@@ -1,4 +1,61 @@
 {
   "mcpServers": {
+    "playwright-execute": {
+      "description": "A Model Context Protocol server that provides browser automation capabilities using Playwright. This server enables LLMs to interact with web pages, take screenshots, generate test code, web scraps the page and execute JavaScript in a real browser environment.",
+      "command": "npx",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"],
+      "disabled": false
+    },
+    "playwright-official": {
+      "description": "A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "disabled": true
+    },
+    "filesystem": {
+      "description": "Secure filesystem access for Claude Code with configurable directory permissions and file operations.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\Mind0\\Downloads\\git\\claudecodewebui\\claude-code-templates"
+      ],
+      "disabled": false
+    },
+    "deepgraph-typescript": {
+      "description": "Comprehensive TypeScript code analysis with type mapping, interface relationships, and module dependency tracking.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-code-graph@latest",
+        "microsoft/TypeScript"
+      ],
+      "disabled": true
+    },
+    "deepgraph-nextjs": {
+      "description": "Deep code analysis and visualization for Next.js projects. Understand component relationships, dependencies, and architecture patterns.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-code-graph@latest",
+        "vercel/next.js"
+      ],
+      "disabled": false
+    },
+    "web-fetch": {
+      "description": "Web content fetching and data extraction capabilities. Access external APIs, scrape web content, and integrate external data sources.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "disabled": false
+    },
+    "github": {
+      "description": "Direct GitHub API integration for repository management, issue tracking, pull requests, and collaborative development workflows.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
+      },
+      "disabled": true
+    }
   }
 }
