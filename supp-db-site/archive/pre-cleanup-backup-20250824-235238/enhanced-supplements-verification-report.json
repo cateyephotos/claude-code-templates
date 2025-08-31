@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-21T01:43:27.486Z",
+  "totalCardsChecked": 10,
+  "enhancedSupplementsFound": 10,
+  "allClean": false,
+  "enhancedSupplements": [
+    {
+      "supplementId": "1",
+      "supplementName": "Bacopa monnieri",
+      "modalOpened": true,
+      "hasUndefined": true,
+      "tabsCount": 3,
+      "tabResults": [
+        {
+          "tabName": "Mechanisms (4)",
+          "hasUndefined": false,
+          "hasContent": true
+        },
+        {
+          "tabName": "Clinical Benefits (2)",
+          "hasUndefined": true,
+          "hasContent": true
+        },
+        {
+          "tabName": "Safety Data (2)",
+          "hasUndefined": true,
+          "hasContent": true
+        }
+      ],
+      "allTabsClean": false
+    },
+    {
+      "supplementId": "2",
+      "supplementName": "Turmeric/Curcumin",
+      "modalOpened": true,
+      "hasUndefined": true,
+      "tabsCount": 3,
+      "tabResults": [
+        {
+          "tabName": "Mechanisms (4)",
+          "hasUndefined": false,
+          "hasContent": true
+        },
+        {
+          "tabName": "Clinical Benefits (4)",
+          "hasUndefined": true,
+          "hasContent": true
+        },
+        {
+          "tabName": "Safety Data (2)",
+          "hasUndefined": true,
+          "hasContent": true
+        }
+      ],
+      "allTabsClean": false
+    },
+    {
+      "supplementId": "3",
+      "supplementName": "Ashwagandha",
+      "modalOpened": true,
+      "hasUndefined": false,
+      "tabsCount": 0,
+      "tabResults": [],
+      "allTabsClean": true
+    },
+    {
+      "supplementId": "4",
+      "supplementName": "Omega-3 Fatty Acids",
+      "modalOpened": true,
+      "hasUndefined": true,
+      "tabsCount": 3,
+      "tabResults": [
+        {
+          "tabName": "Mechanisms (4)",
+          "hasUndefined": false,
+          "hasContent": true
+        },
+        {
+          "tabName": "Clinical Benefits (4)",
+          "hasUndefined": true,
+          "hasContent": true
+        },
+        {
+          "tabName": "Safety Data (2)",
+          "hasUndefined": true,
+          "hasContent": true
+        }
+      ],
+      "allTabsClean": false
+    },
+    {
+      "supplementId": "5",
+      "supplementName": "Creatine",
+      "modalOpened": true,
+      "hasUndefined": true,
+      "tabsCount": 3,
+      "tabResults": [
+        {
+          "tabName": "Mechanisms (4)",
+          "hasUndefined": false,
+          "hasContent": true
+        },
+        {
+          "tabName": "Clinical Benefits (4)",
+          "hasUndefined": true,
+          "hasContent": true
+        },
+        {
+          "tabName": "Safety Data (2)",
+          "hasUndefined": true,
+          "hasContent": true
+        }
+      ],
+      "allTabsClean": false
+    },
+    {
+      "supplementId": "6",
+      "supplementName": "Magnesium",
+      "modalOpened": true,
+      "hasUndefined": true,
+      "tabsCount": 3,
+      "tabResults": [
+        {
+          "tabName": "Mechanisms (4)",
+          "hasUndefined": false,
+          "hasContent": true
+        },
+        {
+          "tabName": "Clinical Benefits (4)",
+          "hasUndefined": true,
+          "hasContent": true
+        },
+        {
+          "tabName": "Safety Data (2)",
+          "hasUndefined": true,
+          "hasContent": true
+        }
+      ],
+      "allTabsClean": false
+    },
+    {
+      "supplementId": "7",
+      "supplementName": "Vitamin D3",
+      "modalOpened": true,
+      "hasUndefined": true,
+      "tabsCount": 3,
+      "tabResults": [
+        {
+          "tabName": "Mechanisms (6)",
+          "hasUndefined": false,
+          "hasContent": true
+        },
+        {
+          "tabName": "Clinical Benefits (8)",
+          "hasUndefined": true,
+          "hasContent": true
+        },
+        {
+          "tabName": "Safety Data (3)",
+          "hasUndefined": false,
+          "hasContent": true
+        }
+      ],
+      "allTabsClean": false
+    },
+    {
+      "supplementId": "8",
+      "supplementName": "Melatonin",
+      "modalOpened": true,
+      "hasUndefined": false,
+      "tabsCount": 0,
+      "tabResults": [],
+      "allTabsClean": true
+    },
+    {
+      "supplementId": "9",
+      "supplementName": "L-Theanine",
+      "modalOpened": true,
+      "hasUndefined": false,
+      "tabsCount": 0,
+      "tabResults": [],
+      "allTabsClean": true
+    },
+    {
+      "supplementId": "10",
+      "supplementName": "Rhodiola rosea",
+      "modalOpened": true,
+      "hasUndefined": false,
+      "tabsCount": 0,
+      "tabResults": [],
+      "allTabsClean": true
+    }
+  ]
+}

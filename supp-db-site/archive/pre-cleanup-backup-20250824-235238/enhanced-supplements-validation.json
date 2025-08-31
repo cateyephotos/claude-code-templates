@@ -1,0 +1,170 @@
+{
+  "timestamp": "2025-08-24T07:26:53.369Z",
+  "totalEnhanced": 85,
+  "tested": 1,
+  "fullyWorking": 1,
+  "hasIssues": 0,
+  "failed": 9,
+  "supplements": [
+    {
+      "id": 1,
+      "name": "Bacopa monnieri",
+      "isEnhancedInData": true,
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "FULLY_WORKING",
+      "issues": []
+    },
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "isEnhancedInData": true,
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    55 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ashwagandha",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Element is not attached to the DOM\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    18 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Omega-3 Fatty Acids",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    51 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Creatine",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    51 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Creatine",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    50 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Creatine",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    51 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Magnesium",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    49 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Magnesium",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    53 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Magnesium",
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "status": "ERROR",
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    53 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    }
+  ]
+}

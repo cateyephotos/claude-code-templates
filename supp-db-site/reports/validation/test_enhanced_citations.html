@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Enhanced Citations - Bacopa monnieri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .citation-tab-btn {
+            border-bottom: 2px solid transparent;
+            color: #6b7280;
+            transition: all 0.2s ease;
+        }
+        
+        .citation-tab-btn:hover {
+            color: #374151;
+            border-bottom-color: #d1d5db;
+        }
+        
+        .citation-tab-btn.active-tab {
+            color: #4f46e5;
+            border-bottom-color: #4f46e5;
+        }
+        
+        .phase-2a-badge {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h1 class="text-2xl font-bold mb-4">Enhanced Citation System Test</h1>
+            
+            <div class="mb-4">
+                <span class="phase-2a-badge text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Phase 2A Enhanced Citations
+                </span>
+            </div>
+            
+            <div id="supplement-info" class="mb-6">
+                <h2 class="text-xl font-semibold">Loading supplement data...</h2>
+            </div>
+            
+            <div id="citations-display">
+                <!-- Citations will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data/supplements.js"></script>
+    <script>
+        // Test the enhanced citation system
+        function testEnhancedCitations() {
+            const bacopa = supplementDatabase.supplements.find(s => s.id === 1);
+            
+            const infoDiv = document.getElementById('supplement-info');
+            const citationsDiv = document.getElementById('citations-display');
+            
+            if (!bacopa) {
+                infoDiv.innerHTML = '<p class="text-red-600">Error: Bacopa monnieri not found in database</p>';
+                return;
+            }
+            
+            // Display basic info
+            infoDiv.innerHTML = `
+                <h2 class="text-xl font-semibold mb-2">${bacopa.name}</h2>
+                <p class="text-gray-600 mb-2">${bacopa.scientificName}</p>
+                <p class="text-sm">Enhanced Citations: ${bacopa.enhancedCitations ? 'Yes ✅' : 'No ❌'}</p>
+            `;
+            
+            // Test enhanced citations
+            if (bacopa.enhancedCitations && bacopa.enhancedCitations.isEnhanced) {
+                const enhanced = bacopa.enhancedCitations;
+                
+                citationsDiv.innerHTML = `
+                    <div class="border-t pt-6">
+                        <h3 class="text-lg font-semibold mb-4">Enhanced Citation System Test Results</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-blue-50 p-4 rounded">
+                                <h4 class="font-medium text-blue-800">Total Citations</h4>
+                                <p class="text-2xl font-bold text-blue-600">${enhanced.evidenceProfile.totalCitations}</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded">
+                                <h4 class="font-medium text-green-800">Quality Score</h4>
+                                <p class="text-2xl font-bold text-green-600">${enhanced.evidenceProfile.researchQualityScore}/100</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded">
+                                <h4 class="font-medium text-purple-800">Research Maturity</h4>
+                                <p class="text-lg font-bold text-purple-600">${enhanced.evidenceProfile.researchMaturity}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Mechanisms (${enhanced.mechanisms ? enhanced.mechanisms.length : 0})</h4>
+                            ${enhanced.mechanisms ? enhanced.mechanisms.map(m => `
+                                <div class="bg-gray-50 p-3 rounded mb-2">
+                                    <span class="font-medium">${m.mechanism}</span>
+                                    <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 text-xs rounded">${m.strength}</span>
+                                    <p class="text-sm text-gray-600 mt-1">${m.evidence.length} research studies</p>
+                                </div>
+                            `).join('') : '<p class="text-gray-600">No mechanisms found</p>'}
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Clinical Benefits (${enhanced.benefits ? enhanced.benefits.length : 0})</h4>
+                            ${enhanced.benefits ? enhanced.benefits.map(b => `
+                                <div class="bg-gray-50 p-3 rounded mb-2">
+                                    <span class="font-medium">${b.healthDomain}</span>
+                                    <span class="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">${b.strength}</span>
+                                    <p class="text-sm text-gray-600 mt-1">${b.evidence.length} clinical studies</p>
+                                    ${b.metaAnalysisSupport ? '<p class="text-xs text-green-600">✅ Meta-analysis support</p>' : ''}
+                                </div>
+                            `).join('') : '<p class="text-gray-600">No benefits found</p>'}
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2">Safety Data (${enhanced.safety ? enhanced.safety.length : 0})</h4>
+                            ${enhanced.safety ? enhanced.safety.map(s => `
+                                <div class="bg-gray-50 p-3 rounded mb-2">
+                                    <span class="font-medium">${s.safetyAspect}</span>
+                                    <span class="ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">${s.riskLevel} Risk</span>
+                                    <p class="text-sm text-gray-600 mt-1">${s.evidence.length} safety studies</p>
+                                </div>
+                            `).join('') : '<p class="text-gray-600">No safety data found</p>'}
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded">
+                            <h4 class="font-medium text-green-800 mb-2">✅ Enhanced Citation System Test: PASSED</h4>
+                            <p class="text-sm text-green-700">Bacopa monnieri successfully loaded with enhanced citation system including mechanism-specific, clinical benefit, and safety citations.</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                citationsDiv.innerHTML = `
+                    <div class="border-t pt-6">
+                        <div class="bg-red-100 p-4 rounded">
+                            <h4 class="font-medium text-red-800 mb-2">❌ Enhanced Citation System Test: FAILED</h4>
+                            <p class="text-sm text-red-700">Bacopa monnieri does not have enhanced citations enabled. Check the supplements.js file.</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Run test when page loads
+        document.addEventListener('DOMContentLoaded', testEnhancedCitations);
+    </script>
+</body>
+</html>

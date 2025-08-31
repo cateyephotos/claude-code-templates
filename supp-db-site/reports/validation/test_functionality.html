@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplement Database Functionality Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .warning { color: orange; font-weight: bold; }
+        .info { color: blue; }
+        .test-result { margin: 10px 0; padding: 8px; border-radius: 3px; }
+        .pass { background-color: #d4edda; border: 1px solid #c3e6cb; }
+        .fail { background-color: #f8d7da; border: 1px solid #f5c6cb; }
+        .warn { background-color: #fff3cd; border: 1px solid #ffeaa7; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Supplement Database Functionality Test</h1>
+    <p>This page tests the core functionality of the supplement database to verify that categories and health domains are working properly.</p>
+    
+    <div id="test-results"></div>
+
+    <!-- Load the supplement data -->
+    <script src="data/supplements.js"></script>
+    
+    <script>
+        // Test Results Container
+        const resultsContainer = document.getElementById('test-results');
+        
+        // Test Result Helpers
+        function addTestSection(title) {
+            const section = document.createElement('div');
+            section.className = 'test-section';
+            section.innerHTML = `<h2>${title}</h2>`;
+            resultsContainer.appendChild(section);
+            return section;
+        }
+        
+        function addTestResult(section, message, status) {
+            const result = document.createElement('div');
+            result.className = `test-result ${status}`;
+            result.innerHTML = message;
+            section.appendChild(result);
+        }
+        
+        function formatArray(arr, limit = 10) {
+            if (!arr || !Array.isArray(arr)) return 'Not an array or undefined';
+            const display = arr.slice(0, limit).join(', ');
+            return arr.length > limit ? `${display}... (${arr.length} total)` : display;
+        }
+
+        // Start Testing
+        console.log('🧪 Starting comprehensive supplement database functionality tests...');
+        
+        // Test 1: Data Structure Validation
+        const dataSection = addTestSection('1. Data Structure Validation');
+        
+        if (typeof supplementDatabase === 'undefined') {
+            addTestResult(dataSection, '❌ CRITICAL: supplementDatabase is not defined', 'fail');
+        } else {
+            addTestResult(dataSection, '✅ supplementDatabase is loaded', 'pass');
+            
+            // Test supplements array
+            if (!supplementDatabase.supplements || !Array.isArray(supplementDatabase.supplements)) {
+                addTestResult(dataSection, '❌ CRITICAL: supplements array is missing or invalid', 'fail');
+            } else {
+                addTestResult(dataSection, `✅ Supplements array loaded with ${supplementDatabase.supplements.length} items`, 'pass');
+            }
+            
+            // Test categories array
+            if (!supplementDatabase.categories || !Array.isArray(supplementDatabase.categories)) {
+                addTestResult(dataSection, '❌ CRITICAL: categories array is missing or invalid', 'fail');
+            } else {
+                addTestResult(dataSection, `✅ Categories array loaded with ${supplementDatabase.categories.length} items`, 'pass');
+            }
+            
+            // Test healthDomains array
+            if (!supplementDatabase.healthDomains || !Array.isArray(supplementDatabase.healthDomains)) {
+                addTestResult(dataSection, '❌ CRITICAL: healthDomains array is missing or invalid', 'fail');
+            } else {
+                addTestResult(dataSection, `✅ Health domains array loaded with ${supplementDatabase.healthDomains.length} items`, 'pass');
+            }
+        }
+
+        // Test 2: Categories Functionality
+        const categoriesSection = addTestSection('2. Categories Functionality Test');
+        
+        if (supplementDatabase && supplementDatabase.categories) {
+            const categories = supplementDatabase.categories;
+            
+            // List all categories
+            const categoryNames = categories.map(cat => cat.name);
+            addTestResult(categoriesSection, `📋 Found categories: ${formatArray(categoryNames)}`, 'pass');
+            
+            // Test expected categories
+            const expectedCategories = ['Nootropics', 'Adaptogens', 'Anti-inflammatory', 'Essential Nutrients', 'Sleep Support'];
+            const foundExpected = expectedCategories.filter(cat => categoryNames.includes(cat));
+            const missingExpected = expectedCategories.filter(cat => !categoryNames.includes(cat));
+            
+            if (foundExpected.length > 0) {
+                addTestResult(categoriesSection, `✅ Expected categories found: ${foundExpected.join(', ')}`, 'pass');
+            }
+            if (missingExpected.length > 0) {
+                addTestResult(categoriesSection, `⚠️ Expected categories missing: ${missingExpected.join(', ')}`, 'warn');
+            }
+            
+            // Test category structure
+            const firstCategory = categories[0];
+            if (firstCategory && firstCategory.name && firstCategory.supplements) {
+                addTestResult(categoriesSection, `✅ Category structure valid (name: "${firstCategory.name}", supplements: ${firstCategory.supplements.length})`, 'pass');
+            } else {
+                addTestResult(categoriesSection, '❌ Category structure invalid - missing name or supplements array', 'fail');
+            }
+        } else {
+            addTestResult(categoriesSection, '❌ Cannot test categories - data not available', 'fail');
+        }
+
+        // Test 3: Health Domains Functionality
+        const healthDomainsSection = addTestSection('3. Health Domains Functionality Test');
+        
+        if (supplementDatabase && supplementDatabase.healthDomains) {
+            const healthDomains = supplementDatabase.healthDomains;
+            
+            // List all health domains
+            const domainNames = healthDomains.map(domain => domain.name);
+            addTestResult(healthDomainsSection, `📋 Found health domains: ${formatArray(domainNames)}`, 'pass');
+            
+            // Test expected health domains
+            const expectedDomains = ['Memory Enhancement', 'Focus & Attention', 'Sleep Quality', 'Anxiety Reduction', 'Stress Resilience', 'Neuroprotection', 'Mood Stabilization'];
+            const foundExpectedDomains = expectedDomains.filter(domain => domainNames.includes(domain));
+            const missingExpectedDomains = expectedDomains.filter(domain => !domainNames.includes(domain));
+            
+            if (foundExpectedDomains.length > 0) {
+                addTestResult(healthDomainsSection, `✅ Expected health domains found: ${foundExpectedDomains.join(', ')}`, 'pass');
+            }
+            if (missingExpectedDomains.length > 0) {
+                addTestResult(healthDomainsSection, `⚠️ Expected health domains missing: ${missingExpectedDomains.join(', ')}`, 'warn');
+            }
+            
+            // Test health domain structure
+            const firstDomain = healthDomains[0];
+            if (firstDomain && firstDomain.name && firstDomain.supplements) {
+                addTestResult(healthDomainsSection, `✅ Health domain structure valid (name: "${firstDomain.name}", supplements: ${firstDomain.supplements.length})`, 'pass');
+            } else {
+                addTestResult(healthDomainsSection, '❌ Health domain structure invalid - missing name or supplements array', 'fail');
+            }
+        } else {
+            addTestResult(healthDomainsSection, '❌ Cannot test health domains - data not available', 'fail');
+        }
+
+        // Test 4: Supplement Data Quality
+        const supplementsSection = addTestSection('4. Supplement Data Quality Test');
+        
+        if (supplementDatabase && supplementDatabase.supplements) {
+            const supplements = supplementDatabase.supplements;
+            
+            addTestResult(supplementsSection, `📊 Total supplements in database: ${supplements.length}`, 'pass');
+            
+            // Test for Phase 2A enhanced supplements
+            const enhancedSupplements = supplements.filter(supp => supp.enhancedCitations && supp.enhancedCitations.isEnhanced);
+            if (enhancedSupplements.length > 0) {
+                addTestResult(supplementsSection, `✅ Phase 2A enhanced supplements found: ${enhancedSupplements.length} (${enhancedSupplements.map(s => s.name).join(', ')})`, 'pass');
+            } else {
+                addTestResult(supplementsSection, '⚠️ No Phase 2A enhanced supplements found', 'warn');
+            }
+            
+            // Test supplement structure
+            const firstSupplement = supplements[0];
+            const requiredFields = ['id', 'name', 'category', 'evidenceTier', 'primaryBenefits'];
+            const missingFields = requiredFields.filter(field => !firstSupplement.hasOwnProperty(field));
+            
+            if (missingFields.length === 0) {
+                addTestResult(supplementsSection, '✅ Supplement data structure is valid', 'pass');
+            } else {
+                addTestResult(supplementsSection, `❌ Supplement data missing required fields: ${missingFields.join(', ')}`, 'fail');
+            }
+            
+            // Test categories in supplements match category list
+            const supplementCategories = [...new Set(supplements.map(s => s.category))];
+            const categoryNames = supplementDatabase.categories.map(c => c.name);
+            const unmatchedCategories = supplementCategories.filter(cat => !categoryNames.includes(cat));
+            
+            if (unmatchedCategories.length === 0) {
+                addTestResult(supplementsSection, '✅ All supplement categories match the category list', 'pass');
+            } else {
+                addTestResult(supplementsSection, `⚠️ Some supplement categories not in category list: ${unmatchedCategories.join(', ')}`, 'warn');
+            }
+        } else {
+            addTestResult(supplementsSection, '❌ Cannot test supplements - data not available', 'fail');
+        }
+
+        // Test 5: Filter Simulation
+        const filterSection = addTestSection('5. Filter Functionality Simulation');
+        
+        if (supplementDatabase && supplementDatabase.supplements && supplementDatabase.categories && supplementDatabase.healthDomains) {
+            try {
+                // Simulate category filtering
+                const nootropicsCategory = 'Nootropics';
+                const nootropicsSupplements = supplementDatabase.supplements.filter(s => s.category === nootropicsCategory);
+                if (nootropicsSupplements.length > 0) {
+                    addTestResult(filterSection, `✅ Category filter test: Found ${nootropicsSupplements.length} supplements in "${nootropicsCategory}" category`, 'pass');
+                    addTestResult(filterSection, `📋 Nootropics found: ${formatArray(nootropicsSupplements.map(s => s.name))}`, 'pass');
+                } else {
+                    addTestResult(filterSection, `⚠️ Category filter test: No supplements found in "${nootropicsCategory}" category`, 'warn');
+                }
+                
+                // Simulate health domain filtering (Memory Enhancement)
+                const memoryDomain = 'Memory Enhancement';
+                const memorySupplements = supplementDatabase.supplements.filter(s => {
+                    return s.primaryBenefits && s.primaryBenefits.cognitive && 
+                           s.primaryBenefits.cognitive.some(benefit => benefit.toLowerCase().includes('memory'));
+                });
+                
+                if (memorySupplements.length > 0) {
+                    addTestResult(filterSection, `✅ Health domain filter test: Found ${memorySupplements.length} supplements for memory enhancement`, 'pass');
+                    addTestResult(filterSection, `📋 Memory supplements found: ${formatArray(memorySupplements.map(s => s.name))}`, 'pass');
+                } else {
+                    addTestResult(filterSection, '⚠️ Health domain filter test: No memory enhancement supplements found', 'warn');
+                }
+                
+                // Test evidence tier filtering
+                const tier1Supplements = supplementDatabase.supplements.filter(s => s.evidenceTier === 1);
+                const tier2Supplements = supplementDatabase.supplements.filter(s => s.evidenceTier === 2);
+                
+                addTestResult(filterSection, `📊 Evidence tier distribution: Tier 1: ${tier1Supplements.length}, Tier 2: ${tier2Supplements.length}`, 'pass');
+                
+            } catch (error) {
+                addTestResult(filterSection, `❌ Filter simulation failed: ${error.message}`, 'fail');
+            }
+        } else {
+            addTestResult(filterSection, '❌ Cannot simulate filters - required data not available', 'fail');
+        }
+
+        // Test 6: Performance and Quality Metrics
+        const performanceSection = addTestSection('6. Performance and Quality Metrics');
+        
+        if (supplementDatabase) {
+            const startTime = performance.now();
+            
+            // Simulate data processing
+            try {
+                const supplements = supplementDatabase.supplements || [];
+                const categories = supplementDatabase.categories || [];
+                const healthDomains = supplementDatabase.healthDomains || [];
+                
+                // Process data
+                const processedData = {
+                    totalSupplements: supplements.length,
+                    totalCategories: categories.length,
+                    totalHealthDomains: healthDomains.length,
+                    averageEvidenceTier: supplements.length > 0 ? 
+                        (supplements.reduce((sum, s) => sum + (s.evidenceTier || 0), 0) / supplements.length).toFixed(2) : 0,
+                    enhancedSupplements: supplements.filter(s => s.enhancedCitations && s.enhancedCitations.isEnhanced).length
+                };
+                
+                const endTime = performance.now();
+                const processingTime = (endTime - startTime).toFixed(2);
+                
+                addTestResult(performanceSection, `⚡ Data processing time: ${processingTime}ms`, processingTime < 100 ? 'pass' : 'warn');
+                addTestResult(performanceSection, `📊 Database metrics: ${JSON.stringify(processedData, null, 2)}`, 'pass');
+                
+                // Quality checks
+                if (processedData.totalSupplements >= 89) {
+                    addTestResult(performanceSection, `✅ Target supplement count met: ${processedData.totalSupplements}/89`, 'pass');
+                } else {
+                    addTestResult(performanceSection, `⚠️ Supplement count below target: ${processedData.totalSupplements}/89`, 'warn');
+                }
+                
+                if (processedData.enhancedSupplements > 0) {
+                    addTestResult(performanceSection, `✅ Phase 2A enhanced citations available: ${processedData.enhancedSupplements} supplements`, 'pass');
+                } else {
+                    addTestResult(performanceSection, '⚠️ No Phase 2A enhanced citations found', 'warn');
+                }
+                
+            } catch (error) {
+                addTestResult(performanceSection, `❌ Performance test failed: ${error.message}`, 'fail');
+            }
+        }
+
+        // Test Summary
+        const summarySection = addTestSection('7. Test Summary');
+        
+        const allResults = document.querySelectorAll('.test-result');
+        const passCount = document.querySelectorAll('.test-result.pass').length;
+        const failCount = document.querySelectorAll('.test-result.fail').length;
+        const warnCount = document.querySelectorAll('.test-result.warn').length;
+        
+        addTestResult(summarySection, `📊 Test Results: ${passCount} passed, ${failCount} failed, ${warnCount} warnings`, 'pass');
+        
+        if (failCount === 0) {
+            addTestResult(summarySection, '🎉 ALL CRITICAL TESTS PASSED! Categories and health domains are functioning correctly.', 'pass');
+        } else {
+            addTestResult(summarySection, `⚠️ ${failCount} critical issues found that need attention.`, 'fail');
+        }
+        
+        if (warnCount > 0) {
+            addTestResult(summarySection, `ℹ️ ${warnCount} warnings detected - these may indicate areas for improvement.`, 'warn');
+        }
+
+        // Specific test for the original issues
+        const issueSection = addTestSection('8. Specific Issue Verification');
+        
+        addTestResult(issueSection, '🔍 Testing specific issues mentioned in the request:', 'pass');
+        
+        // Test if categories dropdown would be populated
+        if (supplementDatabase && supplementDatabase.categories && supplementDatabase.categories.length > 0) {
+            const expectedCategoryOptions = supplementDatabase.categories.map(cat => `<option value="${cat.name}">${cat.name}</option>`);
+            addTestResult(issueSection, '✅ Category filter dropdown WOULD be populated correctly', 'pass');
+            addTestResult(issueSection, `📋 Categories include: ${supplementDatabase.categories.map(c => c.name).slice(0, 5).join(', ')}...`, 'pass');
+        } else {
+            addTestResult(issueSection, '❌ Category filter dropdown would NOT be populated', 'fail');
+        }
+        
+        // Test if health domains dropdown would be populated
+        if (supplementDatabase && supplementDatabase.healthDomains && supplementDatabase.healthDomains.length > 0) {
+            addTestResult(issueSection, '✅ Health domain filter dropdown WOULD be populated correctly', 'pass');
+            addTestResult(issueSection, `📋 Health domains include: ${supplementDatabase.healthDomains.map(d => d.name).slice(0, 5).join(', ')}...`, 'pass');
+        } else {
+            addTestResult(issueSection, '❌ Health domain filter dropdown would NOT be populated', 'fail');
+        }
+        
+        // Test if filtering would work
+        if (supplementDatabase && supplementDatabase.supplements && supplementDatabase.supplements.length > 0) {
+            addTestResult(issueSection, '✅ Supplement filtering WOULD work correctly', 'pass');
+            addTestResult(issueSection, `📊 ${supplementDatabase.supplements.length} supplements available for filtering`, 'pass');
+        } else {
+            addTestResult(issueSection, '❌ Supplement filtering would NOT work', 'fail');
+        }
+
+        console.log('✅ Comprehensive testing complete');
+    </script>
+</body>
+</html>

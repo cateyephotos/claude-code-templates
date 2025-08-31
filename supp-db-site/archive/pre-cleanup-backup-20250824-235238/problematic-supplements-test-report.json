@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-08-24T06:41:45.286Z",
+  "supplements": [
+    {
+      "name": "Melatonin",
+      "id": 8,
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "undefinedCount": 23,
+      "tabResults": {
+        "benefits": 23,
+        "mechanisms": 23,
+        "safety": 23
+      },
+      "status": "STILL_BROKEN",
+      "undefinedContexts": [
+        {
+          "lineNumber": 173,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 202,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 231,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 260,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 289,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        }
+      ]
+    },
+    {
+      "name": "L-Theanine",
+      "id": 9,
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "undefinedCount": 22,
+      "tabResults": {
+        "benefits": 22,
+        "mechanisms": 22,
+        "safety": 22
+      },
+      "status": "STILL_BROKEN",
+      "undefinedContexts": [
+        {
+          "lineNumber": 173,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 202,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 231,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 260,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        },
+        {
+          "lineNumber": 289,
+          "context": "<p class=\"text-xs text-gray-600 mb-2\">Unknown authors (undefined) - undefined</p>"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTested": 2,
+    "resolved": 0,
+    "improved": 0,
+    "stillBroken": 2,
+    "successRate": 0,
+    "improvementRate": 0
+  }
+}

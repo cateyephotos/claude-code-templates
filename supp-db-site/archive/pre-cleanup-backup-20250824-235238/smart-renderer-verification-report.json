@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-08-24T06:26:45.183Z",
+  "totalSupplements": 89,
+  "enhancedSupplements": [
+    "Bacopa monnieri",
+    "Turmeric/Curcumin",
+    "Ashwagandha",
+    "Omega-3 Fatty Acids",
+    "Creatine",
+    "Magnesium",
+    "Vitamin D3",
+    "Melatonin",
+    "L-Theanine",
+    "Rhodiola rosea",
+    "Lion's Mane Mushroom",
+    "Phosphatidylserine",
+    "Acetyl-L-Carnitine",
+    "Ginkgo Biloba",
+    "Panax Ginseng"
+  ],
+  "fullyResolved": [
+    {
+      "name": "Bacopa monnieri",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Turmeric/Curcumin",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Ashwagandha",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Omega-3 Fatty Acids",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Creatine",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Magnesium",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Vitamin D3",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Rhodiola rosea",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Lion's Mane Mushroom",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Phosphatidylserine",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Acetyl-L-Carnitine",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Ginkgo Biloba",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    },
+    {
+      "name": "Panax Ginseng",
+      "status": "RESOLVED",
+      "undefinedCount": 0
+    }
+  ],
+  "partiallyResolved": [],
+  "stillBroken": [
+    {
+      "name": "Melatonin",
+      "status": "BROKEN",
+      "undefinedCount": 51
+    },
+    {
+      "name": "L-Theanine",
+      "status": "BROKEN",
+      "undefinedCount": 48
+    }
+  ],
+  "notEnhanced": [],
+  "summary": {
+    "totalEnhanced": 15,
+    "fullyResolved": 13,
+    "partiallyResolved": 0,
+    "stillBroken": 2,
+    "successRate": 87,
+    "improvementRate": 87
+  }
+}

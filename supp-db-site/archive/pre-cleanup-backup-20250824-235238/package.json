@@ -1,0 +1,24 @@
+{
+  "name": "supplement-database-site",
+  "version": "1.0.0",
+  "description": "Evidence-Based Supplement Database for Cognitive and Mental Health",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "supplements",
+    "cognitive health",
+    "evidence-based",
+    "database"
+  ],
+  "author": "SciSpace Research Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "dependencies": {
+    "playwright": "^1.54.2"
+  }
+}

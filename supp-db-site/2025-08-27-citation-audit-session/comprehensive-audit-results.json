@@ -1,0 +1,2836 @@
+[
+  {
+    "id": 1,
+    "name": "Bacopa monnieri",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 2,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "doiLinks": 3,
+        "htmlLength": 5683,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Improves episodic memory and word recall in healthy adults\n                    \n                        \n                            Strong Evidence\n             "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 6,
+        "pmidLinks": 5,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 2,
+    "name": "Turmeric/Curcumin",
+    "benefitsWorking": false,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "error": "Container not found"
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [
+        "Missing PMIDs"
+      ],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 3,
+    "name": "Ashwagandha",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 5,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 11969,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Reduces stress and anxiety symptoms with cortisol normalization\n                    \n                        \n                            Very Strong Evidence\n   "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 4,
+    "name": "Omega-3 Fatty Acids",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 9131,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Supports cognitive function and memory\n                    \n                        \n                            Moderate Evidence\n                        \n      "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 5,
+    "name": "Creatine",
+    "benefitsWorking": false,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "error": "Container not found"
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [
+        "Missing PMIDs"
+      ],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 7,
+    "name": "Vitamin D3",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 8,
+        "studyCards": 10,
+        "pmidLinks": 10,
+        "doiLinks": 10,
+        "htmlLength": 20633,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Reduces fracture risk by 15-20% in older adults when combined with calcium\n                    \n                        \n                            Strong Eviden"
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 6,
+        "studyCards": 8,
+        "pmidLinks": 8,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 9,
+    "name": "L-Theanine",
+    "benefitsWorking": false,
+    "safetyWorking": false,
+    "mechanismsWorking": false,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 7,
+        "studyCards": 0,
+        "pmidLinks": 0,
+        "doiLinks": 0,
+        "htmlLength": 7781,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": false,
+        "hasDOI": false,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": false,
+        "hasJournal": false,
+        "detailScore": 0,
+        "firstCardPreview": "\n                \n                    Significantly reduces stress and perceived stress levels\n                    \n                        \n                            Moderate Evidence\n             "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      }
+    },
+    "issues": {
+      "benefits": [
+        "No study cards",
+        "Missing PMIDs"
+      ],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": [
+        "Missing PMIDs"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "name": "Rhodiola rosea",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 14047,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Reduces physical and mental fatigue\n                    \n                        \n                            Strong Evidence\n                        \n           "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 11,
+    "name": "Lion's Mane Mushroom",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 14523,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Improves cognitive function and processing speed in healthy adults\n                    \n                        \n                            Strong Evidence\n     "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 12,
+    "name": "Phosphatidylserine",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 13248,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Prevents cognitive decline and improves daily functioning in mild Alzheimer's disease\n                    \n                        \n                            St"
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 13,
+    "name": "Acetyl-L-Carnitine",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 4,
+        "htmlLength": 11050,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May improve cognitive function and memory in aging adults\n                    \n                        \n                            Moderate Evidence\n            "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 14,
+    "name": "Ginkgo Biloba",
+    "benefitsWorking": false,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 0,
+        "pmidLinks": 0,
+        "doiLinks": 0,
+        "htmlLength": 6500,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": false,
+        "hasDOI": false,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": false,
+        "hasJournal": false,
+        "detailScore": 0,
+        "firstCardPreview": "\n                \n                    Supports cognitive function and mental performance\n                    \n                        \n                            Moderate Evidence\n                   "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 0,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 1,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [
+        "No study cards",
+        "Missing PMIDs"
+      ],
+      "safety": [
+        "No study cards",
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 15,
+    "name": "Panax Ginseng",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 7,
+        "studyCards": 7,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 15540,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May improve cognitive function and mental performance\n                    \n                        \n                            Moderate Evidence\n                "
+      },
+      "safety": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 16,
+    "name": "Alpha-GPC",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 8780,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Improves attention, processing speed, and cognitive performance in healthy adults\n                    \n                        \n                            Strong"
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 17,
+    "name": "Berberine",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 8640,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Reduces blood glucose, HbA1c, and improves insulin sensitivity in type 2 diabetes\n                    \n                        \n                            Strong"
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 5,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 18,
+    "name": "CoQ10",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 7795,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Reduces mortality and hospitalizations in heart failure patients\n                    \n                        \n                            Strong Evidence\n       "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 19,
+    "name": "B-Complex Vitamins",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 8930,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Improves cognitive performance and prevents cognitive decline\n                    \n                        \n                            Strong Evidence\n          "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 5,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 20,
+    "name": "Quercetin",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "doiLinks": 3,
+        "htmlLength": 7301,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Reduces muscle damage and enhances recovery\n                    \n                        \n                            Strong Evidence\n                        \n   "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 0,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "No study cards",
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 21,
+    "name": "Vitamin B12",
+    "benefitsWorking": false,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 1,
+        "pmidLinks": 0,
+        "doiLinks": 0,
+        "htmlLength": 7193,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": false,
+        "hasDOI": false,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": false,
+        "hasJournal": false,
+        "detailScore": 0,
+        "firstCardPreview": "\n                \n                    Supports cognitive function and mental performance\n                    \n                        \n                            Moderate Evidence\n                   "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 1,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      }
+    },
+    "issues": {
+      "benefits": [
+        "Missing PMIDs"
+      ],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 22,
+    "name": "Vitamin B6",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 13158,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Prevents and treats vitamin B6 deficiency\n                    \n                        \n                            Strong Evidence\n                        \n     "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 24,
+    "name": "Green Tea Extract",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "doiLinks": 1,
+        "htmlLength": 2326,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    May support metabolic rate and fat oxidation\n                    \n                        \n                            Moderate Evidence\n                        \n"
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 25,
+    "name": "NAD+ Precursors",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "doiLinks": 3,
+        "htmlLength": 6695,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May reduce anxiety and promote relaxation\n                    \n                        \n                            Moderate Evidence\n                        \n   "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 26,
+    "name": "PQQ",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 9091,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May reduce symptoms of depression and anxiety disorders\n                    \n                        \n                            Moderate Evidence\n              "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 27,
+    "name": "Resveratrol",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "doiLinks": 1,
+        "htmlLength": 2323,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    May support cardiovascular function and heart health\n                    \n                        \n                            Moderate Evidence\n                 "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 28,
+    "name": "Glucosamine",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 9830,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Reduced joint pain and improved mobility in osteoarthritis\n                    \n                        \n                            Moderate Evidence\n           "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 30,
+    "name": "Vitamin E",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 8315,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Cardiovascular disease prevention\n                    \n                        \n                            Moderate Evidence\n                        \n           "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 31,
+    "name": "Whey Protein",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 9440,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Enhanced muscle mass and strength gains\n                    \n                        \n                            Strong Evidence\n                        \n       "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 32,
+    "name": "Chondroitin Sulfate",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 4,
+        "htmlLength": 9384,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Pain reduction and functional improvement in osteoarthritis\n                    \n                        \n                            Moderate Evidence\n          "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 34,
+    "name": "5-HTP",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 5,
+        "htmlLength": 11034,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    5-HTP supplementation improves depressive symptoms\n                    \n                        \n                            Moderate Evidence\n                   "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 36,
+    "name": "Vitamin C",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 8088,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Reduced duration and severity of common cold\n                    \n                        \n                            Moderate Evidence\n                        \n"
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 37,
+    "name": "Zinc",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 7,
+        "studyCards": 7,
+        "pmidLinks": 7,
+        "doiLinks": 7,
+        "htmlLength": 16220,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Zinc supplementation for the treatment of attention deficit hyperactivity disorder symptomatology in children: a pilot randomized controlled trial\n               "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 38,
+    "name": "Iron",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 5,
+        "htmlLength": 13843,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Effects of iron supplementation on cognitive development in school-age children: Systematic review and meta-analysis\n                    \n                        "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 39,
+    "name": "Taurine",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 9242,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Improves endurance exercise performance and delays fatigue across various exercise modalities\n                    \n                        \n                      "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": false,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 40,
+    "name": "GABA",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 4,
+        "htmlLength": 11378,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    GABA administration affects sympathetic nervous activity and relaxation in humans\n                    \n                        \n                            Modera"
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 41,
+    "name": "Inositol",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 8,
+        "studyCards": 8,
+        "pmidLinks": 8,
+        "doiLinks": 7,
+        "htmlLength": 17947,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Effects of myo-inositol in women with PCOS: a systematic review and meta-analysis\n                    \n                        \n                            Modera"
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 42,
+    "name": "Selenium",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 9470,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Reduced cancer risk and tumor prevention\n                    \n                        \n                            Moderate Evidence\n                        \n    "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 44,
+    "name": "Alpha-Lipoic Acid",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 7,
+        "studyCards": 7,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 15535,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May improve insulin sensitivity and glucose control in type 2 diabetes\n                    \n                        \n                            Strong Evidence\n "
+      },
+      "safety": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 45,
+    "name": "Lutein",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 14194,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial\n         "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 47,
+    "name": "Ginger",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 9353,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Nausea and vomiting relief in pregnancy and chemotherapy\n                    \n                        \n                            Strong Evidence\n               "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 48,
+    "name": "Garlic",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 8346,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Blood pressure reduction in hypertensive individuals\n                    \n                        \n                            Strong Evidence\n                   "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 50,
+    "name": "Caffeine",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 6,
+        "pmidLinks": 5,
+        "doiLinks": 6,
+        "htmlLength": 10285,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Enhanced cognitive performance and alertness\n                    \n                        \n                            Strong Evidence\n                        \n  "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 51,
+    "name": "Reishi Mushroom",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 4,
+        "htmlLength": 8376,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    Stress reduction and improved sleep quality\n                    \n                        \n                            Moderate Evidence\n                        \n "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 3,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 53,
+    "name": "Spirulina",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 7,
+        "studyCards": 7,
+        "pmidLinks": 7,
+        "doiLinks": 6,
+        "htmlLength": 15744,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May reduce cholesterol and improve lipid profiles\n                    \n                        \n                            Strong Evidence\n                      "
+      },
+      "safety": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 55,
+    "name": "Huperzine A",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 4,
+        "doiLinks": 2,
+        "htmlLength": 8790,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    May improve memory and cognitive function in healthy individuals\n                    \n                        \n                            Moderate Evidence\n     "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 56,
+    "name": "Vinpocetine",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 5,
+        "htmlLength": 11110,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May improve cognitive function and memory in healthy adults\n                    \n                        \n                            Moderate Evidence\n          "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 61,
+    "name": "Chromium",
+    "benefitsWorking": false,
+    "safetyWorking": false,
+    "mechanismsWorking": false,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 4,
+        "pmidLinks": 0,
+        "doiLinks": 4,
+        "htmlLength": 7184,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": false,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 3,
+        "firstCardPreview": "\n                \n                    Improves glucose tolerance and insulin sensitivity in diabetes\n                    \n                        \n                            Moderate Evidence\n       "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      }
+    },
+    "issues": {
+      "benefits": [
+        "Missing PMIDs"
+      ],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": [
+        "Missing PMIDs"
+      ]
+    }
+  },
+  {
+    "id": 62,
+    "name": "Vanadium",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 2,
+        "doiLinks": 3,
+        "htmlLength": 6688,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May improve glucose control in type 2 diabetes\n                    \n                        \n                            Weak to Moderate Evidence\n               "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 67,
+    "name": "Holy Basil",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "doiLinks": 3,
+        "htmlLength": 6636,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": true,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 6,
+        "firstCardPreview": "\n                \n                    Reduces stress and cortisol levels in healthy adults\n                    \n                        \n                            Strong Evidence\n                   "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 75,
+    "name": "Citicoline",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 6,
+        "studyCards": 6,
+        "pmidLinks": 6,
+        "doiLinks": 6,
+        "htmlLength": 13529,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Citicoline and Memory Function in Healthy Older Adults: A Randomized, Double-Blind, Placebo-Controlled Clinical Trial\n                    \n                       "
+      },
+      "safety": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 76,
+    "name": "Sulbutiamine",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "doiLinks": 2,
+        "htmlLength": 4410,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": true,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Reduces fatigue and improves energy levels in asthenia\n                    \n                        \n                            Strong Evidence\n                 "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 77,
+    "name": "DMAE",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "doiLinks": 2,
+        "htmlLength": 4401,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 4,
+        "firstCardPreview": "\n                \n                    May improve memory and cognitive function in aging\n                    \n                        \n                            Limited Evidence\n                    "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 78,
+    "name": "Centella Asiatica",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "doiLinks": 2,
+        "htmlLength": 4497,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": true,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 6,
+        "firstCardPreview": "\n                \n                    Improves cognitive function and memory in healthy adults\n                    \n                        \n                            Moderate Evidence\n             "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 80,
+    "name": "Aniracetam",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "doiLinks": 2,
+        "htmlLength": 4424,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": true,
+        "hasYear": true,
+        "hasJournal": false,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    Improves memory and cognitive function in elderly patients\n                    \n                        \n                            Moderate Evidence\n           "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 81,
+    "name": "Piracetam",
+    "benefitsWorking": true,
+    "safetyWorking": true,
+    "mechanismsWorking": true,
+    "overallWorking": true,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "doiLinks": 2,
+        "htmlLength": 4501,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": true,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 6,
+        "firstCardPreview": "\n                \n                    Improves memory and learning in healthy adults\n                    \n                        \n                            Moderate Evidence\n                       "
+      },
+      "safety": {
+        "totalCards": 1,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      },
+      "mechanisms": {
+        "totalCards": 2,
+        "studyCards": 2,
+        "pmidLinks": 2,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 87,
+    "name": "Krill Oil",
+    "benefitsWorking": true,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 5,
+        "studyCards": 5,
+        "pmidLinks": 5,
+        "doiLinks": 3,
+        "htmlLength": 10907,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": true,
+        "hasDOI": true,
+        "hasFindings": true,
+        "hasAuthors": false,
+        "hasYear": true,
+        "hasJournal": true,
+        "detailScore": 5,
+        "firstCardPreview": "\n                \n                    May improve cardiovascular health and lipid profiles\n                    \n                        \n                            Moderate Evidence\n                 "
+      },
+      "safety": {
+        "totalCards": 4,
+        "studyCards": 4,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": true,
+        "detailScore": 1
+      },
+      "mechanisms": {
+        "totalCards": 3,
+        "studyCards": 3,
+        "pmidLinks": 3,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  },
+  {
+    "id": 89,
+    "name": "Pterostilbene",
+    "benefitsWorking": false,
+    "safetyWorking": false,
+    "mechanismsWorking": true,
+    "overallWorking": false,
+    "tabResults": {
+      "benefits": {
+        "totalCards": 4,
+        "studyCards": 1,
+        "pmidLinks": 0,
+        "doiLinks": 0,
+        "htmlLength": 5078,
+        "hasUndefined": false,
+        "undefinedCount": 0,
+        "hasPMID": false,
+        "hasDOI": false,
+        "hasFindings": false,
+        "hasAuthors": false,
+        "hasYear": false,
+        "hasJournal": false,
+        "detailScore": 0,
+        "firstCardPreview": "\n                \n                    Supports cognitive function and mental performance\n                    \n                        \n                            Moderate Evidence\n                   "
+      },
+      "safety": {
+        "totalCards": 2,
+        "studyCards": 1,
+        "pmidLinks": 0,
+        "hasUndefined": false,
+        "hasPMID": false,
+        "hasFindings": false,
+        "detailScore": 0
+      },
+      "mechanisms": {
+        "totalCards": 4,
+        "studyCards": 1,
+        "pmidLinks": 1,
+        "hasUndefined": false,
+        "hasPMID": true,
+        "hasFindings": true,
+        "detailScore": 2
+      }
+    },
+    "issues": {
+      "benefits": [
+        "Missing PMIDs"
+      ],
+      "safety": [
+        "Missing PMIDs"
+      ],
+      "mechanisms": []
+    }
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "serverRunning": true,
+  "pageAccessible": true,
+  "timestamp": "2025-08-20T18:42:50.288Z",
+  "testResults": {
+    "htmlValidation": {
+      "hasSupplementsScript": true,
+      "hasCitationLoader": true,
+      "hasCitationRenderer": true,
+      "hasModalContainer": true,
+      "hasEnhancedStyles": true,
+      "hasPhase2aBadge": true
+    },
+    "jsFiles": {
+      "data/supplements.js": {
+        "accessible": true,
+        "status": 200
+      },
+      "js/CitationLoader.js": {
+        "accessible": true,
+        "status": 200
+      },
+      "js/CitationRenderer.js": {
+        "accessible": true,
+        "status": 200
+      },
+      "js/app.modernized.js": {
+        "accessible": true,
+        "status": 200
+      }
+    },
+    "enhancedFiles": {
+      "data/enhanced_citations/21_vitamin_b12_enhanced.js": {
+        "accessible": true,
+        "status": 200
+      },
+      "data/enhanced_citations/37_zinc_enhanced.js": {
+        "accessible": true,
+        "status": 200
+      },
+      "data/enhanced_citations/43_choline_enhanced.js": {
+        "accessible": true,
+        "status": 200
+      }
+    }
+  }
+}

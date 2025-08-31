@@ -1,0 +1,335 @@
+{
+  "timestamp": "2025-08-24T23:49:02.388Z",
+  "totalTested": 0,
+  "fullyWorking": 1,
+  "hasIssues": 1,
+  "failed": 8,
+  "smartRenderingTests": [
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "quality": "GOOD",
+      "details": {
+        "mechanismsTest": {
+          "undefinedCount": 0,
+          "contentLength": 10812,
+          "hasMechanismTypes": false,
+          "hasTargetTissues": true
+        },
+        "benefitsTest": {
+          "undefinedCount": 0,
+          "hasHealthDomains": false,
+          "hasSpecificClaims": false,
+          "hasEvidenceQuality": false,
+          "hasStudyDetails": false,
+          "contentLength": 10812
+        },
+        "safetyTest": {
+          "undefinedCount": 0,
+          "contentLength": 10812,
+          "hasRiskLevels": false,
+          "hasSafetyAspects": false
+        },
+        "overallQuality": "GOOD"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Vitamin D3",
+      "quality": "BASIC",
+      "details": {
+        "mechanismsTest": null,
+        "benefitsTest": null,
+        "safetyTest": null,
+        "overallQuality": "BASIC"
+      }
+    }
+  ],
+  "fileAnalysis": [],
+  "supplements": [
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "tier": 1,
+      "expectedFiles": [
+        "2_enhanced.js"
+      ],
+      "actualFiles": [
+        "2_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "FULLY_WORKING",
+      "smartRenderingTest": {
+        "mechanismsTest": {
+          "undefinedCount": 0,
+          "contentLength": 10812,
+          "hasMechanismTypes": false,
+          "hasTargetTissues": true
+        },
+        "benefitsTest": {
+          "undefinedCount": 0,
+          "hasHealthDomains": false,
+          "hasSpecificClaims": false,
+          "hasEvidenceQuality": false,
+          "hasStudyDetails": false,
+          "contentLength": 10812
+        },
+        "safetyTest": {
+          "undefinedCount": 0,
+          "contentLength": 10812,
+          "hasRiskLevels": false,
+          "hasSafetyAspects": false
+        },
+        "overallQuality": "GOOD"
+      },
+      "issues": []
+    },
+    {
+      "id": 3,
+      "name": "Ashwagandha",
+      "tier": 2,
+      "expectedFiles": [
+        "3_enhanced.js"
+      ],
+      "actualFiles": [
+        "3_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    55 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Creatine",
+      "tier": 2,
+      "expectedFiles": [
+        "5_enhanced.js",
+        "5_creatine_enhanced.js",
+        "5_creatine_mens_health_enhanced.js"
+      ],
+      "actualFiles": [
+        "5_enhanced.js",
+        "5_creatine_enhanced.js",
+        "5_creatine_mens_health_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    51 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Magnesium",
+      "tier": 2,
+      "expectedFiles": [
+        "6_enhanced.js",
+        "6_magnesium_enhanced.js",
+        "6_magnesium_l_threonate_enhanced.js"
+      ],
+      "actualFiles": [
+        "6_enhanced.js",
+        "6_magnesium_enhanced.js",
+        "6_magnesium_l_threonate_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    53 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Vitamin D3",
+      "tier": 2,
+      "expectedFiles": [
+        "7_enhanced.js",
+        "7_vitamin_d3_enhanced.js"
+      ],
+      "actualFiles": [
+        "7_enhanced.js",
+        "7_vitamin_d3_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": false,
+      "tabsFound": [],
+      "undefinedCount": 0,
+      "renderingQuality": "MISSING_TABS",
+      "smartRenderingTest": {
+        "mechanismsTest": null,
+        "benefitsTest": null,
+        "safetyTest": null,
+        "overallQuality": "BASIC"
+      },
+      "issues": [
+        "Missing enhanced tabs. Found: "
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Acetyl-L-Carnitine",
+      "tier": 3,
+      "expectedFiles": [
+        "13_enhanced.js",
+        "13_acetyl_l_carnitine_enhanced.js"
+      ],
+      "actualFiles": [
+        "13_enhanced.js",
+        "13_acetyl_l_carnitine_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    45 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Vitamin B12",
+      "tier": 3,
+      "expectedFiles": [
+        "21_enhanced.js",
+        "21_vitamin_b12_enhanced.js"
+      ],
+      "actualFiles": [
+        "21_enhanced.js",
+        "21_vitamin_b12_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    52 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Zinc",
+      "tier": 3,
+      "expectedFiles": [
+        "37_enhanced.js",
+        "37_zinc_enhanced.js",
+        "37_zinc_mens_health_enhanced.js"
+      ],
+      "actualFiles": [
+        "37_enhanced.js",
+        "37_zinc_enhanced.js",
+        "37_zinc_mens_health_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    55 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Choline",
+      "tier": 3,
+      "expectedFiles": [
+        "43_enhanced.js",
+        "43_choline_enhanced.js",
+        "43_choline_bitartrate_enhanced.js"
+      ],
+      "actualFiles": [
+        "43_enhanced.js",
+        "43_choline_enhanced.js",
+        "43_choline_bitartrate_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    55 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Berberine",
+      "tier": 3,
+      "expectedFiles": [
+        "75_enhanced.js"
+      ],
+      "actualFiles": [
+        "75_enhanced.js"
+      ],
+      "hasEnhancedBadge": true,
+      "hasEnhancedTabs": true,
+      "tabsFound": [
+        "Mechanisms",
+        "Benefits",
+        "Safety"
+      ],
+      "undefinedCount": 0,
+      "renderingQuality": "ERROR",
+      "smartRenderingTest": null,
+      "issues": [
+        "Test error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    53 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    }
+  ],
+  "tested": null
+}

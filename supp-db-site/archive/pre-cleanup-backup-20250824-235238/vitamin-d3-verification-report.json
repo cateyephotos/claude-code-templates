@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-08-25T00:20:44.120Z",
+  "serverRestarted": true,
+  "loadingTests": {
+    "totalLoaded": 37,
+    "vitaminD3Loaded": true,
+    "vitaminD3Structure": {
+      "hasId": true,
+      "hasName": true,
+      "hasCitations": true,
+      "hasMechanisms": true,
+      "hasBenefits": true,
+      "hasSafety": true,
+      "mechanismsCount": 6,
+      "benefitsCount": 8,
+      "safetyCount": 3
+    }
+  },
+  "renderingTests": {
+    "card": {
+      "found": true,
+      "hasEnhancedBadge": true,
+      "badgeText": "Phase 2A Enhanced",
+      "hasViewButton": true,
+      "viewButtonText": ""
+    },
+    "modal": {
+      "opened": false
+    }
+  },
+  "contentTests": {
+    "Benefits": {
+      "success": true,
+      "contentLength": 24850,
+      "undefinedCount": 0,
+      "hasRichContent": true,
+      "hasStructuredData": false,
+      "hasDetailedFindings": true,
+      "contentPreview": "\n        \n            \n                \n            \n                \n                    Vitamin D3\n                    Cholecalciferol\n                    \n                        \n                 ..."
+    },
+    "Mechanisms": {
+      "success": true,
+      "contentLength": 24850,
+      "undefinedCount": 0,
+      "hasRichContent": true,
+      "hasStructuredData": false,
+      "hasDetailedFindings": true,
+      "contentPreview": "\n        \n            \n                \n            \n                \n                    Vitamin D3\n                    Cholecalciferol\n                    \n                        \n                 ..."
+    },
+    "Safety": {
+      "success": true,
+      "contentLength": 24850,
+      "undefinedCount": 0,
+      "hasRichContent": true,
+      "hasStructuredData": false,
+      "hasDetailedFindings": true,
+      "contentPreview": "\n        \n            \n                \n            \n                \n                    Vitamin D3\n                    Cholecalciferol\n                    \n                        \n                 ..."
+    }
+  },
+  "interactionTests": {
+    "renderer": {
+      "success": true,
+      "normalizationWorking": true,
+      "keyFindingsNormalization": {
+        "input": {
+          "highQualityStudies": {
+            "effectSize": "Large effect size (Cohen's d = 0.78)",
+            "consistency": "Consistent benefits across well-designed RCTs"
+          },
+          "doseResponse": "Effects most apparent with doses ≥2000 IU daily"
+        },
+        "output": "highQualityStudies: Large effect size (Cohen's d = 0.78); doseResponse: Effects most apparent with doses ≥2000 IU daily",
+        "outputLength": 119
+      },
+      "normalizedStructure": [
+        "mechanisms",
+        "benefits",
+        "safety",
+        "dosage"
+      ]
+    }
+  },
+  "overallStatus": "ISSUES_DETECTED"
+}

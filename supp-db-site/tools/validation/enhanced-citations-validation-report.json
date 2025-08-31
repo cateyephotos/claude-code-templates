@@ -1,0 +1,199 @@
+{
+  "fileValidation": {
+    "totalFiles": 0,
+    "validFiles": 0,
+    "invalidFiles": 0,
+    "fileResults": [],
+    "targetSupplementFiles": {},
+    "errors": [
+      "Directory validation error: Enhanced citations directory not found"
+    ]
+  },
+  "databaseIntegration": {
+    "supplementsLoaded": false,
+    "totalSupplements": 0,
+    "enhancedFlags": 0,
+    "targetSupplementsFound": 0,
+    "targetSupplementsEnhanced": 0,
+    "targetSupplementDetails": {},
+    "errors": [
+      "Database validation error: supplements.js not found"
+    ]
+  },
+  "specificSupplements": {
+    "Vitamin B12": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Vitamin B6": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "5-HTP": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Zinc": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Iron": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "GABA": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Inositol": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Choline": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Alpha-Lipoic Acid": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    },
+    "Lutein": {
+      "databaseEntry": null,
+      "enhancedFile": null,
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file not found"
+      ]
+    }
+  },
+  "errorDetection": {
+    "fileErrors": [
+      "Directory validation error: Enhanced citations directory not found"
+    ],
+    "databaseErrors": [
+      "Database validation error: supplements.js not found"
+    ],
+    "integrationErrors": [
+      "Vitamin B12: Not found in database, Enhanced citation file not found",
+      "Vitamin B6: Not found in database, Enhanced citation file not found",
+      "5-HTP: Not found in database, Enhanced citation file not found",
+      "Zinc: Not found in database, Enhanced citation file not found",
+      "Iron: Not found in database, Enhanced citation file not found",
+      "GABA: Not found in database, Enhanced citation file not found",
+      "Inositol: Not found in database, Enhanced citation file not found",
+      "Choline: Not found in database, Enhanced citation file not found",
+      "Alpha-Lipoic Acid: Not found in database, Enhanced citation file not found",
+      "Lutein: Not found in database, Enhanced citation file not found"
+    ],
+    "qualityMetrics": {},
+    "totalErrors": 12
+  },
+  "summary": {
+    "timestamp": "2025-08-25T04:56:23.038Z",
+    "testDuration": "0.0s",
+    "overallStatus": "FAILED",
+    "criticalIssues": 3,
+    "warnings": 0,
+    "recommendations": [],
+    "integrationScore": "0.0",
+    "issues": [
+      "10 target supplements missing enhanced flags in database",
+      "10 supplements not fully integrated",
+      "12 total errors detected"
+    ]
+  },
+  "metadata": {
+    "testSuite": "Enhanced Citations Integration Validation",
+    "version": "1.0.0",
+    "generatedBy": "Claude Code Enhanced Citations Validator",
+    "timestamp": "2025-08-25T04:56:23.038Z",
+    "targetSupplements": [
+      {
+        "id": 21,
+        "name": "Vitamin B12"
+      },
+      {
+        "id": 22,
+        "name": "Vitamin B6"
+      },
+      {
+        "id": 34,
+        "name": "5-HTP"
+      },
+      {
+        "id": 37,
+        "name": "Zinc"
+      },
+      {
+        "id": 38,
+        "name": "Iron"
+      },
+      {
+        "id": 40,
+        "name": "GABA"
+      },
+      {
+        "id": 41,
+        "name": "Inositol"
+      },
+      {
+        "id": 43,
+        "name": "Choline"
+      },
+      {
+        "id": 44,
+        "name": "Alpha-Lipoic Acid"
+      },
+      {
+        "id": 45,
+        "name": "Lutein"
+      }
+    ]
+  }
+}

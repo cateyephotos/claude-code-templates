@@ -1,0 +1,511 @@
+{
+  "timestamp": "2025-08-21T01:38:47.936Z",
+  "consoleMessages": [
+    {
+      "type": "log",
+      "text": "Development mode: Enhanced logging enabled",
+      "location": {
+        "url": "http://localhost:1285/",
+        "lineNumber": 743,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Global error manager initialized",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 361,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "🧪 Test suites loaded for development environment",
+      "location": {
+        "url": "http://localhost:1285/",
+        "lineNumber": 669,
+        "columnNumber": 24
+      }
+    },
+    {
+      "type": "log",
+      "text": "Database found, initializing...",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 43,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Database loaded: 89 supplements, 13 categories, 20 health domains",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 142,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Citation renderer initialized with lazy template loading",
+      "location": {
+        "url": "http://localhost:1285/js/CitationRenderer.js",
+        "lineNumber": 523,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Performance optimizer initialized",
+      "location": {
+        "url": "http://localhost:1285/js/PerformanceOptimizer.js",
+        "lineNumber": 28,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Template registered: supplementCard",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 44,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Partial registered: evidenceMeter",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 53,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Partial registered: supplementActions",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 53,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Template registered: citationSection",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 44,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Partial registered: enhancedCitationHeader",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 53,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Template registered: skeleton",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 44,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Template registered: error",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 44,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: formatNumber",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: capitalize",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: truncate",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: formatDate",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: join",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: getTierClass",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: evidenceWidth",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: getSafetyColor",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: slice",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Helper registered: math",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Template system initialized",
+      "location": {
+        "url": "http://localhost:1285/js/TemplateSystem.js",
+        "lineNumber": 19,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Error boundary initialized for supplementGrid",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 35,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Error boundary initialized for supplementModal",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 35,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Error boundary initialized for comparisonTable",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 35,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Initializing modernized supplement database...",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 189,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Populated 13 categories",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 268,
+        "columnNumber": 24
+      }
+    },
+    {
+      "type": "log",
+      "text": "Populated 20 health domains",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 295,
+        "columnNumber": 24
+      }
+    },
+    {
+      "type": "log",
+      "text": "Populated comparison selects with 89 supplements",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 332,
+        "columnNumber": 24
+      }
+    },
+    {
+      "type": "log",
+      "text": "Filters populated in 3.60ms",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 342,
+        "columnNumber": 24
+      }
+    },
+    {
+      "type": "log",
+      "text": "Modernized supplement database loaded successfully",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1691,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Rendered 89 supplements in 13.30ms (normal rendering mode)",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 476,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Application initialized successfully",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 206,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Loaded enhanced citations for 1 in 158.20ms",
+      "location": {
+        "url": "http://localhost:1285/js/CitationLoader.js",
+        "lineNumber": 87,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Loaded enhanced citations for 2 in 157.50ms",
+      "location": {
+        "url": "http://localhost:1285/js/CitationLoader.js",
+        "lineNumber": 87,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: {message: module is not defined, filename: http://localhost:1285/data/enhanced_citations/3_enhanced.js, lineno: 744, colno: 1, stack: ReferenceError: module is not defined\n    at http:…:1285/data/enhanced_citations/3_enhanced.js:744:1}",
+      "location": {
+        "url": "http://localhost:1285/",
+        "lineNumber": 769,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: ReferenceError: module is not defined\n    at http://localhost:1285/data/enhanced_citations/3_enhanced.js:744:1",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 349,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Supplement grid error logged: {error: ReferenceError: module is not defined\n    at http://localhost:1285/data/enhanced_citations/3_enhanc…, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.330Z, containerId: supplementGrid}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1485,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Modal error logged: {error: ReferenceError: module is not defined\n    at http://localhost:1285/data/enhanced_citations/3_enhanc…, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.330Z, containerId: supplementModal}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1490,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Comparison error logged: {error: ReferenceError: module is not defined\n    at http://localhost:1285/data/enhanced_citations/3_enhanc…, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.331Z, containerId: comparisonTable}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1495,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: {message: Identifier 'ashwagandhaEnhanced' has already been declared, filename: http://localhost:1285/data/enhanced_citations/3_enhanced.js, lineno: 1, colno: 1, stack: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared}",
+      "location": {
+        "url": "http://localhost:1285/",
+        "lineNumber": 769,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 349,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Supplement grid error logged: {error: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.335Z, containerId: supplementGrid}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1485,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Modal error logged: {error: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.336Z, containerId: supplementModal}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1490,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Comparison error logged: {error: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.336Z, containerId: comparisonTable}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1495,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: {message: Identifier 'ashwagandhaEnhanced' has already been declared, filename: http://localhost:1285/data/enhanced_citations/3_enhanced.js, lineno: 1, colno: 1, stack: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared}",
+      "location": {
+        "url": "http://localhost:1285/",
+        "lineNumber": 769,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared",
+      "location": {
+        "url": "http://localhost:1285/js/ErrorBoundary.js",
+        "lineNumber": 349,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Supplement grid error logged: {error: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.338Z, containerId: supplementGrid}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1485,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Modal error logged: {error: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.338Z, containerId: supplementModal}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1490,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "Comparison error logged: {error: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared, context: Global: Global Error, timestamp: 2025-08-21T01:38:44.338Z, containerId: comparisonTable}",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1495,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "warning",
+      "text": "Failed to load enhanced citations for 3: Error: Could not load citation module for 3\n    at CitationLoader._dynamicImport (http://localhost:1285/js/CitationLoader.js:128:15)\n    at async CitationLoader._loadCitationData (http://localhost:1285/js/CitationLoader.js:61:36)\n    at async CitationLoader.loadEnhancedCitations (http://localhost:1285/js/CitationLoader.js:45:28)\n    at async Promise.all (index 2)\n    at async CitationLoader.preloadCitations (http://localhost:1285/js/CitationLoader.js:215:13)\n    at async ModernSupplementDatabase._preloadEnhancedCitations (http://localhost:1285/js/app.modernized.js:1384:17)",
+      "location": {
+        "url": "http://localhost:1285/",
+        "lineNumber": 762,
+        "columnNumber": 40
+      }
+    },
+    {
+      "type": "log",
+      "text": "Preloaded citations for 3 supplements",
+      "location": {
+        "url": "http://localhost:1285/js/CitationLoader.js",
+        "lineNumber": 215,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "Preloaded citations for 3 enhanced supplements",
+      "location": {
+        "url": "http://localhost:1285/js/app.modernized.js",
+        "lineNumber": 1384,
+        "columnNumber": 24
+      }
+    }
+  ],
+  "enhancedCitationIssues": [],
+  "cardTextIssues": []
+}

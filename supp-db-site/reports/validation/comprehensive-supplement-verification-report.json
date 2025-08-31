@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-08-21T01:41:22.878Z",
+  "summary": {
+    "totalSupplements": 0,
+    "supplementsWithPhase2A": 0,
+    "supplementsWithUndefined": 0,
+    "totalIssuesFound": 3
+  },
+  "issues": [
+    {
+      "type": "page_error",
+      "message": "module is not defined"
+    },
+    {
+      "type": "page_error",
+      "message": "Identifier 'ashwagandhaEnhanced' has already been declared"
+    },
+    {
+      "type": "page_error",
+      "message": "Identifier 'ashwagandhaEnhanced' has already been declared"
+    }
+  ],
+  "verificationResults": [],
+  "consoleMessages": [
+    {
+      "type": "error",
+      "text": "Global error caught: {message: module is not defined, filename: http://localhost:1285/data/enhanced_citations/3_enhanced.js, lineno: 744, colno: 1, stack: ReferenceError: module is not defined\n    at http:…:1285/data/enhanced_citations/3_enhanced.js:744:1}"
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: ReferenceError: module is not defined\n    at http://localhost:1285/data/enhanced_citations/3_enhanced.js:744:1"
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: {message: Identifier 'ashwagandhaEnhanced' has already been declared, filename: http://localhost:1285/data/enhanced_citations/3_enhanced.js, lineno: 1, colno: 1, stack: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared}"
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared"
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: {message: Identifier 'ashwagandhaEnhanced' has already been declared, filename: http://localhost:1285/data/enhanced_citations/3_enhanced.js, lineno: 1, colno: 1, stack: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared}"
+    },
+    {
+      "type": "error",
+      "text": "Global error caught: SyntaxError: Identifier 'ashwagandhaEnhanced' has already been declared"
+    }
+  ]
+}

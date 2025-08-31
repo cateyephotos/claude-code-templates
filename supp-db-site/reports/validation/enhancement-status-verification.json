@@ -1,0 +1,455 @@
+{
+  "timestamp": "2025-08-24T07:00:32.729Z",
+  "summary": {
+    "total": 89,
+    "enhanced": 62,
+    "needsEnhancement": 27,
+    "enhancementRate": 70
+  },
+  "priorities": {
+    "high": 23,
+    "medium": 4,
+    "low": 0
+  },
+  "highPriorityList": [
+    {
+      "id": 58,
+      "name": "MCT Oil",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 59,
+      "name": "Hawthorn Berry",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 60,
+      "name": "Red Yeast Rice",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 61,
+      "name": "Chromium",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 63,
+      "name": "Bitter Melon",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 64,
+      "name": "Gymnema Sylvestre",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 66,
+      "name": "Cinnamon Extract",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 67,
+      "name": "Holy Basil",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 68,
+      "name": "Schisandra Berry",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 71,
+      "name": "Boswellia",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 72,
+      "name": "Milk Thistle",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 74,
+      "name": "Elderberry",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 76,
+      "name": "Sulbutiamine",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 78,
+      "name": "Centella Asiatica",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 79,
+      "name": "Passionflower",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 81,
+      "name": "Piracetam",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 82,
+      "name": "Kanna",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 83,
+      "name": "Black Seed Oil",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 84,
+      "name": "Moringa",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 85,
+      "name": "Pine Bark Extract",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 86,
+      "name": "Grape Seed Extract",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 87,
+      "name": "Krill Oil",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 88,
+      "name": "Zeaxanthin",
+      "evidenceTier": 2,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    }
+  ],
+  "mediumPriorityList": [
+    {
+      "id": 62,
+      "name": "Vanadium",
+      "evidenceTier": 3,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 70,
+      "name": "Forskolin",
+      "evidenceTier": 3,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 77,
+      "name": "DMAE",
+      "evidenceTier": 3,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    },
+    {
+      "id": 80,
+      "name": "Aniracetam",
+      "evidenceTier": 3,
+      "isMarkedEnhanced": true,
+      "hasEnhancedFile": false,
+      "status": "NEEDS_ENHANCEMENT"
+    }
+  ],
+  "mismatches": {
+    "markedButNoFile": [
+      {
+        "id": 58,
+        "name": "MCT Oil",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 59,
+        "name": "Hawthorn Berry",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 60,
+        "name": "Red Yeast Rice",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 61,
+        "name": "Chromium",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 62,
+        "name": "Vanadium",
+        "evidenceTier": 3,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 63,
+        "name": "Bitter Melon",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 64,
+        "name": "Gymnema Sylvestre",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 66,
+        "name": "Cinnamon Extract",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 67,
+        "name": "Holy Basil",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 68,
+        "name": "Schisandra Berry",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 70,
+        "name": "Forskolin",
+        "evidenceTier": 3,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 71,
+        "name": "Boswellia",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 72,
+        "name": "Milk Thistle",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 74,
+        "name": "Elderberry",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 76,
+        "name": "Sulbutiamine",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 77,
+        "name": "DMAE",
+        "evidenceTier": 3,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 78,
+        "name": "Centella Asiatica",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 79,
+        "name": "Passionflower",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 80,
+        "name": "Aniracetam",
+        "evidenceTier": 3,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 81,
+        "name": "Piracetam",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 82,
+        "name": "Kanna",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 83,
+        "name": "Black Seed Oil",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 84,
+        "name": "Moringa",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 85,
+        "name": "Pine Bark Extract",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 86,
+        "name": "Grape Seed Extract",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 87,
+        "name": "Krill Oil",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      },
+      {
+        "id": 88,
+        "name": "Zeaxanthin",
+        "evidenceTier": 2,
+        "isMarkedEnhanced": true,
+        "hasEnhancedFile": false,
+        "status": "NEEDS_ENHANCEMENT"
+      }
+    ],
+    "fileButNotMarked": []
+  }
+}

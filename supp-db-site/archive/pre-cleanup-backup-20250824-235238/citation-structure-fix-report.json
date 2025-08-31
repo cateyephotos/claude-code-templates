@@ -1,0 +1,148 @@
+{
+  "timestamp": "2025-08-24T06:06:26.408Z",
+  "totalFiles": 90,
+  "fixedFiles": 0,
+  "alreadyCorrect": 90,
+  "issuesFound": 27,
+  "issues": [
+    {
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "23_folate_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "33_l_tyrosine_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "37_zinc_mens_health_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "38_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "40_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "43_choline_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "44_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "45_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "51_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "52_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "53_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "54_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "55_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "56_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "57_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "5_creatine_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "5_creatine_mens_health_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "65_fenugreek_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "69_mucuna_pruriens_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "6_magnesium_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "73_stinging_nettle_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    },
+    {
+      "file": "75_enhanced.js",
+      "issue": "Mixed format detected - mechanisms outside citations block",
+      "needsManualReview": true
+    },
+    {
+      "file": "7_vitamin_d3_enhanced.js",
+      "issue": "Missing citations structure entirely",
+      "needsManualReview": true
+    }
+  ],
+  "summary": {
+    "successRate": "100%",
+    "needsManualReview": 27
+  }
+}

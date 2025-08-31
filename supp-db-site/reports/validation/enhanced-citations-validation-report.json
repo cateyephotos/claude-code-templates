@@ -1,0 +1,2501 @@
+{
+  "fileValidation": {
+    "totalFiles": 65,
+    "validFiles": 32,
+    "invalidFiles": 33,
+    "fileResults": [
+      {
+        "fileName": "10_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing citations field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": false,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {}
+      },
+      {
+        "fileName": "12_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 15,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "13_acetyl_l_carnitine_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment",
+          "Missing id field",
+          "Missing name field",
+          "Missing citations field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": false,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {}
+      },
+      {
+        "fileName": "13_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 14,
+          "doiCount": 14,
+          "pmidCount": 14,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "14_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 15,
+          "doiCount": 15,
+          "pmidCount": 15,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "15_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 6,
+          "benefitsCount": 8,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 19,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "16_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 3,
+          "benefitsCount": 3,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 9,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "17_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 5,
+          "benefitsCount": 3,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "18_enhanced.js",
+        "valid": false,
+        "errors": [
+          "JavaScript evaluation error: Unexpected number"
+        ],
+        "globalAssignment": true,
+        "structure": {},
+        "citationQuality": {}
+      },
+      {
+        "fileName": "19_enhanced.js",
+        "valid": false,
+        "errors": [
+          "JavaScript evaluation error: Unexpected number"
+        ],
+        "globalAssignment": true,
+        "structure": {},
+        "citationQuality": {}
+      },
+      {
+        "fileName": "1_enhanced.js",
+        "valid": false,
+        "errors": [
+          "JavaScript evaluation error: Unexpected string"
+        ],
+        "globalAssignment": true,
+        "structure": {},
+        "citationQuality": {}
+      },
+      {
+        "fileName": "20_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 14,
+          "doiCount": 14,
+          "pmidCount": 14,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "21_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 19,
+          "doiCount": 16,
+          "pmidCount": 17,
+          "doiCoverage": "84.2"
+        }
+      },
+      {
+        "fileName": "21_vitamin_b12_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 19,
+          "doiCount": 16,
+          "pmidCount": 17,
+          "doiCoverage": "84.2"
+        }
+      },
+      {
+        "fileName": "22_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 17,
+          "doiCount": 14,
+          "pmidCount": 16,
+          "doiCoverage": "82.4"
+        }
+      },
+      {
+        "fileName": "22_vitamin_b6_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 17,
+          "doiCount": 14,
+          "pmidCount": 16,
+          "doiCoverage": "82.4"
+        }
+      },
+      {
+        "fileName": "23_folate_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 15,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 15,
+          "doiCount": 15,
+          "pmidCount": 15,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "24_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 7,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 16,
+          "doiCount": 16,
+          "pmidCount": 16,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "25_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 14,
+          "doiCount": 14,
+          "pmidCount": 14,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "27_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 5,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 13,
+          "doiCount": 13,
+          "pmidCount": 13,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "2_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "33_l_tyrosine_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment",
+          "Missing id field",
+          "Missing name field",
+          "Missing citations field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": false,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {}
+      },
+      {
+        "fileName": "34_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 5,
+          "benefitsCount": 6,
+          "safetyCount": 4,
+          "dosageCount": 3,
+          "totalCitations": 18,
+          "doiCount": 16,
+          "pmidCount": 18,
+          "doiCoverage": "88.9"
+        }
+      },
+      {
+        "fileName": "35_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 6,
+          "benefitsCount": 8,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 19,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "35_tribulus_terrestris_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 13,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 13,
+          "doiCount": 13,
+          "pmidCount": 13,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "37_zinc_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 7,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 18,
+          "doiCount": 15,
+          "pmidCount": 16,
+          "doiCoverage": "83.3"
+        }
+      },
+      {
+        "fileName": "37_zinc_mens_health_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 14,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 14,
+          "doiCount": 14,
+          "pmidCount": 14,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "38_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 19,
+          "doiCount": 14,
+          "pmidCount": 17,
+          "doiCoverage": "73.7"
+        }
+      },
+      {
+        "fileName": "38_iron_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 19,
+          "doiCount": 14,
+          "pmidCount": 17,
+          "doiCoverage": "73.7"
+        }
+      },
+      {
+        "fileName": "39_taurine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 3,
+          "benefitsCount": 3,
+          "safetyCount": 1,
+          "dosageCount": 1,
+          "totalCitations": 8,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "3_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 5,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 14,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "40_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 5,
+          "benefitsCount": 5,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 15,
+          "doiCount": 14,
+          "pmidCount": 15,
+          "doiCoverage": "93.3"
+        }
+      },
+      {
+        "fileName": "41_inositol_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 8,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 19,
+          "doiCount": 16,
+          "pmidCount": 18,
+          "doiCoverage": "84.2"
+        }
+      },
+      {
+        "fileName": "43_choline_bitartrate_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 6,
+          "safetyCount": 2,
+          "dosageCount": 3,
+          "totalCitations": 17,
+          "doiCount": 17,
+          "pmidCount": 17,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "43_choline_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 12,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 12,
+          "doiCount": 12,
+          "pmidCount": 12,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "44_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 5,
+          "benefitsCount": 6,
+          "safetyCount": 3,
+          "dosageCount": 4,
+          "totalCitations": 18,
+          "doiCount": 18,
+          "pmidCount": 16,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "45_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 5,
+          "benefitsCount": 6,
+          "safetyCount": 3,
+          "dosageCount": 3,
+          "totalCitations": 17,
+          "doiCount": 14,
+          "pmidCount": 17,
+          "doiCoverage": "82.4"
+        }
+      },
+      {
+        "fileName": "4_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "5_creatine_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment",
+          "Missing id field",
+          "Missing name field",
+          "Missing citations field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": false,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {}
+      },
+      {
+        "fileName": "5_creatine_mens_health_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 15,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 15,
+          "doiCount": 15,
+          "pmidCount": 15,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "5_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "65_fenugreek_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 14,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 14,
+          "doiCount": 14,
+          "pmidCount": 14,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "69_mucuna_pruriens_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 12,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 12,
+          "doiCount": 12,
+          "pmidCount": 12,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "6_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "6_magnesium_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 15,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 15,
+          "doiCount": 15,
+          "pmidCount": 15,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "6_magnesium_l_threonate_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 5,
+          "safetyCount": 1,
+          "dosageCount": 2,
+          "totalCitations": 14,
+          "doiCount": 13,
+          "pmidCount": 14,
+          "doiCoverage": "92.9"
+        }
+      },
+      {
+        "fileName": "73_stinging_nettle_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 13,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 13,
+          "doiCount": 13,
+          "pmidCount": 13,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "7_enhanced.js",
+        "valid": false,
+        "errors": [
+          "JavaScript evaluation error: Unexpected number"
+        ],
+        "globalAssignment": true,
+        "structure": {},
+        "citationQuality": {}
+      },
+      {
+        "fileName": "7_vitamin_d3_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": true,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 15,
+          "mechanismsCount": 0,
+          "benefitsCount": 0,
+          "safetyCount": 0,
+          "dosageCount": 0,
+          "totalCitations": 15,
+          "doiCount": 15,
+          "pmidCount": 15,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "89_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 12,
+          "doiCount": 12,
+          "pmidCount": 12,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "8_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing citations field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": false,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {}
+      },
+      {
+        "fileName": "90_beta_alanine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 2,
+          "benefitsCount": 2,
+          "safetyCount": 1,
+          "dosageCount": 1,
+          "totalCitations": 6,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "90_glycine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 8,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 18,
+          "doiCount": 18,
+          "pmidCount": 16,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "91_citrulline_malate_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 2,
+          "benefitsCount": 3,
+          "safetyCount": 1,
+          "dosageCount": 1,
+          "totalCitations": 7,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "92_hmb_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 2,
+          "benefitsCount": 2,
+          "safetyCount": 1,
+          "dosageCount": 1,
+          "totalCitations": 6,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "93_betaine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 2,
+          "benefitsCount": 2,
+          "safetyCount": 1,
+          "dosageCount": 1,
+          "totalCitations": 6,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "9_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing module.exports for Node.js compatibility",
+          "Missing id field",
+          "Missing name field",
+          "Missing citations field",
+          "Missing evidenceProfile field"
+        ],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": false,
+          "hasName": false,
+          "hasCitations": false,
+          "hasEvidenceProfile": false,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {}
+      },
+      {
+        "fileName": "bacopa_monnieri_enhanced.js",
+        "valid": false,
+        "errors": [
+          "Missing global window assignment"
+        ],
+        "globalAssignment": false,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": false
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 2,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 9,
+          "doiCount": 0,
+          "pmidCount": 0,
+          "doiCoverage": "0.0"
+        }
+      },
+      {
+        "fileName": "citicoline_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 3,
+          "benefitsCount": 4,
+          "safetyCount": 3,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 6,
+          "pmidCount": 8,
+          "doiCoverage": "54.5"
+        }
+      },
+      {
+        "fileName": "glycine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 5,
+          "mechanismsCount": 4,
+          "benefitsCount": 8,
+          "safetyCount": 2,
+          "dosageCount": 2,
+          "totalCitations": 18,
+          "doiCount": 18,
+          "pmidCount": 16,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "huperzine_a_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 3,
+          "dosageCount": 2,
+          "totalCitations": 13,
+          "doiCount": 10,
+          "pmidCount": 10,
+          "doiCoverage": "76.9"
+        }
+      },
+      {
+        "fileName": "lions_mane_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 5,
+          "safetyCount": 3,
+          "dosageCount": 1,
+          "totalCitations": 13,
+          "doiCount": 9,
+          "pmidCount": 7,
+          "doiCoverage": "69.2"
+        }
+      },
+      {
+        "fileName": "phosphatidylserine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 4,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 11,
+          "pmidCount": 11,
+          "doiCoverage": "100.0"
+        }
+      },
+      {
+        "fileName": "pqq_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": true,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 5,
+          "safetyCount": 2,
+          "dosageCount": 1,
+          "totalCitations": 12,
+          "doiCount": 10,
+          "pmidCount": 10,
+          "doiCoverage": "83.3"
+        }
+      },
+      {
+        "fileName": "vinpocetine_enhanced.js",
+        "valid": true,
+        "errors": [],
+        "globalAssignment": true,
+        "structure": {
+          "hasId": true,
+          "hasName": true,
+          "hasCitations": true,
+          "hasEvidenceProfile": true,
+          "hasResearchSummary": false,
+          "hasQualityAssurance": true
+        },
+        "citationQuality": {
+          "totalSections": 4,
+          "mechanismsCount": 4,
+          "benefitsCount": 3,
+          "safetyCount": 3,
+          "dosageCount": 1,
+          "totalCitations": 11,
+          "doiCount": 7,
+          "pmidCount": 8,
+          "doiCoverage": "63.6"
+        }
+      }
+    ],
+    "targetSupplementFiles": {
+      "Vitamin B12": {
+        "found": true,
+        "fileName": "21_enhanced.js",
+        "supplementId": 21,
+        "validation": {
+          "fileName": "21_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 6,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 19,
+            "doiCount": 16,
+            "pmidCount": 17,
+            "doiCoverage": "84.2"
+          }
+        }
+      },
+      "Vitamin B6": {
+        "found": true,
+        "fileName": "22_enhanced.js",
+        "supplementId": 22,
+        "validation": {
+          "fileName": "22_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 6,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 17,
+            "doiCount": 14,
+            "pmidCount": 16,
+            "doiCoverage": "82.4"
+          }
+        }
+      },
+      "5-HTP": {
+        "found": true,
+        "fileName": "34_enhanced.js",
+        "supplementId": 34,
+        "validation": {
+          "fileName": "34_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 6,
+            "safetyCount": 4,
+            "dosageCount": 3,
+            "totalCitations": 18,
+            "doiCount": 16,
+            "pmidCount": 18,
+            "doiCoverage": "88.9"
+          }
+        }
+      },
+      "Zinc": {
+        "found": true,
+        "fileName": "37_zinc_enhanced.js",
+        "supplementId": 37,
+        "validation": {
+          "fileName": "37_zinc_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 7,
+            "safetyCount": 2,
+            "dosageCount": 2,
+            "totalCitations": 18,
+            "doiCount": 15,
+            "pmidCount": 16,
+            "doiCoverage": "83.3"
+          }
+        }
+      },
+      "Iron": {
+        "found": true,
+        "fileName": "38_enhanced.js",
+        "supplementId": 38,
+        "validation": {
+          "fileName": "38_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 6,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 19,
+            "doiCount": 14,
+            "pmidCount": 17,
+            "doiCoverage": "73.7"
+          }
+        }
+      },
+      "GABA": {
+        "found": true,
+        "fileName": "40_enhanced.js",
+        "supplementId": 40,
+        "validation": {
+          "fileName": "40_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 5,
+            "safetyCount": 3,
+            "dosageCount": 2,
+            "totalCitations": 15,
+            "doiCount": 14,
+            "pmidCount": 15,
+            "doiCoverage": "93.3"
+          }
+        }
+      },
+      "Inositol": {
+        "found": true,
+        "fileName": "41_inositol_enhanced.js",
+        "supplementId": 41,
+        "validation": {
+          "fileName": "41_inositol_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 8,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 19,
+            "doiCount": 16,
+            "pmidCount": 18,
+            "doiCoverage": "84.2"
+          }
+        }
+      },
+      "Choline": {
+        "found": true,
+        "fileName": "43_choline_enhanced.js",
+        "supplementId": 43,
+        "validation": {
+          "fileName": "43_choline_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing module.exports for Node.js compatibility",
+            "Missing id field",
+            "Missing name field",
+            "Missing evidenceProfile field"
+          ],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": false,
+            "hasName": false,
+            "hasCitations": true,
+            "hasEvidenceProfile": false,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 12,
+            "mechanismsCount": 0,
+            "benefitsCount": 0,
+            "safetyCount": 0,
+            "dosageCount": 0,
+            "totalCitations": 12,
+            "doiCount": 12,
+            "pmidCount": 12,
+            "doiCoverage": "100.0"
+          }
+        }
+      },
+      "Alpha-Lipoic Acid": {
+        "found": true,
+        "fileName": "44_enhanced.js",
+        "supplementId": 44,
+        "validation": {
+          "fileName": "44_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 6,
+            "safetyCount": 3,
+            "dosageCount": 4,
+            "totalCitations": 18,
+            "doiCount": 18,
+            "pmidCount": 16,
+            "doiCoverage": "100.0"
+          }
+        }
+      },
+      "Lutein": {
+        "found": true,
+        "fileName": "45_enhanced.js",
+        "supplementId": 45,
+        "validation": {
+          "fileName": "45_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 6,
+            "safetyCount": 3,
+            "dosageCount": 3,
+            "totalCitations": 17,
+            "doiCount": 14,
+            "pmidCount": 17,
+            "doiCoverage": "82.4"
+          }
+        }
+      }
+    },
+    "errors": [
+      "10_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "13_acetyl_l_carnitine_enhanced.js: Missing global window assignment, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "18_enhanced.js: JavaScript evaluation error: Unexpected number",
+      "19_enhanced.js: JavaScript evaluation error: Unexpected number",
+      "1_enhanced.js: JavaScript evaluation error: Unexpected string",
+      "20_enhanced.js: Missing module.exports for Node.js compatibility",
+      "23_folate_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "24_enhanced.js: Missing module.exports for Node.js compatibility",
+      "25_enhanced.js: Missing module.exports for Node.js compatibility",
+      "2_enhanced.js: Missing module.exports for Node.js compatibility",
+      "33_l_tyrosine_enhanced.js: Missing global window assignment, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "34_enhanced.js: Missing global window assignment",
+      "35_tribulus_terrestris_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "37_zinc_mens_health_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "3_enhanced.js: Missing global window assignment",
+      "40_enhanced.js: Missing global window assignment",
+      "43_choline_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "44_enhanced.js: Missing global window assignment",
+      "45_enhanced.js: Missing global window assignment",
+      "4_enhanced.js: Missing module.exports for Node.js compatibility",
+      "5_creatine_enhanced.js: Missing global window assignment, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "5_creatine_mens_health_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "5_enhanced.js: Missing module.exports for Node.js compatibility",
+      "65_fenugreek_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "69_mucuna_pruriens_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "6_enhanced.js: Missing module.exports for Node.js compatibility",
+      "6_magnesium_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "73_stinging_nettle_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "7_enhanced.js: JavaScript evaluation error: Unexpected number",
+      "7_vitamin_d3_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "8_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "9_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "bacopa_monnieri_enhanced.js: Missing global window assignment"
+    ]
+  },
+  "databaseIntegration": {
+    "supplementsLoaded": false,
+    "totalSupplements": 0,
+    "enhancedFlags": 0,
+    "targetSupplementsFound": 0,
+    "targetSupplementsEnhanced": 0,
+    "targetSupplementDetails": {},
+    "errors": [
+      "supplements.js did not create supplementDatabase object"
+    ]
+  },
+  "specificSupplements": {
+    "Vitamin B12": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "21_enhanced.js",
+        "supplementId": 21,
+        "validation": {
+          "fileName": "21_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 6,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 19,
+            "doiCount": 16,
+            "pmidCount": 17,
+            "doiCoverage": "84.2"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database"
+      ]
+    },
+    "Vitamin B6": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "22_enhanced.js",
+        "supplementId": 22,
+        "validation": {
+          "fileName": "22_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 6,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 17,
+            "doiCount": 14,
+            "pmidCount": 16,
+            "doiCoverage": "82.4"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database"
+      ]
+    },
+    "5-HTP": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "34_enhanced.js",
+        "supplementId": 34,
+        "validation": {
+          "fileName": "34_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 6,
+            "safetyCount": 4,
+            "dosageCount": 3,
+            "totalCitations": 18,
+            "doiCount": 16,
+            "pmidCount": 18,
+            "doiCoverage": "88.9"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file has validation errors"
+      ]
+    },
+    "Zinc": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "37_zinc_enhanced.js",
+        "supplementId": 37,
+        "validation": {
+          "fileName": "37_zinc_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 7,
+            "safetyCount": 2,
+            "dosageCount": 2,
+            "totalCitations": 18,
+            "doiCount": 15,
+            "pmidCount": 16,
+            "doiCoverage": "83.3"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database"
+      ]
+    },
+    "Iron": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "38_enhanced.js",
+        "supplementId": 38,
+        "validation": {
+          "fileName": "38_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 6,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 19,
+            "doiCount": 14,
+            "pmidCount": 17,
+            "doiCoverage": "73.7"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database"
+      ]
+    },
+    "GABA": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "40_enhanced.js",
+        "supplementId": 40,
+        "validation": {
+          "fileName": "40_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 5,
+            "safetyCount": 3,
+            "dosageCount": 2,
+            "totalCitations": 15,
+            "doiCount": 14,
+            "pmidCount": 15,
+            "doiCoverage": "93.3"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file has validation errors"
+      ]
+    },
+    "Inositol": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "41_inositol_enhanced.js",
+        "supplementId": 41,
+        "validation": {
+          "fileName": "41_inositol_enhanced.js",
+          "valid": true,
+          "errors": [],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": true
+          },
+          "citationQuality": {
+            "totalSections": 5,
+            "mechanismsCount": 4,
+            "benefitsCount": 8,
+            "safetyCount": 2,
+            "dosageCount": 3,
+            "totalCitations": 19,
+            "doiCount": 16,
+            "pmidCount": 18,
+            "doiCoverage": "84.2"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database"
+      ]
+    },
+    "Choline": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "43_choline_enhanced.js",
+        "supplementId": 43,
+        "validation": {
+          "fileName": "43_choline_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing module.exports for Node.js compatibility",
+            "Missing id field",
+            "Missing name field",
+            "Missing evidenceProfile field"
+          ],
+          "globalAssignment": true,
+          "structure": {
+            "hasId": false,
+            "hasName": false,
+            "hasCitations": true,
+            "hasEvidenceProfile": false,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 12,
+            "mechanismsCount": 0,
+            "benefitsCount": 0,
+            "safetyCount": 0,
+            "dosageCount": 0,
+            "totalCitations": 12,
+            "doiCount": 12,
+            "pmidCount": 12,
+            "doiCoverage": "100.0"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file has validation errors"
+      ]
+    },
+    "Alpha-Lipoic Acid": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "44_enhanced.js",
+        "supplementId": 44,
+        "validation": {
+          "fileName": "44_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 6,
+            "safetyCount": 3,
+            "dosageCount": 4,
+            "totalCitations": 18,
+            "doiCount": 18,
+            "pmidCount": 16,
+            "doiCoverage": "100.0"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file has validation errors"
+      ]
+    },
+    "Lutein": {
+      "databaseEntry": null,
+      "enhancedFile": {
+        "found": true,
+        "fileName": "45_enhanced.js",
+        "supplementId": 45,
+        "validation": {
+          "fileName": "45_enhanced.js",
+          "valid": false,
+          "errors": [
+            "Missing global window assignment"
+          ],
+          "globalAssignment": false,
+          "structure": {
+            "hasId": true,
+            "hasName": true,
+            "hasCitations": true,
+            "hasEvidenceProfile": true,
+            "hasResearchSummary": true,
+            "hasQualityAssurance": false
+          },
+          "citationQuality": {
+            "totalSections": 4,
+            "mechanismsCount": 5,
+            "benefitsCount": 6,
+            "safetyCount": 3,
+            "dosageCount": 3,
+            "totalCitations": 17,
+            "doiCount": 14,
+            "pmidCount": 17,
+            "doiCoverage": "82.4"
+          }
+        }
+      },
+      "isIntegrated": false,
+      "issues": [
+        "Not found in database",
+        "Enhanced citation file has validation errors"
+      ]
+    }
+  },
+  "errorDetection": {
+    "fileErrors": [
+      "10_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "13_acetyl_l_carnitine_enhanced.js: Missing global window assignment, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "18_enhanced.js: JavaScript evaluation error: Unexpected number",
+      "19_enhanced.js: JavaScript evaluation error: Unexpected number",
+      "1_enhanced.js: JavaScript evaluation error: Unexpected string",
+      "20_enhanced.js: Missing module.exports for Node.js compatibility",
+      "23_folate_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "24_enhanced.js: Missing module.exports for Node.js compatibility",
+      "25_enhanced.js: Missing module.exports for Node.js compatibility",
+      "2_enhanced.js: Missing module.exports for Node.js compatibility",
+      "33_l_tyrosine_enhanced.js: Missing global window assignment, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "34_enhanced.js: Missing global window assignment",
+      "35_tribulus_terrestris_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "37_zinc_mens_health_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "3_enhanced.js: Missing global window assignment",
+      "40_enhanced.js: Missing global window assignment",
+      "43_choline_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "44_enhanced.js: Missing global window assignment",
+      "45_enhanced.js: Missing global window assignment",
+      "4_enhanced.js: Missing module.exports for Node.js compatibility",
+      "5_creatine_enhanced.js: Missing global window assignment, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "5_creatine_mens_health_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "5_enhanced.js: Missing module.exports for Node.js compatibility",
+      "65_fenugreek_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "69_mucuna_pruriens_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "6_enhanced.js: Missing module.exports for Node.js compatibility",
+      "6_magnesium_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "73_stinging_nettle_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "7_enhanced.js: JavaScript evaluation error: Unexpected number",
+      "7_vitamin_d3_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing evidenceProfile field",
+      "8_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "9_enhanced.js: Missing module.exports for Node.js compatibility, Missing id field, Missing name field, Missing citations field, Missing evidenceProfile field",
+      "bacopa_monnieri_enhanced.js: Missing global window assignment"
+    ],
+    "databaseErrors": [
+      "supplements.js did not create supplementDatabase object"
+    ],
+    "integrationErrors": [
+      "Vitamin B12: Not found in database",
+      "Vitamin B6: Not found in database",
+      "5-HTP: Not found in database, Enhanced citation file has validation errors",
+      "Zinc: Not found in database",
+      "Iron: Not found in database",
+      "GABA: Not found in database, Enhanced citation file has validation errors",
+      "Inositol: Not found in database",
+      "Choline: Not found in database, Enhanced citation file has validation errors",
+      "Alpha-Lipoic Acid: Not found in database, Enhanced citation file has validation errors",
+      "Lutein: Not found in database, Enhanced citation file has validation errors"
+    ],
+    "qualityMetrics": {
+      "averageCitationsPerFile": "11.7",
+      "averageDoiCoverage": "54.7%",
+      "filesWithValidStructure": 32,
+      "totalCitationFiles": 65
+    },
+    "totalErrors": 44
+  },
+  "summary": {
+    "timestamp": "2025-08-20T18:41:04.402Z",
+    "testDuration": "0.1s",
+    "overallStatus": "FAILED",
+    "criticalIssues": 4,
+    "warnings": 1,
+    "recommendations": [
+      "Improve DOI coverage in citation files"
+    ],
+    "integrationScore": "0.0",
+    "issues": [
+      "33 invalid enhanced citation files",
+      "10 target supplements missing enhanced flags in database",
+      "10 supplements not fully integrated",
+      "44 total errors detected"
+    ]
+  },
+  "metadata": {
+    "testSuite": "Enhanced Citations Integration Validation",
+    "version": "1.0.0",
+    "generatedBy": "Claude Code Enhanced Citations Validator",
+    "timestamp": "2025-08-20T18:41:04.402Z",
+    "targetSupplements": [
+      {
+        "id": 21,
+        "name": "Vitamin B12"
+      },
+      {
+        "id": 22,
+        "name": "Vitamin B6"
+      },
+      {
+        "id": 34,
+        "name": "5-HTP"
+      },
+      {
+        "id": 37,
+        "name": "Zinc"
+      },
+      {
+        "id": 38,
+        "name": "Iron"
+      },
+      {
+        "id": 40,
+        "name": "GABA"
+      },
+      {
+        "id": 41,
+        "name": "Inositol"
+      },
+      {
+        "id": 43,
+        "name": "Choline"
+      },
+      {
+        "id": 44,
+        "name": "Alpha-Lipoic Acid"
+      },
+      {
+        "id": 45,
+        "name": "Lutein"
+      }
+    ]
+  }
+}

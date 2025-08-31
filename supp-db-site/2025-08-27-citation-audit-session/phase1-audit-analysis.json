@@ -1,0 +1,518 @@
+{
+  "timestamp": "2025-08-27T03:17:07.900Z",
+  "phase": "Phase 1 - Comprehensive Audit Complete",
+  "totalTested": 56,
+  "working": 34,
+  "broken": 22,
+  "successRate": 61,
+  "targetSuccessRate": 95,
+  "supplementsToFix": 20,
+  "workingSupplements": [
+    {
+      "id": 1,
+      "name": "Bacopa monnieri"
+    },
+    {
+      "id": 3,
+      "name": "Ashwagandha"
+    },
+    {
+      "id": 4,
+      "name": "Omega-3 Fatty Acids"
+    },
+    {
+      "id": 7,
+      "name": "Vitamin D3"
+    },
+    {
+      "id": 10,
+      "name": "Rhodiola rosea"
+    },
+    {
+      "id": 11,
+      "name": "Lion's Mane Mushroom"
+    },
+    {
+      "id": 12,
+      "name": "Phosphatidylserine"
+    },
+    {
+      "id": 13,
+      "name": "Acetyl-L-Carnitine"
+    },
+    {
+      "id": 15,
+      "name": "Panax Ginseng"
+    },
+    {
+      "id": 16,
+      "name": "Alpha-GPC"
+    },
+    {
+      "id": 17,
+      "name": "Berberine"
+    },
+    {
+      "id": 18,
+      "name": "CoQ10"
+    },
+    {
+      "id": 22,
+      "name": "Vitamin B6"
+    },
+    {
+      "id": 25,
+      "name": "NAD+ Precursors"
+    },
+    {
+      "id": 26,
+      "name": "PQQ"
+    },
+    {
+      "id": 34,
+      "name": "5-HTP"
+    },
+    {
+      "id": 37,
+      "name": "Zinc"
+    },
+    {
+      "id": 38,
+      "name": "Iron"
+    },
+    {
+      "id": 39,
+      "name": "Taurine"
+    },
+    {
+      "id": 40,
+      "name": "GABA"
+    },
+    {
+      "id": 41,
+      "name": "Inositol"
+    },
+    {
+      "id": 44,
+      "name": "Alpha-Lipoic Acid"
+    },
+    {
+      "id": 45,
+      "name": "Lutein"
+    },
+    {
+      "id": 53,
+      "name": "Spirulina"
+    },
+    {
+      "id": 55,
+      "name": "Huperzine A"
+    },
+    {
+      "id": 56,
+      "name": "Vinpocetine"
+    },
+    {
+      "id": 62,
+      "name": "Vanadium"
+    },
+    {
+      "id": 67,
+      "name": "Holy Basil"
+    },
+    {
+      "id": 75,
+      "name": "Citicoline"
+    },
+    {
+      "id": 76,
+      "name": "Sulbutiamine"
+    },
+    {
+      "id": 77,
+      "name": "DMAE"
+    },
+    {
+      "id": 78,
+      "name": "Centella Asiatica"
+    },
+    {
+      "id": 80,
+      "name": "Aniracetam"
+    },
+    {
+      "id": 81,
+      "name": "Piracetam"
+    }
+  ],
+  "brokenSupplements": [
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "issues": {
+        "benefits": [
+          "Missing PMIDs"
+        ],
+        "safety": [],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 5,
+      "name": "Creatine",
+      "issues": {
+        "benefits": [
+          "Missing PMIDs"
+        ],
+        "safety": [],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 9,
+      "name": "L-Theanine",
+      "issues": {
+        "benefits": [
+          "No study cards",
+          "Missing PMIDs"
+        ],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": [
+          "Missing PMIDs"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "name": "Ginkgo Biloba",
+      "issues": {
+        "benefits": [
+          "No study cards",
+          "Missing PMIDs"
+        ],
+        "safety": [
+          "No study cards",
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 19,
+      "name": "B-Complex Vitamins",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 20,
+      "name": "Quercetin",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "No study cards",
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 21,
+      "name": "Vitamin B12",
+      "issues": {
+        "benefits": [
+          "Missing PMIDs"
+        ],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 24,
+      "name": "Green Tea Extract",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 27,
+      "name": "Resveratrol",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 28,
+      "name": "Glucosamine",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 30,
+      "name": "Vitamin E",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 31,
+      "name": "Whey Protein",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 32,
+      "name": "Chondroitin Sulfate",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 36,
+      "name": "Vitamin C",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 42,
+      "name": "Selenium",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 47,
+      "name": "Ginger",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 48,
+      "name": "Garlic",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 50,
+      "name": "Caffeine",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 51,
+      "name": "Reishi Mushroom",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 61,
+      "name": "Chromium",
+      "issues": {
+        "benefits": [
+          "Missing PMIDs"
+        ],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": [
+          "Missing PMIDs"
+        ]
+      }
+    },
+    {
+      "id": 87,
+      "name": "Krill Oil",
+      "issues": {
+        "benefits": [],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    },
+    {
+      "id": 89,
+      "name": "Pterostilbene",
+      "issues": {
+        "benefits": [
+          "Missing PMIDs"
+        ],
+        "safety": [
+          "Missing PMIDs"
+        ],
+        "mechanisms": []
+      }
+    }
+  ],
+  "issuePatterns": {
+    "Missing PMIDs": 29,
+    "No study cards": 4,
+    "Undefined values": 0
+  },
+  "tabIssues": {
+    "benefits": 7,
+    "safety": 20,
+    "mechanisms": 2
+  },
+  "highPrioritySupplements": [
+    {
+      "id": 9,
+      "name": "L-Theanine"
+    },
+    {
+      "id": 14,
+      "name": "Ginkgo Biloba"
+    },
+    {
+      "id": 20,
+      "name": "Quercetin"
+    }
+  ],
+  "mediumPrioritySupplements": [
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin"
+    },
+    {
+      "id": 5,
+      "name": "Creatine"
+    },
+    {
+      "id": 19,
+      "name": "B-Complex Vitamins"
+    },
+    {
+      "id": 21,
+      "name": "Vitamin B12"
+    },
+    {
+      "id": 24,
+      "name": "Green Tea Extract"
+    },
+    {
+      "id": 27,
+      "name": "Resveratrol"
+    },
+    {
+      "id": 28,
+      "name": "Glucosamine"
+    },
+    {
+      "id": 30,
+      "name": "Vitamin E"
+    },
+    {
+      "id": 31,
+      "name": "Whey Protein"
+    },
+    {
+      "id": 32,
+      "name": "Chondroitin Sulfate"
+    },
+    {
+      "id": 36,
+      "name": "Vitamin C"
+    },
+    {
+      "id": 42,
+      "name": "Selenium"
+    },
+    {
+      "id": 47,
+      "name": "Ginger"
+    },
+    {
+      "id": 48,
+      "name": "Garlic"
+    },
+    {
+      "id": 50,
+      "name": "Caffeine"
+    },
+    {
+      "id": 51,
+      "name": "Reishi Mushroom"
+    },
+    {
+      "id": 61,
+      "name": "Chromium"
+    },
+    {
+      "id": 87,
+      "name": "Krill Oil"
+    },
+    {
+      "id": 89,
+      "name": "Pterostilbene"
+    }
+  ],
+  "remediationPlan": {
+    "phase2Target": "Fix all broken supplements to achieve >95% success rate",
+    "highPriorityCount": 3,
+    "mediumPriorityCount": 19,
+    "estimatedImpact": "20+ supplements fixed"
+  }
+}

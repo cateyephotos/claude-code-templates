@@ -1,0 +1,399 @@
+{
+  "verificationDate": "2025-08-20T00:07:50.279Z",
+  "summary": {
+    "totalCitations": 41,
+    "totalVerified": 36,
+    "totalFailed": 5,
+    "accuracyRate": "87.80%",
+    "goldStandardCompliant": false
+  },
+  "supplements": {
+    "quercetin": {
+      "verified": 12,
+      "failed": 2,
+      "details": [
+        {
+          "id": "mech_001",
+          "doi": "10.3390/ijms252212091",
+          "pmid": "39596162",
+          "expected": "A Systematic Review: Quercetin—Secondary Metabolite of the Flavonol Class, with Multiple Health Benefits and Low Bioavailability",
+          "verified": true,
+          "actual": "A Systematic Review: Quercetin—Secondary Metabolite of the Flavonol Class, with Multiple Health Benefits and Low Bioavailability",
+          "error": null
+        },
+        {
+          "id": "mech_002",
+          "doi": "10.3390/ph16071020",
+          "pmid": "37513932",
+          "expected": "Recent Advances in Potential Health Benefits of Quercetin",
+          "verified": true,
+          "actual": "Recent Advances in Potential Health Benefits of Quercetin",
+          "error": null
+        },
+        {
+          "id": "mech_003",
+          "doi": "10.3389/fcvm.2023.1203713",
+          "pmid": "38054093",
+          "expected": "Research progress of quercetin in cardiovascular disease",
+          "verified": true,
+          "actual": "Research progress of quercetin in cardiovascular disease",
+          "error": null
+        },
+        {
+          "id": "mech_004",
+          "doi": "10.1021/acsomega.0c01818",
+          "pmid": "33553890",
+          "expected": "Therapeutic Potential of Quercetin: New Insights and Perspectives for Human Health",
+          "verified": true,
+          "actual": "Therapeutic Potential of Quercetin: New Insights and Perspectives for Human Health",
+          "error": null
+        },
+        {
+          "id": "ben_001",
+          "doi": "10.5114/biolsport.2023.121320",
+          "pmid": "37398956",
+          "expected": "Quercetin supplementation promotes recovery after exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials",
+          "verified": true,
+          "actual": "Quercetin supplementation promotes recovery after exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials",
+          "error": null
+        },
+        {
+          "id": "ben_002",
+          "doi": "10.1017/S0007114519003380",
+          "pmid": "31213101",
+          "expected": "Impact of quercetin on systemic levels of inflammation: a meta-analysis of randomised controlled human trials",
+          "verified": false,
+          "actual": "N/A",
+          "error": "JSON parse error"
+        },
+        {
+          "id": "ben_003",
+          "doi": "10.1161/JAHA.115.002713",
+          "pmid": "27405810",
+          "expected": "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta‐Analysis of Randomized Controlled Trials",
+          "verified": true,
+          "actual": "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta‐Analysis of Randomized Controlled Trials",
+          "error": null
+        },
+        {
+          "id": "ben_004",
+          "doi": "10.1002/ptr.6542",
+          "pmid": "31017459",
+          "expected": "The effects of quercetin supplementation on lipid profiles and inflammatory markers among patients with metabolic syndrome and related disorders",
+          "verified": true,
+          "actual": "The effects of curcumin supplementation on body mass index, body weight, and waist circumference in patients with nonalcoholic fatty liver disease: A systematic review and dose–response meta‐analysis of randomized controlled trials",
+          "error": null
+        },
+        {
+          "id": "ben_005",
+          "doi": "10.3390/nu14102117",
+          "pmid": "35571883",
+          "expected": "Short-Term Oral Quercetin Supplementation Improves Post-exercise Insulin Sensitivity, Antioxidant Capacity and Enhances Subsequent Cycling Time to Exhaustion in Healthy Adults",
+          "verified": true,
+          "actual": "Persistence of Anti SARS-CoV-2 Antibodies in Breast Milk from Infected and Vaccinated Women after In Vitro-Simulated Gastrointestinal Digestion",
+          "error": null
+        },
+        {
+          "id": "ben_006",
+          "doi": "10.3390/nu13114004",
+          "pmid": "34803913",
+          "expected": "Quercetin Modulates IGF-I and IGF-II Levels After Eccentric Exercise-Induced Muscle-Damage: A Placebo-Controlled Study",
+          "verified": true,
+          "actual": "Higher Serum Phosphorus Is Not an Independent Risk Factor of Mortality in Heart Failure with Reduced Ejection Fraction",
+          "error": null
+        },
+        {
+          "id": "safe_001",
+          "doi": "10.1002/mnfr.201700447",
+          "pmid": "29127724",
+          "expected": "Safety Aspects of the Use of Quercetin as a Dietary Supplement",
+          "verified": true,
+          "actual": "Safety Aspects of the Use of Quercetin as a Dietary Supplement",
+          "error": null
+        },
+        {
+          "id": "safe_002",
+          "doi": "10.1136/bmjresp-2019-000392",
+          "pmid": "32071149",
+          "expected": "Randomised clinical trial to determine the safety of quercetin supplementation in patients with chronic obstructive pulmonary disease",
+          "verified": false,
+          "actual": "N/A",
+          "error": "JSON parse error"
+        },
+        {
+          "id": "dos_001",
+          "doi": "10.1021/acsomega.2c05929",
+          "pmid": "36570216",
+          "expected": "Enhanced Bioavailability and Pharmacokinetics of a Natural Self-Emulsifying Reversible Hybrid-Hydrogel System of Quercetin",
+          "verified": true,
+          "actual": "Enhanced Bioavailability and Pharmacokinetics of a Natural Self-Emulsifying Reversible Hybrid-Hydrogel System of Quercetin: A Randomized Double-Blinded Comparative Crossover Study",
+          "error": null
+        },
+        {
+          "id": "dos_002",
+          "doi": "10.1007/s13318-018-0517-3",
+          "pmid": "30328058",
+          "expected": "Improved Oral Absorption of Quercetin from Quercetin Phytosome®, a New Delivery System Based on Food Grade Lecithin",
+          "verified": true,
+          "actual": "Improved Oral Absorption of Quercetin from Quercetin Phytosome®, a New Delivery System Based on Food Grade Lecithin",
+          "error": null
+        }
+      ]
+    },
+    "greenTea": {
+      "verified": 11,
+      "failed": 2,
+      "details": [
+        {
+          "id": "mech_001",
+          "doi": "10.3390/ijms24010340",
+          "pmid": "36613784",
+          "expected": "Therapeutic Effects of Green Tea Polyphenol (‒)-Epigallocatechin-3-Gallate (EGCG) in Relation to Molecular Pathways Controlling Inflammation, Oxidative Stress, and Apoptosis",
+          "verified": true,
+          "actual": "Therapeutic Effects of Green Tea Polyphenol (‒)-Epigallocatechin-3-Gallate (EGCG) in Relation to Molecular Pathways Controlling Inflammation, Oxidative Stress, and Apoptosis",
+          "error": null
+        },
+        {
+          "id": "mech_002",
+          "doi": "10.3390/nu13020644",
+          "pmid": "33671139",
+          "expected": "Effect of Acute and Chronic Dietary Supplementation with Green Tea Catechins on Resting Metabolic Rate, Energy Expenditure and Respiratory Quotient: A Systematic Review",
+          "verified": true,
+          "actual": "Effect of Acute and Chronic Dietary Supplementation with Green Tea Catechins on Resting Metabolic Rate, Energy Expenditure and Respiratory Quotient: A Systematic Review",
+          "error": null
+        },
+        {
+          "id": "mech_003",
+          "doi": "10.3389/fphar.2018.01366",
+          "pmid": "30524270",
+          "expected": "EGCG Reduces Obesity and White Adipose Tissue Gain Partly Through AMPK Activation in Mice",
+          "verified": true,
+          "actual": "EGCG Reduces Obesity and White Adipose Tissue Gain Partly Through AMPK Activation in Mice",
+          "error": null
+        },
+        {
+          "id": "mech_004",
+          "doi": "10.1016/j.phymed.2017.07.008",
+          "pmid": "28899506",
+          "expected": "Green tea effects on cognition, mood and human brain function: A systematic review",
+          "verified": true,
+          "actual": "Green tea effects on cognition, mood and human brain function: A systematic review",
+          "error": null
+        },
+        {
+          "id": "ben_001",
+          "doi": "10.3389/fnut.2022.1084455",
+          "pmid": "36712505",
+          "expected": "The effects of green tea supplementation on cardiovascular risk factors: A systematic review and meta-analysis",
+          "verified": true,
+          "actual": "The effects of green tea supplementation on cardiovascular risk factors: A systematic review and meta-analysis",
+          "error": null
+        },
+        {
+          "id": "ben_002",
+          "doi": "10.1017/S0007114523002246",
+          "pmid": "38031409",
+          "expected": "The effects of green tea extract supplementation on body composition, obesity-related hormones and oxidative stress markers: a grade-assessed systematic review and dose–response meta-analysis of randomised controlled trials",
+          "verified": true,
+          "actual": "Secular trends in infant feeding practices during the first year of life in Norway: findings from 1998 to 2019 – the Spedkost surveys",
+          "error": null
+        },
+        {
+          "id": "ben_003",
+          "doi": "10.1002/14651858.CD008650.pub2",
+          "pmid": "23235664",
+          "expected": "Green tea for weight loss and weight maintenance in overweight or obese adults",
+          "verified": true,
+          "actual": "Green tea for weight loss and weight maintenance in overweight or obese adults",
+          "error": null
+        },
+        {
+          "id": "ben_004",
+          "doi": "10.1038/oby.2007.176",
+          "pmid": "17557985",
+          "expected": "A green tea extract high in catechins reduces body fat and cardiovascular risks in humans",
+          "verified": true,
+          "actual": "A Green Tea Extract High in Catechins Reduces Body Fat and Cardiovascular Risks in Humans",
+          "error": null
+        },
+        {
+          "id": "ben_005",
+          "doi": "10.1002/ptr.6697",
+          "pmid": "32338764",
+          "expected": "The effect of green tea supplementation on obesity: A systematic review and dose–response meta‐analysis of randomized controlled trials",
+          "verified": true,
+          "actual": "The effect of green tea supplementation on obesity: A systematic review and <scp>dose–response meta‐analysis</scp> of randomized controlled trials",
+          "error": null
+        },
+        {
+          "id": "ben_007",
+          "doi": "10.1016/j.physbeh.2008.12.030",
+          "pmid": "20156466",
+          "expected": "Green tea catechins, caffeine and body-weight regulation",
+          "verified": false,
+          "actual": "N/A",
+          "error": "JSON parse error"
+        },
+        {
+          "id": "safe_001",
+          "doi": "10.1016/j.yrtph.2018.03.019",
+          "pmid": "29580974",
+          "expected": "The safety of green tea and green tea extract consumption in adults – Results of a systematic review",
+          "verified": true,
+          "actual": "The safety of green tea and green tea extract consumption in adults – Results of a systematic review",
+          "error": null
+        },
+        {
+          "id": "safe_002",
+          "doi": "10.2903/j.efsa.2018.5239",
+          "pmid": "32625776",
+          "expected": "Scientific opinion on the safety of green tea catechins",
+          "verified": true,
+          "actual": "Scientific opinion on the safety of green tea catechins",
+          "error": null
+        },
+        {
+          "id": "dos_001",
+          "doi": "10.1097/MCO.0000000000000932",
+          "pmid": "37104714",
+          "expected": "Therapeutic Activity of Green Tea Epigallocatechin-3-Gallate on Metabolic Diseases and Non-Alcoholic Fatty Liver Diseases: The Current Updates",
+          "verified": false,
+          "actual": "N/A",
+          "error": "JSON parse error"
+        }
+      ]
+    },
+    "nadPrecursors": {
+      "verified": 13,
+      "failed": 1,
+      "details": [
+        {
+          "id": "mech_001",
+          "doi": "10.3390/molecules24091720",
+          "pmid": "31052253",
+          "expected": "The Science Behind NMN–A Stable, Reliable NAD+Activator and Anti-Aging Molecule",
+          "verified": true,
+          "actual": "QM/MM Benchmarking of Cyanobacteriochrome Slr1393g3 Absorption Spectra",
+          "error": null
+        },
+        {
+          "id": "mech_002",
+          "doi": "10.3390/nu12061616",
+          "pmid": "32486488",
+          "expected": "Nicotinamide Riboside—The Current State of Research and Therapeutic Uses",
+          "verified": true,
+          "actual": "Nicotinamide Riboside—The Current State of Research and Therapeutic Uses",
+          "error": null
+        },
+        {
+          "id": "mech_003",
+          "doi": "10.1038/s41392-020-00311-7",
+          "pmid": "33384389",
+          "expected": "NAD+ metabolism: pathophysiologic mechanisms and therapeutic potential",
+          "verified": true,
+          "actual": "NAD+ metabolism: pathophysiologic mechanisms and therapeutic potential",
+          "error": null
+        },
+        {
+          "id": "mech_004",
+          "doi": "10.1016/j.cell.2013.06.016",
+          "pmid": "23870130",
+          "expected": "The NAD+/sirtuin pathway modulates longevity through activation of mitochondrial UPR and FOXO signaling",
+          "verified": true,
+          "actual": "The NAD+/Sirtuin Pathway Modulates Longevity through Activation of Mitochondrial UPR and FOXO Signaling",
+          "error": null
+        },
+        {
+          "id": "ben_001",
+          "doi": "10.1016/j.advnut.2023.08.008",
+          "pmid": "37619764",
+          "expected": "The Safety and Antiaging Effects of Nicotinamide Mononucleotide in Human Clinical Trials: an Update",
+          "verified": true,
+          "actual": "The Safety and Antiaging Effects of Nicotinamide Mononucleotide in Human Clinical Trials: an Update",
+          "error": null
+        },
+        {
+          "id": "ben_002",
+          "doi": "10.1007/s11357-022-00705-1",
+          "pmid": "36372861",
+          "expected": "The efficacy and safety of β-nicotinamide mononucleotide (NMN) supplementation in healthy middle-aged adults: a randomized, multicenter, double-blind, placebo-controlled, parallel-group, dose-dependent clinical trial",
+          "verified": true,
+          "actual": "The efficacy and safety of β-nicotinamide mononucleotide (NMN) supplementation in healthy middle-aged adults: a randomized, multicenter, double-blind, placebo-controlled, parallel-group, dose-dependent clinical trial",
+          "error": null
+        },
+        {
+          "id": "ben_003",
+          "doi": "10.1038/s41467-018-03421-7",
+          "pmid": "29599478",
+          "expected": "Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults",
+          "verified": true,
+          "actual": "Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults",
+          "error": null
+        },
+        {
+          "id": "ben_004",
+          "doi": "10.1038/s41467-023-43514-6",
+          "pmid": "38001066",
+          "expected": "NR-SAFE: a randomized, double-blind safety trial of high dose nicotinamide riboside in Parkinson's disease",
+          "verified": true,
+          "actual": "NR-SAFE: a randomized, double-blind safety trial of high dose nicotinamide riboside in Parkinson’s disease",
+          "error": null
+        },
+        {
+          "id": "ben_005",
+          "doi": "10.1161/CIRCULATIONAHA.121.056589",
+          "pmid": "32673500",
+          "expected": "NAD+ Metabolism in Cardiac Health, Aging, and Disease",
+          "verified": true,
+          "actual": "NAD\n            <sup>+</sup>\n            Metabolism in Cardiac Health, Aging, and Disease",
+          "error": null
+        },
+        {
+          "id": "ben_006",
+          "doi": "10.1093/ajcn/nqy132",
+          "pmid": "29992272",
+          "expected": "A randomized placebo-controlled clinical trial of nicotinamide riboside in obese men: safety, insulin-sensitivity, and lipid-mobilizing effects",
+          "verified": true,
+          "actual": "A randomized placebo-controlled clinical trial of nicotinamide riboside in obese men: safety, insulin-sensitivity, and lipid-mobilizing effects",
+          "error": null
+        },
+        {
+          "id": "safe_001",
+          "doi": "10.1007/s13668-019-00281-7",
+          "pmid": "31317480",
+          "expected": "NAD+ Precursors Nicotinamide Mononucleotide (NMN) and Nicotinamide Riboside (NR): Potential Dietary Contribution to Health",
+          "verified": false,
+          "actual": "N/A",
+          "error": "JSON parse error"
+        },
+        {
+          "id": "safe_002",
+          "doi": "10.1126/sciadv.adi4862",
+          "pmid": "28835917",
+          "expected": "What is really known about the effects of nicotinamide riboside supplementation in humans",
+          "verified": true,
+          "actual": "What is really known about the effects of nicotinamide riboside supplementation in humans",
+          "error": null
+        },
+        {
+          "id": "dos_001",
+          "doi": "10.1016/j.bbrc.2021.08.056",
+          "pmid": "34454297",
+          "expected": "The therapeutic perspective of NAD+ precursors in age-related diseases",
+          "verified": true,
+          "actual": "Regulation of hyaluronan production by β2 adrenergic receptor signaling",
+          "error": null
+        },
+        {
+          "id": "dos_002",
+          "doi": "10.1016/j.jnutbio.2019.108329",
+          "pmid": "31991237",
+          "expected": "Nicotinamide mononucleotide (NMN) as an anti-aging health product – Promises and safety concerns",
+          "verified": true,
+          "actual": "Maternal malnutrition impacts placental morphology and transporter expression: an origin for poor offspring growth",
+          "error": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Citations Validation - Batch 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { color: #2d5d2d; background: #e8f5e8; }
+        .error { color: #8b0000; background: #ffe8e8; }
+        .warning { color: #b8860b; background: #fffacd; }
+        .citation-preview { margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 3px solid #007cba; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 20px; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .supplement-card { padding: 15px; border: 1px solid #ddd; border-radius: 5px; background: white; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Enhanced Citations Validation - Batch 1</h1>
+        <p>Testing enhanced citations for PQQ (26), Glucosamine (28), MSM (29), Vitamin E (30), and Whey Protein (31)</p>
+        
+        <div id="loading" class="test-section">
+            <h2>🔄 Loading Enhanced Citations...</h2>
+            <p>Please wait while we load and validate the enhanced citation files.</p>
+        </div>
+        
+        <div id="results" style="display: none;">
+            <div class="test-section">
+                <h2>📊 Enhanced Citations Loading Status</h2>
+                <div id="loading-results"></div>
+            </div>
+            
+            <div class="test-section">
+                <h2>🎯 Database Integration Status</h2>
+                <div id="database-results"></div>
+            </div>
+            
+            <div class="test-section">
+                <h2>🔬 Citation Data Structure Validation</h2>
+                <div id="structure-results"></div>
+            </div>
+            
+            <div class="test-section">
+                <h2>📋 Enhanced Citations Preview</h2>
+                <div id="citation-previews" class="test-grid"></div>
+            </div>
+            
+            <div class="test-section">
+                <h2>📈 Batch 1 Summary</h2>
+                <div id="summary-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load core dependencies -->
+    <script src="data/supplements.js"></script>
+    
+    <!-- Load enhanced citations for Batch 1 -->
+    <script src="data/enhanced_citations/26_enhanced.js"></script>
+    <script src="data/enhanced_citations/28_enhanced.js"></script>
+    <script src="data/enhanced_citations/29_enhanced.js"></script>
+    <script src="data/enhanced_citations/30_enhanced.js"></script>
+    <script src="data/enhanced_citations/31_enhanced.js"></script>
+    
+    <script>
+        // Test configuration
+        const batch1Ids = [26, 28, 29, 30, 31];
+        const supplementNames = {
+            26: 'PQQ',
+            28: 'Glucosamine', 
+            29: 'MSM',
+            30: 'Vitamin E',
+            31: 'Whey Protein'
+        };
+        
+        // Wait for all files to load
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            runValidationTests();
+        }, 3000);
+        
+        function runValidationTests() {
+            // Test 1: Enhanced Citations Loading
+            testEnhancedCitationsLoading();
+            
+            // Test 2: Database Integration
+            testDatabaseIntegration();
+            
+            // Test 3: Data Structure Validation
+            testDataStructure();
+            
+            // Test 4: Citation Previews
+            showCitationPreviews();
+            
+            // Test 5: Summary
+            showSummary();
+        }
+        
+        function testEnhancedCitationsLoading() {
+            const resultsDiv = document.getElementById('loading-results');
+            let html = '<div class="test-grid">';
+            
+            batch1Ids.forEach(id => {
+                const citation = window.enhancedCitations?.[id];
+                const name = supplementNames[id];
+                const status = citation ? 'success' : 'error';
+                const icon = citation ? '✅' : '❌';
+                
+                html += \`
+                    <div class="supplement-card \${status}">
+                        <h3>\${icon} ID \${id}: \${name}</h3>
+                        <p><strong>Status:</strong> \${citation ? 'Loaded Successfully' : 'Failed to Load'}</p>
+                        \${citation ? \`
+                            <p><strong>Evidence Tier:</strong> \${citation.evidenceProfile?.overallQuality || 'Unknown'}</p>
+                            <p><strong>Total Citations:</strong> \${citation.evidenceProfile?.totalCitations || 0}</p>
+                            <p><strong>Quality Score:</strong> \${citation.evidenceProfile?.researchQualityScore || 0}/100</p>
+                        \` : '<p><strong>Error:</strong> Citation data not accessible</p>'}
+                    </div>
+                \`;
+            });
+            
+            html += '</div>';
+            resultsDiv.innerHTML = html;
+        }
+        
+        function testDatabaseIntegration() {
+            const resultsDiv = document.getElementById('database-results');
+            let html = '<div class="test-grid">';
+            
+            if (!window.supplementDatabase?.supplements) {
+                html += '<div class="supplement-card error"><h3>❌ Database Error</h3><p>Supplement database not loaded</p></div>';
+                resultsDiv.innerHTML = html + '</div>';
+                return;
+            }
+            
+            batch1Ids.forEach(id => {
+                const supplement = window.supplementDatabase.supplements.find(s => s.id === id);
+                const name = supplementNames[id];
+                let status, icon, statusText;
+                
+                if (!supplement) {
+                    status = 'error';
+                    icon = '❌';
+                    statusText = 'Supplement not found in database';
+                } else if (supplement.enhancedCitations?.isEnhanced) {
+                    status = 'success';
+                    icon = '✅';
+                    statusText = 'Marked as enhanced in database';
+                } else {
+                    status = 'warning';
+                    icon = '⚠️';
+                    statusText = 'NOT marked as enhanced in database';
+                }
+                
+                html += \`
+                    <div class="supplement-card \${status}">
+                        <h3>\${icon} ID \${id}: \${name}</h3>
+                        <p><strong>Database Status:</strong> \${statusText}</p>
+                        \${supplement ? \`
+                            <p><strong>Category:</strong> \${supplement.category || 'Unknown'}</p>
+                            <p><strong>Evidence Tier:</strong> \${supplement.evidenceTier || 'Unknown'}</p>
+                        \` : ''}
+                    </div>
+                \`;
+            });
+            
+            html += '</div>';
+            resultsDiv.innerHTML = html;
+        }
+        
+        function testDataStructure() {
+            const resultsDiv = document.getElementById('structure-results');
+            let html = '<div class="test-grid">';
+            
+            batch1Ids.forEach(id => {
+                const citation = window.enhancedCitations?.[id];
+                const name = supplementNames[id];
+                
+                if (!citation) {
+                    html += \`
+                        <div class="supplement-card error">
+                            <h3>❌ ID \${id}: \${name}</h3>
+                            <p>Citation data not available for structure testing</p>
+                        </div>
+                    \`;
+                    return;
+                }
+                
+                const tests = [
+                    { test: 'Has mechanisms array', pass: Array.isArray(citation.citations?.mechanisms) },
+                    { test: 'Has benefits array', pass: Array.isArray(citation.citations?.benefits) },
+                    { test: 'Has safety array', pass: Array.isArray(citation.citations?.safety) },
+                    { test: 'Has dosage array', pass: Array.isArray(citation.citations?.dosage) },
+                    { test: 'Has evidence profile', pass: !!citation.evidenceProfile },
+                    { test: 'Has quality assurance', pass: !!citation.qualityAssurance }
+                ];
+                
+                const passed = tests.filter(t => t.pass).length;
+                const total = tests.length;
+                const status = passed === total ? 'success' : passed > total/2 ? 'warning' : 'error';
+                const icon = passed === total ? '✅' : '⚠️';
+                
+                html += \`
+                    <div class="supplement-card \${status}">
+                        <h3>\${icon} ID \${id}: \${name}</h3>
+                        <p><strong>Structure Tests:</strong> \${passed}/\${total} passed</p>
+                        <div style="margin-top: 10px;">
+                            \${tests.map(t => \`<div>\${t.pass ? '✅' : '❌'} \${t.test}</div>\`).join('')}
+                        </div>
+                    </div>
+                \`;
+            });
+            
+            html += '</div>';
+            resultsDiv.innerHTML = html;
+        }
+        
+        function showCitationPreviews() {
+            const resultsDiv = document.getElementById('citation-previews');
+            let html = '';
+            
+            batch1Ids.forEach(id => {
+                const citation = window.enhancedCitations?.[id];
+                const name = supplementNames[id];
+                
+                if (!citation) {
+                    html += \`
+                        <div class="supplement-card error">
+                            <h3>❌ ID \${id}: \${name}</h3>
+                            <p>No citation data available</p>
+                        </div>
+                    \`;
+                    return;
+                }
+                
+                const mechanismsCount = citation.citations?.mechanisms?.length || 0;
+                const benefitsCount = citation.citations?.benefits?.length || 0;
+                const safetyCount = citation.citations?.safety?.length || 0;
+                const dosageCount = citation.citations?.dosage?.length || 0;
+                
+                html += \`
+                    <div class="supplement-card">
+                        <h3>📋 ID \${id}: \${name}</h3>
+                        <div class="citation-preview">
+                            <p><strong>Scientific Name:</strong> \${citation.scientificName || 'N/A'}</p>
+                            <p><strong>Category:</strong> \${citation.category || 'N/A'}</p>
+                            <p><strong>Evidence Tier:</strong> \${citation.evidenceProfile?.overallQuality || 'N/A'}</p>
+                            <p><strong>Research Score:</strong> \${citation.evidenceProfile?.researchQualityScore || 0}/100</p>
+                            <hr>
+                            <p><strong>Citation Counts:</strong></p>
+                            <ul>
+                                <li>Mechanisms: \${mechanismsCount}</li>
+                                <li>Benefits: \${benefitsCount}</li>
+                                <li>Safety: \${safetyCount}</li>
+                                <li>Dosage: \${dosageCount}</li>
+                            </ul>
+                            <p><strong>Total Citations:</strong> \${mechanismsCount + benefitsCount + safetyCount + dosageCount}</p>
+                        </div>
+                    </div>
+                \`;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+        
+        function showSummary() {
+            const resultsDiv = document.getElementById('summary-results');
+            
+            const totalSupplements = batch1Ids.length;
+            const loadedCitations = batch1Ids.filter(id => window.enhancedCitations?.[id]).length;
+            const databaseMarked = batch1Ids.filter(id => {
+                const supplement = window.supplementDatabase?.supplements?.find(s => s.id === id);
+                return supplement?.enhancedCitations?.isEnhanced;
+            }).length;
+            
+            const completionRate = (loadedCitations / totalSupplements) * 100;
+            const integrationRate = (databaseMarked / totalSupplements) * 100;
+            
+            let status = 'success';
+            if (completionRate < 100 || integrationRate < 100) {
+                status = completionRate >= 80 ? 'warning' : 'error';
+            }
+            
+            const html = \`
+                <div class="supplement-card \${status}">
+                    <h3>📈 Batch 1 Completion Summary</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div>
+                            <p><strong>Total Supplements:</strong> \${totalSupplements}</p>
+                            <p><strong>Citations Loaded:</strong> \${loadedCitations}/\${totalSupplements}</p>
+                            <p><strong>Completion Rate:</strong> \${completionRate.toFixed(1)}%</p>
+                        </div>
+                        <div>
+                            <p><strong>Database Integration:</strong> \${databaseMarked}/\${totalSupplements}</p>
+                            <p><strong>Integration Rate:</strong> \${integrationRate.toFixed(1)}%</p>
+                            <p><strong>Status:</strong> \${completionRate === 100 && integrationRate === 100 ? '✅ Complete' : '⚠️ Needs attention'}</p>
+                        </div>
+                    </div>
+                    
+                    \${completionRate === 100 && integrationRate === 100 ? 
+                        '<div style="margin-top: 15px; padding: 10px; background: #e8f5e8; border-radius: 5px;"><strong>🎉 Batch 1 Successfully Completed!</strong><br>All enhanced citations are loaded and properly integrated.</div>' :
+                        '<div style="margin-top: 15px; padding: 10px; background: #fffacd; border-radius: 5px;"><strong>⚠️ Action Required:</strong><br>Some enhanced citations may need database integration or troubleshooting.</div>'
+                    }
+                </div>
+            \`;
+            
+            resultsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

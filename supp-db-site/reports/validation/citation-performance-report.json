@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-20T18:44:26.059Z",
+  "summary": {
+    "totalFiles": 10,
+    "successfulLoads": 10,
+    "averageLoadTime": 7.7,
+    "performanceRating": "EXCELLENT",
+    "recommendations": []
+  },
+  "results": [
+    {
+      "file": "21_vitamin_b12_enhanced.js",
+      "loadTime": 43,
+      "fileSize": 14670,
+      "status": "success",
+      "sizeKB": "14.3"
+    },
+    {
+      "file": "22_vitamin_b6_enhanced.js",
+      "loadTime": 5,
+      "fileSize": 12112,
+      "status": "success",
+      "sizeKB": "11.8"
+    },
+    {
+      "file": "34_enhanced.js",
+      "loadTime": 4,
+      "fileSize": 13237,
+      "status": "success",
+      "sizeKB": "12.9"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "loadTime": 4,
+      "fileSize": 12761,
+      "status": "success",
+      "sizeKB": "12.5"
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "loadTime": 3,
+      "fileSize": 13403,
+      "status": "success",
+      "sizeKB": "13.1"
+    },
+    {
+      "file": "40_enhanced.js",
+      "loadTime": 4,
+      "fileSize": 12125,
+      "status": "success",
+      "sizeKB": "11.8"
+    },
+    {
+      "file": "41_inositol_enhanced.js",
+      "loadTime": 4,
+      "fileSize": 13838,
+      "status": "success",
+      "sizeKB": "13.5"
+    },
+    {
+      "file": "43_choline_enhanced.js",
+      "loadTime": 3,
+      "fileSize": 14502,
+      "status": "success",
+      "sizeKB": "14.2"
+    },
+    {
+      "file": "44_enhanced.js",
+      "loadTime": 3,
+      "fileSize": 14305,
+      "status": "success",
+      "sizeKB": "14.0"
+    },
+    {
+      "file": "45_enhanced.js",
+      "loadTime": 4,
+      "fileSize": 13884,
+      "status": "success",
+      "sizeKB": "13.6"
+    }
+  ],
+  "analysis": {
+    "minLoadTime": 3,
+    "maxLoadTime": 43,
+    "totalDataTransfer": 134837,
+    "averageFileSize": 13483.7
+  }
+}

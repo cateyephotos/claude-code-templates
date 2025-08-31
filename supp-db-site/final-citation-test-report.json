@@ -1,0 +1,563 @@
+{
+  "timestamp": "2025-08-27T02:55:46.941Z",
+  "testResults": {
+    "totalTested": 15,
+    "working": 13,
+    "broken": 2,
+    "successRate": 87
+  },
+  "categoryBreakdown": {
+    "working": {
+      "total": 4,
+      "working": 4,
+      "successRate": 100
+    },
+    "legacy": {
+      "total": 7,
+      "working": 5,
+      "successRate": 71
+    },
+    "empty": {
+      "total": 4,
+      "working": 4,
+      "successRate": 100
+    }
+  },
+  "workingSupplements": [
+    {
+      "id": 15,
+      "name": "Panax Ginseng",
+      "category": "working"
+    },
+    {
+      "id": 13,
+      "name": "Acetyl-L-Carnitine",
+      "category": "working"
+    },
+    {
+      "id": 44,
+      "name": "Alpha-Lipoic Acid",
+      "category": "working"
+    },
+    {
+      "id": 22,
+      "name": "Vitamin B6",
+      "category": "working"
+    },
+    {
+      "id": 1,
+      "name": "Bacopa monnieri",
+      "category": "legacy"
+    },
+    {
+      "id": 3,
+      "name": "Ashwagandha",
+      "category": "legacy"
+    },
+    {
+      "id": 4,
+      "name": "Omega-3 Fatty Acids",
+      "category": "legacy"
+    },
+    {
+      "id": 7,
+      "name": "Vitamin D3",
+      "category": "legacy"
+    },
+    {
+      "id": 10,
+      "name": "Rhodiola rosea",
+      "category": "legacy"
+    },
+    {
+      "id": 37,
+      "name": "Zinc",
+      "category": "empty"
+    },
+    {
+      "id": 38,
+      "name": "Iron",
+      "category": "empty"
+    },
+    {
+      "id": 40,
+      "name": "GABA",
+      "category": "empty"
+    },
+    {
+      "id": 41,
+      "name": "Inositol",
+      "category": "empty"
+    }
+  ],
+  "brokenSupplements": [
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "category": "legacy",
+      "issues": {
+        "benefits": true,
+        "safety": false,
+        "mechanisms": false
+      }
+    },
+    {
+      "id": 9,
+      "name": "L-Theanine",
+      "category": "legacy",
+      "issues": {
+        "benefits": true,
+        "safety": true,
+        "mechanisms": true
+      }
+    }
+  ],
+  "detailedResults": [
+    {
+      "id": 15,
+      "name": "Panax Ginseng",
+      "category": "working",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 7,
+          "studyCards": 7,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 15540
+        },
+        "safety": {
+          "totalCards": 5,
+          "studyCards": 5,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Acetyl-L-Carnitine",
+      "category": "working",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 5,
+          "studyCards": 5,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 11050
+        },
+        "safety": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 44,
+      "name": "Alpha-Lipoic Acid",
+      "category": "working",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 7,
+          "studyCards": 7,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 15535
+        },
+        "safety": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 22,
+      "name": "Vitamin B6",
+      "category": "working",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 6,
+          "studyCards": 6,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 13158
+        },
+        "safety": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 1,
+      "name": "Bacopa monnieri",
+      "category": "legacy",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 2,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 5683
+        },
+        "safety": {
+          "totalCards": 2,
+          "studyCards": 2,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 6,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "category": "legacy",
+      "benefitsWorking": false,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": false,
+      "details": {
+        "benefits": {
+          "error": "Container not found"
+        },
+        "safety": {
+          "totalCards": 2,
+          "studyCards": 2,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ashwagandha",
+      "category": "legacy",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 5,
+          "studyCards": 6,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 11969
+        },
+        "safety": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 5,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Omega-3 Fatty Acids",
+      "category": "legacy",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 9131
+        },
+        "safety": {
+          "totalCards": 2,
+          "studyCards": 2,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Vitamin D3",
+      "category": "legacy",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 8,
+          "studyCards": 10,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 20633
+        },
+        "safety": {
+          "totalCards": 3,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 6,
+          "studyCards": 8,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 9,
+      "name": "L-Theanine",
+      "category": "legacy",
+      "benefitsWorking": false,
+      "safetyWorking": false,
+      "mechanismsWorking": false,
+      "overallWorking": false,
+      "details": {
+        "benefits": {
+          "totalCards": 7,
+          "studyCards": 0,
+          "hasPMID": false,
+          "hasUndefined": false,
+          "htmlLength": 7781
+        },
+        "safety": {
+          "totalCards": 1,
+          "studyCards": 3,
+          "hasPMID": false,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 6,
+          "studyCards": 6,
+          "hasPMID": false,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 10,
+      "name": "Rhodiola rosea",
+      "category": "legacy",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 6,
+          "studyCards": 6,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 14047
+        },
+        "safety": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 37,
+      "name": "Zinc",
+      "category": "empty",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 7,
+          "studyCards": 7,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 16220
+        },
+        "safety": {
+          "totalCards": 2,
+          "studyCards": 2,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 38,
+      "name": "Iron",
+      "category": "empty",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 6,
+          "studyCards": 6,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 13843
+        },
+        "safety": {
+          "totalCards": 2,
+          "studyCards": 2,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 40,
+      "name": "GABA",
+      "category": "empty",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 5,
+          "studyCards": 5,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 11378
+        },
+        "safety": {
+          "totalCards": 3,
+          "studyCards": 3,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 5,
+          "studyCards": 5,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    },
+    {
+      "id": 41,
+      "name": "Inositol",
+      "category": "empty",
+      "benefitsWorking": true,
+      "safetyWorking": true,
+      "mechanismsWorking": true,
+      "overallWorking": true,
+      "details": {
+        "benefits": {
+          "totalCards": 8,
+          "studyCards": 8,
+          "hasPMID": true,
+          "hasUndefined": false,
+          "htmlLength": 17947
+        },
+        "safety": {
+          "totalCards": 2,
+          "studyCards": 2,
+          "hasPMID": true,
+          "hasUndefined": false
+        },
+        "mechanisms": {
+          "totalCards": 4,
+          "studyCards": 4,
+          "hasPMID": true,
+          "hasUndefined": false
+        }
+      }
+    }
+  ]
+}

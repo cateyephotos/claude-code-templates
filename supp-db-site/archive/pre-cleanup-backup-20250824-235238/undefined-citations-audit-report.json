@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-08-24T06:21:45.064Z",
+  "totalSupplements": 89,
+  "enhancedSupplements": [
+    "Bacopa monnieri",
+    "Turmeric/Curcumin",
+    "Ashwagandha",
+    "Omega-3 Fatty Acids",
+    "Creatine",
+    "Magnesium",
+    "Vitamin D3",
+    "Melatonin",
+    "L-Theanine",
+    "Rhodiola rosea",
+    "Lion's Mane Mushroom",
+    "Phosphatidylserine"
+  ],
+  "undefinedIssues": [
+    {
+      "supplement": "Melatonin",
+      "undefinedCount": 51,
+      "cardIndex": 7
+    },
+    {
+      "supplement": "L-Theanine",
+      "undefinedCount": 48,
+      "cardIndex": 8
+    }
+  ],
+  "properlyRendered": [
+    "Bacopa monnieri",
+    "Omega-3 Fatty Acids",
+    "Creatine",
+    "Magnesium",
+    "Vitamin D3",
+    "Rhodiola rosea",
+    "Lion's Mane Mushroom",
+    "Phosphatidylserine"
+  ],
+  "lastWorkedSupplement": "Melatonin",
+  "summary": {
+    "totalEnhanced": 12,
+    "withUndefinedIssues": 2,
+    "properlyRendered": 8,
+    "successRate": "67%"
+  }
+}

@@ -1,0 +1,1908 @@
+{
+  "timestamp": "2025-08-24T06:55:44.287Z",
+  "summary": {
+    "total": 89,
+    "enhanced": 37,
+    "unenhanced": 52,
+    "enhancedSupplements": [
+      {
+        "id": 1,
+        "name": "Bacopa monnieri",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 2,
+        "name": "Turmeric/Curcumin",
+        "evidenceTier": 1,
+        "isEnhanced": true
+      },
+      {
+        "id": 3,
+        "name": "Ashwagandha",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 4,
+        "name": "Omega-3 Fatty Acids",
+        "evidenceTier": 1,
+        "isEnhanced": true
+      },
+      {
+        "id": 5,
+        "name": "Creatine",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 6,
+        "name": "Magnesium",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 7,
+        "name": "Vitamin D3",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 8,
+        "name": "Melatonin",
+        "evidenceTier": 1,
+        "isEnhanced": true
+      },
+      {
+        "id": 9,
+        "name": "L-Theanine",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 10,
+        "name": "Rhodiola rosea",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 11,
+        "name": "Lion's Mane Mushroom",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 12,
+        "name": "Phosphatidylserine",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 13,
+        "name": "Acetyl-L-Carnitine",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 14,
+        "name": "Ginkgo Biloba",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 15,
+        "name": "Panax Ginseng",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 16,
+        "name": "Alpha-GPC",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 17,
+        "name": "Berberine",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 18,
+        "name": "CoQ10",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 19,
+        "name": "B-Complex Vitamins",
+        "evidenceTier": 1,
+        "isEnhanced": true
+      },
+      {
+        "id": 20,
+        "name": "Quercetin",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 21,
+        "name": "Vitamin B12",
+        "evidenceTier": 1,
+        "isEnhanced": true
+      },
+      {
+        "id": 22,
+        "name": "Vitamin B6",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 24,
+        "name": "Green Tea Extract",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 25,
+        "name": "NAD+ Precursors",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 26,
+        "name": "PQQ",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 27,
+        "name": "Resveratrol",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 34,
+        "name": "5-HTP",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 35,
+        "name": "Tribulus Terrestris",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 37,
+        "name": "Zinc",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 38,
+        "name": "Iron",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 40,
+        "name": "GABA",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      },
+      {
+        "id": 41,
+        "name": "Inositol",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 43,
+        "name": "Choline",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 44,
+        "name": "Alpha-Lipoic Acid",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 45,
+        "name": "Lutein",
+        "evidenceTier": 2,
+        "isEnhanced": true
+      },
+      {
+        "id": 75,
+        "name": "Citicoline",
+        "evidenceTier": 1,
+        "isEnhanced": true
+      },
+      {
+        "id": 89,
+        "name": "Pterostilbene",
+        "evidenceTier": 3,
+        "isEnhanced": true
+      }
+    ],
+    "unenhancedSupplements": [
+      {
+        "id": 23,
+        "name": "Folate",
+        "evidenceTier": 1,
+        "isEnhanced": false
+      },
+      {
+        "id": 28,
+        "name": "Glucosamine",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 29,
+        "name": "MSM",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 30,
+        "name": "Vitamin E",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 31,
+        "name": "Whey Protein",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 32,
+        "name": "Chondroitin Sulfate",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 33,
+        "name": "L-Tyrosine",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 36,
+        "name": "Vitamin C",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 39,
+        "name": "Taurine",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 42,
+        "name": "Selenium",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 46,
+        "name": "Astaxanthin",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 47,
+        "name": "Ginger",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 48,
+        "name": "Garlic",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 49,
+        "name": "Echinacea",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 50,
+        "name": "Caffeine",
+        "evidenceTier": 1,
+        "isEnhanced": false
+      },
+      {
+        "id": 51,
+        "name": "Reishi Mushroom",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 52,
+        "name": "Cordyceps",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 53,
+        "name": "Spirulina",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 54,
+        "name": "Chlorella",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 55,
+        "name": "Huperzine A",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 56,
+        "name": "Vinpocetine",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 57,
+        "name": "PEA (Phenylethylamine)",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 58,
+        "name": "MCT Oil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 59,
+        "name": "Hawthorn Berry",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 60,
+        "name": "Red Yeast Rice",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 61,
+        "name": "Chromium",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 62,
+        "name": "Vanadium",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 63,
+        "name": "Bitter Melon",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 64,
+        "name": "Gymnema Sylvestre",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 65,
+        "name": "Fenugreek",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 66,
+        "name": "Cinnamon Extract",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 67,
+        "name": "Holy Basil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 68,
+        "name": "Schisandra Berry",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 69,
+        "name": "Mucuna Pruriens",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 70,
+        "name": "Forskolin",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 71,
+        "name": "Boswellia",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 72,
+        "name": "Milk Thistle",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 73,
+        "name": "Stinging Nettle",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 74,
+        "name": "Elderberry",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 76,
+        "name": "Sulbutiamine",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 77,
+        "name": "DMAE",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 78,
+        "name": "Centella Asiatica",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 79,
+        "name": "Passionflower",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 80,
+        "name": "Aniracetam",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 81,
+        "name": "Piracetam",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 82,
+        "name": "Kanna",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 83,
+        "name": "Black Seed Oil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 84,
+        "name": "Moringa",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 85,
+        "name": "Pine Bark Extract",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 86,
+        "name": "Grape Seed Extract",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 87,
+        "name": "Krill Oil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 88,
+        "name": "Zeaxanthin",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      }
+    ],
+    "byTier": {
+      "tier1": [
+        {
+          "id": 2,
+          "name": "Turmeric/Curcumin",
+          "evidenceTier": 1,
+          "isEnhanced": true
+        },
+        {
+          "id": 4,
+          "name": "Omega-3 Fatty Acids",
+          "evidenceTier": 1,
+          "isEnhanced": true
+        },
+        {
+          "id": 8,
+          "name": "Melatonin",
+          "evidenceTier": 1,
+          "isEnhanced": true
+        },
+        {
+          "id": 19,
+          "name": "B-Complex Vitamins",
+          "evidenceTier": 1,
+          "isEnhanced": true
+        },
+        {
+          "id": 21,
+          "name": "Vitamin B12",
+          "evidenceTier": 1,
+          "isEnhanced": true
+        },
+        {
+          "id": 23,
+          "name": "Folate",
+          "evidenceTier": 1,
+          "isEnhanced": false
+        },
+        {
+          "id": 50,
+          "name": "Caffeine",
+          "evidenceTier": 1,
+          "isEnhanced": false
+        },
+        {
+          "id": 75,
+          "name": "Citicoline",
+          "evidenceTier": 1,
+          "isEnhanced": true
+        }
+      ],
+      "tier2": [
+        {
+          "id": 1,
+          "name": "Bacopa monnieri",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 3,
+          "name": "Ashwagandha",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 5,
+          "name": "Creatine",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 6,
+          "name": "Magnesium",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 7,
+          "name": "Vitamin D3",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 9,
+          "name": "L-Theanine",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 10,
+          "name": "Rhodiola rosea",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 12,
+          "name": "Phosphatidylserine",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 13,
+          "name": "Acetyl-L-Carnitine",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 14,
+          "name": "Ginkgo Biloba",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 15,
+          "name": "Panax Ginseng",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 17,
+          "name": "Berberine",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 18,
+          "name": "CoQ10",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 20,
+          "name": "Quercetin",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 22,
+          "name": "Vitamin B6",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 24,
+          "name": "Green Tea Extract",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 28,
+          "name": "Glucosamine",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 30,
+          "name": "Vitamin E",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 31,
+          "name": "Whey Protein",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 32,
+          "name": "Chondroitin Sulfate",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 36,
+          "name": "Vitamin C",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 37,
+          "name": "Zinc",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 38,
+          "name": "Iron",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 41,
+          "name": "Inositol",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 42,
+          "name": "Selenium",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 43,
+          "name": "Choline",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 44,
+          "name": "Alpha-Lipoic Acid",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 45,
+          "name": "Lutein",
+          "evidenceTier": 2,
+          "isEnhanced": true
+        },
+        {
+          "id": 47,
+          "name": "Ginger",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 48,
+          "name": "Garlic",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 51,
+          "name": "Reishi Mushroom",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 52,
+          "name": "Cordyceps",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 53,
+          "name": "Spirulina",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 55,
+          "name": "Huperzine A",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 58,
+          "name": "MCT Oil",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 59,
+          "name": "Hawthorn Berry",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 60,
+          "name": "Red Yeast Rice",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 61,
+          "name": "Chromium",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 63,
+          "name": "Bitter Melon",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 64,
+          "name": "Gymnema Sylvestre",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 65,
+          "name": "Fenugreek",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 66,
+          "name": "Cinnamon Extract",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 67,
+          "name": "Holy Basil",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 68,
+          "name": "Schisandra Berry",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 69,
+          "name": "Mucuna Pruriens",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 71,
+          "name": "Boswellia",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 72,
+          "name": "Milk Thistle",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 73,
+          "name": "Stinging Nettle",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 74,
+          "name": "Elderberry",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 76,
+          "name": "Sulbutiamine",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 78,
+          "name": "Centella Asiatica",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 79,
+          "name": "Passionflower",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 81,
+          "name": "Piracetam",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 82,
+          "name": "Kanna",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 83,
+          "name": "Black Seed Oil",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 84,
+          "name": "Moringa",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 85,
+          "name": "Pine Bark Extract",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 86,
+          "name": "Grape Seed Extract",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 87,
+          "name": "Krill Oil",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        },
+        {
+          "id": 88,
+          "name": "Zeaxanthin",
+          "evidenceTier": 2,
+          "isEnhanced": false
+        }
+      ],
+      "tier3": [
+        {
+          "id": 11,
+          "name": "Lion's Mane Mushroom",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 16,
+          "name": "Alpha-GPC",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 25,
+          "name": "NAD+ Precursors",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 26,
+          "name": "PQQ",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 27,
+          "name": "Resveratrol",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 29,
+          "name": "MSM",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 33,
+          "name": "L-Tyrosine",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 34,
+          "name": "5-HTP",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 35,
+          "name": "Tribulus Terrestris",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 39,
+          "name": "Taurine",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 40,
+          "name": "GABA",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        },
+        {
+          "id": 46,
+          "name": "Astaxanthin",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 49,
+          "name": "Echinacea",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 54,
+          "name": "Chlorella",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 56,
+          "name": "Vinpocetine",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 57,
+          "name": "PEA (Phenylethylamine)",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 62,
+          "name": "Vanadium",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 70,
+          "name": "Forskolin",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 77,
+          "name": "DMAE",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 80,
+          "name": "Aniracetam",
+          "evidenceTier": 3,
+          "isEnhanced": false
+        },
+        {
+          "id": 89,
+          "name": "Pterostilbene",
+          "evidenceTier": 3,
+          "isEnhanced": true
+        }
+      ]
+    }
+  },
+  "priorities": {
+    "highPriority": [
+      {
+        "id": 23,
+        "name": "Folate",
+        "evidenceTier": 1,
+        "isEnhanced": false
+      },
+      {
+        "id": 28,
+        "name": "Glucosamine",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 30,
+        "name": "Vitamin E",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 31,
+        "name": "Whey Protein",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 32,
+        "name": "Chondroitin Sulfate",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 36,
+        "name": "Vitamin C",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 42,
+        "name": "Selenium",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 47,
+        "name": "Ginger",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 48,
+        "name": "Garlic",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 50,
+        "name": "Caffeine",
+        "evidenceTier": 1,
+        "isEnhanced": false
+      },
+      {
+        "id": 51,
+        "name": "Reishi Mushroom",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 52,
+        "name": "Cordyceps",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 53,
+        "name": "Spirulina",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 55,
+        "name": "Huperzine A",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 58,
+        "name": "MCT Oil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 59,
+        "name": "Hawthorn Berry",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 60,
+        "name": "Red Yeast Rice",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 61,
+        "name": "Chromium",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 63,
+        "name": "Bitter Melon",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 64,
+        "name": "Gymnema Sylvestre",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 65,
+        "name": "Fenugreek",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 66,
+        "name": "Cinnamon Extract",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 67,
+        "name": "Holy Basil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 68,
+        "name": "Schisandra Berry",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 69,
+        "name": "Mucuna Pruriens",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 71,
+        "name": "Boswellia",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 72,
+        "name": "Milk Thistle",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 73,
+        "name": "Stinging Nettle",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 74,
+        "name": "Elderberry",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 76,
+        "name": "Sulbutiamine",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 78,
+        "name": "Centella Asiatica",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 79,
+        "name": "Passionflower",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 81,
+        "name": "Piracetam",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 82,
+        "name": "Kanna",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 83,
+        "name": "Black Seed Oil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 84,
+        "name": "Moringa",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 85,
+        "name": "Pine Bark Extract",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 86,
+        "name": "Grape Seed Extract",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 87,
+        "name": "Krill Oil",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      },
+      {
+        "id": 88,
+        "name": "Zeaxanthin",
+        "evidenceTier": 2,
+        "isEnhanced": false
+      }
+    ],
+    "mediumPriority": [
+      {
+        "id": 29,
+        "name": "MSM",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 33,
+        "name": "L-Tyrosine",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 39,
+        "name": "Taurine",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 46,
+        "name": "Astaxanthin",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 49,
+        "name": "Echinacea",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 54,
+        "name": "Chlorella",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 56,
+        "name": "Vinpocetine",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 57,
+        "name": "PEA (Phenylethylamine)",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 62,
+        "name": "Vanadium",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 70,
+        "name": "Forskolin",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 77,
+        "name": "DMAE",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      },
+      {
+        "id": 80,
+        "name": "Aniracetam",
+        "evidenceTier": 3,
+        "isEnhanced": false
+      }
+    ],
+    "lowPriority": []
+  },
+  "enhancedSupplements": [
+    {
+      "id": 1,
+      "name": "Bacopa monnieri",
+      "tier": 2
+    },
+    {
+      "id": 2,
+      "name": "Turmeric/Curcumin",
+      "tier": 1
+    },
+    {
+      "id": 3,
+      "name": "Ashwagandha",
+      "tier": 2
+    },
+    {
+      "id": 4,
+      "name": "Omega-3 Fatty Acids",
+      "tier": 1
+    },
+    {
+      "id": 5,
+      "name": "Creatine",
+      "tier": 2
+    },
+    {
+      "id": 6,
+      "name": "Magnesium",
+      "tier": 2
+    },
+    {
+      "id": 7,
+      "name": "Vitamin D3",
+      "tier": 2
+    },
+    {
+      "id": 8,
+      "name": "Melatonin",
+      "tier": 1
+    },
+    {
+      "id": 9,
+      "name": "L-Theanine",
+      "tier": 2
+    },
+    {
+      "id": 10,
+      "name": "Rhodiola rosea",
+      "tier": 2
+    },
+    {
+      "id": 11,
+      "name": "Lion's Mane Mushroom",
+      "tier": 3
+    },
+    {
+      "id": 12,
+      "name": "Phosphatidylserine",
+      "tier": 2
+    },
+    {
+      "id": 13,
+      "name": "Acetyl-L-Carnitine",
+      "tier": 2
+    },
+    {
+      "id": 14,
+      "name": "Ginkgo Biloba",
+      "tier": 2
+    },
+    {
+      "id": 15,
+      "name": "Panax Ginseng",
+      "tier": 2
+    },
+    {
+      "id": 16,
+      "name": "Alpha-GPC",
+      "tier": 3
+    },
+    {
+      "id": 17,
+      "name": "Berberine",
+      "tier": 2
+    },
+    {
+      "id": 18,
+      "name": "CoQ10",
+      "tier": 2
+    },
+    {
+      "id": 19,
+      "name": "B-Complex Vitamins",
+      "tier": 1
+    },
+    {
+      "id": 20,
+      "name": "Quercetin",
+      "tier": 2
+    },
+    {
+      "id": 21,
+      "name": "Vitamin B12",
+      "tier": 1
+    },
+    {
+      "id": 22,
+      "name": "Vitamin B6",
+      "tier": 2
+    },
+    {
+      "id": 24,
+      "name": "Green Tea Extract",
+      "tier": 2
+    },
+    {
+      "id": 25,
+      "name": "NAD+ Precursors",
+      "tier": 3
+    },
+    {
+      "id": 26,
+      "name": "PQQ",
+      "tier": 3
+    },
+    {
+      "id": 27,
+      "name": "Resveratrol",
+      "tier": 3
+    },
+    {
+      "id": 34,
+      "name": "5-HTP",
+      "tier": 3
+    },
+    {
+      "id": 35,
+      "name": "Tribulus Terrestris",
+      "tier": 3
+    },
+    {
+      "id": 37,
+      "name": "Zinc",
+      "tier": 2
+    },
+    {
+      "id": 38,
+      "name": "Iron",
+      "tier": 2
+    },
+    {
+      "id": 40,
+      "name": "GABA",
+      "tier": 3
+    },
+    {
+      "id": 41,
+      "name": "Inositol",
+      "tier": 2
+    },
+    {
+      "id": 43,
+      "name": "Choline",
+      "tier": 2
+    },
+    {
+      "id": 44,
+      "name": "Alpha-Lipoic Acid",
+      "tier": 2
+    },
+    {
+      "id": 45,
+      "name": "Lutein",
+      "tier": 2
+    },
+    {
+      "id": 75,
+      "name": "Citicoline",
+      "tier": 1
+    },
+    {
+      "id": 89,
+      "name": "Pterostilbene",
+      "tier": 3
+    }
+  ],
+  "unenhancedSupplements": [
+    {
+      "id": 23,
+      "name": "Folate",
+      "tier": 1,
+      "priority": "HIGH"
+    },
+    {
+      "id": 28,
+      "name": "Glucosamine",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 29,
+      "name": "MSM",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 30,
+      "name": "Vitamin E",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 31,
+      "name": "Whey Protein",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 32,
+      "name": "Chondroitin Sulfate",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 33,
+      "name": "L-Tyrosine",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 36,
+      "name": "Vitamin C",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 39,
+      "name": "Taurine",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 42,
+      "name": "Selenium",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 46,
+      "name": "Astaxanthin",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 47,
+      "name": "Ginger",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 48,
+      "name": "Garlic",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 49,
+      "name": "Echinacea",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 50,
+      "name": "Caffeine",
+      "tier": 1,
+      "priority": "HIGH"
+    },
+    {
+      "id": 51,
+      "name": "Reishi Mushroom",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 52,
+      "name": "Cordyceps",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 53,
+      "name": "Spirulina",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 54,
+      "name": "Chlorella",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 55,
+      "name": "Huperzine A",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 56,
+      "name": "Vinpocetine",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 57,
+      "name": "PEA (Phenylethylamine)",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 58,
+      "name": "MCT Oil",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 59,
+      "name": "Hawthorn Berry",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 60,
+      "name": "Red Yeast Rice",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 61,
+      "name": "Chromium",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 62,
+      "name": "Vanadium",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 63,
+      "name": "Bitter Melon",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 64,
+      "name": "Gymnema Sylvestre",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 65,
+      "name": "Fenugreek",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 66,
+      "name": "Cinnamon Extract",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 67,
+      "name": "Holy Basil",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 68,
+      "name": "Schisandra Berry",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 69,
+      "name": "Mucuna Pruriens",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 70,
+      "name": "Forskolin",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 71,
+      "name": "Boswellia",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 72,
+      "name": "Milk Thistle",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 73,
+      "name": "Stinging Nettle",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 74,
+      "name": "Elderberry",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 76,
+      "name": "Sulbutiamine",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 77,
+      "name": "DMAE",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 78,
+      "name": "Centella Asiatica",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 79,
+      "name": "Passionflower",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 80,
+      "name": "Aniracetam",
+      "tier": 3,
+      "priority": "MEDIUM"
+    },
+    {
+      "id": 81,
+      "name": "Piracetam",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 82,
+      "name": "Kanna",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 83,
+      "name": "Black Seed Oil",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 84,
+      "name": "Moringa",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 85,
+      "name": "Pine Bark Extract",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 86,
+      "name": "Grape Seed Extract",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 87,
+      "name": "Krill Oil",
+      "tier": 2,
+      "priority": "HIGH"
+    },
+    {
+      "id": 88,
+      "name": "Zeaxanthin",
+      "tier": 2,
+      "priority": "HIGH"
+    }
+  ]
+}

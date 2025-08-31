@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Citation Loading Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { color: #2d5d2d; background: #e8f5e8; }
+        .error { color: #8b0000; background: #ffe8e8; }
+        .warning { color: #b8860b; background: #fffacd; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        button { background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #2563eb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Enhanced Citation Loading Test</h1>
+        <p>Testing the enhanced citation loading system for Holy Basil and other supplements.</p>
+        
+        <div class="test-section">
+            <h2>🔄 Test Controls</h2>
+            <button onclick="testEnhancedCitationLoader()">Test Enhanced Citation Loader</button>
+            <button onclick="testHolyBasilFile()">Test Holy Basil File</button>
+            <button onclick="testSupplementDatabase()">Test Supplement Database</button>
+            <button onclick="clearResults()">Clear Results</button>
+        </div>
+        
+        <div id="results" class="test-section">
+            <h2>📊 Test Results</h2>
+            <div id="output">Click a test button to see results...</div>
+        </div>
+    </div>
+
+    <!-- Load the modules -->
+    <script src="data/supplements.js"></script>
+    <script type="module" src="js/EnhancedCitationLoader.js"></script>
+    
+    <script type="module">
+        import EnhancedCitationLoader from './js/EnhancedCitationLoader.js';
+        
+        // Make functions globally available
+        window.testEnhancedCitationLoader = async function() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<h3>🔄 Testing Enhanced Citation Loader...</h3>';
+            
+            try {
+                const loader = new EnhancedCitationLoader();
+                const results = await loader.loadAllEnhancedCitations();
+                
+                output.innerHTML += `
+                    <div class="success">
+                        <h4>✅ Enhanced Citation Loader Results:</h4>
+                        <pre>${JSON.stringify(results, null, 2)}</pre>
+                        <p><strong>Window Enhanced Citations:</strong> ${Object.keys(window.enhancedCitations || {}).length} loaded</p>
+                        <p><strong>Loaded IDs:</strong> ${Object.keys(window.enhancedCitations || {}).join(', ')}</p>
+                    </div>
+                `;
+            } catch (error) {
+                output.innerHTML += `
+                    <div class="error">
+                        <h4>❌ Enhanced Citation Loader Error:</h4>
+                        <pre>${error.message}</pre>
+                        <pre>${error.stack}</pre>
+                    </div>
+                `;
+            }
+        };
+        
+        window.testHolyBasilFile = async function() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<h3>🔄 Testing Holy Basil Enhanced Citation File...</h3>';
+            
+            try {
+                // Try to load the Holy Basil file directly
+                const script = document.createElement('script');
+                script.src = 'data/enhanced_citations/67_holy_basil_enhanced.js';
+                
+                script.onload = () => {
+                    output.innerHTML += `
+                        <div class="success">
+                            <h4>✅ Holy Basil File Loaded Successfully</h4>
+                            <p><strong>holyBasilEnhanced exists:</strong> ${!!window.holyBasilEnhanced}</p>
+                            <p><strong>Has citations:</strong> ${!!(window.holyBasilEnhanced && window.holyBasilEnhanced.citations)}</p>
+                            <p><strong>Citation sections:</strong> ${window.holyBasilEnhanced ? Object.keys(window.holyBasilEnhanced.citations || {}).join(', ') : 'none'}</p>
+                        </div>
+                    `;
+                    document.head.removeChild(script);
+                };
+                
+                script.onerror = () => {
+                    output.innerHTML += `
+                        <div class="error">
+                            <h4>❌ Failed to Load Holy Basil File</h4>
+                            <p>Could not load data/enhanced_citations/67_holy_basil_enhanced.js</p>
+                        </div>
+                    `;
+                    document.head.removeChild(script);
+                };
+                
+                document.head.appendChild(script);
+                
+            } catch (error) {
+                output.innerHTML += `
+                    <div class="error">
+                        <h4>❌ Holy Basil Test Error:</h4>
+                        <pre>${error.message}</pre>
+                    </div>
+                `;
+            }
+        };
+        
+        window.testSupplementDatabase = function() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<h3>🔄 Testing Supplement Database...</h3>';
+            
+            try {
+                if (!window.supplements || !window.supplements.supplements) {
+                    throw new Error('Supplement database not loaded');
+                }
+                
+                const holyBasil = window.supplements.supplements.find(s => s.id === 67);
+                const phosphatidylserine = window.supplements.supplements.find(s => s.id === 12);
+                
+                output.innerHTML += `
+                    <div class="success">
+                        <h4>✅ Supplement Database Loaded</h4>
+                        <p><strong>Total supplements:</strong> ${window.supplements.supplements.length}</p>
+                        
+                        <h5>Holy Basil (ID 67):</h5>
+                        <ul>
+                            <li>Found: ${!!holyBasil}</li>
+                            <li>Name: ${holyBasil ? holyBasil.name : 'N/A'}</li>
+                            <li>Enhanced Citations: ${!!(holyBasil && holyBasil.enhancedCitations)}</li>
+                            <li>Is Enhanced: ${holyBasil && holyBasil.enhancedCitations ? holyBasil.enhancedCitations.isEnhanced : 'N/A'}</li>
+                        </ul>
+                        
+                        <h5>Phosphatidylserine (ID 12):</h5>
+                        <ul>
+                            <li>Found: ${!!phosphatidylserine}</li>
+                            <li>Name: ${phosphatidylserine ? phosphatidylserine.name : 'N/A'}</li>
+                            <li>Enhanced Citations: ${!!(phosphatidylserine && phosphatidylserine.enhancedCitations)}</li>
+                            <li>Is Enhanced: ${phosphatidylserine && phosphatidylserine.enhancedCitations ? phosphatidylserine.enhancedCitations.isEnhanced : 'N/A'}</li>
+                        </ul>
+                    </div>
+                `;
+            } catch (error) {
+                output.innerHTML += `
+                    <div class="error">
+                        <h4>❌ Supplement Database Error:</h4>
+                        <pre>${error.message}</pre>
+                    </div>
+                `;
+            }
+        };
+        
+        window.clearResults = function() {
+            document.getElementById('output').innerHTML = 'Click a test button to see results...';
+        };
+    </script>
+</body>
+</html>
