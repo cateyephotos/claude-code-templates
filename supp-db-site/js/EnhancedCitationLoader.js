@@ -31,8 +31,9 @@ class EnhancedCitationLoader {
             { id: 8, file: '8_melatonin_enhanced.js', globalVar: 'melatoninEnhanced' },
             { id: 10, file: '10_rhodiola_rosea_enhanced.js', globalVar: 'rhodiolaRoseaEnhanced' },
             // Nootropics & Cognitive Support
+            { id: 9, file: '9_l_theanine_enhanced.js', globalVar: 'lTheanineEnhanced' },
             { id: 11, file: '11_lions_mane_enhanced.js', globalVar: 'lionsManeEnhanced' },
-            { id: 12, file: '12_phosphatidylserine_enhanced.js', globalVar: 'phosphatidylserineEnhanced' },
+            { id: 12, file: 'phosphatidylserine_enhanced.js', globalVar: 'phosphatidylserineEnhanced' },
             { id: 14, file: '14_ginkgo_biloba_enhanced.js', globalVar: 'ginkgoBilobaEnhanced' },
             { id: 16, file: '16_alpha_gpc_enhanced.js', globalVar: 'alphaGpcEnhanced' },
             { id: 75, file: '75_citicoline_enhanced.js', globalVar: 'citicolineEnhanced' },
@@ -82,8 +83,10 @@ class EnhancedCitationLoader {
             { id: 21, file: '21_vitamin_b12_enhanced.js', globalVar: 'vitaminB12Enhanced' },
             { id: 22, file: '22_vitamin_b6_enhanced.js', globalVar: 'vitaminB6Enhanced' },
             // Phase 2A Quality Fixes
-            { id: 25, file: '25_gaba_enhanced.js', globalVar: 'gabaEnhanced' },
+            { id: 25, file: '25_nad_precursors_enhanced.js', globalVar: 'nadPrecursorsEnhanced' },
             { id: 26, file: 'pqq_enhanced.js', globalVar: 'pqqEnhanced' },
+            { id: 40, file: '40_gaba_enhanced.js', globalVar: 'gabaEnhanced' },
+            { id: 59, file: '59_hawthorn_berry_enhanced.js', globalVar: 'hawthornBerryEnhanced' },
             // Phase 2B Nootropics Expansion
             { id: 55, file: '55_huperzine_a_enhanced.js', globalVar: 'huperzineAEnhanced' },
             { id: 56, file: '56_vinpocetine_enhanced.js', globalVar: 'vinpocetineEnhanced' },
