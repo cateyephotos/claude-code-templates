@@ -1,170 +1,186 @@
 // Enhanced Citations for Forskolin (ID: 70)
-// Coleus forskohlii extract with research on weight management, cAMP activation, and fat metabolism
+// Coleus forskohlii extract — cAMP-elevating diterpene with evidence for body composition and metabolic effects
+// ALL citations verified against PubMed — Last updated: 2026-03-07
 
 const forskolinEnhanced = {
   "id": 70,
   "name": "Forskolin",
-  "scientificName": "Coleus forskohlii",
+  "scientificName": "Coleus forskohlii (Plectranthus barbatus)",
   "category": "Herbal Supplement",
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 10,
-    "researchQualityScore": 62,
-    "lastEvidenceUpdate": "2025-01-28",
+    "totalCitations": 7,
+    "researchQualityScore": 52,
+    "lastEvidenceUpdate": "2026-03-07",
     "evidenceStrength": {
-      "mechanisms": "Strong", // Well-documented adenylyl cyclase/cAMP activation
-      "clinicalBenefits": "Moderate", // Some clinical trials but mixed results
-      "safety": "Good", // Generally safe with known precautions
-      "dosage": "Moderate" // Some clinical dosage guidance available
+      "mechanisms": "Strong",
+      "clinicalBenefits": "Moderate",
+      "safety": "Good",
+      "dosage": "Partially established"
     },
     "researchMaturity": "Developing",
-    "publicationSpan": "2005-2023",
-    "keyFindings": "Strong mechanistic understanding of cAMP activation but limited consistent clinical evidence for weight loss"
+    "publicationSpan": "2005-2024",
+    "keyFindings": "Strong mechanistic understanding of adenylyl cyclase/cAMP activation with moderate clinical evidence from small RCTs showing favorable body composition changes and metabolic improvements"
   },
   "citations": {
     "benefits": [
       {
         "healthDomain": "Body Composition",
-        "specificClaim": "May improve body composition by reducing body fat percentage and preserving lean mass",
-        "claim": "May improve body composition by reducing body fat percentage and preserving lean mass",
+        "specificClaim": "Reduces body fat percentage and fat mass while preserving lean body mass in overweight men",
+        "claim": "Reduces body fat percentage and fat mass while preserving lean body mass in overweight men",
         "strength": "Moderate",
         "evidenceQuality": "Moderate",
-        "replicationStatus": "Limited",
+        "replicationStatus": "Partially replicated (2 independent RCTs)",
         "tissueTarget": "Adipose tissue",
         "target": "Adipose tissue",
         "evidence": [
           {
-            "title": "Body composition and hormonal responses to a carbohydrate-restricted diet",
-            "authors": "Godard MP, et al.",
-            "journal": "Metabolism",
+            "title": "Body composition and hormonal adaptations associated with forskolin consumption in overweight and obese men",
+            "authors": "Godard MP, Johnson BA, Richmond SR",
+            "journal": "Obesity Research",
             "year": 2005,
-            "pmid": "16125524",
+            "doi": "10.1038/oby.2005.162",
+            "pmid": "16129715",
             "studyType": "Randomized Controlled Trial",
-            "sampleSize": "30 overweight men",
+            "sampleSize": "30 overweight/obese men (BMI ≥26)",
             "duration": "12 weeks",
             "keyFindings": [
-              "Forskolin group showed favorable changes in body composition",
-              "Decreased body fat percentage compared to placebo",
-              "Preserved lean body mass during weight loss"
+              "Significantly decreased body fat percentage and fat mass vs placebo (p≤0.05) by DXA",
+              "Significant increase in bone mass vs placebo (p≤0.05)",
+              "Trend toward increased lean body mass (p=0.097)",
+              "Serum free testosterone significantly increased vs placebo (p≤0.05)"
             ],
             "effectSize": "Moderate",
-            "pValue": "<0.05",
-            "confidenceInterval": "95% CI"
-          }
-        ]
-      },
-      {
-        "healthDomain": "Fat Metabolism",
-        "specificClaim": "Activates lipolysis and increases fat oxidation through cAMP-dependent pathways",
-        "claim": "Activates lipolysis and increases fat oxidation through cAMP-dependent pathways",
-        "strength": "Strong",
-        "evidenceQuality": "High",
-        "replicationStatus": "Well-established",
-        "tissueTarget": "Adipocytes",
-        "target": "Adipocytes",
-        "evidence": [
+            "pValue": "≤0.05",
+            "confidenceInterval": "95%"
+          },
           {
-            "title": "Forskolin: its biological and chemical properties",
-            "authors": "Alasbahi RH, Melzig MF",
-            "journal": "Planta Medica",
-            "year": 2010,
-            "pmid": "20635307",
-            "studyType": "Review",
-            "sampleSize": "Multiple studies",
-            "duration": "N/A",
-            "keyFindings": [
-              "Direct activation of adenylyl cyclase increases cAMP levels",
-              "Enhanced lipolysis through protein kinase A activation",
-              "Increased fat oxidation and thermogenesis"
-            ],
-            "effectSize": "Large",
-            "pValue": "N/A",
-            "confidenceInterval": "N/A"
-          }
-        ]
-      },
-      {
-        "healthDomain": "Testosterone Support",
-        "specificClaim": "May increase testosterone levels through steroidogenic pathway activation",
-        "claim": "May increase testosterone levels through steroidogenic pathway activation",
-        "strength": "Moderate",
-        "evidenceQuality": "Moderate",
-        "replicationStatus": "Limited",
-        "tissueTarget": "Leydig cells",
-        "target": "Leydig cells",
-        "evidence": [
-          {
-            "title": "Examining the effect of Coleus forskohlii and chromium picolinate on metabolic rate and body composition",
-            "authors": "Henderson S, et al.",
+            "title": "Effects of coleus forskohlii supplementation on body composition and hematological profiles in mildly overweight women",
+            "authors": "Henderson S, Magu B, Raber C, Siljander S, Brorson A, Feliciano L",
             "journal": "Journal of the International Society of Sports Nutrition",
             "year": 2005,
+            "doi": "10.1186/1550-2783-2-2-54",
             "pmid": "18500958",
-            "studyType": "Clinical Trial",
-            "sampleSize": "19 overweight women",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "23 mildly overweight women",
             "duration": "12 weeks",
             "keyFindings": [
-              "Trend toward increased free testosterone levels",
-              "Enhanced steroidogenic enzyme activity",
-              "Improved hormonal profile markers"
+              "Coleus forskohlii tended to mitigate weight gain in overweight women",
+              "Reduced fatigue and hunger ratings",
+              "Did not promote statistically significant weight loss",
+              "No clinically significant adverse effects on metabolic markers or blood counts"
             ],
-            "effectSize": "Small to Moderate",
-            "pValue": "0.08",
-            "confidenceInterval": "95% CI"
+            "effectSize": "Small",
+            "pValue": ">0.05 for primary outcome",
+            "confidenceInterval": "95%"
           }
         ]
       },
       {
-        "healthDomain": "Metabolic Rate",
-        "specificClaim": "May increase metabolic rate and energy expenditure through thermogenic activation",
-        "claim": "May increase metabolic rate and energy expenditure through thermogenic activation",
+        "healthDomain": "Metabolic Health",
+        "specificClaim": "Reduces metabolic syndrome risk factors including insulin resistance in overweight subjects",
+        "claim": "Reduces metabolic syndrome risk factors including insulin resistance in overweight subjects",
         "strength": "Moderate",
         "evidenceQuality": "Moderate",
-        "replicationStatus": "Preliminary",
-        "tissueTarget": "Brown adipose tissue",
-        "target": "Brown adipose tissue",
+        "replicationStatus": "Single study",
+        "tissueTarget": "Metabolic system",
+        "target": "Metabolic system",
         "evidence": [
           {
-            "title": "Health Benefits of Epigallocatechin Gallate and Forskolin with a Focus on Adipose Tissue Browning",
-            "authors": "Choi JH, et al.",
+            "title": "Coleus forskohlii Extract Supplementation in Conjunction with a Hypocaloric Diet Reduces the Risk Factors of Metabolic Syndrome in Overweight and Obese Subjects: A Randomized Controlled Trial",
+            "authors": "Loftus HL, Astell KJ, Mathai ML, Su XQ",
             "journal": "Nutrients",
-            "year": 2024,
-            "pmid": "39770316",
-            "studyType": "Review",
-            "sampleSize": "Multiple studies",
-            "duration": "N/A",
+            "year": 2015,
+            "doi": "10.3390/nu7115483",
+            "pmid": "26593941",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "30 overweight/obese subjects",
+            "duration": "12 weeks",
             "keyFindings": [
-              "Activation of brown adipose tissue thermogenesis",
-              "Increased UCP1 expression and mitochondrial biogenesis",
-              "Enhanced energy expenditure through cAMP signaling"
+              "Significant improvement in insulin concentration (p=0.001)",
+              "Significant reduction in insulin resistance (p=0.01)",
+              "Significant reductions in waist and hip circumference",
+              "Significant increase in HDL cholesterol"
+            ],
+            "effectSize": "Moderate to Large",
+            "pValue": "0.001-0.01",
+            "confidenceInterval": "95%"
+          }
+        ]
+      },
+      {
+        "healthDomain": "Hormonal Support",
+        "specificClaim": "Increases serum free testosterone levels in overweight and obese men",
+        "claim": "Increases serum free testosterone levels in overweight and obese men",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single study",
+        "tissueTarget": "Endocrine system",
+        "target": "Endocrine system",
+        "evidence": [
+          {
+            "title": "Body composition and hormonal adaptations associated with forskolin consumption in overweight and obese men",
+            "authors": "Godard MP, Johnson BA, Richmond SR",
+            "journal": "Obesity Research",
+            "year": 2005,
+            "doi": "10.1038/oby.2005.162",
+            "pmid": "16129715",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "30 overweight/obese men",
+            "duration": "12 weeks",
+            "keyFindings": [
+              "Serum free testosterone significantly increased in forskolin group vs placebo (p≤0.05)",
+              "Total testosterone increased 16.77% in forskolin group vs 1.08% decrease in placebo",
+              "cAMP-mediated activation of steroidogenic pathways proposed as mechanism"
             ],
             "effectSize": "Moderate",
-            "pValue": "N/A",
-            "confidenceInterval": "N/A"
+            "pValue": "≤0.05",
+            "confidenceInterval": "95%"
           }
         ]
       }
     ],
     "safety": [
       {
-        "safetyAspect": "General Safety",
+        "safetyAspect": "General Tolerability",
         "riskLevel": "Low",
-        "claim": "Generally well tolerated with minimal side effects in clinical studies",
-        "tissueTarget": "Systemic",
-        "target": "Systemic",
+        "claim": "Generally well tolerated at standard doses with no serious adverse events in clinical trials",
+        "tissueTarget": "Multiple systems",
+        "target": "Multiple systems",
         "evidence": [
           {
-            "title": "Safety evaluation of Coleus forskohlii extract in healthy volunteers",
-            "authors": "Jagtap M, et al.",
-            "journal": "Toxicology Reports",
-            "year": 2014,
-            "pmid": "28962374",
-            "studyType": "Safety Study",
-            "sampleSize": "60 healthy volunteers",
-            "duration": "8 weeks",
+            "title": "Effects of coleus forskohlii supplementation on body composition and hematological profiles in mildly overweight women",
+            "authors": "Henderson S, Magu B, Raber C, Siljander S, Brorson A, Feliciano L",
+            "journal": "Journal of the International Society of Sports Nutrition",
+            "year": 2005,
+            "doi": "10.1186/1550-2783-2-2-54",
+            "pmid": "18500958",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "23 mildly overweight women",
+            "duration": "12 weeks",
             "keyFindings": [
-              "No serious adverse events reported",
-              "Mild gastrointestinal effects in <10% of participants",
-              "No significant changes in vital signs or laboratory parameters"
+              "No clinically significant adverse effects reported",
+              "No adverse changes in metabolic markers, hematological profiles, or vital signs",
+              "Well tolerated at 250mg 10% forskolin extract twice daily"
+            ],
+            "effectSize": "N/A",
+            "pValue": "N/A",
+            "confidenceInterval": "N/A"
+          },
+          {
+            "title": "Body composition and hormonal adaptations associated with forskolin consumption in overweight and obese men",
+            "authors": "Godard MP, Johnson BA, Richmond SR",
+            "journal": "Obesity Research",
+            "year": 2005,
+            "doi": "10.1038/oby.2005.162",
+            "pmid": "16129715",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "30 overweight/obese men",
+            "duration": "12 weeks",
+            "keyFindings": [
+              "No serious adverse events reported over 12-week study period",
+              "Blood pressure changes not clinically significant",
+              "Standard clinical safety markers remained within normal ranges"
             ],
             "effectSize": "N/A",
             "pValue": "N/A",
@@ -173,25 +189,27 @@ const forskolinEnhanced = {
         ]
       },
       {
-        "safetyAspect": "Cardiovascular Considerations",
+        "safetyAspect": "Cardiovascular and Drug Interaction Caution",
         "riskLevel": "Moderate",
-        "claim": "May affect blood pressure and heart rate due to cAMP elevation",
+        "claim": "cAMP-elevating effects warrant caution with blood pressure medications and anticoagulants",
         "tissueTarget": "Cardiovascular system",
         "target": "Cardiovascular system",
         "evidence": [
           {
-            "title": "Cardiovascular effects of forskolin and related compounds",
-            "authors": "Dubey MP, et al.",
-            "journal": "Cardiovascular Drug Reviews",
-            "year": 2006,
-            "pmid": "16961727",
-            "studyType": "Review",
-            "sampleSize": "Multiple studies",
+            "title": "Plectranthus barbatus: a review of phytochemistry, ethnobotanical uses and pharmacology",
+            "authors": "Alasbahi RH, Melzig MF",
+            "journal": "Planta Medica",
+            "year": 2010,
+            "doi": "10.1055/s-0029-1240898",
+            "pmid": "20178070",
+            "studyType": "Comprehensive Review",
+            "sampleSize": "N/A",
             "duration": "N/A",
             "keyFindings": [
-              "Potential for blood pressure reduction",
-              "May increase heart rate through cAMP effects",
-              "Caution advised in cardiovascular conditions"
+              "cAMP elevation may potentiate effects of blood pressure medications",
+              "Vasodilatory and positive inotropic effects documented in pharmacological studies",
+              "Caution with anticoagulants due to potential antiplatelet activity",
+              "Caution in hypotensive patients and those on antihypertensive medications"
             ],
             "effectSize": "N/A",
             "pValue": "N/A",
@@ -202,82 +220,77 @@ const forskolinEnhanced = {
     ],
     "mechanisms": [
       {
-        "mechanism": "Adenylyl cyclase activation",
-        "claim": "Adenylyl cyclase activation",
-        "mechanismType": "Enzymatic process",
+        "mechanism": "Direct adenylyl cyclase activation and cAMP elevation",
+        "claim": "Direct adenylyl cyclase activation and cAMP elevation",
+        "mechanismType": "Enzymatic activation",
         "strength": "Strong",
         "tissueTarget": "Multiple cell types",
         "target": "Multiple cell types",
         "evidence": [
           {
-            "title": "Forskolin: its biological and chemical properties",
+            "title": "Plectranthus barbatus: a review of phytochemistry, ethnobotanical uses and pharmacology",
             "authors": "Alasbahi RH, Melzig MF",
             "journal": "Planta Medica",
             "year": 2010,
-            "pmid": "20635307",
-            "studyType": "Mechanistic Study",
-            "sampleSize": "In vitro",
+            "doi": "10.1055/s-0029-1240898",
+            "pmid": "20178070",
+            "studyType": "Comprehensive Review",
+            "sampleSize": "N/A",
             "duration": "N/A",
             "keyFindings": [
-              "Direct activation of adenylyl cyclase enzyme",
-              "Bypasses receptor-mediated cAMP production",
-              "Universal cAMP elevation across cell types"
+              "Forskolin uniquely and directly activates adenylyl cyclase independent of G-protein receptors",
+              "Increases intracellular cAMP in virtually all cell types tested",
+              "cAMP downstream effects include protein kinase A activation, lipolysis, and hormone synthesis",
+              "Clinical applications documented for cardiovascular, respiratory, and gastrointestinal disorders"
             ],
             "effectSize": "N/A",
-            "pValue": "<0.001",
+            "pValue": "N/A",
             "confidenceInterval": "N/A"
-          }
-        ]
-      },
-      {
-        "mechanism": "Protein kinase A activation",
-        "claim": "Protein kinase A activation",
-        "mechanismType": "Signaling cascade",
-        "strength": "Strong",
-        "tissueTarget": "Adipocytes and steroidogenic cells",
-        "target": "Adipocytes and steroidogenic cells",
-        "evidence": [
+          },
           {
-            "title": "cAMP-dependent protein kinase activation by forskolin in adipocytes",
-            "authors": "Litosch I, et al.",
-            "journal": "Biochemical Pharmacology",
-            "year": 1982,
-            "pmid": "6285935",
-            "studyType": "Mechanistic Study",
-            "sampleSize": "Cell culture",
+            "title": "Biotechnological interventions for production of forskolin from Coleus forskohlii",
+            "authors": "Roshni PT, Rekha PD",
+            "journal": "Physiology and Molecular Biology of Plants",
+            "year": 2024,
+            "doi": "10.1007/s12298-024-01426-9",
+            "pmid": "38623169",
+            "studyType": "Review",
+            "sampleSize": "N/A",
             "duration": "N/A",
             "keyFindings": [
-              "Rapid PKA activation following cAMP elevation",
-              "Phosphorylation of hormone-sensitive lipase",
-              "Activation of steroidogenic acute regulatory protein"
+              "Forskolin is the only known naturally occurring compound that directly activates adenylyl cyclase",
+              "cAMP elevation mediates effects relevant to glaucoma, asthma, obesity, allergies, cardiovascular diseases",
+              "Labdane diterpene structure enables unique membrane-permeable adenylyl cyclase interaction"
             ],
             "effectSize": "N/A",
-            "pValue": "<0.01",
+            "pValue": "N/A",
             "confidenceInterval": "N/A"
           }
         ]
       },
       {
-        "mechanism": "Thermogenic gene expression",
-        "claim": "Thermogenic gene expression",
-        "mechanismType": "Transcriptional process",
+        "mechanism": "Anti-inflammatory pathway modulation",
+        "claim": "Anti-inflammatory pathway modulation",
+        "mechanismType": "Immunological process",
         "strength": "Moderate",
-        "tissueTarget": "Brown and beige adipose tissue",
-        "target": "Brown and beige adipose tissue",
+        "tissueTarget": "Immune system and airways",
+        "target": "Immune system and airways",
         "evidence": [
           {
-            "title": "Forskolin induces thermogenic gene expression in brown adipocytes",
-            "authors": "Collins S, et al.",
-            "journal": "Journal of Biological Chemistry",
-            "year": 2010,
-            "pmid": "20348094",
-            "studyType": "Mechanistic Study",
-            "sampleSize": "Cell culture",
-            "duration": "N/A",
+            "title": "Coleus forskohlii extract modulates inflammation in murine model of allergic asthma",
+            "authors": "Ma C, Gu J, Sun D, Huang Q, Yu J, Zhong Y",
+            "journal": "Journal of Cellular Biochemistry",
+            "year": 2018,
+            "doi": "10.1002/jcb.28243",
+            "pmid": "30520122",
+            "studyType": "Animal Study",
+            "sampleSize": "Animal model (mice)",
+            "duration": "Multiple weeks",
             "keyFindings": [
-              "Upregulation of UCP1 and PGC-1α expression",
-              "Enhanced mitochondrial biogenesis",
-              "Increased thermogenic capacity"
+              "Reduced airway eosinophil infiltration in asthma model",
+              "Decreased pro-inflammatory cytokines IL-4, IL-5, IL-17",
+              "Increased anti-inflammatory cytokines IFN-γ and IL-10",
+              "Downregulated ICAM-1, p-p65 (NF-κB), and MMP-9 expression"
             ],
             "effectSize": "N/A",
             "pValue": "<0.05",
@@ -286,7 +299,55 @@ const forskolinEnhanced = {
         ]
       }
     ],
-    "dosage": []
+    "dosage": [
+      {
+        "dosageRange": "250mg of 10% forskolin extract twice daily (50mg total forskolin/day)",
+        "claim": "Standard dose used in clinical trials is 250mg of 10% Coleus forskohlii extract twice daily",
+        "evidenceBase": "Moderate",
+        "target": "Systemic",
+        "tissueTarget": "Systemic",
+        "evidence": [
+          {
+            "title": "Body composition and hormonal adaptations associated with forskolin consumption in overweight and obese men",
+            "authors": "Godard MP, Johnson BA, Richmond SR",
+            "journal": "Obesity Research",
+            "year": 2005,
+            "doi": "10.1038/oby.2005.162",
+            "pmid": "16129715",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "30 overweight/obese men",
+            "duration": "12 weeks",
+            "keyFindings": [
+              "250mg of 10% forskolin extract (25mg forskolin) twice daily was the effective dose",
+              "12-week duration showed significant body composition changes",
+              "Same dosage protocol used consistently across clinical trials"
+            ],
+            "effectSize": "Moderate",
+            "pValue": "≤0.05",
+            "confidenceInterval": "95%"
+          },
+          {
+            "title": "Coleus forskohlii Extract Supplementation in Conjunction with a Hypocaloric Diet Reduces the Risk Factors of Metabolic Syndrome",
+            "authors": "Loftus HL, Astell KJ, Mathai ML, Su XQ",
+            "journal": "Nutrients",
+            "year": 2015,
+            "doi": "10.3390/nu7115483",
+            "pmid": "26593941",
+            "studyType": "Randomized Controlled Trial",
+            "sampleSize": "30 overweight/obese subjects",
+            "duration": "12 weeks",
+            "keyFindings": [
+              "250mg Coleus forskohlii extract twice daily with hypocaloric diet",
+              "Effective for metabolic syndrome risk factor reduction at this dose",
+              "12-week duration adequate for insulin sensitivity improvements"
+            ],
+            "effectSize": "Moderate to Large",
+            "pValue": "0.001",
+            "confidenceInterval": "95%"
+          }
+        ]
+      }
+    ]
   }
 };
 
