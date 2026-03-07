@@ -1,3 +1,10 @@
+// DEPRECATED — DO NOT USE
+// This file (40_gaba_enhanced.js) is superseded by 40_enhanced.js
+// Deprecated: 2026-03-06 | Pipeline Mode: Evidence Update (Mode 2)
+// Reason: Incorrect module.exports ID assignment ([25] instead of [40]);
+//         non-standard labels; fabricated safety placeholder; only 6 citations.
+//         Canonical file is 40_enhanced.js (Tier 3, score 60, 18 citations).
+//
 // Enhanced Citations for GABA (ID: 40)
 // Gamma-Aminobutyric Acid - Primary Inhibitory Neurotransmitter
 // Generated: 2025-08-25

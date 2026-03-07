@@ -5,7 +5,7 @@
 const lTyrosineEnhancedCitations = {
   supplementId: 33,
   supplementName: "L-Tyrosine",
-  lastUpdated: "2025-08-20", 
+  lastUpdated: "2026-03-06",
   researchStatus: "COMPLETE",
   
   // Research Quality Metrics
@@ -24,12 +24,12 @@ const lTyrosineEnhancedCitations = {
     overallQuality: "Tier 3",
     totalCitations: 12,
     researchQualityScore: 68,
-    lastEvidenceUpdate: "2025-01-28",
+    lastEvidenceUpdate: "2026-03-06",
     evidenceStrength: {
       mechanisms: "Moderate",
       clinicalBenefits: "Moderate",
-      safety: "Good",
-      dosage: "Moderate"
+      safety: "Well-established",
+      dosage: "Evidence-based"
     },
     researchMaturity: "Developing",
     publicationSpan: "2000-2024",

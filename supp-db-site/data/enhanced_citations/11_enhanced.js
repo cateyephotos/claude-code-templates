@@ -1,7 +1,8 @@
 // Enhanced Citations for Lion's Mane Mushroom (ID: 11)
 // Restructured for Phase 2A compatibility: 2025-08-22
-// Quality Score: 92 (Tier 1 Gold Standard)
-// Total Citations: 14 verified DOIs
+// Quality Score: 88 (Tier 2 — reconciled from inflated 92)
+// Total Citations: 16 verified DOIs
+// Mode 2 Evidence Update: 2026-03-05
 
 const lionsManeEnhanced = {
   "id": 11,
@@ -11,18 +12,19 @@ const lionsManeEnhanced = {
   "commonNames": ["Lion's Mane", "Bearded Tooth Mushroom", "Pom Pom Mushroom", "Yamabushitake"],
   
   "evidenceProfile": {
-    "overallQuality": "Tier 1",
-    "totalCitations": 14,
-    "researchQualityScore": 92,
-    "lastEvidenceUpdate": "2025-08-22",
+    "overallQuality": "Tier 2",
+    "totalCitations": 16,
+    "researchQualityScore": 88,
+    "lastEvidenceUpdate": "2026-03-05",
     "evidenceStrength": {
       "mechanisms": "Strong",
-      "clinicalBenefits": "Strong",
+      "clinicalBenefits": "Moderate",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
-    "researchMaturity": "Advanced",
-    "publicationSpan": "2013-2023"
+    "researchMaturity": "Developing",
+    "publicationSpan": "2013-2025",
+    "keyFindings": "Unique nootropic mushroom with strong mechanistic evidence for neurogenesis; human evidence from 4 small RCTs (n=31-41) and 1 PRISMA SR (Menon 2025) is consistent but limited by sample sizes; no meta-analysis with pooled estimates yet available"
   },
 
   "citations": {
@@ -335,6 +337,40 @@ const lionsManeEnhanced = {
             "verificationDate": "2025-08-22"
           }
         ]
+      },
+      {
+        "healthDomain": "Comprehensive Benefit Profile",
+        "specificClaim": "PRISMA systematic review confirms neuroprotection, cognitive enhancement, gut health, and mood benefits",
+        "strength": "Strong",
+        "evidenceQuality": "Strong",
+        "replicationStatus": "Systematic review of multiple studies",
+        "tissueTarget": "Central nervous system, gastrointestinal system",
+        "evidence": [
+          {
+            "id": "lions_mane_ben_007",
+            "title": "Benefits, side effects, and uses of Hericium erinaceus as a supplement: a systematic review",
+            "authors": ["Menon A", "Jalal A", "Arshad Z", "Nawaz FA", "Kashyap R"],
+            "journal": "Frontiers in Nutrition",
+            "year": 2025,
+            "volume": "12",
+            "pages": "1641246",
+            "doi": "10.3389/fnut.2025.1641246",
+            "pmid": "40959699",
+            "studyType": "systematic_review",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "5 RCTs, 3 pilot clinical trials, 15 laboratory studies, 1 cohort study",
+            "keyFindings": [
+              "PRISMA-compliant SR with PROSPERO registration (CRD42024571250)",
+              "Combined weighted mean MMSE increase of +1.17 in intervention groups",
+              "Erinacine A from mycelia inhibited cancer cell invasiveness (MKN28, TSGH 9201)",
+              "Increased gut microbiota diversity and SCFA-producing bacteria",
+              "Enhanced pro-BDNF and BDNF production, promoted hippocampal neurogenesis",
+              "Improved depression, anxiety, binge eating, and sleep disorder symptoms",
+              "Side effects rare: stomach discomfort, headache, allergic reactions"
+            ],
+            "verificationDate": "2026-03-05"
+          }
+        ]
       }
     ],
 
@@ -458,8 +494,18 @@ const lionsManeEnhanced = {
     ]
   },
 
+  "evidenceGaps": [
+    "No meta-analysis with pooled effect estimates exists for Lion's Mane cognitive outcomes",
+    "Largest RCTs are small (n=31-41); larger multi-center trials needed",
+    "No Cochrane review available for any Lion's Mane indication",
+    "Long-term cognitive outcomes (>1 year) not established in human trials",
+    "Optimal dosing (fruiting body vs mycelia, dose-response) not systematically compared",
+    "Bioavailability differences between extract types poorly characterized in humans",
+    "Disease-specific efficacy (MCI vs AD vs healthy) not compared in head-to-head trials"
+  ],
+
   "qualityAssurance": {
-    "doiVerificationDate": "2025-08-22",
+    "doiVerificationDate": "2026-03-05",
     "verificationMethod": "Manual verification against CrossRef API and PubMed",
     "accuracyRate": "100%",
     "verificationCriteria": [
@@ -471,8 +517,23 @@ const lionsManeEnhanced = {
       "PMID verified against PubMed database"
     ],
     "goldStandardCompliant": "Yes",
-    "totalVerifiedCitations": 14,
-    "verificationNotes": "All DOIs manually verified through CrossRef API. All PMIDs confirmed against PubMed database. Citation metadata accuracy confirmed at 100%. Research includes Tier 1 clinical trials with Tier 2 mechanistic studies."
+    "totalVerifiedCitations": 16,
+    "verificationNotes": "All DOIs manually verified through CrossRef API. All PMIDs confirmed against PubMed database. Citation metadata accuracy confirmed at 100%. Mode 2 update added 1 new PRISMA SR (Menon 2025). Tier downgraded 1→2: no meta-analysis exists, RCTs are small (n≤41). Quality reconciled 92→88.",
+    "mode2UpdateLog": {
+      "date": "2026-03-05",
+      "previousQuality": 92,
+      "newQuality": 88,
+      "previousTier": "Tier 1",
+      "newTier": "Tier 2",
+      "previousCitations": 15,
+      "newCitations": 16,
+      "papersScreened": 9,
+      "papersIncluded": 1,
+      "papersExcluded": 8,
+      "addedPapers": ["Menon et al. 2025 (PMID 40959699) — PRISMA SR with PROSPERO registration"],
+      "duplicateFileArchived": "11_lions_mane_enhanced.js → _archive/ (fabricated PMIDs, runtime collision)",
+      "structuralFixes": ["Tier 1→2 (inflated, no meta-analysis)", "Quality 92→88 (reconciled with supplements.js 87)", "Citation count corrected 14→16", "Duplicate file with fabricated PMIDs archived"]
+    }
   }
 };
 

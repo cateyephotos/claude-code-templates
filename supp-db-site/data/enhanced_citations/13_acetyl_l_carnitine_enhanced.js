@@ -14,7 +14,7 @@ window.enhancedCitations[13] = {
         overallQuality: "Tier 2",
         totalCitations: 16,
         researchQualityScore: 79,
-        lastEvidenceUpdate: "2025-01-28",
+        lastEvidenceUpdate: "2026-03-05",
         evidenceStrength: {
             mechanisms: "Strong",
             clinicalBenefits: "Moderate",
@@ -22,8 +22,38 @@ window.enhancedCitations[13] = {
             dosage: "Evidence-based"
         },
         researchMaturity: "Mature",
-        publicationSpan: "1990-2024",
-        keyFindings: "Well-characterized amino acid with strong mechanistic understanding and moderate evidence for cognitive and metabolic benefits"
+        publicationSpan: "1990-2025",
+        keyFindings: "Well-characterized amino acid with strong mechanistic understanding and moderate evidence for cognitive and metabolic benefits. New NMA evidence supports ALC for erectile dysfunction (SUCRA 97% in combination) and male fertility (sperm quality improvement)."
+    },
+
+    keyFindings: [
+        "Cochrane review (Hudson 2003) found benefits for cognitive function in dementia/MCI",
+        "Barbonetti 2024 NMA (15 RCTs, n=1000): PLC+ALC+Sildenafil ranked highest for ED (SUCRA 97%)",
+        "Niu 2025 NMA (16 RCTs): L-carnitine+ALC significantly improved sperm quality parameters",
+        "Multiple RCTs support fatigue reduction in elderly (Malaguarnera 2007)",
+        "Strong mechanistic evidence: BBB transport, mitochondrial function, acetylcholine synthesis"
+    ],
+
+    evidenceGaps: [
+        "No ALCAR-specific meta-analysis with pooled cognitive effect estimates exists",
+        "Depression evidence limited to adjunctive use in elderly — no standalone ALCAR depression MA",
+        "Neuropathy evidence mixed — harmful for CIPN (Frediani 2023) but positive for DPN",
+        "No head-to-head comparison of ALCAR vs L-carnitine for any indication",
+        "Dose-response not formally characterized in meta-analytic framework",
+        "Long-term cognitive outcomes (>1 year) not established",
+        "Two safety citations in enhanced file are fabricated (flagged with _INTEGRITY_FLAG)"
+    ],
+
+    mode2UpdateLog: {
+        date: "2026-03-05",
+        operator: "Claude (automated pipeline)",
+        phase: "Phase 2, Batch 1",
+        papersSearched: 20,
+        papersIncluded: 2,
+        qualityScoreChange: "79 (unchanged — base 78 from supplements.js + 1 already applied; no further increment justified by L-carnitine-general NMAs)",
+        tierChange: "No change — Tier 2 maintained",
+        newCitations: ["Barbonetti 2024 (PMID 39279185)", "Niu 2025 (PMID 40813743)"],
+        integrityIssues: ["2 fake safety citations flagged (_INTEGRITY_FLAG)", "Citation count mismatch (evidenceProfile=16, actual studies=11, supplements.js=14)"]
     },
 
     citations: {
@@ -171,6 +201,46 @@ window.enhancedCitations[13] = {
                         findings: "ALCAR showed benefits for chemotherapy-induced peripheral neuropathy"
                     }
                 ]
+            },
+            {
+                id: "alcar_benefit_6",
+                claim: "Propionyl-L-carnitine + ALC combination with sildenafil ranked highest for erectile dysfunction treatment in network meta-analysis",
+                healthDomain: "Sexual Health / Erectile Dysfunction",
+                strength: "Moderate",
+                evidenceQuality: "High (NMA)",
+                replicationStatus: "Network meta-analysis of 15 RCTs",
+                _mode2Added: "2026-03-05",
+                studies: [
+                    {
+                        title: "Efficacy of Nutraceuticals for the Treatment of Erectile Dysfunction: A Systematic Review and Network Meta-analysis of Randomized Clinical Trials",
+                        authors: ["Barbonetti, A.", "D'Andrea, S.", "Martorella, A.", "Felice, F.", "Francavilla, S."],
+                        year: 2024,
+                        journal: "The Journal of Sexual Medicine",
+                        pmid: "39279185",
+                        doi: "10.1093/jsxmed/qdae137",
+                        findings: "NMA of 15 RCTs (n≈1000): PLC+ALC+Sildenafil ranked highest with SUCRA 97% for IIEF-EF score improvement. ALC is part of the most effective nutraceutical combination for ED treatment."
+                    }
+                ]
+            },
+            {
+                id: "alcar_benefit_7",
+                claim: "L-carnitine and ALC supplementation significantly improves sperm quality parameters including motility",
+                healthDomain: "Male Fertility",
+                strength: "Moderate",
+                evidenceQuality: "High (NMA)",
+                replicationStatus: "Network meta-analysis of 16 RCTs",
+                _mode2Added: "2026-03-05",
+                studies: [
+                    {
+                        title: "The comparative efficacy of carnitine and CoQ10 supplementation on sperm quality: a systematic review and network meta-analysis",
+                        authors: ["Niu, Z.H.", "Zou, M.B.", "Yang, J.", "Li, S.S.", "Chen, Z.P.", "Shao, P."],
+                        year: 2025,
+                        journal: "European Journal of Clinical Pharmacology",
+                        pmid: "40813743",
+                        doi: "10.1007/s00228-025-03853-x",
+                        findings: "NMA of 16 RCTs: L-carnitine ranked best for progressive motility (SMD 4.19, 95% CI 0.51-7.87). ALC+L-carnitine combination significantly improved overall sperm quality parameters."
+                    }
+                ]
             }
         ],
         
@@ -195,6 +265,7 @@ window.enhancedCitations[13] = {
                 claim: "May cause mild gastrointestinal upset or fishy body odor in some individuals",
                 safetyAspect: "Dose-dependent effects",
                 riskLevel: "Low",
+                _INTEGRITY_FLAG: "FABRICATED CITATION — 'Research team' is not a real author; no PMID/DOI. Side effect claim is clinically valid but citation is fake. Needs replacement with actual safety study.",
                 studies: [
                     {
                         title: "Adverse effects of L-carnitine supplementation",
@@ -211,6 +282,7 @@ window.enhancedCitations[13] = {
                 claim: "May interact with anticoagulant medications",
                 safetyAspect: "Drug Interactions",
                 riskLevel: "Moderate",
+                _INTEGRITY_FLAG: "FABRICATED CITATION — 'Research team' is not a real author; no PMID/DOI. Drug interaction claim is clinically valid but citation is fake. Needs replacement with actual pharmacokinetic study.",
                 studies: [
                     {
                         title: "L-carnitine and anticoagulant interactions",

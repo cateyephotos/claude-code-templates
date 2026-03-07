@@ -1,27 +1,29 @@
 // Enhanced Citation File: GABA (Enhanced)
-// Phase 2 Enhanced Citations Integration
-// Generated: 2025-08-20
+// Pipeline: Evidence Update (Mode 2) | Run: 2026-03-06
+// Base generated: 2025-08-20 | Corrected: 2026-03-06
 
 const gabaEnhanced = {
   "id": 40,
   "name": "GABA",
+  "isEnhanced": true,
+  "version": "3.0",
   "scientificName": "Gamma-aminobutyric acid",
   "category": "Amino Acid",
   "commonNames": ["GABA", "γ-Aminobutyric acid", "4-aminobutanoic acid", "Gamma-amino-N-butyric acid"],
   
   "evidenceProfile": {
-    "overallQuality": "Tier 2",
-    "totalCitations": 15,
-    "researchQualityScore": 88,
-    "lastEvidenceUpdate": "2025-08-20",
+    "overallQuality": "Tier 3",
+    "totalCitations": 18,
+    "researchQualityScore": 60,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Well-established",
-      "clinicalBenefits": "Strong",
+      "clinicalBenefits": "Limited",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
-    "researchMaturity": "Mature",
-    "publicationSpan": "1976-2024",
+    "researchMaturity": "Emerging",
+    "publicationSpan": "2002-2021",
     "clinicalTrials": "Limited due to regulatory classification as neurotransmitter"
   },
 
@@ -31,7 +33,6 @@ const gabaEnhanced = {
       "strength": "Strong",
       "mechanismType": "Neurotransmitter Modulation",
       "tissueTarget": "Central Nervous System",
-        "target": "Central Nervous System",
       "evidence": [
         {
           "title": "GABA and its receptors in anxiety disorders",
@@ -50,7 +51,6 @@ const gabaEnhanced = {
       "strength": "Moderate",
       "mechanismType": "Hormonal Modulation",
       "tissueTarget": "Brain GABA Receptors",
-        "target": "Brain GABA Receptors",
       "evidence": [
         {
           "title": "Oral supplementation of gamma-aminobutyric acid reduces psychological stress",
@@ -58,7 +58,6 @@ const gabaEnhanced = {
           "journal": "Pharma Nutrition",
           "year": 2012,
           "doi": "10.1016/j.phanu.2012.05.001",
-          "pmid": "25824938",
           "keyFindings": ["GABA supplementation reduces stress-induced cortisol", "Improved stress resilience in clinical trials"],
           "evidenceLevel": "Randomized controlled trial"
         }
@@ -69,7 +68,6 @@ const gabaEnhanced = {
       "strength": "Moderate",
       "mechanismType": "Sleep Regulation",
       "tissueTarget": "Neural Networks",
-        "target": "Neural Networks",
       "evidence": [
         {
           "title": "GABA and sleep: molecular, functional and clinical aspects",
@@ -88,9 +86,6 @@ const gabaEnhanced = {
       "strength": "Moderate",
       "mechanismType": "Cognitive Enhancement",
       "tissueTarget": "Central Nervous System",
-        "target": "Central Nervous System",
-        "tissueTarget": "Central Nervous System",
-        "target": "Central Nervous System",
       "evidence": [
         {
           "title": "Effects of GABA on cognitive function and brain activity",

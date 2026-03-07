@@ -1,6 +1,6 @@
 // Enhanced Citations for Tribulus Terrestris (ID: 35)
-// Created for Phase 2A compatibility: 2025-08-22
-// Quality Score: 81 (Tier 3 Gold Standard)
+// Created for Phase 2A compatibility: 2026-03-06
+// Quality Score: 65 (Tier 3)
 // Total Citations: 12 verified DOIs
 
 const tribulusTerrestrisEnhanced = {
@@ -13,16 +13,16 @@ const tribulusTerrestrisEnhanced = {
   "evidenceProfile": {
     "overallQuality": "Tier 3",
     "totalCitations": 12,
-    "researchQualityScore": 81,
-    "lastEvidenceUpdate": "2025-08-22",
+    "researchQualityScore": 65,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Moderate",
-      "clinicalBenefits": "Moderate",
+      "clinicalBenefits": "Limited",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Established",
-    "publicationSpan": "2012-2024"
+    "publicationSpan": "2002-2022"
   },
 
   "citations": {
@@ -52,7 +52,7 @@ const tribulusTerrestrisEnhanced = {
               "Potential modulation of luteinizing hormone and testosterone",
               "Steroidogenic enzyme activity enhancement in animal models"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -81,7 +81,7 @@ const tribulusTerrestrisEnhanced = {
               "Improved vascular relaxation and blood flow",
               "Potential benefits for erectile function and cardiovascular health"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -109,7 +109,7 @@ const tribulusTerrestrisEnhanced = {
               "Hepatoprotective effects against oxidative damage",
               "Anti-inflammatory properties through cytokine modulation"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       }
@@ -143,7 +143,7 @@ const tribulusTerrestrisEnhanced = {
               "More pronounced effects in women than men",
               "Limited evidence for testosterone enhancement in healthy individuals"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -175,7 +175,7 @@ const tribulusTerrestrisEnhanced = {
               "Limited improvements in strength or body composition",
               "Inconsistent results across different study populations"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -193,7 +193,7 @@ const tribulusTerrestrisEnhanced = {
             "title": "Cardiovascular effects of Tribulus terrestris: Clinical and experimental evidence",
             "authors": ["Adaikan PG", "Gauthaman K", "Prasad RN"],
             "journal": "Cardiovascular Drug Reviews",
-            "year": 2020,
+            "year": 2005,
             "volume": "23",
             "issue": "3",
             "pages": "199-206",
@@ -206,7 +206,7 @@ const tribulusTerrestrisEnhanced = {
               "Mild blood pressure lowering effects in animal studies",
               "Improved endothelial function and vascular health markers"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -224,7 +224,7 @@ const tribulusTerrestrisEnhanced = {
             "title": "Nephroprotective and diuretic effects of Tribulus terrestris extracts",
             "authors": ["Al-Ali M", "Wahbi S", "Twaij H", "Al-Badr A"],
             "journal": "Journal of Ethnopharmacology",
-            "year": 2019,
+            "year": 2003,
             "volume": "85",
             "issue": "2-3",
             "pages": "257-260",
@@ -237,7 +237,7 @@ const tribulusTerrestrisEnhanced = {
               "Potential kidney stone prevention properties",
               "Nephroprotective effects in animal models"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -268,7 +268,7 @@ const tribulusTerrestrisEnhanced = {
               "Improved lipid profile and cholesterol metabolism",
               "Potential anti-diabetic effects requiring human validation"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       }
@@ -301,7 +301,7 @@ const tribulusTerrestrisEnhanced = {
               "Rare reports of stomach upset and sleep disturbances",
               "No serious adverse events in short-term studies"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -329,7 +329,7 @@ const tribulusTerrestrisEnhanced = {
               "Caution advised for pregnant and breastfeeding women",
               "May interact with diabetes and blood pressure medications"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       },
@@ -345,7 +345,7 @@ const tribulusTerrestrisEnhanced = {
             "title": "Toxicological evaluation of Tribulus terrestris extracts",
             "authors": ["Deepak M", "Dipankar G", "Prashanth D", "Asha MK", "Amit A", "Venkataraman BV"],
             "journal": "Journal of Ethnopharmacology",
-            "year": 2018,
+            "year": 2004,
             "volume": "91",
             "issue": "1",
             "pages": "15-19",
@@ -358,7 +358,7 @@ const tribulusTerrestrisEnhanced = {
               "Limited long-term safety data in humans",
               "Cycling use recommended due to lack of long-term studies"
             ],
-            "verificationDate": "2025-08-22"
+            "verificationDate": "2026-03-06"
           }
         ]
       }
@@ -376,7 +376,7 @@ const tribulusTerrestrisEnhanced = {
           "Divided into 2-3 doses with meals",
           "Cycling approach: 6-8 weeks on, 2-4 weeks off"
         ],
-        "verificationDate": "2025-08-22"
+        "verificationDate": "2026-03-06"
       },
       {
         "id": "tribulus_dose_002",
@@ -389,13 +389,13 @@ const tribulusTerrestrisEnhanced = {
           "Morning and early afternoon dosing preferred",
           "Avoid evening doses to prevent potential sleep disturbances"
         ],
-        "verificationDate": "2025-08-22"
+        "verificationDate": "2026-03-06"
       }
     ]
   },
 
   "qualityAssurance": {
-    "doiVerificationDate": "2025-08-22",
+    "doiVerificationDate": "2026-03-06",
     "verificationMethod": "Manual verification against CrossRef API and PubMed",
     "accuracyRate": "100%",
     "verificationCriteria": [

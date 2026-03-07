@@ -11,10 +11,10 @@ const vitaminCEnhanced = {
   
   // Enhanced Evidence Profile
   "evidenceProfile": {
-    "overallQuality": "Tier 2",
-    "totalCitations": 18,
-    "researchQualityScore": 91,
-    "lastEvidenceUpdate": "2025-08-21",
+    "overallQuality": "Tier 1",
+    "totalCitations": 23,
+    "researchQualityScore": 94,
+    "lastEvidenceUpdate": "2026-03-04",
     "evidenceStrength": {
       "mechanisms": "Strong",
       "clinicalBenefits": "Strong", 
@@ -22,7 +22,7 @@ const vitaminCEnhanced = {
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2000-2024"
+    "publicationSpan": "2000-2026"
   },
 
   // Enhanced Citation System
@@ -88,6 +88,20 @@ const vitaminCEnhanced = {
               "Regenerates other antioxidants like vitamin E"
             ],
             "verificationDate": "2025-08-21"
+          },
+          {
+            "citationId": "moabedi_2025_antioxidant_meta",
+            "title": "The effect of co-administration of vitamin E and C supplements on plasma oxidative stress biomarkers and antioxidant capacity: a GRADE-assessed systematic review and meta-analysis",
+            "authors": ["Moabedi M", "Milajerdi A"],
+            "year": 2025,
+            "journal": "Frontiers in Immunology",
+            "doi": "10.3389/fimmu.2025.1547888",
+            "pmid": "40740780",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=965 (17 RCTs)",
+            "findings": "Combined vitamin C and E supplementation significantly reduced MDA (WMD: -0.38 µg/L, P<0.001), lipid peroxidation (WMD: -1.01 µg/L, P<0.001), and increased total antioxidant capacity (WMD: 0.09 mmol/L, P<0.001) and GPx activity (WMD: 1251.74 U/L, P=0.013). MDA reduction significant only in unhealthy participants.",
+            "methodology": "GRADE-assessed systematic review and meta-analysis of 17 RCTs with meta-regression. Random-effects models. Subgroup analyses by health status and control type."
           }
         ]
       },
@@ -208,6 +222,20 @@ const vitaminCEnhanced = {
               "Critical for maintaining immune homeostasis"
             ],
             "verificationDate": "2025-08-21"
+          },
+          {
+            "citationId": "qin_2024_covid_meta",
+            "title": "Effects of Vitamin C Supplements on Clinical Outcomes and Hospitalization Duration for Patients with COVID-19: A Systematic Review and Meta-Analysis",
+            "authors": ["Qin M", "Xu K", "Chen Z", "Wen X", "Tang Y", "Gao Y", "Zhang H", "Ma X"],
+            "year": 2024,
+            "journal": "Nutrition Reviews",
+            "doi": "10.1093/nutrit/nuae154",
+            "pmid": "39527016",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=3,429 (22 studies)",
+            "findings": "Vitamin C supplementation significantly reduced COVID-19 mortality (OR=0.64, 95% CI 0.51-0.80, P=0.0001), severity (OR=0.59, 95% CI 0.43-0.80, P=0.0006), and overall clinical outcomes (OR=0.76, 95% CI 0.65-0.89, P=0.0007). No significant reduction in hospitalization duration.",
+            "methodology": "Meta-analysis of 22 studies (RCTs, cohort, retrospective) searching 8 databases through December 2023. Fixed- and random-effects models."
           }
         ]
       },
@@ -262,6 +290,20 @@ const vitaminCEnhanced = {
               "Reduced HbA1c levels in diabetics"
             ],
             "verificationDate": "2025-08-21"
+          },
+          {
+            "citationId": "aragonvela_2026_glycemic_cv_meta",
+            "title": "Effects of Vitamin C and/or E Supplementation on Glycemic Control and Cardiovascular Risk Factors in Type 2 Diabetes: A Systematic Review and Subgroup Meta-analysis",
+            "authors": ["Aragón-Vela J", "Huertas JR", "Casuso RA"],
+            "year": 2026,
+            "journal": "Nutrition Reviews",
+            "doi": "10.1093/nutrit/nuaf133",
+            "pmid": "41521729",
+            "studyType": "Systematic review and subgroup meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=1,425 (52 RCTs)",
+            "findings": "Vitamin C supplementation significantly reduced systolic blood pressure in T2D patients. Combined vitamin C+E significantly increased HDL cholesterol. Effects on glycemic control (FBG, HbA1c) comparable across vitamin C alone, vitamin E alone, and C+E combination.",
+            "methodology": "Systematic review with subgroup meta-analysis of 52 RCTs from PubMed, Scopus, Web of Science. Random-effects models. Subgroup analysis by vitamin type (C alone, E alone, C+E)."
           }
         ]
       },
@@ -352,9 +394,59 @@ const vitaminCEnhanced = {
             "verificationDate": "2025-08-21"
           }
         ]
+      },
+      {
+        "healthDomain": "Cancer Risk Reduction",
+        "specificClaim": "Dietary vitamin C inversely associated with colorectal, prostate, and breast cancer risk",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Well-replicated (69 studies)",
+        "tissueTarget": "Multiple organ systems (colorectal, prostate, breast)",
+        "target": "Multiple organ systems (colorectal, prostate, breast)",
+        "evidence": [
+          {
+            "citationId": "arshadi_2024_cancer_meta",
+            "title": "The association between vitamin C and breast cancer, prostate cancer and colorectal cancer: A systematic review and meta-analysis",
+            "authors": ["Arshadi M", "Ghazal N", "Ghavidel F", "Beygi Z", "Nasiri Z", "Zarepour P", "Abdollahi S", "Azizi H", "Khodamoradi F"],
+            "year": 2024,
+            "journal": "Clinical Nutrition ESPEN",
+            "doi": "10.1016/j.clnesp.2024.12.001",
+            "pmid": "39657872",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "69 studies",
+            "findings": "Dietary vitamin C significantly inversely associated with colorectal cancer (pooled RR=0.55, 95% CI 0.42-0.73), prostate cancer (RR=0.88, 95% CI 0.77-1.00), and breast cancer in case-control studies (RR=0.72, 95% CI 0.60-0.85). Supplemental vitamin C showed no significant association with prostate or breast cancer in cohort studies.",
+            "methodology": "Meta-analysis of 69 observational studies (cohort and case-control). PubMed, Scopus, Web of Science searched through September 2023. Newcastle-Ottawa Scale for quality. Random-effects models."
+          }
+        ]
+      },
+      {
+        "healthDomain": "Glycemic Control",
+        "specificClaim": "Improves fasting blood glucose and HbA1c in type 2 diabetes, especially with supplementation >30 days",
+        "strength": "Moderate",
+        "evidenceQuality": "High",
+        "replicationStatus": "Confirmed by umbrella review of 14 meta-analyses",
+        "tissueTarget": "Pancreatic beta cells and peripheral tissues",
+        "target": "Pancreatic beta cells and peripheral tissues",
+        "evidence": [
+          {
+            "citationId": "chai_2025_glycemic_umbrella",
+            "title": "Effects of water-soluble vitamins on glycemic control and insulin resistance in adult type 2 diabetes: an umbrella review of meta-analyses",
+            "authors": ["Chai Y", "Chen C", "Yin X", "Wang X", "Yu W", "Pan H", "Qin R", "Yang X", "Wang Q"],
+            "year": 2025,
+            "journal": "Asia Pacific Journal of Clinical Nutrition",
+            "doi": "10.6133/apjcn.202502_34(1).0012",
+            "pmid": "39828265",
+            "studyType": "Umbrella review of meta-analyses",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "14 meta-analyses synthesized",
+            "findings": "Vitamin C supplementation improved glycemic control in T2D: reduced fasting blood glucose (FBG) and HbA1c. Effects more significant with supplementation duration >30 days. Umbrella-level evidence (highest level of synthesis) confirms benefit.",
+            "methodology": "Umbrella review of 14 systematic reviews and meta-analyses. Web of Science, PubMed, Cochrane searched 2012-2022. Quality assessed with AMSTAR-2 and GRADE."
+          }
+        ]
       }
     ],
-    
+
     // Safety and Tolerability Citations
     "safety": [
       {
@@ -594,7 +686,7 @@ const vitaminCEnhanced = {
       "PMID verified against PubMed database"
     ],
     "goldStandardCompliant": "Yes",
-    "totalVerifiedCitations": 18
+    "totalVerifiedCitations": 23
   }
 };
 

@@ -1,7 +1,7 @@
-// ENHANCED CITATION SYSTEM - PHASE 3B: METABOLIC & PERFORMANCE SPECIALIST
-// Taurine Enhanced Citations - Performance Focused Research
-// All citations verified against actual published papers - Gold Standard Compliance
-// Specialization: Amino acid, cardiovascular, exercise, neurological functions, energy metabolism
+// Enhanced Citations for Taurine (ID: 39)
+// Created for Phase 2A compatibility: 2026-03-06
+// Quality Score: 73 (Tier 3)
+// Total Citations: 11 verified DOIs
 
 const taurineEnhanced = {
   "id": 39,
@@ -14,16 +14,16 @@ const taurineEnhanced = {
   "evidenceProfile": {
     "overallQuality": "Tier 3",
     "totalCitations": 11,
-    "researchQualityScore": 83,
-    "lastEvidenceUpdate": "2025-08-20",
+    "researchQualityScore": 73,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
-      "mechanisms": "Strong", // Calcium regulation, membrane stability, osmolyte
-      "clinicalBenefits": "Strong", // Cardiovascular, exercise, neurological
-      "safety": "Excellent", // One of safest amino acids
-      "dosage": "Well-established" // 1-6g daily protocols established
+      "mechanisms": "Well-established", // Calcium regulation, membrane stability, osmolyte — 40+ years of consistent biochemistry
+      "clinicalBenefits": "Moderate", // Endurance meta-analysis (Hedges' g=0.40); cardiovascular evidence moderate
+      "safety": "Well-established", // GRAS status; no serious AEs across clinical studies; wide safety margin
+      "dosage": "Well-established" // 1-6g daily protocols established from pooled clinical trial data
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2010-2024",
+    "publicationSpan": "1992-2023",
     "keyFindings": "Semi-essential amino acid with strong evidence for cardiovascular health, exercise performance, and neurological support"
   },
 
@@ -37,7 +37,6 @@ const taurineEnhanced = {
         "strength": "Strong",
         "mechanismType": "Intracellular calcium homeostasis and contractile function",
         "tissueTarget": "Skeletal muscle, cardiac muscle, and smooth muscle",
-        "target": "Skeletal muscle, cardiac muscle, and smooth muscle",
         "evidence": [
           {
             "citationId": "schaffer_2010_physiology",
@@ -108,7 +107,6 @@ const taurineEnhanced = {
         "strength": "Strong",
         "mechanismType": "Cellular volume regulation and membrane protection",
         "tissueTarget": "All cell types, particularly muscle and neural tissue",
-        "target": "All cell types, particularly muscle and neural tissue",
         "evidence": [
           {
             "citationId": "huxtable_1992_osmolyte",
@@ -146,10 +144,9 @@ const taurineEnhanced = {
       },
       {
         "mechanism": "GABA receptor modulation and neuromodulation",
-        "strength": "Moderate-Strong",
+        "strength": "Moderate",
         "mechanismType": "Neurotransmitter system modulation and neuroprotection",
         "tissueTarget": "Central and peripheral nervous system",
-        "target": "Central and peripheral nervous system",
         "evidence": [
           {
             "citationId": "wu_2010_cns_role",
@@ -193,11 +190,10 @@ const taurineEnhanced = {
       {
         "healthDomain": "Endurance Exercise Performance",
         "specificClaim": "Improves endurance exercise performance and delays fatigue across various exercise modalities",
-        "strength": "Strong",
-        "evidenceQuality": "High",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
         "replicationStatus": "Well-replicated across multiple studies",
         "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
         "evidence": [
           {
             "citationId": "waldron_2018_endurance",
@@ -282,10 +278,9 @@ const taurineEnhanced = {
       {
         "healthDomain": "Cardiovascular Health and Function",
         "specificClaim": "Provides cardiovascular benefits including blood pressure reduction and improved heart function",
-        "strength": "Strong",
-        "evidenceQuality": "High",
-        "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "tissueTarget": "Cardiovascular system",
         "evidence": [
           {
             "citationId": "militante_2013_cardiovascular",
@@ -357,10 +352,8 @@ const taurineEnhanced = {
       {
         "healthDomain": "Neurological Function and Cognitive Performance",
         "specificClaim": "Supports neurological health, cognitive function, and may reduce neurological disease risk",
-        "strength": "Moderate-Strong",
+        "strength": "Moderate",
         "evidenceQuality": "Moderate",
-        "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
         "tissueTarget": "Central nervous system",
         "evidence": [
           {
@@ -412,18 +405,17 @@ const taurineEnhanced = {
         "safetyAspect": "General safety and tolerability across populations",
         "claim": "One of the safest amino acids with excellent tolerability profile across all age groups",
         "riskLevel": "Very Low",
-        "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
           {
             "citationId": "shao_2008_safety",
-            "title": "Effects and Mechanisms of Taurine as a Therapeutic Agent",
+            "title": "Risk assessment for the amino acids taurine, L-glutamine and L-arginine",
             "authors": ["Shao A", "Hathcock JN"],
             "year": 2008,
-            "journal": "Biomolecules & Therapeutics",
-            "volume": "26", "issue": "3", "pages": "244-258",
-            "doi": "10.4062/biomolther.2017.251",
-            "pmid": "29631391",
+            "journal": "Regulatory Toxicology and Pharmacology",
+            "volume": "50", "issue": "2", "pages": "215-219",
+            "doi": "10.1016/j.yrtph.2007.07.003",
+            "pmid": "17766049",
             "studyType": "Safety review and assessment",
             "evidenceLevel": "Level 1",
             "safetyFindings": {
@@ -468,10 +460,8 @@ const taurineEnhanced = {
       {
         "dosageRange": "1-6g daily for performance; 0.5-1.5g daily for cardiovascular health",
         "claim": "Flexible dosing based on health and performance goals with excellent safety margin",
-        "evidenceBase": "Strong",
-        "target": "Central nervous system",
-        "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
+        "evidenceBase": "Evidence-based",
+        "tissueTarget": "Skeletal muscle, cardiac muscle, neural tissue",
         "evidence": [
           {
             "citationId": "beyranvand_2011_dosing",
@@ -612,7 +602,7 @@ const taurineEnhanced = {
 
   // QUALITY ASSURANCE - Gold Standard Compliance for Performance Research
   "qualityAssurance": {
-    "doiVerificationDate": "2025-08-20",
+    "doiVerificationDate": "2026-03-06",
     "verificationMethod": "Manual verification against PubMed, CrossRef API, and publisher databases",
     "accuracyRate": "100%",
     "verificationCriteria": [
@@ -632,7 +622,7 @@ const taurineEnhanced = {
       "Cardiovascular benefits supported by evidence"
     ],
     "goldStandardCompliant": "Yes",
-    "lastVerificationDate": "2025-08-20",
+    "lastVerificationDate": "2026-03-06",
     "verificationStatus": "All 11 citations verified against original publications",
     "confidenceLevel": "Very High - Exceptionally well-established research with consistent findings"
   }

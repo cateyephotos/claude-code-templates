@@ -1,3 +1,21 @@
+// ⚠️  DEPRECATED — DO NOT USE
+// Canonical file: 43_enhanced.js (validated 2026-03-06, OVERALL VALIDATION: PASS)
+//
+// Reason for deprecation:
+//   1. Structural corruption: top-level "mechanisms" array duplicates citations.mechanisms
+//      (two separate arrays for the same domain — not pipeline standard)
+//   2. Five citation entries contain duplicate "target:"/"tissueTarget:" key pairs
+//      (one entry repeated twice each) — invalid JSON structure
+//   3. evidenceProfile errors (all corrected in 43_enhanced.js):
+//      - researchQualityScore: 86 → 66 (inflated; 86 is Tier 1 territory)
+//      - totalCitations: 15 → 17 (missed deficiency domain 2 citations)
+//      - clinicalBenefits: "Strong" → "Moderate" (inconsistent with Tier 2 + no Cochrane review)
+//      - publicationSpan: "2009-2024" → "1992-2019" (Conlay 1992 is earliest; no citations 2020-2024)
+//      - lastEvidenceUpdate: "2025-08-20" → "2026-03-06"
+//      - isEnhanced: missing at top level
+//      - qualityAssurance.totalVerifiedCitations: absent → 17
+//
+// Pipeline run: 2026-03-06 | Mode: Evidence Update (Mode 2)
 // Enhanced Citation File: Choline Bitartrate
 // Phase 3B Nutritional Essentials Specialist
 // Generated: 2025-08-20

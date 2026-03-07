@@ -4,6 +4,7 @@
 
 const cholineBitartrate = {
   "id": 43,
+  "isEnhanced": true,
   "name": "Choline Bitartrate",
   "scientificName": "2-hydroxy-N,N,N-trimethylethanaminium bitartrate",
   "category": "Essential Nutrient - Methylation Support",
@@ -11,17 +12,17 @@ const cholineBitartrate = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 15,
-    "researchQualityScore": 86,
-    "lastEvidenceUpdate": "2025-08-20",
+    "totalCitations": 17,
+    "researchQualityScore": 66,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Well-established",
-      "clinicalBenefits": "Strong",
+      "clinicalBenefits": "Moderate",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2009-2024",
+    "publicationSpan": "1992-2019",
     "keyResearchInstitutions": ["Cornell University", "University of North Carolina", "National Institutes of Health", "Harvard School of Public Health"]
   },
 
@@ -255,12 +256,13 @@ const cholineBitartrate = {
   },
 
   "qualityAssurance": {
-    "doiVerificationDate": "2025-08-20",
+    "doiVerificationDate": "2026-03-06",
     "verificationMethod": "Manual verification against PubMed and journal databases",
     "accuracyRate": "100%",
+    "totalVerifiedCitations": 17,
     "verificationCriteria": [
       "DOI resolves to correct publication",
-      "Title matches exactly", 
+      "Title matches exactly",
       "Authors match publication records",
       "Journal, volume, issue, pages verified",
       "PMID cross-referenced with PubMed database",

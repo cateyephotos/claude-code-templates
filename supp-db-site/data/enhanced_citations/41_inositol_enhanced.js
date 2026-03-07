@@ -1,5 +1,15 @@
+// DEPRECATED — DO NOT USE
+// This file (41_inositol_enhanced.js) is superseded by 41_enhanced.js
+// Deprecated: 2026-03-06 | Pipeline Mode: Evidence Update (Mode 2)
+// Reason: String id 'inositol-enhanced' (should be numeric 41);
+//         duplicate tissueTarget/target keys; name 'Inositol Enhanced';
+//         inflated researchQualityScore 89 (correct: 68);
+//         totalCitations 16 (correct: 19); publicationSpan '2012-2024' (correct: '1986-2019')
+// Canonical file: 41_enhanced.js (Tier 2, score 68, 19 citations, lastUpdate 2026-03-06)
+// Do not import or reference this file in any application code.
+
 // Enhanced Citation File: Inositol Enhanced
-// Phase 3B Nutritional Essentials Specialist  
+// Phase 3B Nutritional Essentials Specialist
 // Generated: 2025-08-20
 
 const inositolEnhanced = {

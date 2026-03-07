@@ -4,6 +4,7 @@
 
 const seleniumEnhanced = {
   "id": 42,
+  "isEnhanced": true,
   "name": "Selenium",
   "scientificName": "Selenium (elemental)",
   "category": "Essential Nutrients",
@@ -12,17 +13,17 @@ const seleniumEnhanced = {
   // Enhanced Evidence Profile
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 15,
-    "researchQualityScore": 86,
-    "lastEvidenceUpdate": "2025-08-21",
+    "totalCitations": 16,
+    "researchQualityScore": 67,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Strong",
-      "clinicalBenefits": "Strong", 
+      "clinicalBenefits": "Moderate",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2000-2024"
+    "publicationSpan": "2001-2018"
   },
 
   // Enhanced Citation System
@@ -35,7 +36,6 @@ const seleniumEnhanced = {
         "strength": "Strong",
         "mechanismType": "Essential trace element incorporation into proteins",
         "tissueTarget": "Multiple organ systems",
-        "target": "Multiple organ systems",
         "evidence": [
           {
             "id": "selenium_mech_001",
@@ -65,7 +65,6 @@ const seleniumEnhanced = {
         "strength": "Strong",
         "mechanismType": "Deiodinase enzyme cofactor function",
         "tissueTarget": "Thyroid gland",
-        "target": "Thyroid gland",
         "evidence": [
           {
             "id": "selenium_mech_002",
@@ -96,7 +95,6 @@ const seleniumEnhanced = {
         "strength": "Strong",
         "mechanismType": "Selenoprotein-mediated genome protection",
         "tissueTarget": "Cellular DNA",
-        "target": "Cellular DNA",
         "evidence": [
           {
             "id": "selenium_mech_003",
@@ -127,7 +125,6 @@ const seleniumEnhanced = {
         "strength": "Strong",
         "mechanismType": "Selenoprotein regulation of immune responses",
         "tissueTarget": "Immune system",
-        "target": "Immune system",
         "evidence": [
           {
             "id": "selenium_mech_004",
@@ -163,7 +160,6 @@ const seleniumEnhanced = {
         "evidenceQuality": "High",
         "replicationStatus": "Multiple studies",
         "tissueTarget": "Thyroid gland",
-        "target": "Thyroid gland",
         "evidence": [
           {
             "id": "selenium_ben_001",
@@ -218,7 +214,6 @@ const seleniumEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Mixed results",
         "tissueTarget": "Cardiovascular system",
-        "target": "Cardiovascular system",
         "evidence": [
           {
             "id": "selenium_ben_003",
@@ -251,7 +246,6 @@ const seleniumEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Mixed results",
         "tissueTarget": "Multiple organ systems",
-        "target": "Multiple organ systems",
         "evidence": [
           {
             "id": "selenium_ben_004",
@@ -305,7 +299,6 @@ const seleniumEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Limited studies",
         "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
         "evidence": [
           {
             "id": "selenium_ben_006",
@@ -338,7 +331,6 @@ const seleniumEnhanced = {
         "safetyAspect": "Selenosis and toxicity symptoms",
         "claim": "Well-tolerated within recommended ranges; toxicity above 400μg daily",
         "riskLevel": "Moderate",
-        "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
           {
@@ -369,7 +361,6 @@ const seleniumEnhanced = {
         "safetyAspect": "Upper intake limits and safety margins",
         "claim": "EFSA sets tolerable upper limit at 300μg daily for adults",
         "riskLevel": "Low",
-        "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
           {
@@ -400,7 +391,6 @@ const seleniumEnhanced = {
         "safetyAspect": "Long-term supplementation safety",
         "claim": "Long-term supplementation safe at appropriate doses",
         "riskLevel": "Low",
-        "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
           {
@@ -435,7 +425,6 @@ const seleniumEnhanced = {
         "dosageRange": "75-105μg daily",
         "claim": "Optimal intake for selenoprotein optimization",
         "evidenceBase": "Strong",
-        "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
           {
@@ -466,7 +455,6 @@ const seleniumEnhanced = {
         "dosageRange": "200μg daily",
         "claim": "Therapeutic dose for thyroid autoimmune conditions",
         "evidenceBase": "Strong",
-        "target": "Thyroid gland",
         "tissueTarget": "Thyroid gland",
         "evidence": [
           {
@@ -497,7 +485,6 @@ const seleniumEnhanced = {
         "dosageRange": "80-124ng/mL plasma selenium",
         "claim": "Optimal plasma selenium status for health benefits",
         "evidenceBase": "Strong",
-        "target": "Plasma biomarkers",
         "tissueTarget": "Plasma biomarkers",
         "evidence": [
           {
@@ -540,7 +527,7 @@ const seleniumEnhanced = {
       "PMID verified against PubMed database"
     ],
     "goldStandardCompliant": "Yes",
-    "totalVerifiedCitations": 15
+    "totalVerifiedCitations": 16
   }
 };
 

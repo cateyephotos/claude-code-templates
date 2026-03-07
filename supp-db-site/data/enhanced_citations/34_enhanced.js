@@ -1,6 +1,6 @@
 // Enhanced Citation File: 5-HTP (Enhanced)
 // Phase 2 Enhanced Citations Integration
-// Generated: 2025-08-20
+// Generated: 2026-03-06
 
 const fiveHTPEnhanced = {
   "id": 34,
@@ -12,16 +12,16 @@ const fiveHTPEnhanced = {
   "evidenceProfile": {
     "overallQuality": "Tier 2",
     "totalCitations": 16,
-    "researchQualityScore": 87,
-    "lastEvidenceUpdate": "2025-08-20",
+    "researchQualityScore": 75,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Well-established",
-      "clinicalBenefits": "Strong",
+      "clinicalBenefits": "Moderate",
       "safety": "Moderate",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "1972-2024",
+    "publicationSpan": "1971-2024",
     "clinicalTrials": "Moderate number with consistent positive results"
   },
 
@@ -223,7 +223,6 @@ const fiveHTPEnhanced = {
         "replicationStatus": "Limited clinical evidence",
         "tissueTarget": "Central nervous system",
         "target": "Central nervous system",
-        "tissueTarget": "Central nervous system",
         "evidence": [
           {
             "title": "5-Hydroxytryptophan for fibromyalgia syndrome",
@@ -247,7 +246,6 @@ const fiveHTPEnhanced = {
         "claim": "5-HTP is generally safe but requires quality control and may cause mild side effects",
         "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
-        "target": "Multiple organ systems",
         "evidence": [
           {
             "title": "Safety of 5-hydroxytryptophan",
@@ -278,16 +276,24 @@ const fiveHTPEnhanced = {
         ]
       },
       {
-        "title": "Serotonin syndrome: a complex but easily avoidable condition",
-        "authors": ["Ener, R.A.", "Meglathery, S.B.", "Van Decker, W.A.", "Gallagher, R.M."],
-        "journal": "General Hospital Psychiatry",
-        "year": 2003,
-        "volume": 25,
-        "issue": 2,
-        "pages": "93-101",
-        "doi": "10.1016/S0163-8343(02)00282-3",
-        "pmid": "12676422",
-        "significance": "Important safety considerations regarding serotonin syndrome risk with 5-HTP"
+        "safetyAspect": "Serotonin Syndrome Risk",
+        "riskLevel": "Moderate",
+        "claim": "5-HTP combined with serotonergic medications can precipitate serotonin syndrome",
+        "evidence": [
+          {
+            "title": "Serotonin syndrome: a complex but easily avoidable condition",
+            "authors": ["Ener, R.A.", "Meglathery, S.B.", "Van Decker, W.A.", "Gallagher, R.M."],
+            "journal": "General Hospital Psychiatry",
+            "year": 2003,
+            "volume": 25,
+            "issue": 2,
+            "pages": "93-101",
+            "doi": "10.1016/S0163-8343(02)00282-3",
+            "pmid": "12676422",
+            "keyFindings": ["Case series and review documenting serotonin syndrome risk with serotonergic combinations including 5-HTP; mechanism and prevention strategies defined"],
+            "evidenceLevel": "Clinical Safety Review"
+          }
+        ]
       }
     ],
     "dosage": [

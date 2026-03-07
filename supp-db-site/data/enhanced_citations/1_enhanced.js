@@ -13,9 +13,9 @@ const bacopaMonnieriEnhanced = {
   // Enhanced Evidence Profile
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 15,
-    "researchQualityScore": 82, // Calculated from study quality metrics
-    "lastEvidenceUpdate": "2025-08-19",
+    "totalCitations": 18,
+    "researchQualityScore": 85, // Calculated from study quality metrics
+    "lastEvidenceUpdate": "2026-03-05",
     "evidenceStrength": {
       "mechanisms": "Strong", // 6 mechanistic studies
       "clinicalBenefits": "Strong", // 8 RCTs + 2 meta-analyses  
@@ -23,7 +23,7 @@ const bacopaMonnieriEnhanced = {
       "dosage": "Evidence-based" // 2 dose-response studies
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "1997-2023"
+    "publicationSpan": "1997-2026"
   },
 
   // ENHANCED CITATION SYSTEM WITH REAL RESEARCH
@@ -300,6 +300,82 @@ const bacopaMonnieriEnhanced = {
             "methodologyQuality": "High (Jadad score: 4/5)",
             "limitations": ["Smaller sample size", "Computerized testing only"],
             "significance": "Independent confirmation of cognitive benefits with different methods"
+          },
+          {
+            "citationId": "tiemtad_2026_bacopa_ginkgo_nma",
+            "title": "Comparative effects of Bacopa monnieri and Ginkgo biloba on cognitive functions: A systematic review and network meta-analysis",
+            "authors": ["Tiemtad P", "Ingkaninan K", "Temkitthawon P", "Thimkorn P", "Rattanachaisit N", "Teaktong T", "Dhippayom T"],
+            "year": 2026,
+            "journal": "Phytomedicine",
+            "volume": "153", "pages": "157915",
+            "doi": "10.1016/j.phymed.2026.157915",
+            "pmid": "41678913",
+            "studyType": "Systematic review and network meta-analysis",
+            "evidenceLevel": "Level 1",
+            "studiesIncluded": 29,
+            "totalParticipants": 2107,
+            "inclusionCriteria": ["RCTs", "Healthy adults", "Brahmi or Ginkgo extracts", "Cognitive outcomes"],
+            "results": {
+              "workingMemory": {
+                "highDoseBrahmi_vs_placebo": "SMD = 2.03 (95% CI: 1.28-2.78)",
+                "highDoseBrahmi_vs_lowDoseBrahmi": "SMD = 1.84 (95% CI: 1.05-2.64)",
+                "highDoseBrahmi_vs_highDoseGinkgo": "SMD = 1.94 (95% CI: 1.10-2.77)",
+                "highDoseBrahmi_vs_lowDoseGinkgo": "SMD = 2.04 (95% CI: 1.24-2.84)",
+                "SUCRA": "100% for high-dose Brahmi"
+              },
+              "shortTermMemory": "Significant benefit for high-dose Brahmi vs Ginkgo and placebo",
+              "delayedMemory": "Low-dose Brahmi outperformed low-dose Ginkgo and placebo",
+              "attention": "No significant differences in sustained attention, selective attention, or processing speed"
+            },
+            "doseResponse": {
+              "highDose": "≥600mg/day — superior for working memory",
+              "lowDose": "300 to <600mg/day — significant for delayed memory only"
+            },
+            "limitations": ["Indirect comparisons (network MA, no direct head-to-head Brahmi vs Ginkgo RCTs)", "Heterogeneity in cognitive outcome measures"],
+            "clinicalRelevance": "Largest Bacopa-specific NMA to date. Establishes dose-response: ≥600mg/day significantly superior for working memory. SUCRA 100% confirms top cognitive ranking.",
+            "significance": "Landmark NMA superseding Pase 2012 as the most comprehensive Bacopa cognitive meta-analysis (29 vs 6 RCTs)"
+          },
+          {
+            "citationId": "lopresti_2025_bacumen_rct",
+            "title": "The Effects of a Bacopa monnieri Extract (Bacumen) on Cognition, Stress, and Fatigue in Healthy Adults: A Randomized, Double-Blind, Placebo-Controlled Trial",
+            "authors": ["Lopresti AL", "Smith SJ"],
+            "year": 2025,
+            "journal": "Clinical Drug Investigation",
+            "volume": "45", "issue": "12", "pages": "967-982",
+            "doi": "10.1007/s40261-025-01492-1",
+            "pmid": "41091332",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "studyDesign": "Double-blind, placebo-controlled, parallel group",
+            "sampleSize": "n=101 randomized, 87 completers",
+            "demographics": {
+              "ageRange": "40-70 years",
+              "population": "Adults with self-reported memory and attention problems"
+            },
+            "duration": "12 weeks",
+            "dosage": "300mg daily (Bacumen extract)",
+            "results": {
+              "primaryOutcomes": {
+                "verbalLearning": "No significant difference (p = 0.391)",
+                "attention": "No significant difference (p = 0.713)",
+                "workingMemory": "No significant difference (p = 0.610)",
+                "interpretation": "NEGATIVE primary cognitive outcomes at 300mg/day"
+              },
+              "secondaryOutcomes": {
+                "stressReactivity": "Significant reduction (p = 0.03)",
+                "fatigue": "Reduced fatigue after cognitive demanding tasks",
+                "interpretation": "POSITIVE for stress and fatigue outcomes"
+              },
+              "biomarkers": "No group differences in BDNF, MDA, or AChE activity"
+            },
+            "safetyData": {
+              "seriousAdverseEvents": "None reported",
+              "adverseReactions": "Higher frequency in Bacopa group (p=0.024), primarily GI complaints and headaches",
+              "tolerability": "Generally well-tolerated"
+            },
+            "limitations": ["Self-reported memory complaints (not clinical impairment)", "300mg dose may be suboptimal per Tiemtad 2026 NMA", "87/101 completers (14% dropout)"],
+            "clinicalRelevance": "Important negative result for cognition at standard 300mg dose. Supports stress/fatigue benefits but not cognitive enhancement at this dose in older adults with subjective complaints.",
+            "significance": "Adds nuance to evidence base — suggests 300mg may be insufficient for cognitive enhancement, consistent with Tiemtad 2026 dose-response finding"
           }
         ],
         "metaAnalysisSupport": {
@@ -357,6 +433,39 @@ const bacopaMonnieriEnhanced = {
             "mechanismInsight": "First study to show neurophysiological basis for attention improvements",
             "limitations": ["Small sample size", "Acute dosing study", "Limited cognitive battery"],
             "significance": "Provides mechanistic explanation for cognitive benefits"
+          },
+          {
+            "citationId": "feng_2026_plant_elderly_nma",
+            "title": "The effect of plant active substances on cognitive function in healthy older adults: a systematic review and network meta-analysis of randomized controlled trials",
+            "authors": ["Feng X", "Fan S", "Wei F"],
+            "year": 2026,
+            "journal": "Frontiers in Pharmacology",
+            "volume": "16", "pages": "1672171",
+            "doi": "10.3389/fphar.2025.1672171",
+            "pmid": "41640686",
+            "studyType": "Systematic review and network meta-analysis",
+            "evidenceLevel": "Level 1",
+            "studiesIncluded": 25,
+            "totalParticipants": 1861,
+            "population": "Healthy older adults",
+            "plantsCompared": 10,
+            "results": {
+              "executiveFunction": {
+                "bacopa_SUCRA": "91.3% (ranked #1)",
+                "curcumin_SUCRA": "89.3% (#2)",
+                "tartCherry_SUCRA": "88.9% (#3)"
+              },
+              "languageFunction": {
+                "bacopa_SUCRA": "93% (ranked #1)",
+                "raisin_SUCRA": "80.7% (#2)"
+              },
+              "learningAndMemory": "Raisin and tart cherry ranked higher; Bacopa not top-ranked",
+              "complexAttention": "Limited intervention effects overall",
+              "perceptualMotor": "Guarana ranked highest (90.3%)"
+            },
+            "limitations": ["Multi-supplement comparison — not Bacopa-specific", "Heterogeneity in Bacopa formulations across studies", "Limited number of studies per comparison"],
+            "clinicalRelevance": "Positions Bacopa as top-ranked plant substance for executive function and language in healthy elderly, complementing memory evidence from younger adult studies.",
+            "significance": "First NMA comparing Bacopa to other plant nootropics in elderly; confirms executive function domain advantage"
           }
         ]
       }
@@ -494,16 +603,17 @@ const bacopaMonnieriEnhanced = {
 
   // Enhanced Citation Quality Metrics
   "citationMetrics": {
-    "totalStudies": 15,
+    "totalStudies": 18,
     "studyTypes": {
-      "rctCount": 8,
-      "systematicReviews": 2, 
-      "metaAnalyses": 1,
+      "rctCount": 9,
+      "systematicReviews": 2,
+      "metaAnalyses": 3,
+      "networkMetaAnalyses": 2,
       "animalStudies": 3,
       "inVitroStudies": 1
     },
-    "totalParticipants": 487, // Human studies only
-    "averageStudyQuality": 7.4, // Jadad/Cochrane risk of bias score (0-10)
+    "totalParticipants": 588, // Human studies only (direct RCT participants; NMAs analyzed additional pooled participants)
+    "averageStudyQuality": 7.6, // Jadad/Cochrane risk of bias score (0-10)
     "evidenceLevelDistribution": {
       "level1": 3, // Meta-analyses, systematic reviews
       "level2": 8, // Large/well-designed RCTs
@@ -526,10 +636,12 @@ const bacopaMonnieriEnhanced = {
     "researchMaturity": "Mature field with 25+ years of research",
     "evidenceGaps": [
       "Long-term safety studies (>6 months)",
-      "Pediatric safety and efficacy", 
-      "Optimal dosing in elderly populations",
+      "Pediatric safety and efficacy",
+      "Dose-response clarification: Tiemtad 2026 NMA suggests ≥600mg/day for working memory vs traditional 300mg recommendation",
       "Interaction studies with common medications",
-      "Biomarker-guided dosing strategies"
+      "Biomarker-guided dosing strategies",
+      "No dedicated Bacopa anxiety/stress meta-analysis with quantitative pooling",
+      "Head-to-head comparison MA with other nootropics (racetams, Lion's Mane)"
     ]
   },
 
@@ -556,7 +668,7 @@ const bacopaMonnieriEnhanced = {
 
   // QUALITY ASSURANCE - Gold Standard Compliance Implementation
   "qualityAssurance": {
-    "doiVerificationDate": "2025-08-19",
+    "doiVerificationDate": "2026-03-05",
     "verificationMethod": "Manual verification against CrossRef API, PubMed database, and publisher websites",
     "accuracyRate": "100%",
     "verificationCriteria": [
@@ -601,9 +713,22 @@ const bacopaMonnieriEnhanced = {
       }
     ],
     "goldStandardCompliant": "Yes",
-    "lastVerificationDate": "2025-08-19",
-    "verificationStatus": "All 15 citations verified against original publications",
-    "confidenceLevel": "High - Direct verification with publisher databases"
+    "lastVerificationDate": "2026-03-05",
+    "verificationStatus": "All 18 citations verified against original publications. Mode 2 update added 3 new citations (Tiemtad 2026 NMA, Feng 2026 NMA, Lopresti 2025 RCT) — all DOIs and PMIDs verified against PubMed.",
+    "totalVerifiedCitations": 18,
+    "confidenceLevel": "High - Direct verification with publisher databases",
+    "mode2UpdateLog": {
+      "updateDate": "2026-03-05",
+      "previousCitations": 15,
+      "newCitations": 18,
+      "papersAdded": [
+        "Tiemtad et al. 2026 (PMID 41678913) — Bacopa vs Ginkgo NMA, 29 RCTs, n=2107",
+        "Feng et al. 2026 (PMID 41640686) — Multi-plant cognitive NMA, 25 studies, n=1861",
+        "Lopresti & Smith 2025 (PMID 41091332) — Bacumen RCT, n=101"
+      ],
+      "qualityScoreChange": "82 → 85 (+3)",
+      "tierDecision": "MAINTAIN Tier 2"
+    }
   }
 };
 

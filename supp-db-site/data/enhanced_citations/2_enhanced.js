@@ -11,17 +11,17 @@ const turmericCurcuminEnhanced = {
   // Enhanced Evidence Profile
   "evidenceProfile": {
     "overallQuality": "Tier 1",
-    "totalCitations": 20,
-    "researchQualityScore": 89,
-    "lastEvidenceUpdate": "2025-08-18", 
+    "totalCitations": 26,
+    "researchQualityScore": 92,
+    "lastEvidenceUpdate": "2026-03-04",
     "evidenceStrength": {
       "mechanisms": "Strong",
-      "clinicalBenefits": "Strong", 
+      "clinicalBenefits": "Strong",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2009-2024"
+    "publicationSpan": "2003-2026"
   },
 
   // ENHANCED CITATION SYSTEM WITH REAL RESEARCH
@@ -155,6 +155,23 @@ const turmericCurcuminEnhanced = {
             "findings": "Significant improvement in working memory performance and reduced fatigue compared to placebo",
             "effectSize": "Cohen's d = 0.63 for working memory",
             "limitations": "Short study duration, small sample size"
+          },
+          {
+            "citationId": "feng_2026_plant_network_meta",
+            "title": "The effect of plant active substances on cognitive function in healthy older adults: a systematic review and network meta-analysis of randomized controlled trials",
+            "authors": ["Feng X", "Fan S", "Wei F"],
+            "year": 2026,
+            "journal": "Frontiers in Pharmacology",
+            "volume": "16", "issue": "", "pages": "1672171",
+            "doi": "10.3389/fphar.2025.1672171",
+            "pmid": "41640686",
+            "studyType": "Network meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": 1861,
+            "studiesIncluded": 25,
+            "findings": "Among 10 plant active substances compared, curcumin ranked 2nd for executive function (SUCRA = 89.3%), behind only bacopa monnieri compound (91.3%)",
+            "effectSize": "Ranked high (SUCRA 89.3%) among plant-based cognitive interventions",
+            "limitations": "Indirect comparisons via network meta-analysis; limited complex attention effects"
           }
         ]
       },
@@ -212,6 +229,22 @@ const turmericCurcuminEnhanced = {
             "findings": "Significant reduction in C-reactive protein levels (weighted mean difference = -1.44 mg/L, p = 0.009)",
             "effectSize": "Moderate effect size for inflammatory marker reduction",
             "limitations": "Heterogeneity in dosing and study populations"
+          },
+          {
+            "citationId": "xu_2025_umbrella_review",
+            "title": "Curcumin and multiple health outcomes: critical umbrella review of intervention meta-analyses",
+            "authors": ["Xu Q", "Lian H", "Zhou R", "Gu Z", "Wu J", "Wu Y", "Li Z"],
+            "year": 2025,
+            "journal": "Frontiers in Pharmacology",
+            "volume": "16", "issue": "", "pages": "1601204",
+            "doi": "10.3389/fphar.2025.1601204",
+            "pmid": "40538540",
+            "studyType": "Umbrella review",
+            "evidenceLevel": "Level 1",
+            "studiesIncluded": 25,
+            "findings": "Umbrella review of 25 meta-analyses confirms curcumin has positive effects on inflammatory markers, lipids, blood pressure, musculoskeletal diseases, mood, cognitive function. GRADE assessment shows curcumin is safe but study quality needs improvement",
+            "effectSize": "Broad-spectrum benefits confirmed across multiple health domains",
+            "limitations": "Overall methodological quality of included meta-analyses was poor; many conclusions remain uncertain"
           }
         ]
       },
@@ -240,6 +273,132 @@ const turmericCurcuminEnhanced = {
             "findings": "Significant reduction in depression scores compared to placebo (SMD = -0.344, p = 0.015)",
             "effectSize": "Small to moderate effect (Hedges' g = 0.396)",
             "limitations": "Study heterogeneity and small individual study sizes"
+          }
+        ]
+      },
+      {
+        "claim": "Global cognitive function (updated meta-analysis)",
+        "benefit": "Global cognitive function (updated meta-analysis)",
+        "healthDomain": "Global Cognitive Function",
+        "specificClaim": "Significant improvement in global cognitive function with curcumin supplementation",
+        "strength": "Strong",
+        "populationStudied": "Healthy adults and older adults",
+        "evidenceLevel": "Level 1",
+        "evidenceQuality": "High",
+        "replicationStatus": "Well-replicated (9 RCTs)",
+        "target": "Central nervous system",
+        "tissueTarget": "Central nervous system",
+        "evidence": [
+          {
+            "citationId": "wang_2025_cognitive_meta",
+            "title": "The effect of curcumin supplementation on cognitive function: an updated systematic review and meta-analysis",
+            "authors": ["Wang W", "Zhao R", "Liu B", "Li K"],
+            "year": 2025,
+            "journal": "Frontiers in Nutrition",
+            "volume": "12", "issue": "", "pages": "1549509",
+            "doi": "10.3389/fnut.2025.1549509",
+            "pmid": "40308636",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": 501,
+            "studiesIncluded": 9,
+            "findings": "Curcumin significantly improved global cognitive function (SMD = 0.82, 95% CI: 0.19-1.45, p = 0.010). Optimal dose 0.8g/day, duration ≥24 weeks (SMD = 1.15). More effective in adults ≥60 years (SMD = 1.12)",
+            "effectSize": "Large effect (SMD = 0.82 overall; SMD = 1.15 for ≥24 weeks)",
+            "limitations": "Moderate heterogeneity, limited to 9 RCTs with 501 subjects"
+          }
+        ]
+      },
+      {
+        "claim": "Working memory and processing speed (cognitive aging)",
+        "benefit": "Working memory and processing speed (cognitive aging)",
+        "healthDomain": "Cognitive Aging",
+        "specificClaim": "Improves working memory and processing speed in cognitive aging populations",
+        "strength": "Moderate",
+        "populationStudied": "Older adults with cognitive aging",
+        "evidenceLevel": "Level 1",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Replicated across 10 RCTs",
+        "target": "Central nervous system",
+        "tissueTarget": "Central nervous system",
+        "evidence": [
+          {
+            "citationId": "yu_2025_cognitive_aging",
+            "title": "Targeting cognitive aging with curcumin supplementation: A systematic review and meta-analysis",
+            "authors": ["Yu L", "Li N", "Li B", "Ye KX", "Guo J", "Shan J", "Cao L", "Song M", "Wang Y", "Lee TS", "Maier AB", "Feng L"],
+            "year": 2025,
+            "journal": "The Journal of Prevention of Alzheimer's Disease",
+            "volume": "12", "issue": "8", "pages": "100248",
+            "doi": "10.1016/j.tjpad.2025.100248",
+            "pmid": "40579315",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": 531,
+            "studiesIncluded": 10,
+            "findings": "Working memory significantly improved (SMD = 1.01, 95% CI: 0.15-1.87). Processing speed improved (SMD = 0.37, 95% CI: 0.07-0.67). No significant effect on global cognitive outcomes overall (SMD = 0.14)",
+            "effectSize": "Large for working memory (SMD = 1.01); Small for processing speed (SMD = 0.37)",
+            "limitations": "Overall global cognition non-significant; benefits limited to specific cognitive domains"
+          }
+        ]
+      },
+      {
+        "claim": "Anti-inflammatory (rheumatoid arthritis)",
+        "benefit": "Anti-inflammatory (rheumatoid arthritis)",
+        "healthDomain": "Rheumatoid Arthritis",
+        "specificClaim": "Significant therapeutic effects on rheumatoid arthritis outcomes",
+        "strength": "Moderate",
+        "populationStudied": "Patients with rheumatoid arthritis",
+        "evidenceLevel": "Level 1",
+        "evidenceQuality": "Low (GRADE: very low to low)",
+        "replicationStatus": "Replicated across 6 RCTs",
+        "target": "Musculoskeletal system",
+        "tissueTarget": "Joints and immune system",
+        "evidence": [
+          {
+            "citationId": "fan_2026_rheumatoid_meta",
+            "title": "Curcumin for the clinical treatment of rheumatoid arthritis: a systematic review and meta-analysis of placebo-controlled randomized clinical trials",
+            "authors": ["Fan Y", "Yi Z", "Mao S", "Wen J", "Zhang J", "Zhang Q", "Liu R"],
+            "year": 2026,
+            "journal": "Frontiers in Immunology",
+            "volume": "16", "issue": "", "pages": "1726157",
+            "doi": "10.3389/fimmu.2025.1726157",
+            "pmid": "41601662",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": 244,
+            "studiesIncluded": 6,
+            "findings": "Curcumin significantly improved ACR 20 response (SMD = 4.35), DAS-28 (SMD = -3.40), ESR (SMD = -3.72), CRP (SMD = -2.91), VAS pain (SMD = -5.65), tender joint count (SMD = -2.84), swollen joint count (SMD = -4.11), rheumatoid factor (SMD = -3.82)",
+            "effectSize": "Large effects across all measured outcomes",
+            "limitations": "Small number of studies (6 RCTs), limited sample size (244), GRADE certainty very low to low"
+          }
+        ]
+      },
+      {
+        "claim": "Lipid profile improvement in metabolic conditions",
+        "benefit": "Lipid profile improvement in metabolic conditions",
+        "healthDomain": "Metabolic Health",
+        "specificClaim": "Modest improvements in lipid profiles in prediabetes and diabetes populations",
+        "strength": "Moderate",
+        "populationStudied": "Adults with prediabetes and type 2 diabetes",
+        "evidenceLevel": "Level 1",
+        "evidenceQuality": "Low (GRADE)",
+        "replicationStatus": "Well-replicated (27 RCTs)",
+        "target": "Cardiovascular system",
+        "tissueTarget": "Hepatic and vascular tissue",
+        "evidence": [
+          {
+            "citationId": "bahari_2026_lipid_meta",
+            "title": "Effects of Curcumin/Turmeric Supplementation on Lipid Profile in Subjects With Prediabetes and Diabetes: A Systematic Review and Meta-Analysis",
+            "authors": ["Bahari H", "Malekahmadi M", "Shahraki Jazinaki M", "Asadi Z", "Soltaninejad K", "Golafrouz H"],
+            "year": 2026,
+            "journal": "Lipids",
+            "doi": "10.1002/lipd.70037",
+            "pmid": "41656101",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "27 RCTs (31 arms)",
+            "findings": "Significant reductions in triglycerides (WMD: -13.73 mg/dL), total cholesterol (WMD: -5.24 mg/dL), LDL-C (WMD: -5.72 mg/dL), and increased HDL-C (WMD: +2.14 mg/dL) in prediabetes/diabetes populations",
+            "effectSize": "Small to moderate improvements across lipid parameters",
+            "limitations": "Significant heterogeneity (I² > 80%), GRADE certainty low for all outcomes"
           }
         ]
       }

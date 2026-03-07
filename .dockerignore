@@ -1,0 +1,41 @@
+node_modules
+.next
+.git
+*.md
+*.png
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!next.config.js
+!tailwind.config.js
+!postcss.config.js
+
+# Debug and test files
+debug-*.js
+test-*.js
+verify-*.js
+*.output
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reports and temp files
+*.log
+reports/
+verification-screenshots/
+.claude.backup-*
+.mcp.json.backup-*
+
+# Research files
+research/
+Caffeine_*.json
+L-Theanine_*.json
+Vitamin_C_*.json
+*_comprehensive_research*.json
+*_enhanced_citations*.md

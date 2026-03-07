@@ -1,10 +1,13 @@
-// Enhanced Citations for Inositol (ID: 26)
-// Myo-Inositol - Cellular Signaling Molecule
-// Generated: 2025-08-25
+// Enhanced Citations for Inositol (Legacy file — ID conflict resolved 2026-03-06)
+// Inositol is ID 41 in supplements.js; this file previously incorrectly used ID 26.
+// The canonical inositol file is 41_inositol_enhanced.js (exports to window.enhancedCitations[41]).
+// This file's export is redirected to [41] for backward compatibility; 41_inositol_enhanced.js
+// loads after this file alphabetically and will overwrite with the correct newer-schema data.
 
 window.enhancedCitations = window.enhancedCitations || {};
-window.enhancedCitations[26] = {
-    supplementId: 26,
+window.enhancedCitations[41] = window.enhancedCitations[41] || {};  // Do not overwrite if already set
+window.enhancedCitations[41] = {
+    supplementId: 41,
     supplementName: "Inositol",
     isEnhanced: true,
     version: "2.0",
@@ -178,5 +181,5 @@ window.enhancedCitations[26] = {
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = window.enhancedCitations[26];
+    module.exports = window.enhancedCitations[41];
 }

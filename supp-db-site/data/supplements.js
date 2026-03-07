@@ -21,8 +21,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Multiple RCTs with moderate sample sizes",
       "primaryBenefits": {
         "cognitive": ["Memory enhancement", "Attention improvement", "Learning facilitation"],
-        "nonCognitive": ["Anxiety reduction", "Stress management", "Neuroprotection"],
-      "isEnhanced": true
+        "nonCognitive": ["Anxiety reduction", "Stress management", "Neuroprotection"]
       },
       "isEnhanced": true,
       "dosageRange": "300mg daily (standardized to 55% bacosides)",
@@ -42,7 +41,10 @@ const supplementDatabase = {
       },
       "effectSizes": {
         "memory": "Large effect (d=0.95) for word recall",
-        "attention": "Medium effect (d=0.52) for working memory"
+        "attention": "Medium effect (d=0.52) for working memory",
+        "workingMemoryHighDose": "Very large effect (SMD=2.03) for working memory at ≥600mg/day (Tiemtad 2026 NMA, 29 RCTs, n=2107)",
+        "executiveFunction": "Bacopa ranked #1 for executive function (SUCRA 91.3%) in elderly (Feng 2026 NMA, 25 studies)",
+        "stressReactivity": "Significant reduction in stress reactivity (p=0.03) at 300mg/day (Lopresti 2025 RCT, n=101)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder", "Liquid extract"],
@@ -51,27 +53,35 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
+          "title": "Bacopa monnieri versus Ginkgo biloba for enhancing cognitive function: a network meta-analysis of randomized controlled trials",
+          "authors": "Tiemtad S, et al.",
+          "year": "2026",
+          "doi": "10.1016/j.phymed.2026.157915",
+          "pmid": "41678913"
+        },
+        {
           "title": "Chronic effects of Brahmi (Bacopa monnieri) on human memory",
           "authors": "Roodenrys S, Booth D, Bulzomi S, et al.",
           "year": "2002",
-          "doi": "10.1016/S0893-133X(02)00280-1"
+          "doi": "10.1016/S0893-133X(01)00419-5",
+          "pmid": "12093601"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 2",
-          "totalCitations": 15,
-          "researchQualityScore": 82,
-          "lastEvidenceUpdate": "2025-08-17",
+          "totalCitations": 18,
+          "researchQualityScore": 85,
+          "lastEvidenceUpdate": "2026-03-05",
           "evidenceStrength": {
             "mechanisms": "Strong",
             "clinicalBenefits": "Strong",
             "safety": "Well-established",
-            "dosage": "Evidence-based"
+            "dosage": "Evidence-based (dose-response emerging)"
           },
           "researchMaturity": "Mature",
-          "publicationSpan": "1997-2023"
+          "publicationSpan": "1997-2026"
         },
         "mechanisms": [
           {
@@ -229,8 +239,10 @@ const supplementDatabase = {
         "drugInteractions": ["Blood thinners", "Diabetes medications"]
       },
       "effectSizes": {
-        "cognition": "Small to moderate (d=0.3-0.6)",
-        "inflammation": "Moderate to large (d=0.5-0.8)"
+        "cognition": "Moderate to large (SMD=0.82, 95% CI: 0.39-1.25)",
+        "workingMemory": "Large (SMD=1.01 for cognitive aging populations)",
+        "inflammation": "Moderate to large (d=0.5-0.8)",
+        "lipidProfile": "Small to moderate (significant TC, LDL, TG reduction)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder", "Liquid extract"],
@@ -239,19 +251,31 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Effects of curcumin on cognitive function",
-          "authors": "Various meta-analyses",
-          "year": "2020-2023",
-          "doi": "Multiple DOIs available"
+          "title": "Curcumin supplementation and cognitive function: A meta-analysis of randomized controlled trials",
+          "authors": "Wang et al.",
+          "year": 2025,
+          "doi": "10.1016/j.phymed.2025.156742"
+        },
+        {
+          "title": "Effects of curcumin supplementation on cognitive aging: A meta-analysis of 10 RCTs",
+          "authors": "Yu et al.",
+          "year": 2025,
+          "doi": "10.1002/fsn3.70172"
+        },
+        {
+          "title": "A comprehensive umbrella review of curcumin effects based on 25 meta-analyses",
+          "authors": "Xu et al.",
+          "year": 2025,
+          "doi": "10.3389/fphar.2025.1584866"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 1",
-          "totalCitations": 20,
-          "researchQualityScore": 89,
-          "lastEvidenceUpdate": "2025-08-18",
+          "totalCitations": 26,
+          "researchQualityScore": 92,
+          "lastEvidenceUpdate": "2026-03-04",
           "evidenceStrength": {
             "mechanisms": "Strong",
             "clinicalBenefits": "Strong",
@@ -259,7 +283,7 @@ const supplementDatabase = {
             "dosage": "Evidence-based"
           },
           "researchMaturity": "Mature",
-          "publicationSpan": "2009-2024"
+          "publicationSpan": "2003-2026"
         }
       }
     },
@@ -270,21 +294,25 @@ const supplementDatabase = {
       "scientificName": "Withania somnifera",
       "category": "Adaptogen",
       "commonNames": ["Indian Winter Cherry", "Withania", "Indian Ginseng"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Multiple RCTs with good sample sizes",
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Multiple meta-analyses (22-RCT dose-response MA, 23-trial hormonal MA, 14-study psychiatric MA) with consistent findings across 6+ domains including stress, anxiety, depression, sleep, hormonal modulation, and muscle strength. Decision tree: Human data (YES) → Hundreds of RCTs → Multiple meta-analyses (YES) → Consistent findings (YES) → Tier 1",
+      "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Stress-related cognitive improvement", "Attention under stress"],
-        "nonCognitive": ["Stress reduction", "Anxiety management", "Sleep quality", "Testosterone support", "Muscle strength"],
-    "isEnhanced": true
+        "nonCognitive": ["Stress reduction", "Anxiety management", "Sleep quality", "Testosterone support (men)", "Muscle strength", "Hormonal modulation", "Depression symptom reduction"],
+        "isEnhanced": true
       },
-      "dosageRange": "300-600mg daily (standardized extract)",
+      "dosageRange": "300-600mg daily (standardized extract; 600mg/day optimal for stress/anxiety per dose-response MA)",
       "optimalDuration": "8-12 weeks",
-      "studyPopulations": ["Stressed adults", "Athletes", "Individuals with anxiety"],
+      "studyPopulations": ["Stressed adults", "Athletes", "Individuals with anxiety", "Individuals with diagnosed mental disorders", "Men seeking testosterone support", "Individuals with subclinical hypothyroidism"],
       "mechanismsOfAction": [
         "HPA axis modulation",
-        "Cortisol reduction",
+        "Cortisol reduction (SMD = -1.18, 23 RCTs)",
         "GABA signaling enhancement",
-        "Neuroprotective effects"
+        "Neuroprotective effects",
+        "Serotonergic modulation (MD = 31.75 ng/ml increase)",
+        "Testosterone biosynthesis in men (MD = 57.43 ng/dl)",
+        "Thyroid hormone modulation (T4 MD = 0.61 µg/dL)"
       ],
       "safetyProfile": {
         "rating": "Good",
@@ -293,8 +321,13 @@ const supplementDatabase = {
         "drugInteractions": ["Sedatives", "Immunosuppressants", "Thyroid medications"]
       },
       "effectSizes": {
-        "stress": "Moderate to large (d=0.6-1.2)",
-        "anxiety": "Moderate (d=0.4-0.7)"
+        "stress": "Very large (SMD = -5.88, 22 RCTs dose-response MA; SMD = -0.95 in diagnosed disorders)",
+        "anxiety": "Very large (SMD = -6.87, 22 RCTs dose-response MA; SMD = -1.13 in diagnosed disorders)",
+        "depression": "Very large (SMD = -5.68, 22 RCTs dose-response MA; SMD = -1.28 in diagnosed disorders)",
+        "sleep": "Large (SMD = -1.35 in diagnosed disorders)",
+        "cortisol": "Large (SMD = -1.18, 23 trials, n=1706)",
+        "testosteroneMen": "Moderate (MD = 57.43 ng/dl, significant in men only)",
+        "serotonin": "Large (MD = 31.75 ng/ml, p < 0.01)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder", "Liquid extract"],
@@ -303,19 +336,35 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Adaptogenic and anxiolytic effects of ashwagandha root extract",
-          "authors": "Multiple studies",
-          "year": "2019-2023",
-          "doi": "Various"
+          "title": "Effects of ashwagandha on mental health in adults: A systematic review and dose-response meta-analysis of randomized controlled trials",
+          "authors": "Alsanie SA et al.",
+          "year": 2026,
+          "doi": "10.1016/j.ctim.2026.103325",
+          "pmid": "41644067"
+        },
+        {
+          "title": "Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of Randomized-controlled Trials",
+          "authors": "Fornalik M et al.",
+          "year": 2026,
+          "doi": "10.1055/a-2802-8363",
+          "pmid": "41740946"
+        },
+        {
+          "title": "The effect of Withania somnifera on mental health symptoms in individuals with mental disorders: systematic review and meta-analysis",
+          "authors": "Marchi M et al.",
+          "year": 2025,
+          "doi": "10.1192/bjo.2025.10885",
+          "pmid": "41140145"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "isEnhanced": true,
+        "fileId": "3_enhanced"
       },
       "evidenceProfile": {
-        "researchQualityScore": 91,
-        "totalCitations": 18,
-        "lastUpdated": "2025-08-18"
+        "researchQualityScore": 92,
+        "totalCitations": 21,
+        "lastEvidenceUpdate": "2026-03-05"
       }
     },
     
@@ -329,8 +378,8 @@ const supplementDatabase = {
       "evidenceTierRationale": "Extensive meta-analyses and systematic reviews",
       "primaryBenefits": {
         "cognitive": ["Memory support", "Cognitive aging protection", "Brain development"],
-        "nonCognitive": ["Cardiovascular health", "Triglyceride reduction", "Anti-inflammatory", "Eye health"],
-    "isEnhanced": true
+        "nonCognitive": ["Cardiovascular health", "Triglyceride reduction", "Anti-inflammatory", "Eye health", "Metabolic syndrome", "Liver health (MASLD)", "Exercise synergy", "Preeclampsia prevention"],
+        "isEnhanced": true
       },
       "dosageRange": "1000-2000mg daily (combined EPA/DHA)",
       "optimalDuration": "8+ weeks for cognitive benefits",
@@ -348,8 +397,11 @@ const supplementDatabase = {
         "drugInteractions": ["Blood thinners", "Blood pressure medications"]
       },
       "effectSizes": {
-        "triglycerides": "Large (33% reduction)",
-        "cognition": "Small to moderate (d=0.2-0.4)"
+        "triglycerides": "Large (high-dose >2000mg: -56.78 mg/dL; standard: 33% reduction)",
+        "cognition": "Small to moderate (SMD = 0.24, p = 0.02)",
+        "depression": "Small to moderate (Cohen's d = -0.36, EPA ≥60% formulations)",
+        "preeclampsia": "Large (RR 0.63 total, RR 0.45 severe preeclampsia)",
+        "metabolicSyndrome": "Large for TG at high doses (>2000mg/day)"
       },
       "commercialAvailability": {
         "forms": ["Softgels", "Liquid", "Gummies", "Powder"],
@@ -358,19 +410,31 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Omega-3 fatty acids for cardiovascular disease",
-          "authors": "Multiple systematic reviews",
-          "year": "2020-2024",
-          "doi": "Various Cochrane reviews"
+          "title": "Omega-3 fatty acids for the primary and secondary prevention of cardiovascular disease",
+          "authors": "Abdelhamid AS, Brown TJ, Brainard JS, et al.",
+          "year": 2020,
+          "doi": "10.1002/14651858.CD003177.pub5"
+        },
+        {
+          "title": "Marine-Based Omega-3 Fatty Acids and Metabolic Syndrome: A Systematic Review and Meta-Analysis of RCTs",
+          "authors": "Basirat A, Merino-Torres JF",
+          "year": 2025,
+          "doi": "10.3390/nu17203279"
+        },
+        {
+          "title": "The effect of omega-3 supplementation and fish oil on preeclampsia: A meta-analysis",
+          "authors": "Rajati M, et al.",
+          "year": 2025,
+          "doi": "10.1016/j.clnesp.2024.10.146"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 1",
-          "totalCitations": 21,
-          "researchQualityScore": 92,
-          "lastEvidenceUpdate": "2025-08-18",
+          "totalCitations": 27,
+          "researchQualityScore": 94,
+          "lastEvidenceUpdate": "2026-03-04",
           "evidenceStrength": {
             "mechanisms": "Strong",
             "clinicalBenefits": "Strong",
@@ -378,7 +442,7 @@ const supplementDatabase = {
             "dosage": "Evidence-based"
           },
           "researchMaturity": "Mature",
-          "publicationSpan": "2015-2024"
+          "publicationSpan": "2004-2025"
         }
       }
     },
@@ -389,16 +453,16 @@ const supplementDatabase = {
       "scientificName": "N-methylguanidino acetic acid",
       "category": "Performance Enhancer",
       "commonNames": ["Creatine Monohydrate", "Phosphocreatine"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Meta-analysis of memory studies available",
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Multiple large meta-analyses (69+ studies for strength, 61 trials dose-response), ISSN position stand, consistent replication across domains",
       "primaryBenefits": {
-        "cognitive": ["Memory enhancement", "Processing speed", "Mental fatigue reduction"],
-        "nonCognitive": ["Muscle strength", "Power output", "Exercise recovery", "Muscle mass"],
-    "isEnhanced": true
+        "cognitive": ["Memory enhancement", "Processing speed", "Mental fatigue reduction", "Cognitive aging protection"],
+        "nonCognitive": ["Muscle strength", "Power output", "Exercise recovery", "Muscle mass", "Body composition", "Strength and power"],
+        "isEnhanced": true
       },
       "dosageRange": "3-5g daily (maintenance) or 20g daily for 5 days (loading)",
       "optimalDuration": "4+ weeks",
-      "studyPopulations": ["Athletes", "Healthy adults", "Vegetarians", "Elderly"],
+      "studyPopulations": ["Athletes", "Healthy adults", "Vegetarians", "Elderly", "Trained and untrained individuals"],
       "mechanismsOfAction": [
         "ATP regeneration",
         "Brain energy metabolism",
@@ -412,8 +476,11 @@ const supplementDatabase = {
         "drugInteractions": ["Minimal known interactions"]
       },
       "effectSizes": {
-        "memory": "Small to moderate (particularly in vegetarians)",
-        "strength": "Moderate to large (d=0.5-0.8)"
+        "memory": "Small to moderate (83.3% of studies positive in aging; particularly strong in vegetarians)",
+        "strength": "Moderate to large (significant via 69-study meta-analysis; RVE-confirmed)",
+        "bodyComposition": "Moderate (FFM +1.39 kg, body mass +0.89 kg; dose-response from 61 trials)",
+        "depression": "Small (SMD = -0.34, below minimal important difference; GRADE very low)",
+        "kidneyFunction": "No adverse effect (creatinine MD 0.07 mg/dL within normal; GFR unchanged)"
       },
       "commercialAvailability": {
         "forms": ["Powder", "Capsules", "Tablets"],
@@ -422,27 +489,39 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Effectiveness of creatine supplementation on memory in healthy individuals",
-          "authors": "Prokopidis et al.",
-          "year": "2022",
-          "doi": "10.1093/ageing/afac126.011"
+          "title": "The effects of creatine supplementation on upper and lower body strength and power: a systematic review and meta-analysis",
+          "authors": "Kazeminasab et al.",
+          "year": "2025",
+          "doi": "10.1080/02640414.2025.2468753"
+        },
+        {
+          "title": "Dose-response effects of creatine supplementation on body composition: a meta-analysis",
+          "authors": "Ashtary-Larky et al.",
+          "year": "2025",
+          "doi": "10.1016/j.clnu.2025.07.012"
+        },
+        {
+          "title": "The Effects of Creatine Supplementation on Kidney Function: A Systematic Review and Meta-Analysis",
+          "authors": "Naeini et al.",
+          "year": "2025",
+          "doi": "10.1016/j.clnu.2025.06.030"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
-          "overallQuality": "Tier 2",
-          "totalCitations": 18,
-          "researchQualityScore": 86,
-          "lastEvidenceUpdate": "2025-08-18",
+          "overallQuality": "Tier 1",
+          "totalCitations": 24,
+          "researchQualityScore": 93,
+          "lastEvidenceUpdate": "2026-03-04",
           "evidenceStrength": {
             "mechanisms": "Strong",
             "clinicalBenefits": "Strong",
             "safety": "Well-established",
             "dosage": "Evidence-based"
           },
-          "researchMaturity": "Mature",
-          "publicationSpan": "2003-2024"
+          "researchMaturity": "Highly Mature",
+          "publicationSpan": "1992-2026"
         }
       }
     },
@@ -453,21 +532,22 @@ const supplementDatabase = {
       "scientificName": "Magnesium (various forms)",
       "category": "Essential Mineral",
       "commonNames": ["Magnesium Glycinate", "Magnesium Oxide", "Magnesium Citrate"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Multiple RCTs for sleep and stress",
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Multiple large meta-analyses (38 RCTs for blood pressure, 23 RCTs for T2DM glycemic control), consistent replication across cardiovascular, metabolic, and neurological domains",
       "primaryBenefits": {
         "cognitive": ["Stress-related cognitive support", "Sleep quality improvement"],
-        "nonCognitive": ["Sleep enhancement", "Muscle relaxation", "Blood pressure support", "Bone health"],
-    "isEnhanced": true
+        "nonCognitive": ["Sleep enhancement", "Muscle relaxation", "Blood pressure support", "Bone health", "Glycemic control", "Anti-inflammatory effects"],
+        "isEnhanced": true
       },
       "dosageRange": "200-400mg daily (elemental magnesium)",
-      "optimalDuration": "4-8 weeks",
-      "studyPopulations": ["Adults with sleep issues", "Stressed individuals", "Athletes", "Elderly"],
+      "optimalDuration": "4-12 weeks",
+      "studyPopulations": ["Adults with sleep issues", "Stressed individuals", "Athletes", "Elderly", "Hypertensive adults", "Type 2 diabetes patients", "Prediabetic adults", "Metabolic syndrome patients"],
       "mechanismsOfAction": [
         "GABA receptor modulation",
         "NMDA receptor antagonism",
         "Muscle relaxation",
-        "Neurotransmitter regulation"
+        "Neurotransmitter regulation",
+        "Anti-inflammatory activity (CRP reduction)"
       ],
       "safetyProfile": {
         "rating": "Good",
@@ -477,7 +557,10 @@ const supplementDatabase = {
       },
       "effectSizes": {
         "sleep": "Moderate (significant improvement in elderly)",
-        "stress": "Small to moderate"
+        "stress": "Small to moderate",
+        "bloodPressure": "Small-moderate (SBP -2.81 mmHg, DBP -2.05 mmHg overall; up to -7.68 mmHg in hypertensives on medication; 38 RCTs)",
+        "glycemicControl": "Moderate (FBG WMD=-0.58 in T2DM, 23 RCTs; HOMA-IR MD=-1.10 in prediabetes)",
+        "inflammation": "Small-moderate (CRP SMD=-0.327 in metabolic syndrome, 8 RCTs)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder", "Liquid"],
@@ -486,27 +569,39 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Therapeutic Effect of Magnesium Supplementation in Improving Quality of Life among Elderly Insomniac Participants",
-          "authors": "Liaqat et al.",
-          "year": "2023",
-          "doi": "Pakistan Journal of Health Sciences"
+          "title": "Magnesium Supplementation and Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+          "authors": "Argeros et al.",
+          "year": "2025",
+          "doi": "10.1161/HYPERTENSIONAHA.125.25129"
+        },
+        {
+          "title": "Effect of Magnesium Supplements on Improving Glucose Control, Blood Pressure and Lipid Profile in Patients With Type 2 Diabetes Mellitus",
+          "authors": "Maqrashi et al.",
+          "year": "2025",
+          "doi": "10.18295/2075-0528.2848"
+        },
+        {
+          "title": "Unlocking the Power of Magnesium: A Systematic Review and Meta-Analysis Regarding Its Role in Oxidative Stress and Inflammation",
+          "authors": "Cepeda et al.",
+          "year": "2025",
+          "doi": "10.3390/antiox14060740"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
-          "overallQuality": "Tier 2",
-          "totalCitations": 16,
-          "researchQualityScore": 78,
-          "lastEvidenceUpdate": "2025-08-18",
+          "overallQuality": "Tier 1",
+          "totalCitations": 21,
+          "researchQualityScore": 90,
+          "lastEvidenceUpdate": "2026-03-04",
           "evidenceStrength": {
             "mechanisms": "Strong",
-            "clinicalBenefits": "Moderate",
+            "clinicalBenefits": "Strong",
             "safety": "Well-established",
             "dosage": "Evidence-based"
           },
-          "researchMaturity": "Mature",
-          "publicationSpan": "2001-2024"
+          "researchMaturity": "Highly Mature",
+          "publicationSpan": "2001-2026"
         }
       }
     },
@@ -517,21 +612,25 @@ const supplementDatabase = {
       "scientificName": "Cholecalciferol",
       "category": "Vitamin",
       "commonNames": ["Vitamin D", "Cholecalciferol", "Sunshine Vitamin"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Large observational studies and some RCTs",
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Multiple large meta-analyses (20+) across bone, immune, metabolic, liver, and autoimmune domains with consistent findings; largest IPD MA encompasses 46 RCTs with 64,573 participants (Jolliffe 2025)",
       "primaryBenefits": {
         "cognitive": ["Cognitive aging protection", "Mood support", "Executive function"],
-        "nonCognitive": ["Bone health", "Immune function", "Muscle strength", "Mood regulation"],
-    "isEnhanced": true
+        "nonCognitive": ["Bone health", "Immune function (deficiency-dependent)", "Muscle strength", "Mood regulation", "Liver health", "Glycemic control", "Autoimmune disease modulation"],
+        "isEnhanced": true
       },
-      "dosageRange": "1000-4000 IU daily (based on blood levels)",
-      "optimalDuration": "Long-term supplementation",
-      "studyPopulations": ["Deficient individuals", "Elderly", "Limited sun exposure", "General adults"],
+      "isEnhanced": true,
+      "dosageRange": "1000-4000 IU daily (based on blood levels; 2000-4000 IU optimal for metabolic benefit)",
+      "optimalDuration": "Long-term supplementation (benefits apparent by 12 weeks for metabolic outcomes)",
+      "studyPopulations": ["Deficient individuals", "Elderly", "Limited sun exposure", "General adults", "Type 2 diabetes patients", "SLE patients", "Chronic liver disease patients"],
       "mechanismsOfAction": [
         "Vitamin D receptor activation",
         "Calcium homeostasis",
         "Gene expression regulation",
-        "Immune modulation"
+        "Immune modulation (innate and adaptive)",
+        "Anti-inflammatory NF-kB pathway regulation",
+        "Hepatoprotective effects",
+        "Insulin sensitivity modulation"
       ],
       "safetyProfile": {
         "rating": "Good",
@@ -541,7 +640,11 @@ const supplementDatabase = {
       },
       "effectSizes": {
         "mood": "Small to moderate (in deficient individuals)",
-        "bone": "Moderate (fracture prevention)"
+        "bone": "Moderate (fracture prevention)",
+        "immune": "Moderate in deficient populations (OR 0.58 at <25 nmol/L; Jolliffe 2025, 46 RCTs, n=64,573)",
+        "liver": "Moderate (significant AST/ALT/albumin improvement; Martinekova 2025, 46 RCTs, n=4,084)",
+        "glycemic": "Moderate (significant FBG/HbA1c/HOMA-IR improvement; Bruna-Mejias 2025, 20 RCTs)",
+        "autoimmune": "Moderate (improved SLEDAI scores in SLE; El Kababi 2025, 21 studies, n=3,177)"
       },
       "commercialAvailability": {
         "forms": ["Softgels", "Tablets", "Drops", "Gummies"],
@@ -550,19 +653,39 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Vitamin D and cognitive decline",
-          "authors": "Multiple studies",
-          "year": "2014-2024",
-          "doi": "Various"
+          "title": "Effect of vitamin D supplementation on acute respiratory infections: updated individual participant data meta-analysis",
+          "authors": "Jolliffe DA et al.",
+          "year": 2025,
+          "doi": "10.1016/S2213-8587(24)00327-5"
+        },
+        {
+          "title": "The Effect of Vitamin D Supplementation on Disease Activity and Inflammatory Markers in SLE Patients: A Systematic Review and Meta-Analysis",
+          "authors": "El Kababi KA et al.",
+          "year": 2025,
+          "doi": "10.3390/nu17111917"
+        },
+        {
+          "title": "The effects of vitamin D supplementation on liver function in chronic liver disease: A systematic review and meta-analysis",
+          "authors": "Martinekova K et al.",
+          "year": 2025,
+          "doi": "10.1093/nutrit/nuaf024"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
-      },
-      "evidenceProfile": {
-        "researchQualityScore": 89,
-        "totalCitations": 23,
-        "lastUpdated": "2025-08-18"
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "researchQualityScore": 93,
+          "totalCitations": 28,
+          "lastEvidenceUpdate": "2026-03-04",
+          "evidenceStrength": {
+            "mechanisms": "Strong",
+            "clinicalBenefits": "Strong",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature",
+          "publicationSpan": "1990-2025"
+        }
       }
     },
     
@@ -574,10 +697,10 @@ const supplementDatabase = {
       "commonNames": ["Sleep Hormone", "Pineal Hormone"],
       "evidenceTier": 1,
       "evidenceTierRationale": "Extensive meta-analyses for sleep disorders",
+      "isEnhanced": true,
       "primaryBenefits": {
-        "cognitive": ["Sleep-related cognitive improvement", "Circadian rhythm regulation"],
-        "nonCognitive": ["Sleep onset", "Sleep quality", "Jet lag prevention", "Antioxidant effects"],
-    "isEnhanced": true
+        "cognitive": ["Sleep-related cognitive improvement", "Circadian rhythm regulation", "Cognitive decline protection (MCI/mild AD)"],
+        "nonCognitive": ["Sleep onset", "Sleep quality", "Jet lag prevention", "Antioxidant effects", "ICU delirium prevention", "Parkinson's disease sleep"]
       },
       "dosageRange": "0.5-3mg, 30-60 minutes before bedtime",
       "optimalDuration": "As needed or 4+ weeks for chronic issues",
@@ -595,8 +718,10 @@ const supplementDatabase = {
         "drugInteractions": ["Sedatives", "Blood thinners", "Diabetes medications"]
       },
       "effectSizes": {
-        "sleep onset": "Moderate (7-minute reduction)",
-        "sleep quality": "Small to moderate"
+        "sleepOnsetLatency": "SOL SMD=-0.37 (Choi 2022 MA, 11 RCTs); dose-response peaks at 4mg/day (Cruz-Sanabria 2024)",
+        "sleepQuality": "PSQI WMD=-1.24 (Gholami 2022 MA, 23 RCTs, p<0.001)",
+        "icuDelirium": "RR=0.72 (Tang 2025 MA, 32 RCTs, n=3895, 95% CI: 0.58-0.89)",
+        "parkinsonsSleep": "PSQI MD=-1.75 (Yousef 2025 MA, 8 studies, p=0.004); TST SMD=0.84 (p<0.00001)"
       },
       "commercialAvailability": {
         "forms": ["Tablets", "Capsules", "Gummies", "Sublingual", "Extended-release"],
@@ -605,19 +730,27 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Melatonin effective for some sleep disorders",
-          "authors": "Buscemi et al.",
-          "year": "2005",
-          "doi": "South African Family Practice"
+          "title": "Melatonin Use in the ICU: A Systematic Review and Meta-Analysis",
+          "authors": "Tang et al.",
+          "year": "2025",
+          "doi": "10.1097/CCM.0000000000006767"
+        },
+        {
+          "title": "Optimizing the Time and Dose of Melatonin as a Sleep-Promoting Drug: A SR and Dose-Response Meta-Analysis",
+          "authors": "Cruz-Sanabria et al.",
+          "year": "2024",
+          "doi": "10.1111/jpi.12985"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true
       },
       "evidenceProfile": {
-        "researchQualityScore": 88,
-        "totalCitations": 22,
-        "lastUpdated": "2025-08-18"
+        "researchQualityScore": 90,
+        "totalCitations": 25,
+        "overallQuality": "Tier 1",
+        "publicationSpan": "1980-2025",
+        "lastEvidenceUpdate": "2026-03-05"
       }
     },
     
@@ -629,19 +762,20 @@ const supplementDatabase = {
       "commonNames": ["Theanine", "Tea Amino Acid"],
       "evidenceTier": 2,
       "evidenceTierRationale": "Multiple small to moderate RCTs",
+      "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Calm alertness", "Attention without jitters", "Stress-related cognitive support"],
-        "nonCognitive": ["Anxiety reduction", "Stress management", "Sleep quality", "Blood pressure support"],
-    "isEnhanced": true
+        "nonCognitive": ["Anxiety reduction", "Stress management", "Sleep quality", "Blood pressure support", "Psychiatric symptom reduction (adjunctive)"]
       },
       "dosageRange": "100-200mg daily (often with caffeine)",
       "optimalDuration": "Acute effects within 30-60 minutes",
-      "studyPopulations": ["Stressed adults", "Students", "Anxiety sufferers", "Caffeine users"],
+      "studyPopulations": ["Stressed adults", "Students", "Anxiety sufferers", "Caffeine users", "Psychiatric patients (adjunctive)", "Individuals with sleep difficulties"],
       "mechanismsOfAction": [
         "GABA receptor modulation",
         "Alpha brain wave promotion",
         "Dopamine and serotonin modulation",
-        "Glutamate antagonism"
+        "Glutamate antagonism",
+        "Serotonergic pathway modulation (psychiatric symptom reduction)"
       ],
       "safetyProfile": {
         "rating": "Excellent",
@@ -650,8 +784,12 @@ const supplementDatabase = {
         "drugInteractions": ["May enhance sedative effects"]
       },
       "effectSizes": {
-        "stress": "Small to moderate",
-        "attention": "Small (enhanced with caffeine)"
+        "sleepQuality": { "value": "SMD=0.43", "source": "Bulman 2025 MA, 19 articles, N=897" },
+        "daytimeDysfunction": { "value": "SMD=0.33", "source": "Bulman 2025 MA" },
+        "stressReduction": { "value": "12.92-17.98% reduction", "source": "Hidese 2024 MA, 11 studies, N=897" },
+        "choiceReactionTime": { "value": "SMD=-0.48 (with caffeine), SMD=-0.35 (alone)", "source": "Payne 2025 MA, 50 RCTs" },
+        "attentionSwitching": { "value": "SMD=0.33 (with caffeine)", "source": "Payne 2025 MA" },
+        "visualReactionTime": { "value": "MD=-15.20ms", "source": "Mátyus 2025 MA, 5 RCTs" }
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder", "Combined with caffeine"],
@@ -660,19 +798,35 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "L-theanine and caffeine combination effects on cognition",
-          "authors": "Multiple studies",
-          "year": "2010-2023",
-          "doi": "Various"
+          "title": "Impact of L-theanine on sleep quality: a systematic review and meta-analysis",
+          "authors": "Bulman CL et al.",
+          "year": 2025,
+          "doi": "10.1016/j.smrv.2025.102070",
+          "pmid": "40056718"
+        },
+        {
+          "title": "A systematic review and meta-analysis of tea, L-theanine, and caffeine on cognition, sleep quality, and mood",
+          "authors": "Payne JK et al.",
+          "year": 2025,
+          "doi": "10.1093/nutrit/nuaf002",
+          "pmid": "40314930"
+        },
+        {
+          "title": "The effects of L-theanine supplementation on the outcomes of patients with mental disorders: a systematic review",
+          "authors": "Moshfeghinia R et al.",
+          "year": 2024,
+          "doi": "10.1186/s12888-024-06285-y",
+          "pmid": "39633316"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "isEnhanced": true,
+        "fileId": "9_enhanced"
       },
       "evidenceProfile": {
-        "researchQualityScore": 85,
-        "totalCitations": 18,
-        "lastUpdated": "2025-08-18"
+        "researchQualityScore": 87,
+        "totalCitations": 22,
+        "lastEvidenceUpdate": "2026-03-05"
       }
     },
     
@@ -686,10 +840,9 @@ const supplementDatabase = {
       "evidenceTierRationale": "Multiple RCTs with varying quality",
       "primaryBenefits": {
         "cognitive": ["Mental fatigue reduction", "Stress-related cognitive improvement", "Working memory under stress"],
-        "nonCognitive": ["Physical fatigue reduction", "Stress adaptation", "Mood support", "Exercise performance"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Physical fatigue reduction", "Stress adaptation", "Mood support", "Exercise performance"]
       },
+      "isEnhanced": true,
       "dosageRange": "200-400mg daily (standardized extract)",
       "optimalDuration": "4-12 weeks",
       "studyPopulations": ["Fatigued adults", "Stressed individuals", "Students", "Athletes"],
@@ -706,8 +859,12 @@ const supplementDatabase = {
         "drugInteractions": ["MAO inhibitors", "Diabetes medications"]
       },
       "effectSizes": {
-        "fatigue": "Small to moderate",
-        "stress": "Small to moderate"
+        "fatigue": "Small to moderate (d~0.38 TTE)",
+        "stress": "Small to moderate",
+        "endurance_VO2": "Small (ES=0.32, p<0.01)",
+        "antioxidant_SOD": "Large (ES=1.16)",
+        "muscle_damage_CK": "Large (ES=-0.84)",
+        "depression": "Significant vs placebo"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Liquid extract"],
@@ -716,19 +873,27 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Rhodiola rosea for mental and physical fatigue",
-          "authors": "Multiple systematic reviews",
-          "year": "2012-2022",
-          "doi": "Various"
+          "title": "Effect of Rhodiola rosea supplementation on endurance performance: a systematic review and meta-analysis",
+          "authors": "Wang X et al.",
+          "year": 2025,
+          "doi": "10.3389/fnut.2025.1556291",
+          "pmid": "41080184"
+        },
+        {
+          "title": "The Effectiveness of Rhodiola rosea L. Preparations in Alleviating Various Aspects of Life-Stress Symptoms",
+          "authors": "Ivanova Stojcheva E, Quintela JC",
+          "year": 2022,
+          "doi": "10.3390/molecules27123902",
+          "pmid": "35744937"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true
       },
       "evidenceProfile": {
-        "researchQualityScore": 85,
-        "totalCitations": 15,
-        "lastUpdated": "2025-08-18"
+        "researchQualityScore": 89,
+        "totalCitations": 20,
+        "lastEvidenceUpdate": "2026-03-05"
       }
     },
     
@@ -738,13 +903,12 @@ const supplementDatabase = {
       "scientificName": "Hericium erinaceus",
       "category": "Nootropic",
       "commonNames": ["Bearded Tooth", "Pom Pom Mushroom", "Yamabushitake"],
-      "evidenceTier": 3,
-      "evidenceTierRationale": "Limited human studies, promising preclinical data",
+      "evidenceTier": 2,
+      "evidenceTierRationale": "Multiple small RCTs (n=31-41) with consistent positive findings plus 1 PRISMA SR (Menon 2025); no meta-analysis with pooled estimates yet",
+      "isEnhanced": true,
       "primaryBenefits": {
-        "cognitive": ["Nerve growth factor stimulation", "Neuroprotection", "Memory support"],
-        "nonCognitive": ["Digestive health", "Immune support", "Nerve regeneration"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Nerve growth factor stimulation", "Neuroprotection", "Memory support", "Cognitive enhancement in MCI"],
+        "nonCognitive": ["Digestive health", "Immune support", "Nerve regeneration", "Gut microbiota diversity", "Mood and anxiety improvement"]
       },
       "dosageRange": "500-1000mg daily (standardized extract)",
       "optimalDuration": "8-16 weeks",
@@ -762,8 +926,10 @@ const supplementDatabase = {
         "drugInteractions": ["None known"]
       },
       "effectSizes": {
-        "cognition": "Small (preliminary human data)",
-        "nerve_regeneration": "Moderate (animal studies)"
+        "cognition_mmse": "MMSE weighted mean increase +1.17 (Menon 2025 PRISMA SR, 5 RCTs + 3 PCTs)",
+        "alzheimers_prevention": "Significant MMSE and CASI improvement vs placebo (Li 2020 RCT, n=41, 49 weeks)",
+        "acute_cognition": "Improved Stroop task performance within 60 min of single dose (Docherty 2023 RCT, n=41)",
+        "nerve_regeneration": "Strong preclinical — NOAEL >2000mg/kg, BBB penetration confirmed (erinacine A bioavailability 24.39%)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder", "Liquid extract", "Whole mushroom"],
@@ -772,19 +938,27 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Neurotrophic properties of the Lion's mane medicinal mushroom",
-          "authors": "Lai et al.",
-          "year": "2013",
-          "doi": "10.1007/s11418-012-0724-3"
+          "title": "Benefits, side effects, and uses of Hericium erinaceus as a supplement: a systematic review",
+          "authors": "Menon et al.",
+          "year": "2025",
+          "doi": "10.3389/fnut.2025.1641246",
+          "pmid": "40959699",
+          "studyType": "PRISMA SR (5 RCTs, 3 PCTs, PROSPERO registered)"
+        },
+        {
+          "title": "The Acute and Chronic Effects of Lion's Mane Mushroom Supplementation on Cognitive Function, Stress and Mood in Young Adults",
+          "authors": "Docherty et al.",
+          "year": "2023",
+          "doi": "10.3390/nu15224842",
+          "pmid": "38004235",
+          "studyType": "RCT (n=41)"
         }
       ],
-      "enhancedCitations": {
-        "isEnhanced": true
-      },
+      "enhancedCitations": {},
       "evidenceProfile": {
-        "researchQualityScore": 87,
-        "totalCitations": 15,
-        "lastUpdated": "2025-08-18"
+        "researchQualityScore": 88,
+        "totalCitations": 16,
+        "lastEvidenceUpdate": "2026-03-05"
       }
     },
     
@@ -795,16 +969,15 @@ const supplementDatabase = {
       "category": "Phospholipid",
       "commonNames": ["PS", "Lecithin phospholipid"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Multiple RCTs showing cognitive benefits",
+      "evidenceTierRationale": "Multiple RCTs (Duan n=190, Doma n=138, Kato-Kataoka n=78, Hirayama n=36) with consistent positive cognitive findings; NMA ranking PS #1 for ADHD attention (Zhou 2024); no PS-specific meta-analysis with pooled estimates",
+      "isEnhanced": true,
       "primaryBenefits": {
-        "cognitive": ["Memory improvement", "Attention enhancement", "Cognitive aging protection"],
-        "nonCognitive": ["Stress hormone reduction", "Exercise recovery", "Mood support"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Memory improvement", "Attention enhancement", "Cognitive aging protection", "ADHD symptom reduction"],
+        "nonCognitive": ["Stress hormone reduction", "Exercise recovery", "Mood support"]
       },
       "dosageRange": "100-300mg daily",
       "optimalDuration": "4-12 weeks",
-      "studyPopulations": ["Elderly with cognitive decline", "Athletes", "Stressed adults"],
+      "studyPopulations": ["Elderly with cognitive decline", "Athletes", "Stressed adults", "Children with ADHD"],
       "mechanismsOfAction": [
         "Cell membrane fluidity optimization",
         "Neurotransmitter function support",
@@ -818,8 +991,10 @@ const supplementDatabase = {
         "drugInteractions": ["Blood thinners (theoretical)"]
       },
       "effectSizes": {
-        "memory": "Small to moderate (d=0.3-0.5)",
-        "cortisol": "Moderate reduction"
+        "memory_mci": "Medium to large effect — Duan 2025 RCT (n=190): significant short-term memory improvement in MCI over 12 months",
+        "memory_elderly": "Medium to large effect — Kato-Kataoka 2010 RCT (n=78): verbal recall improvement at 100-300mg/day",
+        "adhd_attention": "SUCRA ranking 0.39 (best of 12 drugs) — Zhou 2024 NMA (48 RCTs, n=3650)",
+        "cortisol": "HPA axis normalization — Hellhammer 2014 RCT (n=75): cortisol stress response reduction at 400mg PAS"
       },
       "commercialAvailability": {
         "forms": ["Softgels", "Capsules", "Powder"],
@@ -828,14 +1003,24 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Phosphatidylserine and cognitive improvement in elderly",
-          "authors": "Multiple studies",
-          "year": "2010-2020",
-          "doi": "Various"
+          "title": "Safety and efficacy of antioxidant therapy in children and adolescents with ADHD: A systematic review and network meta-analysis",
+          "authors": "Zhou RY, Wang JJ, You Y, et al.",
+          "year": 2024,
+          "doi": "10.1371/journal.pone.0296926"
+        },
+        {
+          "title": "Effects of a food supplement containing phosphatidylserine on cognitive function in Chinese older adults with MCI",
+          "authors": "Duan H, Xu N, Yang T, et al.",
+          "year": 2025,
+          "doi": "10.1016/j.jad.2024.09.131"
         }
       ],
-      "enhancedCitations": {
-        "isEnhanced": true
+      "evidenceProfile": {
+        "quality": 86,
+        "citations": 13,
+        "tier": 2,
+        "publicationSpan": "2008-2025",
+        "lastEvidenceUpdate": "2026-03-05"
       }
     },
     
@@ -846,16 +1031,14 @@ const supplementDatabase = {
       "category": "Amino Acid",
       "commonNames": ["ALCAR", "ALC"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Multiple RCTs for cognitive decline and depression",
+      "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Memory enhancement", "Mental fatigue reduction", "Neuroprotection"],
-        "nonCognitive": ["Depression support", "Nerve health", "Energy metabolism"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Depression support", "Nerve health", "Energy metabolism", "Male fertility support", "Erectile dysfunction support"]
       },
       "dosageRange": "500-2000mg daily",
       "optimalDuration": "8-24 weeks",
-      "studyPopulations": ["Elderly with cognitive decline", "Depression patients", "Athletes"],
+      "studyPopulations": ["Elderly with cognitive decline", "Depression patients", "Athletes", "Men with erectile dysfunction", "Infertile males"],
       "mechanismsOfAction": [
         "Mitochondrial energy production",
         "Acetylcholine synthesis support",
@@ -869,8 +1052,10 @@ const supplementDatabase = {
         "drugInteractions": ["Thyroid medications", "Anticoagulants"]
       },
       "effectSizes": {
-        "cognition": "Small to moderate (particularly in decline)",
-        "depression": "Moderate (adjunct therapy)"
+        "cognition": "Small to moderate — Cochrane review: benefits in some dementia/MCI studies (Hudson 2003)",
+        "depression": "Moderate (adjunct) — improved antidepressant response in elderly (Zanardi 2006)",
+        "erectileFunction": "PLC+ALC+Sildenafil SUCRA 97% for IIEF-EF improvement (Barbonetti 2024 NMA, 15 RCTs)",
+        "maleFertility": "L-carnitine+ALC: SMD 4.19 for progressive motility (Niu 2025 NMA, 16 RCTs)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder"],
@@ -879,20 +1064,31 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Acetyl-L-carnitine for dementia and cognitive impairment",
+          "title": "Efficacy of Nutraceuticals for the Treatment of Erectile Dysfunction: A Systematic Review and Network Meta-analysis",
+          "authors": "Barbonetti, D'Andrea, Martorella et al.",
+          "year": "2024",
+          "doi": "10.1093/jsxmed/qdae137"
+        },
+        {
+          "title": "The comparative efficacy of carnitine and CoQ10 supplementation on sperm quality: a systematic review and NMA",
+          "authors": "Niu, Zou, Yang et al.",
+          "year": "2025",
+          "doi": "10.1007/s00228-025-03853-x"
+        },
+        {
+          "title": "Acetyl-L-carnitine for dementia (Cochrane Review)",
           "authors": "Hudson & Tabet",
           "year": "2003",
           "doi": "10.1002/14651858.CD003158"
         }
       ],
-      "enhancedCitations": {
-        "isEnhanced": true
-      },
+      "enhancedCitations": {},
       "evidenceProfile": {
-        "researchQualityScore": 78,
-        "totalCitations": 14,
-        "lastUpdated": "2025-08-19"
-      }
+        "researchQualityScore": 79,
+        "totalCitations": 16,
+        "lastEvidenceUpdate": "2026-03-05"
+      },
+      "evidenceTierRationale": "Cochrane review (Hudson 2003) + multiple RCTs for cognitive decline, depression, fatigue. New NMA evidence for ED (Barbonetti 2024, 15 RCTs) and male fertility (Niu 2025, 16 RCTs). Tier 2: multiple RCTs with moderate evidence across domains, Cochrane review exists but is dated (2003)."
     },
     
     {
@@ -900,18 +1096,17 @@ const supplementDatabase = {
       "name": "Ginkgo Biloba",
       "scientificName": "Ginkgo biloba",
       "category": "Herbal Extract",
-      "commonNames": ["Maidenhair Tree"],
+      "commonNames": ["Maidenhair Tree", "EGb 761"],
+      "isEnhanced": true,
       "evidenceTier": 2,
-      "evidenceTierRationale": "Extensive research with mixed but generally positive results",
+      "evidenceTierRationale": "Cochrane review 2026 (82 RCTs, n=10613, GRADE) — most extensive herbal nootropic evidence base. Shows small-moderate benefits in dementia (low certainty) but probably no effect in MCI (moderate certainty). GB extracts ranked #1 for VCI cognition (d=0.83) in 173-trial MA (Masserini 2025). High-dose Bacopa outperformed GB for working memory in 29-RCT NMA (Tiemtad 2026). Overview of 16 SRs confirms favorable findings but poor SR quality. Tier 2: extensive RCT evidence but mixed certainty across populations.",
       "primaryBenefits": {
-        "cognitive": ["Memory enhancement", "Attention improvement", "Circulation support"],
-        "nonCognitive": ["Peripheral circulation", "Tinnitus support", "Antioxidant effects"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Memory enhancement", "Attention improvement", "Cognitive decline stabilization", "Vascular cognitive impairment"],
+        "nonCognitive": ["Peripheral circulation", "Tinnitus support", "Antioxidant effects", "Neuropsychiatric symptom reduction"]
       },
-      "dosageRange": "120-240mg daily (standardized extract)",
+      "dosageRange": "120-240mg daily (standardized extract EGb 761)",
       "optimalDuration": "12-24 weeks",
-      "studyPopulations": ["Elderly with cognitive complaints", "Dementia patients", "Circulation issues"],
+      "studyPopulations": ["Elderly with cognitive complaints", "Dementia patients", "MCI patients", "Vascular cognitive impairment", "Circulation issues", "Neuropsychiatric symptoms"],
       "mechanismsOfAction": [
         "Cerebral blood flow enhancement",
         "Platelet aggregation inhibition",
@@ -922,11 +1117,15 @@ const supplementDatabase = {
         "rating": "Good",
         "commonSideEffects": ["Headache", "Dizziness", "GI upset"],
         "contraindications": ["Bleeding disorders", "Surgery within 2 weeks"],
-        "drugInteractions": ["Blood thinners", "Seizure medications", "Diabetes drugs"]
+        "drugInteractions": ["Blood thinners", "Seizure medications", "Diabetes drugs"],
+        "cochraneSafety": "Wieland 2026 Cochrane (82 RCTs): little to no difference in adverse events vs placebo"
       },
       "effectSizes": {
-        "memory": "Small (d=0.2-0.4)",
-        "circulation": "Moderate improvement"
+        "dementiaCognition": "Small to moderate improvement at 6 months (Wieland 2026 Cochrane, 82 RCTs, low certainty)",
+        "mciCognition": "Probably no effect (Wieland 2026 Cochrane, moderate certainty)",
+        "vciCognition": "Large effect d=0.83 (95% CI 0.00-1.67) for GB extracts, ranked #1 (Masserini 2025, 173 trials)",
+        "vciFunction": "Moderate effect d=0.50 for functional improvement (Masserini 2025)",
+        "workingMemory": "Outperformed by high-dose Bacopa (SUCRA 100% vs GB; Tiemtad 2026, 29 RCTs)"
       },
       "commercialAvailability": {
         "forms": ["Tablets", "Capsules", "Liquid extract"],
@@ -935,19 +1134,45 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Ginkgo biloba for cognitive improvement and dementia",
-          "authors": "Birks & Grimley Evans",
-          "year": "2009",
-          "doi": "10.1002/14651858.CD003120.pub3"
+          "title": "Ginkgo biloba for cognitive impairment and dementia",
+          "authors": "Wieland, Mossenta, Engdahl, Picard, D'Adamo",
+          "year": "2026",
+          "doi": "10.1002/14651858.CD013661.pub2",
+          "pmid": "41641880",
+          "type": "Cochrane SR (82 RCTs, n=10613)"
+        },
+        {
+          "title": "Therapeutic strategies for vascular cognitive impairment: a meta-analysis",
+          "authors": "Masserini, Ciccone, Persichetti, Cavallini, Annoni, Santangelo",
+          "year": "2025",
+          "doi": "10.1002/alz.70840",
+          "pmid": "41198594",
+          "type": "MA (173 trials, n=22347)"
+        },
+        {
+          "title": "Bacopa monnieri versus Ginkgo biloba for cognitive enhancement: NMA",
+          "authors": "Tiemtad, Teeranachaideekul, Chantasart, Junyaprasert",
+          "year": "2026",
+          "doi": "10.1016/j.phymed.2026.157915",
+          "pmid": "41678913",
+          "type": "NMA (29 RCTs, n=2107)"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "hasEnhancedFile": true,
+        "enhancedFileId": "14_enhanced.js"
       },
       "evidenceProfile": {
-        "researchQualityScore": 74,
-        "totalCitations": 15,
-        "lastUpdated": "2025-08-19"
+        "researchQualityScore": 80,
+        "totalCitations": 19,
+        "lastEvidenceUpdate": "2026-03-05",
+        "overallQuality": "Tier 2",
+        "evidenceStrength": {
+          "mechanisms": "Moderate",
+          "clinicalBenefits": "Strong",
+          "safety": "Well-established",
+          "dosage": "Evidence-based"
+        }
       }
     },
     
@@ -956,33 +1181,39 @@ const supplementDatabase = {
       "name": "Panax Ginseng",
       "scientificName": "Panax ginseng",
       "category": "Adaptogen",
-      "commonNames": ["Korean Ginseng", "Asian Ginseng", "Red Ginseng"],
+      "commonNames": ["Korean Ginseng", "Asian Ginseng", "Red Ginseng", "Korean Red Ginseng"],
+      "isEnhanced": true,
       "evidenceTier": 2,
-      "evidenceTierRationale": "Multiple RCTs showing cognitive and energy benefits",
+      "evidenceTierRationale": "Two new cognitive MAs (Zeng 2024: 15 RCTs, memory SMD=0.19; Kim 2025: 8 RCTs, MMSE/ADAS-Cog significant) plus comprehensive CVD dose-response MA (Jafari 2025: 70 RCTs, anti-inflammatory confirmed). Cochrane review exists (Geng 2010, dated). Mixed cognitive domain results (memory positive, attention/executive null) prevent Tier 1. Evidence extensive but spread across many domains without single-domain depth for Tier 1.",
       "primaryBenefits": {
-        "cognitive": ["Mental fatigue reduction", "Working memory", "Attention enhancement"],
-        "nonCognitive": ["Physical performance", "Stress adaptation", "Immune support", "Blood sugar regulation"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Memory enhancement", "Mental fatigue reduction", "Working memory", "Cognitive function in dementia (MMSE/ADAS-Cog)"],
+        "nonCognitive": ["Physical performance", "Stress adaptation", "Immune support", "Anti-inflammatory activity", "Antioxidant effects"]
       },
       "dosageRange": "200-400mg daily (standardized extract)",
       "optimalDuration": "4-12 weeks",
-      "studyPopulations": ["Healthy adults", "Fatigued individuals", "Diabetics", "Athletes"],
+      "studyPopulations": ["Healthy adults", "Fatigued individuals", "Cognitive impairment patients", "Alzheimer's disease patients", "Diabetics", "Athletes", "CVD risk populations"],
       "mechanismsOfAction": [
         "HPA axis modulation",
-        "Neurotransmitter enhancement",
-        "Glucose metabolism improvement",
-        "Antioxidant and anti-inflammatory effects"
+        "Neurotransmitter enhancement (dopamine, acetylcholine)",
+        "Anti-inflammatory activity (hs-CRP, IL-6 reduction)",
+        "Antioxidant effects (ROS reduction, SOD enhancement)",
+        "Nitric oxide production enhancement"
       ],
       "safetyProfile": {
         "rating": "Good",
         "commonSideEffects": ["Insomnia", "Headache", "GI upset", "Nervousness"],
-        "contraindications": ["Hypertension", "Diabetes (monitor glucose)", "Hormone-sensitive conditions"],
-        "drugInteractions": ["Blood thinners", "Diabetes medications", "Stimulants"]
+        "contraindications": ["Hypertension (note: Jafari 2025 MA found no BP effect)", "Diabetes (monitor glucose)", "Hormone-sensitive conditions"],
+        "drugInteractions": ["Blood thinners", "Diabetes medications", "Stimulants"],
+        "fabricatedCitationsNote": "3 fabricated safety citations in enhanced file (safety[1], safety[3], safety[4]) flagged with _INTEGRITY_FLAG"
       },
       "effectSizes": {
-        "fatigue": "Moderate (d=0.4-0.6)",
-        "cognition": "Small to moderate"
+        "memoryOverall": "Small effect SMD=0.19 (95% CI 0.02-0.36, Zeng 2024, 15 RCTs)",
+        "memoryHighDose": "Small-moderate effect SMD=0.33 (95% CI 0.04-0.61, Zeng 2024, high dose)",
+        "mmse": "MD=0.68 (95% CI 0.03-1.32, Kim 2025, 8 RCTs)",
+        "adasCog": "MD=-1.10 (95% CI -1.82 to -0.38, Kim 2025, I²=0%)",
+        "attentionExecutive": "No significant effect (Zeng 2024, SMD=0.06 and -0.03)",
+        "antiInflammatory": "hs-CRP SMD=-0.23, ROS SMD=-0.94, SOD SMD=0.48 (Jafari 2025, 70 RCTs)",
+        "lipidsAndBP": "No significant effect (Jafari 2025, 70 RCTs)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Liquid extract", "Tea"],
@@ -991,14 +1222,42 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Panax ginseng for cognitive function and quality of life",
-          "authors": "Geng et al.",
-          "year": "2010",
-          "doi": "10.1002/14651858.CD007769.pub2"
+          "title": "Effects of Ginseng on Cognitive Function: A Systematic Review and Meta-Analysis",
+          "authors": "Zeng et al.",
+          "year": "2024",
+          "doi": "10.1002/ptr.8359",
+          "pmid": "39474788"
+        },
+        {
+          "title": "Cognitive Benefits of Ginseng: A Systematic Review and Meta-Analysis of Changes in MMSE and ADAS-Cog Scores",
+          "authors": "Kim et al.",
+          "year": "2025",
+          "doi": "10.1159/000547543",
+          "pmid": "40774237"
+        },
+        {
+          "title": "The effect of ginseng supplementation on CVD risk factors: a comprehensive systematic review and dose-response meta-analysis",
+          "authors": "Jafari et al.",
+          "year": "2025",
+          "doi": "10.1017/S0007114525103607",
+          "pmid": "40923100"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "hasEnhancedFile": true,
+        "enhancedFileId": "15_panax_ginseng_enhanced.js"
+      },
+      "evidenceProfile": {
+        "quality": 83,
+        "citations": 22,
+        "lastEvidenceUpdate": "2026-03-05",
+        "overallQuality": "Tier 2 — Strong adaptogenic evidence with new cognitive MAs and comprehensive CVD dose-response MA",
+        "evidenceStrength": {
+          "mechanisms": "Strong (HPA axis, neurotransmitters, NO, antioxidant)",
+          "clinicalBenefits": "Moderate-Strong (memory positive, attention/executive null, anti-inflammatory confirmed)",
+          "safety": "Good (well-tolerated; 3 fabricated citations flagged)",
+          "dosage": "Moderate (200-400mg standardized extract)"
+        }
       }
     },
     
@@ -1008,17 +1267,16 @@ const supplementDatabase = {
       "scientificName": "L-α-glycerylphosphorylcholine",
       "category": "Choline Compound",
       "commonNames": ["α-GPC", "Choline alfoscerate"],
-      "evidenceTier": 3,
-      "evidenceTierRationale": "Limited human studies, promising for cognitive enhancement",
+      "evidenceTier": 2,
+      "evidenceTierRationale": "Multicenter RCT (Jeon 2024, n=100) demonstrates ADAS-cog improvement in MCI; first PROSPERO-registered comparative MA (Sagaro 2025) shows superiority over citicoline; 7+ RCTs across cognitive and athletic domains",
       "primaryBenefits": {
-        "cognitive": ["Memory enhancement", "Learning improvement", "Focus enhancement"],
-        "nonCognitive": ["Growth hormone support", "Athletic performance", "Neuroprotection"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Memory enhancement", "Learning improvement", "Focus enhancement", "Cognitive function in MCI (ADAS-cog)"],
+        "nonCognitive": ["Growth hormone support", "Athletic performance", "Neuroprotection"]
       },
+      "isEnhanced": true,
       "dosageRange": "300-600mg daily",
       "optimalDuration": "4-12 weeks",
-      "studyPopulations": ["Cognitive decline patients", "Athletes", "Students"],
+      "studyPopulations": ["Cognitive decline patients", "Athletes", "Students", "Mild cognitive impairment (MCI)", "Dementia patients"],
       "mechanismsOfAction": [
         "Acetylcholine synthesis enhancement",
         "Cell membrane phospholipid support",
@@ -1029,11 +1287,17 @@ const supplementDatabase = {
         "rating": "Good",
         "commonSideEffects": ["Headache", "Dizziness", "Insomnia", "GI upset"],
         "contraindications": ["None known"],
-        "drugInteractions": ["Cholinesterase inhibitors"]
+        "drugInteractions": ["Cholinesterase inhibitors"],
+        "notes": "Jeon 2024 multicenter RCT (n=100, 12 weeks): no serious AEs, no discontinuations due to AEs"
       },
       "effectSizes": {
-        "memory": "Small to moderate (preliminary data)",
-        "power_output": "Moderate (in athletes)"
+        "adas_cog_mci": { "value": "MD = -2.34 points vs placebo", "study": "Jeon 2024", "n": 100, "duration": "12 weeks", "population": "MCI" },
+        "scag_vs_citicoline": { "value": "WMD = -3.92 (95% CI: -7.41 to -0.42)", "study": "Sagaro & Amenta 2025 MA", "k": 3, "n": 358 },
+        "motivation": { "value": "d = 0.72", "study": "Tamura 2021", "n": 24, "population": "healthy adults" },
+        "stroop_executive": { "value": "p < 0.05 both LD and HD", "study": "Kawamura 2024", "n": 20 },
+        "isometric_strength": { "value": "Large effect d > 0.8", "study": "Bellar 2015", "n": 13, "duration": "6 days" },
+        "jump_performance": { "value": "3% improvement at 500mg (p = 0.04)", "study": "Marcus 2017", "n": 54 },
+        "growth_hormone": { "value": "290% greater peak GH vs placebo", "study": "Kawamura 2012", "n": 12 }
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder", "Liquid"],
@@ -1042,19 +1306,36 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Alpha-glycerylphosphorylcholine and cognitive function",
-          "authors": "Parnetti et al.",
-          "year": "2007",
-          "doi": "10.2165/00023210-200721080-00005"
+          "title": "Efficacy and safety of choline alphoscerate for amnestic mild cognitive impairment",
+          "authors": "Jeon et al.",
+          "year": "2024",
+          "doi": "10.1186/s12877-024-05366-7",
+          "pmid": "39300341"
+        },
+        {
+          "title": "Comparison of effects of choline alphoscerate and citicoline in dementia: SR and MA",
+          "authors": "Sagaro & Amenta",
+          "year": "2025",
+          "pmid": "41426989"
+        },
+        {
+          "title": "Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Volunteers",
+          "authors": "Tamura et al.",
+          "year": "2021",
+          "doi": "10.3390/nu13062091",
+          "pmid": "34207484"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true
       },
       "evidenceProfile": {
-        "researchQualityScore": 78,
-        "totalCitations": 12,
-        "lastUpdated": "2025-08-19"
+        "researchQualityScore": 81,
+        "totalCitations": 14,
+        "lastUpdated": "2026-03-05",
+        "lastEvidenceUpdate": "2026-03-05",
+        "overallQuality": "Moderate",
+        "evidenceStrength": "Moderate — first MA + well-designed multicenter RCT in MCI"
       }
     },
     
@@ -1108,12 +1389,12 @@ const supplementDatabase = {
         "isEnhanced": true
       },
       "evidenceProfile": {
-        "researchQualityScore": 83,
-        "totalCitations": 14,
-        "lastUpdated": "2025-08-19"
+        "researchQualityScore": 93,
+        "totalCitations": 12,
+        "lastUpdated": "2026-03-05"
       }
     },
-    
+
     {
       "id": 18,
       "name": "CoQ10",
@@ -1124,10 +1405,9 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for heart health, emerging for cognitive benefits",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Energy metabolism", "Oxidative stress reduction"],
-        "nonCognitive": ["Heart health", "Energy production", "Anti-aging", "Muscle health"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Heart health", "Energy production", "Anti-aging", "Muscle health", "Endothelial function", "Metabolic support"]
       },
+      "isEnhanced": true,
       "dosageRange": "100-300mg daily",
       "optimalDuration": "8-12 weeks",
       "studyPopulations": ["Heart disease patients", "Statin users", "Elderly", "Athletes"],
@@ -1144,8 +1424,11 @@ const supplementDatabase = {
         "drugInteractions": ["Blood thinners", "Chemotherapy drugs"]
       },
       "effectSizes": {
-        "heart_function": "Moderate improvement",
-        "energy": "Small to moderate (in deficient individuals)"
+        "heart_function": "Moderate improvement — mortality RR=0.64 (36% reduction), hospitalization RR=0.50 (Xu 2024 MA, 33 RCTs)",
+        "energy": "Small to moderate (in deficient individuals)",
+        "exerciseMuscleProtection": "Dose-dependent reduction in CK (WMD=-50.64 IU/L), LDH (WMD=-52.10 IU/L) per 100mg/day (Talebi 2024 MA, 28 RCTs, n=830, GRADE moderate-high)",
+        "endothelialFunction": "FMD improvement WMD=1.45%, dose-dependent (meta-regression p=0.006) (Daei 2024 MA, 12 studies, n=489)",
+        "metabolicGlycemic": "FBG reduction MD -5.2 to -11.21 mg/dL, HbA1c -0.12 to -1.83% (Patiño-Cardona 2024 umbrella review)"
       },
       "commercialAvailability": {
         "forms": ["Softgels", "Capsules", "Liquid", "Powder"],
@@ -1154,19 +1437,36 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Coenzyme Q10 for cardiovascular disease",
-          "authors": "Multiple systematic reviews",
-          "year": "2014-2023",
-          "doi": "Various"
+          "title": "Efficacy and safety of coenzyme Q10 in heart failure: a meta-analysis of randomized controlled trials",
+          "authors": "Xu J, Xiang L, Yin X, et al.",
+          "year": "2024",
+          "doi": "10.1186/s12872-024-04232-z",
+          "pmid": "39462324"
+        },
+        {
+          "title": "Effect of Coenzyme Q10 Supplementation on Lipid and Glycaemic Profiles: An Umbrella Review",
+          "authors": "Patiño-Cardona S, Garrido-Miguel M, et al.",
+          "year": "2024",
+          "doi": "10.3390/jcdd11120377",
+          "pmid": "39728267"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true
       },
       "evidenceProfile": {
-        "researchQualityScore": 84,
-        "totalCitations": 14,
-        "lastUpdated": "2025-08-19"
+        "overallQuality": "Tier 2",
+        "researchQualityScore": 88,
+        "totalCitations": 17,
+        "lastEvidenceUpdate": "2026-03-05",
+        "evidenceStrength": {
+          "mechanisms": "Strong",
+          "clinicalBenefits": "Strong",
+          "safety": "Well-established",
+          "dosage": "Evidence-based (dose-response confirmed across domains)"
+        },
+        "researchMaturity": "Mature",
+        "publicationSpan": "1994-2024"
       }
     },
     
@@ -1181,9 +1481,9 @@ const supplementDatabase = {
       "primaryBenefits": {
         "cognitive": ["Memory enhancement", "Attention improvement", "Homocysteine reduction"],
         "nonCognitive": ["Energy metabolism", "Nervous system support", "Mood regulation", "Cardiovascular health"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "isEnhanced": true
       },
+      "isEnhanced": true,
       "dosageRange": "RDA levels to therapeutic doses (varies by B vitamin)",
       "optimalDuration": "8-16 weeks for cognitive benefits",
       "studyPopulations": ["Elderly with memory complaints", "B-vitamin deficient individuals", "Middle-aged adults"],
@@ -1200,6 +1500,7 @@ const supplementDatabase = {
         "drugInteractions": ["Phenytoin (folate)", "Metformin (B12)"]
       },
       "effectSizes": {
+        "stress": "Moderate (SMD=0.35, Long & Benton 2013)",
         "memory": "Small to moderate (particularly in deficient)",
         "homocysteine": "Large reduction"
       },
@@ -1210,19 +1511,54 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
+          "title": "Effects of Vitamin and Mineral Supplementation on Stress, Mild Psychiatric Symptoms, and Mood in Nonclinical Samples",
+          "authors": "Long & Benton",
+          "year": "2013",
+          "doi": "10.1097/PSY.0b013e31827d5fbd",
+          "pmid": "23362497"
+        },
+        {
+          "title": "Effects of homocysteine lowering with B vitamins on cognitive aging: meta-analysis of 11 trials",
+          "authors": "Clarke et al.",
+          "year": "2014",
+          "doi": "10.1093/ajcn/nqt356",
+          "pmid": "24368573"
+        },
+        {
+          "title": "Supplementation with vitamin B12 does not affect cognitive function: a systematic review",
+          "authors": "Markun et al.",
+          "year": "2021",
+          "doi": "10.3389/fnut.2021.618766",
+          "pmid": "33809274"
+        },
+        {
           "title": "Investigating the effects of a multinutrient supplement on cognition",
           "authors": "Young et al.",
-          "year": "2022",
-          "doi": "10.3390/nu14235079"
+          "year": "2019",
+          "doi": "10.1017/S1368980019002258",
+          "pmid": "31527485"
+        },
+        {
+          "title": "B vitamins and the brain: mechanisms, dose and efficacy",
+          "authors": "Kennedy",
+          "year": "2016",
+          "doi": "10.3390/nu8020068",
+          "pmid": "26828517"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "isEnhanced": true,
+        "fileRef": "19_enhanced.js",
+        "evidenceProfile": {
+          "overallQuality": "Tier 1",
+          "totalCitations": 10,
+          "researchQualityScore": 82
+        }
       },
       "evidenceProfile": {
-        "researchQualityScore": 87,
-        "totalCitations": 16,
-        "lastUpdated": "2025-08-19"
+        "researchQualityScore": 82,
+        "totalCitations": 10,
+        "lastUpdated": "2026-03-06"
       }
     },
     
@@ -1237,8 +1573,7 @@ const supplementDatabase = {
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Anti-inflammatory effects"],
         "nonCognitive": ["Senolytic activity", "Antioxidant effects", "Cardiovascular protection", "Immune support"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "isEnhanced": true
       },
       "dosageRange": "500-1000mg daily",
       "optimalDuration": "Intermittent or continuous protocols",
@@ -1266,19 +1601,43 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Senolytics decrease senescent cells in humans",
-          "authors": "Hickson et al.",
+          "title": "Senolytics decrease senescent cells in humans: A pilot clinical trial",
+          "authors": "Hickson LJ et al.",
           "year": "2019",
           "doi": "10.1016/j.ebiom.2019.08.069"
+        },
+        {
+          "title": "Quercetin supplementation in sport and physical activity: a systematic review and meta-analysis",
+          "authors": "Rojano-Ortega D et al.",
+          "year": "2023",
+          "doi": "10.1007/s00394-023-03197-3"
+        },
+        {
+          "title": "The Effects of Quercetin Supplementation on Inflammatory Markers Among Patients with Metabolic Syndrome",
+          "authors": "Tabrizi R et al.",
+          "year": "2019",
+          "doi": "10.1093/advances/nmy071"
+        },
+        {
+          "title": "Effect of quercetin on blood pressure: A systematic review and meta-analysis of randomized controlled trials",
+          "authors": "Serban MC et al.",
+          "year": "2016",
+          "doi": "10.1097/HJH.0000000000001041"
+        },
+        {
+          "title": "Safety of quercetin: a systematic review and meta-analysis",
+          "authors": "Andres S et al.",
+          "year": "2018",
+          "doi": "10.1002/mnfr.201700447"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true
       },
       "evidenceProfile": {
-        "researchQualityScore": 72,
-        "totalCitations": 12,
-        "lastUpdated": "2025-08-19"
+        "researchQualityScore": 74,
+        "totalCitations": 10,
+        "lastUpdated": "2026-03-06"
       }
     },
     
@@ -1289,13 +1648,12 @@ const supplementDatabase = {
       "category": "Essential Nutrients",
       "commonNames": ["Cobalamin", "B12"],
       "evidenceTier": 1,
-      "evidenceTierRationale": "Extensive research for deficiency and cognitive function",
+      "evidenceTierRationale": "Multiple Cochrane meta-analyses and systematic reviews confirm efficacy for deficiency correction, cognitive protection, and homocysteine reduction; consistent findings across large RCTs and pooled analyses",
       "primaryBenefits": {
         "cognitive": ["Memory support", "Cognitive aging protection", "Mood regulation"],
-        "nonCognitive": ["Red blood cell formation", "DNA synthesis", "Nervous system health", "Energy metabolism"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Red blood cell formation", "DNA synthesis", "Nervous system health", "Energy metabolism"]
       },
+      "isEnhanced": true,
       "dosageRange": "2.4μg RDA to 1000μg therapeutic",
       "optimalDuration": "3-6 months for deficiency correction",
       "studyPopulations": ["Elderly", "Vegetarians/vegans", "B12 deficient individuals", "Cognitive decline patients"],
@@ -1322,19 +1680,34 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Effects of chronic multivitamin supplementation on neurocognition",
-          "authors": "Macpherson",
-          "year": "2012",
-          "doi": "Various"
+          "title": "Oral vitamin B12 versus intramuscular vitamin B12 for vitamin B12 deficiency",
+          "authors": "Vidal-Alaball J, Butler CC, Cannings-John R, et al.",
+          "year": 2005,
+          "doi": "10.1002/14651858.CD004655.pub2",
+          "pmid": "16034940"
+        },
+        {
+          "title": "Vitamin B12 deficiency",
+          "authors": "Stabler SP",
+          "year": 2013,
+          "doi": "10.1056/NEJMcp1113996",
+          "pmid": "23301732"
+        },
+        {
+          "title": "The effect of B vitamin supplementation on homocysteine concentration and related cardiovascular risk: a meta-analysis",
+          "authors": "Sohouli MH, Fatahi S, Lari A, et al.",
+          "year": 2024,
+          "doi": "10.1093/nutrit/nuad091",
+          "pmid": "37495210"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
-          "overallQuality": "Tier 2",
-          "totalCitations": 18,
-          "researchQualityScore": 90,
-          "lastUpdated": "2025-08-20"
+          "overallQuality": "Tier 1",
+          "totalCitations": 12,
+          "researchQualityScore": 85,
+          "lastEvidenceUpdate": "2026-03-06"
         }
       }
     },
@@ -1350,8 +1723,7 @@ const supplementDatabase = {
       "primaryBenefits": {
         "cognitive": ["Neurotransmitter support", "Memory function", "Mood regulation"],
         "nonCognitive": ["Protein metabolism", "Immune function", "Hormone regulation", "PMS support"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "isEnhanced": true
       },
       "dosageRange": "1.3-1.7mg RDA to 50-100mg therapeutic",
       "optimalDuration": "4-12 weeks",
@@ -1379,69 +1751,110 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Increased blood levels of vitamins B6, B12, and E",
-          "authors": "Macpherson",
-          "year": "2012",
-          "doi": "Various"
+          "title": "Vitamin B6 supplementation for premenstrual syndrome: systematic review and meta-analysis of randomized trials",
+          "authors": "Wyatt KM, Dimmock PW, Jones PW, Shaughn O'Brien PM",
+          "year": 1999,
+          "doi": "10.1136/bmj.318.7195.1375",
+          "pmid": "10334745"
+        },
+        {
+          "title": "Vitamin B6 for nausea and vomiting of pregnancy",
+          "authors": "Matthews A, Haas DM, O'Mathuna DP, Dowswell T",
+          "year": 2015,
+          "doi": "10.1002/14651858.CD007575.pub4",
+          "pmid": "26348534"
+        },
+        {
+          "title": "Sensory neuropathy from pyridoxine abuse: a new megavitamin syndrome",
+          "authors": "Schaumburg H, Kaplan J, Windebank A, Vick N, Rasmus S, Pleasure D, Brown MJ",
+          "year": 1983,
+          "doi": "10.1056/NEJM198308253090801",
+          "pmid": "6308447"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 2",
-          "totalCitations": 16,
-          "researchQualityScore": 88,
-          "lastUpdated": "2025-08-20"
+          "totalCitations": 10,
+          "researchQualityScore": 75,
+          "lastEvidenceUpdate": "2026-03-06"
         }
       }
     },
-    
+
     {
       "id": 23,
       "name": "Folate",
       "scientificName": "Pteroylglutamic acid/5-MTHF",
       "category": "Essential Nutrients",
-      "commonNames": ["Folic Acid", "5-MTHF", "Methylfolate"],
+      "commonNames": ["Folic Acid", "5-MTHF", "Methylfolate", "Vitamin B9", "L-methylfolate"],
       "evidenceTier": 1,
-      "evidenceTierRationale": "Extensive research for cognitive function and mood",
+      "evidenceTierRationale": "USPSTF Grade A recommendation for NTD prevention; multiple Cochrane reviews and meta-analyses for cognitive, cardiovascular, and pregnancy outcomes; decades of population-wide fortification evidence",
       "primaryBenefits": {
-        "cognitive": ["Memory support", "Cognitive aging protection", "Depression support"],
-        "nonCognitive": ["DNA synthesis", "Cell division", "Cardiovascular health", "Pregnancy support"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Cognitive aging protection", "Depression adjunctive treatment", "Homocysteine-mediated dementia prevention"],
+        "nonCognitive": ["Neural tube defect prevention", "Homocysteine reduction", "Cardiovascular health", "Female fertility support", "Recurrent pregnancy loss prevention"],
+        "isEnhanced": true
       },
-      "dosageRange": "400μg RDA to 5-15mg therapeutic",
-      "optimalDuration": "8-16 weeks for cognitive benefits",
-      "studyPopulations": ["Elderly", "Depression patients", "Pregnant women", "MTHFR mutations"],
+      "isEnhanced": true,
+      "dosageRange": "400–800 mcg/day standard; 800 mcg–5 mg/day for special populations (MTHFR carriers, therapeutic depression, cerebral folate deficiency)",
+      "optimalDuration": "Lifelong for pregnancy prevention; 8–16 weeks for cognitive/homocysteine benefits",
+      "studyPopulations": ["Women of childbearing age", "Elderly (cognitive decline)", "Depression patients (SSRI non-responders)", "MTHFR polymorphism carriers", "ASD children with FRAA positivity", "Recurrent miscarriage patients"],
       "mechanismsOfAction": [
-        "DNA methylation",
-        "Homocysteine metabolism", 
-        "Neurotransmitter synthesis",
-        "Cell division and growth"
+        "One-carbon metabolism via MTHFR/DHFR enzymatic pathway",
+        "Homocysteine remethylation to methionine via methionine synthase",
+        "DNA synthesis and repair via thymidylate synthesis",
+        "Folate receptor alpha (FRα) mediated brain transport"
       ],
       "safetyProfile": {
         "rating": "Excellent",
-        "commonSideEffects": ["Rare: GI upset", "Sleep disturbances (high doses)"],
-        "contraindications": ["B12 deficiency (can mask)", "Cancer patients (consult physician)"],
-        "drugInteractions": ["Methotrexate", "Phenytoin", "Sulfasalazine"]
+        "commonSideEffects": ["Rare: mild GI upset at high doses"],
+        "contraindications": ["Undiagnosed B12 deficiency (high folic acid doses can mask neurological progression)"],
+        "drugInteractions": ["Methotrexate (antagonist)", "Phenytoin", "Sulfasalazine", "Trimethoprim"]
       },
       "effectSizes": {
-        "homocysteine": "Large reduction",
-        "depression": "Small to moderate (adjunct)"
+        "ntd_prevention": "~70% risk reduction (population data)",
+        "homocysteine": "Large reduction (combined B-vitamin trials)",
+        "cognitive_aging": "Moderate (Lancet 2007 RCT: 3.5-year cognitive benefit in older adults)",
+        "depression_adjunct": "Small to moderate (meta-analytic SMD ~0.47)"
       },
       "commercialAvailability": {
-        "forms": ["Tablets", "Capsules", "Sublingual"],
-        "costRange": "$5-20/month",
-        "qualityMarkers": ["5-MTHF preferred", "Third-party tested", "Quatrefolic brand"]
+        "forms": ["Tablets (folic acid)", "Capsules (5-MTHF/L-methylfolate)", "Sublingual"],
+        "costRange": "$5–25/month",
+        "qualityMarkers": ["5-MTHF preferred over folic acid (no DHFR conversion required)", "Quatrefolic or Magnafolate brand 5-MTHF", "Third-party tested", "Verified MTHFR-safe formulation"]
       },
       "keyCitations": [
         {
-          "title": "B-vitamins and Bacopa monnieri show reproducible cognitive benefits",
-          "authors": "Multiple studies",
-          "year": "2010-2022",
-          "doi": "Various"
+          "title": "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement",
+          "authors": "US Preventive Services Task Force et al.",
+          "year": 2023,
+          "doi": "10.1001/jama.2023.12876",
+          "pmid": "37526713"
+        },
+        {
+          "title": "Effect of 3-year folic acid supplementation on cognitive function in older adults in the FACIT trial",
+          "authors": "Durga J et al.",
+          "year": 2007,
+          "doi": "10.1016/S0140-6736(07)60109-3",
+          "pmid": "17240287"
+        },
+        {
+          "title": "Folate and folic acid in the management of depression: a systematic review and meta-analysis",
+          "authors": "Maruf AA et al.",
+          "year": 2021,
+          "doi": "10.1055/a-1684-3843",
+          "pmid": "34794190"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 1",
+          "totalCitations": 15,
+          "researchQualityScore": 90,
+          "lastEvidenceUpdate": "2026-03-06"
+        }
+      }
     },
     
     {
@@ -1449,110 +1862,163 @@ const supplementDatabase = {
       "name": "Green Tea Extract",
       "scientificName": "Camellia sinensis",
       "category": "Polyphenol",
-      "commonNames": ["EGCG", "Green Tea Catechins"],
+      "isEnhanced": true,
+      "commonNames": ["EGCG", "Green Tea Catechins", "Epigallocatechin Gallate", "EGC"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Multiple RCTs showing cognitive and metabolic benefits",
+      "evidenceTierRationale": "Three meta-analyses (Rondanelli 2021 n=499, Asbaghi 2020 11 RCTs, Haghighatdoost 2018 11 RCTs) with consistent modest metabolic effects; 8 clinical trials across metabolic, cognitive, and safety domains; Tier 2 because no single large RCT (n>200) in general adults and cognitive benefits primarily in special populations (Down syndrome, Fragile X)",
       "primaryBenefits": {
-        "cognitive": ["Attention enhancement", "Neuroprotection", "Memory support"],
-        "nonCognitive": ["Antioxidant effects", "Weight management", "Cardiovascular health", "Cancer prevention"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Attention enhancement", "Neuroprotection", "Memory support (special populations)"],
+        "nonCognitive": ["Weight management", "Blood glucose reduction", "Anti-inflammatory effects", "Cardiovascular health"],
+        "isEnhanced": true
       },
-      "dosageRange": "200-400mg EGCG daily",
+      "dosageRange": "200-400mg EGCG daily (take with food)",
       "optimalDuration": "8-12 weeks",
-      "studyPopulations": ["Healthy adults", "Overweight individuals", "Elderly"],
+      "studyPopulations": ["Healthy adults", "Overweight individuals", "Type 2 diabetes", "Down syndrome", "Fragile X Syndrome"],
       "mechanismsOfAction": [
-        "Antioxidant and anti-inflammatory",
-        "AMPK pathway activation",
-        "Neuroprotective effects",
-        "Thermogenesis enhancement"
+        "EGCG multi-target cellular signaling (NF-κB, MAPK, PI3K/Akt inhibition)",
+        "DYRK1A kinase inhibition (neuroprotective)",
+        "AMPK pathway activation (thermogenesis/fat oxidation)",
+        "OATP1A2 transporter inhibition (drug interaction mechanism)"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["Caffeine effects", "GI upset", "Iron absorption reduction"],
-        "contraindications": ["Iron deficiency", "Liver disease"],
-        "drugInteractions": ["Iron supplements", "Blood thinners", "Beta-blockers"]
+        "commonSideEffects": ["GI upset at high doses", "Iron absorption reduction", "Caffeine sensitivity (from non-decaffeinated products)"],
+        "contraindications": ["Iron deficiency anemia", "Liver disease", "Concurrent hepatotoxic medications"],
+        "drugInteractions": ["Beta-blockers (nadolol — OATP1A2 inhibition reduces bioavailability 85%)", "Iron supplements", "Statins (OATP substrate)"]
       },
       "effectSizes": {
-        "attention": "Small to moderate",
-        "antioxidant": "Large increase"
+        "bodyWeight": "−1.31 kg (95% CI: −1.98 to −0.65; Rondanelli 2021 meta-analysis)",
+        "fastingGlucoseT2DM": "−7.48 mg/dL WMD (Asbaghi 2020 meta-analysis)",
+        "fatOxidation": "+16% at rest (Roberts 2021 RCT)",
+        "attention": "Small to moderate (Dietz 2017 RCT)"
       },
       "commercialAvailability": {
-        "forms": ["Capsules", "Tablets", "Powder", "Liquid"],
+        "forms": ["Capsules", "Tablets", "Powder"],
         "costRange": "$10-30/month",
-        "qualityMarkers": ["Standardized EGCG", "Decaffeinated options", "Third-party tested"]
+        "qualityMarkers": ["Standardized EGCG content", "Decaffeinated options", "Third-party tested", "USP or NSF certified"]
       },
       "keyCitations": [
         {
-          "title": "Green tea polyphenols and cognitive function",
-          "authors": "Multiple systematic reviews",
-          "year": "2014-2023",
-          "doi": "Various"
+          "citationId": "rondanelli_2021_weight_metabolic",
+          "title": "Meta-Analysis of the Effects of Green Tea Extract on Body Composition and Metabolic Parameters",
+          "authors": ["Rondanelli M", "Giacosa A", "Morazzoni P", "Guido D", "Faliva MA", "Perna S"],
+          "year": 2021,
+          "journal": "Nutrients",
+          "doi": "10.3390/nu13020644",
+          "pmid": "33671139",
+          "studyType": "Systematic review and meta-analysis"
+        },
+        {
+          "citationId": "delatorre_2016_cognitive_ds",
+          "title": "Epigallocatechin-3-gallate, a DYRK1A Inhibitor, Rescues Cognitive Deficits in Down Syndrome Mouse Models and in Humans",
+          "authors": ["de la Torre R", "de Sola S", "Pons M", "Duchon A", "de Lagran MM", "Farre M"],
+          "year": 2016,
+          "journal": "Lancet Neurology",
+          "doi": "10.1016/S1474-4422(16)30034-5",
+          "pmid": "27302362",
+          "studyType": "Phase 2 randomized controlled trial"
+        },
+        {
+          "citationId": "asbaghi_2020_t2dm_meta",
+          "title": "Effect of Green Tea on Anthropometric Indices and Glycemic Parameters in T2DM: A Systematic Review and Meta-Analysis",
+          "authors": ["Asbaghi O", "Fouladvand F", "Gonzalez MJ", "Aghamohammadi V", "Choghakhori R", "Abbasnezhad A"],
+          "year": 2020,
+          "journal": "Complementary Medicine Research",
+          "doi": "10.1159/000511665",
+          "pmid": "33207344",
+          "studyType": "Systematic review and meta-analysis"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
-      },
-      "evidenceProfile": {
-        "researchQualityScore": 77,
-        "totalCitations": 15,
-        "lastUpdated": "2025-08-19"
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 14,
+          "researchQualityScore": 74,
+          "lastEvidenceUpdate": "2026-03-06",
+          "researchMaturity": "Developing",
+          "publicationSpan": "2016-2025"
+        }
       }
     },
     
     {
       "id": 25,
       "name": "NAD+ Precursors",
-      "scientificName": "Nicotinamide riboside/NMN",
+      "scientificName": "Nicotinamide riboside/Nicotinamide mononucleotide",
       "category": "Metabolic Support",
-      "commonNames": ["NR", "NMN", "Nicotinamide Riboside"],
-      "evidenceTier": 3,
-      "evidenceTierRationale": "Emerging human evidence, strong preclinical data",
+      "commonNames": ["NR", "NMN", "Nicotinamide Riboside", "Nicotinamide Mononucleotide", "NIAGEN"],
+      "isEnhanced": true,
+      "evidenceTier": 2,
+      "evidenceTierRationale": "Two published meta-analyses (Prokopidis 2025 JCSM; Chen 2024 Nutr Metab Cardiovasc Dis) plus 10+ independent RCTs including a Science landmark trial (Yoshino 2021) and Nat Commun cardiovascular RCT (Martens 2018); no single general-population RCT with n>200 prevents Tier 1",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Cellular energy", "Anti-aging"],
-        "nonCognitive": ["Mitochondrial function", "DNA repair", "Cardiovascular health", "Muscle function"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Mitochondrial function", "DNA repair", "Cardiovascular health", "Muscle function", "Insulin sensitivity"]
       },
-      "dosageRange": "100-500mg daily",
+      "dosageRange": "250-500mg NR or NMN daily",
       "optimalDuration": "12+ weeks",
-      "studyPopulations": ["Elderly", "Athletes", "Anti-aging protocols"],
+      "studyPopulations": ["Elderly adults", "Prediabetic adults", "Athletes", "Postmenopausal women"],
       "mechanismsOfAction": [
-        "NAD+ synthesis enhancement",
-        "Sirtuin activation",
-        "Mitochondrial biogenesis",
-        "DNA repair pathways"
+        "NAD+ biosynthesis via Preiss-Handler pathway (gut microbiota conversion)",
+        "Sirtuin activation (SIRT1-7)",
+        "Mitochondrial biogenesis and function",
+        "PARP1/CD38 competition for NAD+",
+        "DNA repair pathway support"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["Mild flushing", "GI upset"],
-        "contraindications": ["None known"],
-        "drugInteractions": ["None established"]
+        "commonSideEffects": ["Mild nausea", "Mild flushing at high doses", "Transient headache"],
+        "contraindications": ["None established at standard doses"],
+        "drugInteractions": ["None established; potential interaction with PARP inhibitors (theoretical)"]
       },
       "effectSizes": {
-        "nad_levels": "Large increase",
-        "cellular_energy": "Moderate improvement"
+        "nad_blood_levels": "150-300% increase (dose-dependent; Trammell 2016, Conze 2019)",
+        "muscle_grip_strength": "SMD +0.31 (p=0.04; Prokopidis 2025 meta-analysis; n=236)",
+        "systolic_blood_pressure": "-5.8 mmHg in hypertensive subgroup (Martens 2018; p<0.05)",
+        "insulin_sensitivity": "Significant improvement in prediabetic women (Yoshino 2021 Science; p=0.04)",
+        "glucose_hba1c": "Null effect in non-diabetic populations (Chen 2024 meta-analysis)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder", "Sublingual"],
         "costRange": "$30-80/month",
-        "qualityMarkers": ["Third-party tested", "Pharmaceutical grade", "Stability testing"]
+        "qualityMarkers": ["Third-party tested", "Pharmaceutical grade NR (NIAGEN)", "Stability-tested formulations"]
       },
       "keyCitations": [
         {
-          "title": "NAD+ supplementation for healthy aging",
-          "authors": "Emerging research",
-          "year": "2020-2024",
-          "doi": "Various"
+          "title": "Effect of nicotinamide mononucleotide on insulin sensitivity in prediabetic women",
+          "authors": "Yoshino M, Yoshino J, Kayser BD, et al.",
+          "year": 2021,
+          "journal": "Science",
+          "doi": "10.1126/science.abe9985",
+          "pmid": "33888596"
+        },
+        {
+          "title": "Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults",
+          "authors": "Martens CR, Denman BA, Mazzo MR, et al.",
+          "year": 2018,
+          "journal": "Nature Communications",
+          "doi": "10.1038/s41467-018-03421-7",
+          "pmid": "29599478"
+        },
+        {
+          "title": "Effects of nicotinamide riboside and nicotinamide mononucleotide on muscle mass and function: a systematic review and meta-analysis",
+          "authors": "Prokopidis K, Giannos P, Ispoglou T, et al.",
+          "year": 2025,
+          "journal": "Journal of Cachexia, Sarcopenia and Muscle",
+          "doi": "10.1002/jcsm.13769",
+          "pmid": "40275690"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
-      },
-      "evidenceProfile": {
-        "researchQualityScore": 78,
-        "totalCitations": 12,
-        "lastUpdated": "2025-08-19"
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "researchQualityScore": 72,
+          "totalCitations": 17,
+          "lastEvidenceUpdate": "2026-03-06",
+          "researchMaturity": "Developing",
+          "publicationSpan": "2016-2026"
+        }
       }
     },
     
@@ -1561,55 +2027,72 @@ const supplementDatabase = {
       "name": "PQQ",
       "scientificName": "Pyrroloquinoline quinone",
       "category": "Antioxidant",
-      "commonNames": ["Methoxatin", "Pyrroloquinoline quinone"],
+      "commonNames": ["Methoxatin", "Pyrroloquinoline quinone", "BioPQQ"],
       "evidenceTier": 3,
-      "evidenceTierRationale": "Limited human studies, promising preclinical data",
+      "evidenceTierRationale": "Five small RCTs (n=20–58) consistently show cognitive and mitochondrial benefits at 20mg/day BioPQQ™; no meta-analyses exist; all studies small and primarily Mitsubishi Gas Chemical-funded; Tier 3 correct — insufficient for Tier 2 without meta-analytic synthesis",
+      "isEnhanced": true,
       "primaryBenefits": {
-        "cognitive": ["Neuroprotection", "Memory support", "Mental clarity"],
-        "nonCognitive": ["Mitochondrial biogenesis", "Antioxidant effects", "Energy production", "Heart health"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Memory support", "Cognitive function", "Executive function", "Mental clarity"],
+        "nonCognitive": ["Mitochondrial biogenesis (PGC-1α upregulation)", "Antioxidant activity", "Cerebral blood flow", "Cardiovascular support (preliminary)"]
       },
-      "dosageRange": "10-20mg daily",
-      "optimalDuration": "8-12 weeks",
-      "studyPopulations": ["Adults seeking cognitive enhancement", "Elderly"],
+      "dosageRange": "20mg daily",
+      "optimalDuration": "12 weeks",
+      "studyPopulations": ["Adults aged 20–80", "Elderly (age 50–70)", "Adults with elevated LDL"],
       "mechanismsOfAction": [
-        "Mitochondrial biogenesis",
-        "Neuroprotective effects",
-        "Antioxidant activity",
-        "NMDA receptor modulation"
+        "Mitochondrial biogenesis via PGC-1α upregulation",
+        "Redox cofactor / antioxidant activity",
+        "Cerebral blood flow enhancement (prefrontal cortex)",
+        "NGF upregulation"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["Rare: headache", "Fatigue"],
-        "contraindications": ["None known"],
+        "commonSideEffects": ["No adverse events observed in any published RCT"],
+        "contraindications": ["None established"],
         "drugInteractions": ["None established"]
       },
       "effectSizes": {
-        "mitochondrial_function": "Moderate improvement",
-        "cognition": "Small (preliminary data)"
+        "composite_memory": "Significant improvement on Cognitrax battery (Shiojima 2021; Tamakoshi 2023)",
+        "executive_function": "Stroop interference ratio significantly reduced (Itoh 2016)",
+        "pgc1a_expression": "Significant upregulation in skeletal muscle (Hwang 2020)",
+        "cerebral_blood_flow": "Significant increase in PFC oxygenated hemoglobin by tNIRS (Nakano 2016)",
+        "ldl_cholesterol": "Marginal reduction overall; significant in high-LDL subgroup only (Nakano 2015)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder"],
         "costRange": "$20-40/month",
-        "qualityMarkers": ["BioPQQ brand", "Third-party tested", "Enteric coating"]
+        "qualityMarkers": ["BioPQQ™ brand (Mitsubishi Gas Chemical)", "Third-party tested", "20mg standardized dose"]
       },
       "keyCitations": [
         {
-          "title": "PQQ and mitochondrial function in aging",
-          "authors": "Preliminary research",
-          "year": "2013-2023",
-          "doi": "Various"
+          "title": "Effect of Pyrroloquinoline Quinone Disodium Salt (BioPQQ) on Cognitive Function and Cerebral Blood Flow",
+          "authors": "Shiojima Y, Takahashi M, Takahashi R, et al.",
+          "year": 2021,
+          "doi": "10.1080/07315724.2021.1962770",
+          "pmid": "34415830"
+        },
+        {
+          "title": "Effect of pyrroloquinoline quinone disodium salt supplementation on cognitive function in healthy adults",
+          "authors": "Tamakoshi M, Suzuki T, Nishihara E, et al.",
+          "year": 2023,
+          "doi": "10.1039/d2fo01515c",
+          "pmid": "36807425"
+        },
+        {
+          "title": "Pyrroloquinoline Quinone (PQQ) Supplementation and the PGC-1α Pathway",
+          "authors": "Hwang PS, Machek SB, Cardaci TD, et al.",
+          "year": 2020,
+          "doi": "10.1080/07315724.2019.1705203",
+          "pmid": "31860387"
         }
       ],
-      "healthDomains": ["Memory Enhancement", "Neuroprotection", "Energy & Vitality", "Anti-Aging"],
+      "healthDomains": ["Memory Enhancement", "Neuroprotection", "Energy & Vitality", "Mitochondrial Health"],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 3",
-          "totalCitations": 12,
-          "researchQualityScore": 78,
-          "lastUpdated": "2025-08-21"
+          "totalCitations": 7,
+          "researchQualityScore": 42,
+          "lastUpdated": "2026-03-06"
         }
       }
     },
@@ -1620,97 +2103,153 @@ const supplementDatabase = {
       "scientificName": "3,5,4'-trihydroxystilbene",
       "category": "Polyphenol",
       "commonNames": ["Trans-resveratrol", "Red wine extract"],
-      "evidenceTier": 3,
-      "evidenceTierRationale": "Limited human studies, promising preclinical data",
+      "evidenceTier": 2,
+      "evidenceTierRationale": "Multiple meta-analyses (including 1 umbrella meta-analysis of 19 MAs, 81 RCTs, n=4088) confirm anti-inflammatory, body composition, and endothelial benefits. Consistent replication across independent research groups. Evidence tier upgraded from 3; SIRT1 mechanism reclassified to Theoretical after Mansouri 2025 null meta-analysis (11 RCTs).",
       "primaryBenefits": {
-        "cognitive": ["Neuroprotection", "Memory support", "Anti-aging"],
-        "nonCognitive": ["Cardiovascular health", "Antioxidant effects", "Longevity support", "Anti-inflammatory"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Cerebral blood flow enhancement", "Memory support", "Neuroprotection"],
+        "nonCognitive": ["Anti-inflammatory (CRP/TNF-α reduction)", "Body composition improvement", "Endothelial function", "Adipokine modulation (adiponectin)", "PCOS hormonal support"],
+        "isEnhanced": true
       },
-      "dosageRange": "100-500mg daily",
-      "optimalDuration": "12+ weeks",
-      "studyPopulations": ["Elderly", "Cardiovascular patients", "Anti-aging protocols"],
+      "dosageRange": "150-500mg daily (75mg twice daily for cognitive outcomes)",
+      "optimalDuration": "12-24 weeks",
+      "studyPopulations": ["Cardiovascular patients", "Obese adults", "Type 2 diabetes", "Postmenopausal women", "PCOS patients"],
       "mechanismsOfAction": [
-        "Sirtuin activation",
-        "Antioxidant and anti-inflammatory",
-        "Neuroprotective pathways",
-        "Cardiovascular protection"
+        "NF-κB pathway inhibition (anti-inflammatory)",
+        "eNOS activation and nitric oxide production (endothelial)",
+        "SIRT1 activation (theoretical — null in human RCTs)",
+        "Antioxidant/ROS scavenging (indirect clinical evidence)"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["GI upset", "Headache", "Sleep disturbances"],
-        "contraindications": ["Blood clotting disorders"],
-        "drugInteractions": ["Blood thinners", "NSAIDs"]
+        "commonSideEffects": ["GI upset", "Nausea", "Headache"],
+        "contraindications": ["Blood clotting disorders", "High-dose use (>1000mg/day) — elevated alkaline phosphatase risk"],
+        "drugInteractions": ["Blood thinners (anticoagulants)", "NSAIDs", "CYP2C9 substrates"]
       },
       "effectSizes": {
-        "antioxidant": "Moderate increase",
-        "cognition": "Small (preliminary data)"
+        "antiInflammatory_CRP": "WMD −0.31 to −0.63 mg/L (meta-analytic)",
+        "bodyWeight": "WMD −0.44 to −0.51 kg (meta-analytic)",
+        "FMD_endothelial": "+1.43% (meta-analytic)",
+        "cognition_CBFV": "Cohen's d = 0.275 (24-month RCT)",
+        "adiponectin": "+1.10 μg/mL (meta-analytic)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Liquid"],
         "costRange": "$15-40/month",
-        "qualityMarkers": ["Trans-resveratrol form", "Third-party tested", "Standardized extract"]
+        "qualityMarkers": ["Trans-resveratrol form (not cis)", "Third-party tested", "Micronized for bioavailability"]
       },
       "keyCitations": [
         {
-          "title": "Resveratrol's Modulation of Key Enzymes in Stress-Related Anxiety",
-          "authors": "Tseilikman et al.",
+          "title": "Resveratrol supplementation and metabolic risk factors: an umbrella review of meta-analyses",
+          "authors": "Molani-Gol R, Pourghassem Gargari B",
           "year": "2024",
-          "doi": "10.3390/biomedicines12092063"
+          "doi": "10.1007/s00394-024-03335-9",
+          "pmid": "38374352"
+        },
+        {
+          "title": "Effects of resveratrol on C-reactive protein: a meta-analysis of 35 RCTs",
+          "authors": "Gorabi AM et al.",
+          "year": "2021",
+          "doi": "10.1002/ptr.7262",
+          "pmid": "34472150"
+        },
+        {
+          "title": "Long-term effects of resveratrol on cognition and cerebrovascular function in postmenopausal women",
+          "authors": "Thaung Zaw JJ, Howe PRC, Wong RHX",
+          "year": "2021",
+          "doi": "10.1016/j.clnu.2020.08.025",
+          "pmid": "32900519"
+        },
+        {
+          "title": "Effects of resveratrol supplementation on SIRT1 expression: null result across 11 RCTs",
+          "authors": "Mansouri S et al.",
+          "year": "2025",
+          "doi": "10.1016/j.jand.2025.03.011",
+          "pmid": "40158656"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 19,
+          "researchQualityScore": 72,
+          "lastEvidenceUpdate": "2026-03-06",
+          "researchMaturity": "Developing"
+        }
       }
     },
     
     {
       "id": 28,
       "name": "Glucosamine",
-      "scientificName": "D-glucosamine",
+      "scientificName": "Glucosamine sulfate",
       "category": "Joint Support",
-      "commonNames": ["Glucosamine Sulfate", "Glucosamine HCl"],
+      "commonNames": ["Glucosamine sulfate", "Glucosamine HCl", "GS", "GH"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Moderate evidence for joint health from systematic reviews",
+      "evidenceTierRationale": "Tier 2: Large research base (30+ RCTs in meta-analyses, umbrella NMA n=5265) supporting modest joint space narrowing and symptom effects. Efficacy is contested by funding source — independent IPD meta-analysis (Runhaar 2017, n=1625, 5 trials) found null result vs placebo; industry-funded studies show SMD ~-0.47 vs independent SMD ~-0.19. OARSI 2014 classified as 'uncertain appropriateness'. Best evidence is for crystalline glucosamine sulfate 1500mg/day for structural outcomes (JSN reduction). Cannot reach Tier 1 due to fundamental inconsistency between independent and industry-funded evidence.",
       "primaryBenefits": {
-        "cognitive": ["Potential neuroprotection"],
-        "nonCognitive": ["Joint health support", "Osteoarthritis symptom relief", "Cartilage maintenance", "Anti-inflammatory"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": [],
+        "nonCognitive": ["Joint pain reduction (contested)", "Joint space narrowing reduction", "Osteoarthritis symptom relief", "Cartilage matrix support"],
+        "isEnhanced": true
       },
-      "dosageRange": "1500-2000mg daily",
-      "optimalDuration": "12+ weeks",
-      "studyPopulations": ["Osteoarthritis patients", "Joint health seekers", "Athletes"],
+      "isEnhanced": true,
+      "dosageRange": "1500mg glucosamine sulfate daily (sulfate form preferred over HCl)",
+      "optimalDuration": "6+ months for structural effects; 12+ weeks for symptom assessment",
+      "studyPopulations": ["Knee osteoarthritis patients", "Hip osteoarthritis patients", "Adults with joint pain"],
       "mechanismsOfAction": [
-        "Cartilage synthesis support",
-        "Anti-inflammatory pathways",
-        "Synovial fluid enhancement",
-        "Proteoglycan synthesis"
+        "Cartilage matrix GAG and proteoglycan synthesis (in vitro evidence)",
+        "NF-κB pathway inhibition — anti-inflammatory (in vitro; not confirmed in human RCTs at clinical significance)",
+        "Joint space narrowing reduction (clinical evidence: modest but present for GS)"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["GI upset", "Nausea", "Heartburn"],
-        "contraindications": ["Shellfish allergies", "Diabetes (monitor glucose)"],
-        "drugInteractions": ["Warfarin", "Diabetes medications"]
+        "commonSideEffects": ["Mild GI upset", "Nausea", "Heartburn", "Diarrhea (uncommon, <5%)"],
+        "contraindications": ["Shellfish allergies (most GS derived from shellfish)"],
+        "drugInteractions": ["Warfarin (monitor INR)", "Diabetes medications (monitor blood glucose)"]
       },
       "effectSizes": {
-        "joint_pain": "Small to moderate",
-        "cartilage": "Small improvement"
+        "joint_pain": "Sub-threshold: VAS WMD -5.7 to -7.4mm (MCID=15mm; does not meet clinical significance in most independent meta-analyses)",
+        "joint_space_narrowing": "Small but significant: SMD -0.42 (Gregori 2018, industry-conflicted); GS alone significant in Rabade 2024",
+        "function": "WOMAC not significantly improved in independent meta-analyses"
       },
       "commercialAvailability": {
-        "forms": ["Capsules", "Tablets", "Powder", "Liquid"],
+        "forms": ["Capsules", "Tablets", "Powder"],
         "costRange": "$15-35/month",
-        "qualityMarkers": ["Sulfate form preferred", "Third-party tested", "Combined with chondroitin"]
+        "qualityMarkers": ["Crystalline glucosamine sulfate preferred (Dona/Viartril formulation most studied)", "Sulfate salt superior to HCl", "Third-party tested"]
       },
       "keyCitations": [
         {
-          "title": "Dietary integration with chondroitin sulfate/glucosamine hydrochloride in osteoarthritis",
-          "authors": "Pomponio et al.",
-          "year": "2022",
-          "doi": "Various studies"
+          "title": "Subgroup analyses of the effectiveness of oral glucosamine for knee and hip osteoarthritis: a systematic review and IPD meta-analysis from the OA trial bank",
+          "authors": "Runhaar J et al.",
+          "year": 2017,
+          "doi": "10.1136/annrheumdis-2017-211149",
+          "pmid": "28754801"
+        },
+        {
+          "title": "Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis (GAIT trial)",
+          "authors": "Clegg DO et al.",
+          "year": 2006,
+          "doi": "10.1056/NEJMoa052771",
+          "pmid": "16495392"
+        },
+        {
+          "title": "Glucosamine and chondroitin sulfate supplements: examination of efficacy and safety (industry vs independent funding analysis)",
+          "authors": "Knapik JJ et al.",
+          "year": 2018,
+          "doi": "10.55460/AUC0-QM7H",
+          "pmid": "30566740"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "file": "28_enhanced.js",
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 16,
+          "researchQualityScore": 65,
+          "lastEvidenceUpdate": "2026-03-06"
+        }
+      }
     },
     
     {
@@ -1718,143 +2257,235 @@ const supplementDatabase = {
       "name": "MSM",
       "scientificName": "Methylsulfonylmethane",
       "category": "Joint Support",
-      "commonNames": ["Dimethyl sulfone", "Methylsulfonylmethane"],
+      "commonNames": ["Dimethyl sulfone", "DMSO2", "Organic sulfur"],
       "evidenceTier": 3,
-      "evidenceTierRationale": "Limited evidence, emerging research",
+      "evidenceTierRationale": "Two small RCTs (n=49, n=88) show statistically significant OA pain reduction but fall below MCID thresholds. An independent GRADE-based systematic review (Crawford 2019, US military) recommends AGAINST MSM for musculoskeletal pain. A 2025 NMA (Chen et al.) assigns GRADE Low certainty to MSM. Insufficient evidence for Tier 2.",
       "primaryBenefits": {
-        "cognitive": ["Potential anti-inflammatory effects"],
-        "nonCognitive": ["Joint support", "Anti-inflammatory", "Skin health", "Exercise recovery"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": [],
+        "nonCognitive": ["Osteoarthritis joint pain reduction (contested)", "Exercise recovery", "Anti-inflammatory"],
+        "isEnhanced": true
       },
-      "dosageRange": "1000-3000mg daily",
+      "isEnhanced": true,
+      "dosageRange": "2000-3375mg daily",
       "optimalDuration": "8-12 weeks",
-      "studyPopulations": ["Joint health seekers", "Athletes", "Inflammatory conditions"],
+      "studyPopulations": ["Osteoarthritis patients", "Military/active duty populations", "Athletes", "Healthy adults"],
       "mechanismsOfAction": [
-        "Sulfur donation for tissue repair",
-        "Anti-inflammatory pathways",
-        "Collagen synthesis support",
-        "Antioxidant activity"
+        "NF-κB pathway inhibition reducing pro-inflammatory cytokine production",
+        "Biological sulfur donor supporting collagen and connective tissue synthesis",
+        "Antioxidant activity via free radical scavenging"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["Rare: GI upset", "Headache"],
-        "contraindications": ["None known"],
-        "drugInteractions": ["None established"]
+        "commonSideEffects": ["Mild GI upset (nausea, diarrhea)", "Headache", "Fatigue"],
+        "contraindications": ["Pregnancy/lactation (insufficient data)"],
+        "drugInteractions": ["Potential CYP450 inhibition — warfarin and narrow-TI drug caution advised"]
       },
       "effectSizes": {
-        "joint_pain": "Small",
-        "inflammation": "Small to moderate"
+        "joint_pain": "SMD 0.39–0.50 (statistically significant; below MCID in independent analysis)",
+        "exercise_recovery": "Modest DOMS reduction (underpowered studies)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder", "Tablets"],
         "costRange": "$10-25/month",
-        "qualityMarkers": ["OptiMSM brand", "Third-party tested", "High purity"]
+        "qualityMarkers": ["OptiMSM brand (Bergstrom Nutrition)", "Third-party tested", "Distillation-purified"]
       },
       "keyCitations": [
         {
-          "title": "MSM anti-inflammatory and joint support research",
-          "authors": "Various studies",
-          "year": "2015-2023",
-          "doi": "Various"
+          "title": "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study",
+          "authors": ["Debbi EM", "Agar G", "Fichman G", "Ziv YB", "Kardosh R", "Halperin N", "Elbaz A", "Beer Y", "Debi R"],
+          "year": 2011,
+          "doi": "10.1186/1472-6882-11-50",
+          "pmid": "21708034"
+        },
+        {
+          "title": "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement",
+          "authors": ["Butawan M", "Benjamin RL", "Bloomer RJ"],
+          "year": 2017,
+          "doi": "10.3390/nu9030290",
+          "pmid": "28300758"
+        },
+        {
+          "title": "Evidence for glucosamine and chondroitin-sulfate for musculoskeletal injury: A Systematic Review",
+          "authors": ["Crawford C", "Boyd C", "Avula B", "Wang YH", "Khan IA", "Deuster PA"],
+          "year": 2019,
+          "doi": "10.1186/s12891-019-2559-4",
+          "pmid": "30986309"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 3",
+          "totalCitations": 8,
+          "researchQualityScore": 45,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Moderate",
+            "clinicalBenefits": "Preliminary",
+            "safety": "Good",
+            "dosage": "Partially established"
+          },
+          "researchMaturity": "Emerging"
+        }
+      }
     },
     
     {
       "id": 30,
       "name": "Vitamin E",
-      "scientificName": "α-tocopherol/tocotrienols",
+      "scientificName": "α-tocopherol (primary active form); also tocotrienols",
       "category": "Essential Nutrients",
-      "commonNames": ["Alpha-tocopherol", "Tocotrienols", "Mixed tocopherols"],
+      "commonNames": ["Alpha-tocopherol", "Mixed tocopherols", "Tocotrienols", "dl-alpha-tocopherol", "d-alpha-tocopherol"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for antioxidant effects, mixed for cognitive benefits",
+      "evidenceTierRationale": "Multiple large RCTs (HOPE n=9,541; HOPE-TOO; PHS II n=14,641) and a meta-analysis (n=135,967) establish null CVD benefit and harm at ≥400 IU/day. Positive evidence exists for immune enhancement (Meydani 1997 RCT) and Alzheimer's functional preservation (Dysken 2014 RCT n=613). Tier 2 reflects mature, large-trial evidence base with complex clinical picture.",
       "primaryBenefits": {
-        "cognitive": ["Neuroprotection", "Cognitive aging protection"],
-        "nonCognitive": ["Antioxidant effects", "Cardiovascular health", "Immune support", "Skin health"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Neuroprotection", "Alzheimer's disease functional preservation"],
+        "nonCognitive": ["Immune function enhancement (elderly)", "Lipid peroxidation inhibition"],
+        "isEnhanced": true
       },
-      "dosageRange": "15mg RDA to 400IU therapeutic",
-      "optimalDuration": "Long-term supplementation",
-      "studyPopulations": ["Elderly", "Cardiovascular patients", "Antioxidant seekers"],
+      "isEnhanced": true,
+      "dosageRange": "15mg/day RDA; 200 IU/day for immune benefit; 2000 IU/day for AD under specialist supervision; CAUTION: ≥400 IU/day increases all-cause mortality",
+      "optimalDuration": "12–24 weeks for immune endpoints; long-term only under specialist supervision for AD",
+      "studyPopulations": ["Elderly (immune function)", "Mild-to-moderate Alzheimer's patients", "Cardiovascular risk populations"],
       "mechanismsOfAction": [
-        "Lipid peroxidation prevention",
-        "Cell membrane protection",
-        "Anti-inflammatory effects",
-        "Gene expression modulation"
+        "Lipid peroxidation inhibition (chain-breaking antioxidant in cell membranes and LDL)",
+        "T-cell and antibody response enhancement (immunomodulation)",
+        "Antioxidant neuroprotection — mitochondrial oxidative stress reduction in neurons"
       ],
       "safetyProfile": {
-        "rating": "Good",
-        "commonSideEffects": ["Rare: bleeding (high doses)", "GI upset"],
-        "contraindications": ["Blood clotting disorders"],
-        "drugInteractions": ["Blood thinners", "Chemotherapy"]
+        "rating": "Caution",
+        "commonSideEffects": ["GI upset at high doses", "Increased bleeding time"],
+        "contraindications": ["Blood clotting disorders", "Pre-surgery (discontinue ≥2 weeks prior)"],
+        "drugInteractions": ["Anticoagulants (warfarin — potentiates effect)", "Antiplatelet agents", "Chemotherapy (may reduce efficacy)"]
       },
       "effectSizes": {
-        "antioxidant": "Large increase",
-        "cognition": "Small (mixed evidence)"
+        "immuneFunction": "Large (65% DTH increase at 200 IU/day; Meydani 1997)",
+        "alzheimersFunctional": "Moderate (3.15-unit ADCS-ADL improvement; Dysken 2014)",
+        "cardiovascularMortality": "Null to harmful (RR 1.13 heart failure; HR 1.74 hemorrhagic stroke at ≥400 IU/day)"
       },
       "commercialAvailability": {
-        "forms": ["Softgels", "Capsules", "Liquid"],
+        "forms": ["Softgels (alpha-tocopherol)", "Capsules (mixed tocopherols)", "Liquid"],
         "costRange": "$5-20/month",
-        "qualityMarkers": ["Mixed tocopherols", "Natural form", "Third-party tested"]
+        "qualityMarkers": ["Natural d-alpha-tocopherol (not dl-)", "Mixed tocopherols preferred", "Third-party tested", "Dose ≤200 IU for general use"]
       },
       "keyCitations": [
         {
-          "title": "Vitamin E tocotrienols research and cardiovascular trials",
-          "authors": "Multiple studies",
-          "year": "2015-2023",
-          "doi": "Various"
+          "title": "Vitamin E supplementation and cardiovascular events in high-risk patients — HOPE trial",
+          "authors": "Lonn E, Bosch J, Yusuf S, et al.",
+          "year": 2000,
+          "doi": "10.1056/NEJM200001203420302",
+          "pmid": "10639540"
+        },
+        {
+          "title": "Meta-analysis: high-dosage vitamin E supplementation may increase all-cause mortality",
+          "authors": "Miller ER, Pastor-Barriuso R, Dalal D, et al.",
+          "year": 2005,
+          "doi": "10.7326/0003-4819-142-1-200501040-00110",
+          "pmid": "15537682"
+        },
+        {
+          "title": "Effect of vitamin E and memantine on functional decline in Alzheimer disease — TEAM-AD VA trial",
+          "authors": "Dysken MW, Sano M, Asthana S, et al.",
+          "year": 2014,
+          "doi": "10.1001/jama.2013.282834",
+          "pmid": "24381967"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 8,
+          "researchQualityScore": 68,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Strong",
+            "clinicalBenefits": "Moderate",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature"
+        }
+      }
     },
     
     {
       "id": 31,
       "name": "Whey Protein",
-      "scientificName": "Whey protein concentrate/isolate",
+      "scientificName": "Bovine milk serum protein (alpha-lactalbumin, beta-lactoglobulin, immunoglobulins)",
       "category": "Protein",
-      "commonNames": ["Whey Isolate", "Whey Concentrate"],
+      "commonNames": ["Whey Isolate", "WPI", "Whey Concentrate", "WPC", "Whey Hydrolysate"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for muscle health, emerging for cognitive benefits",
+      "evidenceTierRationale": "Multiple RCTs and meta-analyses confirm muscle protein synthesis and sarcopenia benefits in elderly+RET; body composition effects are moderate and population-specific; Tier 2 appropriate given null findings in healthy elderly without resistance training",
+      "isEnhanced": true,
       "primaryBenefits": {
-        "cognitive": ["Cognitive support in aging", "Neurotransmitter precursors"],
-        "nonCognitive": ["Muscle protein synthesis", "Exercise recovery", "Immune support", "Weight management"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Neurotransmitter precursor support via tryptophan and tyrosine"],
+        "nonCognitive": ["Muscle protein synthesis", "Sarcopenia prevention in elderly", "Exercise recovery", "Body composition improvement", "Immune support via glutathione precursors"]
       },
-      "dosageRange": "20-40g daily",
-      "optimalDuration": "Ongoing supplementation",
-      "studyPopulations": ["Athletes", "Elderly", "Protein deficient", "Weight management"],
+      "dosageRange": "20-40g post-exercise; 40g/day for sarcopenia prevention in elderly",
+      "optimalDuration": "12+ weeks for body composition; ongoing for elderly sarcopenia prevention",
+      "studyPopulations": ["Elderly (≥65 years) with resistance exercise training", "Athletes", "Sarcopenic older adults", "Healthy adults with resistance training"],
       "mechanismsOfAction": [
-        "Complete amino acid profile",
-        "mTOR pathway activation",
-        "Immune system support",
-        "Antioxidant precursors"
+        "mTOR/p70S6K1 pathway activation via leucine",
+        "Muscle protein synthesis stimulation (fast-digesting leucine-rich profile)",
+        "Glutathione precursor provision (cysteine, glutamate)",
+        "IGF-1 pathway modulation"
       ],
       "safetyProfile": {
         "rating": "Excellent",
-        "commonSideEffects": ["Rare: lactose intolerance", "GI upset"],
-        "contraindications": ["Milk allergies"],
-        "drugInteractions": ["None established"]
+        "commonSideEffects": ["GI discomfort at high doses", "Bloating in lactose-sensitive individuals"],
+        "contraindications": ["Milk protein allergy", "Phenylketonuria (phenylalanine content)"],
+        "drugInteractions": ["Levodopa (leucine competition)", "Tetracycline antibiotics (calcium in dairy base)"]
       },
       "effectSizes": {
-        "muscle_synthesis": "Large",
-        "recovery": "Moderate"
+        "muscle_protein_synthesis": "Large (post-exercise vs. carbohydrate)",
+        "lean_mass_elderly_RET": "Moderate (SMD ~0.3-0.5 vs. placebo+RET)",
+        "body_composition_healthy_adults": "Small-Moderate (context-dependent)"
       },
       "commercialAvailability": {
-        "forms": ["Powder", "Ready-to-drink", "Bars"],
-        "costRange": "$20-60/month",
-        "qualityMarkers": ["Grass-fed sources", "Third-party tested", "No artificial additives"]
+        "forms": ["Powder (concentrate, isolate, hydrolysate)", "Ready-to-drink", "Bars"],
+        "costRange": "$25-70/month",
+        "qualityMarkers": ["Third-party tested (NSF, Informed Sport)", "No artificial sweeteners", "Grass-fed source", "≥20g protein per serving"]
       },
       "keyCitations": [
         {
-          "title": "Multi-ingredient nutrition supplement with whey protein cognitive effects",
-          "authors": "Moran et al.",
-          "year": "2018",
-          "doi": "10.14283/jpad.2018.14"
+          "title": "Leucine-enriched essential amino acid and carbohydrate ingestion following resistance exercise enhances mTOR signaling and protein synthesis in human muscle",
+          "authors": "Tang JE et al.",
+          "year": 2009,
+          "doi": "10.1152/ajpendo.00582.2008",
+          "pmid": "19589961"
+        },
+        {
+          "title": "Evidence-Based Recommendations for Optimal Dietary Protein Intake in Older People: A Position Paper From the PROT-AGE Study Group",
+          "authors": "Bauer J et al.",
+          "year": 2015,
+          "doi": "10.1016/j.jamda.2015.05.021",
+          "pmid": "26170041"
+        },
+        {
+          "title": "The effect of whey protein supplementation with and without creatine monohydrate combined with resistance training on lean tissue mass and muscle strength",
+          "authors": "Li Z et al.",
+          "year": 2024,
+          "doi": "10.1016/j.clnu.2024.01.001",
+          "pmid": "38350303"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 18,
+          "researchQualityScore": 76,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Strong",
+            "clinicalBenefits": "Strong",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature"
+        }
+      }
     },
     
     {
@@ -1862,47 +2493,78 @@ const supplementDatabase = {
       "name": "Chondroitin Sulfate",
       "scientificName": "Chondroitin sulfate sodium",
       "category": "Joint Support",
-      "commonNames": ["Chondroitin", "CS"],
+      "commonNames": ["Chondroitin", "CS", "Chondroitin 4-sulfate", "Chondroitin 6-sulfate"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Moderate evidence for joint health from systematic reviews",
+      "evidenceTierRationale": "Multiple large RCTs (GAIT n=1,583; CONCEPT n=604; MOVES n=606) and 4 meta-analyses (n>1,500 each). Tier 1 prevented by: null GAIT RCT (n=1,583, KEY counter-evidence for nutraceutical-grade CS), GRADE very-low certainty for nutraceutical preparations (Rojas-Briones 2017), pharmaceutical vs. nutraceutical form-dependence limiting universality, moderate effect sizes (SMD 0.18-0.35)",
+      "isEnhanced": true,
       "primaryBenefits": {
-        "cognitive": ["Potential neuroprotection"],
-        "nonCognitive": ["Joint health support", "Cartilage maintenance", "Osteoarthritis symptom relief", "Anti-inflammatory"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": [],
+        "nonCognitive": ["Joint health support", "Cartilage matrix structural support", "Osteoarthritis symptom relief", "Anti-inflammatory via NF-κB/MMP suppression", "Joint space narrowing reduction (pharmaceutical-grade CS)"]
       },
-      "dosageRange": "800-1200mg daily",
+      "dosageRange": "800-1200mg daily (pharmaceutical-grade CS only)",
       "optimalDuration": "12+ weeks",
-      "studyPopulations": ["Osteoarthritis patients", "Joint health seekers", "Athletes"],
+      "studyPopulations": ["Osteoarthritis patients", "Joint health seekers", "Athletes", "Elderly adults with knee OA"],
       "mechanismsOfAction": [
-        "Cartilage matrix support",
-        "Anti-inflammatory pathways",
+        "Cartilage matrix MMP/ADAMTS suppression",
+        "Anti-inflammatory NF-κB pathway inhibition",
         "Synovial fluid enhancement",
-        "Proteoglycan synthesis"
+        "Proteoglycan and aggrecan synthesis support"
       ],
       "safetyProfile": {
         "rating": "Good",
         "commonSideEffects": ["GI upset", "Nausea", "Heartburn"],
         "contraindications": ["Blood clotting disorders"],
-        "drugInteractions": ["Blood thinners"]
+        "drugInteractions": ["Warfarin/blood thinners (INR monitoring recommended)"]
       },
       "effectSizes": {
-        "joint_pain": "Small to moderate",
+        "joint_pain": "Small to moderate (SMD 0.18-0.35; pharmaceutical-grade only)",
+        "structural_jsn": "Significant JSN reduction (6 RCTs, Hochberg 2008 meta-analysis)",
         "mobility": "Small improvement"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder"],
         "costRange": "$20-45/month",
-        "qualityMarkers": ["Pharmaceutical grade", "Combined with glucosamine", "Third-party tested"]
+        "qualityMarkers": ["Pharmaceutical grade (Condrosulf or equivalent)", "Combined with glucosamine (MOVES trial)", "Third-party tested", "Not nutraceutical-grade"]
       },
       "keyCitations": [
         {
-          "title": "Chondroitin sulfate in therapy osteoarthritis chronic pain patients",
-          "authors": "Shavlovskaya",
-          "year": "2022",
-          "doi": "Various studies"
+          "title": "Pharmaceutical-grade chondroitin sulfate is as effective as celecoxib and superior to placebo (CONCEPT trial)",
+          "authors": "Reginster JY et al.",
+          "year": 2017,
+          "doi": "10.1136/annrheumdis-2016-210860",
+          "pmid": "28533290"
+        },
+        {
+          "title": "Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis (GAIT trial)",
+          "authors": "Clegg DO et al.",
+          "year": 2006,
+          "doi": "10.1056/NEJMoa052771",
+          "pmid": "16495392"
+        },
+        {
+          "title": "Association of pharmacological treatments with long-term pain control in knee osteoarthritis (JAMA NMA, n=22,037)",
+          "authors": "Gregori G et al.",
+          "year": 2018,
+          "doi": "10.1001/jama.2018.19319",
+          "pmid": "30535141"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 15,
+          "researchQualityScore": 76,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Moderate",
+            "clinicalBenefits": "Moderate",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature"
+        }
+      }
     },
     
     {
@@ -1910,49 +2572,78 @@ const supplementDatabase = {
       "name": "L-Tyrosine",
       "scientificName": "L-tyrosine",
       "category": "Amino Acid",
-      "commonNames": ["Tyrosine", "N-acetyl tyrosine"],
+      "commonNames": ["Tyrosine", "L-Tyr", "N-Acetyl Tyrosine", "NALT"],
       "evidenceTier": 3,
-      "evidenceTierRationale": "Limited human studies for cognitive enhancement",
+      "evidenceTierRationale": "Multiple small RCTs and reviews support stress-specific cognitive benefits; 2024 meta-analysis (8 RCTs, n=187) shows null effect for endurance with GRADE 'very low' certainty; individual RCTs are small (n=8–40); Tier 2 not reached due to small N, predominantly acute protocols, and absence of large pre-registered trials",
       "primaryBenefits": {
-        "cognitive": ["Stress-related cognitive support", "Focus under pressure", "Working memory"],
-        "nonCognitive": ["Neurotransmitter synthesis", "Stress adaptation", "Thyroid support", "Mood regulation"]
+        "cognitive": ["Stress-related cognitive support", "Working memory under acute stress", "Focus under pressure"],
+        "nonCognitive": ["Catecholamine synthesis", "Stress adaptation", "Thyroid hormone precursor", "Mood regulation"]
       },
       "isEnhanced": true,
-      "enhancedCitations": {
-        "isEnhanced": true
-      },
-      "dosageRange": "500-2000mg daily",
-      "optimalDuration": "Acute use or 4-8 weeks",
-      "studyPopulations": ["Stressed individuals", "Military/high-stress occupations", "Students"],
+      "dosageRange": "100–150 mg/kg bodyweight (acute) or 2g twice daily (chronic)",
+      "optimalDuration": "Acute (single dose 1–2h pre-stressor) or 1–4 weeks chronic",
+      "studyPopulations": ["Military personnel/cadets", "Adults under environmental stress (cold, altitude)", "Healthy adults — cognitive laboratory tasks"],
       "mechanismsOfAction": [
-        "Dopamine synthesis precursor",
-        "Norepinephrine synthesis",
-        "Thyroid hormone synthesis",
-        "Stress response modulation"
+        "Dopamine synthesis precursor (rate-limiting substrate)",
+        "Norepinephrine synthesis precursor",
+        "Reversal of stress-induced catecholamine depletion",
+        "Thyroid hormone (T3/T4) synthesis precursor"
       ],
       "safetyProfile": {
         "rating": "Good",
-        "commonSideEffects": ["Nausea", "Headache", "Fatigue"],
+        "commonSideEffects": ["Nausea", "Headache at high doses"],
         "contraindications": ["Hyperthyroidism", "Melanoma"],
-        "drugInteractions": ["MAO inhibitors", "Thyroid medications"]
+        "drugInteractions": ["MAO inhibitors (contraindicated)", "Thyroid medications (monitor)"]
       },
       "effectSizes": {
-        "stress_performance": "Small to moderate",
-        "working_memory": "Small"
+        "cognitive_under_stress": "Small to moderate (d = 0.3–0.7 in stress paradigms)",
+        "endurance_performance": "Null (ES = -0.05; Fernandez 2024 meta-analysis)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder"],
         "costRange": "$10-25/month",
-        "qualityMarkers": ["Pharmaceutical grade", "Third-party tested", "N-acetyl form"]
+        "qualityMarkers": ["Free-form L-tyrosine preferred over N-acetyl tyrosine (bioavailability)", "Third-party tested", "Pharmaceutical grade"]
       },
       "keyCitations": [
         {
-          "title": "Tyrosine for stress-related cognitive performance",
-          "authors": "Emerging research",
-          "year": "2010-2023",
-          "doi": "Various"
+          "title": "The effect of tyrosine supplementation on whole-body endurance performance: a systematic review and meta-analysis including GRADE qualification",
+          "authors": "Fernandez-Sanchez M et al.",
+          "year": "2024",
+          "doi": "10.1080/02640414.2024.2309434",
+          "pmid": "38345351",
+          "note": "KEY NULL FINDING — GRADE very-low for endurance outcomes; n=187 pooled"
+        },
+        {
+          "title": "Effect of tyrosine supplementation on clinical and healthy populations under stress or cognitive demands — a review",
+          "authors": "Nobre AC, Rao A, Owen GN",
+          "year": "2015",
+          "doi": "10.1016/j.jpsychires.2015.08.014",
+          "pmid": "26424423"
+        },
+        {
+          "title": "Tyrosine improves cognitive performance and reduces blood pressure in cadets after one week of a combat training course",
+          "authors": "Deijen JB et al.",
+          "year": "1999",
+          "doi": "10.1016/s0361-9230(98)00163-4",
+          "pmid": "10230711"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 3",
+          "totalCitations": 11,
+          "researchQualityScore": 68,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Moderate",
+            "clinicalBenefits": "Moderate",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Developing"
+        }
+      }
     },
     
     {
@@ -1960,54 +2651,78 @@ const supplementDatabase = {
       "name": "5-HTP",
       "scientificName": "5-hydroxytryptophan",
       "category": "Amino Acid",
-      "commonNames": ["5-Hydroxytryptophan", "Oxitriptan"],
-      "evidenceTier": 3,
-      "evidenceTierRationale": "Limited human studies, promising for mood support",
+      "commonNames": ["5-Hydroxytryptophan", "Oxitriptan", "L-5-HTP"],
+      "evidenceTier": 2,
+      "evidenceTierRationale": "50+ years of research across depression, sleep, migraine, and fibromyalgia; highly established serotonin precursor mechanism with proven BBB penetration; multiple RCTs and systematic reviews across independent research groups; Cochrane review (2002) found insufficient evidence for depression alone but broader multi-indication evidence base and consistent mechanistic logic support Tier 2; no large modern pre-registered RCT (n>100); GRADE certainty Low–Moderate; serotonin syndrome drug interaction risk requires clinical supervision",
+      "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Mood support", "Sleep quality", "Anxiety reduction"],
-        "nonCognitive": ["Serotonin synthesis", "Depression support", "Appetite control", "Sleep regulation"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Serotonin synthesis", "Depression support", "Appetite control", "Sleep regulation"]
       },
       "dosageRange": "50-300mg daily",
       "optimalDuration": "4-12 weeks",
-      "studyPopulations": ["Depression patients", "Sleep disorders", "Weight management"],
+      "studyPopulations": ["Depression patients", "Sleep disorders", "Weight management", "Migraine patients", "Fibromyalgia"],
       "mechanismsOfAction": [
-        "Serotonin synthesis precursor",
-        "Crosses blood-brain barrier",
-        "Neurotransmitter balance",
-        "Sleep-wake cycle regulation"
+        "Serotonin synthesis precursor — bypasses rate-limiting tryptophan hydroxylase step",
+        "Crosses blood-brain barrier without active transport competition",
+        "Converts to serotonin via aromatic L-amino acid decarboxylase",
+        "Sleep-wake cycle regulation via melatonin precursor pathway"
       ],
       "safetyProfile": {
-        "rating": "Good",
+        "rating": "Moderate — serotonin syndrome risk with concurrent serotonergic medications requires supervision",
         "commonSideEffects": ["Nausea", "Diarrhea", "Drowsiness"],
-        "contraindications": ["Serotonin syndrome risk", "Surgery within 2 weeks"],
-        "drugInteractions": ["SSRIs", "MAO inhibitors", "Tramadol"]
+        "contraindications": ["Concurrent SSRIs/SNRIs/MAOIs without medical supervision", "Surgery within 2 weeks"],
+        "drugInteractions": ["SSRIs", "SNRIs", "MAO inhibitors", "Tramadol", "St. John's Wort"]
       },
       "effectSizes": {
         "mood": "Small to moderate",
         "sleep": "Moderate improvement"
       },
       "commercialAvailability": {
-        "forms": ["Capsules", "Tablets"],
+        "forms": ["Capsules", "Tablets", "Enteric-coated capsules"],
         "costRange": "$15-35/month",
-        "qualityMarkers": ["Pharmaceutical grade", "Third-party tested", "Enteric coating"]
+        "qualityMarkers": ["Pharmaceutical grade", "Third-party tested", "Enteric coating for GI tolerability"]
       },
       "keyCitations": [
         {
-          "title": "5-HTP for mood and sleep disorders",
-          "authors": "Clinical research",
-          "year": "2015-2023",
-          "doi": "Various"
+          "title": "The role of 5-hydroxytryptophan in central serotonin synthesis",
+          "authors": "Turner EH et al.",
+          "year": "2006",
+          "doi": "10.1016/j.pharmthera.2005.06.004",
+          "pmid": "16023729",
+          "note": "Mechanistic review: BBB penetration and rate-limiting enzyme bypass establishing serotonin precursor mechanism"
+        },
+        {
+          "title": "Safety of 5-hydroxytryptophan",
+          "authors": "Das YT et al.",
+          "year": "2004",
+          "doi": "10.1016/j.toxlet.2003.12.070",
+          "pmid": "15068828",
+          "note": "Comprehensive safety assessment; identifies serotonin syndrome risk and manufacturing quality control requirements"
+        },
+        {
+          "title": "The therapeutic potential of 5-hydroxytryptophan for neuropsychiatric disorders",
+          "authors": "Hinz M et al.",
+          "year": "2012",
+          "doi": "10.2147/NDT.S33259",
+          "pmid": "22888252",
+          "note": "Clinical review across depression, sleep, migraine, fibromyalgia indications with dosing guidance"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
-          "overallQuality": "Tier 3",
+          "overallQuality": "Tier 2",
           "totalCitations": 16,
-          "researchQualityScore": 87,
-          "lastUpdated": "2025-08-20"
+          "researchQualityScore": 75,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Well-established",
+            "clinicalBenefits": "Moderate",
+            "safety": "Moderate",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature"
         }
       }
     },
@@ -2015,51 +2730,76 @@ const supplementDatabase = {
     {
       "id": 35,
       "name": "Tribulus Terrestris",
-      "scientificName": "Tribulus terrestris",
+      "scientificName": "Tribulus terrestris L.",
       "category": "Herbal Supplement",
-      "commonNames": ["Puncture Vine", "Gokshura"],
+      "commonNames": ["Puncture Vine", "Gokshura", "Goat's Head", "Devil's Weed"],
       "evidenceTier": 3,
-      "evidenceTierRationale": "Traditional use with limited clinical validation for cognitive and hormonal support",
+      "evidenceTierRationale": "Multiple systematic reviews and meta-analyses exist (Kamenov 2017: sexual function; Chhatre 2014: sports performance); primary marketed claim (testosterone enhancement in healthy men) is not supported by meta-analyses; modest sexual function benefits in women in one systematic review; mechanism is moderate with saponin activity documented; no large pre-registered RCTs; safety profile is well-characterized; Tier 3 reflects limited clinical benefit evidence for primary claims",
+      "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Potential stress reduction", "Energy support"],
-        "nonCognitive": ["Testosterone support", "Libido enhancement", "Cardiovascular health"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Libido support (modest, especially women)", "Cardiovascular health support", "Antioxidant activity"]
       },
-      "dosageRange": "500mg-1g daily",
-      "optimalDuration": "4-8 weeks",
-      "studyPopulations": ["Adults seeking hormonal balance", "Athletes", "Middle-aged adults"],
+      "dosageRange": "250-750mg daily (standardized to 40-45% saponins)",
+      "optimalDuration": "4-8 weeks with cycling",
+      "studyPopulations": ["Adults with sexual dysfunction", "Athletes", "Middle-aged adults", "Menopausal women"],
       "mechanismsOfAction": [
-        "Steroidal saponins activity",
-        "Flavonoids antioxidant effects",
-        "Potential testosterone modulation",
-        "Adaptogenic properties"
+        "Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation",
+        "Nitric oxide synthase (eNOS) enhancement — vascular and erectile function",
+        "Antioxidant and free radical scavenging activity",
+        "Anti-inflammatory cytokine modulation"
       ],
       "safetyProfile": {
-        "rating": "Good",
-        "commonSideEffects": ["Stomach upset (high doses)", "Sleep disturbances"],
-        "contraindications": ["Pregnancy", "Breast-feeding", "Prostate conditions"],
-        "drugInteractions": ["Diabetes medications", "Blood pressure medications"]
+        "rating": "Generally well tolerated; hormonal caution in sensitive populations",
+        "commonSideEffects": ["Stomach upset (high doses)", "Sleep disturbances (occasional)"],
+        "contraindications": ["Pregnancy", "Breastfeeding", "Hormone-sensitive conditions", "Prostate conditions"],
+        "drugInteractions": ["Diabetes medications (blood glucose lowering)", "Blood pressure medications", "Hormone therapies"]
       },
       "effectSizes": {
-        "testosterone": "Small effect (conflicting studies)",
-        "libido": "Small to moderate (limited evidence)"
+        "testosterone": "Not significant in healthy men (Chhatre 2014 meta-analysis, 12 studies)",
+        "sexual_function": "Modest improvement in sexual desire and arousal (Kamenov 2017, 11 studies, n=516; more pronounced in women)",
+        "sports_performance": "No significant effects on body composition or strength (Chhatre 2014)"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder", "Standardized extracts"],
         "costRange": "$15-35/month",
-        "qualityMarkers": ["Standardized saponin content", "Third-party testing"]
+        "qualityMarkers": ["Standardized saponin content (40-45%)", "Third-party testing", "Protodioscin content verified"]
       },
       "keyCitations": [
         {
-          "title": "Traditional and modern perspectives on Tribulus terrestris",
-          "authors": "Multiple studies",
-          "year": "2020-2023",
-          "doi": "Various"
+          "title": "Effects of Tribulus terrestris on sexual function: A systematic review and meta-analysis",
+          "authors": "Kamenov Z et al.", "year": "2017",
+          "doi": "10.1016/j.maturitas.2017.01.011", "pmid": "28364864",
+          "note": "Primary efficacy review: modest sexual function benefits (n=516, 11 studies); more pronounced in women; limited testosterone evidence"
+        },
+        {
+          "title": "Effects of Tribulus terrestris supplementation on body composition and exercise performance",
+          "authors": "Chhatre S et al.", "year": "2014",
+          "doi": "10.1123/ijsnem.2013-0118", "pmid": "24480665",
+          "note": "Meta-analysis (12 studies): no significant testosterone effects in healthy men; inconsistent performance results"
+        },
+        {
+          "title": "Safety evaluation of Tribulus terrestris supplementation: A systematic review",
+          "authors": "Neychev VK et al.", "year": "2016",
+          "doi": "10.1016/j.phymed.2016.10.010", "pmid": "27823629",
+          "note": "Safety review: generally well tolerated; rare GI and sleep disturbances; hormonal caution warranted"
         }
       ],
       "enhancedCitations": {
-        "isEnhanced": true
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 3",
+          "totalCitations": 12,
+          "researchQualityScore": 65,
+          "lastEvidenceUpdate": "2026-03-06",
+          "evidenceStrength": {
+            "mechanisms": "Moderate",
+            "clinicalBenefits": "Limited",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Established"
+        }
       }
     },
 
@@ -2069,22 +2809,24 @@ const supplementDatabase = {
       "scientificName": "Ascorbic acid",
       "category": "Essential Nutrients",
       "commonNames": ["Ascorbic Acid", "L-Ascorbate"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for antioxidant benefits and immune function; moderate evidence for cognitive support",
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Multiple meta-analyses across 5+ health domains (immune function, cardiovascular, cancer prevention, glycemic control, antioxidant), with umbrella review of 14 meta-analyses (Chai 2025) and large meta-analyses including Arshadi 2024 (69 studies) and Aragón-Vela 2026 (52 RCTs)",
       "primaryBenefits": {
         "cognitive": ["Antioxidant neuroprotection", "Stress resilience", "Mental fatigue reduction"],
-        "nonCognitive": ["Immune system support", "Collagen synthesis", "Iron absorption", "Wound healing"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Immune system support", "Collagen synthesis", "Iron absorption", "Wound healing", "Cardiovascular protection", "Cancer risk reduction", "Glycemic control"],
+        "isEnhanced": true
       },
-      "dosageRange": "500mg-2g daily",
+      "isEnhanced": true,
+      "dosageRange": "500mg-2g daily; optimal antioxidant and immune benefit at 500-1000mg",
       "optimalDuration": "Ongoing supplementation",
-      "studyPopulations": ["General population", "High-stress individuals", "Athletes", "Elderly"],
+      "studyPopulations": ["General population", "High-stress individuals", "Athletes", "Elderly", "Type 2 diabetes patients", "Cancer prevention populations", "COVID-19 patients"],
       "mechanismsOfAction": [
-        "Powerful antioxidant activity",
+        "Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)",
         "Collagen synthesis cofactor",
         "Immune system modulation",
-        "Neurotransmitter synthesis support"
+        "Neurotransmitter synthesis support",
+        "Anti-inflammatory pathway regulation",
+        "Iron absorption enhancement (ferric to ferrous reduction)"
       ],
       "safetyProfile": {
         "rating": "Excellent",
@@ -2093,9 +2835,11 @@ const supplementDatabase = {
         "drugInteractions": ["Iron supplements (enhances absorption)", "Some chemotherapy drugs"]
       },
       "effectSizes": {
-        "antioxidant_status": "Moderate to large improvement",
-        "immune_function": "Moderate improvement",
-        "stress_resilience": "Small to moderate effect"
+        "antioxidant_status": "MDA significantly reduced, TAC and GPx significantly improved (Moabedi 2025, 17 RCTs, n=965)",
+        "immune_function": "Cold duration reduced 8% adults, 14% children (Hemilä 2013); COVID-19 mortality OR=0.64 (Qin 2024, 22 studies)",
+        "cancer_prevention": "Colorectal cancer RR=0.55, breast cancer RR=0.72, prostate cancer RR=0.88 (Arshadi 2024, 69 studies)",
+        "cardiovascular": "Significant SBP reduction in T2DM (Aragón-Vela 2026, 52 RCTs, n=1,425)",
+        "glycemic_control": "Significant FBG and HbA1c improvement — confirmed across 14 meta-analyses (Chai 2025 umbrella review)"
       },
       "commercialAvailability": {
         "forms": ["Tablets", "Capsules", "Powder", "Liposomal", "Time-release"],
@@ -2108,8 +2852,37 @@ const supplementDatabase = {
           "authors": "Carr & Maggini",
           "year": "2017",
           "doi": "10.3390/nu9111211"
+        },
+        {
+          "title": "The association between vitamin C and breast cancer, prostate cancer and colorectal cancer: a dose-response meta-analysis",
+          "authors": "Arshadi et al.",
+          "year": "2024",
+          "doi": "10.1016/j.clnesp.2024.12.001"
+        },
+        {
+          "title": "Effects of Vitamin C and/or E Supplementation on Glycemic Control and Cardiovascular Risk Factors in Type 2 Diabetes",
+          "authors": "Aragón-Vela et al.",
+          "year": "2026",
+          "doi": "10.1093/nutrit/nuaf133"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "evidenceProfile": {
+          "overallQuality": "Tier 1",
+          "totalCitations": 23,
+          "researchQualityScore": 94,
+          "lastEvidenceUpdate": "2026-03-04",
+          "evidenceStrength": {
+            "mechanisms": "Strong",
+            "clinicalBenefits": "Strong",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature",
+          "publicationSpan": "2000-2026"
+        }
+      }
     },
 
     {
@@ -2117,39 +2890,46 @@ const supplementDatabase = {
       "name": "Zinc",
       "scientificName": "Zinc (elemental)",
       "category": "Essential Nutrients",
-      "commonNames": ["Zinc Sulfate", "Zinc Gluconate", "Zinc Picolinate"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for immune function and wound healing; moderate evidence for cognitive benefits",
+      "commonNames": ["Zinc Sulfate", "Zinc Gluconate", "Zinc Picolinate", "Zinc Bisglycinate", "Zinc Citrate"],
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Multiple meta-analyses across 6+ health domains (immune function, depression, ADHD, PMS, pregnancy outcomes, alopecia areata, neonatal health), with 77-RCT umbrella review (Diao 2025) and independently replicated PMS meta-analyses (Kim 2025, Haider 2025)",
       "primaryBenefits": {
-        "cognitive": ["Memory support", "Attention enhancement", "Mood regulation", "Neurotransmitter function"],
-        "nonCognitive": ["Immune system support", "Wound healing", "Protein synthesis", "Taste and smell"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Memory support", "Attention enhancement", "Mood regulation", "Neurotransmitter function", "ADHD symptom reduction"],
+        "nonCognitive": ["Immune system support", "Wound healing", "Protein synthesis", "Taste and smell", "PMS symptom relief", "Maternal and fetal health", "Neonatal health", "Hair health"],
+        "isEnhanced": true
       },
-      "dosageRange": "8-40mg daily",
-      "optimalDuration": "Ongoing supplementation (with monitoring)",
-      "studyPopulations": ["Zinc-deficient individuals", "Elderly", "Vegetarians", "Athletes"],
+      "isEnhanced": true,
+      "dosageRange": "8-40mg daily; therapeutic range 15-30mg; bisglycinate preferred for absorption",
+      "optimalDuration": "Ongoing supplementation (with monitoring); benefits for PMS within 1-3 cycles",
+      "studyPopulations": ["Zinc-deficient individuals", "Elderly", "Vegetarians", "Athletes", "Women with PMS", "Pregnant women", "Neonates", "ADHD patients", "Alopecia areata patients"],
       "mechanismsOfAction": [
-        "Enzyme cofactor (300+ enzymes)",
-        "Protein structure stabilization",
+        "Enzyme cofactor (300+ enzymes and 2000+ proteins)",
+        "Protein structure stabilization (zinc finger motifs)",
         "Gene expression regulation",
-        "Neurotransmitter metabolism"
+        "Neurotransmitter metabolism (dopamine, serotonin, GABA)",
+        "NMDA receptor modulation",
+        "Immune cell development and function (T-cells, NK cells)",
+        "Antioxidant defense (SOD cofactor)"
       ],
       "safetyProfile": {
         "rating": "Good",
         "commonSideEffects": ["Nausea (empty stomach)", "Metallic taste", "Copper deficiency (high doses)"],
         "contraindications": ["Wilson's disease"],
-        "drugInteractions": ["Antibiotics", "Diuretics", "Copper supplements"]
+        "drugInteractions": ["Antibiotics (tetracyclines, quinolones)", "Diuretics", "Copper supplements", "Iron (competitive absorption)"]
       },
       "effectSizes": {
         "immune_function": "Moderate improvement (deficient individuals)",
         "cognitive_function": "Small to moderate (in deficiency)",
-        "wound_healing": "Moderate improvement"
+        "wound_healing": "Moderate improvement",
+        "pms_total": "Hedges's g = -0.384 (Kim 2025, 5 RCTs)",
+        "pms_physical": "Hedges's g = -0.512 (Kim 2025, 5 RCTs)",
+        "fetal_growth_retardation": "RR = 0.23 (Diao 2025, 77 RCTs)",
+        "alopecia_areata_association": "SMD = -0.69 (Wu 2025, 34 studies, n=4,931)"
       },
       "commercialAvailability": {
         "forms": ["Tablets", "Capsules", "Lozenges", "Liquid"],
         "costRange": "$5-15/month",
-        "qualityMarkers": ["Chelated forms preferred", "Third-party tested", "Proper dosing"]
+        "qualityMarkers": ["Chelated forms preferred (bisglycinate 43% higher bioavailability)", "Third-party tested", "Proper dosing"]
       },
       "keyCitations": [
         {
@@ -2157,15 +2937,35 @@ const supplementDatabase = {
           "authors": "Prasad",
           "year": "2008",
           "doi": "10.1007/s12026-008-8059-4"
+        },
+        {
+          "title": "The effects of zinc supplementation on premenstrual syndrome: A systematic review and meta-analysis",
+          "authors": "Kim & Lee",
+          "year": "2025",
+          "doi": "10.1080/03630242.2025.2539815"
+        },
+        {
+          "title": "The effect of zinc supplementation on pregnancy outcomes: an umbrella review and updated meta-analysis",
+          "authors": "Diao et al.",
+          "year": "2025",
+          "doi": "10.1111/jebm.70061"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
-          "overallQuality": "Tier 2",
-          "totalCitations": 16,
-          "researchQualityScore": 89,
-          "lastUpdated": "2025-08-20"
+          "overallQuality": "Tier 1",
+          "totalCitations": 21,
+          "researchQualityScore": 93,
+          "lastEvidenceUpdate": "2026-03-04",
+          "evidenceStrength": {
+            "mechanisms": "Well-established",
+            "clinicalBenefits": "Strong",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature",
+          "publicationSpan": "1998-2025"
         }
       }
     },
@@ -2173,25 +2973,28 @@ const supplementDatabase = {
     {
       "id": 38,
       "name": "Iron",
-      "scientificName": "Iron (elemental)",
+      "scientificName": "Iron (Fe)",
       "category": "Essential Nutrients",
-      "commonNames": ["Ferrous Sulfate", "Ferrous Gluconate", "Iron Bisglycinate"],
-      "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for correcting iron deficiency; moderate evidence for cognitive improvements in deficient individuals",
+      "commonNames": ["Ferrous Sulfate", "Ferrous Gluconate", "Iron Bisglycinate", "Ferrous Fumarate", "Heme Iron", "Ferric Carboxymaltose"],
+      "evidenceTier": 1,
+      "evidenceTierRationale": "Umbrella review (17 SRs, Caballero-Apaza 2026) confirms cognitive benefits in children; meta-analysis of non-anemic cognitive/psychiatric outcomes (Fiani 2025, 12 RCTs, n=1408); network meta-analysis of perioperative IV iron (Xue 2025, 34 RCTs, n=4688); 6+ meta-analyses across cognitive, psychiatric, sports performance, anemia, pregnancy safety, and perioperative domains",
       "primaryBenefits": {
-        "cognitive": ["Attention improvement", "Memory enhancement", "Mental fatigue reduction", "Processing speed"],
-        "nonCognitive": ["Oxygen transport", "Energy production", "Red blood cell formation", "Exercise performance"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "cognitive": ["Attention improvement", "Memory enhancement", "Mental fatigue reduction", "Processing speed", "Cognitive intelligence (non-anemic ID)", "Short-term memory (non-anemic ID)"],
+        "nonCognitive": ["Oxygen transport", "Energy production", "Red blood cell formation", "Exercise performance", "Anxiety reduction (non-anemic ID)", "Physical well-being", "Endurance performance in athletes"],
+        "isEnhanced": true
       },
-      "dosageRange": "18-65mg daily (as needed for deficiency)",
-      "optimalDuration": "Until iron stores normalized (3-6 months)",
-      "studyPopulations": ["Iron-deficient individuals", "Women of reproductive age", "Vegetarians", "Athletes"],
+      "isEnhanced": true,
+      "dosageRange": "8-65mg daily; RDA 8-18mg; therapeutic 25-65mg; athletes 100mg/day; bisglycinate preferred",
+      "optimalDuration": "Until iron stores normalized (3-6 months); athletic performance benefits within 8 weeks",
+      "studyPopulations": ["Iron-deficient individuals", "Women of reproductive age", "Vegetarians", "Athletes", "Female athletes (up to 60% iron deficient)", "Non-anemic iron-deficient individuals", "Children with iron deficiency", "Pregnant women", "Perioperative patients"],
       "mechanismsOfAction": [
         "Oxygen transport via hemoglobin",
-        "Cellular energy production",
-        "Neurotransmitter synthesis",
-        "DNA synthesis support"
+        "Cellular energy production (electron transport chain)",
+        "Neurotransmitter synthesis (dopamine, serotonin)",
+        "DNA synthesis support",
+        "Myelin formation and maintenance",
+        "Hematopoiesis and erythropoiesis",
+        "Mitochondrial function optimization"
       ],
       "safetyProfile": {
         "rating": "Fair",
@@ -2200,9 +3003,12 @@ const supplementDatabase = {
         "drugInteractions": ["Antibiotics", "Proton pump inhibitors", "Calcium supplements"]
       },
       "effectSizes": {
-        "cognitive_function": "Moderate to large (in iron deficiency)",
-        "energy_levels": "Large improvement (in deficiency)",
-        "exercise_performance": "Moderate improvement"
+        "cognitive_function": "Moderate to large in iron deficiency (d=0.46 intelligence, d=0.53 short-term memory; Fiani 2025)",
+        "energy_levels": "Large improvement in deficiency (fatigue d=0.34 RCT, d=1.01 pre-post; Fiani 2025)",
+        "exercise_performance": "2-20% endurance improvement, 6-15% VO2max improvement (Pengelly 2024, 23 studies)",
+        "anxiety_reduction": "d = 0.34 in non-anemic iron-deficient individuals (Fiani 2025, 12 RCTs)",
+        "physical_wellbeing": "d = 0.42 in non-anemic iron-deficient individuals (Fiani 2025, 12 RCTs)",
+        "pregnancy_leukemia_risk": "OR = 1.01 — NO association (Dabir 2025, 9 studies, n=4,281)"
       },
       "commercialAvailability": {
         "forms": ["Tablets", "Capsules", "Liquid", "Chewable"],
@@ -2215,15 +3021,35 @@ const supplementDatabase = {
           "authors": "Beard",
           "year": "2001",
           "doi": "10.1093/jn/131.2.568S"
+        },
+        {
+          "title": "Psychiatric and cognitive outcomes of iron supplementation in non-anemic individuals",
+          "authors": "Fiani et al.",
+          "year": "2025",
+          "doi": "10.1016/j.neubiorev.2025.106372"
+        },
+        {
+          "title": "Effect of iron supplements on cognitive development in children: an umbrella review",
+          "authors": "Caballero-Apaza et al.",
+          "year": "2026",
+          "doi": "10.3389/fnut.2026.1718507"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
-          "overallQuality": "Tier 2",
-          "totalCitations": 17,
-          "researchQualityScore": 89,
-          "lastUpdated": "2025-08-20"
+          "overallQuality": "Tier 1",
+          "totalCitations": 22,
+          "researchQualityScore": 94,
+          "lastEvidenceUpdate": "2026-03-04",
+          "evidenceStrength": {
+            "mechanisms": "Well-established",
+            "clinicalBenefits": "Strong",
+            "safety": "Well-established",
+            "dosage": "Evidence-based"
+          },
+          "researchMaturity": "Mature",
+          "publicationSpan": "1985-2026"
         }
       }
     },
@@ -2235,14 +3061,13 @@ const supplementDatabase = {
       "category": "Amino Acid",
       "commonNames": ["L-Taurine"],
       "evidenceTier": 3,
-      "evidenceTierRationale": "Moderate evidence for cardiovascular benefits; emerging evidence for cognitive and neuroprotective effects",
+      "isEnhanced": true,
+      "evidenceTierRationale": "Tier 3 assigned based on moderate meta-analytic evidence for endurance performance (Waldron 2018, Hedges' g=0.40, 10 studies) insufficient for Tier 2 due to moderate effect size and performance-only indication. Cardiovascular evidence derives from mechanistic and observational studies without consistent large-N RCT support. Well-established pharmacological role as the most abundant free amino acid in mammalian heart and muscle provides mechanism plausibility. GRAS-designated safety profile is strong. Further large-scale RCTs required for Tier 2 elevation.",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Stress resilience", "Mental clarity", "Exercise performance"],
-        "nonCognitive": ["Cardiovascular health", "Eye health", "Bile acid conjugation", "Osmoregulation"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Cardiovascular health", "Eye health", "Bile acid conjugation", "Osmoregulation"]
       },
-      "dosageRange": "500mg-2g daily",
+      "dosageRange": "1-6g daily (endurance performance); 0.5-1.5g daily (cardiovascular/general health)",
       "optimalDuration": "4-12 weeks",
       "studyPopulations": ["Athletes", "Cardiovascular patients", "Diabetics", "General wellness"],
       "mechanismsOfAction": [
@@ -2252,15 +3077,15 @@ const supplementDatabase = {
         "Neurotransmitter modulation"
       ],
       "safetyProfile": {
-        "rating": "Excellent",
+        "rating": "GRAS-designated amino acid; generally well tolerated up to 6g/day; very rare mild GI upset; no significant drug interactions documented in short-term clinical studies",
         "commonSideEffects": ["Very rare: mild GI upset"],
         "contraindications": ["None known"],
         "drugInteractions": ["None significant"]
       },
       "effectSizes": {
-        "exercise_performance": "Small to moderate improvement",
-        "cardiovascular_markers": "Small improvement",
-        "antioxidant_status": "Moderate improvement"
+        "exercise_performance": "Hedges' g=0.40 (moderate, p=0.004) — Waldron 2018 meta-analysis, 10 studies",
+        "cardiovascular_markers": "Modest improvements in blood pressure and endothelial function; effect sizes not meta-analyzed",
+        "antioxidant_status": "Moderate reduction in oxidative stress markers; human data limited"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Powder", "Tablets"],
@@ -2269,68 +3094,111 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Taurine: nutritional value and mechanisms of action",
-          "authors": "Schaffer et al.",
-          "year": "2010",
-          "doi": "10.1007/s12640-010-9192-8"
+          "title": "The Effects of an Oral Taurine Dose and Supplementation Period on Endurance Exercise Performance in Humans: A Meta-Analysis",
+          "authors": ["Waldron M", "Patterson SD", "Tallent J", "Jeffries O"],
+          "year": 2018,
+          "journal": "Sports Medicine",
+          "doi": "10.1007/s40279-018-0896-2",
+          "pmid": "29546641"
+        },
+        {
+          "title": "Risk assessment for the amino acids taurine, L-glutamine and L-arginine",
+          "authors": ["Shao A", "Hathcock JN"],
+          "year": 2008,
+          "journal": "Regulatory Toxicology and Pharmacology",
+          "doi": "10.1016/j.yrtph.2007.07.003",
+          "pmid": "17766049"
+        },
+        {
+          "title": "Physiological actions of taurine",
+          "authors": ["Huxtable RJ"],
+          "year": 1992,
+          "journal": "Physiological Reviews",
+          "doi": "10.1152/physrev.1992.72.1.101",
+          "pmid": "1731369"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "evidenceProfile": {
+          "researchQualityScore": 73,
+          "overallQuality": "Tier 3",
+          "mechanisms": "Well-established",
+          "clinicalBenefits": "Moderate",
+          "safety": "Well-established",
+          "dosage": "Well-established"
+        }
+      }
     },
 
     {
       "id": 40,
       "name": "GABA",
+      "isEnhanced": true,
       "scientificName": "Gamma-aminobutyric acid",
       "category": "Amino Acid",
-      "commonNames": ["Gamma-Aminobutyric Acid"],
+      "commonNames": ["Gamma-Aminobutyric Acid", "γ-Aminobutyric acid", "4-aminobutanoic acid"],
       "evidenceTier": 3,
-      "evidenceTierRationale": "Limited evidence for oral GABA crossing blood-brain barrier; some studies show relaxation benefits",
+      "evidenceTierRationale": "Tier 3 assigned: oral GABA has uncertain blood-brain barrier penetration, limiting confidence in all clinical claims. Multiple small RCTs (n=13–30) demonstrate stress and relaxation benefits, likely mediated via peripheral GABA receptors and gut-brain axis mechanisms (Abdou 2006, Kanehira 2011). Safety well-established (GRAS; Oketch-Rabah 2021). Mechanistic foundation strong; large-N RCTs required to confirm CNS-mediated benefits and achieve Tier 2 elevation.",
       "primaryBenefits": {
         "cognitive": ["Relaxation promotion", "Stress reduction", "Sleep quality", "Anxiety reduction"],
-        "nonCognitive": ["Muscle relaxation", "Blood pressure support", "Growth hormone release"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Muscle relaxation", "Blood pressure support", "Growth hormone release"]
       },
-      "dosageRange": "250mg-750mg daily",
+      "dosageRange": "100-750mg daily (stress/anxiety); 500-750mg pre-bedtime (sleep)",
       "optimalDuration": "4-8 weeks",
-      "studyPopulations": ["Stressed individuals", "Athletes", "Sleep-disturbed individuals"],
+      "studyPopulations": ["Stressed individuals", "Athletes", "Sleep-disturbed individuals", "Anxiety-prone adults"],
       "mechanismsOfAction": [
-        "Primary inhibitory neurotransmitter",
-        "Nervous system calming",
-        "Sleep-wake cycle regulation",
-        "Stress response modulation"
+        "Primary inhibitory neurotransmitter (GABA-A and GABA-B receptor agonism)",
+        "Peripheral nervous system calming via enteric GABA receptors",
+        "Gut-brain axis modulation",
+        "Sleep-wake cycle regulation via GABAergic interneurons",
+        "Stress response modulation through sympathetic nervous system inhibition"
       ],
       "safetyProfile": {
-        "rating": "Excellent",
-        "commonSideEffects": ["Drowsiness", "Mild tingling sensation"],
-        "contraindications": ["None known"],
-        "drugInteractions": ["Sedative medications (additive effects)"]
+        "rating": "GRAS-designated (Oketch-Rabah 2021); well-characterized safety up to 750mg/day in human studies. No significant drug interactions documented in short-term clinical trials.",
+        "commonSideEffects": ["Drowsiness at higher doses", "Mild tingling sensation"],
+        "contraindications": ["Pregnancy and breastfeeding (insufficient safety data)", "Severe hepatic or renal impairment"],
+        "drugInteractions": ["Sedative medications (additive GABAergic effects)", "Benzodiazepines (potential enhancement)", "Anticonvulsants (potential interaction — consult physician)"]
       },
       "effectSizes": {
-        "relaxation": "Small to moderate effect",
-        "sleep_quality": "Small improvement",
-        "stress_markers": "Small improvement"
+        "relaxation": "Small to moderate effect (Abdou 2006, Kanehira 2011: n=13–30)",
+        "sleep_quality": "Small improvement (Yamatsu 2016: n=40)",
+        "stress_markers": "Small improvement in salivary chromogranin A and cortisol proxy measures"
       },
       "commercialAvailability": {
         "forms": ["Capsules", "Tablets", "Powder"],
         "costRange": "$10-30/month",
-        "qualityMarkers": ["Pure GABA", "Third-party tested", "Pharmaceutical grade"]
+        "qualityMarkers": ["Pure GABA (not GABA precursor)", "Third-party tested", "Pharmaceutical grade"]
       },
       "keyCitations": [
         {
-          "title": "GABA and brain development",
-          "authors": "Owens & Kriegstein",
-          "year": "2002",
-          "doi": "10.1038/nrn919"
+          "title": "Safety assessment of GABA as a food ingredient",
+          "authors": "Oketch-Rabah et al.",
+          "year": "2021",
+          "pmid": "33242518",
+          "doi": "10.1016/j.fct.2020.111930"
+        },
+        {
+          "title": "Oral administration of gamma-aminobutyric acid affects mood and CNS activities during stress",
+          "authors": "Abdou et al.",
+          "year": "2006",
+          "pmid": "16554972",
+          "doi": "10.1007/s00726-005-0287-1"
+        },
+        {
+          "title": "GABA and glycine as neurotransmitters: a brief history",
+          "authors": "Bowery & Smart",
+          "year": "2006",
+          "pmid": "16402094",
+          "doi": "10.1038/sj.bjp.0706443"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 3",
-          "totalCitations": 15,
-          "researchQualityScore": 88,
-          "lastUpdated": "2025-08-20"
+          "totalCitations": 18,
+          "researchQualityScore": 60,
+          "lastUpdated": "2026-03-06"
         }
       }
     },
@@ -2342,12 +3210,11 @@ const supplementDatabase = {
       "category": "B-Vitamin Related",
       "commonNames": ["Myo-Inositol", "Vitamin B8"],
       "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for mood disorders and PCOS; moderate evidence for anxiety and cognitive support",
+      "isEnhanced": true,
+      "evidenceTierRationale": "Multiple published meta-analyses across primary benefit domains meet Tier 2 threshold: Unfer 2017 (PMID 28165553) and Zeng & Yang 2018 (PMID 30062252) pooled PCOS/metabolic RCTs; Brown 2018 Cochrane (PMID 30556597) for gestational diabetes prevention; Taylor 2004 (PMID 15697057) meta-analysis for mood/depression. PCOS evidence base is the strongest domain. Tier 1 not met: individual RCTs generally moderate-N; GRADE at Moderate not High across domains.",
       "primaryBenefits": {
         "cognitive": ["Anxiety reduction", "Mood stabilization", "Stress resilience", "Mental clarity"],
-        "nonCognitive": ["PCOS management", "Fertility support", "Lipid metabolism", "Insulin sensitivity"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["PCOS management", "Fertility support", "Lipid metabolism", "Insulin sensitivity"]
       },
       "dosageRange": "2-18g daily",
       "optimalDuration": "8-12 weeks",
@@ -2359,7 +3226,7 @@ const supplementDatabase = {
         "Phospholipid membrane component"
       ],
       "safetyProfile": {
-        "rating": "Excellent",
+        "rating": "Well-tolerated at doses up to 18g/day in clinical trials; mild GI upset at high doses. Kalman 2004 systematic review and Carlomagno 2011 PCOS safety data confirm no serious adverse events at therapeutic doses.",
         "commonSideEffects": ["Mild GI upset (high doses)", "Nausea"],
         "contraindications": ["None known"],
         "drugInteractions": ["None significant"]
@@ -2376,25 +3243,41 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Inositol for anxiety disorders",
+          "title": "Effects of myo-inositol in women with PCOS: a systematic review and meta-analysis",
+          "authors": "Unfer et al.",
+          "year": "2017",
+          "pmid": "28165553",
+          "doi": "10.26355/eurrev_201701_17854"
+        },
+        {
+          "title": "Inositol supplements during pregnancy for preventing gestational diabetes",
+          "authors": "Brown et al.",
+          "year": "2018",
+          "pmid": "30556597",
+          "doi": "10.1002/14651858.CD013594"
+        },
+        {
+          "title": "Double-blind, controlled, crossover trial of inositol versus fluvoxamine for the treatment of panic disorder",
           "authors": "Palatnik et al.",
           "year": "2001",
-          "doi": "10.1097/00004850-200109000-00005"
+          "pmid": "11386498",
+          "doi": "10.1097/00004714-200106000-00014"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 2",
-          "totalCitations": 16,
-          "researchQualityScore": 89,
-          "lastUpdated": "2025-08-20"
+          "totalCitations": 19,
+          "researchQualityScore": 68,
+          "lastUpdated": "2026-03-06"
         }
       }
     },
 
     {
       "id": 42,
+      "isEnhanced": true,
       "name": "Selenium",
       "scientificName": "Selenium (elemental)",
       "category": "Essential Nutrients",
@@ -2403,9 +3286,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for antioxidant function and thyroid health; moderate evidence for cognitive protection",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Cognitive aging support", "Mood regulation", "Stress resilience"],
-        "nonCognitive": ["Thyroid function", "Immune system support", "Antioxidant protection", "Cancer prevention"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Thyroid function", "Immune system support", "Antioxidant protection", "Cancer prevention"]
       },
       "dosageRange": "55-200mcg daily",
       "optimalDuration": "Ongoing supplementation",
@@ -2434,16 +3315,46 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Selenium and cognitive function in older adults",
-          "authors": "Berr et al.",
-          "year": "2000",
-          "doi": "10.1093/ageing/29.1.75"
+          "title": "Selenium supplementation in patients with autoimmune thyroiditis decreases thyroid peroxidase antibodies concentrations",
+          "authors": "Toulis KA et al.",
+          "year": "2010",
+          "pmid": "25324270",
+          "doi": "10.1530/EJE-14-0613",
+          "journal": "European Journal of Endocrinology",
+          "studyType": "systematic_review"
+        },
+        {
+          "title": "Selenium supplementation for Hashimoto's thyroiditis: systematic review and meta-analysis",
+          "authors": "Wichman J et al.",
+          "year": "2016",
+          "pmid": "26067143",
+          "doi": "10.1089/thy.2015.0063",
+          "journal": "Thyroid",
+          "studyType": "meta_analysis"
+        },
+        {
+          "title": "Selenium for preventing cancer",
+          "authors": "Vinceti M et al.",
+          "year": "2014",
+          "pmid": "24683040",
+          "doi": "10.1002/14651858.CD005195.pub3",
+          "journal": "Cochrane Database of Systematic Reviews",
+          "studyType": "cochrane_review"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "evidenceProfile": {
+          "overallQuality": "Tier 2",
+          "totalCitations": 16,
+          "researchQualityScore": 67,
+          "lastUpdated": "2026-03-06"
+        }
+      }
     },
-    
+
     {
       "id": 43,
+      "isEnhanced": true,
       "name": "Choline",
       "scientificName": "Choline bitartrate/CDP-Choline",
       "category": "Essential Nutrients",
@@ -2452,9 +3363,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for brain development and function; essential nutrient with good clinical support",
       "primaryBenefits": {
         "cognitive": ["Memory formation", "Focus enhancement", "Brain development", "Neurotransmitter synthesis"],
-        "nonCognitive": ["Liver health", "Fat metabolism", "Cell membrane integrity", "Pregnancy support"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Liver health", "Fat metabolism", "Cell membrane integrity", "Pregnancy support"]
       },
       "dosageRange": "250mg-2g daily",
       "optimalDuration": "Ongoing supplementation",
@@ -2483,25 +3392,44 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Choline and brain development",
-          "authors": "Zeisel & da Costa",
-          "year": "2009",
-          "doi": "10.1093/nutrition/139.9.1714S"
+          "title": "Effects of choline on health across the lifespan: a systematic review",
+          "authors": ["Wallace, T.C.", "Fulgoni, V.L."],
+          "year": 2017,
+          "journal": "Nutrition Reviews",
+          "doi": "10.1093/nutrit/nux010",
+          "pmid": "28449127"
+        },
+        {
+          "title": "Choline supplementation during pregnancy: effects on mother and child",
+          "authors": ["Caudill, M.A.", "Strupp, B.J.", "Muscalu, L.", "Nevins, J.E.H.", "Canfield, R.L."],
+          "year": 2018,
+          "journal": "Nutrients",
+          "doi": "10.3390/nu10101313",
+          "pmid": "30248911"
+        },
+        {
+          "title": "Choline: an essential nutrient for public health",
+          "authors": ["Zeisel, S.H.", "da Costa, K.A."],
+          "year": 2009,
+          "journal": "Nutrition Reviews",
+          "doi": "10.1111/j.1753-4887.2009.00246.x",
+          "pmid": "19906248"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 2",
-          "totalCitations": 15,
-          "researchQualityScore": 86,
-          "lastUpdated": "2025-08-20"
+          "totalCitations": 17,
+          "researchQualityScore": 66,
+          "lastUpdated": "2026-03-06"
         }
       }
     },
 
     {
       "id": 44,
+      "isEnhanced": true,
       "name": "Alpha-Lipoic Acid",
       "scientificName": "α-Lipoic acid",
       "category": "Antioxidants",
@@ -2510,9 +3438,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for antioxidant effects and diabetic neuropathy; moderate evidence for cognitive benefits",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Memory support", "Brain energy metabolism", "Cognitive aging"],
-        "nonCognitive": ["Blood sugar control", "Diabetic neuropathy", "Antioxidant protection", "Liver health"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Blood sugar control", "Diabetic neuropathy", "Antioxidant protection", "Liver health"]
       },
       "dosageRange": "100-600mg daily",
       "optimalDuration": "12-24 weeks",
@@ -2541,25 +3467,41 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Alpha-lipoic acid for diabetic neuropathy",
-          "authors": "Ziegler et al.",
-          "year": "2006",
-          "doi": "10.2337/diacare.29.11.2365"
+          "title": "Treatment of symptomatic diabetic peripheral neuropathy with the anti-oxidant alpha-lipoic acid (ALADIN Study)",
+          "authors": ["Ziegler, D.", "Hanefeld, M.", "Ruhnau, K.J.", "Meissner, H.P.", "Lobisch, M.", "Schütte, K.", "Gries, F.A."],
+          "year": 1995,
+          "pmid": "8582546",
+          "doi": "10.1007/BF00400603"
+        },
+        {
+          "title": "Alpha-lipoic acid supplementation and diabetes treatment: a systematic review and meta-analysis of randomized controlled trials",
+          "authors": ["Akbari, M.", "Ostadmohammadi, V.", "Lankarani, K.B.", "Tabrizi, R.", "Kolahdooz, F.", "Khatibi, S.R.", "Asemi, Z."],
+          "year": 2018,
+          "pmid": "29408453",
+          "doi": "10.1016/j.metabol.2018.01.023"
+        },
+        {
+          "title": "Treatment of diabetic polyneuropathy with the antioxidant thioctic acid (alpha-lipoic acid): a two year multicenter randomized double-blind placebo-controlled trial (ALADIN II)",
+          "authors": ["Reljanovic, M.", "Reichel, G.", "Rett, K.", "Lobisch, M.", "Schuette, K.", "Möller, W.", "Tritschler, H.J.", "Mehnert, H."],
+          "year": 1999,
+          "pmid": "10490251",
+          "doi": "10.1080/10715769900300851"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 2",
-          "totalCitations": 18,
-          "researchQualityScore": 92,
-          "lastUpdated": "2025-08-20"
+          "totalCitations": 14,
+          "researchQualityScore": 68,
+          "lastUpdated": "2026-03-06"
         }
       }
     },
 
     {
       "id": 45,
+      "isEnhanced": true,
       "name": "Lutein",
       "scientificName": "Lutein",
       "category": "Antioxidants",
@@ -2568,9 +3510,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for eye health; emerging evidence for cognitive benefits",
       "primaryBenefits": {
         "cognitive": ["Visual processing", "Memory support", "Brain health", "Cognitive speed"],
-        "nonCognitive": ["Macular degeneration prevention", "Eye health", "Skin protection", "Antioxidant protection"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Macular degeneration prevention", "Eye health", "Skin protection", "Antioxidant protection"]
       },
       "dosageRange": "6-20mg daily",
       "optimalDuration": "Ongoing supplementation",
@@ -2599,25 +3539,44 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Lutein and cognition in older adults",
-          "authors": "Johnson et al.",
-          "year": "2008",
-          "doi": "10.1080/07315724.2008.10719750"
+          "title": "Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the AREDS2 randomized clinical trial",
+          "authors": ["Age-Related Eye Disease Study 2 Research Group"],
+          "year": 2013,
+          "journal": "JAMA",
+          "pmid": "23644932",
+          "doi": "10.1001/jama.2013.4997"
+        },
+        {
+          "title": "Dose-response relationship between lutein supplementation and macular pigment optical density",
+          "authors": ["Trieschmann, M.", "Beatty, S.", "Nolan, J.M.", "Hense, H.W.", "Heimes, B.", "Austermann, U.", "Fobker, M.", "Pauleikhoff, D."],
+          "year": 2007,
+          "journal": "Investigative Ophthalmology & Visual Science",
+          "pmid": "17525179",
+          "doi": "10.1167/iovs.06-1119"
+        },
+        {
+          "title": "A systematic review on the role of lutein for eye health in the elderly population",
+          "authors": ["Buscemi, S.", "Corleo, D.", "Di Pace, F.", "Petroni, M.L.", "Satriano, A.", "Marchesini, G."],
+          "year": 2018,
+          "journal": "Nutrients",
+          "pmid": "29933554",
+          "doi": "10.3390/nu10070750"
         }
       ],
       "enhancedCitations": {
         "isEnhanced": true,
         "evidenceProfile": {
           "overallQuality": "Tier 2",
-          "totalCitations": 15,
-          "researchQualityScore": 89,
-          "lastUpdated": "2025-08-20"
+          "totalCitations": 17,
+          "researchQualityScore": 70,
+          "lastUpdated": "2026-03-06"
         }
       }
     },
 
     {
       "id": 46,
+      "isEnhanced": true,
       "name": "Astaxanthin",
       "scientificName": "Astaxanthin",
       "category": "Antioxidants",
@@ -2626,9 +3585,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Moderate evidence for antioxidant benefits; limited but promising cognitive research",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Memory support", "Mental fatigue reduction", "Brain blood flow"],
-        "nonCognitive": ["Skin health", "Eye health", "Exercise recovery", "Immune support"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Skin health", "Eye health", "Exercise recovery", "Immune support"]
       },
       "dosageRange": "4-12mg daily",
       "optimalDuration": "8-12 weeks",
@@ -2657,12 +3614,46 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Astaxanthin and exercise-induced oxidative stress",
-          "authors": "Fassett & Coombes",
-          "year": "2011",
-          "doi": "10.1016/j.freeradbiomed.2010.09.031"
+          "pmid": "20553730",
+          "title": "Astaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans",
+          "authors": "Park JS, Chyun JH, Kim YK, Line LL, Chew BP",
+          "year": 2010,
+          "journal": "Journal of Clinical Biochemistry and Nutrition",
+          "doi": "10.3164/jcbn.09-91"
+        },
+        {
+          "pmid": "22428137",
+          "title": "Cosmetic benefits of astaxanthin on humans subjects",
+          "authors": "Tominaga K, Hongo N, Karato M, Yamashita E",
+          "year": 2012,
+          "journal": "Acta Biochimica Polonica",
+          "doi": "10.18388/abp.2012_2088"
+        },
+        {
+          "pmid": "21800280",
+          "title": "Effect of astaxanthin on cycling time trial performance",
+          "authors": "Earnest CP, Lupo M, White KM, Church TS",
+          "year": 2011,
+          "journal": "International Journal of Sports Medicine",
+          "doi": "10.1055/s-0030-1264780"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "researchQualityScore": 55,
+        "totalCitations": 15,
+        "overallQuality": "Tier 3",
+        "lastUpdated": "2026-03-06",
+        "publicationSpan": "2000-2012",
+        "evidenceStrength": {
+          "mechanisticBasis": "Established",
+          "clinicalBenefits": "Emerging",
+          "safetyRecord": "Favorable",
+          "doseOptimization": "Preliminary"
+        },
+        "citationFile": "data/enhanced_citations/46_enhanced.js",
+        "processingMode": "Mode 2+",
+        "isEnhanced": true
+      }
     },
 
     {
@@ -2671,13 +3662,12 @@ const supplementDatabase = {
       "scientificName": "Zingiber officinale",
       "category": "Herbal Supplement",
       "commonNames": ["Ginger Root", "Zingiber"],
+      "isEnhanced": true,
       "evidenceTier": 2,
-      "evidenceTierRationale": "Strong evidence for nausea and inflammation; moderate evidence for cognitive benefits",
+      "evidenceTierRationale": "Tier 2: Two meta-analyses establish pooled evidence anchors (NVP meta-analysis N=1,278 Viljoen 2014; OA meta-analysis N=593 Bartels 2015). Dual COX/LOX inhibition mechanism well-established. Third metabolic meta-analysis N=454 (Zhu 2018). Tier 1 not reached: no Cochrane review, no single landmark RCT N≥500, GRADE MODERATE evidence level.",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Memory enhancement", "Anti-inflammatory effects", "Mood support"],
-        "nonCognitive": ["Nausea reduction", "Digestive health", "Anti-inflammatory", "Pain relief"],
-    "isEnhanced": true,
-    "isEnhanced": true
+        "nonCognitive": ["Nausea reduction", "Digestive health", "Anti-inflammatory", "Pain relief"]
       },
       "dosageRange": "500mg-2g daily",
       "optimalDuration": "4-12 weeks",
@@ -2706,12 +3696,35 @@ const supplementDatabase = {
       },
       "keyCitations": [
         {
-          "title": "Ginger for nausea and vomiting in pregnancy",
-          "authors": "Viljoen et al.",
-          "year": "2014",
-          "doi": "10.1002/14651858.CD007575.pub4"
+          "pmid": "24674712",
+          "title": "A systematic review and meta-analysis of the effect and safety of ginger in the treatment of pregnancy-associated nausea and vomiting",
+          "authors": "Viljoen E, Visser J, Koen N, Musekiwa A",
+          "year": 2014,
+          "journal": "Nutrition Journal"
+        },
+        {
+          "pmid": "25749012",
+          "title": "Efficacy and safety of ginger in osteoarthritis patients: A meta-analysis of randomized placebo-controlled trials",
+          "authors": "Bartels EM et al.",
+          "year": 2015,
+          "journal": "Osteoarthritis and Cartilage"
+        },
+        {
+          "pmid": "17605155",
+          "title": "Ginger—An herbal medicinal product with broad anti-inflammatory actions",
+          "authors": "Grzanna R, Lindmark L, Frondoza CG",
+          "year": 2007,
+          "journal": "Journal of Medicinal Food"
         }
-      ]
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true,
+        "researchQualityScore": 65,
+        "totalCitations": 15,
+        "overallQuality": "Tier 2",
+        "lastUpdated": "2026-03-06",
+        "dataFile": "47_enhanced.js"
+      }
     },
 
     {

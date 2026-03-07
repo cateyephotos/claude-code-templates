@@ -1,3 +1,15 @@
+// DEPRECATED — DO NOT USE
+// This file (42_selenium_enhanced.js) is superseded by 42_enhanced.js
+// Deprecated: 2026-03-06 | Pipeline Mode: Evidence Update (Mode 2)
+// Reason: isEnhanced incorrectly nested inside primaryBenefits (×2) instead of top-level;
+//         14 duplicate "target": keys (should be "tissueTarget":);
+//         inflated researchQualityScore 86 (correct: 67);
+//         totalCitations 15 (correct: 16); publicationSpan '2000-2024' (correct: '2001-2018');
+//         clinicalBenefits evidenceStrength 'Strong' (correct: 'Moderate');
+//         totalVerifiedCitations 15 (correct: 16)
+// Canonical file: 42_enhanced.js (Tier 2, score 67, 16 citations, lastUpdate 2026-03-06)
+// Do not import or reference this file in any application code.
+
 // Enhanced Citations for Selenium (ID: 42)
 // Tier 2 Essential Nutrient - Comprehensive Research Database
 // Generated: 2025-01-25

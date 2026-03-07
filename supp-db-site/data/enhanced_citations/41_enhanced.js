@@ -1,27 +1,34 @@
-// Enhanced Citation File: Inositol Enhanced
-// Phase 3B Nutritional Essentials Specialist  
-// Generated: 2025-08-20
+// Enhanced Citation File: Inositol
+// Pipeline Run: 2026-03-06 | Mode: Evidence Update (Mode 2)
+// Canonical file for ID 41. Corrections: publicationSpan, totalCitations,
+// researchQualityScore (89→68), clinicalBenefits label (Strong→Moderate),
+// isEnhanced added top-level, name corrected, lastEvidenceUpdate updated.
+// Note: Vucenik 1995 (Cancer Letters) in benefits[] is animal-model evidence
+// (nude mice); does not support human clinical claims for anticancer benefit.
+// Note: Clements 1980 dosage citation has likely year error — DOI pattern
+// (90)90034-W suggests 1990; J Nutr Biochem founded 1990. Retained as-is.
 
 const inositolEnhanced = {
   "id": 41,
-  "name": "Inositol Enhanced", 
+  "name": "Inositol",
+  "isEnhanced": true,
   "scientificName": "myo-Inositol, D-chiro-Inositol",
   "category": "Essential Cellular Signaling Molecule",
   "commonNames": ["Vitamin B8", "Myo-Inositol", "D-chiro-Inositol", "Cyclitol"],
-  
+
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
-    "researchQualityScore": 89,
-    "lastEvidenceUpdate": "2025-08-20",
+    "totalCitations": 19,
+    "researchQualityScore": 68,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Well-established",
-      "clinicalBenefits": "Strong",
-      "safety": "Well-established", 
+      "clinicalBenefits": "Moderate",
+      "safety": "Well-established",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2012-2024",
+    "publicationSpan": "1986-2019",
     "keyResearchInstitutions": ["Harvard Medical School", "University of Virginia", "Sapienza University of Rome", "Tel Aviv University"]
   },
 

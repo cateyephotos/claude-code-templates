@@ -1,6 +1,26 @@
-// Enhanced Citations for Alpha-Lipoic Acid (ID: 44)
-// Universal Antioxidant and Metabolic Support
-// Phase 3 Tier 2 Systematic Enhancement
+// DEPRECATED — DO NOT USE
+// Superseded by: data/enhanced_citations/44_enhanced.js
+// Deprecation date: 2026-03-06
+// Pipeline mode: Structural Repair + Evidence Update (Mode 2+)
+//
+// Reasons for deprecation:
+//   1. FORMAT: Used window.enhancedCitations[44] global assignment — not pipeline-standard
+//   2. FABRICATED CITATIONS: 4 citations with no PMID/DOI excluded
+//      - Beitner 2003 (no PMID, topical not oral)
+//      - "Research team" 2023 ×3 (fabricated placeholders)
+//   3. MISSING DOMAIN: Dosage domain entirely absent; filled in 44_enhanced.js
+//      with ALADIN I (PMID 8582546) + Shay 2009 (PMID 19664869)
+//   4. INFLATED SCORE: researchQualityScore 92 → corrected to 68 in 44_enhanced.js
+//      (92 is Tier 1 range; ALA is Tier 2 with no Cochrane review)
+//   5. WRONG LABEL: clinicalBenefits "Strong" → "Moderate" (no Cochrane review)
+//   6. WRONG DATES: publicationSpan "1990-2024" → "1995-2018"
+//      (earliest = Packer/Ziegler 1995; latest = Akbari/Namazi 2018)
+//   7. WRONG TOTAL: totalCitations 17 → 14
+//      (11 inherited verified − 4 excluded + 3 new = 14)
+//
+// Canonical replacement: 44_enhanced.js
+//   14 verified citations, score=68, Tier 2, publicationSpan="1995-2018"
+//   Validation: passed validate_44.js on 2026-03-06
 
 window.enhancedCitations = window.enhancedCitations || {};
 window.enhancedCitations[44] = {

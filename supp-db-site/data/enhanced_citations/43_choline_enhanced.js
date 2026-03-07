@@ -1,3 +1,18 @@
+// ⚠️  DEPRECATED — DO NOT USE
+// Canonical file: 43_enhanced.js (validated 2026-03-06, OVERALL VALIDATION: PASS)
+//
+// Reason for deprecation:
+//   1. Wrong format: uses window.enhancedCitations[43] assignment (non-standard)
+//      rather than pipeline-standard const + module.exports pattern
+//   2. Wrong tier: evidenceProfile.overallQuality = "Tier 1" — incorrect
+//      (Choline is Tier 2; no Cochrane review, no multiple large-N High GRADE RCTs)
+//   3. Inflated score: researchQualityScore 88 (should be 66 per weighted formula)
+//   4. Conflicting citation counts: qualityMetrics.totalCitations=12 vs evidenceProfile.totalCitations=17
+//   5. Wrong lastEvidenceUpdate: "2025-01-28" (should be "2026-03-06")
+//   6. Wrong publicationSpan (implied by wrong lastEvidenceUpdate)
+//   7. Erroneous evidenceStrength labels ("Strong" across domains inconsistent with Tier 2)
+//
+// Pipeline run: 2026-03-06 | Mode: Evidence Update (Mode 2)
 // Enhanced Citations for Choline (ID: 43) - Women's Health & Hormone Specialist Focus
 // Phase 3B-6 Enhanced Citations Expansion
 // Generated: 2025-08-20
