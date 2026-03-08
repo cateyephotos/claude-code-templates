@@ -1,0 +1,247 @@
+{
+  "date": "2026-03-08T21:09:59.165Z",
+  "mode": "applied",
+  "totalFixes": 31,
+  "skippedTitleFixes": 92,
+  "fileChanges": {
+    "8_melatonin_enhanced.js": 1,
+    "13_acetyl_l_carnitine_enhanced.js": 2,
+    "14_enhanced.js": 1,
+    "16_enhanced.js": 1,
+    "28_glucosamine_enhanced.js": 1,
+    "30_vitamin_e_enhanced.js": 1,
+    "31_whey_protein_enhanced.js": 1,
+    "35_tribulus_terrestris_enhanced.js": 1,
+    "65_fenugreek_enhanced.js": 3,
+    "75_enhanced.js": 1,
+    "81_piracetam_enhanced.js": 1,
+    "84_moringa_enhanced.js": 3,
+    "85_pine_bark_extract_enhanced.js": 4,
+    "86_grape_seed_extract_enhanced.js": 4,
+    "87_krill_oil_enhanced.js": 1,
+    "88_zeaxanthin_enhanced.js": 1,
+    "89_pterostilbene_enhanced.js": 1,
+    "92_hmb_enhanced.js": 1,
+    "93_betaine_enhanced.js": 1,
+    "91_citrulline_malate_enhanced.js": 1
+  },
+  "fixes": [
+    {
+      "type": "doi_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "38888087",
+      "old": "10.1016/j.smrv.2024.101922",
+      "new": "10.1111/jpi.12985"
+    },
+    {
+      "type": "doi_fix",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "pmid": "39279185",
+      "old": "10.1093/jsxmed/qdae137",
+      "new": "10.1093/jsxmed/qdae123"
+    },
+    {
+      "type": "doi_fix",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "pmid": "40813743",
+      "old": "10.1007/s00228-025-03853-x",
+      "new": "10.1007/s43032-025-01958-9"
+    },
+    {
+      "type": "doi_fix",
+      "file": "14_enhanced.js",
+      "pmid": "21107543",
+      "old": "10.1007/s00234-010-0790-6",
+      "new": "10.1007/s00221-010-2488-8"
+    },
+    {
+      "type": "doi_fix",
+      "file": "16_enhanced.js",
+      "pmid": "39683633",
+      "old": "10.1080/19390211.2023.2293844",
+      "new": "10.3390/nu16234240"
+    },
+    {
+      "type": "doi_fix",
+      "file": "28_glucosamine_enhanced.js",
+      "pmid": "11300747",
+      "old": "10.1053/joca.2000.0398",
+      "new": "10.1053/joca.2000.0381"
+    },
+    {
+      "type": "doi_fix",
+      "file": "30_vitamin_e_enhanced.js",
+      "pmid": "10639539",
+      "old": "10.1056/NEJM200001203420302",
+      "new": "10.1056/NEJM200001203420301"
+    },
+    {
+      "type": "doi_fix",
+      "file": "31_whey_protein_enhanced.js",
+      "pmid": "17908288",
+      "old": "10.1186/1550-2783-4-8",
+      "new": "10.1186/1550-2783-4-6"
+    },
+    {
+      "type": "doi_fix",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "pmid": "40219032",
+      "old": "10.3390/nu16071060",
+      "new": "10.3390/nu17071275"
+    },
+    {
+      "type": "doi_fix",
+      "file": "65_fenugreek_enhanced.js",
+      "pmid": "26791805",
+      "old": "10.1002/ptr.5775",
+      "new": "10.3109/13685538.2015.1135323"
+    },
+    {
+      "type": "doi_fix",
+      "file": "65_fenugreek_enhanced.js",
+      "pmid": "37253363",
+      "old": "10.1016/j.clnesp.2023.04.001",
+      "new": "10.1055/a-2048-5925"
+    },
+    {
+      "type": "doi_fix",
+      "file": "65_fenugreek_enhanced.js",
+      "pmid": "36983608",
+      "old": "10.3390/nu15071550",
+      "new": "10.3390/jpm13030427"
+    },
+    {
+      "type": "doi_fix",
+      "file": "75_enhanced.js",
+      "pmid": "36678257",
+      "old": "10.1016/j.arr.2022.101816",
+      "new": "10.3390/nu15020386"
+    },
+    {
+      "type": "doi_fix",
+      "file": "81_piracetam_enhanced.js",
+      "pmid": "10338106",
+      "old": "10.1006/phrs.1998.0447",
+      "new": "10.1055/s-2007-979234"
+    },
+    {
+      "type": "doi_fix",
+      "file": "84_moringa_enhanced.js",
+      "pmid": "41305552",
+      "old": "10.3390/nu17010001",
+      "new": "10.3390/nu17223501"
+    },
+    {
+      "type": "doi_fix",
+      "file": "84_moringa_enhanced.js",
+      "pmid": "34207664",
+      "old": "10.3390/molecules26133900",
+      "new": "10.3390/molecules26123513"
+    },
+    {
+      "type": "doi_fix",
+      "file": "84_moringa_enhanced.js",
+      "pmid": "40989801",
+      "old": "10.1186/s12906-025-04880-4",
+      "new": "10.3389/fnut.2025.1667158"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "31637782",
+      "old": "10.1016/j.ctim.2019.102189",
+      "new": "10.1002/ptr.6515"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "29713620",
+      "old": "10.1016/j.clnu.2017.07.010",
+      "new": "10.7762/cnr.2018.7.2.117"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "37908749",
+      "old": "10.1038/s41443-023-00788-y",
+      "new": "10.3389/fendo.2023.1211720"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "31763928",
+      "old": "10.1016/j.numecd.2019.04.002",
+      "new": "10.1177/0003319719889428"
+    },
+    {
+      "type": "doi_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "31880030",
+      "old": "10.1016/j.jff.2019.103642",
+      "new": "10.1002/ptr.6518"
+    },
+    {
+      "type": "doi_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "27537554",
+      "old": "10.1016/j.clnu.2016.07.009",
+      "new": "10.1097/MD.0000000000004247"
+    },
+    {
+      "type": "doi_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "34798267",
+      "old": "10.1002/ptr.7338",
+      "new": "10.1016/j.phrs.2021.105905"
+    },
+    {
+      "type": "doi_fix",
+      "file": "87_krill_oil_enhanced.js",
+      "pmid": "17353582",
+      "old": "10.1080/07315724.2007.10719571",
+      "new": "10.1080/07315724.2007.10719584"
+    },
+    {
+      "type": "doi_fix",
+      "file": "88_zeaxanthin_enhanced.js",
+      "pmid": "35223939",
+      "old": "10.1159/000522205",
+      "new": "10.3389/fnut.2022.745390"
+    },
+    {
+      "type": "doi_fix",
+      "file": "89_pterostilbene_enhanced.js",
+      "pmid": "35998039",
+      "old": "10.1172/jci.insight.158124",
+      "new": "10.1172/jci.insight.158314"
+    },
+    {
+      "type": "doi_fix",
+      "file": "92_hmb_enhanced.js",
+      "pmid": "31531146",
+      "old": "10.1519/JSC.0000000000003200",
+      "new": "10.2478/hukin-2019-0070"
+    },
+    {
+      "type": "doi_fix",
+      "file": "93_betaine_enhanced.js",
+      "pmid": "39514262",
+      "old": "10.1080/15502783.2024.2409688",
+      "new": "10.1080/02640414.2024.2423578"
+    },
+    {
+      "type": "year_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "31942838",
+      "old": 2020,
+      "new": 2022
+    },
+    {
+      "type": "year_fix",
+      "file": "91_citrulline_malate_enhanced.js",
+      "pmid": "26658899",
+      "old": 2015,
+      "new": 2017
+    }
+  ]
+}

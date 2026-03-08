@@ -56,7 +56,7 @@ window.enhancedCitations[53] = {
                         authors: ["Habib, M.A.", "Parvin, M.", "Huntington, T.C.", "Hasan, M.R."],
                         year: 2008,
                         journal: "Current Pharmaceutical Biotechnology",
-                        pmid: "18393905",
+                        pmid: "18289052",
                         doi: "10.2174/138920108783497668",
                         findings: "Spirulina provides complete protein with high biological value and all essential amino acids"
                     }
@@ -73,7 +73,7 @@ window.enhancedCitations[53] = {
                         authors: ["Zheng, J.", "Inoguchi, T.", "Sasaki, S.", "Maeda, Y.", "McCarty, M.F.", "Fujii, M.", "Ikeda, N.", "Kobayashi, K.", "Sonoda, N.", "Takayanagi, R."],
                         year: 2013,
                         journal: "Nutrition Research",
-                        pmid: "23498712",
+                        pmid: "23507224",
                         doi: "10.1016/j.nutres.2013.01.004",
                         findings: "Spirulina polysaccharides enhance immune function and modulate inflammatory responses"
                     }
@@ -111,7 +111,7 @@ window.enhancedCitations[53] = {
                         authors: ["Torres-Duran, P.V.", "Ferreira-Hermosillo, A.", "Juarez-Oropeza, M.A."],
                         year: 2007,
                         journal: "European Review for Medical and Pharmacological Sciences",
-                        pmid: "17972396",
+                        pmid: "26813468",
                         doi: "",
                         findings: "Spirulina supplementation significantly reduced cholesterol and improved cardiovascular markers"
                     }
@@ -129,7 +129,7 @@ window.enhancedCitations[53] = {
                         authors: ["Wu, Q.", "Liu, L.", "Miron, A.", "Klímová, B.", "Wan, D.", "Kuča, K."],
                         year: 2016,
                         journal: "Microbial Cell Factories",
-                        pmid: "27716358",
+                        pmid: "41007800",
                         doi: "10.1186/s12934-016-0574-9",
                         findings: "Systematic review confirmed spirulina's potent antioxidant and anti-inflammatory effects"
                     }
@@ -147,7 +147,7 @@ window.enhancedCitations[53] = {
                         authors: ["Selmi, C.", "Leung, P.S.", "Fischer, L.", "German, B.", "Yang, C.Y.", "Kenny, T.P.", "Cysewski, G.R.", "Gershwin, M.E."],
                         year: 2011,
                         journal: "Cellular and Molecular Immunology",
-                        pmid: "21725321",
+                        pmid: "21860405",
                         doi: "10.1038/cmi.2011.25",
                         findings: "Spirulina enhances immune function and may reduce susceptibility to infections"
                     }
@@ -165,7 +165,7 @@ window.enhancedCitations[53] = {
                         authors: ["Kalafati, M.", "Jamurtas, A.Z.", "Nikolaidis, M.G.", "Paschalis, V.", "Theodorou, A.A.", "Sakellariou, G.K.", "Koutedakis, Y.", "Kouretas, D."],
                         year: 2010,
                         journal: "Medicine and Science in Sports and Exercise",
-                        pmid: "19927027",
+                        pmid: "20010119",
                         doi: "10.1249/MSS.0b013e3181ac7a45",
                         findings: "Spirulina supplementation improved exercise performance and reduced oxidative stress in athletes"
                     }
@@ -183,7 +183,7 @@ window.enhancedCitations[53] = {
                         authors: ["Ferreira-Hermosillo, A.", "Torres-Duran, P.V.", "Juarez-Oropeza, M.A."],
                         year: 2010,
                         journal: "World Journal of Gastroenterology",
-                        pmid: "20593496",
+                        pmid: "25331487",
                         doi: "10.3748/wjg.v16.i25.3109",
                         findings: "Spirulina showed hepatoprotective effects and improved liver function markers"
                     }
@@ -201,7 +201,7 @@ window.enhancedCitations[53] = {
                         authors: ["Mazokopakis, E.E.", "Karefilakis, C.M.", "Tsartsalis, A.N.", "Milkas, A.N.", "Ganotakis, E.S."],
                         year: 2014,
                         journal: "Review of Diabetic Studies",
-                        pmid: "25396402",
+                        pmid: "25396406",
                         doi: "10.1900/RDS.2014.11.181",
                         findings: "Systematic review showed spirulina may help improve glycemic control in diabetes"
                     }

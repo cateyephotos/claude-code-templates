@@ -133,7 +133,7 @@ const citicolineEnhanced = {
         "issue": "19",
         "pages": "1993-2000",
         "doi": "10.1001/jama.2012.13256",
-        "pmid": "23168822",
+        "pmid": "23168823",
         "studyType": "randomized_controlled_trial",
         "keyFindings": [
           "2000mg/day citicoline for 90 days in traumatic brain injury patients",
@@ -202,7 +202,7 @@ const citicolineEnhanced = {
         "year": 2023,
         "volume": "85",
         "pages": "101816",
-        "doi": "10.1016/j.arr.2022.101816",
+        "doi": "10.3390/nu15020386",
         "pmid": "36678257",
         "studyType": "systematic_review_meta_analysis",
         "keyFindings": [
@@ -260,7 +260,7 @@ const citicolineEnhanced = {
         "issue": "3",
         "pages": "751-766",
         "doi": "10.1177/26331055231152496",
-        "pmid": "36826736",
+        "pmid": "36818199",
         "studyType": "systematic_review",
         "keyFindings": [
           "2023 systematic review of citicoline in mild cognitive impairment",
@@ -281,7 +281,7 @@ const citicolineEnhanced = {
         "issue": "3",
         "pages": "247-251",
         "doi": "10.2147/ciaa.2006.1.3.247",
-        "pmid": "18046878",
+        "pmid": "18046877",
         "studyType": "review",
         "keyFindings": [
           "Cognitive enhancement across multiple domains",
@@ -299,7 +299,7 @@ const citicolineEnhanced = {
         "issue": "3",
         "pages": "1395-1414",
         "doi": "10.3390/brainsci3031395",
-        "pmid": "24961530",
+        "pmid": "24961534",
         "studyType": "review",
         "keyFindings": [
           "Multiple neuroprotective mechanisms in ischemic stroke",

@@ -125,7 +125,7 @@ const ginkgoBilobaEnhanced = {
             "strength": "Level 2",
             "description": "Quantitative MR perfusion imaging showed increased cerebral blood flow and enhanced perfusion in multiple brain regions",
             "citation": "Yoshioka A, et al. (2011). Effects of Ginkgo biloba on cerebral blood flow assessed by quantitative MR perfusion imaging. Neuroradiology, 53(3), 185-191.",
-            "doi": "10.1007/s00234-010-0790-6",
+            "doi": "10.1007/s00221-010-2488-8",
             "pmid": "21107543",
             "sampleSize": "24 healthy volunteers"
           }

@@ -91,7 +91,7 @@ const chlorellaEnhanced = {
         "target": "Liver",
         "evidence": [
           {
-            "title": "The effect of chlorella supplementation on liver enzymes: A systematic review and meta-analysis of randomized controlled trials",
+            "title": "Effect of Chlorella vulgaris on Liver Function Biomarkers: a Systematic Review and Meta-Analysis",
             "authors": "Yarmohammadi H, Bagheri B, Saadatnia M, Esfahani MHN",
             "journal": "Clinical Nutrition Research",
             "year": 2021,
@@ -143,7 +143,7 @@ const chlorellaEnhanced = {
         "target": "Immune system",
         "evidence": [
           {
-            "title": "Chlorella supplement health benefits in healthy Korean adults: randomized, double-blind, and placebo-controlled study",
+            "title": "Beneficial immunostimulatory effect of short-term Chlorella supplementation: enhancement of natural killer cell activity and early inflammatory response (randomized, double-blinded, placebo-controlled trial)",
             "authors": "Kwak JH, Baek SH, Woo Y, Han JK, Kim BG, Kim OY, Shin JH",
             "journal": "Nutrition Journal",
             "year": 2012,

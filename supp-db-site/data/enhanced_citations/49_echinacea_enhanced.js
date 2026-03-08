@@ -75,7 +75,7 @@ const echinaceaEnhanced = {
             "confidenceInterval": "95%"
           },
           {
-            "title": "Echinacea reduces the risk of recurrent respiratory tract infections and complications: a meta-analysis of randomized controlled trials",
+            "title": "Echinacea in the prevention of induced rhinovirus colds: a meta-analysis",
             "authors": "Schoop R, Klein P, Suter A, Johnston SL",
             "journal": "Clinical Therapeutics",
             "year": 2006,
@@ -127,7 +127,7 @@ const echinaceaEnhanced = {
         "target": "Upper respiratory tract and immune system",
         "evidence": [
           {
-            "title": "A proprietary extract of Echinacea purpurea (Echinilin) for prevention and treatment of upper respiratory infections",
+            "title": "Efficacy of a standardized echinacea preparation (Echinilin) for the treatment of the common cold: a randomized, double-blind, placebo-controlled trial",
             "authors": "Goel V, Lovlin R, Barton R, Lyon MR, Bauer R, Lee TDG, Basu TK",
             "journal": "Journal of Clinical Pharmacy and Therapeutics",
             "year": 2004,
@@ -311,7 +311,7 @@ const echinaceaEnhanced = {
         "target": "Immune system, respiratory epithelium",
         "evidence": [
           {
-            "title": "Echinacea Species as Potential Agents against Infections and Cancers: A Review of In Vitro and In Vivo Studies",
+            "title": "Phytochemistry, Mechanisms, and Preclinical Studies of Echinacea Extracts in Modulating Immune Responses to Bacterial and Viral Infections: A Comprehensive Review",
             "authors": "Ahmadi F, Hamidi Moghadam R, Sabt S, Zafari A, Taghvaei Javanshir S, Sabouri Ghannad M",
             "journal": "Antibiotics",
             "year": 2024,

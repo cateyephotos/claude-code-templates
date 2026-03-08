@@ -205,7 +205,7 @@ const elderberryEnhanced = {
         "target": "Gastrointestinal system",
         "evidence": [
           {
-            "title": "Sambucus genus - Taxonomy, Botany, Phytochemistry, Traditional Uses and Pharmacological Properties",
+            "title": "Ethnobotany, phytochemistry, pharmacology, and toxicology of the genus Sambucus L. (Viburnaceae)",
             "authors": "Waswa EN, Kambura AK, Mwanzia VM, Kamau MM, Olango TM, Odago WO",
             "journal": "Journal of Ethnopharmacology",
             "year": 2022,

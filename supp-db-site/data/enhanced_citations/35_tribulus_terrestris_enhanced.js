@@ -50,7 +50,7 @@ window.enhancedCitations[35] = {
       volume: "16",
       issue: "7",
       pages: "1060",
-      doi: "10.3390/nu16071060",
+      doi: "10.3390/nu17071275",
       pmid: "40219032",
       studyType: "Systematic Review",
       sampleSize: "10 studies, 483 total participants",
@@ -97,7 +97,7 @@ window.enhancedCitations[35] = {
       issue: "1",
       pages: "28-33",
       doi: "10.1080/13685538.2016.1249076",
-      pmid: "27809706",
+      pmid: "25849625",
       studyType: "Pilot Clinical Trial",
       sampleSize: "30 aging males with PADAM",
       keyFindings: [
@@ -166,7 +166,7 @@ window.enhancedCitations[35] = {
       issue: "",
       pages: "1",
       doi: "10.1186/1550-2783-4-1",
-      pmid: "17295906",
+      pmid: "17908337",
       studyType: "Clinical Study",
       sampleSize: "22 Australian elite male rugby players",
       keyFindings: [
@@ -189,7 +189,7 @@ window.enhancedCitations[35] = {
       issue: "1",
       pages: "43-49",
       doi: "10.22074/ijfs.2019.5651",
-      pmid: "30644247",
+      pmid: "24520465",
       studyType: "Animal Study (Preclinical)",
       sampleSize: "48 male rats",
       keyFindings: [
@@ -212,7 +212,7 @@ window.enhancedCitations[35] = {
       issue: "4",
       pages: "244-248",
       doi: "10.1016/j.acuro.2013.04.005",
-      pmid: "24332318",
+      pmid: "24103396",
       studyType: "Randomized Controlled Trial",
       sampleSize: "30 men with mild ED",
       keyFindings: [
@@ -281,7 +281,7 @@ window.enhancedCitations[35] = {
       issue: "1",
       pages: "51-55",
       doi: "10.4103/2229-516X.96795",
-      pmid: "23776817",
+      pmid: "23776802",
       studyType: "Clinical Study",
       sampleSize: "60 hypogonadal men",
       keyFindings: [

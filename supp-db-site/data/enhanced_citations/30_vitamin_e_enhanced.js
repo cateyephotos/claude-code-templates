@@ -67,7 +67,7 @@ window.enhancedCitations[30] = {
                         authors: ["Azzi, A.", "Ricciarelli, R.", "Zingg, J.M."],
                         year: 2002,
                         journal: "FEBS Letters",
-                        pmid: "12417320",
+                        pmid: "9280299",
                         doi: "10.1016/S0014-5793(02)03479-4",
                         evidenceLevel: "Level 2",
                         keyFindings: "Vitamin E modulates protein kinase C activity and influences gene expression related to inflammation and cell proliferation."
@@ -85,7 +85,7 @@ window.enhancedCitations[30] = {
                         authors: ["Steiner, M.", "Anastasi, J."],
                         year: 1976,
                         journal: "Journal of Clinical Investigation",
-                        pmid: "956397",
+                        pmid: "965498",
                         doi: "10.1172/JCI108549",
                         evidenceLevel: "Level 2",
                         keyFindings: "Vitamin E supplementation reduces platelet aggregation and adhesion, potentially contributing to cardiovascular protection."
@@ -107,7 +107,7 @@ window.enhancedCitations[30] = {
                         year: 2000,
                         journal: "New England Journal of Medicine",
                         pmid: "10639539",
-                        doi: "10.1056/NEJM200001203420302",
+                        doi: "10.1056/NEJM200001203420301",
                         evidenceLevel: "Level 1",
                         keyFindings: "Large-scale trial showed mixed results for cardiovascular protection, with benefits observed in specific subgroups but not overall population."
                     }
@@ -142,7 +142,7 @@ window.enhancedCitations[30] = {
                         authors: ["Morris, M.C.", "Evans, D.A.", "Tangney, C.C.", "Bienias, J.L.", "Wilson, R.S."],
                         year: 2005,
                         journal: "Archives of Neurology",
-                        pmid: "16009767",
+                        pmid: "16286541",
                         doi: "10.1001/archneur.62.11.1689",
                         evidenceLevel: "Level 2",
                         keyFindings: "Higher vitamin E intake from food sources was associated with reduced cognitive decline in older adults over 6-year follow-up."
@@ -160,7 +160,7 @@ window.enhancedCitations[30] = {
                         authors: ["Burke, K.E.", "Clive, J.", "Combs, G.F.", "Commisso, J.", "Keen, C.L.", "Nakamura, R.M."],
                         year: 2000,
                         journal: "Nutrition and Cancer",
-                        pmid: "10693192",
+                        pmid: "11341040",
                         doi: "10.1207/S15327914NC381_4",
                         evidenceLevel: "Level 2",
                         keyFindings: "Vitamin E supplementation provides modest protection against UV-induced skin damage and may reduce risk of skin cancer."
@@ -181,7 +181,7 @@ window.enhancedCitations[30] = {
                         authors: ["Miller, E.R.", "Pastor-Barriuso, R.", "Dalal, D.", "Riemersma, R.A.", "Appel, L.J.", "Guallar, E."],
                         year: 2005,
                         journal: "Annals of Internal Medicine",
-                        pmid: "15657354",
+                        pmid: "15537682",
                         doi: "10.7326/0003-4819-142-1-200501040-00110",
                         evidenceLevel: "Level 1",
                         keyFindings: "Vitamin E supplementation up to 400 IU/day appears safe for most adults, with minimal adverse effects reported."

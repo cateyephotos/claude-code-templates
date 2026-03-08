@@ -232,7 +232,7 @@ const zeaxanthinEnhanced = {
                         journal: "Annals of Nutrition and Metabolism",
                         year: 2022,
                         pmid: "35223939",
-                        doi: "10.1159/000522205",
+                        doi: "10.3389/fnut.2022.745390",
                         studyType: "Case-Control Study and Meta-Analysis",
                         sampleSize: "Original study: 540 cases + 540 controls; Meta-analysis: 13 studies, 85,321 individuals",
                         duration: "Cross-sectional with meta-analysis",

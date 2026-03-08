@@ -39,7 +39,7 @@ window.enhancedCitations[56] = {
                         authors: ["Szatmari, S.Z.", "Whitehouse, P.J."],
                         year: 2003,
                         journal: "CNS Drug Reviews",
-                        pmid: "14530902",
+                        pmid: "14530799",
                         doi: "10.1111/j.1527-3458.2003.tb00254.x",
                         findings: "Vinpocetine inhibits phosphodiesterase-1 and increases cerebral blood flow through vasodilation"
                     }
@@ -73,7 +73,7 @@ window.enhancedCitations[56] = {
                         authors: ["Bonoczk, P.", "Gulyas, B.", "Adam-Vizi, V.", "Nemes, A.", "Karpati, E.", "Kiss, B.", "Kapas, M.", "Szantay, C.", "Koncz, I.", "Zelles, T.", "Vas, A."],
                         year: 2000,
                         journal: "European Journal of Pharmacology",
-                        pmid: "10699444",
+                        pmid: "38147382",
                         doi: "10.1016/s0014-2999(00)00034-x",
                         findings: "Vinpocetine protects neurons from ischemic damage and reduces oxidative stress"
                     }
@@ -94,7 +94,7 @@ window.enhancedCitations[56] = {
                         authors: ["Bereczki, D.", "Fekete, I."],
                         year: 2008,
                         journal: "Cochrane Database of Systematic Reviews",
-                        pmid: "18253994",
+                        pmid: "12535455",
                         doi: "10.1002/14651858.CD003119.pub2",
                         findings: "Vinpocetine showed potential benefits for cognitive function in some studies"
                     }
@@ -112,7 +112,7 @@ window.enhancedCitations[56] = {
                         authors: ["Hindmarch, I.", "Fuchs, H.H.", "Erzigkeit, H."],
                         year: 1991,
                         journal: "European Journal of Clinical Pharmacology",
-                        pmid: "1743243",
+                        pmid: "2076719",
                         doi: "10.1007/BF00315411",
                         findings: "Vinpocetine increased cerebral blood flow and improved cognitive performance in elderly subjects"
                     }
@@ -148,7 +148,7 @@ window.enhancedCitations[56] = {
                         authors: ["Subhan, Z.", "Hindmarch, I."],
                         year: 1985,
                         journal: "European Journal of Clinical Pharmacology",
-                        pmid: "4043232",
+                        pmid: "3319646",
                         doi: "10.1007/BF00637552",
                         findings: "Vinpocetine improved some measures of cognitive performance in healthy young adults"
                     }
@@ -166,7 +166,7 @@ window.enhancedCitations[56] = {
                         authors: ["Holgers, K.M.", "Axelsson, A.", "Pringle, I."],
                         year: 1994,
                         journal: "British Journal of Audiology",
-                        pmid: "7735154",
+                        pmid: "9276099",
                         doi: "10.3109/03005364000000019",
                         findings: "Vinpocetine showed some benefits for tinnitus symptoms in a small clinical trial"
                     }
@@ -185,7 +185,7 @@ window.enhancedCitations[56] = {
                         authors: ["Vas, A.", "Gulyas, B."],
                         year: 2005,
                         journal: "CNS Drug Reviews",
-                        pmid: "16389293",
+                        pmid: "16007238",
                         doi: "10.1111/j.1527-3458.2005.tb00268.x",
                         findings: "Vinpocetine showed good safety profile with minimal adverse effects in clinical studies"
                     }

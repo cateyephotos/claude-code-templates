@@ -1,0 +1,1196 @@
+{
+  "fixed": [
+    {
+      "pmid": "36678188",
+      "file": "7_vitamin_d3_enhanced.js",
+      "supplement": "Vitamin D3",
+      "fileDoi": "10.3390/nu15020316",
+      "correctPmid": "36678187"
+    },
+    {
+      "pmid": "22348451",
+      "file": "8_melatonin_enhanced.js",
+      "supplement": "8_melatonin_enhanced",
+      "fileDoi": "10.1111/j.1600-079X.2012.00975.x",
+      "correctPmid": "22289049"
+    },
+    {
+      "pmid": "35691474",
+      "file": "8_melatonin_enhanced.js",
+      "supplement": "8_melatonin_enhanced",
+      "fileDoi": "10.7759/cureus.26923",
+      "correctPmid": "35983404"
+    },
+    {
+      "pmid": "20036321",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "supplement": "Acetyl-L-Carnitine",
+      "fileDoi": "10.1016/j.bbalip.2010.01.015",
+      "correctPmid": "40592838"
+    },
+    {
+      "pmid": "16473978",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "supplement": "Acetyl-L-Carnitine",
+      "fileDoi": "10.1097/01.JGP.0000196627.12010.d1",
+      "correctPmid": "16473973"
+    },
+    {
+      "pmid": "18580597",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.1097/WAD.0b013e318169651b",
+      "correctPmid": "18580589"
+    },
+    {
+      "pmid": "23717137",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.5142/jgr.2010.34.4.261",
+      "correctPmid": "29021708"
+    },
+    {
+      "pmid": "25229827",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.1371/journal.pone.0107391",
+      "correctPmid": "25265315"
+    },
+    {
+      "pmid": "11772128",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.2165/00003495-200161150-00005",
+      "correctPmid": "11772131"
+    },
+    {
+      "pmid": "17612572",
+      "file": "17_enhanced.js",
+      "supplement": "17_enhanced",
+      "fileDoi": "10.1016/j.lfs.2007.05.009",
+      "correctPmid": "17568620"
+    },
+    {
+      "pmid": "22661190",
+      "file": "17_enhanced.js",
+      "supplement": "17_enhanced",
+      "fileDoi": "10.1007/s12020-012-9656-z",
+      "correctPmid": "41297722"
+    },
+    {
+      "pmid": "31317480",
+      "file": "25_nad_precursors_enhanced.js",
+      "supplement": "25_nad_precursors_enhanced",
+      "fileDoi": "10.1007/s13668-019-00281-7",
+      "correctPmid": "37273100"
+    },
+    {
+      "pmid": "34454297",
+      "file": "25_nad_precursors_enhanced.js",
+      "supplement": "25_nad_precursors_enhanced",
+      "fileDoi": "10.1016/j.bbrc.2021.08.056",
+      "correctPmid": "34455221"
+    },
+    {
+      "pmid": "12801478",
+      "file": "28_glucosamine_enhanced.js",
+      "supplement": "Glucosamine",
+      "fileDoi": "10.1016/S1063-4584(03)00134-9",
+      "correctPmid": "41795418"
+    },
+    {
+      "pmid": "24928195",
+      "file": "28_glucosamine_enhanced.js",
+      "supplement": "Glucosamine",
+      "fileDoi": "10.1016/j.amjmed.2014.05.025",
+      "correctPmid": "24858063"
+    },
+    {
+      "pmid": "12133968",
+      "file": "28_glucosamine_enhanced.js",
+      "supplement": "Glucosamine",
+      "fileDoi": "10.1016/S0140-6736(02)09013-2",
+      "correctPmid": "41795402"
+    },
+    {
+      "pmid": "17266067",
+      "file": "28_glucosamine_enhanced.js",
+      "supplement": "Glucosamine",
+      "fileDoi": "10.1002/art.22482",
+      "correctPmid": "17266100"
+    },
+    {
+      "pmid": "31065914",
+      "file": "28_glucosamine_enhanced.js",
+      "supplement": "Glucosamine",
+      "fileDoi": "10.1007/s10654-019-00524-3",
+      "correctPmid": "31055709"
+    },
+    {
+      "pmid": "9280299",
+      "file": "30_vitamin_e_enhanced.js",
+      "supplement": "Vitamin E",
+      "fileDoi": "10.1016/S0014-5793(02)03479-4",
+      "correctPmid": "41795402"
+    },
+    {
+      "pmid": "15321791",
+      "file": "30_vitamin_e_enhanced.js",
+      "supplement": "Vitamin E",
+      "fileDoi": "10.1093/ajcn/80.3.628",
+      "correctPmid": "41781077"
+    },
+    {
+      "pmid": "17215883",
+      "file": "31_whey_protein_enhanced.js",
+      "supplement": "Whey Protein",
+      "fileDoi": "10.1080/07315724.2006.10719574",
+      "correctPmid": "16772636"
+    },
+    {
+      "pmid": "24623121",
+      "file": "31_whey_protein_enhanced.js",
+      "supplement": "Whey Protein",
+      "fileDoi": "10.1007/s00726-014-1742-3",
+      "correctPmid": "25063205"
+    },
+    {
+      "pmid": "15180757",
+      "file": "31_whey_protein_enhanced.js",
+      "supplement": "Whey Protein",
+      "fileDoi": "10.1111/j.1398-9995.2004.00499.x",
+      "correctPmid": "15147439"
+    },
+    {
+      "pmid": "20230764",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplement": "Chondroitin Sulfate",
+      "fileDoi": "10.1016/S1054-3589(08)00006-3",
+      "correctPmid": "41241004"
+    },
+    {
+      "pmid": "12801481",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplement": "Chondroitin Sulfate",
+      "fileDoi": "10.1016/S1063-4584(03)00137-4",
+      "correctPmid": "41795418"
+    },
+    {
+      "pmid": "11300746",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplement": "Chondroitin Sulfate",
+      "fileDoi": "10.1053/joca.2000.0397",
+      "correctPmid": "11399101"
+    },
+    {
+      "pmid": "21305503",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplement": "Chondroitin Sulfate",
+      "fileDoi": "10.1002/art.30314",
+      "correctPmid": "21400475"
+    },
+    {
+      "pmid": "18677011",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplement": "Chondroitin Sulfate",
+      "fileDoi": "10.1136/ard.2007.082800",
+      "correctPmid": "36156542"
+    },
+    {
+      "pmid": "26126146",
+      "file": "33_l_tyrosine_enhanced.js",
+      "supplement": "L-Tyrosine",
+      "fileDoi": "10.7205/MILMED-D-14-00594",
+      "correctPmid": "26126245"
+    },
+    {
+      "pmid": "2871566",
+      "file": "34_enhanced.js",
+      "supplement": "34_enhanced",
+      "fileDoi": "10.1016/0149-7634(86)90020-6",
+      "correctPmid": "41707763"
+    },
+    {
+      "pmid": "31504850",
+      "file": "34_enhanced.js",
+      "supplement": "34_enhanced",
+      "fileDoi": "10.1016/0165-0327(77)90005-6",
+      "correctPmid": "41791601"
+    },
+    {
+      "pmid": "7765187",
+      "file": "34_enhanced.js",
+      "supplement": "34_enhanced",
+      "fileDoi": "10.1016/0167-7799(90)90217-P",
+      "correctPmid": "41058342"
+    },
+    {
+      "pmid": "18433663",
+      "file": "34_enhanced.js",
+      "supplement": "34_enhanced",
+      "fileDoi": "10.1016/S0163-8343(02)00282-3",
+      "correctPmid": "41795402"
+    },
+    {
+      "pmid": "37398644",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "supplement": "Tribulus Terrestris",
+      "fileDoi": "10.1155/2023/7118431",
+      "correctPmid": "41795433"
+    },
+    {
+      "pmid": "30644247",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "supplement": "Tribulus Terrestris",
+      "fileDoi": "10.22074/ijfs.2019.5651",
+      "correctPmid": "24520465"
+    },
+    {
+      "pmid": "11744291",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "supplement": "Tribulus Terrestris",
+      "fileDoi": "10.1016/S0378-8741(01)00374-X",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "15743017",
+      "file": "36_vitamin_c_enhanced.js",
+      "supplement": "Vitamin C",
+      "fileDoi": "10.1093/ajcn/33.11.2394",
+      "correctPmid": "41781077"
+    },
+    {
+      "pmid": "15213266",
+      "file": "36_vitamin_c_enhanced.js",
+      "supplement": "Vitamin C",
+      "fileDoi": "10.1097/01.ASN.0000135520.78748.8C",
+      "correctPmid": "39059059"
+    },
+    {
+      "pmid": "35806265",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.3390/ijms23137251",
+      "correctPmid": "35806253"
+    },
+    {
+      "pmid": "15142400",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.1089/104454604773840553",
+      "correctPmid": "15142398"
+    },
+    {
+      "pmid": "39770957",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.3390/nu16244269",
+      "correctPmid": "39770891"
+    },
+    {
+      "pmid": "12730445",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.1093/jn/133.5.1473S",
+      "correctPmid": "12730446"
+    },
+    {
+      "pmid": "21677057",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.3945/ajcn.111.018556",
+      "correctPmid": "9521632"
+    },
+    {
+      "pmid": "10799391",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.1093/ajcn/71.5.1181s",
+      "correctPmid": "41781077"
+    },
+    {
+      "pmid": "27189895",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.1097/MOP.0b013e3283444b89",
+      "correctPmid": "41751190"
+    },
+    {
+      "pmid": "25877495",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.3945/ajcn.114.103036",
+      "correctPmid": "24152889"
+    },
+    {
+      "pmid": "41257751",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.1016/s0140-6736(85)90465-4",
+      "correctPmid": "41795434"
+    },
+    {
+      "pmid": "24656435",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.1016/S0140-6736(13)62404-4",
+      "correctPmid": "41795435"
+    },
+    {
+      "pmid": "22823350",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.1080/10408398.2010.511931",
+      "correctPmid": "41614655"
+    },
+    {
+      "pmid": "12436202",
+      "file": "39_taurine_enhanced.js",
+      "supplement": "39_taurine_enhanced",
+      "fileDoi": "10.1007/s00726-002-0212-0",
+      "correctPmid": "12436205"
+    },
+    {
+      "pmid": "30556597",
+      "file": "41_inositol_enhanced.js",
+      "supplement": "41_inositol_enhanced",
+      "fileDoi": "10.1002/14651858.CD013594",
+      "correctPmid": "32343003"
+    },
+    {
+      "pmid": "9247407",
+      "file": "41_inositol_enhanced.js",
+      "supplement": "41_inositol_enhanced",
+      "fileDoi": "10.1176/ajp.154.8.1148",
+      "correctPmid": "9247405"
+    },
+    {
+      "pmid": "7714224",
+      "file": "41_inositol_enhanced.js",
+      "supplement": "41_inositol_enhanced",
+      "fileDoi": "10.1097/00004714-199502000-00004",
+      "correctPmid": "7714223"
+    },
+    {
+      "pmid": "29190764",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.1093/jn/135.4.865",
+      "correctPmid": "41795076"
+    },
+    {
+      "pmid": "12816794",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.1093/ajcn/77.6.1457S",
+      "correctPmid": "41781077"
+    },
+    {
+      "pmid": "8950879",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.1001/jama.1996.03540250035027",
+      "correctPmid": "8971064"
+    },
+    {
+      "pmid": "16313696",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.1016/S0163-7258(97)00014-1",
+      "correctPmid": "35976089"
+    },
+    {
+      "pmid": "36100996",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.1093/aje/151.11.1107",
+      "correctPmid": "41790109"
+    },
+    {
+      "pmid": "28608931",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplement": "43_choline_bitartrate_enhanced",
+      "fileDoi": "10.1111/jnc.14050",
+      "correctPmid": "28440877"
+    },
+    {
+      "pmid": "31109059",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplement": "43_choline_bitartrate_enhanced",
+      "fileDoi": "10.3390/nu11051125",
+      "correctPmid": "31117180"
+    },
+    {
+      "pmid": "30248994",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplement": "43_choline_bitartrate_enhanced",
+      "fileDoi": "10.3390/nu10101349",
+      "correctPmid": "30241424"
+    },
+    {
+      "pmid": "11744339",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplement": "43_choline_bitartrate_enhanced",
+      "fileDoi": "10.1016/S0899-9007(01)00659-8",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "30704570",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplement": "43_choline_bitartrate_enhanced",
+      "fileDoi": "10.1016/S0899-9007(01)00659-8",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "11469271",
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "supplement": "Alpha-Lipoic Acid",
+      "fileDoi": "10.1089/152091500750049479",
+      "correctPmid": "11467343"
+    },
+    {
+      "pmid": "35098396",
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "supplement": "Alpha-Lipoic Acid",
+      "fileDoi": "10.1002/biof.5520160309",
+      "correctPmid": "23565271"
+    },
+    {
+      "pmid": "21088437",
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "supplement": "Alpha-Lipoic Acid",
+      "fileDoi": "10.1159/000323825",
+      "correctPmid": "21540600"
+    },
+    {
+      "pmid": "29408453",
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "supplement": "Alpha-Lipoic Acid",
+      "fileDoi": "10.1016/j.metabol.2018.01.023",
+      "correctPmid": "29409822"
+    },
+    {
+      "pmid": "11985953",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1016/s0899-9007(01)00768-5",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "27420092",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1167/iovs.06-1119",
+      "correctPmid": "20599660"
+    },
+    {
+      "pmid": "12634107",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1016/s0014-4835(02)00307-9",
+      "correctPmid": "41795402"
+    },
+    {
+      "pmid": "11275030",
+      "file": "47_ginger_enhanced.js",
+      "supplement": "Ginger",
+      "fileDoi": "10.1016/S0029-7844(00)01142-3",
+      "correctPmid": "41795410"
+    },
+    {
+      "pmid": "40771488",
+      "file": "47_ginger_enhanced.js",
+      "supplement": "Ginger",
+      "fileDoi": "10.1200/JCO.2014.58.9390",
+      "correctPmid": "39173346"
+    },
+    {
+      "pmid": "21472114",
+      "file": "47_ginger_enhanced.js",
+      "supplement": "Ginger",
+      "fileDoi": "10.3748/wjg.v17.i1.105",
+      "correctPmid": "21218090"
+    },
+    {
+      "pmid": "16008121",
+      "file": "47_ginger_enhanced.js",
+      "supplement": "Ginger",
+      "fileDoi": "10.1016/j.phymed.2004.09.002",
+      "correctPmid": "16360941"
+    },
+    {
+      "pmid": "10796682",
+      "file": "48_garlic_enhanced.js",
+      "supplement": "Garlic",
+      "fileDoi": "10.1002/14651858.CD000383",
+      "correctPmid": "22895963"
+    },
+    {
+      "pmid": "31456413",
+      "file": "50_caffeine_enhanced.js",
+      "supplement": "Caffeine",
+      "fileDoi": "10.1016/0003-9861(88)90189-4",
+      "correctPmid": "41619931"
+    },
+    {
+      "pmid": "11968130",
+      "file": "50_caffeine_enhanced.js",
+      "supplement": "Caffeine",
+      "fileDoi": "10.1002/hup.386",
+      "correctPmid": "12404667"
+    },
+    {
+      "pmid": "23179966",
+      "file": "50_caffeine_enhanced.js",
+      "supplement": "Caffeine",
+      "fileDoi": "10.1007/s00213-012-2889-4",
+      "correctPmid": "23108937"
+    },
+    {
+      "pmid": "12804695",
+      "file": "50_caffeine_enhanced.js",
+      "supplement": "Caffeine",
+      "fileDoi": "10.1016/S0278-6915(03)00104-7",
+      "correctPmid": "41795418"
+    },
+    {
+      "pmid": "25396402",
+      "file": "53_spirulina_enhanced.js",
+      "supplement": "Spirulina",
+      "fileDoi": "10.1900/RDS.2014.11.181",
+      "correctPmid": "25396406"
+    },
+    {
+      "pmid": "11893517",
+      "file": "53_spirulina_enhanced.js",
+      "supplement": "Spirulina",
+      "fileDoi": "10.1016/s0278-6915(01)00101-8",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "24556750",
+      "file": "55_huperzine_a_enhanced.js",
+      "supplement": "Huperzine A",
+      "fileDoi": "10.1159/000357040",
+      "correctPmid": "357040"
+    },
+    {
+      "pmid": "38147382",
+      "file": "56_vinpocetine_enhanced.js",
+      "supplement": "Vinpocetine",
+      "fileDoi": "10.1016/s0014-2999(00)00034-x",
+      "correctPmid": "41795410"
+    },
+    {
+      "pmid": "1743243",
+      "file": "56_vinpocetine_enhanced.js",
+      "supplement": "Vinpocetine",
+      "fileDoi": "10.1007/BF00315411",
+      "correctPmid": "2076719"
+    },
+    {
+      "pmid": "10999822",
+      "file": "62_vanadium_enhanced.js",
+      "supplement": "Vanadium",
+      "fileDoi": "10.1210/jcem.85.12.7014",
+      "correctPmid": "11238540"
+    },
+    {
+      "pmid": "32048383",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1002/ptr.6615",
+      "correctPmid": "31989711"
+    },
+    {
+      "pmid": "33200772",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1093/advances/nmaa134",
+      "correctPmid": "33150931"
+    },
+    {
+      "pmid": "20979624",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1186/1550-2783-7-34",
+      "correctPmid": "20979623"
+    },
+    {
+      "pmid": "11604262",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1016/S0271-5317(01)00358-8",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "36211502",
+      "file": "67_holy_basil_enhanced.js",
+      "supplement": "67_holy_basil_enhanced",
+      "fileDoi": "10.3389/fnut.2022.965130",
+      "correctPmid": "36185698"
+    },
+    {
+      "pmid": "23195472",
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplement": "Stinging Nettle",
+      "fileDoi": "10.1016/S0944-7113(97)80076-5",
+      "correctPmid": "41795405"
+    },
+    {
+      "pmid": "10617073",
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplement": "Stinging Nettle",
+      "fileDoi": "10.1016/s0378-8741(99)00087-3",
+      "correctPmid": "41795432"
+    },
+    {
+      "pmid": "15234764",
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplement": "Stinging Nettle",
+      "fileDoi": "10.1016/j.jep.2004.03.049",
+      "correctPmid": "15234770"
+    },
+    {
+      "pmid": "11022082",
+      "file": "75_enhanced.js",
+      "supplement": "75_enhanced",
+      "fileDoi": "10.1161/01.str.31.10.2473",
+      "correctPmid": "11588329"
+    },
+    {
+      "pmid": "24961530",
+      "file": "75_enhanced.js",
+      "supplement": "75_enhanced",
+      "fileDoi": "10.3390/brainsci3031395",
+      "correctPmid": "24961534"
+    },
+    {
+      "pmid": "16208142",
+      "file": "76_sulbutiamine_enhanced.js",
+      "supplement": "76_sulbutiamine_enhanced",
+      "fileDoi": "10.1016/S0755-4982(05)84117-4",
+      "correctPmid": "41795435"
+    },
+    {
+      "pmid": "32408706",
+      "file": "76_sulbutiamine_enhanced.js",
+      "supplement": "76_sulbutiamine_enhanced",
+      "fileDoi": "10.3390/nu12051401",
+      "correctPmid": "32414132"
+    },
+    {
+      "pmid": "29258858",
+      "file": "78_centella_asiatica_enhanced.js",
+      "supplement": "78_centella_asiatica_enhanced",
+      "fileDoi": "10.1016/j.jep.2017.12.020",
+      "correctPmid": "29253615"
+    },
+    {
+      "pmid": "11796155",
+      "file": "80_aniracetam_enhanced.js",
+      "supplement": "80_aniracetam_enhanced",
+      "fileDoi": "10.1016/S0091-3057(01)00676-4",
+      "correctPmid": "41795469"
+    },
+    {
+      "pmid": "15374421",
+      "file": "80_aniracetam_enhanced.js",
+      "supplement": "80_aniracetam_enhanced",
+      "fileDoi": "10.1016/0167-4943(91)90056-P",
+      "correctPmid": "41570428"
+    },
+    {
+      "pmid": "36296956",
+      "file": "88_zeaxanthin_enhanced.js",
+      "supplement": "Zeaxanthin",
+      "fileDoi": "10.3390/nu14245413",
+      "correctPmid": "35215476"
+    },
+    {
+      "pmid": "32064876",
+      "file": "89_pterostilbene_enhanced.js",
+      "supplement": "Pterostilbene",
+      "fileDoi": "10.1021/acs.jafc.9b07519",
+      "correctPmid": "25083823"
+    },
+    {
+      "pmid": "36082508",
+      "file": "89_pterostilbene_enhanced.js",
+      "supplement": "Pterostilbene",
+      "fileDoi": "10.1002/hep.32643",
+      "correctPmid": "35788964"
+    },
+    {
+      "pmid": "37037309",
+      "file": "90_beta_alanine_enhanced.js",
+      "supplement": "90_beta_alanine_enhanced",
+      "fileDoi": "10.1016/j.advnut.2023.04.001",
+      "correctPmid": "37028708"
+    },
+    {
+      "pmid": "39005720",
+      "file": "92_hmb_enhanced.js",
+      "supplement": "92_hmb_enhanced",
+      "fileDoi": "10.3389/fmed.2024.1348212",
+      "correctPmid": "39071082"
+    },
+    {
+      "pmid": "32320006",
+      "file": "92_hmb_enhanced.js",
+      "supplement": "92_hmb_enhanced",
+      "fileDoi": "10.1093/jn/nxaa092",
+      "correctPmid": "32271921"
+    },
+    {
+      "pmid": "20659505",
+      "file": "93_betaine_enhanced.js",
+      "supplement": "93_betaine_enhanced",
+      "fileDoi": "10.1186/1550-2783-7-27",
+      "correctPmid": "20642826"
+    },
+    {
+      "pmid": "14668277",
+      "file": "93_betaine_enhanced.js",
+      "supplement": "93_betaine_enhanced",
+      "fileDoi": "10.1093/ajcn/78.6.1157",
+      "correctPmid": "41781077"
+    }
+  ],
+  "notFound": [
+    {
+      "pmid": "7768078",
+      "file": "8_melatonin_enhanced.js",
+      "supplement": "8_melatonin_enhanced",
+      "fileDoi": "10.1067/mcp.2001.116127",
+      "fileTitle": "Sleep-inducing effects of low doses of melatonin ingested in the evening"
+    },
+    {
+      "pmid": "11028937",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "supplement": "Acetyl-L-Carnitine",
+      "fileDoi": "10.1023/a:1007659928358",
+      "fileTitle": "Acetyl-L-carnitine: metabolism and applications in clinical practice"
+    },
+    {
+      "pmid": "22934754",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "supplement": "Acetyl-L-Carnitine",
+      "fileDoi": "10.2165/11635200-000000000-00000",
+      "fileTitle": "Safety and tolerability of acetyl-L-carnitine supplementation"
+    },
+    {
+      "pmid": "11169620",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.1002/1098-2396(200103)39:4<319::AID-SYN1014>3.0.CO;2-3",
+      "fileTitle": "Mechanisms of ginsenoside-induced long-term potentiation of hippocampal synapses"
+    },
+    {
+      "pmid": "23201840",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.3390/nu4111590",
+      "fileTitle": "Antioxidant effects of Panax ginseng C.A. Meyer in healthy and diabetic aged rats"
+    },
+    {
+      "pmid": "12027278",
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplement": "Panax Ginseng",
+      "fileDoi": "10.1079/phn2002168",
+      "fileTitle": "Safety and efficacy of ginseng"
+    },
+    {
+      "pmid": "17939769",
+      "file": "16_enhanced.js",
+      "supplement": "16_enhanced",
+      "fileDoi": "10.1586/14737175.7.10.1307",
+      "fileTitle": "Cholinesterase inhibitors in Alzheimer's disease: from the preclinical to the clinical evidence"
+    },
+    {
+      "pmid": "33132638",
+      "file": "17_enhanced.js",
+      "supplement": "17_enhanced",
+      "fileDoi": "10.3748/wjg.v26.i38.5864",
+      "fileTitle": ""
+    },
+    {
+      "pmid": "26146123",
+      "file": "17_enhanced.js",
+      "supplement": "17_enhanced",
+      "fileDoi": "10.2174/138161282001140113154803",
+      "fileTitle": "Berberine safety assessment: a comprehensive review"
+    },
+    {
+      "pmid": "28168552",
+      "file": "17_enhanced.js",
+      "supplement": "17_enhanced",
+      "fileDoi": "10.1007/s13318-017-0395-x",
+      "fileTitle": "Pharmacokinetic and pharmacodynamic interactions of berberine with conventional drugs"
+    },
+    {
+      "pmid": "38987464",
+      "file": "26_pqq_enhanced.js",
+      "supplement": "26_pqq_enhanced",
+      "fileDoi": "10.1007/s11357-024-01279-5",
+      "fileTitle": ""
+    },
+    {
+      "pmid": "11375373",
+      "file": "28_glucosamine_enhanced.js",
+      "supplement": "Glucosamine",
+      "fileDoi": "10.2337/diacare.24.8.1366",
+      "fileTitle": "Effects of glucosamine on glucose metabolism"
+    },
+    {
+      "pmid": "10064301",
+      "file": "30_vitamin_e_enhanced.js",
+      "supplement": "Vitamin E",
+      "fileDoi": "10.1096/fasebj.13.10.1145",
+      "fileTitle": "Vitamin E: function and metabolism"
+    },
+    {
+      "pmid": "20975057",
+      "file": "30_vitamin_e_enhanced.js",
+      "supplement": "Vitamin E",
+      "fileDoi": "10.1212/WNL.0b013e3181f25759",
+      "fileTitle": "High-dose vitamin E supplementation and hemorrhagic stroke"
+    },
+    {
+      "pmid": "15863478",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplement": "Chondroitin Sulfate",
+      "fileDoi": "10.1016/j.joca.2005.02.017",
+      "fileTitle": "Chondroitin sulfate reduces MMP-13 expression in a model of osteoarthritis"
+    },
+    {
+      "pmid": "25849625",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "supplement": "Tribulus Terrestris",
+      "fileDoi": "10.1080/13685538.2016.1249076",
+      "fileTitle": "Pilot Study on the Effect of Botanical Medicine (Tribulus terrestris) on Serum Testosterone Level and Erectile Function "
+    },
+    {
+      "pmid": "18345236",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "supplement": "Tribulus Terrestris",
+      "fileDoi": "10.1177/1934578X0800300111",
+      "fileTitle": "Steroidal saponins from Tribulus terrestris and their biological activities"
+    },
+    {
+      "pmid": "11468135",
+      "file": "36_vitamin_c_enhanced.js",
+      "supplement": "Vitamin C",
+      "fileDoi": "10.1503/cmaj.164.13.1847",
+      "fileTitle": "Drug interactions with vitamin C"
+    },
+    {
+      "pmid": "26307969",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.3390/ijms160919997",
+      "fileTitle": "Zinc in the Brain: Friend or Foe?"
+    },
+    {
+      "pmid": "35806253",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.3390/ijms23137251",
+      "fileTitle": "Zinc and the aging brain"
+    },
+    {
+      "pmid": "24366781",
+      "file": "37_zinc_enhanced.js",
+      "supplement": "37_zinc_enhanced",
+      "fileDoi": "10.1007/s12263-013-0379-x",
+      "fileTitle": "The role of zinc in neurotransmitter pathways"
+    },
+    {
+      "pmid": "21301340",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.1097/MOP.0b013e3283444b89",
+      "fileTitle": "Iron and neurodevelopment: the brain at risk"
+    },
+    {
+      "pmid": "34996762",
+      "file": "38_iron_enhanced.js",
+      "supplement": "38_iron_enhanced",
+      "fileDoi": "10.1007/s11739-019-02143-z",
+      "fileTitle": "Iron deficiency anaemia: pathophysiology, assessment, practical management"
+    },
+    {
+      "pmid": "12531147",
+      "file": "40_gaba_enhanced.js",
+      "supplement": "GABA",
+      "fileDoi": "10.1053/smrv.2001.0230",
+      "fileTitle": "GABA and sleep: molecular, functional and clinical aspects"
+    },
+    {
+      "pmid": "16895873",
+      "file": "40_gaba_enhanced.js",
+      "supplement": "GABA",
+      "fileDoi": "10.1093/ajcn/84.2.289",
+      "fileTitle": "Effects of GABA on cognitive performance and stress"
+    },
+    {
+      "pmid": "15697057",
+      "file": "41_inositol_enhanced.js",
+      "supplement": "41_inositol_enhanced",
+      "fileDoi": "10.1017/S0033291704002734",
+      "fileTitle": "Inositol for depression: a systematic review and meta-analysis of randomized controlled trials"
+    },
+    {
+      "pmid": "28255299",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.1155/2015/365179",
+      "fileTitle": "Selenium and thyroid disease: from pathophysiology to treatment"
+    },
+    {
+      "pmid": "20698816",
+      "file": "42_selenium_enhanced.js",
+      "supplement": "Selenium",
+      "fileDoi": "10.3109/15563650.2010.514315",
+      "fileTitle": "Selenium poisoning: clinical features and treatment"
+    },
+    {
+      "pmid": "30248911",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplement": "43_choline_bitartrate_enhanced",
+      "fileDoi": "10.3390/nu10101313",
+      "fileTitle": "Choline supplementation during pregnancy: effects on mother and child"
+    },
+    {
+      "pmid": "16644601",
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "supplement": "Alpha-Lipoic Acid",
+      "fileDoi": "10.2337/diacare.29.12.2365",
+      "fileTitle": "Safety and tolerability of alpha-lipoic acid supplementation"
+    },
+    {
+      "pmid": "23572691",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1007/s13197-010-0122-7",
+      "fileTitle": "The role of lutein in human health"
+    },
+    {
+      "pmid": "22465791",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1007/s13197-010-0122-7",
+      "fileTitle": "Lutein: more than just a filter for blue light"
+    },
+    {
+      "pmid": "29933554",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.3390/nu10070750",
+      "fileTitle": "A systematic review on the role of lutein for eye health in the elderly population"
+    },
+    {
+      "pmid": "10565517",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1001/archopht.117.11.1469",
+      "fileTitle": "Dietary carotenoids, vitamins A, C, and E, and risk of cataract in women: a prospective study"
+    },
+    {
+      "pmid": "16759390",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1007/s00417-005-0251-1",
+      "fileTitle": "Lutein supplementation improves visual function in patients with retinitis pigmentosa"
+    },
+    {
+      "pmid": "21856009",
+      "file": "45_enhanced.js",
+      "supplement": "45_enhanced",
+      "fileDoi": "10.1016/j.ophtha.2011.06.023",
+      "fileTitle": "Safety assessment of lutein and zeaxanthin (LuteMax 2020): subchronic toxicity and genotoxicity studies"
+    },
+    {
+      "pmid": "7480271",
+      "file": "48_garlic_enhanced.js",
+      "supplement": "Garlic",
+      "fileDoi": "10.1097/00006534-199503000-00026",
+      "fileTitle": "Garlic and anticoagulant therapy"
+    },
+    {
+      "pmid": "22017823",
+      "file": "51_reishi_mushroom_enhanced.js",
+      "supplement": "Reishi Mushroom",
+      "fileDoi": "10.1017/S0007114511006099",
+      "fileTitle": "Cholesterol-lowering effect of Ganoderma lucidum in hypercholesterolemic subjects"
+    },
+    {
+      "pmid": "16813508",
+      "file": "51_reishi_mushroom_enhanced.js",
+      "supplement": "Reishi Mushroom",
+      "fileDoi": "10.1089/acm.2006.12.435",
+      "fileTitle": "Ganoderma lucidum for hepatitis B: systematic review and meta-analysis"
+    },
+    {
+      "pmid": "25739077",
+      "file": "51_reishi_mushroom_enhanced.js",
+      "supplement": "Reishi Mushroom",
+      "fileDoi": "10.3390/ijms16035036",
+      "fileTitle": "Potential interactions of Ganoderma lucidum with medications"
+    },
+    {
+      "pmid": "41007800",
+      "file": "53_spirulina_enhanced.js",
+      "supplement": "Spirulina",
+      "fileDoi": "10.1186/s12934-016-0574-9",
+      "fileTitle": "Antioxidant and anti-inflammatory effects of spirulina in animal models: a systematic review"
+    },
+    {
+      "pmid": "18537543",
+      "file": "55_huperzine_a_enhanced.js",
+      "supplement": "Huperzine A",
+      "fileDoi": "10.2174/156720508784533318",
+      "fileTitle": "Safety evaluation of huperzine A supplementation"
+    },
+    {
+      "pmid": "12535455",
+      "file": "56_vinpocetine_enhanced.js",
+      "supplement": "Vinpocetine",
+      "fileDoi": "10.1002/14651858.CD003119.pub2",
+      "fileTitle": "Vinpocetine for cognitive impairment and dementia"
+    },
+    {
+      "pmid": "30450251",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1016/j.jshs.2018.07.003",
+      "fileTitle": "Beneficial effects of fenugreek glycoside supplementation in male subjects during resistance training: A randomized cont"
+    },
+    {
+      "pmid": "27182418",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.70252/VYOU5267",
+      "fileTitle": "Fenugreek extract supplementation has no effect on the hormonal profile of resistance-trained males"
+    },
+    {
+      "pmid": "11693199",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1007/s00394-006-0634-9",
+      "fileTitle": "Trigonella foenum-graecum (Fenugreek) Seed Powder Improves Glucose Homeostasis in Alloxan Diabetic Rat Tissues by Revers"
+    },
+    {
+      "pmid": "9271419",
+      "file": "65_fenugreek_enhanced.js",
+      "supplement": "Fenugreek",
+      "fileDoi": "10.1002/(SICI)1099-1573(199706)11:4<312::AID-PTR90>3.0.CO;2-7",
+      "fileTitle": "Efficacy of Trigonella foenum-graecum (fenugreek) extract in lowering serum cholesterol in diabetic patients"
+    },
+    {
+      "pmid": "17268847",
+      "file": "67_holy_basil_enhanced.js",
+      "supplement": "67_holy_basil_enhanced",
+      "fileDoi": "10.1007/s11064-006-9265-y",
+      "fileTitle": "Neuroprotective effects of Ocimum sanctum against oxidative stress"
+    },
+    {
+      "pmid": "21989597",
+      "file": "69_mucuna_pruriens_enhanced.js",
+      "supplement": "Mucuna Pruriens",
+      "fileDoi": "10.1007/s00394-011-0253-y",
+      "fileTitle": "The effect of Mucuna pruriens on metabolic syndrome and its associated complications"
+    },
+    {
+      "pmid": "16611115",
+      "file": "69_mucuna_pruriens_enhanced.js",
+      "supplement": "Mucuna Pruriens",
+      "fileDoi": "10.2174/138161206776360943",
+      "fileTitle": "Antioxidant potential of Mucuna pruriens (L.) DC. var. utilis (Wall. ex Wight) Bak. ex Burck and its effect on male fert"
+    },
+    {
+      "pmid": "19952963",
+      "file": "69_mucuna_pruriens_enhanced.js",
+      "supplement": "Mucuna Pruriens",
+      "fileDoi": "10.1097/WNR.0b013e3283328c3a",
+      "fileTitle": "Mucuna pruriens seed extract pretreatment protects against paraquat-induced dopaminergic neurodegeneration in the rat su"
+    },
+    {
+      "pmid": "17219220",
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplement": "Stinging Nettle",
+      "fileDoi": "10.1007/s00345-006-0149-x",
+      "fileTitle": "The efficacy and safety of Urtica dioica in treating benign prostatic hyperplasia: A systematic review and meta-analysis"
+    },
+    {
+      "pmid": "15889403",
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplement": "Stinging Nettle",
+      "fileDoi": "10.17816/uroved20052014-19",
+      "fileTitle": "Clinical efficacy of nettle extract in the treatment of benign prostatic hyperplasia in comparison with finasteride"
+    },
+    {
+      "pmid": "9264045",
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplement": "Stinging Nettle",
+      "fileDoi": "10.1006/phrs.1997.0103",
+      "fileTitle": "Effects of Urtica dioica and Pygeum africanum extracts on prostatic hyperplasia in rats"
+    },
+    {
+      "pmid": "18046877",
+      "file": "75_enhanced.js",
+      "supplement": "75_enhanced",
+      "fileDoi": "10.2147/ciaa.2006.1.3.247",
+      "fileTitle": "Citicoline (Cognizin) in the treatment of cognitive impairment"
+    },
+    {
+      "pmid": "10513588",
+      "file": "76_sulbutiamine_enhanced.js",
+      "supplement": "76_sulbutiamine_enhanced",
+      "fileDoi": "10.1016/S0166-4328(99)00042-1",
+      "fileTitle": "Sulbutiamine modulates dopaminergic transmission in the prefrontal cortex"
+    },
+    {
+      "pmid": "36059957",
+      "file": "77_dmae_enhanced.js",
+      "supplement": "77_dmae_enhanced",
+      "fileDoi": "10.3389/fphar.2022.884087",
+      "fileTitle": "Deanol as a putative acetylcholine precursor in cognitive enhancement"
+    },
+    {
+      "pmid": "12678719",
+      "file": "81_piracetam_enhanced.js",
+      "supplement": "81_piracetam_enhanced",
+      "fileDoi": "10.1177/1533210102009004497",
+      "fileTitle": "Piracetam in the treatment of cognitive impairment in the elderly"
+    },
+    {
+      "pmid": "15834536",
+      "file": "81_piracetam_enhanced.js",
+      "supplement": "81_piracetam_enhanced",
+      "fileDoi": "10.1007/s00213-005-2232-z",
+      "fileTitle": "Dose-response relationship of piracetam in cognitive enhancement"
+    },
+    {
+      "pmid": "23676322",
+      "file": "87_krill_oil_enhanced.js",
+      "supplement": "Krill Oil",
+      "fileDoi": "10.1016/j.plefa.2013.04.010",
+      "fileTitle": "Bioavailability of marine n-3 fatty acid formulations"
+    },
+    {
+      "pmid": "40411697",
+      "file": "89_pterostilbene_enhanced.js",
+      "supplement": "Pterostilbene",
+      "fileDoi": "10.1016/j.phrs.2025.107162",
+      "fileTitle": "Comprehensive review: pterostilbene pharmacology and safety"
+    },
+    {
+      "pmid": "17609254",
+      "file": "92_hmb_enhanced.js",
+      "supplement": "92_hmb_enhanced",
+      "fileDoi": "10.1158/0008-5472.CAN-04-3705",
+      "fileTitle": "Mechanism of the attenuation of proteolysis by beta-hydroxy-beta-methylbutyrate in skeletal muscle"
+    }
+  ]
+}

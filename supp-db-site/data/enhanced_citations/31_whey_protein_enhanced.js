@@ -49,7 +49,7 @@ window.enhancedCitations[31] = {
                         authors: ["Dreyer, H.C.", "Drummond, M.J.", "Pennings, B.", "Fujita, S.", "Glynn, E.L.", "Chinkes, D.L.", "Dhanani, S.", "Volpi, E.", "Rasmussen, B.B."],
                         year: 2008,
                         journal: "American Journal of Physiology",
-                        pmid: "18187517",
+                        pmid: "18056791",
                         doi: "10.1152/ajpendo.00582.2007",
                         evidenceLevel: "Level 1",
                         keyFindings: "Whey protein's high leucine content triggers mTOR signaling cascade, leading to enhanced muscle protein synthesis and anabolic response."
@@ -67,7 +67,7 @@ window.enhancedCitations[31] = {
                         authors: ["Dangin, M.", "Boirie, Y.", "Garcia-Rodenas, C.", "Gachon, P.", "Fauquant, J.", "Callier, P.", "Ballèvre, O.", "Beaufrère, B."],
                         year: 2001,
                         journal: "American Journal of Physiology",
-                        pmid: "11238485",
+                        pmid: "11158939",
                         doi: "10.1152/ajpendo.2001.280.2.E340",
                         evidenceLevel: "Level 1",
                         keyFindings: "Whey protein demonstrates rapid digestion and absorption kinetics, leading to quick amino acid availability and protein synthesis stimulation."
@@ -85,7 +85,7 @@ window.enhancedCitations[31] = {
                         authors: ["Krissansen, G.W."],
                         year: 2007,
                         journal: "Pharmacology & Therapeutics",
-                        pmid: "17292493",
+                        pmid: "17316816",
                         doi: "10.1016/j.pharmthera.2007.01.003",
                         evidenceLevel: "Level 2",
                         keyFindings: "Whey protein contains bioactive peptides including lactoferrin and immunoglobulins that enhance immune function and antimicrobial activity."
@@ -117,7 +117,7 @@ window.enhancedCitations[31] = {
                         year: 2007,
                         journal: "Journal of the International Society of Sports Nutrition",
                         pmid: "17908288",
-                        doi: "10.1186/1550-2783-4-8",
+                        doi: "10.1186/1550-2783-4-6",
                         evidenceLevel: "Level 1",
                         keyFindings: "Whey protein is highly effective for promoting muscle protein synthesis and supporting training adaptations in athletes."
                     }
@@ -134,7 +134,7 @@ window.enhancedCitations[31] = {
                         authors: ["Cribb, P.J.", "Williams, A.D.", "Carey, M.F.", "Hayes, A."],
                         year: 2006,
                         journal: "Journal of the American College of Nutrition",
-                        pmid: "17215883",
+                        pmid: "16772636",
                         doi: "10.1080/07315724.2006.10719574",
                         evidenceLevel: "Level 1",
                         keyFindings: "Whey protein supplementation promotes greater lean body mass gains and fat loss compared to placebo during resistance training."
@@ -170,7 +170,7 @@ window.enhancedCitations[31] = {
                         authors: ["Luhovyy, B.L.", "Akhavan, T.", "Anderson, G.H."],
                         year: 2007,
                         journal: "Journal of the American College of Nutrition",
-                        pmid: "17906407",
+                        pmid: "17914132",
                         doi: "10.1080/07315724.2007.10719634",
                         evidenceLevel: "Level 2",
                         keyFindings: "Whey protein consumption increases satiety hormones and reduces subsequent food intake, supporting weight management goals."
@@ -226,7 +226,7 @@ window.enhancedCitations[31] = {
                         authors: ["Wal, J.M."],
                         year: 2004,
                         journal: "Allergy",
-                        pmid: "15180757",
+                        pmid: "15147439",
                         doi: "10.1111/j.1398-9995.2004.00499.x",
                         evidenceLevel: "Level 3",
                         keyFindings: "Individuals with milk protein allergies should avoid whey protein supplements due to risk of allergic reactions, including anaphylaxis in severe cases."

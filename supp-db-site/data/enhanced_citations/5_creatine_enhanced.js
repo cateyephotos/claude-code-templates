@@ -47,7 +47,7 @@ const creatineEnhanced = {
             "issue": "2",
             "pages": "209-237",
             "doi": "10.1124/pr.55.2.1",
-            "pmid": "12773629",
+            "pmid": "12773628",
             "studyType": "Comprehensive pharmacological review",
             "evidenceLevel": "Level 3",
             "findings": "Creatine is phosphorylated to phosphocreatine (PCr) by creatine kinase, serving as a temporal and spatial energy buffer. PCr rapidly regenerates ATP during high-intensity exercise, with intramuscular PCr stores increasing 10-40% following supplementation.",

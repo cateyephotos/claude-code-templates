@@ -124,7 +124,7 @@ window.enhancedCitations[13] = {
                         authors: ["Hudson, S.", "Tabet, N."],
                         year: 2003,
                         journal: "Cochrane Database of Systematic Reviews",
-                        pmid: "14583932",
+                        pmid: "12804452",
                         doi: "10.1002/14651858.CD003158",
                         findings: "ALCAR showed benefits for cognitive function in some studies of dementia and mild cognitive impairment"
                     }
@@ -142,7 +142,7 @@ window.enhancedCitations[13] = {
                         authors: ["Malaguarnera, M.", "Cammalleri, L.", "Gargante, M.P.", "Vacante, M.", "Colonna, V.", "Motta, M."],
                         year: 2007,
                         journal: "Aging Clinical and Experimental Research",
-                        pmid: "18071057",
+                        pmid: "17607085",
                         doi: "10.1007/BF03324688",
                         findings: "ALCAR supplementation reduced physical and mental fatigue in elderly subjects"
                     }
@@ -160,7 +160,7 @@ window.enhancedCitations[13] = {
                         authors: ["Ribas, G.S.", "Vargas, C.R.", "Wajner, M."],
                         year: 2020,
                         journal: "Journal of the International Society of Sports Nutrition",
-                        pmid: "32938503",
+                        pmid: "32958033",
                         doi: "10.1186/s12970-020-00377-2",
                         findings: "L-carnitine supplementation enhanced fat oxidation and reduced muscle glycogen utilization during exercise"
                     }
@@ -178,7 +178,7 @@ window.enhancedCitations[13] = {
                         authors: ["Zanardi, R.", "Smeraldi, E."],
                         year: 2006,
                         journal: "American Journal of Geriatric Psychiatry",
-                        pmid: "16473978",
+                        pmid: "16473973",
                         doi: "10.1097/01.JGP.0000196627.12010.d1",
                         findings: "ALCAR augmentation improved antidepressant response in elderly patients with depression"
                     }
@@ -217,7 +217,7 @@ window.enhancedCitations[13] = {
                         year: 2024,
                         journal: "The Journal of Sexual Medicine",
                         pmid: "39279185",
-                        doi: "10.1093/jsxmed/qdae137",
+                        doi: "10.1093/jsxmed/qdae123",
                         findings: "NMA of 15 RCTs (n≈1000): PLC+ALC+Sildenafil ranked highest with SUCRA 97% for IIEF-EF score improvement. ALC is part of the most effective nutraceutical combination for ED treatment."
                     }
                 ]
@@ -237,7 +237,7 @@ window.enhancedCitations[13] = {
                         year: 2025,
                         journal: "European Journal of Clinical Pharmacology",
                         pmid: "40813743",
-                        doi: "10.1007/s00228-025-03853-x",
+                        doi: "10.1007/s43032-025-01958-9",
                         findings: "NMA of 16 RCTs: L-carnitine ranked best for progressive motility (SMD 4.19, 95% CI 0.51-7.87). ALC+L-carnitine combination significantly improved overall sperm quality parameters."
                     }
                 ]

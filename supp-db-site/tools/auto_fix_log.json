@@ -1,0 +1,918 @@
+{
+  "date": "2026-03-08T21:07:01.623Z",
+  "mode": "dry-run",
+  "totalFixes": 123,
+  "fileChanges": {
+    "8_melatonin_enhanced.js": 12,
+    "13_acetyl_l_carnitine_enhanced.js": 3,
+    "14_enhanced.js": 1,
+    "16_enhanced.js": 1,
+    "28_glucosamine_enhanced.js": 3,
+    "30_vitamin_e_enhanced.js": 4,
+    "31_whey_protein_enhanced.js": 2,
+    "35_tribulus_terrestris_enhanced.js": 1,
+    "65_fenugreek_enhanced.js": 3,
+    "75_enhanced.js": 2,
+    "81_piracetam_enhanced.js": 2,
+    "84_moringa_enhanced.js": 3,
+    "85_pine_bark_extract_enhanced.js": 5,
+    "86_grape_seed_extract_enhanced.js": 4,
+    "87_krill_oil_enhanced.js": 3,
+    "88_zeaxanthin_enhanced.js": 1,
+    "89_pterostilbene_enhanced.js": 1,
+    "92_hmb_enhanced.js": 1,
+    "93_betaine_enhanced.js": 1,
+    "15_panax_ginseng_enhanced.js": 2,
+    "22_vitamin_b6_enhanced.js": 1,
+    "32_chondroitin_sulfate_enhanced.js": 2,
+    "34_enhanced.js": 5,
+    "36_vitamin_c_enhanced.js": 1,
+    "37_zinc_enhanced.js": 2,
+    "38_iron_enhanced.js": 4,
+    "39_taurine_enhanced.js": 1,
+    "41_inositol_enhanced.js": 8,
+    "43_choline_bitartrate_enhanced.js": 2,
+    "45_enhanced.js": 2,
+    "48_garlic_enhanced.js": 1,
+    "49_echinacea_enhanced.js": 3,
+    "50_caffeine_enhanced.js": 4,
+    "51_reishi_mushroom_enhanced.js": 2,
+    "52_cordyceps_enhanced.js": 3,
+    "53_spirulina_enhanced.js": 2,
+    "54_chlorella_enhanced.js": 2,
+    "55_huperzine_a_enhanced.js": 2,
+    "56_vinpocetine_enhanced.js": 1,
+    "57_pea_enhanced.js": 2,
+    "62_vanadium_enhanced.js": 2,
+    "64_gymnema_sylvestre_enhanced.js": 3,
+    "66_cinnamon_extract_enhanced.js": 5,
+    "73_stinging_nettle_enhanced.js": 3,
+    "74_elderberry_enhanced.js": 1,
+    "77_dmae_enhanced.js": 2,
+    "80_aniracetam_enhanced.js": 1,
+    "91_citrulline_malate_enhanced.js": 1
+  },
+  "fixes": [
+    {
+      "type": "doi_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "38888087",
+      "old": "10.1016/j.smrv.2024.101922",
+      "new": "10.1111/jpi.12985"
+    },
+    {
+      "type": "doi_fix",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "pmid": "39279185",
+      "old": "10.1093/jsxmed/qdae137",
+      "new": "10.1093/jsxmed/qdae123"
+    },
+    {
+      "type": "doi_fix",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "pmid": "40813743",
+      "old": "10.1007/s00228-025-03853-x",
+      "new": "10.1007/s43032-025-01958-9"
+    },
+    {
+      "type": "doi_fix",
+      "file": "14_enhanced.js",
+      "pmid": "21107543",
+      "old": "10.1007/s00234-010-0790-6",
+      "new": "10.1007/s00221-010-2488-8"
+    },
+    {
+      "type": "doi_fix",
+      "file": "16_enhanced.js",
+      "pmid": "39683633",
+      "old": "10.1080/19390211.2023.2293844",
+      "new": "10.3390/nu16234240"
+    },
+    {
+      "type": "doi_fix",
+      "file": "28_glucosamine_enhanced.js",
+      "pmid": "11300747",
+      "old": "10.1053/joca.2000.0398",
+      "new": "10.1053/joca.2000.0381"
+    },
+    {
+      "type": "doi_fix",
+      "file": "30_vitamin_e_enhanced.js",
+      "pmid": "10639539",
+      "old": "10.1056/NEJM200001203420302",
+      "new": "10.1056/NEJM200001203420301"
+    },
+    {
+      "type": "doi_fix",
+      "file": "31_whey_protein_enhanced.js",
+      "pmid": "17908288",
+      "old": "10.1186/1550-2783-4-8",
+      "new": "10.1186/1550-2783-4-6"
+    },
+    {
+      "type": "doi_fix",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "pmid": "40219032",
+      "old": "10.3390/nu16071060",
+      "new": "10.3390/nu17071275"
+    },
+    {
+      "type": "doi_fix",
+      "file": "65_fenugreek_enhanced.js",
+      "pmid": "26791805",
+      "old": "10.1002/ptr.5775",
+      "new": "10.3109/13685538.2015.1135323"
+    },
+    {
+      "type": "doi_fix",
+      "file": "65_fenugreek_enhanced.js",
+      "pmid": "37253363",
+      "old": "10.1016/j.clnesp.2023.04.001",
+      "new": "10.1055/a-2048-5925"
+    },
+    {
+      "type": "doi_fix",
+      "file": "65_fenugreek_enhanced.js",
+      "pmid": "36983608",
+      "old": "10.3390/nu15071550",
+      "new": "10.3390/jpm13030427"
+    },
+    {
+      "type": "doi_fix",
+      "file": "75_enhanced.js",
+      "pmid": "36678257",
+      "old": "10.1016/j.arr.2022.101816",
+      "new": "10.3390/nu15020386"
+    },
+    {
+      "type": "doi_fix",
+      "file": "81_piracetam_enhanced.js",
+      "pmid": "10338106",
+      "old": "10.1006/phrs.1998.0447",
+      "new": "10.1055/s-2007-979234"
+    },
+    {
+      "type": "doi_fix",
+      "file": "84_moringa_enhanced.js",
+      "pmid": "41305552",
+      "old": "10.3390/nu17010001",
+      "new": "10.3390/nu17223501"
+    },
+    {
+      "type": "doi_fix",
+      "file": "84_moringa_enhanced.js",
+      "pmid": "34207664",
+      "old": "10.3390/molecules26133900",
+      "new": "10.3390/molecules26123513"
+    },
+    {
+      "type": "doi_fix",
+      "file": "84_moringa_enhanced.js",
+      "pmid": "40989801",
+      "old": "10.1186/s12906-025-04880-4",
+      "new": "10.3389/fnut.2025.1667158"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "31637782",
+      "old": "10.1016/j.ctim.2019.102189",
+      "new": "10.1002/ptr.6515"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "29713620",
+      "old": "10.1016/j.clnu.2017.07.010",
+      "new": "10.7762/cnr.2018.7.2.117"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "37908749",
+      "old": "10.1038/s41443-023-00788-y",
+      "new": "10.3389/fendo.2023.1211720"
+    },
+    {
+      "type": "doi_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "31763928",
+      "old": "10.1016/j.numecd.2019.04.002",
+      "new": "10.1177/0003319719889428"
+    },
+    {
+      "type": "doi_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "31880030",
+      "old": "10.1016/j.jff.2019.103642",
+      "new": "10.1002/ptr.6518"
+    },
+    {
+      "type": "doi_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "27537554",
+      "old": "10.1016/j.clnu.2016.07.009",
+      "new": "10.1097/MD.0000000000004247"
+    },
+    {
+      "type": "doi_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "34798267",
+      "old": "10.1002/ptr.7338",
+      "new": "10.1016/j.phrs.2021.105905"
+    },
+    {
+      "type": "doi_fix",
+      "file": "87_krill_oil_enhanced.js",
+      "pmid": "17353582",
+      "old": "10.1080/07315724.2007.10719571",
+      "new": "10.1080/07315724.2007.10719584"
+    },
+    {
+      "type": "doi_fix",
+      "file": "88_zeaxanthin_enhanced.js",
+      "pmid": "35223939",
+      "old": "10.1159/000522205",
+      "new": "10.3389/fnut.2022.745390"
+    },
+    {
+      "type": "doi_fix",
+      "file": "89_pterostilbene_enhanced.js",
+      "pmid": "35998039",
+      "old": "10.1172/jci.insight.158124",
+      "new": "10.1172/jci.insight.158314"
+    },
+    {
+      "type": "doi_fix",
+      "file": "92_hmb_enhanced.js",
+      "pmid": "31531146",
+      "old": "10.1519/JSC.0000000000003200",
+      "new": "10.2478/hukin-2019-0070"
+    },
+    {
+      "type": "doi_fix",
+      "file": "93_betaine_enhanced.js",
+      "pmid": "39514262",
+      "old": "10.1080/15502783.2024.2409688",
+      "new": "10.1080/02640414.2024.2423578"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "36442478",
+      "old": "Efficacy of melatonin for chronic insomnia: Systematic reviews and meta-analyses",
+      "new": "High-Throughput Functional Evaluation of MAP2K1 Variants in Cancer"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "32808274",
+      "old": "Pharmacological interventions for sleepiness and sleep disturbances caused by sh",
+      "new": "Pitfalls in diagnosing Wilson's Disease by genetic testing alone: the case of a "
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "12137675",
+      "old": "Melatonin for the prevention and treatment of jet lag",
+      "new": "Hormone replacement therapy for cognitive function in postmenopausal women"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "26462739",
+      "old": "Melatonin: an ancient molecule that makes oxygen metabolically tolerable",
+      "new": "Melatonin sensitizes human cervical cancer HeLa cells to cisplatin-induced cytot"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "31758569",
+      "old": "Adverse events associated with melatonin for the treatment of sleep disorders",
+      "new": "(1) H, (13) C and (15) N NMR of spiro acridines integrated with pyrrole scaffold"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "31922909",
+      "old": "Melatonin improves sleep in asthma: a randomized, double-blind, placebo-controll",
+      "new": "Regulation of Metamorphosis by Environmental Cues and Retinoic Acid Signaling in"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "38273715",
+      "old": "Thirty-seven years of MT1 and MT2 melatonin receptor localization in the brain",
+      "new": "Development and validation of a new tool for assessment of trainees' interventio"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "29031747",
+      "old": "Melatonin and circadian rhythms",
+      "new": "Sleep phenotypes in infants and toddlers with neurogenetic syndromes"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "17584137",
+      "old": "Melatonin as a potent and inducible endogenous antioxidant",
+      "new": "The biology of cholecystokinin and gastrin peptides"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "8843534",
+      "old": "Oral melatonin in neurologically disabled children",
+      "new": "Effects of low oral doses of melatonin, given 2-4 hours before habitual bedtime,"
+    },
+    {
+      "type": "title_fix",
+      "file": "8_melatonin_enhanced.js",
+      "pmid": "8856838",
+      "old": "Melatonin and sleep in middle-aged subjects",
+      "new": "Low dose melatonin improves sleep in healthy middle-aged subjects"
+    },
+    {
+      "type": "title_fix",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "pmid": "16001973",
+      "old": "Acetyl-L-carnitine for peripheral neuropathy",
+      "new": "Response rate of fibrosarcoma cells to cytotoxic drugs on the expression level c"
+    },
+    {
+      "type": "title_fix",
+      "file": "15_panax_ginseng_enhanced.js",
+      "pmid": "20448530",
+      "old": "Panax ginseng effects on nitric oxide, blood pressure, and arterial wall propert",
+      "new": "Use of combination measles, mumps, rubella, and varicella vaccine: recommendatio"
+    },
+    {
+      "type": "title_fix",
+      "file": "15_panax_ginseng_enhanced.js",
+      "pmid": "19839297",
+      "old": "Immunomodulatory effects of Panax ginseng C.A. Meyer in the mouse",
+      "new": "[Gas pipeline leak detection based on tunable diode laser absorption spectroscop"
+    },
+    {
+      "type": "title_fix",
+      "file": "22_vitamin_b6_enhanced.js",
+      "pmid": "14584010",
+      "old": "Vitamin B6 for cognition",
+      "new": "The effect of vitamin B6 on cognition"
+    },
+    {
+      "type": "title_fix",
+      "file": "28_glucosamine_enhanced.js",
+      "pmid": "7118331",
+      "old": "Safety and efficacy of glucosamine sulfate versus ibuprofen in patients with kne",
+      "new": "Doctors in spite of themselves: the limits of radical health criticism"
+    },
+    {
+      "type": "title_fix",
+      "file": "28_glucosamine_enhanced.js",
+      "pmid": "15061602",
+      "old": "Glucosamine and shellfish allergy",
+      "new": "[Lack of association between Chlamydia pneumoniae seropositivity and common caro"
+    },
+    {
+      "type": "title_fix",
+      "file": "30_vitamin_e_enhanced.js",
+      "pmid": "9177506",
+      "old": "Vitamin E supplementation and in vivo immune response in healthy elderly subject",
+      "new": "Esophageal motility abnormalities in cirrhotic patients before and after endosco"
+    },
+    {
+      "type": "title_fix",
+      "file": "30_vitamin_e_enhanced.js",
+      "pmid": "10693192",
+      "old": "Photoprotective effects of vitamin E",
+      "new": "Questioning APR cartridge use"
+    },
+    {
+      "type": "title_fix",
+      "file": "30_vitamin_e_enhanced.js",
+      "pmid": "15657354",
+      "old": "Safety of vitamin E supplementation",
+      "new": "Epigenetic regulation of O6-methylguanine-DNA methyltransferase gene expression "
+    },
+    {
+      "type": "title_fix",
+      "file": "31_whey_protein_enhanced.js",
+      "pmid": "17906407",
+      "old": "Effects of whey protein on satiety and food intake",
+      "new": "[Possible role of the FGF23-Klotho axis in bone mineralization]"
+    },
+    {
+      "type": "title_fix",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "pmid": "9458215",
+      "old": "Chondroitin sulfate in osteoarthritis of the knee: a prospective, double blind, ",
+      "new": "Pain and disability in patients with osteoarthritis of hip or knee: the relation"
+    },
+    {
+      "type": "title_fix",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "pmid": "18947494",
+      "old": "Adverse effects of chondroitin sulfate: systematic review",
+      "new": "[Lipopolysaccharide and hyperoxia induce nuclear factor-kappa B expression in hu"
+    },
+    {
+      "type": "title_fix",
+      "file": "34_enhanced.js",
+      "pmid": "202213",
+      "old": "5-Hydroxytryptophan in depression: a systematic review and meta-analysis",
+      "new": "Interferon induction by double-stranded like complexes of vinyl copolymers with "
+    },
+    {
+      "type": "title_fix",
+      "file": "34_enhanced.js",
+      "pmid": "22888252",
+      "old": "The therapeutic potential of 5-hydroxytryptophan for neuropsychiatric disorders",
+      "new": "5-HTP efficacy and contraindications"
+    },
+    {
+      "type": "title_fix",
+      "file": "34_enhanced.js",
+      "pmid": "5556734",
+      "old": "Effects of oral 5-hydroxytryptophan on sleep, mood, and appetite in healthy volu",
+      "new": "[A particular cause of Adams-Stokes syncope: auricular rhythmic disorder]"
+    },
+    {
+      "type": "title_fix",
+      "file": "34_enhanced.js",
+      "pmid": "2132307",
+      "old": "5-Hydroxytryptophan for fibromyalgia syndrome",
+      "new": "Awareness during caesarean section"
+    },
+    {
+      "type": "title_fix",
+      "file": "34_enhanced.js",
+      "pmid": "3054627",
+      "old": "Therapeutic doses of 5-hydroxytryptophan and clinical response",
+      "new": "[Immunotherapy of parenchymal tumors. Recent progress and theoretical considerat"
+    },
+    {
+      "type": "title_fix",
+      "file": "36_vitamin_c_enhanced.js",
+      "pmid": "10357726",
+      "old": "Safety considerations with vitamin C",
+      "new": "Toward a new recommended dietary allowance for vitamin C based on antioxidant an"
+    },
+    {
+      "type": "title_fix",
+      "file": "37_zinc_enhanced.js",
+      "pmid": "11113504",
+      "old": "The role of zinc in neurotransmitter pathways",
+      "new": "Movement of zinc and its functional significance in the brain"
+    },
+    {
+      "type": "title_fix",
+      "file": "37_zinc_enhanced.js",
+      "pmid": "30137818",
+      "old": "Zinc Deficiency",
+      "new": "Sarcoma"
+    },
+    {
+      "type": "title_fix",
+      "file": "38_iron_enhanced.js",
+      "pmid": "24346035",
+      "old": "Iron metabolism and the regulation of cell death",
+      "new": "The role of iron and reactive oxygen species in cell death"
+    },
+    {
+      "type": "title_fix",
+      "file": "38_iron_enhanced.js",
+      "pmid": "11411450",
+      "old": "Ferrous bisglycinate 25 mg iron is as effective as ferrous sulfate 50 mg iron in",
+      "new": "Sharp transients in the EEGs of non-epileptic adult patients receiving sevoflura"
+    },
+    {
+      "type": "title_fix",
+      "file": "38_iron_enhanced.js",
+      "pmid": "28722969",
+      "old": "Iron Deficiency Anemia",
+      "new": "American Society of Anesthesiologists Physical Status Classification System"
+    },
+    {
+      "type": "title_fix",
+      "file": "38_iron_enhanced.js",
+      "pmid": "15711213",
+      "old": "Iron absorption and bioavailability: an updated review",
+      "new": "Update on branched-chain amino acid supplementation in liver diseases"
+    },
+    {
+      "type": "title_fix",
+      "file": "39_taurine_enhanced.js",
+      "pmid": "23170060",
+      "old": "Review: taurine: a \\",
+      "new": "Review: taurine: a \\\"very essential\\\" amino acid"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "2550825",
+      "old": "Inositol and its derivatives: their roles in cellular signaling",
+      "new": "Inositol phosphates and cell signalling"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "3024320",
+      "old": "The inositol phosphate pathway and signal transduction",
+      "new": "The metabolism of phosphoinositide-derived messenger molecules"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "28165553",
+      "old": "Effects of myo-inositol in women with PCOS: a systematic review and meta-analysi",
+      "new": "LncRNA H19 promotes atherosclerosis by regulating MAPK and NF-kB signaling pathw"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "7793450",
+      "old": "Inositol treatment for panic disorder: an open-label study",
+      "new": "Double-blind, placebo-controlled, crossover trial of inositol treatment for pani"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "7889459",
+      "old": "Inositol hexakisphosphate suppresses tumor growth in nude mice",
+      "new": "Activation of murine macrophages and lymphocytes by Ureaplasma diversum"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "15027549",
+      "old": "Safety and efficacy of inositol supplements in clinical conditions: a systematic",
+      "new": "Development of a finger printing device for use on a mobile robot"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "21845803",
+      "old": "Long-term safety of inositol treatment in polycystic ovary syndrome",
+      "new": "Inositol safety: clinical evidences"
+    },
+    {
+      "type": "title_fix",
+      "file": "41_inositol_enhanced.js",
+      "pmid": "25010617",
+      "old": "Optimal dosing of myo-inositol for PCOS management: a dose-finding study",
+      "new": "Comparative efficacy of selegiline versus rasagiline in the treatment of early P"
+    },
+    {
+      "type": "title_fix",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "pmid": "22071706",
+      "old": "Choline supplementation improves memory in healthy older adults",
+      "new": "The relation of dietary choline to cognitive performance and white-matter hyperi"
+    },
+    {
+      "type": "title_fix",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "pmid": "17921386",
+      "old": "Choline intake and risk of nonalcoholic fatty liver disease in the Third Nationa",
+      "new": "The association between betaine and choline intakes and the plasma concentration"
+    },
+    {
+      "type": "title_fix",
+      "file": "45_enhanced.js",
+      "pmid": "8407219",
+      "old": "Carotenoids in the retina and whole eye",
+      "new": "Visual attention problems as a predictor of vehicle crashes in older drivers"
+    },
+    {
+      "type": "title_fix",
+      "file": "45_enhanced.js",
+      "pmid": "15287677",
+      "old": "Generally recognized as safe (GRAS) determination for lutein from Tagetes erecta",
+      "new": "Resistant starch: metabolic effects and potential health benefits"
+    },
+    {
+      "type": "title_fix",
+      "file": "48_garlic_enhanced.js",
+      "pmid": "12537594",
+      "old": "Mechanisms of cardiovascular effects of garlic",
+      "new": "Effect of garlic on cardiovascular disorders: a review"
+    },
+    {
+      "type": "title_fix",
+      "file": "49_echinacea_enhanced.js",
+      "pmid": "16678640",
+      "old": "Echinacea reduces the risk of recurrent respiratory tract infections and complic",
+      "new": "Echinacea in the prevention of induced rhinovirus colds: a meta-analysis"
+    },
+    {
+      "type": "title_fix",
+      "file": "49_echinacea_enhanced.js",
+      "pmid": "14748902",
+      "old": "A proprietary extract of Echinacea purpurea (Echinilin) for prevention and treat",
+      "new": "Efficacy of a standardized echinacea preparation (Echinilin) for the treatment o"
+    },
+    {
+      "type": "title_fix",
+      "file": "49_echinacea_enhanced.js",
+      "pmid": "39452214",
+      "old": "Echinacea Species as Potential Agents against Infections and Cancers: A Review o",
+      "new": "Phytochemistry, Mechanisms, and Preclinical Studies of Echinacea Extracts in Mod"
+    },
+    {
+      "type": "title_fix",
+      "file": "50_caffeine_enhanced.js",
+      "pmid": "10353985",
+      "old": "Caffeine as an adenosine receptor antagonist",
+      "new": "Vanilloid (Capsaicin) receptors and mechanisms"
+    },
+    {
+      "type": "title_fix",
+      "file": "50_caffeine_enhanced.js",
+      "pmid": "1418466",
+      "old": "Mechanisms of action of caffeine: implications for the behavioral and cognitive ",
+      "new": "Identification of the epileptic focus: magnetic resonance imaging"
+    },
+    {
+      "type": "title_fix",
+      "file": "50_caffeine_enhanced.js",
+      "pmid": "226776",
+      "old": "Phosphodiesterase inhibition by caffeine and its metabolites",
+      "new": "[Psychosocial assistance in stoma therapy]"
+    },
+    {
+      "type": "title_fix",
+      "file": "50_caffeine_enhanced.js",
+      "pmid": "8960382",
+      "old": "Caffeine ingestion increases plasma ketones: an acute metabolic study in humans",
+      "new": "Differentiation of binding sites of CGP12177, a beta 3-adrenoceptor partial agon"
+    },
+    {
+      "type": "title_fix",
+      "file": "51_reishi_mushroom_enhanced.js",
+      "pmid": "22593941",
+      "old": "Adaptogenic activity of Ganoderma lucidum extract",
+      "new": "The Amazing and Mighty Ginger"
+    },
+    {
+      "type": "title_fix",
+      "file": "51_reishi_mushroom_enhanced.js",
+      "pmid": "15301735",
+      "old": "Hepatoprotective effects of Ganoderma lucidum",
+      "new": "Intrathecal cdk5 inhibitor, roscovitine, attenuates morphine antinociceptive tol"
+    },
+    {
+      "type": "title_fix",
+      "file": "52_cordyceps_enhanced.js",
+      "pmid": "38873567",
+      "old": "2-Weeks of Cordyceps militaris Supplementation Does Not Impact Body Composition ",
+      "new": "Beet supplementation mitigates post-exercise inflammation"
+    },
+    {
+      "type": "title_fix",
+      "file": "52_cordyceps_enhanced.js",
+      "pmid": "38201932",
+      "old": "A review on Cordyceps (Caterpillar Fungus) neuroprotective bioactives and their ",
+      "new": "Unique Bioactives from Zombie Fungus (Cordyceps) as Promising Multitargeted Neur"
+    },
+    {
+      "type": "title_fix",
+      "file": "52_cordyceps_enhanced.js",
+      "pmid": "37518188",
+      "old": "Cordyceps spp.: A Review on Its Immune-Stimulatory and Other Biological Potentia",
+      "new": "Bioactive compounds from Cordyceps and their therapeutic potential"
+    },
+    {
+      "type": "title_fix",
+      "file": "53_spirulina_enhanced.js",
+      "pmid": "9894091",
+      "old": "Phycocyanin: a potent peroxyl radical scavenger with cytoprotective and anti-inf",
+      "new": "Hoffman-Tinel sign. The realities"
+    },
+    {
+      "type": "title_fix",
+      "file": "53_spirulina_enhanced.js",
+      "pmid": "17972396",
+      "old": "Effects of Spirulina consumption on body weight, blood pressure, and endothelial",
+      "new": "[Sponsorship of continuing medical education]"
+    },
+    {
+      "type": "title_fix",
+      "file": "54_chlorella_enhanced.js",
+      "pmid": "33564655",
+      "old": "The effect of chlorella supplementation on liver enzymes: A systematic review an",
+      "new": "Effect of Chlorella vulgaris on Liver Function Biomarkers: a Systematic Review a"
+    },
+    {
+      "type": "title_fix",
+      "file": "54_chlorella_enhanced.js",
+      "pmid": "22849818",
+      "old": "Chlorella supplement health benefits in healthy Korean adults: randomized, doubl",
+      "new": "Beneficial immunostimulatory effect of short-term Chlorella supplementation: enh"
+    },
+    {
+      "type": "title_fix",
+      "file": "55_huperzine_a_enhanced.js",
+      "pmid": "8701750",
+      "old": "Effect of huperzine A on learning and memory in normal mice and mice with memory",
+      "new": "Efficacy of tablet huperzine-A on memory, cognition, and behavior in Alzheimer's"
+    },
+    {
+      "type": "title_fix",
+      "file": "55_huperzine_a_enhanced.js",
+      "pmid": "10678121",
+      "old": "Cognitive enhancement effects of huperzine A in healthy young adults",
+      "new": "Huperzine-A capsules enhance memory and learning performance in 34 pairs of matc"
+    },
+    {
+      "type": "title_fix",
+      "file": "56_vinpocetine_enhanced.js",
+      "pmid": "10447511",
+      "old": "Vinpocetine blocks voltage-gated Na+ channels and reduces neuronal excitability",
+      "new": "A 12-Mb complete coverage BAC contig map in human chromosome 16p13.1-p11.2"
+    },
+    {
+      "type": "title_fix",
+      "file": "57_pea_enhanced.js",
+      "pmid": "37935377",
+      "old": "Structural insights into ligand recognition and activation of the human TAAR1-Gs",
+      "new": "Recognition of methamphetamine and other amines by trace amine receptor TAAR1"
+    },
+    {
+      "type": "title_fix",
+      "file": "57_pea_enhanced.js",
+      "pmid": "36495868",
+      "old": "Gut microbiome-produced phenylethylamine stimulates serotonin biosynthesis via T",
+      "new": "Ruminococcus gnavus plays a pathogenic role in diarrhea-predominant irritable bo"
+    },
+    {
+      "type": "title_fix",
+      "file": "62_vanadium_enhanced.js",
+      "pmid": "8544514",
+      "old": "Vanadium and diabetes",
+      "new": "[In the footsteps of plague-carrying fleas in the old empire of Genghis Khan--re"
+    },
+    {
+      "type": "title_fix",
+      "file": "62_vanadium_enhanced.js",
+      "pmid": "10946018",
+      "old": "Mechanisms of vanadium action as an insulin-mimetic agent",
+      "new": "Sib-pair linkage analysis of longitudinal changes in lipoprotein risk factors an"
+    },
+    {
+      "type": "title_fix",
+      "file": "64_gymnema_sylvestre_enhanced.js",
+      "pmid": "22432517",
+      "old": "Gymnema sylvestre extract (GS4): acute and chronic effects on glucose homeostasi",
+      "new": "An open label study on the supplementation of Gymnema sylvestre in type 2 diabet"
+    },
+    {
+      "type": "title_fix",
+      "file": "64_gymnema_sylvestre_enhanced.js",
+      "pmid": "20812281",
+      "old": "A novel Gymnema sylvestre extract (OSA®): a pilot study in subjects with type 2 ",
+      "new": "A novel Gymnema sylvestre extract stimulates insulin secretion from human islets"
+    },
+    {
+      "type": "title_fix",
+      "file": "64_gymnema_sylvestre_enhanced.js",
+      "pmid": "25056955",
+      "old": "Molecular basis for the human sweet taste receptor inhibition by gymnemic acids",
+      "new": "Molecular mechanisms for sweet-suppressing effect of gymnemic acids"
+    },
+    {
+      "type": "title_fix",
+      "file": "66_cinnamon_extract_enhanced.js",
+      "pmid": "19930003",
+      "old": "Cinnamon (Cinnamomum spp.) and type 2 diabetes",
+      "new": "The potential of cinnamon to reduce blood glucose levels in patients with type 2"
+    },
+    {
+      "type": "title_fix",
+      "file": "66_cinnamon_extract_enhanced.js",
+      "pmid": "27378929",
+      "old": "Coumarin in cinnamon-derived food supplements and herbal medicines: risk assessm",
+      "new": "The Relation between Hepatotoxicity and the Total Coumarin Intake from Tradition"
+    },
+    {
+      "type": "title_fix",
+      "file": "66_cinnamon_extract_enhanced.js",
+      "pmid": "25561392",
+      "old": "Cinnamaldehyde attenuates AGE-induced vascular cell adhesion molecule-1 expressi",
+      "new": "Cinnamaldehyde and nitric oxide attenuate advanced glycation end products-induce"
+    },
+    {
+      "type": "title_fix",
+      "file": "66_cinnamon_extract_enhanced.js",
+      "pmid": "35164117",
+      "old": "The Antidiabetic Potential of Cinnamon Essential Oil: A Narrative Review",
+      "new": "Antidiabetic Potential of Volatile Cinnamon Oil: A Review and Exploration of Mec"
+    },
+    {
+      "type": "title_fix",
+      "file": "66_cinnamon_extract_enhanced.js",
+      "pmid": "22972104",
+      "old": "Cinnamon and type 2 diabetes: a systematic review",
+      "new": "Cinnamon for diabetes mellitus"
+    },
+    {
+      "type": "title_fix",
+      "file": "73_stinging_nettle_enhanced.js",
+      "pmid": "16635963",
+      "old": "The Efficacy of Stinging Nettle (Urtica Dioica) in Patients with Benign Prostati",
+      "new": "Urtica dioica for treatment of benign prostatic hyperplasia: a prospective, rand"
+    },
+    {
+      "type": "title_fix",
+      "file": "73_stinging_nettle_enhanced.js",
+      "pmid": "7753918",
+      "old": "Urtica dioica root extract inhibits aromatase activity",
+      "new": "Comparative antilipoperoxidant, antinecrotic and scavenging properties of terpen"
+    },
+    {
+      "type": "title_fix",
+      "file": "73_stinging_nettle_enhanced.js",
+      "pmid": "8821521",
+      "old": "Stinging nettle leaf extract inhibits prostaglandin E2 and leukotriene B4 synthe",
+      "new": "Therapy of bacterial vaginosis using exogenously-applied Lactobacilli acidophili"
+    },
+    {
+      "type": "title_fix",
+      "file": "74_elderberry_enhanced.js",
+      "pmid": "35288288",
+      "old": "Sambucus genus - Taxonomy, Botany, Phytochemistry, Traditional Uses and Pharmaco",
+      "new": "Ethnobotany, phytochemistry, pharmacology, and toxicology of the genus Sambucus "
+    },
+    {
+      "type": "title_fix",
+      "file": "75_enhanced.js",
+      "pmid": "11079533",
+      "old": "Effect of citicoline on ischemic lesions as measured by diffusion-weighted magne",
+      "new": "Immunogenicity of interferon-beta in multiple sclerosis patients: influence of p"
+    },
+    {
+      "type": "title_fix",
+      "file": "77_dmae_enhanced.js",
+      "pmid": "895955",
+      "old": "Effects of dimethylaminoethanol on membrane phospholipid metabolism",
+      "new": "[Common attitudes toward the psychiatrist and psychotherapist (author's transl)]"
+    },
+    {
+      "type": "title_fix",
+      "file": "77_dmae_enhanced.js",
+      "pmid": "15675889",
+      "old": "Safety profile of dimethylaminoethanol in clinical applications",
+      "new": "The role of dimethylaminoethanol in cosmetic dermatology"
+    },
+    {
+      "type": "title_fix",
+      "file": "80_aniracetam_enhanced.js",
+      "pmid": "20166767",
+      "old": "Safety profile of aniracetam in clinical trials",
+      "new": "Piracetam and piracetam-like drugs: from basic science to novel clinical applica"
+    },
+    {
+      "type": "title_fix",
+      "file": "81_piracetam_enhanced.js",
+      "pmid": "8061686",
+      "old": "Racetams enhance synaptic plasticity through AMPA receptor modulation",
+      "new": "Piracetam and other structurally related nootropics"
+    },
+    {
+      "type": "title_fix",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "pmid": "32990945",
+      "old": "Pycnogenol for the treatment of chronic disorders",
+      "new": "Pine bark (Pinus spp.) extract for treating chronic disorders"
+    },
+    {
+      "type": "title_fix",
+      "file": "87_krill_oil_enhanced.js",
+      "pmid": "15648814",
+      "old": "Evaluation of the effects of Neptune Krill Oil on the clinical course of hyperli",
+      "new": "An electrodiffusion-filtration model for effects of endothelial surface glycocal"
+    },
+    {
+      "type": "title_fix",
+      "file": "87_krill_oil_enhanced.js",
+      "pmid": "18568016",
+      "old": "Omega-3 fatty acids and cognitive function",
+      "new": "Brain foods: the effects of nutrients on brain function"
+    },
+    {
+      "type": "year_fix",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "pmid": "31942838",
+      "old": 2020,
+      "new": 2022
+    },
+    {
+      "type": "year_fix",
+      "file": "91_citrulline_malate_enhanced.js",
+      "pmid": "26658899",
+      "old": 2015,
+      "new": 2017
+    }
+  ]
+}

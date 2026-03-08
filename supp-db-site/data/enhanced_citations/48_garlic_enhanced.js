@@ -45,7 +45,7 @@ window.enhancedCitations[48] = {
                         keyFindings: "Garlic's allicin and sulfur compounds reduce blood pressure through vasodilation and nitric oxide enhancement."
                     },
                     {
-                        title: "Mechanisms of cardiovascular effects of garlic",
+                        title: "Effect of garlic on cardiovascular disorders: a review",
                         authors: ["Banerjee, S.K.", "Maulik, S.K."],
                         year: 2002,
                         journal: "Nutrition Journal",
@@ -123,7 +123,7 @@ window.enhancedCitations[48] = {
                         authors: ["Stevinson, C.", "Pittler, M.H.", "Ernst, E."],
                         year: 2000,
                         journal: "Annals of Internal Medicine",
-                        pmid: "10836917",
+                        pmid: "10975959",
                         doi: "10.7326/0003-4819-133-6-200009190-00009",
                         evidenceLevel: "Level 1",
                         keyFindings: "Garlic supplementation modestly reduces total cholesterol by 12-20 mg/dL, with greater effects in individuals with elevated baseline levels."
@@ -159,7 +159,7 @@ window.enhancedCitations[48] = {
                         authors: ["Fleischauer, A.T.", "Poole, C.", "Arab, L."],
                         year: 2000,
                         journal: "American Journal of Clinical Nutrition",
-                        pmid: "10617999",
+                        pmid: "11010950",
                         doi: "10.1093/ajcn/72.4.1047",
                         evidenceLevel: "Level 2",
                         keyFindings: "Meta-analysis suggests garlic consumption associated with reduced risk of stomach and colorectal cancers, with dose-response relationship."
@@ -180,7 +180,7 @@ window.enhancedCitations[48] = {
                         authors: ["Rahman, K.", "Lowe, G.M."],
                         year: 2006,
                         journal: "Journal of Nutrition",
-                        pmid: "16702333",
+                        pmid: "16484553",
                         doi: "10.1093/jn/136.3.736S",
                         evidenceLevel: "Level 1",
                         keyFindings: "Garlic supplementation is generally safe with mild side effects including breath odor, body odor, and occasional gastrointestinal upset."
@@ -216,7 +216,7 @@ window.enhancedCitations[48] = {
                         authors: ["Borrelli, F.", "Capasso, R.", "Izzo, A.A."],
                         year: 2007,
                         journal: "Journal of Ethnopharmacology",
-                        pmid: "17276637",
+                        pmid: "17291700",
                         doi: "10.1016/j.jep.2007.01.008",
                         evidenceLevel: "Level 2",
                         keyFindings: "Common side effects include heartburn, nausea, and flatulence. Rare allergic reactions including contact dermatitis have been reported."

@@ -394,7 +394,7 @@ class CitationRenderer {
                 </div>
                 <p class="text-xs text-gray-600 mb-2">${this._safeJoin(study.authors, ', ')} (${study.year || 'Recent'}) - ${study.journal || 'Research Publication'}</p>
                 ${study.findings ? `<p class="text-sm text-gray-700 mb-2"><strong>Findings:</strong> ${study.findings}</p>` : ''}
-                ${study.methodology ? `<p class="text-xs text-gray-600"><strong>Methodology:</strong> ${study.methodology}</p>` : ''}
+                ${study.methodology ? `<p class="text-xs text-gray-600"><strong>Methodology:</strong> ${typeof study.methodology === 'string' ? study.methodology : Object.values(study.methodology).filter(v => typeof v === 'string').join('; ')}</p>` : ''}
                 ${this._renderStudyLinks(study)}
             </div>
         `;

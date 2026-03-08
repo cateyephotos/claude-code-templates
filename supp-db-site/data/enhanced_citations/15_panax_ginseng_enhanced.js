@@ -86,7 +86,7 @@ window.enhancedCitations[15] = {
                         authors: ["Jovanovski, E.", "Jenkins, A.", "Dias, A.G.", "Peeva, V.", "Sievenpiper, J.", "Arnason, J.T.", "Rahelic, D.", "Josse, R.G.", "Vuksan, V."],
                         year: 2010,
                         journal: "American Journal of Hypertension",
-                        pmid: "20448530",
+                        pmid: "20431529",
                         doi: "10.1038/ajh.2010.70",
                         findings: "Ginseng enhances nitric oxide production and improves arterial stiffness in healthy individuals"
                     }
@@ -159,7 +159,7 @@ window.enhancedCitations[15] = {
                         authors: ["Kim, H.G.", "Cho, J.H.", "Yoo, S.R.", "Lee, J.S.", "Han, J.M.", "Lee, N.H.", "Ahn, Y.C.", "Son, C.G."],
                         year: 2013,
                         journal: "PLoS One",
-                        pmid: "23593446",
+                        pmid: "23613825",
                         doi: "10.1371/journal.pone.0061271",
                         findings: "Ginseng significantly reduced fatigue and improved energy levels in chronic fatigue patients"
                     }
@@ -215,7 +215,7 @@ window.enhancedCitations[15] = {
                         authors: ["Vuksan, V.", "Stavro, M.P.", "Sievenpiper, J.L.", "Beljan-Zdravkovic, U.", "Leiter, L.A.", "Josse, R.G.", "Xu, Z."],
                         year: 2000,
                         journal: "Archives of Internal Medicine",
-                        pmid: "10737278",
+                        pmid: "10761967",
                         doi: "10.1001/archinte.160.7.1009",
                         findings: "Ginseng reduced postprandial glucose levels in both diabetic and non-diabetic subjects"
                     }
@@ -251,7 +251,7 @@ window.enhancedCitations[15] = {
                         authors: ["Shishtar, E.", "Sievenpiper, J.L.", "Djedovic, V.", "Cozma, A.I.", "Ha, V.", "Jayalath, V.H.", "Jenkins, D.J.", "Meija, S.B.", "de Souza, R.J.", "Jovanovski, E.", "Vuksan, V."],
                         year: 2014,
                         journal: "PLoS One",
-                        pmid: "25229827",
+                        pmid: "25265315",
                         doi: "10.1371/journal.pone.0107391",
                         findings: "Meta-analysis showed ginseng may have beneficial effects on cardiovascular risk factors"
                     }
@@ -393,7 +393,7 @@ window.enhancedCitations[15] = {
                         authors: ["Izzo, A.A.", "Ernst, E."],
                         year: 2001,
                         journal: "Drugs",
-                        pmid: "11772128",
+                        pmid: "11772131",
                         doi: "10.2165/00003495-200161150-00005",
                         findings: "Ginseng may interact with warfarin and diabetes medications; monitor closely"
                     }

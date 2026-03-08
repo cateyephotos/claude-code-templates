@@ -39,7 +39,7 @@ window.enhancedCitations[51] = {
                         authors: ["Jin, X.", "Ruiz Beguerie, J.", "Sze, D.M.", "Chan, G.C."],
                         year: 2012,
                         journal: "Cochrane Database of Systematic Reviews",
-                        pmid: "22592694",
+                        pmid: "22696372",
                         doi: "10.1002/14651858.CD007731.pub2",
                         evidenceLevel: "Level 1",
                         keyFindings: "Reishi's triterpenes and polysaccharides modulate stress response through HPA axis regulation and cortisol balance."
@@ -66,7 +66,7 @@ window.enhancedCitations[51] = {
                         authors: ["Zhu, X.L.", "Chen, A.F.", "Lin, Z.B."],
                         year: 2007,
                         journal: "Journal of Ethnopharmacology",
-                        pmid: "17289312",
+                        pmid: "17306481",
                         doi: "10.1016/j.jep.2007.01.013",
                         evidenceLevel: "Level 2",
                         keyFindings: "Reishi polysaccharides enhance immune function by stimulating macrophages, T-cells, and natural killer cell activity."
@@ -141,7 +141,7 @@ window.enhancedCitations[51] = {
                         authors: ["Gao, Y.", "Zhou, S.", "Jiang, W.", "Huang, M.", "Dai, X."],
                         year: 2003,
                         journal: "Journal of Medicinal Food",
-                        pmid: "14977436",
+                        pmid: "14977447",
                         doi: "10.1089/109662003772519949",
                         evidenceLevel: "Level 2",
                         keyFindings: "Reishi supplementation enhanced immune markers and reduced infection rates in advanced cancer patients undergoing treatment."
@@ -180,7 +180,7 @@ window.enhancedCitations[51] = {
                         authors: ["Wachtel-Galor, S.", "Tomlinson, B.", "Benzie, I.F."],
                         year: 2004,
                         journal: "British Journal of Nutrition",
-                        pmid: "15469644",
+                        pmid: "15522164",
                         doi: "10.1079/BJN20041159",
                         evidenceLevel: "Level 1",
                         keyFindings: "Reishi supplementation up to 1.44g daily for 12 weeks showed excellent safety profile with no significant adverse effects."
@@ -216,7 +216,7 @@ window.enhancedCitations[51] = {
                         authors: ["Yuen, J.W.", "Gohel, M.D."],
                         year: 2005,
                         journal: "Phytotherapy Research",
-                        pmid: "16041731",
+                        pmid: "16177974",
                         doi: "10.1002/ptr.1735",
                         evidenceLevel: "Level 2",
                         keyFindings: "Rare reports of dizziness, skin rash, and gastrointestinal upset. Overall incidence of adverse effects <5% of users."

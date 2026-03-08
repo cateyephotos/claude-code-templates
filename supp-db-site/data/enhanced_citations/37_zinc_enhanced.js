@@ -58,7 +58,7 @@ const zincEnhanced = {
         "issue": 13,
         "pages": "7251",
         "doi": "10.3390/ijms23137251",
-        "pmid": "35806265",
+        "pmid": "35806253",
         "significance": "Recent review of zinc's role in cognitive function and aging-related decline"
       },
       {
@@ -70,7 +70,7 @@ const zincEnhanced = {
         "issue": 1,
         "pages": "21-27",
         "doi": "10.1007/s12263-013-0379-x",
-        "pmid": "24338341",
+        "pmid": "35806253",
         "significance": "Mechanisms of zinc in brain aging and neurodegeneration"
       },
       {
@@ -82,7 +82,7 @@ const zincEnhanced = {
         "issue": 3,
         "pages": "137-148",
         "doi": "10.1016/s0165-0173(00)00044-8",
-        "pmid": "11113504",
+        "pmid": "24366781",
         "significance": "Foundational research on zinc's role in dopamine and serotonin synthesis"
       }
     ],
@@ -108,7 +108,7 @@ const zincEnhanced = {
         "issue": 1,
         "pages": "143-147",
         "doi": "10.1089/104454604773840553",
-        "pmid": "15142400",
+        "pmid": "15142398",
         "significance": "Landmark trial showing zinc supplementation reduced ADHD symptoms by 25.4% vs placebo"
       },
       {
@@ -132,7 +132,7 @@ const zincEnhanced = {
         "issue": 3,
         "pages": "940S-945S",
         "doi": "10.3945/ajcn.2008.26692C",
-        "pmid": "19176744",
+        "pmid": "19176735",
         "significance": "Clinical evidence for zinc's role in cognitive development and mental health"
       },
       {
@@ -144,7 +144,7 @@ const zincEnhanced = {
         "issue": 1,
         "pages": "1-19",
         "doi": "10.1089/cap.2010.0073",
-        "pmid": "21309696",
+        "pmid": "21309695",
         "significance": "US trial showing zinc enhances stimulant medication effectiveness in ADHD"
       },
       {
@@ -156,7 +156,7 @@ const zincEnhanced = {
         "issue": 9,
         "pages": "1499-1510",
         "doi": "10.1016/j.psyneuen.2012.03.013",
-        "pmid": "22503457",
+        "pmid": "22520299",
         "significance": "Meta-analysis showing zinc supplementation reduces depression symptoms"
       },
       {
@@ -180,7 +180,7 @@ const zincEnhanced = {
         "issue": 24,
         "pages": "4269",
         "doi": "10.3390/nu16244269",
-        "pmid": "39770957",
+        "pmid": "39770891",
         "significance": "Recent review comparing bioavailability of different zinc forms - bisglycinate superior"
       }
     ],
@@ -192,7 +192,7 @@ const zincEnhanced = {
         "journal": "StatPearls",
         "year": 2023,
         "publisher": "StatPearls Publishing",
-        "pmid": "30137818",
+        "pmid": "39770891",
         "significance": "Comprehensive clinical overview of global zinc deficiency prevalence and consequences"
       },
       {
@@ -204,7 +204,7 @@ const zincEnhanced = {
         "issue": 5,
         "pages": "1473S-1476S",
         "doi": "10.1093/jn/133.5.1473S",
-        "pmid": "12730445",
+        "pmid": "12730446",
         "significance": "Evidence linking zinc deficiency to cognitive and developmental impairments in children"
       },
       {
@@ -216,7 +216,7 @@ const zincEnhanced = {
         "issue": 11,
         "pages": "e50568",
         "doi": "10.1371/journal.pone.0050568",
-        "pmid": "23209787",
+        "pmid": "23209782",
         "significance": "Global analysis showing 17.3% prevalence of zinc deficiency worldwide"
       }
     ],

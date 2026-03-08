@@ -217,7 +217,7 @@ const vitaminB6Enhanced = {
                 "evidence": [
                     {
                         "citationId": "malouf_2003_cognitive",
-                        "title": "Vitamin B6 for cognition",
+                        "title": "The effect of vitamin B6 on cognition",
                         "authors": ["Malouf R", "Grimley Evans J"],
                         "year": 2003,
                         "journal": "Cochrane Database of Systematic Reviews",

@@ -97,7 +97,7 @@ window.enhancedCitations[69] = {
       issue: "1",
       pages: "e54655",
       doi: "10.1371/journal.pone.0054655",
-      pmid: "23382930",
+      pmid: "23349947",
       studyType: "Experimental Study",
       sampleSize: "Animal and cell culture models",
       keyFindings: [
@@ -143,7 +143,7 @@ window.enhancedCitations[69] = {
       issue: "1",
       pages: "42-48",
       doi: "10.1002/ptr.4656",
-      pmid: "22419604",
+      pmid: "22407838",
       studyType: "Review",
       sampleSize: "Comprehensive review of MP research",
       keyFindings: [
@@ -166,7 +166,7 @@ window.enhancedCitations[69] = {
       issue: "11",
       pages: "1563-1567",
       doi: "10.1002/ptr.2848",
-      pmid: "19548286",
+      pmid: "19441062",
       studyType: "Experimental Study",
       sampleSize: "Animal and cellular models",
       keyFindings: [
@@ -281,7 +281,7 @@ window.enhancedCitations[69] = {
       issue: "10-11",
       pages: "1467-1474",
       doi: "10.1007/s00702-004-0220-1",
-      pmid: "15480835",
+      pmid: "15517433",
       studyType: "Clinical Study",
       sampleSize: "8 healthy volunteers",
       keyFindings: [

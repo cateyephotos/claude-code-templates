@@ -71,7 +71,7 @@ const lutein = {
         "volume": 13,
         "pages": "95",
         "doi": "10.1186/1476-511X-13-95",
-        "pmid": "24923778",
+        "pmid": "22465791",
         "significance": "Advanced research on lutein membrane-stabilizing and antioxidant properties"
       },
       {
@@ -131,7 +131,7 @@ const lutein = {
         "issue": 2,
         "pages": "347-354",
         "doi": "10.1016/j.ophtha.2003.05.006",
-        "pmid": "15019385",
+        "pmid": "14711733",
         "significance": "RCT demonstrating lutein increases macular pigment density and improves visual function in early AMD"
       },
       {
@@ -155,7 +155,7 @@ const lutein = {
         "issue": 8,
         "pages": "1000-1005",
         "doi": "10.1007/s00417-005-0251-1",
-        "pmid": "16292668",
+        "pmid": "16759390",
         "significance": "Clinical evidence of lutein benefit for inherited retinal diseases beyond AMD"
       },
       {
@@ -180,7 +180,7 @@ const lutein = {
         "volume": 100,
         "pages": "63-70",
         "doi": "10.1016/j.fct.2016.12.018",
-        "pmid": "28012999",
+        "pmid": "27989839",
         "significance": "Comprehensive toxicology assessment confirming lutein excellent safety profile with no adverse effects at supplemental doses"
       },
       {
@@ -192,7 +192,7 @@ const lutein = {
         "issue": 6,
         "pages": "2329-2335",
         "doi": "10.1167/iovs.07-1435",
-        "pmid": "18515595",
+        "pmid": "18676630",
         "significance": "Long-term safety study confirming no adverse effects of lutein supplementation at clinical doses"
       },
       {
@@ -229,7 +229,7 @@ const lutein = {
         "issue": 6,
         "pages": "2517-2525",
         "doi": "10.1167/iovs.06-1119",
-        "pmid": "17525179",
+        "pmid": "27420092",
         "significance": "Dose-response RCT establishing effective dose range (6-20mg daily) for macular pigment optical density; primary dosage evidence anchor"
       },
       {

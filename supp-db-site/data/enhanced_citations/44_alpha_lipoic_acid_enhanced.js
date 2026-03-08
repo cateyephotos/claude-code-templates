@@ -59,7 +59,7 @@ window.enhancedCitations[44] = {
                         authors: ["Holmquist, L.", "Stuchbury, G.", "Berbaum, K.", "Muscat, S.", "Young, S.", "Hager, K.", "Engel, J.", "Münch, G."],
                         year: 2007,
                         journal: "Pharmacology & Therapeutics",
-                        pmid: "17292493",
+                        pmid: "17316817",
                         doi: "10.1016/j.pharmthera.2007.01.001",
                         findings: "Alpha-lipoic acid acts as a universal antioxidant, working in both aqueous and lipid phases"
                     }
@@ -93,7 +93,7 @@ window.enhancedCitations[44] = {
                         authors: ["Jacob, S.", "Ruus, P.", "Hermann, R.", "Tritschler, H.J.", "Maerker, E.", "Renn, W.", "Augustin, H.J.", "Dietze, G.J.", "Rett, K."],
                         year: 1999,
                         journal: "Free Radical Biology and Medicine",
-                        pmid: "10381194",
+                        pmid: "10468203",
                         doi: "10.1016/s0891-5849(99)00089-1",
                         findings: "ALA enhances glucose uptake by activating insulin signaling pathways and glucose transporters"
                     }
@@ -110,7 +110,7 @@ window.enhancedCitations[44] = {
                         authors: ["Moini, H.", "Packer, L.", "Saris, N.E."],
                         year: 2002,
                         journal: "BioFactors",
-                        pmid: "12897426",
+                        pmid: "35098396",
                         doi: "10.1002/biof.5520160309",
                         findings: "ALA supports mitochondrial function by protecting against oxidative damage and enhancing energy production"
                     }
@@ -131,7 +131,7 @@ window.enhancedCitations[44] = {
                         authors: ["Haritoglou, C.", "Gerss, J.", "Hammes, H.P.", "Kampik, A.", "Ulbig, M.W."],
                         year: 2011,
                         journal: "Ophthalmologica",
-                        pmid: "21088437",
+                        pmid: "21540600",
                         doi: "10.1159/000323825",
                         findings: "ALA supplementation improved insulin sensitivity and glucose metabolism in diabetic patients"
                     }
@@ -149,7 +149,7 @@ window.enhancedCitations[44] = {
                         authors: ["Reljanovic, M.", "Reichel, G.", "Rett, K.", "Lobisch, M.", "Schuette, K.", "Möller, W.", "Tritschler, H.J.", "Mehnert, H."],
                         year: 1999,
                         journal: "Free Radical Research",
-                        pmid: "10490251",
+                        pmid: "10517533",
                         doi: "10.1080/10715769900300851",
                         findings: "ALA significantly reduced neuropathic symptoms and improved nerve conduction in diabetic patients"
                     }
@@ -167,7 +167,7 @@ window.enhancedCitations[44] = {
                         authors: ["Namazi, N.", "Larijani, B.", "Azadbakht, L."],
                         year: 2018,
                         journal: "Clinical Nutrition",
-                        pmid: "29031735",
+                        pmid: "28987467",
                         doi: "10.1016/j.clnu.2017.09.017",
                         findings: "Meta-analysis showed ALA supplementation resulted in significant weight loss compared to placebo"
                     }
@@ -185,7 +185,7 @@ window.enhancedCitations[44] = {
                         authors: ["Akbari, M.", "Ostadmohammadi, V.", "Lankarani, K.B.", "Tabrizi, R.", "Kolahdooz, F.", "Khatibi, S.R.", "Asemi, Z."],
                         year: 2018,
                         journal: "Metabolism",
-                        pmid: "29408453",
+                        pmid: "29409822",
                         doi: "10.1016/j.metabol.2018.01.023",
                         findings: "ALA showed neuroprotective effects and may support cognitive function in diabetic patients"
                     }
@@ -221,7 +221,7 @@ window.enhancedCitations[44] = {
                         authors: ["Rochette, L.", "Ghibu, S.", "Muresan, A.", "Vergely, C."],
                         year: 2015,
                         journal: "Nutrition Research Reviews",
-                        pmid: "26016853",
+                        pmid: "26809946",
                         doi: "10.1017/S0954422415000116",
                         findings: "ALA supplementation improved endothelial function and reduced cardiovascular risk markers"
                     }
@@ -239,7 +239,7 @@ window.enhancedCitations[44] = {
                         authors: ["Derosa, G.", "Maffioli, P.", "Simental-Mendía, L.E.", "Bo, S.", "Sahebkar, A."],
                         year: 2016,
                         journal: "International Journal of Molecular Sciences",
-                        pmid: "27338359",
+                        pmid: "27314342",
                         doi: "10.3390/ijms17060947",
                         findings: "Meta-analysis showed ALA significantly reduced inflammatory markers and oxidative stress"
                     }

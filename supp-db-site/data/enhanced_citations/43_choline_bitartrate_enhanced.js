@@ -49,7 +49,7 @@ const cholineBitartrate = {
         "issue": 4,
         "pages": "441-459",
         "doi": "10.1111/jnc.14050",
-        "pmid": "28608931",
+        "pmid": "28440877",
         "significance": "Comprehensive mechanisms of choline in acetylcholine synthesis, membrane phospholipids, and epigenetic regulation"
       },
       {
@@ -61,7 +61,7 @@ const cholineBitartrate = {
         "issue": 1,
         "pages": "32-35",
         "doi": "10.1016/j.febslet.2007.11.018",
-        "pmid": "18005667",
+        "pmid": "18022388",
         "significance": "Molecular pathways of choline in phosphatidylcholine biosynthesis and membrane integrity"
       },
       {
@@ -73,14 +73,14 @@ const cholineBitartrate = {
         "issue": 3,
         "pages": "261-268",
         "doi": "10.1093/aje/kwp119",
-        "pmid": "19454612",
+        "pmid": "19498075",
         "significance": "Critical role in neural development and methylation-dependent processes"
       }
     ],
 
     "benefits": [
       {
-        "title": "Choline supplementation improves memory in healthy older adults",
+        "title": "The relation of dietary choline to cognitive performance and white-matter hyperintensity in the Framingham Offspring Cohort",
         "authors": ["Poly, C.", "Massaro, J.M.", "Seshadri, S.", "Wolf, P.A.", "Cho, E.", "Krall, E.", "Jacques, P.F.", "Au, R."],
         "journal": "American Journal of Clinical Nutrition",
         "year": 2011,
@@ -100,7 +100,7 @@ const cholineBitartrate = {
         "issue": 6,
         "pages": "497-508",
         "doi": "10.1093/nutrit/nux010",
-        "pmid": "28449127",
+        "pmid": "28969357",
         "significance": "Comprehensive review of benefits across brain development, cognitive function, and liver health"
       },
       {
@@ -116,7 +116,7 @@ const cholineBitartrate = {
         "significance": "Maternal choline improving fetal brain development and cognitive outcomes"
       },
       {
-        "title": "Choline intake and risk of nonalcoholic fatty liver disease in the Third National Health and Nutrition Examination Survey",
+        "title": "The association between betaine and choline intakes and the plasma concentrations of homocysteine in women",
         "authors": ["Fischer, L.M.", "daCosta, K.A.", "Kwock, L.", "Stewart, P.W.", "Lu, T.S.", "Stabler, S.P.", "Allen, R.H.", "Zeisel, S.H."],
         "journal": "American Journal of Clinical Nutrition",
         "year": 2007,
@@ -136,7 +136,7 @@ const cholineBitartrate = {
         "issue": 5,
         "pages": "1125",
         "doi": "10.3390/nu11051125",
-        "pmid": "31109059",
+        "pmid": "31117180",
         "significance": "Synergistic effects with omega-3s in neural development"
       },
       {
@@ -148,7 +148,7 @@ const cholineBitartrate = {
         "issue": 6,
         "pages": "1186-1197",
         "doi": "10.1039/C4FO00037D",
-        "pmid": "24699999",
+        "pmid": "24760201",
         "significance": "Metabolic benefits in lipid oxidation and energy production"
       }
     ],
@@ -175,7 +175,7 @@ const cholineBitartrate = {
         "issue": 10,
         "pages": "1349",
         "doi": "10.3390/nu10101349",
-        "pmid": "30248994",
+        "pmid": "30241424",
         "significance": "Widespread inadequate intake across populations, especially pregnant women"
       }
     ],
@@ -190,7 +190,7 @@ const cholineBitartrate = {
         "issue": 8,
         "pages": "753-756",
         "doi": "10.1002/j.1552-4604.1992.tb03884.x",
-        "pmid": "1487572",
+        "pmid": "1430298",
         "significance": "Establishing safety profile with minimal side effects at therapeutic doses"
       },
       {
@@ -202,7 +202,7 @@ const cholineBitartrate = {
         "issue": 10,
         "pages": "1155",
         "doi": "10.3390/nu9101155",
-        "pmid": "29065455",
+        "pmid": "29065471",
         "significance": "Safety in pregnancy and lactation with established upper limits"
       }
     ],

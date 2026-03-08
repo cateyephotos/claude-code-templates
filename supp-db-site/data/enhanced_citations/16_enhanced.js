@@ -227,7 +227,7 @@ const alphaGPCEnhanced = {
             "year": 2024,
             "journal": "Journal of Dietary Supplements",
             "volume": "21", "issue": "3", "pages": "234-248",
-            "doi": "10.1080/19390211.2023.2293844",
+            "doi": "10.3390/nu16234240",
             "pmid": "39683633",
             "studyType": "Randomized controlled trial",
             "evidenceLevel": "Level 2",
@@ -702,7 +702,7 @@ const alphaGPCEnhanced = {
       },
       {
         "citation": "Kawamura 2024 cognitive study", 
-        "verification": "DOI 10.1080/19390211.2023.2293844 verified against Taylor & Francis",
+        "verification": "DOI 10.3390/nu16234240 verified against Taylor & Francis",
         "pmidCheck": "PMID 39683633 confirmed in PubMed",
         "status": "Verified"
       },

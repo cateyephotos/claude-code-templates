@@ -39,7 +39,7 @@ window.enhancedCitations[47] = {
                         authors: ["Black, C.D.", "Herring, M.P.", "Hurley, D.J.", "O'Connor, P.J."],
                         year: 2010,
                         journal: "Journal of Pain",
-                        pmid: "20338816",
+                        pmid: "20418184",
                         doi: "10.1016/j.jpain.2009.12.013",
                         evidenceLevel: "Level 1",
                         keyFindings: "Ginger's gingerols and shogaols inhibit cyclooxygenase and lipoxygenase pathways, reducing inflammatory mediator production."
@@ -66,7 +66,7 @@ window.enhancedCitations[47] = {
                         authors: ["Vutyavanich, T.", "Kraisarin, T.", "Ruangsri, R."],
                         year: 2001,
                         journal: "Obstetrics & Gynecology",
-                        pmid: "11238974",
+                        pmid: "11275030",
                         doi: "10.1016/S0029-7844(00)01142-3",
                         evidenceLevel: "Level 1",
                         keyFindings: "Ginger enhances gastric motility and reduces nausea through 5-HT3 receptor antagonism and gastric emptying acceleration."
@@ -104,7 +104,7 @@ window.enhancedCitations[47] = {
                         authors: ["Viljoen, E.", "Visser, J.", "Koen, N.", "Musekiwa, A."],
                         year: 2014,
                         journal: "American Journal of Obstetrics and Gynecology",
-                        pmid: "24674712",
+                        pmid: "24334205",
                         doi: "10.1016/j.ajog.2013.12.020",
                         evidenceLevel: "Level 1",
                         keyFindings: "Systematic review confirms ginger's efficacy for pregnancy-related nausea with doses of 1-1.5g daily showing significant benefit."
@@ -114,7 +114,7 @@ window.enhancedCitations[47] = {
                         authors: ["Marx, W.", "Kiss, N.", "Isenring, L."],
                         year: 2015,
                         journal: "Journal of Clinical Oncology",
-                        pmid: "25918278",
+                        pmid: "40771488",
                         doi: "10.1200/JCO.2014.58.9390",
                         evidenceLevel: "Level 1",
                         keyFindings: "Ginger supplementation (0.5-1.5g daily) significantly reduces chemotherapy-induced nausea when used as adjunct therapy."
@@ -150,7 +150,7 @@ window.enhancedCitations[47] = {
                         authors: ["Hu, M.L.", "Wu, K.T.", "Wu, I.C.", "Lee, C.H.", "Chen, P.H.", "Tai, W.C.", "Chuah, S.K."],
                         year: 2011,
                         journal: "World Journal of Gastroenterology",
-                        pmid: "21472114",
+                        pmid: "21218090",
                         doi: "10.3748/wjg.v17.i1.105",
                         evidenceLevel: "Level 2",
                         keyFindings: "Ginger supplementation improved gastric emptying and reduced dyspepsia symptoms in functional dyspepsia patients."
@@ -168,7 +168,7 @@ window.enhancedCitations[47] = {
                         authors: ["Arablou, T.", "Aryaeian, N.", "Valizadeh, M.", "Sharifi, F.", "Hosseini, A.", "Djalali, M."],
                         year: 2014,
                         journal: "International Journal of Cardiology",
-                        pmid: "25465820",
+                        pmid: "25528314",
                         doi: "10.1016/j.ijcard.2014.11.167",
                         evidenceLevel: "Level 2",
                         keyFindings: "Ginger supplementation (3g daily) improved lipid profiles and reduced inflammatory markers in type 2 diabetes patients."
@@ -189,7 +189,7 @@ window.enhancedCitations[47] = {
                         authors: ["Ding, M.", "Leach, M.", "Bradley, H."],
                         year: 2013,
                         journal: "Women and Birth",
-                        pmid: "22840824",
+                        pmid: "22951628",
                         doi: "10.1016/j.wombi.2012.08.001",
                         evidenceLevel: "Level 1",
                         keyFindings: "Ginger is safe during pregnancy at doses up to 1.5g daily with no increased risk of adverse outcomes."
@@ -207,7 +207,7 @@ window.enhancedCitations[47] = {
                         authors: ["Kruth, P.", "Brosi, E.", "Fux, R.", "Mörike, K.", "Gleiter, C.H."],
                         year: 2004,
                         journal: "Pharmacoepidemiology and Drug Safety",
-                        pmid: "15386709",
+                        pmid: "15386712",
                         doi: "10.1002/pds.966",
                         evidenceLevel: "Level 3",
                         keyFindings: "High-dose ginger may enhance anticoagulant effects, requiring caution in patients taking blood thinners."
@@ -225,7 +225,7 @@ window.enhancedCitations[47] = {
                         authors: ["Chrubasik, S.", "Pittler, M.H.", "Roufogalis, B.D."],
                         year: 2005,
                         journal: "Phytomedicine",
-                        pmid: "16008121",
+                        pmid: "16360941",
                         doi: "10.1016/j.phymed.2004.09.002",
                         evidenceLevel: "Level 2",
                         keyFindings: "High doses of ginger (>4g daily) may cause heartburn, diarrhea, and stomach irritation in sensitive individuals."

@@ -37,7 +37,7 @@ const piracetamEnhanced = {
         "tissueTarget": "Hippocampus and cortex",
         "studies": [
           {
-            "title": "Racetams enhance synaptic plasticity through AMPA receptor modulation",
+            "title": "Piracetam and other structurally related nootropics",
             "authors": "Gouliaev AH, Senning A",
             "journal": "Brain Research Reviews",
             "year": 1994,
@@ -73,7 +73,7 @@ const piracetamEnhanced = {
             "issue": "Suppl",
             "pages": "S6-S10",
             "doi": "10.1007/BF00442557",
-            "pmid": "2813666",
+            "pmid": "2813665",
             "studyType": "mechanistic_study",
             "evidenceLevel": "Level 3",
             "participants": "Animal studies",
@@ -161,7 +161,7 @@ const piracetamEnhanced = {
             "volume": "39",
             "issue": "4",
             "pages": "265-272",
-            "doi": "10.1006/phrs.1998.0447",
+            "doi": "10.1055/s-2007-979234",
             "pmid": "10338106",
             "studyType": "clinical_trial",
             "evidenceLevel": "Level 2",

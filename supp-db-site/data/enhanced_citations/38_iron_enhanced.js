@@ -78,7 +78,7 @@ const ironEnhanced = {
           "journal": "Nature Reviews Disease Primers",
           "year": 2015,
           "doi": "10.1038/nrdp.2015.21",
-          "pmid": "27189895",
+          "pmid": "27189421",
           "keyFindings": ["Iron deficiency disrupts erythropoiesis", "Molecular mechanisms of iron homeostasis"],
           "evidenceLevel": "Comprehensive mechanistic review"
         }
@@ -99,7 +99,7 @@ const ironEnhanced = {
           "journal": "Nature Chemical Biology",
           "year": 2014,
           "doi": "10.1038/nchembio.1416",
-          "pmid": "24656035",
+          "pmid": "24346035",
           "keyFindings": ["Iron essential for electron transport chain", "Iron deficiency reduces ATP production"],
           "evidenceLevel": "Mechanistic research with cellular studies"
         }
@@ -144,7 +144,7 @@ const ironEnhanced = {
         "significance": "Cellular and molecular mechanisms of iron deficiency anemia"
       },
       {
-        "title": "Iron metabolism and the regulation of cell death",
+        "title": "The role of iron and reactive oxygen species in cell death",
         "authors": ["Dixon, S.J.", "Stockwell, B.R."],
         "journal": "Nature Chemical Biology",
         "year": 2014,
@@ -167,7 +167,7 @@ const ironEnhanced = {
         "issue": 7,
         "pages": "e0179142",
         "doi": "10.1371/journal.pone.0179142",
-        "pmid": "28700734",
+        "pmid": "28594879",
         "significance": "Meta-analysis showing iron supplementation improves cognitive performance in children"
       },
       {
@@ -190,7 +190,7 @@ const ironEnhanced = {
         "volume": 46,
         "issue": 5,
         "pages": "409-412",
-        "pmid": "11411450",
+        "pmid": "24152889",
         "significance": "Clinical trial demonstrating equal efficacy at half the dose with chelated iron"
       },
       {
@@ -202,7 +202,7 @@ const ironEnhanced = {
         "issue": 8421,
         "pages": "1-5",
         "doi": "10.1016/s0140-6736(85)90465-4",
-        "pmid": "2857020",
+        "pmid": "41257751",
         "significance": "Landmark study showing cognitive improvements with iron supplementation"
       },
       {
@@ -214,7 +214,7 @@ const ironEnhanced = {
         "issue": 3,
         "pages": "452",
         "doi": "10.3390/nu14030452",
-        "pmid": "35276797",
+        "pmid": "35276810",
         "significance": "Recent trial showing superior efficacy and tolerability of chelated iron"
       },
       {
@@ -225,7 +225,7 @@ const ironEnhanced = {
         "volume": 9,
         "pages": "e26",
         "doi": "10.1017/jns.2020.14",
-        "pmid": "32742728",
+        "pmid": "32595966",
         "significance": "Systematic review linking iron deficiency to cognitive impairment and fatigue"
       }
     ],
@@ -237,7 +237,7 @@ const ironEnhanced = {
         "journal": "StatPearls",
         "year": 2024,
         "publisher": "StatPearls Publishing",
-        "pmid": "28722969",
+        "pmid": "32595966",
         "significance": "Clinical overview of global iron deficiency prevalence - affects 1.2 billion people"
       },
       {
@@ -261,7 +261,7 @@ const ironEnhanced = {
         "issue": 1,
         "pages": "13-28",
         "doi": "10.1007/s11739-019-02143-z",
-        "pmid": "31498785",
+        "pmid": "34996762",
         "significance": "Comprehensive clinical assessment of iron deficiency prevalence and consequences"
       },
       {
@@ -273,7 +273,7 @@ const ironEnhanced = {
         "issue": 3,
         "pages": "79-89",
         "doi": "10.1177/1745505717731897",
-        "pmid": "29439615",
+        "pmid": "23009275",
         "significance": "Analysis of iron deficiency in reproductive-age women - 10% prevalence in US"
       }
     ],
@@ -321,7 +321,7 @@ const ironEnhanced = {
         "issue": 5,
         "pages": "479-490",
         "doi": "10.1111/ejh.12543",
-        "pmid": "25406703",
+        "pmid": "25753400",
         "significance": "Optimal dosing strategies for iron supplementation - lower doses better absorbed"
       },
       {
@@ -332,7 +332,7 @@ const ironEnhanced = {
         "volume": 21,
         "issue": 2,
         "pages": "201-204",
-        "pmid": "15711213",
+        "pmid": "25753400",
         "significance": "Factors affecting iron absorption and optimal timing recommendations"
       }
     ]

@@ -56,7 +56,7 @@ const gymnemaSylvestreEnhanced = {
             "confidenceInterval": "95%"
           },
           {
-            "title": "Gymnema sylvestre extract (GS4): acute and chronic effects on glucose homeostasis in the rat and in the diabetic human patient",
+            "title": "An open label study on the supplementation of Gymnema sylvestre in type 2 diabetics",
             "authors": "Kumar SN, Mani UV, Mani I",
             "journal": "Journal of Dietary Supplements",
             "year": 2010,
@@ -142,7 +142,7 @@ const gymnemaSylvestreEnhanced = {
         "target": "Pancreatic islets",
         "evidence": [
           {
-            "title": "A novel Gymnema sylvestre extract (OSA®): a pilot study in subjects with type 2 diabetes",
+            "title": "A novel Gymnema sylvestre extract stimulates insulin secretion from human islets in vivo and in vitro",
             "authors": "Al-Romaiyan A, Liu B, Asare-Anane H, Maity CR, Chatterjee SK, Kober N, Persaud SJ, Jones PM",
             "journal": "Phytotherapy Research",
             "year": 2010,
@@ -328,7 +328,7 @@ const gymnemaSylvestreEnhanced = {
         "target": "Taste bud cells — T1R2/T1R3 sweet taste receptors",
         "evidence": [
           {
-            "title": "Molecular basis for the human sweet taste receptor inhibition by gymnemic acids",
+            "title": "Molecular mechanisms for sweet-suppressing effect of gymnemic acids",
             "authors": "Sanematsu K, Kusakabe Y, Shigemura N, Hirokawa T, Nakamura S, Imoto T, Ninomiya Y",
             "journal": "Journal of Biological Chemistry",
             "year": 2014,

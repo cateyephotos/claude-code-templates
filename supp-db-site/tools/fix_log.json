@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-03-08T14:42:54.144802",
+  "changes": [
+    "  PMID 26026565 → 26268459",
+    "  PMID 25687549 → 25681539",
+    "  PMID 35299988 → 35265150",
+    "  PMID 38929084 → 38929090",
+    "  PMID 39705029 → 21573082",
+    "  PMID 32267590 → 32097990",
+    "  PMID 38629803 → 39189506",
+    "  PMID 22033170 → 21414376",
+    "  Title for PMID 31213101: updated to match PubMed",
+    "  PMID 30570133 → 28752910",
+    "  DOI for PMID 18412997: 10.1017/S0029665108007027 → 10.1017/S0029665108007076",
+    "  DOI for PMID 16672082: 10.1017/S0029665106002424 → 10.1079/pns2006495",
+    "  Title for PMID 27876835: updated to match PubMed",
+    "  Title for PMID 34432056: updated to match PubMed",
+    "  Title for PMID 34794190: updated to match PubMed",
+    "  Title for PMID 34794190: updated to match PubMed",
+    "  Title for PMID 30986309: updated to match PubMed",
+    "  Title for PMID 40507030: updated to match PubMed",
+    "  Title for PMID 38138558: updated to match PubMed",
+    "  PMID 35907529 → 35986981",
+    "  PMID 41433021 → 39042054",
+    "  REMOVED PMID 26900013: PubMed PMID 26900013 is about glutamate neurotoxicity/ATF3 (unrelated to creatine). DOI 10.1007/s40279-016-0507-y returns 404. Correct PMID not found in PubMed."
+  ],
+  "pmid_replacements": {
+    "35907529": "35986981",
+    "41433021": "39042054",
+    "26026565": "26268459",
+    "25687549": "25681539",
+    "35299988": "35265150",
+    "38929084": "38929090",
+    "39705029": "21573082",
+    "32267590": "32097990",
+    "38629803": "39189506",
+    "22033170": "21414376",
+    "30570133": "28752910"
+  },
+  "doi_fixes": {
+    "18412997": {
+      "from": "10.1017/S0029665108007027",
+      "to": "10.1017/S0029665108007076"
+    },
+    "16672082": {
+      "from": "10.1017/S0029665106002424",
+      "to": "10.1079/pns2006495"
+    }
+  },
+  "title_updates": [
+    "27876835",
+    "34432056",
+    "34794190",
+    "31213101",
+    "30986309",
+    "40507030",
+    "38138558"
+  ],
+  "pmid_removals": [
+    "26900013"
+  ]
+}

@@ -51,7 +51,7 @@ window.enhancedCitations[42] = {
                         authors: ["Rayman, M.P."],
                         year: 2012,
                         journal: "Antioxidants & Redox Signaling",
-                        pmid: "21864024",
+                        pmid: "21554057",
                         doi: "10.1089/ars.2011.4033",
                         evidenceLevel: "Level 1",
                         keyFindings: "Selenium is essential for synthesis of 25 selenoproteins including glutathione peroxidases, thioredoxin reductases, and selenoprotein P."
@@ -61,7 +61,7 @@ window.enhancedCitations[42] = {
                         authors: ["Burk, R.F.", "Hill, K.E."],
                         year: 2005,
                         journal: "Journal of Nutrition",
-                        pmid: "15735094",
+                        pmid: "29190764",
                         doi: "10.1093/jn/135.4.865",
                         evidenceLevel: "Level 1",
                         keyFindings: "Selenium functions as cofactor for glutathione peroxidase and other antioxidant enzymes, protecting cells from oxidative damage."
@@ -97,7 +97,7 @@ window.enhancedCitations[42] = {
                         authors: ["Duntas, L.H.", "Benvenga, S."],
                         year: 2015,
                         journal: "International Journal of Endocrinology",
-                        pmid: "25861266",
+                        pmid: "28255299",
                         doi: "10.1155/2015/365179",
                         evidenceLevel: "Level 1",
                         keyFindings: "Selenium is essential for thyroid hormone synthesis and metabolism through selenoenzymes that convert T4 to active T3."
@@ -118,7 +118,7 @@ window.enhancedCitations[42] = {
                         authors: ["Clark, L.C.", "Combs, G.F.", "Turnbull, B.W.", "Slate, E.H.", "Chalker, D.K.", "Chow, J.", "Davis, L.S.", "Glover, R.A.", "Graham, G.F.", "Gross, E.G."],
                         year: 1996,
                         journal: "JAMA",
-                        pmid: "8950879",
+                        pmid: "8971064",
                         doi: "10.1001/jama.1996.03540250035027",
                         evidenceLevel: "Level 1",
                         keyFindings: "Selenium supplementation (200 μg/day) significantly reduced prostate, lung, and colorectal cancer incidence in this landmark trial."
@@ -128,7 +128,7 @@ window.enhancedCitations[42] = {
                         authors: ["Combs, G.F.", "Gray, W.P."],
                         year: 1998,
                         journal: "Pharmacology & Therapeutics",
-                        pmid: "9437616",
+                        pmid: "16313696",
                         doi: "10.1016/S0163-7258(97)00014-1",
                         evidenceLevel: "Level 2",
                         keyFindings: "Selenium's cancer-protective effects involve antioxidant activity, immune enhancement, and regulation of cell cycle and apoptosis."
@@ -146,7 +146,7 @@ window.enhancedCitations[42] = {
                         authors: ["Flores-Mateo, G.", "Navas-Acien, A.", "Pastor-Barriuso, R.", "Guallar, E."],
                         year: 2006,
                         journal: "American Journal of Clinical Nutrition",
-                        pmid: "16825686",
+                        pmid: "17023702",
                         doi: "10.1093/ajcn/84.4.762",
                         evidenceLevel: "Level 1",
                         keyFindings: "Meta-analysis shows inverse association between selenium levels and cardiovascular disease risk, with optimal benefits at moderate intake levels."
@@ -182,7 +182,7 @@ window.enhancedCitations[42] = {
                         authors: ["Berr, C.", "Balansard, B.", "Arnaud, J.", "Roussel, A.M.", "Alpérovitch, A."],
                         year: 2000,
                         journal: "American Journal of Epidemiology",
-                        pmid: "10968529",
+                        pmid: "36100996",
                         doi: "10.1093/aje/151.11.1107",
                         evidenceLevel: "Level 2",
                         keyFindings: "Higher selenium levels associated with better cognitive performance and reduced risk of cognitive decline in elderly populations."
@@ -203,7 +203,7 @@ window.enhancedCitations[42] = {
                         authors: ["Yang, G.Q.", "Wang, S.Z.", "Zhou, R.H.", "Sun, S.Z."],
                         year: 1983,
                         journal: "American Journal of Clinical Nutrition",
-                        pmid: "6846212",
+                        pmid: "6846228",
                         doi: "10.1093/ajcn/37.5.872",
                         evidenceLevel: "Level 1",
                         keyFindings: "Selenium is safe at doses up to 400 μg/day, but has narrow therapeutic window with toxicity occurring at higher doses."
@@ -239,7 +239,7 @@ window.enhancedCitations[42] = {
                         authors: ["Stranges, S.", "Marshall, J.R.", "Natarajan, R.", "Donahue, R.P.", "Trevisan, M.", "Combs, G.F.", "Cappuccio, F.P.", "Ceriello, A.", "Reid, M.E."],
                         year: 2007,
                         journal: "Annals of Internal Medicine",
-                        pmid: "17679017",
+                        pmid: "17620655",
                         doi: "10.7326/0003-4819-147-4-200708210-00175",
                         evidenceLevel: "Level 1",
                         keyFindings: "High-dose selenium supplementation (200 μg/day) associated with increased type 2 diabetes risk in individuals with high baseline selenium levels."

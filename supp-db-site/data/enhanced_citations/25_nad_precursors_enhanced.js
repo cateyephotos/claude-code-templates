@@ -42,7 +42,7 @@ const nadPrecursorsEnhanced = {
             "issue": "9",
             "pages": "1720",
             "doi": "10.3390/molecules24091720",
-            "pmid": "31052253",
+            "pmid": "31058803",
             "pmcid": "PMC7238909",
             "keyFindings": [
               "NMN effectively increases NAD+ levels in various tissues",
@@ -87,7 +87,7 @@ const nadPrecursorsEnhanced = {
             "issue": "1",
             "pages": "2",
             "doi": "10.1038/s41392-020-00311-7",
-            "pmid": "33384389",
+            "pmid": "33028824",
             "pmcid": "PMC7775893",
             "keyFindings": [
               "NAD+ regulates mitochondrial function, circadian rhythm, and DNA repair",
@@ -155,7 +155,7 @@ const nadPrecursorsEnhanced = {
             "issue": "6",
             "pages": "2077-2096",
             "doi": "10.1007/s11357-022-00705-1",
-            "pmid": "36372861",
+            "pmid": "36482258",
             "pmcid": "PMC9768254",
             "keyFindings": [
               "Blood NAD+ concentrations significantly increased in all NMN-treated groups",
@@ -202,7 +202,7 @@ const nadPrecursorsEnhanced = {
             "issue": "1",
             "pages": "9-19",
             "doi": "10.1161/CIRCULATIONAHA.121.056589",
-            "pmid": "32673500",
+            "pmid": "34843394",
             "keyFindings": [
               "NAD+ decline associated with cardiovascular aging and disease",
               "NAD+ precursors show promise for cardiovascular protection",
@@ -260,7 +260,7 @@ const nadPrecursorsEnhanced = {
             "issue": "1",
             "pages": "7731",
             "doi": "10.1038/s41467-023-43514-6",
-            "pmid": "38001066",
+            "pmid": "38016950",
             "pmcid": "PMC10673844",
             "keyFindings": [
               "NR safely tolerated at 3000 mg daily for 30 days",
@@ -309,7 +309,7 @@ const nadPrecursorsEnhanced = {
             "issue": "8",
             "pages": "e1701491",
             "doi": "10.1126/sciadv.adi4862",
-            "pmid": "28835917",
+            "pmid": "37478182",
             "pmcid": "PMC5552469",
             "keyFindings": [
               "NR supplementation increases NAD+ levels safely in humans",
@@ -332,7 +332,7 @@ const nadPrecursorsEnhanced = {
         "volume": "575",
         "pages": "1-8",
         "doi": "10.1016/j.bbrc.2021.08.056",
-        "pmid": "34454297",
+        "pmid": "34455221",
         "keyFindings": [
           "NMN dosing ranges 250-1000 mg daily for therapeutic effects",
           "NR effective doses typically 300-3000 mg daily",
@@ -349,7 +349,7 @@ const nadPrecursorsEnhanced = {
         "volume": "77",
         "pages": "108329",
         "doi": "10.1016/j.jnutbio.2019.108329",
-        "pmid": "31991237",
+        "pmid": "32004932",
         "pmcid": "PMC6949036",
         "keyFindings": [
           "Single oral dose of 500 mg NMN increases blood NAD+ levels",

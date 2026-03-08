@@ -324,7 +324,7 @@ const betaAlanineEnhanced = {
             "journal": "Advances in Nutrition", 
             "volume": "14", "issue": "4", "pages": "671-688",
             "doi": "10.1016/j.advnut.2023.04.001",
-            "pmid": "37037309",
+            "pmid": "37028708",
             "studyType": "Systematic risk assessment and meta-analysis",
             "evidenceLevel": "Level 1",
             "analysisScope": {
@@ -400,7 +400,7 @@ const betaAlanineEnhanced = {
             "journal": "Medicine & Science in Sports & Exercise",
             "volume": "47", "issue": "7", "pages": "1510-1518",
             "doi": "10.1249/MSS.0000000000000568",
-            "pmid": "25333246",
+            "pmid": "25386711",
             "studyType": "Dose-optimization study",
             "evidenceLevel": "Level 2",
             "loadingComparison": {

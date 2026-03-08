@@ -85,7 +85,7 @@ window.enhancedCitations[50] = {
                         authors: ["Rousseau, E.", "Ladine, J.", "Liu, Q.Y.", "Meissner, G."],
                         year: 1988,
                         journal: "Archives of Biochemistry and Biophysics",
-                        pmid: "2461741",
+                        pmid: "31456413",
                         doi: "10.1016/0003-9861(88)90189-4",
                         evidenceLevel: "Level 2",
                         keyFindings: "Caffeine triggers calcium release from sarcoplasmic reticulum, enhancing muscle contraction and contributing to ergogenic effects."
@@ -106,7 +106,7 @@ window.enhancedCitations[50] = {
                         authors: ["Lieberman, H.R.", "Tharion, W.J.", "Shukitt-Hale, B.", "Speckman, K.L.", "Tulley, R."],
                         year: 2002,
                         journal: "Human Psychopharmacology",
-                        pmid: "11968130",
+                        pmid: "12404667",
                         doi: "10.1002/hup.386",
                         evidenceLevel: "Level 1",
                         keyFindings: "Meta-analysis shows caffeine significantly improves attention, vigilance, reaction time, and working memory across multiple cognitive domains."
@@ -116,7 +116,7 @@ window.enhancedCitations[50] = {
                         authors: ["Rogers, P.J.", "Heatherley, S.V.", "Mullings, E.L.", "Smith, J.E."],
                         year: 2013,
                         journal: "Psychopharmacology",
-                        pmid: "23179966",
+                        pmid: "23108937",
                         doi: "10.1007/s00213-012-2889-4",
                         evidenceLevel: "Level 1",
                         keyFindings: "Caffeine improves cognitive performance in both habitual users and non-users, with effects on memory consolidation and mood enhancement."
@@ -144,7 +144,7 @@ window.enhancedCitations[50] = {
                         authors: ["Spriet, L.L.", "MacLean, D.A.", "Dyck, D.J.", "Hultman, E.", "Cederblad, G.", "Graham, T.E."],
                         year: 1992,
                         journal: "American Journal of Physiology",
-                        pmid: "1415572",
+                        pmid: "1616022",
                         doi: "10.1152/ajpendo.1992.262.6.E891",
                         evidenceLevel: "Level 1",
                         keyFindings: "Caffeine enhances fat oxidation and spares muscle glycogen during prolonged exercise, contributing to improved endurance capacity."
@@ -218,7 +218,7 @@ window.enhancedCitations[50] = {
                         authors: ["Juliano, L.M.", "Griffiths, R.R."],
                         year: 2004,
                         journal: "Psychopharmacology",
-                        pmid: "15549276",
+                        pmid: "15448977",
                         doi: "10.1007/s00213-004-2000-x",
                         evidenceLevel: "Level 2",
                         keyFindings: "Caffeine withdrawal symptoms include headache, fatigue, and mood changes, typically occurring 12-24 hours after cessation and lasting 2-9 days."
@@ -236,7 +236,7 @@ window.enhancedCitations[50] = {
                         authors: ["Weng, X.", "Odouli, R.", "Li, D.K."],
                         year: 2008,
                         journal: "American Journal of Obstetrics and Gynecology",
-                        pmid: "18207090",
+                        pmid: "18221932",
                         doi: "10.1016/j.ajog.2007.10.803",
                         evidenceLevel: "Level 2",
                         keyFindings: "High caffeine intake during pregnancy (>200 mg/day) is associated with increased risk of miscarriage. Pregnant women should limit caffeine consumption."

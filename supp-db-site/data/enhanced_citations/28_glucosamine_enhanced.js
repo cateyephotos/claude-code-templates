@@ -39,7 +39,7 @@ window.enhancedCitations[28] = {
                         authors: ["Reginster, J.Y.", "Deroisy, R.", "Rovati, L.C.", "Lee, R.L.", "Lejeune, E.", "Bruyere, O.", "Giacovelli, G.", "Henrotin, Y.", "Dacre, J.E.", "Gossett, C."],
                         year: 2001,
                         journal: "Archives of Internal Medicine",
-                        pmid: "11176766",
+                        pmid: "11606146",
                         doi: "10.1001/archinte.161.19.2309",
                         evidenceLevel: "Level 1",
                         keyFindings: "Glucosamine sulfate stimulates proteoglycan synthesis in cartilage and provides structural building blocks for glycosaminoglycan formation."
@@ -49,7 +49,7 @@ window.enhancedCitations[28] = {
                         authors: ["Bassleer, C.", "Rovati, L.", "Franchimont, P."],
                         year: 1998,
                         journal: "Osteoarthritis and Cartilage",
-                        pmid: "9876394",
+                        pmid: "10343776",
                         doi: "10.1053/joca.1998.0146",
                         evidenceLevel: "Level 2",
                         keyFindings: "Glucosamine enhances proteoglycan synthesis and inhibits cartilage degradation through stimulation of chondrocyte metabolism."
@@ -86,7 +86,7 @@ window.enhancedCitations[28] = {
                         year: 2001,
                         journal: "Osteoarthritis and Cartilage",
                         pmid: "11300747",
-                        doi: "10.1053/joca.2000.0398",
+                        doi: "10.1053/joca.2000.0381",
                         evidenceLevel: "Level 2",
                         keyFindings: "Glucosamine inhibits matrix metalloproteinase activity and prevents cartilage matrix degradation."
                     }
@@ -106,7 +106,7 @@ window.enhancedCitations[28] = {
                         authors: ["Clegg, D.O.", "Reda, D.J.", "Harris, C.L.", "Klein, M.A.", "O'Dell, J.R.", "Hooper, M.M.", "Bradley, J.D.", "Bingham, C.O.", "Weisman, M.H.", "Jackson, C.G."],
                         year: 2006,
                         journal: "New England Journal of Medicine",
-                        pmid: "16481635",
+                        pmid: "16495392",
                         doi: "10.1056/NEJMoa052771",
                         evidenceLevel: "Level 1",
                         keyFindings: "Large-scale trial showed modest pain reduction in severe osteoarthritis, with greater effects in combination with chondroitin sulfate."
@@ -116,7 +116,7 @@ window.enhancedCitations[28] = {
                         authors: ["Kwoh, C.K.", "Roemer, F.W.", "Hannon, M.J.", "Moore, C.E.", "Jakicic, J.M.", "Guermazi, A.", "Green, S.M.", "Tschon, M.", "Soher, B.J.", "Evans, R.W."],
                         year: 2014,
                         journal: "American Journal of Medicine",
-                        pmid: "24928195",
+                        pmid: "24858063",
                         doi: "10.1016/j.amjmed.2014.05.025",
                         evidenceLevel: "Level 1",
                         keyFindings: "Glucosamine sulfate provided significant pain relief and functional improvement compared to placebo in knee osteoarthritis patients."
@@ -152,7 +152,7 @@ window.enhancedCitations[28] = {
                         authors: ["Herrero-Beaumont, G.", "Ivorra, J.A.", "Del Carmen Trabado, M.", "Blanco, F.J.", "Benito, P.", "Martín-Mola, E.", "Paulino, J.", "Marenco, J.L.", "Porto, A.", "Laffon, A."],
                         year: 2007,
                         journal: "Arthritis & Rheumatism",
-                        pmid: "17266067",
+                        pmid: "17266100",
                         doi: "10.1002/art.22482",
                         evidenceLevel: "Level 1",
                         keyFindings: "Glucosamine sulfate improved joint function scores and quality of life measures in osteoarthritis patients over 6 months."
@@ -170,7 +170,7 @@ window.enhancedCitations[28] = {
                         authors: ["Ma, H.", "Li, X.", "Zhou, T.", "Sun, D.", "Liang, Z.", "Li, Y.", "Heianza, Y.", "Qi, L."],
                         year: 2019,
                         journal: "European Journal of Epidemiology",
-                        pmid: "31065914",
+                        pmid: "31055709",
                         doi: "10.1007/s10654-019-00524-3",
                         evidenceLevel: "Level 2",
                         keyFindings: "Large cohort study suggested glucosamine use associated with reduced cardiovascular disease risk and all-cause mortality."

@@ -46,7 +46,7 @@ window.enhancedCitations[40] = {
                         authors: ["Owens, D.F.", "Kriegstein, A.R."],
                         year: 2002,
                         journal: "Nature Reviews Neuroscience",
-                        pmid: "12209119",
+                        pmid: "12209120",
                         doi: "10.1038/nrn919",
                         findings: "GABA is the primary inhibitory neurotransmitter in the mature brain, regulating neuronal excitability"
                     }
@@ -63,7 +63,7 @@ window.enhancedCitations[40] = {
                         authors: ["Sigel, E.", "Steinmann, M.E."],
                         year: 2012,
                         journal: "Journal of Biological Chemistry",
-                        pmid: "22952235",
+                        pmid: "23038269",
                         doi: "10.1074/jbc.R112.386664",
                         findings: "GABA activates ionotropic GABA-A and metabotropic GABA-B receptors to produce inhibitory effects"
                     }
@@ -84,7 +84,7 @@ window.enhancedCitations[40] = {
                         authors: ["Yamatsu, A.", "Yamashita, Y.", "Pandharipande, T.", "Maru, I.", "Kim, M."],
                         year: 2016,
                         journal: "BioFactors",
-                        pmid: "26662574",
+                        pmid: "26826024",
                         doi: "10.1002/biof.1256",
                         findings: "GABA administration increased parasympathetic activity and reduced stress markers"
                     }
@@ -139,7 +139,7 @@ window.enhancedCitations[40] = {
                         authors: ["Oketch-Rabah, H.A.", "Roe, A.L.", "Rider, C.V.", "Bonkovsky, H.L."],
                         year: 2021,
                         journal: "Nutrients",
-                        pmid: "34444790",
+                        pmid: "34444869",
                         doi: "10.3390/nu13082709",
                         findings: "GABA supplementation appears safe for most adults when used appropriately"
                     }

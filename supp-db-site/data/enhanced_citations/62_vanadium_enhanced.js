@@ -39,7 +39,7 @@ window.enhancedCitations[62] = {
                         authors: ["Shechter, Y.", "Karlish, S.J."],
                         year: 1980,
                         journal: "Nature",
-                        pmid: "7001228",
+                        pmid: "6988725",
                         doi: "10.1038/284556a0",
                         findings: "Vanadium compounds mimic insulin action by activating insulin receptor signaling pathways"
                     }
@@ -112,7 +112,7 @@ window.enhancedCitations[62] = {
                         authors: ["Badmaev, V.", "Prakash, S.", "Majeed, M."],
                         year: 1999,
                         journal: "Journal of Alternative and Complementary Medicine",
-                        pmid: "10471012",
+                        pmid: "10381252",
                         doi: "10.1089/acm.1999.5.273",
                         findings: "Limited evidence suggests vanadium may support glucose metabolism in healthy individuals"
                     }
@@ -149,7 +149,7 @@ window.enhancedCitations[62] = {
                         authors: ["Domingo, J.L."],
                         year: 1996,
                         journal: "Reproductive Toxicology",
-                        pmid: "8738771",
+                        pmid: "8738553",
                         doi: "10.1016/0890-6238(96)00019-6",
                         findings: "Vanadium can be toxic at high doses; careful attention to dosage is required"
                     }

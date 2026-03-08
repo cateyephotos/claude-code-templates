@@ -1,0 +1,698 @@
+{
+  "date": "2026-03-08T21:35:28.297Z",
+  "mode": "applied",
+  "totalFixes": 108,
+  "fileChanges": {
+    "7_vitamin_d3_enhanced.js": 1,
+    "8_melatonin_enhanced.js": 2,
+    "13_acetyl_l_carnitine_enhanced.js": 2,
+    "15_panax_ginseng_enhanced.js": 4,
+    "17_enhanced.js": 2,
+    "25_nad_precursors_enhanced.js": 2,
+    "28_glucosamine_enhanced.js": 5,
+    "30_vitamin_e_enhanced.js": 2,
+    "31_whey_protein_enhanced.js": 3,
+    "32_chondroitin_sulfate_enhanced.js": 5,
+    "33_l_tyrosine_enhanced.js": 1,
+    "34_enhanced.js": 4,
+    "35_tribulus_terrestris_enhanced.js": 3,
+    "36_vitamin_c_enhanced.js": 2,
+    "37_zinc_enhanced.js": 6,
+    "38_iron_enhanced.js": 5,
+    "39_taurine_enhanced.js": 1,
+    "41_inositol_enhanced.js": 3,
+    "42_selenium_enhanced.js": 5,
+    "43_choline_bitartrate_enhanced.js": 5,
+    "44_alpha_lipoic_acid_enhanced.js": 4,
+    "45_enhanced.js": 3,
+    "47_ginger_enhanced.js": 4,
+    "48_garlic_enhanced.js": 1,
+    "50_caffeine_enhanced.js": 4,
+    "53_spirulina_enhanced.js": 2,
+    "55_huperzine_a_enhanced.js": 1,
+    "56_vinpocetine_enhanced.js": 2,
+    "62_vanadium_enhanced.js": 1,
+    "65_fenugreek_enhanced.js": 4,
+    "67_holy_basil_enhanced.js": 1,
+    "73_stinging_nettle_enhanced.js": 3,
+    "75_enhanced.js": 2,
+    "76_sulbutiamine_enhanced.js": 2,
+    "78_centella_asiatica_enhanced.js": 1,
+    "80_aniracetam_enhanced.js": 2,
+    "88_zeaxanthin_enhanced.js": 1,
+    "89_pterostilbene_enhanced.js": 2,
+    "90_beta_alanine_enhanced.js": 1,
+    "92_hmb_enhanced.js": 2,
+    "93_betaine_enhanced.js": 2
+  },
+  "fixes": [
+    {
+      "file": "7_vitamin_d3_enhanced.js",
+      "oldPmid": "36678188",
+      "newPmid": "36678187",
+      "doi": "10.3390/nu15020316"
+    },
+    {
+      "file": "8_melatonin_enhanced.js",
+      "oldPmid": "22348451",
+      "newPmid": "22289049",
+      "doi": "10.1111/j.1600-079X.2012.00975.x"
+    },
+    {
+      "file": "8_melatonin_enhanced.js",
+      "oldPmid": "35691474",
+      "newPmid": "35983404",
+      "doi": "10.7759/cureus.26923"
+    },
+    {
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "oldPmid": "20036321",
+      "newPmid": "40592838",
+      "doi": "10.1016/j.bbalip.2010.01.015"
+    },
+    {
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "oldPmid": "16473978",
+      "newPmid": "16473973",
+      "doi": "10.1097/01.JGP.0000196627.12010.d1"
+    },
+    {
+      "file": "15_panax_ginseng_enhanced.js",
+      "oldPmid": "18580597",
+      "newPmid": "18580589",
+      "doi": "10.1097/WAD.0b013e318169651b"
+    },
+    {
+      "file": "15_panax_ginseng_enhanced.js",
+      "oldPmid": "23717137",
+      "newPmid": "29021708",
+      "doi": "10.5142/jgr.2010.34.4.261"
+    },
+    {
+      "file": "15_panax_ginseng_enhanced.js",
+      "oldPmid": "25229827",
+      "newPmid": "25265315",
+      "doi": "10.1371/journal.pone.0107391"
+    },
+    {
+      "file": "15_panax_ginseng_enhanced.js",
+      "oldPmid": "11772128",
+      "newPmid": "11772131",
+      "doi": "10.2165/00003495-200161150-00005"
+    },
+    {
+      "file": "17_enhanced.js",
+      "oldPmid": "17612572",
+      "newPmid": "17568620",
+      "doi": "10.1016/j.lfs.2007.05.009"
+    },
+    {
+      "file": "17_enhanced.js",
+      "oldPmid": "22661190",
+      "newPmid": "41297722",
+      "doi": "10.1007/s12020-012-9656-z"
+    },
+    {
+      "file": "25_nad_precursors_enhanced.js",
+      "oldPmid": "31317480",
+      "newPmid": "37273100",
+      "doi": "10.1007/s13668-019-00281-7"
+    },
+    {
+      "file": "25_nad_precursors_enhanced.js",
+      "oldPmid": "34454297",
+      "newPmid": "34455221",
+      "doi": "10.1016/j.bbrc.2021.08.056"
+    },
+    {
+      "file": "28_glucosamine_enhanced.js",
+      "oldPmid": "12801478",
+      "newPmid": "41795418",
+      "doi": "10.1016/S1063-4584(03)00134-9"
+    },
+    {
+      "file": "28_glucosamine_enhanced.js",
+      "oldPmid": "24928195",
+      "newPmid": "24858063",
+      "doi": "10.1016/j.amjmed.2014.05.025"
+    },
+    {
+      "file": "28_glucosamine_enhanced.js",
+      "oldPmid": "12133968",
+      "newPmid": "41795402",
+      "doi": "10.1016/S0140-6736(02)09013-2"
+    },
+    {
+      "file": "28_glucosamine_enhanced.js",
+      "oldPmid": "17266067",
+      "newPmid": "17266100",
+      "doi": "10.1002/art.22482"
+    },
+    {
+      "file": "28_glucosamine_enhanced.js",
+      "oldPmid": "31065914",
+      "newPmid": "31055709",
+      "doi": "10.1007/s10654-019-00524-3"
+    },
+    {
+      "file": "30_vitamin_e_enhanced.js",
+      "oldPmid": "9280299",
+      "newPmid": "41795402",
+      "doi": "10.1016/S0014-5793(02)03479-4"
+    },
+    {
+      "file": "30_vitamin_e_enhanced.js",
+      "oldPmid": "15321791",
+      "newPmid": "41781077",
+      "doi": "10.1093/ajcn/80.3.628"
+    },
+    {
+      "file": "31_whey_protein_enhanced.js",
+      "oldPmid": "17215883",
+      "newPmid": "16772636",
+      "doi": "10.1080/07315724.2006.10719574"
+    },
+    {
+      "file": "31_whey_protein_enhanced.js",
+      "oldPmid": "24623121",
+      "newPmid": "25063205",
+      "doi": "10.1007/s00726-014-1742-3"
+    },
+    {
+      "file": "31_whey_protein_enhanced.js",
+      "oldPmid": "15180757",
+      "newPmid": "15147439",
+      "doi": "10.1111/j.1398-9995.2004.00499.x"
+    },
+    {
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "oldPmid": "20230764",
+      "newPmid": "41241004",
+      "doi": "10.1016/S1054-3589(08)00006-3"
+    },
+    {
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "oldPmid": "12801481",
+      "newPmid": "41795418",
+      "doi": "10.1016/S1063-4584(03)00137-4"
+    },
+    {
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "oldPmid": "11300746",
+      "newPmid": "11399101",
+      "doi": "10.1053/joca.2000.0397"
+    },
+    {
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "oldPmid": "21305503",
+      "newPmid": "21400475",
+      "doi": "10.1002/art.30314"
+    },
+    {
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "oldPmid": "18677011",
+      "newPmid": "36156542",
+      "doi": "10.1136/ard.2007.082800"
+    },
+    {
+      "file": "33_l_tyrosine_enhanced.js",
+      "oldPmid": "26126146",
+      "newPmid": "26126245",
+      "doi": "10.7205/MILMED-D-14-00594"
+    },
+    {
+      "file": "34_enhanced.js",
+      "oldPmid": "2871566",
+      "newPmid": "41707763",
+      "doi": "10.1016/0149-7634(86)90020-6"
+    },
+    {
+      "file": "34_enhanced.js",
+      "oldPmid": "31504850",
+      "newPmid": "41791601",
+      "doi": "10.1016/0165-0327(77)90005-6"
+    },
+    {
+      "file": "34_enhanced.js",
+      "oldPmid": "7765187",
+      "newPmid": "41058342",
+      "doi": "10.1016/0167-7799(90)90217-P"
+    },
+    {
+      "file": "34_enhanced.js",
+      "oldPmid": "18433663",
+      "newPmid": "41795402",
+      "doi": "10.1016/S0163-8343(02)00282-3"
+    },
+    {
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "oldPmid": "37398644",
+      "newPmid": "41795433",
+      "doi": "10.1155/2023/7118431"
+    },
+    {
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "oldPmid": "30644247",
+      "newPmid": "24520465",
+      "doi": "10.22074/ijfs.2019.5651"
+    },
+    {
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "oldPmid": "11744291",
+      "newPmid": "41795469",
+      "doi": "10.1016/S0378-8741(01)00374-X"
+    },
+    {
+      "file": "36_vitamin_c_enhanced.js",
+      "oldPmid": "15743017",
+      "newPmid": "41781077",
+      "doi": "10.1093/ajcn/33.11.2394"
+    },
+    {
+      "file": "36_vitamin_c_enhanced.js",
+      "oldPmid": "15213266",
+      "newPmid": "39059059",
+      "doi": "10.1097/01.ASN.0000135520.78748.8C"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "oldPmid": "35806265",
+      "newPmid": "35806253",
+      "doi": "10.3390/ijms23137251"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "oldPmid": "15142400",
+      "newPmid": "15142398",
+      "doi": "10.1089/104454604773840553"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "oldPmid": "39770957",
+      "newPmid": "39770891",
+      "doi": "10.3390/nu16244269"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "oldPmid": "12730445",
+      "newPmid": "12730446",
+      "doi": "10.1093/jn/133.5.1473S"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "oldPmid": "21677057",
+      "newPmid": "9521632",
+      "doi": "10.3945/ajcn.111.018556"
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "oldPmid": "10799391",
+      "newPmid": "41781077",
+      "doi": "10.1093/ajcn/71.5.1181s"
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "oldPmid": "27189895",
+      "newPmid": "41751190",
+      "doi": "10.1097/MOP.0b013e3283444b89"
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "oldPmid": "25877495",
+      "newPmid": "24152889",
+      "doi": "10.3945/ajcn.114.103036"
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "oldPmid": "41257751",
+      "newPmid": "41795434",
+      "doi": "10.1016/s0140-6736(85)90465-4"
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "oldPmid": "24656435",
+      "newPmid": "41795435",
+      "doi": "10.1016/S0140-6736(13)62404-4"
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "oldPmid": "22823350",
+      "newPmid": "41614655",
+      "doi": "10.1080/10408398.2010.511931"
+    },
+    {
+      "file": "39_taurine_enhanced.js",
+      "oldPmid": "12436202",
+      "newPmid": "12436205",
+      "doi": "10.1007/s00726-002-0212-0"
+    },
+    {
+      "file": "41_inositol_enhanced.js",
+      "oldPmid": "30556597",
+      "newPmid": "32343003",
+      "doi": "10.1002/14651858.CD013594"
+    },
+    {
+      "file": "41_inositol_enhanced.js",
+      "oldPmid": "9247407",
+      "newPmid": "9247405",
+      "doi": "10.1176/ajp.154.8.1148"
+    },
+    {
+      "file": "41_inositol_enhanced.js",
+      "oldPmid": "7714224",
+      "newPmid": "7714223",
+      "doi": "10.1097/00004714-199502000-00004"
+    },
+    {
+      "file": "42_selenium_enhanced.js",
+      "oldPmid": "29190764",
+      "newPmid": "41795076",
+      "doi": "10.1093/jn/135.4.865"
+    },
+    {
+      "file": "42_selenium_enhanced.js",
+      "oldPmid": "12816794",
+      "newPmid": "41781077",
+      "doi": "10.1093/ajcn/77.6.1457S"
+    },
+    {
+      "file": "42_selenium_enhanced.js",
+      "oldPmid": "8950879",
+      "newPmid": "8971064",
+      "doi": "10.1001/jama.1996.03540250035027"
+    },
+    {
+      "file": "42_selenium_enhanced.js",
+      "oldPmid": "16313696",
+      "newPmid": "35976089",
+      "doi": "10.1016/S0163-7258(97)00014-1"
+    },
+    {
+      "file": "42_selenium_enhanced.js",
+      "oldPmid": "36100996",
+      "newPmid": "41790109",
+      "doi": "10.1093/aje/151.11.1107"
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "oldPmid": "28608931",
+      "newPmid": "28440877",
+      "doi": "10.1111/jnc.14050"
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "oldPmid": "31109059",
+      "newPmid": "31117180",
+      "doi": "10.3390/nu11051125"
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "oldPmid": "30248994",
+      "newPmid": "30241424",
+      "doi": "10.3390/nu10101349"
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "oldPmid": "11744339",
+      "newPmid": "41795469",
+      "doi": "10.1016/S0899-9007(01)00659-8"
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "oldPmid": "30704570",
+      "newPmid": "41795469",
+      "doi": "10.1016/S0899-9007(01)00659-8"
+    },
+    {
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "oldPmid": "11469271",
+      "newPmid": "11467343",
+      "doi": "10.1089/152091500750049479"
+    },
+    {
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "oldPmid": "35098396",
+      "newPmid": "23565271",
+      "doi": "10.1002/biof.5520160309"
+    },
+    {
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "oldPmid": "21088437",
+      "newPmid": "21540600",
+      "doi": "10.1159/000323825"
+    },
+    {
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "oldPmid": "29408453",
+      "newPmid": "29409822",
+      "doi": "10.1016/j.metabol.2018.01.023"
+    },
+    {
+      "file": "45_enhanced.js",
+      "oldPmid": "11985953",
+      "newPmid": "41795469",
+      "doi": "10.1016/s0899-9007(01)00768-5"
+    },
+    {
+      "file": "45_enhanced.js",
+      "oldPmid": "27420092",
+      "newPmid": "20599660",
+      "doi": "10.1167/iovs.06-1119"
+    },
+    {
+      "file": "45_enhanced.js",
+      "oldPmid": "12634107",
+      "newPmid": "41795402",
+      "doi": "10.1016/s0014-4835(02)00307-9"
+    },
+    {
+      "file": "47_ginger_enhanced.js",
+      "oldPmid": "11275030",
+      "newPmid": "41795410",
+      "doi": "10.1016/S0029-7844(00)01142-3"
+    },
+    {
+      "file": "47_ginger_enhanced.js",
+      "oldPmid": "40771488",
+      "newPmid": "39173346",
+      "doi": "10.1200/JCO.2014.58.9390"
+    },
+    {
+      "file": "47_ginger_enhanced.js",
+      "oldPmid": "21472114",
+      "newPmid": "21218090",
+      "doi": "10.3748/wjg.v17.i1.105"
+    },
+    {
+      "file": "47_ginger_enhanced.js",
+      "oldPmid": "16008121",
+      "newPmid": "16360941",
+      "doi": "10.1016/j.phymed.2004.09.002"
+    },
+    {
+      "file": "48_garlic_enhanced.js",
+      "oldPmid": "10796682",
+      "newPmid": "22895963",
+      "doi": "10.1002/14651858.CD000383"
+    },
+    {
+      "file": "50_caffeine_enhanced.js",
+      "oldPmid": "31456413",
+      "newPmid": "41619931",
+      "doi": "10.1016/0003-9861(88)90189-4"
+    },
+    {
+      "file": "50_caffeine_enhanced.js",
+      "oldPmid": "11968130",
+      "newPmid": "12404667",
+      "doi": "10.1002/hup.386"
+    },
+    {
+      "file": "50_caffeine_enhanced.js",
+      "oldPmid": "23179966",
+      "newPmid": "23108937",
+      "doi": "10.1007/s00213-012-2889-4"
+    },
+    {
+      "file": "50_caffeine_enhanced.js",
+      "oldPmid": "12804695",
+      "newPmid": "41795418",
+      "doi": "10.1016/S0278-6915(03)00104-7"
+    },
+    {
+      "file": "53_spirulina_enhanced.js",
+      "oldPmid": "25396402",
+      "newPmid": "25396406",
+      "doi": "10.1900/RDS.2014.11.181"
+    },
+    {
+      "file": "53_spirulina_enhanced.js",
+      "oldPmid": "11893517",
+      "newPmid": "41795469",
+      "doi": "10.1016/s0278-6915(01)00101-8"
+    },
+    {
+      "file": "55_huperzine_a_enhanced.js",
+      "oldPmid": "24556750",
+      "newPmid": "357040",
+      "doi": "10.1159/000357040"
+    },
+    {
+      "file": "56_vinpocetine_enhanced.js",
+      "oldPmid": "38147382",
+      "newPmid": "41795410",
+      "doi": "10.1016/s0014-2999(00)00034-x"
+    },
+    {
+      "file": "56_vinpocetine_enhanced.js",
+      "oldPmid": "1743243",
+      "newPmid": "2076719",
+      "doi": "10.1007/BF00315411"
+    },
+    {
+      "file": "62_vanadium_enhanced.js",
+      "oldPmid": "10999822",
+      "newPmid": "11238540",
+      "doi": "10.1210/jcem.85.12.7014"
+    },
+    {
+      "file": "65_fenugreek_enhanced.js",
+      "oldPmid": "32048383",
+      "newPmid": "31989711",
+      "doi": "10.1002/ptr.6615"
+    },
+    {
+      "file": "65_fenugreek_enhanced.js",
+      "oldPmid": "33200772",
+      "newPmid": "33150931",
+      "doi": "10.1093/advances/nmaa134"
+    },
+    {
+      "file": "65_fenugreek_enhanced.js",
+      "oldPmid": "20979624",
+      "newPmid": "20979623",
+      "doi": "10.1186/1550-2783-7-34"
+    },
+    {
+      "file": "65_fenugreek_enhanced.js",
+      "oldPmid": "11604262",
+      "newPmid": "41795469",
+      "doi": "10.1016/S0271-5317(01)00358-8"
+    },
+    {
+      "file": "67_holy_basil_enhanced.js",
+      "oldPmid": "36211502",
+      "newPmid": "36185698",
+      "doi": "10.3389/fnut.2022.965130"
+    },
+    {
+      "file": "73_stinging_nettle_enhanced.js",
+      "oldPmid": "23195472",
+      "newPmid": "41795405",
+      "doi": "10.1016/S0944-7113(97)80076-5"
+    },
+    {
+      "file": "73_stinging_nettle_enhanced.js",
+      "oldPmid": "10617073",
+      "newPmid": "41795432",
+      "doi": "10.1016/s0378-8741(99)00087-3"
+    },
+    {
+      "file": "73_stinging_nettle_enhanced.js",
+      "oldPmid": "15234764",
+      "newPmid": "15234770",
+      "doi": "10.1016/j.jep.2004.03.049"
+    },
+    {
+      "file": "75_enhanced.js",
+      "oldPmid": "11022082",
+      "newPmid": "11588329",
+      "doi": "10.1161/01.str.31.10.2473"
+    },
+    {
+      "file": "75_enhanced.js",
+      "oldPmid": "24961530",
+      "newPmid": "24961534",
+      "doi": "10.3390/brainsci3031395"
+    },
+    {
+      "file": "76_sulbutiamine_enhanced.js",
+      "oldPmid": "16208142",
+      "newPmid": "41795435",
+      "doi": "10.1016/S0755-4982(05)84117-4"
+    },
+    {
+      "file": "76_sulbutiamine_enhanced.js",
+      "oldPmid": "32408706",
+      "newPmid": "32414132",
+      "doi": "10.3390/nu12051401"
+    },
+    {
+      "file": "78_centella_asiatica_enhanced.js",
+      "oldPmid": "29258858",
+      "newPmid": "29253615",
+      "doi": "10.1016/j.jep.2017.12.020"
+    },
+    {
+      "file": "80_aniracetam_enhanced.js",
+      "oldPmid": "11796155",
+      "newPmid": "41795469",
+      "doi": "10.1016/S0091-3057(01)00676-4"
+    },
+    {
+      "file": "80_aniracetam_enhanced.js",
+      "oldPmid": "15374421",
+      "newPmid": "41570428",
+      "doi": "10.1016/0167-4943(91)90056-P"
+    },
+    {
+      "file": "88_zeaxanthin_enhanced.js",
+      "oldPmid": "36296956",
+      "newPmid": "35215476",
+      "doi": "10.3390/nu14245413"
+    },
+    {
+      "file": "89_pterostilbene_enhanced.js",
+      "oldPmid": "32064876",
+      "newPmid": "25083823",
+      "doi": "10.1021/acs.jafc.9b07519"
+    },
+    {
+      "file": "89_pterostilbene_enhanced.js",
+      "oldPmid": "36082508",
+      "newPmid": "35788964",
+      "doi": "10.1002/hep.32643"
+    },
+    {
+      "file": "90_beta_alanine_enhanced.js",
+      "oldPmid": "37037309",
+      "newPmid": "37028708",
+      "doi": "10.1016/j.advnut.2023.04.001"
+    },
+    {
+      "file": "92_hmb_enhanced.js",
+      "oldPmid": "39005720",
+      "newPmid": "39071082",
+      "doi": "10.3389/fmed.2024.1348212"
+    },
+    {
+      "file": "92_hmb_enhanced.js",
+      "oldPmid": "32320006",
+      "newPmid": "32271921",
+      "doi": "10.1093/jn/nxaa092"
+    },
+    {
+      "file": "93_betaine_enhanced.js",
+      "oldPmid": "20659505",
+      "newPmid": "20642826",
+      "doi": "10.1186/1550-2783-7-27"
+    },
+    {
+      "file": "93_betaine_enhanced.js",
+      "oldPmid": "14668277",
+      "newPmid": "41781077",
+      "doi": "10.1093/ajcn/78.6.1157"
+    }
+  ]
+}

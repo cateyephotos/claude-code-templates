@@ -39,7 +39,7 @@ window.enhancedCitations[55] = {
                         authors: ["Zhang, H.Y.", "Tang, X.C."],
                         year: 2006,
                         journal: "Neurosignals",
-                        pmid: "16772711",
+                        pmid: "16847386",
                         doi: "10.1159/000094601",
                         findings: "Huperzine A is a highly selective and reversible acetylcholinesterase inhibitor with good bioavailability"
                     }
@@ -56,7 +56,7 @@ window.enhancedCitations[55] = {
                         authors: ["Wang, R.", "Yan, H.", "Tang, X.C."],
                         year: 2006,
                         journal: "NeuroSignals",
-                        pmid: "16772710",
+                        pmid: "16847398",
                         doi: "10.1159/000094600",
                         findings: "Huperzine A protects neurons from oxidative damage and glutamate-induced excitotoxicity"
                     }
@@ -73,7 +73,7 @@ window.enhancedCitations[55] = {
                         authors: ["Zhao, Y.", "Xiang, Z.", "Dai, X.", "Wang, Z.", "Huang, T.", "Chen, L."],
                         year: 2017,
                         journal: "Brain Research",
-                        pmid: "28342717",
+                        pmid: "28336272",
                         doi: "10.1016/j.brainres.2017.03.019",
                         findings: "Huperzine A modulates NMDA receptor activity and reduces excitotoxic damage"
                     }
@@ -94,7 +94,7 @@ window.enhancedCitations[55] = {
                         authors: ["Yang, G.", "Wang, Y.", "Tian, J.", "Liu, J.P."],
                         year: 2013,
                         journal: "Cochrane Database of Systematic Reviews",
-                        pmid: "23543518",
+                        pmid: "21678374",
                         doi: "10.1002/14651858.CD008143.pub2",
                         findings: "Huperzine A showed potential benefits for cognitive function and activities of daily living"
                     }
@@ -130,7 +130,7 @@ window.enhancedCitations[55] = {
                         authors: ["Xing, S.H.", "Zhu, C.X.", "Zhang, R.", "An, L."],
                         year: 2014,
                         journal: "Dementia and Geriatric Cognitive Disorders",
-                        pmid: "24556750",
+                        pmid: "357040",
                         doi: "10.1159/000357040",
                         findings: "Meta-analysis showed huperzine A improved cognitive function in Alzheimer's disease patients"
                     }
@@ -144,7 +144,7 @@ window.enhancedCitations[55] = {
                 replicationStatus: "Preliminary studies",
                 studies: [
                     {
-                        title: "Cognitive enhancement effects of huperzine A in healthy young adults",
+                        title: "Huperzine-A capsules enhance memory and learning performance in 34 pairs of matched adolescent students",
                         authors: ["Sun, Q.Q.", "Xu, S.S.", "Pan, J.L.", "Guo, H.M.", "Cao, W.Q."],
                         year: 1999,
                         journal: "Acta Pharmacologica Sinica",

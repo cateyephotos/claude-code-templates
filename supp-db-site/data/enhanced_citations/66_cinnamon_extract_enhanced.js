@@ -138,7 +138,7 @@ const cinnamonExtractEnhanced = {
             "confidenceInterval": "95%"
           },
           {
-            "title": "Cinnamon (Cinnamomum spp.) and type 2 diabetes",
+            "title": "The potential of cinnamon to reduce blood glucose levels in patients with type 2 diabetes and insulin resistance",
             "authors": "Kirkham S, Akilen R, Sharma S, Tsiami A",
             "journal": "Diabetes, Obesity and Metabolism",
             "year": 2009,
@@ -273,7 +273,7 @@ const cinnamonExtractEnhanced = {
             "confidenceInterval": "N/A"
           },
           {
-            "title": "Coumarin in cinnamon-derived food supplements and herbal medicines: risk assessment",
+            "title": "The Relation between Hepatotoxicity and the Total Coumarin Intake from Traditional Japanese Medicines Containing Cinnamon Bark",
             "authors": "Iwata N, Kainuma M, Kobayashi D, Kubota T, Sugawara N, Uchida A, Ozono S, Yamamuro Y, Furusyo N, Ueda K, Kinoshita S, Yokoyama T, Inoue K",
             "journal": "Frontiers in Pharmacology",
             "year": 2016,
@@ -372,7 +372,7 @@ const cinnamonExtractEnhanced = {
         "target": "Renal tubular cells and insulin-sensitive tissues",
         "evidence": [
           {
-            "title": "Cinnamaldehyde attenuates AGE-induced vascular cell adhesion molecule-1 expression via JAK2-STAT1/STAT3 pathway",
+            "title": "Cinnamaldehyde and nitric oxide attenuate advanced glycation end products-induced the Jak/STAT signaling in human renal tubular cells",
             "authors": "Huang JS, Lee YH, Chuang LY, Guh JY, Hwang JY",
             "journal": "Journal of Cellular Biochemistry",
             "year": 2015,
@@ -393,7 +393,7 @@ const cinnamonExtractEnhanced = {
             "confidenceInterval": "N/A"
           },
           {
-            "title": "The Antidiabetic Potential of Cinnamon Essential Oil: A Narrative Review",
+            "title": "Antidiabetic Potential of Volatile Cinnamon Oil: A Review and Exploration of Mechanisms Using In Silico Molecular Docking Simulations",
             "authors": "Stevens N, Allred K",
             "journal": "Molecules",
             "year": 2022,
@@ -496,7 +496,7 @@ const cinnamonExtractEnhanced = {
             "confidenceInterval": "95%"
           },
           {
-            "title": "Cinnamon and type 2 diabetes: a systematic review",
+            "title": "Cinnamon for diabetes mellitus",
             "authors": "Leach MJ, Kumar S",
             "journal": "Cochrane Database of Systematic Reviews",
             "year": 2012,

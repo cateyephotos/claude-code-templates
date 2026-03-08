@@ -143,7 +143,7 @@ window.enhancedCitations[73] = {
       issue: "2",
       pages: "412-423",
       doi: "10.1016/j.jep.2013.04.049",
-      pmid: "23684723",
+      pmid: "23680158",
       studyType: "Systematic Review",
       sampleSize: "Multiple studies on Urtica dioica",
       keyFindings: [
@@ -166,7 +166,7 @@ window.enhancedCitations[73] = {
       issue: "1",
       pages: "31-32",
       doi: "10.1055/s-2006-957993",
-      pmid: "7700988",
+      pmid: "7700987",
       studyType: "In Vitro Study",
       sampleSize: "Laboratory study",
       keyFindings: [
@@ -189,7 +189,7 @@ window.enhancedCitations[73] = {
       issue: "10",
       pages: "1024-1030",
       doi: "10.1055/s-0031-1298548",
-      pmid: "22549394",
+      pmid: "22588834",
       studyType: "In Vitro Study",
       sampleSize: "Laboratory enzyme inhibition study",
       keyFindings: [
@@ -250,7 +250,7 @@ window.enhancedCitations[73] = {
 
     {
       id: 10,
-      title: "Urtica dioica root extract inhibits aromatase activity",
+      title: "Comparative antilipoperoxidant, antinecrotic and scavenging properties of terpenes and biflavones from Ginkgo and some flavonoids",
       authors: "Gansser D, Spiteller G",
       journal: "Planta Medica",
       year: "1995",
@@ -327,7 +327,7 @@ window.enhancedCitations[73] = {
       issue: "2-3",
       pages: "259-266",
       doi: "10.1016/j.jep.2004.03.049",
-      pmid: "15234764",
+      pmid: "15234770",
       studyType: "In Vitro and In Vivo Study",
       sampleSize: "Human prostate cell lines and animal models",
       keyFindings: [

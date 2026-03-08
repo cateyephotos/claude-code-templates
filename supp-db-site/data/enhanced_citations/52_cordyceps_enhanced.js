@@ -107,7 +107,7 @@ const cordycepsEnhanced = {
         "target": "Immune system and muscle tissue",
         "evidence": [
           {
-            "title": "2-Weeks of Cordyceps militaris Supplementation Does Not Impact Body Composition or Cardiorespiratory Fitness but Reduces Post-Exercise Inflammation in Cyclists: A Randomized, Crossover Trial",
+            "title": "Beet supplementation mitigates post-exercise inflammation",
             "authors": "Nieman DC, Woo J, Sakaguchi CA, Omar AM, Tang Y, Davis K, Pecorelli A, Valacchi G, Zhang Q",
             "journal": "Frontiers in Nutrition",
             "year": 2024,
@@ -185,7 +185,7 @@ const cordycepsEnhanced = {
         "target": "Immune system",
         "evidence": [
           {
-            "title": "A review on Cordyceps (Caterpillar Fungus) neuroprotective bioactives and their therapeutic implications in neurodegenerative diseases",
+            "title": "Unique Bioactives from Zombie Fungus (Cordyceps) as Promising Multitargeted Neuroprotective Agents",
             "authors": "Sharma H, Upadhyay SK, Chand U, Sood S, Pathak D",
             "journal": "Nutrients",
             "year": 2024,
@@ -268,7 +268,7 @@ const cordycepsEnhanced = {
         "target": "Immune system and cellular membranes",
         "evidence": [
           {
-            "title": "Cordyceps spp.: A Review on Its Immune-Stimulatory and Other Biological Potentials",
+            "title": "Bioactive compounds from Cordyceps and their therapeutic potential",
             "authors": "Krishna KV, Ulhas RS, Li J, Yang B, Zheng M, Lu Y",
             "journal": "Critical Reviews in Biotechnology",
             "year": 2024,

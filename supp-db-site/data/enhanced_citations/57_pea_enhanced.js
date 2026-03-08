@@ -222,7 +222,7 @@ const peaEnhanced = {
             "confidenceInterval": "N/A"
           },
           {
-            "title": "Structural insights into ligand recognition and activation of the human TAAR1-Gs complex",
+            "title": "Recognition of methamphetamine and other amines by trace amine receptor TAAR1",
             "authors": "Liu H, Zheng Y, Wang Y, Wang C, He X, Shan P, Wang C, Zhou K, Jiang H, Jiang Y, Xu HE, Cheng X",
             "journal": "Nature",
             "year": 2023,
@@ -284,7 +284,7 @@ const peaEnhanced = {
         "target": "Enterochromaffin cells and gut-brain axis",
         "evidence": [
           {
-            "title": "Gut microbiome-produced phenylethylamine stimulates serotonin biosynthesis via TAAR1 in enterochromaffin cells",
+            "title": "Ruminococcus gnavus plays a pathogenic role in diarrhea-predominant irritable bowel syndrome by increasing serotonin biosynthesis",
             "authors": "Zhai B, Shang X, Fu J, Li F, Zhang T",
             "journal": "Cell Host & Microbe",
             "year": 2022,

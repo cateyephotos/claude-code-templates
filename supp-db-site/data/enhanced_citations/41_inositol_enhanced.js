@@ -46,7 +46,7 @@ const inositolEnhanced = {
         "target": "Neural tissue and neurotransmitter systems",
         "evidence": [
       {
-        "title": "Inositol and its derivatives: their roles in cellular signaling",
+        "title": "Inositol phosphates and cell signalling",
         "authors": ["Berridge, M.J.", "Irvine, R.F."]
       }
     ],
@@ -60,7 +60,7 @@ const inositolEnhanced = {
         "significance": "Foundational understanding of inositol's role in IP3/DAG second messenger signaling pathway"
       },
       {
-        "title": "The inositol phosphate pathway and signal transduction",
+        "title": "The metabolism of phosphoinositide-derived messenger molecules",
         "authors": ["Majerus, P.W.", "Connolly, T.M.", "Deckmyn, H.", "Ross, T.S.", "Bross, T.E.", "Ishii, H.", "Bansal, V.S.", "Wilson, D.B."],
         "journal": "Science", 
         "year": 1986,
@@ -80,7 +80,7 @@ const inositolEnhanced = {
         "issue": 11,
         "pages": "R188-R196", 
         "doi": "10.1530/EC-18-0456",
-        "pmid": "30307155",
+        "pmid": "30772871",
         "significance": "Insulin sensitizing mechanisms and steroidogenesis regulation in reproductive health"
       },
       {
@@ -92,7 +92,7 @@ const inositolEnhanced = {
         "issue": 11,
         "pages": "1992-1998",
         "doi": "10.1016/j.bbadis.2014.05.014", 
-        "pmid": "24844177",
+        "pmid": "24859566",
         "significance": "Neural development mechanisms independent of folate metabolism"
       }
     ],
@@ -121,7 +121,7 @@ const inositolEnhanced = {
         "significance": "Comprehensive evidence for PCOS management: improved ovulation, insulin sensitivity, hormone balance"
       },
       {
-        "title": "Inositol treatment for panic disorder: an open-label study",
+        "title": "Double-blind, placebo-controlled, crossover trial of inositol treatment for panic disorder",
         "authors": ["Benjamin, J.", "Levine, J.", "Fux, M.", "Aviv, A.", "Levy, D.", "Belmaker, R.H."],
         "journal": "American Journal of Psychiatry",
         "year": 1995,
@@ -164,7 +164,7 @@ const inositolEnhanced = {
         "issue": 12,
         "pages": "CD013594",
         "doi": "10.1002/14651858.CD013594",
-        "pmid": "30556597",
+        "pmid": "32343003",
         "significance": "Gestational diabetes prevention through improved insulin sensitivity"
       },
       {
@@ -176,7 +176,7 @@ const inositolEnhanced = {
         "issue": 5,
         "pages": "1891-1895",
         "doi": "10.26355/eurrev_201903_17218",
-        "pmid": "30915739",
+        "pmid": "30915725",
         "significance": "Synergistic effects of 40:1 ratio combination for metabolic improvement"
       },
       {
@@ -200,7 +200,7 @@ const inositolEnhanced = {
         "issue": 9,
         "pages": "1098-1106",
         "doi": "10.1530/EC-18-0237",
-        "pmid": "30062252",
+        "pmid": "29973373",
         "significance": "Comprehensive metabolic benefits: insulin resistance, lipid profiles, reproductive function"
       }
     ],
@@ -214,7 +214,7 @@ const inositolEnhanced = {
         "volume": 2013,
         "pages": "967067",
         "doi": "10.1155/2013/967067",
-        "pmid": "24223476",
+        "pmid": "23533314",
         "significance": "Metabolic consequences of deficiency including insulin resistance and inflammatory markers"
       },
       {
@@ -226,7 +226,7 @@ const inositolEnhanced = {
         "issue": 8,
         "pages": "1148-1150",
         "doi": "10.1176/ajp.154.8.1148",
-        "pmid": "9247407",
+        "pmid": "9247405",
         "significance": "Association between low brain inositol levels and mood disorders"
       }
     ],
@@ -250,7 +250,7 @@ const inositolEnhanced = {
         "issue": 19,
         "pages": "2327-2336",
         "doi": "10.1016/j.lfs.2003.09.032",
-        "pmid": "15027549",
+        "pmid": "14609730",
         "significance": "Comprehensive safety profile with minimal adverse effects at therapeutic doses"
       },
       {
@@ -261,7 +261,7 @@ const inositolEnhanced = {
         "volume": 15,
         "issue": 8,
         "pages": "931-936",
-        "pmid": "21845803",
+        "pmid": "31339394",
         "significance": "Extended use safety data in reproductive health applications"
       }
     ],
@@ -287,7 +287,7 @@ const inositolEnhanced = {
         "issue": 1,
         "pages": "25-27",
         "doi": "10.1097/00004714-199502000-00004",
-        "pmid": "7714224",
+        "pmid": "7714223",
         "significance": "Establishing 12-18g daily dosing for psychiatric applications"
       },
       {

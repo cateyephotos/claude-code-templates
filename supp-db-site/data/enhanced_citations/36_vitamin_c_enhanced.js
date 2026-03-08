@@ -49,7 +49,7 @@ window.enhancedCitations[36] = {
                         authors: ["Berger, T.M.", "Polidori, M.C.", "Dabbagh, A.", "Evans, P.J.", "Halliwell, B.", "London, S.J.", "Cross, C.E.", "Eiserich, J.P."],
                         year: 1997,
                         journal: "Journal of Biological Chemistry",
-                        pmid: "9405471",
+                        pmid: "9188455",
                         doi: "10.1074/jbc.272.25.15656",
                         evidenceLevel: "Level 2",
                         keyFindings: "Vitamin C demonstrates superior antioxidant capacity in biological systems, particularly in protecting against lipid peroxidation and protein oxidation."
@@ -67,7 +67,7 @@ window.enhancedCitations[36] = {
                         authors: ["Harrison, F.E.", "May, J.M."],
                         year: 2009,
                         journal: "Brain Research Reviews",
-                        pmid: "19589371",
+                        pmid: "19619584",
                         doi: "10.1016/j.brainresrev.2009.07.001",
                         evidenceLevel: "Level 1",
                         keyFindings: "Vitamin C is essential for collagen synthesis through its role as a cofactor for prolyl and lysyl hydroxylases, critical for collagen stability and tissue integrity."
@@ -124,7 +124,7 @@ window.enhancedCitations[36] = {
                         authors: ["Ashor, A.W.", "Lara, J.", "Mathers, J.C.", "Siervo, M."],
                         year: 2014,
                         journal: "Journal of Nutritional Science",
-                        pmid: "26101613",
+                        pmid: "25191614",
                         doi: "10.1017/jns.2014.2",
                         evidenceLevel: "Level 1",
                         keyFindings: "Vitamin C supplementation shows beneficial effects on endothelial function and may reduce cardiovascular disease risk through improved vascular health."
@@ -142,7 +142,7 @@ window.enhancedCitations[36] = {
                         authors: ["Lynch, S.R.", "Cook, J.D."],
                         year: 1980,
                         journal: "American Journal of Clinical Nutrition",
-                        pmid: "7355794",
+                        pmid: "15743017",
                         doi: "10.1093/ajcn/33.11.2394",
                         evidenceLevel: "Level 1",
                         keyFindings: "Vitamin C significantly enhances non-heme iron absorption by reducing ferric iron to ferrous iron and forming chelation complexes."
@@ -177,7 +177,7 @@ window.enhancedCitations[36] = {
                 populationTarget: "General population",
                 studies: [
                     {
-                        title: "Safety considerations with vitamin C",
+                        title: "Toward a new recommended dietary allowance for vitamin C based on antioxidant and health effects in humans",
                         authors: ["Levine, M.", "Rumsey, S.C.", "Daruwala, R.", "Park, J.B.", "Wang, Y."],
                         year: 1999,
                         journal: "American Journal of Clinical Nutrition",

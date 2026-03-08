@@ -49,7 +49,7 @@ window.enhancedCitations[32] = {
                         authors: ["Uebelhart, D.", "Thonar, E.J.", "Delmas, P.D.", "Chantraine, A.", "Vignon, E."],
                         year: 1998,
                         journal: "Osteoarthritis and Cartilage",
-                        pmid: "9876391",
+                        pmid: "10343773",
                         doi: "10.1053/joca.1998.0143",
                         evidenceLevel: "Level 2",
                         keyFindings: "Oral chondroitin sulfate increases hyaluronic acid synthesis and reduces cartilage degradation markers in synovial fluid."
@@ -102,7 +102,7 @@ window.enhancedCitations[32] = {
                 populationTarget: "Adults with knee and hip osteoarthritis",
                 studies: [
                     {
-                        title: "Chondroitin sulfate in osteoarthritis of the knee: a prospective, double blind, placebo controlled multicenter clinical study",
+                        title: "Pain and disability in patients with osteoarthritis of hip or knee: the relationship with articular, kinesiological, and psychological characteristics",
                         authors: ["Bucsi, L.", "Poór, G."],
                         year: 1998,
                         journal: "Journal of Rheumatology",
@@ -115,7 +115,7 @@ window.enhancedCitations[32] = {
                         authors: ["Mazieres, B.", "Combe, B.", "Phan Van, A.", "Tondut, J.", "Grynfeltt, M."],
                         year: 2001,
                         journal: "Osteoarthritis and Cartilage",
-                        pmid: "11300746",
+                        pmid: "11399101",
                         doi: "10.1053/joca.2000.0397",
                         evidenceLevel: "Level 1",
                         keyFindings: "Chondroitin sulfate reduced joint swelling and pain intensity with sustained effects lasting 3 months after treatment cessation."
@@ -133,7 +133,7 @@ window.enhancedCitations[32] = {
                         authors: ["Wildi, L.M.", "Raynauld, J.P.", "Martel-Pelletier, J.", "Beaulieu, A.", "Bessette, L.", "Morin, F.", "Abram, F.", "Dorais, M.", "Pelletier, J.P."],
                         year: 2011,
                         journal: "Arthritis & Rheumatism",
-                        pmid: "21305503",
+                        pmid: "21400475",
                         doi: "10.1002/art.30314",
                         evidenceLevel: "Level 1",
                         keyFindings: "Two-year study showed chondroitin sulfate significantly reduced cartilage volume loss and bone marrow lesions compared to placebo."
@@ -151,7 +151,7 @@ window.enhancedCitations[32] = {
                         authors: ["Clegg, D.O.", "Reda, D.J.", "Harris, C.L.", "Klein, M.A.", "O'Dell, J.R.", "Hooper, M.M.", "Bradley, J.D.", "Bingham, C.O.", "Weisman, M.H.", "Jackson, C.G."],
                         year: 2006,
                         journal: "New England Journal of Medicine",
-                        pmid: "16481635",
+                        pmid: "16495392",
                         doi: "10.1056/NEJMoa052771",
                         evidenceLevel: "Level 1",
                         keyFindings: "Combination of glucosamine and chondroitin sulfate showed superior pain relief compared to individual components in severe osteoarthritis."
@@ -190,7 +190,7 @@ window.enhancedCitations[32] = {
                         authors: ["Volpi, N."],
                         year: 2002,
                         journal: "Osteoarthritis and Cartilage",
-                        pmid: "12417536",
+                        pmid: "12359162",
                         doi: "10.1053/joca.2002.0824",
                         evidenceLevel: "Level 1",
                         keyFindings: "Comprehensive safety analysis shows chondroitin sulfate has excellent tolerability with adverse event rates similar to placebo."
@@ -208,7 +208,7 @@ window.enhancedCitations[32] = {
                         authors: ["Miller, K.L.", "Clegg, D.O."],
                         year: 2006,
                         journal: "Thrombosis Research",
-                        pmid: "16337659",
+                        pmid: "16426667",
                         doi: "10.1016/j.thromres.2005.11.005",
                         evidenceLevel: "Level 3",
                         keyFindings: "High-dose chondroitin sulfate may have mild anticoagulant effects, requiring monitoring in patients on blood thinners."
@@ -226,7 +226,7 @@ window.enhancedCitations[32] = {
                         authors: ["Hochberg, M.C.", "Clegg, D.O."],
                         year: 2008,
                         journal: "Current Medical Research and Opinion",
-                        pmid: "18947494",
+                        pmid: "18826751",
                         doi: "10.1185/03007990802434932",
                         evidenceLevel: "Level 2",
                         keyFindings: "Systematic review found rare reports of nausea, diarrhea, and allergic reactions, with overall incidence <2% of users."

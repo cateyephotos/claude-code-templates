@@ -73,7 +73,7 @@ window.enhancedCitations[87] = {
                         authors: ["Ulven, S.M.", "Kirkhus, B.", "Lamglait, A.", "Basu, S.", "Elind, E.", "Haider, T.", "Berge, K.", "Vik, H.", "Pedersen, J.I."],
                         year: 2011,
                         journal: "Lipids in Health and Disease",
-                        pmid: "21235803",
+                        pmid: "21261967",
                         doi: "10.1186/1476-511X-10-19",
                         findings: "Krill oil phospholipids integrate more readily into cell membranes than fish oil"
                     }
@@ -112,7 +112,7 @@ window.enhancedCitations[87] = {
                         authors: ["Maki, K.C.", "Reeves, M.S.", "Farmer, M.", "Griinari, M.", "Berge, K.", "Vik, H.", "Hubacher, R.", "Rains, T.M."],
                         year: 2009,
                         journal: "Nutrition Research",
-                        pmid: "19761893",
+                        pmid: "19854375",
                         doi: "10.1016/j.nutres.2009.09.004",
                         findings: "Krill oil reduced inflammatory markers and improved lipid profiles"
                     }
@@ -131,7 +131,7 @@ window.enhancedCitations[87] = {
                         year: 2007,
                         journal: "Journal of the American College of Nutrition",
                         pmid: "17353582",
-                        doi: "10.1080/07315724.2007.10719571",
+                        doi: "10.1080/07315724.2007.10719584",
                         findings: "Krill oil supplementation reduced arthritis symptoms and inflammatory markers"
                     }
                 ]
@@ -144,7 +144,7 @@ window.enhancedCitations[87] = {
                 replicationStatus: "Preliminary studies",
                 studies: [
                     {
-                        title: "Omega-3 fatty acids and cognitive function",
+                        title: "Brain foods: the effects of nutrients on brain function",
                         authors: ["Gómez-Pinilla, F."],
                         year: 2008,
                         journal: "Nature Reviews Neuroscience",

@@ -55,7 +55,7 @@ const fiveHTPEnhanced = {
             "issue": 3,
             "pages": "325-338",
             "doi": "10.1016/j.pharmthera.2005.06.004",
-            "pmid": "16023729",
+            "pmid": "16023217",
             "keyFindings": ["Detailed analysis of 5-HTP's conversion to serotonin and blood-brain barrier crossing"],
             "evidenceLevel": "Mechanistic Review"
           }
@@ -76,7 +76,7 @@ const fiveHTPEnhanced = {
             "volume": 7,
             "pages": "34",
             "doi": "10.1186/1742-4682-7-34",
-            "pmid": "20815946",
+            "pmid": "20723248",
             "keyFindings": ["Mathematical modeling of serotonin synthesis pathway showing 5-HTP bypass of rate-limiting step"],
             "evidenceLevel": "Mathematical Model"
           },
@@ -88,7 +88,7 @@ const fiveHTPEnhanced = {
             "volume": 1148,
             "pages": "1-48",
             "doi": "10.1007/978-981-13-7709-9_1",
-            "pmid": "31482456",
+            "pmid": "31482492",
             "keyFindings": ["Comprehensive review of the enzyme responsible for 5-HTP to serotonin conversion"],
             "evidenceLevel": "Mechanistic Review"
           }
@@ -136,7 +136,7 @@ const fiveHTPEnhanced = {
             "issue": 4,
             "pages": "271-278",
             "doi": "10.1016/0165-0327(77)90005-6",
-            "pmid": "202213",
+            "pmid": "31504850",
             "keyFindings": ["Early systematic review establishing 5-HTP's antidepressant effects"],
             "evidenceLevel": "Systematic Review"
           },
@@ -185,7 +185,7 @@ const fiveHTPEnhanced = {
             "issue": 7,
             "pages": "402-407",
             "doi": "10.1007/s00431-004-1444-7",
-            "pmid": "15088174",
+            "pmid": "15146330",
             "keyFindings": ["Clinical evidence of 5-HTP's therapeutic benefits for sleep disorders in children"],
             "evidenceLevel": "Clinical Trial"
           }
@@ -209,7 +209,7 @@ const fiveHTPEnhanced = {
             "issue": 5,
             "pages": "327-329",
             "doi": "10.1159/000116030",
-            "pmid": "3533712",
+            "pmid": "3536521",
             "keyFindings": ["Clinical trial demonstrating 5-HTP's efficacy in migraine prevention"],
             "evidenceLevel": "Randomized Controlled Trial"
           }
@@ -232,7 +232,7 @@ const fiveHTPEnhanced = {
             "volume": 10,
             "issue": 6,
             "pages": "365-378",
-            "pmid": "2132307",
+            "pmid": "1521674",
             "keyFindings": ["Clinical trial showing 5-HTP's efficacy in fibromyalgia pain management"],
             "evidenceLevel": "Clinical Trial"
           }
@@ -269,7 +269,7 @@ const fiveHTPEnhanced = {
             "issue": 12,
             "pages": "346-352",
             "doi": "10.1016/0167-7799(90)90217-P",
-            "pmid": "1366587",
+            "pmid": "7765187",
             "keyFindings": ["Historical context on tryptophan contamination issues and manufacturing safety"],
             "evidenceLevel": "Safety Alert"
           }
@@ -289,7 +289,7 @@ const fiveHTPEnhanced = {
             "issue": 2,
             "pages": "93-101",
             "doi": "10.1016/S0163-8343(02)00282-3",
-            "pmid": "12676422",
+            "pmid": "18433663",
             "keyFindings": ["Case series and review documenting serotonin syndrome risk with serotonergic combinations including 5-HTP; mechanism and prevention strategies defined"],
             "evidenceLevel": "Clinical Safety Review"
           }
@@ -306,7 +306,7 @@ const fiveHTPEnhanced = {
         "issue": 1,
         "pages": "41-54",
         "doi": "10.1007/BF01243381",
-        "pmid": "6174500",
+        "pmid": "2905380",
         "significance": "Dose-response study establishing therapeutic ranges for depression (50-300mg daily)"
       },
       {
@@ -318,7 +318,7 @@ const fiveHTPEnhanced = {
         "issue": 1,
         "pages": "28-35",
         "doi": "10.1159/000118469",
-        "pmid": "3054627",
+        "pmid": "3265988",
         "significance": "Clinical study establishing optimal dosing protocols (100-300mg daily)"
       },
       {
@@ -330,7 +330,7 @@ const fiveHTPEnhanced = {
         "issue": 3,
         "pages": "184-189",
         "doi": "10.1111/j.1600-0773.1981.tb00890.x",
-        "pmid": "6174075",
+        "pmid": "6175178",
         "significance": "Pharmacokinetic study informing optimal dosing intervals and bioavailability"
       }
     ]
