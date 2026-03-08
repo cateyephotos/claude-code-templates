@@ -1,358 +1,222 @@
-// Enhanced Citations for MCT Oil (ID: 58) - Tier 2 High-Priority Supplement
-// Research completed: 2025-08-24 by Enhanced Citations Expansion
-// Citation count: 16 citations (Target: 15+ achieved ✅)
-// Evidence quality: 63% Level 1-2 evidence
+// Enhanced Citations for MCT Oil (ID: 58)
+// Research focus: Ketone production, cognitive support, weight management, energy metabolism
+// Evidence Profile: Tier 2 - Moderate evidence with growing clinical support
+// Last rebuilt: 2026-03-07 | All PMIDs PubMed-verified
 
 window.enhancedCitations = window.enhancedCitations || {};
 
-window.enhancedCitations[58] = {
-  supplementId: 58,
-  supplementName: "MCT Oil",
-  lastUpdated: "2025-08-24",
-  researchPhase: "Batch 1 - High-Priority Tier 2 Supplements",
-  
-  // Quality metrics for this research phase
-  qualityMetrics: {
-    totalCitations: 16,
-    level1Evidence: 6,  // 38%
-    level2Evidence: 4,  // 25%
-    level3Evidence: 6,  // 37%
-    averageStudyQuality: 82,
-    citationCompleteness: 100,
-    dosageProtocolsCovered: true,
-    safetyProfileCovered: true,
-    mechanismsCovered: true
-  },
+window.mctOilEnhanced = {
+    supplementId: 58,
+    supplementName: "MCT Oil",
+    lastUpdated: "2026-03-07",
+    version: "2.0",
 
-  evidenceProfile: {
-    overallQuality: "Tier 2",
-    totalCitations: 16,
-    researchQualityScore: 82,
-    lastEvidenceUpdate: "2025-08-24",
-    evidenceStrength: {
-      mechanisms: "Strong",
-      clinicalBenefits: "Moderate to Strong",
-      safety: "Well-established",
-      dosage: "Evidence-based"
+    evidenceProfile: {
+        overallQuality: "Tier 2",
+        totalCitations: 17,
+        researchQualityScore: 78,
+        lastEvidenceUpdate: "2026-03-07",
+        evidenceStrength: {
+            mechanisms: "Strong",
+            clinicalBenefits: "Moderate",
+            safety: "Good",
+            dosage: "Evidence-based"
+        },
+        researchMaturity: "Mature",
+        publicationSpan: "2002-2024",
+        keyFindings: "MCTs are rapidly converted to ketone bodies providing alternative brain fuel; meta-analyses support modest weight and fat loss benefits versus LCTs; cognitive benefits observed in Alzheimer's and MCI patients, particularly in ApoE4-negative individuals; well-tolerated with mainly GI side effects at higher doses; 5-30g daily doses supported across clinical endpoints"
     },
-    researchMaturity: "Mature",
-    publicationSpan: "2009-2024",
-    keyFindings: "Well-established ketogenic supplement with strong evidence for cognitive and metabolic benefits"
-  },
 
-  citations: {
-    mechanisms: [
-      {
-        mechanism: "Ketone Body Production and Brain Energy",
-        strength: "Strong",
-        mechanismType: "Alternative Energy Substrate",
-        tissueTarget: "Central Nervous System",
-        evidence: [
-          {
-            type: "Level 2",
-            strength: "Strong",
-            description: "MCTs are rapidly converted to ketone bodies (β-hydroxybutyrate, acetoacetate) which cross the blood-brain barrier and provide alternative energy substrate for neurons",
-            citation: "Augustin K, Khabbush A, Williams S, et al. (2018). Mechanisms of action for the medium-chain triglyceride ketogenic diet in neurological and metabolic disorders. Lancet Neurology, 17(1), 84-93.",
-            doi: "10.1016/S1474-4422(17)30408-8",
-            studyType: "Comprehensive Review",
-            sampleSize: "Systematic analysis"
-          }
-        ]
-      },
-      {
-        mechanism: "Mitochondrial Function Enhancement",
-        strength: "Moderate",
-        mechanismType: "Cellular Energy",
-        tissueTarget: "Mitochondria",
-        evidence: [
-          {
-            type: "Level 3",
-            strength: "Moderate",
-            description: "MCTs enhance mitochondrial biogenesis and improve cellular energy production efficiency",
-            citation: "Schönfeld P, Wojtczak L. (2016). Short- and medium-chain fatty acids in mitochondria: bioenergetic implications. Biochimica et Biophysica Acta, 1857(2), 194-211.",
-            doi: "10.1016/j.bbabio.2015.11.005",
-            studyType: "Mechanistic Review",
-            sampleSize: "Cellular studies"
-          }
-        ]
-      }
-    ],
+    citations: {
+        mechanisms: [
+            {
+                claim: "MCTs generate ketone bodies that provide brain cells an energy source more efficient than glucose, and medium-chain fatty acids directly inhibit AMPA receptors and enhance mitochondrial biogenesis",
+                evidence: "Strong",
+                studyType: "Comprehensive Review",
+                participants: "Systematic analysis of neurological and metabolic disorders",
+                pmid: "29263011",
+                year: 2018,
+                replication: "Well-established across multiple studies",
+                details: "Augustin et al. reviewed mechanisms of the MCT ketogenic diet in Lancet Neurology. MCTs generate ketone bodies (beta-hydroxybutyrate, acetoacetate) that provide brain cells an energy source more efficient than glucose. Medium-chain fatty acids also directly inhibit AMPA receptors and change cell energetics through mitochondrial biogenesis, suggesting multiple neuroprotective pathways beyond ketosis alone."
+            },
+            {
+                claim: "Medium-chain fatty acids are taken up by mitochondria independently of the carnitine transport system and modulate mitochondrial energy production through providing reducing equivalents to the respiratory chain",
+                evidence: "Strong",
+                studyType: "Mechanistic Review",
+                participants: "Cellular and biochemical studies",
+                pmid: "27080715",
+                year: 2016,
+                replication: "Established biochemistry",
+                details: "Schonfeld and Wojtczak reviewed the cellular energy metabolism of short- and medium-chain fatty acids in the Journal of Lipid Research. MCFAs are taken up by mitochondria independently of the carnitine transport system and activate to acyl-CoA thioesters. They modulate tissue carbohydrate and lipid metabolism, inhibiting glycolysis and stimulating lipogenesis or gluconeogenesis, and partly decrease efficacy of oxidative ATP synthesis."
+            },
+            {
+                claim: "MCT-containing diet upregulates genes involved in mitochondrial biogenesis and metabolism through activation of Akt and AMPK signaling pathways",
+                evidence: "Moderate",
+                studyType: "Animal Study",
+                participants: "Mouse model (ICR mice)",
+                pmid: "29420554",
+                year: 2018,
+                replication: "Preclinical evidence",
+                details: "Wang et al. demonstrated in PLoS ONE that MCT-containing diet improves exercise performance through increased mitochondrial biogenesis and metabolism. MCT upregulated expression and protein levels of genes involved in mitochondrial biogenesis, mediated through activation of Akt and AMPK signaling pathways and inhibition of TGF-beta signaling."
+            },
+            {
+                claim: "Ketone bodies serve as alternative brain fuel bypassing metabolic blocks to glucose utilization, with neuroprotective effects involving modulation of neuronal membrane excitability, inflammation, and ROS production",
+                evidence: "Strong",
+                studyType: "Review",
+                participants: "Analysis of ketogenic diet and neurological diseases",
+                pmid: "29434537",
+                year: 2018,
+                replication: "Well-established concept",
+                details: "Veyrat-Durebex et al. reviewed in Frontiers in Molecular Neuroscience how ketogenic diets improve motor function. KD increases ketone body production providing the brain alternative energy supply that enhances oxidative mitochondrial metabolism. The neuroprotective effect involves pleiotropic mechanisms including modulation of neuronal membrane excitability, inflammation, and reactive oxygen species production."
+            }
+        ],
 
-    benefits: [
-      {
-        healthDomain: "Cognitive Function",
-        specificClaim: "Improves cognitive performance in mild cognitive impairment and Alzheimer's disease",
-        strength: "Moderate",
-        evidenceQuality: "Moderate",
-        replicationStatus: "Multiple studies",
-        tissueTarget: "Central nervous system",
-        target: "Central nervous system",
-        evidence: [
-          {
-            id: "benefit_1",
-            title: "MCT supplementation improves cognitive function in Alzheimer's disease",
-            authors: ["Reger MA", "Henderson ST", "Hale C", "Cholerton B", "Baker LD", "Watson GS", "Hyde K", "Chapman D", "Craft S"],
-            year: "2004",
-            evidenceLevel: "Level 2",
-            findings: "MCT supplementation (20g) improved cognitive performance in Alzheimer's patients within 90 minutes of administration",
-            citation: "Reger MA, Henderson ST, Hale C, et al. (2004). Effects of beta-hydroxybutyrate on cognition in memory-impaired adults. Neurobiology of Aging, 25(3), 311-314.",
-            doi: "10.1016/S0197-4580(03)00087-3",
-            studyType: "Randomized Controlled Trial",
-            sampleSize: "20 participants"
-          },
-          {
-            id: "benefit_2",
-            title: "Medium-chain triglycerides improve memory in healthy older adults",
-            authors: ["Ota M", "Matsuo J", "Ishida I", "Takano H", "Yokoi Y", "Hori H", "Yoshida S", "Ashida K", "Nakamura K", "Takahashi T", "Kunugi H"],
-            year: "2016",
-            evidenceLevel: "Level 2",
-            findings: "6g MCT oil daily for 12 weeks improved working memory performance in healthy older adults",
-            citation: "Ota M, Matsuo J, Ishida I, et al. (2016). Effects of a medium-chain triglyceride-based ketogenic formula on cognitive function in patients with mild-to-moderate Alzheimer's disease. Neuroscience Letters, 690, 232-236.",
-            doi: "10.1016/j.neulet.2016.10.038",
-            studyType: "Randomized Controlled Trial",
-            sampleSize: "20 participants"
-          }
-        ]
-      },
-      {
-        healthDomain: "Weight Management",
-        specificClaim: "Supports weight loss and metabolic health",
-        strength: "Moderate",
-        evidenceQuality: "Moderate",
-        replicationStatus: "Multiple studies",
-        tissueTarget: "Adipose tissue and metabolism",
-        target: "Metabolic system",
-        evidence: [
-          {
-            id: "benefit_3",
-            title: "MCT oil reduces body weight and waist circumference",
-            authors: ["Mumme K", "Stonehouse W"],
-            year: "2015",
-            evidenceLevel: "Level 1",
-            findings: "Meta-analysis showed MCT consumption significantly reduced body weight (-0.51 kg) and waist circumference (-1.46 cm) compared to LCT",
-            citation: "Mumme K, Stonehouse W. (2015). Effects of medium-chain triglycerides on weight loss and body composition: a meta-analysis of randomized controlled trials. Journal of the Academy of Nutrition and Dietetics, 115(2), 249-263.",
-            doi: "10.1016/j.jand.2014.10.022",
-            studyType: "Meta-analysis",
-            sampleSize: "13 RCTs, 749 participants"
-          }
-        ]
-      },
-      {
-        healthDomain: "Athletic Performance",
-        specificClaim: "Enhances endurance performance and fat oxidation",
-        strength: "Moderate",
-        evidenceQuality: "Moderate",
-        replicationStatus: "Multiple studies",
-        tissueTarget: "Skeletal muscle",
-        target: "Muscular system",
-        evidence: [
-          {
-            id: "benefit_4",
-            title: "MCT supplementation improves endurance performance",
-            authors: ["Wang Y", "Liu Z", "Han Y", "Xu J", "Huang W", "Li Z"],
-            year: "2018",
-            evidenceLevel: "Level 1",
-            findings: "Systematic review showed MCT supplementation improved endurance performance and increased fat oxidation during exercise",
-            citation: "Wang Y, Liu Z, Han Y, et al. (2018). Medium Chain Triglycerides enhances exercise endurance through the increased mitochondrial biogenesis and metabolism. PLoS One, 13(2), e0191182.",
-            doi: "10.1371/journal.pone.0191182",
-            studyType: "Systematic Review",
-            sampleSize: "Multiple studies"
-          }
-        ]
-      }
-    ],
+        benefits: [
+            {
+                claim: "MCT supplementation (20g single dose) improved cognitive performance on ADAS-cog in Alzheimer's patients, with effects modulated by ApoE4 genotype",
+                evidence: "Moderate",
+                studyType: "Human RCT",
+                participants: "20 subjects with AD or mild cognitive impairment",
+                duration: "Acute single-dose crossover",
+                pmid: "15123336",
+                year: 2004,
+                replication: "Replicated in subsequent studies",
+                details: "Reger et al. showed in Neurobiology of Aging that MCT-induced elevation of beta-hydroxybutyrate improved ADAS-cog scores in ApoE4-negative Alzheimer's patients within 90 minutes. Higher ketone values correlated with greater improvement in paragraph recall. ApoE4-positive subjects did not show the same benefit."
+            },
+            {
+                claim: "12-week MCT-based ketogenic formula (20g MCTs daily) improved verbal memory and processing speed in mild-to-moderate Alzheimer's patients",
+                evidence: "Moderate",
+                studyType: "Controlled Clinical Trial",
+                participants: "20 Japanese patients with mild-to-moderate AD",
+                duration: "12 weeks",
+                pmid: "30367958",
+                year: 2019,
+                replication: "Consistent with other MCT-AD studies",
+                details: "Ota et al. published in Neuroscience Letters that 50g ketogenic formula containing 20g MCTs daily for 12 weeks improved cognition. At 8 weeks, patients showed significant improvement in immediate and delayed logical memory tests; at 12 weeks, significant improvements in digit-symbol coding and immediate logical memory compared to baseline."
+            },
+            {
+                claim: "Acute MCT meal improved executive function (N-back task) in healthy elderly adults, with effects most pronounced in those with reduced prefrontal cortex grey matter",
+                evidence: "Moderate",
+                studyType: "Human RCT (fMRI study)",
+                participants: "20 healthy elderly subjects (mean age 65.7)",
+                duration: "Single dose",
+                pmid: "34206642",
+                year: 2021,
+                replication: "Novel imaging findings",
+                details: "Yomogida et al. published in Nutrients that an MCT meal improved N-back task performance using fMRI, especially in subjects with reduced grey matter volume in the dorsolateral prefrontal cortex. Decreased BOLD signals in DLPFC indicated consumption of ketone bodies as extra energy source."
+            },
+            {
+                claim: "Systematic review of 21 studies confirms MCTs substantially increase plasma ketone levels and brain metabolic rates in AD/MCI, though clinical cognitive improvements are domain-specific",
+                evidence: "Moderate",
+                studyType: "Systematic Review",
+                participants: "21 studies (8 uncontrolled + 13 RCTs) in AD and MCI",
+                duration: "Various",
+                pmid: "38715705",
+                year: 2024,
+                replication: "Comprehensive evidence synthesis",
+                details: "Meer and Fischer conducted a systematic review in Journal of Nutrition and Metabolism following Cochrane and PRISMA guidelines. MCT supplementation substantially increased plasma ketone levels and brain metabolic rates. Cognitive improvements were occasional or domain-specific rather than global. GI side effects were the main adverse events."
+            },
+            {
+                claim: "Meta-analysis of 13 RCTs: MCT consumption significantly reduced body weight (-0.51 kg), waist circumference (-1.46 cm), and body fat compared to long-chain triglycerides",
+                evidence: "Strong",
+                studyType: "Meta-analysis",
+                participants: "13 RCTs, 749 participants",
+                duration: "3+ weeks each",
+                pmid: "25636220",
+                year: 2015,
+                replication: "Confirmed by independent meta-analysis",
+                details: "Mumme and Stonehouse meta-analyzed 13 RCTs in the Journal of the Academy of Nutrition and Dietetics comparing MCT vs LCT. MCTs significantly decreased body weight, waist circumference, hip circumference, total body fat, subcutaneous fat, and visceral fat. No adverse effects on blood lipid levels were observed."
+            },
+            {
+                claim: "Independent meta-analysis of 11 RCTs confirmed MCT replacement of LCT significantly reduced body weight (-0.69 kg), body fat (-0.89 kg), and waist circumference (-1.78 cm)",
+                evidence: "Strong",
+                studyType: "Meta-analysis",
+                participants: "11 RCTs",
+                duration: "4+ weeks each",
+                pmid: "25651239",
+                year: 2015,
+                replication: "Independent replication of weight loss findings",
+                details: "Bueno et al. published in the Journal of the American College of Nutrition an independent systematic review and meta-analysis. Individuals replacing dietary LCT with MCT showed significantly reduced body weight, body fat, and waist circumference. Overall quality of evidence was low to moderate."
+            },
+            {
+                claim: "MCT consumption increased fat oxidation and energy expenditure compared to olive oil, with greater effects in men with lower initial body weight",
+                evidence: "Moderate",
+                studyType: "Human RCT",
+                participants: "19 healthy overweight men",
+                duration: "Two 4-week crossover periods",
+                pmid: "12975635",
+                year: 2003,
+                replication: "Consistent with thermogenesis literature",
+                details: "St-Onge and Jones published in the International Journal of Obesity that MCT consumption led to greater body weight loss (-1.03 kg vs -0.62 kg) and subcutaneous adipose tissue loss compared to olive oil. The thermogenic response to MCT was inversely related to initial body weight, suggesting greater responsiveness in leaner individuals."
+            }
+        ],
 
-    safety: [
-      {
-        safetyAspect: "General Safety Profile",
-        riskLevel: "Low",
-        claim: "Well-tolerated with minimal side effects at recommended doses",
-        evidence: [
-          {
-            id: "safety_1",
-            title: "MCT oil shows excellent safety profile in clinical trials",
-            authors: ["Mumme K", "Stonehouse W"],
-            year: "2015",
-            evidenceLevel: "Level 1",
-            findings: "Meta-analysis of 13 RCTs showed minimal adverse effects with MCT supplementation",
-            citation: "Mumme K, Stonehouse W. (2015). Effects of medium-chain triglycerides on weight loss and body composition: a meta-analysis of randomized controlled trials. Journal of the Academy of Nutrition and Dietetics, 115(2), 249-263.",
-            doi: "10.1016/j.jand.2014.10.022",
-            studyType: "Meta-analysis",
-            sampleSize: "13 RCTs, 749 participants"
-          }
-        ]
-      },
-      {
-        safetyAspect: "Gastrointestinal Effects",
-        riskLevel: "Low to Moderate",
-        claim: "May cause mild digestive upset at high doses, especially initially",
-        evidence: [
-          {
-            id: "safety_2",
-            title: "Dose-dependent gastrointestinal effects",
-            authors: ["St-Onge MP", "Mayrsohn B", "O'Keeffe M", "Kissileff HR", "Choudhury AR", "Laferrère B"],
-            year: "2014",
-            evidenceLevel: "Level 2",
-            findings: "Higher doses (>30g) may cause nausea, cramping, and diarrhea; gradual dose escalation recommended",
-            citation: "St-Onge MP, Mayrsohn B, O'Keeffe M, et al. (2014). Impact of medium and long chain triglycerides consumption on appetite and food intake in overweight men. European Journal of Clinical Nutrition, 68(10), 1134-1140.",
-            doi: "10.1038/ejcn.2014.145",
-            studyType: "Randomized Controlled Trial",
-            sampleSize: "49 participants"
-          }
-        ]
-      }
-    ],
+        safety: [
+            {
+                claim: "MCT supplementation is well-tolerated with minimal adverse effects; GI disturbances are the most common side effect, with no other harmful effects observed",
+                evidence: "Good Safety Profile",
+                studyType: "Systematic Review",
+                participants: "21 studies in AD/MCI patients",
+                pmid: "38715705",
+                year: 2024,
+                details: "Meer and Fischer's systematic review in Journal of Nutrition and Metabolism found that besides gastrointestinal side effects (nausea, cramping, diarrhea), no harmful effects were observed with MCT supplementation. Gradual dose titration is recommended to minimize GI effects."
+            },
+            {
+                claim: "MCT oil reduces food intake acutely through effects on appetite hormones (PYY, leptin); higher doses may cause nausea and cramping, requiring gradual dose escalation",
+                evidence: "Good Safety Profile",
+                studyType: "Human RCT",
+                participants: "17 overweight men across two crossover studies",
+                pmid: "25074387",
+                year: 2014,
+                details: "St-Onge et al. published in the European Journal of Clinical Nutrition that MCT consumption reduced food intake and altered appetite hormone levels compared to LCT. MCT resulted in higher PYY and leptin levels. Higher doses may cause GI disturbances; gradual dose escalation is recommended."
+            },
+            {
+                claim: "Add-on MCT treatment was feasible, safe, and tolerated for 12 weeks in adults with treatment-resistant epilepsy; most common adverse events were GI disturbances in 47% of participants",
+                evidence: "Good Safety Profile",
+                studyType: "Human RCT",
+                participants: "34 adults with refractory epilepsy",
+                pmid: "30868125",
+                year: 2019,
+                details: "Borges et al. published in Epilepsia Open that MCT was tolerated in approximately two-thirds of participants over 12 weeks. The most common adverse events were gastrointestinal disturbances (47% of participants). No serious safety concerns were identified. Median MCT dose was 59 mL/day."
+            }
+        ],
 
-    dosage: [
-      {
-        id: "dosage_1",
-        claim: "Cognitive benefits: 6-20g daily",
-        evidence: "Level 2",
-        citation: "Reger MA, Henderson ST, Hale C, et al. (2004). Effects of beta-hydroxybutyrate on cognition in memory-impaired adults. Neurobiology of Aging, 25(3), 311-314.",
-        doi: "10.1016/S0197-4580(03)00087-3",
-        keyFinding: "20g single dose improved cognitive performance in Alzheimer's patients; 6g daily effective for healthy older adults",
-        studyType: "Randomized Controlled Trial",
-        sampleSize: "Multiple studies"
-      },
-      {
-        id: "dosage_2",
-        claim: "Weight management: 15-30g daily",
-        evidence: "Level 1",
-        citation: "Mumme K, Stonehouse W. (2015). Effects of medium-chain triglycerides on weight loss and body composition: a meta-analysis of randomized controlled trials. Journal of the Academy of Nutrition and Dietetics, 115(2), 249-263.",
-        doi: "10.1016/j.jand.2014.10.022",
-        keyFinding: "15-30g daily doses showed significant weight loss benefits in meta-analysis",
-        studyType: "Meta-analysis",
-        sampleSize: "13 RCTs"
-      },
-      {
-        id: "dosage_3",
-        claim: "Athletic performance: 10-15g pre-exercise",
-        evidence: "Level 2",
-        citation: "Wang Y, Liu Z, Han Y, et al. (2018). Medium Chain Triglycerides enhances exercise endurance through the increased mitochondrial biogenesis and metabolism. PLoS One, 13(2), e0191182.",
-        doi: "10.1371/journal.pone.0191182",
-        keyFinding: "10-15g taken 30-60 minutes before exercise optimizes fat oxidation and endurance",
-        studyType: "Systematic Review",
-        sampleSize: "Multiple studies"
-      }
-    ]
-  }
+        dosage: [
+            {
+                claim: "Cognitive benefits: 20g MCT acutely or 20g daily in ketogenic formula for 8-12 weeks improves memory and cognitive processing in AD patients",
+                evidence: "Evidence-based",
+                studyType: "Multiple RCTs",
+                participants: "AD and MCI patients",
+                pmid: "30367958",
+                year: 2019,
+                details: "Ota et al. used 50g ketogenic formula containing 20g MCTs daily. Single dose of 20g MCT improved cognition acutely in the Reger 2004 study. Chronic 12-week administration showed improvements in verbal memory at 8 weeks and processing speed at 12 weeks."
+            },
+            {
+                claim: "Weight management: 15-30g MCT daily replacing equivalent LCT produces modest but significant reductions in body weight, waist circumference, and visceral fat",
+                evidence: "Evidence-based",
+                studyType: "Meta-analysis",
+                participants: "13 RCTs, 749 participants",
+                pmid: "25636220",
+                year: 2015,
+                details: "Mumme and Stonehouse's meta-analysis showed 15-30g daily MCT doses replacing LCT led to significant reductions in body weight (-0.51 kg), waist circumference (-1.46 cm), and visceral fat. St-Onge et al. used 18-24g/day in feeding studies showing enhanced thermogenesis."
+            },
+            {
+                claim: "Thermogenesis: As little as 5-10g MCT increases diet-induced thermogenesis compared to long-chain triglycerides, regardless of meal form",
+                evidence: "Evidence-based",
+                studyType: "Human RCT",
+                participants: "16 healthy adults (8 male, 8 female) across two studies",
+                pmid: "12775122",
+                year: 2002,
+                details: "Kasai et al. published in the Journal of Nutritional Science and Vitaminology that 5-10g MCT caused significantly greater diet-induced thermogenesis than LCT in a double-blind crossover design, irrespective of whether MCT was in liquid meals, mayonnaise, or margarine. Even 5g MCT mixed with 5g LCT significantly increased thermogenesis."
+            }
+        ]
+    }
 };
 
-// Enhanced Citations for Hawthorn Berry (ID: 59) - Tier 2 High-Priority Supplement
-window.enhancedCitations[59] = {
-  supplementId: 59,
-  supplementName: "Hawthorn Berry",
-  lastUpdated: "2025-08-24",
-  researchPhase: "Batch 1 - High-Priority Tier 2 Supplements",
+// Set in global enhanced citations
+window.enhancedCitations[58] = window.mctOilEnhanced;
 
-  qualityMetrics: {
-    totalCitations: 15,
-    level1Evidence: 8,  // 53%
-    level2Evidence: 5,  // 33%
-    level3Evidence: 2,  // 14%
-    averageStudyQuality: 85,
-    citationCompleteness: 100,
-    dosageProtocolsCovered: true,
-    safetyProfileCovered: true,
-    mechanismsCovered: true
-  },
-
-  evidenceProfile: {
-    overallQuality: "Tier 2",
-    totalCitations: 15,
-    researchQualityScore: 85,
-    lastEvidenceUpdate: "2025-08-24",
-    evidenceStrength: {
-      mechanisms: "Strong",
-      clinicalBenefits: "Strong",
-      safety: "Well-established",
-      dosage: "Evidence-based"
-    },
-    researchMaturity: "Highly Mature",
-    publicationSpan: "1994-2024",
-    keyFindings: "Well-established cardiovascular herb with strong evidence for heart failure and cardiac function support"
-  },
-
-  citations: {
-    mechanisms: [
-      {
-        mechanism: "Cardiac Contractility Enhancement",
-        strength: "Strong",
-        mechanismType: "Inotropic Support",
-        tissueTarget: "Cardiac Muscle",
-        evidence: [
-          {
-            type: "Level 2",
-            strength: "Strong",
-            description: "Hawthorn extract increases cardiac contractility through calcium channel modulation and improved coronary blood flow",
-            citation: "Holubarsch CJ, Colucci WS, Meinertz T, et al. (2008). The efficacy and safety of Crataegus extract WS 1442 in patients with heart failure: the SPICE trial. European Journal of Heart Failure, 10(12), 1255-1263.",
-            doi: "10.1016/j.ejheart.2008.10.004",
-            studyType: "Randomized Controlled Trial",
-            sampleSize: "2681 participants"
-          }
-        ]
-      }
-    ],
-
-    benefits: [
-      {
-        healthDomain: "Cardiovascular Health",
-        specificClaim: "Improves heart failure symptoms and exercise tolerance",
-        strength: "Strong",
-        evidenceQuality: "Strong",
-        replicationStatus: "Multiple studies",
-        tissueTarget: "Cardiovascular system",
-        target: "Cardiovascular system",
-        evidence: [
-          {
-            id: "benefit_1",
-            title: "Hawthorn extract improves heart failure symptoms",
-            authors: ["Pittler MH", "Guo R", "Ernst E"],
-            year: "2008",
-            evidenceLevel: "Level 1",
-            findings: "Meta-analysis showed significant improvement in maximal workload and exercise tolerance in heart failure patients",
-            citation: "Pittler MH, Guo R, Ernst E. (2008). Hawthorn extract for treating chronic heart failure. Cochrane Database of Systematic Reviews, (1), CD005312.",
-            doi: "10.1002/14651858.CD005312.pub2",
-            studyType: "Meta-analysis",
-            sampleSize: "10 RCTs, 855 participants"
-          }
-        ]
-      }
-    ],
-
-    safety: [
-      {
-        safetyAspect: "General Safety Profile",
-        riskLevel: "Low",
-        claim: "Well-tolerated with minimal side effects",
-        evidence: [
-          {
-            id: "safety_1",
-            title: "Excellent safety profile in clinical trials",
-            authors: ["Pittler MH", "Guo R", "Ernst E"],
-            year: "2008",
-            evidenceLevel: "Level 1",
-            findings: "Meta-analysis showed minimal adverse effects with hawthorn supplementation",
-            citation: "Pittler MH, Guo R, Ernst E. (2008). Hawthorn extract for treating chronic heart failure. Cochrane Database of Systematic Reviews, (1), CD005312.",
-            doi: "10.1002/14651858.CD005312.pub2",
-            studyType: "Meta-analysis",
-            sampleSize: "10 RCTs"
-          }
-        ]
-      }
-    ],
-
-    dosage: [
-      {
-        id: "dosage_1",
-        claim: "Heart failure: 160-900mg daily standardized extract",
-        evidence: "Level 1",
-        citation: "Pittler MH, Guo R, Ernst E. (2008). Hawthorn extract for treating chronic heart failure. Cochrane Database of Systematic Reviews, (1), CD005312.",
-        doi: "10.1002/14651858.CD005312.pub2",
-        keyFinding: "160-900mg daily of standardized hawthorn extract showed significant benefits in heart failure",
-        studyType: "Meta-analysis",
-        sampleSize: "10 RCTs"
-      }
-    ]
-  }
-};
+// Support module exports for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = window.mctOilEnhanced;
+}
