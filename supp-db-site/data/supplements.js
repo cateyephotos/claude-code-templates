@@ -5768,9 +5768,217 @@ const supplementDatabase = {
         "isEnhanced": true
       },
       "healthDomains": ["Memory Enhancement", "Neuroprotection", "Anti-aging", "Antioxidant Support"]
+    },
+    {
+      "id": 90,
+      "name": "Beta-Alanine",
+      "scientificName": "β-Alanine (3-aminopropionic acid)",
+      "category": "Performance Enhancers",
+      "commonNames": ["β-Alanine", "3-Aminopropionic acid", "Beta-Ala"],
+      "evidenceTier": 3,
+      "evidenceTierRationale": "Strong evidence for exercise endurance and muscle buffering capacity via carnosine synthesis",
+      "primaryBenefits": {
+        "cognitive": ["Sustained focus during exercise", "Reduced mental fatigue during high-intensity efforts"],
+        "nonCognitive": ["Exercise endurance", "Muscle buffering", "High-intensity performance", "Carnosine elevation"],
+    "isEnhanced": true,
+    "isEnhanced": true
+      },
+      "dosageRange": "4-6g daily (split doses)",
+      "optimalDuration": "4-12 weeks loading, ongoing maintenance",
+      "studyPopulations": ["Athletes", "Resistance trainees", "Endurance athletes", "Military personnel"],
+      "mechanismsOfAction": [
+        "Carnosine synthesis in skeletal muscle",
+        "Intracellular pH buffering during high-intensity exercise",
+        "Delayed onset of neuromuscular fatigue",
+        "Enhanced Type II muscle fiber carnosine content"
+      ],
+      "safetyProfile": {
+        "rating": "Good",
+        "commonSideEffects": ["Paraesthesia (tingling)", "Skin flushing at high single doses"],
+        "contraindications": ["Pregnancy (limited data)", "Taurine depletion concerns at very high doses"],
+        "drugInteractions": ["May interact with taurine metabolism", "No major drug interactions reported"]
+      },
+      "effectSizes": {
+        "exerciseEndurance": "Moderate improvement (2-5% in 1-4 min efforts)",
+        "muscleBuffering": "Large (40-80% increase in muscle carnosine)"
+      },
+      "commercialAvailability": {
+        "forms": ["Powder", "Capsules", "Pre-workout blends"],
+        "costRange": "$15-30/month",
+        "qualityMarkers": ["CarnoSyn® brand", "Third-party tested", "Sustained-release forms"]
+      },
+      "keyCitations": [
+        {
+          "title": "Role of beta-alanine supplementation on muscle carnosine and exercise performance",
+          "authors": "Artioli GG, et al.",
+          "journal": "Med Sci Sports Exerc",
+          "year": 2010,
+          "doi": "10.1249/MSS.0b013e3181c74e38"
+        }
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true
+      },
+      "healthDomains": ["Exercise Performance", "Muscle Endurance", "Athletic Performance", "Physical Stamina"]
+    },
+    {
+      "id": 91,
+      "name": "Citrulline Malate",
+      "scientificName": "L-Citrulline + DL-Malate",
+      "category": "Performance Enhancers",
+      "commonNames": ["L-Citrulline Malate", "CitMal", "CM"],
+      "evidenceTier": 3,
+      "evidenceTierRationale": "Moderate evidence for exercise performance and nitric oxide enhancement with mixed results across studies",
+      "primaryBenefits": {
+        "cognitive": ["Reduced mental fatigue during exercise", "Enhanced blood flow to brain during exertion"],
+        "nonCognitive": ["Nitric oxide production", "Blood flow enhancement", "Exercise endurance", "Reduced muscle soreness"],
+    "isEnhanced": true,
+    "isEnhanced": true
+      },
+      "dosageRange": "6-8g acute pre-workout",
+      "optimalDuration": "Acute dosing (60 min pre-exercise)",
+      "studyPopulations": ["Resistance trainees", "Endurance athletes", "Recreational exercisers"],
+      "mechanismsOfAction": [
+        "Arginine-nitric oxide pathway enhancement",
+        "Ammonia detoxification via urea cycle",
+        "Malate contribution to aerobic energy production",
+        "Vasodilation and improved blood flow"
+      ],
+      "safetyProfile": {
+        "rating": "Good",
+        "commonSideEffects": ["Mild GI discomfort at high doses", "Possible nausea"],
+        "contraindications": ["Citrullinemia (rare genetic disorder)", "Pregnancy (limited data)"],
+        "drugInteractions": ["PDE5 inhibitors (additive vasodilation)", "Nitrates", "Blood pressure medications"]
+      },
+      "effectSizes": {
+        "exercisePerformance": "Small to moderate improvement",
+        "muscleRecovery": "Moderate reduction in soreness"
+      },
+      "commercialAvailability": {
+        "forms": ["Powder", "Capsules", "Pre-workout formulas"],
+        "costRange": "$15-25/month",
+        "qualityMarkers": ["2:1 citrulline-to-malate ratio", "Third-party tested", "Pharmaceutical grade"]
+      },
+      "keyCitations": [
+        {
+          "title": "Citrulline malate enhances athletic anaerobic performance and relieves muscle soreness",
+          "authors": "Pérez-Guisado J, Jakeman PM",
+          "journal": "J Strength Cond Res",
+          "year": 2010,
+          "doi": "10.1519/JSC.0b013e3181cb28e0"
+        }
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true
+      },
+      "healthDomains": ["Exercise Performance", "Blood Flow", "Muscle Recovery", "Cardiovascular Support"]
+    },
+    {
+      "id": 92,
+      "name": "HMB (β-Hydroxy β-Methylbutyrate)",
+      "scientificName": "β-Hydroxy β-Methylbutyrate",
+      "category": "Performance Enhancers",
+      "commonNames": ["HMB", "β-HMB", "HMB-Ca", "HMB-FA", "Hydroxymethylbutyrate"],
+      "evidenceTier": 3,
+      "evidenceTierRationale": "Moderate evidence for muscle preservation and recovery, particularly in untrained or elderly populations",
+      "primaryBenefits": {
+        "cognitive": ["Indirect neuroprotection via reduced systemic inflammation"],
+        "nonCognitive": ["Muscle protein synthesis", "Muscle preservation", "Recovery enhancement", "Lean mass support"],
+    "isEnhanced": true,
+    "isEnhanced": true
+      },
+      "dosageRange": "3g daily or 38mg/kg body weight",
+      "optimalDuration": "4-12 weeks",
+      "studyPopulations": ["Untrained individuals", "Elderly populations", "Athletes in caloric deficit", "Clinical populations"],
+      "mechanismsOfAction": [
+        "mTOR pathway activation for protein synthesis",
+        "Ubiquitin-proteasome pathway inhibition (reduced protein breakdown)",
+        "Cholesterol synthesis for cell membrane repair",
+        "Leucine metabolite with anti-catabolic properties"
+      ],
+      "safetyProfile": {
+        "rating": "Good",
+        "commonSideEffects": ["Mild GI discomfort", "No major side effects at recommended doses"],
+        "contraindications": ["Pregnancy (limited data)", "Kidney disease (caution)"],
+        "drugInteractions": ["Statins (shared cholesterol pathways)", "No major drug interactions reported"]
+      },
+      "effectSizes": {
+        "muscleMass": "Small to moderate gains in untrained populations",
+        "musclePreservation": "Moderate during caloric restriction"
+      },
+      "commercialAvailability": {
+        "forms": ["Capsules", "Powder", "Free acid gel"],
+        "costRange": "$20-40/month",
+        "qualityMarkers": ["HMB-FA (free acid form)", "myHMB® brand", "Third-party tested"]
+      },
+      "keyCitations": [
+        {
+          "title": "β-Hydroxy-β-methylbutyrate free acid supplementation effects on muscle mass",
+          "authors": "Wilson JM, et al.",
+          "journal": "Br J Nutr",
+          "year": 2014,
+          "doi": "10.1017/S0007114513002665"
+        }
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true
+      },
+      "healthDomains": ["Muscle Preservation", "Recovery", "Lean Mass", "Anti-Catabolic Support"]
+    },
+    {
+      "id": 93,
+      "name": "Betaine",
+      "scientificName": "Trimethylglycine (TMG)",
+      "category": "Performance Enhancers",
+      "commonNames": ["TMG", "Trimethylglycine", "Betaine Anhydrous"],
+      "evidenceTier": 3,
+      "evidenceTierRationale": "Moderate evidence for power output and body composition with consistent but modest performance benefits",
+      "primaryBenefits": {
+        "cognitive": ["Methylation support for neurotransmitter synthesis", "Homocysteine regulation"],
+        "nonCognitive": ["Power output enhancement", "Body composition improvement", "Cellular hydration", "Methylation support"],
+    "isEnhanced": true,
+    "isEnhanced": true
+      },
+      "dosageRange": "2.5g daily",
+      "optimalDuration": "6-12 weeks",
+      "studyPopulations": ["Resistance-trained individuals", "Athletes", "Power sport athletes"],
+      "mechanismsOfAction": [
+        "Osmolyte function for cellular hydration",
+        "Methyl donor in homocysteine-to-methionine conversion",
+        "Creatine synthesis support via methylation",
+        "Protein synthesis signaling via cellular volume"
+      ],
+      "safetyProfile": {
+        "rating": "Good",
+        "commonSideEffects": ["Fishy body odor (trimethylaminuria)", "Mild GI upset", "Possible cholesterol elevation"],
+        "contraindications": ["Trimethylaminuria", "Pregnancy (limited data)"],
+        "drugInteractions": ["May interact with cholesterol medications", "No major drug interactions reported"]
+      },
+      "effectSizes": {
+        "powerOutput": "Small to moderate improvement",
+        "bodyComposition": "Small improvement (fat loss, lean mass)"
+      },
+      "commercialAvailability": {
+        "forms": ["Powder", "Capsules"],
+        "costRange": "$10-25/month",
+        "qualityMarkers": ["Betaine anhydrous", "Third-party tested", "USP grade"]
+      },
+      "keyCitations": [
+        {
+          "title": "Ergogenic effects of betaine supplementation on strength and power performance",
+          "authors": "Lee EC, et al.",
+          "journal": "J Int Soc Sports Nutr",
+          "year": 2010,
+          "doi": "10.1186/1550-2783-7-27"
+        }
+      ],
+      "enhancedCitations": {
+        "isEnhanced": true
+      },
+      "healthDomains": ["Exercise Performance", "Power Output", "Body Composition", "Methylation Support"]
     }
   ],
-  
+
   "categories": [
     {
       "name": "Nootropics",
@@ -5800,7 +6008,7 @@ const supplementDatabase = {
     {
       "name": "Performance Enhancers",
       "description": "Supplements for physical and mental performance",
-      "supplements": ["Creatine", "Rhodiola rosea", "Panax Ginseng", "Caffeine", "Cordyceps", "MCT Oil"]
+      "supplements": ["Creatine", "Rhodiola rosea", "Panax Ginseng", "Caffeine", "Cordyceps", "MCT Oil", "Beta-Alanine", "Citrulline Malate", "HMB (β-Hydroxy β-Methylbutyrate)", "Betaine"]
     },
     {
       "name": "Herbal Extracts",
