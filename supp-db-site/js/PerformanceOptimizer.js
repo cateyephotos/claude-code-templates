@@ -169,13 +169,6 @@ class PerformanceOptimizer {
                         <i class="fas fa-heart ${isFavorite ? 'text-red-500' : ''}"></i>
                     </button>
                 </div>
-                ${hasEnhanced ? `
-                    <div class="flex justify-end">
-                        <span class="phase-2a-badge text-white text-xs px-2 py-1 rounded-full font-semibold">
-                            Phase 2A Enhanced
-                        </span>
-                    </div>
-                ` : ''}
             </div>
             
             <div class="mb-4">
@@ -225,10 +218,10 @@ class PerformanceOptimizer {
             
             <div class="flex space-x-2">
                 <button onclick="app.showSupplementDetails(${supplement.id})" 
-                        class="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
+                        class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors">
                     View Details
                 </button>
-                <button onclick="app.addToComparison(${supplement.id})" 
+                <button onclick="app.addToComparison(${supplement.id})"
                         class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
                     Compare
                 </button>
@@ -383,7 +376,7 @@ class VirtualScrollManager {
                 <h3 class="font-bold">${item.name}</h3>
                 <p class="text-gray-600">${item.scientificName}</p>
                 <button onclick="app.showSupplementDetails(${item.id})" 
-                        class="mt-2 bg-indigo-600 text-white px-4 py-2 rounded">
+                        class="mt-2 bg-accent text-white px-4 py-2 rounded">
                     View Details
                 </button>
             </div>

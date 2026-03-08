@@ -186,7 +186,7 @@ class CitationRenderer {
         switch (templateName) {
             case 'evidenceProfile':
                 return (data) => `
-                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-6">
+                    <div class="p-6 rounded-lg mb-6" style="background: var(--accent-50); border: 1px solid var(--accent-200);">
                         <h4 class="text-lg font-semibold text-gray-900 mb-4">Evidence Profile</h4>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             ${this._renderEvidenceStrengthItems(data)}
@@ -205,7 +205,7 @@ class CitationRenderer {
                     <div class="border-b border-gray-200">
                         <nav class="flex space-x-8">
                             <button onclick="app.citationRenderer.showTab('mechanisms-${data.supplementId}')" 
-                                    class="citation-tab-btn active-tab py-2 px-1 border-b-2 font-medium text-sm">
+                                    class="citation-tab-btn active-tab py-2 px-1 border-b-2 font-medium text-sm" style="border-color: var(--accent); color: var(--accent);">
                                 Mechanisms (${data.mechanismsCount})
                             </button>
                             <button onclick="app.citationRenderer.showTab('benefits-${data.supplementId}')" 
@@ -338,7 +338,7 @@ class CitationRenderer {
                         <span class="px-2 py-1 rounded text-xs bg-${benefit.strengthColor}-100 text-${benefit.strengthColor}-800">
                             ${benefit.strength} Evidence
                         </span>
-                        <span class="px-2 py-1 rounded text-xs bg-purple-100 text-purple-600">
+                        <span class="px-2 py-1 rounded text-xs" style="background: var(--accent-50); color: var(--accent);">
                             ${benefit.evidenceQuality} Quality
                         </span>
                     </div>
@@ -436,11 +436,6 @@ class CitationRenderer {
             <div class="mt-8">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-xl font-semibold">Enhanced Citation System</h3>
-                    <div class="flex items-center space-x-2">
-                        <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                            Phase 2A Enhanced
-                        </span>
-                    </div>
                 </div>
 
                 ${evidenceProfile}
@@ -504,20 +499,24 @@ class CitationRenderer {
         
         // Remove active class from all tab buttons
         document.querySelectorAll('.citation-tab-btn').forEach(btn => {
-            btn.classList.remove('active-tab', 'border-indigo-500', 'text-indigo-600');
+            btn.classList.remove('active-tab');
             btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            btn.style.borderColor = '';
+            btn.style.color = '';
         });
-        
+
         // Show selected tab
         const selectedTab = document.getElementById(tabId);
         if (selectedTab) {
             selectedTab.classList.remove('hidden');
         }
-        
+
         // Add active class to clicked button
         if (event && event.target) {
-            event.target.classList.add('active-tab', 'border-indigo-500', 'text-indigo-600');
+            event.target.classList.add('active-tab');
             event.target.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            event.target.style.borderColor = 'var(--accent)';
+            event.target.style.color = 'var(--accent)';
         }
     }
 

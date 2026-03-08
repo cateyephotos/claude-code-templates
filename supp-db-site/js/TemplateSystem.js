@@ -305,13 +305,6 @@ class TemplateSystem {
                             <i class="fas fa-heart {{#if isFavorite}}text-red-500{{/if}}"></i>
                         </button>
                     </div>
-                    {{#if hasEnhanced}}
-                    <div class="flex justify-end">
-                        <span class="phase-2a-badge text-white text-xs px-2 py-1 rounded-full font-semibold">
-                            Phase 2A Enhanced
-                        </span>
-                    </div>
-                    {{/if}}
                 </div>
                 
                 <div class="mb-4">
@@ -358,7 +351,7 @@ class TemplateSystem {
         this.registerPartial('supplementActions', `
             <div class="flex space-x-2">
                 <button onclick="app.showSupplementDetails({{id}})" 
-                        class="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
+                        class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors"
                     View Details
                 </button>
                 <button onclick="app.addToComparison({{id}})" 
@@ -387,9 +380,6 @@ class TemplateSystem {
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-semibold">Enhanced Citation System</h3>
                 <div class="flex items-center space-x-2">
-                    <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                        Phase 2A Enhanced
-                    </span>
                     <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
                         {{totalCitations}} Citations
                     </span>

@@ -4,13 +4,13 @@
  */
 
 // Import required modules
-import CitationLoader from './CitationLoader.js?v=20260307m';
-import CitationRenderer from './CitationRenderer.js?v=20260307m';
-import EnhancedCitationLoader from './EnhancedCitationLoader.js?v=20260307m';
-import EnhancedCitationAttacher from './EnhancedCitationAttacher.js?v=20260307m';
-import { ErrorBoundary, GlobalErrorManager } from './ErrorBoundary.js';
-import TemplateSystem from './TemplateSystem.js';
-import PerformanceOptimizer from './PerformanceOptimizer.js';
+import CitationLoader from './CitationLoader.js?v=20260308a';
+import CitationRenderer from './CitationRenderer.js?v=20260308a';
+import EnhancedCitationLoader from './EnhancedCitationLoader.js?v=20260308a';
+import EnhancedCitationAttacher from './EnhancedCitationAttacher.js?v=20260308a';
+import { ErrorBoundary, GlobalErrorManager } from './ErrorBoundary.js?v=20260308a';
+import TemplateSystem from './TemplateSystem.js?v=20260308a';
+import PerformanceOptimizer from './PerformanceOptimizer.js?v=20260308a';
 class ModernSupplementDatabase {
     constructor() {
         // Initialize basic properties first
@@ -542,80 +542,77 @@ class ModernSupplementDatabase {
     _renderBasicSupplementCard(supplement) {
         const isFavorite = this.favorites.includes(supplement.id);
         const tierClass = this._getTierClass(supplement.evidenceTier);
-        const hasEnhanced = supplement.enhancedCitations?.isEnhanced;
-        
+
+        // Evidence pip indicator: Tier 1→5/5, Tier 2→3/5, Tier 3→2/5, Tier 4→1/5
+        const pipCounts = { 1: 5, 2: 3, 3: 2, 4: 1 };
+        const filledPips = pipCounts[supplement.evidenceTier] || 1;
+        const pipTierClass = `pip-tier-${supplement.evidenceTier}`;
+        const pipsHTML = Array.from({ length: 5 }, (_, i) =>
+            `<div class="evidence-pip ${i < filledPips ? 'filled ' + pipTierClass : ''}"></div>`
+        ).join('');
+
         return `
-            <div class="bg-white rounded-lg shadow-md card-hover p-6 relative" data-supplement-id="${supplement.id}">
-                <div class="absolute top-4 right-4 flex flex-col space-y-2">
-                    <div class="flex space-x-2">
-                        <span class="tier-badge ${tierClass} text-white text-xs px-2 py-1 rounded-full font-semibold">
-                            Tier ${supplement.evidenceTier}
-                        </span>
-                        <button onclick="app.toggleFavorite(${supplement.id})" 
-                                class="text-gray-400 hover:text-red-500 transition-colors">
-                            <i class="fas fa-heart ${isFavorite ? 'text-red-500' : ''}"></i>
-                        </button>
-                    </div>
-                    ${hasEnhanced ? `
-                        <div class="flex justify-end">
-                            <span class="phase-2a-badge text-white text-xs px-2 py-1 rounded-full font-semibold">
-                                Phase 2A Enhanced
-                            </span>
-                        </div>
-                    ` : ''}
-                </div>
-                
-                <div class="mb-4">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">${supplement.name}</h3>
-                    <p class="text-sm text-gray-600 italic mb-2">${supplement.scientificName}</p>
-                    <span class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                        ${supplement.category}
+            <div class="bg-white rounded-lg shadow-md card-hover supplement-card p-6 relative" data-supplement-id="${supplement.id}">
+                <div class="absolute top-4 right-4 flex space-x-2">
+                    <span class="tier-badge ${tierClass} text-white text-xs px-2 py-1 rounded-full font-semibold">
+                        Tier ${supplement.evidenceTier}
                     </span>
+                    <button onclick="app.toggleFavorite(${supplement.id})"
+                            class="text-gray-400 hover:text-red-500 transition-colors">
+                        <i class="fas fa-heart ${isFavorite ? 'text-red-500' : ''}"></i>
+                    </button>
                 </div>
-                
-                <div class="mb-4">
-                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Primary Benefits:</h4>
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        ${(supplement.primaryBenefits?.cognitive || []).slice(0, 2).map(benefit => 
-                            `<span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">${benefit}</span>`
-                        ).join('')}
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">${supplement.name}</h3>
+                        <p class="text-sm text-gray-600 italic mb-2">${supplement.scientificName}</p>
+                        <span class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                            ${supplement.category}
+                        </span>
                     </div>
-                    <div class="flex flex-wrap gap-1">
-                        ${(supplement.primaryBenefits?.nonCognitive || []).slice(0, 2).map(benefit => 
-                            `<span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">${benefit}</span>`
-                        ).join('')}
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-sm font-medium text-gray-700">Evidence Strength</span>
-                        <span class="text-sm text-gray-600">${supplement.evidenceTierRationale}</span>
-                    </div>
-                    <div class="evidence-meter bg-gray-200">
-                        <div class="evidence-fill ${tierClass}" style="width: ${(5 - supplement.evidenceTier) * 25}%"></div>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div>
-                            <span class="font-medium text-gray-700">Dosage:</span>
-                            <p class="text-gray-600">${supplement.dosageRange}</p>
+
+                    <div class="mb-3 benefits-clamp">
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Primary Benefits:</h4>
+                        <div class="flex flex-wrap gap-1 mb-1">
+                            ${(supplement.primaryBenefits?.cognitive || []).slice(0, 2).map(benefit =>
+                                `<span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">${benefit}</span>`
+                            ).join('')}
                         </div>
-                        <div>
-                            <span class="font-medium text-gray-700">Safety:</span>
-                            <p class="text-gray-600">${supplement.safetyProfile.rating}</p>
+                        <div class="flex flex-wrap gap-1">
+                            ${(supplement.primaryBenefits?.nonCognitive || []).slice(0, 2).map(benefit =>
+                                `<span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">${benefit}</span>`
+                            ).join('')}
                         </div>
                     </div>
+
+                    <div class="mb-3">
+                        <div class="evidence-pips-row">
+                            <span class="evidence-pips-label">Evidence</span>
+                            <div class="evidence-pips">${pipsHTML}</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <span class="font-medium text-gray-700">Dosage:</span>
+                                <p class="text-gray-600">${supplement.dosageRange}</p>
+                            </div>
+                            <div>
+                                <span class="font-medium text-gray-700">Safety:</span>
+                                <p class="text-gray-600">${supplement.safetyProfile.rating}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="flex space-x-2">
-                    <button onclick="app.showSupplementDetails(${supplement.id})" 
-                            class="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
+
+                <div class="card-footer flex space-x-2">
+                    <button onclick="app.showSupplementDetails(${supplement.id})"
+                            class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors">
                         View Details
                     </button>
-                    <button onclick="app.addToComparison(${supplement.id})" 
+                    <button onclick="app.addToComparison(${supplement.id})"
                             class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
                         Compare
                     </button>
@@ -777,11 +774,6 @@ class ModernSupplementDatabase {
                         <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
                             ${supplement.category}
                         </span>
-                        ${hasEnhanced ? `
-                            <span class="phase-2a-badge text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                Phase 2A Enhanced
-                            </span>
-                        ` : ''}
                     </div>
                 </div>
                 <button onclick="app.closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">
@@ -804,11 +796,11 @@ class ModernSupplementDatabase {
         
         return `
             <!-- Enhanced Evidence Profile -->
-            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6 mb-6">
+            <div class="bg-accent-50 rounded-lg p-6 mb-6 border border-accent-200" style="border-color: var(--accent-200); background: var(--accent-50);">
                 <h3 class="text-lg font-semibold mb-4 text-gray-900">Enhanced Evidence Profile</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                     <div>
-                        <div class="text-2xl font-bold text-purple-600">${enhancedData.evidenceProfile.researchQualityScore}/100</div>
+                        <div class="text-2xl font-bold" style="color: var(--accent);">${enhancedData.evidenceProfile.researchQualityScore}/100</div>
                         <div class="text-sm text-gray-600">Quality Score</div>
                     </div>
                     <div>
@@ -836,7 +828,7 @@ class ModernSupplementDatabase {
             <div class="border-b border-gray-200">
                 <nav class="flex space-x-8">
                     <button onclick="app.showCitationTab('mechanisms-${supplement.id}')" 
-                            class="citation-tab-btn active-tab py-2 px-1 border-b-2 border-purple-500 font-medium text-sm text-purple-600">
+                            class="citation-tab-btn active-tab py-2 px-1 border-b-2 font-medium text-sm" style="border-color: var(--accent); color: var(--accent);">
                         Mechanisms (${mechanisms.length})
                     </button>
                     <button onclick="app.showCitationTab('benefits-${supplement.id}')" 
@@ -1111,27 +1103,31 @@ class ModernSupplementDatabase {
         // Hide all tab contents
         const allTabs = document.querySelectorAll('.citation-tab-content');
         allTabs.forEach(tab => tab.classList.add('hidden'));
-        
+
         // Remove active class from all tab buttons
         const allBtns = document.querySelectorAll('.citation-tab-btn');
         allBtns.forEach(btn => {
-            btn.classList.remove('active-tab', 'border-purple-500', 'text-purple-600');
+            btn.classList.remove('active-tab');
             btn.classList.add('border-transparent', 'text-gray-500');
+            btn.style.borderColor = '';
+            btn.style.color = '';
         });
-        
+
         // Show selected tab
         const selectedTab = document.getElementById(tabId);
         if (selectedTab) {
             selectedTab.classList.remove('hidden');
-            
+
             // Update button styling
             const btnText = tabId.split('-')[0];
-            const activeBtn = Array.from(allBtns).find(btn => 
+            const activeBtn = Array.from(allBtns).find(btn =>
                 btn.textContent.toLowerCase().includes(btnText)
             );
             if (activeBtn) {
-                activeBtn.classList.add('active-tab', 'border-purple-500', 'text-purple-600');
+                activeBtn.classList.add('active-tab');
                 activeBtn.classList.remove('border-transparent', 'text-gray-500');
+                activeBtn.style.borderColor = 'var(--accent)';
+                activeBtn.style.color = 'var(--accent)';
             }
         }
     }
@@ -1349,7 +1345,7 @@ class ModernSupplementDatabase {
                     ${this.favorites.includes(supplement.id) ? 'Remove from Favorites' : 'Add to Favorites'}
                 </button>
                 <button onclick="app.addToComparison(${supplement.id})" 
-                        class="px-6 py-3 bg-indigo-100 text-indigo-700 rounded-lg font-medium hover:bg-indigo-200 transition-colors">
+                        class="px-6 py-3 rounded-lg font-medium transition-colors" style="background: var(--accent-50); color: var(--accent);" onmouseover="this.style.background='var(--accent-100)'" onmouseout="this.style.background='var(--accent-50)'"
                     <i class="fas fa-balance-scale mr-2"></i>Add to Comparison
                 </button>
             </div>
