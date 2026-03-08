@@ -1,4 +1,4 @@
-// Enhanced Citations for Omega-3 Fish Oil (ID: 2)
+// Enhanced Citations for Omega-3 Fish Oil (ID: 4)
 // Research focus: Cardiovascular health, brain function, inflammation reduction
 // Evidence Profile: Tier 1 - Extensive high-quality evidence
 // Last rebuilt: 2026-03-07 | All PMIDs PubMed-verified
@@ -6,7 +6,7 @@
 window.enhancedCitations = window.enhancedCitations || {};
 
 window.omega3FishOilEnhanced = {
-    supplementId: 2,
+    supplementId: 4,
     supplementName: "Omega-3 Fish Oil",
     lastUpdated: "2026-03-07",
     version: "2.0",
@@ -277,7 +277,7 @@ window.omega3FishOilEnhanced = {
 };
 
 // Set in global enhanced citations
-window.enhancedCitations[2] = window.omega3FishOilEnhanced;
+window.enhancedCitations[4] = window.omega3FishOilEnhanced;
 
 // Make available for module systems
 if (typeof module !== 'undefined' && module.exports) {

@@ -632,19 +632,31 @@ class CitationRenderer {
      */
     _inferSafetyAspectFromStudy(study) {
         const title = (study.title || '').toLowerCase();
+        return this._inferSafetyAspectFromText(title);
+    }
 
-        if (title.includes('toxicity') || title.includes('toxic')) {
+    _inferSafetyAspectFromClaim(claim) {
+        const text = (claim || '').toLowerCase();
+        return this._inferSafetyAspectFromText(text);
+    }
+
+    _inferSafetyAspectFromText(text) {
+        if (text.includes('toxicity') || text.includes('toxic') || text.includes('noael') || text.includes('ld50')) {
             return 'Toxicity Profile';
-        } else if (title.includes('side effects') || title.includes('adverse')) {
-            return 'Side Effects';
-        } else if (title.includes('interaction') || title.includes('drug')) {
+        } else if (text.includes('side effects') || text.includes('adverse') || text.includes('tolerab')) {
+            return 'Side Effects & Tolerability';
+        } else if (text.includes('interaction') || text.includes('drug')) {
             return 'Drug Interactions';
-        } else if (title.includes('dosage') || title.includes('dose')) {
+        } else if (text.includes('dosage') || text.includes('dose')) {
             return 'Dosage Safety';
-        } else if (title.includes('gastrointestinal') || title.includes('stomach')) {
+        } else if (text.includes('gastrointestinal') || text.includes('stomach')) {
             return 'Gastrointestinal Safety';
-        } else if (title.includes('liver') || title.includes('hepatic')) {
+        } else if (text.includes('liver') || text.includes('hepatic')) {
             return 'Liver Safety';
+        } else if (text.includes('children') || text.includes('pediatric') || text.includes('adolescent')) {
+            return 'Pediatric Safety';
+        } else if (text.includes('pregnancy') || text.includes('pregnant')) {
+            return 'Pregnancy Safety';
         } else {
             return 'General Safety';
         }
@@ -839,6 +851,33 @@ class CitationRenderer {
             }));
         }
 
+        // Check for v2.0 flat citation format: each item has claim + evidence(string) + pmid + year + details
+        // but does NOT have nested evidence array or title/authors fields
+        if (mechanisms.length > 0 && mechanisms[0].claim && mechanisms[0].pmid
+            && typeof mechanisms[0].evidence === 'string' && !mechanisms[0].title && !mechanisms[0].authors) {
+            return mechanisms.map(citation => ({
+                mechanism: citation.claim.length > 100 ? citation.claim.substring(0, 100) + '...' : citation.claim,
+                claim: citation.claim,
+                mechanismType: citation.studyType || "Research study",
+                strength: citation.evidence || "Moderate",
+                tissueTarget: citation.participants || "See study details",
+                target: citation.participants || "See study details",
+                description: citation.details || "",
+                evidence: [{
+                    title: citation.claim,
+                    authors: [citation.studyType || 'Research study'],
+                    year: citation.year || 'Unknown',
+                    journal: citation.studyType || 'Research study',
+                    pmid: citation.pmid,
+                    findings: citation.details || '',
+                    evidenceLevel: citation.evidence || 'Moderate',
+                    studyType: citation.studyType,
+                    replication: citation.replication || '',
+                    sampleSize: citation.participants || ''
+                }]
+            }));
+        }
+
         return mechanisms.map(mechanism => {
             // Ensure required validation fields are present
             const normalizedMechanism = {
@@ -897,6 +936,36 @@ class CitationRenderer {
                 // Add required validation fields
                 claim: study.title || `Health benefit ${index + 1}`,
                 evidence: "Moderate Evidence"
+            }));
+        }
+
+        // Check for v2.0 flat citation format: each item has claim + evidence(string) + pmid + year + details
+        // but does NOT have nested evidence array, healthDomain, specificClaim, title/authors
+        if (benefits.length > 0 && benefits[0].claim && benefits[0].pmid
+            && typeof benefits[0].evidence === 'string' && !benefits[0].title && !benefits[0].authors
+            && !benefits[0].healthDomain && !benefits[0].specificClaim) {
+            return benefits.map(citation => ({
+                healthDomain: this._getHealthDomainForBenefit(citation.claim) || "Health Benefits",
+                specificClaim: citation.claim,
+                claim: citation.claim,
+                strength: citation.evidence || "Moderate",
+                evidenceQuality: citation.evidence || "Moderate",
+                replicationStatus: citation.replication || "See study details",
+                tissueTarget: citation.participants || "See study details",
+                target: citation.participants || "See study details",
+                evidence: [{
+                    title: citation.claim,
+                    authors: [citation.studyType || 'Research study'],
+                    year: citation.year || 'Unknown',
+                    journal: citation.studyType || 'Research study',
+                    pmid: citation.pmid,
+                    findings: citation.details || '',
+                    evidenceLevel: citation.evidence || 'Moderate',
+                    studyType: citation.studyType,
+                    duration: citation.duration || '',
+                    sampleSize: citation.participants || '',
+                    dosage: citation.dosage || ''
+                }]
             }));
         }
 
@@ -993,6 +1062,29 @@ class CitationRenderer {
      */
     _normalizeSafety(safety) {
         if (!Array.isArray(safety)) return [];
+
+        // Check for v2.0 flat citation format: each item has claim + evidence(string) + pmid + year + details
+        if (safety.length > 0 && safety[0].claim && safety[0].pmid
+            && typeof safety[0].evidence === 'string' && !safety[0].title && !safety[0].authors
+            && !safety[0].safetyAspect) {
+            return safety.map(citation => ({
+                safetyAspect: this._inferSafetyAspectFromClaim(citation.claim) || "General Safety",
+                riskLevel: "Low",
+                claim: citation.claim,
+                strength: citation.evidence || "Good Safety Profile",
+                evidence: [{
+                    title: citation.claim,
+                    authors: [citation.studyType || 'Research study'],
+                    year: citation.year || 'Unknown',
+                    journal: citation.studyType || 'Research study',
+                    pmid: citation.pmid,
+                    findings: citation.details || '',
+                    evidenceLevel: citation.evidence || 'Good Safety Profile',
+                    studyType: citation.studyType,
+                    sampleSize: citation.participants || ''
+                }]
+            }));
+        }
 
         // Check if this is direct study list format (academic papers)
         if (safety.length > 0 && safety[0].title && safety[0].authors && !safety[0].safetyAspect) {

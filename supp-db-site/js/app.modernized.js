@@ -5,8 +5,8 @@
 
 // Import required modules
 import CitationLoader from './CitationLoader.js';
-import CitationRenderer from './CitationRenderer.js';
-import EnhancedCitationLoader from './EnhancedCitationLoader.js';
+import CitationRenderer from './CitationRenderer.js?v=20260307c';
+import EnhancedCitationLoader from './EnhancedCitationLoader.js?v=20260307b';
 import EnhancedCitationAttacher from './EnhancedCitationAttacher.js';
 import { ErrorBoundary, GlobalErrorManager } from './ErrorBoundary.js';
 import TemplateSystem from './TemplateSystem.js';

@@ -25,9 +25,9 @@ class EnhancedCitationLoader {
         // Simplified approach: Load files sequentially and wait for each one
         const enhancedFiles = [
             // Core Anti-inflammatory & Adaptogens
-            { id: 2, file: '2_turmeric_enhanced.js', globalVar: 'turmericEnhanced' },
+            { id: 2, file: '2_curcumin_enhanced.js', globalVar: 'curcuminEnhanced' },
             { id: 3, file: '3_ashwagandha_enhanced.js', globalVar: 'ashwagandhaEnhanced' },
-            { id: 4, file: '4_omega_3_fatty_acids_enhanced.js', globalVar: 'omega3FattyAcidsEnhanced' },
+            { id: 4, file: '4_omega_3_fish_oil_enhanced.js', globalVar: 'omega3FishOilEnhanced' },
             { id: 8, file: '8_melatonin_enhanced.js', globalVar: 'melatoninEnhanced' },
             { id: 10, file: '10_rhodiola_rosea_enhanced.js', globalVar: 'rhodiolaRoseaEnhanced' },
             // Nootropics & Cognitive Support
@@ -132,7 +132,7 @@ class EnhancedCitationLoader {
             { id: 41, file: '41_inositol_enhanced.js', globalVar: 'inositol41Enhanced' },
             { id: 43, file: '43_choline_enhanced.js', globalVar: 'cholineEnhanced' },
             { id: 5, file: '5_creatine_enhanced.js', globalVar: 'creatineEnhanced' },
-            { id: 6, file: '6_enhanced.js', globalVar: 'magnesiumEnhanced' },
+            { id: 6, file: '6_magnesium_enhanced.js', globalVar: 'magnesiumEnhanced' },
             { id: 7, file: '7_vitamin_d3_enhanced.js', globalVar: 'vitaminD3Enhanced' },
             // Existing Enhanced Supplements
             { id: 67, file: '67_holy_basil_enhanced.js', globalVar: 'holyBasilEnhanced' },
@@ -141,7 +141,7 @@ class EnhancedCitationLoader {
             { id: 78, file: '78_centella_asiatica_enhanced.js', globalVar: 'centellaAsiaticaEnhanced' },
             { id: 80, file: '80_aniracetam_enhanced.js', globalVar: 'aniracetamEnhanced' },
             { id: 81, file: '81_piracetam_enhanced.js', globalVar: 'piracetamEnhanced' },
-            { id: 1, file: 'bacopa_monnieri_enhanced.js', globalVar: 'bacopaMonnieri' }
+            { id: 1, file: '1_bacopa_monnieri_enhanced.js', globalVar: 'bacopaMonnieriEnhanced' }
         ];
 
         const results = {

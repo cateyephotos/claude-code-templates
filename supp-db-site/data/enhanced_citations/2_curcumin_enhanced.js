@@ -1,4 +1,4 @@
-// Enhanced Citations for Curcumin (ID: 49)
+// Enhanced Citations for Curcumin (ID: 2)
 // Research focus: Anti-inflammatory, joint health, pain management, antioxidant, cognitive support, metabolic health
 // Evidence Profile: Tier 1 - Extensive high-quality evidence
 // Last rebuilt: 2026-03-07 | All 21 PMIDs PubMed-verified
@@ -6,7 +6,7 @@
 window.enhancedCitations = window.enhancedCitations || {};
 
 window.curcuminEnhanced = {
-    supplementId: 49,
+    supplementId: 2,
     supplementName: "Curcumin",
     lastUpdated: "2026-03-07",
     version: "2.0",
@@ -255,7 +255,7 @@ window.curcuminEnhanced = {
 };
 
 // Set in global enhanced citations
-window.enhancedCitations[49] = window.curcuminEnhanced;
+window.enhancedCitations[2] = window.curcuminEnhanced;
 
 // Support module exports for testing
 if (typeof module !== 'undefined' && module.exports) {
