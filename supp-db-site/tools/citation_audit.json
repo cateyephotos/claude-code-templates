@@ -1,0 +1,2994 @@
+{
+  "extractionDate": "2026-03-08T20:05:35.813Z",
+  "totalFiles": 93,
+  "supplements": [
+    {
+      "file": "1_bacopa_monnieri_enhanced.js",
+      "supplementId": 1,
+      "supplementName": "1_bacopa_monnieri_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "2_curcumin_enhanced.js",
+      "supplementId": 2,
+      "supplementName": "2_curcumin_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "3_ashwagandha_enhanced.js",
+      "supplementId": 3,
+      "supplementName": "3_ashwagandha_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "4_omega_3_fish_oil_enhanced.js",
+      "supplementId": 4,
+      "supplementName": "4_omega_3_fish_oil_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "5_creatine_enhanced.js",
+      "supplementId": 5,
+      "supplementName": "Creatine",
+      "totalCitations": 20,
+      "citations": [
+        {
+          "citationId": "persky_2003_pcr_system",
+          "title": "Clinical pharmacology of the dietary supplement creatine monohydrate",
+          "pmid": "12773629",
+          "doi": "10.1124/pr.55.2.1",
+          "year": 2003,
+          "journal": "Pharmacological Reviews",
+          "firstAuthor": "Persky AM"
+        },
+        {
+          "citationId": "harris_1992_muscle_creatine",
+          "title": "Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation",
+          "pmid": "1327657",
+          "doi": "10.1042/cs0830367",
+          "year": 1992,
+          "journal": "Clinical Science",
+          "firstAuthor": "Harris RC"
+        },
+        {
+          "citationId": "rawson_2011_brain_creatine",
+          "title": "Use of creatine in the elderly and evidence for effects on cognitive function in young and old",
+          "pmid": "21394604",
+          "doi": "10.1007/s00726-011-0855-9",
+          "year": 2011,
+          "journal": "Amino Acids",
+          "firstAuthor": "Rawson ES"
+        },
+        {
+          "citationId": "kreider_2017_issn_position",
+          "title": "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine",
+          "pmid": "28615996",
+          "doi": "10.1186/s12970-017-0173-z",
+          "year": 2017,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Kreider RB"
+        },
+        {
+          "citationId": "avgerinos_2018_cognition_meta",
+          "title": "Effects of creatine supplementation on cognitive function of healthy individuals: a systematic review of 6 randomized controlled trials",
+          "pmid": "29704637",
+          "doi": "10.1016/j.exger.2018.04.013",
+          "year": 2018,
+          "journal": "Experimental Gerontology",
+          "firstAuthor": "Avgerinos KI"
+        },
+        {
+          "citationId": "rae_2003_cognitive",
+          "title": "Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial",
+          "pmid": "14561278",
+          "doi": "10.1098/rspb.2003.2492",
+          "year": 2003,
+          "journal": "Proceedings of the Royal Society of London B",
+          "firstAuthor": "Rae C"
+        },
+        {
+          "citationId": "marshall_2026_cognition_aging",
+          "title": "Creatine and Cognition in Aging: A Systematic Review of Evidence in Older Adults",
+          "pmid": "40971619",
+          "doi": "10.1093/nutrit/nuaf135",
+          "year": 2026,
+          "journal": "Nutrition Reviews",
+          "firstAuthor": "Marshall S"
+        },
+        {
+          "citationId": "dolan_2019_strength_meta",
+          "title": "Beyond muscle: the effects of creatine supplementation on brain creatine, cognitive processing, and traumatic brain injury",
+          "pmid": "30086660",
+          "doi": "10.1080/17461391.2018.1500644",
+          "year": 2018,
+          "journal": "European Journal of Sport Science",
+          "firstAuthor": "Dolan E"
+        },
+        {
+          "citationId": "zhang_2025_strength_meta",
+          "title": "Effects of creatine supplementation on muscle strength gains — a meta-analysis and systematic review",
+          "pmid": "41328071",
+          "doi": "10.7717/peerj.20380",
+          "year": 2025,
+          "journal": "PeerJ",
+          "firstAuthor": "Zhang H"
+        },
+        {
+          "citationId": "kazeminasab_2025_strength_power",
+          "title": "The Effects of Creatine Supplementation on Upper- and Lower-Body Strength and Power: A Systematic Review and Meta-Analysis",
+          "pmid": "40944139",
+          "doi": "10.3390/nu17172748",
+          "year": 2025,
+          "journal": "Nutrients",
+          "firstAuthor": "Kazeminasab F"
+        },
+        {
+          "citationId": "antonio_2021_body_comp",
+          "title": "Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?",
+          "pmid": "33557850",
+          "doi": "10.1186/s12970-021-00412-w",
+          "year": 2021,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Antonio J"
+        },
+        {
+          "citationId": "delpino_2022_lbm_meta",
+          "title": "Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials",
+          "pmid": "35986981",
+          "doi": "10.1016/j.nut.2022.111791",
+          "year": 2022,
+          "journal": "Nutrition",
+          "firstAuthor": "Delpino FM"
+        },
+        {
+          "citationId": "pashayee_khamene_2024_dose_response",
+          "title": "Creatine supplementation protocols with or without training interventions on body composition: a GRADE-assessed systematic review and dose-response meta-analysis",
+          "pmid": "39042054",
+          "doi": "10.1080/15502783.2024.2380058",
+          "year": 2024,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Pashayee-Khamene F"
+        },
+        {
+          "citationId": "delpino_2022_lbm_meta",
+          "title": "Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials",
+          "pmid": "35986981",
+          "doi": "10.1016/j.nut.2022.111791",
+          "year": 2022,
+          "journal": "Nutrition",
+          "firstAuthor": "Delpino FM"
+        },
+        {
+          "citationId": "eckert_2025_depression_meta",
+          "title": "Creatine supplementation for treating symptoms of depression: a systematic review and meta-analysis",
+          "pmid": "41189312",
+          "doi": "10.1017/S0007114525105588",
+          "year": 2025,
+          "journal": "British Journal of Nutrition",
+          "firstAuthor": "Eckert I"
+        },
+        {
+          "citationId": "antonio_2021_safety_review",
+          "title": "Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?",
+          "pmid": "33557850",
+          "doi": "10.1186/s12970-021-00412-w",
+          "year": 2021,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Antonio J"
+        },
+        {
+          "citationId": "buford_2007_issn_position",
+          "title": "International Society of Sports Nutrition position stand: creatine supplementation and exercise",
+          "pmid": "17908288",
+          "doi": "10.1186/1550-2783-4-6",
+          "year": 2007,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Buford TW"
+        },
+        {
+          "citationId": "naeini_2025_kidney_safety",
+          "title": "Effect of creatine supplementation on kidney function: a systematic review and meta-analysis",
+          "pmid": "41199218",
+          "doi": "10.1186/s12882-025-04558-6",
+          "year": 2025,
+          "journal": "BMC Nephrology",
+          "firstAuthor": "Naeini EK"
+        },
+        {
+          "citationId": "kreider_2017_issn_position",
+          "title": "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine",
+          "pmid": "28615996",
+          "doi": "10.1186/s12970-017-0173-z",
+          "year": 2017,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Kreider RB"
+        },
+        {
+          "citationId": "buford_2007_issn_position",
+          "title": "International Society of Sports Nutrition position stand: creatine supplementation and exercise",
+          "pmid": "17908288",
+          "doi": "10.1186/1550-2783-4-6",
+          "year": 2007,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Buford TW"
+        }
+      ]
+    },
+    {
+      "file": "6_magnesium_enhanced.js",
+      "supplementId": 6,
+      "supplementName": "6_magnesium_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "7_vitamin_d3_enhanced.js",
+      "supplementId": 7,
+      "supplementName": "7_vitamin_d3_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "8_melatonin_enhanced.js",
+      "supplementId": 8,
+      "supplementName": "Melatonin",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "9_l_theanine_enhanced.js",
+      "supplementId": 9,
+      "supplementName": "9_l_theanine_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "10_rhodiola_rosea_enhanced.js",
+      "supplementId": 10,
+      "supplementName": "10_rhodiola_rosea_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "11_lions_mane_enhanced.js",
+      "supplementId": 11,
+      "supplementName": "11_lions_mane_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "12_phosphatidylserine_enhanced.js",
+      "supplementId": 12,
+      "supplementName": "Phosphatidylserine",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "supplementId": 13,
+      "supplementName": "13_acetyl_l_carnitine_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "14_enhanced.js",
+      "supplementId": 14,
+      "supplementName": "Ginkgo Biloba",
+      "totalCitations": 15,
+      "citations": [
+        {
+          "citationId": null,
+          "title": "Identification and quantification of the antioxidants in Ginkgo biloba leaf",
+          "pmid": "39189506",
+          "doi": "10.1002/bmc.5980",
+          "year": 2024,
+          "journal": "Biomedical Chromatography",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Effect of Ginkgo biloba extract on experimental cardiac remodeling",
+          "pmid": "26268459",
+          "doi": "10.1186/s12906-015-0719-z",
+          "year": 2015,
+          "journal": "BMC Complementary and Alternative Medicine",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Ginkgo biloba: A Leaf of Hope in the Fight against Alzheimer's Dementia: Clinical Trial Systematic Review",
+          "pmid": "38929090",
+          "doi": "10.3390/antiox13060651",
+          "year": 2024,
+          "journal": "Antioxidants",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Effects of Ginkgo biloba in dementia: systematic review and meta-analysis",
+          "pmid": "20236541",
+          "doi": "10.1186/1471-2318-10-14",
+          "year": 2010,
+          "journal": "BMC Geriatrics",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Alleviating neuropsychiatric symptoms in dementia: the effects of Ginkgo biloba extract EGb 761. Findings from a randomized controlled trial",
+          "pmid": "21573082",
+          "doi": "10.2147/NDT.S18741",
+          "year": 2011,
+          "journal": "Neuropsychiatric Disease and Treatment",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Effects of Ginkgo biloba extract EGb 761® on cognitive control functions, mental activity of the prefrontal cortex and stress reactivity in elderly adults with subjective memory impairment",
+          "pmid": "27147264",
+          "doi": "10.1002/hup.2534",
+          "year": 2016,
+          "journal": "Human Psychopharmacology: Clinical and Experimental",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "The effects of Ginkgo biloba on metabolic syndrome: a review",
+          "pmid": "32097990",
+          "doi": "10.1002/ptr.6646",
+          "year": 2020,
+          "journal": "Phytotherapy Research",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Ginkgo biloba for cognitive impairment and dementia",
+          "pmid": "41641880",
+          "doi": "10.1002/14651858.CD013661.pub2",
+          "year": 2026,
+          "journal": "Cochrane Database of Systematic Reviews",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Comparative effects of Bacopa monnieri and Ginkgo biloba on cognitive functions: A systematic review and network meta-analysis.",
+          "pmid": "41678913",
+          "doi": "10.1016/j.phymed.2026.157915",
+          "year": 2026,
+          "journal": "Phytomedicine",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Therapeutic strategies in vascular cognitive impairment: A systematic review and meta-analysis.",
+          "pmid": "41198594",
+          "doi": "10.1002/alz.70840",
+          "year": 2025,
+          "journal": "Alzheimer's & Dementia",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Ginkgo biloba leaf extract EGb 761 for the treatment of various diseases: Overview of systematic reviews.",
+          "pmid": "40121884",
+          "doi": "10.1016/j.phymed.2025.156565",
+          "year": 2025,
+          "journal": "Phytomedicine",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "The leaf extract of Ginkgo Biloba L. suppresses oxidized LDL-stimulated fibronectin production through an antioxidant action in rat mesangial cells",
+          "pmid": "15024120",
+          "doi": "10.1038/sj.bjp.0705805",
+          "year": 2004,
+          "journal": "British Journal of Pharmacology",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Ginkgolide A reduces inflammatory response in high-glucose-stimulated human umbilical vein endothelial cells through STAT3-mediated pathway",
+          "pmid": "25681539",
+          "doi": "10.1016/j.intimp.2015.02.001",
+          "year": 2015,
+          "journal": "International Immunopharmacology",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Efficacy and adverse effects of ginkgo biloba for cognitive impairment and dementia: a systematic review and meta-analysis",
+          "pmid": "25114079",
+          "doi": "10.3233/JAD-140837",
+          "year": 2015,
+          "journal": "Journal of Alzheimer's Disease",
+          "firstAuthor": null
+        },
+        {
+          "citationId": null,
+          "title": "Ginkgo biloba: A Treasure of Functional Phytochemicals with Multimedicinal Applications",
+          "pmid": "35265150",
+          "doi": "10.1155/2022/8288818",
+          "year": 2022,
+          "journal": "Evidence-Based Complementary and Alternative Medicine",
+          "firstAuthor": null
+        }
+      ]
+    },
+    {
+      "file": "15_panax_ginseng_enhanced.js",
+      "supplementId": 15,
+      "supplementName": "15_panax_ginseng_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "16_enhanced.js",
+      "supplementId": 16,
+      "supplementName": "Alpha-GPC",
+      "totalCitations": 3,
+      "citations": [
+        {
+          "citationId": "brownawell_2011_safety",
+          "title": "Safety assessment of AGPC as a food ingredient",
+          "pmid": "21414376",
+          "doi": "10.1016/j.fct.2011.03.012",
+          "year": 2011,
+          "journal": "Food and Chemical Toxicology",
+          "firstAuthor": "Brownawell AM"
+        },
+        {
+          "citationId": "traini_2013_cholinesterase",
+          "title": "Choline alphoscerate (alpha-glyceryl-phosphoryl-choline) an old choline- containing phospholipid with a still interesting profile as cognition enhancing agent",
+          "pmid": "24156263",
+          "doi": "10.2174/15672050113106660173",
+          "year": 2013,
+          "journal": "Current Alzheimer Research",
+          "firstAuthor": "Traini E"
+        },
+        {
+          "citationId": "brownawell_2011_neuroplasticity",
+          "title": "Safety assessment of AGPC as a food ingredient",
+          "pmid": "21414376",
+          "doi": "10.1016/j.fct.2011.03.012",
+          "year": 2011,
+          "journal": "Food and Chemical Toxicology",
+          "firstAuthor": "Brownawell AM"
+        }
+      ]
+    },
+    {
+      "file": "17_enhanced.js",
+      "supplementId": 17,
+      "supplementName": "Berberine",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "18_coq10_enhanced.js",
+      "supplementId": 18,
+      "supplementName": "18_coq10_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "19_enhanced.js",
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "totalCitations": 11,
+      "citations": [
+        {
+          "citationId": "kennedy_2016_mechanisms",
+          "title": "B Vitamins and the Brain: Mechanisms, Dose and Efficacy—A Review",
+          "pmid": "26828517",
+          "doi": "10.3390/nu8020068",
+          "year": 2016,
+          "journal": "Nutrients",
+          "firstAuthor": "Kennedy DO"
+        },
+        {
+          "citationId": "depeint_2006_mitochondrial",
+          "title": "Mitochondrial function and toxicity: role of the B vitamin family on mitochondrial energy metabolism",
+          "pmid": "16765926",
+          "doi": "10.1016/j.cbi.2006.04.014",
+          "year": 2006,
+          "journal": "Chemico-Biological Interactions",
+          "firstAuthor": "Depeint F"
+        },
+        {
+          "citationId": "reynolds_2006_neurology",
+          "title": "Vitamin B12, folic acid, and the nervous system",
+          "pmid": "17052662",
+          "doi": "10.1016/S1474-4422(06)70598-1",
+          "year": 2006,
+          "journal": "The Lancet. Neurology",
+          "firstAuthor": "Reynolds E"
+        },
+        {
+          "citationId": "smith_2018_homocysteine",
+          "title": "Homocysteine and dementia: an international consensus statement",
+          "pmid": "29480200",
+          "doi": "10.3233/JAD-171042",
+          "year": 2018,
+          "journal": "Journal of Alzheimer's Disease",
+          "firstAuthor": "Smith AD"
+        },
+        {
+          "citationId": "wang_2022_cognitive",
+          "title": "B vitamins and prevention of cognitive decline and incident dementia: a systematic review and meta-analysis",
+          "pmid": "34432056",
+          "doi": "10.1093/nutrit/nuab057",
+          "year": 2022,
+          "journal": "Nutrition Reviews",
+          "firstAuthor": "Wang Z"
+        },
+        {
+          "citationId": "markun_2021_b12_systematic",
+          "title": "Effects of Vitamin B12 Supplementation on Cognitive Function, Depressive Symptoms, and Fatigue: A Systematic Review, Meta-Analysis, and Meta-Regression",
+          "pmid": "33809274",
+          "doi": "10.3390/nu13030923",
+          "year": 2021,
+          "journal": "Nutrients",
+          "firstAuthor": "Markun S"
+        },
+        {
+          "citationId": "long_2013_stress",
+          "title": "Effects of vitamin and mineral supplementation on stress, mild psychiatric symptoms, and mood in nonclinical samples: a meta-analysis",
+          "pmid": "23362497",
+          "doi": "10.1097/PSY.0b013e31827d5fbd",
+          "year": 2013,
+          "journal": "Psychosomatic Medicine",
+          "firstAuthor": "Long SJ"
+        },
+        {
+          "citationId": "young_2019_psychological",
+          "title": "A Systematic Review and Meta-Analysis of B Vitamin Supplementation on Depressive Symptoms, Anxiety, and Stress: Effects on Healthy and 'At-Risk' Individuals",
+          "pmid": "31527485",
+          "doi": "10.3390/nu11092232",
+          "year": 2019,
+          "journal": "Nutrients",
+          "firstAuthor": "Young LM"
+        },
+        {
+          "citationId": "clarke_2010_homocysteine",
+          "title": "Effects of lowering homocysteine levels with B vitamins on cardiovascular disease, cancer, and cause-specific mortality: Meta-analysis of 8 randomized trials involving 37 485 individuals",
+          "pmid": "20937919",
+          "doi": "10.1001/archinternmed.2010.348",
+          "year": 2010,
+          "journal": "Archives of Internal Medicine",
+          "firstAuthor": "Clarke R"
+        },
+        {
+          "citationId": "huskisson_2007_energy",
+          "title": "The role of vitamins and minerals in energy metabolism and well-being",
+          "pmid": "17593855",
+          "doi": "10.1177/147323000703500301",
+          "year": 2007,
+          "journal": "Journal of International Medical Research",
+          "firstAuthor": "Huskisson E"
+        },
+        {
+          "citationId": "huskisson_2007_energy",
+          "title": "The role of vitamins and minerals in energy metabolism and well-being",
+          "pmid": "17593855",
+          "doi": "10.1177/147323000703500301",
+          "year": 2007,
+          "journal": "Journal of International Medical Research",
+          "firstAuthor": "Huskisson E"
+        }
+      ]
+    },
+    {
+      "file": "20_enhanced.js",
+      "supplementId": 20,
+      "supplementName": "Quercetin",
+      "totalCitations": 11,
+      "citations": [
+        {
+          "citationId": "frent_2024_systematic",
+          "title": "A Systematic Review: Quercetin-Secondary Metabolite of the Flavonol Class, with Multiple Health Benefits and Low Bioavailability.",
+          "pmid": "39596162",
+          "doi": "10.3390/ijms252212091",
+          "year": 2024,
+          "journal": "International Journal of Molecular Sciences",
+          "firstAuthor": "Frenț OD"
+        },
+        {
+          "citationId": "aghababaei_2023_mechanisms",
+          "title": "Recent Advances in Potential Health Benefits of Quercetin.",
+          "pmid": "37513932",
+          "doi": "10.3390/ph16071020",
+          "year": 2023,
+          "journal": "Pharmaceuticals (Basel)",
+          "firstAuthor": "Aghababaei F"
+        },
+        {
+          "citationId": "salehi_2020_therapeutic",
+          "title": "Therapeutic Potential of Quercetin: New Insights and Perspectives for Human Health.",
+          "pmid": "32478277",
+          "doi": "10.1021/acsomega.0c01818",
+          "year": 2020,
+          "journal": "ACS Omega",
+          "firstAuthor": "Salehi B"
+        },
+        {
+          "citationId": "zhang_2023_cardiovascular",
+          "title": "Research progress of quercetin in cardiovascular disease.",
+          "pmid": "38054093",
+          "doi": "10.3389/fcvm.2023.1203713",
+          "year": 2023,
+          "journal": "Frontiers in Cardiovascular Medicine",
+          "firstAuthor": "Zhang W"
+        },
+        {
+          "citationId": "rojano_ortega_2022_exercise",
+          "title": "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
+          "pmid": "37398956",
+          "doi": "10.5114/biolsport.2023.121320",
+          "year": 2022,
+          "journal": "Biology of Sport",
+          "firstAuthor": "Rojano-Ortega D"
+        },
+        {
+          "citationId": "tabrizi_2019_inflammation",
+          "title": "The effects of quercetin supplementation on lipid profiles and inflammatory markers among patients with metabolic syndrome and related disorders: A systematic review and meta-analysis of randomized controlled trials",
+          "pmid": "31017459",
+          "doi": "10.1080/10408398.2019.1604491",
+          "year": 2019,
+          "journal": "Critical Reviews in Food Science and Nutrition",
+          "firstAuthor": "Tabrizi R"
+        },
+        {
+          "citationId": "ou_2019_crp",
+          "title": "Impact of quercetin on systemic levels of inflammation: a meta-analysis of randomised controlled human trials",
+          "pmid": "31213101",
+          "doi": "10.1080/09637486.2019.1627515",
+          "year": 2019,
+          "journal": "International Journal of Food Sciences and Nutrition",
+          "firstAuthor": "Ou Q"
+        },
+        {
+          "citationId": "serban_2016_blood_pressure",
+          "title": "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+          "pmid": "27405810",
+          "doi": "10.1161/JAHA.115.002713",
+          "year": 2016,
+          "journal": "Journal of the American Heart Association",
+          "firstAuthor": "Serban MC"
+        },
+        {
+          "citationId": "hickson_2019_senolytic",
+          "title": "Senolytics decrease senescent cells in humans: Preliminary report from a clinical trial of Dasatinib plus Quercetin in individuals with diabetic kidney disease.",
+          "pmid": "31542391",
+          "doi": "10.1016/j.ebiom.2019.08.069",
+          "year": 2019,
+          "journal": "EBioMedicine",
+          "firstAuthor": "Hickson LJ"
+        },
+        {
+          "citationId": "rojano_ortega_2022_exercise",
+          "title": "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
+          "pmid": "37398956",
+          "doi": "10.5114/biolsport.2023.121320",
+          "year": 2022,
+          "journal": "Biology of Sport",
+          "firstAuthor": "Rojano-Ortega D"
+        },
+        {
+          "citationId": "serban_2016_blood_pressure",
+          "title": "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+          "pmid": "27405810",
+          "doi": "10.1161/JAHA.115.002713",
+          "year": 2016,
+          "journal": "Journal of the American Heart Association",
+          "firstAuthor": "Serban MC"
+        }
+      ]
+    },
+    {
+      "file": "21_vitamin_b12_enhanced.js",
+      "supplementId": 21,
+      "supplementName": "Vitamin B12",
+      "totalCitations": 14,
+      "citations": [
+        {
+          "citationId": "finkelstein_1990_methionine",
+          "title": "Methionine metabolism in mammals",
+          "pmid": "15539209",
+          "doi": "10.1016/0955-2863(90)90070-2",
+          "year": 1990,
+          "journal": "Journal of Nutritional Biochemistry",
+          "firstAuthor": "Finkelstein, J.D."
+        },
+        {
+          "citationId": "alruwaili_2023_neurological",
+          "title": "Neurological Implications of Vitamin B12 Deficiency in Diet: A Systematic Review and Meta-Analysis",
+          "pmid": "37046885",
+          "doi": "10.3390/healthcare11070958",
+          "year": 2023,
+          "journal": "Healthcare",
+          "firstAuthor": "Alruwaili, M."
+        },
+        {
+          "citationId": "stabler_2013_clinical",
+          "title": "Clinical practice. Vitamin B12 deficiency.",
+          "pmid": "23301732",
+          "doi": "10.1056/NEJMcp1113996",
+          "year": 2013,
+          "journal": "New England Journal of Medicine",
+          "firstAuthor": "Stabler, S.P."
+        },
+        {
+          "citationId": "clarke_2007_cognitive",
+          "title": "Low vitamin B-12 status and risk of cognitive decline in older adults",
+          "pmid": "17991650",
+          "doi": "10.1093/ajcn/86.5.1384",
+          "year": 2007,
+          "journal": "American Journal of Clinical Nutrition",
+          "firstAuthor": "Clarke, R."
+        },
+        {
+          "citationId": "smith_2018_dementia",
+          "title": "Homocysteine and Dementia: An International Consensus Statement",
+          "pmid": "29480200",
+          "doi": "10.3233/JAD-171042",
+          "year": 2018,
+          "journal": "Journal of Alzheimer's Disease",
+          "firstAuthor": "Smith, A.D."
+        },
+        {
+          "citationId": "sohouli_2024_homocysteine",
+          "title": "A comprehensive review and meta-regression analysis of randomized controlled trials examining the impact of vitamin B12 supplementation on homocysteine levels",
+          "pmid": "37495210",
+          "doi": "10.1093/nutrit/nuad091",
+          "year": 2024,
+          "journal": "Nutrition Reviews",
+          "firstAuthor": "Sohouli, M.H."
+        },
+        {
+          "citationId": "marti_carvajal_2017_cvd",
+          "title": "Homocysteine-lowering interventions for preventing cardiovascular events",
+          "pmid": "28816346",
+          "doi": "10.1002/14651858.CD006612.pub5",
+          "year": 2017,
+          "journal": "Cochrane Database of Systematic Reviews",
+          "firstAuthor": "Martí-Carvajal, A.J."
+        },
+        {
+          "citationId": "penninx_2000_depression",
+          "title": "Vitamin B12 deficiency and depression in physically disabled older women: epidemiologic evidence from the Women's Health and Aging Study",
+          "pmid": "10784463",
+          "doi": "10.1176/appi.ajp.157.5.715",
+          "year": 2000,
+          "journal": "American Journal of Psychiatry",
+          "firstAuthor": "Penninx, B.W."
+        },
+        {
+          "citationId": "volkov_2009_stomatitis",
+          "title": "Effectiveness of vitamin B12 in treating recurrent aphthous stomatitis: a randomized, double-blind, placebo-controlled trial",
+          "pmid": "19124628",
+          "doi": "10.3122/jabfm.2009.01.080113",
+          "year": 2009,
+          "journal": "Journal of the American Board of Family Medicine",
+          "firstAuthor": "Volkov, I."
+        },
+        {
+          "citationId": "allen_2008_deficiency",
+          "title": "How common is vitamin B-12 deficiency?",
+          "pmid": "19116323",
+          "doi": "10.3945/ajcn.2008.26947A",
+          "year": 2008,
+          "journal": "American Journal of Clinical Nutrition",
+          "firstAuthor": "Allen, L.H."
+        },
+        {
+          "citationId": "stabler_2013_clinical",
+          "title": "Clinical practice. Vitamin B12 deficiency.",
+          "pmid": "23301732",
+          "doi": "10.1056/NEJMcp1113996",
+          "year": 2013,
+          "journal": "New England Journal of Medicine",
+          "firstAuthor": "Stabler, S.P."
+        },
+        {
+          "citationId": "watanabe_2014_plant",
+          "title": "Vitamin B12-containing plant food sources for vegetarians",
+          "pmid": "24803097",
+          "doi": "10.3390/nu6051861",
+          "year": 2014,
+          "journal": "Nutrients",
+          "firstAuthor": "Watanabe, F."
+        },
+        {
+          "citationId": "vidal_alaball_2005_oral",
+          "title": "Oral vitamin B12 versus intramuscular vitamin B12 for vitamin B12 deficiency",
+          "pmid": "16034940",
+          "doi": "10.1002/14651858.CD004655.pub2",
+          "year": 2005,
+          "journal": "Cochrane Database of Systematic Reviews",
+          "firstAuthor": "Vidal-Alaball, J."
+        },
+        {
+          "citationId": "watanabe_2014_plant",
+          "title": "Vitamin B12-containing plant food sources for vegetarians",
+          "pmid": "24803097",
+          "doi": "10.3390/nu6051861",
+          "year": 2014,
+          "journal": "Nutrients",
+          "firstAuthor": "Watanabe, F."
+        }
+      ]
+    },
+    {
+      "file": "22_vitamin_b6_enhanced.js",
+      "supplementId": 22,
+      "supplementName": "Vitamin B6",
+      "totalCitations": 11,
+      "citations": [
+        {
+          "citationId": "mooney_2009_cofactor",
+          "title": "Vitamin B6: a long known compound of surprising complexity",
+          "pmid": "19145213",
+          "doi": "10.3390/molecules14010329",
+          "year": 2009,
+          "journal": "Molecules",
+          "firstAuthor": "Mooney S"
+        },
+        {
+          "citationId": "wilson_2019_b6disorders",
+          "title": "Disorders affecting vitamin B6 metabolism",
+          "pmid": "30671974",
+          "doi": "10.1002/jimd.12060",
+          "year": 2019,
+          "journal": "Journal of Inherited Metabolic Disease",
+          "firstAuthor": "Wilson MP"
+        },
+        {
+          "citationId": "clayton_2006_b6responsive",
+          "title": "B6-responsive disorders: a model of vitamin dependency",
+          "pmid": "16763894",
+          "doi": "10.1007/s10545-005-0243-2",
+          "year": 2006,
+          "journal": "Journal of Inherited Metabolic Disease",
+          "firstAuthor": "Clayton PT"
+        },
+        {
+          "citationId": "mills_2006_antiquitin",
+          "title": "Mutations in antiquitin in individuals with pyridoxine-dependent seizures",
+          "pmid": "16491085",
+          "doi": "10.1038/nm1366",
+          "year": 2006,
+          "journal": "Nature Medicine",
+          "firstAuthor": "Mills PB"
+        },
+        {
+          "citationId": "rall_1993_immune",
+          "title": "Vitamin B6 and immune competence",
+          "pmid": "8302491",
+          "doi": "10.1111/j.1753-4887.1993.tb03109.x",
+          "year": 1993,
+          "journal": "Nutrition Reviews",
+          "firstAuthor": "Rall LC"
+        },
+        {
+          "citationId": "clarke_2007_cardiovascular",
+          "title": "Effects of B-vitamins on plasma homocysteine concentrations and on risk of cardiovascular disease and dementia",
+          "pmid": "17143052",
+          "doi": "10.1097/MCO.0b013e328011aa71",
+          "year": 2007,
+          "journal": "Current Opinion in Clinical Nutrition and Metabolic Care",
+          "firstAuthor": "Clarke R"
+        },
+        {
+          "citationId": "rall_1993_immune",
+          "title": "Vitamin B6 and immune competence",
+          "pmid": "8302491",
+          "doi": "10.1111/j.1753-4887.1993.tb03109.x",
+          "year": 1993,
+          "journal": "Nutrition Reviews",
+          "firstAuthor": "Rall LC"
+        },
+        {
+          "citationId": "wilson_2019_b6disorders",
+          "title": "Disorders affecting vitamin B6 metabolism",
+          "pmid": "30671974",
+          "doi": "10.1002/jimd.12060",
+          "year": 2019,
+          "journal": "Journal of Inherited Metabolic Disease",
+          "firstAuthor": "Wilson MP"
+        },
+        {
+          "citationId": "wyatt_1999_pms",
+          "title": "Efficacy of vitamin B-6 in the treatment of premenstrual syndrome: systematic review",
+          "pmid": "10334745",
+          "doi": "10.1136/bmj.318.7195.1375",
+          "year": 1999,
+          "journal": "BMJ",
+          "firstAuthor": "Wyatt KM"
+        },
+        {
+          "citationId": "matthews_2015_nausea",
+          "title": "Interventions for nausea and vomiting in early pregnancy",
+          "pmid": "26348534",
+          "doi": "10.1002/14651858.CD007575.pub4",
+          "year": 2015,
+          "journal": "Cochrane Database of Systematic Reviews",
+          "firstAuthor": "Matthews A"
+        },
+        {
+          "citationId": "schaumburg_1983_neuropathy",
+          "title": "Sensory neuropathy from pyridoxine abuse: a new megavitamin syndrome",
+          "pmid": "6308447",
+          "doi": "10.1056/NEJM198308253090801",
+          "year": 1983,
+          "journal": "New England Journal of Medicine",
+          "firstAuthor": "Schaumburg H"
+        }
+      ]
+    },
+    {
+      "file": "23_folate_enhanced.js",
+      "supplementId": 23,
+      "supplementName": "Folate (Vitamin B9)",
+      "totalCitations": 25,
+      "citations": [
+        {
+          "citationId": "vanderlinden_2006_mthfr",
+          "title": "Genetic variation in genes of folate metabolism and neural-tube defect risk",
+          "pmid": "16672082",
+          "doi": "10.1079/pns2006495",
+          "year": 2006,
+          "journal": "Proceedings of the Nutrition Society",
+          "firstAuthor": "van der Linden IJ"
+        },
+        {
+          "citationId": "pietrzik_2010_5mthf",
+          "title": "Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics",
+          "pmid": "20608755",
+          "doi": "10.2165/11532990-000000000-00000",
+          "year": 2010,
+          "journal": "Clinical Pharmacokinetics",
+          "firstAuthor": "Pietrzik K"
+        },
+        {
+          "citationId": "scaglione_2014_5mthf",
+          "title": "Folate, folic acid and 5-methyltetrahydrofolate are not the same thing",
+          "pmid": "24494987",
+          "doi": "10.3109/00498254.2013.845705",
+          "year": 2014,
+          "journal": "Xenobiotica",
+          "firstAuthor": "Scaglione F"
+        },
+        {
+          "citationId": "mcnulty_2005_riboflavin",
+          "title": "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism",
+          "pmid": "16380544",
+          "doi": "10.1161/CIRCULATIONAHA.105.580332",
+          "year": 2005,
+          "journal": "Circulation",
+          "firstAuthor": "McNulty H"
+        },
+        {
+          "citationId": "nelen_2000_pregnancy_loss",
+          "title": "Homocysteine and folate levels as risk factors for recurrent early pregnancy loss",
+          "pmid": "10725483",
+          "doi": "10.1016/s0029-7844(99)00610-9",
+          "year": 2000,
+          "journal": "Obstetrics and Gynecology",
+          "firstAuthor": "Nelen WL"
+        },
+        {
+          "citationId": "rossignol_2021_folate_receptor",
+          "title": "Cerebral folate deficiency, folate receptor alpha autoantibodies and leucovorin (folinic acid) treatment in autism spectrum disorders: a systematic review and meta-analysis",
+          "pmid": "34834493",
+          "doi": "10.3390/jpm11111141",
+          "year": 2021,
+          "journal": "Journal of Personalized Medicine",
+          "firstAuthor": "Rossignol DA"
+        },
+        {
+          "citationId": "greenberg_2011_pregnancy",
+          "title": "Folic acid supplementation and pregnancy: more than just neural tube defect prevention",
+          "pmid": "22102928",
+          "doi": "10.3909/riog0149",
+          "year": 2011,
+          "journal": "Reviews in Obstetrics and Gynecology",
+          "firstAuthor": "Greenberg JA"
+        },
+        {
+          "citationId": "uspstf_2023_ntd",
+          "title": "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement",
+          "pmid": "37526713",
+          "doi": "10.1001/jama.2023.12876",
+          "year": 2023,
+          "journal": "JAMA",
+          "firstAuthor": "US Preventive Services Task Force"
+        },
+        {
+          "citationId": "greenberg_2011_pregnancy",
+          "title": "Folic acid supplementation and pregnancy: more than just neural tube defect prevention",
+          "pmid": "22102928",
+          "doi": "10.3909/riog0149",
+          "year": 2011,
+          "journal": "Reviews in Obstetrics and Gynecology",
+          "firstAuthor": "Greenberg JA"
+        },
+        {
+          "citationId": "vanderlinden_2006_mthfr",
+          "title": "Genetic variation in genes of folate metabolism and neural-tube defect risk",
+          "pmid": "16672082",
+          "doi": "10.1079/pns2006495",
+          "year": 2006,
+          "journal": "Proceedings of the Nutrition Society",
+          "firstAuthor": "van der Linden IJ"
+        },
+        {
+          "citationId": "wang_2022_cognitive",
+          "title": "B vitamins and prevention of cognitive decline and incident dementia: a systematic review and meta-analysis",
+          "pmid": "34432056",
+          "doi": "10.1093/nutrit/nuab057",
+          "year": 2022,
+          "journal": "Nutrition Reviews",
+          "firstAuthor": "Wang Z"
+        },
+        {
+          "citationId": "durga_2007_cognitive",
+          "title": "Effect of 3-year folic acid supplementation on cognitive function in older adults in the FACIT trial: a randomised, double blind, controlled trial",
+          "pmid": "17240287",
+          "doi": "10.1016/S0140-6736(07)60109-3",
+          "year": 2007,
+          "journal": "The Lancet",
+          "firstAuthor": "Durga J"
+        },
+        {
+          "citationId": "ma_2016_mci",
+          "title": "Folic acid supplementation improves cognitive function by reducing the levels of peripheral inflammatory cytokines in elderly Chinese subjects with MCI",
+          "pmid": "27876835",
+          "doi": "10.1038/srep37486",
+          "year": 2016,
+          "journal": "Scientific Reports",
+          "firstAuthor": "Ma F"
+        },
+        {
+          "citationId": "maruf_2021_depression",
+          "title": "Systematic Review and Meta-Analysis of L-Methylfolate Augmentation in Depressive Disorders",
+          "pmid": "34794190",
+          "doi": "10.1055/a-1681-2047",
+          "year": 2021,
+          "journal": "Pharmacopsychiatry",
+          "firstAuthor": "Maruf AA"
+        },
+        {
+          "citationId": "mcnulty_2005_riboflavin",
+          "title": "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism",
+          "pmid": "16380544",
+          "doi": "10.1161/CIRCULATIONAHA.105.580332",
+          "year": 2005,
+          "journal": "Circulation",
+          "firstAuthor": "McNulty H"
+        },
+        {
+          "citationId": "liu_2021_autism",
+          "title": "Prenatal Folic Acid Supplements and Offspring's Autism Spectrum Disorder: A Meta-analysis and Meta-regression.",
+          "pmid": "33743119",
+          "doi": "10.1007/s10803-021-04951-8",
+          "year": 2021,
+          "journal": "Journal of Autism and Developmental Disorders",
+          "firstAuthor": "Liu X"
+        },
+        {
+          "citationId": "rossignol_2021_folate_receptor",
+          "title": "Cerebral folate deficiency, folate receptor alpha autoantibodies and leucovorin (folinic acid) treatment in autism spectrum disorders: a systematic review and meta-analysis",
+          "pmid": "34834493",
+          "doi": "10.3390/jpm11111141",
+          "year": 2021,
+          "journal": "Journal of Personalized Medicine",
+          "firstAuthor": "Rossignol DA"
+        },
+        {
+          "citationId": "nelen_2000_pregnancy_loss",
+          "title": "Homocysteine and folate levels as risk factors for recurrent early pregnancy loss",
+          "pmid": "10725483",
+          "doi": "10.1016/s0029-7844(99)00610-9",
+          "year": 2000,
+          "journal": "Obstetrics and Gynecology",
+          "firstAuthor": "Nelen WL"
+        },
+        {
+          "citationId": "showell_2018_pcos",
+          "title": "Antioxidants for female subfertility",
+          "pmid": "28752910",
+          "doi": "10.1002/14651858.CD007807.pub3",
+          "year": 2017,
+          "journal": "Cochrane Database of Systematic Reviews",
+          "firstAuthor": "Showell MG"
+        },
+        {
+          "citationId": "servy_2018_mthfr_fertility",
+          "title": "MTHFR isoform carriers. 5-MTHF (5-methyl tetrahydrofolate) vs folic acid: a key to pregnancy outcome: a case series",
+          "pmid": "29882091",
+          "doi": "10.1007/s10815-018-1225-2",
+          "year": 2018,
+          "journal": "Journal of Assisted Reproduction and Genetics",
+          "firstAuthor": "Servy EJ"
+        },
+        {
+          "citationId": "uspstf_2023_ntd",
+          "title": "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement",
+          "pmid": "37526713",
+          "doi": "10.1001/jama.2023.12876",
+          "year": 2023,
+          "journal": "JAMA",
+          "firstAuthor": "US Preventive Services Task Force"
+        },
+        {
+          "citationId": "pietrzik_2010_5mthf",
+          "title": "Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics",
+          "pmid": "20608755",
+          "doi": "10.2165/11532990-000000000-00000",
+          "year": 2010,
+          "journal": "Clinical Pharmacokinetics",
+          "firstAuthor": "Pietrzik K"
+        },
+        {
+          "citationId": "rossignol_2021_folate_receptor",
+          "title": "Cerebral Folate Deficiency, Folate Receptor Alpha Autoantibodies and Leucovorin (Folinic Acid) Treatment in Autism Spectrum Disorders: A Systematic Review and Meta-Analysis",
+          "pmid": "34834493",
+          "doi": "10.3390/jpm11111141",
+          "year": 2021,
+          "journal": "Journal of Personalized Medicine",
+          "firstAuthor": "Rossignol DA"
+        },
+        {
+          "citationId": "maruf_2021_depression",
+          "title": "Systematic Review and Meta-Analysis of L-Methylfolate Augmentation in Depressive Disorders",
+          "pmid": "34794190",
+          "doi": "10.1055/a-1681-2047",
+          "year": 2021,
+          "journal": "Pharmacopsychiatry",
+          "firstAuthor": "Maruf AA"
+        },
+        {
+          "citationId": "servy_2018_mthfr_fertility",
+          "title": "MTHFR isoform carriers. 5-MTHF (5-methyl tetrahydrofolate) vs folic acid: a key to pregnancy outcome: a case series.",
+          "pmid": "29882091",
+          "doi": "10.1007/s10815-018-1225-2",
+          "year": 2018,
+          "journal": "Journal of Assisted Reproduction and Genetics",
+          "firstAuthor": "Servy EJ"
+        }
+      ]
+    },
+    {
+      "file": "24_l_theanine_enhanced.js",
+      "supplementId": 24,
+      "supplementName": "24_l_theanine_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "25_nad_precursors_enhanced.js",
+      "supplementId": 25,
+      "supplementName": "NAD+ Precursors",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "26_pqq_enhanced.js",
+      "supplementId": 26,
+      "supplementName": "PQQ",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "27_resveratrol_enhanced.js",
+      "supplementId": 27,
+      "supplementName": "27_resveratrol_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "28_glucosamine_enhanced.js",
+      "supplementId": 28,
+      "supplementName": "28_glucosamine_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "29_enhanced.js",
+      "supplementId": 29,
+      "supplementName": "MSM",
+      "totalCitations": 11,
+      "citations": [
+        {
+          "citationId": "butawan_2017_applications",
+          "title": "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement",
+          "pmid": "28300758",
+          "doi": "10.3390/nu9030290",
+          "year": 2017,
+          "journal": "Nutrients",
+          "firstAuthor": "Butawan M"
+        },
+        {
+          "citationId": "butawan_2017_sulfur",
+          "title": "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement",
+          "pmid": "28300758",
+          "doi": "10.3390/nu9030290",
+          "year": 2017,
+          "journal": "Nutrients",
+          "firstAuthor": "Butawan M"
+        },
+        {
+          "citationId": "debbi_2011_oa_rct",
+          "title": "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study",
+          "pmid": "21708034",
+          "doi": "10.1186/1472-6882-11-50",
+          "year": 2011,
+          "journal": "BMC Complementary and Alternative Medicine",
+          "firstAuthor": "Debbi EM"
+        },
+        {
+          "citationId": "toguchi_2023_knee_rct",
+          "title": "Methylsulfonylmethane Improves Knee Quality of Life in Participants with Mild Knee Pain: A Randomized, Double-Blind, Placebo-Controlled Trial.",
+          "pmid": "37447322",
+          "doi": "10.3390/nu15132995",
+          "year": 2023,
+          "journal": "Nutrients",
+          "firstAuthor": "Toguchi A"
+        },
+        {
+          "citationId": "crawford_2019_against_msm",
+          "title": "Dietary Ingredients as an Alternative Approach for Mitigating Chronic Musculoskeletal Pain: Evidence-Based Recommendations for Practice and Research in the Military",
+          "pmid": "30986309",
+          "doi": "10.1093/pm/pnz040",
+          "year": 2019,
+          "journal": "Pain Medicine",
+          "firstAuthor": "Crawford C"
+        },
+        {
+          "citationId": "chen_2025_oa_nma",
+          "title": "Effects of dietary supplements on patients with osteoarthritis: A systematic review and network meta-analysis.",
+          "pmid": "40425393",
+          "doi": "10.1016/j.joim.2025.04.008",
+          "year": 2025,
+          "journal": "Journal of Integrative Medicine",
+          "firstAuthor": "Chen B"
+        },
+        {
+          "citationId": "kalman_2012_exercise_pilot",
+          "title": "Influence of methylsulfonylmethane on markers of exercise recovery and performance in healthy men: a pilot study",
+          "pmid": "23013531",
+          "doi": "10.1186/1550-2783-9-46",
+          "year": 2012,
+          "journal": "Journal of the International Society of Sports Nutrition",
+          "firstAuthor": "Kalman DS"
+        },
+        {
+          "citationId": "mcfarlin_2025_mrna",
+          "title": "Using the Rise and Fall of Oxidative Stress and Inflammation Post-Exercise to Evaluate the Effect of Methylsulfonylmethane Supplementation on Immune Response mRNA",
+          "pmid": "40507030",
+          "doi": "10.3390/nu17111761",
+          "year": 2025,
+          "journal": "Nutrients",
+          "firstAuthor": "McFarlin BK"
+        },
+        {
+          "citationId": "kim_2023_cyp450",
+          "title": "Investigation of Drug-Interaction Potential for Arthritis Dietary Supplements: Chondroitin Sulfate, Glucosamine, and Methylsulfonylmethane",
+          "pmid": "38138558",
+          "doi": "10.3390/molecules28248068",
+          "year": 2023,
+          "journal": "Molecules",
+          "firstAuthor": "Kim D"
+        },
+        {
+          "citationId": "debbi_2011_dosage",
+          "title": "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study",
+          "pmid": "21708034",
+          "doi": "10.1186/1472-6882-11-50",
+          "year": 2011,
+          "journal": "BMC Complementary and Alternative Medicine",
+          "firstAuthor": "Debbi EM"
+        },
+        {
+          "citationId": "toguchi_2023_dosage",
+          "title": "Methylsulfonylmethane Improves Knee Quality of Life in Participants with Mild Knee Pain: A Randomized, Double-Blind, Placebo-Controlled Trial.",
+          "pmid": "37447322",
+          "doi": "10.3390/nu15132995",
+          "year": 2023,
+          "journal": "Nutrients",
+          "firstAuthor": "Toguchi A"
+        }
+      ]
+    },
+    {
+      "file": "30_vitamin_e_enhanced.js",
+      "supplementId": 30,
+      "supplementName": "30_vitamin_e_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "31_whey_protein_enhanced.js",
+      "supplementId": 31,
+      "supplementName": "31_whey_protein_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "supplementId": 32,
+      "supplementName": "32_chondroitin_sulfate_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "33_l_tyrosine_enhanced.js",
+      "supplementId": 33,
+      "supplementName": "Catecholamine Synthesis Limitation",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "34_enhanced.js",
+      "supplementId": 34,
+      "supplementName": "5-HTP",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "supplementId": 35,
+      "supplementName": "35_tribulus_terrestris_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "36_vitamin_c_enhanced.js",
+      "supplementId": 36,
+      "supplementName": "36_vitamin_c_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "37_zinc_enhanced.js",
+      "supplementId": 37,
+      "supplementName": "Zinc",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "38_iron_enhanced.js",
+      "supplementId": 38,
+      "supplementName": "Iron",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "39_taurine_enhanced.js",
+      "supplementId": 39,
+      "supplementName": "Taurine",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "40_gaba_enhanced.js",
+      "supplementId": 40,
+      "supplementName": "40_gaba_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "41_inositol_enhanced.js",
+      "supplementId": 41,
+      "supplementName": "Inositol Enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "42_selenium_enhanced.js",
+      "supplementId": 42,
+      "supplementName": "42_selenium_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "43_choline_bitartrate_enhanced.js",
+      "supplementId": 43,
+      "supplementName": "Choline Bitartrate",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "supplementId": 44,
+      "supplementName": "44_alpha_lipoic_acid_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "45_enhanced.js",
+      "supplementId": 45,
+      "supplementName": "Lutein",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "46_astaxanthin_enhanced.js",
+      "supplementId": 46,
+      "supplementName": "Astaxanthin",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "47_ginger_enhanced.js",
+      "supplementId": 47,
+      "supplementName": "47_ginger_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "48_garlic_enhanced.js",
+      "supplementId": 48,
+      "supplementName": "48_garlic_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "49_echinacea_enhanced.js",
+      "supplementId": 49,
+      "supplementName": "Echinacea",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "50_caffeine_enhanced.js",
+      "supplementId": 50,
+      "supplementName": "50_caffeine_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "51_reishi_mushroom_enhanced.js",
+      "supplementId": 51,
+      "supplementName": "51_reishi_mushroom_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "52_cordyceps_enhanced.js",
+      "supplementId": 52,
+      "supplementName": "Cordyceps",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "53_spirulina_enhanced.js",
+      "supplementId": 53,
+      "supplementName": "53_spirulina_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "54_chlorella_enhanced.js",
+      "supplementId": 54,
+      "supplementName": "Chlorella",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "55_huperzine_a_enhanced.js",
+      "supplementId": 55,
+      "supplementName": "55_huperzine_a_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "56_vinpocetine_enhanced.js",
+      "supplementId": 56,
+      "supplementName": "56_vinpocetine_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "57_pea_enhanced.js",
+      "supplementId": 57,
+      "supplementName": "PEA (Phenylethylamine)",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "58_mct_oil_enhanced.js",
+      "supplementId": 58,
+      "supplementName": "58_mct_oil_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "59_hawthorn_berry_enhanced.js",
+      "supplementId": 59,
+      "supplementName": "59_hawthorn_berry_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "60_red_yeast_rice_enhanced.js",
+      "supplementId": 60,
+      "supplementName": "60_red_yeast_rice_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "61_chromium_enhanced.js",
+      "supplementId": 61,
+      "supplementName": "61_chromium_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "62_vanadium_enhanced.js",
+      "supplementId": 62,
+      "supplementName": "62_vanadium_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "63_bitter_melon_enhanced.js",
+      "supplementId": 63,
+      "supplementName": "Bitter Melon",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "64_gymnema_sylvestre_enhanced.js",
+      "supplementId": 64,
+      "supplementName": "Gymnema Sylvestre",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "65_fenugreek_enhanced.js",
+      "supplementId": 65,
+      "supplementName": "65_fenugreek_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "66_cinnamon_extract_enhanced.js",
+      "supplementId": 66,
+      "supplementName": "Cinnamon Extract",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "67_holy_basil_enhanced.js",
+      "supplementId": 67,
+      "supplementName": "Holy Basil",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "68_schisandra_berry_enhanced.js",
+      "supplementId": 68,
+      "supplementName": "Schisandra Berry",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "69_mucuna_pruriens_enhanced.js",
+      "supplementId": 69,
+      "supplementName": "69_mucuna_pruriens_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "70_forskolin_enhanced.js",
+      "supplementId": 70,
+      "supplementName": "Forskolin",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "71_boswellia_enhanced.js",
+      "supplementId": 71,
+      "supplementName": "Boswellia",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "72_milk_thistle_enhanced.js",
+      "supplementId": 72,
+      "supplementName": "Milk Thistle",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "73_stinging_nettle_enhanced.js",
+      "supplementId": 73,
+      "supplementName": "73_stinging_nettle_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "74_elderberry_enhanced.js",
+      "supplementId": 74,
+      "supplementName": "Elderberry",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "75_enhanced.js",
+      "supplementId": 75,
+      "supplementName": "Citicoline",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "76_sulbutiamine_enhanced.js",
+      "supplementId": 76,
+      "supplementName": "Sulbutiamine",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "77_dmae_enhanced.js",
+      "supplementId": 77,
+      "supplementName": "DMAE",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "78_centella_asiatica_enhanced.js",
+      "supplementId": 78,
+      "supplementName": "Centella Asiatica",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "79_passionflower_enhanced.js",
+      "supplementId": 79,
+      "supplementName": "79_passionflower_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "80_aniracetam_enhanced.js",
+      "supplementId": 80,
+      "supplementName": "Aniracetam",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "81_piracetam_enhanced.js",
+      "supplementId": 81,
+      "supplementName": "Piracetam",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "82_kanna_enhanced.js",
+      "supplementId": 82,
+      "supplementName": "Kanna",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "83_black_seed_oil_enhanced.js",
+      "supplementId": 83,
+      "supplementName": "83_black_seed_oil_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "84_moringa_enhanced.js",
+      "supplementId": 84,
+      "supplementName": "84_moringa_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "85_pine_bark_extract_enhanced.js",
+      "supplementId": 85,
+      "supplementName": "85_pine_bark_extract_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "86_grape_seed_extract_enhanced.js",
+      "supplementId": 86,
+      "supplementName": "86_grape_seed_extract_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "87_krill_oil_enhanced.js",
+      "supplementId": 87,
+      "supplementName": "87_krill_oil_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "88_zeaxanthin_enhanced.js",
+      "supplementId": 88,
+      "supplementName": "88_zeaxanthin_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "89_pterostilbene_enhanced.js",
+      "supplementId": 89,
+      "supplementName": "89_pterostilbene_enhanced",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "90_beta_alanine_enhanced.js",
+      "supplementId": 90,
+      "supplementName": "Beta-Alanine",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "91_citrulline_malate_enhanced.js",
+      "supplementId": 91,
+      "supplementName": "Citrulline Malate",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "92_hmb_enhanced.js",
+      "supplementId": 92,
+      "supplementName": "HMB (β-Hydroxy β-Methylbutyrate)",
+      "totalCitations": 0,
+      "citations": []
+    },
+    {
+      "file": "93_betaine_enhanced.js",
+      "supplementId": 93,
+      "supplementName": "Betaine",
+      "totalCitations": 0,
+      "citations": []
+    }
+  ],
+  "summary": {
+    "totalCitations": 121,
+    "citationsWithPmid": 121,
+    "citationsWithDoi": 121,
+    "citationsWithBoth": 121,
+    "citationsWithNeither": 0,
+    "uniquePmidCount": 94,
+    "uniqueDoiCount": 94,
+    "crossSupplementPmids": [
+      {
+        "pmid": "29480200",
+        "supplements": [
+          "B-Complex Vitamins",
+          "Vitamin B12"
+        ],
+        "count": 2
+      },
+      {
+        "pmid": "34432056",
+        "supplements": [
+          "B-Complex Vitamins",
+          "Folate (Vitamin B9)"
+        ],
+        "count": 2
+      }
+    ]
+  },
+  "allPmidsForValidation": [
+    {
+      "pmid": "12773629",
+      "expectedTitle": "Clinical pharmacology of the dietary supplement creatine monohydrate",
+      "expectedDoi": "10.1124/pr.55.2.1",
+      "expectedYear": 2003,
+      "expectedJournal": "Pharmacological Reviews",
+      "expectedFirstAuthor": "Persky AM",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "1327657",
+      "expectedTitle": "Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation",
+      "expectedDoi": "10.1042/cs0830367",
+      "expectedYear": 1992,
+      "expectedJournal": "Clinical Science",
+      "expectedFirstAuthor": "Harris RC",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "21394604",
+      "expectedTitle": "Use of creatine in the elderly and evidence for effects on cognitive function in young and old",
+      "expectedDoi": "10.1007/s00726-011-0855-9",
+      "expectedYear": 2011,
+      "expectedJournal": "Amino Acids",
+      "expectedFirstAuthor": "Rawson ES",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "28615996",
+      "expectedTitle": "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine",
+      "expectedDoi": "10.1186/s12970-017-0173-z",
+      "expectedYear": 2017,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Kreider RB",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "29704637",
+      "expectedTitle": "Effects of creatine supplementation on cognitive function of healthy individuals: a systematic review of 6 randomized controlled trials",
+      "expectedDoi": "10.1016/j.exger.2018.04.013",
+      "expectedYear": 2018,
+      "expectedJournal": "Experimental Gerontology",
+      "expectedFirstAuthor": "Avgerinos KI",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "14561278",
+      "expectedTitle": "Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial",
+      "expectedDoi": "10.1098/rspb.2003.2492",
+      "expectedYear": 2003,
+      "expectedJournal": "Proceedings of the Royal Society of London B",
+      "expectedFirstAuthor": "Rae C",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "40971619",
+      "expectedTitle": "Creatine and Cognition in Aging: A Systematic Review of Evidence in Older Adults",
+      "expectedDoi": "10.1093/nutrit/nuaf135",
+      "expectedYear": 2026,
+      "expectedJournal": "Nutrition Reviews",
+      "expectedFirstAuthor": "Marshall S",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "30086660",
+      "expectedTitle": "Beyond muscle: the effects of creatine supplementation on brain creatine, cognitive processing, and traumatic brain injury",
+      "expectedDoi": "10.1080/17461391.2018.1500644",
+      "expectedYear": 2018,
+      "expectedJournal": "European Journal of Sport Science",
+      "expectedFirstAuthor": "Dolan E",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "41328071",
+      "expectedTitle": "Effects of creatine supplementation on muscle strength gains — a meta-analysis and systematic review",
+      "expectedDoi": "10.7717/peerj.20380",
+      "expectedYear": 2025,
+      "expectedJournal": "PeerJ",
+      "expectedFirstAuthor": "Zhang H",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "40944139",
+      "expectedTitle": "The Effects of Creatine Supplementation on Upper- and Lower-Body Strength and Power: A Systematic Review and Meta-Analysis",
+      "expectedDoi": "10.3390/nu17172748",
+      "expectedYear": 2025,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Kazeminasab F",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "33557850",
+      "expectedTitle": "Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?",
+      "expectedDoi": "10.1186/s12970-021-00412-w",
+      "expectedYear": 2021,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Antonio J",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "35986981",
+      "expectedTitle": "Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials",
+      "expectedDoi": "10.1016/j.nut.2022.111791",
+      "expectedYear": 2022,
+      "expectedJournal": "Nutrition",
+      "expectedFirstAuthor": "Delpino FM",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "39042054",
+      "expectedTitle": "Creatine supplementation protocols with or without training interventions on body composition: a GRADE-assessed systematic review and dose-response meta-analysis",
+      "expectedDoi": "10.1080/15502783.2024.2380058",
+      "expectedYear": 2024,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Pashayee-Khamene F",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "35986981",
+      "expectedTitle": "Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials",
+      "expectedDoi": "10.1016/j.nut.2022.111791",
+      "expectedYear": 2022,
+      "expectedJournal": "Nutrition",
+      "expectedFirstAuthor": "Delpino FM",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "41189312",
+      "expectedTitle": "Creatine supplementation for treating symptoms of depression: a systematic review and meta-analysis",
+      "expectedDoi": "10.1017/S0007114525105588",
+      "expectedYear": 2025,
+      "expectedJournal": "British Journal of Nutrition",
+      "expectedFirstAuthor": "Eckert I",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "33557850",
+      "expectedTitle": "Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?",
+      "expectedDoi": "10.1186/s12970-021-00412-w",
+      "expectedYear": 2021,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Antonio J",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "17908288",
+      "expectedTitle": "International Society of Sports Nutrition position stand: creatine supplementation and exercise",
+      "expectedDoi": "10.1186/1550-2783-4-6",
+      "expectedYear": 2007,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Buford TW",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "41199218",
+      "expectedTitle": "Effect of creatine supplementation on kidney function: a systematic review and meta-analysis",
+      "expectedDoi": "10.1186/s12882-025-04558-6",
+      "expectedYear": 2025,
+      "expectedJournal": "BMC Nephrology",
+      "expectedFirstAuthor": "Naeini EK",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "28615996",
+      "expectedTitle": "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine",
+      "expectedDoi": "10.1186/s12970-017-0173-z",
+      "expectedYear": 2017,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Kreider RB",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "17908288",
+      "expectedTitle": "International Society of Sports Nutrition position stand: creatine supplementation and exercise",
+      "expectedDoi": "10.1186/1550-2783-4-6",
+      "expectedYear": 2007,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Buford TW",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js"
+    },
+    {
+      "pmid": "39189506",
+      "expectedTitle": "Identification and quantification of the antioxidants in Ginkgo biloba leaf",
+      "expectedDoi": "10.1002/bmc.5980",
+      "expectedYear": 2024,
+      "expectedJournal": "Biomedical Chromatography",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "26268459",
+      "expectedTitle": "Effect of Ginkgo biloba extract on experimental cardiac remodeling",
+      "expectedDoi": "10.1186/s12906-015-0719-z",
+      "expectedYear": 2015,
+      "expectedJournal": "BMC Complementary and Alternative Medicine",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "38929090",
+      "expectedTitle": "Ginkgo biloba: A Leaf of Hope in the Fight against Alzheimer's Dementia: Clinical Trial Systematic Review",
+      "expectedDoi": "10.3390/antiox13060651",
+      "expectedYear": 2024,
+      "expectedJournal": "Antioxidants",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "20236541",
+      "expectedTitle": "Effects of Ginkgo biloba in dementia: systematic review and meta-analysis",
+      "expectedDoi": "10.1186/1471-2318-10-14",
+      "expectedYear": 2010,
+      "expectedJournal": "BMC Geriatrics",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "21573082",
+      "expectedTitle": "Alleviating neuropsychiatric symptoms in dementia: the effects of Ginkgo biloba extract EGb 761. Findings from a randomized controlled trial",
+      "expectedDoi": "10.2147/NDT.S18741",
+      "expectedYear": 2011,
+      "expectedJournal": "Neuropsychiatric Disease and Treatment",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "27147264",
+      "expectedTitle": "Effects of Ginkgo biloba extract EGb 761® on cognitive control functions, mental activity of the prefrontal cortex and stress reactivity in elderly adults with subjective memory impairment",
+      "expectedDoi": "10.1002/hup.2534",
+      "expectedYear": 2016,
+      "expectedJournal": "Human Psychopharmacology: Clinical and Experimental",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "32097990",
+      "expectedTitle": "The effects of Ginkgo biloba on metabolic syndrome: a review",
+      "expectedDoi": "10.1002/ptr.6646",
+      "expectedYear": 2020,
+      "expectedJournal": "Phytotherapy Research",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "41641880",
+      "expectedTitle": "Ginkgo biloba for cognitive impairment and dementia",
+      "expectedDoi": "10.1002/14651858.CD013661.pub2",
+      "expectedYear": 2026,
+      "expectedJournal": "Cochrane Database of Systematic Reviews",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "41678913",
+      "expectedTitle": "Comparative effects of Bacopa monnieri and Ginkgo biloba on cognitive functions: A systematic review and network meta-analysis.",
+      "expectedDoi": "10.1016/j.phymed.2026.157915",
+      "expectedYear": 2026,
+      "expectedJournal": "Phytomedicine",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "41198594",
+      "expectedTitle": "Therapeutic strategies in vascular cognitive impairment: A systematic review and meta-analysis.",
+      "expectedDoi": "10.1002/alz.70840",
+      "expectedYear": 2025,
+      "expectedJournal": "Alzheimer's & Dementia",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "40121884",
+      "expectedTitle": "Ginkgo biloba leaf extract EGb 761 for the treatment of various diseases: Overview of systematic reviews.",
+      "expectedDoi": "10.1016/j.phymed.2025.156565",
+      "expectedYear": 2025,
+      "expectedJournal": "Phytomedicine",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "15024120",
+      "expectedTitle": "The leaf extract of Ginkgo Biloba L. suppresses oxidized LDL-stimulated fibronectin production through an antioxidant action in rat mesangial cells",
+      "expectedDoi": "10.1038/sj.bjp.0705805",
+      "expectedYear": 2004,
+      "expectedJournal": "British Journal of Pharmacology",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "25681539",
+      "expectedTitle": "Ginkgolide A reduces inflammatory response in high-glucose-stimulated human umbilical vein endothelial cells through STAT3-mediated pathway",
+      "expectedDoi": "10.1016/j.intimp.2015.02.001",
+      "expectedYear": 2015,
+      "expectedJournal": "International Immunopharmacology",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "25114079",
+      "expectedTitle": "Efficacy and adverse effects of ginkgo biloba for cognitive impairment and dementia: a systematic review and meta-analysis",
+      "expectedDoi": "10.3233/JAD-140837",
+      "expectedYear": 2015,
+      "expectedJournal": "Journal of Alzheimer's Disease",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "35265150",
+      "expectedTitle": "Ginkgo biloba: A Treasure of Functional Phytochemicals with Multimedicinal Applications",
+      "expectedDoi": "10.1155/2022/8288818",
+      "expectedYear": 2022,
+      "expectedJournal": "Evidence-Based Complementary and Alternative Medicine",
+      "expectedFirstAuthor": null,
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js"
+    },
+    {
+      "pmid": "21414376",
+      "expectedTitle": "Safety assessment of AGPC as a food ingredient",
+      "expectedDoi": "10.1016/j.fct.2011.03.012",
+      "expectedYear": 2011,
+      "expectedJournal": "Food and Chemical Toxicology",
+      "expectedFirstAuthor": "Brownawell AM",
+      "supplement": "Alpha-GPC",
+      "file": "16_enhanced.js"
+    },
+    {
+      "pmid": "24156263",
+      "expectedTitle": "Choline alphoscerate (alpha-glyceryl-phosphoryl-choline) an old choline- containing phospholipid with a still interesting profile as cognition enhancing agent",
+      "expectedDoi": "10.2174/15672050113106660173",
+      "expectedYear": 2013,
+      "expectedJournal": "Current Alzheimer Research",
+      "expectedFirstAuthor": "Traini E",
+      "supplement": "Alpha-GPC",
+      "file": "16_enhanced.js"
+    },
+    {
+      "pmid": "21414376",
+      "expectedTitle": "Safety assessment of AGPC as a food ingredient",
+      "expectedDoi": "10.1016/j.fct.2011.03.012",
+      "expectedYear": 2011,
+      "expectedJournal": "Food and Chemical Toxicology",
+      "expectedFirstAuthor": "Brownawell AM",
+      "supplement": "Alpha-GPC",
+      "file": "16_enhanced.js"
+    },
+    {
+      "pmid": "26828517",
+      "expectedTitle": "B Vitamins and the Brain: Mechanisms, Dose and Efficacy—A Review",
+      "expectedDoi": "10.3390/nu8020068",
+      "expectedYear": 2016,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Kennedy DO",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "16765926",
+      "expectedTitle": "Mitochondrial function and toxicity: role of the B vitamin family on mitochondrial energy metabolism",
+      "expectedDoi": "10.1016/j.cbi.2006.04.014",
+      "expectedYear": 2006,
+      "expectedJournal": "Chemico-Biological Interactions",
+      "expectedFirstAuthor": "Depeint F",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "17052662",
+      "expectedTitle": "Vitamin B12, folic acid, and the nervous system",
+      "expectedDoi": "10.1016/S1474-4422(06)70598-1",
+      "expectedYear": 2006,
+      "expectedJournal": "The Lancet. Neurology",
+      "expectedFirstAuthor": "Reynolds E",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "29480200",
+      "expectedTitle": "Homocysteine and dementia: an international consensus statement",
+      "expectedDoi": "10.3233/JAD-171042",
+      "expectedYear": 2018,
+      "expectedJournal": "Journal of Alzheimer's Disease",
+      "expectedFirstAuthor": "Smith AD",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "34432056",
+      "expectedTitle": "B vitamins and prevention of cognitive decline and incident dementia: a systematic review and meta-analysis",
+      "expectedDoi": "10.1093/nutrit/nuab057",
+      "expectedYear": 2022,
+      "expectedJournal": "Nutrition Reviews",
+      "expectedFirstAuthor": "Wang Z",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "33809274",
+      "expectedTitle": "Effects of Vitamin B12 Supplementation on Cognitive Function, Depressive Symptoms, and Fatigue: A Systematic Review, Meta-Analysis, and Meta-Regression",
+      "expectedDoi": "10.3390/nu13030923",
+      "expectedYear": 2021,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Markun S",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "23362497",
+      "expectedTitle": "Effects of vitamin and mineral supplementation on stress, mild psychiatric symptoms, and mood in nonclinical samples: a meta-analysis",
+      "expectedDoi": "10.1097/PSY.0b013e31827d5fbd",
+      "expectedYear": 2013,
+      "expectedJournal": "Psychosomatic Medicine",
+      "expectedFirstAuthor": "Long SJ",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "31527485",
+      "expectedTitle": "A Systematic Review and Meta-Analysis of B Vitamin Supplementation on Depressive Symptoms, Anxiety, and Stress: Effects on Healthy and 'At-Risk' Individuals",
+      "expectedDoi": "10.3390/nu11092232",
+      "expectedYear": 2019,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Young LM",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "20937919",
+      "expectedTitle": "Effects of lowering homocysteine levels with B vitamins on cardiovascular disease, cancer, and cause-specific mortality: Meta-analysis of 8 randomized trials involving 37 485 individuals",
+      "expectedDoi": "10.1001/archinternmed.2010.348",
+      "expectedYear": 2010,
+      "expectedJournal": "Archives of Internal Medicine",
+      "expectedFirstAuthor": "Clarke R",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "17593855",
+      "expectedTitle": "The role of vitamins and minerals in energy metabolism and well-being",
+      "expectedDoi": "10.1177/147323000703500301",
+      "expectedYear": 2007,
+      "expectedJournal": "Journal of International Medical Research",
+      "expectedFirstAuthor": "Huskisson E",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "17593855",
+      "expectedTitle": "The role of vitamins and minerals in energy metabolism and well-being",
+      "expectedDoi": "10.1177/147323000703500301",
+      "expectedYear": 2007,
+      "expectedJournal": "Journal of International Medical Research",
+      "expectedFirstAuthor": "Huskisson E",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js"
+    },
+    {
+      "pmid": "39596162",
+      "expectedTitle": "A Systematic Review: Quercetin-Secondary Metabolite of the Flavonol Class, with Multiple Health Benefits and Low Bioavailability.",
+      "expectedDoi": "10.3390/ijms252212091",
+      "expectedYear": 2024,
+      "expectedJournal": "International Journal of Molecular Sciences",
+      "expectedFirstAuthor": "Frenț OD",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "37513932",
+      "expectedTitle": "Recent Advances in Potential Health Benefits of Quercetin.",
+      "expectedDoi": "10.3390/ph16071020",
+      "expectedYear": 2023,
+      "expectedJournal": "Pharmaceuticals (Basel)",
+      "expectedFirstAuthor": "Aghababaei F",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "32478277",
+      "expectedTitle": "Therapeutic Potential of Quercetin: New Insights and Perspectives for Human Health.",
+      "expectedDoi": "10.1021/acsomega.0c01818",
+      "expectedYear": 2020,
+      "expectedJournal": "ACS Omega",
+      "expectedFirstAuthor": "Salehi B",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "38054093",
+      "expectedTitle": "Research progress of quercetin in cardiovascular disease.",
+      "expectedDoi": "10.3389/fcvm.2023.1203713",
+      "expectedYear": 2023,
+      "expectedJournal": "Frontiers in Cardiovascular Medicine",
+      "expectedFirstAuthor": "Zhang W",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "37398956",
+      "expectedTitle": "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
+      "expectedDoi": "10.5114/biolsport.2023.121320",
+      "expectedYear": 2022,
+      "expectedJournal": "Biology of Sport",
+      "expectedFirstAuthor": "Rojano-Ortega D",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "31017459",
+      "expectedTitle": "The effects of quercetin supplementation on lipid profiles and inflammatory markers among patients with metabolic syndrome and related disorders: A systematic review and meta-analysis of randomized controlled trials",
+      "expectedDoi": "10.1080/10408398.2019.1604491",
+      "expectedYear": 2019,
+      "expectedJournal": "Critical Reviews in Food Science and Nutrition",
+      "expectedFirstAuthor": "Tabrizi R",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "31213101",
+      "expectedTitle": "Impact of quercetin on systemic levels of inflammation: a meta-analysis of randomised controlled human trials",
+      "expectedDoi": "10.1080/09637486.2019.1627515",
+      "expectedYear": 2019,
+      "expectedJournal": "International Journal of Food Sciences and Nutrition",
+      "expectedFirstAuthor": "Ou Q",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "27405810",
+      "expectedTitle": "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+      "expectedDoi": "10.1161/JAHA.115.002713",
+      "expectedYear": 2016,
+      "expectedJournal": "Journal of the American Heart Association",
+      "expectedFirstAuthor": "Serban MC",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "31542391",
+      "expectedTitle": "Senolytics decrease senescent cells in humans: Preliminary report from a clinical trial of Dasatinib plus Quercetin in individuals with diabetic kidney disease.",
+      "expectedDoi": "10.1016/j.ebiom.2019.08.069",
+      "expectedYear": 2019,
+      "expectedJournal": "EBioMedicine",
+      "expectedFirstAuthor": "Hickson LJ",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "37398956",
+      "expectedTitle": "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
+      "expectedDoi": "10.5114/biolsport.2023.121320",
+      "expectedYear": 2022,
+      "expectedJournal": "Biology of Sport",
+      "expectedFirstAuthor": "Rojano-Ortega D",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "27405810",
+      "expectedTitle": "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+      "expectedDoi": "10.1161/JAHA.115.002713",
+      "expectedYear": 2016,
+      "expectedJournal": "Journal of the American Heart Association",
+      "expectedFirstAuthor": "Serban MC",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js"
+    },
+    {
+      "pmid": "15539209",
+      "expectedTitle": "Methionine metabolism in mammals",
+      "expectedDoi": "10.1016/0955-2863(90)90070-2",
+      "expectedYear": 1990,
+      "expectedJournal": "Journal of Nutritional Biochemistry",
+      "expectedFirstAuthor": "Finkelstein, J.D.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "37046885",
+      "expectedTitle": "Neurological Implications of Vitamin B12 Deficiency in Diet: A Systematic Review and Meta-Analysis",
+      "expectedDoi": "10.3390/healthcare11070958",
+      "expectedYear": 2023,
+      "expectedJournal": "Healthcare",
+      "expectedFirstAuthor": "Alruwaili, M.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "23301732",
+      "expectedTitle": "Clinical practice. Vitamin B12 deficiency.",
+      "expectedDoi": "10.1056/NEJMcp1113996",
+      "expectedYear": 2013,
+      "expectedJournal": "New England Journal of Medicine",
+      "expectedFirstAuthor": "Stabler, S.P.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "17991650",
+      "expectedTitle": "Low vitamin B-12 status and risk of cognitive decline in older adults",
+      "expectedDoi": "10.1093/ajcn/86.5.1384",
+      "expectedYear": 2007,
+      "expectedJournal": "American Journal of Clinical Nutrition",
+      "expectedFirstAuthor": "Clarke, R.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "29480200",
+      "expectedTitle": "Homocysteine and Dementia: An International Consensus Statement",
+      "expectedDoi": "10.3233/JAD-171042",
+      "expectedYear": 2018,
+      "expectedJournal": "Journal of Alzheimer's Disease",
+      "expectedFirstAuthor": "Smith, A.D.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "37495210",
+      "expectedTitle": "A comprehensive review and meta-regression analysis of randomized controlled trials examining the impact of vitamin B12 supplementation on homocysteine levels",
+      "expectedDoi": "10.1093/nutrit/nuad091",
+      "expectedYear": 2024,
+      "expectedJournal": "Nutrition Reviews",
+      "expectedFirstAuthor": "Sohouli, M.H.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "28816346",
+      "expectedTitle": "Homocysteine-lowering interventions for preventing cardiovascular events",
+      "expectedDoi": "10.1002/14651858.CD006612.pub5",
+      "expectedYear": 2017,
+      "expectedJournal": "Cochrane Database of Systematic Reviews",
+      "expectedFirstAuthor": "Martí-Carvajal, A.J.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "10784463",
+      "expectedTitle": "Vitamin B12 deficiency and depression in physically disabled older women: epidemiologic evidence from the Women's Health and Aging Study",
+      "expectedDoi": "10.1176/appi.ajp.157.5.715",
+      "expectedYear": 2000,
+      "expectedJournal": "American Journal of Psychiatry",
+      "expectedFirstAuthor": "Penninx, B.W.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "19124628",
+      "expectedTitle": "Effectiveness of vitamin B12 in treating recurrent aphthous stomatitis: a randomized, double-blind, placebo-controlled trial",
+      "expectedDoi": "10.3122/jabfm.2009.01.080113",
+      "expectedYear": 2009,
+      "expectedJournal": "Journal of the American Board of Family Medicine",
+      "expectedFirstAuthor": "Volkov, I.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "19116323",
+      "expectedTitle": "How common is vitamin B-12 deficiency?",
+      "expectedDoi": "10.3945/ajcn.2008.26947A",
+      "expectedYear": 2008,
+      "expectedJournal": "American Journal of Clinical Nutrition",
+      "expectedFirstAuthor": "Allen, L.H.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "23301732",
+      "expectedTitle": "Clinical practice. Vitamin B12 deficiency.",
+      "expectedDoi": "10.1056/NEJMcp1113996",
+      "expectedYear": 2013,
+      "expectedJournal": "New England Journal of Medicine",
+      "expectedFirstAuthor": "Stabler, S.P.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "24803097",
+      "expectedTitle": "Vitamin B12-containing plant food sources for vegetarians",
+      "expectedDoi": "10.3390/nu6051861",
+      "expectedYear": 2014,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Watanabe, F.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "16034940",
+      "expectedTitle": "Oral vitamin B12 versus intramuscular vitamin B12 for vitamin B12 deficiency",
+      "expectedDoi": "10.1002/14651858.CD004655.pub2",
+      "expectedYear": 2005,
+      "expectedJournal": "Cochrane Database of Systematic Reviews",
+      "expectedFirstAuthor": "Vidal-Alaball, J.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "24803097",
+      "expectedTitle": "Vitamin B12-containing plant food sources for vegetarians",
+      "expectedDoi": "10.3390/nu6051861",
+      "expectedYear": 2014,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Watanabe, F.",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js"
+    },
+    {
+      "pmid": "19145213",
+      "expectedTitle": "Vitamin B6: a long known compound of surprising complexity",
+      "expectedDoi": "10.3390/molecules14010329",
+      "expectedYear": 2009,
+      "expectedJournal": "Molecules",
+      "expectedFirstAuthor": "Mooney S",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "30671974",
+      "expectedTitle": "Disorders affecting vitamin B6 metabolism",
+      "expectedDoi": "10.1002/jimd.12060",
+      "expectedYear": 2019,
+      "expectedJournal": "Journal of Inherited Metabolic Disease",
+      "expectedFirstAuthor": "Wilson MP",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "16763894",
+      "expectedTitle": "B6-responsive disorders: a model of vitamin dependency",
+      "expectedDoi": "10.1007/s10545-005-0243-2",
+      "expectedYear": 2006,
+      "expectedJournal": "Journal of Inherited Metabolic Disease",
+      "expectedFirstAuthor": "Clayton PT",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "16491085",
+      "expectedTitle": "Mutations in antiquitin in individuals with pyridoxine-dependent seizures",
+      "expectedDoi": "10.1038/nm1366",
+      "expectedYear": 2006,
+      "expectedJournal": "Nature Medicine",
+      "expectedFirstAuthor": "Mills PB",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "8302491",
+      "expectedTitle": "Vitamin B6 and immune competence",
+      "expectedDoi": "10.1111/j.1753-4887.1993.tb03109.x",
+      "expectedYear": 1993,
+      "expectedJournal": "Nutrition Reviews",
+      "expectedFirstAuthor": "Rall LC",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "17143052",
+      "expectedTitle": "Effects of B-vitamins on plasma homocysteine concentrations and on risk of cardiovascular disease and dementia",
+      "expectedDoi": "10.1097/MCO.0b013e328011aa71",
+      "expectedYear": 2007,
+      "expectedJournal": "Current Opinion in Clinical Nutrition and Metabolic Care",
+      "expectedFirstAuthor": "Clarke R",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "8302491",
+      "expectedTitle": "Vitamin B6 and immune competence",
+      "expectedDoi": "10.1111/j.1753-4887.1993.tb03109.x",
+      "expectedYear": 1993,
+      "expectedJournal": "Nutrition Reviews",
+      "expectedFirstAuthor": "Rall LC",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "30671974",
+      "expectedTitle": "Disorders affecting vitamin B6 metabolism",
+      "expectedDoi": "10.1002/jimd.12060",
+      "expectedYear": 2019,
+      "expectedJournal": "Journal of Inherited Metabolic Disease",
+      "expectedFirstAuthor": "Wilson MP",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "10334745",
+      "expectedTitle": "Efficacy of vitamin B-6 in the treatment of premenstrual syndrome: systematic review",
+      "expectedDoi": "10.1136/bmj.318.7195.1375",
+      "expectedYear": 1999,
+      "expectedJournal": "BMJ",
+      "expectedFirstAuthor": "Wyatt KM",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "26348534",
+      "expectedTitle": "Interventions for nausea and vomiting in early pregnancy",
+      "expectedDoi": "10.1002/14651858.CD007575.pub4",
+      "expectedYear": 2015,
+      "expectedJournal": "Cochrane Database of Systematic Reviews",
+      "expectedFirstAuthor": "Matthews A",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "6308447",
+      "expectedTitle": "Sensory neuropathy from pyridoxine abuse: a new megavitamin syndrome",
+      "expectedDoi": "10.1056/NEJM198308253090801",
+      "expectedYear": 1983,
+      "expectedJournal": "New England Journal of Medicine",
+      "expectedFirstAuthor": "Schaumburg H",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js"
+    },
+    {
+      "pmid": "16672082",
+      "expectedTitle": "Genetic variation in genes of folate metabolism and neural-tube defect risk",
+      "expectedDoi": "10.1079/pns2006495",
+      "expectedYear": 2006,
+      "expectedJournal": "Proceedings of the Nutrition Society",
+      "expectedFirstAuthor": "van der Linden IJ",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "20608755",
+      "expectedTitle": "Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics",
+      "expectedDoi": "10.2165/11532990-000000000-00000",
+      "expectedYear": 2010,
+      "expectedJournal": "Clinical Pharmacokinetics",
+      "expectedFirstAuthor": "Pietrzik K",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "24494987",
+      "expectedTitle": "Folate, folic acid and 5-methyltetrahydrofolate are not the same thing",
+      "expectedDoi": "10.3109/00498254.2013.845705",
+      "expectedYear": 2014,
+      "expectedJournal": "Xenobiotica",
+      "expectedFirstAuthor": "Scaglione F",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "16380544",
+      "expectedTitle": "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism",
+      "expectedDoi": "10.1161/CIRCULATIONAHA.105.580332",
+      "expectedYear": 2005,
+      "expectedJournal": "Circulation",
+      "expectedFirstAuthor": "McNulty H",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "10725483",
+      "expectedTitle": "Homocysteine and folate levels as risk factors for recurrent early pregnancy loss",
+      "expectedDoi": "10.1016/s0029-7844(99)00610-9",
+      "expectedYear": 2000,
+      "expectedJournal": "Obstetrics and Gynecology",
+      "expectedFirstAuthor": "Nelen WL",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "34834493",
+      "expectedTitle": "Cerebral folate deficiency, folate receptor alpha autoantibodies and leucovorin (folinic acid) treatment in autism spectrum disorders: a systematic review and meta-analysis",
+      "expectedDoi": "10.3390/jpm11111141",
+      "expectedYear": 2021,
+      "expectedJournal": "Journal of Personalized Medicine",
+      "expectedFirstAuthor": "Rossignol DA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "22102928",
+      "expectedTitle": "Folic acid supplementation and pregnancy: more than just neural tube defect prevention",
+      "expectedDoi": "10.3909/riog0149",
+      "expectedYear": 2011,
+      "expectedJournal": "Reviews in Obstetrics and Gynecology",
+      "expectedFirstAuthor": "Greenberg JA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "37526713",
+      "expectedTitle": "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement",
+      "expectedDoi": "10.1001/jama.2023.12876",
+      "expectedYear": 2023,
+      "expectedJournal": "JAMA",
+      "expectedFirstAuthor": "US Preventive Services Task Force",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "22102928",
+      "expectedTitle": "Folic acid supplementation and pregnancy: more than just neural tube defect prevention",
+      "expectedDoi": "10.3909/riog0149",
+      "expectedYear": 2011,
+      "expectedJournal": "Reviews in Obstetrics and Gynecology",
+      "expectedFirstAuthor": "Greenberg JA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "16672082",
+      "expectedTitle": "Genetic variation in genes of folate metabolism and neural-tube defect risk",
+      "expectedDoi": "10.1079/pns2006495",
+      "expectedYear": 2006,
+      "expectedJournal": "Proceedings of the Nutrition Society",
+      "expectedFirstAuthor": "van der Linden IJ",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "34432056",
+      "expectedTitle": "B vitamins and prevention of cognitive decline and incident dementia: a systematic review and meta-analysis",
+      "expectedDoi": "10.1093/nutrit/nuab057",
+      "expectedYear": 2022,
+      "expectedJournal": "Nutrition Reviews",
+      "expectedFirstAuthor": "Wang Z",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "17240287",
+      "expectedTitle": "Effect of 3-year folic acid supplementation on cognitive function in older adults in the FACIT trial: a randomised, double blind, controlled trial",
+      "expectedDoi": "10.1016/S0140-6736(07)60109-3",
+      "expectedYear": 2007,
+      "expectedJournal": "The Lancet",
+      "expectedFirstAuthor": "Durga J",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "27876835",
+      "expectedTitle": "Folic acid supplementation improves cognitive function by reducing the levels of peripheral inflammatory cytokines in elderly Chinese subjects with MCI",
+      "expectedDoi": "10.1038/srep37486",
+      "expectedYear": 2016,
+      "expectedJournal": "Scientific Reports",
+      "expectedFirstAuthor": "Ma F",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "34794190",
+      "expectedTitle": "Systematic Review and Meta-Analysis of L-Methylfolate Augmentation in Depressive Disorders",
+      "expectedDoi": "10.1055/a-1681-2047",
+      "expectedYear": 2021,
+      "expectedJournal": "Pharmacopsychiatry",
+      "expectedFirstAuthor": "Maruf AA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "16380544",
+      "expectedTitle": "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism",
+      "expectedDoi": "10.1161/CIRCULATIONAHA.105.580332",
+      "expectedYear": 2005,
+      "expectedJournal": "Circulation",
+      "expectedFirstAuthor": "McNulty H",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "33743119",
+      "expectedTitle": "Prenatal Folic Acid Supplements and Offspring's Autism Spectrum Disorder: A Meta-analysis and Meta-regression.",
+      "expectedDoi": "10.1007/s10803-021-04951-8",
+      "expectedYear": 2021,
+      "expectedJournal": "Journal of Autism and Developmental Disorders",
+      "expectedFirstAuthor": "Liu X",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "34834493",
+      "expectedTitle": "Cerebral folate deficiency, folate receptor alpha autoantibodies and leucovorin (folinic acid) treatment in autism spectrum disorders: a systematic review and meta-analysis",
+      "expectedDoi": "10.3390/jpm11111141",
+      "expectedYear": 2021,
+      "expectedJournal": "Journal of Personalized Medicine",
+      "expectedFirstAuthor": "Rossignol DA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "10725483",
+      "expectedTitle": "Homocysteine and folate levels as risk factors for recurrent early pregnancy loss",
+      "expectedDoi": "10.1016/s0029-7844(99)00610-9",
+      "expectedYear": 2000,
+      "expectedJournal": "Obstetrics and Gynecology",
+      "expectedFirstAuthor": "Nelen WL",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "28752910",
+      "expectedTitle": "Antioxidants for female subfertility",
+      "expectedDoi": "10.1002/14651858.CD007807.pub3",
+      "expectedYear": 2017,
+      "expectedJournal": "Cochrane Database of Systematic Reviews",
+      "expectedFirstAuthor": "Showell MG",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "29882091",
+      "expectedTitle": "MTHFR isoform carriers. 5-MTHF (5-methyl tetrahydrofolate) vs folic acid: a key to pregnancy outcome: a case series",
+      "expectedDoi": "10.1007/s10815-018-1225-2",
+      "expectedYear": 2018,
+      "expectedJournal": "Journal of Assisted Reproduction and Genetics",
+      "expectedFirstAuthor": "Servy EJ",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "37526713",
+      "expectedTitle": "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement",
+      "expectedDoi": "10.1001/jama.2023.12876",
+      "expectedYear": 2023,
+      "expectedJournal": "JAMA",
+      "expectedFirstAuthor": "US Preventive Services Task Force",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "20608755",
+      "expectedTitle": "Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics",
+      "expectedDoi": "10.2165/11532990-000000000-00000",
+      "expectedYear": 2010,
+      "expectedJournal": "Clinical Pharmacokinetics",
+      "expectedFirstAuthor": "Pietrzik K",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "34834493",
+      "expectedTitle": "Cerebral Folate Deficiency, Folate Receptor Alpha Autoantibodies and Leucovorin (Folinic Acid) Treatment in Autism Spectrum Disorders: A Systematic Review and Meta-Analysis",
+      "expectedDoi": "10.3390/jpm11111141",
+      "expectedYear": 2021,
+      "expectedJournal": "Journal of Personalized Medicine",
+      "expectedFirstAuthor": "Rossignol DA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "34794190",
+      "expectedTitle": "Systematic Review and Meta-Analysis of L-Methylfolate Augmentation in Depressive Disorders",
+      "expectedDoi": "10.1055/a-1681-2047",
+      "expectedYear": 2021,
+      "expectedJournal": "Pharmacopsychiatry",
+      "expectedFirstAuthor": "Maruf AA",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "29882091",
+      "expectedTitle": "MTHFR isoform carriers. 5-MTHF (5-methyl tetrahydrofolate) vs folic acid: a key to pregnancy outcome: a case series.",
+      "expectedDoi": "10.1007/s10815-018-1225-2",
+      "expectedYear": 2018,
+      "expectedJournal": "Journal of Assisted Reproduction and Genetics",
+      "expectedFirstAuthor": "Servy EJ",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js"
+    },
+    {
+      "pmid": "28300758",
+      "expectedTitle": "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement",
+      "expectedDoi": "10.3390/nu9030290",
+      "expectedYear": 2017,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Butawan M",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "28300758",
+      "expectedTitle": "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement",
+      "expectedDoi": "10.3390/nu9030290",
+      "expectedYear": 2017,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Butawan M",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "21708034",
+      "expectedTitle": "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study",
+      "expectedDoi": "10.1186/1472-6882-11-50",
+      "expectedYear": 2011,
+      "expectedJournal": "BMC Complementary and Alternative Medicine",
+      "expectedFirstAuthor": "Debbi EM",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "37447322",
+      "expectedTitle": "Methylsulfonylmethane Improves Knee Quality of Life in Participants with Mild Knee Pain: A Randomized, Double-Blind, Placebo-Controlled Trial.",
+      "expectedDoi": "10.3390/nu15132995",
+      "expectedYear": 2023,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Toguchi A",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "30986309",
+      "expectedTitle": "Dietary Ingredients as an Alternative Approach for Mitigating Chronic Musculoskeletal Pain: Evidence-Based Recommendations for Practice and Research in the Military",
+      "expectedDoi": "10.1093/pm/pnz040",
+      "expectedYear": 2019,
+      "expectedJournal": "Pain Medicine",
+      "expectedFirstAuthor": "Crawford C",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "40425393",
+      "expectedTitle": "Effects of dietary supplements on patients with osteoarthritis: A systematic review and network meta-analysis.",
+      "expectedDoi": "10.1016/j.joim.2025.04.008",
+      "expectedYear": 2025,
+      "expectedJournal": "Journal of Integrative Medicine",
+      "expectedFirstAuthor": "Chen B",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "23013531",
+      "expectedTitle": "Influence of methylsulfonylmethane on markers of exercise recovery and performance in healthy men: a pilot study",
+      "expectedDoi": "10.1186/1550-2783-9-46",
+      "expectedYear": 2012,
+      "expectedJournal": "Journal of the International Society of Sports Nutrition",
+      "expectedFirstAuthor": "Kalman DS",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "40507030",
+      "expectedTitle": "Using the Rise and Fall of Oxidative Stress and Inflammation Post-Exercise to Evaluate the Effect of Methylsulfonylmethane Supplementation on Immune Response mRNA",
+      "expectedDoi": "10.3390/nu17111761",
+      "expectedYear": 2025,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "McFarlin BK",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "38138558",
+      "expectedTitle": "Investigation of Drug-Interaction Potential for Arthritis Dietary Supplements: Chondroitin Sulfate, Glucosamine, and Methylsulfonylmethane",
+      "expectedDoi": "10.3390/molecules28248068",
+      "expectedYear": 2023,
+      "expectedJournal": "Molecules",
+      "expectedFirstAuthor": "Kim D",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "21708034",
+      "expectedTitle": "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study",
+      "expectedDoi": "10.1186/1472-6882-11-50",
+      "expectedYear": 2011,
+      "expectedJournal": "BMC Complementary and Alternative Medicine",
+      "expectedFirstAuthor": "Debbi EM",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    },
+    {
+      "pmid": "37447322",
+      "expectedTitle": "Methylsulfonylmethane Improves Knee Quality of Life in Participants with Mild Knee Pain: A Randomized, Double-Blind, Placebo-Controlled Trial.",
+      "expectedDoi": "10.3390/nu15132995",
+      "expectedYear": 2023,
+      "expectedJournal": "Nutrients",
+      "expectedFirstAuthor": "Toguchi A",
+      "supplement": "MSM",
+      "file": "29_enhanced.js"
+    }
+  ]
+}

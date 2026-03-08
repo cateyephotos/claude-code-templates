@@ -64,13 +64,13 @@ const alphaGPCEnhanced = {
         "evidence": [
           {
             "citationId": "brownawell_2011_safety",
-            "title": "Safety assessment of AGPC (L-alpha-glyceryl-phosphoryl-choline), a natural choline precursor",
+            "title": "Safety assessment of AGPC as a food ingredient",
             "authors": ["Brownawell AM", "Carmines EL", "Montesano F"],
             "year": 2011,
-            "journal": "International Journal of Toxicology",
-            "volume": "30", "issue": "6", "pages": "619-629",
-            "doi": "10.1177/1091581811420465",
-            "pmid": "22033170",
+            "journal": "Food and Chemical Toxicology",
+            "volume": "49", "issue": "6", "pages": "1303-15",
+            "doi": "10.1016/j.fct.2011.03.012",
+            "pmid": "21414376",
             "studyType": "Safety and mechanistic review",
             "evidenceLevel": "Level 3",
             "findings": "Alpha-GPC rapidly crosses blood-brain barrier and increases brain choline levels by 50-70%",
@@ -137,13 +137,13 @@ const alphaGPCEnhanced = {
         "evidence": [
           {
             "citationId": "brownawell_2011_neuroplasticity",
-            "title": "Safety assessment of AGPC (L-alpha-glyceryl-phosphoryl-choline), a natural choline precursor",
+            "title": "Safety assessment of AGPC as a food ingredient",
             "authors": ["Brownawell AM", "Carmines EL", "Montesano F"],
             "year": 2011,
-            "journal": "International Journal of Toxicology",
-            "volume": "30", "issue": "6", "pages": "619-629",
-            "doi": "10.1177/1091581811420465", 
-            "pmid": "22033170",
+            "journal": "Food and Chemical Toxicology",
+            "volume": "49", "issue": "6", "pages": "1303-15",
+            "doi": "10.1016/j.fct.2011.03.012", 
+            "pmid": "21414376",
             "studyType": "Mechanistic analysis",
             "evidenceLevel": "Level 3",
             "findings": "Enhances phospholipid synthesis supporting neuronal membrane integrity",
@@ -467,13 +467,13 @@ const alphaGPCEnhanced = {
         "evidence": [
           {
             "citationId": "brownawell_2011_comprehensive",
-            "title": "Safety assessment of AGPC (L-alpha-glyceryl-phosphoryl-choline), a natural choline precursor",
+            "title": "Safety assessment of AGPC as a food ingredient",
             "authors": ["Brownawell AM", "Carmines EL", "Montesano F"],
             "year": 2011,
-            "journal": "International Journal of Toxicology",
-            "volume": "30", "issue": "6", "pages": "619-629",
-            "doi": "10.1177/1091581811420465",
-            "pmid": "22033170",
+            "journal": "Food and Chemical Toxicology",
+            "volume": "49", "issue": "6", "pages": "1303-15",
+            "doi": "10.1016/j.fct.2011.03.012",
+            "pmid": "21414376",
             "studyType": "Comprehensive safety review",
             "evidenceLevel": "Level 3",
             "safetyPopulation": "Multiple populations including elderly and athletes",
@@ -714,8 +714,8 @@ const alphaGPCEnhanced = {
       },
       {
         "citation": "Brownawell 2011 safety review",
-        "verification": "DOI 10.1177/1091581811420465 verified against SAGE",
-        "pmidCheck": "PMID 22033170 confirmed in PubMed",
+        "verification": "DOI 10.1016/j.fct.2011.03.012 verified against Elsevier (Food and Chemical Toxicology)",
+        "pmidCheck": "PMID 21414376 confirmed in PubMed",
         "status": "Verified"
       }
     ],

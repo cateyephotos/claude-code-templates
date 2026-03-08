@@ -71,7 +71,7 @@ const vitaminB12Enhanced = {
           },
           {
             citationId: "stabler_2013_clinical",
-            title: "Vitamin B12 Deficiency",
+            title: "Clinical practice. Vitamin B12 deficiency.",
             authors: ["Stabler, S.P."],
             year: 2013,
             journal: "New England Journal of Medicine",
@@ -135,7 +135,7 @@ const vitaminB12Enhanced = {
         evidence: [
           {
             citationId: "sohouli_2024_homocysteine",
-            title: "A Comprehensive Systematic Review and Meta-Analysis of the Effect of Vitamin B12 Supplementation on Homocysteine Levels",
+            title: "A comprehensive review and meta-regression analysis of randomized controlled trials examining the impact of vitamin B12 supplementation on homocysteine levels",
             authors: ["Sohouli, M.H.", "Fatahi, S.", "Sharifi-Zahabi, E.", "Santos, H.O.", "Găman, M.A.", "Shidfar, F."],
             year: 2024,
             journal: "Nutrition Reviews",
@@ -234,7 +234,7 @@ const vitaminB12Enhanced = {
           },
           {
             citationId: "stabler_2013_clinical",
-            title: "Vitamin B12 Deficiency",
+            title: "Clinical practice. Vitamin B12 deficiency.",
             authors: ["Stabler, S.P."],
             year: 2013,
             journal: "New England Journal of Medicine",

@@ -113,10 +113,10 @@ const quercetinEnhanced = {
         "target": "Skeletal muscle",
         "evidence": [
           {
-            "citationId": "rojano_ortega_2023_exercise",
+            "citationId": "rojano_ortega_2022_exercise",
             "title": "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
             "authors": ["Rojano-Ortega D", "Berral-Aguilar AJ", "Berral-de la Rosa FJ", "Rojano-Ortega JM"],
-            "year": 2023,
+            "year": 2022,
             "journal": "Biology of Sport",
             "doi": "10.5114/biolsport.2023.121320",
             "pmid": "37398956",
@@ -138,7 +138,7 @@ const quercetinEnhanced = {
         "evidence": [
           {
             "citationId": "tabrizi_2019_inflammation",
-            "title": "The effects of quercetin supplementation on lipid profiles and inflammatory markers among patients with metabolic syndrome and related disorders: a systematic review and meta-analysis of randomized controlled trials.",
+            "title": "The effects of quercetin supplementation on lipid profiles and inflammatory markers among patients with metabolic syndrome and related disorders: A systematic review and meta-analysis of randomized controlled trials",
             "authors": ["Tabrizi R", "Tamtaji OR", "Mirhosseini N", "Lankarani KB", "Akbari M", "Heydari ST", "Dadgostar E", "Asemi Z"],
             "year": 2019,
             "journal": "Critical Reviews in Food Science and Nutrition",
@@ -151,7 +151,7 @@ const quercetinEnhanced = {
           },
           {
             "citationId": "ou_2019_crp",
-            "title": "Effect of quercetin supplementation on the serum levels of C-reactive protein, interleukin-6 and tumour necrosis factor-alpha: Evidence from a systematic review and meta-analysis.",
+            "title": "Impact of quercetin on systemic levels of inflammation: a meta-analysis of randomised controlled human trials",
             "authors": ["Ou Q", "Zheng Z", "Zhao Y", "Lin W"],
             "year": 2019,
             "journal": "International Journal of Food Sciences and Nutrition",
@@ -254,10 +254,10 @@ const quercetinEnhanced = {
         "tissueTarget": "Systemic via oral administration",
         "evidence": [
           {
-            "citationId": "rojano_ortega_2023_exercise",
+            "citationId": "rojano_ortega_2022_exercise",
             "title": "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
             "authors": ["Rojano-Ortega D", "Berral-Aguilar AJ", "Berral-de la Rosa FJ", "Rojano-Ortega JM"],
-            "year": 2023,
+            "year": 2022,
             "journal": "Biology of Sport",
             "doi": "10.5114/biolsport.2023.121320",
             "pmid": "37398956",

@@ -1,0 +1,959 @@
+{
+  "totalCitations": 121,
+  "validatedAgainstPubmed": 102,
+  "pmidsNotFoundInPubmed": [
+    {
+      "pmid": "12773629",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "ourTitle": "Clinical pharmacology of the dietary supplement creatine monohydrate"
+    },
+    {
+      "pmid": "1327657",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "ourTitle": "Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation"
+    },
+    {
+      "pmid": "14561278",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "ourTitle": "Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial"
+    },
+    {
+      "pmid": "17908288",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "ourTitle": "International Society of Sports Nutrition position stand: creatine supplementation and exercise"
+    },
+    {
+      "pmid": "17908288",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "ourTitle": "International Society of Sports Nutrition position stand: creatine supplementation and exercise"
+    },
+    {
+      "pmid": "15024120",
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js",
+      "ourTitle": "The leaf extract of Ginkgo Biloba L. suppresses oxidized LDL-stimulated fibronectin production through an antioxidant action in rat mesangial cells"
+    },
+    {
+      "pmid": "16765926",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js",
+      "ourTitle": "Mitochondrial function and toxicity: role of the B vitamin family on mitochondrial energy metabolism"
+    },
+    {
+      "pmid": "17052662",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js",
+      "ourTitle": "Vitamin B12, folic acid, and the nervous system"
+    },
+    {
+      "pmid": "17593855",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js",
+      "ourTitle": "The role of vitamins and minerals in energy metabolism and well-being"
+    },
+    {
+      "pmid": "17593855",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js",
+      "ourTitle": "The role of vitamins and minerals in energy metabolism and well-being"
+    },
+    {
+      "pmid": "15539209",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js",
+      "ourTitle": "Methionine metabolism in mammals"
+    },
+    {
+      "pmid": "10784463",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js",
+      "ourTitle": "Vitamin B12 deficiency and depression in physically disabled older women: epidemiologic evidence from the Women's Health and Aging Study"
+    },
+    {
+      "pmid": "16034940",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js",
+      "ourTitle": "Oral vitamin B12 versus intramuscular vitamin B12 for vitamin B12 deficiency"
+    },
+    {
+      "pmid": "16763894",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "ourTitle": "B6-responsive disorders: a model of vitamin dependency"
+    },
+    {
+      "pmid": "16491085",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "ourTitle": "Mutations in antiquitin in individuals with pyridoxine-dependent seizures"
+    },
+    {
+      "pmid": "17143052",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "ourTitle": "Effects of B-vitamins on plasma homocysteine concentrations and on risk of cardiovascular disease and dementia"
+    },
+    {
+      "pmid": "10334745",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "ourTitle": "Efficacy of vitamin B-6 in the treatment of premenstrual syndrome: systematic review"
+    },
+    {
+      "pmid": "16380544",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "ourTitle": "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism"
+    },
+    {
+      "pmid": "16380544",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "ourTitle": "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism"
+    }
+  ],
+  "titleMismatches": [],
+  "doiMismatches": [],
+  "yearMismatches": [],
+  "journalMismatches": [],
+  "authorMismatches": [
+    {
+      "pmid": "39596162",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js",
+      "ourFirstAuthor": "Frenț OD",
+      "pubmedFirstAuthor": "Fren&#x21b;, Olimpia-Daniela",
+      "similarity": 0.5
+    },
+    {
+      "pmid": "37526713",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "ourFirstAuthor": "US Preventive Services Task Force",
+      "pubmedFirstAuthor": ", ",
+      "similarity": 0.0
+    },
+    {
+      "pmid": "37526713",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "ourFirstAuthor": "US Preventive Services Task Force",
+      "pubmedFirstAuthor": ", ",
+      "similarity": 0.0
+    }
+  ],
+  "duplicatePmidsWithinSupplement": [
+    {
+      "pmid": "28615996",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "count": 2,
+      "titles": [
+        "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine",
+        "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine"
+      ]
+    },
+    {
+      "pmid": "33557850",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?",
+        "Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?"
+      ]
+    },
+    {
+      "pmid": "35986981",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials",
+        "Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials"
+      ]
+    },
+    {
+      "pmid": "17908288",
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "count": 2,
+      "titles": [
+        "International Society of Sports Nutrition position stand: creatine supplementation and exercise",
+        "International Society of Sports Nutrition position stand: creatine supplementation and exercise"
+      ]
+    },
+    {
+      "pmid": "21414376",
+      "supplement": "Alpha-GPC",
+      "file": "16_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Safety assessment of AGPC as a food ingredient",
+        "Safety assessment of AGPC as a food ingredient"
+      ]
+    },
+    {
+      "pmid": "17593855",
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js",
+      "count": 2,
+      "titles": [
+        "The role of vitamins and minerals in energy metabolism and well-being",
+        "The role of vitamins and minerals in energy metabolism and well-being"
+      ]
+    },
+    {
+      "pmid": "37398956",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials.",
+        "Effects of quercetin supplementation on exercise-induced muscle damage: a systematic review and meta-analysis of randomized controlled trials."
+      ]
+    },
+    {
+      "pmid": "27405810",
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+        "Effects of Quercetin on Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials."
+      ]
+    },
+    {
+      "pmid": "23301732",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Clinical practice. Vitamin B12 deficiency.",
+        "Clinical practice. Vitamin B12 deficiency."
+      ]
+    },
+    {
+      "pmid": "24803097",
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Vitamin B12-containing plant food sources for vegetarians",
+        "Vitamin B12-containing plant food sources for vegetarians"
+      ]
+    },
+    {
+      "pmid": "30671974",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Disorders affecting vitamin B6 metabolism",
+        "Disorders affecting vitamin B6 metabolism"
+      ]
+    },
+    {
+      "pmid": "8302491",
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Vitamin B6 and immune competence",
+        "Vitamin B6 and immune competence"
+      ]
+    },
+    {
+      "pmid": "16672082",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Genetic variation in genes of folate metabolism and neural-tube defect risk",
+        "Genetic variation in genes of folate metabolism and neural-tube defect risk"
+      ]
+    },
+    {
+      "pmid": "20608755",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics",
+        "Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics"
+      ]
+    },
+    {
+      "pmid": "16380544",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism",
+        "Riboflavin lowers homocysteine in individuals homozygous for the MTHFR 677C->T polymorphism"
+      ]
+    },
+    {
+      "pmid": "10725483",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Homocysteine and folate levels as risk factors for recurrent early pregnancy loss",
+        "Homocysteine and folate levels as risk factors for recurrent early pregnancy loss"
+      ]
+    },
+    {
+      "pmid": "34834493",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 3,
+      "titles": [
+        "Cerebral folate deficiency, folate receptor alpha autoantibodies and leucovorin (folinic acid) treatment in autism spectrum disorders: a systematic review and meta-analysis",
+        "Cerebral folate deficiency, folate receptor alpha autoantibodies and leucovorin (folinic acid) treatment in autism spectrum disorders: a systematic review and meta-analysis",
+        "Cerebral Folate Deficiency, Folate Receptor Alpha Autoantibodies and Leucovorin (Folinic Acid) Treatment in Autism Spectrum Disorders: A Systematic Review and Meta-Analysis"
+      ]
+    },
+    {
+      "pmid": "22102928",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Folic acid supplementation and pregnancy: more than just neural tube defect prevention",
+        "Folic acid supplementation and pregnancy: more than just neural tube defect prevention"
+      ]
+    },
+    {
+      "pmid": "37526713",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement",
+        "Folic Acid Supplementation to Prevent Neural Tube Defects: US Preventive Services Task Force Reaffirmation Recommendation Statement"
+      ]
+    },
+    {
+      "pmid": "34794190",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Systematic Review and Meta-Analysis of L-Methylfolate Augmentation in Depressive Disorders",
+        "Systematic Review and Meta-Analysis of L-Methylfolate Augmentation in Depressive Disorders"
+      ]
+    },
+    {
+      "pmid": "29882091",
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "count": 2,
+      "titles": [
+        "MTHFR isoform carriers. 5-MTHF (5-methyl tetrahydrofolate) vs folic acid: a key to pregnancy outcome: a case series",
+        "MTHFR isoform carriers. 5-MTHF (5-methyl tetrahydrofolate) vs folic acid: a key to pregnancy outcome: a case series."
+      ]
+    },
+    {
+      "pmid": "28300758",
+      "supplement": "MSM",
+      "file": "29_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement",
+        "Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement"
+      ]
+    },
+    {
+      "pmid": "21708034",
+      "supplement": "MSM",
+      "file": "29_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study",
+        "Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study"
+      ]
+    },
+    {
+      "pmid": "37447322",
+      "supplement": "MSM",
+      "file": "29_enhanced.js",
+      "count": 2,
+      "titles": [
+        "Methylsulfonylmethane Improves Knee Quality of Life in Participants with Mild Knee Pain: A Randomized, Double-Blind, Placebo-Controlled Trial.",
+        "Methylsulfonylmethane Improves Knee Quality of Life in Participants with Mild Knee Pain: A Randomized, Double-Blind, Placebo-Controlled Trial."
+      ]
+    }
+  ],
+  "perfectMatches": 99,
+  "bySupplementSummary": [
+    {
+      "supplement": "1_bacopa_monnieri_enhanced",
+      "file": "1_bacopa_monnieri_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "2_curcumin_enhanced",
+      "file": "2_curcumin_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "3_ashwagandha_enhanced",
+      "file": "3_ashwagandha_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "4_omega_3_fish_oil_enhanced",
+      "file": "4_omega_3_fish_oil_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Creatine",
+      "file": "5_creatine_enhanced.js",
+      "totalCitations": 20,
+      "issues": []
+    },
+    {
+      "supplement": "6_magnesium_enhanced",
+      "file": "6_magnesium_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "7_vitamin_d3_enhanced",
+      "file": "7_vitamin_d3_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Melatonin",
+      "file": "8_melatonin_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "9_l_theanine_enhanced",
+      "file": "9_l_theanine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "10_rhodiola_rosea_enhanced",
+      "file": "10_rhodiola_rosea_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "11_lions_mane_enhanced",
+      "file": "11_lions_mane_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Phosphatidylserine",
+      "file": "12_phosphatidylserine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "13_acetyl_l_carnitine_enhanced",
+      "file": "13_acetyl_l_carnitine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Ginkgo Biloba",
+      "file": "14_enhanced.js",
+      "totalCitations": 15,
+      "issues": []
+    },
+    {
+      "supplement": "15_panax_ginseng_enhanced",
+      "file": "15_panax_ginseng_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Alpha-GPC",
+      "file": "16_enhanced.js",
+      "totalCitations": 3,
+      "issues": []
+    },
+    {
+      "supplement": "Berberine",
+      "file": "17_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "18_coq10_enhanced",
+      "file": "18_coq10_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "B-Complex Vitamins",
+      "file": "19_enhanced.js",
+      "totalCitations": 11,
+      "issues": []
+    },
+    {
+      "supplement": "Quercetin",
+      "file": "20_enhanced.js",
+      "totalCitations": 11,
+      "issues": [
+        "AUTHOR MISMATCH (PMID 39596162)"
+      ]
+    },
+    {
+      "supplement": "Vitamin B12",
+      "file": "21_vitamin_b12_enhanced.js",
+      "totalCitations": 14,
+      "issues": []
+    },
+    {
+      "supplement": "Vitamin B6",
+      "file": "22_vitamin_b6_enhanced.js",
+      "totalCitations": 11,
+      "issues": []
+    },
+    {
+      "supplement": "Folate (Vitamin B9)",
+      "file": "23_folate_enhanced.js",
+      "totalCitations": 25,
+      "issues": [
+        "AUTHOR MISMATCH (PMID 37526713)",
+        "AUTHOR MISMATCH (PMID 37526713)"
+      ]
+    },
+    {
+      "supplement": "24_l_theanine_enhanced",
+      "file": "24_l_theanine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "NAD+ Precursors",
+      "file": "25_nad_precursors_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "PQQ",
+      "file": "26_pqq_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "27_resveratrol_enhanced",
+      "file": "27_resveratrol_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "28_glucosamine_enhanced",
+      "file": "28_glucosamine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "MSM",
+      "file": "29_enhanced.js",
+      "totalCitations": 11,
+      "issues": []
+    },
+    {
+      "supplement": "30_vitamin_e_enhanced",
+      "file": "30_vitamin_e_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "31_whey_protein_enhanced",
+      "file": "31_whey_protein_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "32_chondroitin_sulfate_enhanced",
+      "file": "32_chondroitin_sulfate_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Catecholamine Synthesis Limitation",
+      "file": "33_l_tyrosine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "5-HTP",
+      "file": "34_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "35_tribulus_terrestris_enhanced",
+      "file": "35_tribulus_terrestris_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "36_vitamin_c_enhanced",
+      "file": "36_vitamin_c_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Zinc",
+      "file": "37_zinc_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Iron",
+      "file": "38_iron_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Taurine",
+      "file": "39_taurine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "40_gaba_enhanced",
+      "file": "40_gaba_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Inositol Enhanced",
+      "file": "41_inositol_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "42_selenium_enhanced",
+      "file": "42_selenium_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Choline Bitartrate",
+      "file": "43_choline_bitartrate_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "44_alpha_lipoic_acid_enhanced",
+      "file": "44_alpha_lipoic_acid_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Lutein",
+      "file": "45_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Astaxanthin",
+      "file": "46_astaxanthin_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "47_ginger_enhanced",
+      "file": "47_ginger_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "48_garlic_enhanced",
+      "file": "48_garlic_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Echinacea",
+      "file": "49_echinacea_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "50_caffeine_enhanced",
+      "file": "50_caffeine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "51_reishi_mushroom_enhanced",
+      "file": "51_reishi_mushroom_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Cordyceps",
+      "file": "52_cordyceps_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "53_spirulina_enhanced",
+      "file": "53_spirulina_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Chlorella",
+      "file": "54_chlorella_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "55_huperzine_a_enhanced",
+      "file": "55_huperzine_a_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "56_vinpocetine_enhanced",
+      "file": "56_vinpocetine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "PEA (Phenylethylamine)",
+      "file": "57_pea_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "58_mct_oil_enhanced",
+      "file": "58_mct_oil_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "59_hawthorn_berry_enhanced",
+      "file": "59_hawthorn_berry_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "60_red_yeast_rice_enhanced",
+      "file": "60_red_yeast_rice_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "61_chromium_enhanced",
+      "file": "61_chromium_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "62_vanadium_enhanced",
+      "file": "62_vanadium_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Bitter Melon",
+      "file": "63_bitter_melon_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Gymnema Sylvestre",
+      "file": "64_gymnema_sylvestre_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "65_fenugreek_enhanced",
+      "file": "65_fenugreek_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Cinnamon Extract",
+      "file": "66_cinnamon_extract_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Holy Basil",
+      "file": "67_holy_basil_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Schisandra Berry",
+      "file": "68_schisandra_berry_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "69_mucuna_pruriens_enhanced",
+      "file": "69_mucuna_pruriens_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Forskolin",
+      "file": "70_forskolin_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Boswellia",
+      "file": "71_boswellia_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Milk Thistle",
+      "file": "72_milk_thistle_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "73_stinging_nettle_enhanced",
+      "file": "73_stinging_nettle_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Elderberry",
+      "file": "74_elderberry_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Citicoline",
+      "file": "75_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Sulbutiamine",
+      "file": "76_sulbutiamine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "DMAE",
+      "file": "77_dmae_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Centella Asiatica",
+      "file": "78_centella_asiatica_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "79_passionflower_enhanced",
+      "file": "79_passionflower_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Aniracetam",
+      "file": "80_aniracetam_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Piracetam",
+      "file": "81_piracetam_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Kanna",
+      "file": "82_kanna_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "83_black_seed_oil_enhanced",
+      "file": "83_black_seed_oil_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "84_moringa_enhanced",
+      "file": "84_moringa_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "85_pine_bark_extract_enhanced",
+      "file": "85_pine_bark_extract_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "86_grape_seed_extract_enhanced",
+      "file": "86_grape_seed_extract_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "87_krill_oil_enhanced",
+      "file": "87_krill_oil_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "88_zeaxanthin_enhanced",
+      "file": "88_zeaxanthin_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "89_pterostilbene_enhanced",
+      "file": "89_pterostilbene_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Beta-Alanine",
+      "file": "90_beta_alanine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Citrulline Malate",
+      "file": "91_citrulline_malate_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "HMB (β-Hydroxy β-Methylbutyrate)",
+      "file": "92_hmb_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    },
+    {
+      "supplement": "Betaine",
+      "file": "93_betaine_enhanced.js",
+      "totalCitations": 0,
+      "issues": []
+    }
+  ]
+}
