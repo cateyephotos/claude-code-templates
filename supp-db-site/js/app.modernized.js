@@ -4,10 +4,10 @@
  */
 
 // Import required modules
-import CitationLoader from './CitationLoader.js';
-import CitationRenderer from './CitationRenderer.js?v=20260307c';
-import EnhancedCitationLoader from './EnhancedCitationLoader.js?v=20260307b';
-import EnhancedCitationAttacher from './EnhancedCitationAttacher.js';
+import CitationLoader from './CitationLoader.js?v=20260307m';
+import CitationRenderer from './CitationRenderer.js?v=20260307m';
+import EnhancedCitationLoader from './EnhancedCitationLoader.js?v=20260307m';
+import EnhancedCitationAttacher from './EnhancedCitationAttacher.js?v=20260307m';
 import { ErrorBoundary, GlobalErrorManager } from './ErrorBoundary.js';
 import TemplateSystem from './TemplateSystem.js';
 import PerformanceOptimizer from './PerformanceOptimizer.js';
@@ -205,9 +205,10 @@ class ModernSupplementDatabase {
                 this._updateStats();
             }, 'Application initialization');
             
-            // Preload enhanced citations for Phase 2A supplements
-            this._preloadEnhancedCitations();
-            
+            // Note: Enhanced citations are loaded by EnhancedCitationLoader.loadAllEnhancedCitations()
+            // called from _initializeEnhancedCitations() in the constructor.
+            // The redundant _preloadEnhancedCitations() was removed to prevent duplicate script loading.
+
             // Setup performance monitoring
             this._setupPerformanceMonitoring();
             
@@ -1463,25 +1464,9 @@ class ModernSupplementDatabase {
         return this._loadAndAttachEnhancedCitations();
     }
 
-    /**
-     * Preload enhanced citations for Phase 2A supplements
-     * @private
-     */
-    async _preloadEnhancedCitations() {
-        const enhancedSupplements = this.supplements
-            .filter(s => s.enhancedCitations?.isEnhanced)
-            .map(s => s.id)
-            .slice(0, 37); // Preload all enhanced supplements (ensures ALA at position 34 is included)
-        
-        if (enhancedSupplements.length > 0) {
-            try {
-                await this.citationLoader.preloadCitations(enhancedSupplements);
-                console.log(`Preloaded citations for ${enhancedSupplements.length} enhanced supplements`);
-            } catch (error) {
-                console.warn('Citation preloading failed:', error);
-            }
-        }
-    }
+    // _preloadEnhancedCitations() removed — was redundantly loading ${id}_enhanced.js files
+    // via CitationLoader while EnhancedCitationLoader already loads named files.
+    // This caused duplicate const declarations when both XX_enhanced.js and XX_name_enhanced.js existed.
 
     /**
      * Setup performance monitoring

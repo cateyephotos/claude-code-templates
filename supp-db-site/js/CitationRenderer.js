@@ -24,7 +24,7 @@ class CitationRenderer {
         const startTime = performance.now();
 
         try {
-            if (!citationData || !citationData.citations) {
+            if (!citationData || (!citationData.citations && !citationData.enhancedCitations)) {
                 return this._renderFallbackCitations(supplement);
             }
 
@@ -541,16 +541,31 @@ class CitationRenderer {
             };
         }
 
-        // Handle standard format
+        // Handle standard format (including Phase 3B-7 flat references)
+        // Phase 3B-7 has: authors as string, keyFindings as array, studyType, clinicalRelevance
+        const authors = typeof study.authors === 'string'
+            ? [study.authors]
+            : (study.authors || ['Unknown authors']);
+
+        const findings = study.findings
+            || study.significance
+            || (Array.isArray(study.keyFindings) ? study.keyFindings.join('; ') : study.keyFindings)
+            || 'Research findings support this claim';
+
         return {
             title: study.title || 'Research study',
-            authors: study.authors || ['Unknown authors'],
+            authors: authors,
             year: study.year || new Date().getFullYear(),
             journal: study.journal || 'Research publication',
             pmid: study.pmid || null,
             doi: study.doi || null,
-            findings: study.findings || study.significance || 'Research findings support this claim',
-            evidenceLevel: study.evidenceLevel || study.type || 'Research Study'
+            volume: study.volume || null,
+            issue: study.issue || null,
+            pages: study.pages || null,
+            findings: findings,
+            evidenceLevel: study.clinicalRelevance || study.evidenceLevel || study.type || 'Research Study',
+            studyType: study.studyType || study.type || null,
+            sampleSize: study.sampleSize || null
         };
     }
 
@@ -747,13 +762,17 @@ class CitationRenderer {
      */
     _normalizeData(citationData) {
         // Detect different data formats
-        const isLegacyFormat = this._isLegacyFormat(citationData.citations);
+        const isFlatArray = Array.isArray(citationData.citations);
         const isEnhancedCitationsArray = this._isEnhancedCitationsArray(citationData);
+        const isLegacyFormat = !isFlatArray && this._isLegacyFormat(citationData.citations);
 
         let citations;
         if (isEnhancedCitationsArray) {
-            // Convert enhancedCitations array format (L-Tyrosine style)
-            citations = this._convertEnhancedCitationsArray(citationData.enhancedCitations);
+            // Convert enhancedCitations array format (L-Tyrosine style - no citations key)
+            citations = this._convertFlatCitationArray(citationData.enhancedCitations);
+        } else if (isFlatArray) {
+            // Convert flat citations array format (Phase 3B-6/7 style - citations is array)
+            citations = this._convertFlatCitationArray(citationData.citations);
         } else if (isLegacyFormat) {
             // Convert legacy numbered citations to grouped format
             citations = this._convertLegacyFormat(citationData.citations);
@@ -1544,40 +1563,76 @@ class CitationRenderer {
 
     /**
      * Detect if data uses enhancedCitations array format (L-Tyrosine style)
+     * Note: The attacher now normalizes enhancedCitations→citations, but this handles
+     * any case where the original key still comes through
      * @private
      */
     _isEnhancedCitationsArray(citationData) {
         return citationData &&
                Array.isArray(citationData.enhancedCitations) &&
                citationData.enhancedCitations.length > 0 &&
-               (!citationData.citations || Object.keys(citationData.citations || {}).length === 0);
+               (!citationData.citations || Array.isArray(citationData.citations));
     }
 
     /**
-     * Convert enhancedCitations array format to grouped sections (L-Tyrosine style)
+     * Convert flat citation array to grouped sections
+     * Handles both L-Tyrosine style (enhancedCitations key) and Phase 3B-6/7 style (citations as array)
+     * Uses content-aware categorization via _categorizeLegacyCitation for smart section assignment
      * @private
      */
-    _convertEnhancedCitationsArray(enhancedCitations) {
+    _convertFlatCitationArray(citationArray) {
+        if (!Array.isArray(citationArray) || citationArray.length === 0) {
+            return { benefits: [], safety: [], mechanisms: [], dosage: [] };
+        }
+
         const benefits = [];
         const safety = [];
         const mechanisms = [];
 
-        enhancedCitations.forEach((citation, index) => {
-            // Each citation in enhancedCitations array is a complete study
-            // Convert to benefit format (most studies show benefits)
-            benefits.push({
-                healthDomain: this._inferHealthDomainFromStudy(citation),
-                specificClaim: citation.title || `Health benefit ${index + 1}`,
-                claim: citation.title || `Health benefit ${index + 1}`,
-                strength: "Moderate",
-                evidenceQuality: "Moderate",
-                replicationStatus: "Research-supported",
-                tissueTarget: "Multiple systems",
-                target: "Multiple systems",
-                evidence: [this._normalizeStudy(citation)]
-            });
+        citationArray.forEach((citation, index) => {
+            // Use smart content-based categorization
+            const category = this._categorizeLegacyCitation(citation);
+            const normalizedStudy = this._normalizeStudy(citation);
 
-            // If citation has mechanisms, add them
+            switch (category) {
+                case 'safety':
+                    safety.push({
+                        safetyAspect: citation.mensHealthFocus || citation.womensHealthFocus || "General Safety",
+                        riskLevel: "Low",
+                        claim: citation.title || `Safety information ${index + 1}`,
+                        tissueTarget: citation.sampleSize || "Multiple systems",
+                        target: citation.sampleSize || "Multiple systems",
+                        evidence: [normalizedStudy]
+                    });
+                    break;
+
+                case 'mechanism':
+                    mechanisms.push({
+                        mechanism: citation.title || `Mechanism ${index + 1}`,
+                        claim: citation.title || `Mechanism ${index + 1}`,
+                        mechanismType: citation.studyType || "Biochemical pathway",
+                        strength: citation.clinicalRelevance || "Moderate",
+                        tissueTarget: citation.sampleSize || "Multiple systems",
+                        target: citation.sampleSize || "Multiple systems",
+                        evidence: [normalizedStudy]
+                    });
+                    break;
+
+                default: // 'benefit'
+                    benefits.push({
+                        healthDomain: this._inferHealthDomainFromStudy(citation),
+                        specificClaim: citation.title || `Health benefit ${index + 1}`,
+                        claim: citation.title || `Health benefit ${index + 1}`,
+                        strength: citation.clinicalRelevance || "Moderate",
+                        evidenceQuality: citation.clinicalRelevance || "Moderate",
+                        replicationStatus: "Research-supported",
+                        tissueTarget: citation.sampleSize || "Multiple systems",
+                        target: citation.sampleSize || "Multiple systems",
+                        evidence: [normalizedStudy]
+                    });
+            }
+
+            // If L-Tyrosine style citation has explicit mechanisms array, add those too
             if (citation.mechanisms && Array.isArray(citation.mechanisms)) {
                 citation.mechanisms.forEach((mechanism, mechIndex) => {
                     mechanisms.push({
@@ -1587,12 +1642,12 @@ class CitationRenderer {
                         strength: "Moderate",
                         tissueTarget: "Multiple systems",
                         target: "Multiple systems",
-                        evidence: [this._normalizeStudy(citation)]
+                        evidence: [normalizedStudy]
                     });
                 });
             }
 
-            // If citation has safety info, add it
+            // If L-Tyrosine style citation has safety profile, add safety entry
             if (citation.safetyProfile || citation.limitations) {
                 safety.push({
                     safetyAspect: "General Safety",
@@ -1600,17 +1655,17 @@ class CitationRenderer {
                     claim: citation.safetyProfile?.rating || "Generally well tolerated",
                     tissueTarget: "Multiple systems",
                     target: "Multiple systems",
-                    evidence: [this._normalizeStudy(citation)]
+                    evidence: [normalizedStudy]
                 });
             }
         });
 
-        // Ensure at least one safety entry
+        // Ensure at least one safety entry for supplements with no safety-categorized citations
         if (safety.length === 0) {
             safety.push({
                 safetyAspect: "General Safety",
                 riskLevel: "Low",
-                claim: "Generally well tolerated based on research",
+                claim: "Generally well tolerated based on available research",
                 tissueTarget: "Multiple systems",
                 target: "Multiple systems",
                 evidence: []

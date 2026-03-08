@@ -1,27 +1,10 @@
-// ⚠️  DEPRECATED — DO NOT USE
-// Canonical file: 43_enhanced.js (validated 2026-03-06, OVERALL VALIDATION: PASS)
-//
-// Reason for deprecation:
-//   1. Structural corruption: top-level "mechanisms" array duplicates citations.mechanisms
-//      (two separate arrays for the same domain — not pipeline standard)
-//   2. Five citation entries contain duplicate "target:"/"tissueTarget:" key pairs
-//      (one entry repeated twice each) — invalid JSON structure
-//   3. evidenceProfile errors (all corrected in 43_enhanced.js):
-//      - researchQualityScore: 86 → 66 (inflated; 86 is Tier 1 territory)
-//      - totalCitations: 15 → 17 (missed deficiency domain 2 citations)
-//      - clinicalBenefits: "Strong" → "Moderate" (inconsistent with Tier 2 + no Cochrane review)
-//      - publicationSpan: "2009-2024" → "1992-2019" (Conlay 1992 is earliest; no citations 2020-2024)
-//      - lastEvidenceUpdate: "2025-08-20" → "2026-03-06"
-//      - isEnhanced: missing at top level
-//      - qualityAssurance.totalVerifiedCitations: absent → 17
-//
-// Pipeline run: 2026-03-06 | Mode: Evidence Update (Mode 2)
 // Enhanced Citation File: Choline Bitartrate
 // Phase 3B Nutritional Essentials Specialist
 // Generated: 2025-08-20
 
 const cholineBitartrate = {
   "id": 43,
+  "isEnhanced": true,
   "name": "Choline Bitartrate",
   "scientificName": "2-hydroxy-N,N,N-trimethylethanaminium bitartrate",
   "category": "Essential Nutrient - Methylation Support",
@@ -29,101 +12,19 @@ const cholineBitartrate = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 15,
-    "researchQualityScore": 86,
-    "lastEvidenceUpdate": "2025-08-20",
+    "totalCitations": 17,
+    "researchQualityScore": 66,
+    "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
       "mechanisms": "Well-established",
-      "clinicalBenefits": "Strong",
+      "clinicalBenefits": "Moderate",
       "safety": "Well-established",
       "dosage": "Evidence-based"
     },
     "researchMaturity": "Mature",
-    "publicationSpan": "2009-2024",
-    "keyFindings": "Essential nutrient with strong evidence for brain health, cognitive function, and methylation support",
+    "publicationSpan": "1992-2019",
     "keyResearchInstitutions": ["Cornell University", "University of North Carolina", "National Institutes of Health", "Harvard School of Public Health"]
   },
-
-  "mechanisms": [
-    {
-      "mechanism": "Acetylcholine synthesis and neurotransmitter function",
-      "strength": "Strong",
-      "mechanismType": "Neurotransmitter Production",
-      "tissueTarget": "Brain Tissue",
-        "target": "Brain Tissue",
-      "evidence": [
-        {
-          "title": "Choline: critical role during fetal development and dietary requirements in adults",
-          "authors": ["Zeisel, S.H.", "da Costa, K.A."],
-          "journal": "Annual Review of Nutrition",
-          "year": 2009,
-          "doi": "10.1146/annurev-nutr-080508-141059",
-          "pmid": "19400752",
-          "keyFindings": ["Choline essential for acetylcholine synthesis", "Critical for neural development"],
-          "evidenceLevel": "Comprehensive mechanistic review"
-        }
-      ]
-    },
-    {
-      "mechanism": "Phospholipid metabolism and cell membrane integrity",
-      "strength": "Strong",
-      "mechanismType": "Cellular Structure",
-      "tissueTarget": "Cell Membranes",
-        "target": "Cell Membranes",
-      "evidence": [
-        {
-          "title": "The role of choline in phospholipid metabolism",
-          "authors": ["Ridgway, N.D."],
-          "journal": "Current Opinion in Lipidology",
-          "year": 2013,
-          "doi": "10.1097/MOL.0b013e328360644d",
-          "pmid": "23652570",
-          "keyFindings": ["Choline essential for phosphatidylcholine synthesis", "Critical for membrane structure"],
-          "evidenceLevel": "Expert biochemical review"
-        }
-      ]
-    },
-    {
-      "mechanism": "Methylation pathway support and gene expression",
-      "strength": "Strong",
-      "mechanismType": "Epigenetic Modulation",
-      "tissueTarget": "Liver",
-        "target": "Liver",
-      "evidence": [
-        {
-          "title": "Choline metabolism and methylation reactions",
-          "authors": ["Craig, S.A."],
-          "journal": "American Journal of Clinical Nutrition",
-          "year": 2004,
-          "doi": "10.1093/ajcn/80.3.539",
-          "pmid": "15321791",
-          "keyFindings": ["Choline provides methyl groups for DNA methylation", "Essential for one-carbon metabolism"],
-          "evidenceLevel": "Comprehensive metabolic review"
-        }
-      ]
-    },
-    {
-      "mechanism": "Fetal brain development and cognitive function support",
-      "strength": "Strong",
-      "mechanismType": "Developmental Support",
-      "tissueTarget": "Nervous System",
-        "target": "Nervous System",
-        "tissueTarget": "Nervous System",
-        "target": "Nervous System",
-      "evidence": [
-        {
-          "title": "Maternal choline supplementation during pregnancy and lactation",
-          "authors": ["Caudill, M.A."],
-          "journal": "Nutrients",
-          "year": 2010,
-          "doi": "10.3390/nu2111199",
-          "pmid": "22254006",
-          "keyFindings": ["Choline critical for fetal brain development", "Maternal status affects offspring cognition"],
-          "evidenceLevel": "Clinical developmental research"
-        }
-      ]
-    }
-  ],
 
   "citations": {
     "mechanisms": [
@@ -355,12 +256,13 @@ const cholineBitartrate = {
   },
 
   "qualityAssurance": {
-    "doiVerificationDate": "2025-08-20",
+    "doiVerificationDate": "2026-03-06",
     "verificationMethod": "Manual verification against PubMed and journal databases",
     "accuracyRate": "100%",
+    "totalVerifiedCitations": 17,
     "verificationCriteria": [
       "DOI resolves to correct publication",
-      "Title matches exactly", 
+      "Title matches exactly",
       "Authors match publication records",
       "Journal, volume, issue, pages verified",
       "PMID cross-referenced with PubMed database",

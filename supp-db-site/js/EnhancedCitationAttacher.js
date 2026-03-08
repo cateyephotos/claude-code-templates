@@ -42,21 +42,36 @@ class EnhancedCitationAttacher {
                 
                 if (hasEnhancedFile) {
                     const enhancedData = window.enhancedCitations[supplement.id];
-                    
-                    if (enhancedData && enhancedData.citations) {
+
+                    // Accept multiple data formats:
+                    // 1. Standard: enhancedData.citations as object with mechanisms/benefits/safety
+                    // 2. Flat array: enhancedData.citations as array of reference objects (Phase 3B-6/7)
+                    // 3. Alt key: enhancedData.enhancedCitations as array (L-Tyrosine style)
+                    const hasCitations = enhancedData && (
+                        enhancedData.citations ||
+                        (Array.isArray(enhancedData.enhancedCitations) && enhancedData.enhancedCitations.length > 0)
+                    );
+
+                    if (hasCitations) {
+                        // For enhancedCitations-keyed data (ID 33 style), map to citations key
+                        const normalizedData = { ...enhancedData };
+                        if (!normalizedData.citations && Array.isArray(normalizedData.enhancedCitations)) {
+                            normalizedData.citations = normalizedData.enhancedCitations;
+                        }
+
                         // Attach enhanced citation data to supplement
                         supplement.enhancedCitations = {
                             isEnhanced: true,
-                            ...enhancedData
+                            ...normalizedData
                         };
-                        
+
                         results.enhancedAttached++;
                         results.attachedSupplements.push({
                             id: supplement.id,
                             name: supplement.name,
-                            citationCount: this._countCitations(enhancedData.citations)
+                            citationCount: this._countCitations(normalizedData.citations)
                         });
-                        
+
                         console.log(`✅ Attached enhanced citations to ${supplement.name} (ID: ${supplement.id})`);
                     } else {
                         const error = `Enhanced file exists but invalid data structure for ${supplement.name} (ID: ${supplement.id})`;
@@ -114,30 +129,35 @@ class EnhancedCitationAttacher {
      * @private
      */
     _countCitations(citations) {
+        // Handle flat array format (Phase 3B-6/7 and L-Tyrosine style)
+        if (Array.isArray(citations)) {
+            return citations.length;
+        }
+
         let count = 0;
-        
+
         if (citations.mechanisms) {
             citations.mechanisms.forEach(mechanism => {
                 if (mechanism.evidence) count += mechanism.evidence.length;
             });
         }
-        
+
         if (citations.benefits) {
             citations.benefits.forEach(benefit => {
                 if (benefit.evidence) count += benefit.evidence.length;
             });
         }
-        
+
         if (citations.safety) {
             citations.safety.forEach(safety => {
                 if (safety.evidence) count += safety.evidence.length;
             });
         }
-        
+
         if (citations.dosage) {
             count += citations.dosage.length;
         }
-        
+
         return count;
     }
 
