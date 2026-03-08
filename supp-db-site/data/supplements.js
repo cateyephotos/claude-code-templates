@@ -5993,7 +5993,7 @@ const supplementDatabase = {
     {
       "name": "Anti-inflammatory",
       "description": "Compounds with strong anti-inflammatory properties",
-      "supplements": ["Turmeric/Curcumin", "Omega-3 Fatty Acids", "Quercetin", "Green Tea Extract", "Boswellia", "Milk Thistle", "Stinging Nettle", "Elderberry", "Cinnamon Extract"]
+      "supplements": ["Turmeric/Curcumin", "Omega-3 Fatty Acids", "Quercetin", "Green Tea Extract", "Boswellia", "Milk Thistle", "Stinging Nettle", "Elderberry", "Cinnamon Extract", "Glucosamine", "MSM", "Chondroitin Sulfate"]
     },
     {
       "name": "Essential Nutrients",
@@ -6008,7 +6008,7 @@ const supplementDatabase = {
     {
       "name": "Performance Enhancers",
       "description": "Supplements for physical and mental performance",
-      "supplements": ["Creatine", "Rhodiola rosea", "Panax Ginseng", "Caffeine", "Cordyceps", "MCT Oil", "Beta-Alanine", "Citrulline Malate", "HMB (β-Hydroxy β-Methylbutyrate)", "Betaine"]
+      "supplements": ["Creatine", "Rhodiola rosea", "Panax Ginseng", "Caffeine", "Cordyceps", "MCT Oil", "Beta-Alanine", "Citrulline Malate", "HMB (β-Hydroxy β-Methylbutyrate)", "Betaine", "Whey Protein"]
     },
     {
       "name": "Herbal Extracts",
@@ -6023,7 +6023,7 @@ const supplementDatabase = {
     {
       "name": "Polyphenols",
       "description": "Plant compounds with antioxidant and cognitive benefits",
-      "supplements": ["Quercetin", "Green Tea Extract"]
+      "supplements": ["Quercetin", "Green Tea Extract", "Resveratrol"]
     },
     {
       "name": "Antioxidants",
@@ -6033,12 +6033,12 @@ const supplementDatabase = {
     {
       "name": "Amino Acids",
       "description": "Amino acids and neurotransmitter precursors",
-      "supplements": ["L-Tyrosine", "5-HTP", "Taurine", "GABA"]
+      "supplements": ["L-Tyrosine", "5-HTP", "Taurine", "GABA", "PEA (Phenylethylamine)"]
     },
     {
       "name": "Herbal Supplement",
       "description": "Traditional herbal supplements with cognitive and health benefits",
-      "supplements": ["Tribulus Terrestris", "Ginger", "Garlic", "Echinacea", "Hawthorn Berry", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract", "Mucuna Pruriens", "Forskolin", "Milk Thistle", "Stinging Nettle", "Elderberry", "Centella Asiatica", "Passionflower", "Kanna", "Black Seed Oil", "Moringa"]
+      "supplements": ["Tribulus Terrestris", "Ginger", "Garlic", "Echinacea", "Hawthorn Berry", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract", "Mucuna Pruriens", "Forskolin", "Milk Thistle", "Stinging Nettle", "Elderberry", "Centella Asiatica", "Passionflower", "Kanna", "Black Seed Oil", "Moringa", "Reishi Mushroom"]
     },
     {
       "name": "B-Vitamin Related",
