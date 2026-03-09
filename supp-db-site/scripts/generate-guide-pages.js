@@ -98,6 +98,7 @@ This guide systematically reviews the supplements with the strongest clinical ev
             { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
             { href: '../compare/ashwagandha-vs-rhodiola.html', icon: 'fa-scale-balanced', text: 'Ashwagandha vs Rhodiola' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
             { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
         ]
     },
@@ -191,6 +192,7 @@ This guide systematically reviews the supplements with the strongest clinical ev
             { href: '../categories/amino-acids.html', icon: 'fa-atom', text: 'Browse Amino Acids' },
             { href: '../compare/bacopa-vs-ginkgo.html', icon: 'fa-scale-balanced', text: 'Bacopa vs Ginkgo' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
             { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
         ]
     },
@@ -272,6 +274,7 @@ This guide systematically reviews the supplements with the strongest clinical ev
             { href: '../categories/antioxidants.html', icon: 'fa-shield-halved', text: 'Browse Antioxidants' },
             { href: '../compare/omega-3-vs-coq10.html', icon: 'fa-scale-balanced', text: 'Omega-3 vs CoQ10' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
             { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
         ]
     }
@@ -523,6 +526,17 @@ function generateGuidePage(guide, allSupplements) {
                 <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
             </div>
         </div>
+    </div>
+
+    <!-- Trust Signal Bar -->
+    <div class="trust-bar" style="max-width:64rem;margin:1rem auto;">
+        <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
+        <span class="trust-bar-divider"></span>
+        <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+        <span class="trust-bar-divider"></span>
+        <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+        <span class="trust-bar-divider"></span>
+        <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
     </div>
 
     <!-- Main Content with optional TOC -->
@@ -877,6 +891,7 @@ function generateGuidePage(guide, allSupplements) {
             </p>
             <p class="mt-2 text-sm text-gray-500">
                 <a href="../about.html" style="color:#9ca3af;">About</a> &middot;
+                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
                 <a href="../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
                 <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
                 <a href="../legal/terms.html" style="color:#9ca3af;">Terms</a>

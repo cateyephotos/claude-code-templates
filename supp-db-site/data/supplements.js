@@ -378,7 +378,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Extensive meta-analyses and systematic reviews",
       "primaryBenefits": {
         "cognitive": ["Memory support", "Cognitive aging protection", "Brain development"],
-        "nonCognitive": ["Cardiovascular health", "Triglyceride reduction", "Anti-inflammatory", "Eye health", "Metabolic syndrome", "Liver health (MASLD)", "Exercise synergy", "Preeclampsia prevention"],
+        "nonCognitive": ["Cardiovascular health", "Triglyceride reduction", "Anti-inflammatory", "Eye health", "Metabolic syndrome", "Liver health (MASLD)", "Exercise synergy", "Pregnancy cardiovascular support"],
         "isEnhanced": true
       },
       "dosageRange": "1000-2000mg daily (combined EPA/DHA)",
@@ -700,7 +700,7 @@ const supplementDatabase = {
       "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Sleep-related cognitive improvement", "Circadian rhythm regulation", "Cognitive decline protection (MCI/mild AD)"],
-        "nonCognitive": ["Sleep onset", "Sleep quality", "Jet lag prevention", "Antioxidant effects", "ICU delirium prevention", "Parkinson's disease sleep"]
+        "nonCognitive": ["Sleep onset", "Sleep quality", "Jet lag support", "Antioxidant effects", "ICU sleep support", "Parkinson's disease sleep support"]
       },
       "dosageRange": "0.5-3mg, 30-60 minutes before bedtime",
       "optimalDuration": "As needed or 4+ weeks for chronic issues",
@@ -1348,7 +1348,7 @@ const supplementDatabase = {
       "evidenceTier": 2,
       "evidenceTierRationale": "Strong evidence for metabolic health, emerging for cognitive benefits",
       "primaryBenefits": {
-        "cognitive": ["Neuroprotection", "Cognitive decline prevention"],
+        "cognitive": ["Neuroprotection", "Cognitive health support"],
         "nonCognitive": ["Blood sugar regulation", "Cardiovascular health", "Weight management", "Antimicrobial effects"],
     "isEnhanced": true,
     "isEnhanced": true
@@ -1792,13 +1792,13 @@ const supplementDatabase = {
       "evidenceTier": 1,
       "evidenceTierRationale": "USPSTF Grade A recommendation for NTD prevention; multiple Cochrane reviews and meta-analyses for cognitive, cardiovascular, and pregnancy outcomes; decades of population-wide fortification evidence",
       "primaryBenefits": {
-        "cognitive": ["Cognitive aging protection", "Depression adjunctive treatment", "Homocysteine-mediated dementia prevention"],
-        "nonCognitive": ["Neural tube defect prevention", "Homocysteine reduction", "Cardiovascular health", "Female fertility support", "Recurrent pregnancy loss prevention"],
+        "cognitive": ["Cognitive aging protection", "Mood support (adjunctive)", "Homocysteine metabolism support"],
+        "nonCognitive": ["Neural tube development support", "Homocysteine reduction", "Cardiovascular health", "Female fertility support", "Pregnancy health support"],
         "isEnhanced": true
       },
       "isEnhanced": true,
       "dosageRange": "400–800 mcg/day standard; 800 mcg–5 mg/day for special populations (MTHFR carriers, therapeutic depression, cerebral folate deficiency)",
-      "optimalDuration": "Lifelong for pregnancy prevention; 8–16 weeks for cognitive/homocysteine benefits",
+      "optimalDuration": "Lifelong for pregnancy health support; 8–16 weeks for cognitive/homocysteine benefits",
       "studyPopulations": ["Women of childbearing age", "Elderly (cognitive decline)", "Depression patients (SSRI non-responders)", "MTHFR polymorphism carriers", "ASD children with FRAA positivity", "Recurrent miscarriage patients"],
       "mechanismsOfAction": [
         "One-carbon metabolism via MTHFR/DHFR enzymatic pathway",
@@ -2420,10 +2420,10 @@ const supplementDatabase = {
       "isEnhanced": true,
       "primaryBenefits": {
         "cognitive": ["Neurotransmitter precursor support via tryptophan and tyrosine"],
-        "nonCognitive": ["Muscle protein synthesis", "Sarcopenia prevention in elderly", "Exercise recovery", "Body composition improvement", "Immune support via glutathione precursors"]
+        "nonCognitive": ["Muscle protein synthesis", "Muscle maintenance support in elderly", "Exercise recovery", "Body composition improvement", "Immune support via glutathione precursors"]
       },
-      "dosageRange": "20-40g post-exercise; 40g/day for sarcopenia prevention in elderly",
-      "optimalDuration": "12+ weeks for body composition; ongoing for elderly sarcopenia prevention",
+      "dosageRange": "20-40g post-exercise; 40g/day for muscle maintenance in elderly",
+      "optimalDuration": "12+ weeks for body composition; ongoing for elderly muscle maintenance",
       "studyPopulations": ["Elderly (≥65 years) with resistance exercise training", "Athletes", "Sarcopenic older adults", "Healthy adults with resistance training"],
       "mechanismsOfAction": [
         "mTOR/p70S6K1 pathway activation via leucine",
@@ -2813,7 +2813,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Multiple meta-analyses across 5+ health domains (immune function, cardiovascular, cancer prevention, glycemic control, antioxidant), with umbrella review of 14 meta-analyses (Chai 2025) and large meta-analyses including Arshadi 2024 (69 studies) and Aragón-Vela 2026 (52 RCTs)",
       "primaryBenefits": {
         "cognitive": ["Antioxidant neuroprotection", "Stress resilience", "Mental fatigue reduction"],
-        "nonCognitive": ["Immune system support", "Collagen synthesis", "Iron absorption", "Wound healing", "Cardiovascular protection", "Cancer risk reduction", "Glycemic control"],
+        "nonCognitive": ["Immune system support", "Collagen synthesis", "Iron absorption", "Wound healing", "Cardiovascular protection", "Cellular health support", "Glycemic control"],
         "isEnhanced": true
       },
       "isEnhanced": true,
@@ -3286,7 +3286,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for antioxidant function and thyroid health; moderate evidence for cognitive protection",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Cognitive aging support", "Mood regulation", "Stress resilience"],
-        "nonCognitive": ["Thyroid function", "Immune system support", "Antioxidant protection", "Cancer prevention"]
+        "nonCognitive": ["Thyroid function", "Immune system support", "Antioxidant protection", "Cellular health support"]
       },
       "dosageRange": "55-200mcg daily",
       "optimalDuration": "Ongoing supplementation",
@@ -3510,7 +3510,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for eye health; emerging evidence for cognitive benefits",
       "primaryBenefits": {
         "cognitive": ["Visual processing", "Memory support", "Brain health", "Cognitive speed"],
-        "nonCognitive": ["Macular degeneration prevention", "Eye health", "Skin protection", "Antioxidant protection"]
+        "nonCognitive": ["Macular health support", "Eye health", "Skin protection", "Antioxidant protection"]
       },
       "dosageRange": "6-20mg daily",
       "optimalDuration": "Ongoing supplementation",
@@ -3737,7 +3737,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Strong evidence for cardiovascular health; moderate evidence for immune and cognitive support",
       "primaryBenefits": {
         "cognitive": ["Neuroprotection", "Cognitive aging support", "Brain circulation", "Memory support"],
-        "nonCognitive": ["Cardiovascular health", "Immune support", "Cholesterol reduction", "Blood pressure"],
+        "nonCognitive": ["Cardiovascular health", "Immune support", "Cholesterol metabolism support", "Blood pressure support"],
     "isEnhanced": true,
     "isEnhanced": true
       },
@@ -3786,13 +3786,13 @@ const supplementDatabase = {
       "evidenceTierRationale": "Moderate evidence for immune support; traditional use with some clinical validation",
       "primaryBenefits": {
         "cognitive": ["Stress resilience", "Mental fatigue reduction"],
-        "nonCognitive": ["Immune system support", "Cold prevention", "Upper respiratory health", "Anti-inflammatory"],
+        "nonCognitive": ["Immune system support", "Cold season immune support", "Upper respiratory health", "Anti-inflammatory"],
     "isEnhanced": true,
     "isEnhanced": true
       },
       "dosageRange": "300mg-1g daily",
       "optimalDuration": "7-10 days (acute use) or 8-12 weeks (preventive)",
-      "studyPopulations": ["Cold prevention", "Upper respiratory infections", "Immune compromised", "Athletes"],
+      "studyPopulations": ["Cold season immune support", "Upper respiratory infections", "Immune compromised", "Athletes"],
       "mechanismsOfAction": [
         "Immune system modulation",
         "Cytokine regulation",
@@ -4322,7 +4322,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Well-established cholesterol-lowering effects in multiple RCTs",
       "primaryBenefits": {
         "cognitive": ["Improved brain circulation via cholesterol management", "Reduced vascular cognitive impairment risk"],
-        "nonCognitive": ["Cholesterol reduction", "Cardiovascular protection", "Lipid profile improvement"],
+        "nonCognitive": ["Cholesterol metabolism support", "Cardiovascular protection", "Lipid profile support"],
     "isEnhanced": true
       },
       "dosageRange": "1200-2400mg daily (standardized extract)",
@@ -5002,7 +5002,7 @@ const supplementDatabase = {
       },
       "dosageRange": "300-600mg daily (standardized extract)",
       "optimalDuration": "2-12 weeks (seasonal or as needed)",
-      "studyPopulations": ["Cold/flu prevention", "Upper respiratory infections", "Immune compromised"],
+      "studyPopulations": ["Cold/flu season immune support", "Upper respiratory infections", "Immune compromised"],
       "mechanismsOfAction": [
         "Antiviral hemagglutinin inhibition",
         "Immune system stimulation",
@@ -5679,7 +5679,7 @@ const supplementDatabase = {
       "evidenceTierRationale": "Clinical evidence for eye health and cognitive benefits",
       "primaryBenefits": {
         "cognitive": ["Visual cognitive processing", "Macular health supporting cognitive function", "Antioxidant neuroprotection"],
-        "nonCognitive": ["Macular degeneration prevention", "Eye health", "Blue light protection", "Skin health"],
+        "nonCognitive": ["Macular health support", "Eye health", "Blue light protection", "Skin health"],
     "isEnhanced": true
       },
       "dosageRange": "2-10mg daily",
@@ -5726,7 +5726,7 @@ const supplementDatabase = {
       "evidenceTier": 3,
       "evidenceTierRationale": "Promising preclinical studies with limited human data",
       "primaryBenefits": {
-        "cognitive": ["Memory enhancement", "Neuroprotection", "Age-related cognitive decline prevention"],
+        "cognitive": ["Memory enhancement", "Neuroprotection", "Age-related cognitive support"],
         "nonCognitive": ["Antioxidant effects", "Anti-inflammatory activity", "Metabolic support", "Cardiovascular health"],
     "isEnhanced": true,
     "isEnhanced": true

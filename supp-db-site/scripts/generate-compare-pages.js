@@ -73,7 +73,7 @@ const COMPARISONS = [
         metaDescription: 'Evidence-based comparison of Magnesium vs Melatonin for sleep quality. Compare mechanisms, dosages, side effects, and which supplement works better for different sleep issues.',
         domain: 'Sleep Support',
         sharedDomains: ['sleep quality', 'sleep onset', 'relaxation'],
-        verdict: 'Both Magnesium and Melatonin are Tier 1 (Strong Evidence) for sleep support, but they work through entirely different mechanisms. Melatonin directly regulates the circadian clock and is most effective for sleep onset and jet lag. Magnesium promotes relaxation through GABA modulation and muscle relaxation, offering broader benefits including blood pressure and stress reduction. For sleep onset issues, Melatonin is typically more effective; for overall sleep quality with additional health benefits, Magnesium is the better choice.',
+        verdict: 'Both Magnesium and Melatonin are Tier 1 (Strong Evidence) for sleep support, but they work through entirely different mechanisms. Melatonin directly regulates the circadian clock and is most effective for sleep onset and jet lag. Magnesium promotes relaxation through GABA modulation and muscle relaxation, offering broader benefits including cardiovascular and stress management support. For sleep onset issues, Melatonin is typically more effective; for overall sleep quality with additional health benefits, Magnesium is the better choice.',
         whoShouldChoose: [
             { scenario: 'Difficulty falling asleep', recommendation: 'Melatonin', reason: 'Directly reduces sleep onset latency by signaling the circadian system that it is time to sleep.' },
             { scenario: 'Jet lag or shift work', recommendation: 'Melatonin', reason: 'Uniquely effective for circadian rhythm resetting; Magnesium does not address circadian disruption.' },
@@ -104,12 +104,12 @@ const COMPARISONS = [
         whoShouldChoose: [
             { scenario: 'High triglycerides', recommendation: 'Omega-3 Fatty Acids', reason: 'Strong evidence for triglyceride reduction (15-30% at therapeutic doses); primary FDA-approved indication.' },
             { scenario: 'General heart disease prevention', recommendation: 'Omega-3 Fatty Acids', reason: 'Broader cardiovascular evidence including mortality reduction, anti-inflammatory effects, and metabolic benefits.' },
-            { scenario: 'Statin users', recommendation: 'CoQ10', reason: 'Statins deplete CoQ10 levels; supplementation may reduce statin-related muscle pain and support energy production.' },
+            { scenario: 'Statin users', recommendation: 'CoQ10', reason: 'Statins deplete CoQ10 levels; supplementation may support muscle comfort and energy production.' },
             { scenario: 'Heart failure', recommendation: 'CoQ10', reason: 'Specific evidence for improving heart function parameters and exercise tolerance in heart failure patients.' },
             { scenario: 'Anti-aging & energy', recommendation: 'CoQ10', reason: 'Central role in mitochondrial energy production; declines with age, making supplementation more relevant for older adults.' },
             { scenario: 'Comprehensive cardiovascular support', recommendation: 'Both', reason: 'Complementary mechanisms — Omega-3 for inflammation and lipids, CoQ10 for energy production and endothelial function.' }
         ],
-        canStack: 'Yes — Omega-3 and CoQ10 are commonly combined for comprehensive cardiovascular support. Their mechanisms are fully complementary: Omega-3 reduces inflammation, lowers triglycerides, and improves cell membrane fluidity, while CoQ10 supports mitochondrial energy production and endothelial function. Many cardiologists recommend this combination, especially for patients on statins. Take both with a fat-containing meal for optimal absorption. No known adverse interactions.',
+        canStack: 'Yes — Omega-3 and CoQ10 are commonly combined for comprehensive cardiovascular support. Their mechanisms are fully complementary: Omega-3 supports a healthy inflammatory response, supports healthy triglyceride levels, and promotes cell membrane fluidity, while CoQ10 supports mitochondrial energy production and endothelial function. This combination is widely used, especially alongside statin therapy. Take both with a fat-containing meal for optimal absorption. No known adverse interactions.',
         relatedGuides: [
             { title: 'Cardiovascular Health Guide', url: '../guides/cardiovascular.html' }
         ],
@@ -342,6 +342,17 @@ function generateComparePage(comp) {
                 <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
                 <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
             </div>
+        </div>
+
+        <!-- Trust Signal Bar -->
+        <div class="trust-bar">
+            <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
         </div>
 
         <div class="guide-layout">
@@ -712,6 +723,7 @@ function generateComparePage(comp) {
             <div style="margin-bottom:1rem;">
                 <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
                 <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
+                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
                 <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
                 <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
                 <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Methodology | SupplementDB — Evidence Rating &amp; Verification Process</title>
+    <meta name="description" content="Understand how SupplementDB evaluates supplement evidence. Our 4-tier rating system, citation verification process, and research methodology ensure every recommendation is backed by peer-reviewed science.">
+    <link rel="canonical" href="https://supplementdb.co/methodology.html">
+    <meta property="og:title" content="Research Methodology | SupplementDB">
+    <meta property="og:description" content="Our evidence rating system, citation verification process, and research standards. Learn how we evaluate 471+ studies across 93 supplements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supplementdb.co/methodology.html">
+    <meta property="og:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="SupplementDB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Research Methodology | SupplementDB">
+    <meta name="twitter:description" content="Our evidence rating system, citation verification process, and research standards.">
+    <meta name="twitter:image" content="https://supplementdb.co/assets/og-default.svg">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="legal/legal-shared.css">
+    <style>
+        /* Methodology-specific enhancements */
+        .method-pipeline { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+        .method-step {
+            flex: 1; min-width: 200px; background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius); padding: 1.25rem; position: relative; text-align: center;
+        }
+        .method-step::after {
+            content: '→'; position: absolute; right: -0.85rem; top: 50%; transform: translateY(-50%);
+            font-size: 1.25rem; color: var(--accent); font-weight: 700;
+        }
+        .method-step:last-child::after { display: none; }
+        .method-step .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: #fff;
+            font-weight: 700; font-size: 0.85rem; margin-bottom: 0.5rem;
+        }
+        .method-step h4 { font-family: var(--font-serif); font-size: 0.95rem; margin: 0.5rem 0 0.25rem; color: var(--text-primary); }
+        .method-step p { font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+        .trust-badge-row { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+        .trust-badge {
+            flex: 1; min-width: 160px; display: flex; align-items: center; gap: 0.75rem;
+            background: var(--accent-bg); border: 1px solid #c8e0cf; border-radius: var(--radius);
+            padding: 1rem 1.25rem;
+        }
+        .trust-badge i { color: var(--accent); font-size: 1.25rem; flex-shrink: 0; }
+        .trust-badge .badge-text { font-size: 0.85rem; line-height: 1.4; }
+        .trust-badge .badge-text strong { display: block; color: var(--text-primary); font-size: 0.9rem; }
+        .trust-badge .badge-text span { color: var(--text-secondary); }
+
+        .tier-visual { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
+        .tier-card {
+            display: flex; align-items: stretch; background: var(--bg-card);
+            border: 1px solid var(--border-color); border-radius: var(--radius); overflow: hidden;
+        }
+        .tier-indicator {
+            width: 6px; flex-shrink: 0;
+        }
+        .tier-indicator.tier-1 { background: #059669; }
+        .tier-indicator.tier-2 { background: #2563eb; }
+        .tier-indicator.tier-3 { background: #d97706; }
+        .tier-indicator.tier-4 { background: #6b7280; }
+        .tier-body { padding: 1.25rem; flex: 1; }
+        .tier-body h4 { font-family: var(--font-serif); margin: 0 0 0.5rem; font-size: 1.05rem; }
+        .tier-body .tier-label { font-weight: 600; }
+        .tier-body .tier-label.t1 { color: #059669; }
+        .tier-body .tier-label.t2 { color: #2563eb; }
+        .tier-body .tier-label.t3 { color: #d97706; }
+        .tier-body .tier-label.t4 { color: #6b7280; }
+        .tier-body .tier-criteria { font-size: 0.9rem; color: var(--text-secondary); margin: 0.25rem 0; }
+        .tier-body .tier-examples { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+        .verification-matrix { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .verification-matrix th, .verification-matrix td {
+            padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 0.9rem;
+        }
+        .verification-matrix th { background: var(--accent-bg); font-weight: 600; color: var(--text-primary); }
+        .verification-matrix .check { color: #059669; font-weight: 700; }
+        .verification-matrix .partial { color: #d97706; }
+
+        .fda-compliance-box {
+            background: #fef3c7; border: 1px solid #f59e0b; border-left: 4px solid #f59e0b;
+            border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+        }
+        .fda-compliance-box h4 { margin: 0 0 0.5rem; color: #92400e; font-family: var(--font-serif); }
+        .fda-compliance-box p { color: #92400e; font-size: 0.9rem; margin: 0; line-height: 1.6; }
+
+        @media (max-width: 640px) {
+            .method-pipeline { flex-direction: column; }
+            .method-step::after { content: '↓'; right: auto; bottom: -1rem; top: auto; left: 50%; transform: translateX(-50%); }
+            .trust-badge-row { flex-direction: column; }
+        }
+    </style>
+
+    <!-- Structured Data: WebPage + FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Research Methodology",
+        "description": "SupplementDB's evidence rating system, citation verification process, and research methodology standards.",
+        "url": "https://supplementdb.co/methodology.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "SupplementDB",
+            "url": "https://supplementdb.co"
+        },
+        "about": {
+            "@type": "MedicalScholarlyArticle",
+            "name": "SupplementDB Evidence Review Methodology",
+            "articleBody": "Systematic methodology for evaluating dietary supplement evidence from peer-reviewed research."
+        },
+        "mainEntity": {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does SupplementDB rate supplement evidence?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "SupplementDB uses a 4-tier evidence rating system based on the quality, quantity, and consistency of published clinical research. Tier 1 (Strong Evidence) requires multiple large RCTs and meta-analyses. Tier 4 (Emerging) indicates primarily preclinical research."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are SupplementDB's citations verified?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Every citation undergoes DOI resolution verification, PMID cross-referencing against PubMed, author/journal confirmation, study type classification, and sample size extraction. All 471+ citations are individually verified."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does SupplementDB make health claims?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. SupplementDB reports published research findings using FDA-compliant structure/function language. We do not claim any supplement can diagnose, treat, cure, or prevent any disease. Our automated FDA compliance audit verifies this across all content."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body class="legal-page">
+    <!-- Navigation -->
+    <nav class="legal-nav">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-pills text-xl"></i>
+                <span class="font-bold text-lg">SupplementDB</span>
+            </a>
+            <a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                <i class="fas fa-arrow-left mr-1"></i> Back to Database
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="legal-content">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+            <h1>Research Methodology</h1>
+            <p class="legal-updated">How we evaluate, verify, and present supplement evidence</p>
+
+            <!-- Trust Badges -->
+            <div class="trust-badge-row">
+                <div class="trust-badge">
+                    <i class="fas fa-flask"></i>
+                    <div class="badge-text">
+                        <strong>471+ Verified Citations</strong>
+                        <span>Every DOI &amp; PMID confirmed</span>
+                    </div>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="badge-text">
+                        <strong>FDA-Compliant Language</strong>
+                        <span>Automated audit verified</span>
+                    </div>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-ban"></i>
+                    <div class="badge-text">
+                        <strong>No Industry Funding</strong>
+                        <span>Zero conflicts of interest</span>
+                    </div>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-sync-alt"></i>
+                    <div class="badge-text">
+                        <strong>Regularly Updated</strong>
+                        <span>New research integrated continuously</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Research Pipeline -->
+            <section class="legal-section" id="research-pipeline">
+                <h2>1. Evidence Evaluation Pipeline</h2>
+                <p>Every supplement in the SupplementDB database passes through a structured five-stage evaluation pipeline before publication. This process ensures that all data points are accurate, traceable, and presented using appropriate scientific language.</p>
+
+                <div class="method-pipeline">
+                    <div class="method-step">
+                        <div class="step-num">1</div>
+                        <h4>Literature Search</h4>
+                        <p>Systematic search across PubMed, PMC, Cochrane, bioRxiv, and ClinicalTrials.gov</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">2</div>
+                        <h4>Citation Verification</h4>
+                        <p>DOI resolution, PMID cross-referencing, author/journal confirmation</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">3</div>
+                        <h4>Data Extraction</h4>
+                        <p>Benefits, dosages, mechanisms, safety, effect sizes from published studies</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">4</div>
+                        <h4>Evidence Rating</h4>
+                        <p>4-tier classification based on research quality, quantity, and consistency</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-num">5</div>
+                        <h4>Compliance Audit</h4>
+                        <p>Automated FDA claim language scan across all consumer-facing content</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Evidence Tier System -->
+            <section class="legal-section" id="evidence-tiers">
+                <h2>2. Evidence Tier System</h2>
+                <p>Each supplement receives a tier rating that reflects the current state of published clinical research. Higher tiers indicate more robust evidence — not necessarily greater effectiveness.</p>
+
+                <div class="tier-visual">
+                    <div class="tier-card">
+                        <div class="tier-indicator tier-1"></div>
+                        <div class="tier-body">
+                            <h4><span class="tier-label t1">Tier 1 — Strong Evidence</span></h4>
+                            <p class="tier-criteria">Consistent findings across multiple large RCTs (n&gt;200 each), supported by at least one systematic review or meta-analysis. High confidence in reported effects.</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> 5+ RCTs, 1+ meta-analyses, large sample sizes &bull; <strong>Examples:</strong> Omega-3, Magnesium, Creatine, Ashwagandha</p>
+                        </div>
+                    </div>
+                    <div class="tier-card">
+                        <div class="tier-indicator tier-2"></div>
+                        <div class="tier-body">
+                            <h4><span class="tier-label t2">Tier 2 — Moderate Evidence</span></h4>
+                            <p class="tier-criteria">Multiple RCTs with moderate sample sizes showing generally consistent results. Some meta-analytic support but may have limitations in study design or population diversity.</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> 3+ RCTs, n=50&ndash;200, some meta-analyses &bull; <strong>Examples:</strong> Rhodiola Rosea, CoQ10, NAC, Berberine</p>
+                        </div>
+                    </div>
+                    <div class="tier-card">
+                        <div class="tier-indicator tier-3"></div>
+                        <div class="tier-body">
+                            <h4><span class="tier-label t3">Tier 3 — Preliminary Evidence</span></h4>
+                            <p class="tier-criteria">Limited RCTs available. Evidence is drawn primarily from smaller trials, observational studies, or studies with mixed results. Promising but not yet well-established.</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> 1&ndash;2 RCTs, mostly small samples (n&lt;50), observational data &bull; <strong>Examples:</strong> Lion's Mane, PQQ, Phosphatidylserine</p>
+                        </div>
+                    </div>
+                    <div class="tier-card">
+                        <div class="tier-indicator tier-4"></div>
+                        <div class="tier-body">
+                            <h4><span class="tier-label t4">Tier 4 — Emerging Evidence</span></h4>
+                            <p class="tier-criteria">Primarily preclinical research (cell culture, animal models) or very early-phase human investigations. Mechanisms may be well-characterized but human clinical data is limited.</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> In vitro/animal studies, pilot trials &bull; <strong>Examples:</strong> Fisetin, Sulforaphane, Cistanche</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p><strong>Critical distinction:</strong> Evidence tiers measure <em>research maturity</em>, not supplement effectiveness. A Tier 4 supplement may be effective but under-studied, while a Tier 1 supplement has extensive clinical validation. Tiers are updated as new research is published.</p>
+            </section>
+
+            <!-- Section 3: Citation Verification -->
+            <section class="legal-section" id="citation-verification">
+                <h2>3. Citation Verification Process</h2>
+                <p>Every citation in the SupplementDB library is individually verified through a multi-step process. This ensures that no data point in the database is based on fabricated, retracted, or misattributed research.</p>
+
+                <table class="verification-matrix">
+                    <thead>
+                        <tr>
+                            <th>Verification Step</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DOI Resolution</strong></td>
+                            <td>Each DOI is tested to confirm it resolves to the correct publication on the publisher's website</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> All 471+ verified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PMID Cross-Reference</strong></td>
+                            <td>PubMed IDs are validated against NLM records; title, authors, and journal are cross-checked</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> All PMIDs confirmed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Study Type Classification</strong></td>
+                            <td>Each study is categorized by design: RCT, meta-analysis, systematic review, cohort, pilot, etc.</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> All classified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sample Size Extraction</strong></td>
+                            <td>Participant counts are recorded from published methods sections for transparency</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> All extracted</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Effect Size Recording</strong></td>
+                            <td>Where reported, standardized effect sizes (Cohen's d, SMD, OR, RR) are documented</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> Available per supplement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Retraction Monitoring</strong></td>
+                            <td>Citations are checked against the Retraction Watch database for retractions or corrections</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> Monitored</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 4: Data Sources -->
+            <section class="legal-section" id="data-sources">
+                <h2>4. Data Sources &amp; Evidence Hierarchy</h2>
+                <p>We draw from established biomedical databases and prioritize evidence according to a strict hierarchy based on study design quality:</p>
+
+                <h3>Primary Databases</h3>
+                <ul>
+                    <li><strong>PubMed / MEDLINE</strong> &mdash; 36+ million biomedical citations from the U.S. National Library of Medicine</li>
+                    <li><strong>PubMed Central (PMC)</strong> &mdash; Full-text archive for open-access biomedical literature</li>
+                    <li><strong>Cochrane Library</strong> &mdash; Gold-standard systematic reviews for evidence-based healthcare</li>
+                    <li><strong>ClinicalTrials.gov</strong> &mdash; Registry and results database for clinical studies</li>
+                    <li><strong>bioRxiv / medRxiv</strong> &mdash; Preprint servers for early research (clearly labeled when cited)</li>
+                </ul>
+
+                <h3>Evidence Hierarchy (Descending Strength)</h3>
+                <ol>
+                    <li><strong>Systematic reviews &amp; meta-analyses</strong> &mdash; Highest weight; pool data across multiple studies</li>
+                    <li><strong>Network meta-analyses</strong> &mdash; Compare interventions that may not have been directly studied head-to-head</li>
+                    <li><strong>Randomized controlled trials (RCTs)</strong> &mdash; The gold standard for individual study design</li>
+                    <li><strong>Cohort and observational studies</strong> &mdash; Valuable for long-term safety and real-world patterns</li>
+                    <li><strong>Mechanistic and preclinical studies</strong> &mdash; Inform biological plausibility, especially for Tier 4 supplements</li>
+                </ol>
+
+                <p class="legal-plain"><em>In plain language: We use the same evidence hierarchy that medical research uses — the strongest evidence comes from pooling many clinical trials together, not from any single study.</em></p>
+            </section>
+
+            <!-- Section 5: FDA Compliance -->
+            <section class="legal-section" id="fda-compliance">
+                <h2>5. FDA Compliance &amp; Language Standards</h2>
+
+                <div class="fda-compliance-box">
+                    <h4><i class="fas fa-exclamation-triangle mr-2"></i>FDA Disclosure</h4>
+                    <p>These statements have not been evaluated by the Food and Drug Administration. The products and supplements discussed on this website are not intended to diagnose, treat, cure, or prevent any disease.</p>
+                </div>
+
+                <p>All consumer-facing content on SupplementDB adheres to FDA structure/function claim guidelines. We employ an automated compliance audit system that scans every data field and generated page for prohibited disease claim language.</p>
+
+                <h3>Permitted Language (Structure/Function Claims)</h3>
+                <ul>
+                    <li>"Supports immune system function" &mdash; describes a body system function</li>
+                    <li>"Promotes healthy sleep onset" &mdash; describes a normal body process</li>
+                    <li>"Supports cardiovascular health" &mdash; general wellness claim</li>
+                    <li>"Supports healthy cholesterol levels already in the normal range" &mdash; qualifies the biomarker claim</li>
+                </ul>
+
+                <h3>Prohibited Language (Disease Claims)</h3>
+                <ul>
+                    <li>"Cures arthritis" &mdash; direct disease claim, requires drug approval</li>
+                    <li>"Prevents cancer" &mdash; disease prevention claim, requires FDA authorization</li>
+                    <li>"Lowers blood pressure" &mdash; implicit disease claim without qualifying language</li>
+                    <li>"Clinically proven to..." &mdash; implies drug-level evidence</li>
+                </ul>
+
+                <h3>Automated Compliance Audit</h3>
+                <p>SupplementDB runs an automated FDA claim language audit (<code>audit-fda-claims.js</code>) that scans:</p>
+                <ul>
+                    <li><strong>93 supplement data entries</strong> &mdash; all consumer-facing benefit descriptions, mechanisms, and rationale fields</li>
+                    <li><strong>23+ generated HTML pages</strong> &mdash; all guides, categories, comparisons, and informational pages</li>
+                    <li><strong>3 page generator templates</strong> &mdash; ensuring template strings don't introduce non-compliant language</li>
+                </ul>
+                <p>The audit flags violations at four severity levels (Critical, High, Medium, Low) and must pass with zero Critical or High findings before any content update is published. Context-aware exemptions prevent false positives from research citation titles, disclaimer text, and safety warnings.</p>
+            </section>
+
+            <!-- Section 6: Data Extraction Standards -->
+            <section class="legal-section" id="data-extraction">
+                <h2>6. Data Extraction Standards</h2>
+                <p>For each of the 93 supplements in the database, we extract and standardize the following information from published research:</p>
+
+                <table class="verification-matrix">
+                    <thead>
+                        <tr>
+                            <th>Data Field</th>
+                            <th>Source</th>
+                            <th>Standardization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Benefits</strong></td>
+                            <td>Published RCTs and meta-analyses</td>
+                            <td>FDA-compliant structure/function language</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dosage Range</strong></td>
+                            <td>Clinical study protocols</td>
+                            <td>Ranges as used in research; standardization noted</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mechanisms of Action</strong></td>
+                            <td>Mechanistic studies + review papers</td>
+                            <td>Biological pathway descriptions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Safety Profile</strong></td>
+                            <td>Published adverse event data, interaction databases</td>
+                            <td>Side effects, contraindications, drug interactions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Effect Sizes</strong></td>
+                            <td>Individual RCTs and meta-analyses</td>
+                            <td>Cohen's d, SMD, OR, RR with study details and n-counts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Study Populations</strong></td>
+                            <td>Published inclusion/exclusion criteria</td>
+                            <td>Descriptive labels (e.g., "healthy adults," "elderly")</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 7: Limitations & Transparency -->
+            <section class="legal-section" id="limitations">
+                <h2>7. Limitations &amp; Transparency</h2>
+                <p>Rigorous methodology does not eliminate all limitations. We believe transparent acknowledgment of these limitations is essential to maintaining trust:</p>
+                <ul>
+                    <li><strong>Publication bias</strong> &mdash; Published research over-represents positive findings. We note this limitation and include effect sizes where available so readers can assess practical significance</li>
+                    <li><strong>Research lag</strong> &mdash; A natural delay exists between publication and database integration. We track update dates per supplement</li>
+                    <li><strong>Individual variation</strong> &mdash; Clinical research reports population averages. Individual responses to supplements vary based on genetics, health status, and concurrent medications</li>
+                    <li><strong>Supplement quality variability</strong> &mdash; Research studies use standardized extracts. Commercial supplement quality varies by manufacturer. We note standardization requirements where relevant</li>
+                    <li><strong>Not medical advice</strong> &mdash; SupplementDB is an informational resource. Always consult a qualified healthcare professional before starting any supplement regimen</li>
+                </ul>
+            </section>
+
+            <!-- Section 8: Editorial Independence -->
+            <section class="legal-section" id="editorial-independence">
+                <h2>8. Editorial Independence</h2>
+                <ul>
+                    <li><strong>No supplement sales</strong> &mdash; SupplementDB does not sell supplements, accept supplement advertising, or receive manufacturer funding</li>
+                    <li><strong>No affiliate revenue from supplement brands</strong> &mdash; Our data is not influenced by commercial relationships</li>
+                    <li><strong>Open methodology</strong> &mdash; Our evidence evaluation criteria, tier system, and compliance standards are fully documented on this page</li>
+                    <li><strong>Correction policy</strong> &mdash; If you identify a citation error, outdated data, or language concern, contact us at <a href="mailto:research@supplementdb.com">research@supplementdb.com</a> with the relevant DOI or PMID. We will review and update the record</li>
+                </ul>
+            </section>
+
+            <!-- Cross-links -->
+            <div class="legal-links-box">
+                <h3>Related Pages</h3>
+                <ul>
+                    <li><a href="about.html"><i class="fas fa-info-circle mr-2"></i>About SupplementDB</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle mr-2"></i>Frequently Asked Questions</a></li>
+                    <li><a href="legal/disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Medical Disclaimer</a></li>
+                    <li><a href="legal/privacy.html"><i class="fas fa-shield-alt mr-2"></i>Privacy Policy</a></li>
+                    <li><a href="legal/terms.html"><i class="fas fa-file-contract mr-2"></i>Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="legal-footer">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p class="mt-2 text-sm text-gray-400">
+                <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
