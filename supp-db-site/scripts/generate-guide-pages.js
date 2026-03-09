@@ -436,16 +436,19 @@ function generateGuidePage(guide, allSupplements) {
     <meta property="og:description" content="${esc(guide.metaDescription)}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://supplementdb.co/guides/${guide.slug}.html">
-    <meta property="og:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta property="og:image" content="https://supplementdb.co/assets/og-guide-${guide.slug}.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(guide.metaTitle)}">
     <meta name="twitter:description" content="${esc(guide.metaDescription)}">
-    <meta name="twitter:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta name="twitter:image" content="https://supplementdb.co/assets/og-guide-${guide.slug}.svg">
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJDOC4yNzMgMiAyIDguMjczIDIgMTZTOC4yNzMgMzAgMTYgMzBTMzAgMjMuNzI3IDMwIDE2UzIzLjcyNyAyIDE2IDJaTTE2IDI2QzEwLjQ3NyAyNiA2IDIxLjUyMyA2IDE2UzEwLjQ3NyA2IDE2IDZTMjYgMTAuNDc3IDI2IDE2UzIxLjUyMyAyNiAxNiAyNloiIGZpbGw9IiM2MzY2RjEiLz4KPHBhdGggZD0iTTIwIDEySDEyQzExLjQ0OCAxMiAxMSAxMi40NDggMTEgMTNWMTlDMTEgMTkuNTUyIDExLjQ0OCAyMCAxMiAyMEgyMEMyMC41NTIgMjAgMjEgMTkuNTUyIDIxIDE5VjEzQzIxIDEyLjQ0OCAyMC41NTIgMTIgMjAgMTJaIiBmaWxsPSIjNjM2NkYxIi8+Cjwvc3ZnPgo=">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 
     <!-- PostHog Analytics -->
     <script>
@@ -508,6 +511,19 @@ function generateGuidePage(guide, allSupplements) {
             </div>
         </div>
     </section>
+
+    <!-- Share Bar -->
+    <div class="share-bar">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="share-bar-label">Share this guide</span>
+            <div class="share-bar-buttons">
+                <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+                <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+                <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
+                <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content with optional TOC -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -799,6 +815,30 @@ function generateGuidePage(guide, allSupplements) {
                 </section>
 `;
 
+    // ── Email Capture ─────────────────────────────────────────────────────
+    html += `
+                <!-- Email Capture -->
+                <section class="newsletter-section" id="subscribe">
+                    <div class="newsletter-inner">
+                        <h3><i class="fas fa-envelope-open-text"></i> Get ${esc(guide.title)} Research Updates</h3>
+                        <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
+                        <div id="guide-newsletter-container">
+                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
+                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                            </form>
+                            <p id="guide-newsletter-success" class="newsletter-success hidden">
+                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
+                            </p>
+                            <p id="guide-newsletter-already" class="newsletter-already hidden">
+                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
+                            </p>
+                        </div>
+                        <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../legal/privacy.html">Privacy Policy</a></p>
+                    </div>
+                </section>
+`;
+
     // ── Related Content ───────────────────────────────────────────────────
     html += `
                 <!-- Related Content -->
@@ -869,7 +909,41 @@ function generateGuidePage(guide, allSupplements) {
                 a.classList.toggle('active', a.getAttribute('href') === '#' + (active ? active.id : ''));
             });
         });
+
+        // Guide newsletter handler
+        window.handleGuideNewsletter = function(e) {
+            e.preventDefault();
+            var email = document.getElementById('guide-newsletter-email').value.trim();
+            if (!email) return false;
+            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
+            if (subscribed.indexOf(email) !== -1) {
+                document.getElementById('guide-newsletter-form').classList.add('hidden');
+                document.getElementById('guide-newsletter-already').classList.remove('hidden');
+                return false;
+            }
+            if (typeof posthog !== 'undefined') {
+                posthog.identify(email);
+                posthog.people.set({
+                    email: email,
+                    newsletter_subscribed: true,
+                    subscribed_guide: '${guide.slug}',
+                    signup_source: 'guide_${guide.slug}',
+                    signup_date: new Date().toISOString()
+                });
+                posthog.capture('guide_email_captured', {
+                    source: 'guide',
+                    guide_slug: '${guide.slug}',
+                    email: email
+                });
+            }
+            subscribed.push(email);
+            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
+            document.getElementById('guide-newsletter-form').classList.add('hidden');
+            document.getElementById('guide-newsletter-success').classList.remove('hidden');
+            return false;
+        };
     </script>
+    <script src="../js/share-bar.js"></script>
 </body>
 </html>`;
 

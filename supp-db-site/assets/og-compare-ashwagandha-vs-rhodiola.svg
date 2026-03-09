@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafaf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f7f3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5a3d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a7d5c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)" />
+  <!-- Bottom accent bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#accent)" />
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="6" height="630" fill="#2d5a3d" opacity="0.3" />
+
+  <!-- Decorative grid dots -->
+  <g fill="#2d5a3d" opacity="0.06">
+    <circle cx="80" cy="80" r="3" /><circle cx="120" cy="80" r="3" /><circle cx="160" cy="80" r="3" />
+    <circle cx="80" cy="120" r="3" /><circle cx="120" cy="120" r="3" /><circle cx="160" cy="120" r="3" />
+    <circle cx="80" cy="160" r="3" /><circle cx="120" cy="160" r="3" /><circle cx="160" cy="160" r="3" />
+    <circle cx="1040" cy="470" r="3" /><circle cx="1080" cy="470" r="3" /><circle cx="1120" cy="470" r="3" />
+    <circle cx="1040" cy="510" r="3" /><circle cx="1080" cy="510" r="3" /><circle cx="1120" cy="510" r="3" />
+    <circle cx="1040" cy="550" r="3" /><circle cx="1080" cy="550" r="3" /><circle cx="1120" cy="550" r="3" />
+  </g>
+
+  <!-- Logo mark -->
+  <g transform="translate(100, 190)">
+    <circle cx="45" cy="45" r="42" fill="#2d5a3d"/>
+    <rect x="30" y="18" width="30" height="54" rx="15" fill="none" stroke="white" stroke-width="2.5"/>
+    <line x1="30" y1="45" x2="60" y2="45" stroke="white" stroke-width="1.8"/>
+    <path d="M45 18C36.716 18 30 24.716 30 33V45H60V33C60 24.716 53.284 18 45 18Z" fill="white" opacity="0.35"/>
+    <path d="M30 45V57C30 65.284 36.716 72 45 72C53.284 72 60 65.284 60 57V45H30Z" fill="white" opacity="0.85"/>
+  </g>
+
+  <!-- Badge -->
+  <rect x="210" y="195" width="122" height="30" rx="15" fill="#2d5a3d" opacity="0.12"/>
+  <text x="226" y="215" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" fill="#2d5a3d" font-weight="600">COMPARISON</text>
+
+  <!-- Title -->
+  <text x="210" y="275" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#1a1a2e" letter-spacing="-1">Ashwagandha vs Rhodiola</text>
+
+  <!-- Subtitle -->
+  <text x="210" y="325" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#4a4a6a" font-weight="400">Head-to-Head Comparison for Stress &amp; Adaptogens</text>
+
+  <!-- Stats bar -->
+  <g transform="translate(210, 375)">
+    <text font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#2d5a3d" font-weight="600">Clinical Evidence</text>
+    <text x="220" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#9ca3af">|</text>
+    <text x="244" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#2d5a3d" font-weight="600">Dosage &amp; Safety</text>
+    <text x="510" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#9ca3af">|</text>
+    <text x="534" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#2d5a3d" font-weight="600">Expert Verdict</text>
+  </g>
+
+  <!-- Divider line -->
+  <line x1="210" y1="425" x2="940" y2="425" stroke="#2d5a3d" stroke-width="1" opacity="0.2" />
+
+  <!-- Domain / tagline -->
+  <text x="210" y="465" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="#6b7280" font-weight="400">Head-to-Head Comparison for Stress &amp; Adaptogens</text>
+
+  <!-- URL -->
+  <text x="210" y="540" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="#2d5a3d" font-weight="500">supplementdb.co</text>
+</svg>

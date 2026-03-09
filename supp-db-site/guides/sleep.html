@@ -11,7 +11,7 @@
     <meta property="og:description" content="Systematic review of 7 supplements for sleep quality across 126 research citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://supplementdb.co/guides/sleep.html">
-    <meta property="og:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta property="og:image" content="https://supplementdb.co/assets/og-guide-sleep.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SupplementDB">
@@ -19,10 +19,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Evidence-Based Supplements for Sleep | Sleep Evidence Guide">
     <meta name="twitter:description" content="Systematic review of 7 supplements for sleep quality across 126 research citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
-    <meta name="twitter:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta name="twitter:image" content="https://supplementdb.co/assets/og-guide-sleep.svg">
 
     <!-- Favicon (same as parent) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJDOC4yNzMgMiAyIDguMjczIDIgMTZTOC4yNzMgMzAgMTYgMzBTMzAgMjMuNzI3IDMwIDE2UzIzLjcyNyAyIDE2IDJaTTE2IDI2QzEwLjQ3NyAyNiA2IDIxLjUyMyA2IDE2UzEwLjQ3NyA2IDE2IDZTMjYgMTAuNDc3IDI2IDE2UzIxLjUyMyAyNiAxNiAyNloiIGZpbGw9IiM2MzY2RjEiLz4KPHBhdGggZD0iTTIwIDEySDEyQzExLjQ0OCAxMiAxMSAxMi40NDggMTEgMTNWMTlDMTEgMTkuNTUyIDExLjQ0OCAyMCAxMiAyMEgyMEMyMC41NTIgMjAgMjEgMTkuNTUyIDIxIDE5VjEzQzIxIDEyLjQ0OCAyMC41NTIgMTIgMjAgMTJaIiBmaWxsPSIjNjM2NkYxIi8+Cjwvc3ZnPgo=">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 
     <!-- PostHog Analytics -->
     <script>
@@ -418,6 +421,18 @@
     </div>
 </header>
 
+<!-- Share Bar -->
+<div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <span class="share-bar-label" style="color: var(--text-muted);">Share this guide</span>
+        <div class="share-bar-buttons">
+            <button class="share-btn" data-share="twitter" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+            <button class="share-btn" data-share="linkedin" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+            <button class="share-btn" data-share="facebook" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-facebook"></i> Facebook</button>
+            <button class="share-btn share-btn-copy" data-share="copy" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fas fa-link"></i> Copy Link</button>
+        </div>
+    </div>
+</div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- QUICK EVIDENCE SUMMARY TABLE               -->
@@ -1291,36 +1306,62 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => observer.observe(el));
 });
 
-// Email capture form — frontend-only placeholder
+// Email capture form with PostHog + localStorage dedup
 document.getElementById('capture-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = this.querySelector('input[name="email"]').value;
+    const email = this.querySelector('input[name="email"]').value.trim();
+    if (!email) return;
     const btn = this.querySelector('button');
     const originalText = btn.textContent;
+
+    // Check localStorage dedup
+    var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
+    if (subscribed.indexOf(email) !== -1) {
+        btn.textContent = 'Already subscribed!';
+        btn.style.opacity = '0.7';
+        setTimeout(function() { btn.textContent = originalText; btn.style.opacity = '1'; }, 3000);
+        return;
+    }
 
     btn.textContent = 'Thank you!';
     btn.style.opacity = '0.7';
     btn.disabled = true;
 
-    // PostHog person identification
+    // PostHog person identification with rich properties
     if (typeof posthog !== 'undefined') {
         posthog.identify(email);
-        posthog.people.set({ email: email, guide_subscriber: true, subscribed_guide: 'sleep' });
+        posthog.people.set({
+            email: email,
+            newsletter_subscribed: true,
+            subscribed_guide: 'sleep',
+            signup_source: 'guide_sleep',
+            signup_date: new Date().toISOString()
+        });
+        posthog.capture('guide_email_captured', {
+            source: 'guide',
+            guide_slug: 'sleep',
+            email: email,
+            form_location: 'inline_cta'
+        });
     }
 
-    // Store locally for later backend integration
+    // Store to unified newsletter key for dedup
+    subscribed.push(email);
+    localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
+
+    // Also keep legacy key for backward compatibility
     try {
         const captures = JSON.parse(localStorage.getItem('guide_captures') || '[]');
-        captures.push({ email, guide: 'sleep', timestamp: new Date().toISOString() });
+        captures.push({ email: email, guide: 'sleep', timestamp: new Date().toISOString() });
         localStorage.setItem('guide_captures', JSON.stringify(captures));
-    } catch(e) { /* localStorage not available */ }
+    } catch(err) { /* localStorage not available */ }
 
-    setTimeout(() => {
+    setTimeout(function() {
         btn.textContent = originalText;
         btn.style.opacity = '1';
         btn.disabled = false;
-        this.reset();
     }, 3000);
+    this.reset();
 });
 
 // Smooth scroll for anchor links
@@ -1469,5 +1510,6 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 });
 </script>
 
+<script src="../js/share-bar.js"></script>
 </body>
 </html>

@@ -347,11 +347,95 @@ Phase 2 is now **COMPLETE**. The site has moved from a single-page database to a
 
 ---
 
+### Sprint 9 — March 9, 2026 (Night)
+**Session Focus:** Phase 3 — Brand & Strategic Positioning
+
+#### Goals
+- Fix purple favicon (#6366F1) → brand green (#2d5a3d) across all pages
+- Create proper SVG logo mark and full wordmark logo
+- Generate favicon PNG variants (16px, 32px, 180px apple-touch-icon)
+- Build privacy-respecting social sharing buttons for all content pages
+- Add newsletter/email capture with PostHog integration
+- Create page-specific OG images for social sharing
+- Brand consistency validation across 23+ pages
+
+#### Work Completed
+- **Brand Asset Suite:**
+  - `assets/logo-mark.svg` — 32×32 capsule pill icon in brand green circle
+  - `assets/favicon.svg` — SVG favicon for modern browsers
+  - `assets/logo-full.svg` — 1200×630 full wordmark for OG/social
+  - `assets/favicon-16x16.png`, `assets/favicon-32x32.png`, `assets/apple-touch-icon.png` — PNG variants via `sharp`
+  - `scripts/generate-favicons.js` — SVG→PNG conversion script
+
+- **Favicon Replacement (13 files):**
+  - Replaced purple base64 data URI with proper `<link>` tags across: `index.html`, `about.html`, `faq.html`, `guides/sleep.html`, 6 legal pages, 3 generator scripts
+  - All 13 generated content pages updated via generator re-run
+
+- **Schema.org Update:**
+  - Organization logo changed from `og-default.svg` to `logo-full.svg` in index.html JSON-LD
+
+- **Social Sharing Buttons:**
+  - `css/content-shared.css` — Share bar styles (`.share-bar`, `.share-btn`, dark theme overrides, newsletter section styles)
+  - `js/share-bar.js` — Zero-dependency vanilla JS: Twitter, LinkedIn, Facebook share + clipboard copy with PostHog tracking
+  - Share bar added to all 3 generator templates + manually to sleep guide (with dark theme styling)
+
+- **Newsletter / Email Capture:**
+  - `index.html` — Brand green gradient newsletter section above footer with `posthog.identify()`, `posthog.people.set()`, and localStorage dedup
+  - Guide generator — Email capture section with guide-specific PostHog properties between References and Related Content
+  - `guides/sleep.html` — Upgraded existing email capture: added localStorage dedup, richer `posthog.people.set()` properties, consistent event naming
+
+- **Page-Specific OG Images:**
+  - `scripts/generate-og-images.js` — Generates parameterized 1200×630 SVGs from supplement data
+  - 14 unique OG images: 4 guides, 4 comparisons, 6 categories
+  - All generators + sleep guide updated to reference page-specific OG images
+
+- **Brand Validation:**
+  - `scripts/validate-brand-assets.js` — Scans all 23 HTML pages for favicon, apple-touch-icon, OG image, and legacy purple references
+  - **Result: 23/23 pages pass**
+
+- **Generator Re-run:** All 3 generators re-run after template changes — 13 pages regenerated with favicons, share bars, email capture, and page-specific OG images
+
+#### Issues & Blockers
+- **index.html "file modified" error:** Favicon replacement script modified the file, causing Edit tool to reject subsequent Schema.org change — resolved by re-reading file
+- **parse-data.js API:** `loadSupplementData()` returns database object (not array) — OG image script needed `db.supplements` not `db`
+- **Sleep guide purple false positive:** Validator flagged `#6366f1` in CSS variables (legitimate dark theme accent, not old favicon) — resolved with more precise detection logic
+
+#### Metrics
+| Metric | Value |
+|--------|-------|
+| New Files Created | 22 (logos, favicons, OG images, scripts) |
+| Files Modified | 16+ (all HTML pages, generators, CSS) |
+| OG Images Generated | 14 page-specific SVGs |
+| Brand Validation | 23/23 pages pass |
+| Social Share Buttons | Added to all content pages |
+| Email Capture Points | 2 (homepage + guide pages) |
+| PostHog Events Added | `share_clicked`, `newsletter_signup`, `guide_email_captured` |
+| Console Errors | 0 |
+
+#### Decisions Made
+- **Enhanced PostHog-only email capture** — Avoided third-party services (Formspree, Mailchimp). `posthog.identify()` + `posthog.people.set()` creates Person records exportable via PostHog Cohorts. localStorage provides per-device dedup.
+- **SVG OG images** — Chose SVG over PNG for OG images due to infinite scalability and minimal file size. Most social platforms rasterize SVGs correctly.
+- **Zero-dependency social sharing** — No Twitter/Facebook SDKs loaded. Share buttons use `window.open()` with platform-specific intent URLs. Privacy-respecting by default.
+- **Dark theme share bar for sleep guide** — Inline styles override the standard clinical journal share bar aesthetic to match the sleep guide's dark indigo theme.
+- **Excluded test/debug files from validation** — `debug-page-content.html`, `test-enhanced-*.html` are development-only artifacts, not production pages.
+
+#### Reflections
+Phase 3 transforms SupplementDB from a database into a recognizable brand. The favicon fix alone was overdue — every page was showing a purple icon that didn't match the green design system. The social sharing infrastructure is particularly well-designed: zero third-party scripts, PostHog tracking for share analytics, and a copy-link feature with visual feedback.
+
+The newsletter capture being PostHog-native is a pragmatic choice for a static site — no email service costs, no backend needed, and the email data is queryable via PostHog's People API. When traffic grows enough to justify a dedicated email service, the migration path is straightforward: export the PostHog Cohort and import into whatever service is chosen.
+
+Phase 3 is now **COMPLETE**. All brand assets, social sharing, email capture, and OG images are in place and validated.
+
+---
+
 ## Backlog & Future Goals
 
-### Phase 3 — Brand & Strategic Positioning (Next)
-- [ ] Brand identity refinement (logo, favicon, social assets)
-- [ ] Newsletter/email capture system
+### Phase 3 — Brand & Strategic Positioning ✅ COMPLETE
+- [x] Brand identity refinement (logo, favicon, social assets)
+- [x] Newsletter/email capture system
+- [x] Page-specific OG images for social sharing
+- [x] Social sharing buttons on all content pages
+- [x] Brand consistency validation
 - [ ] Social media presence setup
 - [ ] Outreach strategy for backlink acquisition
 - [ ] Guest posting pipeline for health/wellness publications
