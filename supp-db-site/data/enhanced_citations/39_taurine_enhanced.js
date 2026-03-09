@@ -72,7 +72,7 @@ const taurineEnhanced = {
           },
           {
             "citationId": "ripps_2012_essential",
-            "title": "Review: taurine: a \"very essential\" amino acid"very essential\" amino acid",
+            "title": "Review: taurine: a \"very essential\" amino acid",
             "authors": ["Ripps H", "Shen W"],
             "year": 2012,
             "journal": "Molecular Vision",
