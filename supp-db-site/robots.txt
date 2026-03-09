@@ -1,0 +1,15 @@
+# SupplementDB — robots.txt
+# https://supplementdb.co/
+
+User-agent: *
+Allow: /
+Disallow: /content/provenance/
+Disallow: /content/audits/
+Disallow: /content/audience-summaries/
+Disallow: /content/newsletters/
+Disallow: /content/research-updates/
+Disallow: /data/
+Disallow: /js/
+
+# Sitemap
+Sitemap: https://supplementdb.co/sitemap.xml

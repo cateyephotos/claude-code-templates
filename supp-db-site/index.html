@@ -7,16 +7,73 @@
     <meta name="description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 471+ research papers and systematic reviews.">
     <meta name="keywords" content="supplements, cognitive health, mental health, evidence-based, nootropics, research">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://supplementdb.co/">
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Evidence-Based Supplement Database">
-    <meta property="og:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health">
+    <meta property="og:title" content="Evidence-Based Supplement Database | SupplementDB">
+    <meta property="og:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 471+ research papers and systematic reviews.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
+    <meta property="og:url" content="https://supplementdb.co/">
+    <meta property="og:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="SupplementDB">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Evidence-Based Supplement Database">
-    <meta name="twitter:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health">
+    <meta name="twitter:title" content="Evidence-Based Supplement Database | SupplementDB">
+    <meta name="twitter:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 471+ research papers and systematic reviews.">
+    <meta name="twitter:image" content="https://supplementdb.co/assets/og-default.svg">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://supplementdb.co/#website",
+                "name": "SupplementDB",
+                "url": "https://supplementdb.co/",
+                "description": "Comprehensive evidence-based supplement database for cognitive enhancement and mental health, backed by 471+ peer-reviewed research papers and systematic reviews.",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://supplementdb.co/?search={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://supplementdb.co/#organization",
+                "name": "SupplementDB",
+                "url": "https://supplementdb.co/",
+                "description": "Evidence-based supplement research database providing peer-reviewed clinical data on cognitive and mental health supplements.",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://supplementdb.co/assets/og-default.svg",
+                    "width": 1200,
+                    "height": 630
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://supplementdb.co/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://supplementdb.co/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJDOC4yNzMgMiAyIDguMjczIDIgMTZTOC4yNzMgMzAgMTYgMzBTMzAgMjMuNzI3IDMwIDE2UzIzLjcyNyAyIDE2IDJaTTE2IDI2QzEwLjQ3NyAyNiA2IDIxLjUyMyA2IDE2UzEwLjQ3NyA2IDE2IDZTMjYgMTAuNDc3IDI2IDE2UzIxLjUyMyAyNiAxNiAyNloiIGZpbGw9IiM2MzY2RjEiLz4KPHBhdGggZD0iTTIwIDEySDEyQzExLjQ0OCAxMiAxMSAxMi40NDggMTEgMTNWMTlDMTEgMTkuNTUyIDExLjQ0OCAyMCAxMiAyMEgyMEMyMC41NTIgMjAgMjEgMTkuNTUyIDIxIDE5VjEzQzIxIDEyLjQ0OCAyMC41NTIgMTIgMjAgMTJaIiBmaWxsPSIjNjM2NkYxIi8+Cjwvc3ZnPgo=">
@@ -273,7 +330,7 @@
                             <a href="#compare" class="text-gray-600 hover:text-green-800 px-3 py-2 rounded-md text-sm font-medium">Compare</a>
                             <a href="#calculator" class="text-gray-600 hover:text-green-800 px-3 py-2 rounded-md text-sm font-medium">Calculator</a>
                             <a href="#guides" class="text-gray-600 hover:text-green-800 px-3 py-2 rounded-md text-sm font-medium"><i class="fas fa-book-open mr-1 text-accent-400"></i>Evidence Guides</a>
-                            <a href="#about" class="text-gray-600 hover:text-green-800 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="about.html" class="text-gray-600 hover:text-green-800 px-3 py-2 rounded-md text-sm font-medium">About</a>
                         </div>
                     </div>
                 </div>
@@ -803,9 +860,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Resources</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="#methodology" class="hover:text-white transition-colors">Methodology</a></li>
-                        <li><a href="#citations" class="hover:text-white transition-colors">Citations</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="about.html#methodology" class="hover:text-white transition-colors">Methodology</a></li>
+                        <li><a href="about.html#data-sources" class="hover:text-white transition-colors">Citations</a></li>
+                        <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                 

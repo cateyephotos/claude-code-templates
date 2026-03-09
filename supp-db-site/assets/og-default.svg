@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafaf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f7f3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d5a3d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a7d5c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)" />
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#accent)" />
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="6" height="630" fill="#2d5a3d" opacity="0.3" />
+
+  <!-- Decorative grid dots -->
+  <g fill="#2d5a3d" opacity="0.06">
+    <circle cx="80" cy="80" r="3" /><circle cx="120" cy="80" r="3" /><circle cx="160" cy="80" r="3" />
+    <circle cx="80" cy="120" r="3" /><circle cx="120" cy="120" r="3" /><circle cx="160" cy="120" r="3" />
+    <circle cx="80" cy="160" r="3" /><circle cx="120" cy="160" r="3" /><circle cx="160" cy="160" r="3" />
+    <circle cx="1040" cy="470" r="3" /><circle cx="1080" cy="470" r="3" /><circle cx="1120" cy="470" r="3" />
+    <circle cx="1040" cy="510" r="3" /><circle cx="1080" cy="510" r="3" /><circle cx="1120" cy="510" r="3" />
+    <circle cx="1040" cy="550" r="3" /><circle cx="1080" cy="550" r="3" /><circle cx="1120" cy="550" r="3" />
+  </g>
+
+  <!-- Pills icon -->
+  <g transform="translate(100, 230)">
+    <circle cx="30" cy="30" r="28" fill="#2d5a3d" opacity="0.1" stroke="#2d5a3d" stroke-width="2" />
+    <rect x="18" y="14" width="24" height="32" rx="12" fill="none" stroke="#2d5a3d" stroke-width="2.5" />
+    <line x1="18" y1="30" x2="42" y2="30" stroke="#2d5a3d" stroke-width="1.5" />
+    <rect x="18" y="14" width="24" height="16" rx="12" fill="#2d5a3d" opacity="0.2" />
+  </g>
+
+  <!-- Title -->
+  <text x="170" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" fill="#1a1a2e" letter-spacing="-1">SupplementDB</text>
+
+  <!-- Subtitle -->
+  <text x="170" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#4a4a6a" font-weight="400">Evidence-Based Supplement Research Database</text>
+
+  <!-- Stats bar -->
+  <g transform="translate(170, 360)">
+    <!-- Stat 1 -->
+    <text font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#2d5a3d" font-weight="600">93 Supplements</text>
+    <text x="200" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#9ca3af">|</text>
+    <!-- Stat 2 -->
+    <text x="224" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#2d5a3d" font-weight="600">471+ Research Papers</text>
+    <text x="490" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#9ca3af">|</text>
+    <!-- Stat 3 -->
+    <text x="514" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" fill="#2d5a3d" font-weight="600">Peer-Reviewed Citations</text>
+  </g>
+
+  <!-- Divider line -->
+  <line x1="170" y1="410" x2="900" y2="410" stroke="#2d5a3d" stroke-width="1" opacity="0.2" />
+
+  <!-- Tagline -->
+  <text x="170" y="450" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="#6b7280" font-weight="400">Cognitive &amp; Mental Health | Clinical Evidence | Open Access</text>
+
+  <!-- URL -->
+  <text x="170" y="530" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="#2d5a3d" font-weight="500">supplementdb.co</text>
+</svg>
