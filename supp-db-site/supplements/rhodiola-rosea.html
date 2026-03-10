@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133444">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Rhodiola rosea","headline":"Rhodiola rosea — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Rhodiola rosea. Tier 2 evidence with 18+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/rhodiola-rosea.html"},"about":{"@type":"DietarySupplement","name":"Rhodiola rosea","alternateName":"Golden Root","activeIngredient":"Rhodiola rosea"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Adaptogens</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Adaptogens</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Rhodiola rosea</h1>
             
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Golden Root, Arctic Root, Rose Root</p>
+            <p class="common-names">Also known as: Golden Root, Arctic Root, Rose Root</p>
             <p class="hero-subtitle">Multiple RCTs with varying quality</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 18+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 18+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Adaptogens</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Rhodiola rosea is classified as adaptogens with moderate evidence (Tier 2) for its primary applications. Multiple RCTs with varying quality</p>
-                        <p style="margin-top:1rem;">Well-established adaptogenic herb with strong evidence for fatigue reduction through HPA axis modulation and Hsp70 pathways, stress adaptation at 200-600 mg/day standardized extract, cognitive performance enhancement, and emerging evidence for mild-moderate depression as a safer alternative to conventional antidepressants</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Fatigued adults; Stressed individuals; Students; Athletes</p>
+                        <p class="key-findings">Well-established adaptogenic herb with strong evidence for fatigue reduction through HPA axis modulation and Hsp70 pathways, stress adaptation at 200-600 mg/day standardized extract, cognitive performance enhancement, and emerging evidence for mild-moderate depression as a safer alternative to conventional antidepressants</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Fatigued adults; Stressed individuals; Students; Athletes</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">HPA axis modulation</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">HPA axis modulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Monoamine oxidase inhibition</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Monoamine oxidase inhibition</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Stress protein expression</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Stress protein expression</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Neurotransmitter balance</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Neurotransmitter balance</p>
                         </div>
                     </div>
                 </section>
@@ -188,26 +188,26 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mental fatigue reduction</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Stress-related cognitive improvement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Working memory under stress</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Mental fatigue reduction</li>
+                        <li>Stress-related cognitive improvement</li>
+                        <li>Working memory under stress</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Physical fatigue reduction</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Stress adaptation</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mood support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Exercise performance</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Physical fatigue reduction</li>
+                        <li>Stress adaptation</li>
+                        <li>Mood support</li>
+                        <li>Exercise performance</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -216,28 +216,28 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Fatigue</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate (d~0.38 TTE)</td>
+                                    <td class="effect-domain">Fatigue</td>
+                                    <td class="effect-value">Small to moderate (d~0.38 TTE)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Stress</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate</td>
+                                    <td class="effect-domain">Stress</td>
+                                    <td class="effect-value">Small to moderate</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Endurance VO2</strong></td>
-                                    <td style="font-size:0.85rem;">Small (ES=0.32, p&lt;0.01)</td>
+                                    <td class="effect-domain">Endurance VO2</td>
+                                    <td class="effect-value">Small (ES=0.32, p&lt;0.01)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Antioxidant SOD</strong></td>
-                                    <td style="font-size:0.85rem;">Large (ES=1.16)</td>
+                                    <td class="effect-domain">Antioxidant SOD</td>
+                                    <td class="effect-value">Large (ES=1.16)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Muscle Damage CK</strong></td>
-                                    <td style="font-size:0.85rem;">Large (ES=-0.84)</td>
+                                    <td class="effect-domain">Muscle Damage CK</td>
+                                    <td class="effect-value">Large (ES=-0.84)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Depression</strong></td>
-                                    <td style="font-size:0.85rem;">Significant vs placebo</td>
+                                    <td class="effect-domain">Depression</td>
+                                    <td class="effect-value">Significant vs placebo</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -256,293 +256,293 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Fatigued adults</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Stressed individuals</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Students</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Athletes</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Fatigued adults</li>
+                        <li>Stressed individuals</li>
+                        <li>Students</li>
+                        <li>Athletes</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Dizziness</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Dry mouth</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Sleep disturbances</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Dizziness</li>
+                        <li>Dry mouth</li>
+                        <li>Sleep disturbances</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Bipolar disorder</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Bipolar disorder</li>
+                            <li>Pregnancy</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">MAO inhibitors</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Diabetes medications</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>MAO inhibitors</li>
+                            <li>Diabetes medications</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 16 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Molecular mechanisms of stress adaptation through Hsp70, JNK, and cortisol pathways</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Evidence-based Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2009</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Multiple preclinical and clinical studies</span>
+                    <p class="section-intro">Detailed citation analysis from 16 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Molecular mechanisms of stress adaptation through Hsp70, JNK, and cortisol pathways</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Evidence-based Review</span>
+                <span class="evidence-tag">2009</span>
+                <span class="evidence-tag">n=Multiple preclinical and clinical studies</span>
                 
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Comprehensive review of adaptogen mechanisms in fatigue. Rhodiola rosea's active compounds (salidroside, rosavin) activate molecular chaperone Hsp70, inhibit stress-activated JNK pathway, modulate cortisol and nitric oxide levels, and influence DAF-16/FOXO transcription factors. These pathways mediate enhanced stress tolerance and fatigue resistance.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/19500070/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 19500070</a></p>
+            <p class="evidence-details">Comprehensive review of adaptogen mechanisms in fatigue. Rhodiola rosea's active compounds (salidroside, rosavin) activate molecular chaperone Hsp70, inhibit stress-activated JNK pathway, modulate cortisol and nitric oxide levels, and influence DAF-16/FOXO transcription factors. These pathways mediate enhanced stress tolerance and fatigue resistance.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/19500070/" target="_blank" rel="noopener">PubMed: 19500070</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Comprehensive pharmacological profile of Rhodiola rosea SHR-5 extract</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Comprehensive Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2010</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Chemical, pharmacological, and clinical data</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Comprehensive pharmacological profile of Rhodiola rosea SHR-5 extract</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Comprehensive Review</span>
+                <span class="evidence-tag">2010</span>
+                <span class="evidence-tag">n=Chemical, pharmacological, and clinical data</span>
                 
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Detailed review of R. rosea chemical composition (140+ identified compounds), pharmacological properties of SHR-5 standardized extract, and clinical efficacy data. Active compounds include salidroside, rosavins, and tyrosol with demonstrated adaptogenic, anti-fatigue, and cognitive-enhancing properties through multiple signaling pathways.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/20378318/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 20378318</a></p>
+            <p class="evidence-details">Detailed review of R. rosea chemical composition (140+ identified compounds), pharmacological properties of SHR-5 standardized extract, and clinical efficacy data. Active compounds include salidroside, rosavins, and tyrosol with demonstrated adaptogenic, anti-fatigue, and cognitive-enhancing properties through multiple signaling pathways.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/20378318/" target="_blank" rel="noopener">PubMed: 20378318</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Salidroside neuroprotection via BDNF/CREB signaling pathway</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Animal Study</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2016</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Rodent models of cognitive impairment</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Salidroside neuroprotection via BDNF/CREB signaling pathway</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Animal Study</span>
+                <span class="evidence-tag">2016</span>
+                <span class="evidence-tag">n=Rodent models of cognitive impairment</span>
                 
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Salidroside, the primary bioactive compound of Rhodiola rosea, demonstrated neuroprotective effects through upregulation of BDNF and CREB phosphorylation. Improved memory acquisition and retention, reduced anxiety-like and depression-like behaviors in animal models of stress-induced cognitive impairment.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/26967223/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 26967223</a></p>
+            <p class="evidence-details">Salidroside, the primary bioactive compound of Rhodiola rosea, demonstrated neuroprotective effects through upregulation of BDNF and CREB phosphorylation. Improved memory acquisition and retention, reduced anxiety-like and depression-like behaviors in animal models of stress-induced cognitive impairment.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/26967223/" target="_blank" rel="noopener">PubMed: 26967223</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Salidroside cardiovascular and metabolic protective mechanisms</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Comprehensive Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2021</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Multiple preclinical studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Salidroside cardiovascular and metabolic protective mechanisms</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Comprehensive Review</span>
+                <span class="evidence-tag">2021</span>
+                <span class="evidence-tag">n=Multiple preclinical studies</span>
                 
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Comprehensive review of salidroside's protective mechanisms in cardiovascular and metabolic disorders. Salidroside demonstrates anti-inflammatory, antioxidant, anti-apoptotic, and autophagy-regulating properties. Activates AMPK, Nrf2/HO-1, and PI3K/Akt pathways while inhibiting NF-kB and MAPK inflammatory signaling.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/33991395/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 33991395</a></p>
+            <p class="evidence-details">Comprehensive review of salidroside's protective mechanisms in cardiovascular and metabolic disorders. Salidroside demonstrates anti-inflammatory, antioxidant, anti-apoptotic, and autophagy-regulating properties. Activates AMPK, Nrf2/HO-1, and PI3K/Akt pathways while inhibiting NF-kB and MAPK inflammatory signaling.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/33991395/" target="_blank" rel="noopener">PubMed: 33991395</a></p>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Broad clinical effectiveness for stress, fatigue, and cognitive function</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Comprehensive Clinical Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2022</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Multiple RCTs and clinical studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Acute to 12 weeks</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Broad clinical effectiveness for stress, fatigue, and cognitive function</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong Evidence</span>
+                <span class="evidence-tag">Comprehensive Clinical Review</span>
+                <span class="evidence-tag">2022</span>
+                <span class="evidence-tag">n=Multiple RCTs and clinical studies</span>
+                <span class="evidence-tag">Acute to 12 weeks</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Comprehensive review of Rhodiola rosea clinical effectiveness. Strong evidence for reducing physical and mental fatigue, improving stress adaptation, and enhancing cognitive performance under stress conditions. Benefits observed in both healthy individuals under stress and clinical populations with burnout or chronic fatigue.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/35745023/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 35745023</a></p>
+            <p class="evidence-details">Comprehensive review of Rhodiola rosea clinical effectiveness. Strong evidence for reducing physical and mental fatigue, improving stress adaptation, and enhancing cognitive performance under stress conditions. Benefits observed in both healthy individuals under stress and clinical populations with burnout or chronic fatigue.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/35745023/" target="_blank" rel="noopener">PubMed: 35745023</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Chronic fatigue reduction with 400 mg/day standardized extract</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Open-label Clinical Study</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2017</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=100 subjects with prolonged or chronic fatigue</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">8 weeks</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Chronic fatigue reduction with 400 mg/day standardized extract</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong Evidence</span>
+                <span class="evidence-tag">Open-label Clinical Study</span>
+                <span class="evidence-tag">2017</span>
+                <span class="evidence-tag">n=100 subjects with prolonged or chronic fatigue</span>
+                <span class="evidence-tag">8 weeks</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Open-label study of 100 subjects with prolonged or chronic fatigue receiving Rhodiola rosea extract (WS 1375) at 400 mg/day for 8 weeks. Significant improvements in fatigue symptoms, with greatest improvement occurring during the first week. Clinically meaningful reductions in fatigue, impaired concentration, and decreased motivation.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/28219059/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 28219059</a></p>
+            <p class="evidence-details">Open-label study of 100 subjects with prolonged or chronic fatigue receiving Rhodiola rosea extract (WS 1375) at 400 mg/day for 8 weeks. Significant improvements in fatigue symptoms, with greatest improvement occurring during the first week. Clinically meaningful reductions in fatigue, impaired concentration, and decreased motivation.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/28219059/" target="_blank" rel="noopener">PubMed: 28219059</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Physical and cognitive performance improvement under stress</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Post-marketing Drug Monitoring Study</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2007</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=120 adults with physical and cognitive deficiencies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">12 weeks</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Physical and cognitive performance improvement under stress</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong Evidence</span>
+                <span class="evidence-tag">Post-marketing Drug Monitoring Study</span>
+                <span class="evidence-tag">2007</span>
+                <span class="evidence-tag">n=120 adults with physical and cognitive deficiencies</span>
+                <span class="evidence-tag">12 weeks</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Drug monitoring study of 120 adults with physical and cognitive deficiencies related to stress. Rhodiola extract significantly improved physical fitness, mental fatigue, psychomotor function, general well-being, and reduced neurovegetative complaints. 83% of patients showed improvement across multiple outcome measures.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/17901042/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 17901042</a></p>
+            <p class="evidence-details">Drug monitoring study of 120 adults with physical and cognitive deficiencies related to stress. Rhodiola extract significantly improved physical fitness, mental fatigue, psychomotor function, general well-being, and reduced neurovegetative complaints. 83% of patients showed improvement across multiple outcome measures.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/17901042/" target="_blank" rel="noopener">PubMed: 17901042</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Post-COVID fatigue and cognitive symptom improvement</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Randomized Controlled Trial</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2022</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=100 patients with post-COVID fatigue</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">12 weeks</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Post-COVID fatigue and cognitive symptom improvement</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate Evidence</span>
+                <span class="evidence-tag">Randomized Controlled Trial</span>
+                <span class="evidence-tag">2022</span>
+                <span class="evidence-tag">n=100 patients with post-COVID fatigue</span>
+                <span class="evidence-tag">12 weeks</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">RCT of adaptogen combination (Rhodiola-containing) in 100 patients with post-COVID fatigue syndrome. Significant improvement in fatigue severity, cognitive function, and quality of life measures compared to placebo. Supports adaptogenic herbs' role in managing persistent fatigue conditions.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/35337143/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 35337143</a></p>
+            <p class="evidence-details">RCT of adaptogen combination (Rhodiola-containing) in 100 patients with post-COVID fatigue syndrome. Significant improvement in fatigue severity, cognitive function, and quality of life measures compared to placebo. Supports adaptogenic herbs' role in managing persistent fatigue conditions.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/35337143/" target="_blank" rel="noopener">PubMed: 35337143</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Anxiety and stress reduction in mildly anxious adults</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Human RCT (Double-blind, Placebo-controlled)</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2015</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=80 mildly anxious adults</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">14 days at 400 mg/day</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Anxiety and stress reduction in mildly anxious adults</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong Evidence</span>
+                <span class="evidence-tag">Human RCT (Double-blind, Placebo-controlled)</span>
+                <span class="evidence-tag">2015</span>
+                <span class="evidence-tag">n=80 mildly anxious adults</span>
+                <span class="evidence-tag">14 days at 400 mg/day</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Double-blind RCT of 80 mildly anxious participants receiving 200 mg Rhodiola rosea extract twice daily for 14 days. Significant reductions in self-reported anxiety, stress, anger, confusion, and depression compared to placebo. Significant overall mood improvement with rapid onset of effects.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/26502953/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 26502953</a></p>
+            <p class="evidence-details">Double-blind RCT of 80 mildly anxious participants receiving 200 mg Rhodiola rosea extract twice daily for 14 days. Significant reductions in self-reported anxiety, stress, anger, confusion, and depression compared to placebo. Significant overall mood improvement with rapid onset of effects.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/26502953/" target="_blank" rel="noopener">PubMed: 26502953</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Antidepressant effects comparable to sertraline with fewer side effects</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Phase II Randomized Controlled Trial</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2015</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=57 adults with mild-moderate major depressive disorder</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">12 weeks</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Antidepressant effects comparable to sertraline with fewer side effects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate Evidence</span>
+                <span class="evidence-tag">Phase II Randomized Controlled Trial</span>
+                <span class="evidence-tag">2015</span>
+                <span class="evidence-tag">n=57 adults with mild-moderate major depressive disorder</span>
+                <span class="evidence-tag">12 weeks</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Phase II RCT comparing Rhodiola rosea (340-1360 mg/day), sertraline (50-200 mg/day), and placebo in 57 subjects with mild-moderate MDD. While rhodiola showed smaller effect sizes than sertraline, it demonstrated clinically meaningful improvement with significantly fewer adverse events (30.0% vs 63.2%) and better tolerability.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/25837277/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 25837277</a></p>
+            <p class="evidence-details">Phase II RCT comparing Rhodiola rosea (340-1360 mg/day), sertraline (50-200 mg/day), and placebo in 57 subjects with mild-moderate MDD. While rhodiola showed smaller effect sizes than sertraline, it demonstrated clinically meaningful improvement with significantly fewer adverse events (30.0% vs 63.2%) and better tolerability.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/25837277/" target="_blank" rel="noopener">PubMed: 25837277</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Accumulated evidence supporting antidepressant properties</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate Evidence</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Comprehensive Clinical Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2016</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=2 RCTs (146 subjects) + 7 open-label studies (714 individuals)</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">6-12 weeks across studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Accumulated evidence supporting antidepressant properties</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate Evidence</span>
+                <span class="evidence-tag">Comprehensive Clinical Review</span>
+                <span class="evidence-tag">2016</span>
+                <span class="evidence-tag">n=2 RCTs (146 subjects) + 7 open-label studies (714 individuals)</span>
+                <span class="evidence-tag">6-12 weeks across studies</span>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Review of Rhodiola rosea as a putative antidepressant covering 2 RCTs with 146 subjects and 7 open-label studies with 714 individuals. Evidence supports mild-moderate antidepressant effects with favorable safety profile. Proposed mechanisms include monoamine modulation and HPA axis normalization.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/27013349/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 27013349</a></p>
-        </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Clinical guideline recognition with generally favorable safety</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Good Safety Profile</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Clinical Practice Guidelines (WFSBP/CANMAT)</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2022</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Evidence synthesis for clinical recommendations</span>
-                
-            </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">WFSBP/CANMAT clinical guidelines reviewed Rhodiola rosea evidence for mood and anxiety disorders. While not meeting threshold for primary treatment recommendation, acknowledged generally favorable safety profile and potential as adjunctive therapy. Minor adverse effects include dizziness, dry mouth, and occasional sleep disturbance.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/35311615/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 35311615</a></p>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Significantly fewer adverse events than conventional antidepressants</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Good Safety Profile</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Phase II Randomized Controlled Trial</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2015</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=57 adults with MDD</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">12 weeks</span>
-            </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Head-to-head comparison with sertraline showed Rhodiola had significantly fewer adverse events (30.0% vs 63.2%, p=0.03). Most common adverse effects were mild: dizziness, dry mouth, and excessive salivation. No serious adverse events reported. Supports favorable risk-benefit ratio for mild-moderate symptoms.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/25837277/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 25837277</a></p>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Long history of traditional use with good modern safety data</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Good Safety Profile</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Historical and Clinical Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2021</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Centuries of traditional use + modern clinical data</span>
-                
-            </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Review of plant adaptogens including Rhodiola rosea covering historical use and modern safety data. Rhodiola has centuries of safe use in traditional Scandinavian and Russian medicine. Caution advised with stimulant medications, bipolar disorder (potential manic activation), and evening dosing (may interfere with sleep).</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/34445021/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 34445021</a></p>
+            <p class="evidence-details">Review of Rhodiola rosea as a putative antidepressant covering 2 RCTs with 146 subjects and 7 open-label studies with 714 individuals. Evidence supports mild-moderate antidepressant effects with favorable safety profile. Proposed mechanisms include monoamine modulation and HPA axis normalization.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/27013349/" target="_blank" rel="noopener">PubMed: 27013349</a></p>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Effective dose: 200-600 mg/day standardized extract for fatigue and stress</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Evidence-based</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple Clinical Studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2017</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Multiple RCTs and clinical studies</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Clinical guideline recognition with generally favorable safety</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Good Safety Profile</span>
+                <span class="evidence-tag">Clinical Practice Guidelines (WFSBP/CANMAT)</span>
+                <span class="evidence-tag">2022</span>
+                <span class="evidence-tag">n=Evidence synthesis for clinical recommendations</span>
                 
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Clinical studies consistently use 200-600 mg/day of standardized Rhodiola rosea extract. For chronic fatigue, 400 mg/day (WS 1375) for 8 weeks showed significant benefit. For anxiety/stress, 400 mg/day (200 mg BID) for 14 days was effective. Higher doses (up to 680 mg/day) used in depression studies.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/28219059/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 28219059</a></p>
+            <p class="evidence-details">WFSBP/CANMAT clinical guidelines reviewed Rhodiola rosea evidence for mood and anxiety disorders. While not meeting threshold for primary treatment recommendation, acknowledged generally favorable safety profile and potential as adjunctive therapy. Minor adverse effects include dizziness, dry mouth, and occasional sleep disturbance.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/35311615/" target="_blank" rel="noopener">PubMed: 35311615</a></p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Standardized extract (SHR-5) with defined salidroside and rosavin content</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Evidence-based</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Pharmacological Review</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">2010</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=Standardization data across clinical trials</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Significantly fewer adverse events than conventional antidepressants</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Good Safety Profile</span>
+                <span class="evidence-tag">Phase II Randomized Controlled Trial</span>
+                <span class="evidence-tag">2015</span>
+                <span class="evidence-tag">n=57 adults with MDD</span>
+                <span class="evidence-tag">12 weeks</span>
+            </div>
+            <p class="evidence-details">Head-to-head comparison with sertraline showed Rhodiola had significantly fewer adverse events (30.0% vs 63.2%, p=0.03). Most common adverse effects were mild: dizziness, dry mouth, and excessive salivation. No serious adverse events reported. Supports favorable risk-benefit ratio for mild-moderate symptoms.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/25837277/" target="_blank" rel="noopener">PubMed: 25837277</a></p>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Long history of traditional use with good modern safety data</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Good Safety Profile</span>
+                <span class="evidence-tag">Historical and Clinical Review</span>
+                <span class="evidence-tag">2021</span>
+                <span class="evidence-tag">n=Centuries of traditional use + modern clinical data</span>
                 
             </div>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">Most clinical evidence based on standardized SHR-5 extract containing minimum 3% rosavins and 1% salidroside, reflecting natural root ratio. Standard clinical doses of 340-680 mg/day of SHR-5 extract. Best taken in morning or early afternoon to avoid potential sleep interference. Effects may be noticed within 1-2 weeks.</p>
-            <p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/20378318/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: 20378318</a></p>
+            <p class="evidence-details">Review of plant adaptogens including Rhodiola rosea covering historical use and modern safety data. Rhodiola has centuries of safe use in traditional Scandinavian and Russian medicine. Caution advised with stimulant medications, bipolar disorder (potential manic activation), and evening dosing (may interfere with sleep).</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/34445021/" target="_blank" rel="noopener">PubMed: 34445021</a></p>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Effective dose: 200-600 mg/day standardized extract for fatigue and stress</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Evidence-based</span>
+                <span class="evidence-tag">Multiple Clinical Studies</span>
+                <span class="evidence-tag">2017</span>
+                <span class="evidence-tag">n=Multiple RCTs and clinical studies</span>
+                
+            </div>
+            <p class="evidence-details">Clinical studies consistently use 200-600 mg/day of standardized Rhodiola rosea extract. For chronic fatigue, 400 mg/day (WS 1375) for 8 weeks showed significant benefit. For anxiety/stress, 400 mg/day (200 mg BID) for 14 days was effective. Higher doses (up to 680 mg/day) used in depression studies.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/28219059/" target="_blank" rel="noopener">PubMed: 28219059</a></p>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Standardized extract (SHR-5) with defined salidroside and rosavin content</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Evidence-based</span>
+                <span class="evidence-tag">Pharmacological Review</span>
+                <span class="evidence-tag">2010</span>
+                <span class="evidence-tag">n=Standardization data across clinical trials</span>
+                
+            </div>
+            <p class="evidence-details">Most clinical evidence based on standardized SHR-5 extract containing minimum 3% rosavins and 1% salidroside, reflecting natural root ratio. Standard clinical doses of 340-680 mg/day of SHR-5 extract. Best taken in morning or early afternoon to avoid potential sleep interference. Effects may be noticed within 1-2 weeks.</p>
+            <p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/20378318/" target="_blank" rel="noopener">PubMed: 20378318</a></p>
         </div>
     </div>
                 </section>
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Wang X et al. (2025). Effect of Rhodiola rosea supplementation on endurance performance: a systematic review and meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.3389/fnut.2025.1556291" target="_blank" rel="noopener">10.3389/fnut.2025.1556291</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/41080184/" target="_blank" rel="noopener">PubMed</a></li>
-                        <li style="margin-bottom:0.6rem;">Ivanova Stojcheva E, Quintela JC (2022). The Effectiveness of Rhodiola rosea L. Preparations in Alleviating Various Aspects of Life-Stress Symptoms. <em></em>. DOI: <a href="https://doi.org/10.3390/molecules27123902" target="_blank" rel="noopener">10.3390/molecules27123902</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/35744937/" target="_blank" rel="noopener">PubMed</a></li>
+                    <ol class="references-list">
+                        <li>Wang X et al. (2025). Effect of Rhodiola rosea supplementation on endurance performance: a systematic review and meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.3389/fnut.2025.1556291" target="_blank" rel="noopener">10.3389/fnut.2025.1556291</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/41080184/" target="_blank" rel="noopener">PubMed</a></li>
+                        <li>Ivanova Stojcheva E, Quintela JC (2022). The Effectiveness of Rhodiola rosea L. Preparations in Alleviating Various Aspects of Life-Stress Symptoms. <em></em>. DOI: <a href="https://doi.org/10.3390/molecules27123902" target="_blank" rel="noopener">10.3390/molecules27123902</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/35744937/" target="_blank" rel="noopener">PubMed</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/herbal-extracts.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/herbal-extracts.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Adaptogens (Herbal Extracts)</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/anxiety-stress.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/anxiety-stress.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Anxiety &amp; Stress Relief Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../guides/energy-vitality.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/energy-vitality.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Energy &amp; Vitality Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../compare/ashwagandha-vs-rhodiola.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-balance-scale" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../compare/ashwagandha-vs-rhodiola.html" class="related-card">
+                            <i class="fas fa-balance-scale related-card-icon"></i>
                             <strong>Ashwagandha vs Rhodiola</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Head-to-head comparison</p>
+                            <p class="related-card-desc">Head-to-head comparison</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -550,19 +550,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133850">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Grape Seed Extract","headline":"Grape Seed Extract — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Grape Seed Extract (Vitis vinifera). Tier 2 evidence with 12+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/grape-seed-extract.html"},"about":{"@type":"DietarySupplement","name":"Grape Seed Extract","alternateName":"GSE","activeIngredient":"Vitis vinifera"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Antioxidants</span>
-                <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                <span class="monograph-badge monograph-badge-category">Antioxidants</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
             </div>
             <h1>Grape Seed Extract</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Vitis vinifera</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: GSE, Grape Polyphenols, Proanthocyanidins</p>
+            <p class="scientific-name">Vitis vinifera</p>
+            <p class="common-names">Also known as: GSE, Grape Polyphenols, Proanthocyanidins</p>
             <p class="hero-subtitle">Clinical studies demonstrating antioxidant and circulation benefits</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 12+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 12+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Antioxidants</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Grape Seed Extract is classified as antioxidants with moderate evidence (Tier 2) for its primary applications. Clinical studies demonstrating antioxidant and circulation benefits</p>
-                        <p style="margin-top:1rem;">Grape seed extract proanthocyanidins demonstrate strong evidence from multiple meta-analyses of RCTs for reducing blood pressure, improving lipid profiles, lowering fasting blood glucose, decreasing inflammatory markers (CRP), and promoting wound healing, primarily through NF-kB inhibition and Nrf2 activation pathways</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Cardiovascular health; Antioxidant support; Circulation disorders</p>
+                        <p class="key-findings">Grape seed extract proanthocyanidins demonstrate strong evidence from multiple meta-analyses of RCTs for reducing blood pressure, improving lipid profiles, lowering fasting blood glucose, decreasing inflammatory markers (CRP), and promoting wound healing, primarily through NF-kB inhibition and Nrf2 activation pathways</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Cardiovascular health; Antioxidant support; Circulation disorders</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Potent proanthocyanidin antioxidants</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Potent proanthocyanidin antioxidants</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Endothelial function enhancement</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Endothelial function enhancement</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Anti-inflammatory activity</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Anti-inflammatory activity</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Collagen protection</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Collagen protection</p>
                         </div>
                     </div>
                 </section>
@@ -188,26 +188,26 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant neuroprotection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Circulation-mediated cognitive support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Memory protection</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Antioxidant neuroprotection</li>
+                        <li>Circulation-mediated cognitive support</li>
+                        <li>Memory protection</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cardiovascular health</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant protection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Anti-inflammatory effects</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Skin health</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Cardiovascular health</li>
+                        <li>Antioxidant protection</li>
+                        <li>Anti-inflammatory effects</li>
+                        <li>Skin health</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -216,12 +216,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>AntioxidantActivity</strong></td>
-                                    <td style="font-size:0.85rem;">Large (significant free radical scavenging)</td>
+                                    <td class="effect-domain">AntioxidantActivity</td>
+                                    <td class="effect-value">Large (significant free radical scavenging)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>CirculationImprovement</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (endothelial function enhancement)</td>
+                                    <td class="effect-domain">CirculationImprovement</td>
+                                    <td class="effect-value">Moderate (endothelial function enhancement)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -240,244 +240,244 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Cardiovascular health</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Antioxidant support</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Circulation disorders</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Cardiovascular health</li>
+                        <li>Antioxidant support</li>
+                        <li>Circulation disorders</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Mild GI upset</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Headache (rare)</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Nausea (high doses)</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Mild GI upset</li>
+                        <li>Headache (rare)</li>
+                        <li>Nausea (high doses)</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Blood clotting disorders</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Surgery</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy</li>
+                            <li>Blood clotting disorders</li>
+                            <li>Surgery</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Blood thinners</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Iron absorption inhibition</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Blood thinners</li>
+                            <li>Iron absorption inhibition</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 11 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Multi-targeted molecular signaling modulation through NF-kappaB, MAPK, and PI3K/Akt pathways</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated across cell lines and animal models</span>
+                    <p class="section-intro">Detailed citation analysis from 11 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Multi-targeted molecular signaling modulation through NF-kappaB, MAPK, and PI3K/Akt pathways</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated across cell lines and animal models</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Multi-targeted prevention and therapy of cancer by proanthocyanidins</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Nandakumar V, Singh T, Katiyar SK (2008) — <em>Cancer Letters</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Grape seed proanthocyanidins modulate NF-kappaB, MAPK, PI3K/Akt, and caspase signaling pathways,Proanthocyanidins exhibit substantial antioxidant and anti-inflammatory activities,Monomers and smaller oligomeric procyanidins are absorbed in the gut,Anti-carcinogenic activity demonstrated across multiple organ tumor models</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18457915/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 18457915</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Multi-targeted prevention and therapy of cancer by proanthocyanidins</p>
+                    <p class="study-meta">Nandakumar V, Singh T, Katiyar SK (2008) — <em>Cancer Letters</em></p>
+                    <p class="study-findings">Grape seed proanthocyanidins modulate NF-kappaB, MAPK, PI3K/Akt, and caspase signaling pathways,Proanthocyanidins exhibit substantial antioxidant and anti-inflammatory activities,Monomers and smaller oligomeric procyanidins are absorbed in the gut,Anti-carcinogenic activity demonstrated across multiple organ tumor models</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18457915/" target="_blank" rel="noopener">PubMed: 18457915</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">eNOS upregulation and NF-kappaB inhibition protect vascular endothelium and reduce inflammatory remodeling</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Replicated in multiple vascular inflammation models</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">eNOS upregulation and NF-kappaB inhibition protect vascular endothelium and reduce inflammatory remodeling</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Replicated in multiple vascular inflammation models</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Grape seed proanthocyanidin inhibits monocrotaline-induced pulmonary arterial hypertension via attenuating inflammation: in vivo and in vitro studies</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Chen F, Wang H, Zhao J, Yan J, Meng H, Zhan H, Chen L, Yuan L (2019) — <em>The Journal of Nutritional Biochemistry</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">GSP significantly increased eNOS expression in lung tissue and elevated plasma NO levels,NF-kappaB pathway inhibited: reduced IkappaBalpha phosphorylation,Downregulated pro-inflammatory mRNA transcription of MPO, IL-1beta, IL-6, and TNF-alpha in lung tissue,Decreased intracellular Ca2+ levels in pulmonary arterial smooth muscle cells,Inhibited TNF-alpha-induced smooth muscle cell overproliferation</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/30856466/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 30856466</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Grape seed proanthocyanidin inhibits monocrotaline-induced pulmonary arterial hypertension via attenuating inflammation: in vivo and in vitro studies</p>
+                    <p class="study-meta">Chen F, Wang H, Zhao J, Yan J, Meng H, Zhan H, Chen L, Yuan L (2019) — <em>The Journal of Nutritional Biochemistry</em></p>
+                    <p class="study-findings">GSP significantly increased eNOS expression in lung tissue and elevated plasma NO levels,NF-kappaB pathway inhibited: reduced IkappaBalpha phosphorylation,Downregulated pro-inflammatory mRNA transcription of MPO, IL-1beta, IL-6, and TNF-alpha in lung tissue,Decreased intracellular Ca2+ levels in pulmonary arterial smooth muscle cells,Inhibited TNF-alpha-induced smooth muscle cell overproliferation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/30856466/" target="_blank" rel="noopener">PubMed: 30856466</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">AMPK-dependent Nrf2 activation enhances endogenous antioxidant defense systems</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Replicated across multiple oxidative stress models</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">AMPK-dependent Nrf2 activation enhances endogenous antioxidant defense systems</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Replicated across multiple oxidative stress models</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Grape seed procyanidin extract protects against Pb-induced lung toxicity by activating the AMPK/Nrf2/p62 signaling axis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Lu J, Jiang H, Liu B, Baiyun R, Li S, Lv Y, Li D, Qiao S, Tan X, Zhang Z (2018) — <em>Food and Chemical Toxicology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">GSPE activated the Nrf2 signaling pathway promoting HO-1 and NQO1 expression,p62 formed a positive feedback loop with Nrf2 during oxidative stress responses,AMPK activation was required for Nrf2 nuclear translocation,Alleviated oxidative stress, reduced inflammatory factor release, and inhibited apoptosis,Provides mechanistic basis for GSPE antioxidant and organ-protective effects</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/29630945/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 29630945</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Significant improvements in glycemic, lipid, and inflammatory markers from the largest meta-analysis of GSE supplementation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated across diverse populations</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The effect of grape seed extract supplementation on cardiometabolic risk factors: A systematic review and meta-analysis of randomized controlled trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Asbaghi O, Nazarian B, Reiner Z, Amirani E, Kolahdooz F, Chamani M, Asemi Z (2020) — <em>Journal of Functional Foods</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant FPG reduction: WMD -2.01 mg/dL (95% CI: -3.14, -0.86; p = 0.001),Significant total cholesterol reduction: WMD -6.03 mg/dL (95% CI: -9.71, -2.35; p = 0.001),Significant LDL reduction: WMD -4.97 mg/dL (95% CI: -8.37, -1.57; p = 0.004),Significant triglyceride reduction: WMD -6.55 mg/dL (95% CI: -9.28, -3.83; p &lt; 0.001),Significant CRP reduction: WMD -0.81 mg/L (95% CI: -1.25, -0.38; p &lt; 0.001),No significant effects on HbA1c, HDL cholesterol, or anthropometric measures</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31880030/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31880030</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Clinically meaningful blood pressure reduction across 16 RCTs with 810 subjects</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Replicated across multiple populations</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effect of grape seed extract on blood pressure: A meta-analysis of randomized, controlled trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Zhang H, Liu S, Li L, Liu S, Liu S, Mi J, Tian G (2016) — <em>Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant SBP reduction: WMD -6.077 mmHg (95% CI: -10.736, -1.419; p = 0.011),Significant DBP reduction: WMD -2.803 mmHg (95% CI: -4.417, -1.189; p = 0.001),Subgroup analysis: larger effects in younger subjects (&lt; 50 years),Greater BP reductions in obese individuals and those with metabolic syndrome,No evidence of publication bias</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/27537554/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 27537554</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The effects of grape seed extract on cardiovascular risk factors and endothelial function: A systematic review and dose-response meta-analysis of randomized controlled trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Foshati S, Rouhani MH, Amiri F (2021) — <em>Phytotherapy Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant DBP reduction: WMD -2.20 mmHg (95% CI: -3.79, -0.60; p = 0.007),Significant heart rate reduction: WMD -1.25 bpm (95% CI: -2.32, -0.19),No significant effect on SBP: WMD -3.55 mmHg (p = NS),No significant effect on flow-mediated dilation (FMD),Non-linear dose-response relationship identified for DBP reduction</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/34798267/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 34798267</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Modest but significant SBP and heart rate reductions from early meta-analysis of CV risk markers</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Confirmed in later larger meta-analyses</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Grape seed extract reduces blood pressure and cardiovascular risk markers: a meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Feringa HH, Laskey DA, Dickson JE, Coleman CI (2011) — <em>Journal of the American Dietetic Association</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant SBP reduction: WMD -1.54 mmHg (p = 0.02),Significant heart rate reduction: WMD -1.42 bpm (p = 0.01),No significant effect on DBP, total cholesterol, LDL, or CRP,Early evidence supporting GSE cardiovascular benefits,Later confirmed and expanded by larger meta-analyses</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21802563/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 21802563</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Topical GSE accelerates surgical wound healing in a dose-dependent manner</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Limited replication, supported by preclinical evidence</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effect of grape seed extract ointment on cesarean section wound healing: A double-blind, randomized, controlled clinical trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Izadpanah A, Soorgi S, Geraminejad N, Hosseini M (2019) — <em>Complementary Therapies in Clinical Practice</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">5% GSE ointment group: REEDA scores 2.02 (day 6) and 0.98 (day 14),Petrolatum group: REEDA scores 2.91 (day 6) and 1.55 (day 14),5% GSE was significantly superior to both 2.5% GSE and petrolatum (p &lt; 0.001),2.5% GSE was not significantly different from petrolatum control,Dose-dependent effect suggests 5% concentration is the minimum effective topical dose</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31003677/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31003677</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Dermatological benefits for multiple skin conditions supported by clinical and preclinical evidence</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Replicated across multiple skin condition models</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Implications of grape extract and its nanoformulated bioactive agent resveratrol against skin disorders</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Soleymani S, Iranpanah A, Najafi F, Belwal T, Ramola S, Abbasabadi Z, Momtaz S, Farzaei MH (2019) — <em>Archives of Dermatological Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">GSE and resveratrol show beneficial impacts on chloasma, acne vulgaris, skin aging, wound healing, and facial redness,Proanthocyanidins trigger VEGF release promoting wound contraction and closure,Nanoformulations (liposomes, niosomes, SLNs) enhance skin permeability of GSE active compounds,Antioxidant and anti-inflammatory properties contribute to photoprotective effects,Clinical interventions support topical and oral GSE for dermatological conditions</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31115657/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31115657</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">No consistent cognitive benefits from GSE in healthy young adults (null result)</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Limited</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Single study; contrasts with positive results in older/impaired populations</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Grape seed polyphenol extract and cognitive function in healthy young adults: a randomised, placebo-controlled, parallel-groups acute-on-chronic trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Bell L, Whyte AR, Lamport DJ, Spencer JPE, Butler LT, Williams CM (2022) — <em>Nutritional Neuroscience</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">400 mg GSPE did not show consistent cognitive improvements vs placebo,Some improvements in reaction time (acutely) and psychomotor skill (chronically),Placebo group also showed some improvements in reaction time and memory,No consistent pattern of cognitive benefits across all outcome measures,Authors suggest younger healthy populations less sensitive to polyphenol doses under 400 mg</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31942838/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31942838</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Grape seed procyanidin extract protects against Pb-induced lung toxicity by activating the AMPK/Nrf2/p62 signaling axis</p>
+                    <p class="study-meta">Lu J, Jiang H, Liu B, Baiyun R, Li S, Lv Y, Li D, Qiao S, Tan X, Zhang Z (2018) — <em>Food and Chemical Toxicology</em></p>
+                    <p class="study-findings">GSPE activated the Nrf2 signaling pathway promoting HO-1 and NQO1 expression,p62 formed a positive feedback loop with Nrf2 during oxidative stress responses,AMPK activation was required for Nrf2 nuclear translocation,Alleviated oxidative stress, reduced inflammatory factor release, and inhibited apoptosis,Provides mechanistic basis for GSPE antioxidant and organ-protective effects</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29630945/" target="_blank" rel="noopener">PubMed: 29630945</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Excellent safety profile up to 2500 mg/day in clinical safety study</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Good</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Supported by safety data from multiple RCTs</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Significant improvements in glycemic, lipid, and inflammatory markers from the largest meta-analysis of GSE supplementation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated across diverse populations</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Safety assessment of 4-week oral intake of proanthocyanidin-rich grape seed extract in healthy subjects</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Sano A (2016) — <em>Food and Chemical Toxicology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Doses of 1000, 1500, and 2500 mg/day were well-tolerated with no discontinuations,Two subjects in the 2500 mg group showed transient serum iron decreases (within normal range),Serum iron levels returned to near baseline 2 weeks after completing GSE ingestion,No clinically significant adverse effects on liver, kidney, or hematological parameters,Supports safety of standard supplement doses (100-600 mg/day) with wide margin</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/27889390/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 27889390</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The effect of grape seed extract supplementation on cardiometabolic risk factors: A systematic review and meta-analysis of randomized controlled trials</p>
+                    <p class="study-meta">Asbaghi O, Nazarian B, Reiner Z, Amirani E, Kolahdooz F, Chamani M, Asemi Z (2020) — <em>Journal of Functional Foods</em></p>
+                    <p class="study-findings">Significant FPG reduction: WMD -2.01 mg/dL (95% CI: -3.14, -0.86; p = 0.001),Significant total cholesterol reduction: WMD -6.03 mg/dL (95% CI: -9.71, -2.35; p = 0.001),Significant LDL reduction: WMD -4.97 mg/dL (95% CI: -8.37, -1.57; p = 0.004),Significant triglyceride reduction: WMD -6.55 mg/dL (95% CI: -9.28, -3.83; p &lt; 0.001),Significant CRP reduction: WMD -0.81 mg/L (95% CI: -1.25, -0.38; p &lt; 0.001),No significant effects on HbA1c, HDL cholesterol, or anthropometric measures</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31880030/" target="_blank" rel="noopener">PubMed: 31880030</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">A Pilot Study of a Grape Seed Procyanidin Extract for Lung Cancer Chemoprevention</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Mao JT, Lu QY, Xue B, Neis P, Zamora FD, Lundmark L, Qualls C, Massie L (2019) — <em>Cancer Prevention Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Leucoselect phytosome (standardized GSE) was well-tolerated at all dose levels,No dosing adjustment was necessary across the escalation protocol,Two withdrawals were unrelated to study medication,Significantly decreased bronchial Ki-67 labeling index by 55% (p = 0.041),Supports safety and potential chemopreventive activity of GSE in humans</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31138523/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31138523</a>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Clinically meaningful blood pressure reduction across 16 RCTs with 810 subjects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Replicated across multiple populations</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effect of grape seed extract on blood pressure: A meta-analysis of randomized, controlled trials</p>
+                    <p class="study-meta">Zhang H, Liu S, Li L, Liu S, Liu S, Mi J, Tian G (2016) — <em>Clinical Nutrition</em></p>
+                    <p class="study-findings">Significant SBP reduction: WMD -6.077 mmHg (95% CI: -10.736, -1.419; p = 0.011),Significant DBP reduction: WMD -2.803 mmHg (95% CI: -4.417, -1.189; p = 0.001),Subgroup analysis: larger effects in younger subjects (&lt; 50 years),Greater BP reductions in obese individuals and those with metabolic syndrome,No evidence of publication bias</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/27537554/" target="_blank" rel="noopener">PubMed: 27537554</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">The effects of grape seed extract on cardiovascular risk factors and endothelial function: A systematic review and dose-response meta-analysis of randomized controlled trials</p>
+                    <p class="study-meta">Foshati S, Rouhani MH, Amiri F (2021) — <em>Phytotherapy Research</em></p>
+                    <p class="study-findings">Significant DBP reduction: WMD -2.20 mmHg (95% CI: -3.79, -0.60; p = 0.007),Significant heart rate reduction: WMD -1.25 bpm (95% CI: -2.32, -0.19),No significant effect on SBP: WMD -3.55 mmHg (p = NS),No significant effect on flow-mediated dilation (FMD),Non-linear dose-response relationship identified for DBP reduction</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/34798267/" target="_blank" rel="noopener">PubMed: 34798267</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Modest but significant SBP and heart rate reductions from early meta-analysis of CV risk markers</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Confirmed in later larger meta-analyses</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Grape seed extract reduces blood pressure and cardiovascular risk markers: a meta-analysis</p>
+                    <p class="study-meta">Feringa HH, Laskey DA, Dickson JE, Coleman CI (2011) — <em>Journal of the American Dietetic Association</em></p>
+                    <p class="study-findings">Significant SBP reduction: WMD -1.54 mmHg (p = 0.02),Significant heart rate reduction: WMD -1.42 bpm (p = 0.01),No significant effect on DBP, total cholesterol, LDL, or CRP,Early evidence supporting GSE cardiovascular benefits,Later confirmed and expanded by larger meta-analyses</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/21802563/" target="_blank" rel="noopener">PubMed: 21802563</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Topical GSE accelerates surgical wound healing in a dose-dependent manner</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Limited replication, supported by preclinical evidence</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effect of grape seed extract ointment on cesarean section wound healing: A double-blind, randomized, controlled clinical trial</p>
+                    <p class="study-meta">Izadpanah A, Soorgi S, Geraminejad N, Hosseini M (2019) — <em>Complementary Therapies in Clinical Practice</em></p>
+                    <p class="study-findings">5% GSE ointment group: REEDA scores 2.02 (day 6) and 0.98 (day 14),Petrolatum group: REEDA scores 2.91 (day 6) and 1.55 (day 14),5% GSE was significantly superior to both 2.5% GSE and petrolatum (p &lt; 0.001),2.5% GSE was not significantly different from petrolatum control,Dose-dependent effect suggests 5% concentration is the minimum effective topical dose</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31003677/" target="_blank" rel="noopener">PubMed: 31003677</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Dermatological benefits for multiple skin conditions supported by clinical and preclinical evidence</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Replicated across multiple skin condition models</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Implications of grape extract and its nanoformulated bioactive agent resveratrol against skin disorders</p>
+                    <p class="study-meta">Soleymani S, Iranpanah A, Najafi F, Belwal T, Ramola S, Abbasabadi Z, Momtaz S, Farzaei MH (2019) — <em>Archives of Dermatological Research</em></p>
+                    <p class="study-findings">GSE and resveratrol show beneficial impacts on chloasma, acne vulgaris, skin aging, wound healing, and facial redness,Proanthocyanidins trigger VEGF release promoting wound contraction and closure,Nanoformulations (liposomes, niosomes, SLNs) enhance skin permeability of GSE active compounds,Antioxidant and anti-inflammatory properties contribute to photoprotective effects,Clinical interventions support topical and oral GSE for dermatological conditions</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31115657/" target="_blank" rel="noopener">PubMed: 31115657</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">No consistent cognitive benefits from GSE in healthy young adults (null result)</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Single study; contrasts with positive results in older/impaired populations</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Grape seed polyphenol extract and cognitive function in healthy young adults: a randomised, placebo-controlled, parallel-groups acute-on-chronic trial</p>
+                    <p class="study-meta">Bell L, Whyte AR, Lamport DJ, Spencer JPE, Butler LT, Williams CM (2022) — <em>Nutritional Neuroscience</em></p>
+                    <p class="study-findings">400 mg GSPE did not show consistent cognitive improvements vs placebo,Some improvements in reaction time (acutely) and psychomotor skill (chronically),Placebo group also showed some improvements in reaction time and memory,No consistent pattern of cognitive benefits across all outcome measures,Authors suggest younger healthy populations less sensitive to polyphenol doses under 400 mg</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31942838/" target="_blank" rel="noopener">PubMed: 31942838</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Standard dosing of 150-300 mg/day for cardiovascular and metabolic benefits; safe up to 2500 mg/day</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Evidence-based</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Consistent across meta-analyses</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Excellent safety profile up to 2500 mg/day in clinical safety study</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Good</span>
+                <span class="evidence-tag">Supported by safety data from multiple RCTs</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The effect of grape seed extract supplementation on cardiometabolic risk factors: A systematic review and meta-analysis of randomized controlled trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Asbaghi O, Nazarian B, Reiner Z, Amirani E, Kolahdooz F, Chamani M, Asemi Z (2020) — <em>Journal of Functional Foods</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Most included RCTs used doses of 100-600 mg/day grape seed extract,Significant cardiometabolic benefits achieved across this dose range,Dose-response analysis from Foshati 2021 meta-analysis found non-linear DBP reduction,Safety study by Sano 2016 demonstrated tolerability up to 2500 mg/day for 4 weeks,Standard supplementation range of 150-300 mg/day supported by overall evidence base</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31880030/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31880030</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Safety assessment of 4-week oral intake of proanthocyanidin-rich grape seed extract in healthy subjects</p>
+                    <p class="study-meta">Sano A (2016) — <em>Food and Chemical Toxicology</em></p>
+                    <p class="study-findings">Doses of 1000, 1500, and 2500 mg/day were well-tolerated with no discontinuations,Two subjects in the 2500 mg group showed transient serum iron decreases (within normal range),Serum iron levels returned to near baseline 2 weeks after completing GSE ingestion,No clinically significant adverse effects on liver, kidney, or hematological parameters,Supports safety of standard supplement doses (100-600 mg/day) with wide margin</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/27889390/" target="_blank" rel="noopener">PubMed: 27889390</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">A Pilot Study of a Grape Seed Procyanidin Extract for Lung Cancer Chemoprevention</p>
+                    <p class="study-meta">Mao JT, Lu QY, Xue B, Neis P, Zamora FD, Lundmark L, Qualls C, Massie L (2019) — <em>Cancer Prevention Research</em></p>
+                    <p class="study-findings">Leucoselect phytosome (standardized GSE) was well-tolerated at all dose levels,No dosing adjustment was necessary across the escalation protocol,Two withdrawals were unrelated to study medication,Significantly decreased bronchial Ki-67 labeling index by 55% (p = 0.041),Supports safety and potential chemopreventive activity of GSE in humans</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31138523/" target="_blank" rel="noopener">PubMed: 31138523</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Standard dosing of 150-300 mg/day for cardiovascular and metabolic benefits; safe up to 2500 mg/day</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Evidence-based</span>
+                <span class="evidence-tag">Consistent across meta-analyses</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The effect of grape seed extract supplementation on cardiometabolic risk factors: A systematic review and meta-analysis of randomized controlled trials</p>
+                    <p class="study-meta">Asbaghi O, Nazarian B, Reiner Z, Amirani E, Kolahdooz F, Chamani M, Asemi Z (2020) — <em>Journal of Functional Foods</em></p>
+                    <p class="study-findings">Most included RCTs used doses of 100-600 mg/day grape seed extract,Significant cardiometabolic benefits achieved across this dose range,Dose-response analysis from Foshati 2021 meta-analysis found non-linear DBP reduction,Safety study by Sano 2016 demonstrated tolerability up to 2500 mg/day for 4 weeks,Standard supplementation range of 150-300 mg/day supported by overall evidence base</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31880030/" target="_blank" rel="noopener">PubMed: 31880030</a>
                 </div>
             </div>
         </div>
@@ -486,37 +486,37 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Shi J, et al. (2003). Grape seed extract: having a potential health benefits. <em>J Food Eng</em>. DOI: <a href="https://doi.org/10.1016/S0260-8774(02)00471-2" target="_blank" rel="noopener">10.1016/S0260-8774(02)00471-2</a></li>
+                    <ol class="references-list">
+                        <li>Shi J, et al. (2003). Grape seed extract: having a potential health benefits. <em>J Food Eng</em>. DOI: <a href="https://doi.org/10.1016/S0260-8774(02)00471-2" target="_blank" rel="noopener">10.1016/S0260-8774(02)00471-2</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/antioxidants.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/antioxidants.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Antioxidants</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/cardiovascular.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/cardiovascular.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Cardiovascular Health Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -524,19 +524,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

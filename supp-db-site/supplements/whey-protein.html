@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133572">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Whey Protein","headline":"Whey Protein — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Whey Protein (Bovine milk serum protein (alpha-lactalbumin, beta-lactoglobulin, immunoglobulins)). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/whey-protein.html"},"about":{"@type":"DietarySupplement","name":"Whey Protein","alternateName":"Whey Isolate","activeIngredient":"Bovine milk serum protein (alpha-lactalbumin, beta-lactoglobulin, immunoglobulins)"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Performance Enhancers</span>
-                <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                <span class="monograph-badge monograph-badge-category">Performance Enhancers</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
             </div>
             <h1>Whey Protein</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Bovine milk serum protein (alpha-lactalbumin, beta-lactoglobulin, immunoglobulins)</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Whey Isolate, WPI, Whey Concentrate, WPC, Whey Hydrolysate</p>
+            <p class="scientific-name">Bovine milk serum protein (alpha-lactalbumin, beta-lactoglobulin, immunoglobulins)</p>
+            <p class="common-names">Also known as: Whey Isolate, WPI, Whey Concentrate, WPC, Whey Hydrolysate</p>
             <p class="hero-subtitle">Multiple RCTs and meta-analyses confirm muscle protein synthesis and sarcopenia benefits in elderly+RET; body composition effects are moderate and population-specific; Tier 2 appropriate given null findings in healthy elderly without resistance training</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Performance Enhancers</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Whey Protein is classified as performance enhancers with moderate evidence (Tier 2) for its primary applications. Multiple RCTs and meta-analyses confirm muscle protein synthesis and sarcopenia benefits in elderly+RET; body composition effects are moderate and population-specific; Tier 2 appropriate given null findings in healthy elderly without resistance training</p>
-                        <p style="margin-top:1rem;">Well-characterized protein supplement with strong evidence for muscle building and recovery benefits</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Elderly (≥65 years) with resistance exercise training; Athletes; Sarcopenic older adults; Healthy adults with resistance training</p>
+                        <p class="key-findings">Well-characterized protein supplement with strong evidence for muscle building and recovery benefits</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Elderly (≥65 years) with resistance exercise training; Athletes; Sarcopenic older adults; Healthy adults with resistance training</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">mTOR/p70S6K1 pathway activation via leucine</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">mTOR/p70S6K1 pathway activation via leucine</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Muscle protein synthesis stimulation (fast-digesting leucine-rich profile)</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Muscle protein synthesis stimulation (fast-digesting leucine-rich profile)</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Glutathione precursor provision (cysteine, glutamate)</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Glutathione precursor provision (cysteine, glutamate)</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">IGF-1 pathway modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">IGF-1 pathway modulation</p>
                         </div>
                     </div>
                 </section>
@@ -188,25 +188,25 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Neurotransmitter precursor support via tryptophan and tyrosine</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Neurotransmitter precursor support via tryptophan and tyrosine</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Muscle protein synthesis</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Muscle maintenance support in elderly</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Exercise recovery</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Body composition improvement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Immune support via glutathione precursors</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Muscle protein synthesis</li>
+                        <li>Muscle maintenance support in elderly</li>
+                        <li>Exercise recovery</li>
+                        <li>Body composition improvement</li>
+                        <li>Immune support via glutathione precursors</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -215,16 +215,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Muscle Protein Synthesis</strong></td>
-                                    <td style="font-size:0.85rem;">Large (post-exercise vs. carbohydrate)</td>
+                                    <td class="effect-domain">Muscle Protein Synthesis</td>
+                                    <td class="effect-value">Large (post-exercise vs. carbohydrate)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Lean Mass Elderly RET</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (SMD ~0.3-0.5 vs. placebo+RET)</td>
+                                    <td class="effect-domain">Lean Mass Elderly RET</td>
+                                    <td class="effect-value">Moderate (SMD ~0.3-0.5 vs. placebo+RET)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Body Composition Healthy Adults</strong></td>
-                                    <td style="font-size:0.85rem;">Small-Moderate (context-dependent)</td>
+                                    <td class="effect-domain">Body Composition Healthy Adults</td>
+                                    <td class="effect-value">Small-Moderate (context-dependent)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -243,224 +243,224 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Elderly (≥65 years) with resistance exercise training</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Athletes</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Sarcopenic older adults</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Healthy adults with resistance training</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Elderly (≥65 years) with resistance exercise training</li>
+                        <li>Athletes</li>
+                        <li>Sarcopenic older adults</li>
+                        <li>Healthy adults with resistance training</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">GI discomfort at high doses</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Bloating in lactose-sensitive individuals</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>GI discomfort at high doses</li>
+                        <li>Bloating in lactose-sensitive individuals</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Milk protein allergy</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Phenylketonuria (phenylalanine content)</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Milk protein allergy</li>
+                            <li>Phenylketonuria (phenylalanine content)</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Levodopa (leucine competition)</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Tetracycline antibiotics (calcium in dairy base)</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Levodopa (leucine competition)</li>
+                            <li>Tetracycline antibiotics (calcium in dairy base)</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Muscle protein synthesis stimulation via mTOR pathway</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Athletes and active individuals</span>
+                    <p class="section-intro">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Muscle protein synthesis stimulation via mTOR pathway</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Athletes and active individuals</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Whey protein stimulates postprandial muscle protein accretion more effectively than casein and casein hydrolysate in older men</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Pennings, B., Boirie, Y., Senden, J.M., Gijsen, A.P., Kuipers, H., van Loon, L.J. (2011) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein rapidly stimulates muscle protein synthesis through mTOR pathway activation, with superior effects compared to casein protein.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21367943/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 21367943</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Whey protein stimulates postprandial muscle protein accretion more effectively than casein and casein hydrolysate in older men</p>
+                    <p class="study-meta">Pennings, B., Boirie, Y., Senden, J.M., Gijsen, A.P., Kuipers, H., van Loon, L.J. (2011) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Whey protein rapidly stimulates muscle protein synthesis through mTOR pathway activation, with superior effects compared to casein protein.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/21367943/" target="_blank" rel="noopener">PubMed: 21367943</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Leucine-enriched essential amino acid and carbohydrate ingestion following resistance exercise enhances mTOR signaling</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Dreyer, H.C., Drummond, M.J., Pennings, B., Fujita, S., Glynn, E.L., Chinkes, D.L., Dhanani, S., Volpi, E., Rasmussen, B.B. (2008) — <em>American Journal of Physiology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein's high leucine content triggers mTOR signaling cascade, leading to enhanced muscle protein synthesis and anabolic response.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18056791/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 18056791</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Rapid amino acid absorption and bioavailability</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Protein digestion and absorption along the gastrointestinal tract</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Dangin, M., Boirie, Y., Garcia-Rodenas, C., Gachon, P., Fauquant, J., Callier, P., Ballèvre, O., Beaufrère, B. (2001) — <em>American Journal of Physiology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein demonstrates rapid digestion and absorption kinetics, leading to quick amino acid availability and protein synthesis stimulation.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/11158939/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 11158939</a>
+                <div class="study-item">
+                    <p class="study-title">Leucine-enriched essential amino acid and carbohydrate ingestion following resistance exercise enhances mTOR signaling</p>
+                    <p class="study-meta">Dreyer, H.C., Drummond, M.J., Pennings, B., Fujita, S., Glynn, E.L., Chinkes, D.L., Dhanani, S., Volpi, E., Rasmussen, B.B. (2008) — <em>American Journal of Physiology</em></p>
+                    <p class="study-findings">Whey protein's high leucine content triggers mTOR signaling cascade, leading to enhanced muscle protein synthesis and anabolic response.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18056791/" target="_blank" rel="noopener">PubMed: 18056791</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Immunomodulatory effects through bioactive peptides</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Rapid amino acid absorption and bioavailability</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Immunomodulatory effects of whey proteins and their enzymatic hydrolysates</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Krissansen, G.W. (2007) — <em>Pharmacology &amp; Therapeutics</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein contains bioactive peptides including lactoferrin and immunoglobulins that enhance immune function and antimicrobial activity.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17316816/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17316816</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Protein digestion and absorption along the gastrointestinal tract</p>
+                    <p class="study-meta">Dangin, M., Boirie, Y., Garcia-Rodenas, C., Gachon, P., Fauquant, J., Callier, P., Ballèvre, O., Beaufrère, B. (2001) — <em>American Journal of Physiology</em></p>
+                    <p class="study-findings">Whey protein demonstrates rapid digestion and absorption kinetics, leading to quick amino acid availability and protein synthesis stimulation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11158939/" target="_blank" rel="noopener">PubMed: 11158939</a>
                 </div>
             </div>
         </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Enhanced muscle mass and strength gains</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Athletes and resistance training individuals</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Immunomodulatory effects through bioactive peptides</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The effects of whey protein supplementation on muscle mass, strength, and power in resistance training individuals</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Devries, M.C., Phillips, S.M. (2015) — <em>Sports Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein supplementation significantly enhances muscle mass, strength, and power gains when combined with resistance training.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/25169440/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 25169440</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">International Society of Sports Nutrition position stand: protein and exercise</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Campbell, B., Kreider, R.B., Ziegenfuss, T., La Bounty, P., Roberts, M., Burke, D., Landis, J., Lopez, H., Antonio, J. (2007) — <em>Journal of the International Society of Sports Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein is highly effective for promoting muscle protein synthesis and supporting training adaptations in athletes.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17908288/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17908288</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Improved body composition and fat loss</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Overweight and obese individuals</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Whey protein supplementation during resistance training augments lean body mass</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Cribb, P.J., Williams, A.D., Carey, M.F., Hayes, A. (2006) — <em>Journal of the American College of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein supplementation promotes greater lean body mass gains and fat loss compared to placebo during resistance training.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/16772636/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 16772636</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Enhanced recovery and reduced muscle damage</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Athletes and active individuals</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Whey protein supplementation accelerates satellite cell proliferation during recovery from eccentric exercise</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Farup, J., Rahbek, S.K., Vendelbo, M.H., Matzon, A., Hindhede, J., Bejder, A., Ringgard, S., Vissing, K. (2014) — <em>Amino Acids</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein supplementation enhances muscle recovery by promoting satellite cell proliferation and reducing exercise-induced muscle damage.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/24623121/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 24623121</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Satiety and weight management support</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals seeking weight management</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of whey protein on satiety and food intake</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Luhovyy, B.L., Akhavan, T., Anderson, G.H. (2007) — <em>Journal of the American College of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein consumption increases satiety hormones and reduces subsequent food intake, supporting weight management goals.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17914132/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17914132</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Immunomodulatory effects of whey proteins and their enzymatic hydrolysates</p>
+                    <p class="study-meta">Krissansen, G.W. (2007) — <em>Pharmacology &amp; Therapeutics</em></p>
+                    <p class="study-findings">Whey protein contains bioactive peptides including lactoferrin and immunoglobulins that enhance immune function and antimicrobial activity.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17316816/" target="_blank" rel="noopener">PubMed: 17316816</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally safe with excellent tolerance profile</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Enhanced muscle mass and strength gains</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Athletes and resistance training individuals</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Safety and efficacy of whey protein supplementation</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Devries, M.C., Phillips, S.M. (2015) — <em>Sports Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein supplementation demonstrates excellent safety profile with minimal adverse effects in healthy individuals.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/25169440/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 25169440</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The effects of whey protein supplementation on muscle mass, strength, and power in resistance training individuals</p>
+                    <p class="study-meta">Devries, M.C., Phillips, S.M. (2015) — <em>Sports Medicine</em></p>
+                    <p class="study-findings">Whey protein supplementation significantly enhances muscle mass, strength, and power gains when combined with resistance training.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25169440/" target="_blank" rel="noopener">PubMed: 25169440</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">International Society of Sports Nutrition position stand: protein and exercise</p>
+                    <p class="study-meta">Campbell, B., Kreider, R.B., Ziegenfuss, T., La Bounty, P., Roberts, M., Burke, D., Landis, J., Lopez, H., Antonio, J. (2007) — <em>Journal of the International Society of Sports Nutrition</em></p>
+                    <p class="study-findings">Whey protein is highly effective for promoting muscle protein synthesis and supporting training adaptations in athletes.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17908288/" target="_blank" rel="noopener">PubMed: 17908288</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Potential digestive issues in lactose-intolerant individuals</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Lactose-intolerant individuals</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Improved body composition and fat loss</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Overweight and obese individuals</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Lactose content and lactase activity in whey protein supplements</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Montalto, M., Curigliano, V., Santoro, L., Vastola, M., Cammarota, G., Manna, R., Gasbarrini, A., Gasbarrini, G. (2006) — <em>International Dairy Journal</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Whey protein concentrates contain residual lactose that may cause digestive issues in lactose-intolerant individuals, while isolates are generally well-tolerated.</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Whey protein supplementation during resistance training augments lean body mass</p>
+                    <p class="study-meta">Cribb, P.J., Williams, A.D., Carey, M.F., Hayes, A. (2006) — <em>Journal of the American College of Nutrition</em></p>
+                    <p class="study-findings">Whey protein supplementation promotes greater lean body mass gains and fat loss compared to placebo during resistance training.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/16772636/" target="_blank" rel="noopener">PubMed: 16772636</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Enhanced recovery and reduced muscle damage</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Athletes and active individuals</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Whey protein supplementation accelerates satellite cell proliferation during recovery from eccentric exercise</p>
+                    <p class="study-meta">Farup, J., Rahbek, S.K., Vendelbo, M.H., Matzon, A., Hindhede, J., Bejder, A., Ringgard, S., Vissing, K. (2014) — <em>Amino Acids</em></p>
+                    <p class="study-findings">Whey protein supplementation enhances muscle recovery by promoting satellite cell proliferation and reducing exercise-induced muscle damage.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/24623121/" target="_blank" rel="noopener">PubMed: 24623121</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Satiety and weight management support</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Individuals seeking weight management</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of whey protein on satiety and food intake</p>
+                    <p class="study-meta">Luhovyy, B.L., Akhavan, T., Anderson, G.H. (2007) — <em>Journal of the American College of Nutrition</em></p>
+                    <p class="study-findings">Whey protein consumption increases satiety hormones and reduces subsequent food intake, supporting weight management goals.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17914132/" target="_blank" rel="noopener">PubMed: 17914132</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally safe with excellent tolerance profile</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively documented</span>
+                <span class="evidence-tag">General population</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Safety and efficacy of whey protein supplementation</p>
+                    <p class="study-meta">Devries, M.C., Phillips, S.M. (2015) — <em>Sports Medicine</em></p>
+                    <p class="study-findings">Whey protein supplementation demonstrates excellent safety profile with minimal adverse effects in healthy individuals.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25169440/" target="_blank" rel="noopener">PubMed: 25169440</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Potential digestive issues in lactose-intolerant individuals</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Lactose-intolerant individuals</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Lactose content and lactase activity in whey protein supplements</p>
+                    <p class="study-meta">Montalto, M., Curigliano, V., Santoro, L., Vastola, M., Cammarota, G., Manna, R., Gasbarrini, A., Gasbarrini, G. (2006) — <em>International Dairy Journal</em></p>
+                    <p class="study-findings">Whey protein concentrates contain residual lactose that may cause digestive issues in lactose-intolerant individuals, while isolates are generally well-tolerated.</p>
                     
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Rare allergic reactions in milk-sensitive individuals</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple case reports</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals with milk allergies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Rare allergic reactions in milk-sensitive individuals</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple case reports</span>
+                <span class="evidence-tag">Individuals with milk allergies</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Milk protein allergy and whey protein supplements</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Wal, J.M. (2004) — <em>Allergy</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Individuals with milk protein allergies should avoid whey protein supplements due to risk of allergic reactions, including anaphylaxis in severe cases.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/15147439/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 15147439</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Milk protein allergy and whey protein supplements</p>
+                    <p class="study-meta">Wal, J.M. (2004) — <em>Allergy</em></p>
+                    <p class="study-findings">Individuals with milk protein allergies should avoid whey protein supplements due to risk of allergic reactions, including anaphylaxis in severe cases.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/15147439/" target="_blank" rel="noopener">PubMed: 15147439</a>
                 </div>
             </div>
         </div>
@@ -469,34 +469,34 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Tang JE et al. (2009). Leucine-enriched essential amino acid and carbohydrate ingestion following resistance exercise enhances mTOR signaling and protein synthesis in human muscle. <em></em>. DOI: <a href="https://doi.org/10.1152/ajpendo.00582.2008" target="_blank" rel="noopener">10.1152/ajpendo.00582.2008</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/19589961/" target="_blank" rel="noopener">PubMed</a></li>
-                        <li style="margin-bottom:0.6rem;">Bauer J et al. (2015). Evidence-Based Recommendations for Optimal Dietary Protein Intake in Older People: A Position Paper From the PROT-AGE Study Group. <em></em>. DOI: <a href="https://doi.org/10.1016/j.jamda.2015.05.021" target="_blank" rel="noopener">10.1016/j.jamda.2015.05.021</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26170041/" target="_blank" rel="noopener">PubMed</a></li>
-                        <li style="margin-bottom:0.6rem;">Li Z et al. (2024). The effect of whey protein supplementation with and without creatine monohydrate combined with resistance training on lean tissue mass and muscle strength. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnu.2024.01.001" target="_blank" rel="noopener">10.1016/j.clnu.2024.01.001</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/38350303/" target="_blank" rel="noopener">PubMed</a></li>
+                    <ol class="references-list">
+                        <li>Tang JE et al. (2009). Leucine-enriched essential amino acid and carbohydrate ingestion following resistance exercise enhances mTOR signaling and protein synthesis in human muscle. <em></em>. DOI: <a href="https://doi.org/10.1152/ajpendo.00582.2008" target="_blank" rel="noopener">10.1152/ajpendo.00582.2008</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/19589961/" target="_blank" rel="noopener">PubMed</a></li>
+                        <li>Bauer J et al. (2015). Evidence-Based Recommendations for Optimal Dietary Protein Intake in Older People: A Position Paper From the PROT-AGE Study Group. <em></em>. DOI: <a href="https://doi.org/10.1016/j.jamda.2015.05.021" target="_blank" rel="noopener">10.1016/j.jamda.2015.05.021</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26170041/" target="_blank" rel="noopener">PubMed</a></li>
+                        <li>Li Z et al. (2024). The effect of whey protein supplementation with and without creatine monohydrate combined with resistance training on lean tissue mass and muscle strength. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnu.2024.01.001" target="_blank" rel="noopener">10.1016/j.clnu.2024.01.001</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/38350303/" target="_blank" rel="noopener">PubMed</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/performance-enhancers.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/performance-enhancers.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Performance Enhancers</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/energy-vitality.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/energy-vitality.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Energy &amp; Vitality Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -504,19 +504,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

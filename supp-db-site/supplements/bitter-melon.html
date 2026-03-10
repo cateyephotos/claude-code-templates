@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133731">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Bitter Melon","headline":"Bitter Melon — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Bitter Melon (Momordica charantia). Tier 2 evidence with 9+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/bitter-melon.html"},"about":{"@type":"DietarySupplement","name":"Bitter Melon","alternateName":"Bitter Gourd","activeIngredient":"Momordica charantia"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Herbal Extracts</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Herbal Extracts</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Bitter Melon</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Momordica charantia</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Bitter Gourd, Balsam Pear, Karela</p>
+            <p class="scientific-name">Momordica charantia</p>
+            <p class="common-names">Also known as: Bitter Gourd, Balsam Pear, Karela</p>
             <p class="hero-subtitle">Multiple studies showing glucose-lowering effects</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 9+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 9+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Herbal Extracts</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Bitter Melon is classified as herbal extracts with moderate evidence (Tier 2) for its primary applications. Multiple studies showing glucose-lowering effects</p>
-                        <p style="margin-top:1rem;">Multiple meta-analyses and RCTs show modest reductions in fasting plasma glucose and lipids; however, the Cochrane systematic review rated overall evidence quality as low with high risk of bias. Strongest effects seen in prediabetic populations with longer supplementation (12+ weeks). Well-characterized mechanisms via charantin, polypeptide-p, and AMPK activation.</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Type 2 diabetics; Prediabetic individuals; Metabolic syndrome</p>
+                        <p class="key-findings">Multiple meta-analyses and RCTs show modest reductions in fasting plasma glucose and lipids; however, the Cochrane systematic review rated overall evidence quality as low with high risk of bias. Strongest effects seen in prediabetic populations with longer supplementation (12+ weeks). Well-characterized mechanisms via charantin, polypeptide-p, and AMPK activation.</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Type 2 diabetics; Prediabetic individuals; Metabolic syndrome</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Alpha-glucosidase inhibition</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Alpha-glucosidase inhibition</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Glucose transporter enhancement</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Glucose transporter enhancement</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Insulin secretion stimulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Insulin secretion stimulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Antioxidant pancreatic protection</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Antioxidant pancreatic protection</p>
                         </div>
                     </div>
                 </section>
@@ -188,24 +188,24 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Blood sugar stability supporting cognitive function</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Neuroprotective compounds</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Blood sugar stability supporting cognitive function</li>
+                        <li>Neuroprotective compounds</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Blood glucose reduction</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Insulin sensitivity improvement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant effects</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Blood glucose reduction</li>
+                        <li>Insulin sensitivity improvement</li>
+                        <li>Antioxidant effects</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -214,12 +214,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>GlucoseReduction</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (20-30mg/dL fasting glucose reduction)</td>
+                                    <td class="effect-domain">GlucoseReduction</td>
+                                    <td class="effect-value">Moderate (20-30mg/dL fasting glucose reduction)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>HbA1c</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate (0.3-0.8% reduction)</td>
+                                    <td class="effect-domain">HbA1c</td>
+                                    <td class="effect-value">Small to moderate (0.3-0.8% reduction)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -238,238 +238,238 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Type 2 diabetics</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Prediabetic individuals</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Metabolic syndrome</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Type 2 diabetics</li>
+                        <li>Prediabetic individuals</li>
+                        <li>Metabolic syndrome</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">GI upset</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Diarrhea</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Abdominal pain</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>GI upset</li>
+                        <li>Diarrhea</li>
+                        <li>Abdominal pain</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Hypoglycemia</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">G6PD deficiency</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy</li>
+                            <li>Hypoglycemia</li>
+                            <li>G6PD deficiency</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Diabetes medications</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">May enhance hypoglycemic effects</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Diabetes medications</li>
+                            <li>May enhance hypoglycemic effects</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 8 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Charantin, vicine, and polypeptide-p bioactive compounds with insulin-mimetic activity</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+                    <p class="section-intro">Detailed citation analysis from 8 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Charantin, vicine, and polypeptide-p bioactive compounds with insulin-mimetic activity</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Bitter gourd (Momordica charantia): A dietary approach to hyperglycemia</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Krawinkel MB, Keding GB (2006) — <em>Nutrition Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Bitter gourd contains charantin, vicine, and polypeptide-p with antidiabetic properties,Polypeptide-p acts as insulin-like compound with hypoglycemic action,Charantin is a steroidal glycoside with glucose-lowering effects,Antioxidant components also contribute to metabolic benefits,Mechanism of action debated: insulin release regulation vs altered glucose metabolism vs direct insulin-like effect</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/16910221/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 16910221</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Bitter gourd (Momordica charantia): A dietary approach to hyperglycemia</p>
+                    <p class="study-meta">Krawinkel MB, Keding GB (2006) — <em>Nutrition Reviews</em></p>
+                    <p class="study-findings">Bitter gourd contains charantin, vicine, and polypeptide-p with antidiabetic properties,Polypeptide-p acts as insulin-like compound with hypoglycemic action,Charantin is a steroidal glycoside with glucose-lowering effects,Antioxidant components also contribute to metabolic benefits,Mechanism of action debated: insulin release regulation vs altered glucose metabolism vs direct insulin-like effect</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/16910221/" target="_blank" rel="noopener">PubMed: 16910221</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Anti-diabetic and hypoglycaemic effects of Momordica charantia (bitter melon): a mini review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Leung L, Birtwhistle R, Kotecha J, Hannah S, Cuthbertson S (2009) — <em>British Journal of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Abundant preclinical studies document anti-diabetic and hypoglycaemic effects through various mechanisms,Mechanisms include increased insulin secretion, enhanced glucose uptake, and hepatic glycogen synthesis,Clinical trial data limited and flawed by poor study design and low statistical power,Calls for better-designed clinical trials with standardized preparations</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/19825210/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 19825210</a>
+                <div class="study-item">
+                    <p class="study-title">Anti-diabetic and hypoglycaemic effects of Momordica charantia (bitter melon): a mini review</p>
+                    <p class="study-meta">Leung L, Birtwhistle R, Kotecha J, Hannah S, Cuthbertson S (2009) — <em>British Journal of Nutrition</em></p>
+                    <p class="study-findings">Abundant preclinical studies document anti-diabetic and hypoglycaemic effects through various mechanisms,Mechanisms include increased insulin secretion, enhanced glucose uptake, and hepatic glycogen synthesis,Clinical trial data limited and flawed by poor study design and low statistical power,Calls for better-designed clinical trials with standardized preparations</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/19825210/" target="_blank" rel="noopener">PubMed: 19825210</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">AMPK activation via CaMKKbeta-dependent pathway</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">AMPK activation via CaMKKbeta-dependent pathway</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Activation of AMPK by bitter melon triterpenoids involves CaMKKbeta</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Iseli TJ, Turner N, Zeng XY, Cooney GJ, Kraegen EW, Yao S, Ye Y, James DE, Ye JM (2013) — <em>PLoS ONE</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Bitter melon-derived triterpenoids (BMTs) activate AMPK by 20-35% in L6 myotubes and LKB1-deficient HeLa cells,BMTs do not activate AMPK directly in allosteric manner like AMP,BMTs do not inhibit cellular respiration like metformin,CaMKKbeta inhibitor (STO-609) completely attenuated AMPK activation,Activation is Ca2+-independent, mediated by CaMKKbeta as upstream kinase,BMTs increase GLUT4 translocation to plasma membrane</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/23638033/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 23638033</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Reduces fasting plasma glucose and improves insulin resistance in type 2 diabetes and prediabetic subjects</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple RCTs with meta-analytic support; Cochrane review rates evidence quality as low</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Momordica charantia L. lowers elevated glycaemia in type 2 diabetes mellitus patients: Systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Peter EL, Kasali FM, Deyno S, Mtewa A, Nagendrappa PB, Tolo CU, Ogwang PE, Sesaazi D (2018) — <em>Journal of Ethnopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">M. charantia significantly reduced FPG vs placebo: mean difference -0.72 mmol/L (95% CI: -1.33, -0.12), I²=14%,Significantly reduced PPG: mean difference -1.43 mmol/L (95% CI: -2.18, -0.67), I²=0,Significantly reduced HbA1c: mean difference -0.26% (95% CI: -0.49, -0.03), I²=0,Overall moderate to high risk of bias across included studies,No serious adverse effects reported across trials</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/30385422/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 30385422</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Momordica charantia for type 2 diabetes mellitus</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ooi CP, Yassin Z, Hamid TA (2012) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">No statistically significant difference compared to placebo or active control for glycemic outcomes,Risk of bias generally high across included trials,Insufficient evidence to recommend M. charantia for type 2 diabetes mellitus,Call for larger, well-designed clinical trials with standardized preparations</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/22895968/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 22895968</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Hypoglycemic efficacy and safety of Momordica charantia (bitter melon) in patients with type 2 diabetes mellitus</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kim SK, Jung J, Jung JH, Yoon N, Kang SS, Roh GS, Hahm JR (2020) — <em>Complementary Therapies in Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Fasting blood glucose significantly decreased in bitter melon group (p=0.014),HbA1c levels did not show significant change vs placebo,No serious adverse events reported during the study period,Largest single RCT of bitter melon for T2DM to date</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32951763/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 32951763</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Bitter gourd (Momordica charantia L.) supplementation for twelve weeks improves biomarkers of glucose homeostasis in a prediabetic population</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Mes JJ, van den Belt M, van der Haar S, Oosterink E, Luijendijk T, Manusama K, van Dam L, de Bie T, Witkamp R, Esser D (2025) — <em>Journal of Ethnopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Study 1 (4 weeks): No significant differences between groups; trend in high-baseline FPG subgroup,Study 2 (12 weeks): Significant reductions in FPG (p=0.014), fasting insulin (p=0.007), and HOMA-IR (p=0.003),Between-treatment analysis: significant effects on FPG (p=0.026) and HOMA-IR (p=0.045),Bitter gourd reduced FPG by ~0.05 mmol/L per week over 12 weeks,No indications of health risks or side effects in either study</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40199408/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40199408</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">A randomized, double-blind, placebo-controlled trial to evaluate the hypoglycemic efficacy of the mcIRBP-19-containing Momordica charantia L. fruit extracts in type 2 diabetic subjects</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Yang YS, Wu NY, Kornelius E, Huang CN, Yang NC (2022) — <em>Food &amp; Nutrition Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">mcIRBP-19-BGE (600 mg/day) showed borderline significance for FBG (p=0.057) and HbA1c (p=0.060) in full analysis,Subgroup analysis (n=29, inadequate response to antidiabetic drugs): significant FBG reduction (p=0.041) and HbA1c reduction (p=0.010),HbA1c decreased from 8.0±0.7% to 7.5±0.8% in responder subgroup,Demonstrates insulin receptor binding peptide-19 (mcIRBP-19) as specific bioactive component</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35140559/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 35140559</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Reduces total cholesterol and triglycerides in supplementation trials</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Meta-analysis of 8 RCTs with 423 participants</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The Effects of Bitter Melon (Momordica charantia) on Lipid Profile: A Systematic Review and Meta-Analysis of Randomized Controlled Trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Amini MR, Rasaei N, Jalalzadeh M, Pourreza S, Hekmatdoost A (2024) — <em>Phytotherapy Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant decrease in total cholesterol: WMD -9.71 mg/dL (95% CI: -17.69 to -1.74, p=0.01),Significant decrease in triglycerides: WMD -10.24 mg/dL (95% CI: -19.92 to -0.56, p=0.03),No significant effect on LDL-C (WMD -8.66, p=0.12) or HDL-C (WMD 0.54, p=0.71),Subgroup analysis: dose ≤2000 mg/day and ≤8 weeks showed greater effects on TC, LDL-C, and HDL-C,Greatest lipid effects seen in diabetic and prediabetic populations</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/39444254/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 39444254</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May reduce body weight and improve pain scores in knee osteoarthritis patients</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Weak</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Single study</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of Momordica charantia (bitter melon) supplementation in patients with primary knee osteoarthritis: A single-blinded, randomized controlled trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Soo May L, Sanip Z, Ahmed Shokri A, Abdul Kadir A, Md Lazin MR (2018) — <em>Complementary Therapies in Clinical Practice</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Reduced body weight and BMI in supplemented group,Reduced fasting blood glucose levels,Improved KOOS (Knee Injury and Osteoarthritis Outcome Score) subscales,Single-blinded design limits strength of conclusions</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/30057048/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 30057048</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Activation of AMPK by bitter melon triterpenoids involves CaMKKbeta</p>
+                    <p class="study-meta">Iseli TJ, Turner N, Zeng XY, Cooney GJ, Kraegen EW, Yao S, Ye Y, James DE, Ye JM (2013) — <em>PLoS ONE</em></p>
+                    <p class="study-findings">Bitter melon-derived triterpenoids (BMTs) activate AMPK by 20-35% in L6 myotubes and LKB1-deficient HeLa cells,BMTs do not activate AMPK directly in allosteric manner like AMP,BMTs do not inhibit cellular respiration like metformin,CaMKKbeta inhibitor (STO-609) completely attenuated AMPK activation,Activation is Ca2+-independent, mediated by CaMKKbeta as upstream kinase,BMTs increase GLUT4 translocation to plasma membrane</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/23638033/" target="_blank" rel="noopener">PubMed: 23638033</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally well tolerated in clinical trials with no serious adverse events reported in adult populations at standard doses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Low</span>
-                
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduces fasting plasma glucose and improves insulin resistance in type 2 diabetes and prediabetic subjects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple RCTs with meta-analytic support; Cochrane review rates evidence quality as low</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Hypoglycemic efficacy and safety of Momordica charantia (bitter melon) in patients with type 2 diabetes mellitus</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kim SK, Jung J, Jung JH, Yoon N, Kang SS, Roh GS, Hahm JR (2020) — <em>Complementary Therapies in Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">No serious adverse events reported during 12-week supplementation,Well tolerated in adult type 2 diabetes population,Safety confirmed in largest single RCT to date</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32951763/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 32951763</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Momordica charantia L. lowers elevated glycaemia in type 2 diabetes mellitus patients: Systematic review and meta-analysis</p>
+                    <p class="study-meta">Peter EL, Kasali FM, Deyno S, Mtewa A, Nagendrappa PB, Tolo CU, Ogwang PE, Sesaazi D (2018) — <em>Journal of Ethnopharmacology</em></p>
+                    <p class="study-findings">M. charantia significantly reduced FPG vs placebo: mean difference -0.72 mmol/L (95% CI: -1.33, -0.12), I²=14%,Significantly reduced PPG: mean difference -1.43 mmol/L (95% CI: -2.18, -0.67), I²=0,Significantly reduced HbA1c: mean difference -0.26% (95% CI: -0.49, -0.03), I²=0,Overall moderate to high risk of bias across included studies,No serious adverse effects reported across trials</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/30385422/" target="_blank" rel="noopener">PubMed: 30385422</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Bitter gourd (Momordica charantia L.) supplementation for twelve weeks improves biomarkers of glucose homeostasis in a prediabetic population</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Mes JJ, van den Belt M, van der Haar S, Oosterink E, Luijendijk T, Manusama K, van Dam L, de Bie T, Witkamp R, Esser D (2025) — <em>Journal of Ethnopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">No indications of health risks or side effects from consumption of bitter gourd supplements,Safe in prediabetic population at 2.4-3.6 g/day freeze-dried preparations,Safety biomarkers analyzed with no clinically significant changes</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40199408/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40199408</a>
+                <div class="study-item">
+                    <p class="study-title">Momordica charantia for type 2 diabetes mellitus</p>
+                    <p class="study-meta">Ooi CP, Yassin Z, Hamid TA (2012) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">No statistically significant difference compared to placebo or active control for glycemic outcomes,Risk of bias generally high across included trials,Insufficient evidence to recommend M. charantia for type 2 diabetes mellitus,Call for larger, well-designed clinical trials with standardized preparations</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/22895968/" target="_blank" rel="noopener">PubMed: 22895968</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Hypoglycemic efficacy and safety of Momordica charantia (bitter melon) in patients with type 2 diabetes mellitus</p>
+                    <p class="study-meta">Kim SK, Jung J, Jung JH, Yoon N, Kang SS, Roh GS, Hahm JR (2020) — <em>Complementary Therapies in Medicine</em></p>
+                    <p class="study-findings">Fasting blood glucose significantly decreased in bitter melon group (p=0.014),HbA1c levels did not show significant change vs placebo,No serious adverse events reported during the study period,Largest single RCT of bitter melon for T2DM to date</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32951763/" target="_blank" rel="noopener">PubMed: 32951763</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Bitter gourd (Momordica charantia L.) supplementation for twelve weeks improves biomarkers of glucose homeostasis in a prediabetic population</p>
+                    <p class="study-meta">Mes JJ, van den Belt M, van der Haar S, Oosterink E, Luijendijk T, Manusama K, van Dam L, de Bie T, Witkamp R, Esser D (2025) — <em>Journal of Ethnopharmacology</em></p>
+                    <p class="study-findings">Study 1 (4 weeks): No significant differences between groups; trend in high-baseline FPG subgroup,Study 2 (12 weeks): Significant reductions in FPG (p=0.014), fasting insulin (p=0.007), and HOMA-IR (p=0.003),Between-treatment analysis: significant effects on FPG (p=0.026) and HOMA-IR (p=0.045),Bitter gourd reduced FPG by ~0.05 mmol/L per week over 12 weeks,No indications of health risks or side effects in either study</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40199408/" target="_blank" rel="noopener">PubMed: 40199408</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">A randomized, double-blind, placebo-controlled trial to evaluate the hypoglycemic efficacy of the mcIRBP-19-containing Momordica charantia L. fruit extracts in type 2 diabetic subjects</p>
+                    <p class="study-meta">Yang YS, Wu NY, Kornelius E, Huang CN, Yang NC (2022) — <em>Food &amp; Nutrition Research</em></p>
+                    <p class="study-findings">mcIRBP-19-BGE (600 mg/day) showed borderline significance for FBG (p=0.057) and HbA1c (p=0.060) in full analysis,Subgroup analysis (n=29, inadequate response to antidiabetic drugs): significant FBG reduction (p=0.041) and HbA1c reduction (p=0.010),HbA1c decreased from 8.0±0.7% to 7.5±0.8% in responder subgroup,Demonstrates insulin receptor binding peptide-19 (mcIRBP-19) as specific bioactive component</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35140559/" target="_blank" rel="noopener">PubMed: 35140559</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Risk of hypoglycemia when combined with antidiabetic medications; adverse effects include gastrointestinal symptoms and rare hypoglycemic coma in children</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduces total cholesterol and triglycerides in supplementation trials</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Meta-analysis of 8 RCTs with 423 participants</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Bitter melon (Momordica charantia): a review of efficacy and safety</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Basch E, Gabardi S, Ulbricht C (2003) — <em>American Journal of Health-System Pharmacy</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Four clinical trials found moderate hypoglycemic effect but methodological limitations,Adverse effects include hypoglycemic coma reported in children,Reduced fertility documented in animal studies (mice),Gastrointestinal adverse effects reported including abdominal pain and diarrhea,Contraindicated in pregnancy due to potential abortifacient properties</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12625217/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12625217</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The Effects of Bitter Melon (Momordica charantia) on Lipid Profile: A Systematic Review and Meta-Analysis of Randomized Controlled Trials</p>
+                    <p class="study-meta">Amini MR, Rasaei N, Jalalzadeh M, Pourreza S, Hekmatdoost A (2024) — <em>Phytotherapy Research</em></p>
+                    <p class="study-findings">Significant decrease in total cholesterol: WMD -9.71 mg/dL (95% CI: -17.69 to -1.74, p=0.01),Significant decrease in triglycerides: WMD -10.24 mg/dL (95% CI: -19.92 to -0.56, p=0.03),No significant effect on LDL-C (WMD -8.66, p=0.12) or HDL-C (WMD 0.54, p=0.71),Subgroup analysis: dose ≤2000 mg/day and ≤8 weeks showed greater effects on TC, LDL-C, and HDL-C,Greatest lipid effects seen in diabetic and prediabetic populations</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/39444254/" target="_blank" rel="noopener">PubMed: 39444254</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Momordica charantia, a Nutraceutical Approach for Inflammatory Related Diseases</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Bortolotti M, Mercatelli D, Polito L (2019) — <em>Frontiers in Pharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Both in vitro and in vivo studies demonstrate bitter melon may elicit toxic or adverse effects under certain conditions,Anti-inflammatory and anti-neoplastic properties documented alongside safety concerns,Systematic clinical studies needed to establish efficacy and safety in patients,Hepatotoxicity reported in high-dose animal studies</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31139079/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31139079</a>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May reduce body weight and improve pain scores in knee osteoarthritis patients</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Weak</span>
+                <span class="evidence-tag">Single study</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of Momordica charantia (bitter melon) supplementation in patients with primary knee osteoarthritis: A single-blinded, randomized controlled trial</p>
+                    <p class="study-meta">Soo May L, Sanip Z, Ahmed Shokri A, Abdul Kadir A, Md Lazin MR (2018) — <em>Complementary Therapies in Clinical Practice</em></p>
+                    <p class="study-findings">Reduced body weight and BMI in supplemented group,Reduced fasting blood glucose levels,Improved KOOS (Knee Injury and Osteoarthritis Outcome Score) subscales,Single-blinded design limits strength of conclusions</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/30057048/" target="_blank" rel="noopener">PubMed: 30057048</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Clinical trials have used 2-3 g/day bitter melon extract or equivalent preparations for 12+ weeks for glycemic benefits</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally well tolerated in clinical trials with no serious adverse events reported in adult populations at standard doses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Low</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Hypoglycemic efficacy and safety of Momordica charantia (bitter melon) in patients with type 2 diabetes mellitus</p>
+                    <p class="study-meta">Kim SK, Jung J, Jung JH, Yoon N, Kang SS, Roh GS, Hahm JR (2020) — <em>Complementary Therapies in Medicine</em></p>
+                    <p class="study-findings">No serious adverse events reported during 12-week supplementation,Well tolerated in adult type 2 diabetes population,Safety confirmed in largest single RCT to date</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32951763/" target="_blank" rel="noopener">PubMed: 32951763</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Bitter gourd (Momordica charantia L.) supplementation for twelve weeks improves biomarkers of glucose homeostasis in a prediabetic population</p>
+                    <p class="study-meta">Mes JJ, van den Belt M, van der Haar S, Oosterink E, Luijendijk T, Manusama K, van Dam L, de Bie T, Witkamp R, Esser D (2025) — <em>Journal of Ethnopharmacology</em></p>
+                    <p class="study-findings">No indications of health risks or side effects from consumption of bitter gourd supplements,Safe in prediabetic population at 2.4-3.6 g/day freeze-dried preparations,Safety biomarkers analyzed with no clinically significant changes</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40199408/" target="_blank" rel="noopener">PubMed: 40199408</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Risk of hypoglycemia when combined with antidiabetic medications; adverse effects include gastrointestinal symptoms and rare hypoglycemic coma in children</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Bitter melon (Momordica charantia): a review of efficacy and safety</p>
+                    <p class="study-meta">Basch E, Gabardi S, Ulbricht C (2003) — <em>American Journal of Health-System Pharmacy</em></p>
+                    <p class="study-findings">Four clinical trials found moderate hypoglycemic effect but methodological limitations,Adverse effects include hypoglycemic coma reported in children,Reduced fertility documented in animal studies (mice),Gastrointestinal adverse effects reported including abdominal pain and diarrhea,Contraindicated in pregnancy due to potential abortifacient properties</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12625217/" target="_blank" rel="noopener">PubMed: 12625217</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Momordica charantia, a Nutraceutical Approach for Inflammatory Related Diseases</p>
+                    <p class="study-meta">Bortolotti M, Mercatelli D, Polito L (2019) — <em>Frontiers in Pharmacology</em></p>
+                    <p class="study-findings">Both in vitro and in vivo studies demonstrate bitter melon may elicit toxic or adverse effects under certain conditions,Anti-inflammatory and anti-neoplastic properties documented alongside safety concerns,Systematic clinical studies needed to establish efficacy and safety in patients,Hepatotoxicity reported in high-dose animal studies</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31139079/" target="_blank" rel="noopener">PubMed: 31139079</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Clinical trials have used 2-3 g/day bitter melon extract or equivalent preparations for 12+ weeks for glycemic benefits</p>
+            <div class="evidence-tags">
                 
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Hypoglycemic efficacy and safety of Momordica charantia (bitter melon) in patients with type 2 diabetes mellitus</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kim SK, Jung J, Jung JH, Yoon N, Kang SS, Roh GS, Hahm JR (2020) — <em>Complementary Therapies in Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">2000 mg/day bitter melon extract for 12 weeks,Significant fasting glucose reduction at this dose,12-week minimum duration needed for measurable glucose improvements</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32951763/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 32951763</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Hypoglycemic efficacy and safety of Momordica charantia (bitter melon) in patients with type 2 diabetes mellitus</p>
+                    <p class="study-meta">Kim SK, Jung J, Jung JH, Yoon N, Kang SS, Roh GS, Hahm JR (2020) — <em>Complementary Therapies in Medicine</em></p>
+                    <p class="study-findings">2000 mg/day bitter melon extract for 12 weeks,Significant fasting glucose reduction at this dose,12-week minimum duration needed for measurable glucose improvements</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32951763/" target="_blank" rel="noopener">PubMed: 32951763</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Bitter gourd (Momordica charantia L.) supplementation for twelve weeks improves biomarkers of glucose homeostasis in a prediabetic population</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Mes JJ, van den Belt M, van der Haar S, Oosterink E, Luijendijk T, Manusama K, van Dam L, de Bie T, Witkamp R, Esser D (2025) — <em>Journal of Ethnopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Study 1: 2.4 g/day freeze-dried juice for 4 weeks — no significant effect (duration too short),Study 2: 3.6 g/day freeze-dried whole fruit for 12 weeks — significant glucose improvements,12-week duration appears to be minimum effective treatment period,Higher dose and whole fruit preparation more effective than juice alone</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40199408/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40199408</a>
+                <div class="study-item">
+                    <p class="study-title">Bitter gourd (Momordica charantia L.) supplementation for twelve weeks improves biomarkers of glucose homeostasis in a prediabetic population</p>
+                    <p class="study-meta">Mes JJ, van den Belt M, van der Haar S, Oosterink E, Luijendijk T, Manusama K, van Dam L, de Bie T, Witkamp R, Esser D (2025) — <em>Journal of Ethnopharmacology</em></p>
+                    <p class="study-findings">Study 1: 2.4 g/day freeze-dried juice for 4 weeks — no significant effect (duration too short),Study 2: 3.6 g/day freeze-dried whole fruit for 12 weeks — significant glucose improvements,12-week duration appears to be minimum effective treatment period,Higher dose and whole fruit preparation more effective than juice alone</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40199408/" target="_blank" rel="noopener">PubMed: 40199408</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The Effects of Bitter Melon (Momordica charantia) on Lipid Profile: A Systematic Review and Meta-Analysis of Randomized Controlled Trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Amini MR, Rasaei N, Jalalzadeh M, Pourreza S, Hekmatdoost A (2024) — <em>Phytotherapy Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Subgroup analysis: doses ≤2000 mg/day showed significant effects on TC, LDL-C, and HDL-C,Intervention periods ≤8 weeks sufficient for lipid effects,For lipid benefits, lower doses may be more effective than higher doses</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/39444254/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 39444254</a>
+                <div class="study-item">
+                    <p class="study-title">The Effects of Bitter Melon (Momordica charantia) on Lipid Profile: A Systematic Review and Meta-Analysis of Randomized Controlled Trials</p>
+                    <p class="study-meta">Amini MR, Rasaei N, Jalalzadeh M, Pourreza S, Hekmatdoost A (2024) — <em>Phytotherapy Research</em></p>
+                    <p class="study-findings">Subgroup analysis: doses ≤2000 mg/day showed significant effects on TC, LDL-C, and HDL-C,Intervention periods ≤8 weeks sufficient for lipid effects,For lipid benefits, lower doses may be more effective than higher doses</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/39444254/" target="_blank" rel="noopener">PubMed: 39444254</a>
                 </div>
             </div>
         </div>
@@ -478,32 +478,32 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Peter EL, et al. (2019). Bitter melon (Momordica charantia) in patients with type 2 diabetes mellitus. <em>Food Funct</em>. DOI: <a href="https://doi.org/10.1039/c8fo02206g" target="_blank" rel="noopener">10.1039/c8fo02206g</a></li>
+                    <ol class="references-list">
+                        <li>Peter EL, et al. (2019). Bitter melon (Momordica charantia) in patients with type 2 diabetes mellitus. <em>Food Funct</em>. DOI: <a href="https://doi.org/10.1039/c8fo02206g" target="_blank" rel="noopener">10.1039/c8fo02206g</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/herbal-extracts.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/herbal-extracts.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Herbal Extracts</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/metabolic-health.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/metabolic-health.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Metabolic Health Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -511,19 +511,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

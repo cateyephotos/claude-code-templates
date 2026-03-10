@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133669">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Caffeine","headline":"Caffeine — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Caffeine (1,3,7-Trimethylxanthine). Tier 1 evidence with 11+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/caffeine.html"},"about":{"@type":"DietarySupplement","name":"Caffeine","alternateName":"Caffeine Anhydrous","activeIngredient":"1,3,7-Trimethylxanthine"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Performance Enhancers</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Performance Enhancers</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Caffeine</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">1,3,7-Trimethylxanthine</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Caffeine Anhydrous, Natural Caffeine</p>
+            <p class="scientific-name">1,3,7-Trimethylxanthine</p>
+            <p class="common-names">Also known as: Caffeine Anhydrous, Natural Caffeine</p>
             <p class="hero-subtitle">Extensive research showing strong evidence for cognitive enhancement and alertness</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 11+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 11+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Performance Enhancers</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Caffeine is classified as performance enhancers with strong evidence (Tier 1) for its primary applications. Extensive research showing strong evidence for cognitive enhancement and alertness</p>
-                        <p style="margin-top:1rem;">Extensively researched performance enhancer with strong evidence for cognitive and physical performance enhancement</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Healthy adults; Athletes; Shift workers; Sleep-deprived individuals</p>
+                        <p class="key-findings">Extensively researched performance enhancer with strong evidence for cognitive and physical performance enhancement</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Healthy adults; Athletes; Shift workers; Sleep-deprived individuals</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Adenosine receptor antagonism</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Adenosine receptor antagonism</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Dopamine enhancement</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Dopamine enhancement</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Adrenaline stimulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Adrenaline stimulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Calcium release in muscles</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Calcium release in muscles</p>
                         </div>
                     </div>
                 </section>
@@ -188,27 +188,27 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Alertness enhancement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Focus improvement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Reaction time</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Memory consolidation</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Alertness enhancement</li>
+                        <li>Focus improvement</li>
+                        <li>Reaction time</li>
+                        <li>Memory consolidation</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Exercise performance</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Fat burning</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Metabolic boost</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mood enhancement</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Exercise performance</li>
+                        <li>Fat burning</li>
+                        <li>Metabolic boost</li>
+                        <li>Mood enhancement</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -217,16 +217,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Alertness</strong></td>
-                                    <td style="font-size:0.85rem;">Large improvement</td>
+                                    <td class="effect-domain">Alertness</td>
+                                    <td class="effect-value">Large improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Reaction Time</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate improvement</td>
+                                    <td class="effect-domain">Reaction Time</td>
+                                    <td class="effect-value">Moderate improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Exercise Performance</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate improvement</td>
+                                    <td class="effect-domain">Exercise Performance</td>
+                                    <td class="effect-value">Moderate improvement</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -245,234 +245,234 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Healthy adults</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Athletes</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Shift workers</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Sleep-deprived individuals</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Healthy adults</li>
+                        <li>Athletes</li>
+                        <li>Shift workers</li>
+                        <li>Sleep-deprived individuals</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Jitters</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Anxiety</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Insomnia</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Dependence</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Jitters</li>
+                        <li>Anxiety</li>
+                        <li>Insomnia</li>
+                        <li>Dependence</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Anxiety disorders</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Heart conditions</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy</li>
+                            <li>Anxiety disorders</li>
+                            <li>Heart conditions</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Stimulant medications</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Blood thinners</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Some antibiotics</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Stimulant medications</li>
+                            <li>Blood thinners</li>
+                            <li>Some antibiotics</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Adenosine receptor antagonism and neurotransmitter modulation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+                    <p class="section-intro">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Adenosine receptor antagonism and neurotransmitter modulation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine as an adenosine receptor antagonist</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Fredholm, B.B., Bättig, K., Holmén, J., Nehlig, A., Zvartau, E.E. (1999) — <em>Pharmacological Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine blocks adenosine A1 and A2A receptors, preventing adenosine-induced drowsiness and enhancing alertness through dopaminergic and noradrenergic pathways.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/10353985/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 10353985</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Caffeine as an adenosine receptor antagonist</p>
+                    <p class="study-meta">Fredholm, B.B., Bättig, K., Holmén, J., Nehlig, A., Zvartau, E.E. (1999) — <em>Pharmacological Reviews</em></p>
+                    <p class="study-findings">Caffeine blocks adenosine A1 and A2A receptors, preventing adenosine-induced drowsiness and enhancing alertness through dopaminergic and noradrenergic pathways.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10353985/" target="_blank" rel="noopener">PubMed: 10353985</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Mechanisms of action of caffeine: implications for the behavioral and cognitive effects of the methylxanthine</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Nehlig, A., Daval, J.L., Debry, G. (1992) — <em>Behavioural Brain Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine enhances dopamine signaling in the nucleus accumbens and increases norepinephrine release, contributing to improved mood and cognitive performance.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/1418466/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 1418466</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Phosphodiesterase inhibition and cyclic AMP elevation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Phosphodiesterase inhibition by caffeine and its metabolites</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Smellie, F.W., Davis, C.W., Daly, J.W., Wells, J.N. (1979) — <em>Life Sciences</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine inhibits phosphodiesterase enzymes, leading to increased cyclic AMP levels and enhanced cellular signaling pathways.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/226776/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 226776</a>
+                <div class="study-item">
+                    <p class="study-title">Mechanisms of action of caffeine: implications for the behavioral and cognitive effects of the methylxanthine</p>
+                    <p class="study-meta">Nehlig, A., Daval, J.L., Debry, G. (1992) — <em>Behavioural Brain Research</em></p>
+                    <p class="study-findings">Caffeine enhances dopamine signaling in the nucleus accumbens and increases norepinephrine release, contributing to improved mood and cognitive performance.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/1418466/" target="_blank" rel="noopener">PubMed: 1418466</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Calcium release from intracellular stores</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Muscle tissue</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Phosphodiesterase inhibition and cyclic AMP elevation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine-induced calcium release from the sarcoplasmic reticulum</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rousseau, E., Ladine, J., Liu, Q.Y., Meissner, G. (1988) — <em>Archives of Biochemistry and Biophysics</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine triggers calcium release from sarcoplasmic reticulum, enhancing muscle contraction and contributing to ergogenic effects.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31456413/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31456413</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Phosphodiesterase inhibition by caffeine and its metabolites</p>
+                    <p class="study-meta">Smellie, F.W., Davis, C.W., Daly, J.W., Wells, J.N. (1979) — <em>Life Sciences</em></p>
+                    <p class="study-findings">Caffeine inhibits phosphodiesterase enzymes, leading to increased cyclic AMP levels and enhanced cellular signaling pathways.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/226776/" target="_blank" rel="noopener">PubMed: 226776</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Calcium release from intracellular stores</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Muscle tissue</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Caffeine-induced calcium release from the sarcoplasmic reticulum</p>
+                    <p class="study-meta">Rousseau, E., Ladine, J., Liu, Q.Y., Meissner, G. (1988) — <em>Archives of Biochemistry and Biophysics</em></p>
+                    <p class="study-findings">Caffeine triggers calcium release from sarcoplasmic reticulum, enhancing muscle contraction and contributing to ergogenic effects.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31456413/" target="_blank" rel="noopener">PubMed: 31456413</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Enhanced cognitive performance and alertness</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Healthy adults</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Enhanced cognitive performance and alertness</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Healthy adults</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The effects of caffeine on cognitive performance: a meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Lieberman, H.R., Tharion, W.J., Shukitt-Hale, B., Speckman, K.L., Tulley, R. (2002) — <em>Human Psychopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Meta-analysis shows caffeine significantly improves attention, vigilance, reaction time, and working memory across multiple cognitive domains.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12404667/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12404667</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The effects of caffeine on cognitive performance: a meta-analysis</p>
+                    <p class="study-meta">Lieberman, H.R., Tharion, W.J., Shukitt-Hale, B., Speckman, K.L., Tulley, R. (2002) — <em>Human Psychopharmacology</em></p>
+                    <p class="study-findings">Meta-analysis shows caffeine significantly improves attention, vigilance, reaction time, and working memory across multiple cognitive domains.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12404667/" target="_blank" rel="noopener">PubMed: 12404667</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine effects on learning, memory, and mood state are dependent on the level of caffeine abstinence</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rogers, P.J., Heatherley, S.V., Mullings, E.L., Smith, J.E. (2013) — <em>Psychopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine improves cognitive performance in both habitual users and non-users, with effects on memory consolidation and mood enhancement.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/23108937/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 23108937</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Improved physical performance and endurance</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Athletes and active individuals</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">International society of sports nutrition position stand: caffeine and performance</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Goldstein, E.R., Ziegenfuss, T., Kalman, D., Kreider, R., Campbell, B., Wilborn, C., Taylor, L., Willoughby, D., Stout, J., Graves, B.S., Wildman, R., Ivy, J.L., Spano, M., Smith, A.E., Antonio, J. (2010) — <em>Journal of the International Society of Sports Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine supplementation (3-6 mg/kg) enhances endurance performance, reduces perceived exertion, and improves power output in various exercise modalities.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/20205813/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 20205813</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine ingestion and muscle metabolism during prolonged exercise in humans</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Spriet, L.L., MacLean, D.A., Dyck, D.J., Hultman, E., Cederblad, G., Graham, T.E. (1992) — <em>American Journal of Physiology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine enhances fat oxidation and spares muscle glycogen during prolonged exercise, contributing to improved endurance capacity.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/1616022/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 1616022</a>
+                <div class="study-item">
+                    <p class="study-title">Caffeine effects on learning, memory, and mood state are dependent on the level of caffeine abstinence</p>
+                    <p class="study-meta">Rogers, P.J., Heatherley, S.V., Mullings, E.L., Smith, J.E. (2013) — <em>Psychopharmacology</em></p>
+                    <p class="study-findings">Caffeine improves cognitive performance in both habitual users and non-users, with effects on memory consolidation and mood enhancement.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/23108937/" target="_blank" rel="noopener">PubMed: 23108937</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Fat oxidation and metabolic enhancement</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Improved physical performance and endurance</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Athletes and active individuals</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine ingestion increases plasma ketones: an acute metabolic study in humans</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Vandenberghe, K., Gillis, N., Van Leemputte, M., Van Hecke, P., Vanstapel, F., Hespel, P. (1996) — <em>Canadian Journal of Physiology and Pharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine significantly increases lipolysis and ketone production, enhancing fat oxidation and metabolic rate.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/8960382/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 8960382</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">International society of sports nutrition position stand: caffeine and performance</p>
+                    <p class="study-meta">Goldstein, E.R., Ziegenfuss, T., Kalman, D., Kreider, R., Campbell, B., Wilborn, C., Taylor, L., Willoughby, D., Stout, J., Graves, B.S., Wildman, R., Ivy, J.L., Spano, M., Smith, A.E., Antonio, J. (2010) — <em>Journal of the International Society of Sports Nutrition</em></p>
+                    <p class="study-findings">Caffeine supplementation (3-6 mg/kg) enhances endurance performance, reduces perceived exertion, and improves power output in various exercise modalities.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/20205813/" target="_blank" rel="noopener">PubMed: 20205813</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Caffeine ingestion and muscle metabolism during prolonged exercise in humans</p>
+                    <p class="study-meta">Spriet, L.L., MacLean, D.A., Dyck, D.J., Hultman, E., Cederblad, G., Graham, T.E. (1992) — <em>American Journal of Physiology</em></p>
+                    <p class="study-findings">Caffeine enhances fat oxidation and spares muscle glycogen during prolonged exercise, contributing to improved endurance capacity.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/1616022/" target="_blank" rel="noopener">PubMed: 1616022</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Mood enhancement and reduced fatigue</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Fat oxidation and metabolic enhancement</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine, mood and mental performance in everyday life</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Smith, A. (2002) — <em>Nutrition Bulletin</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Regular caffeine consumption is associated with improved mood, reduced fatigue, and enhanced subjective well-being in daily life settings.</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Caffeine ingestion increases plasma ketones: an acute metabolic study in humans</p>
+                    <p class="study-meta">Vandenberghe, K., Gillis, N., Van Leemputte, M., Van Hecke, P., Vanstapel, F., Hespel, P. (1996) — <em>Canadian Journal of Physiology and Pharmacology</em></p>
+                    <p class="study-findings">Caffeine significantly increases lipolysis and ketone production, enhancing fat oxidation and metabolic rate.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/8960382/" target="_blank" rel="noopener">PubMed: 8960382</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Mood enhancement and reduced fatigue</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Caffeine, mood and mental performance in everyday life</p>
+                    <p class="study-meta">Smith, A. (2002) — <em>Nutrition Bulletin</em></p>
+                    <p class="study-findings">Regular caffeine consumption is associated with improved mood, reduced fatigue, and enhanced subjective well-being in daily life settings.</p>
                     
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally safe at moderate doses with well-established tolerance profile</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Healthy adults</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally safe at moderate doses with well-established tolerance profile</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively documented</span>
+                <span class="evidence-tag">Healthy adults</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Systematic review of the potential adverse effects of caffeine consumption in healthy adults, pregnant women, adolescents, and children</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Nawrot, P., Jordan, S., Eastwood, J., Rotstein, J., Hugenholtz, A., Feeley, M. (2003) — <em>Food and Chemical Toxicology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine consumption up to 400 mg/day is not associated with adverse health effects in healthy adults. Higher doses may cause anxiety, insomnia, and cardiovascular effects.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12804695/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12804695</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Systematic review of the potential adverse effects of caffeine consumption in healthy adults, pregnant women, adolescents, and children</p>
+                    <p class="study-meta">Nawrot, P., Jordan, S., Eastwood, J., Rotstein, J., Hugenholtz, A., Feeley, M. (2003) — <em>Food and Chemical Toxicology</em></p>
+                    <p class="study-findings">Caffeine consumption up to 400 mg/day is not associated with adverse health effects in healthy adults. Higher doses may cause anxiety, insomnia, and cardiovascular effects.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12804695/" target="_blank" rel="noopener">PubMed: 12804695</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Potential for dependence and withdrawal symptoms</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Regular users</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Potential for dependence and withdrawal symptoms</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Well-documented</span>
+                <span class="evidence-tag">Regular users</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Caffeine withdrawal: a parametric analysis of caffeine dosing conditions</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Juliano, L.M., Griffiths, R.R. (2004) — <em>Psychopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Caffeine withdrawal symptoms include headache, fatigue, and mood changes, typically occurring 12-24 hours after cessation and lasting 2-9 days.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/15448977/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 15448977</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Caffeine withdrawal: a parametric analysis of caffeine dosing conditions</p>
+                    <p class="study-meta">Juliano, L.M., Griffiths, R.R. (2004) — <em>Psychopharmacology</em></p>
+                    <p class="study-findings">Caffeine withdrawal symptoms include headache, fatigue, and mood changes, typically occurring 12-24 hours after cessation and lasting 2-9 days.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/15448977/" target="_blank" rel="noopener">PubMed: 15448977</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Contraindications in pregnancy and certain medical conditions</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Pregnant women, cardiovascular patients</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Contraindications in pregnancy and certain medical conditions</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Pregnant women, cardiovascular patients</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Maternal caffeine consumption during pregnancy and the risk of miscarriage: a prospective cohort study</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Weng, X., Odouli, R., Li, D.K. (2008) — <em>American Journal of Obstetrics and Gynecology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">High caffeine intake during pregnancy (&gt;200 mg/day) is associated with increased risk of miscarriage. Pregnant women should limit caffeine consumption.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18221932/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 18221932</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Maternal caffeine consumption during pregnancy and the risk of miscarriage: a prospective cohort study</p>
+                    <p class="study-meta">Weng, X., Odouli, R., Li, D.K. (2008) — <em>American Journal of Obstetrics and Gynecology</em></p>
+                    <p class="study-findings">High caffeine intake during pregnancy (&gt;200 mg/day) is associated with increased risk of miscarriage. Pregnant women should limit caffeine consumption.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18221932/" target="_blank" rel="noopener">PubMed: 18221932</a>
                 </div>
             </div>
         </div>
@@ -481,37 +481,37 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Nehlig (2010). Caffeine and cognitive performance. <em></em>. DOI: <a href="https://doi.org/10.1111/j.1469-8986.2010.00992.x" target="_blank" rel="noopener">10.1111/j.1469-8986.2010.00992.x</a></li>
+                    <ol class="references-list">
+                        <li>Nehlig (2010). Caffeine and cognitive performance. <em></em>. DOI: <a href="https://doi.org/10.1111/j.1469-8986.2010.00992.x" target="_blank" rel="noopener">10.1111/j.1469-8986.2010.00992.x</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/performance-enhancers.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/performance-enhancers.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Performance Enhancers</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/energy-vitality.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/energy-vitality.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Energy &amp; Vitality Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../guides/cognitive-performance.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/cognitive-performance.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Cognitive Performance Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -519,19 +519,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

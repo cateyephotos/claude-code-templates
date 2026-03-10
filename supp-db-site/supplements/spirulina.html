@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133683">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Spirulina","headline":"Spirulina — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Spirulina (Arthrospira platensis). Tier 2 evidence with 16+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/spirulina.html"},"about":{"@type":"DietarySupplement","name":"Spirulina","alternateName":"Blue-Green Algae","activeIngredient":"Arthrospira platensis"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Antioxidants</span>
-                <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                <span class="monograph-badge monograph-badge-category">Antioxidants</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
             </div>
             <h1>Spirulina</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Arthrospira platensis</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Blue-Green Algae, Arthrospira</p>
+            <p class="scientific-name">Arthrospira platensis</p>
+            <p class="common-names">Also known as: Blue-Green Algae, Arthrospira</p>
             <p class="hero-subtitle">Strong evidence for nutritional benefits and antioxidant effects; moderate evidence for cognitive support</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 16+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 16+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Antioxidants</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Spirulina is classified as antioxidants with moderate evidence (Tier 2) for its primary applications. Strong evidence for nutritional benefits and antioxidant effects; moderate evidence for cognitive support</p>
-                        <p style="margin-top:1rem;">Well-characterized superfood with strong antioxidant mechanisms and moderate evidence for immune and cardiovascular benefits</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Malnutrition; Athletes; Cardiovascular disease; Immune support</p>
+                        <p class="key-findings">Well-characterized superfood with strong antioxidant mechanisms and moderate evidence for immune and cardiovascular benefits</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Malnutrition; Athletes; Cardiovascular disease; Immune support</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">High protein and micronutrient content</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">High protein and micronutrient content</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Phycocyanin antioxidant activity</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Phycocyanin antioxidant activity</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Immune system modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Immune system modulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Nitric oxide production</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Nitric oxide production</p>
                         </div>
                     </div>
                 </section>
@@ -188,27 +188,27 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Neuroprotection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mental clarity</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Focus support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Brain energy</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Neuroprotection</li>
+                        <li>Mental clarity</li>
+                        <li>Focus support</li>
+                        <li>Brain energy</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Immune support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant protection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Protein source</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cardiovascular health</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Immune support</li>
+                        <li>Antioxidant protection</li>
+                        <li>Protein source</li>
+                        <li>Cardiovascular health</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -217,16 +217,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Antioxidant Status</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate to large improvement</td>
+                                    <td class="effect-domain">Antioxidant Status</td>
+                                    <td class="effect-value">Moderate to large improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Immune Function</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate improvement</td>
+                                    <td class="effect-domain">Immune Function</td>
+                                    <td class="effect-value">Moderate improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Nutritional Status</strong></td>
-                                    <td style="font-size:0.85rem;">Large improvement</td>
+                                    <td class="effect-domain">Nutritional Status</td>
+                                    <td class="effect-value">Large improvement</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -245,290 +245,290 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Malnutrition</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Athletes</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Cardiovascular disease</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Immune support</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Malnutrition</li>
+                        <li>Athletes</li>
+                        <li>Cardiovascular disease</li>
+                        <li>Immune support</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Green-colored stool</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Mild nausea (high doses)</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Green-colored stool</li>
+                        <li>Mild nausea (high doses)</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Phenylketonuria</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Autoimmune diseases</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Phenylketonuria</li>
+                            <li>Autoimmune diseases</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Immunosuppressive drugs</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Immunosuppressive drugs</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 15 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Rich in phycocyanin, a potent antioxidant and anti-inflammatory compound</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+                    <p class="section-intro">Detailed citation analysis from 15 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Rich in phycocyanin, a potent antioxidant and anti-inflammatory compound</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Phycocyanin: a potent peroxyl radical scavenger with cytoprotective and anti-inflammatory effects</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Romay, C., Armesto, J., Remirez, D., González, R., Ledon, N., García, I. (1998) — <em>Applied Biochemistry and Biotechnology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Phycocyanin in spirulina acts as a powerful antioxidant and provides cytoprotective effects</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/9894091/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 9894091</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Phycocyanin: a potent peroxyl radical scavenger with cytoprotective and anti-inflammatory effects</p>
+                    <p class="study-meta">Romay, C., Armesto, J., Remirez, D., González, R., Ledon, N., García, I. (1998) — <em>Applied Biochemistry and Biotechnology</em></p>
+                    <p class="study-findings">Phycocyanin in spirulina acts as a powerful antioxidant and provides cytoprotective effects</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/9894091/" target="_blank" rel="noopener">PubMed: 9894091</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Contains complete protein with all essential amino acids</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Contains complete protein with all essential amino acids</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Nutritional and therapeutic potential of Spirulina</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Habib, M.A., Parvin, M., Huntington, T.C., Hasan, M.R. (2008) — <em>Current Pharmaceutical Biotechnology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina provides complete protein with high biological value and all essential amino acids</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18289052/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 18289052</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Nutritional and therapeutic potential of Spirulina</p>
+                    <p class="study-meta">Habib, M.A., Parvin, M., Huntington, T.C., Hasan, M.R. (2008) — <em>Current Pharmaceutical Biotechnology</em></p>
+                    <p class="study-findings">Spirulina provides complete protein with high biological value and all essential amino acids</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18289052/" target="_blank" rel="noopener">PubMed: 18289052</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Modulates immune system function through polysaccharide compounds</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Modulates immune system function through polysaccharide compounds</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Immunomodulatory effects of spirulina supplementation in patients with chronic obstructive pulmonary disease</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Zheng, J., Inoguchi, T., Sasaki, S., Maeda, Y., McCarty, M.F., Fujii, M., Ikeda, N., Kobayashi, K., Sonoda, N., Takayanagi, R. (2013) — <em>Nutrition Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina polysaccharides enhance immune function and modulate inflammatory responses</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/23507224/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 23507224</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Immunomodulatory effects of spirulina supplementation in patients with chronic obstructive pulmonary disease</p>
+                    <p class="study-meta">Zheng, J., Inoguchi, T., Sasaki, S., Maeda, Y., McCarty, M.F., Fujii, M., Ikeda, N., Kobayashi, K., Sonoda, N., Takayanagi, R. (2013) — <em>Nutrition Research</em></p>
+                    <p class="study-findings">Spirulina polysaccharides enhance immune function and modulate inflammatory responses</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/23507224/" target="_blank" rel="noopener">PubMed: 23507224</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Supports lipid metabolism and cholesterol regulation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Supports lipid metabolism and cholesterol regulation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Hypolipidemic effect of Spirulina maxima in patients with dyslipidemic nephrotic syndrome</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Samuels, R., Mani, U.V., Iyer, U.M., Nayak, U.S. (2002) — <em>Journal of Nutritional Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina improves lipid metabolism and reduces cholesterol levels through multiple pathways</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Hypolipidemic effect of Spirulina maxima in patients with dyslipidemic nephrotic syndrome</p>
+                    <p class="study-meta">Samuels, R., Mani, U.V., Iyer, U.M., Nayak, U.S. (2002) — <em>Journal of Nutritional Medicine</em></p>
+                    <p class="study-findings">Spirulina improves lipid metabolism and reduces cholesterol levels through multiple pathways</p>
                     
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May reduce cholesterol and improve lipid profiles</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May reduce cholesterol and improve lipid profiles</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of Spirulina consumption on body weight, blood pressure, and endothelial function in overweight hypertensive Caucasians: a double-blind, placebo-controlled, randomized trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Torres-Duran, P.V., Ferreira-Hermosillo, A., Juarez-Oropeza, M.A. (2007) — <em>European Review for Medical and Pharmacological Sciences</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina supplementation significantly reduced cholesterol and improved cardiovascular markers</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/26813468/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 26813468</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of Spirulina consumption on body weight, blood pressure, and endothelial function in overweight hypertensive Caucasians: a double-blind, placebo-controlled, randomized trial</p>
+                    <p class="study-meta">Torres-Duran, P.V., Ferreira-Hermosillo, A., Juarez-Oropeza, M.A. (2007) — <em>European Review for Medical and Pharmacological Sciences</em></p>
+                    <p class="study-findings">Spirulina supplementation significantly reduced cholesterol and improved cardiovascular markers</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/26813468/" target="_blank" rel="noopener">PubMed: 26813468</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May provide antioxidant protection and reduce oxidative stress</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May provide antioxidant protection and reduce oxidative stress</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Antioxidant and anti-inflammatory effects of spirulina in animal models: a systematic review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Wu, Q., Liu, L., Miron, A., Klímová, B., Wan, D., Kuča, K. (2016) — <em>Microbial Cell Factories</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Systematic review confirmed spirulina's potent antioxidant and anti-inflammatory effects</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41007800/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41007800</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Antioxidant and anti-inflammatory effects of spirulina in animal models: a systematic review</p>
+                    <p class="study-meta">Wu, Q., Liu, L., Miron, A., Klímová, B., Wan, D., Kuča, K. (2016) — <em>Microbial Cell Factories</em></p>
+                    <p class="study-findings">Systematic review confirmed spirulina's potent antioxidant and anti-inflammatory effects</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41007800/" target="_blank" rel="noopener">PubMed: 41007800</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May support immune system function and reduce infection risk</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May support immune system function and reduce infection risk</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of spirulina on the immune system</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Selmi, C., Leung, P.S., Fischer, L., German, B., Yang, C.Y., Kenny, T.P., Cysewski, G.R., Gershwin, M.E. (2011) — <em>Cellular and Molecular Immunology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina enhances immune function and may reduce susceptibility to infections</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21860405/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 21860405</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of spirulina on the immune system</p>
+                    <p class="study-meta">Selmi, C., Leung, P.S., Fischer, L., German, B., Yang, C.Y., Kenny, T.P., Cysewski, G.R., Gershwin, M.E. (2011) — <em>Cellular and Molecular Immunology</em></p>
+                    <p class="study-findings">Spirulina enhances immune function and may reduce susceptibility to infections</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/21860405/" target="_blank" rel="noopener">PubMed: 21860405</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May improve exercise performance and reduce fatigue</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Limited studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May improve exercise performance and reduce fatigue</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Limited studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Ergogenic and antioxidant effects of spirulina supplementation in humans</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kalafati, M., Jamurtas, A.Z., Nikolaidis, M.G., Paschalis, V., Theodorou, A.A., Sakellariou, G.K., Koutedakis, Y., Kouretas, D. (2010) — <em>Medicine and Science in Sports and Exercise</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina supplementation improved exercise performance and reduced oxidative stress in athletes</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/20010119/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 20010119</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Ergogenic and antioxidant effects of spirulina supplementation in humans</p>
+                    <p class="study-meta">Kalafati, M., Jamurtas, A.Z., Nikolaidis, M.G., Paschalis, V., Theodorou, A.A., Sakellariou, G.K., Koutedakis, Y., Kouretas, D. (2010) — <em>Medicine and Science in Sports and Exercise</em></p>
+                    <p class="study-findings">Spirulina supplementation improved exercise performance and reduced oxidative stress in athletes</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/20010119/" target="_blank" rel="noopener">PubMed: 20010119</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May support liver health and detoxification</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Animal and human studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May support liver health and detoxification</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Animal and human studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Hepatoprotective effects of Spirulina maxima in patients with non-alcoholic fatty liver disease</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ferreira-Hermosillo, A., Torres-Duran, P.V., Juarez-Oropeza, M.A. (2010) — <em>World Journal of Gastroenterology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina showed hepatoprotective effects and improved liver function markers</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/25331487/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 25331487</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Hepatoprotective effects of Spirulina maxima in patients with non-alcoholic fatty liver disease</p>
+                    <p class="study-meta">Ferreira-Hermosillo, A., Torres-Duran, P.V., Juarez-Oropeza, M.A. (2010) — <em>World Journal of Gastroenterology</em></p>
+                    <p class="study-findings">Spirulina showed hepatoprotective effects and improved liver function markers</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25331487/" target="_blank" rel="noopener">PubMed: 25331487</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May help regulate blood sugar levels</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May help regulate blood sugar levels</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of spirulina supplementation on diabetes mellitus: a systematic review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Mazokopakis, E.E., Karefilakis, C.M., Tsartsalis, A.N., Milkas, A.N., Ganotakis, E.S. (2014) — <em>Review of Diabetic Studies</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Systematic review showed spirulina may help improve glycemic control in diabetes</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/25396406/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 25396406</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of spirulina supplementation on diabetes mellitus: a systematic review</p>
+                    <p class="study-meta">Mazokopakis, E.E., Karefilakis, C.M., Tsartsalis, A.N., Milkas, A.N., Ganotakis, E.S. (2014) — <em>Review of Diabetic Studies</em></p>
+                    <p class="study-findings">Systematic review showed spirulina may help improve glycemic control in diabetes</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25396406/" target="_blank" rel="noopener">PubMed: 25396406</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May provide nutritional support for malnutrition</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May provide nutritional support for malnutrition</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Spirulina in clinical practice: evidence-based human applications</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Deng, R., Chow, T.J. (2010) — <em>Evidence-Based Complementary and Alternative Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina provides significant nutritional benefits and helps address malnutrition</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18955364/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 18955364</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Spirulina in clinical practice: evidence-based human applications</p>
+                    <p class="study-meta">Deng, R., Chow, T.J. (2010) — <em>Evidence-Based Complementary and Alternative Medicine</em></p>
+                    <p class="study-findings">Spirulina provides significant nutritional benefits and helps address malnutrition</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18955364/" target="_blank" rel="noopener">PubMed: 18955364</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally recognized as safe with excellent safety profile</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Very Low</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally recognized as safe with excellent safety profile</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Very Low</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Safety assessment of spirulina supplementation</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Chamorro, G., Salazar, M., Araújo, K.G., dos Santos, C.P., Ceballos, G., Castillo, L.F. (2002) — <em>Food and Chemical Toxicology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Comprehensive safety studies show spirulina has an excellent safety profile</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/11893517/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 11893517</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Safety assessment of spirulina supplementation</p>
+                    <p class="study-meta">Chamorro, G., Salazar, M., Araújo, K.G., dos Santos, C.P., Ceballos, G., Castillo, L.F. (2002) — <em>Food and Chemical Toxicology</em></p>
+                    <p class="study-findings">Comprehensive safety studies show spirulina has an excellent safety profile</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11893517/" target="_blank" rel="noopener">PubMed: 11893517</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May cause mild gastrointestinal upset in sensitive individuals</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Very Low</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May cause mild gastrointestinal upset in sensitive individuals</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Very Low</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Side effects of spirulina supplementation</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Research team (2023) — <em>Clinical review</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Rare mild side effects may include nausea or digestive upset in sensitive individuals</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Side effects of spirulina supplementation</p>
+                    <p class="study-meta">Research team (2023) — <em>Clinical review</em></p>
+                    <p class="study-findings">Rare mild side effects may include nausea or digestive upset in sensitive individuals</p>
                     
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Should be sourced from reputable suppliers to avoid contamination</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Low</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Should be sourced from reputable suppliers to avoid contamination</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Low</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Quality and safety considerations for spirulina products</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Research team (2023) — <em>Clinical review</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Choose spirulina from certified sources to avoid potential contamination with toxins or heavy metals</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Quality and safety considerations for spirulina products</p>
+                    <p class="study-meta">Research team (2023) — <em>Clinical review</em></p>
+                    <p class="study-findings">Choose spirulina from certified sources to avoid potential contamination with toxins or heavy metals</p>
                     
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">May interact with immunosuppressive medications</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Low</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">May interact with immunosuppressive medications</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Low</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Spirulina drug interactions and contraindications</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Research team (2023) — <em>Clinical review</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Spirulina's immune-enhancing effects may theoretically interact with immunosuppressive drugs</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Spirulina drug interactions and contraindications</p>
+                    <p class="study-meta">Research team (2023) — <em>Clinical review</em></p>
+                    <p class="study-findings">Spirulina's immune-enhancing effects may theoretically interact with immunosuppressive drugs</p>
                     
                 </div>
             </div>
@@ -538,32 +538,32 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Wu et al. (2016). Spirulina for nutrition and health benefits. <em></em>. DOI: <a href="https://doi.org/10.1155/2016/3649162" target="_blank" rel="noopener">10.1155/2016/3649162</a></li>
+                    <ol class="references-list">
+                        <li>Wu et al. (2016). Spirulina for nutrition and health benefits. <em></em>. DOI: <a href="https://doi.org/10.1155/2016/3649162" target="_blank" rel="noopener">10.1155/2016/3649162</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/antioxidants.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/antioxidants.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Antioxidants</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -571,19 +571,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133659">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Garlic","headline":"Garlic — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Garlic (Allium sativum). Tier 2 evidence with 11+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/garlic.html"},"about":{"@type":"DietarySupplement","name":"Garlic","alternateName":"Aged Garlic Extract","activeIngredient":"Allium sativum"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Herbal Extracts</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Herbal Extracts</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Garlic</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Allium sativum</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Aged Garlic Extract, Allicin, Garlic Extract</p>
+            <p class="scientific-name">Allium sativum</p>
+            <p class="common-names">Also known as: Aged Garlic Extract, Allicin, Garlic Extract</p>
             <p class="hero-subtitle">Strong evidence for cardiovascular health; moderate evidence for immune and cognitive support</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 11+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 11+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Herbal Extracts</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Garlic is classified as herbal extracts with moderate evidence (Tier 2) for its primary applications. Strong evidence for cardiovascular health; moderate evidence for immune and cognitive support</p>
-                        <p style="margin-top:1rem;">Well-established herbal supplement with strong evidence for cardiovascular health and immune support</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Cardiovascular disease; High cholesterol; Hypertension; Immune support</p>
+                        <p class="key-findings">Well-established herbal supplement with strong evidence for cardiovascular health and immune support</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Cardiovascular disease; High cholesterol; Hypertension; Immune support</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Allicin and sulfur compounds</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Allicin and sulfur compounds</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Antioxidant activity</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Antioxidant activity</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Nitric oxide production</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Nitric oxide production</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Cholesterol synthesis inhibition</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Cholesterol synthesis inhibition</p>
                         </div>
                     </div>
                 </section>
@@ -188,27 +188,27 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Neuroprotection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cognitive aging support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Brain circulation</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Memory support</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Neuroprotection</li>
+                        <li>Cognitive aging support</li>
+                        <li>Brain circulation</li>
+                        <li>Memory support</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cardiovascular health</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Immune support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cholesterol metabolism support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Blood pressure support</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Cardiovascular health</li>
+                        <li>Immune support</li>
+                        <li>Cholesterol metabolism support</li>
+                        <li>Blood pressure support</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -217,16 +217,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Cholesterol Reduction</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate improvement</td>
+                                    <td class="effect-domain">Cholesterol Reduction</td>
+                                    <td class="effect-value">Small to moderate improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Blood Pressure</strong></td>
-                                    <td style="font-size:0.85rem;">Small improvement</td>
+                                    <td class="effect-domain">Blood Pressure</td>
+                                    <td class="effect-value">Small improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Immune Function</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate improvement</td>
+                                    <td class="effect-domain">Immune Function</td>
+                                    <td class="effect-value">Small to moderate improvement</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -245,219 +245,219 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Cardiovascular disease</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">High cholesterol</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Hypertension</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Immune support</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Cardiovascular disease</li>
+                        <li>High cholesterol</li>
+                        <li>Hypertension</li>
+                        <li>Immune support</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Garlic odor</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">GI upset</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Heartburn</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Garlic odor</li>
+                        <li>GI upset</li>
+                        <li>Heartburn</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Bleeding disorders</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Surgery within 2 weeks</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Bleeding disorders</li>
+                            <li>Surgery within 2 weeks</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Blood thinners</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">HIV medications</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Blood thinners</li>
+                            <li>HIV medications</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cardiovascular protection through allicin and sulfur compounds</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Adults with cardiovascular risk factors</span>
+                    <p class="section-intro">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cardiovascular protection through allicin and sulfur compounds</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Adults with cardiovascular risk factors</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Garlic for the prevention of cardiovascular morbidity and mortality in hypertensive patients</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Silagy, C.A., Neil, H.A. (1994) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Garlic's allicin and sulfur compounds reduce blood pressure through vasodilation and nitric oxide enhancement.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/10796682/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 10796682</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Garlic for the prevention of cardiovascular morbidity and mortality in hypertensive patients</p>
+                    <p class="study-meta">Silagy, C.A., Neil, H.A. (1994) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">Garlic's allicin and sulfur compounds reduce blood pressure through vasodilation and nitric oxide enhancement.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10796682/" target="_blank" rel="noopener">PubMed: 10796682</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effect of garlic on cardiovascular disorders: a review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Banerjee, S.K., Maulik, S.K. (2002) — <em>Nutrition Journal</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Garlic compounds inhibit HMG-CoA reductase, reduce platelet aggregation, and enhance endothelial function.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12537594/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12537594</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Antimicrobial and immune-enhancing properties</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Antimicrobial properties of allicin from garlic</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ankri, S., Mirelman, D. (1999) — <em>Microbes and Infection</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Allicin demonstrates broad-spectrum antimicrobial activity against bacteria, viruses, and fungi through sulfhydryl group interactions.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/10594976/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 10594976</a>
+                <div class="study-item">
+                    <p class="study-title">Effect of garlic on cardiovascular disorders: a review</p>
+                    <p class="study-meta">Banerjee, S.K., Maulik, S.K. (2002) — <em>Nutrition Journal</em></p>
+                    <p class="study-findings">Garlic compounds inhibit HMG-CoA reductase, reduce platelet aggregation, and enhance endothelial function.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12537594/" target="_blank" rel="noopener">PubMed: 12537594</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Antioxidant activity and cellular protection</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Antimicrobial and immune-enhancing properties</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Antioxidant activity of garlic extract</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Imai, J., Ide, N., Nagae, S., Moriguchi, T., Matsuura, H., Itakura, Y. (1994) — <em>Phytomedicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Aged garlic extract demonstrates significant antioxidant capacity, protecting cells from oxidative damage.</p>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Antimicrobial properties of allicin from garlic</p>
+                    <p class="study-meta">Ankri, S., Mirelman, D. (1999) — <em>Microbes and Infection</em></p>
+                    <p class="study-findings">Allicin demonstrates broad-spectrum antimicrobial activity against bacteria, viruses, and fungi through sulfhydryl group interactions.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10594976/" target="_blank" rel="noopener">PubMed: 10594976</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Antioxidant activity and cellular protection</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Antioxidant activity of garlic extract</p>
+                    <p class="study-meta">Imai, J., Ide, N., Nagae, S., Moriguchi, T., Matsuura, H., Itakura, Y. (1994) — <em>Phytomedicine</em></p>
+                    <p class="study-findings">Aged garlic extract demonstrates significant antioxidant capacity, protecting cells from oxidative damage.</p>
                     
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Blood pressure reduction in hypertensive individuals</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple meta-analyses</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Adults with hypertension</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Blood pressure reduction in hypertensive individuals</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple meta-analyses</span>
+                <span class="evidence-tag">Adults with hypertension</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effect of garlic on blood pressure: a systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ried, K., Frank, O.R., Stocks, N.P., Fakler, P., Sullivan, T. (2008) — <em>BMC Cardiovascular Disorders</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Meta-analysis shows garlic supplementation reduces systolic blood pressure by 8.4 mmHg and diastolic by 7.3 mmHg in hypertensive patients.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/18554422/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 18554422</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effect of garlic on blood pressure: a systematic review and meta-analysis</p>
+                    <p class="study-meta">Ried, K., Frank, O.R., Stocks, N.P., Fakler, P., Sullivan, T. (2008) — <em>BMC Cardiovascular Disorders</em></p>
+                    <p class="study-findings">Meta-analysis shows garlic supplementation reduces systolic blood pressure by 8.4 mmHg and diastolic by 7.3 mmHg in hypertensive patients.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18554422/" target="_blank" rel="noopener">PubMed: 18554422</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cholesterol reduction and lipid profile improvement</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies with variable results</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Adults with elevated cholesterol</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cholesterol reduction and lipid profile improvement</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies with variable results</span>
+                <span class="evidence-tag">Adults with elevated cholesterol</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Garlic for treating hypercholesterolemia: a meta-analysis of randomized clinical trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Stevinson, C., Pittler, M.H., Ernst, E. (2000) — <em>Annals of Internal Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Garlic supplementation modestly reduces total cholesterol by 12-20 mg/dL, with greater effects in individuals with elevated baseline levels.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/10975959/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 10975959</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Garlic for treating hypercholesterolemia: a meta-analysis of randomized clinical trials</p>
+                    <p class="study-meta">Stevinson, C., Pittler, M.H., Ernst, E. (2000) — <em>Annals of Internal Medicine</em></p>
+                    <p class="study-findings">Garlic supplementation modestly reduces total cholesterol by 12-20 mg/dL, with greater effects in individuals with elevated baseline levels.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10975959/" target="_blank" rel="noopener">PubMed: 10975959</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Immune system enhancement and infection prevention</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Immune system enhancement and infection prevention</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Preventing the common cold with a garlic supplement: a double-blind, placebo-controlled survey</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Josling, P. (2001) — <em>Advances in Therapy</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Garlic supplementation reduced cold incidence by 63% and shortened duration of symptoms compared to placebo.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/11697022/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 11697022</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Preventing the common cold with a garlic supplement: a double-blind, placebo-controlled survey</p>
+                    <p class="study-meta">Josling, P. (2001) — <em>Advances in Therapy</em></p>
+                    <p class="study-findings">Garlic supplementation reduced cold incidence by 63% and shortened duration of symptoms compared to placebo.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11697022/" target="_blank" rel="noopener">PubMed: 11697022</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cancer risk reduction</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Observational studies and limited trials</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cancer risk reduction</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Observational studies and limited trials</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Garlic consumption and cancer prevention: meta-analyses of colorectal and stomach cancers</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Fleischauer, A.T., Poole, C., Arab, L. (2000) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Meta-analysis suggests garlic consumption associated with reduced risk of stomach and colorectal cancers, with dose-response relationship.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/11010950/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 11010950</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Garlic consumption and cancer prevention: meta-analyses of colorectal and stomach cancers</p>
+                    <p class="study-meta">Fleischauer, A.T., Poole, C., Arab, L. (2000) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Meta-analysis suggests garlic consumption associated with reduced risk of stomach and colorectal cancers, with dose-response relationship.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11010950/" target="_blank" rel="noopener">PubMed: 11010950</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally safe with good tolerance profile</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally safe with good tolerance profile</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively documented</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Safety of garlic supplementation: a systematic review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rahman, K., Lowe, G.M. (2006) — <em>Journal of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Garlic supplementation is generally safe with mild side effects including breath odor, body odor, and occasional gastrointestinal upset.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/16484553/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 16484553</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Safety of garlic supplementation: a systematic review</p>
+                    <p class="study-meta">Rahman, K., Lowe, G.M. (2006) — <em>Journal of Nutrition</em></p>
+                    <p class="study-findings">Garlic supplementation is generally safe with mild side effects including breath odor, body odor, and occasional gastrointestinal upset.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/16484553/" target="_blank" rel="noopener">PubMed: 16484553</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Potential bleeding risk and anticoagulant interactions</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple case reports and studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals on anticoagulant therapy</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Potential bleeding risk and anticoagulant interactions</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple case reports and studies</span>
+                <span class="evidence-tag">Individuals on anticoagulant therapy</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Garlic and anticoagulant therapy</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Burnham, B.E. (1995) — <em>Plastic and Reconstructive Surgery</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Garlic may enhance anticoagulant effects and increase bleeding risk, requiring caution in patients on warfarin or other blood thinners.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/7480271/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 7480271</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Garlic and anticoagulant therapy</p>
+                    <p class="study-meta">Burnham, B.E. (1995) — <em>Plastic and Reconstructive Surgery</em></p>
+                    <p class="study-findings">Garlic may enhance anticoagulant effects and increase bleeding risk, requiring caution in patients on warfarin or other blood thinners.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/7480271/" target="_blank" rel="noopener">PubMed: 7480271</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Gastrointestinal irritation and allergic reactions</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple reports</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Sensitive individuals</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Gastrointestinal irritation and allergic reactions</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple reports</span>
+                <span class="evidence-tag">Sensitive individuals</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Adverse effects of garlic supplementation</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Borrelli, F., Capasso, R., Izzo, A.A. (2007) — <em>Journal of Ethnopharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Common side effects include heartburn, nausea, and flatulence. Rare allergic reactions including contact dermatitis have been reported.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17291700/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17291700</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Adverse effects of garlic supplementation</p>
+                    <p class="study-meta">Borrelli, F., Capasso, R., Izzo, A.A. (2007) — <em>Journal of Ethnopharmacology</em></p>
+                    <p class="study-findings">Common side effects include heartburn, nausea, and flatulence. Rare allergic reactions including contact dermatitis have been reported.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17291700/" target="_blank" rel="noopener">PubMed: 17291700</a>
                 </div>
             </div>
         </div>
@@ -466,37 +466,37 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Ried et al. (2016). Garlic for cardiovascular disease prevention. <em></em>. DOI: <a href="https://doi.org/10.1016/j.jnutbio.2015.10.015" target="_blank" rel="noopener">10.1016/j.jnutbio.2015.10.015</a></li>
+                    <ol class="references-list">
+                        <li>Ried et al. (2016). Garlic for cardiovascular disease prevention. <em></em>. DOI: <a href="https://doi.org/10.1016/j.jnutbio.2015.10.015" target="_blank" rel="noopener">10.1016/j.jnutbio.2015.10.015</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/herbal-extracts.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/herbal-extracts.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Herbal Extracts</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/cardiovascular.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/cardiovascular.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Cardiovascular Health Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -504,19 +504,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133411">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Creatine","headline":"Creatine — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Creatine (N-methylguanidino acetic acid). Tier 1 evidence with 14+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/creatine.html"},"about":{"@type":"DietarySupplement","name":"Creatine","alternateName":"Creatine Monohydrate","activeIngredient":"N-methylguanidino acetic acid"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Performance Enhancers</span>
-                <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                <span class="monograph-badge monograph-badge-category">Performance Enhancers</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
             </div>
             <h1>Creatine</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">N-methylguanidino acetic acid</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Creatine Monohydrate, Phosphocreatine</p>
+            <p class="scientific-name">N-methylguanidino acetic acid</p>
+            <p class="common-names">Also known as: Creatine Monohydrate, Phosphocreatine</p>
             <p class="hero-subtitle">Multiple large meta-analyses (69+ studies for strength, 61 trials dose-response), ISSN position stand, consistent replication across domains</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 14+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 14+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Performance Enhancers</td></tr>
@@ -157,29 +157,29 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Creatine is classified as performance enhancers with strong evidence (Tier 1) for its primary applications. Multiple large meta-analyses (69+ studies for strength, 61 trials dose-response), ISSN position stand, consistent replication across domains</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Athletes; Healthy adults; Vegetarians; Elderly; Trained and untrained individuals</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Athletes; Healthy adults; Vegetarians; Elderly; Trained and untrained individuals</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">ATP regeneration</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">ATP regeneration</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Brain energy metabolism</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Brain energy metabolism</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Neuroprotection</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Neuroprotection</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Cellular energy buffering</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Cellular energy buffering</p>
                         </div>
                     </div>
                 </section>
@@ -187,29 +187,29 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Memory enhancement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Processing speed</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mental fatigue reduction</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cognitive aging protection</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Memory enhancement</li>
+                        <li>Processing speed</li>
+                        <li>Mental fatigue reduction</li>
+                        <li>Cognitive aging protection</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Muscle strength</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Power output</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Exercise recovery</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Muscle mass</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Body composition</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Strength and power</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Muscle strength</li>
+                        <li>Power output</li>
+                        <li>Exercise recovery</li>
+                        <li>Muscle mass</li>
+                        <li>Body composition</li>
+                        <li>Strength and power</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -218,24 +218,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate (83.3% of studies positive in aging; particularly strong in vegetarians)</td>
+                                    <td class="effect-domain">Memory</td>
+                                    <td class="effect-value">Small to moderate (83.3% of studies positive in aging; particularly strong in vegetarians)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Strength</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate to large (significant via 69-study meta-analysis; RVE-confirmed)</td>
+                                    <td class="effect-domain">Strength</td>
+                                    <td class="effect-value">Moderate to large (significant via 69-study meta-analysis; RVE-confirmed)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>BodyComposition</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (FFM +1.39 kg, body mass +0.89 kg; dose-response from 61 trials)</td>
+                                    <td class="effect-domain">BodyComposition</td>
+                                    <td class="effect-value">Moderate (FFM +1.39 kg, body mass +0.89 kg; dose-response from 61 trials)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Depression</strong></td>
-                                    <td style="font-size:0.85rem;">Small (SMD = -0.34, below minimal important difference; GRADE very low)</td>
+                                    <td class="effect-domain">Depression</td>
+                                    <td class="effect-value">Small (SMD = -0.34, below minimal important difference; GRADE very low)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>KidneyFunction</strong></td>
-                                    <td style="font-size:0.85rem;">No adverse effect (creatinine MD 0.07 mg/dL within normal; GFR unchanged)</td>
+                                    <td class="effect-domain">KidneyFunction</td>
+                                    <td class="effect-value">No adverse effect (creatinine MD 0.07 mg/dL within normal; GFR unchanged)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -254,277 +254,277 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Athletes</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Healthy adults</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Vegetarians</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Elderly</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Trained and untrained individuals</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Athletes</li>
+                        <li>Healthy adults</li>
+                        <li>Vegetarians</li>
+                        <li>Elderly</li>
+                        <li>Trained and untrained individuals</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Water retention</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Weight gain</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">GI upset if loading</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Water retention</li>
+                        <li>Weight gain</li>
+                        <li>GI upset if loading</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Kidney disease</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Kidney disease</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Minimal known interactions</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Minimal known interactions</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 11 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">ATP-Phosphocreatine Energy System</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+                    <p class="section-intro">Detailed citation analysis from 11 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">ATP-Phosphocreatine Energy System</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Clinical pharmacology of the dietary supplement creatine monohydrate</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Persky AM, Brazeau GA (2003) — <em>Pharmacological Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Creatine is phosphorylated to phosphocreatine (PCr) by creatine kinase, serving as a temporal and spatial energy buffer. PCr rapidly regenerates ATP during high-intensity exercise, with intramuscular PCr stores increasing 10-40% following supplementation.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12773628/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12773628</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Clinical pharmacology of the dietary supplement creatine monohydrate</p>
+                    <p class="study-meta">Persky AM, Brazeau GA (2003) — <em>Pharmacological Reviews</em></p>
+                    <p class="study-findings">Creatine is phosphorylated to phosphocreatine (PCr) by creatine kinase, serving as a temporal and spatial energy buffer. PCr rapidly regenerates ATP during high-intensity exercise, with intramuscular PCr stores increasing 10-40% following supplementation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12773628/" target="_blank" rel="noopener">PubMed: 12773628</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Harris RC, Soderlund K, Hultman E (1992) — <em>Clinical Science</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Oral creatine supplementation (5g x 4-6 times daily for 2+ days) increased total muscle creatine by ~20%. Both free creatine and phosphocreatine were elevated. Uptake was greatest in muscles with lowest initial creatine content.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/1327657/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 1327657</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Brain Creatine Metabolism</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Use of creatine in the elderly and evidence for effects on cognitive function in young and old</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rawson ES, Venezia AC (2011) — <em>Amino Acids</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Brain creatine is synthesized locally and also taken up from the periphery via creatine transporters. Brain PCr serves as an energy buffer during cognitively demanding tasks. Supplementation can increase brain creatine levels by 5-10%, with greater effects in vegetarians and under metabolic stress conditions.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21394604/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 21394604</a>
+                <div class="study-item">
+                    <p class="study-title">Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation</p>
+                    <p class="study-meta">Harris RC, Soderlund K, Hultman E (1992) — <em>Clinical Science</em></p>
+                    <p class="study-findings">Oral creatine supplementation (5g x 4-6 times daily for 2+ days) increased total muscle creatine by ~20%. Both free creatine and phosphocreatine were elevated. Uptake was greatest in muscles with lowest initial creatine content.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/1327657/" target="_blank" rel="noopener">PubMed: 1327657</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cellular Energy Buffering</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Brain Creatine Metabolism</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kreider RB, Kalman DS, Antonio J, Ziegenfuss TN, Wildman R, Collins R, Candow DG, Kleiner SM, Almada AL, Lopez HL (2017) — <em>Journal of the International Society of Sports Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Creatine functions as a spatial and temporal energy buffer via the phosphocreatine shuttle. It increases intramuscular PCr stores by 10-40%, enabling faster ATP regeneration during high-intensity exercise. Cell volumization through osmotic water uptake may also stimulate protein synthesis and satellite cell activation.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/28615996/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 28615996</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Use of creatine in the elderly and evidence for effects on cognitive function in young and old</p>
+                    <p class="study-meta">Rawson ES, Venezia AC (2011) — <em>Amino Acids</em></p>
+                    <p class="study-findings">Brain creatine is synthesized locally and also taken up from the periphery via creatine transporters. Brain PCr serves as an energy buffer during cognitively demanding tasks. Supplementation can increase brain creatine levels by 5-10%, with greater effects in vegetarians and under metabolic stress conditions.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/21394604/" target="_blank" rel="noopener">PubMed: 21394604</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cellular Energy Buffering</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine</p>
+                    <p class="study-meta">Kreider RB, Kalman DS, Antonio J, Ziegenfuss TN, Wildman R, Collins R, Candow DG, Kleiner SM, Almada AL, Lopez HL (2017) — <em>Journal of the International Society of Sports Nutrition</em></p>
+                    <p class="study-findings">Creatine functions as a spatial and temporal energy buffer via the phosphocreatine shuttle. It increases intramuscular PCr stores by 10-40%, enabling faster ATP regeneration during high-intensity exercise. Cell volumization through osmotic water uptake may also stimulate protein synthesis and satellite cell activation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/28615996/" target="_blank" rel="noopener">PubMed: 28615996</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cognitive Function</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cognitive Function</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of creatine supplementation on cognitive function of healthy individuals: a systematic review of 6 randomized controlled trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Avgerinos KI, Spyrou N, Bougioukas KI, Kapogiannis D (2018) — <em>Experimental Gerontology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Creatine supplementation improved short-term memory and reasoning in healthy individuals. Effects were most pronounced under conditions of stress (sleep deprivation, mental fatigue) and in vegetarians with lower baseline creatine levels. Six RCTs with 281 total participants analyzed.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/29704637/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 29704637</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of creatine supplementation on cognitive function of healthy individuals: a systematic review of 6 randomized controlled trials</p>
+                    <p class="study-meta">Avgerinos KI, Spyrou N, Bougioukas KI, Kapogiannis D (2018) — <em>Experimental Gerontology</em></p>
+                    <p class="study-findings">Creatine supplementation improved short-term memory and reasoning in healthy individuals. Effects were most pronounced under conditions of stress (sleep deprivation, mental fatigue) and in vegetarians with lower baseline creatine levels. Six RCTs with 281 total participants analyzed.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29704637/" target="_blank" rel="noopener">PubMed: 29704637</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rae C, Digney AL, McEwan SR, Bates TC (2003) — <em>Proceedings of the Royal Society of London B</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Creatine supplementation (5g/day for 6 weeks) significantly improved working memory (backward digit span) and intelligence (Raven's Advanced Progressive Matrices) in 45 young adult vegetarians. Effects attributed to increased brain creatine availability.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/14561278/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 14561278</a>
+                <div class="study-item">
+                    <p class="study-title">Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial</p>
+                    <p class="study-meta">Rae C, Digney AL, McEwan SR, Bates TC (2003) — <em>Proceedings of the Royal Society of London B</em></p>
+                    <p class="study-findings">Creatine supplementation (5g/day for 6 weeks) significantly improved working memory (backward digit span) and intelligence (Raven's Advanced Progressive Matrices) in 45 young adult vegetarians. Effects attributed to increased brain creatine availability.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/14561278/" target="_blank" rel="noopener">PubMed: 14561278</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Creatine and Cognition in Aging: A Systematic Review of Evidence in Older Adults</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Marshall S, Kitzan A, Wright J, Bocicariu L, Nagamatsu LS (2026) — <em>Nutrition Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">83.3% of studies (5 out of 6) reported positive effects of creatine supplementation on cognition in aging adults. Memory and attention were the most consistently improved domains. A total of 1542 participants were included across the 6 qualifying studies.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40971619/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40971619</a>
+                <div class="study-item">
+                    <p class="study-title">Creatine and Cognition in Aging: A Systematic Review of Evidence in Older Adults</p>
+                    <p class="study-meta">Marshall S, Kitzan A, Wright J, Bocicariu L, Nagamatsu LS (2026) — <em>Nutrition Reviews</em></p>
+                    <p class="study-findings">83.3% of studies (5 out of 6) reported positive effects of creatine supplementation on cognition in aging adults. Memory and attention were the most consistently improved domains. A total of 1542 participants were included across the 6 qualifying studies.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40971619/" target="_blank" rel="noopener">PubMed: 40971619</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Muscle Strength and Power</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Muscle Strength and Power</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Beyond muscle: the effects of creatine supplementation on brain creatine, cognitive processing, and traumatic brain injury</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Dolan E, Gualano B, Rawson ES (2018) — <em>European Journal of Sport Science</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Meta-analytic evidence confirms creatine supplementation produces significant increases in maximal strength across upper and lower body exercises. Effect sizes for 1RM strength measures ranged from 0.15 to 0.85, with larger effects in untrained individuals and during initial training phases.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/30086660/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 30086660</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Beyond muscle: the effects of creatine supplementation on brain creatine, cognitive processing, and traumatic brain injury</p>
+                    <p class="study-meta">Dolan E, Gualano B, Rawson ES (2018) — <em>European Journal of Sport Science</em></p>
+                    <p class="study-findings">Meta-analytic evidence confirms creatine supplementation produces significant increases in maximal strength across upper and lower body exercises. Effect sizes for 1RM strength measures ranged from 0.15 to 0.85, with larger effects in untrained individuals and during initial training phases.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/30086660/" target="_blank" rel="noopener">PubMed: 30086660</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effect of creatine supplementation during high-intensity intermittent exercise</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Smith-Ryan AE, McNaughton LR (2016) — <em>Sports Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Creatine supplementation improved peak and mean power output during repeated sprint protocols by 5-15%. Sprint performance was enhanced across cycling, running, and swimming modalities. Greatest benefits seen in protocols with short recovery intervals between sprints.</p>
+                <div class="study-item">
+                    <p class="study-title">Effect of creatine supplementation during high-intensity intermittent exercise</p>
+                    <p class="study-meta">Smith-Ryan AE, McNaughton LR (2016) — <em>Sports Medicine</em></p>
+                    <p class="study-findings">Creatine supplementation improved peak and mean power output during repeated sprint protocols by 5-15%. Sprint performance was enhanced across cycling, running, and swimming modalities. Greatest benefits seen in protocols with short recovery intervals between sprints.</p>
                     
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of creatine supplementation on muscle strength gains — a meta-analysis and systematic review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Zhang H, Lan T, Yan X, Gu H, Li Y, He E (2025) — <em>PeerJ</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant strength gains confirmed via robust variance estimation methodology that accounts for dependent effect sizes. Low-to-moderate dosing combined with high-intensity resistance training yields optimal strength adaptations. Novel statistical approach strengthens confidence in creatine-strength relationship.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41328071/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41328071</a>
+                <div class="study-item">
+                    <p class="study-title">Effects of creatine supplementation on muscle strength gains — a meta-analysis and systematic review</p>
+                    <p class="study-meta">Zhang H, Lan T, Yan X, Gu H, Li Y, He E (2025) — <em>PeerJ</em></p>
+                    <p class="study-findings">Significant strength gains confirmed via robust variance estimation methodology that accounts for dependent effect sizes. Low-to-moderate dosing combined with high-intensity resistance training yields optimal strength adaptations. Novel statistical approach strengthens confidence in creatine-strength relationship.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41328071/" target="_blank" rel="noopener">PubMed: 41328071</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The Effects of Creatine Supplementation on Upper- and Lower-Body Strength and Power: A Systematic Review and Meta-Analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kazeminasab F, Kerchi AB, Sharafifard F, Zarreh M, Forbes SC, Camera DM, Lanhers C, Wong A, Nordvall M, Bagheri R, Dutheil F (2025) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant improvements in both upper and lower body strength and power output across 69 studies with 1937 total participants. Effects were more pronounced when combined with resistance training protocols. Consistent benefits observed across diverse populations and training modalities.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40944139/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40944139</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Body Composition</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Antonio J, Candow DG, Forbes SC, Gualano B, Jagim AR, Kreider RB, Rawson ES, Smith-Ryan AE, VanDusseldorp TA, Willoughby DS, Ziegenfuss TN (2021) — <em>Journal of the International Society of Sports Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Creatine supplementation consistently increases lean body mass by 1-2 kg over placebo when combined with resistance training. Initial weight gain (1-1.5 kg in first week) is primarily intracellular water; chronic gains reflect true lean tissue accretion. No significant effect on fat mass. Loading phase not mandatory for body composition benefits.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/33557850/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 33557850</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Delpino FM, Figueiredo LM, Forbes SC, Candow DG, Santos HO (2022) — <em>Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Overall creatine increased LBM by 0.68 kg (95% CI: 0.26-1.11) across 35 studies with 1192 participants. Greater gains when combined with resistance training (MD 1.10 kg). Males showed larger gains (1.46 kg) versus non-significant increase in females (0.29 kg). No significant effect without exercise training.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35986981/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 35986981</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Creatine supplementation protocols with or without training interventions on body composition: a GRADE-assessed systematic review and dose-response meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Pashayee-Khamene F, Heidari Z, Asbaghi O, Ashtary-Larky D, Goudarzi K, Forbes SC, Candow DG, Bagheri R, Ghanavati M, Dutheil F (2024) — <em>Journal of the International Society of Sports Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Fat-free mass (FFM) increased by +1.39 kg overall with creatine supplementation. Greater gains observed in untrained compared to trained individuals. A dose-response relationship was confirmed for body composition outcomes. Total body mass increased by +0.89 kg. No significant effect on fat mass was detected.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/39042054/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 39042054</a>
+                <div class="study-item">
+                    <p class="study-title">The Effects of Creatine Supplementation on Upper- and Lower-Body Strength and Power: A Systematic Review and Meta-Analysis</p>
+                    <p class="study-meta">Kazeminasab F, Kerchi AB, Sharafifard F, Zarreh M, Forbes SC, Camera DM, Lanhers C, Wong A, Nordvall M, Bagheri R, Dutheil F (2025) — <em>Nutrients</em></p>
+                    <p class="study-findings">Significant improvements in both upper and lower body strength and power output across 69 studies with 1937 total participants. Effects were more pronounced when combined with resistance training protocols. Consistent benefits observed across diverse populations and training modalities.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40944139/" target="_blank" rel="noopener">PubMed: 40944139</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Aging and Sarcopenia</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Body Composition</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Delpino FM, Figueiredo LM, Forbes SC, Candow DG, Santos HO (2022) — <em>Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Older adults (&gt;50 years) showed a significant but smaller effect size for lean mass gains with creatine supplementation compared to younger adults. Benefits were still clinically meaningful and creatine may help counteract age-related sarcopenia when combined with resistance exercise.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35986981/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 35986981</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Common questions and misconceptions about creatine supplementation: what does the scientific evidence really show?</p>
+                    <p class="study-meta">Antonio J, Candow DG, Forbes SC, Gualano B, Jagim AR, Kreider RB, Rawson ES, Smith-Ryan AE, VanDusseldorp TA, Willoughby DS, Ziegenfuss TN (2021) — <em>Journal of the International Society of Sports Nutrition</em></p>
+                    <p class="study-findings">Creatine supplementation consistently increases lean body mass by 1-2 kg over placebo when combined with resistance training. Initial weight gain (1-1.5 kg in first week) is primarily intracellular water; chronic gains reflect true lean tissue accretion. No significant effect on fat mass. Loading phase not mandatory for body composition benefits.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/33557850/" target="_blank" rel="noopener">PubMed: 33557850</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials</p>
+                    <p class="study-meta">Delpino FM, Figueiredo LM, Forbes SC, Candow DG, Santos HO (2022) — <em>Nutrition</em></p>
+                    <p class="study-findings">Overall creatine increased LBM by 0.68 kg (95% CI: 0.26-1.11) across 35 studies with 1192 participants. Greater gains when combined with resistance training (MD 1.10 kg). Males showed larger gains (1.46 kg) versus non-significant increase in females (0.29 kg). No significant effect without exercise training.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35986981/" target="_blank" rel="noopener">PubMed: 35986981</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Creatine supplementation protocols with or without training interventions on body composition: a GRADE-assessed systematic review and dose-response meta-analysis</p>
+                    <p class="study-meta">Pashayee-Khamene F, Heidari Z, Asbaghi O, Ashtary-Larky D, Goudarzi K, Forbes SC, Candow DG, Bagheri R, Ghanavati M, Dutheil F (2024) — <em>Journal of the International Society of Sports Nutrition</em></p>
+                    <p class="study-findings">Fat-free mass (FFM) increased by +1.39 kg overall with creatine supplementation. Greater gains observed in untrained compared to trained individuals. A dose-response relationship was confirmed for body composition outcomes. Total body mass increased by +0.89 kg. No significant effect on fat mass was detected.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/39042054/" target="_blank" rel="noopener">PubMed: 39042054</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Depression and Mood</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Weak</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Aging and Sarcopenia</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Creatine supplementation for treating symptoms of depression: a systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Eckert I, Lima J, Dariva AA (2025) — <em>British Journal of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Pooled standardized mean difference (SMD) was -0.34 (95% CI: -0.67 to -0.02) for depression symptoms, reaching statistical significance but falling below the minimal important difference threshold. GRADE certainty rated as very low. Not recommended as a standalone treatment for depression, but may have a potential adjunctive role alongside conventional therapies.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41189312/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41189312</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Influence of age, sex, and type of exercise on the efficacy of creatine supplementation on lean body mass: A systematic review and meta-analysis of randomized clinical trials</p>
+                    <p class="study-meta">Delpino FM, Figueiredo LM, Forbes SC, Candow DG, Santos HO (2022) — <em>Nutrition</em></p>
+                    <p class="study-findings">Older adults (&gt;50 years) showed a significant but smaller effect size for lean mass gains with creatine supplementation compared to younger adults. Benefits were still clinically meaningful and creatine may help counteract age-related sarcopenia when combined with resistance exercise.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35986981/" target="_blank" rel="noopener">PubMed: 35986981</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Depression and Mood</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Weak</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Creatine supplementation for treating symptoms of depression: a systematic review and meta-analysis</p>
+                    <p class="study-meta">Eckert I, Lima J, Dariva AA (2025) — <em>British Journal of Nutrition</em></p>
+                    <p class="study-findings">Pooled standardized mean difference (SMD) was -0.34 (95% CI: -0.67 to -0.02) for depression symptoms, reaching statistical significance but falling below the minimal important difference threshold. GRADE certainty rated as very low. Not recommended as a standalone treatment for depression, but may have a potential adjunctive role alongside conventional therapies.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41189312/" target="_blank" rel="noopener">PubMed: 41189312</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
     </div>
                 </section>
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Kazeminasab et al. (2025). The effects of creatine supplementation on upper and lower body strength and power: a systematic review and meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1080/02640414.2025.2468753" target="_blank" rel="noopener">10.1080/02640414.2025.2468753</a></li>
-                        <li style="margin-bottom:0.6rem;">Ashtary-Larky et al. (2025). Dose-response effects of creatine supplementation on body composition: a meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnu.2025.07.012" target="_blank" rel="noopener">10.1016/j.clnu.2025.07.012</a></li>
-                        <li style="margin-bottom:0.6rem;">Naeini et al. (2025). The Effects of Creatine Supplementation on Kidney Function: A Systematic Review and Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnu.2025.06.030" target="_blank" rel="noopener">10.1016/j.clnu.2025.06.030</a></li>
+                    <ol class="references-list">
+                        <li>Kazeminasab et al. (2025). The effects of creatine supplementation on upper and lower body strength and power: a systematic review and meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1080/02640414.2025.2468753" target="_blank" rel="noopener">10.1080/02640414.2025.2468753</a></li>
+                        <li>Ashtary-Larky et al. (2025). Dose-response effects of creatine supplementation on body composition: a meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnu.2025.07.012" target="_blank" rel="noopener">10.1016/j.clnu.2025.07.012</a></li>
+                        <li>Naeini et al. (2025). The Effects of Creatine Supplementation on Kidney Function: A Systematic Review and Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnu.2025.06.030" target="_blank" rel="noopener">10.1016/j.clnu.2025.06.030</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/performance-enhancers.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/performance-enhancers.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Performance Enhancers</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/energy-vitality.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/energy-vitality.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Energy &amp; Vitality Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../guides/cognitive-performance.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/cognitive-performance.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Cognitive Performance Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../compare/creatine-vs-beta-alanine.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-balance-scale" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../compare/creatine-vs-beta-alanine.html" class="related-card">
+                            <i class="fas fa-balance-scale related-card-icon"></i>
                             <strong>Creatine vs Beta-Alanine</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Head-to-head comparison</p>
+                            <p class="related-card-desc">Head-to-head comparison</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -532,19 +532,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133628">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Selenium","headline":"Selenium — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Selenium (Selenium (elemental)). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/selenium.html"},"about":{"@type":"DietarySupplement","name":"Selenium","alternateName":"Selenomethionine","activeIngredient":"Selenium (elemental)"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Essential Nutrients</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Essential Nutrients</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Selenium</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Selenium (elemental)</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Selenomethionine, Sodium Selenite</p>
+            <p class="scientific-name">Selenium (elemental)</p>
+            <p class="common-names">Also known as: Selenomethionine, Sodium Selenite</p>
             <p class="hero-subtitle">Strong evidence for antioxidant function and thyroid health; moderate evidence for cognitive protection</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Essential Nutrients</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Selenium is classified as essential nutrients with moderate evidence (Tier 2) for its primary applications. Strong evidence for antioxidant function and thyroid health; moderate evidence for cognitive protection</p>
-                        <p style="margin-top:1rem;">Essential trace mineral with strong antioxidant mechanisms and moderate evidence for immune and thyroid support</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Selenium-deficient regions; Thyroid patients; Elderly; Cancer risk individuals</p>
+                        <p class="key-findings">Essential trace mineral with strong antioxidant mechanisms and moderate evidence for immune and thyroid support</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Selenium-deficient regions; Thyroid patients; Elderly; Cancer risk individuals</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Glutathione peroxidase cofactor</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Glutathione peroxidase cofactor</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Thyroid hormone metabolism</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Thyroid hormone metabolism</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Antioxidant enzyme systems</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Antioxidant enzyme systems</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Immune function modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Immune function modulation</p>
                         </div>
                     </div>
                 </section>
@@ -188,27 +188,27 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Neuroprotection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cognitive aging support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mood regulation</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Stress resilience</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Neuroprotection</li>
+                        <li>Cognitive aging support</li>
+                        <li>Mood regulation</li>
+                        <li>Stress resilience</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Thyroid function</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Immune system support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant protection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cellular health support</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Thyroid function</li>
+                        <li>Immune system support</li>
+                        <li>Antioxidant protection</li>
+                        <li>Cellular health support</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -217,16 +217,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Antioxidant Status</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate improvement</td>
+                                    <td class="effect-domain">Antioxidant Status</td>
+                                    <td class="effect-value">Moderate improvement</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Thyroid Function</strong></td>
-                                    <td style="font-size:0.85rem;">Large improvement (in deficiency)</td>
+                                    <td class="effect-domain">Thyroid Function</td>
+                                    <td class="effect-value">Large improvement (in deficiency)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Cognitive Protection</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate effect</td>
+                                    <td class="effect-domain">Cognitive Protection</td>
+                                    <td class="effect-value">Small to moderate effect</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -245,223 +245,223 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Selenium-deficient regions</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Thyroid patients</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Elderly</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Cancer risk individuals</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Selenium-deficient regions</li>
+                        <li>Thyroid patients</li>
+                        <li>Elderly</li>
+                        <li>Cancer risk individuals</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Garlic breath odor (high doses)</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Hair loss (toxicity)</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Nail changes</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Garlic breath odor (high doses)</li>
+                        <li>Hair loss (toxicity)</li>
+                        <li>Nail changes</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Selenium toxicity history</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Selenium toxicity history</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">None significant at normal doses</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>None significant at normal doses</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Antioxidant enzyme cofactor and selenoprotein synthesis</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+                    <p class="section-intro">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Antioxidant enzyme cofactor and selenoprotein synthesis</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium and selenoproteins in human health and disease</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rayman, M.P. (2012) — <em>Antioxidants &amp; Redox Signaling</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium is essential for synthesis of 25 selenoproteins including glutathione peroxidases, thioredoxin reductases, and selenoprotein P.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21554057/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 21554057</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium and selenoproteins in human health and disease</p>
+                    <p class="study-meta">Rayman, M.P. (2012) — <em>Antioxidants &amp; Redox Signaling</em></p>
+                    <p class="study-findings">Selenium is essential for synthesis of 25 selenoproteins including glutathione peroxidases, thioredoxin reductases, and selenoprotein P.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/21554057/" target="_blank" rel="noopener">PubMed: 21554057</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium metabolism and selenoproteins: function and requirements</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Burk, R.F., Hill, K.E. (2005) — <em>Journal of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium functions as cofactor for glutathione peroxidase and other antioxidant enzymes, protecting cells from oxidative damage.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/29190764/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 29190764</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Immune system modulation and inflammatory response</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium and immune function</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Arthur, J.R., McKenzie, R.C., Beckett, G.J. (2003) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium deficiency impairs immune function, while adequate levels support T-cell proliferation and antibody production.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12816794/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12816794</a>
+                <div class="study-item">
+                    <p class="study-title">Selenium metabolism and selenoproteins: function and requirements</p>
+                    <p class="study-meta">Burk, R.F., Hill, K.E. (2005) — <em>Journal of Nutrition</em></p>
+                    <p class="study-findings">Selenium functions as cofactor for glutathione peroxidase and other antioxidant enzymes, protecting cells from oxidative damage.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29190764/" target="_blank" rel="noopener">PubMed: 29190764</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Thyroid hormone metabolism and regulation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals with thyroid concerns</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Immune system modulation and inflammatory response</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium and thyroid disease: from pathophysiology to treatment</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Duntas, L.H., Benvenga, S. (2015) — <em>International Journal of Endocrinology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium is essential for thyroid hormone synthesis and metabolism through selenoenzymes that convert T4 to active T3.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/28255299/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 28255299</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium and immune function</p>
+                    <p class="study-meta">Arthur, J.R., McKenzie, R.C., Beckett, G.J. (2003) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Selenium deficiency impairs immune function, while adequate levels support T-cell proliferation and antibody production.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12816794/" target="_blank" rel="noopener">PubMed: 12816794</a>
                 </div>
             </div>
         </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Reduced cancer risk and tumor prevention</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies with mixed results</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Thyroid hormone metabolism and regulation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Individuals with thyroid concerns</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of selenium supplementation for cancer prevention in patients with carcinoma of the skin</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Clark, L.C., Combs, G.F., Turnbull, B.W., Slate, E.H., Chalker, D.K., Chow, J., Davis, L.S., Glover, R.A., Graham, G.F., Gross, E.G. (1996) — <em>JAMA</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium supplementation (200 μg/day) significantly reduced prostate, lung, and colorectal cancer incidence in this landmark trial.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/8971064/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 8971064</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium and cancer prevention: a review of the evidence and mechanism of action</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Combs, G.F., Gray, W.P. (1998) — <em>Pharmacology &amp; Therapeutics</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium's cancer-protective effects involve antioxidant activity, immune enhancement, and regulation of cell cycle and apoptosis.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/16313696/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 16313696</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cardiovascular disease protection</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Adults at cardiovascular risk</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium status and cardiovascular diseases: meta-analysis of prospective observational studies and randomized controlled trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Flores-Mateo, G., Navas-Acien, A., Pastor-Barriuso, R., Guallar, E. (2006) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Meta-analysis shows inverse association between selenium levels and cardiovascular disease risk, with optimal benefits at moderate intake levels.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17023702/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17023702</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Thyroid function optimization</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals with thyroid disorders</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium supplementation in patients with autoimmune thyroiditis decreases thyroid peroxidase antibodies concentrations</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Gärtner, R., Gasnier, B.C., Dietrich, J.W., Krebs, B., Angstwurm, M.W. (2002) — <em>Journal of Clinical Endocrinology &amp; Metabolism</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium supplementation (200 μg/day) significantly reduced thyroid peroxidase antibodies in autoimmune thyroiditis patients.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12050222/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12050222</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cognitive function and neuroprotection</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Elderly and cognitive risk populations</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium and cognitive decline in elderly</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Berr, C., Balansard, B., Arnaud, J., Roussel, A.M., Alpérovitch, A. (2000) — <em>American Journal of Epidemiology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Higher selenium levels associated with better cognitive performance and reduced risk of cognitive decline in elderly populations.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/36100996/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 36100996</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium and thyroid disease: from pathophysiology to treatment</p>
+                    <p class="study-meta">Duntas, L.H., Benvenga, S. (2015) — <em>International Journal of Endocrinology</em></p>
+                    <p class="study-findings">Selenium is essential for thyroid hormone synthesis and metabolism through selenoenzymes that convert T4 to active T3.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/28255299/" target="_blank" rel="noopener">PubMed: 28255299</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Safe at recommended doses with narrow therapeutic window</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduced cancer risk and tumor prevention</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies with mixed results</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium toxicity and tolerance in humans</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Yang, G.Q., Wang, S.Z., Zhou, R.H., Sun, S.Z. (1983) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Selenium is safe at doses up to 400 μg/day, but has narrow therapeutic window with toxicity occurring at higher doses.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/6846228/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 6846228</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of selenium supplementation for cancer prevention in patients with carcinoma of the skin</p>
+                    <p class="study-meta">Clark, L.C., Combs, G.F., Turnbull, B.W., Slate, E.H., Chalker, D.K., Chow, J., Davis, L.S., Glover, R.A., Graham, G.F., Gross, E.G. (1996) — <em>JAMA</em></p>
+                    <p class="study-findings">Selenium supplementation (200 μg/day) significantly reduced prostate, lung, and colorectal cancer incidence in this landmark trial.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/8971064/" target="_blank" rel="noopener">PubMed: 8971064</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Selenium and cancer prevention: a review of the evidence and mechanism of action</p>
+                    <p class="study-meta">Combs, G.F., Gray, W.P. (1998) — <em>Pharmacology &amp; Therapeutics</em></p>
+                    <p class="study-findings">Selenium's cancer-protective effects involve antioxidant activity, immune enhancement, and regulation of cell cycle and apoptosis.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/16313696/" target="_blank" rel="noopener">PubMed: 16313696</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Selenosis risk at excessive doses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals taking high-dose supplements</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cardiovascular disease protection</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Adults at cardiovascular risk</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Selenium poisoning: clinical features and treatment</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">MacFarquhar, J.K., Broussard, D.L., Melstrom, P., Hutchinson, R., Wolkin, A., Martin, C., Burk, R.F., Dunn, J.R., Green, A.L., Hammond, R. (2010) — <em>Clinical Toxicology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Chronic selenium toxicity (selenosis) causes hair loss, nail brittleness, garlic breath, and neurological symptoms at doses &gt;900 μg/day.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/20698816/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 20698816</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium status and cardiovascular diseases: meta-analysis of prospective observational studies and randomized controlled trials</p>
+                    <p class="study-meta">Flores-Mateo, G., Navas-Acien, A., Pastor-Barriuso, R., Guallar, E. (2006) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Meta-analysis shows inverse association between selenium levels and cardiovascular disease risk, with optimal benefits at moderate intake levels.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17023702/" target="_blank" rel="noopener">PubMed: 17023702</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Potential increased diabetes risk at high doses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals with diabetes risk factors</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Thyroid function optimization</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Individuals with thyroid disorders</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of long-term selenium supplementation on the incidence of type 2 diabetes</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Stranges, S., Marshall, J.R., Natarajan, R., Donahue, R.P., Trevisan, M., Combs, G.F., Cappuccio, F.P., Ceriello, A., Reid, M.E. (2007) — <em>Annals of Internal Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">High-dose selenium supplementation (200 μg/day) associated with increased type 2 diabetes risk in individuals with high baseline selenium levels.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17620655/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17620655</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium supplementation in patients with autoimmune thyroiditis decreases thyroid peroxidase antibodies concentrations</p>
+                    <p class="study-meta">Gärtner, R., Gasnier, B.C., Dietrich, J.W., Krebs, B., Angstwurm, M.W. (2002) — <em>Journal of Clinical Endocrinology &amp; Metabolism</em></p>
+                    <p class="study-findings">Selenium supplementation (200 μg/day) significantly reduced thyroid peroxidase antibodies in autoimmune thyroiditis patients.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12050222/" target="_blank" rel="noopener">PubMed: 12050222</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cognitive function and neuroprotection</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Elderly and cognitive risk populations</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium and cognitive decline in elderly</p>
+                    <p class="study-meta">Berr, C., Balansard, B., Arnaud, J., Roussel, A.M., Alpérovitch, A. (2000) — <em>American Journal of Epidemiology</em></p>
+                    <p class="study-findings">Higher selenium levels associated with better cognitive performance and reduced risk of cognitive decline in elderly populations.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/36100996/" target="_blank" rel="noopener">PubMed: 36100996</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Safe at recommended doses with narrow therapeutic window</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively documented</span>
+                <span class="evidence-tag">General population</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium toxicity and tolerance in humans</p>
+                    <p class="study-meta">Yang, G.Q., Wang, S.Z., Zhou, R.H., Sun, S.Z. (1983) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Selenium is safe at doses up to 400 μg/day, but has narrow therapeutic window with toxicity occurring at higher doses.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/6846228/" target="_blank" rel="noopener">PubMed: 6846228</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Selenosis risk at excessive doses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-documented</span>
+                <span class="evidence-tag">Individuals taking high-dose supplements</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Selenium poisoning: clinical features and treatment</p>
+                    <p class="study-meta">MacFarquhar, J.K., Broussard, D.L., Melstrom, P., Hutchinson, R., Wolkin, A., Martin, C., Burk, R.F., Dunn, J.R., Green, A.L., Hammond, R. (2010) — <em>Clinical Toxicology</em></p>
+                    <p class="study-findings">Chronic selenium toxicity (selenosis) causes hair loss, nail brittleness, garlic breath, and neurological symptoms at doses &gt;900 μg/day.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/20698816/" target="_blank" rel="noopener">PubMed: 20698816</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Potential increased diabetes risk at high doses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Individuals with diabetes risk factors</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of long-term selenium supplementation on the incidence of type 2 diabetes</p>
+                    <p class="study-meta">Stranges, S., Marshall, J.R., Natarajan, R., Donahue, R.P., Trevisan, M., Combs, G.F., Cappuccio, F.P., Ceriello, A., Reid, M.E. (2007) — <em>Annals of Internal Medicine</em></p>
+                    <p class="study-findings">High-dose selenium supplementation (200 μg/day) associated with increased type 2 diabetes risk in individuals with high baseline selenium levels.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17620655/" target="_blank" rel="noopener">PubMed: 17620655</a>
                 </div>
             </div>
         </div>
@@ -470,34 +470,34 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Toulis KA et al. (2010). Selenium supplementation in patients with autoimmune thyroiditis decreases thyroid peroxidase antibodies concentrations. <em>European Journal of Endocrinology</em>. DOI: <a href="https://doi.org/10.1530/EJE-14-0613" target="_blank" rel="noopener">10.1530/EJE-14-0613</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/25324270/" target="_blank" rel="noopener">PubMed</a></li>
-                        <li style="margin-bottom:0.6rem;">Wichman J et al. (2016). Selenium supplementation for Hashimoto's thyroiditis: systematic review and meta-analysis. <em>Thyroid</em>. DOI: <a href="https://doi.org/10.1089/thy.2015.0063" target="_blank" rel="noopener">10.1089/thy.2015.0063</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26067143/" target="_blank" rel="noopener">PubMed</a></li>
-                        <li style="margin-bottom:0.6rem;">Vinceti M et al. (2014). Selenium for preventing cancer. <em>Cochrane Database of Systematic Reviews</em>. DOI: <a href="https://doi.org/10.1002/14651858.CD005195.pub3" target="_blank" rel="noopener">10.1002/14651858.CD005195.pub3</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/24683040/" target="_blank" rel="noopener">PubMed</a></li>
+                    <ol class="references-list">
+                        <li>Toulis KA et al. (2010). Selenium supplementation in patients with autoimmune thyroiditis decreases thyroid peroxidase antibodies concentrations. <em>European Journal of Endocrinology</em>. DOI: <a href="https://doi.org/10.1530/EJE-14-0613" target="_blank" rel="noopener">10.1530/EJE-14-0613</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/25324270/" target="_blank" rel="noopener">PubMed</a></li>
+                        <li>Wichman J et al. (2016). Selenium supplementation for Hashimoto's thyroiditis: systematic review and meta-analysis. <em>Thyroid</em>. DOI: <a href="https://doi.org/10.1089/thy.2015.0063" target="_blank" rel="noopener">10.1089/thy.2015.0063</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26067143/" target="_blank" rel="noopener">PubMed</a></li>
+                        <li>Vinceti M et al. (2014). Selenium for preventing cancer. <em>Cochrane Database of Systematic Reviews</em>. DOI: <a href="https://doi.org/10.1002/14651858.CD005195.pub3" target="_blank" rel="noopener">10.1002/14651858.CD005195.pub3</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/24683040/" target="_blank" rel="noopener">PubMed</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/essential-nutrients.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/essential-nutrients.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Essential Nutrients</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -505,19 +505,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

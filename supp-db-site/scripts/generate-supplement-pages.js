@@ -252,8 +252,19 @@ function getCategoryPage(category) {
 function renderEnhancedCitationSection(sectionTitle, icon, citations) {
     if (!citations || citations.length === 0) return '';
 
-    let html = `<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-${icon}" style="margin-right:0.5rem;"></i>${esc(sectionTitle)}</h4>\n`;
+    // Determine evidence strength class from string
+    function strengthClass(str) {
+        if (!str) return '';
+        const lower = str.toLowerCase();
+        if (lower.includes('strong') || lower.includes('robust') || lower.includes('well-established')) return 'evidence-tag-strong';
+        if (lower.includes('moderate') || lower.includes('promising')) return 'evidence-tag-moderate';
+        if (lower.includes('preliminary') || lower.includes('emerging') || lower.includes('limited')) return 'evidence-tag-preliminary';
+        if (lower.includes('meta') || lower.includes('systematic')) return 'evidence-tag-meta';
+        return '';
+    }
+
+    let html = `<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-${icon}"></i>${esc(sectionTitle)}</h4>\n`;
 
     citations.forEach((cit, idx) => {
         // Normalize: some entries use "mechanism" or "safetyAspect" instead of "claim"
@@ -265,37 +276,37 @@ function renderEnhancedCitationSection(sectionTitle, icon, citations) {
 
         // Handle flat format (no nested studies — v2.0 with string evidence)
         if (displayTitle && !studiesArr) {
-            html += `        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">${esc(displayTitle)}</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-                ${strengthStr ? `<span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">${esc(strengthStr)}</span>` : ''}
-                ${cit.studyType ? `<span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">${esc(cit.studyType)}</span>` : ''}
-                ${cit.year ? `<span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">${esc(String(cit.year))}</span>` : ''}
-                ${cit.participants ? `<span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">n=${esc(cit.participants)}</span>` : ''}
-                ${cit.duration ? `<span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">${esc(cit.duration)}</span>` : ''}
+            html += `        <div class="evidence-card">
+            <p class="evidence-card-title">${esc(displayTitle)}</p>
+            <div class="evidence-tags">
+                ${strengthStr ? `<span class="evidence-tag ${strengthClass(strengthStr)}">${esc(strengthStr)}</span>` : ''}
+                ${cit.studyType ? `<span class="evidence-tag">${esc(cit.studyType)}</span>` : ''}
+                ${cit.year ? `<span class="evidence-tag">${esc(String(cit.year))}</span>` : ''}
+                ${cit.participants ? `<span class="evidence-tag">n=${esc(cit.participants)}</span>` : ''}
+                ${cit.duration ? `<span class="evidence-tag">${esc(cit.duration)}</span>` : ''}
             </div>
-            ${cit.details ? `<p style="font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 0 0;line-height:1.6;">${esc(cit.details)}</p>` : ''}
-            ${cit.pmid ? `<p style="font-size:0.8rem;margin:0.5rem 0 0 0;"><a href="https://pubmed.ncbi.nlm.nih.gov/${esc(cit.pmid)}/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed: ${esc(cit.pmid)}</a></p>` : ''}
+            ${cit.details ? `<p class="evidence-details">${esc(cit.details)}</p>` : ''}
+            ${cit.pmid ? `<p class="evidence-link"><a href="https://pubmed.ncbi.nlm.nih.gov/${esc(cit.pmid)}/" target="_blank" rel="noopener">PubMed: ${esc(cit.pmid)}</a></p>` : ''}
         </div>\n`;
         }
         // Handle nested studies format (v1.0 with studies[] or evidence[] array)
         else if (displayTitle && studiesArr && studiesArr.length > 0) {
-            html += `        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">${esc(displayTitle)}</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                ${strengthStr ? `<span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">${esc(strengthStr)}</span>` : ''}
-                ${cit.replicationStatus ? `<span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">${esc(cit.replicationStatus)}</span>` : ''}
-                ${cit.populationTarget ? `<span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">${esc(cit.populationTarget)}</span>` : ''}
+            html += `        <div class="evidence-card">
+            <p class="evidence-card-title">${esc(displayTitle)}</p>
+            <div class="evidence-tags">
+                ${strengthStr ? `<span class="evidence-tag ${strengthClass(strengthStr)}">${esc(strengthStr)}</span>` : ''}
+                ${cit.replicationStatus ? `<span class="evidence-tag">${esc(cit.replicationStatus)}</span>` : ''}
+                ${cit.populationTarget ? `<span class="evidence-tag">${esc(cit.populationTarget)}</span>` : ''}
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">\n`;
+            <div class="study-list">\n`;
 
             studiesArr.forEach(study => {
                 const studyFindings = study.keyFindings || study.findings || '';
-                html += `                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">${esc(study.title || '')}</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">${esc(Array.isArray(study.authors) ? study.authors.join(', ') : (study.authors || ''))} (${esc(String(study.year || ''))}) — <em>${esc(study.journal || '')}</em></p>
-                    ${studyFindings ? `<p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">${esc(studyFindings)}</p>` : ''}
-                    ${study.pmid ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(study.pmid)}/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: ${esc(study.pmid)}</a>` : ''}
+                html += `                <div class="study-item">
+                    <p class="study-title">${esc(study.title || '')}</p>
+                    <p class="study-meta">${esc(Array.isArray(study.authors) ? study.authors.join(', ') : (study.authors || ''))} (${esc(String(study.year || ''))}) — <em>${esc(study.journal || '')}</em></p>
+                    ${studyFindings ? `<p class="study-findings">${esc(studyFindings)}</p>` : ''}
+                    ${study.pmid ? `<a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/${esc(study.pmid)}/" target="_blank" rel="noopener">PubMed: ${esc(study.pmid)}</a>` : ''}
                 </div>\n`;
             });
 
@@ -393,7 +404,7 @@ function generateSupplementPage(s) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=${Date.now()}">
 
     <script type="application/ld+json">${JSON.stringify({
         "@context": "https://schema.org",
@@ -448,21 +459,21 @@ function generateSupplementPage(s) {
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 ${tierBadgeHtml(s.evidenceTier)}
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">${esc(norm)}</span>
-                ${safetyRating ? safetyRatingBadge(safetyRating) : ''}
+                <span class="monograph-badge monograph-badge-category">${esc(norm)}</span>
+                ${safetyRating ? `<span class="monograph-badge monograph-badge-safety" data-safety="${esc(safetyRating.toLowerCase())}">${esc(safetyRating)}</span>` : ''}
             </div>
             <h1>${esc(s.name)}</h1>
-            ${s.scientificName && s.scientificName !== s.name ? `<p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">${esc(s.scientificName)}</p>` : ''}
-            ${commonNames.length > 0 ? `<p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: ${commonNames.map(n => esc(n)).join(', ')}</p>` : ''}
+            ${s.scientificName && s.scientificName !== s.name ? `<p class="scientific-name">${esc(s.scientificName)}</p>` : ''}
+            ${commonNames.length > 0 ? `<p class="common-names">Also known as: ${commonNames.map(n => esc(n)).join(', ')}</p>` : ''}
             <p class="hero-subtitle">${esc(s.evidenceTierRationale || `Comprehensive evidence review covering benefits, mechanisms, dosage, and safety profile.`)}</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> ${totalCitations}+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier ${s.evidenceTier}: ${getTierLabel(s.evidenceTier)}</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: ${esc(safetyRating)}</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated ${TODAY}</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> ${totalCitations}+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier ${s.evidenceTier}: ${getTierLabel(s.evidenceTier)}</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: ${esc(safetyRating)}</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated ${TODAY}</div>
             </div>
         </header>
 
@@ -514,7 +525,7 @@ function generateSupplementPage(s) {
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td>${tierBadgeHtml(s.evidenceTier)}</td></tr>
                                 <tr><td><strong>Category</strong></td><td>${esc(norm)}</td></tr>
@@ -538,11 +549,11 @@ function generateSupplementPage(s) {
 `;
 
     if (hasEnhanced && enhanced.evidenceProfile?.keyFindings) {
-        html += `                        <p style="margin-top:1rem;">${esc(enhanced.evidenceProfile.keyFindings)}</p>\n`;
+        html += `                        <p class="key-findings">${esc(enhanced.evidenceProfile.keyFindings)}</p>\n`;
     }
 
     if (studyPops.length > 0) {
-        html += `                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> ${studyPops.map(p => esc(p)).join('; ')}</p>\n`;
+        html += `                        <p class="study-populations"><strong>Key study populations:</strong> ${studyPops.map(p => esc(p)).join('; ')}</p>\n`;
     }
 
     html += `                    </div>
@@ -554,16 +565,16 @@ function generateSupplementPage(s) {
 `;
 
     if (mechanisms.length > 0) {
-        html += `                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">\n`;
+        html += `                    <div class="mechanism-grid">\n`;
         mechanisms.forEach((mech, idx) => {
-            html += `                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">${idx + 1}</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">${esc(mech)}</p>
+            html += `                        <div class="mechanism-card">
+                            <div class="mechanism-num">${idx + 1}</div>
+                            <p class="mechanism-text">${esc(mech)}</p>
                         </div>\n`;
         });
         html += `                    </div>\n`;
     } else {
-        html += `                    <p style="color:var(--text-muted);">Mechanism data not yet available for this supplement.</p>\n`;
+        html += `                    <p class="text-muted">Mechanism data not yet available for this supplement.</p>\n`;
     }
 
     html += `                </section>
@@ -574,25 +585,25 @@ function generateSupplementPage(s) {
 `;
 
     if (cogBenefits.length > 0) {
-        html += `                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">\n`;
+        html += `                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">\n`;
         cogBenefits.forEach(b => {
-            html += `                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">${esc(b)}</li>\n`;
+            html += `                        <li>${esc(b)}</li>\n`;
         });
         html += `                    </ul>\n`;
     }
 
     if (nonCogBenefits.length > 0) {
-        html += `                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">\n`;
+        html += `                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">\n`;
         nonCogBenefits.forEach(b => {
-            html += `                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">${esc(b)}</li>\n`;
+            html += `                        <li>${esc(b)}</li>\n`;
         });
         html += `                    </ul>\n`;
     }
 
     if (allBenefits.length === 0) {
-        html += `                    <p style="color:var(--text-muted);">Benefit data not yet available for this supplement.</p>\n`;
+        html += `                    <p class="text-muted">Benefit data not yet available for this supplement.</p>\n`;
     }
 
     html += `                </section>
@@ -603,9 +614,9 @@ function generateSupplementPage(s) {
         html += `                <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -616,8 +627,8 @@ function generateSupplementPage(s) {
         effectEntries.forEach(([domain, value]) => {
             const domainLabel = domain.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
             html += `                                <tr>
-                                    <td><strong>${esc(domainLabel)}</strong></td>
-                                    <td style="font-size:0.85rem;">${esc(String(value))}</td>
+                                    <td class="effect-domain">${esc(domainLabel)}</td>
+                                    <td class="effect-value">${esc(String(value))}</td>
                                 </tr>\n`;
         });
         html += `                            </tbody>
@@ -644,10 +655,10 @@ function generateSupplementPage(s) {
 `;
 
     if (studyPops.length > 0) {
-        html += `                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">\n`;
+        html += `                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">\n`;
         studyPops.forEach(pop => {
-            html += `                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">${esc(pop)}</li>\n`;
+            html += `                        <li>${esc(pop)}</li>\n`;
         });
         html += `                    </ul>\n`;
     }
@@ -657,39 +668,39 @@ function generateSupplementPage(s) {
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> ${safetyRatingBadge(safetyRating)}
                         </div>
                     </div>
 `;
 
     if (sideEffects.length > 0) {
-        html += `                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">\n`;
+        html += `                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">\n`;
         sideEffects.forEach(se => {
-            html += `                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">${esc(se)}</li>\n`;
+            html += `                        <li>${esc(se)}</li>\n`;
         });
         html += `                    </ul>\n`;
     }
 
     if (contraindications.length > 0) {
-        html += `                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">\n`;
+        html += `                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>\n`;
         contraindications.forEach(ci => {
-            html += `                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">${esc(ci)}</li>\n`;
+            html += `                            <li>${esc(ci)}</li>\n`;
         });
         html += `                        </ul>
                     </div>\n`;
     }
 
     if (drugInteractions.length > 0) {
-        html += `                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">\n`;
+        html += `                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>\n`;
         drugInteractions.forEach(di => {
-            html += `                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">${esc(di)}</li>\n`;
+            html += `                            <li>${esc(di)}</li>\n`;
         });
         html += `                        </ul>
                     </div>\n`;
@@ -704,7 +715,7 @@ function generateSupplementPage(s) {
         html += `                <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from ${enhancedCitCount} peer-reviewed sources, organized by research domain.</p>
+                    <p class="section-intro">Detailed citation analysis from ${enhancedCitCount} peer-reviewed sources, organized by research domain.</p>
 `;
         html += renderEnhancedCitationSection('Mechanisms of Action', 'cogs', cits.mechanisms || []);
         html += renderEnhancedCitationSection('Clinical Benefits', 'chart-line', cits.benefits || []);
@@ -722,7 +733,7 @@ function generateSupplementPage(s) {
 `;
 
     if (keyCitations.length > 0) {
-        html += `                    <ol style="font-size:0.85rem;padding-left:1.5rem;">\n`;
+        html += `                    <ol class="references-list">\n`;
         keyCitations.forEach(c => {
             const authors = c.authors || 'Unknown authors';
             const year = c.year || '';
@@ -730,11 +741,11 @@ function generateSupplementPage(s) {
             const journal = c.journal || '';
             const doi = c.doi || '';
             const pmid = c.pmid || '';
-            html += `                        <li style="margin-bottom:0.6rem;">${esc(authors)} (${esc(String(year))}). ${esc(title)}. <em>${esc(journal)}</em>.${doi ? ` DOI: <a href="https://doi.org/${esc(doi)}" target="_blank" rel="noopener">${esc(doi)}</a>` : ''}${pmid ? ` | <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(pmid)}/" target="_blank" rel="noopener">PubMed</a>` : ''}</li>\n`;
+            html += `                        <li>${esc(authors)} (${esc(String(year))}). ${esc(title)}. <em>${esc(journal)}</em>.${doi ? ` DOI: <a href="https://doi.org/${esc(doi)}" target="_blank" rel="noopener">${esc(doi)}</a>` : ''}${pmid ? ` | <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(pmid)}/" target="_blank" rel="noopener">PubMed</a>` : ''}</li>\n`;
         });
         html += `                    </ol>\n`;
     } else {
-        html += `                    <p style="color:var(--text-muted);">Key citations will be added in a future update.</p>\n`;
+        html += `                    <p class="text-muted">Key citations will be added in a future update.</p>\n`;
     }
 
     html += `                </section>
@@ -742,33 +753,33 @@ function generateSupplementPage(s) {
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
+                    <div class="related-grid">
 `;
 
     // Category link
     if (catPage) {
-        html += `                        <a href="${catPage.url}" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+        html += `                        <a href="${catPage.url}" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>${esc(catPage.title)}</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>\n`;
     }
 
     // Guide links
     relatedGuides.forEach(guide => {
-        html += `                        <a href="${guide.url}" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+        html += `                        <a href="${guide.url}" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>${esc(guide.title)}</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>\n`;
     });
 
     // Comparison links
     relatedComparisons.forEach(comp => {
-        html += `                        <a href="${comp.url}" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-balance-scale" style="color:var(--accent);margin-right:0.5rem;"></i>
+        html += `                        <a href="${comp.url}" class="related-card">
+                            <i class="fas fa-balance-scale related-card-icon"></i>
                             <strong>${esc(comp.title)}</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Head-to-head comparison</p>
+                            <p class="related-card-desc">Head-to-head comparison</p>
                         </a>\n`;
     });
 
@@ -776,9 +787,9 @@ function generateSupplementPage(s) {
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -786,19 +797,19 @@ function generateSupplementPage(s) {
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; ${new Date().getFullYear()} SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; ${new Date().getFullYear()} SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133841">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Moringa","headline":"Moringa — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Moringa (Moringa oleifera). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/moringa.html"},"about":{"@type":"DietarySupplement","name":"Moringa","alternateName":"Drumstick Tree","activeIngredient":"Moringa oleifera"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Herbal Extracts</span>
-                <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                <span class="monograph-badge monograph-badge-category">Herbal Extracts</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
             </div>
             <h1>Moringa</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Moringa oleifera</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Drumstick Tree, Miracle Tree, Horseradish Tree</p>
+            <p class="scientific-name">Moringa oleifera</p>
+            <p class="common-names">Also known as: Drumstick Tree, Miracle Tree, Horseradish Tree</p>
             <p class="hero-subtitle">Growing clinical evidence for nutritional and health benefits</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Herbal Extracts</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Moringa is classified as herbal extracts with moderate evidence (Tier 2) for its primary applications. Growing clinical evidence for nutritional and health benefits</p>
-                        <p style="margin-top:1rem;">Moringa oleifera possesses strong preclinical evidence for anti-inflammatory and antioxidant mechanisms via NF-κB/Nrf2 pathways, but the most rigorous meta-analysis of human RCTs with GRADE assessment (Crișan et al. 2025, 9 RCTs, 649 participants) found very low certainty for all cardiometabolic outcomes with no consistent significant benefits</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Nutritional deficiency; Antioxidant support; General wellness</p>
+                        <p class="key-findings">Moringa oleifera possesses strong preclinical evidence for anti-inflammatory and antioxidant mechanisms via NF-κB/Nrf2 pathways, but the most rigorous meta-analysis of human RCTs with GRADE assessment (Crișan et al. 2025, 9 RCTs, 649 participants) found very low certainty for all cardiometabolic outcomes with no consistent significant benefits</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Nutritional deficiency; Antioxidant support; General wellness</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Dense nutritional profile</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Dense nutritional profile</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Potent antioxidant activity</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Potent antioxidant activity</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Anti-inflammatory compounds</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Anti-inflammatory compounds</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Micronutrient replenishment</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Micronutrient replenishment</p>
                         </div>
                     </div>
                 </section>
@@ -188,26 +188,26 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Nutritional cognitive support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant neuroprotection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Energy enhancement</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Nutritional cognitive support</li>
+                        <li>Antioxidant neuroprotection</li>
+                        <li>Energy enhancement</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Comprehensive nutrition</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Anti-inflammatory effects</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Energy boost</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Comprehensive nutrition</li>
+                        <li>Antioxidant support</li>
+                        <li>Anti-inflammatory effects</li>
+                        <li>Energy boost</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -216,12 +216,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>NutritionalSupport</strong></td>
-                                    <td style="font-size:0.85rem;">Large (significant micronutrient provision)</td>
+                                    <td class="effect-domain">NutritionalSupport</td>
+                                    <td class="effect-value">Large (significant micronutrient provision)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>AntioxidantActivity</strong></td>
-                                    <td style="font-size:0.85rem;">Large (high ORAC values)</td>
+                                    <td class="effect-domain">AntioxidantActivity</td>
+                                    <td class="effect-value">Large (high ORAC values)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -240,264 +240,264 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Nutritional deficiency</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Antioxidant support</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">General wellness</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Nutritional deficiency</li>
+                        <li>Antioxidant support</li>
+                        <li>General wellness</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Mild GI upset (high doses)</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Diarrhea (excessive intake)</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Mild GI upset (high doses)</li>
+                        <li>Diarrhea (excessive intake)</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy (root/bark)</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Medication absorption concerns</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy (root/bark)</li>
+                            <li>Medication absorption concerns</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">May affect medication absorption</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Blood thinning medications</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>May affect medication absorption</li>
+                            <li>Blood thinning medications</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 12 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Quercetin and kaempferol inhibit COX/LOX pro-inflammatory enzymes while isothiocyanates modulate NF-κB signaling and suppress TNF-α and IL-1β production</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Replicated across multiple research groups</span>
+                    <p class="section-intro">Detailed citation analysis from 12 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Quercetin and kaempferol inhibit COX/LOX pro-inflammatory enzymes while isothiocyanates modulate NF-κB signaling and suppress TNF-α and IL-1β production</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Replicated across multiple research groups</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Bioactive Compounds in Moringa oleifera: Mechanisms of Action, Focus on Their Anti-Inflammatory Properties</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Chiș A, Noubissi PA, Pop OL, Mureșan CI, Fokam Tagne MA, Kamgang R, Fodor A, Sitar-Tăut AV, Cozma A, Orășan OH, Heghes SC, Vulturar R, Suharoschi R (2024) — <em>Plants (Basel)</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Quercetin and kaempferol inhibit pro-inflammatory enzymes cyclooxygenase (COX) and lipoxygenase (LOX),Isothiocyanates modulate NF-κB pathway and inhibit TNF-α and IL-1β production,Flavonoids and polyphenols reduce oxidative stress contributing to anti-inflammatory effects,Demonstrated effects on cardiovascular protection, anti-hypertensive activities, type 2 diabetes, IBD, and NAFLD</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/38202328/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 38202328</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Bioactive Compounds in Moringa oleifera: Mechanisms of Action, Focus on Their Anti-Inflammatory Properties</p>
+                    <p class="study-meta">Chiș A, Noubissi PA, Pop OL, Mureșan CI, Fokam Tagne MA, Kamgang R, Fodor A, Sitar-Tăut AV, Cozma A, Orășan OH, Heghes SC, Vulturar R, Suharoschi R (2024) — <em>Plants (Basel)</em></p>
+                    <p class="study-findings">Quercetin and kaempferol inhibit pro-inflammatory enzymes cyclooxygenase (COX) and lipoxygenase (LOX),Isothiocyanates modulate NF-κB pathway and inhibit TNF-α and IL-1β production,Flavonoids and polyphenols reduce oxidative stress contributing to anti-inflammatory effects,Demonstrated effects on cardiovascular protection, anti-hypertensive activities, type 2 diabetes, IBD, and NAFLD</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38202328/" target="_blank" rel="noopener">PubMed: 38202328</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Phytoconstituents maintain brain antioxidant enzyme levels, mitochondrial functions, and neurogenesis through NF-kB/Nrf2/HO-1 signaling</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Consistent findings across models</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Phytoconstituents maintain brain antioxidant enzyme levels, mitochondrial functions, and neurogenesis through NF-kB/Nrf2/HO-1 signaling</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Consistent findings across models</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Neuroprotective potential of Moringa oleifera mediated by NF-kB/Nrf2/HO-1 signaling pathway: A review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Mundkar M, Bijalwan A, Soni D, Kumar P (2022) — <em>J Food Biochem</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">β-carotene, quercetin, kaempferol, ascorbic acid, glucomoringin, and isothiocyanates identified as key bioactives,Compounds maintain brain antioxidant enzyme levels and mitochondrial functions,Nrf2/HO-1 activation provides cytoprotective antioxidant defense,NF-κB suppression reduces neuroinflammation in neurodegenerative disease models</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/36206551/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 36206551</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Neuroprotective potential of Moringa oleifera mediated by NF-kB/Nrf2/HO-1 signaling pathway: A review</p>
+                    <p class="study-meta">Mundkar M, Bijalwan A, Soni D, Kumar P (2022) — <em>J Food Biochem</em></p>
+                    <p class="study-findings">β-carotene, quercetin, kaempferol, ascorbic acid, glucomoringin, and isothiocyanates identified as key bioactives,Compounds maintain brain antioxidant enzyme levels and mitochondrial functions,Nrf2/HO-1 activation provides cytoprotective antioxidant defense,NF-κB suppression reduces neuroinflammation in neurodegenerative disease models</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/36206551/" target="_blank" rel="noopener">PubMed: 36206551</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Comprehensive review of 89 in vivo, 24 in vitro, and 8 clinical studies showing multi-pathway cardioprotective mechanisms</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Broad preclinical replication</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Comprehensive review of 89 in vivo, 24 in vitro, and 8 clinical studies showing multi-pathway cardioprotective mechanisms</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Broad preclinical replication</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">A molecular perspective on cardioprotective potential of Moringa oleifera Lam. and its nano-formulations</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Thanikachalam PV, Mallapu P, Dhalapathy VV, Hydar MI, Ramesh K, Ramamurthy S, Bharathy P (2026) — <em>Phytomedicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Leaves most studied plant part (78%), mainly as aqueous and ethanolic extracts,Key bioactives: flavonoids (quercetin, kaempferol), glucosinolates, and isothiocyanates,Multi-pathway modulation: NF-κB, Nrf2/Keap1, PI3K/Akt, PPAR, AMPK, and MAPK,Clinical trials showed improvements in BP, lipids, and oxidative stress but with variable rigor and small samples</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41678916/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41678916</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">The most rigorous meta-analysis of 9 RCTs with 649 participants found very low certainty evidence for all cardiometabolic outcomes, with only modest diastolic BP reduction that was not robust in sensitivity analyses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Limited</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Mixed results across studies</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Moringa oleifera supplementation and cardiometabolic outcomes in adults: a systematic review and meta-analysis with GRADE assessment</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Crișan M et al. (2025) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">GRADE certainty rated 'very low' for ALL cardiometabolic outcomes assessed,No significant effects on most outcomes including fasting glucose, HbA1c, total cholesterol, LDL, triglycerides,Only modest diastolic BP reduction (SMD -0.41) observed but not robust in sensitivity analyses,Subgroup analysis suggested potential benefits at doses &lt;10 g/day, age &lt;50, and interventions ≥12 weeks</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41305552/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41305552</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Double-blind RCT showed 2400 mg/day moringa leaf powder decreased FBG and HbA1c in prediabetic subjects compared to placebo, where placebo showed increases</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Single study - not replicated</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Moringa oleifera Leaf Supplementation as a Glycemic Control Strategy in Subjects with Prediabetes</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Gómez-Martínez S, Díaz-Prieto LE, Vicente Castro I, Jurado C, Iturmendi N, Martín-Ridaura MC, Calle N, Dueñas M, Picón MJ, Marcos A, Nova E (2021) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">2400 mg/day moringa leaf powder capsules vs placebo,Significant favorable changes in fasting blood glucose rate of change vs placebo,HbA1c showed opposite directions: decreased in moringa, increased in placebo,No differences found in gut microbiota or appetite-controlling hormones</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 35010932</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Meta-analysis of 44 studies in 699 diabetic rodents showed large pooled effect size of -3.92 for blood glucose reduction</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong (Preclinical)</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated in animal models</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Moringa oleifera supplementation in diabetic rodents: systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Watanabe S et al. (2021) — <em>Molecules</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Pooled effect size -3.92 for blood glucose reduction in diabetic rodent models,Consistent hypoglycemic effects across diverse moringa preparations,Effects observed with leaf extracts, leaf powder, and seed extracts,Strong preclinical signal supporting antidiabetic potential requiring human translation</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/34207664/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 34207664</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Meta-analysis of 7 studies showed significant improvements in CD4 count, WBC, platelet count, and BMI in adults living with HIV</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies in specific population</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of Moringa oleifera supplementation on immunological and nutritional outcomes in HIV adults: a meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Jin X et al. (2025) — <em>BMC Complement Med Ther</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Significant improvement in CD4 cell count with moringa supplementation,Increased white blood cell (WBC) and platelet (PLT) counts observed,BMI improvement indicating nutritional support benefits,Suggests adjunctive role for moringa alongside antiretroviral therapy</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40989801/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40989801</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Systematic review of galactagogues including Moringa oleifera capsules found low certainty evidence of increased breastmilk production in preterm infant mothers</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Limited</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Limited replication</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Herbal galactagogues to improve breastmilk production and lactation in mothers of preterm babies: a systematic review of clinical trials</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Cragg A, Levene I, Darabi S, Willcox M (2025) — <em>Eur J Clin Nutr</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Low certainty evidence that Moringa oleifera leaf capsules increase breastmilk production,Most RCTs scored 'some concerns' for risk of bias,Traditional use as galactagogue partially supported by limited clinical data,Higher-quality trials needed to confirm galactagogue effects</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41350450/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41350450</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The effect of Moringa oleifera capsule in increasing breastmilk volume in early postpartum patients: A double-blind, randomized controlled trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Fungtammasan S, Phupong V (2021) — <em>PLoS One</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Double-blind, placebo-controlled trial protocol registered (NCT04487613),Evaluating moringa oleifera leaves capsules for breastmilk volume,Designed to address conflicting data on galactagogue effects,Outcome data pending from registered clinical trial</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/33822798/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 33822798</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">A molecular perspective on cardioprotective potential of Moringa oleifera Lam. and its nano-formulations</p>
+                    <p class="study-meta">Thanikachalam PV, Mallapu P, Dhalapathy VV, Hydar MI, Ramesh K, Ramamurthy S, Bharathy P (2026) — <em>Phytomedicine</em></p>
+                    <p class="study-findings">Leaves most studied plant part (78%), mainly as aqueous and ethanolic extracts,Key bioactives: flavonoids (quercetin, kaempferol), glucosinolates, and isothiocyanates,Multi-pathway modulation: NF-κB, Nrf2/Keap1, PI3K/Akt, PPAR, AMPK, and MAPK,Clinical trials showed improvements in BP, lipids, and oxidative stress but with variable rigor and small samples</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41678916/" target="_blank" rel="noopener">PubMed: 41678916</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Comprehensive review found no adverse effects in human studies, with animal safety studies indicating a high degree of safety for aqueous leaf extracts</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Good Safety Profile</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Confirmed across multiple populations</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">The most rigorous meta-analysis of 9 RCTs with 649 participants found very low certainty evidence for all cardiometabolic outcomes, with only modest diastolic BP reduction that was not robust in sensitivity analyses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Mixed results across studies</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Review of the Safety and Efficacy of Moringa oleifera</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Stohs SJ, Hartman MJ (2015) — <em>Phytother Res</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">No adverse effects reported in any human studies reviewed (5 published studies at time of review),Animal safety studies with aqueous leaf extracts indicate high degree of safety,Long history of traditional food use in South Asia and Africa,Standardization of products remains an issue for consistent dosing</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/25808883/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 25808883</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Moringa oleifera: a systematic review of its botany, traditional uses, phytochemistry, pharmacology and toxicity</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Liu R, Liu J, Huang Q, Liu S, Jiang Y (2022) — <em>J Pharm Pharmacol</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">163 chemical components identified including flavonoids, carbamates, glucosinolates, and phenols,Moringa is toxic at certain high doses; overuse can cause genotoxicity,Pharmacological studies insufficient for evidence-based medicine conclusions,Majority of constituent studies conducted only in vitro; clinical data limited</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/34718669/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 34718669</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera supplementation and cardiometabolic outcomes in adults: a systematic review and meta-analysis with GRADE assessment</p>
+                    <p class="study-meta">Crișan M et al. (2025) — <em>Nutrients</em></p>
+                    <p class="study-findings">GRADE certainty rated 'very low' for ALL cardiometabolic outcomes assessed,No significant effects on most outcomes including fasting glucose, HbA1c, total cholesterol, LDL, triglycerides,Only modest diastolic BP reduction (SMD -0.41) observed but not robust in sensitivity analyses,Subgroup analysis suggested potential benefits at doses &lt;10 g/day, age &lt;50, and interventions ≥12 weeks</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41305552/" target="_blank" rel="noopener">PubMed: 41305552</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Narrative review of 12 studies found moringa administration during pregnancy and postnatal period influences maternal health variables with no reported contraindications</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Preliminary Safety Data</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Limited data in specific population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Double-blind RCT showed 2400 mg/day moringa leaf powder decreased FBG and HbA1c in prediabetic subjects compared to placebo, where placebo showed increases</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Single study - not replicated</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The Impact of Moringa oleifera Supplementation on Anemia and other Variables during Pregnancy and Breastfeeding: A Narrative Review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Rotella R, Soriano JM, Llopis-González A, Morales-Suarez-Varela M (2023) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">None of 12 analyzed studies reported contraindications during pregnancy and lactation,Moringa influenced maternal haematochemical profile and milk production,Child socio-personal development improved in some studies,Reduced morbidity incidence in first 6 months of life in some studies</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/37375577/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 37375577</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera Leaf Supplementation as a Glycemic Control Strategy in Subjects with Prediabetes</p>
+                    <p class="study-meta">Gómez-Martínez S, Díaz-Prieto LE, Vicente Castro I, Jurado C, Iturmendi N, Martín-Ridaura MC, Calle N, Dueñas M, Picón MJ, Marcos A, Nova E (2021) — <em>Nutrients</em></p>
+                    <p class="study-findings">2400 mg/day moringa leaf powder capsules vs placebo,Significant favorable changes in fasting blood glucose rate of change vs placebo,HbA1c showed opposite directions: decreased in moringa, increased in placebo,No differences found in gut microbiota or appetite-controlling hormones</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener">PubMed: 35010932</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">14-day toxicity study established NOAEL of 257 mg/kg bw/day for moringa seed extract (100 mg/kg bw/day moringa isothiocyanate-1); mortality observed only at very high doses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Preclinical Safety Data</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Single formal toxicity study</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Meta-analysis of 44 studies in 699 diabetic rodents showed large pooled effect size of -3.92 for blood glucose reduction</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong (Preclinical)</span>
+                <span class="evidence-tag">Extensively replicated in animal models</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">A 14-day repeated-dose oral toxicological evaluation of an isothiocyanate-enriched hydro-alcoholic extract from Moringa oleifera Lam. seeds in rats</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kim Y, Jaja-Chimedza A, Merrill D, Mendes O, Raskin I (2018) — <em>Toxicol Rep</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">NOAEL determined at 257 mg/kg bw/day MSE (providing 100 mg/kg bw/day MIC-1),Mortality only at highest dose (2571 mg/kg bw/day) with GI distention and organ damage,Low and mid-low dose groups showed no adverse effects,Increased liver weights at mid-high and high doses in females</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/29854612/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 29854612</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera supplementation in diabetic rodents: systematic review and meta-analysis</p>
+                    <p class="study-meta">Watanabe S et al. (2021) — <em>Molecules</em></p>
+                    <p class="study-findings">Pooled effect size -3.92 for blood glucose reduction in diabetic rodent models,Consistent hypoglycemic effects across diverse moringa preparations,Effects observed with leaf extracts, leaf powder, and seed extracts,Strong preclinical signal supporting antidiabetic potential requiring human translation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/34207664/" target="_blank" rel="noopener">PubMed: 34207664</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Meta-analysis of 7 studies showed significant improvements in CD4 count, WBC, platelet count, and BMI in adults living with HIV</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies in specific population</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of Moringa oleifera supplementation on immunological and nutritional outcomes in HIV adults: a meta-analysis</p>
+                    <p class="study-meta">Jin X et al. (2025) — <em>BMC Complement Med Ther</em></p>
+                    <p class="study-findings">Significant improvement in CD4 cell count with moringa supplementation,Increased white blood cell (WBC) and platelet (PLT) counts observed,BMI improvement indicating nutritional support benefits,Suggests adjunctive role for moringa alongside antiretroviral therapy</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40989801/" target="_blank" rel="noopener">PubMed: 40989801</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Systematic review of galactagogues including Moringa oleifera capsules found low certainty evidence of increased breastmilk production in preterm infant mothers</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Limited replication</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Herbal galactagogues to improve breastmilk production and lactation in mothers of preterm babies: a systematic review of clinical trials</p>
+                    <p class="study-meta">Cragg A, Levene I, Darabi S, Willcox M (2025) — <em>Eur J Clin Nutr</em></p>
+                    <p class="study-findings">Low certainty evidence that Moringa oleifera leaf capsules increase breastmilk production,Most RCTs scored 'some concerns' for risk of bias,Traditional use as galactagogue partially supported by limited clinical data,Higher-quality trials needed to confirm galactagogue effects</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41350450/" target="_blank" rel="noopener">PubMed: 41350450</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">The effect of Moringa oleifera capsule in increasing breastmilk volume in early postpartum patients: A double-blind, randomized controlled trial</p>
+                    <p class="study-meta">Fungtammasan S, Phupong V (2021) — <em>PLoS One</em></p>
+                    <p class="study-findings">Double-blind, placebo-controlled trial protocol registered (NCT04487613),Evaluating moringa oleifera leaves capsules for breastmilk volume,Designed to address conflicting data on galactagogue effects,Outcome data pending from registered clinical trial</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/33822798/" target="_blank" rel="noopener">PubMed: 33822798</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Clinical trials used 2400 mg/day leaf powder capsules; meta-analysis subgroup analysis suggested potential benefits at doses &lt;10 g/day</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Limited</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Inconsistent dosing across studies</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Comprehensive review found no adverse effects in human studies, with animal safety studies indicating a high degree of safety for aqueous leaf extracts</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Good Safety Profile</span>
+                <span class="evidence-tag">Confirmed across multiple populations</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Moringa oleifera Leaf Supplementation as a Glycemic Control Strategy in Subjects with Prediabetes</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Gómez-Martínez S, Díaz-Prieto LE, Vicente Castro I, Jurado C, Iturmendi N, Martín-Ridaura MC, Calle N, Dueñas M, Picón MJ, Marcos A, Nova E (2021) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Used 2400 mg/day (6 capsules) of Moringa oleifera dry leaf powder,Dosage well tolerated with no reported adverse effects,Effective for glycemic control markers in prediabetic population,Capsule form provided standardized delivery of leaf powder</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 35010932</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Review of the Safety and Efficacy of Moringa oleifera</p>
+                    <p class="study-meta">Stohs SJ, Hartman MJ (2015) — <em>Phytother Res</em></p>
+                    <p class="study-findings">No adverse effects reported in any human studies reviewed (5 published studies at time of review),Animal safety studies with aqueous leaf extracts indicate high degree of safety,Long history of traditional food use in South Asia and Africa,Standardization of products remains an issue for consistent dosing</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25808883/" target="_blank" rel="noopener">PubMed: 25808883</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Moringa oleifera supplementation and cardiometabolic outcomes in adults: a systematic review and meta-analysis with GRADE assessment</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Crișan M et al. (2025) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Subgroup analysis suggested potential benefits at doses &lt;10 g/day,Interventions ≥12 weeks may show more benefit than shorter durations,Participants aged &lt;50 may respond better than older populations,Standardization of preparations and doses is a major challenge across studies</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/41305552/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 41305552</a>
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera: a systematic review of its botany, traditional uses, phytochemistry, pharmacology and toxicity</p>
+                    <p class="study-meta">Liu R, Liu J, Huang Q, Liu S, Jiang Y (2022) — <em>J Pharm Pharmacol</em></p>
+                    <p class="study-findings">163 chemical components identified including flavonoids, carbamates, glucosinolates, and phenols,Moringa is toxic at certain high doses; overuse can cause genotoxicity,Pharmacological studies insufficient for evidence-based medicine conclusions,Majority of constituent studies conducted only in vitro; clinical data limited</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/34718669/" target="_blank" rel="noopener">PubMed: 34718669</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Narrative review of 12 studies found moringa administration during pregnancy and postnatal period influences maternal health variables with no reported contraindications</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Preliminary Safety Data</span>
+                <span class="evidence-tag">Limited data in specific population</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The Impact of Moringa oleifera Supplementation on Anemia and other Variables during Pregnancy and Breastfeeding: A Narrative Review</p>
+                    <p class="study-meta">Rotella R, Soriano JM, Llopis-González A, Morales-Suarez-Varela M (2023) — <em>Nutrients</em></p>
+                    <p class="study-findings">None of 12 analyzed studies reported contraindications during pregnancy and lactation,Moringa influenced maternal haematochemical profile and milk production,Child socio-personal development improved in some studies,Reduced morbidity incidence in first 6 months of life in some studies</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/37375577/" target="_blank" rel="noopener">PubMed: 37375577</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">14-day toxicity study established NOAEL of 257 mg/kg bw/day for moringa seed extract (100 mg/kg bw/day moringa isothiocyanate-1); mortality observed only at very high doses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Preclinical Safety Data</span>
+                <span class="evidence-tag">Single formal toxicity study</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">A 14-day repeated-dose oral toxicological evaluation of an isothiocyanate-enriched hydro-alcoholic extract from Moringa oleifera Lam. seeds in rats</p>
+                    <p class="study-meta">Kim Y, Jaja-Chimedza A, Merrill D, Mendes O, Raskin I (2018) — <em>Toxicol Rep</em></p>
+                    <p class="study-findings">NOAEL determined at 257 mg/kg bw/day MSE (providing 100 mg/kg bw/day MIC-1),Mortality only at highest dose (2571 mg/kg bw/day) with GI distention and organ damage,Low and mid-low dose groups showed no adverse effects,Increased liver weights at mid-high and high doses in females</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29854612/" target="_blank" rel="noopener">PubMed: 29854612</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Clinical trials used 2400 mg/day leaf powder capsules; meta-analysis subgroup analysis suggested potential benefits at doses &lt;10 g/day</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Inconsistent dosing across studies</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera Leaf Supplementation as a Glycemic Control Strategy in Subjects with Prediabetes</p>
+                    <p class="study-meta">Gómez-Martínez S, Díaz-Prieto LE, Vicente Castro I, Jurado C, Iturmendi N, Martín-Ridaura MC, Calle N, Dueñas M, Picón MJ, Marcos A, Nova E (2021) — <em>Nutrients</em></p>
+                    <p class="study-findings">Used 2400 mg/day (6 capsules) of Moringa oleifera dry leaf powder,Dosage well tolerated with no reported adverse effects,Effective for glycemic control markers in prediabetic population,Capsule form provided standardized delivery of leaf powder</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener">PubMed: 35010932</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera supplementation and cardiometabolic outcomes in adults: a systematic review and meta-analysis with GRADE assessment</p>
+                    <p class="study-meta">Crișan M et al. (2025) — <em>Nutrients</em></p>
+                    <p class="study-findings">Subgroup analysis suggested potential benefits at doses &lt;10 g/day,Interventions ≥12 weeks may show more benefit than shorter durations,Participants aged &lt;50 may respond better than older populations,Standardization of preparations and doses is a major challenge across studies</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41305552/" target="_blank" rel="noopener">PubMed: 41305552</a>
                 </div>
             </div>
         </div>
@@ -506,32 +506,32 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Anwar F, et al. (2007). Moringa oleifera: a food plant with multiple medicinal uses. <em>Phytother Res</em>. DOI: <a href="https://doi.org/10.1002/ptr.2023" target="_blank" rel="noopener">10.1002/ptr.2023</a></li>
+                    <ol class="references-list">
+                        <li>Anwar F, et al. (2007). Moringa oleifera: a food plant with multiple medicinal uses. <em>Phytother Res</em>. DOI: <a href="https://doi.org/10.1002/ptr.2023" target="_blank" rel="noopener">10.1002/ptr.2023</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/herbal-extracts.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/herbal-extracts.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Herbal Extracts</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -539,19 +539,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

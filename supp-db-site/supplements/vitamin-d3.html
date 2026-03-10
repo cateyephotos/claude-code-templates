@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133424">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Vitamin D3","headline":"Vitamin D3 — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Vitamin D3 (Cholecalciferol). Tier 1 evidence with 3+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/vitamin-d3.html"},"about":{"@type":"DietarySupplement","name":"Vitamin D3","alternateName":"Vitamin D","activeIngredient":"Cholecalciferol"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Essential Nutrients</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Essential Nutrients</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Vitamin D3</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Cholecalciferol</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Vitamin D, Cholecalciferol, Sunshine Vitamin</p>
+            <p class="scientific-name">Cholecalciferol</p>
+            <p class="common-names">Also known as: Vitamin D, Cholecalciferol, Sunshine Vitamin</p>
             <p class="hero-subtitle">Multiple large meta-analyses (20+) across bone, immune, metabolic, liver, and autoimmune domains with consistent findings; largest IPD MA encompasses 46 RCTs with 64,573 participants (Jolliffe 2025)</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 3+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 3+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Essential Nutrients</td></tr>
@@ -157,41 +157,41 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Vitamin D3 is classified as essential nutrients with strong evidence (Tier 1) for its primary applications. Multiple large meta-analyses (20+) across bone, immune, metabolic, liver, and autoimmune domains with consistent findings; largest IPD MA encompasses 46 RCTs with 64,573 participants (Jolliffe 2025)</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Deficient individuals; Elderly; Limited sun exposure; General adults; Type 2 diabetes patients; SLE patients; Chronic liver disease patients</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Deficient individuals; Elderly; Limited sun exposure; General adults; Type 2 diabetes patients; SLE patients; Chronic liver disease patients</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Vitamin D receptor activation</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Vitamin D receptor activation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Calcium homeostasis</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Calcium homeostasis</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Gene expression regulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Gene expression regulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Immune modulation (innate and adaptive)</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Immune modulation (innate and adaptive)</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">5</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Anti-inflammatory NF-kB pathway regulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">5</div>
+                            <p class="mechanism-text">Anti-inflammatory NF-kB pathway regulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">6</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Hepatoprotective effects</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">6</div>
+                            <p class="mechanism-text">Hepatoprotective effects</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">7</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Insulin sensitivity modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">7</div>
+                            <p class="mechanism-text">Insulin sensitivity modulation</p>
                         </div>
                     </div>
                 </section>
@@ -199,29 +199,29 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cognitive aging protection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mood support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Executive function</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Cognitive aging protection</li>
+                        <li>Mood support</li>
+                        <li>Executive function</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Bone health</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Immune function (deficiency-dependent)</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Muscle strength</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mood regulation</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Liver health</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Glycemic control</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Autoimmune disease modulation</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Bone health</li>
+                        <li>Immune function (deficiency-dependent)</li>
+                        <li>Muscle strength</li>
+                        <li>Mood regulation</li>
+                        <li>Liver health</li>
+                        <li>Glycemic control</li>
+                        <li>Autoimmune disease modulation</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -230,28 +230,28 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Mood</strong></td>
-                                    <td style="font-size:0.85rem;">Small to moderate (in deficient individuals)</td>
+                                    <td class="effect-domain">Mood</td>
+                                    <td class="effect-value">Small to moderate (in deficient individuals)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Bone</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (fracture prevention)</td>
+                                    <td class="effect-domain">Bone</td>
+                                    <td class="effect-value">Moderate (fracture prevention)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Immune</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate in deficient populations (OR 0.58 at &lt;25 nmol/L; Jolliffe 2025, 46 RCTs, n=64,573)</td>
+                                    <td class="effect-domain">Immune</td>
+                                    <td class="effect-value">Moderate in deficient populations (OR 0.58 at &lt;25 nmol/L; Jolliffe 2025, 46 RCTs, n=64,573)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Liver</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (significant AST/ALT/albumin improvement; Martinekova 2025, 46 RCTs, n=4,084)</td>
+                                    <td class="effect-domain">Liver</td>
+                                    <td class="effect-value">Moderate (significant AST/ALT/albumin improvement; Martinekova 2025, 46 RCTs, n=4,084)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Glycemic</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (significant FBG/HbA1c/HOMA-IR improvement; Bruna-Mejias 2025, 20 RCTs)</td>
+                                    <td class="effect-domain">Glycemic</td>
+                                    <td class="effect-value">Moderate (significant FBG/HbA1c/HOMA-IR improvement; Bruna-Mejias 2025, 20 RCTs)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Autoimmune</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (improved SLEDAI scores in SLE; El Kababi 2025, 21 studies, n=3,177)</td>
+                                    <td class="effect-domain">Autoimmune</td>
+                                    <td class="effect-value">Moderate (improved SLEDAI scores in SLE; El Kababi 2025, 21 studies, n=3,177)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -270,87 +270,87 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Deficient individuals</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Elderly</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Limited sun exposure</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">General adults</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Type 2 diabetes patients</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">SLE patients</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Chronic liver disease patients</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Deficient individuals</li>
+                        <li>Elderly</li>
+                        <li>Limited sun exposure</li>
+                        <li>General adults</li>
+                        <li>Type 2 diabetes patients</li>
+                        <li>SLE patients</li>
+                        <li>Chronic liver disease patients</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Hypercalcemia (high doses)</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Kidney stones (rare)</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Hypercalcemia (high doses)</li>
+                        <li>Kidney stones (rare)</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Hypercalcemia</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Sarcoidosis</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Hypercalcemia</li>
+                            <li>Sarcoidosis</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Thiazide diuretics</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Calcium channel blockers</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Thiazide diuretics</li>
+                            <li>Calcium channel blockers</li>
                         </ul>
                     </div>
                 </section>
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Jolliffe DA et al. (2025). Effect of vitamin D supplementation on acute respiratory infections: updated individual participant data meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/S2213-8587(24)00327-5" target="_blank" rel="noopener">10.1016/S2213-8587(24)00327-5</a></li>
-                        <li style="margin-bottom:0.6rem;">El Kababi KA et al. (2025). The Effect of Vitamin D Supplementation on Disease Activity and Inflammatory Markers in SLE Patients: A Systematic Review and Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.3390/nu17111917" target="_blank" rel="noopener">10.3390/nu17111917</a></li>
-                        <li style="margin-bottom:0.6rem;">Martinekova K et al. (2025). The effects of vitamin D supplementation on liver function in chronic liver disease: A systematic review and meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1093/nutrit/nuaf024" target="_blank" rel="noopener">10.1093/nutrit/nuaf024</a></li>
+                    <ol class="references-list">
+                        <li>Jolliffe DA et al. (2025). Effect of vitamin D supplementation on acute respiratory infections: updated individual participant data meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/S2213-8587(24)00327-5" target="_blank" rel="noopener">10.1016/S2213-8587(24)00327-5</a></li>
+                        <li>El Kababi KA et al. (2025). The Effect of Vitamin D Supplementation on Disease Activity and Inflammatory Markers in SLE Patients: A Systematic Review and Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.3390/nu17111917" target="_blank" rel="noopener">10.3390/nu17111917</a></li>
+                        <li>Martinekova K et al. (2025). The effects of vitamin D supplementation on liver function in chronic liver disease: A systematic review and meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1093/nutrit/nuaf024" target="_blank" rel="noopener">10.1093/nutrit/nuaf024</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/essential-nutrients.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/essential-nutrients.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Essential Nutrients</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../guides/cardiovascular.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/cardiovascular.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Cardiovascular Health Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../compare/vitamin-d-vs-magnesium.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-balance-scale" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../compare/vitamin-d-vs-magnesium.html" class="related-card">
+                            <i class="fas fa-balance-scale related-card-icon"></i>
                             <strong>Vitamin D vs Magnesium</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Head-to-head comparison</p>
+                            <p class="related-card-desc">Head-to-head comparison</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -358,19 +358,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

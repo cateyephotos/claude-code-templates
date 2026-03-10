@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133776">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Boswellia","headline":"Boswellia — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Boswellia (Boswellia serrata). Tier 2 evidence with 10+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/boswellia.html"},"about":{"@type":"DietarySupplement","name":"Boswellia","alternateName":"Indian Frankincense","activeIngredient":"Boswellia serrata"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Anti-inflammatory</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Anti-inflammatory</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Boswellia</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Boswellia serrata</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Indian Frankincense, Shallaki, Boswellia Resin</p>
+            <p class="scientific-name">Boswellia serrata</p>
+            <p class="common-names">Also known as: Indian Frankincense, Shallaki, Boswellia Resin</p>
             <p class="hero-subtitle">Multiple RCTs demonstrating anti-inflammatory effects</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 10+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 10+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Anti-inflammatory</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Boswellia is classified as anti-inflammatory with moderate evidence (Tier 2) for its primary applications. Multiple RCTs demonstrating anti-inflammatory effects</p>
-                        <p style="margin-top:1rem;">Multiple meta-analyses and a Cochrane review consistently demonstrate Boswellia serrata extract significantly reduces osteoarthritis pain and improves joint function through 5-LOX inhibition and pro-resolving lipid mediator promotion</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Arthritis; Inflammatory conditions; Asthma</p>
+                        <p class="key-findings">Multiple meta-analyses and a Cochrane review consistently demonstrate Boswellia serrata extract significantly reduces osteoarthritis pain and improves joint function through 5-LOX inhibition and pro-resolving lipid mediator promotion</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Arthritis; Inflammatory conditions; Asthma</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">5-lipoxygenase inhibition</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">5-lipoxygenase inhibition</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Leukotriene synthesis reduction</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Leukotriene synthesis reduction</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">NF-kappaB pathway modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">NF-kappaB pathway modulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Complement cascade inhibition</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Complement cascade inhibition</p>
                         </div>
                     </div>
                 </section>
@@ -188,24 +188,24 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Neuroinflammation reduction</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cognitive protection via anti-inflammatory effects</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Neuroinflammation reduction</li>
+                        <li>Cognitive protection via anti-inflammatory effects</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Joint health</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Inflammatory reduction</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Respiratory support</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Joint health</li>
+                        <li>Inflammatory reduction</li>
+                        <li>Respiratory support</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -214,12 +214,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>JointPain</strong></td>
-                                    <td style="font-size:0.85rem;">Moderate (30-40% pain reduction)</td>
+                                    <td class="effect-domain">JointPain</td>
+                                    <td class="effect-value">Moderate (30-40% pain reduction)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Inflammation</strong></td>
-                                    <td style="font-size:0.85rem;">Large (significant biomarker reduction)</td>
+                                    <td class="effect-domain">Inflammation</td>
+                                    <td class="effect-value">Large (significant biomarker reduction)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -238,229 +238,229 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Arthritis</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Inflammatory conditions</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Asthma</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Arthritis</li>
+                        <li>Inflammatory conditions</li>
+                        <li>Asthma</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Nausea</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Acid reflux</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Diarrhea</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Nausea</li>
+                        <li>Acid reflux</li>
+                        <li>Diarrhea</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Autoimmune conditions</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy</li>
+                            <li>Autoimmune conditions</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Immunosuppressants</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Anti-inflammatory medications</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Immunosuppressants</li>
+                            <li>Anti-inflammatory medications</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 9 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">AKBA from Boswellia shifts lipoxygenase activity from pro-inflammatory leukotrienes to specialized pro-resolving mediators</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
+                    <p class="section-intro">Detailed citation analysis from 9 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">AKBA from Boswellia shifts lipoxygenase activity from pro-inflammatory leukotrienes to specialized pro-resolving mediators</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Frankincense preparation promotes formation of inflammation-resolving lipid mediators by manipulating lipoxygenases in human innate immune cells</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Nischang V, Witt FM, Borner F, Gomez M, Jordan PM, Werz O (2024) — <em>Frontiers in Pharmacology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">AKBA binds allosteric sites in 5-LOX shifting regiospecificity from pro-inflammatory to 12/15-lipoxygenating enzyme,Suppressed LTB4 and pro-inflammatory 5-LOX products in M1 macrophages and neutrophils,Strongly elevated specialized pro-resolving mediators (SPM) in M2 macrophages starting at 10 ug/mL,Effect amplified when combined with DHA and EPA, promoting complete lipid mediator class switch</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/38239198/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 38239198</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Frankincense preparation promotes formation of inflammation-resolving lipid mediators by manipulating lipoxygenases in human innate immune cells</p>
+                    <p class="study-meta">Nischang V, Witt FM, Borner F, Gomez M, Jordan PM, Werz O (2024) — <em>Frontiers in Pharmacology</em></p>
+                    <p class="study-findings">AKBA binds allosteric sites in 5-LOX shifting regiospecificity from pro-inflammatory to 12/15-lipoxygenating enzyme,Suppressed LTB4 and pro-inflammatory 5-LOX products in M1 macrophages and neutrophils,Strongly elevated specialized pro-resolving mediators (SPM) in M2 macrophages starting at 10 ug/mL,Effect amplified when combined with DHA and EPA, promoting complete lipid mediator class switch</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38239198/" target="_blank" rel="noopener">PubMed: 38239198</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Boswellic acids inhibit 5-LOX, NF-kB, complement system, and pro-inflammatory cytokines through distinct molecular pathways</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Boswellic acids inhibit 5-LOX, NF-kB, complement system, and pro-inflammatory cytokines through distinct molecular pathways</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Boswellic Acids and Their Role in Chronic Inflammatory Diseases</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ammon HPT (2016) — <em>Advances in Experimental Medicine and Biology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">AKBA and KBA are primary active compounds with selective 5-LOX inhibition,Inhibition of NF-kB reduces IL-1, IL-2, IL-6, IFN-gamma and TNF-alpha production,Complement system inhibition at C3 to C3a/C3b conversion level,Clinical improvement in 60-70% of cases across RA, OA, colitis, and asthma</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/27671822/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 27671822</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Boswellic Acids and Their Role in Chronic Inflammatory Diseases</p>
+                    <p class="study-meta">Ammon HPT (2016) — <em>Advances in Experimental Medicine and Biology</em></p>
+                    <p class="study-findings">AKBA and KBA are primary active compounds with selective 5-LOX inhibition,Inhibition of NF-kB reduces IL-1, IL-2, IL-6, IFN-gamma and TNF-alpha production,Complement system inhibition at C3 to C3a/C3b conversion level,Clinical improvement in 60-70% of cases across RA, OA, colitis, and asthma</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/27671822/" target="_blank" rel="noopener">PubMed: 27671822</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Boswellic acids in chronic inflammatory diseases</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ammon HPT (2006) — <em>Planta Medica</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">5-LOX inhibition is the most evident mechanism reducing leukotriene synthesis,Additional targets include leukocyte elastase, oxygen radicals, and cathepsin G,Distinct from NSAID mechanism - does not inhibit COX pathway,Pilot clinical studies suggest efficacy across multiple autoimmune diseases</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/17024588/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 17024588</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Boswellia extract significantly reduces OA pain and improves joint function across multiple meta-analyses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effectiveness of Boswellia and Boswellia extract for osteoarthritis patients: a systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Yu G, Xiang W, Zhang T, Zeng L, Yang K, Li J (2020) — <em>BMC Complementary Medicine and Therapies</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">VAS pain significantly reduced (WMD -8.33; 95% CI -11.19 to -5.46; P&lt;0.00001),WOMAC pain significantly reduced (WMD -14.22; 95% CI -22.34 to -6.09; P=0.0006),WOMAC stiffness reduced (WMD -10.04; 95% CI -15.86 to -4.22; P=0.0007),Recommended minimum treatment duration of 4 weeks</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32680575/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 32680575</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Efficacy evaluation of standardized Boswellia serrata extract (Aflapin) in osteoarthritis: A systematic review and sub-group meta-analysis study</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Dubey V, Kheni D, Sureja V (2024) — <em>Explore</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">BS supplementation significantly reduced VAS (MD: -10.71; p&lt;0.00001),WOMAC-pain (MD: -10.69; p&lt;0.0001), stiffness (MD: -5.49; p&lt;0.00001), function (MD: -10.69; p&lt;0.00001),Enriched Aflapin extract showed greater effects than standard extracts in subgroup analysis,Lequesne Functional Index significantly improved (MD: -2.99; p&lt;0.00001)</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/38365549/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 38365549</a>
-                </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Oral herbal therapies for treating osteoarthritis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Cameron M, Chrubasik S (2014) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">High-quality evidence: enriched Boswellia 100mg reduced pain by 17 points vs placebo (95% CI 8-26) on 0-100 VAS,NNT for beneficial pain outcome = 2; NNT for function improvement = 4,Physical function improved by 8 points on WOMAC 0-100 subscale (95% CI 2-14),Adverse events probably reduced with Boswellia vs placebo (RR 0.60, 95% CI 0.39-0.92)</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/24848732/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 24848732</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Long-term Boswellia supplementation improves cartilage morphology on MRI and reduces cartilage degradation biomarkers</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Emerging</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">A Standardized Boswellia serrata Extract Improves Knee Joint Function and Cartilage Morphology in Human Volunteers with Mild to Moderate Osteoarthritis in a Randomized Placebo-Controlled Study</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kumar B, Ghaytidak AB, Pandey AK, Somepalli RR, Sarda P, Raychaudhuri SP, Rokkam MP (2024) — <em>Journal of the American Nutrition Association</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">MRI-confirmed increases in cartilage volume, thickness, and joint space width (p&lt;0.001 vs placebo),Significant reduction in MMP-3, type II collagen degradation peptide, and hs-CRP,WOMAC and VAS scores significantly improved (p&lt;0.001 vs baseline and placebo),100 mg/day Aflapin extract safe over 180 days with no adverse changes in labs or vitals</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/39700461/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 39700461</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Boswellia serrata gum resin improves pulmonary function and reduces asthma symptoms</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Single pivotal study</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of Boswellia serrata gum resin in patients with bronchial asthma: results of a double-blind, placebo-controlled, 6-week clinical study</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Gupta I, Gupta V, Parihar A, Gupta S, Ludtke R, Safayhi H, Ammon HP (1998) — <em>European Journal of Medical Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">70% of Boswellia patients showed improvement vs 27% in placebo group,Improvement in FEV1, FVC, and PEFR pulmonary function measures,Reduction in dyspnea, rhonchi, and number of asthma attacks,Decreased eosinophil count and ESR indicating reduced inflammation</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/9810030/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 9810030</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Boswellia serrata reduces radiation-induced cerebral edema with potential steroid-sparing effects</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Single pivotal study</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Boswellia serrata acts on cerebral edema in patients irradiated for brain tumors: a prospective, randomized, placebo-controlled, double-blind pilot trial</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kirste S, Treier M, Wehrle SJ, Becker G, Abdel-Tawab M, Gerbeth K, Hug MJ, Lubrich B, Grosu AL, Momm F (2011) — <em>Cancer</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Cerebral edema reduction &gt;75% in 60% of Boswellia group vs 26% placebo (P=0.023),4200 mg/day BS was administered alongside radiotherapy,Only minor GI discomfort as side effect in 6 patients,Boswellic acids detectable in patient serum confirming bioavailability</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/21287538/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 21287538</a>
+                <div class="study-item">
+                    <p class="study-title">Boswellic acids in chronic inflammatory diseases</p>
+                    <p class="study-meta">Ammon HPT (2006) — <em>Planta Medica</em></p>
+                    <p class="study-findings">5-LOX inhibition is the most evident mechanism reducing leukotriene synthesis,Additional targets include leukocyte elastase, oxygen radicals, and cathepsin G,Distinct from NSAID mechanism - does not inhibit COX pathway,Pilot clinical studies suggest efficacy across multiple autoimmune diseases</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17024588/" target="_blank" rel="noopener">PubMed: 17024588</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Boswellia serrata extracts demonstrate favorable safety across clinical trials with mild GI effects as primary concern</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Boswellia extract significantly reduces OA pain and improves joint function across multiple meta-analyses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Frankincense: systematic review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ernst E (2008) — <em>BMJ</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">No serious safety issues noted across all included trials,Clinical effectiveness demonstrated for asthma, RA, Crohn's disease, OA, and collagenous colitis,Side effects limited to occasional mild GI discomfort,Safety profile favorable compared to conventional anti-inflammatory medications</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/19091760/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 19091760</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effectiveness of Boswellia and Boswellia extract for osteoarthritis patients: a systematic review and meta-analysis</p>
+                    <p class="study-meta">Yu G, Xiang W, Zhang T, Zeng L, Yang K, Li J (2020) — <em>BMC Complementary Medicine and Therapies</em></p>
+                    <p class="study-findings">VAS pain significantly reduced (WMD -8.33; 95% CI -11.19 to -5.46; P&lt;0.00001),WOMAC pain significantly reduced (WMD -14.22; 95% CI -22.34 to -6.09; P=0.0006),WOMAC stiffness reduced (WMD -10.04; 95% CI -15.86 to -4.22; P=0.0007),Recommended minimum treatment duration of 4 weeks</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32680575/" target="_blank" rel="noopener">PubMed: 32680575</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Oral herbal therapies for treating osteoarthritis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Cameron M, Chrubasik S (2014) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Adverse events actually reduced with enriched Boswellia vs placebo (RR 0.60, 95% CI 0.39-0.92),No serious adverse events reported in any Boswellia study,Enriched 100 mg extract at 90 days showed best safety-efficacy profile,No radiographic structural harm observed</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/24848732/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 24848732</a>
+                <div class="study-item">
+                    <p class="study-title">Efficacy evaluation of standardized Boswellia serrata extract (Aflapin) in osteoarthritis: A systematic review and sub-group meta-analysis study</p>
+                    <p class="study-meta">Dubey V, Kheni D, Sureja V (2024) — <em>Explore</em></p>
+                    <p class="study-findings">BS supplementation significantly reduced VAS (MD: -10.71; p&lt;0.00001),WOMAC-pain (MD: -10.69; p&lt;0.0001), stiffness (MD: -5.49; p&lt;0.00001), function (MD: -10.69; p&lt;0.00001),Enriched Aflapin extract showed greater effects than standard extracts in subgroup analysis,Lequesne Functional Index significantly improved (MD: -2.99; p&lt;0.00001)</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38365549/" target="_blank" rel="noopener">PubMed: 38365549</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Oral herbal therapies for treating osteoarthritis</p>
+                    <p class="study-meta">Cameron M, Chrubasik S (2014) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">High-quality evidence: enriched Boswellia 100mg reduced pain by 17 points vs placebo (95% CI 8-26) on 0-100 VAS,NNT for beneficial pain outcome = 2; NNT for function improvement = 4,Physical function improved by 8 points on WOMAC 0-100 subscale (95% CI 2-14),Adverse events probably reduced with Boswellia vs placebo (RR 0.60, 95% CI 0.39-0.92)</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/24848732/" target="_blank" rel="noopener">PubMed: 24848732</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">High-dose Boswellia showed hepatotoxic potential in mouse models, warranting dose monitoring in clinical use</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Preclinical only, not confirmed in humans</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Long-term Boswellia supplementation improves cartilage morphology on MRI and reduces cartilage degradation biomarkers</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Emerging</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effects of Boswellia serrata in mouse models of chemically induced colitis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Kiela PR, Midura AJ, Kuscuoglu N, Jolad SD, Solyom AM, Besselsen DG, Timmermann BN, Ghishan FK (2004) — <em>American Journal of Physiology - Gastrointestinal and Liver Physiology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Higher doses of Boswellia showed hepatomegaly and steatosis in mice,Dysregulation of lipid metabolism genes in liver confirmed by microarray,Individual boswellic acids increased NF-kB activity in intestinal epithelial cells in vitro,Clinical relevance uncertain as human trials show good hepatic safety at standard doses</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/15539433/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 15539433</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">A Standardized Boswellia serrata Extract Improves Knee Joint Function and Cartilage Morphology in Human Volunteers with Mild to Moderate Osteoarthritis in a Randomized Placebo-Controlled Study</p>
+                    <p class="study-meta">Kumar B, Ghaytidak AB, Pandey AK, Somepalli RR, Sarda P, Raychaudhuri SP, Rokkam MP (2024) — <em>Journal of the American Nutrition Association</em></p>
+                    <p class="study-findings">MRI-confirmed increases in cartilage volume, thickness, and joint space width (p&lt;0.001 vs placebo),Significant reduction in MMP-3, type II collagen degradation peptide, and hs-CRP,WOMAC and VAS scores significantly improved (p&lt;0.001 vs baseline and placebo),100 mg/day Aflapin extract safe over 180 days with no adverse changes in labs or vitals</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/39700461/" target="_blank" rel="noopener">PubMed: 39700461</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Boswellia serrata gum resin improves pulmonary function and reduces asthma symptoms</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Single pivotal study</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of Boswellia serrata gum resin in patients with bronchial asthma: results of a double-blind, placebo-controlled, 6-week clinical study</p>
+                    <p class="study-meta">Gupta I, Gupta V, Parihar A, Gupta S, Ludtke R, Safayhi H, Ammon HP (1998) — <em>European Journal of Medical Research</em></p>
+                    <p class="study-findings">70% of Boswellia patients showed improvement vs 27% in placebo group,Improvement in FEV1, FVC, and PEFR pulmonary function measures,Reduction in dyspnea, rhonchi, and number of asthma attacks,Decreased eosinophil count and ESR indicating reduced inflammation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/9810030/" target="_blank" rel="noopener">PubMed: 9810030</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Boswellia serrata reduces radiation-induced cerebral edema with potential steroid-sparing effects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Single pivotal study</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Boswellia serrata acts on cerebral edema in patients irradiated for brain tumors: a prospective, randomized, placebo-controlled, double-blind pilot trial</p>
+                    <p class="study-meta">Kirste S, Treier M, Wehrle SJ, Becker G, Abdel-Tawab M, Gerbeth K, Hug MJ, Lubrich B, Grosu AL, Momm F (2011) — <em>Cancer</em></p>
+                    <p class="study-findings">Cerebral edema reduction &gt;75% in 60% of Boswellia group vs 26% placebo (P=0.023),4200 mg/day BS was administered alongside radiotherapy,Only minor GI discomfort as side effect in 6 patients,Boswellic acids detectable in patient serum confirming bioavailability</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/21287538/" target="_blank" rel="noopener">PubMed: 21287538</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Enriched Boswellia extract 100 mg/day for 90+ days provides optimal OA benefit based on Cochrane-level evidence</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Replicated across multiple RCTs</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Boswellia serrata extracts demonstrate favorable safety across clinical trials with mild GI effects as primary concern</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Oral herbal therapies for treating osteoarthritis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Cameron M, Chrubasik S (2014) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Enriched Boswellia serrata extract 100 mg/day for 90 days showed high-quality evidence of benefit,NNT of 2 for pain and 4 for function indicates excellent dose-response,Higher doses (999 mg standard extract) also showed benefit with low-quality evidence,Minimum 4-week treatment duration recommended; 90+ days optimal</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/24848732/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 24848732</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Frankincense: systematic review</p>
+                    <p class="study-meta">Ernst E (2008) — <em>BMJ</em></p>
+                    <p class="study-findings">No serious safety issues noted across all included trials,Clinical effectiveness demonstrated for asthma, RA, Crohn's disease, OA, and collagenous colitis,Side effects limited to occasional mild GI discomfort,Safety profile favorable compared to conventional anti-inflammatory medications</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/19091760/" target="_blank" rel="noopener">PubMed: 19091760</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effectiveness of Boswellia and Boswellia extract for osteoarthritis patients: a systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Yu G, Xiang W, Zhang T, Zeng L, Yang K, Li J (2020) — <em>BMC Complementary Medicine and Therapies</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Recommended duration of at least 4 weeks based on time-to-benefit analysis,Doses ranged from 100 mg enriched to 999 mg standard extract across trials,Both enriched low-dose and standard high-dose formulations showed efficacy,Standardization to boswellic acid content (especially AKBA) more important than total extract weight</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32680575/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 32680575</a>
+                <div class="study-item">
+                    <p class="study-title">Oral herbal therapies for treating osteoarthritis</p>
+                    <p class="study-meta">Cameron M, Chrubasik S (2014) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">Adverse events actually reduced with enriched Boswellia vs placebo (RR 0.60, 95% CI 0.39-0.92),No serious adverse events reported in any Boswellia study,Enriched 100 mg extract at 90 days showed best safety-efficacy profile,No radiographic structural harm observed</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/24848732/" target="_blank" rel="noopener">PubMed: 24848732</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">High-dose Boswellia showed hepatotoxic potential in mouse models, warranting dose monitoring in clinical use</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Preclinical only, not confirmed in humans</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of Boswellia serrata in mouse models of chemically induced colitis</p>
+                    <p class="study-meta">Kiela PR, Midura AJ, Kuscuoglu N, Jolad SD, Solyom AM, Besselsen DG, Timmermann BN, Ghishan FK (2004) — <em>American Journal of Physiology - Gastrointestinal and Liver Physiology</em></p>
+                    <p class="study-findings">Higher doses of Boswellia showed hepatomegaly and steatosis in mice,Dysregulation of lipid metabolism genes in liver confirmed by microarray,Individual boswellic acids increased NF-kB activity in intestinal epithelial cells in vitro,Clinical relevance uncertain as human trials show good hepatic safety at standard doses</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/15539433/" target="_blank" rel="noopener">PubMed: 15539433</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Enriched Boswellia extract 100 mg/day for 90+ days provides optimal OA benefit based on Cochrane-level evidence</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Replicated across multiple RCTs</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Oral herbal therapies for treating osteoarthritis</p>
+                    <p class="study-meta">Cameron M, Chrubasik S (2014) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">Enriched Boswellia serrata extract 100 mg/day for 90 days showed high-quality evidence of benefit,NNT of 2 for pain and 4 for function indicates excellent dose-response,Higher doses (999 mg standard extract) also showed benefit with low-quality evidence,Minimum 4-week treatment duration recommended; 90+ days optimal</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/24848732/" target="_blank" rel="noopener">PubMed: 24848732</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Effectiveness of Boswellia and Boswellia extract for osteoarthritis patients: a systematic review and meta-analysis</p>
+                    <p class="study-meta">Yu G, Xiang W, Zhang T, Zeng L, Yang K, Li J (2020) — <em>BMC Complementary Medicine and Therapies</em></p>
+                    <p class="study-findings">Recommended duration of at least 4 weeks based on time-to-benefit analysis,Doses ranged from 100 mg enriched to 999 mg standard extract across trials,Both enriched low-dose and standard high-dose formulations showed efficacy,Standardization to boswellic acid content (especially AKBA) more important than total extract weight</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32680575/" target="_blank" rel="noopener">PubMed: 32680575</a>
                 </div>
             </div>
         </div>
@@ -469,37 +469,37 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Ernst E (2008). Boswellia serrata extract for treatment of rheumatoid arthritis: a systematic review. <em>Phytomedicine</em>. DOI: <a href="https://doi.org/10.1016/j.phymed.2007.11.017" target="_blank" rel="noopener">10.1016/j.phymed.2007.11.017</a></li>
+                    <ol class="references-list">
+                        <li>Ernst E (2008). Boswellia serrata extract for treatment of rheumatoid arthritis: a systematic review. <em>Phytomedicine</em>. DOI: <a href="https://doi.org/10.1016/j.phymed.2007.11.017" target="_blank" rel="noopener">10.1016/j.phymed.2007.11.017</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/herbal-extracts.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/herbal-extracts.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Herbal Extracts</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/joint-health.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/joint-health.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Joint Health &amp; Mobility Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../compare/turmeric-vs-boswellia.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-balance-scale" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../compare/turmeric-vs-boswellia.html" class="related-card">
+                            <i class="fas fa-balance-scale related-card-icon"></i>
                             <strong>Turmeric vs Boswellia</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Head-to-head comparison</p>
+                            <p class="related-card-desc">Head-to-head comparison</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -507,19 +507,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

@@ -997,6 +997,826 @@
     }
 }
 
+/* ============================================
+   Supplement Monograph Page — Enhanced Styles
+   Clinical journal aesthetic with rich visual hierarchy
+   ============================================ */
+
+/* ---- Monograph Hero Enhancement ---- */
+.monograph-hero {
+    background: linear-gradient(135deg, var(--bg-page) 0%, var(--accent-bg) 50%, #e8f0ea 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 2.5rem 0 2rem 0;
+    position: relative;
+}
+
+.monograph-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.monograph-hero h1 {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.monograph-hero .scientific-name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.monograph-hero .common-names {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.monograph-hero .hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0 0 1.25rem 0;
+    max-width: 680px;
+    line-height: 1.65;
+}
+
+/* ---- Badge Row ---- */
+.monograph-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.monograph-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.monograph-badge-category {
+    background: var(--accent-bg);
+    color: var(--accent);
+    border: 1px solid rgba(45, 90, 61, 0.2);
+}
+
+.monograph-badge-safety {
+    border: 1px solid;
+}
+
+.monograph-badge-safety[data-safety="Generally Safe"] {
+    background: var(--tier-1-bg);
+    color: var(--tier-1);
+    border-color: var(--tier-1-border);
+}
+
+.monograph-badge-safety[data-safety="Caution Advised"],
+.monograph-badge-safety[data-safety="Caution Required"],
+.monograph-badge-safety[data-safety="Use with Caution"] {
+    background: var(--tier-3-bg);
+    color: var(--tier-3);
+    border-color: var(--tier-3-border);
+}
+
+.monograph-badge-safety[data-safety="Significant Risks"] {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+/* ---- Hero Stats Strip ---- */
+.monograph-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.monograph-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    padding: 0.35rem 0.85rem;
+    font-weight: 500;
+    transition: border-color 0.2s;
+}
+
+.monograph-stat i {
+    color: var(--accent);
+    font-size: 0.75rem;
+}
+
+.monograph-stat:hover {
+    border-color: var(--accent);
+}
+
+/* ---- Mechanism Cards ---- */
+.mechanism-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.125rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    transition: border-left-color 0.2s, box-shadow 0.2s;
+}
+
+.mechanism-card:hover {
+    box-shadow: var(--shadow-sm);
+    border-left-color: var(--accent-light);
+}
+
+.mechanism-num {
+    min-width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: var(--font-sans);
+}
+
+.mechanism-text {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ---- Section Dividers ---- */
+.content-section + .content-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2.5rem;
+}
+
+.content-section h2 .section-icon {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* ---- Quick Facts Monograph Table ---- */
+.monograph-facts-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.monograph-facts-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.monograph-facts-table tr:last-child td {
+    border-bottom: none;
+}
+
+.monograph-facts-table td:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+    width: 40%;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: #f9fafb;
+}
+
+.monograph-facts-table td:last-child {
+    color: var(--text-secondary);
+}
+
+.monograph-facts-table tr:hover td {
+    background: var(--accent-bg);
+}
+
+.monograph-facts-table tr:hover td:first-child {
+    background: var(--accent-bg);
+}
+
+/* ---- Effect Size Visual Bars ---- */
+.effect-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.effect-table thead th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.effect-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.effect-table tbody tr:nth-child(even) td {
+    background: #f9fafb;
+}
+
+.effect-table tbody tr:hover td {
+    background: var(--accent-bg);
+}
+
+.effect-domain {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+}
+
+.effect-value {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ---- Enhanced Citation Cards ---- */
+.citation-group {
+    margin-bottom: 2rem;
+}
+
+.citation-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-serif);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.citation-group-header i {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.evidence-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.125rem 1.25rem;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.evidence-card:hover {
+    border-color: rgba(45, 90, 61, 0.3);
+    box-shadow: var(--shadow-sm);
+}
+
+.evidence-card-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.evidence-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+
+.evidence-tag {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: #f0f0f0;
+    color: #555;
+}
+
+.evidence-tag-strength {
+    background: var(--accent-bg);
+    color: var(--accent);
+}
+
+.evidence-tag-strong {
+    background: var(--tier-1-bg);
+    color: var(--tier-1);
+}
+
+.evidence-tag-moderate {
+    background: var(--tier-2-bg);
+    color: var(--tier-2);
+}
+
+.evidence-tag-preliminary,
+.evidence-tag-emerging,
+.evidence-tag-weak {
+    background: var(--tier-3-bg);
+    color: var(--tier-3);
+}
+
+.evidence-tag-meta {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.evidence-card-details {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.5rem 0 0 0;
+    line-height: 1.6;
+}
+
+.evidence-card-link {
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.evidence-card-link:hover {
+    text-decoration: underline;
+}
+
+/* ---- Study Sub-Cards (nested citations) ---- */
+.study-list {
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--border-color);
+    margin-top: 0.75rem;
+}
+
+.study-item {
+    margin-bottom: 0.75rem;
+}
+
+.study-item:last-child {
+    margin-bottom: 0;
+}
+
+.study-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0 0 0.2rem 0;
+    color: var(--text-primary);
+}
+
+.study-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.study-findings {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0.2rem 0 0 0;
+    line-height: 1.5;
+}
+
+.study-link {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.study-link:hover {
+    text-decoration: underline;
+}
+
+/* ---- Safety Boxes ---- */
+.safety-rating-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.safety-contraindications {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 3px solid #ef4444;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.safety-contraindications h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #991b1b;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.safety-contraindications h4 i {
+    font-size: 0.8rem;
+}
+
+.safety-contraindications ul {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.safety-contraindications li {
+    margin-bottom: 0.3rem;
+    font-size: 0.875rem;
+    color: #991b1b;
+    line-height: 1.5;
+}
+
+.safety-interactions {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.safety-interactions h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #92400e;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.safety-interactions h4 i {
+    font-size: 0.8rem;
+}
+
+.safety-interactions ul {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.safety-interactions li {
+    margin-bottom: 0.3rem;
+    font-size: 0.875rem;
+    color: #92400e;
+    line-height: 1.5;
+}
+
+/* ---- Related Content Cards (Monograph) ---- */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.related-card {
+    display: block;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.related-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+.related-card i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.related-card strong {
+    font-size: 0.9rem;
+}
+
+.related-card .related-card-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0.2rem 0 0 0;
+    display: block;
+}
+
+/* ---- Monograph Footer ---- */
+.monograph-footer {
+    background: #1a1a2e;
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.monograph-footer a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.monograph-footer a:hover {
+    color: #fff;
+}
+
+/* ---- Benefits List ---- */
+.benefit-list {
+    padding-left: 0;
+    margin: 0.5rem 0 1rem 0;
+    list-style: none;
+}
+
+.benefit-list li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.benefit-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
+    top: 0.35rem;
+}
+
+/* ---- Mechanism Grid ---- */
+.mechanism-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+/* ---- Section Intro Text ---- */
+.section-intro {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+/* ---- Key Findings / Study Populations ---- */
+.key-findings {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
+
+.study-populations {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ---- Text Utility ---- */
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* ---- Safety List (side effects) ---- */
+.safety-list {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.safety-list li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ---- Safety Rating Label Row ---- */
+.safety-rating-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* ---- Evidence Details & Link (flat citations) ---- */
+.evidence-details {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.5rem 0 0 0;
+    line-height: 1.6;
+}
+
+.evidence-link {
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.evidence-link a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.evidence-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Default evidence tag fallback ---- */
+.evidence-tag:not([class*="evidence-tag-"]) {
+    background: #f0f0f0;
+    color: #555;
+}
+
+/* ---- Related Card Sub-text ---- */
+.related-card-icon {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.related-card-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0.2rem 0 0 0;
+}
+
+/* ---- Disclaimer Box ---- */
+.disclaimer-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.disclaimer-title {
+    margin-top: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.disclaimer-title i {
+    color: var(--tier-3);
+}
+
+.disclaimer-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    line-height: 1.65;
+}
+
+/* ---- Footer Inner ---- */
+.monograph-footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand strong {
+    color: #fff;
+}
+
+.footer-disclaimer {
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.5rem;
+}
+
+.footer-copyright {
+    margin: 0;
+    opacity: 0.7;
+}
+
+/* ---- References List ---- */
+.references-list {
+    font-size: 0.85rem;
+    padding-left: 1.5rem;
+}
+
+.references-list li {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.references-list a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.references-list a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Responsive for Monograph ---- */
+@media (max-width: 768px) {
+    .monograph-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .monograph-stats {
+        gap: 0.5rem;
+    }
+
+    .monograph-stat {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.625rem;
+    }
+
+    .mechanism-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mechanism-card {
+        padding: 0.875rem 1rem;
+    }
+
+    .monograph-facts-table td:first-child {
+        width: 35%;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .monograph-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .monograph-badges {
+        gap: 0.375rem;
+    }
+
+    .effect-table {
+        font-size: 0.8rem;
+    }
+
+    .evidence-card {
+        padding: 0.875rem 1rem;
+    }
+}
+
 /* ---- Print ---- */
 @media print {
     .content-hero {

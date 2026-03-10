@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133597">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Vitamin C","headline":"Vitamin C — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Vitamin C (Ascorbic acid). Tier 1 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/vitamin-c.html"},"about":{"@type":"DietarySupplement","name":"Vitamin C","alternateName":"Ascorbic Acid","activeIngredient":"Ascorbic acid"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Essential Nutrients</span>
-                <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                <span class="monograph-badge monograph-badge-category">Essential Nutrients</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
             </div>
             <h1>Vitamin C</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">Ascorbic acid</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Ascorbic Acid, L-Ascorbate</p>
+            <p class="scientific-name">Ascorbic acid</p>
+            <p class="common-names">Also known as: Ascorbic Acid, L-Ascorbate</p>
             <p class="hero-subtitle">Multiple meta-analyses across 5+ health domains (immune function, cardiovascular, cancer prevention, glycemic control, antioxidant), with umbrella review of 14 meta-analyses (Chai 2025) and large meta-analyses including Arshadi 2024 (69 studies) and Aragón-Vela 2026 (52 RCTs)</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Essential Nutrients</td></tr>
@@ -157,38 +157,38 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Vitamin C is classified as essential nutrients with strong evidence (Tier 1) for its primary applications. Multiple meta-analyses across 5+ health domains (immune function, cardiovascular, cancer prevention, glycemic control, antioxidant), with umbrella review of 14 meta-analyses (Chai 2025) and large meta-analyses including Arshadi 2024 (69 studies) and Aragón-Vela 2026 (52 RCTs)</p>
-                        <p style="margin-top:1rem;">Well-characterized essential nutrient with extensive high-quality evidence for antioxidant and immune support</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> General population; High-stress individuals; Athletes; Elderly; Type 2 diabetes patients; Cancer prevention populations; COVID-19 patients</p>
+                        <p class="key-findings">Well-characterized essential nutrient with extensive high-quality evidence for antioxidant and immune support</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> General population; High-stress individuals; Athletes; Elderly; Type 2 diabetes patients; Cancer prevention populations; COVID-19 patients</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Collagen synthesis cofactor</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Collagen synthesis cofactor</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Immune system modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Immune system modulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Neurotransmitter synthesis support</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Neurotransmitter synthesis support</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">5</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Anti-inflammatory pathway regulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">5</div>
+                            <p class="mechanism-text">Anti-inflammatory pathway regulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">6</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Iron absorption enhancement (ferric to ferrous reduction)</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">6</div>
+                            <p class="mechanism-text">Iron absorption enhancement (ferric to ferrous reduction)</p>
                         </div>
                     </div>
                 </section>
@@ -196,29 +196,29 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant neuroprotection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Stress resilience</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Mental fatigue reduction</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Antioxidant neuroprotection</li>
+                        <li>Stress resilience</li>
+                        <li>Mental fatigue reduction</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Immune system support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Collagen synthesis</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Iron absorption</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Wound healing</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cardiovascular protection</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cellular health support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Glycemic control</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Immune system support</li>
+                        <li>Collagen synthesis</li>
+                        <li>Iron absorption</li>
+                        <li>Wound healing</li>
+                        <li>Cardiovascular protection</li>
+                        <li>Cellular health support</li>
+                        <li>Glycemic control</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -227,24 +227,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Antioxidant Status</strong></td>
-                                    <td style="font-size:0.85rem;">MDA significantly reduced, TAC and GPx significantly improved (Moabedi 2025, 17 RCTs, n=965)</td>
+                                    <td class="effect-domain">Antioxidant Status</td>
+                                    <td class="effect-value">MDA significantly reduced, TAC and GPx significantly improved (Moabedi 2025, 17 RCTs, n=965)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Immune Function</strong></td>
-                                    <td style="font-size:0.85rem;">Cold duration reduced 8% adults, 14% children (Hemilä 2013); COVID-19 mortality OR=0.64 (Qin 2024, 22 studies)</td>
+                                    <td class="effect-domain">Immune Function</td>
+                                    <td class="effect-value">Cold duration reduced 8% adults, 14% children (Hemilä 2013); COVID-19 mortality OR=0.64 (Qin 2024, 22 studies)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Cancer Prevention</strong></td>
-                                    <td style="font-size:0.85rem;">Colorectal cancer RR=0.55, breast cancer RR=0.72, prostate cancer RR=0.88 (Arshadi 2024, 69 studies)</td>
+                                    <td class="effect-domain">Cancer Prevention</td>
+                                    <td class="effect-value">Colorectal cancer RR=0.55, breast cancer RR=0.72, prostate cancer RR=0.88 (Arshadi 2024, 69 studies)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Cardiovascular</strong></td>
-                                    <td style="font-size:0.85rem;">Significant SBP reduction in T2DM (Aragón-Vela 2026, 52 RCTs, n=1,425)</td>
+                                    <td class="effect-domain">Cardiovascular</td>
+                                    <td class="effect-value">Significant SBP reduction in T2DM (Aragón-Vela 2026, 52 RCTs, n=1,425)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Glycemic Control</strong></td>
-                                    <td style="font-size:0.85rem;">Significant FBG and HbA1c improvement — confirmed across 14 meta-analyses (Chai 2025 umbrella review)</td>
+                                    <td class="effect-domain">Glycemic Control</td>
+                                    <td class="effect-value">Significant FBG and HbA1c improvement — confirmed across 14 meta-analyses (Chai 2025 umbrella review)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -263,221 +263,221 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">General population</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">High-stress individuals</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Athletes</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Elderly</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Type 2 diabetes patients</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Cancer prevention populations</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">COVID-19 patients</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>General population</li>
+                        <li>High-stress individuals</li>
+                        <li>Athletes</li>
+                        <li>Elderly</li>
+                        <li>Type 2 diabetes patients</li>
+                        <li>Cancer prevention populations</li>
+                        <li>COVID-19 patients</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">GI upset (high doses)</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Kidney stones (very high doses)</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>GI upset (high doses)</li>
+                        <li>Kidney stones (very high doses)</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">History of kidney stones</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Hemochromatosis</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>History of kidney stones</li>
+                            <li>Hemochromatosis</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Iron supplements (enhances absorption)</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Some chemotherapy drugs</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Iron supplements (enhances absorption)</li>
+                            <li>Some chemotherapy drugs</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Antioxidant activity and free radical scavenging</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+                    <p class="section-intro">Detailed citation analysis from 10 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Antioxidant activity and free radical scavenging</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Vitamin C as an antioxidant: evaluation of its role in disease prevention</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Padayatty, S.J., Katz, A., Wang, Y., Eck, P., Kwon, O., Lee, J.H., Chen, S., Corpe, C., Dutta, A., Dutta, S.K., Levine, M. (2003) — <em>Journal of the American College of Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C acts as a potent water-soluble antioxidant, neutralizing reactive oxygen species and protecting cellular components from oxidative damage.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12569111/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12569111</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Vitamin C as an antioxidant: evaluation of its role in disease prevention</p>
+                    <p class="study-meta">Padayatty, S.J., Katz, A., Wang, Y., Eck, P., Kwon, O., Lee, J.H., Chen, S., Corpe, C., Dutta, A., Dutta, S.K., Levine, M. (2003) — <em>Journal of the American College of Nutrition</em></p>
+                    <p class="study-findings">Vitamin C acts as a potent water-soluble antioxidant, neutralizing reactive oxygen species and protecting cellular components from oxidative damage.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12569111/" target="_blank" rel="noopener">PubMed: 12569111</a>
                 </div>
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Antioxidant activity of vitamin C in iron-overloaded human plasma</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Berger, T.M., Polidori, M.C., Dabbagh, A., Evans, P.J., Halliwell, B., London, S.J., Cross, C.E., Eiserich, J.P. (1997) — <em>Journal of Biological Chemistry</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C demonstrates superior antioxidant capacity in biological systems, particularly in protecting against lipid peroxidation and protein oxidation.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/9188455/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 9188455</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Collagen synthesis and tissue repair</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Vitamin C in health and disease: its role in the metabolism of cells and redox state in the brain</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Harrison, F.E., May, J.M. (2009) — <em>Brain Research Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C is essential for collagen synthesis through its role as a cofactor for prolyl and lysyl hydroxylases, critical for collagen stability and tissue integrity.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/19619584/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 19619584</a>
+                <div class="study-item">
+                    <p class="study-title">Antioxidant activity of vitamin C in iron-overloaded human plasma</p>
+                    <p class="study-meta">Berger, T.M., Polidori, M.C., Dabbagh, A., Evans, P.J., Halliwell, B., London, S.J., Cross, C.E., Eiserich, J.P. (1997) — <em>Journal of Biological Chemistry</em></p>
+                    <p class="study-findings">Vitamin C demonstrates superior antioxidant capacity in biological systems, particularly in protecting against lipid peroxidation and protein oxidation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/9188455/" target="_blank" rel="noopener">PubMed: 9188455</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Immune system modulation and enhancement</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Collagen synthesis and tissue repair</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Vitamin C and immune function</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Carr, A.C., Maggini, S. (2017) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C supports various cellular functions of both innate and adaptive immune systems, enhancing neutrophil function and lymphocyte proliferation.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/29099763/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 29099763</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Vitamin C in health and disease: its role in the metabolism of cells and redox state in the brain</p>
+                    <p class="study-meta">Harrison, F.E., May, J.M. (2009) — <em>Brain Research Reviews</em></p>
+                    <p class="study-findings">Vitamin C is essential for collagen synthesis through its role as a cofactor for prolyl and lysyl hydroxylases, critical for collagen stability and tissue integrity.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/19619584/" target="_blank" rel="noopener">PubMed: 19619584</a>
                 </div>
             </div>
         </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Reduced duration and severity of common cold</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Immune system modulation and enhancement</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Vitamin C for preventing and treating the common cold</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Hemilä, H., Chalker, E. (2013) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Regular vitamin C supplementation reduces cold duration by 8% in adults and 14% in children, with greater effects in people under physical stress.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/23440782/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 23440782</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Cardiovascular health protection</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Adults at cardiovascular risk</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Vitamin C and cardiovascular disease: a systematic review</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ashor, A.W., Lara, J., Mathers, J.C., Siervo, M. (2014) — <em>Journal of Nutritional Science</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C supplementation shows beneficial effects on endothelial function and may reduce cardiovascular disease risk through improved vascular health.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/25191614/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 25191614</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Enhanced iron absorption</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively replicated</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals with iron deficiency</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Enhancers of iron absorption: ascorbic acid and other organic acids</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Lynch, S.R., Cook, J.D. (1980) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C significantly enhances non-heme iron absorption by reducing ferric iron to ferrous iron and forming chelation complexes.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/15743017/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 15743017</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Skin health and wound healing</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The role of vitamin C in skin health</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Pullar, J.M., Carr, A.C., Vissers, M.C.M. (2017) — <em>Nutrients</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C is essential for wound healing and skin health through its role in collagen synthesis and antioxidant protection.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/28805671/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 28805671</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Vitamin C and immune function</p>
+                    <p class="study-meta">Carr, A.C., Maggini, S. (2017) — <em>Nutrients</em></p>
+                    <p class="study-findings">Vitamin C supports various cellular functions of both innate and adaptive immune systems, enhancing neutrophil function and lymphocyte proliferation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29099763/" target="_blank" rel="noopener">PubMed: 29099763</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally safe with excellent tolerance profile</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Extensively documented</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">General population</span>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduced duration and severity of common cold</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Toward a new recommended dietary allowance for vitamin C based on antioxidant and health effects in humans</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Levine, M., Rumsey, S.C., Daruwala, R., Park, J.B., Wang, Y. (1999) — <em>American Journal of Clinical Nutrition</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C has an excellent safety profile with minimal adverse effects at doses up to 2000 mg/day. Higher doses may cause gastrointestinal upset.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/10357726/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 10357726</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Vitamin C for preventing and treating the common cold</p>
+                    <p class="study-meta">Hemilä, H., Chalker, E. (2013) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">Regular vitamin C supplementation reduces cold duration by 8% in adults and 14% in children, with greater effects in people under physical stress.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/23440782/" target="_blank" rel="noopener">PubMed: 23440782</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Potential for kidney stone formation at very high doses</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals with history of kidney stones</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cardiovascular health protection</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Adults at cardiovascular risk</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Vitamin C intake and the risk of kidney stones</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Taylor, E.N., Stampfer, M.J., Curhan, G.C. (2004) — <em>Journal of the American Society of Nephrology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Very high vitamin C intake (&gt;1000 mg/day) may increase kidney stone risk in susceptible individuals, particularly men with history of stones.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/15213266/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 15213266</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Vitamin C and cardiovascular disease: a systematic review</p>
+                    <p class="study-meta">Ashor, A.W., Lara, J., Mathers, J.C., Siervo, M. (2014) — <em>Journal of Nutritional Science</em></p>
+                    <p class="study-findings">Vitamin C supplementation shows beneficial effects on endothelial function and may reduce cardiovascular disease risk through improved vascular health.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25191614/" target="_blank" rel="noopener">PubMed: 25191614</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Interaction with certain medications</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Multiple studies</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Individuals on specific medications</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Enhanced iron absorption</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively replicated</span>
+                <span class="evidence-tag">Individuals with iron deficiency</span>
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Drug interactions with vitamin C</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Weinstein, M., Babyn, P., Zlotkin, S. (2001) — <em>Canadian Medical Association Journal</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Vitamin C may interact with certain medications including warfarin and chemotherapy drugs, requiring monitoring in clinical settings.</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/11468135/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 11468135</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Enhancers of iron absorption: ascorbic acid and other organic acids</p>
+                    <p class="study-meta">Lynch, S.R., Cook, J.D. (1980) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Vitamin C significantly enhances non-heme iron absorption by reducing ferric iron to ferrous iron and forming chelation complexes.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/15743017/" target="_blank" rel="noopener">PubMed: 15743017</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Skin health and wound healing</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">General population</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The role of vitamin C in skin health</p>
+                    <p class="study-meta">Pullar, J.M., Carr, A.C., Vissers, M.C.M. (2017) — <em>Nutrients</em></p>
+                    <p class="study-findings">Vitamin C is essential for wound healing and skin health through its role in collagen synthesis and antioxidant protection.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/28805671/" target="_blank" rel="noopener">PubMed: 28805671</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally safe with excellent tolerance profile</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Extensively documented</span>
+                <span class="evidence-tag">General population</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Toward a new recommended dietary allowance for vitamin C based on antioxidant and health effects in humans</p>
+                    <p class="study-meta">Levine, M., Rumsey, S.C., Daruwala, R., Park, J.B., Wang, Y. (1999) — <em>American Journal of Clinical Nutrition</em></p>
+                    <p class="study-findings">Vitamin C has an excellent safety profile with minimal adverse effects at doses up to 2000 mg/day. Higher doses may cause gastrointestinal upset.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10357726/" target="_blank" rel="noopener">PubMed: 10357726</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Potential for kidney stone formation at very high doses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Individuals with history of kidney stones</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Vitamin C intake and the risk of kidney stones</p>
+                    <p class="study-meta">Taylor, E.N., Stampfer, M.J., Curhan, G.C. (2004) — <em>Journal of the American Society of Nephrology</em></p>
+                    <p class="study-findings">Very high vitamin C intake (&gt;1000 mg/day) may increase kidney stone risk in susceptible individuals, particularly men with history of stones.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/15213266/" target="_blank" rel="noopener">PubMed: 15213266</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Interaction with certain medications</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies</span>
+                <span class="evidence-tag">Individuals on specific medications</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Drug interactions with vitamin C</p>
+                    <p class="study-meta">Weinstein, M., Babyn, P., Zlotkin, S. (2001) — <em>Canadian Medical Association Journal</em></p>
+                    <p class="study-findings">Vitamin C may interact with certain medications including warfarin and chemotherapy drugs, requiring monitoring in clinical settings.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11468135/" target="_blank" rel="noopener">PubMed: 11468135</a>
                 </div>
             </div>
         </div>
@@ -486,34 +486,34 @@
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Carr &amp; Maggini (2017). Vitamin C and immune function. <em></em>. DOI: <a href="https://doi.org/10.3390/nu9111211" target="_blank" rel="noopener">10.3390/nu9111211</a></li>
-                        <li style="margin-bottom:0.6rem;">Arshadi et al. (2024). The association between vitamin C and breast cancer, prostate cancer and colorectal cancer: a dose-response meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnesp.2024.12.001" target="_blank" rel="noopener">10.1016/j.clnesp.2024.12.001</a></li>
-                        <li style="margin-bottom:0.6rem;">Aragón-Vela et al. (2026). Effects of Vitamin C and/or E Supplementation on Glycemic Control and Cardiovascular Risk Factors in Type 2 Diabetes. <em></em>. DOI: <a href="https://doi.org/10.1093/nutrit/nuaf133" target="_blank" rel="noopener">10.1093/nutrit/nuaf133</a></li>
+                    <ol class="references-list">
+                        <li>Carr &amp; Maggini (2017). Vitamin C and immune function. <em></em>. DOI: <a href="https://doi.org/10.3390/nu9111211" target="_blank" rel="noopener">10.3390/nu9111211</a></li>
+                        <li>Arshadi et al. (2024). The association between vitamin C and breast cancer, prostate cancer and colorectal cancer: a dose-response meta-analysis. <em></em>. DOI: <a href="https://doi.org/10.1016/j.clnesp.2024.12.001" target="_blank" rel="noopener">10.1016/j.clnesp.2024.12.001</a></li>
+                        <li>Aragón-Vela et al. (2026). Effects of Vitamin C and/or E Supplementation on Glycemic Control and Cardiovascular Risk Factors in Type 2 Diabetes. <em></em>. DOI: <a href="https://doi.org/10.1093/nutrit/nuaf133" target="_blank" rel="noopener">10.1093/nutrit/nuaf133</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/essential-nutrients.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/essential-nutrients.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Essential Nutrients</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/immune-function.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Immune Function Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -521,19 +521,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 

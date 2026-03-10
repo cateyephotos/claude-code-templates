@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773115133431">
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Melatonin","headline":"Melatonin — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Melatonin (N-acetyl-5-methoxytryptamine). Tier 1 evidence with 27+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-10","dateModified":"2026-03-10","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/melatonin.html"},"about":{"@type":"DietarySupplement","name":"Melatonin","alternateName":"Sleep Hormone","activeIngredient":"N-acetyl-5-methoxytryptamine"}}</script>
 </head>
@@ -70,21 +70,21 @@
         </nav>
 
         <!-- Hero -->
-        <header class="guide-hero">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
                 <span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span>
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;">Sleep Support</span>
-                <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
+                <span class="monograph-badge monograph-badge-category">Sleep Support</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="good">Good</span>
             </div>
             <h1>Melatonin</h1>
-            <p style="font-style:italic;color:var(--text-muted);margin:-0.5rem 0 0.5rem 0;font-size:1.05rem;">N-acetyl-5-methoxytryptamine</p>
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Also known as: Sleep Hormone, Pineal Hormone</p>
+            <p class="scientific-name">N-acetyl-5-methoxytryptamine</p>
+            <p class="common-names">Also known as: Sleep Hormone, Pineal Hormone</p>
             <p class="hero-subtitle">Extensive meta-analyses for sleep disorders</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><i class="fas fa-book-open"></i> 27+ Citations</div>
-                <div class="hero-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
-                <div class="hero-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
-                <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 27+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 1: Strong Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Good</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
             </div>
         </header>
 
@@ -136,7 +136,7 @@
                 <section class="content-section" id="quick-facts">
                     <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="monograph-facts-table">
                             <tbody>
                                 <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#16a34a;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 1: Strong Evidence</span></td></tr>
                                 <tr><td><strong>Category</strong></td><td>Sleep Support</td></tr>
@@ -157,30 +157,30 @@
                     <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
                     <div class="snippet-paragraph">
                         <p>Melatonin is classified as sleep support with strong evidence (Tier 1) for its primary applications. Extensive meta-analyses for sleep disorders</p>
-                        <p style="margin-top:1rem;">Well-characterized sleep aid with extensive high-quality evidence for sleep quality and circadian rhythm regulation</p>
-                        <p style="margin-top:1rem;"><strong>Key study populations:</strong> Insomnia patients; Shift workers; Elderly; Jet lag sufferers</p>
+                        <p class="key-findings">Well-characterized sleep aid with extensive high-quality evidence for sleep quality and circadian rhythm regulation</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Insomnia patients; Shift workers; Elderly; Jet lag sufferers</p>
                     </div>
                 </section>
 
                 <!-- Mechanisms of Action -->
                 <section class="content-section" id="mechanisms">
                     <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
-                    <div style="display:grid;gap:0.75rem;margin:1rem 0;">
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Melatonin receptor activation</p>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Melatonin receptor activation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Circadian rhythm regulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Circadian rhythm regulation</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Antioxidant effects</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Antioxidant effects</p>
                         </div>
-                        <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;">
-                            <div style="min-width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">4</div>
-                            <p style="margin:0;line-height:1.6;font-size:0.9rem;">Sleep-wake cycle modulation</p>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Sleep-wake cycle modulation</p>
                         </div>
                     </div>
                 </section>
@@ -188,28 +188,28 @@
                 <!-- Benefits -->
                 <section class="content-section" id="benefits">
                     <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Sleep-related cognitive improvement</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Circadian rhythm regulation</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Cognitive decline protection (MCI/mild AD)</li>
+                    <h3>Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Sleep-related cognitive improvement</li>
+                        <li>Circadian rhythm regulation</li>
+                        <li>Cognitive decline protection (MCI/mild AD)</li>
                     </ul>
-                    <h3 style="font-size:1rem;margin-top:1rem;">Non-Cognitive Benefits</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Sleep onset</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Sleep quality</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Jet lag support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Antioxidant effects</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">ICU sleep support</li>
-                        <li style="margin-bottom:0.4rem;line-height:1.5;font-size:0.9rem;">Parkinson's disease sleep support</li>
+                    <h3>Non-Cognitive Benefits</h3>
+                    <ul class="benefit-list">
+                        <li>Sleep onset</li>
+                        <li>Sleep quality</li>
+                        <li>Jet lag support</li>
+                        <li>Antioxidant effects</li>
+                        <li>ICU sleep support</li>
+                        <li>Parkinson's disease sleep support</li>
                     </ul>
                 </section>
                 <!-- Effect Sizes -->
                 <section class="content-section" id="effect-sizes">
                     <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">Quantified effect sizes from clinical research, where available.</p>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
                     <div class="table-responsive">
-                        <table class="snippet-table">
+                        <table class="effect-table">
                             <thead>
                                 <tr>
                                     <th>Domain</th>
@@ -218,20 +218,20 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>SleepOnsetLatency</strong></td>
-                                    <td style="font-size:0.85rem;">SOL SMD=-0.37 (Choi 2022 MA, 11 RCTs); dose-response peaks at 4mg/day (Cruz-Sanabria 2024)</td>
+                                    <td class="effect-domain">SleepOnsetLatency</td>
+                                    <td class="effect-value">SOL SMD=-0.37 (Choi 2022 MA, 11 RCTs); dose-response peaks at 4mg/day (Cruz-Sanabria 2024)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>SleepQuality</strong></td>
-                                    <td style="font-size:0.85rem;">PSQI WMD=-1.24 (Gholami 2022 MA, 23 RCTs, p&lt;0.001)</td>
+                                    <td class="effect-domain">SleepQuality</td>
+                                    <td class="effect-value">PSQI WMD=-1.24 (Gholami 2022 MA, 23 RCTs, p&lt;0.001)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>IcuDelirium</strong></td>
-                                    <td style="font-size:0.85rem;">RR=0.72 (Tang 2025 MA, 32 RCTs, n=3895, 95% CI: 0.58-0.89)</td>
+                                    <td class="effect-domain">IcuDelirium</td>
+                                    <td class="effect-value">RR=0.72 (Tang 2025 MA, 32 RCTs, n=3895, 95% CI: 0.58-0.89)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>ParkinsonsSleep</strong></td>
-                                    <td style="font-size:0.85rem;">PSQI MD=-1.75 (Yousef 2025 MA, 8 studies, p=0.004); TST SMD=0.84 (p&lt;0.00001)</td>
+                                    <td class="effect-domain">ParkinsonsSleep</td>
+                                    <td class="effect-value">PSQI MD=-1.75 (Yousef 2025 MA, 8 studies, p=0.004); TST SMD=0.84 (p&lt;0.00001)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -250,306 +250,306 @@
                             </tbody>
                         </table>
                     </div>
-                    <h3 style="font-size:1rem;margin-top:1.5rem;">Study Populations</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0;">
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Insomnia patients</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Shift workers</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Elderly</li>
-                        <li style="margin-bottom:0.4rem;font-size:0.9rem;">Jet lag sufferers</li>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Insomnia patients</li>
+                        <li>Shift workers</li>
+                        <li>Elderly</li>
+                        <li>Jet lag sufferers</li>
                     </ul>
                 </section>
 
                 <!-- Safety Profile -->
                 <section class="content-section" id="safety">
                     <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;">
-                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
                             <strong>Overall Safety Rating:</strong> <span style="background:#2563eb;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Good</span>
                         </div>
                     </div>
-                    <h3 style="font-size:1rem;">Common Side Effects</h3>
-                    <ul style="padding-left:1.5rem;margin:0.5rem 0 1rem 0;">
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Daytime drowsiness</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Headache</li>
-                        <li style="margin-bottom:0.3rem;font-size:0.9rem;">Dizziness</li>
+                    <h3>Common Side Effects</h3>
+                    <ul class="safety-list">
+                        <li>Daytime drowsiness</li>
+                        <li>Headache</li>
+                        <li>Dizziness</li>
                     </ul>
-                    <h3 style="font-size:1rem;">Contraindications</h3>
-                    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Autoimmune conditions</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Depression</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#991b1b;">Pregnancy</li>
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Autoimmune conditions</li>
+                            <li>Depression</li>
+                            <li>Pregnancy</li>
                         </ul>
                     </div>
-                    <h3 style="font-size:1rem;">Drug Interactions</h3>
-                    <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin:0.5rem 0 1rem 0;">
-                        <ul style="padding-left:1.25rem;margin:0;">
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Sedatives</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Blood thinners</li>
-                            <li style="margin-bottom:0.3rem;font-size:0.9rem;color:#92400e;">Diabetes medications</li>
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Sedatives</li>
+                            <li>Blood thinners</li>
+                            <li>Diabetes medications</li>
                         </ul>
                     </div>
                 </section>
                 <!-- Enhanced Evidence -->
                 <section class="content-section" id="enhanced-evidence">
                     <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Detailed citation analysis from 25 peer-reviewed sources, organized by research domain.</p>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-cogs" style="margin-right:0.5rem;"></i>Mechanisms of Action</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Melatonin receptor activation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+                    <p class="section-intro">Detailed citation analysis from 25 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Melatonin receptor activation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Thirty-seven years of MT1 and MT2 melatonin receptor localization in the brain</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Klosen P, Sebestény T, Korkmaz A, et al. (2024) — <em>Journal of Pineal Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">MT1 receptors show circadian variation in SCN density,Significant increases at dusk vs dawn,Critical for sleep-wake cycle regulation</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/38606787/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 38606787</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Thirty-seven years of MT1 and MT2 melatonin receptor localization in the brain</p>
+                    <p class="study-meta">Klosen P, Sebestény T, Korkmaz A, et al. (2024) — <em>Journal of Pineal Research</em></p>
+                    <p class="study-findings">MT1 receptors show circadian variation in SCN density,Significant increases at dusk vs dawn,Critical for sleep-wake cycle regulation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38606787/" target="_blank" rel="noopener">PubMed: 38606787</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Circadian rhythm regulation</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Circadian rhythm regulation</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Melatonin and circadian rhythms</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Zisapel N (2018) — <em>Sleep Medicine Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Synchronizes circadian clock with environmental light-dark cycle,Regulates core body temperature rhythms,Coordinates peripheral tissue clocks</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/29031747/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 29031747</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Melatonin and circadian rhythms</p>
+                    <p class="study-meta">Zisapel N (2018) — <em>Sleep Medicine Reviews</em></p>
+                    <p class="study-findings">Synchronizes circadian clock with environmental light-dark cycle,Regulates core body temperature rhythms,Coordinates peripheral tissue clocks</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29031747/" target="_blank" rel="noopener">PubMed: 29031747</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Antioxidant activity</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Antioxidant activity</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
                 
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Melatonin as a potent and inducible endogenous antioxidant</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Tan DX, Manchester LC, Terron MP, et al. (2007) — <em>Current Topics in Medicinal Chemistry</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Direct free radical scavenging activity,Stimulates antioxidant enzyme production,Protects against lipid peroxidation</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/26501252/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 26501252</a>
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-chart-line" style="margin-right:0.5rem;"></i>Clinical Benefits</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Improves sleep quality and reduces sleep onset latency by 23.5 minutes</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Effect of melatonin supplementation on sleep quality: a systematic review and meta-analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Gholami F, Moradi L, Ziaei R, et al. (2022) — <em>Journal of Neurology</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">PSQI improvement WMD -1.24 (95% CI -1.77 to -0.71),Strongest effects in respiratory diseases WMD -2.20,Consistent benefits across multiple populations</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/33417003/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 33417003</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Reduces sleep onset latency by 23.5 minutes in chronic insomnia</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Efficacy of melatonin for chronic insomnia: Systematic reviews and meta-analyses</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Ferracioli-Oda E, Qawasmi A, Bloch MH (2023) — <em>Sleep Medicine Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Sleep onset latency improved by 23.5 minutes in children,Significant benefits in neurodevelopmental disorders,Consistent efficacy across age groups</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/36179487/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 36179487</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Improves sleep quality in day sleep after night shift work</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Research-supported</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Pharmacological interventions for sleepiness and sleep disturbances caused by shift work</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Liira J, Verbeek JH, Costa G, et al. (2020) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Improved sleep quality in day sleep after night shift,MD 0.17 (95% CI 0.09 to 0.25),Effective for circadian rhythm adjustment</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/32808274/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 32808274</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Prevents and treats jet lag symptoms when crossing time zones</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Strong</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Well-established</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Melatonin for the prevention and treatment of jet lag</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Herxheimer A, Petrie KJ (2002) — <em>Cochrane Database of Systematic Reviews</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Remarkably effective in preventing jet lag,Benefits increase with number of time zones crossed,Most effective when taken close to bedtime</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/12137675/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 12137675</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Provides neuroprotective antioxidant effects reducing oxidative stress by 40-60%</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Research-supported</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Melatonin: an ancient molecule that makes oxygen metabolically tolerable</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Manchester LC, Coto-Montes A, Boga JA, et al. (2019) — <em>Journal of Pineal Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Reduces oxidative stress biomarkers by 40-60%,Direct free radical scavenging activity,Neuroprotective in neurological conditions</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/26272235/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 26272235</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Reduces delirium incidence and improves sleep quality in ICU patients</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Emerging — largest melatonin MA to date</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Melatonin Use in the ICU: A Systematic Review and Meta-Analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Tang BHY, Manalo J, Chowdhury SR, et al. (2025) — <em>Critical Care Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Delirium RR=0.72 (95% CI: 0.58-0.89, low certainty),ICU LOS MD=-0.57 days (95% CI: -0.95 to -0.18),Sleep quality SMD=0.54 (95% CI: 0.01-1.07),Slight reduction in adverse events,Uncertain effects on mortality and functional status</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40662882/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40662882</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Melatonin more effective than anti-amyloid antibodies for cognitive function in MCI/mild AD</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Emerging — single NMA, requires replication</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Comparative Efficacy, Tolerability, and Acceptability of Donanemab, Lecanemab, Aducanumab, Melatonin, and Aerobic Exercise for a Short Time on Cognitive Function in Mild Cognitive Impairment and Mild Alzheimer's Disease: A Systematic Review and Network Meta-Analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Terao I, Kodama W (2024) — <em>Journal of Alzheimer's Disease</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Melatonin significantly more effective than donanemab, lecanemab, aducanumab, and placebo for cognitive function,Sensitivity analysis excluding exercise confirmed melatonin superiority with no significant heterogeneity,Anti-amyloid antibodies significantly less tolerable than placebo,Small number of melatonin RCTs limits confidence</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/38461503/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 38461503</a>
-                </div>
-            </div>
-        </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Improves subjective sleep quality and sleep onset latency in Parkinson's disease</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Moderate</span>
-                <span style="background:#f0f0f0;color:#555;padding:2px 8px;border-radius:4px;font-size:0.75rem;">Emerging — first PD-specific melatonin MA</span>
-                
-            </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">The Effectiveness of Melatonin for Sleep Disturbances in Parkinson's Disease: Systematic Review and Meta-Analysis</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Yousef O, Abouelmagd ME, Khaddam H, et al. (2025) — <em>Journal of Sleep Research</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">PSQI improvement MD=-1.75 (95% CI: -2.94 to -0.55, p=0.004),ESS improvement MD=-1.07 (95% CI: -1.87 to -0.27, p=0.009),SOL improvement MD=-9.74 min (p=0.001) after heterogeneity adjustment,TST improvement SMD=0.84 (p&lt;0.00001) after heterogeneity adjustment,No significant effect on REM Sleep Behaviour Disorder,Improvements did not meet MCID threshold for subjective measures</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/40588412/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 40588412</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Melatonin as a potent and inducible endogenous antioxidant</p>
+                    <p class="study-meta">Tan DX, Manchester LC, Terron MP, et al. (2007) — <em>Current Topics in Medicinal Chemistry</em></p>
+                    <p class="study-findings">Direct free radical scavenging activity,Stimulates antioxidant enzyme production,Protects against lipid peroxidation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/26501252/" target="_blank" rel="noopener">PubMed: 26501252</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-shield-alt" style="margin-right:0.5rem;"></i>Safety &amp; Tolerability</h4>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Generally well tolerated with minimal side effects</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Very Low</span>
-                
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Improves sleep quality and reduces sleep onset latency by 23.5 minutes</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Adverse events associated with melatonin for the treatment of sleep disorders</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Besag FMC, Vasey MJ, Lao KSJ, et al. (2019) — <em>CNS Drugs</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">Adverse events rate 12.2% vs 10.8% placebo,Most common: headache (2.7%), dizziness (2.2%), nausea (1.8%),No serious adverse events reported</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/35660990/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 35660990</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effect of melatonin supplementation on sleep quality: a systematic review and meta-analysis</p>
+                    <p class="study-meta">Gholami F, Moradi L, Ziaei R, et al. (2022) — <em>Journal of Neurology</em></p>
+                    <p class="study-findings">PSQI improvement WMD -1.24 (95% CI -1.77 to -0.71),Strongest effects in respiratory diseases WMD -2.20,Consistent benefits across multiple populations</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/33417003/" target="_blank" rel="noopener">PubMed: 33417003</a>
                 </div>
             </div>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-            <p style="font-weight:600;font-size:0.9rem;margin:0 0 0.5rem 0;color:var(--text-primary);">Safe for long-term use with no habituation or withdrawal effects</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span style="background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Low</span>
-                
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduces sleep onset latency by 23.5 minutes in chronic insomnia</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
                 
             </div>
-            <div style="padding-left:0.75rem;border-left:2px solid var(--border);">
-                <div style="margin-bottom:0.75rem;">
-                    <p style="font-size:0.85rem;font-weight:500;margin:0 0 0.25rem 0;">Melatonin improves sleep in asthma: a randomized, double-blind, placebo-controlled study</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Campos FL, Silva-Junior FP, de Bruin VMS, et al. (2020) — <em>American Journal of Respiratory and Critical Care Medicine</em></p>
-                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0 0;">No serious adverse events in 8-week study,Well-tolerated with no habituation effects,No withdrawal symptoms upon discontinuation</p>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/31922909/" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">PubMed: 31922909</a>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Efficacy of melatonin for chronic insomnia: Systematic reviews and meta-analyses</p>
+                    <p class="study-meta">Ferracioli-Oda E, Qawasmi A, Bloch MH (2023) — <em>Sleep Medicine Reviews</em></p>
+                    <p class="study-findings">Sleep onset latency improved by 23.5 minutes in children,Significant benefits in neurodevelopmental disorders,Consistent efficacy across age groups</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/36179487/" target="_blank" rel="noopener">PubMed: 36179487</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Improves sleep quality in day sleep after night shift work</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Research-supported</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Pharmacological interventions for sleepiness and sleep disturbances caused by shift work</p>
+                    <p class="study-meta">Liira J, Verbeek JH, Costa G, et al. (2020) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">Improved sleep quality in day sleep after night shift,MD 0.17 (95% CI 0.09 to 0.25),Effective for circadian rhythm adjustment</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32808274/" target="_blank" rel="noopener">PubMed: 32808274</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Prevents and treats jet lag symptoms when crossing time zones</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Well-established</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Melatonin for the prevention and treatment of jet lag</p>
+                    <p class="study-meta">Herxheimer A, Petrie KJ (2002) — <em>Cochrane Database of Systematic Reviews</em></p>
+                    <p class="study-findings">Remarkably effective in preventing jet lag,Benefits increase with number of time zones crossed,Most effective when taken close to bedtime</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12137675/" target="_blank" rel="noopener">PubMed: 12137675</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Provides neuroprotective antioxidant effects reducing oxidative stress by 40-60%</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Research-supported</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Melatonin: an ancient molecule that makes oxygen metabolically tolerable</p>
+                    <p class="study-meta">Manchester LC, Coto-Montes A, Boga JA, et al. (2019) — <em>Journal of Pineal Research</em></p>
+                    <p class="study-findings">Reduces oxidative stress biomarkers by 40-60%,Direct free radical scavenging activity,Neuroprotective in neurological conditions</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/26272235/" target="_blank" rel="noopener">PubMed: 26272235</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduces delirium incidence and improves sleep quality in ICU patients</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Emerging — largest melatonin MA to date</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Melatonin Use in the ICU: A Systematic Review and Meta-Analysis</p>
+                    <p class="study-meta">Tang BHY, Manalo J, Chowdhury SR, et al. (2025) — <em>Critical Care Medicine</em></p>
+                    <p class="study-findings">Delirium RR=0.72 (95% CI: 0.58-0.89, low certainty),ICU LOS MD=-0.57 days (95% CI: -0.95 to -0.18),Sleep quality SMD=0.54 (95% CI: 0.01-1.07),Slight reduction in adverse events,Uncertain effects on mortality and functional status</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40662882/" target="_blank" rel="noopener">PubMed: 40662882</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Melatonin more effective than anti-amyloid antibodies for cognitive function in MCI/mild AD</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Emerging — single NMA, requires replication</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Comparative Efficacy, Tolerability, and Acceptability of Donanemab, Lecanemab, Aducanumab, Melatonin, and Aerobic Exercise for a Short Time on Cognitive Function in Mild Cognitive Impairment and Mild Alzheimer's Disease: A Systematic Review and Network Meta-Analysis</p>
+                    <p class="study-meta">Terao I, Kodama W (2024) — <em>Journal of Alzheimer's Disease</em></p>
+                    <p class="study-findings">Melatonin significantly more effective than donanemab, lecanemab, aducanumab, and placebo for cognitive function,Sensitivity analysis excluding exercise confirmed melatonin superiority with no significant heterogeneity,Anti-amyloid antibodies significantly less tolerable than placebo,Small number of melatonin RCTs limits confidence</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38461503/" target="_blank" rel="noopener">PubMed: 38461503</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Improves subjective sleep quality and sleep onset latency in Parkinson's disease</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Emerging — first PD-specific melatonin MA</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The Effectiveness of Melatonin for Sleep Disturbances in Parkinson's Disease: Systematic Review and Meta-Analysis</p>
+                    <p class="study-meta">Yousef O, Abouelmagd ME, Khaddam H, et al. (2025) — <em>Journal of Sleep Research</em></p>
+                    <p class="study-findings">PSQI improvement MD=-1.75 (95% CI: -2.94 to -0.55, p=0.004),ESS improvement MD=-1.07 (95% CI: -1.87 to -0.27, p=0.009),SOL improvement MD=-9.74 min (p=0.001) after heterogeneity adjustment,TST improvement SMD=0.84 (p&lt;0.00001) after heterogeneity adjustment,No significant effect on REM Sleep Behaviour Disorder,Improvements did not meet MCID threshold for subjective measures</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40588412/" target="_blank" rel="noopener">PubMed: 40588412</a>
                 </div>
             </div>
         </div>
     </div>
-<div class="enhanced-citation-group" style="margin-bottom:2rem;">
-        <h4 style="color:var(--accent);font-size:0.95rem;margin-bottom:1rem;"><i class="fas fa-prescription-bottle-alt" style="margin-right:0.5rem;"></i>Dosage Research</h4>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally well tolerated with minimal side effects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Very Low</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Adverse events associated with melatonin for the treatment of sleep disorders</p>
+                    <p class="study-meta">Besag FMC, Vasey MJ, Lao KSJ, et al. (2019) — <em>CNS Drugs</em></p>
+                    <p class="study-findings">Adverse events rate 12.2% vs 10.8% placebo,Most common: headache (2.7%), dizziness (2.2%), nausea (1.8%),No serious adverse events reported</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35660990/" target="_blank" rel="noopener">PubMed: 35660990</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Safe for long-term use with no habituation or withdrawal effects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Low</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Melatonin improves sleep in asthma: a randomized, double-blind, placebo-controlled study</p>
+                    <p class="study-meta">Campos FL, Silva-Junior FP, de Bruin VMS, et al. (2020) — <em>American Journal of Respiratory and Critical Care Medicine</em></p>
+                    <p class="study-findings">No serious adverse events in 8-week study,Well-tolerated with no habituation effects,No withdrawal symptoms upon discontinuation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/31922909/" target="_blank" rel="noopener">PubMed: 31922909</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
     </div>
                 </section>
                 <!-- References -->
                 <section class="content-section" id="references">
                     <h2><i class="fas fa-book section-icon"></i> References</h2>
-                    <ol style="font-size:0.85rem;padding-left:1.5rem;">
-                        <li style="margin-bottom:0.6rem;">Tang et al. (2025). Melatonin Use in the ICU: A Systematic Review and Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.1097/CCM.0000000000006767" target="_blank" rel="noopener">10.1097/CCM.0000000000006767</a></li>
-                        <li style="margin-bottom:0.6rem;">Cruz-Sanabria et al. (2024). Optimizing the Time and Dose of Melatonin as a Sleep-Promoting Drug: A SR and Dose-Response Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.1111/jpi.12985" target="_blank" rel="noopener">10.1111/jpi.12985</a></li>
+                    <ol class="references-list">
+                        <li>Tang et al. (2025). Melatonin Use in the ICU: A Systematic Review and Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.1097/CCM.0000000000006767" target="_blank" rel="noopener">10.1097/CCM.0000000000006767</a></li>
+                        <li>Cruz-Sanabria et al. (2024). Optimizing the Time and Dose of Melatonin as a Sleep-Promoting Drug: A SR and Dose-Response Meta-Analysis. <em></em>. DOI: <a href="https://doi.org/10.1111/jpi.12985" target="_blank" rel="noopener">10.1111/jpi.12985</a></li>
                     </ol>
                 </section>
 
                 <!-- Related Content -->
                 <section class="content-section" id="related">
                     <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1rem 0;">
-                        <a href="../categories/essential-nutrients.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-th-large" style="color:var(--accent);margin-right:0.5rem;"></i>
+                    <div class="related-grid">
+                        <a href="../categories/essential-nutrients.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
                             <strong>Essential Nutrients</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Browse category</p>
+                            <p class="related-card-desc">Browse category</p>
                         </a>
-                        <a href="../guides/sleep.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-book-reader" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../guides/sleep.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
                             <strong>Sleep Quality Guide</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Evidence guide</p>
+                            <p class="related-card-desc">Evidence guide</p>
                         </a>
-                        <a href="../compare/magnesium-vs-melatonin.html" style="display:block;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);transition:border-color 0.2s;">
-                            <i class="fas fa-balance-scale" style="color:var(--accent);margin-right:0.5rem;"></i>
+                        <a href="../compare/magnesium-vs-melatonin.html" class="related-card">
+                            <i class="fas fa-balance-scale related-card-icon"></i>
                             <strong>Magnesium vs Melatonin</strong>
-                            <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0 0;">Head-to-head comparison</p>
+                            <p class="related-card-desc">Head-to-head comparison</p>
                         </a>
                     </div>
                 </section>
 
                 <!-- Medical Disclaimer -->
-                <section class="content-section" style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;">
-                    <h3 style="margin-top:0;font-size:0.95rem;"><i class="fas fa-exclamation-triangle" style="color:var(--tier-3);margin-right:0.5rem;"></i> Medical Disclaimer</h3>
-                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0;">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
                 </section>
 
             </main>
@@ -557,19 +557,19 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
-        <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
-            <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-            <div style="margin-bottom:1rem;">
-                <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
-                <a href="../about.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">About</a>
-                <a href="../methodology.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Methodology</a>
-                <a href="../faq.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">FAQ</a>
-                <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
-                <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 
