@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evidence-Based Supplement Database | Cognitive & Mental Health</title>
+    <title>Evidence-Based Supplement Database | Cognitive &amp; Mental Health</title>
     <meta name="description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 471+ research papers and systematic reviews.">
     <meta name="keywords" content="supplements, cognitive health, mental health, evidence-based, nootropics, research">
     
@@ -94,7 +92,14 @@
     </script>
 
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Chart.js for visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -104,8 +109,8 @@
 
     <!-- Direction A Typography: Source Serif 4 + DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- Custom CSS — Direction A Clinical Journal + Direction C Pip Indicators -->
     <style>
@@ -346,7 +351,7 @@
                     <button id="exportBtn" class="bg-accent text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-900 transition-colors">
                         <i class="fas fa-download mr-2"></i>Export
                     </button>
-                </div>
+                <div id="auth-buttons"></div></div>
             </div>
         </div>
     </nav>
@@ -405,8 +410,7 @@
             <!-- Search Bar -->
             <div class="mb-8">
                 <div class="relative max-w-2xl mx-auto">
-                    <input type="text" id="searchInput" placeholder="Search supplements, benefits, or mechanisms..." 
-                           class="w-full px-6 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 ring-accent focus:border-transparent">
+                    <input type="text" id="searchInput" placeholder="Search supplements, benefits, or mechanisms..." class="w-full px-6 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 ring-accent focus:border-transparent">
                     <div class="absolute inset-y-0 right-0 flex items-center pr-6">
                         <i class="fas fa-search text-gray-400"></i>
                     </div>
@@ -526,21 +530,21 @@
                             </span>
                             <div class="ml-3">
                                 <h3 class="text-lg font-bold text-white leading-tight">Sleep Quality &amp; Insomnia</h3>
-                                <p class="text-indigo-300 text-xs mt-0.5">7 supplements &middot; 126 citations &middot; 3 evidence tiers</p>
+                                <p class="text-indigo-300 text-xs mt-0.5">7 supplements · 126 citations · 3 evidence tiers</p>
                             </div>
                         </div>
                         <p class="text-indigo-100 text-sm leading-relaxed flex-1">
                             Systematic review of melatonin, magnesium, L-theanine, and 4 more supplements ranked by research evidence strength.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">2&times; Tier 1</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">3&times; Tier 2</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-400 bg-opacity-25 text-orange-200 border border-orange-400 border-opacity-40">2&times; Tier 3</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">2× Tier 1</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">3× Tier 2</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-400 bg-opacity-25 text-orange-200 border border-orange-400 border-opacity-40">2× Tier 3</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="/guides/sleep.html" class="block w-full text-center bg-white text-indigo-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-indigo-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -554,20 +558,20 @@
                             </span>
                             <div class="ml-3">
                                 <h3 class="text-lg font-bold text-white leading-tight">Anxiety &amp; Stress Relief</h3>
-                                <p class="text-green-300 text-xs mt-0.5">21 supplements &middot; Evidence-based review</p>
+                                <p class="text-green-300 text-xs mt-0.5">21 supplements · Evidence-based review</p>
                             </div>
                         </div>
                         <p class="text-green-100 text-sm leading-relaxed flex-1">
                             Adaptogens, GABAergic compounds, and HPA-axis modulators evaluated for anxiety reduction and stress resilience.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1&ndash;4</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1–4</span>
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">21 Supplements</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/anxiety-stress.html" class="block w-full text-center bg-white text-green-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-green-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -581,20 +585,20 @@
                             </span>
                             <div class="ml-3">
                                 <h3 class="text-lg font-bold text-white leading-tight">Cognitive Performance</h3>
-                                <p class="text-blue-300 text-xs mt-0.5">41 supplements &middot; Evidence-based review</p>
+                                <p class="text-blue-300 text-xs mt-0.5">41 supplements · Evidence-based review</p>
                             </div>
                         </div>
                         <p class="text-blue-100 text-sm leading-relaxed flex-1">
                             Nootropics, acetylcholine precursors, and neuro-protective compounds ranked by evidence for focus, memory, and processing speed.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1&ndash;4</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1–4</span>
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">41 Supplements</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/cognitive-performance.html" class="block w-full text-center bg-white text-blue-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-blue-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -611,20 +615,20 @@
                             </span>
                             <div class="ml-3">
                                 <h3 class="text-lg font-bold text-white leading-tight">Cardiovascular Health</h3>
-                                <p class="text-red-300 text-xs mt-0.5">20 supplements &middot; Evidence-based review</p>
+                                <p class="text-red-300 text-xs mt-0.5">20 supplements · Evidence-based review</p>
                             </div>
                         </div>
                         <p class="text-red-100 text-sm leading-relaxed flex-1">
                             Omega-3s, CoQ10, magnesium, and more evaluated for blood pressure, lipid profiles, and heart health.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1&ndash;4</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1–4</span>
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">20 Supplements</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/cardiovascular.html" class="block w-full text-center bg-white text-red-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-red-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -645,12 +649,12 @@
                             Vitamin C, zinc, elderberry, and more evaluated for immune cell function, cold prevention, and infection resistance.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1&ndash;4</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1–4</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/immune-function.html" class="block w-full text-center bg-white text-cyan-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-cyan-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -671,12 +675,12 @@
                             Glucosamine, turmeric, boswellia, and more evaluated for cartilage support, inflammation, and mobility.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1&ndash;4</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">Tier 1–4</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/joint-health.html" class="block w-full text-center bg-white text-purple-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-purple-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -693,21 +697,21 @@
                             </span>
                             <div class="ml-3">
                                 <h3 class="text-lg font-bold text-white leading-tight">Metabolic Health</h3>
-                                <p class="text-lime-300 text-xs mt-0.5">8 supplements &middot; Evidence-based review</p>
+                                <p class="text-lime-300 text-xs mt-0.5">8 supplements · Evidence-based review</p>
                             </div>
                         </div>
                         <p class="text-lime-100 text-sm leading-relaxed flex-1">
                             Berberine, chromium, cinnamon, and more evaluated for blood sugar regulation, insulin sensitivity, and metabolic support.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">1&times; Tier 1</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">3&times; Tier 2</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-400 bg-opacity-25 text-orange-200 border border-orange-400 border-opacity-40">4&times; Tier 3</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">1× Tier 1</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">3× Tier 2</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-400 bg-opacity-25 text-orange-200 border border-orange-400 border-opacity-40">4× Tier 3</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/metabolic-health.html" class="block w-full text-center bg-white text-green-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-green-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -721,21 +725,21 @@
                             </span>
                             <div class="ml-3">
                                 <h3 class="text-lg font-bold text-white leading-tight">Energy &amp; Vitality</h3>
-                                <p class="text-amber-300 text-xs mt-0.5">8 supplements &middot; Evidence-based review</p>
+                                <p class="text-amber-300 text-xs mt-0.5">8 supplements · Evidence-based review</p>
                             </div>
                         </div>
                         <p class="text-amber-100 text-sm leading-relaxed flex-1">
                             Creatine, caffeine, CoQ10, and more evaluated for ATP production, mitochondrial function, and physical endurance.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">2&times; Tier 1</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">2&times; Tier 2</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-400 bg-opacity-25 text-orange-200 border border-orange-400 border-opacity-40">4&times; Tier 3</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-500 bg-opacity-25 text-green-200 border border-green-500 border-opacity-40">2× Tier 1</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-400 bg-opacity-25 text-yellow-200 border border-yellow-400 border-opacity-40">2× Tier 2</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-400 bg-opacity-25 text-orange-200 border border-orange-400 border-opacity-40">4× Tier 3</span>
                         </div>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="guides/energy-vitality.html" class="block w-full text-center bg-white text-amber-900 font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-amber-50 transition-colors">
-                            Read Full Guide &rarr;
+                            Read Full Guide →
                         </a>
                     </div>
                 </div>
@@ -907,13 +911,11 @@
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Age</label>
-                                <input type="number" id="userAge" placeholder="Enter your age" 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
+                                <input type="number" id="userAge" placeholder="Enter your age" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Weight (kg)</label>
-                                <input type="number" id="userWeight" placeholder="Enter your weight" 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
+                                <input type="number" id="userWeight" placeholder="Enter your weight" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Sex</label>
@@ -945,7 +947,7 @@
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" class="health-goal mr-3" value="focus">
-                                <span>Focus & Attention</span>
+                                <span>Focus &amp; Attention</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" class="health-goal mr-3" value="sleep">
@@ -977,16 +979,15 @@
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <p class="text-sm font-medium text-green-900" id="guide-cta-title">Sleep Evidence Guide Available</p>
-                                    <p class="text-xs text-accent-700" id="guide-cta-subtitle">7 supplements &middot; 126 citations &middot; ranked by evidence</p>
+                                    <p class="text-xs text-accent-700" id="guide-cta-subtitle">7 supplements · 126 citations · ranked by evidence</p>
                                 </div>
                                 <a id="guide-cta-link" href="/guides/sleep.html" class="flex-shrink-0 bg-accent text-white text-xs font-semibold px-3 py-1.5 rounded-md hover:bg-green-900 transition-colors">
-                                    Read Guide &rarr;
+                                    Read Guide →
                                 </a>
                             </div>
                         </div>
 
-                        <button onclick="calculateRecommendations()"
-                                class="w-full mt-6 bg-accent text-white py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors">
+                        <button onclick="calculateRecommendations()" class="w-full mt-6 bg-accent text-white py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors">
                             <i class="fas fa-calculator mr-2"></i>Calculate Recommendations
                         </button>
                     </div>
@@ -1024,7 +1025,7 @@
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
                         <li><strong>Tier 1:</strong> Meta-analyses and systematic reviews</li>
-                        <li><strong>Tier 2:</strong> Large RCTs (>100 participants)</li>
+                        <li><strong>Tier 2:</strong> Large RCTs (&gt;100 participants)</li>
                         <li><strong>Tier 3:</strong> Smaller RCTs (30-100 participants)</li>
                         <li><strong>Tier 4:</strong> Preliminary studies and animal research</li>
                     </ul>
@@ -1086,13 +1087,8 @@
             <p class="text-base sm:text-lg mb-8" style="color: rgba(255,255,255,0.85);">Join researchers and health professionals who rely on peer-reviewed supplement science.</p>
             <div id="newsletter-form-container">
                 <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto" onsubmit="return handleNewsletterSubmit(event)">
-                    <input type="email" id="newsletter-email" placeholder="your@email.com" required
-                        class="flex-1 px-4 py-3 rounded-lg border-0 text-gray-900 text-sm focus:ring-2 focus:ring-white/50 focus:outline-none"
-                        style="min-width: 0;">
-                    <button type="submit" class="px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 whitespace-nowrap"
-                        style="background: rgba(255,255,255,0.95); color: #2d5a3d; border: none; cursor: pointer;"
-                        onmouseover="this.style.background='#fff'; this.style.transform='translateY(-1px)'"
-                        onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='none'">
+                    <input type="email" id="newsletter-email" placeholder="your@email.com" required="" class="flex-1 px-4 py-3 rounded-lg border-0 text-gray-900 text-sm focus:ring-2 focus:ring-white/50 focus:outline-none" style="min-width: 0;">
+                    <button type="submit" class="px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 whitespace-nowrap" style="background: rgba(255,255,255,0.95); color: #2d5a3d; border: none; cursor: pointer;" onmouseover="this.style.background='#fff'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='none'">
                         <i class="fas fa-envelope mr-1"></i> Subscribe
                     </button>
                 </form>
@@ -1223,20 +1219,20 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+                <p>© 2025–2026 SupplementDB. All rights reserved.</p>
                 <p class="mt-2 text-sm space-x-1">
                     <a href="legal/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <span>&middot;</span>
+                    <span>·</span>
                     <a href="legal/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
-                    <span>&middot;</span>
+                    <span>·</span>
                     <a href="legal/disclaimer.html" class="hover:text-white transition-colors">Medical Disclaimer</a>
-                    <span>&middot;</span>
+                    <span>·</span>
                     <a href="legal/cookies.html" class="hover:text-white transition-colors">Cookie Policy</a>
-                    <span>&middot;</span>
+                    <span>·</span>
                     <a href="legal/copyright.html" class="hover:text-white transition-colors">Copyright</a>
-                    <span>&middot;</span>
+                    <span>·</span>
                     <a href="legal/accessibility.html" class="hover:text-white transition-colors">Accessibility</a>
-                    <span>&middot;</span>
+                    <span>·</span>
                     <a href="methodology.html" class="hover:text-white transition-colors">Research Methodology</a>
                 </p>
                 <p class="mt-3 text-sm">
@@ -1272,7 +1268,7 @@
     <script type="module" src="js/app.modernized.js?v=20260309a"></script>
 
     <!-- Fallback for non-module browsers -->
-    <script nomodule src="js/app.js"></script>
+    <script nomodule="" src="js/app.js"></script>
     
     <!-- Test Suites for Development -->
     <script>
@@ -1474,5 +1470,11 @@
         });
     })();
     </script>
-</body>
-</html>
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+</body></html>

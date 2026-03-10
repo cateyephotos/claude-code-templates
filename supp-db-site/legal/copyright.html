@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copyright Notice | SupplementDB</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
 </head>
 <body class="legal-page">
@@ -51,9 +56,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -67,16 +72,16 @@
             <!-- Section 1 -->
             <section class="legal-section">
                 <h2>1. Copyright Ownership</h2>
-                <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+                <p>© 2025–2026 SupplementDB. All rights reserved.</p>
                 <p>The original content on SupplementDB ("the Website") is protected by copyright law and international treaties. This includes but is not limited to:</p>
                 <ul>
-                    <li><strong>Database compilation</strong> &mdash; The selection, arrangement, and organization of 93 supplement profiles across 13 categories represents an original work of authorship</li>
-                    <li><strong>Evidence assessments</strong> &mdash; Our proprietary evidence tier rating system and the evaluations applied to each supplement</li>
-                    <li><strong>Editorial content</strong> &mdash; Supplement descriptions, mechanism of action summaries, safety profiles, and dosage range commentaries</li>
-                    <li><strong>Research curation</strong> &mdash; The selection and annotation of over 650 PubMed-indexed citations (PMIDs) and DOI references</li>
-                    <li><strong>Visual design</strong> &mdash; Website layout, color scheme, typography choices, clinical journal design aesthetic, and user interface elements</li>
-                    <li><strong>Educational guides</strong> &mdash; Original guide content on supplement topics</li>
-                    <li><strong>Source code</strong> &mdash; HTML, CSS, JavaScript, and other code comprising the Website</li>
+                    <li><strong>Database compilation</strong> — The selection, arrangement, and organization of 93 supplement profiles across 13 categories represents an original work of authorship</li>
+                    <li><strong>Evidence assessments</strong> — Our proprietary evidence tier rating system and the evaluations applied to each supplement</li>
+                    <li><strong>Editorial content</strong> — Supplement descriptions, mechanism of action summaries, safety profiles, and dosage range commentaries</li>
+                    <li><strong>Research curation</strong> — The selection and annotation of over 650 PubMed-indexed citations (PMIDs) and DOI references</li>
+                    <li><strong>Visual design</strong> — Website layout, color scheme, typography choices, clinical journal design aesthetic, and user interface elements</li>
+                    <li><strong>Educational guides</strong> — Original guide content on supplement topics</li>
+                    <li><strong>Source code</strong> — HTML, CSS, JavaScript, and other code comprising the Website</li>
                 </ul>
                 <p class="legal-plain"><em>In plain language: While individual scientific facts are not copyrightable, the way we've compiled, organized, evaluated, and presented 93 supplements with 650+ research citations is our original creative work and is protected by copyright.</em></p>
             </section>
@@ -159,12 +164,12 @@
                 <h2>4. Prohibited Uses</h2>
                 <p>The following uses are <strong>not permitted</strong> without prior written consent from SupplementDB:</p>
                 <ul>
-                    <li><strong>Commercial reproduction</strong> &mdash; Copying substantial portions of the database for use in commercial products, services, or competing websites</li>
-                    <li><strong>Systematic downloading</strong> &mdash; Using automated tools to scrape, crawl, or systematically download database content</li>
-                    <li><strong>Database replication</strong> &mdash; Creating a substantially similar database by copying our compilation, organization, or evidence assessments</li>
-                    <li><strong>Rebranding</strong> &mdash; Presenting our content as your own or removing attribution and copyright notices</li>
-                    <li><strong>Derivative commercial works</strong> &mdash; Creating apps, tools, PDFs, courses, or other commercial products that substantially incorporate our database content</li>
-                    <li><strong>AI training</strong> &mdash; Using our database content to train artificial intelligence or machine learning models for commercial purposes without permission</li>
+                    <li><strong>Commercial reproduction</strong> — Copying substantial portions of the database for use in commercial products, services, or competing websites</li>
+                    <li><strong>Systematic downloading</strong> — Using automated tools to scrape, crawl, or systematically download database content</li>
+                    <li><strong>Database replication</strong> — Creating a substantially similar database by copying our compilation, organization, or evidence assessments</li>
+                    <li><strong>Rebranding</strong> — Presenting our content as your own or removing attribution and copyright notices</li>
+                    <li><strong>Derivative commercial works</strong> — Creating apps, tools, PDFs, courses, or other commercial products that substantially incorporate our database content</li>
+                    <li><strong>AI training</strong> — Using our database content to train artificial intelligence or machine learning models for commercial purposes without permission</li>
                 </ul>
                 <p class="legal-plain"><em>In plain language: Feel free to read, learn from, and cite our work. Do not copy our database to build a competing product, scrape our content for commercial use, or train AI models on our data without asking first.</em></p>
             </section>
@@ -172,7 +177,7 @@
             <!-- Section 5 -->
             <section class="legal-section">
                 <h2>5. Fair Use</h2>
-                <p>We respect the doctrine of fair use as defined under 17 U.S.C. &sect; 107. Fair use allows limited use of copyrighted material without permission for purposes such as criticism, comment, news reporting, teaching, scholarship, and research.</p>
+                <p>We respect the doctrine of fair use as defined under 17 U.S.C. § 107. Fair use allows limited use of copyrighted material without permission for purposes such as criticism, comment, news reporting, teaching, scholarship, and research.</p>
                 <p>Factors considered in fair use include:</p>
                 <ul>
                     <li>The purpose and character of the use (commercial vs. educational)</li>
@@ -255,7 +260,7 @@
             <div class="legal-links-box">
                 <h3>Other Legal Documents</h3>
                 <ul>
-                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Health & Medical Disclaimer</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Health &amp; Medical Disclaimer</a></li>
                     <li><a href="privacy.html"><i class="fas fa-shield-alt mr-2"></i>Privacy Policy</a></li>
                     <li><a href="terms.html"><i class="fas fa-file-contract mr-2"></i>Terms of Service</a></li>
                     <li><a href="cookies.html"><i class="fas fa-cookie-bite mr-2"></i>Cookie Policy</a></li>
@@ -268,11 +273,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L-Theanine vs 5-HTP (2026) | Which Is Better for Anxiety &amp; Mood?</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
     <link rel="stylesheet" href="../css/content-shared.css">
 
@@ -59,7 +64,7 @@
                 <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                     <i class="fas fa-arrow-left mr-1"></i> Database
                 </a>
-            </div>
+            <div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -118,7 +123,7 @@
                         <li><a href="#evidence">Evidence Comparison</a></li>
                         <li><a href="#benefits">Benefits Comparison</a></li>
                         <li><a href="#mechanisms">Mechanisms of Action</a></li>
-                        <li><a href="#dosage">Dosage & Timing</a></li>
+                        <li><a href="#dosage">Dosage &amp; Timing</a></li>
                         <li><a href="#safety">Safety Profiles</a></li>
                         <li><a href="#who-should-choose">Who Should Choose Which</a></li>
                         <li><a href="#stacking">Can You Stack Them?</a></li>
@@ -201,20 +206,20 @@
                     <div class="compare-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;">
                         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
                             <h3 style="margin-top:0;"><a href="../supplements/l-theanine.html" style="color:inherit;text-decoration:none;">L-Theanine</a> <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></h3>
-                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Amino Acids &bull; 3 key citations</p>
+                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Amino Acids • 3 key citations</p>
                             <h4 style="font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;">Studied Effects:</h4>
                             <ul style="font-size:0.85rem;margin:0;padding-left:1.2rem;">
-                                <li><strong>sleepQuality:</strong> {&quot;value&quot;:&quot;SMD=0.43&quot;,&quot;source&quot;:&quot;Bulman 2025 MA, 19 articles, N=897&quot;}</li>
-                                <li><strong>daytimeDysfunction:</strong> {&quot;value&quot;:&quot;SMD=0.33&quot;,&quot;source&quot;:&quot;Bulman 2025 MA&quot;}</li>
-                                <li><strong>stressReduction:</strong> {&quot;value&quot;:&quot;12.92-17.98% reduction&quot;,&quot;source&quot;:&quot;Hidese 2024 MA, 11 studies, N=897&quot;}</li>
-                                <li><strong>choiceReactionTime:</strong> {&quot;value&quot;:&quot;SMD=-0.48 (with caffeine), SMD=-0.35 (alone)&quot;,&quot;source&quot;:&quot;Payne 2025 MA, 50 RCTs&quot;}</li>
-                                <li><strong>attentionSwitching:</strong> {&quot;value&quot;:&quot;SMD=0.33 (with caffeine)&quot;,&quot;source&quot;:&quot;Payne 2025 MA&quot;}</li>
-                                <li><strong>visualReactionTime:</strong> {&quot;value&quot;:&quot;MD=-15.20ms&quot;,&quot;source&quot;:&quot;Mátyus 2025 MA, 5 RCTs&quot;}</li>
+                                <li><strong>sleepQuality:</strong> {"value":"SMD=0.43","source":"Bulman 2025 MA, 19 articles, N=897"}</li>
+                                <li><strong>daytimeDysfunction:</strong> {"value":"SMD=0.33","source":"Bulman 2025 MA"}</li>
+                                <li><strong>stressReduction:</strong> {"value":"12.92-17.98% reduction","source":"Hidese 2024 MA, 11 studies, N=897"}</li>
+                                <li><strong>choiceReactionTime:</strong> {"value":"SMD=-0.48 (with caffeine), SMD=-0.35 (alone)","source":"Payne 2025 MA, 50 RCTs"}</li>
+                                <li><strong>attentionSwitching:</strong> {"value":"SMD=0.33 (with caffeine)","source":"Payne 2025 MA"}</li>
+                                <li><strong>visualReactionTime:</strong> {"value":"MD=-15.20ms","source":"Mátyus 2025 MA, 5 RCTs"}</li>
                             </ul>
                         </div>
                         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
                             <h3 style="margin-top:0;"><a href="../supplements/5-htp.html" style="color:inherit;text-decoration:none;">5-HTP</a> <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></h3>
-                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Amino Acids &bull; 3 key citations</p>
+                            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Amino Acids • 3 key citations</p>
                             <h4 style="font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;">Studied Effects:</h4>
                             <ul style="font-size:0.85rem;margin:0;padding-left:1.2rem;">
                                 <li><strong>mood:</strong> Small to moderate</li>
@@ -447,7 +452,7 @@
     <!-- Footer -->
     <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:3rem 1.5rem;margin-top:3rem;text-align:center;font-size:0.85rem;">
         <div style="max-width:800px;margin:0 auto;">
-            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p style="margin-bottom:0.5rem;"><strong style="color:#fff;">SupplementDB</strong> — Evidence-based supplement research</p>
             <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
             <div style="margin-bottom:1rem;">
                 <a href="../index.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Database</a>
@@ -457,7 +462,7 @@
                 <a href="../legal/terms.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Terms</a>
                 <a href="../legal/privacy.html" style="color:rgba(255,255,255,0.7);margin:0 0.75rem;text-decoration:none;">Privacy</a>
             </div>
-            <p>&copy; 2026 SupplementDB. All rights reserved.</p>
+            <p>© 2026 SupplementDB. All rights reserved.</p>
         </div>
     </footer>
 
@@ -484,5 +489,11 @@
     });
     </script>
     <script src="../js/share-bar.js"></script>
-</body>
-</html>
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>

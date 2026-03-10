@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Methodology | SupplementDB — Evidence Rating &amp; Verification Process</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="legal/legal-shared.css">
     <style>
         /* Methodology-specific enhancements */
@@ -175,9 +180,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -265,7 +270,7 @@
                         <div class="tier-body">
                             <h4><span class="tier-label t1">Tier 1 — Strong Evidence</span></h4>
                             <p class="tier-criteria">Consistent findings across multiple large RCTs (n&gt;200 each), supported by at least one systematic review or meta-analysis. High confidence in reported effects.</p>
-                            <p class="tier-examples"><strong>Typical base:</strong> 5+ RCTs, 1+ meta-analyses, large sample sizes &bull; <strong>Examples:</strong> Omega-3, Magnesium, Creatine, Ashwagandha</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> 5+ RCTs, 1+ meta-analyses, large sample sizes • <strong>Examples:</strong> Omega-3, Magnesium, Creatine, Ashwagandha</p>
                         </div>
                     </div>
                     <div class="tier-card">
@@ -273,7 +278,7 @@
                         <div class="tier-body">
                             <h4><span class="tier-label t2">Tier 2 — Moderate Evidence</span></h4>
                             <p class="tier-criteria">Multiple RCTs with moderate sample sizes showing generally consistent results. Some meta-analytic support but may have limitations in study design or population diversity.</p>
-                            <p class="tier-examples"><strong>Typical base:</strong> 3+ RCTs, n=50&ndash;200, some meta-analyses &bull; <strong>Examples:</strong> Rhodiola Rosea, CoQ10, NAC, Berberine</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> 3+ RCTs, n=50–200, some meta-analyses • <strong>Examples:</strong> Rhodiola Rosea, CoQ10, NAC, Berberine</p>
                         </div>
                     </div>
                     <div class="tier-card">
@@ -281,7 +286,7 @@
                         <div class="tier-body">
                             <h4><span class="tier-label t3">Tier 3 — Preliminary Evidence</span></h4>
                             <p class="tier-criteria">Limited RCTs available. Evidence is drawn primarily from smaller trials, observational studies, or studies with mixed results. Promising but not yet well-established.</p>
-                            <p class="tier-examples"><strong>Typical base:</strong> 1&ndash;2 RCTs, mostly small samples (n&lt;50), observational data &bull; <strong>Examples:</strong> Lion's Mane, PQQ, Phosphatidylserine</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> 1–2 RCTs, mostly small samples (n&lt;50), observational data • <strong>Examples:</strong> Lion's Mane, PQQ, Phosphatidylserine</p>
                         </div>
                     </div>
                     <div class="tier-card">
@@ -289,7 +294,7 @@
                         <div class="tier-body">
                             <h4><span class="tier-label t4">Tier 4 — Emerging Evidence</span></h4>
                             <p class="tier-criteria">Primarily preclinical research (cell culture, animal models) or very early-phase human investigations. Mechanisms may be well-characterized but human clinical data is limited.</p>
-                            <p class="tier-examples"><strong>Typical base:</strong> In vitro/animal studies, pilot trials &bull; <strong>Examples:</strong> Fisetin, Sulforaphane, Cistanche</p>
+                            <p class="tier-examples"><strong>Typical base:</strong> In vitro/animal studies, pilot trials • <strong>Examples:</strong> Fisetin, Sulforaphane, Cistanche</p>
                         </div>
                     </div>
                 </div>
@@ -352,20 +357,20 @@
 
                 <h3>Primary Databases</h3>
                 <ul>
-                    <li><strong>PubMed / MEDLINE</strong> &mdash; 36+ million biomedical citations from the U.S. National Library of Medicine</li>
-                    <li><strong>PubMed Central (PMC)</strong> &mdash; Full-text archive for open-access biomedical literature</li>
-                    <li><strong>Cochrane Library</strong> &mdash; Gold-standard systematic reviews for evidence-based healthcare</li>
-                    <li><strong>ClinicalTrials.gov</strong> &mdash; Registry and results database for clinical studies</li>
-                    <li><strong>bioRxiv / medRxiv</strong> &mdash; Preprint servers for early research (clearly labeled when cited)</li>
+                    <li><strong>PubMed / MEDLINE</strong> — 36+ million biomedical citations from the U.S. National Library of Medicine</li>
+                    <li><strong>PubMed Central (PMC)</strong> — Full-text archive for open-access biomedical literature</li>
+                    <li><strong>Cochrane Library</strong> — Gold-standard systematic reviews for evidence-based healthcare</li>
+                    <li><strong>ClinicalTrials.gov</strong> — Registry and results database for clinical studies</li>
+                    <li><strong>bioRxiv / medRxiv</strong> — Preprint servers for early research (clearly labeled when cited)</li>
                 </ul>
 
                 <h3>Evidence Hierarchy (Descending Strength)</h3>
                 <ol>
-                    <li><strong>Systematic reviews &amp; meta-analyses</strong> &mdash; Highest weight; pool data across multiple studies</li>
-                    <li><strong>Network meta-analyses</strong> &mdash; Compare interventions that may not have been directly studied head-to-head</li>
-                    <li><strong>Randomized controlled trials (RCTs)</strong> &mdash; The gold standard for individual study design</li>
-                    <li><strong>Cohort and observational studies</strong> &mdash; Valuable for long-term safety and real-world patterns</li>
-                    <li><strong>Mechanistic and preclinical studies</strong> &mdash; Inform biological plausibility, especially for Tier 4 supplements</li>
+                    <li><strong>Systematic reviews &amp; meta-analyses</strong> — Highest weight; pool data across multiple studies</li>
+                    <li><strong>Network meta-analyses</strong> — Compare interventions that may not have been directly studied head-to-head</li>
+                    <li><strong>Randomized controlled trials (RCTs)</strong> — The gold standard for individual study design</li>
+                    <li><strong>Cohort and observational studies</strong> — Valuable for long-term safety and real-world patterns</li>
+                    <li><strong>Mechanistic and preclinical studies</strong> — Inform biological plausibility, especially for Tier 4 supplements</li>
                 </ol>
 
                 <p class="legal-plain"><em>In plain language: We use the same evidence hierarchy that medical research uses — the strongest evidence comes from pooling many clinical trials together, not from any single study.</em></p>
@@ -384,26 +389,26 @@
 
                 <h3>Permitted Language (Structure/Function Claims)</h3>
                 <ul>
-                    <li>"Supports immune system function" &mdash; describes a body system function</li>
-                    <li>"Promotes healthy sleep onset" &mdash; describes a normal body process</li>
-                    <li>"Supports cardiovascular health" &mdash; general wellness claim</li>
-                    <li>"Supports healthy cholesterol levels already in the normal range" &mdash; qualifies the biomarker claim</li>
+                    <li>"Supports immune system function" — describes a body system function</li>
+                    <li>"Promotes healthy sleep onset" — describes a normal body process</li>
+                    <li>"Supports cardiovascular health" — general wellness claim</li>
+                    <li>"Supports healthy cholesterol levels already in the normal range" — qualifies the biomarker claim</li>
                 </ul>
 
                 <h3>Prohibited Language (Disease Claims)</h3>
                 <ul>
-                    <li>"Cures arthritis" &mdash; direct disease claim, requires drug approval</li>
-                    <li>"Prevents cancer" &mdash; disease prevention claim, requires FDA authorization</li>
-                    <li>"Lowers blood pressure" &mdash; implicit disease claim without qualifying language</li>
-                    <li>"Clinically proven to..." &mdash; implies drug-level evidence</li>
+                    <li>"Cures arthritis" — direct disease claim, requires drug approval</li>
+                    <li>"Prevents cancer" — disease prevention claim, requires FDA authorization</li>
+                    <li>"Lowers blood pressure" — implicit disease claim without qualifying language</li>
+                    <li>"Clinically proven to..." — implies drug-level evidence</li>
                 </ul>
 
                 <h3>Automated Compliance Audit</h3>
                 <p>SupplementDB runs an automated FDA claim language audit (<code>audit-fda-claims.js</code>) that scans:</p>
                 <ul>
-                    <li><strong>93 supplement data entries</strong> &mdash; all consumer-facing benefit descriptions, mechanisms, and rationale fields</li>
-                    <li><strong>23+ generated HTML pages</strong> &mdash; all guides, categories, comparisons, and informational pages</li>
-                    <li><strong>3 page generator templates</strong> &mdash; ensuring template strings don't introduce non-compliant language</li>
+                    <li><strong>93 supplement data entries</strong> — all consumer-facing benefit descriptions, mechanisms, and rationale fields</li>
+                    <li><strong>23+ generated HTML pages</strong> — all guides, categories, comparisons, and informational pages</li>
+                    <li><strong>3 page generator templates</strong> — ensuring template strings don't introduce non-compliant language</li>
                 </ul>
                 <p>The audit flags violations at four severity levels (Critical, High, Medium, Low) and must pass with zero Critical or High findings before any content update is published. Context-aware exemptions prevent false positives from research citation titles, disclaimer text, and safety warnings.</p>
             </section>
@@ -461,11 +466,11 @@
                 <h2>7. Limitations &amp; Transparency</h2>
                 <p>Rigorous methodology does not eliminate all limitations. We believe transparent acknowledgment of these limitations is essential to maintaining trust:</p>
                 <ul>
-                    <li><strong>Publication bias</strong> &mdash; Published research over-represents positive findings. We note this limitation and include effect sizes where available so readers can assess practical significance</li>
-                    <li><strong>Research lag</strong> &mdash; A natural delay exists between publication and database integration. We track update dates per supplement</li>
-                    <li><strong>Individual variation</strong> &mdash; Clinical research reports population averages. Individual responses to supplements vary based on genetics, health status, and concurrent medications</li>
-                    <li><strong>Supplement quality variability</strong> &mdash; Research studies use standardized extracts. Commercial supplement quality varies by manufacturer. We note standardization requirements where relevant</li>
-                    <li><strong>Not medical advice</strong> &mdash; SupplementDB is an informational resource. Always consult a qualified healthcare professional before starting any supplement regimen</li>
+                    <li><strong>Publication bias</strong> — Published research over-represents positive findings. We note this limitation and include effect sizes where available so readers can assess practical significance</li>
+                    <li><strong>Research lag</strong> — A natural delay exists between publication and database integration. We track update dates per supplement</li>
+                    <li><strong>Individual variation</strong> — Clinical research reports population averages. Individual responses to supplements vary based on genetics, health status, and concurrent medications</li>
+                    <li><strong>Supplement quality variability</strong> — Research studies use standardized extracts. Commercial supplement quality varies by manufacturer. We note standardization requirements where relevant</li>
+                    <li><strong>Not medical advice</strong> — SupplementDB is an informational resource. Always consult a qualified healthcare professional before starting any supplement regimen</li>
                 </ul>
             </section>
 
@@ -473,10 +478,10 @@
             <section class="legal-section" id="editorial-independence">
                 <h2>8. Editorial Independence</h2>
                 <ul>
-                    <li><strong>No supplement sales</strong> &mdash; SupplementDB does not sell supplements, accept supplement advertising, or receive manufacturer funding</li>
-                    <li><strong>No affiliate revenue from supplement brands</strong> &mdash; Our data is not influenced by commercial relationships</li>
-                    <li><strong>Open methodology</strong> &mdash; Our evidence evaluation criteria, tier system, and compliance standards are fully documented on this page</li>
-                    <li><strong>Correction policy</strong> &mdash; If you identify a citation error, outdated data, or language concern, contact us at <a href="mailto:research@supplementdb.com">research@supplementdb.com</a> with the relevant DOI or PMID. We will review and update the record</li>
+                    <li><strong>No supplement sales</strong> — SupplementDB does not sell supplements, accept supplement advertising, or receive manufacturer funding</li>
+                    <li><strong>No affiliate revenue from supplement brands</strong> — Our data is not influenced by commercial relationships</li>
+                    <li><strong>Open methodology</strong> — Our evidence evaluation criteria, tier system, and compliance standards are fully documented on this page</li>
+                    <li><strong>Correction policy</strong> — If you identify a citation error, outdated data, or language concern, contact us at <a href="mailto:research@supplementdb.com">research@supplementdb.com</a> with the relevant DOI or PMID. We will review and update the record</li>
                 </ul>
             </section>
 
@@ -497,11 +502,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+</body></html>

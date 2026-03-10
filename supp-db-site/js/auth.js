@@ -1,0 +1,217 @@
+/**
+ * auth.js — Clerk CDN Authentication Manager
+ *
+ * Initializes Clerk from CDN, manages auth state, and fires custom events.
+ * Works with static HTML pages (no build step).
+ *
+ * Dependencies: @clerk/clerk-js loaded via CDN before this script.
+ *
+ * Custom events fired:
+ *   auth:loaded     — Clerk finished initializing (user may or may not be signed in)
+ *   auth:signed-in  — User just signed in (detail: { user, role })
+ *   auth:signed-out — User just signed out
+ *   auth:error      — Auth initialization error (detail: { error })
+ */
+(function () {
+  "use strict";
+
+  // Skip real initialization when test mock is active
+  if (window.__CLERK_MOCK__) return;
+
+  // ── Configuration ──────────────────────────────────────────────
+  // Injected by Docker entrypoint; falls back for local dev
+  const CLERK_PUBLISHABLE_KEY =
+    document.querySelector('meta[name="clerk-publishable-key"]')?.content ||
+    "__CLERK_PUBLISHABLE_KEY__";
+
+  // ── State ──────────────────────────────────────────────────────
+  const state = {
+    clerk: null,
+    user: null,
+    session: null,
+    isSignedIn: false,
+    role: "free",
+    isLoaded: false,
+    isLoading: false,
+  };
+
+  // ── Public API ─────────────────────────────────────────────────
+  window.SupplementDBAuth = {
+    /** Current auth state (read-only snapshot) */
+    get state() {
+      return { ...state };
+    },
+    get isSignedIn() {
+      return state.isSignedIn;
+    },
+    get user() {
+      return state.user;
+    },
+    get role() {
+      return state.role;
+    },
+    get session() {
+      return state.session;
+    },
+    get isLoaded() {
+      return state.isLoaded;
+    },
+    get clerk() {
+      return state.clerk;
+    },
+
+    /** Open Clerk sign-in modal */
+    openSignIn() {
+      if (!state.clerk) return;
+      state.clerk.openSignIn({
+        afterSignInUrl: window.location.href,
+        afterSignUpUrl: window.location.href,
+      });
+    },
+
+    /** Open Clerk sign-up modal */
+    openSignUp() {
+      if (!state.clerk) return;
+      state.clerk.openSignUp({
+        afterSignInUrl: window.location.href,
+        afterSignUpUrl: window.location.href,
+      });
+    },
+
+    /** Sign out the current user */
+    async signOut() {
+      if (!state.clerk) return;
+      await state.clerk.signOut();
+    },
+
+    /** Mount Clerk UserButton into a DOM element */
+    mountUserButton(selector) {
+      if (!state.clerk || !state.isSignedIn) return;
+      const el =
+        typeof selector === "string"
+          ? document.querySelector(selector)
+          : selector;
+      if (!el) return;
+      state.clerk.mountUserButton(el, {
+        afterSignOutUrl: window.location.href,
+      });
+    },
+
+    /**
+     * Get Clerk session token for Convex authentication.
+     * Returns a function that Convex client can use as a token provider.
+     */
+    getTokenProvider() {
+      return async () => {
+        if (!state.clerk?.session) return null;
+        try {
+          return await state.clerk.session.getToken({ template: "convex" });
+        } catch (err) {
+          console.warn("[Auth] Failed to get Convex token:", err);
+          return null;
+        }
+      };
+    },
+
+    /**
+     * Wait for auth to finish loading.
+     * @returns {Promise<void>}
+     */
+    whenLoaded() {
+      if (state.isLoaded) return Promise.resolve();
+      return new Promise((resolve) => {
+        document.addEventListener("auth:loaded", () => resolve(), {
+          once: true,
+        });
+      });
+    },
+  };
+
+  // ── Initialization ─────────────────────────────────────────────
+  async function initClerk() {
+    if (state.isLoading || state.isLoaded) return;
+    state.isLoading = true;
+
+    // Wait for Clerk CDN to load
+    if (typeof window.Clerk === "undefined") {
+      console.warn(
+        "[Auth] Clerk CDN not loaded. Auth features will be unavailable."
+      );
+      state.isLoaded = true;
+      state.isLoading = false;
+      dispatch("auth:loaded");
+      return;
+    }
+
+    // Validate key
+    if (
+      !CLERK_PUBLISHABLE_KEY ||
+      CLERK_PUBLISHABLE_KEY === "__CLERK_PUBLISHABLE_KEY__"
+    ) {
+      console.warn(
+        "[Auth] Clerk publishable key not configured. Auth features will be unavailable."
+      );
+      state.isLoaded = true;
+      state.isLoading = false;
+      dispatch("auth:loaded");
+      return;
+    }
+
+    try {
+      const clerk = new window.Clerk(CLERK_PUBLISHABLE_KEY);
+      await clerk.load();
+
+      state.clerk = clerk;
+      state.isLoaded = true;
+      state.isLoading = false;
+
+      // Set initial state
+      updateAuthState(clerk);
+
+      // Listen for auth changes
+      clerk.addListener((emission) => {
+        const wasSignedIn = state.isSignedIn;
+        updateAuthState(clerk);
+
+        if (!wasSignedIn && state.isSignedIn) {
+          dispatch("auth:signed-in", { user: state.user, role: state.role });
+        } else if (wasSignedIn && !state.isSignedIn) {
+          dispatch("auth:signed-out");
+        }
+      });
+
+      dispatch("auth:loaded");
+
+      // If signed in, fire initial event
+      if (state.isSignedIn) {
+        dispatch("auth:signed-in", { user: state.user, role: state.role });
+      }
+    } catch (err) {
+      console.error("[Auth] Clerk initialization failed:", err);
+      state.isLoaded = true;
+      state.isLoading = false;
+      dispatch("auth:error", { error: err });
+      dispatch("auth:loaded");
+    }
+  }
+
+  function updateAuthState(clerk) {
+    state.session = clerk.session;
+    state.user = clerk.user;
+    state.isSignedIn = !!clerk.user;
+    state.role = clerk.user?.publicMetadata?.role || "free";
+  }
+
+  function dispatch(eventName, detail) {
+    document.dispatchEvent(
+      new CustomEvent(eventName, { detail: detail || {} })
+    );
+  }
+
+  // ── Auto-initialize when DOM is ready ──────────────────────────
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initClerk);
+  } else {
+    initClerk();
+  }
+})();

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evidence-Based Supplements for Sleep | Sleep Evidence Guide</title>
@@ -40,15 +38,24 @@
     </script>
 
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/content-gate.css">
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Fonts: DM Serif Display for headings + DM Sans for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -367,6 +374,7 @@
             <a href="#tier3" class="hover:text-gray-300 transition-colors">Tier 3</a>
             <a href="#safety" class="hover:text-gray-300 transition-colors">Safety</a>
             <a href="#citations" class="hover:text-gray-300 transition-colors">Citations</a>
+            <div id="auth-buttons"></div>
         </div>
     </div>
 </nav>
@@ -391,12 +399,12 @@
         <!-- Moon icon -->
         <div class="moon-glow mb-6 inline-block">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M38 26c0 8.837-7.163 16-16 16-6.286 0-11.718-3.627-14.323-8.9C10.276 36.336 14.825 38 19.75 38 28.587 38 35.75 30.837 35.75 22c0-4.925-1.664-9.474-4.463-12.073C36.56 12.532 38 18.964 38 26z" fill="#93c5fd" fill-opacity="0.4"/>
-                <circle cx="12" cy="10" r="1" fill="#93c5fd" fill-opacity="0.3"/>
-                <circle cx="38" cy="14" r="0.8" fill="#93c5fd" fill-opacity="0.2"/>
-                <circle cx="8" cy="32" r="0.6" fill="#93c5fd" fill-opacity="0.2"/>
-                <circle cx="42" cy="34" r="0.7" fill="#93c5fd" fill-opacity="0.15"/>
-                <circle cx="20" cy="6" r="0.5" fill="#93c5fd" fill-opacity="0.25"/>
+                <path d="M38 26c0 8.837-7.163 16-16 16-6.286 0-11.718-3.627-14.323-8.9C10.276 36.336 14.825 38 19.75 38 28.587 38 35.75 30.837 35.75 22c0-4.925-1.664-9.474-4.463-12.073C36.56 12.532 38 18.964 38 26z" fill="#93c5fd" fill-opacity="0.4"></path>
+                <circle cx="12" cy="10" r="1" fill="#93c5fd" fill-opacity="0.3"></circle>
+                <circle cx="38" cy="14" r="0.8" fill="#93c5fd" fill-opacity="0.2"></circle>
+                <circle cx="8" cy="32" r="0.6" fill="#93c5fd" fill-opacity="0.2"></circle>
+                <circle cx="42" cy="34" r="0.7" fill="#93c5fd" fill-opacity="0.15"></circle>
+                <circle cx="20" cy="6" r="0.5" fill="#93c5fd" fill-opacity="0.25"></circle>
             </svg>
         </div>
 
@@ -445,6 +453,9 @@
     <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
 </div>
 
+<!-- Main content wrapper for content gating -->
+<main>
+
 <!-- ═══════════════════════════════════════════ -->
 <!-- QUICK EVIDENCE SUMMARY TABLE               -->
 <!-- ═══════════════════════════════════════════ -->
@@ -473,14 +484,14 @@
                         <td class="font-semibold" style="color: var(--text-bright);">Melatonin</td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Tier 1</span></td>
                         <td>MT1/MT2 receptor activation; circadian regulation</td>
-                        <td>Sleep onset latency &minus;23.5 min <a href="https://pubmed.ncbi.nlm.nih.gov/23691095" target="_blank" rel="noopener" class="pmid-link">(PMID: 23691095)</a></td>
+                        <td>Sleep onset latency −23.5 min <a href="https://pubmed.ncbi.nlm.nih.gov/23691095" target="_blank" rel="noopener" class="pmid-link">(PMID: 23691095)</a></td>
                         <td style="white-space: nowrap;">0.5–3 mg</td>
                     </tr>
                     <tr>
                         <td class="font-semibold" style="color: var(--text-bright);">Magnesium</td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Tier 1</span></td>
                         <td>GABA modulation; NMDA antagonism</td>
-                        <td>Sleep onset latency &minus;17.36 min <a href="https://pubmed.ncbi.nlm.nih.gov/33865376" target="_blank" rel="noopener" class="pmid-link">(PMID: 33865376)</a></td>
+                        <td>Sleep onset latency −17.36 min <a href="https://pubmed.ncbi.nlm.nih.gov/33865376" target="_blank" rel="noopener" class="pmid-link">(PMID: 33865376)</a></td>
                         <td style="white-space: nowrap;">200–400 mg</td>
                     </tr>
                     <tr>
@@ -501,7 +512,7 @@
                         <td class="font-semibold" style="color: var(--text-bright);">Ashwagandha</td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Tier 2</span></td>
                         <td>HPA axis modulation; cortisol reduction</td>
-                        <td>Cortisol MD = &minus;2.58 (8 RCTs) <a href="https://pubmed.ncbi.nlm.nih.gov/39348746" target="_blank" rel="noopener" class="pmid-link">(PMID: 39348746)</a></td>
+                        <td>Cortisol MD = −2.58 (8 RCTs) <a href="https://pubmed.ncbi.nlm.nih.gov/39348746" target="_blank" rel="noopener" class="pmid-link">(PMID: 39348746)</a></td>
                         <td style="white-space: nowrap;">300–600 mg</td>
                     </tr>
                     <tr>
@@ -580,7 +591,7 @@
             <div class="finding-highlight">
                 <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--indigo-light);">Sleep Quality</div>
                 <p class="text-sm" style="color: var(--text-bright);">
-                    PSQI improvement <strong>WMD &minus;1.24</strong> (95% CI &minus;1.77 to &minus;0.71). Strongest effects in respiratory diseases (WMD &minus;2.20).
+                    PSQI improvement <strong>WMD −1.24</strong> (95% CI −1.77 to −0.71). Strongest effects in respiratory diseases (WMD −2.20).
                 </p>
                 <p class="mt-1 text-xs" style="color: var(--text-muted);">
                     Gholami F, Moradi L, Ziaei R, et al. <em>Journal of Neurology</em>, 2022. 23 RCTs.
@@ -793,7 +804,7 @@
 
         <div class="space-y-4 mb-6">
             <div class="finding-highlight">
-                <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--indigo-light);">Anxiety & Sleep</div>
+                <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--indigo-light);">Anxiety &amp; Sleep</div>
                 <p class="text-sm" style="color: var(--text-bright);">
                     Anxiolytic effect comparable to oxazepam in generalized anxiety disorder patients, with moderate improvements in polysomnographic sleep quality measures. Particularly effective for anxiety-driven insomnia.
                 </p>
@@ -840,7 +851,7 @@
             <div class="finding-highlight">
                 <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--indigo-light);">Cortisol Reduction</div>
                 <p class="text-sm" style="color: var(--text-bright);">
-                    Significant cortisol reduction <strong>MD = &minus;2.58</strong> (95% CI &minus;4.99 to &minus;0.16) compared to placebo across multiple RCTs with 491 participants.
+                    Significant cortisol reduction <strong>MD = −2.58</strong> (95% CI −4.99 to −0.16) compared to placebo across multiple RCTs with 491 participants.
                 </p>
                 <p class="mt-1 text-xs" style="color: var(--text-muted);">
                     Arumugam V, Vijayakumar V, et al. <em>Explore (NY)</em>, 2024. Meta-analysis of 8 RCTs.
@@ -1104,7 +1115,7 @@
             <div class="p-4 rounded-lg" style="background: rgba(99, 102, 241, 0.04); border: 1px solid var(--border);">
                 <div class="flex items-center gap-2 mb-2">
                     <i class="fas fa-baby text-sm" style="color: var(--blue-muted);"></i>
-                    <h4 class="text-sm font-semibold" style="color: var(--text-bright);">Pregnancy & Nursing</h4>
+                    <h4 class="text-sm font-semibold" style="color: var(--text-bright);">Pregnancy &amp; Nursing</h4>
                 </div>
                 <p class="text-sm" style="color: var(--text-muted);">
                     Insufficient safety data for most sleep supplements during pregnancy or breastfeeding. Melatonin is not recommended. Consult your OB/GYN.
@@ -1140,19 +1151,8 @@
         </p>
 
         <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4" id="capture-form">
-            <input
-                type="email"
-                name="email"
-                placeholder="your@email.com"
-                required
-                class="flex-1 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--text-bright);"
-            >
-            <button
-                type="submit"
-                class="px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-400 whitespace-nowrap"
-                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff;"
-            >
+            <input type="email" name="email" placeholder="your@email.com" required="" class="flex-1 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-400" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--text-bright);">
+            <button type="submit" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-400 whitespace-nowrap" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff;">
                 Send Me the Guide
             </button>
         </form>
@@ -1273,6 +1273,8 @@
 </section>
 
 
+</main>
+
 <!-- ═══════════════════════════════════════════ -->
 <!-- FOOTER                                     -->
 <!-- ═══════════════════════════════════════════ -->
@@ -1294,7 +1296,7 @@
     </div>
     <div class="text-center mt-8">
         <p class="text-xs" style="color: rgba(139, 148, 158, 0.5);">
-            &copy; 2026 SupplementDB. Evidence-Based Supplement Database.
+            © 2026 SupplementDB. Evidence-Based Supplement Database.
         </p>
     </div>
 </footer>
@@ -1528,5 +1530,14 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 </script>
 
 <script src="../js/share-bar.js"></script>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+
+    <script src="../js/content-gate.js"></script>
+</body></html>

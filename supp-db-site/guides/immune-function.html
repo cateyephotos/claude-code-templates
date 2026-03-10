@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Supplements for Immune Support (2026) | Evidence-Based Guide</title>
@@ -36,11 +34,20 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/content-gate.css">
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
     <link rel="stylesheet" href="../css/content-shared.css">
 
@@ -59,7 +66,7 @@
                 <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                     <i class="fas fa-arrow-left mr-1"></i> Database
                 </a>
-            </div>
+            <div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -138,14 +145,14 @@
                     <div class="snippet-list">
                         <h2>Top 8 Evidence-Based Supplements for Immune Support</h2>
                         <ol>
-                            <li><a href="../supplements/vitamin-c.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Vitamin C</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Immune system support (500mg-2g daily; optimal antioxidant and immune benefit at 500-1000mg)</li>
-                            <li><a href="../supplements/zinc.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Zinc</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Immune system support (8-40mg daily; therapeutic range 15-30mg; bisglycinate preferred for absorption)</li>
-                            <li><a href="../supplements/elderberry.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Elderberry</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Immune system enhancement (300-600mg daily (standardized extract))</li>
-                            <li><a href="../supplements/garlic.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Garlic</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Immune support (600mg-2g daily)</li>
-                            <li><a href="../supplements/reishi-mushroom.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Reishi Mushroom</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Immune system support (1-3g daily (extract) or 6-12g dried)</li>
-                            <li><a href="../supplements/selenium.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Selenium</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Immune system support (55-200mcg daily)</li>
-                            <li><a href="../supplements/spirulina.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Spirulina</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Immune support (1-8g daily)</li>
-                            <li><a href="../supplements/echinacea.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Echinacea</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> &mdash; Immune system support (300mg-1g daily)</li>
+                            <li><a href="../supplements/vitamin-c.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Vitamin C</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> — Immune system support (500mg-2g daily; optimal antioxidant and immune benefit at 500-1000mg)</li>
+                            <li><a href="../supplements/zinc.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Zinc</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> — Immune system support (8-40mg daily; therapeutic range 15-30mg; bisglycinate preferred for absorption)</li>
+                            <li><a href="../supplements/elderberry.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Elderberry</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Immune system enhancement (300-600mg daily (standardized extract))</li>
+                            <li><a href="../supplements/garlic.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Garlic</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Immune support (600mg-2g daily)</li>
+                            <li><a href="../supplements/reishi-mushroom.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Reishi Mushroom</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Immune system support (1-3g daily (extract) or 6-12g dried)</li>
+                            <li><a href="../supplements/selenium.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Selenium</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Immune system support (55-200mcg daily)</li>
+                            <li><a href="../supplements/spirulina.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Spirulina</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Immune support (1-8g daily)</li>
+                            <li><a href="../supplements/echinacea.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Echinacea</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> — Immune system support (300mg-1g daily)</li>
                         </ol>
                     </div>
 
@@ -855,7 +862,7 @@
                         <li>Wichman J et al. (2016).  Selenium supplementation for Hashimoto's thyroiditis: systematic review and meta-analysis. <em>Thyroid</em>. <a class="citation-doi" href="https://doi.org/10.1089/thy.2015.0063" target="_blank" rel="noopener">10.1089/thy.2015.0063</a> PMID: 26067143</li>
                         <li>Vinceti M et al. (2014).  Selenium for preventing cancer. <em>Cochrane Database of Systematic Reviews</em>. <a class="citation-doi" href="https://doi.org/10.1002/14651858.CD005195.pub3" target="_blank" rel="noopener">10.1002/14651858.CD005195.pub3</a> PMID: 24683040</li>
                         <li>Wu et al. (2016).  Spirulina for nutrition and health benefits. <em></em>. <a class="citation-doi" href="https://doi.org/10.1155/2016/3649162" target="_blank" rel="noopener">10.1155/2016/3649162</a></li>
-                        <li>Randall C, et al. (2000).  Stinging nettle (Urtica dioica) in rheumatoid arthritis: a randomized controlled trial. <em>Phytother Res</em>. <a class="citation-doi" href="https://doi.org/10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K" target="_blank" rel="noopener">10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K</a></li>
+                        <li>Randall C, et al. (2000).  Stinging nettle (Urtica dioica) in rheumatoid arthritis: a randomized controlled trial. <em>Phytother Res</em>. <a class="citation-doi" href="https://doi.org/10.1002/1099-1573(200006)14:4<213::AID-PTR653>3.0.CO;2-K" target="_blank" rel="noopener">10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K</a></li>
                         <li>Park JS, Chyun JH, Kim YK, Line LL, Chew BP (2010).  Astaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans. <em>Journal of Clinical Biochemistry and Nutrition</em>. <a class="citation-doi" href="https://doi.org/10.3164/jcbn.09-91" target="_blank" rel="noopener">10.3164/jcbn.09-91</a> PMID: 20553730</li>
                         <li>Tominaga K, Hongo N, Karato M, Yamashita E (2012).  Cosmetic benefits of astaxanthin on humans subjects. <em>Acta Biochimica Polonica</em>. <a class="citation-doi" href="https://doi.org/10.18388/abp.2012_2088" target="_blank" rel="noopener">10.18388/abp.2012_2088</a> PMID: 22428137</li>
                         <li>Earnest CP, Lupo M, White KM, Church TS (2011).  Effect of astaxanthin on cycling time trial performance. <em>International Journal of Sports Medicine</em>. <a class="citation-doi" href="https://doi.org/10.1055/s-0030-1264780" target="_blank" rel="noopener">10.1055/s-0030-1264780</a> PMID: 21800280</li>
@@ -875,7 +882,7 @@
                         <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
                         <div id="guide-newsletter-container">
                             <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
+                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required="">
                                 <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
                             </form>
                             <p id="guide-newsletter-success" class="newsletter-success hidden">
@@ -927,16 +934,16 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
                 <a href="../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
             </p>
             <p class="mt-2 text-sm text-gray-500">
-                <a href="../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
+                <a href="../about.html" style="color:#9ca3af;">About</a> ·
+                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> ·
+                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> ·
+                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> ·
                 <a href="../legal/terms.html" style="color:#9ca3af;">Terms</a>
             </p>
         </div>
@@ -1002,5 +1009,13 @@
         };
     </script>
     <script src="../js/share-bar.js"></script>
-</body>
-</html>
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+
+    <script src="../js/content-gate.js"></script>
+</body></html>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | SupplementDB</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
 </head>
 <body class="legal-page">
@@ -51,9 +56,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -79,11 +84,11 @@
                 <h3>2.1 Automatically Collected Information</h3>
                 <p>When you visit the Website, we may automatically collect certain information about your device and usage, including:</p>
                 <ul>
-                    <li><strong>Device information</strong> &mdash; Browser type, operating system, device type, screen resolution</li>
-                    <li><strong>Usage data</strong> &mdash; Pages visited, time spent on pages, clicks, scrolls, and navigation patterns</li>
-                    <li><strong>Referral data</strong> &mdash; How you arrived at the Website (search engine, direct link, referral)</li>
-                    <li><strong>Location data</strong> &mdash; Approximate geographic location derived from your IP address (country/region level only)</li>
-                    <li><strong>Session data</strong> &mdash; Session duration, page load times, and interaction events</li>
+                    <li><strong>Device information</strong> — Browser type, operating system, device type, screen resolution</li>
+                    <li><strong>Usage data</strong> — Pages visited, time spent on pages, clicks, scrolls, and navigation patterns</li>
+                    <li><strong>Referral data</strong> — How you arrived at the Website (search engine, direct link, referral)</li>
+                    <li><strong>Location data</strong> — Approximate geographic location derived from your IP address (country/region level only)</li>
+                    <li><strong>Session data</strong> — Session duration, page load times, and interaction events</li>
                 </ul>
 
                 <h3>2.2 Information We Do Not Collect</h3>
@@ -147,10 +152,10 @@
                 <h2>5. How We Use Your Information</h2>
                 <p>We use the automatically collected information to:</p>
                 <ul>
-                    <li><strong>Improve our Website</strong> &mdash; Understand which supplements and guides are most visited to prioritize content updates</li>
-                    <li><strong>Analyze usage patterns</strong> &mdash; Identify how visitors navigate the database to improve user experience</li>
-                    <li><strong>Monitor performance</strong> &mdash; Track page load times and technical issues to maintain site reliability</li>
-                    <li><strong>Understand our audience</strong> &mdash; Aggregate demographic data (country/region level) to understand our user base</li>
+                    <li><strong>Improve our Website</strong> — Understand which supplements and guides are most visited to prioritize content updates</li>
+                    <li><strong>Analyze usage patterns</strong> — Identify how visitors navigate the database to improve user experience</li>
+                    <li><strong>Monitor performance</strong> — Track page load times and technical issues to maintain site reliability</li>
+                    <li><strong>Understand our audience</strong> — Aggregate demographic data (country/region level) to understand our user base</li>
                 </ul>
                 <p>We do <strong>not</strong> use collected data for:</p>
                 <ul>
@@ -166,9 +171,9 @@
                 <h2>6. Data Sharing and Disclosure</h2>
                 <p>We do not sell, trade, or rent your personal information. We may share anonymized, aggregated data in the following limited circumstances:</p>
                 <ul>
-                    <li><strong>Service providers</strong> &mdash; With PostHog for analytics processing, subject to their privacy policy and data processing agreements</li>
-                    <li><strong>Legal requirements</strong> &mdash; When required by law, subpoena, court order, or governmental regulation</li>
-                    <li><strong>Protection of rights</strong> &mdash; When necessary to protect our rights, safety, or property, or that of our users or the public</li>
+                    <li><strong>Service providers</strong> — With PostHog for analytics processing, subject to their privacy policy and data processing agreements</li>
+                    <li><strong>Legal requirements</strong> — When required by law, subpoena, court order, or governmental regulation</li>
+                    <li><strong>Protection of rights</strong> — When necessary to protect our rights, safety, or property, or that of our users or the public</li>
                 </ul>
             </section>
 
@@ -186,23 +191,23 @@
 
                 <h3>8.1 For All Users</h3>
                 <ul>
-                    <li><strong>Opt-out of analytics</strong> &mdash; You can disable PostHog tracking by using browser privacy settings, enabling Do Not Track, or using browser extensions that block analytics scripts</li>
-                    <li><strong>Cookie management</strong> &mdash; You can manage or delete cookies through your browser settings (see our <a href="cookies.html">Cookie Policy</a>)</li>
+                    <li><strong>Opt-out of analytics</strong> — You can disable PostHog tracking by using browser privacy settings, enabling Do Not Track, or using browser extensions that block analytics scripts</li>
+                    <li><strong>Cookie management</strong> — You can manage or delete cookies through your browser settings (see our <a href="cookies.html">Cookie Policy</a>)</li>
                 </ul>
 
-                <h3>8.2 For European Economic Area (EEA) Residents &mdash; GDPR</h3>
+                <h3>8.2 For European Economic Area (EEA) Residents — GDPR</h3>
                 <p>Under the General Data Protection Regulation (GDPR), you have the right to:</p>
                 <ul>
-                    <li><strong>Access</strong> &mdash; Request a copy of the data we hold about you</li>
-                    <li><strong>Rectification</strong> &mdash; Request correction of inaccurate data</li>
-                    <li><strong>Erasure</strong> &mdash; Request deletion of your personal data ("right to be forgotten")</li>
-                    <li><strong>Restriction</strong> &mdash; Request that we limit processing of your data</li>
-                    <li><strong>Portability</strong> &mdash; Request your data in a portable format</li>
-                    <li><strong>Objection</strong> &mdash; Object to our processing of your data</li>
+                    <li><strong>Access</strong> — Request a copy of the data we hold about you</li>
+                    <li><strong>Rectification</strong> — Request correction of inaccurate data</li>
+                    <li><strong>Erasure</strong> — Request deletion of your personal data ("right to be forgotten")</li>
+                    <li><strong>Restriction</strong> — Request that we limit processing of your data</li>
+                    <li><strong>Portability</strong> — Request your data in a portable format</li>
+                    <li><strong>Objection</strong> — Object to our processing of your data</li>
                 </ul>
                 <p>Our legal basis for processing data is <strong>legitimate interest</strong> (improving our Website and understanding usage patterns).</p>
 
-                <h3>8.3 For California Residents &mdash; CCPA</h3>
+                <h3>8.3 For California Residents — CCPA</h3>
                 <p>Under the California Consumer Privacy Act (CCPA), you have the right to:</p>
                 <ul>
                     <li>Know what personal information is collected about you</li>
@@ -264,7 +269,7 @@
             <div class="legal-links-box">
                 <h3>Other Legal Documents</h3>
                 <ul>
-                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Health & Medical Disclaimer</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Health &amp; Medical Disclaimer</a></li>
                     <li><a href="terms.html"><i class="fas fa-file-contract mr-2"></i>Terms of Service</a></li>
                     <li><a href="cookies.html"><i class="fas fa-cookie-bite mr-2"></i>Cookie Policy</a></li>
                     <li><a href="copyright.html"><i class="fas fa-copyright mr-2"></i>Copyright Notice</a></li>
@@ -277,11 +282,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>

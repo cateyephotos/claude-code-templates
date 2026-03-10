@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Supplements for Energy &amp; Fatigue (2026) | Evidence-Based Guide</title>
@@ -36,11 +34,20 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/content-gate.css">
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
     <link rel="stylesheet" href="../css/content-shared.css">
 
@@ -59,7 +66,7 @@
                 <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                     <i class="fas fa-arrow-left mr-1"></i> Database
                 </a>
-            </div>
+            <div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -138,14 +145,14 @@
                     <div class="snippet-list">
                         <h2>Top 8 Evidence-Based Supplements for Energy &amp; Vitality</h2>
                         <ol>
-                            <li><a href="../supplements/caffeine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Caffeine</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Exercise performance (50-400mg daily)</li>
-                            <li><a href="../supplements/creatine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Creatine</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Muscle strength (3-5g daily (maintenance) or 20g daily for 5 days (loading))</li>
-                            <li><a href="../supplements/iron.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Iron</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Oxygen transport (8-65mg daily; RDA 8-18mg; therapeutic 25-65mg; athletes 100mg/day; bisglycinate preferred)</li>
-                            <li><a href="../supplements/coq10.html" style="color:var(--accent);text-decoration:none;font-weight:700;">CoQ10</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Energy production (100-300mg daily)</li>
-                            <li><a href="../supplements/cordyceps.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Cordyceps</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Exercise performance (1-3g daily)</li>
-                            <li><a href="../supplements/mct-oil.html" style="color:var(--accent);text-decoration:none;font-weight:700;">MCT Oil</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Energy production (5-30ml daily)</li>
-                            <li><a href="../supplements/rhodiola-rosea.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Rhodiola rosea</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Physical fatigue reduction (200-400mg daily (standardized extract))</li>
-                            <li><a href="../supplements/beta-alanine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Beta-Alanine</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> &mdash; Exercise endurance (4-6g daily (split doses))</li>
+                            <li><a href="../supplements/caffeine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Caffeine</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> — Exercise performance (50-400mg daily)</li>
+                            <li><a href="../supplements/creatine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Creatine</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> — Muscle strength (3-5g daily (maintenance) or 20g daily for 5 days (loading))</li>
+                            <li><a href="../supplements/iron.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Iron</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> — Oxygen transport (8-65mg daily; RDA 8-18mg; therapeutic 25-65mg; athletes 100mg/day; bisglycinate preferred)</li>
+                            <li><a href="../supplements/coq10.html" style="color:var(--accent);text-decoration:none;font-weight:700;">CoQ10</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Energy production (100-300mg daily)</li>
+                            <li><a href="../supplements/cordyceps.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Cordyceps</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Exercise performance (1-3g daily)</li>
+                            <li><a href="../supplements/mct-oil.html" style="color:var(--accent);text-decoration:none;font-weight:700;">MCT Oil</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Energy production (5-30ml daily)</li>
+                            <li><a href="../supplements/rhodiola-rosea.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Rhodiola rosea</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> — Physical fatigue reduction (200-400mg daily (standardized extract))</li>
+                            <li><a href="../supplements/beta-alanine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Beta-Alanine</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> — Exercise endurance (4-6g daily (split doses))</li>
                         </ol>
                     </div>
 
@@ -541,7 +548,7 @@
                     <h2>Safety &amp; Interactions</h2>
                     <p>Energy supplements generally have well-characterized safety profiles, but several important considerations apply — particularly regarding stimulant effects, nutrient interactions, and pre-existing conditions.</p>
                     <ul>
-                        <li><strong>Caffeine tolerance & dependence:</strong> Regular caffeine consumption leads to tolerance (requiring higher doses for the same effect) and physical dependence (withdrawal headaches, fatigue, irritability). Limit intake to 400mg/day for most adults and cycle usage to maintain sensitivity.</li>
+                        <li><strong>Caffeine tolerance &amp; dependence:</strong> Regular caffeine consumption leads to tolerance (requiring higher doses for the same effect) and physical dependence (withdrawal headaches, fatigue, irritability). Limit intake to 400mg/day for most adults and cycle usage to maintain sensitivity.</li>
                         <li><strong>Iron overload risk:</strong> Iron supplementation without confirmed deficiency can lead to iron overload (hemochromatosis), causing liver damage, heart disease, and diabetes. Always test ferritin and iron saturation levels before supplementing — iron is not an "energy supplement" for non-deficient individuals.</li>
                         <li><strong>Creatine kidney myths vs. reality:</strong> Despite persistent myths, creatine monohydrate does not cause kidney damage in healthy individuals at standard doses (3-5g/day). However, creatine raises serum creatinine (a kidney marker), which can falsely suggest kidney impairment. Individuals with pre-existing kidney disease should consult a nephrologist.</li>
                         <li><strong>Stimulant stacking dangers:</strong> Combining multiple stimulants (caffeine + high-dose green tea + pre-workout supplements) can cause dangerous cardiovascular effects including tachycardia, hypertension, and arrhythmias. Use one stimulant source at a time.</li>
@@ -616,7 +623,7 @@
 
                 <section class="content-section" id="research-gaps">
                     <h2>Research Gaps &amp; Limitations</h2>
-                    <p>While the evidence base for energy & vitality supplements continues to grow, several important gaps remain in the current literature:</p>
+                    <p>While the evidence base for energy &amp; vitality supplements continues to grow, several important gaps remain in the current literature:</p>
                     <ul>
                         <li>Long-term effects of energy supplement use (&gt;12 months) on mitochondrial health and aging remain understudied</li>
                         <li>Optimal timing and periodization of energy supplements for peak performance is poorly characterized</li>
@@ -629,7 +636,7 @@
 
                 <section class="content-section" id="additional">
                     <h2>Additional Supplements with Relevant Evidence</h2>
-                    <p>The following 5 supplements show some evidence related to energy & vitality but are not among the primary recommendations. They may have relevant benefits as secondary effects or within specific subpopulations.</p>
+                    <p>The following 5 supplements show some evidence related to energy &amp; vitality but are not among the primary recommendations. They may have relevant benefits as secondary effects or within specific subpopulations.</p>
                     <div class="content-table-wrap">
                         <table class="content-table">
                             <thead>
@@ -711,7 +718,7 @@
                         <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
                         <div id="guide-newsletter-container">
                             <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
+                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required="">
                                 <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
                             </form>
                             <p id="guide-newsletter-success" class="newsletter-success hidden">
@@ -765,16 +772,16 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
                 <a href="../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
             </p>
             <p class="mt-2 text-sm text-gray-500">
-                <a href="../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
+                <a href="../about.html" style="color:#9ca3af;">About</a> ·
+                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> ·
+                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> ·
+                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> ·
                 <a href="../legal/terms.html" style="color:#9ca3af;">Terms</a>
             </p>
         </div>
@@ -840,5 +847,13 @@
         };
     </script>
     <script src="../js/share-bar.js"></script>
-</body>
-</html>
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+
+    <script src="../js/content-gate.js"></script>
+</body></html>

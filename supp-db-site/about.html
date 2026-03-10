@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About SupplementDB | Evidence-Based Supplement Research</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="legal/legal-shared.css">
 </head>
 <body class="legal-page">
@@ -51,9 +56,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -83,11 +88,11 @@
                 <h3>Citation Verification</h3>
                 <p>Every citation in the database undergoes a multi-step verification process:</p>
                 <ul>
-                    <li><strong>DOI validation</strong> &mdash; Each Digital Object Identifier is verified to resolve to the correct published paper</li>
-                    <li><strong>PMID confirmation</strong> &mdash; PubMed IDs are cross-referenced against the National Library of Medicine records</li>
-                    <li><strong>Author and journal verification</strong> &mdash; Publication details are confirmed against the original source</li>
-                    <li><strong>Study type classification</strong> &mdash; Each study is categorized (RCT, meta-analysis, cohort study, etc.) based on its design</li>
-                    <li><strong>Sample size recording</strong> &mdash; Participant counts are extracted and documented for transparency</li>
+                    <li><strong>DOI validation</strong> — Each Digital Object Identifier is verified to resolve to the correct published paper</li>
+                    <li><strong>PMID confirmation</strong> — PubMed IDs are cross-referenced against the National Library of Medicine records</li>
+                    <li><strong>Author and journal verification</strong> — Publication details are confirmed against the original source</li>
+                    <li><strong>Study type classification</strong> — Each study is categorized (RCT, meta-analysis, cohort study, etc.) based on its design</li>
+                    <li><strong>Sample size recording</strong> — Participant counts are extracted and documented for transparency</li>
                 </ul>
 
                 <h3>Data Extraction</h3>
@@ -132,13 +137,13 @@
                                 <td><strong>2</strong></td>
                                 <td>Moderate Evidence</td>
                                 <td>Multiple RCTs with moderate sample sizes showing generally consistent results</td>
-                                <td>3+ RCTs, moderate sample sizes (n = 50&ndash;200), some meta-analytic support</td>
+                                <td>3+ RCTs, moderate sample sizes (n = 50–200), some meta-analytic support</td>
                             </tr>
                             <tr>
                                 <td><strong>3</strong></td>
                                 <td>Preliminary Evidence</td>
                                 <td>Limited RCTs available; evidence drawn primarily from smaller trials, observational studies, or mixed results</td>
-                                <td>1&ndash;2 RCTs, mostly small samples (n &lt; 50), observational data</td>
+                                <td>1–2 RCTs, mostly small samples (n &lt; 50), observational data</td>
                             </tr>
                             <tr>
                                 <td><strong>4</strong></td>
@@ -150,7 +155,7 @@
                     </table>
                 </div>
 
-                <p><strong>Important note:</strong> Evidence tiers reflect the state of <em>published research</em>, not the effectiveness of a supplement. A Tier 4 rating does not mean a supplement is ineffective &mdash; it means the current body of human clinical research is limited. Conversely, a Tier 1 rating does not guarantee a supplement will work for every individual.</p>
+                <p><strong>Important note:</strong> Evidence tiers reflect the state of <em>published research</em>, not the effectiveness of a supplement. A Tier 4 rating does not mean a supplement is ineffective — it means the current body of human clinical research is limited. Conversely, a Tier 1 rating does not guarantee a supplement will work for every individual.</p>
 
                 <p class="legal-plain"><em>In plain language: Our tier system tells you how much high-quality research exists for each supplement. More research = higher tier. It measures the strength of the evidence, not a recommendation.</em></p>
             </section>
@@ -160,11 +165,11 @@
                 <h2>4. Data Sources &amp; Citation Standards</h2>
                 <p>The SupplementDB citation library draws from the following primary sources:</p>
                 <ul>
-                    <li><strong>PubMed / MEDLINE</strong> &mdash; The U.S. National Library of Medicine's database of biomedical literature, containing 36+ million citations</li>
-                    <li><strong>PubMed Central (PMC)</strong> &mdash; Full-text archive of biomedical and life sciences journal literature</li>
-                    <li><strong>Cochrane Library</strong> &mdash; Systematic reviews recognized as the highest standard of evidence-based healthcare</li>
-                    <li><strong>Clinical trial registries</strong> &mdash; ClinicalTrials.gov and international equivalents for ongoing and completed trials</li>
-                    <li><strong>Peer-reviewed journals</strong> &mdash; Including The Lancet, BMJ, JAMA, Nature, Phytomedicine, Nutrients, Journal of Clinical Psychopharmacology, and field-specific publications</li>
+                    <li><strong>PubMed / MEDLINE</strong> — The U.S. National Library of Medicine's database of biomedical literature, containing 36+ million citations</li>
+                    <li><strong>PubMed Central (PMC)</strong> — Full-text archive of biomedical and life sciences journal literature</li>
+                    <li><strong>Cochrane Library</strong> — Systematic reviews recognized as the highest standard of evidence-based healthcare</li>
+                    <li><strong>Clinical trial registries</strong> — ClinicalTrials.gov and international equivalents for ongoing and completed trials</li>
+                    <li><strong>Peer-reviewed journals</strong> — Including The Lancet, BMJ, JAMA, Nature, Phytomedicine, Nutrients, Journal of Clinical Psychopharmacology, and field-specific publications</li>
                 </ul>
 
                 <p>We prioritize the following study types, in order of evidence strength:</p>
@@ -184,11 +189,11 @@
                 <h2>5. Editorial Standards</h2>
                 <p>All content on SupplementDB adheres to the following editorial principles:</p>
                 <ul>
-                    <li><strong>Evidence-first approach</strong> &mdash; No supplement is included or rated based on popularity, commercial interest, or anecdotal reports. Inclusion requires published research</li>
-                    <li><strong>Neutral reporting</strong> &mdash; We present findings as reported in the literature without advocacy for or against any supplement</li>
-                    <li><strong>Transparent sourcing</strong> &mdash; Every claim is traceable to its original citation via DOI and/or PMID links</li>
-                    <li><strong>Regular updates</strong> &mdash; The database is updated as new significant research is published, with update dates tracked per supplement</li>
-                    <li><strong>Conflict of interest disclosure</strong> &mdash; SupplementDB does not sell supplements, accept advertising from supplement manufacturers, or receive funding from the supplement industry</li>
+                    <li><strong>Evidence-first approach</strong> — No supplement is included or rated based on popularity, commercial interest, or anecdotal reports. Inclusion requires published research</li>
+                    <li><strong>Neutral reporting</strong> — We present findings as reported in the literature without advocacy for or against any supplement</li>
+                    <li><strong>Transparent sourcing</strong> — Every claim is traceable to its original citation via DOI and/or PMID links</li>
+                    <li><strong>Regular updates</strong> — The database is updated as new significant research is published, with update dates tracked per supplement</li>
+                    <li><strong>Conflict of interest disclosure</strong> — SupplementDB does not sell supplements, accept advertising from supplement manufacturers, or receive funding from the supplement industry</li>
                 </ul>
 
                 <p class="legal-plain"><em>In plain language: We don't sell anything, we don't accept industry money, and we only include supplements that have been studied in published research. Our goal is to be the most transparent and unbiased supplement reference available.</em></p>
@@ -214,12 +219,12 @@
                 <h2>7. Limitations &amp; Disclaimers</h2>
                 <p>While we strive for accuracy and comprehensiveness, important limitations apply:</p>
                 <ul>
-                    <li><strong>Not medical advice</strong> &mdash; SupplementDB is an informational resource, not a healthcare provider. Always consult a qualified healthcare professional before starting any supplement regimen. See our <a href="legal/disclaimer.html">full medical disclaimer</a></li>
-                    <li><strong>Research lag</strong> &mdash; There is an inherent delay between when research is published and when it is incorporated into the database</li>
-                    <li><strong>Publication bias</strong> &mdash; Published research may over-represent positive findings. We note this limitation where relevant</li>
-                    <li><strong>Individual variation</strong> &mdash; Research findings reflect population averages. Individual responses to supplements vary based on genetics, health status, medications, and other factors</li>
-                    <li><strong>Regulatory status</strong> &mdash; Dietary supplements are not FDA-approved for the treatment of any disease. Our evidence ratings reflect research quality, not regulatory approval</li>
-                    <li><strong>Coverage scope</strong> &mdash; Not all commercially available supplements are included. We prioritize those with meaningful published research</li>
+                    <li><strong>Not medical advice</strong> — SupplementDB is an informational resource, not a healthcare provider. Always consult a qualified healthcare professional before starting any supplement regimen. See our <a href="legal/disclaimer.html">full medical disclaimer</a></li>
+                    <li><strong>Research lag</strong> — There is an inherent delay between when research is published and when it is incorporated into the database</li>
+                    <li><strong>Publication bias</strong> — Published research may over-represent positive findings. We note this limitation where relevant</li>
+                    <li><strong>Individual variation</strong> — Research findings reflect population averages. Individual responses to supplements vary based on genetics, health status, medications, and other factors</li>
+                    <li><strong>Regulatory status</strong> — Dietary supplements are not FDA-approved for the treatment of any disease. Our evidence ratings reflect research quality, not regulatory approval</li>
+                    <li><strong>Coverage scope</strong> — Not all commercially available supplements are included. We prioritize those with meaningful published research</li>
                 </ul>
             </section>
 
@@ -253,11 +258,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+</body></html>

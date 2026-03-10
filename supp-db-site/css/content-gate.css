@@ -1,0 +1,222 @@
+/* ============================================================
+   content-gate.css — Content Gate Overlay Styles
+   SEO-preserving soft gate for guide pages.
+   Design system: --accent: #2d5a3d, --font-serif, --font-sans
+   ============================================================ */
+
+/* ── Gated Content ──────────────────────────────────────────── */
+.content-gated {
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s ease;
+}
+
+/* ── Gate Overlay Container ─────────────────────────────────── */
+.content-gate-overlay {
+  position: relative;
+  margin-top: -120px; /* Overlap with content for gradient effect */
+  z-index: 10;
+}
+
+/* ── Gradient Fade ──────────────────────────────────────────── */
+.content-gate-gradient {
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 247, 244, 0) 0%,
+    rgba(248, 247, 244, 0.7) 40%,
+    rgba(248, 247, 244, 1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Dark theme variant (for pages with dark backgrounds) */
+.dark-content .content-gate-gradient,
+[data-theme="dark"] .content-gate-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0) 0%,
+    rgba(26, 26, 26, 0.7) 40%,
+    rgba(26, 26, 26, 1) 100%
+  );
+}
+
+/* ── CTA Container ──────────────────────────────────────────── */
+.content-gate-cta {
+  background: #f8f7f4;
+  padding: 0 1.5rem 3rem;
+}
+
+.content-gate-cta-inner {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(45, 90, 61, 0.1);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 10px 30px -5px rgba(45, 90, 61, 0.08);
+}
+
+/* ── Icon ───────────────────────────────────────────────────── */
+.content-gate-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  background: linear-gradient(135deg, #2d5a3d 0%, #3d7a5d 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.content-gate-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+/* ── Description ────────────────────────────────────────────── */
+.content-gate-description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  color: #666;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+/* ── Primary CTA Button ─────────────────────────────────────── */
+.content-gate-btn-primary {
+  display: inline-block;
+  background: #2d5a3d;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.content-gate-btn-primary:hover {
+  background: #1a3a25;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(45, 90, 61, 0.3);
+}
+
+.content-gate-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ── Sign In Link ───────────────────────────────────────────── */
+.content-gate-signin {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: #888;
+  margin: 1rem 0 0;
+}
+
+.content-gate-link {
+  color: #2d5a3d;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 90, 61, 0.3);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+}
+
+.content-gate-link:hover {
+  text-decoration-color: #2d5a3d;
+}
+
+/* ── Trust Signal ───────────────────────────────────────────── */
+.content-gate-trust {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8125rem;
+  color: #aaa;
+  margin: 1.25rem 0 0;
+}
+
+.content-gate-trust i {
+  margin-right: 0.375rem;
+  color: #2d5a3d;
+  opacity: 0.6;
+}
+
+/* ── Mobile Responsive ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  .content-gate-overlay {
+    margin-top: -80px;
+  }
+
+  .content-gate-gradient {
+    height: 80px;
+  }
+
+  .content-gate-cta {
+    padding: 0 1rem 2rem;
+  }
+
+  .content-gate-cta-inner {
+    padding: 2rem 1.25rem;
+  }
+
+  .content-gate-title {
+    font-size: 1.25rem;
+  }
+
+  .content-gate-description {
+    font-size: 0.875rem;
+  }
+
+  .content-gate-btn-primary {
+    font-size: 0.9375rem;
+    padding: 0.625rem 1.5rem;
+  }
+}
+
+/* ── Animation ──────────────────────────────────────────────── */
+.content-gate-overlay {
+  animation: gate-fade-in 0.4s ease-out;
+}
+
+@keyframes gate-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Print: show full content ───────────────────────────────── */
+@media print {
+  .content-gated {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .content-gate-overlay {
+    display: none !important;
+  }
+}

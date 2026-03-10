@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SupplementDB</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="SupplementDB Admin Dashboard — SaaS metrics, user engagement, content quality, and business analytics.">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- Tailwind + Font Awesome + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Admin Dashboard Styles -->
+    <link rel="stylesheet" href="admin.css">
+
+    <style>
+        /* Admin page overrides */
+        body { font-family: 'DM Sans', sans-serif; margin: 0; padding: 0; background: #fafaf8; }
+        .legal-nav { background: #1a1a1a; position: sticky; top: 0; z-index: 50; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="legal-nav">
+        <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="flex items-center space-x-4">
+                <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                    <i class="fas fa-pills text-xl"></i>
+                    <span class="font-bold text-lg">SupplementDB</span>
+                </a>
+                <span class="text-gray-500 hidden sm:inline">|</span>
+                <span class="text-gray-300 text-sm font-medium hidden sm:inline">Admin Dashboard</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline-flex items-center">
+                    <i class="fas fa-arrow-left mr-1"></i> Back to Database
+                </a>
+                <button class="admin-sidebar-toggle sm:hidden text-gray-300 hover:text-white" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+                <div id="auth-buttons"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h2>Analytics</h2>
+                <p>Real-time metrics &amp; insights</p>
+            </div>
+
+            <div class="admin-nav-section">
+                <div class="admin-nav-label">Dashboard</div>
+                <button class="admin-nav-item active" data-section="overview">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Overview</span>
+                </button>
+            </div>
+
+            <div class="admin-nav-section">
+                <div class="admin-nav-label">Metrics</div>
+                <button class="admin-nav-item" data-section="engagement">
+                    <i class="fas fa-users"></i>
+                    <span>Engagement</span>
+                </button>
+                <button class="admin-nav-item" data-section="content">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Content Quality</span>
+                </button>
+                <button class="admin-nav-item" data-section="business">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Business &amp; Revenue</span>
+                </button>
+            </div>
+
+            <div class="admin-nav-section">
+                <div class="admin-nav-label">Monitoring</div>
+                <button class="admin-nav-item" data-section="activity">
+                    <i class="fas fa-stream"></i>
+                    <span>Activity Log</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Toolbar -->
+            <div class="admin-toolbar">
+                <div class="admin-range-picker">
+                    <button class="admin-range-btn" data-range="7d">7D</button>
+                    <button class="admin-range-btn active" data-range="30d">30D</button>
+                    <button class="admin-range-btn" data-range="90d">90D</button>
+                    <button class="admin-range-btn" data-range="365d">1Y</button>
+                </div>
+                <button id="refreshBtn" class="admin-refresh-btn" title="Refresh data">
+                    <i class="fas fa-sync-alt"></i>
+                    <span class="hidden sm:inline ml-1">Refresh</span>
+                </button>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Overview                                  -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-overview" class="admin-section active">
+                <h2 class="admin-section-title">Overview</h2>
+
+                <!-- Overview Cards Row 1 -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Total Users</div>
+                        <div class="admin-card-value admin-skeleton" id="card-total-users">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Page Views</div>
+                        <div class="admin-card-value admin-skeleton" id="card-total-views">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Searches</div>
+                        <div class="admin-card-value admin-skeleton" id="card-total-searches">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-search"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Subscribers</div>
+                        <div class="admin-card-value admin-skeleton" id="card-total-subscribers">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+
+                <!-- Overview Cards Row 2 — Active Users + Revenue -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">DAU</div>
+                        <div class="admin-card-value admin-skeleton" id="card-dau">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-user-clock"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">WAU</div>
+                        <div class="admin-card-value admin-skeleton" id="card-wau">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-calendar-week"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">MRR</div>
+                        <div class="admin-card-value admin-skeleton" id="card-mrr">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-dollar-sign"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Churn Rate</div>
+                        <div class="admin-card-value admin-skeleton" id="card-churn">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-user-minus"></i></div>
+                    </div>
+                </div>
+
+                <!-- Overview Lists — Top Supplements + Top Searches -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Top Supplements</h3>
+                        <div id="overview-top-supplements" class="p-4">
+                            <div class="admin-skeleton" style="height: 140px;"></div>
+                        </div>
+                    </div>
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Top Searches</h3>
+                        <div id="overview-top-searches" class="p-4">
+                            <div class="admin-skeleton" style="height: 140px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Engagement                                -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-engagement" class="admin-section">
+                <h2 class="admin-section-title">User Engagement</h2>
+
+                <!-- Session Duration Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Avg Session Duration</div>
+                        <div class="admin-card-value admin-skeleton" id="card-avg-session">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-clock"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Total Sessions</div>
+                        <div class="admin-card-value admin-skeleton" id="card-total-sessions-eng">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-layer-group"></i></div>
+                    </div>
+                </div>
+
+                <!-- Charts: Active Users + PV by Type -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card admin-chart-card-wide">
+                        <h3 class="admin-chart-title">Active Users &amp; Sessions</h3>
+                        <div class="admin-chart-container" style="height: 320px;">
+                            <canvas id="chart-active-users"></canvas>
+                        </div>
+                    </div>
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Page Views by Type</h3>
+                        <div class="admin-chart-container" style="height: 320px;">
+                            <canvas id="chart-pv-by-type"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts: Traffic Sources -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Traffic Sources</h3>
+                        <div class="admin-chart-container" style="height: 320px;">
+                            <canvas id="chart-traffic-sources"></canvas>
+                        </div>
+                    </div>
+                    <div class="admin-chart-card admin-chart-card-wide">
+                        <h3 class="admin-chart-title">Activity Heatmap <span class="text-xs font-normal text-gray-400 ml-1">(hour vs day)</span></h3>
+                        <div id="heatmap-container" class="p-4">
+                            <div class="admin-skeleton" style="height: 200px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Content Quality                           -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-content" class="admin-section">
+                <h2 class="admin-section-title">Content Quality</h2>
+
+                <!-- Gate Stats Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Gate Impressions</div>
+                        <div class="admin-card-value admin-skeleton" id="card-gate-impressions">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">CTA Clicks</div>
+                        <div class="admin-card-value admin-skeleton" id="card-gate-clicks">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Gate Sign-ups</div>
+                        <div class="admin-card-value admin-skeleton" id="card-gate-signups">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-user-plus"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Gate Conversion</div>
+                        <div class="admin-card-value admin-skeleton" id="card-gate-rate">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-percentage"></i></div>
+                    </div>
+                </div>
+
+                <!-- Charts: Top Supplements + Top Searches Table -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card admin-chart-card-wide">
+                        <h3 class="admin-chart-title">Top 20 Supplements by Views</h3>
+                        <div class="admin-chart-container" style="height: 500px;">
+                            <canvas id="chart-top-supplements"></canvas>
+                        </div>
+                    </div>
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Top Searches</h3>
+                        <div class="overflow-x-auto">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Query</th>
+                                        <th class="text-right">Count</th>
+                                        <th class="text-right">Avg Results</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-top-searches">
+                                    <tr>
+                                        <td colspan="3" class="text-center text-gray-400 py-8">
+                                            <div class="admin-skeleton" style="height: 160px;"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide Engagement Chart -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card" style="grid-column: 1 / -1;">
+                        <h3 class="admin-chart-title">Guide Engagement <span class="text-xs font-normal text-gray-400 ml-1">(views vs avg duration)</span></h3>
+                        <div class="admin-chart-container" style="height: 350px;">
+                            <canvas id="chart-guide-engagement"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Business & Revenue                        -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-business" class="admin-section">
+                <h2 class="admin-section-title">Business &amp; Revenue</h2>
+
+                <!-- Subscription Metric Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Active Subscribers</div>
+                        <div class="admin-card-value admin-skeleton" id="card-active-subs">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-user-check"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">MRR</div>
+                        <div class="admin-card-value admin-skeleton" id="card-mrr-biz">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">ARR</div>
+                        <div class="admin-card-value admin-skeleton" id="card-arr-biz">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-coins"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Churn Rate</div>
+                        <div class="admin-card-value admin-skeleton" id="card-churn-biz">&mdash;</div>
+                        <div class="admin-card-icon"><i class="fas fa-user-minus"></i></div>
+                    </div>
+                </div>
+
+                <!-- Secondary Metric Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Past Due</div>
+                        <div class="admin-card-value admin-skeleton" id="card-past-due">&mdash;</div>
+                        <div class="admin-card-icon" style="color: var(--admin-warning);"><i class="fas fa-exclamation-triangle"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Trialing</div>
+                        <div class="admin-card-value admin-skeleton" id="card-trialing">&mdash;</div>
+                        <div class="admin-card-icon" style="color: var(--admin-info);"><i class="fas fa-flask"></i></div>
+                    </div>
+                </div>
+
+                <!-- Charts: Subs by Plan + Subscription Growth -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Subscribers by Plan</h3>
+                        <div class="admin-chart-container" style="height: 320px;">
+                            <canvas id="chart-subs-by-plan"></canvas>
+                        </div>
+                    </div>
+                    <div class="admin-chart-card admin-chart-card-wide">
+                        <h3 class="admin-chart-title">Subscription Growth</h3>
+                        <div class="admin-chart-container" style="height: 320px;">
+                            <canvas id="chart-sub-growth"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conversion Funnel -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card" style="grid-column: 1 / -1;">
+                        <h3 class="admin-chart-title">Conversion Funnel <span class="text-xs font-normal text-gray-400 ml-1">(free &rarr; subscriber)</span></h3>
+                        <div id="funnel-container" class="p-4">
+                            <div class="admin-skeleton" style="height: 200px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Activity Log                              -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-activity" class="admin-section">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="admin-section-title" style="margin-bottom: 0;">Activity Log</h2>
+                    <button id="exportActivityBtn" class="admin-refresh-btn" title="Export to CSV">
+                        <i class="fas fa-download"></i>
+                        <span class="hidden sm:inline ml-1">Export CSV</span>
+                    </button>
+                </div>
+
+                <div class="admin-chart-card">
+                    <div class="admin-activity-header">
+                        <div class="flex items-center space-x-2">
+                            <span class="admin-live-dot"></span>
+                            <span class="text-sm font-medium text-gray-600">Real-time page views &amp; events</span>
+                        </div>
+                    </div>
+                    <div id="activity-list" class="admin-activity-list">
+                        <div class="admin-empty-state">
+                            <i class="fas fa-stream"></i>
+                            <h3>Loading Activity&hellip;</h3>
+                            <p>Page views and events will appear here in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+
+    <!-- Admin Dashboard Scripts -->
+    <script src="../js/admin-metrics.js"></script>
+    <script src="../js/analytics-enhanced.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

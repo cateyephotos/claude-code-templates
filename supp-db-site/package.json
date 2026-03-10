@@ -1,8 +1,27 @@
 {
+  "name": "supp-db-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test",
+    "test:auth": "npx playwright test tests/auth-flow.spec.js",
+    "test:rbac": "npx playwright test tests/rbac.spec.js",
+    "test:gate": "npx playwright test tests/content-gate.spec.js",
+    "test:dashboard": "npx playwright test tests/admin-dashboard.spec.js",
+    "convex:dev": "npx convex dev",
+    "convex:deploy": "npx convex deploy",
+    "inject-auth": "node scripts/inject-auth.js",
+    "generate:supplements": "node scripts/generate-supplement-pages.js",
+    "generate:guides": "node scripts/generate-guide-pages.js",
+    "generate:compare": "node scripts/generate-compare-pages.js",
+    "audit:fda": "node scripts/audit-fda-claims.js"
+  },
   "devDependencies": {
-    "playwright": "^1.55.0"
+    "playwright": "^1.55.0",
+    "convex": "^1.17.0"
   },
   "dependencies": {
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "cheerio": "^1.0.0"
   }
 }

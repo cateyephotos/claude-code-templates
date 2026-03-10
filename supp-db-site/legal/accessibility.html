@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessibility Statement | SupplementDB</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
 </head>
 <body class="legal-page">
@@ -51,9 +56,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -92,33 +97,33 @@
 
                 <h3>3.1 Navigation and Structure</h3>
                 <ul>
-                    <li><strong>Semantic HTML</strong> &mdash; We use proper heading hierarchy (h1&ndash;h6), landmark regions, and semantic elements to ensure screen readers can accurately convey page structure</li>
-                    <li><strong>Keyboard navigation</strong> &mdash; All interactive elements (links, buttons, search, filters, modals) are accessible via keyboard using Tab, Enter, and Escape keys</li>
-                    <li><strong>Skip navigation</strong> &mdash; Users can bypass repetitive content to access main page content directly</li>
-                    <li><strong>Consistent navigation</strong> &mdash; Navigation patterns are consistent across all pages</li>
+                    <li><strong>Semantic HTML</strong> — We use proper heading hierarchy (h1–h6), landmark regions, and semantic elements to ensure screen readers can accurately convey page structure</li>
+                    <li><strong>Keyboard navigation</strong> — All interactive elements (links, buttons, search, filters, modals) are accessible via keyboard using Tab, Enter, and Escape keys</li>
+                    <li><strong>Skip navigation</strong> — Users can bypass repetitive content to access main page content directly</li>
+                    <li><strong>Consistent navigation</strong> — Navigation patterns are consistent across all pages</li>
                 </ul>
 
                 <h3>3.2 Visual Design</h3>
                 <ul>
-                    <li><strong>Color contrast</strong> &mdash; Text and interactive elements meet WCAG 2.1 AA contrast ratio requirements (minimum 4.5:1 for normal text, 3:1 for large text)</li>
-                    <li><strong>Non-color indicators</strong> &mdash; Information is not conveyed by color alone; our evidence tier system uses text labels alongside color coding</li>
-                    <li><strong>Responsive design</strong> &mdash; The Website is fully responsive and can be zoomed up to 200% without loss of content or functionality</li>
-                    <li><strong>Readable typography</strong> &mdash; We use legible fonts (Source Serif 4, DM Sans) with adequate line spacing (1.5+) and font sizes</li>
+                    <li><strong>Color contrast</strong> — Text and interactive elements meet WCAG 2.1 AA contrast ratio requirements (minimum 4.5:1 for normal text, 3:1 for large text)</li>
+                    <li><strong>Non-color indicators</strong> — Information is not conveyed by color alone; our evidence tier system uses text labels alongside color coding</li>
+                    <li><strong>Responsive design</strong> — The Website is fully responsive and can be zoomed up to 200% without loss of content or functionality</li>
+                    <li><strong>Readable typography</strong> — We use legible fonts (Source Serif 4, DM Sans) with adequate line spacing (1.5+) and font sizes</li>
                 </ul>
 
                 <h3>3.3 Content Accessibility</h3>
                 <ul>
-                    <li><strong>Plain language annotations</strong> &mdash; Legal documents include plain-language summaries marked with distinctive styling for easy identification</li>
-                    <li><strong>Descriptive links</strong> &mdash; Link text describes the destination or action, avoiding generic phrases like "click here"</li>
-                    <li><strong>ARIA labels</strong> &mdash; Interactive components include ARIA attributes where native HTML semantics are insufficient</li>
-                    <li><strong>Focus indicators</strong> &mdash; Visible focus outlines are present on all interactive elements for keyboard users</li>
+                    <li><strong>Plain language annotations</strong> — Legal documents include plain-language summaries marked with distinctive styling for easy identification</li>
+                    <li><strong>Descriptive links</strong> — Link text describes the destination or action, avoiding generic phrases like "click here"</li>
+                    <li><strong>ARIA labels</strong> — Interactive components include ARIA attributes where native HTML semantics are insufficient</li>
+                    <li><strong>Focus indicators</strong> — Visible focus outlines are present on all interactive elements for keyboard users</li>
                 </ul>
 
                 <h3>3.4 Data Presentation</h3>
                 <ul>
-                    <li><strong>Structured data tables</strong> &mdash; Supplement data is presented in properly marked-up tables with headers and scope attributes</li>
-                    <li><strong>Alternative text</strong> &mdash; Icons include appropriate aria-hidden or aria-label attributes to ensure meaningful communication to screen reader users</li>
-                    <li><strong>Consistent formatting</strong> &mdash; Dosage information, evidence ratings, and safety data follow consistent patterns for predictable reading</li>
+                    <li><strong>Structured data tables</strong> — Supplement data is presented in properly marked-up tables with headers and scope attributes</li>
+                    <li><strong>Alternative text</strong> — Icons include appropriate aria-hidden or aria-label attributes to ensure meaningful communication to screen reader users</li>
+                    <li><strong>Consistent formatting</strong> — Dosage information, evidence ratings, and safety data follow consistent patterns for predictable reading</li>
                 </ul>
             </section>
 
@@ -127,10 +132,10 @@
                 <h2>4. Known Limitations</h2>
                 <p>While we strive for full compliance, we acknowledge the following current limitations:</p>
                 <ul>
-                    <li><strong>Third-party content</strong> &mdash; External links to PubMed and DOI-registered publications lead to websites outside our control; their accessibility levels may vary</li>
-                    <li><strong>Complex data visualizations</strong> &mdash; Some evidence tier visual indicators may not fully convey information to screen readers; text alternatives are provided alongside visual elements</li>
-                    <li><strong>Dynamic content</strong> &mdash; Some dynamically loaded content (search results, filter changes) may not always announce updates to screen readers immediately; we are working to improve ARIA live region implementation</li>
-                    <li><strong>PDF exports</strong> &mdash; If PDF export features are added in the future, initial versions may have limited accessibility until remediation is complete</li>
+                    <li><strong>Third-party content</strong> — External links to PubMed and DOI-registered publications lead to websites outside our control; their accessibility levels may vary</li>
+                    <li><strong>Complex data visualizations</strong> — Some evidence tier visual indicators may not fully convey information to screen readers; text alternatives are provided alongside visual elements</li>
+                    <li><strong>Dynamic content</strong> — Some dynamically loaded content (search results, filter changes) may not always announce updates to screen readers immediately; we are working to improve ARIA live region implementation</li>
+                    <li><strong>PDF exports</strong> — If PDF export features are added in the future, initial versions may have limited accessibility until remediation is complete</li>
                 </ul>
                 <p>We are actively working to address these limitations and improve accessibility across the entire Website.</p>
             </section>
@@ -140,11 +145,11 @@
                 <h2>5. Assistive Technology Compatibility</h2>
                 <p>SupplementDB has been designed to be compatible with the following assistive technologies:</p>
                 <ul>
-                    <li><strong>Screen readers</strong> &mdash; NVDA (Windows), VoiceOver (macOS/iOS), TalkBack (Android)</li>
-                    <li><strong>Voice recognition</strong> &mdash; Dragon NaturallySpeaking, Windows Speech Recognition</li>
-                    <li><strong>Screen magnification</strong> &mdash; Windows Magnifier, macOS Zoom, browser zoom (up to 200%)</li>
-                    <li><strong>Keyboard-only navigation</strong> &mdash; Full site functionality available without a mouse</li>
-                    <li><strong>High contrast modes</strong> &mdash; Compatible with Windows High Contrast mode and browser high-contrast extensions</li>
+                    <li><strong>Screen readers</strong> — NVDA (Windows), VoiceOver (macOS/iOS), TalkBack (Android)</li>
+                    <li><strong>Voice recognition</strong> — Dragon NaturallySpeaking, Windows Speech Recognition</li>
+                    <li><strong>Screen magnification</strong> — Windows Magnifier, macOS Zoom, browser zoom (up to 200%)</li>
+                    <li><strong>Keyboard-only navigation</strong> — Full site functionality available without a mouse</li>
+                    <li><strong>High contrast modes</strong> — Compatible with Windows High Contrast mode and browser high-contrast extensions</li>
                 </ul>
             </section>
 
@@ -200,10 +205,10 @@
                 <h2>9. Legal Compliance</h2>
                 <p>This Accessibility Statement has been prepared in reference to:</p>
                 <ul>
-                    <li><strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong> &mdash; W3C Recommendation</li>
-                    <li><strong>Americans with Disabilities Act (ADA)</strong> &mdash; Title III, Public Accommodations</li>
-                    <li><strong>Section 508</strong> &mdash; Rehabilitation Act of 1973, as amended</li>
-                    <li><strong>European Accessibility Act</strong> &mdash; Directive (EU) 2019/882</li>
+                    <li><strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong> — W3C Recommendation</li>
+                    <li><strong>Americans with Disabilities Act (ADA)</strong> — Title III, Public Accommodations</li>
+                    <li><strong>Section 508</strong> — Rehabilitation Act of 1973, as amended</li>
+                    <li><strong>European Accessibility Act</strong> — Directive (EU) 2019/882</li>
                 </ul>
             </section>
 
@@ -211,7 +216,7 @@
             <div class="legal-links-box">
                 <h3>Other Legal Documents</h3>
                 <ul>
-                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Health & Medical Disclaimer</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle mr-2"></i>Health &amp; Medical Disclaimer</a></li>
                     <li><a href="privacy.html"><i class="fas fa-shield-alt mr-2"></i>Privacy Policy</a></li>
                     <li><a href="terms.html"><i class="fas fa-file-contract mr-2"></i>Terms of Service</a></li>
                     <li><a href="cookies.html"><i class="fas fa-cookie-bite mr-2"></i>Cookie Policy</a></li>
@@ -224,11 +229,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>

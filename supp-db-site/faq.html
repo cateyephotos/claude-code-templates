@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequently Asked Questions | SupplementDB</title>
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="legal/legal-shared.css">
 
     <!-- FAQPage Schema.org Structured Data -->
@@ -181,9 +186,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -215,10 +220,10 @@
                 <h3>How does SupplementDB rate supplement evidence?</h3>
                 <p>We use a four-tier evidence rating system based on the quality, quantity, and consistency of available research:</p>
                 <ul>
-                    <li><strong>Tier 1 &mdash; Strong Evidence:</strong> Multiple large RCTs and meta-analyses with consistent findings</li>
-                    <li><strong>Tier 2 &mdash; Moderate Evidence:</strong> Multiple RCTs with moderate sample sizes</li>
-                    <li><strong>Tier 3 &mdash; Preliminary Evidence:</strong> Limited RCTs, mostly observational data or small trials</li>
-                    <li><strong>Tier 4 &mdash; Emerging Evidence:</strong> Primarily preclinical or very early-phase human studies</li>
+                    <li><strong>Tier 1 — Strong Evidence:</strong> Multiple large RCTs and meta-analyses with consistent findings</li>
+                    <li><strong>Tier 2 — Moderate Evidence:</strong> Multiple RCTs with moderate sample sizes</li>
+                    <li><strong>Tier 3 — Preliminary Evidence:</strong> Limited RCTs, mostly observational data or small trials</li>
+                    <li><strong>Tier 4 — Emerging Evidence:</strong> Primarily preclinical or very early-phase human studies</li>
                 </ul>
                 <p>Tiers reflect research quality and quantity, not supplement effectiveness. See our <a href="about.html#evidence-rating">Evidence Rating System</a> for full criteria.</p>
 
@@ -285,11 +290,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+</body></html>

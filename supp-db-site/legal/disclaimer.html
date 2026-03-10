@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health & Medical Disclaimer | SupplementDB</title>
+    <title>Health &amp; Medical Disclaimer | SupplementDB</title>
     <meta name="description" content="Important health and medical disclaimers for SupplementDB. This information is for educational purposes only and does not constitute medical advice.">
     <link rel="canonical" href="https://supplementdb.co/legal/disclaimer.html">
-    <meta property="og:title" content="Health & Medical Disclaimer | SupplementDB">
+    <meta property="og:title" content="Health &amp; Medical Disclaimer | SupplementDB">
     <meta property="og:description" content="Important health and medical disclaimers for SupplementDB. This information is for educational purposes only and does not constitute medical advice.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://supplementdb.co/legal/disclaimer.html">
@@ -15,7 +13,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Health & Medical Disclaimer | SupplementDB">
+    <meta name="twitter:title" content="Health &amp; Medical Disclaimer | SupplementDB">
     <meta name="twitter:description" content="Important health and medical disclaimers for SupplementDB. This information is for educational purposes only and does not constitute medical advice.">
     <meta name="twitter:image" content="https://supplementdb.co/assets/og-default.svg">
 
@@ -36,11 +34,18 @@
         });
     </script>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../legal/legal-shared.css">
 </head>
 <body class="legal-page">
@@ -51,9 +56,9 @@
                 <i class="fas fa-pills text-xl"></i>
                 <span class="font-bold text-lg">SupplementDB</span>
             </a>
-            <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+            <div class="flex items-center space-x-4"><a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
                 <i class="fas fa-arrow-left mr-1"></i> Back to Database
-            </a>
+            </a><div id="auth-buttons"></div></div>
         </div>
     </nav>
 
@@ -93,11 +98,11 @@
                 <p>Dietary supplements are not evaluated or approved by the U.S. Food and Drug Administration (FDA) for the treatment, cure, or prevention of any disease. The statements and information presented on this Website have not been evaluated by the FDA.</p>
                 <p>Supplement use involves inherent risks, including but not limited to:</p>
                 <ul>
-                    <li><strong>Drug interactions</strong> &mdash; Supplements can interact with prescription medications, over-the-counter drugs, and other supplements. Some interactions can be dangerous or life-threatening.</li>
-                    <li><strong>Pre-existing conditions</strong> &mdash; Certain supplements may be contraindicated for individuals with specific medical conditions, including but not limited to pregnancy, breastfeeding, liver disease, kidney disease, bleeding disorders, autoimmune conditions, and scheduled surgeries.</li>
-                    <li><strong>Allergic reactions</strong> &mdash; Supplements may contain allergens or cause adverse reactions in sensitive individuals.</li>
-                    <li><strong>Dosage risks</strong> &mdash; Exceeding recommended dosages can cause toxicity and serious adverse effects. Dosage information presented on this Website represents ranges reported in research literature and may not be appropriate for your individual circumstances.</li>
-                    <li><strong>Quality variability</strong> &mdash; Supplement manufacturing quality varies significantly between brands. Third-party testing certifications (USP, NSF, ConsumerLab) are recommended.</li>
+                    <li><strong>Drug interactions</strong> — Supplements can interact with prescription medications, over-the-counter drugs, and other supplements. Some interactions can be dangerous or life-threatening.</li>
+                    <li><strong>Pre-existing conditions</strong> — Certain supplements may be contraindicated for individuals with specific medical conditions, including but not limited to pregnancy, breastfeeding, liver disease, kidney disease, bleeding disorders, autoimmune conditions, and scheduled surgeries.</li>
+                    <li><strong>Allergic reactions</strong> — Supplements may contain allergens or cause adverse reactions in sensitive individuals.</li>
+                    <li><strong>Dosage risks</strong> — Exceeding recommended dosages can cause toxicity and serious adverse effects. Dosage information presented on this Website represents ranges reported in research literature and may not be appropriate for your individual circumstances.</li>
+                    <li><strong>Quality variability</strong> — Supplement manufacturing quality varies significantly between brands. Third-party testing certifications (USP, NSF, ConsumerLab) are recommended.</li>
                 </ul>
                 <p class="legal-plain"><em>In plain language: Supplements can interact with medications and health conditions in ways that may be harmful. The dosages we report are from research studies and may not be right for you personally. Always verify with your healthcare provider before taking any supplement.</em></p>
             </section>
@@ -184,11 +189,18 @@
     <!-- Footer -->
     <footer class="legal-footer">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
+            <p>© 2025–2026 SupplementDB. All rights reserved.</p>
             <p class="mt-2 text-sm text-gray-400">
                 <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
             </p>
         </div>
     </footer>
-</body>
-</html>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>
