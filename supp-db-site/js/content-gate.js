@@ -46,14 +46,35 @@
     checkAndApplyGate();
   }
 
-  function checkAndApplyGate() {
+  async function checkAndApplyGate() {
     const rbac = window.SupplementDBRBAC;
 
+    // Primary check: RBAC (reads role from Clerk publicMetadata)
     if (rbac?.canAccessGuide()) {
       removeGate();
-    } else {
-      applyGate();
+      return;
     }
+
+    // Convex fallback for race condition:
+    // Stripe webhook may have updated Convex DB subscription status
+    // but Clerk JWT hasn't refreshed yet, so RBAC still reads "free".
+    // Query Convex directly to check subscription status.
+    const auth = window.SupplementDBAuth;
+    if (auth?.isSignedIn && window.SupplementDB?.query) {
+      try {
+        const hasAccess = await window.SupplementDB.query(
+          "subscriptions:hasActiveSubscription"
+        );
+        if (hasAccess) {
+          removeGate();
+          return;
+        }
+      } catch {
+        // Convex query failed — fall through to apply gate
+      }
+    }
+
+    applyGate();
   }
 
   function applyGate() {
@@ -109,52 +130,83 @@
   // ── Gate Overlay HTML ──────────────────────────────────────────
   function createGateOverlay() {
     const guideSlug = getGuideSlug();
+    const isSignedIn = window.SupplementDBAuth?.isSignedIn;
     const overlay = document.createElement("div");
     overlay.id = GATE_ID;
     overlay.className = "content-gate-overlay";
 
-    overlay.innerHTML = `
-      <div class="content-gate-gradient"></div>
-      <div class="content-gate-cta">
-        <div class="content-gate-cta-inner">
-          <div class="content-gate-icon">
-            <i class="fas fa-lock"></i>
+    if (isSignedIn) {
+      // Signed-in free user — show upgrade CTA
+      overlay.innerHTML = `
+        <div class="content-gate-gradient"></div>
+        <div class="content-gate-cta">
+          <div class="content-gate-cta-inner">
+            <div class="content-gate-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3 class="content-gate-title">Upgrade to Pro</h3>
+            <p class="content-gate-description">
+              Get full access to all 8 evidence guides with dosage protocols,
+              mechanism analysis, interaction warnings, and clinical citations.
+            </p>
+            <a href="/pricing.html" id="gate-cta-upgrade" class="content-gate-btn-primary" style="text-decoration:none; display:inline-block; text-align:center;">
+              View Plans &amp; Pricing
+            </a>
+            <p class="content-gate-trust">
+              <i class="fas fa-shield-halved"></i>
+              Cancel anytime &middot; Instant access
+            </p>
           </div>
-          <h3 class="content-gate-title">Unlock Full Evidence Guide</h3>
-          <p class="content-gate-description">
-            Get complete access to dosage protocols, mechanism analysis,
-            interaction warnings, and all clinical citations.
-          </p>
-          <button id="gate-cta-signup" class="content-gate-btn-primary">
-            Start Free Account
-          </button>
-          <p class="content-gate-signin">
-            Already have an account?
-            <button id="gate-cta-signin" class="content-gate-link">Sign in</button>
-          </p>
-          <p class="content-gate-trust">
-            <i class="fas fa-shield-halved"></i>
-            Trusted by researchers and practitioners
-          </p>
         </div>
-      </div>
-    `;
+      `;
 
-    // Wire up CTA buttons
-    overlay.querySelector("#gate-cta-signup")?.addEventListener("click", () => {
-      recordGateEvent("cta_click");
-      if (window.SupplementDBAuth?.openSignUp) {
-        recordGateEvent("sign_up_started");
-        window.SupplementDBAuth.openSignUp();
-      }
-    });
+      overlay.querySelector("#gate-cta-upgrade")?.addEventListener("click", () => {
+        recordGateEvent("upgrade_click");
+      });
+    } else {
+      // Anonymous user — show sign-up CTA
+      overlay.innerHTML = `
+        <div class="content-gate-gradient"></div>
+        <div class="content-gate-cta">
+          <div class="content-gate-cta-inner">
+            <div class="content-gate-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="content-gate-title">Unlock Full Evidence Guide</h3>
+            <p class="content-gate-description">
+              Get complete access to dosage protocols, mechanism analysis,
+              interaction warnings, and all clinical citations.
+            </p>
+            <button id="gate-cta-signup" class="content-gate-btn-primary">
+              Start Free Account
+            </button>
+            <p class="content-gate-signin">
+              Already have an account?
+              <button id="gate-cta-signin" class="content-gate-link">Sign in</button>
+            </p>
+            <p class="content-gate-trust">
+              <i class="fas fa-shield-halved"></i>
+              Trusted by researchers and practitioners
+            </p>
+          </div>
+        </div>
+      `;
 
-    overlay.querySelector("#gate-cta-signin")?.addEventListener("click", () => {
-      recordGateEvent("cta_click");
-      if (window.SupplementDBAuth?.openSignIn) {
-        window.SupplementDBAuth.openSignIn();
-      }
-    });
+      overlay.querySelector("#gate-cta-signup")?.addEventListener("click", () => {
+        recordGateEvent("cta_click");
+        if (window.SupplementDBAuth?.openSignUp) {
+          recordGateEvent("sign_up_started");
+          window.SupplementDBAuth.openSignUp();
+        }
+      });
+
+      overlay.querySelector("#gate-cta-signin")?.addEventListener("click", () => {
+        recordGateEvent("cta_click");
+        if (window.SupplementDBAuth?.openSignIn) {
+          window.SupplementDBAuth.openSignIn();
+        }
+      });
+    }
 
     return overlay;
   }
@@ -216,6 +268,11 @@
 
   document.addEventListener("auth:signed-out", () => {
     applyGate();
+  });
+
+  // Listen for role changes (e.g., after successful Stripe checkout)
+  document.addEventListener("auth:role-changed", () => {
+    setTimeout(checkAndApplyGate, 300);
   });
 
   // ── Initialize ─────────────────────────────────────────────────

@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pro! | SupplementDB</title>
+    <meta name="description" content="Your SupplementDB Pro subscription is now active. Access all 8 evidence-based supplement guides.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --indigo: #4f46e5;
+            --indigo-light: #6366f1;
+            --border: rgba(99, 102, 241, 0.12);
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --card-bg: rgba(22, 27, 34, 0.7);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .success-nav {
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .success-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .success-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Animated checkmark */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .success-icon.loading {
+            background: rgba(99, 102, 241, 0.15);
+            color: #6366f1;
+        }
+
+        .success-icon.complete {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            animation: successPop 0.4s ease-out;
+        }
+
+        .success-icon.error {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-title {
+            font-size: 1.75rem;
+            color: var(--text-bright);
+            margin: 0 0 0.75rem;
+        }
+
+        .success-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0 0 2rem;
+            line-height: 1.6;
+        }
+
+        .success-btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .success-btn.primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            color: white;
+        }
+
+        .success-btn.primary:hover {
+            background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+
+        .success-btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            margin-left: 0.75rem;
+        }
+
+        .success-btn.secondary:hover {
+            background: rgba(99, 102, 241, 0.05);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .success-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-top-color: #6366f1;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-countdown {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+        }
+
+        .success-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .success-card {
+                padding: 2rem 1.5rem;
+            }
+            .success-title {
+                font-size: 1.5rem;
+            }
+            .success-actions {
+                flex-direction: column;
+            }
+            .success-btn.secondary {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="success-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+            <a href="index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-pills text-xl"></i>
+                <span class="font-bold text-lg">SupplementDB</span>
+            </a>
+            <div id="auth-buttons"></div>
+        </div>
+    </nav>
+
+    <!-- Success Content -->
+    <div class="success-container">
+        <div class="success-card">
+            <!-- Loading state (default) -->
+            <div id="state-loading">
+                <div class="success-icon loading">
+                    <div class="success-spinner"></div>
+                </div>
+                <h1 class="success-title">Setting Up Your Subscription</h1>
+                <p class="success-description">
+                    We're confirming your payment and activating your Pro access.
+                    This usually takes just a few seconds.
+                </p>
+            </div>
+
+            <!-- Success state (shown after subscription confirmed) -->
+            <div id="state-success" style="display: none;">
+                <div class="success-icon complete">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h1 class="success-title">Welcome to Pro!</h1>
+                <p class="success-description">
+                    Your subscription is active. You now have full access to all 8 evidence
+                    guides with dosage protocols, mechanism analysis, and clinical citations.
+                </p>
+                <div class="success-actions">
+                    <a href="guides/sleep.html" class="success-btn primary">
+                        <i class="fas fa-book-open" style="margin-right: 0.5rem;"></i>
+                        Browse Evidence Guides
+                    </a>
+                    <a href="index.html" class="success-btn secondary">
+                        Back to Database
+                    </a>
+                </div>
+                <p class="success-countdown" id="redirect-countdown"></p>
+            </div>
+
+            <!-- Timeout state (shown if polling times out) -->
+            <div id="state-timeout" style="display: none;">
+                <div class="success-icon error">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h1 class="success-title">Almost There</h1>
+                <p class="success-description">
+                    Your payment was received, but it's taking a moment to process.
+                    Your subscription should be active within a few minutes.
+                </p>
+                <div class="success-actions">
+                    <button class="success-btn primary" onclick="window.location.reload()">
+                        <i class="fas fa-rotate" style="margin-right: 0.5rem;"></i>
+                        Refresh Page
+                    </button>
+                    <a href="index.html" class="success-btn secondary">
+                        Back to Database
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error state (shown if no session ID or not signed in) -->
+            <div id="state-error" style="display: none;">
+                <div class="success-icon error">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h1 class="success-title">Something Went Wrong</h1>
+                <p class="success-description" id="error-message">
+                    We couldn't verify your subscription. Please try again or contact support.
+                </p>
+                <div class="success-actions">
+                    <a href="pricing.html" class="success-btn primary">
+                        Back to Pricing
+                    </a>
+                    <a href="index.html" class="success-btn secondary">
+                        Back to Database
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth & Convex scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+
+    <script>
+    /**
+     * Success page polling logic.
+     *
+     * After Stripe Checkout completes, the user is redirected here with
+     * ?session_id=cs_xxx. We poll Convex for subscription status.
+     *
+     * Polling: every 2s for up to 15s (7 attempts).
+     * On success: show confirmation + auto-redirect to guides after 5s.
+     * On timeout: show "almost there" with refresh button.
+     */
+    (function () {
+      "use strict";
+
+      var POLL_INTERVAL = 2000;   // 2 seconds
+      var MAX_POLL_TIME = 15000;  // 15 seconds
+      var REDIRECT_DELAY = 5;     // 5 seconds countdown
+
+      var stateLoading = document.getElementById("state-loading");
+      var stateSuccess = document.getElementById("state-success");
+      var stateTimeout = document.getElementById("state-timeout");
+      var stateError = document.getElementById("state-error");
+      var errorMessage = document.getElementById("error-message");
+      var countdownEl = document.getElementById("redirect-countdown");
+
+      function showState(state) {
+        stateLoading.style.display = "none";
+        stateSuccess.style.display = "none";
+        stateTimeout.style.display = "none";
+        stateError.style.display = "none";
+        state.style.display = "block";
+      }
+
+      function showError(msg) {
+        if (errorMessage) errorMessage.textContent = msg;
+        showState(stateError);
+      }
+
+      // Get session_id from URL (not used for polling, but validates checkout happened)
+      var params = new URLSearchParams(window.location.search);
+      var sessionId = params.get("session_id");
+
+      if (!sessionId) {
+        showError("No checkout session found. Please complete checkout from the pricing page.");
+        return;
+      }
+
+      // Track successful checkout redirect
+      try {
+        if (typeof posthog !== "undefined") {
+          posthog.capture("checkout_success_page_loaded", {
+            session_id: sessionId,
+          });
+        }
+      } catch (e) {
+        // Silent
+      }
+
+      // Wait for auth to load before polling
+      function startPolling() {
+        var auth = window.SupplementDBAuth;
+        if (!auth || !auth.isLoaded) {
+          document.addEventListener("auth:loaded", function () {
+            beginPoll();
+          }, { once: true });
+
+          // Fallback: start polling anyway after 3s
+          setTimeout(function () {
+            beginPoll();
+          }, 3000);
+          return;
+        }
+        beginPoll();
+      }
+
+      var pollStartTime = null;
+      var pollTimer = null;
+
+      function beginPoll() {
+        var auth = window.SupplementDBAuth;
+        if (!auth || !auth.isSignedIn) {
+          showError("Please sign in to verify your subscription.");
+          return;
+        }
+
+        pollStartTime = Date.now();
+        poll();
+      }
+
+      async function poll() {
+        var elapsed = Date.now() - pollStartTime;
+
+        if (elapsed >= MAX_POLL_TIME) {
+          showState(stateTimeout);
+          try {
+            if (typeof posthog !== "undefined") {
+              posthog.capture("checkout_poll_timeout", { session_id: sessionId });
+            }
+          } catch (e) { /* silent */ }
+          return;
+        }
+
+        try {
+          if (!window.SupplementDB || !window.SupplementDB.query) {
+            // Convex not ready yet, retry
+            pollTimer = setTimeout(poll, POLL_INTERVAL);
+            return;
+          }
+
+          var subscription = await window.SupplementDB.query(
+            "subscriptions:getMySubscription"
+          );
+
+          if (
+            subscription &&
+            (subscription.status === "active" || subscription.status === "trialing")
+          ) {
+            // Subscription confirmed
+            onSubscriptionActive(subscription);
+            return;
+          }
+        } catch (err) {
+          console.warn("Poll query error:", err);
+        }
+
+        // Continue polling
+        pollTimer = setTimeout(poll, POLL_INTERVAL);
+      }
+
+      function onSubscriptionActive(subscription) {
+        showState(stateSuccess);
+
+        // Fire role-changed event so other tabs/scripts can react
+        document.dispatchEvent(new CustomEvent("auth:role-changed"));
+
+        // Track
+        try {
+          if (typeof posthog !== "undefined") {
+            posthog.capture("checkout_subscription_confirmed", {
+              plan: subscription.plan,
+              session_id: sessionId,
+            });
+          }
+        } catch (e) { /* silent */ }
+
+        // Auto-redirect countdown
+        var remaining = REDIRECT_DELAY;
+        function updateCountdown() {
+          if (countdownEl) {
+            if (remaining > 0) {
+              countdownEl.textContent = "Redirecting to guides in " + remaining + "s…";
+              remaining--;
+              setTimeout(updateCountdown, 1000);
+            } else {
+              window.location.href = "guides/sleep.html";
+            }
+          }
+        }
+        updateCountdown();
+      }
+
+      // Initialize
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startPolling);
+      } else {
+        startPolling();
+      }
+    })();
+    </script>
+</body>
+</html>

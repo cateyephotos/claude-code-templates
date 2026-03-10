@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | SupplementDB</title>
+    <meta name="description" content="Unlock full access to 8 evidence-based supplement guides with detailed dosage protocols, mechanism analysis, and clinical citations. Plans start at $0/month.">
+    <link rel="canonical" href="https://supplementdb.co/pricing.html">
+    <meta property="og:title" content="Pricing | SupplementDB">
+    <meta property="og:description" content="Unlock full access to 8 evidence-based supplement guides with detailed dosage protocols, mechanism analysis, and clinical citations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supplementdb.co/pricing.html">
+    <meta property="og:image" content="https://supplementdb.co/assets/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="SupplementDB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pricing | SupplementDB">
+    <meta name="twitter:description" content="Unlock full access to 8 evidence-based supplement guides with detailed dosage protocols, mechanism analysis, and clinical citations.">
+    <meta name="twitter:image" content="https://supplementdb.co/assets/og-default.svg">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/pricing.css">
+
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --indigo: #4f46e5;
+            --indigo-light: #6366f1;
+            --indigo-glow: rgba(99, 102, 241, 0.15);
+            --slate: #8b949e;
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: rgba(99, 102, 241, 0.12);
+            --card-bg: rgba(22, 27, 34, 0.7);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .pricing-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="pricing-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+            <a href="index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-pills text-xl"></i>
+                <span class="font-bold text-lg">SupplementDB</span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                    <i class="fas fa-arrow-left mr-1"></i> Back to Database
+                </a>
+                <div id="auth-buttons"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cancelled subscription banner (shown conditionally by pricing.js) -->
+    <div class="pricing-cancelled-banner" id="cancelled-banner">
+        <i class="fas fa-info-circle"></i>
+        Your subscription is set to cancel at the end of your billing period.
+        You still have access until then.
+    </div>
+
+    <!-- Hero -->
+    <section class="pricing-hero">
+        <h1>Choose Your Plan</h1>
+        <p class="subtitle">
+            Get full access to evidence-based supplement guides with dosage protocols,
+            mechanism analysis, interaction warnings, and clinical citations.
+        </p>
+    </section>
+
+    <!-- Trust Signals -->
+    <div class="pricing-trust">
+        <div class="pricing-trust-item">
+            <i class="fas fa-shield-halved"></i>
+            <span>Cancel anytime</span>
+        </div>
+        <div class="pricing-trust-item">
+            <i class="fas fa-bolt"></i>
+            <span>Instant access</span>
+        </div>
+        <div class="pricing-trust-item">
+            <i class="fas fa-lock"></i>
+            <span>Secure payment via Stripe</span>
+        </div>
+    </div>
+
+    <!-- Plan Cards -->
+    <section class="pricing-cards">
+
+        <!-- FREE Plan -->
+        <div class="plan-card" data-plan="free">
+            <p class="plan-name">Free</p>
+            <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount">0</span>
+                <span class="period">/mo</span>
+            </div>
+            <p class="plan-price-note">Free forever</p>
+            <hr class="plan-divider">
+            <ul class="plan-features">
+                <li>93 supplement monograph pages</li>
+                <li>Basic supplement search</li>
+                <li>10 supplement comparisons</li>
+                <li>Evidence tier indicators</li>
+                <li class="disabled">Full evidence guide access</li>
+                <li class="disabled">Dosage protocols</li>
+                <li class="disabled">Clinical citations</li>
+                <li class="disabled">Priority research updates</li>
+            </ul>
+            <button class="plan-cta outline" id="cta-free" data-plan="free">
+                Get Started Free
+            </button>
+        </div>
+
+        <!-- PRO MONTHLY Plan (Featured) -->
+        <div class="plan-card featured" data-plan="monthly">
+            <span class="plan-badge">Most Popular</span>
+            <p class="plan-name">Pro Monthly</p>
+            <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount">9</span>
+                <span class="period">.99/mo</span>
+            </div>
+            <p class="plan-price-note">Billed monthly</p>
+            <hr class="plan-divider">
+            <ul class="plan-features">
+                <li>Everything in Free, plus:</li>
+                <li>8 full evidence guides</li>
+                <li>Dosage protocols &amp; timing</li>
+                <li>Mechanism of action analysis</li>
+                <li>Interaction warnings</li>
+                <li>All clinical citations</li>
+                <li>Priority research updates</li>
+                <li>Email support</li>
+            </ul>
+            <button class="plan-cta primary" id="cta-monthly" data-plan="monthly">
+                Subscribe Monthly
+            </button>
+        </div>
+
+        <!-- PRO ANNUAL Plan -->
+        <div class="plan-card" data-plan="annual">
+            <p class="plan-name">Pro Annual</p>
+            <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount">79</span>
+                <span class="period">.99/yr</span>
+            </div>
+            <p class="plan-price-note">
+                $6.67/mo &middot; <span class="savings-badge">Save 33%</span>
+            </p>
+            <hr class="plan-divider">
+            <ul class="plan-features">
+                <li>Everything in Pro Monthly, plus:</li>
+                <li>8 full evidence guides</li>
+                <li>Dosage protocols &amp; timing</li>
+                <li>Mechanism of action analysis</li>
+                <li>Interaction warnings</li>
+                <li>All clinical citations</li>
+                <li>Priority research updates</li>
+                <li>Priority email support</li>
+            </ul>
+            <button class="plan-cta dark" id="cta-annual" data-plan="annual">
+                Subscribe Annually
+            </button>
+        </div>
+
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="pricing-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>What's included in the Pro plan?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Pro gives you full access to all 8 evidence guides covering sleep, cognition,
+                    stress, joints, gut health, energy, immunity, and heart health. Each guide includes
+                    detailed dosage protocols, mechanism of action breakdowns, supplement interaction
+                    warnings, and links to all clinical citations used in our analysis.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Can I cancel anytime?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Yes, you can cancel your subscription at any time from the Manage Subscription page.
+                    When you cancel, you'll retain access until the end of your current billing period.
+                    No questions asked, no hidden fees.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>Is there a refund policy?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    We offer a full refund within the first 7 days of your subscription if you're not
+                    satisfied. After 7 days, your subscription will remain active until the end of
+                    the current billing period when cancelled. Contact us at support@supplementdb.co
+                    for refund requests.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>How is the database different from the guides?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    The free database contains 93 supplement monograph pages with evidence tiers,
+                    basic dosage ranges, and safety notes. The Pro evidence guides provide deep-dive
+                    analysis organized by health goal — covering multiple supplements per guide with
+                    head-to-head comparisons, detailed dosing protocols, timing recommendations,
+                    mechanism of action diagrams, and comprehensive clinical citation lists.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                <span>What payment methods do you accept?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    We accept all major credit and debit cards (Visa, Mastercard, American Express,
+                    Discover) through our secure payment processor Stripe. We also accept Apple Pay,
+                    Google Pay, and Link by Stripe where supported by your browser.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast notification (shown by pricing.js on errors) -->
+    <div class="pricing-toast" id="pricing-toast"></div>
+
+    <!-- Auth & Convex scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+    <!-- Pricing page logic -->
+    <script src="js/pricing.js"></script>
+
+    <!-- FAQ accordion -->
+    <script>
+    (function() {
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(i) {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle clicked
+                if (!isOpen) {
+                    item.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

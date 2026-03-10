@@ -1,0 +1,432 @@
+/* ============================================================
+   pricing.css — Pricing Page Styles
+   Design system: dark theme (#0d1117), DM Serif Display + DM Sans
+   Accent: #4f46e5 (indigo), Green: #2d5a3d
+   ============================================================ */
+
+/* ── Page Layout ───────────────────────────────────────────── */
+.pricing-hero {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pricing-hero h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.75rem;
+  color: #f0f6fc;
+  margin: 0 0 1rem;
+  line-height: 1.15;
+}
+
+.pricing-hero .subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.125rem;
+  color: #8b949e;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Plan Cards Container ──────────────────────────────────── */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  align-items: start;
+}
+
+/* ── Individual Plan Card ──────────────────────────────────── */
+.plan-card {
+  background: rgba(22, 27, 34, 0.7);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.plan-card.featured {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+}
+
+/* ── Popular Badge ─────────────────────────────────────────── */
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ── Plan Name ─────────────────────────────────────────────── */
+.plan-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem;
+}
+
+/* ── Price ──────────────────────────────────────────────────── */
+.plan-price {
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.plan-price .currency {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.plan-price .amount {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #f0f6fc;
+  line-height: 1;
+}
+
+.plan-price .period {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: #8b949e;
+}
+
+.plan-price-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8125rem;
+  color: #8b949e;
+  margin: 0 0 1.5rem;
+  min-height: 1.25rem;
+}
+
+/* ── Savings Badge ─────────────────────────────────────────── */
+.savings-badge {
+  display: inline-block;
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+/* ── Divider ───────────────────────────────────────────────── */
+.plan-divider {
+  border: none;
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+  margin: 1.5rem 0;
+}
+
+/* ── Features List ─────────────────────────────────────────── */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.plan-features li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  color: #c9d1d9;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.plan-features li::before {
+  content: '✓';
+  color: #4ade80;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.plan-features li.disabled {
+  color: #484f58;
+}
+
+.plan-features li.disabled::before {
+  content: '—';
+  color: #484f58;
+}
+
+/* ── CTA Buttons ───────────────────────────────────────────── */
+.plan-cta {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.plan-cta.outline {
+  background: transparent;
+  color: #c9d1d9;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.plan-cta.outline:hover {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.plan-cta.primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: white;
+  border: 1px solid transparent;
+}
+
+.plan-cta.primary:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.plan-cta.dark {
+  background: #2d5a3d;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.plan-cta.dark:hover {
+  background: #1a3a25;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(45, 90, 61, 0.4);
+}
+
+.plan-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.plan-cta .spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Current Plan State ────────────────────────────────────── */
+.plan-cta.current {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  cursor: default;
+}
+
+/* ── FAQ Section ───────────────────────────────────────────── */
+.pricing-faq {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.pricing-faq h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+  color: #f0f6fc;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #c9d1d9;
+}
+
+.faq-question i {
+  color: #8b949e;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 0 1.25rem;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-answer p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  color: #8b949e;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ── Trust Row ─────────────────────────────────────────────── */
+.pricing-trust {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pricing-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: #8b949e;
+}
+
+.pricing-trust-item i {
+  color: #4ade80;
+}
+
+/* ── Toast Notification ────────────────────────────────────── */
+.pricing-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: #e11d48;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  text-align: center;
+}
+
+.pricing-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Cancelled Banner ──────────────────────────────────────── */
+.pricing-cancelled-banner {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  color: #fbbf24;
+  display: none;
+}
+
+.pricing-cancelled-banner.show {
+  display: block;
+}
+
+/* ── Mobile Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .plan-card.featured {
+    order: -1; /* Featured card first on mobile */
+  }
+
+  .pricing-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-hero {
+    padding: 3rem 1rem 1.5rem;
+  }
+
+  .pricing-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .plan-price .amount {
+    font-size: 2.75rem;
+  }
+
+  .pricing-trust {
+    gap: 1rem;
+  }
+
+  .pricing-trust-item {
+    font-size: 0.8125rem;
+  }
+}

@@ -133,6 +133,29 @@ export const reactivateSubscription = mutation({
   },
 });
 
+/**
+ * Check if the current user has an active subscription.
+ * Returns a simple boolean — no auth guard (returns false for anonymous).
+ *
+ * Used as a fallback by content-gate.js to solve the race condition
+ * where Stripe webhook has updated Convex but Clerk JWT hasn't refreshed yet.
+ */
+export const hasActiveSubscription = query({
+  args: {},
+  handler: async (ctx) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) return false;
+
+    const sub = await ctx.db
+      .query("subscriptions")
+      .withIndex("by_userId", (q) => q.eq("userId", identity.subject))
+      .first();
+
+    if (!sub) return false;
+    return sub.status === "active" || sub.status === "trialing";
+  },
+});
+
 // ============================================================
 // Admin-only subscription queries
 // ============================================================

@@ -1,4 +1,4 @@
-import { mutation, query } from "./_generated/server";
+import { mutation, query, internalMutation } from "./_generated/server";
 import { v } from "convex/values";
 import { requireAdmin, getAuthUser } from "./auth";
 
@@ -41,6 +41,37 @@ export const upsertUser = mutation({
       createdAt: now,
       lastLoginAt: now,
     });
+  },
+});
+
+/**
+ * Update a user's role — internal only (called from webhooks).
+ * Does not require admin auth — used by Stripe webhook handler.
+ */
+export const updateRoleInternal = internalMutation({
+  args: {
+    clerkId: v.string(),
+    newRole: v.union(
+      v.literal("admin"),
+      v.literal("subscriber"),
+      v.literal("free")
+    ),
+  },
+  handler: async (ctx, args) => {
+    const user = await ctx.db
+      .query("users")
+      .withIndex("by_clerkId", (q) => q.eq("clerkId", args.clerkId))
+      .first();
+
+    if (!user) {
+      console.error(`updateRoleInternal: user not found for clerkId ${args.clerkId}`);
+      return;
+    }
+
+    await ctx.db.patch(user._id, { role: args.newRole });
+    console.log(
+      `Updated role for user ${args.clerkId}: ${user.role} → ${args.newRole}`
+    );
   },
 });
 
