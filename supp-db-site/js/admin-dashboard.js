@@ -488,6 +488,46 @@
     if (funnel) {
       renderConversionFunnel(funnel);
     }
+
+    // ── Newsletter Metrics ──────────────────────────────────
+    const nlStats = await M.fetchNewsletterStats();
+    if (nlStats) {
+      setCardValue("card-nl-total", M.formatNumber(nlStats.total));
+      setCardValue("card-nl-confirmed", M.formatNumber(nlStats.confirmed));
+      setCardValue("card-nl-pending", M.formatNumber(nlStats.pending));
+      setCardValue("card-nl-unsubscribed", M.formatNumber(nlStats.unsubscribed));
+      setCardValue("card-nl-last7", M.formatNumber(nlStats.last7Days));
+      setCardValue("card-nl-last30", M.formatNumber(nlStats.last30Days));
+    }
+
+    // Newsletter subscriber growth line chart
+    const nlGrowth = await M.fetchNewsletterGrowth();
+    if (nlGrowth && nlGrowth.length > 0) {
+      createChart("chart-nl-growth", {
+        type: "line",
+        data: {
+          labels: nlGrowth.map((g) => g.date),
+          datasets: [
+            {
+              label: "Confirmed Subscribers",
+              data: nlGrowth.map((g) => g.confirmed),
+              borderColor: COLORS.teal,
+              backgroundColor: COLORS.tealLight,
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: "top" } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { beginAtZero: true },
+          },
+        },
+      });
+    }
   }
 
   // ── Activity Log Section ────────────────────────────────────

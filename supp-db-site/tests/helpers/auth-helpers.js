@@ -6,6 +6,7 @@
  *   - Mocking Clerk / Convex for isolated testing
  *   - Simulating auth states (signed-in, signed-out, different roles)
  *   - Asserting common DOM patterns (nav, gate, dashboard)
+ *   - Newsletter mutation mocks for subscription flow testing
  */
 
 /**
@@ -101,9 +102,35 @@ async function injectAuthMock(page, { role = "free", signedIn = false } = {}) {
       };
 
       // ── Mock Convex client ────────────────────────────────────
+      // Includes default newsletter mutation responses so confirm.html
+      // and unsubscribe.html don't hang waiting for Convex.
       window.SupplementDB = {
-        query: () => Promise.resolve(null),
-        mutation: () => Promise.resolve(null),
+        query: (name) => {
+          // Default admin query responses for dashboard tests
+          if (name === "newsletter:getNewsletterStats") {
+            return Promise.resolve({
+              total: 0, confirmed: 0, pending: 0,
+              unsubscribed: 0, last7Days: 0, last30Days: 0,
+            });
+          }
+          if (name === "newsletter:getSubscriberGrowth") {
+            return Promise.resolve([]);
+          }
+          return Promise.resolve(null);
+        },
+        mutation: (name, args) => {
+          // Default newsletter mutation responses
+          if (name === "newsletter:subscribe") {
+            return Promise.resolve({ status: "pending" });
+          }
+          if (name === "newsletter:confirm") {
+            return Promise.resolve({ status: "confirmed" });
+          }
+          if (name === "newsletter:unsubscribe") {
+            return Promise.resolve({ status: "unsubscribed" });
+          }
+          return Promise.resolve(null);
+        },
         action: () => Promise.resolve(null),
         subscribe: () => () => {},
         getSessionId: () => "sess_test_" + Date.now(),
@@ -157,9 +184,31 @@ async function safeGoto(page, url) {
   );
 }
 
+/**
+ * Filter out known non-critical console errors (PostHog, CORS, CDN, etc.).
+ * Returns only errors that indicate genuine JS bugs in our code.
+ */
+function filterCriticalErrors(errors) {
+  return errors.filter(
+    (e) =>
+      !e.includes("posthog") &&
+      !e.includes("PostHog") &&
+      !e.includes("net::ERR") &&
+      !e.includes("favicon") &&
+      !e.includes("ERR_CONNECTION_REFUSED") &&
+      !e.includes("Failed to load resource") &&
+      !e.includes("CORS") &&
+      !e.includes("Access-Control-Allow-Origin") &&
+      !e.includes("unpkg.com") &&
+      !e.includes("Newsletter Convex error") &&
+      !e.includes("Poll query error")
+  );
+}
+
 module.exports = {
   waitForModules,
   injectAuthMock,
   collectConsoleErrors,
+  filterCriticalErrors,
   safeGoto,
 };

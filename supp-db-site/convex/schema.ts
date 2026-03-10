@@ -113,4 +113,28 @@ export default defineSchema({
     .index("by_timestamp", ["timestamp"])
     .index("by_guideSlug", ["guideSlug"])
     .index("by_eventType", ["eventType"]),
+
+  // Newsletter subscribers with double opt-in
+  newsletterSubscribers: defineTable({
+    email: v.string(),
+    status: v.union(
+      v.literal("pending"),
+      v.literal("confirmed"),
+      v.literal("unsubscribed")
+    ),
+    source: v.string(),
+    confirmToken: v.string(),
+    tokenExpiresAt: v.number(),
+    confirmedAt: v.optional(v.number()),
+    unsubscribedAt: v.optional(v.number()),
+    unsubscribeToken: v.string(),
+    clerkUserId: v.optional(v.string()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_email", ["email"])
+    .index("by_confirmToken", ["confirmToken"])
+    .index("by_unsubscribeToken", ["unsubscribeToken"])
+    .index("by_status", ["status"])
+    .index("by_source", ["source"]),
 });

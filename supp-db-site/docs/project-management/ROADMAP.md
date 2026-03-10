@@ -1,259 +1,273 @@
-# Evidence-Based Supplement Database - Development Roadmap
+# SupplementDB — Development Roadmap
 
-## 🎯 Project Overview
+## Project Overview
 
-**Mission**: Create the most comprehensive, evidence-based supplement database for cognitive and mental health optimization with granular claim-to-citation mapping.
+**Mission**: Build the most comprehensive, evidence-based supplement database for cognitive and mental health optimization — delivered as a MicroSaaS with subscription revenue.
 
-**Current Status**: Version 2.1.0 - Phase 1 COMPLETE (89 supplements), Phase 2 Enhanced Citations ACTIVE
+**Current Status**: Phase 7 COMPLETE — 127+ static pages, Clerk auth, Convex backend, Stripe payments, Resend email, 135 Playwright tests passing.
 
----
-
-## ✅ Phase 1: Core Database Expansion (COMPLETE)
-
-### 🎉 Completed Milestones - 89/89 Supplements (100%)
-- **Batch 1-2**: Foundation (18 supplements) - Core nootropics and adaptogens
-- **Batch 3**: Joint & Recovery (8 supplements) - Joint health and protein support  
-- **Batch 4**: Essential Nutrients (8 supplements) - Minerals and specialized compounds
-- **Batch 5**: Advanced Compounds (8 supplements) - Antioxidants and performance enhancers
-- **Batch 6**: Specialized Nootropics (8 supplements) - Mushroom extracts and algae superfoods
-- **Batch 7**: Heart Health & Metabolism (8 supplements) - Cardiovascular and metabolic support
-- **Batch 8**: Advanced Adaptogens & Herbs (8 supplements) - Stress response and traditional medicine
-- **Batch 9**: Specialized Cognitive Enhancers (8 supplements) - Advanced nootropics and mood support
-- **Batch 10**: Specialized & Emerging Compounds (7 supplements) - Cutting-edge and research-backed compounds
-
-## 🚀 Phase 2: Enhanced Citation System (ACTIVE)
-
-### 🎯 Mission: Granular Claim-to-Citation Mapping
-Transform the database from basic citation lists to comprehensive evidence mapping where every claim is directly linked to specific research studies with full traceability.
-
-### ✅ Completed Milestones
-- **Schema Design**: Complete architecture for claim-specific citation mapping
-- **Pilot Implementation**: Bacopa monnieri enhanced with 15 detailed citations
-- **Quality Standards**: Evidence levels, effect sizes, methodology details established
-- **Priority List**: 20 top supplements identified for Phase 2A implementation
-
-### 🔄 Current Phase: Phase 2A Implementation (1/20 complete)
-
-#### **Priority Tier 1 Supplements (8 supplements) - Meta-analyses & Systematic Reviews**
-- [ ] Turmeric/Curcumin - Anti-inflammatory with extensive meta-analysis support
-- [ ] Omega-3 Fatty Acids - Cardiovascular and cognitive health with systematic reviews
-- [ ] Melatonin - Sleep and circadian rhythm with extensive clinical evidence  
-- [ ] B-Complex Vitamins - Cognitive function with multiple systematic reviews
-- [ ] Vitamin B12 - Deficiency and cognitive function with extensive research
-- [ ] Folate - Cognitive function and mood with extensive research
-- [ ] Caffeine - Cognitive enhancement with extensive research base
-- [ ] Citicoline - Memory and focus with high-quality RCTs and meta-analyses
-
-#### **Priority Tier 2 Supplements (12 supplements) - Strong RCT Evidence**
-- [x] Bacopa monnieri - Memory enhancement with multiple RCTs ✅ COMPLETE
-- [ ] Ashwagandha - Stress and cognitive function with good RCT evidence
-- [ ] Creatine - Memory and cognitive performance with meta-analysis support
-- [ ] Magnesium - Sleep and stress with multiple RCTs
-- [ ] Vitamin D3 - Mood and cognitive function with large studies
-- [ ] L-Theanine - Calm focus with multiple moderate RCTs
-- [ ] Rhodiola rosea - Mental fatigue with multiple RCTs
-- [ ] Phosphatidylserine - Memory and cognitive aging with multiple RCTs
-- [ ] Acetyl-L-Carnitine - Cognitive decline and depression with multiple RCTs
-- [ ] Ginkgo Biloba - Memory and circulation with extensive research
-- [ ] Panax Ginseng - Energy and cognitive function with multiple RCTs
-- [ ] Quercetin - Anti-inflammatory and senolytic with strong evidence
-
-### 📋 Phase 2A Implementation Plan
-
-#### **Week 1-2: Tier 1 Priority (4 supplements)**
-- [ ] Turmeric/Curcumin enhanced citations
-- [ ] Omega-3 Fatty Acids enhanced citations  
-- [ ] Melatonin enhanced citations
-- [ ] B-Complex Vitamins enhanced citations
-
-#### **Week 3-4: Tier 1 Completion (4 supplements)**
-- [ ] Vitamin B12 enhanced citations
-- [ ] Folate enhanced citations
-- [ ] Caffeine enhanced citations
-- [ ] Citicoline enhanced citations
-
-#### **Week 5-6: Top Tier 2 Supplements (6 supplements)**
-- [ ] Ashwagandha enhanced citations
-- [ ] Creatine enhanced citations
-- [ ] Magnesium enhanced citations
-- [ ] Vitamin D3 enhanced citations
-- [ ] L-Theanine enhanced citations
-- [ ] Rhodiola rosea enhanced citations
-
-#### **Week 7-8: Remaining Tier 2 Supplements (6 supplements)**
-- [ ] Phosphatidylserine enhanced citations
-- [ ] Acetyl-L-Carnitine enhanced citations
-- [ ] Ginkgo Biloba enhanced citations
-- [ ] Panax Ginseng enhanced citations
-- [ ] Quercetin enhanced citations
-- [ ] Quality assurance and testing
-- [x] Cordyceps - Performance and energy mushroom
-- [x] Spirulina - Nutrient-dense algae superfood  
-- [x] Chlorella - Detoxifying green algae
-- [x] Huperzine A - Acetylcholinesterase inhibitor for memory
-- [x] Vinpocetine - Cerebral circulation enhancer
-- [x] PEA (Phenylethylamine) - Mood and focus enhancer
-- [x] MCT Oil - Ketogenic brain fuel
-
-#### **Batch 7 (IDs 59-66) - NEXT UP**
-*Target: Heart Health & Metabolism Support*
-- [ ] Hawthorn Berry - Cardiovascular support herb
-- [ ] Red Yeast Rice - Natural cholesterol management
-- [ ] Chromium - Blood sugar and metabolism
-- [ ] Vanadium - Insulin sensitivity support
-- [ ] Bitter Melon - Natural blood sugar control
-- [ ] Gymnema Sylvestre - Sugar metabolism herb
-- [ ] Fenugreek - Metabolic and hormonal support
-- [ ] Cinnamon Extract - Blood sugar and inflammation
-
-#### **Batch 8 (IDs 67-74) - Advanced Adaptogens & Herbs**
-*Target: Stress Response & Traditional Medicine*
-- [ ] Holy Basil (Tulsi) - Adaptogenic stress reducer
-- [ ] Schisandra Berry - Liver and cognitive adaptogen
-- [ ] Mucuna Pruriens - Natural L-DOPA source
-- [ ] Forskolin - cAMP enhancer for metabolism
-- [ ] Boswellia - Anti-inflammatory resin
-- [ ] Milk Thistle - Liver protection and detox
-- [ ] Stinging Nettle - Anti-inflammatory and nutrient support
-- [ ] Elderberry - Immune and antioxidant support
-
-#### **Batch 9 (IDs 75-82) - Specialized Cognitive Enhancers**
-*Target: Advanced Nootropics & Neurotransmitter Support*
-- [ ] Citicoline (CDP-Choline) - Premium choline source
-- [ ] Huperzine A - Acetylcholinesterase inhibitor
-- [ ] Sulbutiamine - Enhanced thiamine for energy
-- [ ] Aniracetam - AMPA receptor modulator (if legal)
-- [ ] Piracetam - Original nootropic (where legal)
-- [ ] DMAE - Choline precursor for focus
-- [ ] Centella Asiatica (Gotu Kola) - Cognitive and circulation
-- [ ] Passionflower - GABA support and anxiety
-
-#### **Batch 10 (IDs 83-89) - Final Phase 1 Completion**
-*Target: Specialized & Emerging Compounds*
-- [ ] Black Seed Oil (Nigella Sativa) - Multi-target health support
-- [ ] Moringa - Nutrient-dense superfood
-- [ ] Pine Bark Extract (Pycnogenol) - Vascular and cognitive support
-- [ ] Grape Seed Extract - Antioxidant and circulation
-- [ ] Krill Oil - Enhanced omega-3 delivery
-- [ ] MCT Oil - Ketogenic brain fuel
-- [ ] Zeaxanthin - Eye health complement to lutein
-
-### 📅 Phase 1 Timeline
-- **Target Completion**: Mid-September 2025
-- **Current Progress**: 65% complete (58/89)
-- **Estimated Remaining Work**: 4-5 development sessions
-- **Quality Gates**: Evidence review, citation verification, categorization
+**Branch**: `feat/clinical-journal-design-migration`
 
 ---
 
-## 🔬 Phase 2: Enhanced Features & Optimization (PLANNED)
+## Phase Summary
 
-### 2.1 Citation System Enhancement
-- [ ] **DOI Verification System**: Automated DOI validation and link checking
-- [ ] **PubMed Integration**: Direct API integration for citation details
-- [ ] **Interactive Citations**: Hover tooltips with study abstracts
-- [ ] **Citation Quality Scoring**: Automated evidence quality assessment
-- [ ] **Conflict of Interest Tracking**: Industry funding transparency
-
-### 2.2 Database Performance & Search
-- [ ] **Advanced Search Engine**: Multi-parameter filtering and ranking
-- [ ] **Fuzzy Search**: Typo-tolerant search with suggestions
-- [ ] **AI-Powered Recommendations**: Personalized supplement suggestions
-- [ ] **Interaction Checker**: Drug-supplement interaction database
-- [ ] **Mobile Optimization**: Responsive design improvements
-
-### 2.3 User Experience Features
-- [ ] **Personal Profiles**: User accounts with health tracking
-- [ ] **Dosage Calculator 2.0**: Enhanced with personal factors
-- [ ] **Stack Builder**: Custom supplement combination tool
-- [ ] **Progress Tracking**: Health outcome monitoring
-- [ ] **Expert Reviews**: Professional practitioner insights
-
-### 2.4 Data Visualization
-- [ ] **Evidence Strength Charts**: Visual evidence quality indicators
-- [ ] **Research Timeline**: Historical evidence development
-- [ ] **Mechanism Maps**: Interactive pathway visualizations
-- [ ] **Comparative Analysis**: Side-by-side supplement comparisons
-- [ ] **Safety Dashboard**: Risk assessment visualizations
+| Phase | Name | Status | Commit | Tests |
+|-------|------|--------|--------|-------|
+| P1 | Foundation & Discoverability | ✅ Complete | `afe8e75` | — |
+| P2 | Content Authority & Growth | ✅ Complete | `19f48e7` | — |
+| P3 | Brand & Strategic Positioning | ✅ Complete | `e49e33e` | — |
+| P4 | Supplement Monograph Pages | ✅ Complete | `b7c2761` | — |
+| P5 | Auth + Backend + Admin Dashboard | ✅ Complete | `600c016` | 72 |
+| P6 | Stripe Checkout Integration | ✅ Complete | `251e0a5` | 113 |
+| P7 | Email Service + Newsletter Backend | ✅ Complete | (pending) | 135 |
+| P8 | Guide Library Expansion (8→20) | 🔄 Next | — | — |
+| P9 | Problem × Supplement Evidence Pages | Planned | — | — |
+| P10 | Comparison Page Expansion | Planned | — | — |
+| P11 | Stack Analyzer Tool | Planned | — | — |
+| P12 | Bundle Pricing Optimization | Planned | — | — |
 
 ---
 
-## 🚀 Phase 3: Advanced Platform (FUTURE)
+## ✅ Phase 1: Foundation & Discoverability (COMPLETE)
 
-### 3.1 AI & Machine Learning
-- [ ] **Study Analysis AI**: Automated research paper analysis
-- [ ] **Personalization Engine**: ML-driven recommendations
-- [ ] **Outcome Prediction**: Health improvement forecasting
-- [ ] **Interaction Modeling**: Complex supplement interaction prediction
-- [ ] **Evidence Synthesis**: Automated meta-analysis updates
+**Commit**: `afe8e75`
 
-### 3.2 Community & Professional Features
-- [ ] **Expert Network**: Verified practitioner contributions
-- [ ] **User Reviews**: Community-driven supplement experiences
-- [ ] **Clinical Integration**: Healthcare provider tools
-- [ ] **Research Collaboration**: Direct researcher engagement
-- [ ] **Professional Certification**: Evidence-based supplement education
+SEO infrastructure, E-E-A-T compliance, structured data, and core site architecture.
 
-### 3.3 Global Expansion
-- [ ] **Multi-language Support**: International accessibility
-- [ ] **Regional Regulations**: Country-specific supplement legality
-- [ ] **Cultural Adaptations**: Traditional medicine integration
-- [ ] **Global Research**: International study inclusion
-- [ ] **Regulatory Compliance**: Multiple jurisdiction adherence
+- Schema.org structured data on all supplement pages
+- Canonical URLs, Open Graph metadata, XML sitemap
+- FDA compliance audit + Research Methodology page
+- Legal compliance suite (6 pages: privacy, terms, disclaimer, cookies, DMCA, accessibility)
+- Internal linking architecture across all page types
 
 ---
 
-## 📊 Success Metrics & KPIs
+## ✅ Phase 2: Content Authority & Growth (COMPLETE)
 
-### Database Quality Metrics
-- **Evidence Coverage**: >90% of supplements with Tier 1-2 evidence
-- **Citation Completeness**: 100% DOI verification for major studies
-- **Update Frequency**: Quarterly evidence reviews
-- **Accuracy Rate**: <1% error rate in supplement information
-- **Source Diversity**: >500 unique research sources
+**Commit**: `19f48e7`
 
-### User Engagement Metrics
-- **Database Utilization**: Supplements accessed per session
-- **Search Success Rate**: Query resolution percentage
-- **Feature Adoption**: New feature usage rates
-- **User Retention**: Monthly active user growth
-- **Professional Adoption**: Healthcare provider engagement
+Content expansion creating 6 category pages, 8 evidence guides, and 10 comparison pages.
 
-### Technical Performance Metrics
-- **Load Time**: <2 seconds for database queries
-- **Search Speed**: <500ms for complex searches
-- **Uptime**: 99.9% availability target
-- **Mobile Performance**: Lighthouse score >90
-- **API Response**: <100ms for supplement lookups
+- 6 category pages: Cognitive, Sleep, Stress, Energy, Immunity, Cardiovascular
+- 8 evidence-based guides with deep-dive content (10,000+ words each)
+- 10 supplement comparison pages (head-to-head analysis)
+- Content gates with CSS `max-height` + `overflow: hidden` (SEO-preserving)
+- PostHog dual analytics (client-side + server-side event tracking)
 
 ---
 
-## 🛠️ Technical Architecture Evolution
+## ✅ Phase 3: Brand & Strategic Positioning (COMPLETE)
 
-### Current Stack (v1.5)
-- **Frontend**: Vanilla JavaScript + Tailwind CSS
-- **Data**: JSON-based supplement database
-- **Hosting**: Static site deployment
-- **Search**: Client-side filtering
-- **Citations**: Manual curation
+**Commit**: `e49e33e`
 
-### Phase 2 Stack (Planned)
-- **Frontend**: React/Vue.js + TypeScript
-- **Backend**: Node.js + Express API
-- **Database**: PostgreSQL with full-text search
-- **Search**: Elasticsearch integration
-- **Citations**: Automated DOI validation
+Clinical journal design system, trust infrastructure, and brand identity.
 
-### Phase 3 Stack (Future)
-- **AI/ML**: Python + TensorFlow/PyTorch
-- **API**: GraphQL federation
-- **Database**: Multi-region PostgreSQL cluster
-- **Cache**: Redis distributed caching
-- **CDN**: Global content delivery network
+- Clinical journal design system with dark nav, evidence-tier badges
+- Trust signals: expert review indicators, methodology transparency
+- Brand positioning as "evidence-first" supplement resource
+- Content expansion and strategic internal linking
 
 ---
 
-## 🔒 Quality Assurance & Governance
+## ✅ Phase 4: Supplement Monograph Pages (COMPLETE)
+
+**Commit**: `b7c2761`
+
+103 new individual supplement monograph pages with detailed evidence profiles.
+
+- Template-driven page generation via `scripts/generate-supplement-pages.js`
+- Each monograph: hero section, evidence summary, mechanism of action, dosage, safety, citations
+- Enhanced citation rendering with Smart Citation Renderer
+- Evidence-tier badge system (Meta-Analysis, RCT, Clinical Review, Preliminary)
+- Total site pages: 127+
+
+---
+
+## ✅ Phase 5: Auth + Backend + Admin Dashboard (COMPLETE)
+
+**Commit**: `600c016` | **Tests**: 72 passing
+
+Full authentication, serverless backend, role-based access control, and admin analytics.
+
+- **Clerk Authentication**: Social logins, session management, user metadata
+- **Convex Backend**: 9 server modules, 60+ functions, 6 database tables
+- **RBAC**: 3 roles (anonymous, free, subscriber) with `requireAdmin` / `requireSubscriber` guards
+- **Admin Dashboard**: 5 sections, 7 Chart.js charts, 4 date ranges
+  - Guide engagement, gate impressions, search analytics, supplement views, user activity
+- **PostHog Integration**: Server-side event recording via Convex actions
+- **72 Playwright Tests**: Auth flows, RBAC enforcement, content gating, dashboard rendering
+
+**Stack**: Static HTML + Vanilla JS → Convex Cloud (`robust-frog-754.convex.cloud`) → Clerk → PostHog
+
+---
+
+## ✅ Phase 6: Stripe Checkout Integration (COMPLETE)
+
+**Commit**: `251e0a5` | **Tests**: 113 passing (+41 new)
+
+Subscription revenue collection with pricing page, checkout flow, and role sync.
+
+- **Stripe Products**: Monthly ($9.99/mo), Annual ($79.99/yr) via env vars
+- **Convex Actions**: `createCheckoutSession`, `createPortalSession`, `syncRoleToClerk`
+- **Pricing Page** (`pricing.html`): 3 plan comparison cards with auth-aware CTAs
+- **Success Page** (`success.html`): 4-state polling (verifying, success, timeout, error)
+- **Dual-Path Role Sync**: Convex DB `users.role` + Clerk Backend API `publicMetadata.role`
+- **Webhook Handler**: `convex/http.ts` with `stripe.webhooks.constructEvent()` — 4 event types
+- **Content Gate**: Wired to `hasActiveSubscription` Convex query
+- **Customer Portal**: Subscription management via Stripe hosted portal
+
+---
+
+## ✅ Phase 7: Email Service + Newsletter Backend (COMPLETE)
+
+**Tests**: 135 passing (+22 new)
+
+Double opt-in newsletter system with Resend email delivery, replacing localStorage-only capture.
+
+- **Convex Schema**: `newsletterSubscribers` table with 5 indexes
+- **`convex/newsletter.ts`** (342 lines): 6 exports — `subscribe`, `confirm`, `unsubscribe`, `getNewsletterStats`, `listSubscribers`, `getSubscriberGrowth`
+- **`convex/resend.ts`** (236 lines): `sendConfirmationEmail` + `sendWelcomeEmail` internalActions
+- **`js/newsletter.js`** (172 lines): Shared handler replacing 8+ duplicated inline scripts across 9 HTML files
+- **Double Opt-In Flow**: subscribe → pending + 32-char confirmToken → Resend email → `confirm.html` → confirmed → welcome email
+- **`confirm.html`** (480 lines): 6 states (loading, success, already confirmed, expired, invalid, error)
+- **`unsubscribe.html`** (416 lines): 4 states (loading, success, invalid, error)
+- **Sleep Guide**: Newsletter form added (was missing from all other guides)
+- **Admin Dashboard**: 6 newsletter stat cards + subscriber growth chart (Chart.js)
+- **Docker**: `SITE_URL` env injection in `docker-entrypoint.sh` + `docker-compose.yml`
+- **Graceful Fallback**: localStorage still works when Convex is unavailable
+
+---
+
+## 🔄 Phase 8: Guide Library Expansion — 8 → 20 (NEXT)
+
+**Estimated Duration**: 3-4 days
+
+Expand the evidence guide library from 8 to 20 guides, tripling the content-gated conversion surface.
+
+### New Guides Planned (12)
+
+| Guide | Category | Data Readiness |
+|-------|----------|---------------|
+| Mood Support | Mental Health | Ready — ashwagandha, omega-3, magnesium, B vitamins |
+| Memory & Cognitive Aging | Cognitive | Ready — bacopa, citicoline, phosphatidylserine, omega-3, lion's mane |
+| Longevity & Healthy Aging | Aging | Partial — CoQ10, NAC, resveratrol, quercetin |
+| Brain Fog & Mental Clarity | Cognitive | Ready — citicoline, alpha-GPC, creatine, lion's mane, bacopa |
+| Stress Resilience & Cortisol | Stress | Ready — ashwagandha, rhodiola, phosphatidylserine, magnesium |
+| Supplement Safety & Interactions | Trust | Needs new template (non-problem-centered) |
+| Muscle Strength & Lean Mass | Fitness | Ready — creatine, beta-alanine, HMB, carnitine |
+| Recovery & Soreness | Fitness | Ready — creatine, omega-3, curcumin, taurine |
+| Healthy Aging (Women) | Aging | Partial — omega-3, magnesium, vitamin D, CoQ10, iron |
+| Healthy Aging (Men) | Aging | Partial — creatine, omega-3, CoQ10, magnesium, zinc, vitamin D |
+| Gut-Brain Axis Deep Dive | Digestive | Partial — probiotics, glutamine, fiber |
+| Nootropic Stacks | Cognitive | Ready — racetam stacks, caffeine+theanine, choline combos |
+
+### Deliverables
+- [ ] Expand `data/problems.js` from 7 → 13 health domains
+- [ ] Add 12 guide definitions to `scripts/generate-guide-pages.js` config
+- [ ] Generate all 20 guides with content gates
+- [ ] Newsletter forms on all new guides (using `js/newsletter.js`)
+- [ ] Internal linking updated across all page types
+- [ ] Sitemap regenerated
+- [ ] 20+ smoke tests for new guide pages
+
+---
+
+## 📋 Phase 9: Problem × Supplement Evidence Pages (PLANNED)
+
+**Estimated Duration**: 4-5 days
+
+New page family creating 25-200 pages from existing data: `/evidence/{problem}/{supplement}.html`
+
+- New template with problem-specific evidence excerpts
+- Generator: `scripts/generate-evidence-pages.js`
+- Wave 1: 25 pages across Sleep, Anxiety, Cognitive, Metabolic, Inflammation
+- Internal linking: monographs ↔ evidence ↔ guides
+
+---
+
+## 📋 Phase 10: Comparison Page Expansion (PLANNED)
+
+**Estimated Duration**: 3-4 days
+
+Scale comparison pages from 10 to 50+ with auto-generation logic.
+
+- Comparison selection algorithm (shared domains, mechanisms, categories)
+- Simplified template for auto-generated pages
+- Wave 1: 40 high-value comparisons
+
+---
+
+## 📋 Phase 11: Stack Analyzer Tool (PLANNED)
+
+**Estimated Duration**: 5-7 days
+
+Interactive supplement stack analysis tool at `/tools/stack-analyzer.html`.
+
+- Multi-select supplement picker + health goal selector
+- Analysis engine: overlap detection, redundancy flagging, interaction warnings
+- Gated results (free = basic, subscriber = full report)
+- Analytics tracking for tool usage and conversion
+
+---
+
+## 📋 Phase 12: Bundle Pricing Optimization (PLANNED)
+
+**Estimated Duration**: 2-3 days
+
+Guide bundles and pricing page optimization.
+
+- 4 bundle landing pages (Sleep & Stress, Brain, Fitness, Longevity)
+- Master bundle page
+- Bundle checkout via Stripe
+- Access control for bundle purchases
+
+---
+
+## Technical Architecture
+
+### Current Stack (Post-Phase 7)
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Static HTML + Vanilla JS + Tailwind CSS |
+| Backend | Convex Cloud (serverless DB + functions) |
+| Auth | Clerk (social logins, session management) |
+| Payments | Stripe Checkout (hosted) + webhooks |
+| Email | Resend (transactional email delivery) |
+| Analytics | PostHog (client + server-side events) |
+| Hosting | Docker (nginx:alpine) — DigitalOcean/AWS ready |
+| Testing | Playwright (135 tests across 5 suites) |
+
+### Database Tables (Convex)
+
+| Table | Purpose |
+|-------|---------|
+| `users` | User profiles with Clerk integration + RBAC roles |
+| `pageViews` | Page view analytics |
+| `searchEvents` | Search query tracking |
+| `favorites` | User supplement favorites |
+| `subscriptions` | Stripe subscription state |
+| `gateEvents` | Content gate impressions/conversions |
+| `newsletterSubscribers` | Email subscriptions with double opt-in tokens |
+
+---
+
+## Page Count Projection
+
+| Page Family | Current | After P8 | After P9 | After P10 | Target |
+|-------------|---------|----------|----------|-----------|--------|
+| Supplement monographs | 93 | 93 | 93 | 93 | 93 |
+| Evidence guides | 8 | 20 | 20 | 20 | 20 |
+| Problem × Supplement | 0 | 0 | 25 | 25 | 200 |
+| Comparison pages | 10 | 10 | 10 | 50 | 175 |
+| Category pages | 6 | 6 | 6 | 6 | 6 |
+| Trust/legal/tools | 6 | 6 | 6 | 6 | 10+ |
+| **Total** | **127** | **139** | **164** | **204** | **~500** |
+
+---
+
+## Quality Assurance
 
 ### Evidence Standards
 - **Tier 1**: Meta-analyses, systematic reviews (Cochrane preferred)
@@ -261,47 +275,15 @@ Transform the database from basic citation lists to comprehensive evidence mappi
 - **Tier 3**: Smaller RCTs (30-100 participants), clinical reviews
 - **Tier 4**: Preclinical studies, case reports, traditional use
 
-### Review Process
-1. **Initial Research**: Literature search and evidence compilation
-2. **Expert Review**: Scientific accuracy verification
-3. **Citation Validation**: Source verification and DOI checking
-4. **Peer Review**: Second expert opinion for Tier 1-2 supplements
-5. **Community Feedback**: User-reported corrections and updates
-6. **Quarterly Updates**: Regular evidence refresh cycles
-
-### Safety Protocols
-- **Contraindication Tracking**: Comprehensive safety warnings
-- **Drug Interaction Database**: Pharmaceutical interaction alerts
-- **Dosage Safety Limits**: Evidence-based maximum dosage guidance
-- **Population Warnings**: Age, pregnancy, condition-specific alerts
-- **Regulatory Compliance**: FDA, Health Canada, EMA guideline adherence
+### Testing Strategy
+- **Playwright E2E Tests**: 135 tests across 5 suites (auth, RBAC, gating, dashboard, newsletter)
+- **Mock Guard Pattern**: `window.__CLERK_MOCK__` prevents CDN script conflicts
+- **Convex Mutation Mocks**: `addInitScript` pattern for serverless function mocking
+- **Error Filtering**: PostHog/CORS/CDN noise excluded from test assertions
 
 ---
 
-## 📞 Stakeholder Communication
+*This roadmap is a living document, updated after each phase completion.*
 
-### Development Team
-- **Weekly Sprints**: Feature development cycles
-- **Monthly Reviews**: Progress assessment and planning
-- **Quarterly Retrospectives**: Process improvement sessions
-- **Annual Planning**: Roadmap updates and goal setting
-
-### User Community
-- **Feature Announcements**: New supplement additions
-- **Educational Content**: Evidence-based supplement guides
-- **Feedback Channels**: User suggestions and bug reports
-- **Beta Testing**: Early access to new features
-
-### Scientific Advisory Board
-- **Evidence Review**: Quarterly supplement evidence assessment
-- **Methodology Guidance**: Research inclusion criteria refinement
-- **Quality Assurance**: Scientific accuracy verification
-- **Trend Analysis**: Emerging supplement research monitoring
-
----
-
-*This roadmap is a living document, updated quarterly based on development progress, user feedback, and emerging research priorities.*
-
-**Last Updated**: August 17, 2025  
-**Next Review**: September 1, 2025  
+**Last Updated**: March 10, 2026
 **Document Owner**: Claude Code Development Team

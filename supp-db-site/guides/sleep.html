@@ -1141,25 +1141,26 @@
 <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12 no-print reveal">
     <div class="capture-section rounded-2xl p-8 sm:p-12 text-center">
         <div class="moon-glow mb-4 inline-block">
-            <i class="fas fa-file-pdf text-3xl" style="color: var(--blue-soft);"></i>
+            <i class="fas fa-envelope-open-text text-3xl" style="color: var(--blue-soft);"></i>
         </div>
         <h2 class="text-2xl sm:text-3xl mb-3" style="color: var(--text-bright);">
-            Get the Complete Sleep Evidence Report
+            Get Evidence-Based Sleep Research Updates
         </h2>
         <p class="text-sm mb-8 mx-auto" style="color: var(--blue-muted); max-width: 480px;">
-            Download our comprehensive 25-page PDF with the full citation index, dosage protocols, interaction charts, and decision flowcharts.
+            Stay informed when new studies are published or evidence tiers are updated for sleep supplements.
         </p>
 
-        <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4" id="capture-form">
-            <input type="email" name="email" placeholder="your@email.com" required="" class="flex-1 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-400" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--text-bright);">
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4" id="guide-newsletter-form">
+            <input type="email" id="guide-newsletter-email" name="email" placeholder="your@email.com" required="" class="flex-1 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-400" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--text-bright);">
             <button type="submit" class="px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-400 whitespace-nowrap" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff;">
-                Send Me the Guide
+                <i class="fas fa-paper-plane"></i> Subscribe
             </button>
         </form>
+        <p id="guide-newsletter-message" class="newsletter-message text-sm" style="display:none; color: var(--text-bright);"></p>
 
         <p class="text-xs" style="color: var(--text-muted);">
             <i class="fas fa-lock mr-1" style="font-size: 0.6rem;"></i>
-            No spam. Unsubscribe anytime. We respect your privacy.
+            No spam. Unsubscribe anytime. <a href="../legal/privacy.html" style="color: var(--blue-muted);">Privacy Policy</a>
         </p>
     </div>
 </section>
@@ -1325,63 +1326,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => observer.observe(el));
 });
 
-// Email capture form with PostHog + localStorage dedup
-document.getElementById('capture-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input[name="email"]').value.trim();
-    if (!email) return;
-    const btn = this.querySelector('button');
-    const originalText = btn.textContent;
-
-    // Check localStorage dedup
-    var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-    if (subscribed.indexOf(email) !== -1) {
-        btn.textContent = 'Already subscribed!';
-        btn.style.opacity = '0.7';
-        setTimeout(function() { btn.textContent = originalText; btn.style.opacity = '1'; }, 3000);
-        return;
-    }
-
-    btn.textContent = 'Thank you!';
-    btn.style.opacity = '0.7';
-    btn.disabled = true;
-
-    // PostHog person identification with rich properties
-    if (typeof posthog !== 'undefined') {
-        posthog.identify(email);
-        posthog.people.set({
-            email: email,
-            newsletter_subscribed: true,
-            subscribed_guide: 'sleep',
-            signup_source: 'guide_sleep',
-            signup_date: new Date().toISOString()
-        });
-        posthog.capture('guide_email_captured', {
-            source: 'guide',
-            guide_slug: 'sleep',
-            email: email,
-            form_location: 'inline_cta'
-        });
-    }
-
-    // Store to unified newsletter key for dedup
-    subscribed.push(email);
-    localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-
-    // Also keep legacy key for backward compatibility
-    try {
-        const captures = JSON.parse(localStorage.getItem('guide_captures') || '[]');
-        captures.push({ email: email, guide: 'sleep', timestamp: new Date().toISOString() });
-        localStorage.setItem('guide_captures', JSON.stringify(captures));
-    } catch(err) { /* localStorage not available */ }
-
-    setTimeout(function() {
-        btn.textContent = originalText;
-        btn.style.opacity = '1';
-        btn.disabled = false;
-    }, 3000);
-    this.reset();
-});
+// Newsletter initialization via shared handler
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1443,17 +1388,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         var el = document.getElementById(id);
         if (el) sectionObserver.observe(el);
     });
-
-    // Track email capture form submissions
-    var captureForm = document.getElementById('capture-form');
-    if (captureForm) {
-        captureForm.addEventListener('submit', function() {
-            posthog.capture('guide_email_captured', {
-                guide_slug: 'sleep',
-                form_location: 'inline_cta'
-            });
-        });
-    }
 
     // Track citation link clicks (PMID and DOI)
     document.querySelectorAll('.pmid-link').forEach(function(link) {
@@ -1530,7 +1464,8 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 </script>
 
 <script src="../js/share-bar.js"></script>
-
+<script src="../js/newsletter.js"></script>
+<script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-sleep");</script>
 
 
     <!-- Auth & Backend Scripts -->

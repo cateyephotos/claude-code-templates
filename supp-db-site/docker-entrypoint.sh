@@ -10,6 +10,7 @@ set -e
 #   __CLERK_PUBLISHABLE_KEY__  → CLERK_PUBLISHABLE_KEY env var
 #   __CONVEX_URL__             → CONVEX_URL env var (defaults to production URL)
 #   __POSTHOG_KEY__            → POSTHOG_KEY env var
+#   __SITE_URL__               → SITE_URL env var (defaults to http://localhost:8080)
 
 HTML_DIR="/usr/share/nginx/html"
 
@@ -41,6 +42,15 @@ if [ -n "$POSTHOG_KEY" ]; then
     echo "   ✅ POSTHOG_KEY injected"
 else
     echo "   ⚠️  POSTHOG_KEY not set — PostHog analytics will use hardcoded key"
+fi
+
+# ── Site URL ──────────────────────────────────────────────────
+if [ -n "$SITE_URL" ]; then
+    find "$HTML_DIR" -type f \( -name "*.html" -o -name "*.js" \) \
+        -exec sed -i "s|__SITE_URL__|${SITE_URL}|g" {} +
+    echo "   ✅ SITE_URL injected"
+else
+    echo "   ⚠️  SITE_URL not set — using default (http://localhost:8080)"
 fi
 
 echo "   Environment substitution complete."

@@ -290,6 +290,28 @@
     return data;
   }
 
+  // ── Newsletter Stats ────────────────────────────────────────
+  async function fetchNewsletterStats() {
+    const cacheKey = "newsletterStats";
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const data = await convexQuery("newsletter:getNewsletterStats", {});
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Newsletter Subscriber Growth ──────────────────────────
+  async function fetchNewsletterGrowth() {
+    const cacheKey = "newsletterGrowth";
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const data = await convexQuery("newsletter:getSubscriberGrowth", {});
+    setCache(cacheKey, data);
+    return data;
+  }
+
   // ── Recent Page Views (Activity Log) ────────────────────────
   async function fetchRecentActivity(limit) {
     const lim = limit || 50;
@@ -318,6 +340,7 @@
       fetchTopSupplements(r, 10),
       fetchTopSearches(r, 10),
       fetchConversionFunnel(r),
+      fetchNewsletterStats(),
     ]);
 
     return {
@@ -331,6 +354,7 @@
       topSearches:
         results[4].status === "fulfilled" ? results[4].value : null,
       funnel: results[5].status === "fulfilled" ? results[5].value : null,
+      newsletter: results[6].status === "fulfilled" ? results[6].value : null,
     };
   }
 
@@ -411,6 +435,8 @@
     fetchSubscriptionMetrics,
     fetchSubscriptionGrowth,
     fetchSubscriptionsByPlan,
+    fetchNewsletterStats,
+    fetchNewsletterGrowth,
     fetchRecentActivity,
     fetchUserCountByRole,
     fetchAllDashboardData,

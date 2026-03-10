@@ -397,6 +397,59 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- ── Newsletter Metrics ──────────────────────────── -->
+                <h3 class="admin-section-title" style="font-size: 1.15rem; margin-top: 2rem;">
+                    <i class="fas fa-envelope mr-2" style="color: #0d9488;"></i>Newsletter
+                </h3>
+
+                <!-- Newsletter Stat Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Total Subscribers</div>
+                        <div class="admin-card-value admin-skeleton" id="card-nl-total">&mdash;</div>
+                        <div class="admin-card-icon" style="color: #0d9488;"><i class="fas fa-envelope"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Confirmed</div>
+                        <div class="admin-card-value admin-skeleton" id="card-nl-confirmed">&mdash;</div>
+                        <div class="admin-card-icon" style="color: #22c55e;"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Pending</div>
+                        <div class="admin-card-value admin-skeleton" id="card-nl-pending">&mdash;</div>
+                        <div class="admin-card-icon" style="color: #f59e0b;"><i class="fas fa-clock"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Unsubscribed</div>
+                        <div class="admin-card-value admin-skeleton" id="card-nl-unsubscribed">&mdash;</div>
+                        <div class="admin-card-icon" style="color: #9ca3af;"><i class="fas fa-user-slash"></i></div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Secondary Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Last 7 Days</div>
+                        <div class="admin-card-value admin-skeleton" id="card-nl-last7">&mdash;</div>
+                        <div class="admin-card-icon" style="color: #0d9488;"><i class="fas fa-calendar-week"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Last 30 Days</div>
+                        <div class="admin-card-value admin-skeleton" id="card-nl-last30">&mdash;</div>
+                        <div class="admin-card-icon" style="color: #0d9488;"><i class="fas fa-calendar-alt"></i></div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Growth Chart -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card" style="grid-column: 1 / -1;">
+                        <h3 class="admin-chart-title">Email Subscriber Growth <span class="text-xs font-normal text-gray-400 ml-1">(daily confirmed)</span></h3>
+                        <div class="admin-chart-container" style="height: 320px;">
+                            <canvas id="chart-nl-growth"></canvas>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- ═══════════════════════════════════════════════════ -->

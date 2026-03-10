@@ -717,16 +717,11 @@
                         <h3><i class="fas fa-envelope-open-text"></i> Get Evidence-Based Supplements for Energy &amp; Vitality Research Updates</h3>
                         <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
                         <div id="guide-newsletter-container">
-                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
+                            <form id="guide-newsletter-form" class="newsletter-form">
                                 <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required="">
                                 <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
                             </form>
-                            <p id="guide-newsletter-success" class="newsletter-success hidden">
-                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
-                            </p>
-                            <p id="guide-newsletter-already" class="newsletter-already hidden">
-                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
-                            </p>
+                            <p id="guide-newsletter-message" class="newsletter-message" style="display:none;"></p>
                         </div>
                         <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../legal/privacy.html">Privacy Policy</a></p>
                     </div>
@@ -813,39 +808,9 @@
             });
         });
 
-        // Guide newsletter handler
-        window.handleGuideNewsletter = function(e) {
-            e.preventDefault();
-            var email = document.getElementById('guide-newsletter-email').value.trim();
-            if (!email) return false;
-            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-            if (subscribed.indexOf(email) !== -1) {
-                document.getElementById('guide-newsletter-form').classList.add('hidden');
-                document.getElementById('guide-newsletter-already').classList.remove('hidden');
-                return false;
-            }
-            if (typeof posthog !== 'undefined') {
-                posthog.identify(email);
-                posthog.people.set({
-                    email: email,
-                    newsletter_subscribed: true,
-                    subscribed_guide: 'energy-vitality',
-                    signup_source: 'guide_energy-vitality',
-                    signup_date: new Date().toISOString()
-                });
-                posthog.capture('guide_email_captured', {
-                    source: 'guide',
-                    guide_slug: 'energy-vitality',
-                    email: email
-                });
-            }
-            subscribed.push(email);
-            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-            document.getElementById('guide-newsletter-form').classList.add('hidden');
-            document.getElementById('guide-newsletter-success').classList.remove('hidden');
-            return false;
-        };
     </script>
+    <script src="../js/newsletter.js"></script>
+    <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-energy-vitality");</script>
     <script src="../js/share-bar.js"></script>
 
 

@@ -218,28 +218,37 @@ Based on the consultant's review cross-referenced with our actual codebase state
 
 ## 3. Engineering Phases (Execution Order)
 
-### Phase 6 (P6): Revenue — Stripe Checkout + Pricing Page
-**Duration:** 2-3 days
+### Phase 6 (P6): Revenue — Stripe Checkout + Pricing Page ✅ COMPLETE
+**Duration:** 2-3 days → **Completed 2026-03-10** (commit `251e0a5`)
 **Deliverables:**
-- [ ] Stripe products/prices created (Monthly $9.99, Annual $79.99, Lifetime $199)
-- [ ] Convex action: `createCheckoutSession`
-- [ ] `/pricing.html` with plan comparison cards
-- [ ] Post-purchase success page
-- [ ] Content gate wired to subscription status
-- [ ] Stripe webhook signature verification
-- [ ] Customer portal link
-- [ ] 12+ Playwright tests (checkout flow, gate unlocking, subscription state)
+- [x] Stripe products/prices config (Monthly $9.99, Annual $79.99) — env vars in `.env.example`
+- [x] Convex action: `createCheckoutSession` + `createPortalSession` + `syncRoleToClerk` — `convex/stripe.ts` (214 lines)
+- [x] `/pricing.html` with 3 plan comparison cards — Free/$0, Monthly/$9.99, Annual/$79.99 (337 lines)
+- [x] Post-purchase success page — `success.html` with 4-state polling (488 lines)
+- [x] Content gate wired to subscription status — Convex `hasActiveSubscription` fallback in `content-gate.js`
+- [x] Stripe webhook signature verification — `convex/http.ts` with `stripe.webhooks.constructEvent()` handling 4 events
+- [x] Customer portal link — `openPortal()` in `pricing.js` via `stripe:createPortalSession`
+- [x] 41 Playwright tests (checkout flow, gate unlocking, subscription state, success page states, FAQ accordion)
+- [x] Dual-path role sync: Convex DB + Clerk Backend API PATCH for `publicMetadata.role`
+- [x] Auth-aware pricing CTAs: Anonymous→signup, Free→checkout, Subscriber→manage
+- [x] **113 total tests passing** (72 existing + 41 Stripe)
 
-### Phase 7 (P7): Email Service + Newsletter Backend
-**Duration:** 1-2 days
+### Phase 7 (P7): Email Service + Newsletter Backend ✅ COMPLETE
+**Duration:** 1-2 days → **Completed 2026-03-10** (branch `feat/clinical-journal-design-migration`)
 **Deliverables:**
-- [ ] Resend integration (Convex action)
-- [ ] `convex/newsletter.ts` module (subscribe, unsubscribe, list)
-- [ ] Newsletter table in Convex schema
-- [ ] Welcome email template
-- [ ] Wire existing 9 forms to Convex mutation
-- [ ] Double opt-in flow
-- [ ] 6+ Playwright tests
+- [x] Resend integration — `convex/resend.ts` (236 lines) with `sendConfirmationEmail` + `sendWelcomeEmail` internalActions
+- [x] `convex/newsletter.ts` (342 lines) — 6 exports: `subscribe`, `confirm`, `unsubscribe`, `getNewsletterStats`, `listSubscribers`, `getSubscriberGrowth`
+- [x] `newsletterSubscribers` table in Convex schema with 5 indexes (`by_email`, `by_confirmToken`, `by_unsubscribeToken`, `by_status`, `by_source`)
+- [x] Branded HTML email templates — confirmation (24h expiry notice) + welcome email with guide links
+- [x] Shared `js/newsletter.js` (172 lines) replacing 8+ duplicated inline handlers across 9 HTML files
+- [x] Double opt-in flow: subscribe → pending + confirmToken → Resend email → `confirm.html` → confirmed → welcome email
+- [x] `confirm.html` (480 lines) with 6 states: loading, success, already confirmed, expired, invalid, error
+- [x] `unsubscribe.html` (416 lines) with 4 states: loading, success, invalid, error
+- [x] Sleep guide newsletter form added (was missing from all other guides)
+- [x] Admin dashboard newsletter metrics — 6 stat cards + subscriber growth chart (Chart.js)
+- [x] Docker env injection for `SITE_URL` in `docker-entrypoint.sh` + `docker-compose.yml`
+- [x] 22 Playwright tests (newsletter forms, confirm/unsubscribe flows, admin metrics, edge cases)
+- [x] **135 total tests passing** (113 existing + 22 newsletter)
 
 ### Phase 8 (P8): Guide Library Expansion (8 → 20)
 **Duration:** 3-4 days
@@ -349,13 +358,12 @@ Consultant's $5k-15k MRR at 12-18 months is achievable if guide library + compar
 
 ## 8. Immediate Next Action
 
-**Start Phase 6 (Stripe Checkout)** — it's the shortest path to revenue and validates the entire business model before investing in the 500-page content expansion.
+~~**Start Phase 6 (Stripe Checkout)**~~ → **✅ P6 COMPLETE (2026-03-10)**
 
-The backend is 80% done. The remaining 20% is:
-1. Create Stripe products/prices
-2. Build checkout session creator
-3. Build pricing page
-4. Wire content gate to subscription check
-5. Test end-to-end
+~~**Start Phase 7 (Email Service + Newsletter Backend)**~~ → **✅ P7 COMPLETE (2026-03-10)**
 
-Everything else in this roadmap multiplies a product that can't make money until Stripe ships.
+**Start Phase 8 (Guide Library Expansion: 8 → 20)** — Revenue collection (P6) and email capture (P7) are both live. The growth engine is operational. Now expand the content library that drives traffic and conversions:
+1. Expand `data/problems.js` from 7 → 13 health domains
+2. Add 12 new guide definitions + generate pages via `scripts/generate-guide-pages.js`
+3. Apply content gates + internal linking to all new guides
+4. Each new guide is a new email capture + conversion opportunity
