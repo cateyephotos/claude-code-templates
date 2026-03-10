@@ -277,6 +277,340 @@ This guide systematically reviews the supplements with the strongest clinical ev
             { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
             { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
         ]
+    },
+
+    // ── Phase 3 Guides ──────────────────────────────────────────────────────
+
+    {
+        slug: 'immune-function',
+        title: 'Evidence-Based Supplements for Immune Function',
+        shortTitle: 'Immune Function',
+        metaTitle: 'Best Supplements for Immune Support (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to the best supplements for immune function, cold prevention, and immune resilience. Ranked by evidence from peer-reviewed studies with dosages and safety data.',
+        breadcrumb: 'Immune Function',
+        heroSubtitle: 'A systematic review of supplements studied for immune defense, infection prevention, and immune modulation — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const immuneKeys = ['immune_function','immune_markers','immuneSupport','immuneModulation',
+                'cold_prevention','cold_duration','allergyRelief','allergy_markers',
+                'antioxidant_status','antioxidantActivity','antioxidant_protection',
+                'inflammation','antiInflammatory','anti_inflammatory',
+                'nk_cell_activity','white_blood_cells','cytokine_modulation',
+                'infection_risk','viral_load','respiratory_infections'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => immuneKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Vitamin C', 'Zinc', 'Elderberry', 'Echinacea',
+            'Selenium', 'Spirulina', 'Reishi Mushroom', 'Garlic'
+        ],
+        snippetDefinition: 'Immune-supporting supplements are compounds studied in clinical trials for their effects on immune cell function, infection risk, cold duration, and inflammatory biomarkers. The strongest evidence exists for Vitamin C, Zinc, and Elderberry, with multiple randomized controlled trials demonstrating measurable effects on cold duration, immune cell activity, and upper respiratory infection outcomes.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Immune Support',
+        introduction: `The human immune system is a complex network of cells, tissues, and signaling molecules that defend against pathogens and maintain tissue homeostasis. While no supplement can replace a healthy lifestyle — adequate sleep, regular exercise, balanced nutrition, and stress management form the foundation of immune health — a growing body of peer-reviewed research has identified specific nutrients and botanical compounds that may support optimal immune function.
+
+This guide systematically reviews the supplements with the strongest clinical evidence for immune support, cold prevention, and immune modulation. Each recommendation is grounded in published randomized controlled trials (RCTs), systematic reviews, and meta-analyses.
+
+<strong>Important:</strong> This guide is for informational purposes only. Supplements are not substitutes for vaccines, prescribed antimicrobials, or professional medical care for immune disorders. Always consult a qualified healthcare professional before starting any supplement regimen, particularly if you have an autoimmune condition, are immunocompromised, or take immunosuppressive medications.`,
+        mechanismsIntro: `Immune-supporting supplements work through several distinct immunological pathways. Understanding these mechanisms helps explain why certain supplements may be more appropriate for specific aspects of immune health.`,
+        mechanisms: [
+            {
+                name: 'Innate Immune Enhancement',
+                description: 'The innate immune system provides the first line of defense against pathogens through natural killer (NK) cells, macrophages, and neutrophils. Several supplements enhance innate immune cell activity, phagocytosis, and cytokine production, supporting rapid immune responses to novel threats.',
+                supplements: ['Vitamin C', 'Zinc', 'Elderberry', 'Reishi Mushroom']
+            },
+            {
+                name: 'Adaptive Immune Modulation',
+                description: 'The adaptive immune system generates targeted responses through T-cells and B-cells, providing long-term immunity. Certain supplements support lymphocyte proliferation, antibody production, and immune memory formation without causing excessive immune activation.',
+                supplements: ['Zinc', 'Selenium', 'Echinacea', 'Vitamin C']
+            },
+            {
+                name: 'Antioxidant Defense',
+                description: 'Immune activation generates reactive oxygen species (ROS) that can damage immune cells and surrounding tissues if not properly neutralized. Antioxidant supplements help protect immune cells from oxidative damage during active immune responses, maintaining immune cell viability and function.',
+                supplements: ['Vitamin C', 'Selenium', 'Spirulina', 'Garlic']
+            },
+            {
+                name: 'Mucosal Barrier Support',
+                description: 'Mucosal surfaces in the respiratory and gastrointestinal tracts serve as critical barriers against pathogen entry. Some supplements support mucosal immunity by enhancing secretory IgA production, maintaining epithelial integrity, and modulating local immune responses at mucosal surfaces.',
+                supplements: ['Zinc', 'Vitamin C', 'Elderberry', 'Echinacea']
+            }
+        ],
+        safetyIntro: `While immune-supporting supplements generally have favorable safety profiles, several critical considerations apply — particularly regarding autoimmune conditions and medication interactions.`,
+        safetyNotes: [
+            '<strong>Autoimmune conditions:</strong> Immune-stimulating supplements (echinacea, reishi, elderberry) may exacerbate autoimmune diseases (lupus, rheumatoid arthritis, multiple sclerosis) by further activating an already overactive immune system. Avoid without medical supervision.',
+            '<strong>Immunosuppressant interactions:</strong> Supplements that enhance immune function may counteract immunosuppressive drugs used after organ transplants or for autoimmune conditions (cyclosporine, tacrolimus, corticosteroids). Medical supervision is essential.',
+            '<strong>Zinc toxicity at high doses:</strong> Zinc supplementation above 40mg/day long-term can cause copper deficiency, leading to anemia and neurological problems. Intranasal zinc is associated with permanent loss of smell and should be avoided.',
+            '<strong>Selenium narrow therapeutic window:</strong> Selenium toxicity (selenosis) can occur at doses above 400mcg/day, causing hair loss, nail brittleness, GI distress, and neurological symptoms. Do not exceed recommended doses.',
+            '<strong>Pregnancy and lactation:</strong> While Vitamin C and Zinc are generally safe at recommended doses during pregnancy, many herbal immune supplements (echinacea, elderberry, reishi) lack adequate safety data for pregnant or breastfeeding individuals.',
+            '<strong>Diabetes medication interactions:</strong> Garlic extract may enhance the effects of blood sugar-lowering medications. Blood glucose monitoring is advised when combining these supplements with diabetes management protocols.'
+        ],
+        researchGaps: [
+            'Long-term immune supplementation effects (>12 months) on overall infection rates and immune aging remain understudied',
+            'Optimal dosing during acute infection vs. maintenance prevention is poorly characterized for most supplements',
+            'Effects on specific immune cell populations (NK cells, T-cells, B-cells) need more systematic characterization',
+            'Interactions between multiple immune supplements taken concurrently lack controlled trial evidence',
+            'Age-specific responses (children, elderly, immunocompromised) are underrepresented in existing trials',
+            'Vaccine response modulation by immune supplements is an emerging but underdeveloped research area'
+        ],
+        relatedLinks: [
+            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../guides/cardiovascular.html', icon: 'fa-heartbeat', text: 'Cardiovascular Health Guide' },
+            { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
+            { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
+            { href: '../categories/antioxidants.html', icon: 'fa-shield-halved', text: 'Browse Antioxidants' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'joint-health',
+        title: 'Evidence-Based Supplements for Joint Health & Mobility',
+        shortTitle: 'Joint Health',
+        metaTitle: 'Best Supplements for Joint Health & Mobility (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to the best supplements for joint pain, cartilage support, and mobility. Ranked by evidence from peer-reviewed studies with dosages and safety profiles.',
+        breadcrumb: 'Joint Health & Mobility',
+        heroSubtitle: 'A systematic review of supplements studied for joint pain relief, cartilage protection, and mobility improvement — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const jointKeys = ['joint_pain','joint_space_narrowing','jointPain','jointHealth',
+                'function','functionalImprovement','osteoarthritisPain',
+                'inflammation','antiInflammatory','anti_inflammatory',
+                'cartilage','cartilageProtection','cartilage_markers',
+                'exercise_recovery','recoveryImprovement','muscleRecovery',
+                'pain_management','painReduction','pain_intensity',
+                'mobility','range_of_motion','stiffness',
+                'collagen_synthesis','connective_tissue'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => jointKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Glucosamine', 'Chondroitin Sulfate', 'MSM', 'Boswellia',
+            'Turmeric/Curcumin', 'Omega-3 Fatty Acids', 'Stinging Nettle', 'Pine Bark Extract'
+        ],
+        snippetDefinition: 'Joint health supplements are compounds studied in clinical trials for their effects on joint pain, cartilage integrity, mobility, and inflammation. The strongest evidence exists for glucosamine, chondroitin sulfate, and curcumin, with multiple meta-analyses and large-scale randomized controlled trials demonstrating measurable effects on osteoarthritis symptoms and structural joint outcomes.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Joint Health',
+        introduction: `Osteoarthritis affects over 500 million people worldwide and is the most common cause of joint pain and disability in adults over 50. While joint replacement surgery and pharmaceutical pain management remain critical care options, a substantial body of peer-reviewed research has investigated the potential of dietary supplements to support joint health, promote a healthy inflammatory response, and slow cartilage degradation.
+
+This guide systematically reviews the supplements with the strongest clinical evidence for joint health outcomes including pain reduction, cartilage protection, mobility improvement, and inflammatory modulation.
+
+<strong>Important:</strong> This guide is for informational purposes only. Joint supplements are not replacements for prescribed treatments including disease-modifying therapies, physical therapy, or surgical intervention. Always consult a qualified healthcare professional before starting any supplement regimen, particularly if you have rheumatoid arthritis or other inflammatory joint conditions.`,
+        mechanismsIntro: `Joint health supplements work through several distinct pathways to support cartilage integrity, promote a healthy inflammatory response, and improve mobility. Understanding these mechanisms helps match supplements to specific joint health goals.`,
+        mechanisms: [
+            {
+                name: 'Cartilage Matrix Support',
+                description: 'Joint cartilage is composed of a complex extracellular matrix including collagen, proteoglycans, and glycosaminoglycans. Several supplements provide building blocks for cartilage synthesis or inhibit enzymes that degrade cartilage matrix components (matrix metalloproteinases).',
+                supplements: ['Glucosamine', 'Chondroitin Sulfate', 'MSM']
+            },
+            {
+                name: 'Anti-Inflammatory Pathways',
+                description: 'Chronic low-grade inflammation is a primary driver of joint degeneration in osteoarthritis. Multiple supplements target distinct inflammatory pathways — including COX-2, 5-LOX, and NF-κB — to reduce inflammatory mediators in joint tissues.',
+                supplements: ['Turmeric/Curcumin', 'Boswellia', 'Omega-3 Fatty Acids', 'Stinging Nettle']
+            },
+            {
+                name: 'Collagen Synthesis',
+                description: 'Type II collagen is the predominant collagen in articular cartilage. Some supplements support collagen production by providing precursors (MSM provides sulfur), stimulating chondrocyte activity, or providing antioxidant protection to preserve existing collagen structures.',
+                supplements: ['MSM', 'Pine Bark Extract', 'Glucosamine']
+            },
+            {
+                name: 'Synovial Fluid Maintenance',
+                description: 'Synovial fluid lubricates joints and provides nutrients to avascular cartilage. Supplements that support hyaluronic acid production, reduce synovial inflammation, or improve joint fluid viscosity contribute to better joint mechanics and reduced friction-related damage.',
+                supplements: ['Chondroitin Sulfate', 'Omega-3 Fatty Acids', 'Glucosamine']
+            }
+        ],
+        safetyIntro: `Joint health supplements generally have favorable safety profiles in clinical trials, but several important considerations and medication interactions apply.`,
+        safetyNotes: [
+            '<strong>Shellfish allergy:</strong> Glucosamine derived from shellfish (most common form) is contraindicated in individuals with shellfish allergies. Vegetarian glucosamine derived from corn fermentation is available as an alternative.',
+            '<strong>Blood thinner interactions:</strong> Omega-3 fatty acids, boswellia, and curcumin may have mild antiplatelet or anticoagulant effects. Use caution when combining with warfarin, aspirin, or clopidogrel — INR monitoring may be necessary.',
+            '<strong>GI effects:</strong> Glucosamine, chondroitin, and MSM may cause mild GI symptoms (nausea, bloating, diarrhea) in some individuals. Taking with food often reduces these effects. These are generally milder than NSAID-related GI complications.',
+            '<strong>Diabetes considerations:</strong> Early concerns about glucosamine affecting blood sugar have not been confirmed in controlled trials, but individuals with diabetes should monitor glucose when starting supplementation.',
+            '<strong>Pregnancy and lactation:</strong> Most joint supplements lack adequate safety data for use during pregnancy or breastfeeding. Consult a healthcare provider before use.',
+            '<strong>Autoimmune arthritis:</strong> Supplements studied for osteoarthritis may not be appropriate for rheumatoid arthritis or other autoimmune joint conditions. Disease-modifying therapy should not be replaced with supplements.'
+        ],
+        researchGaps: [
+            'Long-term structural disease modification by supplements (joint space narrowing, cartilage volume) remains debated despite large trials',
+            'Optimal combinations of joint supplements (e.g., glucosamine + chondroitin + MSM) lack factorial trial designs',
+            'Head-to-head comparisons with NSAIDs and other analgesics are limited for most supplements',
+            'Effects in early-stage vs. advanced osteoarthritis may differ significantly but are rarely stratified in trials',
+            'Bioavailability of oral supplements to joint tissues (synovial fluid concentrations) is poorly characterized',
+            'Exercise synergy — whether supplements enhance the benefits of physical therapy and exercise programs — needs more study'
+        ],
+        relatedLinks: [
+            { href: '../guides/cardiovascular.html', icon: 'fa-heartbeat', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
+            { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
+            { href: '../compare/turmeric-vs-boswellia.html', icon: 'fa-scale-balanced', text: 'Turmeric vs Boswellia' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'metabolic-health',
+        title: 'Evidence-Based Supplements for Metabolic Health & Blood Sugar',
+        shortTitle: 'Metabolic Health',
+        metaTitle: 'Best Supplements for Blood Sugar & Metabolism (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to the best supplements for blood sugar management, insulin sensitivity, and metabolic health. Ranked by evidence from peer-reviewed studies with dosages and safety data.',
+        breadcrumb: 'Metabolic Health',
+        heroSubtitle: 'A systematic review of supplements studied for glucose control, insulin sensitivity, and metabolic function — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const metabKeys = ['glucoseControl','glucoseReduction','glucose_control','glucose_fasting',
+                'HbA1c','hba1c_reduction','fastingGlucoseT2DM','fastingGlucose',
+                'insulinSensitivity','insulin_sensitivity','insulin_resistance','insulinResistance',
+                'metabolicSupport','metabolicEnhancement','metabolicHealth','metabolic_markers',
+                'bodyWeight','bodyComposition','body_weight','weightManagement','weight_management',
+                'fat_oxidation','fatLoss','bmi_reduction',
+                'glycemicControl','glycemic','blood_sugar',
+                'lipidProfile','cholesterolReduction','triglycerides',
+                'thermogenesis','metabolicRate','energy_expenditure'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => metabKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Berberine', 'Chromium', 'Cinnamon Extract', 'Bitter Melon',
+            'Gymnema Sylvestre', 'Fenugreek', 'Alpha-Lipoic Acid', 'Green Tea Extract'
+        ],
+        snippetDefinition: 'Metabolic health supplements are compounds studied in clinical trials for their effects on blood glucose control, insulin sensitivity, lipid metabolism, and body composition. The strongest evidence exists for berberine, chromium, and alpha-lipoic acid, with multiple meta-analyses demonstrating measurable effects on fasting glucose, HbA1c, and metabolic biomarkers.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Metabolic Health',
+        introduction: `Metabolic syndrome affects approximately 25-30% of the global adult population and is characterized by a cluster of conditions including elevated blood sugar, insulin resistance, dyslipidemia, and central obesity. Type 2 diabetes alone affects over 530 million adults worldwide, with prevalence continuing to rise.
+
+While lifestyle modifications (diet, exercise, weight management) and pharmaceutical interventions remain the cornerstone of metabolic health management, a substantial body of peer-reviewed research has investigated dietary supplements that may support glucose metabolism, insulin sensitivity, and related metabolic parameters.
+
+<strong>Important:</strong> This guide is for informational purposes only. Metabolic supplements are not replacements for prescribed diabetes medications such as metformin, insulin, GLP-1 agonists, or SGLT2 inhibitors. Always consult an endocrinologist or qualified healthcare professional before starting any supplement, particularly if you have diabetes or are taking glucose-lowering medications — supplement-drug combinations may cause dangerous hypoglycemia.`,
+        mechanismsIntro: `Metabolic health supplements work through several distinct biochemical pathways to support glucose metabolism and insulin function. Understanding these mechanisms helps explain their clinical applications and potential interactions.`,
+        mechanisms: [
+            {
+                name: 'AMPK Activation & Glucose Uptake',
+                description: 'AMP-activated protein kinase (AMPK) is a master metabolic regulator that increases glucose uptake, enhances fatty acid oxidation, and improves insulin sensitivity. Berberine is the most potent natural AMPK activator, working through a mechanism similar to metformin but via distinct molecular targets.',
+                supplements: ['Berberine', 'Alpha-Lipoic Acid', 'Green Tea Extract']
+            },
+            {
+                name: 'Insulin Sensitization',
+                description: 'Insulin resistance — where cells respond poorly to insulin signaling — is a central feature of metabolic syndrome and type 2 diabetes. Several supplements improve insulin receptor sensitivity, enhance glucose transporter (GLUT4) translocation, or modulate insulin signaling cascades.',
+                supplements: ['Chromium', 'Alpha-Lipoic Acid', 'Berberine', 'Cinnamon Extract']
+            },
+            {
+                name: 'Carbohydrate Metabolism Modulation',
+                description: 'Some supplements influence carbohydrate metabolism by inhibiting digestive enzymes (alpha-glucosidase, alpha-amylase), slowing glucose absorption, or modulating hepatic glucose production. These mechanisms help reduce postprandial glucose spikes.',
+                supplements: ['Gymnema Sylvestre', 'Bitter Melon', 'Cinnamon Extract', 'Fenugreek']
+            },
+            {
+                name: 'Thermogenesis & Fat Oxidation',
+                description: 'Increased energy expenditure through thermogenesis and enhanced fatty acid oxidation can support metabolic health and body composition. Certain supplements stimulate these processes through catecholamine modulation, uncoupling protein activation, or direct mitochondrial effects.',
+                supplements: ['Green Tea Extract', 'Alpha-Lipoic Acid', 'Berberine']
+            }
+        ],
+        safetyIntro: `Metabolic health supplements require particular caution due to significant interactions with diabetes medications and the risk of dangerous hypoglycemia.`,
+        safetyNotes: [
+            '<strong>Hypoglycemia risk:</strong> Berberine, gymnema, bitter melon, chromium, and cinnamon all have glucose-lowering effects. When combined with diabetes medications (metformin, insulin, sulfonylureas, GLP-1 agonists), they may cause dangerous hypoglycemia. Blood glucose monitoring is essential and medication dose adjustments may be needed.',
+            '<strong>Berberine drug interactions:</strong> Berberine is a potent inhibitor of CYP3A4, CYP2D6, and P-glycoprotein enzymes, affecting the metabolism of many prescription drugs including statins, antidepressants, and immunosuppressants. Medical supervision is required.',
+            '<strong>Chromium kidney concerns:</strong> High-dose chromium supplementation (>1000mcg/day) has been associated with renal toxicity in some case reports. Stay within recommended doses (200-1000mcg/day) and avoid in individuals with pre-existing kidney disease.',
+            '<strong>Bitter melon pregnancy contraindication:</strong> Bitter melon has demonstrated abortifacient properties in animal studies and is contraindicated during pregnancy. Avoid use during pregnancy or when attempting to conceive.',
+            '<strong>Green tea extract liver risk:</strong> High-dose green tea extract supplements (especially fasted) have been associated with rare cases of liver injury. Take with food and avoid doses above 800mg EGCG/day.',
+            '<strong>Medication timing:</strong> Berberine and fenugreek may interfere with the absorption of other medications. Separate dosing by at least 2 hours from prescription drugs.'
+        ],
+        researchGaps: [
+            'Long-term effects of metabolic supplements on diabetes progression and cardiovascular outcomes are understudied',
+            'Optimal dosing for pre-diabetes vs. established type 2 diabetes is poorly differentiated in most trials',
+            'Interactions between multiple glucose-lowering supplements taken concurrently lack controlled evidence',
+            'Effects on type 1 diabetes and gestational diabetes are largely unstudied for most supplements',
+            'Genetic variation in supplement response (e.g., chromium transporter polymorphisms) is an emerging research area',
+            'Quality and standardization issues — particularly for botanical extracts like bitter melon and gymnema — limit reproducibility across studies'
+        ],
+        relatedLinks: [
+            { href: '../guides/cardiovascular.html', icon: 'fa-heartbeat', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
+            { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'energy-vitality',
+        title: 'Evidence-Based Supplements for Energy & Vitality',
+        shortTitle: 'Energy & Vitality',
+        metaTitle: 'Best Supplements for Energy & Fatigue (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to the best supplements for energy, fatigue reduction, and physical vitality. Ranked by evidence from peer-reviewed studies with dosages and safety profiles.',
+        breadcrumb: 'Energy & Vitality',
+        heroSubtitle: 'A systematic review of supplements studied for energy production, fatigue resistance, and physical performance — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const energyKeys = ['energy_levels','energy','energyEnhancement','energyProduction',
+                'exercise_performance','exercisePerformance','exerciseEndurance','physicalPerformance',
+                'endurance_VO2','endurance','endurancePerformance','aerobic_performance',
+                'fatigue','fatigueReduction','mentalFatigue','physicalFatigue','fatigue_reduction',
+                'strength','strengthImprovement','muscleStrength','powerOutput',
+                'alertness','alertnessImprovement','wakefulness',
+                'ketone_production','cognitive_energy','cellularEnergy',
+                'oxygen_utilization','VO2max','vo2_max',
+                'muscle_mass','leanBodyMass','bodyComposition',
+                'recovery','recoveryImprovement','exerciseRecovery',
+                'metabolicRate','thermogenesis'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => energyKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Creatine', 'Caffeine', 'CoQ10', 'Iron',
+            'Rhodiola rosea', 'Cordyceps', 'MCT Oil', 'Beta-Alanine'
+        ],
+        snippetDefinition: 'Energy and vitality supplements are compounds studied in clinical trials for their effects on ATP production, exercise performance, fatigue resistance, and physical endurance. The strongest evidence exists for creatine (Tier 1 with extensive meta-analyses), caffeine (Tier 1 for acute performance), and CoQ10 (Tier 2 for mitochondrial energy), with robust randomized controlled trials demonstrating measurable performance and energy benefits.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Energy & Vitality',
+        introduction: `Fatigue is one of the most common complaints in clinical practice, affecting up to 45% of the general population. While fatigue can stem from numerous medical, psychological, and lifestyle factors, cellular energy production — particularly mitochondrial ATP synthesis — is the fundamental biochemical process underlying physical and mental vitality.
+
+This guide systematically reviews the supplements with the strongest clinical evidence for enhancing energy production, reducing fatigue, and supporting physical performance. Each recommendation is grounded in published randomized controlled trials (RCTs), systematic reviews, and meta-analyses.
+
+<strong>Important:</strong> This guide is for informational purposes only. Persistent fatigue may indicate underlying medical conditions (thyroid dysfunction, anemia, sleep disorders, depression) that require proper diagnosis and professional care. Always consult a healthcare professional before starting supplements for fatigue, and ensure underlying causes have been appropriately evaluated.`,
+        mechanismsIntro: `Energy supplements work through several distinct biochemical pathways to support cellular energy production, improve oxygen delivery, and enhance fatigue resistance. Understanding these mechanisms helps match supplements to specific energy goals.`,
+        mechanisms: [
+            {
+                name: 'ATP Production & Phosphocreatine System',
+                description: 'Adenosine triphosphate (ATP) is the universal energy currency of cells. The phosphocreatine system provides rapid ATP regeneration during high-intensity activities. Creatine supplementation increases intramuscular phosphocreatine stores by 20-40%, directly enhancing ATP availability for both physical and cognitive performance.',
+                supplements: ['Creatine', 'CoQ10', 'Iron']
+            },
+            {
+                name: 'Mitochondrial Electron Transport',
+                description: 'Mitochondria generate ~90% of cellular ATP through oxidative phosphorylation. CoQ10 is an essential electron carrier in the mitochondrial respiratory chain (Complex I to III), and its levels naturally decline with age. Supporting mitochondrial function is fundamental to sustained energy production.',
+                supplements: ['CoQ10', 'Iron', 'MCT Oil']
+            },
+            {
+                name: 'Oxygen Utilization & VO2 Max',
+                description: 'Maximal oxygen consumption (VO2 max) is a key determinant of aerobic performance and endurance capacity. Certain supplements improve oxygen delivery (iron for hemoglobin synthesis), oxygen utilization at the tissue level (cordyceps), or buffer metabolic byproducts that limit sustained effort (beta-alanine).',
+                supplements: ['Iron', 'Cordyceps', 'Beta-Alanine', 'Rhodiola rosea']
+            },
+            {
+                name: 'Adaptogenic Fatigue Resistance',
+                description: 'Adaptogens are a class of compounds that modulate the stress response and improve resistance to physical and mental fatigue. They typically work by normalizing HPA axis function, modulating cortisol responses, and supporting neurotransmitter balance during prolonged stress.',
+                supplements: ['Rhodiola rosea', 'Cordyceps', 'Caffeine']
+            }
+        ],
+        safetyIntro: `Energy supplements generally have well-characterized safety profiles, but several important considerations apply — particularly regarding stimulant effects, nutrient interactions, and pre-existing conditions.`,
+        safetyNotes: [
+            '<strong>Caffeine tolerance & dependence:</strong> Regular caffeine consumption leads to tolerance (requiring higher doses for the same effect) and physical dependence (withdrawal headaches, fatigue, irritability). Limit intake to 400mg/day for most adults and cycle usage to maintain sensitivity.',
+            '<strong>Iron overload risk:</strong> Iron supplementation without confirmed deficiency can lead to iron overload (hemochromatosis), causing liver damage, heart disease, and diabetes. Always test ferritin and iron saturation levels before supplementing — iron is not an "energy supplement" for non-deficient individuals.',
+            '<strong>Creatine kidney myths vs. reality:</strong> Despite persistent myths, creatine monohydrate does not cause kidney damage in healthy individuals at standard doses (3-5g/day). However, creatine raises serum creatinine (a kidney marker), which can falsely suggest kidney impairment. Individuals with pre-existing kidney disease should consult a nephrologist.',
+            '<strong>Stimulant stacking dangers:</strong> Combining multiple stimulants (caffeine + high-dose green tea + pre-workout supplements) can cause dangerous cardiovascular effects including tachycardia, hypertension, and arrhythmias. Use one stimulant source at a time.',
+            '<strong>Sleep interference:</strong> Caffeine (half-life 5-6 hours), rhodiola, and cordyceps may interfere with sleep quality if taken later in the day. Consume stimulating supplements before noon to minimize sleep disruption.',
+            '<strong>Pregnancy and lactation:</strong> Caffeine should be limited to 200mg/day during pregnancy. Most other performance supplements lack adequate pregnancy safety data. Consult a healthcare provider.'
+        ],
+        researchGaps: [
+            'Long-term effects of energy supplement use (>12 months) on mitochondrial health and aging remain understudied',
+            'Optimal timing and periodization of energy supplements for peak performance is poorly characterized',
+            'Individual variation in caffeine metabolism (CYP1A2 polymorphisms) significantly affects response but is rarely accounted for in trials',
+            'Synergistic effects of energy supplement combinations (e.g., creatine + caffeine) show conflicting evidence and need larger trials',
+            'Effects on different types of fatigue (physical vs. mental vs. chronic) are often conflated in study designs',
+            'Female-specific responses to energy supplements are underrepresented in the literature, with most trials conducted predominantly in male participants'
+        ],
+        relatedLinks: [
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../categories/performance-enhancers.html', icon: 'fa-dumbbell', text: 'Browse Performance Enhancers' },
+            { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
+            { href: '../categories/antioxidants.html', icon: 'fa-shield-halved', text: 'Browse Antioxidants' },
+            { href: '../compare/creatine-vs-beta-alanine.html', icon: 'fa-scale-balanced', text: 'Creatine vs Beta-Alanine' },
+            { href: '../compare/coq10-vs-pqq.html', icon: 'fa-scale-balanced', text: 'CoQ10 vs PQQ' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
     }
 ];
 
@@ -308,13 +642,18 @@ function getDomainBenefit(s, guideSlug) {
     const domainKeywords = {
         'anxiety-stress': ['anxiety', 'stress', 'calm', 'relax', 'cortisol', 'mood', 'sleep', 'gaba', 'serotonin', 'adaptogen'],
         'cognitive-performance': ['memory', 'cognit', 'focus', 'attention', 'brain', 'learning', 'mental', 'neuroprotect', 'neurotrophic', 'acetylcholine'],
-        'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation']
+        'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation'],
+        'immune-function': ['immune', 'infection', 'cold', 'flu', 'antioxidant', 'nk cell', 'cytokine', 'antibod', 'pathogen', 'antimicrobial', 'antiviral', 'white blood'],
+        'joint-health': ['joint', 'cartilage', 'inflammat', 'arthritis', 'pain', 'mobility', 'collagen', 'bone', 'connective tissue', 'synovial', 'musculoskeletal'],
+        'metabolic-health': ['glucose', 'insulin', 'blood sugar', 'metaboli', 'HbA1c', 'glycemic', 'diabetes', 'weight', 'fat', 'obesity', 'AMPK', 'thermogen'],
+        'energy-vitality': ['energy', 'fatigue', 'endurance', 'performance', 'ATP', 'mitochondri', 'oxygen', 'VO2', 'stamina', 'power', 'strength', 'exercise']
     };
 
     const keywords = domainKeywords[guideSlug] || [];
     if (keywords.length > 0) {
-        // Search nonCognitive first for anxiety/cardiovascular, cognitive first for cognitive
-        const searchOrder = guideSlug === 'cognitive-performance' ? [...cog, ...non] : [...non, ...cog];
+        // Search nonCognitive first for most domains, cognitive first for cognitive
+        const cogDomains = ['cognitive-performance'];
+        const searchOrder = cogDomains.includes(guideSlug) ? [...cog, ...non] : [...non, ...cog];
         for (const benefit of searchOrder) {
             const lower = benefit.toLowerCase();
             if (keywords.some(kw => lower.includes(kw))) {
@@ -323,8 +662,9 @@ function getDomainBenefit(s, guideSlug) {
         }
     }
 
-    // Fallback: for cognitive guides prefer cognitive benefits, otherwise nonCognitive
-    if (guideSlug === 'cognitive-performance') {
+    // Fallback: for cognitive/energy guides prefer cognitive benefits, otherwise nonCognitive
+    const cogFirstGuides = ['cognitive-performance', 'energy-vitality'];
+    if (cogFirstGuides.includes(guideSlug)) {
         return cog[0] || non[0] || 'General support';
     }
     return non[0] || cog[0] || 'General support';
@@ -342,7 +682,11 @@ function getDomainSortedBenefits(s, guideSlug) {
     const domainKeywords = {
         'anxiety-stress': ['anxiety', 'stress', 'calm', 'relax', 'cortisol', 'mood', 'sleep', 'gaba', 'serotonin', 'adaptogen'],
         'cognitive-performance': ['memory', 'cognit', 'focus', 'attention', 'brain', 'learning', 'mental', 'neuroprotect', 'neurotrophic', 'acetylcholine'],
-        'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation']
+        'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation'],
+        'immune-function': ['immune', 'infection', 'cold', 'flu', 'antioxidant', 'nk cell', 'cytokine', 'antibod', 'pathogen', 'antimicrobial', 'antiviral', 'white blood'],
+        'joint-health': ['joint', 'cartilage', 'inflammat', 'arthritis', 'pain', 'mobility', 'collagen', 'bone', 'connective tissue', 'synovial', 'musculoskeletal'],
+        'metabolic-health': ['glucose', 'insulin', 'blood sugar', 'metaboli', 'HbA1c', 'glycemic', 'diabetes', 'weight', 'fat', 'obesity', 'AMPK', 'thermogen'],
+        'energy-vitality': ['energy', 'fatigue', 'endurance', 'performance', 'ATP', 'mitochondri', 'oxygen', 'VO2', 'stamina', 'power', 'strength', 'exercise']
     };
 
     const keywords = domainKeywords[guideSlug] || [];
@@ -580,7 +924,7 @@ function generateGuidePage(guide, allSupplements) {
 `;
     core.forEach(s => {
         const topBenefit = getDomainBenefit(s, guide.slug);
-        html += `                            <li><strong>${esc(s.name)}</strong> ${tierBadgeHtml(s.evidenceTier)} &mdash; ${esc(topBenefit)} (${esc(s.dosageRange || 'Dosage varies')})</li>\n`;
+        html += `                            <li><a href="../supplements/${slugify(s.name)}.html" style="color:var(--accent);text-decoration:none;font-weight:700;">${esc(s.name)}</a> ${tierBadgeHtml(s.evidenceTier)} &mdash; ${esc(topBenefit)} (${esc(s.dosageRange || 'Dosage varies')})</li>\n`;
     });
     html += `                        </ol>
                     </div>
@@ -598,7 +942,7 @@ function generateGuidePage(guide, allSupplements) {
         html += `                        <div class="supplement-card" id="supp-${slugify(s.name)}">
                             <div class="card-header">
                                 <div>
-                                    <h3 class="card-name">${esc(s.name)}</h3>
+                                    <h3 class="card-name"><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${esc(s.name)}</a></h3>
                                     <p class="card-scientific">${esc(s.scientificName || '')}</p>
                                 </div>
                                 ${tierBadgeHtml(s.evidenceTier)}
@@ -652,7 +996,7 @@ function generateGuidePage(guide, allSupplements) {
     filtered.forEach(s => {
         const topBenefit = getDomainBenefit(s, guide.slug);
         html += `                                <tr>
-                                    <td><strong>${esc(s.name)}</strong></td>
+                                    <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${esc(s.name)}</a></strong></td>
                                     <td>${tierBadgeHtml(s.evidenceTier)}</td>
                                     <td>${esc(normalizeCategory(s.category))}</td>
                                     <td>${esc(topBenefit)}</td>
@@ -677,7 +1021,7 @@ function generateGuidePage(guide, allSupplements) {
         html += `
                     <h3>${esc(m.name)}</h3>
                     <p>${m.description}</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> ${m.supplements.map(n => `<a href="#supp-${slugify(n)}">${esc(n)}</a>`).join(', ')}</p>
+                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> ${m.supplements.map(n => `<a href="../supplements/${slugify(n)}.html">${esc(n)}</a>`).join(', ')}</p>
 `;
     });
     html += `                </section>
@@ -702,7 +1046,7 @@ function generateGuidePage(guide, allSupplements) {
 `;
     core.forEach(s => {
         html += `                                <tr>
-                                    <td><strong>${esc(s.name)}</strong></td>
+                                    <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${esc(s.name)}</a></strong></td>
                                     <td>${esc(s.dosageRange || '—')}</td>
                                     <td>${tierBadgeHtml(s.evidenceTier)}</td>
                                     <td>${esc(s.safetyProfile?.rating || '—')}</td>

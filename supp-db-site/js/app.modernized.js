@@ -608,9 +608,14 @@ class ModernSupplementDatabase {
                 </div>
 
                 <div class="card-footer flex space-x-2">
+                    <a href="supplements/${supplement.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.html"
+                       class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors text-center"
+                       style="text-decoration:none;">
+                        Full Monograph
+                    </a>
                     <button onclick="app.showSupplementDetails(${supplement.id})"
-                            class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors">
-                        View Details
+                            class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
+                        Quick View
                     </button>
                     <button onclick="app.addToComparison(${supplement.id})"
                             class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
@@ -629,6 +634,7 @@ class ModernSupplementDatabase {
         return {
             id: supplement.id,
             name: supplement.name,
+            slug: supplement.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
             scientificName: supplement.scientificName,
             category: supplement.category,
             evidenceTier: supplement.evidenceTier,

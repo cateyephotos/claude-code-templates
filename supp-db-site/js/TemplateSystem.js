@@ -350,11 +350,16 @@ class TemplateSystem {
         // Supplement actions partial
         this.registerPartial('supplementActions', `
             <div class="flex space-x-2">
-                <button onclick="app.showSupplementDetails({{id}})" 
-                        class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors"
-                    View Details
+                <a href="supplements/{{slug}}.html"
+                   class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors text-center"
+                   style="text-decoration:none;">
+                    Full Monograph
+                </a>
+                <button onclick="app.showSupplementDetails({{id}})"
+                        class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
+                    Quick View
                 </button>
-                <button onclick="app.addToComparison({{id}})" 
+                <button onclick="app.addToComparison({{id}})"
                         class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
                     Compare
                 </button>

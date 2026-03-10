@@ -96,7 +96,7 @@ function generateCategoryPage(categoryName, supplements) {
             ...(s.primaryBenefits?.nonCognitive || []).slice(0, 2)
         ].slice(0, 3);
         return `                            <tr>
-                                <td><strong>${escHtml(s.name)}</strong>${s.scientificName && s.scientificName !== s.name ? `<br><span style="font-size:0.8em;color:var(--text-muted);font-style:italic">${escHtml(s.scientificName)}</span>` : ''}</td>
+                                <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${escHtml(s.name)}</a></strong>${s.scientificName && s.scientificName !== s.name ? `<br><span style="font-size:0.8em;color:var(--text-muted);font-style:italic">${escHtml(s.scientificName)}</span>` : ''}</td>
                                 <td><span class="tier-badge tier-badge-${s.evidenceTier}">${getTierLabel(s.evidenceTier)}</span></td>
                                 <td>${benefits.map(b => escHtml(b)).join(', ') || '—'}</td>
                                 <td>${escHtml(s.dosageRange || 'See research')}</td>
@@ -114,7 +114,7 @@ function generateCategoryPage(categoryName, supplements) {
         const sideEffects = (s.safetyProfile?.commonSideEffects || []).slice(0, 3);
         return `                    <div class="supplement-card">
                         <div class="supplement-card-header">
-                            <h3 class="supplement-card-name">${escHtml(s.name)}</h3>
+                            <h3 class="supplement-card-name"><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${escHtml(s.name)}</a></h3>
                             <span class="tier-badge tier-badge-${s.evidenceTier}">${getTierLabel(s.evidenceTier)}</span>
                         </div>
                         ${s.scientificName && s.scientificName !== s.name ? `<p style="font-style:italic;color:var(--text-muted);font-size:0.85rem;margin:0 0 0.75rem">${escHtml(s.scientificName)}</p>` : ''}
@@ -308,7 +308,7 @@ ${JSON.stringify(jsonLd, null, 4)}
                     <ol>
 ${sorted.slice(0, 8).map(s => {
     const topBenefit = [...(s.primaryBenefits?.cognitive || []), ...(s.primaryBenefits?.nonCognitive || [])][0] || '';
-    return `                        <li><strong>${escHtml(s.name)}</strong> (${getTierLabel(s.evidenceTier)}) — ${escHtml(topBenefit)}</li>`;
+    return `                        <li><strong><a href="../supplements/${slugify(s.name)}.html" style="color:var(--accent);text-decoration:none;">${escHtml(s.name)}</a></strong> (${getTierLabel(s.evidenceTier)}) — ${escHtml(topBenefit)}</li>`;
 }).join('\n')}
                     </ol>
                 </div>

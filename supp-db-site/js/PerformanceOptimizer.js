@@ -217,9 +217,14 @@ class PerformanceOptimizer {
             </div>
             
             <div class="flex space-x-2">
-                <button onclick="app.showSupplementDetails(${supplement.id})" 
-                        class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors">
-                    View Details
+                <a href="supplements/${supplement.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.html"
+                   class="flex-1 bg-accent text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-green-900 transition-colors text-center"
+                   style="text-decoration:none;">
+                    Full Monograph
+                </a>
+                <button onclick="app.showSupplementDetails(${supplement.id})"
+                        class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
+                    Quick View
                 </button>
                 <button onclick="app.addToComparison(${supplement.id})"
                         class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">
@@ -375,9 +380,14 @@ class VirtualScrollManager {
             <div class="bg-white rounded-lg shadow-md p-4 mb-4">
                 <h3 class="font-bold">${item.name}</h3>
                 <p class="text-gray-600">${item.scientificName}</p>
-                <button onclick="app.showSupplementDetails(${item.id})" 
-                        class="mt-2 bg-accent text-white px-4 py-2 rounded">
-                    View Details
+                <a href="supplements/${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.html"
+                   class="mt-2 inline-block bg-accent text-white px-4 py-2 rounded text-center"
+                   style="text-decoration:none;">
+                    Full Monograph
+                </a>
+                <button onclick="app.showSupplementDetails(${item.id})"
+                        class="mt-2 bg-gray-200 text-gray-700 px-4 py-2 rounded">
+                    Quick View
                 </button>
             </div>
         `;

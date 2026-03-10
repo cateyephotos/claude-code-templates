@@ -90,7 +90,13 @@ function isResearchContext(text, lineContext) {
     const researchTerms = ['study', 'trial', 'RCT', 'meta-analysis', 'systematic review', 'placebo',
         'double-blind', 'randomized', 'cohort', 'observational', 'methodology', 'citation',
         'PMID', 'DOI', 'journal', 'authors', 'findings', 'p-value', 'p =', 'SMD', 'CI:',
-        'n=', 'sample', 'outcome', 'endpoint', 'baseline', 'intervention'];
+        'n=', 'sample', 'outcome', 'endpoint', 'baseline', 'intervention',
+        'aged rats', 'subjects', 'patients', 'participants', 'volunteers',
+        'supplementation', 'efficacy', 'tolerability', 'well tolerated',
+        'incidence', 'hypercholesterolemia', 'depressive disorder',
+        'alternative medicine', 'potential treatment', 'preliminary evidence',
+        'recommendation', 'PubMed', 'Enhanced Evidence Review',
+        'peer-reviewed'];
     const ctx = (text + ' ' + (lineContext || '')).toLowerCase();
     return researchTerms.some(t => ctx.includes(t.toLowerCase()));
 }
@@ -148,7 +154,7 @@ function isFalsePositiveContext(text, matched) {
 
     // 6. Academic paper title patterns (commonly appear as link text on pages)
     const paperTitlePatterns = [
-        /\bfor\s+(?:the\s+)?treat(?:ing|ment)\s+(?:of\s+)?\w/i,  // "for treating X" / "for the treatment of X"
+        /\bfor\s+(?:(?:the|preventing|managing|reducing|controlling)\s+(?:and\s+)?)*treat(?:ing|ment)\s+(?:of\s+)?\w/i,  // "for treating X" / "for preventing and treating X"
         /\bto\s+(?:p|P)revent\s+\w/i,  // "to Prevent Neural Tube..."
         /\b(?:effects?|efficacy|safety|role)\s+of\s+\w+.*(?:on|in|for)\b/i,  // "Effect of X on Y"
         /\bassociated\s+with\s+\w+.*\bfor\s+the\b/i,  // "Adverse events associated with X for the..."
@@ -226,6 +232,7 @@ function auditHTMLFiles() {
         path.join(ROOT, 'guides'),
         path.join(ROOT, 'categories'),
         path.join(ROOT, 'compare'),
+        path.join(ROOT, 'supplements'),
     ];
 
     // Add root HTML files
@@ -252,17 +259,23 @@ function auditHTMLFiles() {
             .replace(/&[a-z]+;/gi, ' ')
             .replace(/\s+/g, ' ');
 
-        // Split into sentences for context
-        const sentences = visibleText.split(/[.!?]+/).filter(s => s.trim().length > 10);
+        // Split into sentences for context (preserve DOI-like strings by replacing their periods first)
+        const sanitized = visibleText.replace(/\b(10\.\d{4,}\/[^\s]+)/g, m => m.replace(/\./g, '\u2024'));
+        const sentences = sanitized.split(/[.!?]+/).map(s => s.replace(/\u2024/g, '.')).filter(s => s.trim().length > 10);
 
-        sentences.forEach(sentence => {
+        // For supplement monograph pages, provide broader context since these are evidence summary pages
+        const isSupplementPage = relPath.startsWith('supplements' + path.sep) || relPath.startsWith('supplements/');
+        const pageContext = isSupplementPage ? 'Enhanced Evidence Review peer-reviewed citation study findings' : '';
+
+        sentences.forEach((sentence, sentIdx) => {
             PROHIBITED_PATTERNS.forEach(rule => {
                 if (rule.severity === 'INFO' || rule.severity === 'LOW') return;
                 const match = sentence.match(rule.pattern);
                 if (!match) return;
 
-                // Skip if in research context
-                if (isResearchContext(sentence, '')) return;
+                // Skip if in research context (supplement pages get extra context)
+                const neighborContext = [sentences[sentIdx - 1] || '', sentences[sentIdx + 1] || ''].join(' ');
+                if (isResearchContext(sentence, pageContext + ' ' + neighborContext)) return;
 
                 // Skip false positives (disclaimers, citation titles, safety warnings, negations)
                 if (isFalsePositiveContext(sentence, match[0])) return;

@@ -144,6 +144,168 @@ const COMPARISONS = [
             { title: 'Nootropics', url: '../categories/nootropics.html' },
             { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' }
         ]
+    },
+
+    // ── Phase 3 Comparisons ──────────────────────────────────────────────
+
+    {
+        slug: 'lions-mane-vs-bacopa',
+        suppA: "Lion's Mane Mushroom",
+        suppB: 'Bacopa monnieri',
+        title: "Lion's Mane vs Bacopa Monnieri: Evidence-Based Comparison for Cognitive Enhancement",
+        metaTitle: "Lion's Mane vs Bacopa (2026) | Which Nootropic Is Better for Memory?",
+        metaDescription: "Evidence-based comparison of Lion's Mane Mushroom vs Bacopa Monnieri for memory, neuroprotection, and cognitive function. Compare mechanisms, clinical evidence, and which nootropic suits your needs.",
+        domain: 'Cognitive Enhancement',
+        sharedDomains: ['memory', 'neuroprotection', 'cognitive function', 'learning'],
+        verdict: "Both Lion's Mane Mushroom and Bacopa monnieri are Tier 2 (Moderate Evidence) nootropics that support cognitive function through distinct and complementary mechanisms. Bacopa monnieri has stronger evidence for memory consolidation and learning facilitation, working through acetylcholinesterase inhibition and synaptic transmission enhancement — though it requires 8-12 weeks for full effects. Lion's Mane is unique among nootropics for stimulating nerve growth factor (NGF) synthesis, supporting neurogenesis and nerve regeneration. Choose Bacopa for proven memory enhancement; choose Lion's Mane for neurotrophic support and long-term neuroprotection.",
+        whoShouldChoose: [
+            { scenario: 'Memory & learning', recommendation: 'Bacopa monnieri', reason: 'Strongest evidence for memory consolidation and learning facilitation through cholinergic enhancement; multiple RCTs in healthy adults.' },
+            { scenario: 'Neurogenesis & nerve repair', recommendation: "Lion's Mane Mushroom", reason: "Unique ability to stimulate NGF synthesis; may support nerve regeneration and myelination — a mechanism not shared by other common nootropics." },
+            { scenario: 'Age-related cognitive decline', recommendation: 'Both viable', reason: "Bacopa supports memory retention while Lion's Mane may support structural brain health through neurotrophic factors." },
+            { scenario: 'Students & exam preparation', recommendation: 'Bacopa monnieri', reason: 'Better evidence for attention, working memory, and information processing speed in healthy young adults.' },
+            { scenario: 'Long-term neuroprotection', recommendation: "Lion's Mane Mushroom", reason: "NGF stimulation may support long-term neuronal health and resilience; emerging evidence for mood and immune modulation." },
+            { scenario: 'Anxiety alongside cognition', recommendation: 'Bacopa monnieri', reason: 'Has demonstrated anxiolytic properties alongside cognitive benefits in clinical trials.' }
+        ],
+        canStack: "Yes — Lion's Mane and Bacopa work through complementary mechanisms and can be safely combined. Lion's Mane stimulates NGF synthesis (neurotrophic pathway) while Bacopa modulates acetylcholinesterase and synaptic transmission (cholinergic pathway). This combination addresses both structural neuronal growth and neurochemical signaling for comprehensive cognitive support. Standard dosing: Lion's Mane 500-1000mg (fruiting body extract) and Bacopa 300mg (55% bacosides) with meals. No known adverse interactions between these compounds.",
+        relatedGuides: [
+            { title: 'Cognitive Performance Guide', url: '../guides/cognitive-performance.html' }
+        ],
+        relatedCategories: [
+            { title: 'Nootropics', url: '../categories/nootropics.html' }
+        ]
+    },
+    {
+        slug: 'creatine-vs-beta-alanine',
+        suppA: 'Creatine',
+        suppB: 'Beta-Alanine',
+        title: 'Creatine vs Beta-Alanine: Evidence-Based Comparison for Performance',
+        metaTitle: 'Creatine vs Beta-Alanine (2026) | Which Performance Supplement Is Better?',
+        metaDescription: 'Evidence-based comparison of Creatine vs Beta-Alanine for physical and cognitive performance. Compare mechanisms, clinical evidence for strength, endurance, and which supplement fits your goals.',
+        domain: 'Physical & Cognitive Performance',
+        sharedDomains: ['exercise performance', 'muscle function', 'physical endurance', 'strength'],
+        verdict: 'Creatine (Tier 1) has vastly superior evidence compared to Beta-Alanine (Tier 3) across both physical and cognitive performance domains. Creatine is one of the most extensively studied supplements in existence, with strong meta-analytic support for strength, power, lean mass, and emerging evidence for cognitive benefits — particularly under sleep deprivation or mental fatigue. Beta-Alanine supports endurance through carnosine-mediated acid buffering, which is more specific to sustained high-intensity efforts lasting 1-10 minutes. Creatine is the clear first choice for most people; Beta-Alanine is a targeted addition for endurance-specific goals.',
+        whoShouldChoose: [
+            { scenario: 'Strength & power output', recommendation: 'Creatine', reason: 'Extensive meta-analysis support for increased strength, power, and lean body mass across diverse populations.' },
+            { scenario: 'Cognitive performance', recommendation: 'Creatine', reason: 'Emerging Tier 1 evidence for cognitive benefits, particularly under conditions of sleep deprivation, mental fatigue, and aging.' },
+            { scenario: 'High-intensity endurance (1-10 min)', recommendation: 'Beta-Alanine', reason: 'Carnosine buffering specifically supports sustained efforts where lactic acid accumulation is the limiting factor.' },
+            { scenario: 'General supplementation', recommendation: 'Creatine', reason: 'Broader benefits, stronger evidence base, well-established safety profile, and cognitive benefits make it the superior all-around choice.' },
+            { scenario: 'Time-to-exhaustion sports', recommendation: 'Beta-Alanine', reason: 'May improve time-to-exhaustion in activities like rowing, cycling sprints, and high-intensity interval training.' },
+            { scenario: 'Maximum overall performance', recommendation: 'Both', reason: 'Different mechanisms (phosphocreatine energy system vs carnosine acid buffering) are fully complementary for comprehensive performance support.' }
+        ],
+        canStack: 'Yes — Creatine and Beta-Alanine are commonly stacked in sports nutrition and target entirely different performance pathways. Creatine replenishes phosphocreatine for short-duration maximal efforts (ATP resynthesis), while Beta-Alanine increases intramuscular carnosine to buffer hydrogen ions during sustained high-intensity work. This combination is one of the most evidence-supported supplement stacks for athletic performance. Standard dosing: Creatine 3-5g/day (monohydrate) and Beta-Alanine 3.2-6.4g/day (split doses to minimize paresthesia). No known adverse interactions.',
+        relatedGuides: [
+            { title: 'Energy & Vitality Guide', url: '../guides/energy-vitality.html' }
+        ],
+        relatedCategories: [
+            { title: 'Performance Enhancers', url: '../categories/performance-enhancers.html' }
+        ]
+    },
+    {
+        slug: 'vitamin-d-vs-magnesium',
+        suppA: 'Vitamin D3',
+        suppB: 'Magnesium',
+        title: 'Vitamin D3 vs Magnesium: Evidence-Based Comparison for Foundational Health',
+        metaTitle: 'Vitamin D vs Magnesium (2026) | Which Essential Nutrient Do You Need?',
+        metaDescription: 'Evidence-based comparison of Vitamin D3 vs Magnesium for mood, sleep, bone health, and immune function. Compare deficiency patterns, clinical evidence, and which essential nutrient to prioritize.',
+        domain: 'Foundational Health',
+        sharedDomains: ['mood', 'sleep', 'bone health', 'immune function', 'muscle function'],
+        verdict: 'Vitamin D3 and Magnesium are both Tier 1 (Strong Evidence) essential nutrients that address widespread population deficiencies. Rather than competing supplements, they are synergistic — magnesium is required for vitamin D metabolism, and both are foundational to hundreds of enzymatic processes. Vitamin D3 has stronger evidence for immune function, bone mineral density, and mood regulation. Magnesium has stronger evidence for sleep quality, stress response, muscle relaxation, and cardiovascular function. Most people benefit from both, and deficiency in one can impair the function of the other.',
+        whoShouldChoose: [
+            { scenario: 'Sleep quality', recommendation: 'Magnesium', reason: 'Stronger evidence for sleep onset, sleep quality, and GABA modulation; particularly glycinate and threonate forms.' },
+            { scenario: 'Immune function', recommendation: 'Vitamin D3', reason: 'Critical for both innate and adaptive immunity; deficiency strongly associated with increased infection susceptibility.' },
+            { scenario: 'Mood & depression', recommendation: 'Both', reason: 'Both deficiencies are associated with depression; Vitamin D modulates serotonin synthesis while Magnesium supports NMDA receptor regulation.' },
+            { scenario: 'Bone health', recommendation: 'Vitamin D3', reason: 'Essential for calcium absorption and bone mineralization; best combined with K2 for directing calcium to bones rather than soft tissue.' },
+            { scenario: 'Muscle cramps & tension', recommendation: 'Magnesium', reason: 'Directly involved in muscle relaxation and neuromuscular transmission; deficiency commonly causes cramps and tension.' },
+            { scenario: 'Budget (one supplement only)', recommendation: 'Depends on deficiency status', reason: 'Get tested — 42% of US adults are vitamin D deficient, while ~50% have inadequate magnesium intake. Prioritize the greater deficiency.' }
+        ],
+        canStack: 'Yes — Vitamin D3 and Magnesium are synergistic and commonly recommended together. Magnesium is required for the enzymatic conversion of vitamin D to its active form (calcitriol). Research suggests that magnesium deficiency can impair vitamin D metabolism, making both supplements less effective alone than combined. Standard dosing: Vitamin D3 1000-5000 IU/day (based on blood levels) and Magnesium 200-400mg/day (glycinate, threonate, or citrate forms). Vitamin D3 is best taken with a fat-containing meal; Magnesium can be taken anytime but evening may support sleep.',
+        relatedGuides: [
+            { title: 'Sleep Quality Guide', url: '../guides/sleep.html' },
+            { title: 'Anxiety & Stress Guide', url: '../guides/anxiety-stress.html' }
+        ],
+        relatedCategories: [
+            { title: 'Essential Nutrients', url: '../categories/essential-nutrients.html' }
+        ]
+    },
+    {
+        slug: 'turmeric-vs-boswellia',
+        suppA: 'Turmeric/Curcumin',
+        suppB: 'Boswellia',
+        title: 'Turmeric/Curcumin vs Boswellia: Evidence-Based Comparison for Inflammation',
+        metaTitle: 'Turmeric vs Boswellia (2026) | Which Anti-Inflammatory Is Better?',
+        metaDescription: 'Evidence-based comparison of Turmeric/Curcumin vs Boswellia for inflammation, joint health, and pain management. Compare mechanisms, clinical evidence, and which anti-inflammatory suits your needs.',
+        domain: 'Anti-Inflammatory Support',
+        sharedDomains: ['inflammation', 'joint health', 'pain management', 'antioxidant'],
+        verdict: 'Turmeric/Curcumin (Tier 1) has a vastly broader evidence base compared to Boswellia (Tier 2), with strong meta-analytic support spanning systemic inflammation, joint health, cognitive function, cardiovascular markers, and metabolic health. Boswellia is more specifically targeted at 5-lipoxygenase (5-LOX) inhibition and has notable evidence for osteoarthritis and inflammatory bowel conditions. For general anti-inflammatory support, curcumin is the better first choice due to its broader mechanism of action and stronger evidence base. Boswellia excels in joint-specific and GI inflammatory conditions.',
+        whoShouldChoose: [
+            { scenario: 'Systemic inflammation', recommendation: 'Turmeric/Curcumin', reason: 'Broader anti-inflammatory mechanism targeting NF-κB, COX-2, and multiple inflammatory cytokines; strong meta-analytic support for CRP reduction.' },
+            { scenario: 'Joint-specific pain', recommendation: 'Boswellia', reason: 'Targeted 5-LOX inhibition is particularly effective for joint inflammation; strong evidence in osteoarthritis trials.' },
+            { scenario: 'Cognitive support + anti-inflammatory', recommendation: 'Turmeric/Curcumin', reason: 'Emerging evidence for neuroprotective effects and cognitive support alongside anti-inflammatory benefits.' },
+            { scenario: 'IBD / GI inflammation', recommendation: 'Boswellia', reason: 'Specific evidence for inflammatory bowel conditions including ulcerative colitis and Crohn\'s disease.' },
+            { scenario: 'Metabolic health', recommendation: 'Turmeric/Curcumin', reason: 'Evidence for supporting healthy lipid profiles, blood glucose, and liver function markers.' },
+            { scenario: 'Osteoarthritis', recommendation: 'Both viable', reason: 'Both have evidence for osteoarthritis; curcumin addresses broader inflammatory markers while Boswellia targets joint-specific pathways.' }
+        ],
+        canStack: 'Yes — Turmeric/Curcumin and Boswellia target different inflammatory pathways and are commonly combined for comprehensive anti-inflammatory support. Curcumin primarily inhibits NF-κB and COX-2 pathways, while Boswellia\'s boswellic acids specifically inhibit 5-lipoxygenase (5-LOX). This dual-pathway approach may provide more thorough inflammatory modulation than either supplement alone. Standard dosing: Curcumin 500-1000mg/day (with piperine or phytosome formulation for absorption) and Boswellia 300-500mg/day (standardized to 30-40% AKBA). Both are best taken with food. Note: both may have mild blood-thinning effects — consult a healthcare provider if on anticoagulant therapy.',
+        relatedGuides: [
+            { title: 'Joint Health Guide', url: '../guides/joint-health.html' }
+        ],
+        relatedCategories: [
+            { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' }
+        ]
+    },
+    {
+        slug: 'l-theanine-vs-5-htp',
+        suppA: 'L-Theanine',
+        suppB: '5-HTP',
+        title: 'L-Theanine vs 5-HTP: Evidence-Based Comparison for Calm & Mood Support',
+        metaTitle: 'L-Theanine vs 5-HTP (2026) | Which Is Better for Anxiety & Mood?',
+        metaDescription: 'Evidence-based comparison of L-Theanine vs 5-HTP for mood, relaxation, and sleep support. Compare safety profiles, drug interactions, and which calming supplement suits your needs.',
+        domain: 'Calm & Mood Support',
+        sharedDomains: ['mood', 'relaxation', 'sleep quality', 'anxiety reduction'],
+        verdict: 'L-Theanine (Tier 2) and 5-HTP (Tier 2) both support mood and relaxation, but through fundamentally different mechanisms and with very different safety profiles. L-Theanine promotes calm, focused alertness by modulating alpha brain waves and supporting GABA, serotonin, and dopamine balance — with an excellent safety profile and no known drug interaction concerns. 5-HTP is a direct serotonin precursor that can be more potent for mood elevation and sleep onset, but carries a serious risk of serotonin syndrome when combined with SSRIs, SNRIs, or other serotonergic medications. L-Theanine is the safer choice for most people; 5-HTP is more targeted but requires careful screening for medication interactions.',
+        whoShouldChoose: [
+            { scenario: 'Calm focus without sedation', recommendation: 'L-Theanine', reason: 'Promotes alpha brain waves for relaxed alertness; excellent for daytime use without drowsiness or cognitive impairment.' },
+            { scenario: 'Mood & depression support', recommendation: '5-HTP', reason: 'Direct serotonin precursor with more potent mood-elevating effects; but ONLY for those NOT on serotonergic medications.' },
+            { scenario: 'On SSRIs or SNRIs', recommendation: 'L-Theanine ONLY', reason: '5-HTP is CONTRAINDICATED with serotonergic medications due to serious serotonin syndrome risk. L-Theanine is safe with these medications.' },
+            { scenario: 'Sleep onset support', recommendation: '5-HTP', reason: 'Serotonin is a precursor to melatonin; 5-HTP may support both sleep onset and sleep quality through this pathway.' },
+            { scenario: 'Daily long-term use', recommendation: 'L-Theanine', reason: 'Excellent long-term safety profile with no tolerance, dependence, or withdrawal concerns. 5-HTP long-term safety is less established.' },
+            { scenario: 'Stress-related anxiety', recommendation: 'L-Theanine', reason: 'Evidence for reducing stress response and physiological markers of anxiety without sedation or impairment.' }
+        ],
+        canStack: 'Use caution — while L-Theanine and 5-HTP can be taken together at standard doses by healthy individuals not on serotonergic medications, both influence serotonin pathways. L-Theanine modulates serotonin indirectly, while 5-HTP directly increases serotonin synthesis. This combination is generally considered safe for most people at standard doses (L-Theanine 100-200mg, 5-HTP 50-100mg), but is NOT recommended for anyone taking SSRIs, SNRIs, MAOIs, tramadol, triptans, or other serotonergic drugs. Start with the lowest effective doses and monitor for symptoms of excess serotonin (agitation, confusion, rapid heartbeat, elevated body temperature).',
+        relatedGuides: [
+            { title: 'Anxiety & Stress Guide', url: '../guides/anxiety-stress.html' },
+            { title: 'Sleep Quality Guide', url: '../guides/sleep.html' }
+        ],
+        relatedCategories: [
+            { title: 'Amino Acids', url: '../categories/amino-acids.html' }
+        ]
+    },
+    {
+        slug: 'coq10-vs-pqq',
+        suppA: 'CoQ10',
+        suppB: 'PQQ',
+        title: 'CoQ10 vs PQQ: Evidence-Based Comparison for Mitochondrial Health',
+        metaTitle: 'CoQ10 vs PQQ (2026) | Which Mitochondrial Supplement Is Better?',
+        metaDescription: 'Evidence-based comparison of CoQ10 vs PQQ for mitochondrial function, energy, and cognitive support. Compare clinical evidence, mechanisms, and which supplement is best for cellular health.',
+        domain: 'Mitochondrial & Cellular Health',
+        sharedDomains: ['mitochondrial function', 'antioxidant protection', 'cognitive support', 'energy production'],
+        verdict: 'CoQ10 (Tier 2) has a vastly stronger evidence base compared to PQQ (Tier 3), with extensive clinical trials supporting its role in cardiovascular health, mitochondrial energy production, statin-related CoQ10 depletion, and antioxidant defense. PQQ (pyrroloquinoline quinone) is an emerging compound with preliminary evidence for stimulating mitochondrial biogenesis — the creation of new mitochondria — and early signals for memory and sleep quality support. CoQ10 is the proven, well-established choice for mitochondrial support; PQQ is a promising but largely unproven addition that may complement CoQ10.',
+        whoShouldChoose: [
+            { scenario: 'Heart health', recommendation: 'CoQ10', reason: 'Extensive evidence for cardiovascular support, particularly heart failure, blood pressure, and endothelial function.' },
+            { scenario: 'Statin users', recommendation: 'CoQ10', reason: 'Statins inhibit CoQ10 biosynthesis; supplementation may support muscle comfort and energy levels in statin users.' },
+            { scenario: 'Energy & fatigue', recommendation: 'CoQ10', reason: 'Central role in the mitochondrial electron transport chain; well-established for supporting cellular energy production.' },
+            { scenario: 'Mitochondrial biogenesis', recommendation: 'PQQ (preliminary)', reason: 'Early evidence suggests PQQ may stimulate PGC-1α and the creation of new mitochondria — a unique mechanism not shared by CoQ10.' },
+            { scenario: 'Memory & cognitive function', recommendation: 'PQQ shows early promise', reason: 'Preliminary studies suggest PQQ may support cognitive function and memory in middle-aged and elderly adults, but evidence is limited.' },
+            { scenario: 'Proven track record', recommendation: 'CoQ10', reason: 'Decades of clinical research with hundreds of trials; well-characterized safety profile and established efficacy across multiple health domains.' }
+        ],
+        canStack: 'Yes — CoQ10 and PQQ are commonly combined for comprehensive mitochondrial support. CoQ10 optimizes the function of existing mitochondria by serving as an essential electron carrier in the respiratory chain, while PQQ may stimulate the biogenesis of new mitochondria through PGC-1α activation. This combination theoretically supports both the quantity and quality of mitochondrial function. Standard dosing: CoQ10 100-300mg/day (ubiquinol form for better absorption) and PQQ 10-20mg/day. Both are best taken with food. No known adverse interactions between these compounds.',
+        relatedGuides: [
+            { title: 'Cardiovascular Health Guide', url: '../guides/cardiovascular.html' },
+            { title: 'Cognitive Performance Guide', url: '../guides/cognitive-performance.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
     }
 ];
 
@@ -452,7 +614,7 @@ function generateComparePage(comp) {
     // Evidence cards for each supplement
     [dA, dB].forEach(d => {
         html += `                        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
-                            <h3 style="margin-top:0;">${esc(d.name)} ${tierBadgeHtml(d.tier)}</h3>
+                            <h3 style="margin-top:0;"><a href="../supplements/${slugify(d.name)}.html" style="color:inherit;text-decoration:none;">${esc(d.name)}</a> ${tierBadgeHtml(d.tier)}</h3>
                             <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">${esc(d.category)} &bull; ${d.citationCount} key citations</p>
 `;
         if (d.effectEntries.length > 0) {
@@ -553,7 +715,7 @@ function generateComparePage(comp) {
 
     [dA, dB].forEach(d => {
         html += `                        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
-                            <h3 style="margin-top:0;">${esc(d.name)}</h3>
+                            <h3 style="margin-top:0;"><a href="../supplements/${slugify(d.name)}.html" style="color:inherit;text-decoration:none;">${esc(d.name)}</a></h3>
                             <ol style="font-size:0.9rem;padding-left:1.2rem;">
 `;
         d.mechanisms.forEach(m => {
@@ -689,7 +851,7 @@ function generateComparePage(comp) {
 
     [dA, dB].forEach(d => {
         if (d.citations.length > 0) {
-            html += `                    <h3>${esc(d.name)} (${d.citationCount} key citations)</h3>
+            html += `                    <h3><a href="../supplements/${slugify(d.name)}.html" style="color:inherit;text-decoration:none;">${esc(d.name)}</a> (${d.citationCount} key citations)</h3>
                     <ol style="font-size:0.85rem;padding-left:1.5rem;">\n`;
             d.citations.forEach(c => {
                 const authors = c.authors || 'Unknown authors';
