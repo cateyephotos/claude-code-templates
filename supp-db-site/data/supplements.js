@@ -1313,12 +1313,6 @@ const supplementDatabase = {
           "pmid": "39300341"
         },
         {
-          "title": "Comparison of effects of choline alphoscerate and citicoline in dementia: SR and MA",
-          "authors": "Sagaro & Amenta",
-          "year": "2025",
-          "pmid": "41426989"
-        },
-        {
           "title": "Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Volunteers",
           "authors": "Tamura et al.",
           "year": "2021",
@@ -1377,14 +1371,7 @@ const supplementDatabase = {
         "costRange": "$20-40/month",
         "qualityMarkers": ["Standardized to 97%+ berberine", "Third-party tested", "Enteric coating"]
       },
-      "keyCitations": [
-        {
-          "title": "Berberine in cardiovascular and metabolic health",
-          "authors": "Sutherland",
-          "year": "2023",
-          "doi": "Various studies"
-        }
-      ],
+      "keyCitations": [],
       "enhancedCitations": {
         "isEnhanced": true
       },

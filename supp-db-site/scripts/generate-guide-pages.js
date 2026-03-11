@@ -1624,7 +1624,7 @@ function esc(str) {
 }
 
 function tierBadgeHtml(tier) {
-    return `<span class="tier-badge tier-badge-${tier}">${getTierLabel(tier)}</span>`;
+    return `<span class="tier-${tier}-badge inline-block px-2 py-0.5 rounded text-xs font-bold">${getTierLabel(tier)}</span>`;
 }
 
 function getBenefitsList(s) {
@@ -1657,6 +1657,331 @@ const DOMAIN_KEYWORDS = {
     'gut-brain': ['gut', 'digest', 'microbiome', 'probiotic', 'intestin', 'IBS', 'leaky gut', 'barrier', 'enteric', 'vagus'],
     'nootropic-stacks': ['nootropic', 'stack', 'synerg', 'cognitive enhance', 'smart drug', 'brain boost', 'neuroenhance', 'racetam', 'choline', 'cognitive combo']
 };
+
+// ─── Domain Themes (dark journal design) ─────────────────────────────────────
+// Each domain gets a unique accent color palette but shares the same dark navy base.
+const DOMAIN_THEMES = {
+    'anxiety-stress':         { accent: '#7c3aed', accentLight: '#8b5cf6', glow: '#c4b5fd', glowRgb: '196,181,253', accentRgb: '124,58,237', icon: 'wave',       faIcon: 'fa-spa' },
+    'cognitive-performance':  { accent: '#0891b2', accentLight: '#06b6d4', glow: '#67e8f9', glowRgb: '103,232,249', accentRgb: '8,145,178',   icon: 'brain',      faIcon: 'fa-brain' },
+    'cardiovascular':         { accent: '#e11d48', accentLight: '#f43f5e', glow: '#fda4af', glowRgb: '253,164,175', accentRgb: '225,29,72',    icon: 'heart',      faIcon: 'fa-heart-pulse' },
+    'immune-function':        { accent: '#059669', accentLight: '#10b981', glow: '#6ee7b7', glowRgb: '110,231,183', accentRgb: '5,150,105',    icon: 'shield',     faIcon: 'fa-shield-virus' },
+    'joint-health':           { accent: '#d97706', accentLight: '#f59e0b', glow: '#fcd34d', glowRgb: '252,211,77',  accentRgb: '217,119,6',    icon: 'bone',       faIcon: 'fa-bone' },
+    'metabolic-health':       { accent: '#ea580c', accentLight: '#f97316', glow: '#fdba74', glowRgb: '253,186,116', accentRgb: '234,88,12',    icon: 'flame',      faIcon: 'fa-fire' },
+    'energy-vitality':        { accent: '#ca8a04', accentLight: '#eab308', glow: '#fde047', glowRgb: '253,224,71',  accentRgb: '202,138,4',    icon: 'lightning',  faIcon: 'fa-bolt' },
+    'mood-support':           { accent: '#0284c7', accentLight: '#0ea5e9', glow: '#7dd3fc', glowRgb: '125,211,252', accentRgb: '2,132,199',    icon: 'sun',        faIcon: 'fa-sun' },
+    'memory-aging':           { accent: '#475569', accentLight: '#64748b', glow: '#cbd5e1', glowRgb: '203,213,225', accentRgb: '71,85,105',    icon: 'chip',       faIcon: 'fa-microchip' },
+    'longevity':              { accent: '#0d9488', accentLight: '#14b8a6', glow: '#5eead4', glowRgb: '94,234,212',  accentRgb: '13,148,136',   icon: 'hourglass',  faIcon: 'fa-hourglass-half' },
+    'brain-fog':              { accent: '#c026d3', accentLight: '#d946ef', glow: '#f0abfc', glowRgb: '240,171,252', accentRgb: '192,38,211',   icon: 'cloud',      faIcon: 'fa-cloud' },
+    'stress-resilience':      { accent: '#78716c', accentLight: '#a8a29e', glow: '#d6d3d1', glowRgb: '214,211,209', accentRgb: '120,113,108',  icon: 'mountain',   faIcon: 'fa-mountain' },
+    'safety-interactions':    { accent: '#f59e0b', accentLight: '#fbbf24', glow: '#fde68a', glowRgb: '253,230,138', accentRgb: '245,158,11',   icon: 'warning',    faIcon: 'fa-triangle-exclamation' },
+    'muscle-strength':        { accent: '#dc2626', accentLight: '#ef4444', glow: '#fca5a5', glowRgb: '252,165,165', accentRgb: '220,38,38',    icon: 'dumbbell',   faIcon: 'fa-dumbbell' },
+    'recovery':               { accent: '#16a34a', accentLight: '#22c55e', glow: '#86efac', glowRgb: '134,239,172', accentRgb: '22,163,74',    icon: 'arrows',     faIcon: 'fa-rotate' },
+    'womens-health':          { accent: '#db2777', accentLight: '#ec4899', glow: '#f9a8d4', glowRgb: '249,168,212', accentRgb: '219,39,119',   icon: 'venus',      faIcon: 'fa-venus' },
+    'mens-health':            { accent: '#2563eb', accentLight: '#3b82f6', glow: '#bfdbfe', glowRgb: '191,219,254', accentRgb: '37,99,235',    icon: 'mars',       faIcon: 'fa-mars' },
+    'gut-brain':              { accent: '#65a30d', accentLight: '#84cc16', glow: '#bef264', glowRgb: '190,242,100', accentRgb: '101,163,13',   icon: 'gut',        faIcon: 'fa-bacterium' },
+    'nootropic-stacks':       { accent: '#2563eb', accentLight: '#3b82f6', glow: '#93c5fd', glowRgb: '147,197,253', accentRgb: '37,99,235',    icon: 'layers',     faIcon: 'fa-layer-group' },
+};
+
+// ─── Domain SVG Hero Icons ───────────────────────────────────────────────────
+function getDomainHeroIcon(slug, theme) {
+    const c = theme.glow;
+    const icons = {
+        'anxiety-stress': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 28c4-8 8-12 12-12s8 4 12 12 8 12 12 12" stroke="${c}" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 24c6-10 12-14 16-14s10 4 16 14" stroke="${c}" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/><circle cx="24" cy="24" r="4" fill="${c}" fill-opacity="0.25"/></svg>`,
+        'cognitive-performance': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6C14 6 6 14 6 24s8 18 18 18 18-8 18-18S34 6 24 6z" stroke="${c}" stroke-width="1.5" fill="none" opacity="0.3"/><path d="M24 10c-2 4-6 6-10 6m10-6c2 4 6 6 10 6M24 38c-2-4-6-6-10-6m10 6c2-4 6-6 10-6" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="24" cy="24" r="6" fill="${c}" fill-opacity="0.2"/><circle cx="24" cy="24" r="2" fill="${c}" fill-opacity="0.5"/></svg>`,
+        'cardiovascular': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40s-14-8-14-18c0-6 4-10 8-10 3 0 5 2 6 4 1-2 3-4 6-4 4 0 8 4 8 10 0 10-14 18-14 18z" fill="${c}" fill-opacity="0.25" stroke="${c}" stroke-width="1.5"/><path d="M8 24h6l3-6 4 12 3-8 4 6h12" stroke="${c}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>`,
+        'immune-function': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4v8m0 24v8M4 24h8m24 0h8M10 10l6 6m12 12l6 6M38 10l-6 6M16 28l-6 6" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><circle cx="24" cy="24" r="10" stroke="${c}" stroke-width="2" fill="${c}" fill-opacity="0.15"/><circle cx="24" cy="24" r="4" fill="${c}" fill-opacity="0.3"/></svg>`,
+        'joint-health': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8c0 4 2 8 6 10m6-10c0 4-2 8-6 10m-6 10c0-4 2-8 6-10m6 10c0-4-2-8-6-10" stroke="${c}" stroke-width="1.5" opacity="0.4"/><circle cx="24" cy="18" r="5" stroke="${c}" stroke-width="2" fill="${c}" fill-opacity="0.2"/><circle cx="24" cy="30" r="5" stroke="${c}" stroke-width="2" fill="${c}" fill-opacity="0.2"/><circle cx="24" cy="24" r="3" fill="${c}" fill-opacity="0.4"/></svg>`,
+        'metabolic-health': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6c-4 8-12 14-12 24a12 12 0 0024 0c0-10-8-16-12-24z" fill="${c}" fill-opacity="0.2" stroke="${c}" stroke-width="1.5"/><path d="M20 32c2-4 6-6 8-4" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+        'energy-vitality': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 4L14 26h10L18 44l18-24H26L28 4z" fill="${c}" fill-opacity="0.25" stroke="${c}" stroke-width="1.5" stroke-linejoin="round"/></svg>`,
+        'mood-support': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="12" fill="${c}" fill-opacity="0.2" stroke="${c}" stroke-width="1.5"/><path d="M24 4v4m0 32v4M4 24h4m32 0h4M10 10l3 3m22 22l3 3M38 10l-3 3M13 35l-3 3" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/></svg>`,
+        'memory-aging': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="12" width="24" height="24" rx="4" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.1"/><path d="M18 18h4v4h-4zm8 0h4v4h-4zm-8 8h4v4h-4zm8 0h4v4h-4z" fill="${c}" fill-opacity="0.3"/><circle cx="24" cy="24" r="2" fill="${c}" fill-opacity="0.5"/></svg>`,
+        'longevity': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6v36M18 6h12M18 42h12" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><path d="M18 6c0 10 6 14 6 18s-6 8-6 18" stroke="${c}" stroke-width="1.5" fill="none" opacity="0.4"/><path d="M30 6c0 10-6 14-6 18s6 8 6 18" stroke="${c}" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="24" cy="24" r="3" fill="${c}" fill-opacity="0.3"/></svg>`,
+        'brain-fog': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 32c-2 0-4-2-4-4s2-4 4-4c0-4 4-8 8-8 1 0 2 0 3 .5C24 12 28 8 32 8c6 0 10 4 10 10 0 1-.2 2-.4 3 2 1 3.4 3 3.4 5s-2 4-4 4H12z" fill="${c}" fill-opacity="0.2" stroke="${c}" stroke-width="1.5"/><path d="M20 38l2-4m4 4l2-4m4 4l2-4" stroke="${c}" stroke-width="1" stroke-linecap="round" opacity="0.3"/></svg>`,
+        'stress-resilience': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 40l10-16 8 8 8-20 8 12 6-8" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.4"/><path d="M4 40h40" stroke="${c}" stroke-width="1.5" opacity="0.2"/></svg>`,
+        'safety-interactions': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6L6 40h36L24 6z" stroke="${c}" stroke-width="2" fill="${c}" fill-opacity="0.15"/><path d="M24 18v12" stroke="${c}" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="34" r="1.5" fill="${c}"/></svg>`,
+        'muscle-strength': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 20v8M12 16v16M16 20v8M32 20v8M36 16v16M40 20v8" stroke="${c}" stroke-width="2" stroke-linecap="round" opacity="0.4"/><rect x="16" y="22" width="16" height="4" rx="2" fill="${c}" fill-opacity="0.3"/></svg>`,
+        'recovery': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 8v12l8 4" stroke="${c}" stroke-width="2" stroke-linecap="round" opacity="0.4"/><circle cx="24" cy="24" r="16" stroke="${c}" stroke-width="1.5" fill="none" opacity="0.3"/><path d="M36 12l-4 4m4-4h-4m4 0v4" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+        'womens-health': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="18" r="10" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.15"/><path d="M24 28v12M18 36h12" stroke="${c}" stroke-width="2" stroke-linecap="round"/></svg>`,
+        'mens-health': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="28" r="10" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.15"/><path d="M28 20l10-10m0 0h-8m8 0v8" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        'gut-brain': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="12" r="6" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.15"/><circle cx="24" cy="36" r="6" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.15"/><path d="M24 18v12" stroke="${c}" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/><path d="M20 12c-2 6-4 8-4 12s2 6 4 12m8-24c2 6 4 8 4 12s-2 6-4 12" stroke="${c}" stroke-width="1" opacity="0.25"/></svg>`,
+        'nootropic-stacks': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="28" width="28" height="8" rx="3" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.1"/><rect x="14" y="18" width="20" height="8" rx="3" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.2"/><rect x="18" y="8" width="12" height="8" rx="3" stroke="${c}" stroke-width="1.5" fill="${c}" fill-opacity="0.3"/></svg>`,
+    };
+    return icons[slug] || icons['cognitive-performance'];
+}
+
+// ─── Inline CSS Generator (dark journal theme per domain) ────────────────────
+function generateGuideCSS(t) {
+    return `
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --accent: ${t.accent};
+            --accent-light: ${t.accentLight};
+            --accent-glow: rgba(${t.accentRgb}, 0.15);
+            --glow: ${t.glow};
+            --blue-muted: #7c8db5;
+            --slate: #8b949e;
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: rgba(${t.accentRgb}, 0.12);
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --tier1-from: #4ade80;
+            --tier1-to: #22c55e;
+            --tier2-from: #fbbf24;
+            --tier2-to: #f59e0b;
+            --tier3-from: #fb7185;
+            --tier3-to: #e11d48;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .guide-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-section {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(${t.accentRgb}, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                var(--navy-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .domain-icon-glow {
+            filter: drop-shadow(0 0 20px rgba(${t.glowRgb}, 0.3));
+        }
+
+        .tier-1-badge {
+            background: linear-gradient(135deg, var(--tier1-from), var(--tier1-to));
+            color: #052e16;
+        }
+        .tier-2-badge {
+            background: linear-gradient(135deg, var(--tier2-from), var(--tier2-to));
+            color: #451a03;
+        }
+        .tier-3-badge {
+            background: linear-gradient(135deg, var(--tier3-from), var(--tier3-to));
+            color: #fff;
+        }
+
+        .evidence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .evidence-card:hover {
+            border-color: rgba(${t.accentRgb}, 0.3);
+            box-shadow: 0 0 30px rgba(${t.accentRgb}, 0.06);
+        }
+
+        .cite-ref {
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: help;
+            vertical-align: super;
+            line-height: 0;
+            transition: color 0.2s;
+        }
+        .cite-ref:hover { color: var(--glow); }
+
+        .pmid-link {
+            color: var(--blue-muted);
+            font-size: 0.8rem;
+            font-family: 'DM Sans', monospace;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .pmid-link:hover {
+            opacity: 1;
+            color: var(--glow);
+            text-decoration: underline;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .summary-table thead th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        .summary-table thead th:first-child { border-radius: 8px 0 0 0; }
+        .summary-table thead th:last-child { border-radius: 0 8px 0 0; }
+        .summary-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(${t.accentRgb}, 0.06);
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+        .summary-table tbody tr { transition: background 0.2s; }
+        .summary-table tbody tr:hover { background: rgba(${t.accentRgb}, 0.04); }
+        .summary-table tbody tr:last-child td { border-bottom: none; }
+
+        .interaction-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.85rem;
+        }
+        .interaction-table th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .interaction-table th:first-child { border-radius: 8px 0 0 0; }
+        .interaction-table th:last-child { border-radius: 0 8px 0 0; }
+        .interaction-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(${t.accentRgb}, 0.06);
+            vertical-align: top;
+        }
+        .interaction-table tbody tr:last-child td { border-bottom: none; }
+
+        .risk-high { color: #f87171; font-weight: 600; }
+        .risk-moderate { color: #fbbf24; font-weight: 600; }
+        .risk-low { color: #4ade80; font-weight: 600; }
+
+        .tier-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .tier-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        .finding-highlight {
+            border-left: 3px solid var(--accent-light);
+            background: rgba(${t.accentRgb}, 0.05);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(${t.accentRgb}, 0.08);
+            border: 1px solid rgba(${t.accentRgb}, 0.15);
+            color: var(--glow);
+        }
+
+        .capture-section {
+            background:
+                radial-gradient(ellipse 70% 80% at 30% 50%, rgba(${t.accentRgb}, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 80% 40%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1040 0%, #0d1117 100%);
+            border: 1px solid rgba(${t.accentRgb}, 0.2);
+        }
+
+        .citation-entry {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(${t.accentRgb}, 0.05);
+            color: var(--text-muted);
+        }
+        .citation-entry:last-child { border-bottom: none; }
+        .citation-entry .cite-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(${t.accentRgb}, 0.1);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        @media (max-width: 768px) {
+            .summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table { min-width: 700px; }
+            .interaction-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .interaction-table { min-width: 600px; }
+            .evidence-card { margin-left: -4px; margin-right: -4px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        @media print {
+            .guide-nav, .capture-section, .no-print { display: none !important; }
+            body { background: #fff; color: #111; }
+            .evidence-card { border: 1px solid #ddd; background: #fff; }
+        }
+    </style>`;
+}
 
 /**
  * Get the most domain-relevant benefit for snippet list display.
@@ -1745,17 +2070,20 @@ function generateGuidePage(guide, allSupplements) {
     const tierCounts = {};
     filtered.forEach(s => { tierCounts[s.evidenceTier] = (tierCounts[s.evidenceTier] || 0) + 1; });
 
-    const tocItems = [
-        { id: 'introduction', label: 'Introduction' },
-        { id: 'top-supplements', label: 'Top Supplements' },
-        { id: 'evidence-comparison', label: 'Evidence Comparison' },
-        { id: 'mechanisms', label: 'Mechanisms of Action' },
-        { id: 'dosage-guidelines', label: 'Dosage Guidelines' },
-        { id: 'safety', label: 'Safety & Interactions' },
-        { id: 'research-gaps', label: 'Research Gaps' },
-        { id: 'additional', label: 'Additional Supplements' },
-        { id: 'references', label: 'References' },
-    ];
+    // Theme and navigation
+    const theme = DOMAIN_THEMES[guide.slug] || DOMAIN_THEMES['nootropic-stacks'];
+    const heroIcon = getDomainHeroIcon(guide.slug, theme.glow);
+
+    const navLinks = [{ id: 'summary', label: 'Summary' }];
+    if (tierCounts[1]) navLinks.push({ id: 'tier1', label: 'Tier 1' });
+    if (tierCounts[2]) navLinks.push({ id: 'tier2', label: 'Tier 2' });
+    if (tierCounts[3]) navLinks.push({ id: 'tier3', label: 'Tier 3' });
+    navLinks.push({ id: 'safety', label: 'Safety' }, { id: 'citations', label: 'Citations' });
+
+    // Group supplements by tier for structured display
+    const tier1 = filtered.filter(s => s.evidenceTier === 1);
+    const tier2 = filtered.filter(s => s.evidenceTier === 2);
+    const tier3 = filtered.filter(s => s.evidenceTier === 3);
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -1778,7 +2106,110 @@ function generateGuidePage(guide, allSupplements) {
         }
     };
 
-    // ── Build HTML ──────────────────────────────────────────────────────────
+    // ── Build HTML (dark journal theme) ─────────────────────────────────────
+    // Helper: build an evidence card for one supplement
+    function buildEvidenceCard(s, idx, guideSlug) {
+        const benefits = getDomainSortedBenefits(s, guideSlug);
+        const mechanisms = getMechanismsList(s);
+        const effects = getAnxietyEffects(s);
+        const safetyRating = s.safetyProfile?.rating || '';
+        const riskClass = safetyRating.toLowerCase().includes('high') ? 'risk-high'
+            : safetyRating.toLowerCase().includes('moderate') ? 'risk-moderate' : 'risk-low';
+        const delay = (idx * 0.08).toFixed(2);
+
+        let card = `
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: ${delay}s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/${slugify(s.name)}.html" style="color: inherit; text-decoration: none;">${esc(s.name)}</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">${esc(s.scientificName || '')}</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(${theme.accentRgb}, 0.1); color: ${theme.glow};">
+                            ${esc(s.dosageRange || 'See studies')}
+                        </span>
+                        ${tierBadgeHtml(s.evidenceTier)}
+                    </div>
+                </div>`;
+
+        // Mechanism pills
+        if (mechanisms.length > 0) {
+            card += `
+                <div class="flex flex-wrap gap-2 mb-5">`;
+            mechanisms.slice(0, 4).forEach(m => {
+                card += `
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ${esc(m)}</span>`;
+            });
+            card += `
+                </div>`;
+        }
+
+        // Key findings / effect sizes
+        if (effects.length > 0 || benefits.length > 0) {
+            card += `
+                <div class="space-y-3 mb-5">`;
+            effects.slice(0, 3).forEach(e => {
+                card += `
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">${esc(e.domain)}</p>
+                        <p class="text-sm" style="color: var(--text-primary);">${esc(e.description)}</p>
+                    </div>`;
+            });
+            // If no effect sizes, show top benefits
+            if (effects.length === 0) {
+                benefits.slice(0, 2).forEach(b => {
+                    card += `
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">Key Benefit</p>
+                        <p class="text-sm" style="color: var(--text-primary);">${esc(b)}</p>
+                    </div>`;
+                });
+            }
+            card += `
+                </div>`;
+        }
+
+        // Safety box
+        if (safetyRating) {
+            const sideEffects = (s.safetyProfile?.commonSideEffects || []).slice(0, 3).join(', ');
+            card += `
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="${riskClass}">●</span> ${esc(safetyRating)}${sideEffects ? '. Common: ' + esc(sideEffects) : ''}
+                    </p>
+                </div>`;
+        }
+
+        card += `
+            </div>`;
+        return card;
+    }
+
+    // Helper: build a tier section
+    function buildTierSection(tierNum, supplements, guideSlug) {
+        if (supplements.length === 0) return '';
+        const tierLabels = { 1: 'Strong Evidence', 2: 'Moderate Evidence', 3: 'Preliminary Evidence' };
+        let section = `
+        <section id="tier${tierNum}" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                ${tierBadgeHtml(tierNum)}
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier ${tierNum} &mdash; ${tierLabels[tierNum]}
+                </h2>
+            </div>
+            <div class="space-y-6">`;
+        supplements.forEach((s, i) => {
+            section += buildEvidenceCard(s, i, guideSlug);
+        });
+        section += `
+            </div>
+        </section>`;
+        return section;
+    }
+
     let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1819,498 +2250,565 @@ function generateGuidePage(guide, allSupplements) {
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/content-gate.css?v=${Date.now()}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Auth CDN -->
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+
+    ${generateGuideCSS(theme)}
 </head>
-<body class="content-page">
-    <!-- Navigation -->
-    <nav class="legal-nav">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
-                <i class="fas fa-pills text-xl"></i>
-                <span class="font-bold text-lg">SupplementDB</span>
-            </a>
-            <div class="flex items-center space-x-4">
-                <a href="../guides/sleep.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">Sleep Guide</a>
-                <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
-                    <i class="fas fa-arrow-left mr-1"></i> Database
-                </a>
-            </div>
-        </div>
-    </nav>
+<body data-theme="dark">
 
-    <!-- Hero Section -->
-    <section class="content-hero">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="content-breadcrumb" aria-label="Breadcrumb">
-                <a href="../index.html">Home</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <a href="../index.html#guides">Evidence Guides</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>${esc(guide.breadcrumb)}</span>
-            </nav>
-            <h1>${esc(guide.title)}</h1>
-            <p class="hero-subtitle">${esc(guide.heroSubtitle)}</p>
-            <div class="hero-meta">
-                <span class="hero-stat"><i class="fas fa-flask"></i> ${filtered.length} Supplements Reviewed</span>
-                <span class="hero-stat"><i class="fas fa-file-lines"></i> ${totalCitations}+ Citations</span>
-                <span class="hero-stat"><i class="fas fa-calendar"></i> Updated ${today}</span>
-                ${Object.entries(tierCounts).sort(([a],[b])=>a-b).map(([t,c]) =>
-                    `<span class="hero-stat">${tierBadgeHtml(t)} ${c}</span>`
-                ).join('\n                ')}
-            </div>
+<!-- Sticky Navigation -->
+<nav class="guide-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+        <a href="../index.html" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="hidden sm:inline">Back to Database</span>
+            <span class="sm:hidden">Back</span>
+        </a>
+        <div class="flex items-center gap-1">
+            <i class="fas fa-pills text-sm" style="color: ${theme.accentLight};"></i>
+            <span class="text-sm font-semibold text-gray-300">SupplementDB</span>
         </div>
-    </section>
-
-    <!-- Share Bar -->
-    <div class="share-bar">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span class="share-bar-label">Share this guide</span>
-            <div class="share-bar-buttons">
-                <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
-                <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-                <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
-                <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-            </div>
+        <button id="mobile-nav-toggle" class="md:hidden text-gray-400 hover:text-white transition-colors p-1">
+            <i class="fas fa-bars text-sm"></i>
+        </button>
+        <div class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-500">
+            ${navLinks.map(l => `<a href="#${l.id}" class="hover:text-gray-300 transition-colors">${l.label}</a>`).join('\n            ')}
+            <div id="auth-buttons"></div>
         </div>
     </div>
+</nav>
 
-    <!-- Trust Signal Bar -->
-    <div class="trust-bar" style="max-width:64rem;margin:1rem auto;">
-        <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+<!-- Mobile navigation dropdown -->
+<div id="mobile-nav-menu" class="hidden" style="position: fixed; top: 56px; left: 0; right: 0; z-index: 40; background: #0d1117; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="flex flex-col px-4 py-3 gap-1">
+        ${navLinks.map(l => `<a href="#${l.id}" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">${l.label}</a>`).join('\n        ')}
     </div>
+</div>
 
-    <!-- Main Content with optional TOC -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div style="display:grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: start;">
-            <div>
+<!-- Hero Section -->
+<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+    <div class="max-w-3xl mx-auto relative z-10">
+        <!-- Domain icon -->
+        <div class="domain-icon-glow mb-6 inline-block">
+            ${heroIcon}
+        </div>
+
+        <!-- Review badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(${theme.accentRgb}, 0.12); color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.2);">
+            <i class="fas fa-clock text-xs" style="color: ${theme.accentLight}; font-size: 0.65rem;"></i>
+            Last reviewed: ${today}
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
+            ${esc(guide.title)}
+        </h1>
+
+        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+            A systematic review of ${filtered.length} supplements across ${totalCitations}+ research citations, ranked by evidence strength.
+        </p>
+
+        <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+            <i class="fas fa-info-circle mr-1 opacity-60"></i>
+            This guide summarizes published research. It does not constitute medical advice.
+            <a href="../legal/disclaimer.html" style="color: ${theme.glow}; text-decoration: underline; opacity: 0.7;">Full disclaimer</a>.
+        </p>
+    </div>
+</header>
+
+<!-- Share Bar -->
+<div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <span class="share-bar-label" style="color: var(--text-muted);">Share this guide</span>
+        <div class="share-bar-buttons">
+            <button class="share-btn" data-share="twitter" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+            <button class="share-btn" data-share="linkedin" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+            <button class="share-btn" data-share="facebook" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-facebook"></i> Facebook</button>
+            <button class="share-btn share-btn-copy" data-share="copy" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fas fa-link"></i> Copy Link</button>
+        </div>
+    </div>
+</div>
+
+<!-- Trust Signal Bar -->
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
+    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+</div>
+
+<!-- Main content wrapper for content gating -->
+<main>
 `;
 
-    // ── Medical Disclaimer ────────────────────────────────────────────────
+    // ── Evidence Summary Table ────────────────────────────────────────────
     html += `
-                <div class="content-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div><strong>Medical Disclaimer:</strong> This guide is for informational and educational purposes only. It does not constitute medical advice, diagnosis, or treatment recommendations. Always consult a qualified healthcare professional before starting any supplement regimen. <a href="../legal/disclaimer.html" style="color:#92400e; text-decoration:underline;">Read full disclaimer</a>.</div>
-                </div>
-`;
-
-    // ── Featured Snippet: Definition ──────────────────────────────────────
+<section id="summary" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="evidence-card p-6">
+        <h2 class="text-xl sm:text-2xl mb-6" style="color: var(--text-bright);">Quick Evidence Summary</h2>
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Tier</th>
+                        <th>Key Mechanism</th>
+                        <th>Primary Finding</th>
+                        <th>Dosage</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+    const GATE_CUTOFF_AFTER_ROW = 3; // Show 3 rows before content gate cuts off
+    filtered.forEach((s, idx) => {
+        const topBenefit = getDomainBenefit(s, guide.slug);
+        const topMech = getMechanismsList(s)[0] || '—';
+        html += `
+                    <tr>
+                        <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none;">${esc(s.name)}</a></strong></td>
+                        <td>${tierBadgeHtml(s.evidenceTier)}</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">${esc(topMech)}</td>
+                        <td style="font-size:0.82rem;">${esc(topBenefit)}</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">${esc(s.dosageRange || '—')}</td>
+                    </tr>`;
+        // Insert invisible gate cutoff marker after the Nth row
+        if (idx === GATE_CUTOFF_AFTER_ROW - 1) {
+            html += `
+                    <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>`;
+        }
+    });
     html += `
-                <!-- Featured Snippet: Definition -->
-                <div class="snippet-definition">
-                    <p><strong>${esc(guide.shortTitle)} supplements</strong> ${guide.snippetDefinition}</p>
-                </div>
-`;
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>`;
 
     // ── Introduction ──────────────────────────────────────────────────────
     html += `
-                <section class="content-section" id="introduction">
-                    <h2>Introduction</h2>
-                    ${guide.introduction.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('\n                    ')}
-                </section>
-`;
+<section id="introduction" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Introduction</h2>
+    ${guide.introduction.split('\n\n').map(p => `<p class="mb-4" style="color: var(--text-primary);">${p.trim()}</p>`).join('\n    ')}
 
-    // ── Featured Snippet: Top Supplements List ────────────────────────────
-    html += `
-                <!-- Featured Snippet: Ranked List -->
-                <section class="content-section" id="top-supplements">
-                    <h2>${esc(guide.snippetListTitle)}</h2>
-                    <div class="snippet-list">
-                        <h2>${esc(guide.snippetListTitle)}</h2>
-                        <ol>
-`;
+    <!-- Featured Snippet -->
+    <div class="evidence-card p-5 mt-6" style="border-left: 3px solid var(--accent-light);">
+        <p class="text-sm" style="color: var(--text-primary);"><strong style="color: var(--text-bright);">${esc(guide.shortTitle)} supplements</strong> ${guide.snippetDefinition}</p>
+    </div>
+
+    <!-- Top supplement ranking -->
+    <div class="mt-8">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">${esc(guide.snippetListTitle)}</h3>
+        <ol class="space-y-2 pl-5" style="list-style-type: decimal; color: var(--text-primary);">`;
     core.forEach(s => {
         const topBenefit = getDomainBenefit(s, guide.slug);
-        html += `                            <li><a href="../supplements/${slugify(s.name)}.html" style="color:var(--accent);text-decoration:none;font-weight:700;">${esc(s.name)}</a> ${tierBadgeHtml(s.evidenceTier)} &mdash; ${esc(topBenefit)} (${esc(s.dosageRange || 'Dosage varies')})</li>\n`;
+        html += `
+            <li class="text-sm"><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">${esc(s.name)}</a> ${tierBadgeHtml(s.evidenceTier)} &mdash; ${esc(topBenefit)} (${esc(s.dosageRange || 'Dosage varies')})</li>`;
     });
-    html += `                        </ol>
-                    </div>
-`;
-
-    // ── Core Supplement Cards ─────────────────────────────────────────────
     html += `
-                    <div class="supplement-card-grid">
-`;
-    core.forEach(s => {
-        const benefits = getDomainSortedBenefits(s, guide.slug);
-        const mechanisms = getMechanismsList(s);
-        const effects = getAnxietyEffects(s);
+        </ol>
+    </div>
+</section>`;
 
-        html += `                        <div class="supplement-card" id="supp-${slugify(s.name)}">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${esc(s.name)}</a></h3>
-                                    <p class="card-scientific">${esc(s.scientificName || '')}</p>
-                                </div>
-                                ${tierBadgeHtml(s.evidenceTier)}
-                            </div>
-                            <ul class="card-benefits">
-`;
-        benefits.slice(0, 4).forEach(b => {
-            html += `                                <li>${esc(b)}</li>\n`;
-        });
-        html += `                            </ul>
-`;
-        // Key effect sizes
-        if (effects.length > 0) {
-            html += `                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">\n`;
-            effects.slice(0, 2).forEach(e => {
-                html += `                                <div style="margin-bottom:0.25rem"><strong>${esc(e.domain)}:</strong> ${esc(e.description)}</div>\n`;
-            });
-            html += `                            </div>\n`;
-        }
-        // Mechanisms
-        if (mechanisms.length > 0) {
-            html += `                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> ${esc(mechanisms.slice(0, 2).join('; '))}</div>\n`;
-        }
-        html += `                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> ${esc(s.dosageRange || 'See studies for dosing')}</div>
-                        </div>
-`;
-    });
-    html += `                    </div>
-                </section>
-`;
-
-    // ── Evidence Comparison Table ─────────────────────────────────────────
+    // ── Tier-Grouped Evidence Cards ──────────────────────────────────────
     html += `
-                <section class="content-section" id="evidence-comparison">
-                    <h2>Evidence Comparison</h2>
-                    <p>The following table compares all ${filtered.length} supplements reviewed in this guide by evidence tier, category, key benefit, dosage range, and number of cited studies.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table snippet-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Evidence</th>
-                                    <th>Category</th>
-                                    <th>Key Benefit</th>
-                                    <th>Dosage Range</th>
-                                    <th>Studies</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-`;
-    filtered.forEach(s => {
-        const topBenefit = getDomainBenefit(s, guide.slug);
-        html += `                                <tr>
-                                    <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${esc(s.name)}</a></strong></td>
-                                    <td>${tierBadgeHtml(s.evidenceTier)}</td>
-                                    <td>${esc(normalizeCategory(s.category))}</td>
-                                    <td>${esc(topBenefit)}</td>
-                                    <td style="font-size:0.8rem">${esc(s.dosageRange || '—')}</td>
-                                    <td>${(s.keyCitations || []).length}</td>
-                                </tr>
-`;
-    });
-    html += `                            </tbody>
-                        </table>
-                    </div>
-                </section>
-`;
-
-    // ── Mechanisms of Action ──────────────────────────────────────────────
+<div id="top-supplements">`;
+    html += buildTierSection(1, tier1, guide.slug);
+    html += buildTierSection(2, tier2, guide.slug);
+    html += buildTierSection(3, tier3, guide.slug);
     html += `
-                <section class="content-section" id="mechanisms">
-                    <h2>Mechanisms of Action</h2>
-                    <p>${guide.mechanismsIntro}</p>
-`;
+</div>`;
+
+    // ── Mechanisms of Action ─────────────────────────────────────────────
+    html += `
+<section id="mechanisms" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Mechanisms of Action</h2>
+    <p class="mb-6" style="color: var(--text-primary);">${guide.mechanismsIntro}</p>`;
     guide.mechanisms.forEach(m => {
         html += `
-                    <h3>${esc(m.name)}</h3>
-                    <p>${m.description}</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> ${m.supplements.map(n => `<a href="../supplements/${slugify(n)}.html">${esc(n)}</a>`).join(', ')}</p>
-`;
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">${esc(m.name)}</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">${m.description}</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> ${m.supplements.map(n => `<a href="../supplements/${slugify(n)}.html" style="color: var(--glow); text-decoration: none;">${esc(n)}</a>`).join(', ')}</p>
+    </div>`;
     });
-    html += `                </section>
-`;
-
-    // ── Dosage Guidelines ─────────────────────────────────────────────────
     html += `
-                <section class="content-section" id="dosage-guidelines">
-                    <h2>Dosage Guidelines</h2>
-                    <p>The following dosage ranges reflect those used in published clinical trials. Individual needs may vary. Always start with the lower end of the range and titrate upward as tolerated.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Clinical Dosage Range</th>
-                                    <th>Evidence Tier</th>
-                                    <th>Safety Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-`;
+</section>`;
+
+    // ── Dosage Guidelines ────────────────────────────────────────────────
+    html += `
+<section id="dosage-guidelines" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Dosage Guidelines</h2>
+    <p class="mb-6" style="color: var(--text-primary);">The following dosage ranges reflect those used in published clinical trials. Individual needs may vary. Always start with the lower end and titrate upward as tolerated.</p>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Clinical Dosage Range</th>
+                        <th>Evidence Tier</th>
+                        <th>Safety Rating</th>
+                    </tr>
+                </thead>
+                <tbody>`;
     core.forEach(s => {
-        html += `                                <tr>
-                                    <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color:inherit;text-decoration:none;">${esc(s.name)}</a></strong></td>
-                                    <td>${esc(s.dosageRange || '—')}</td>
-                                    <td>${tierBadgeHtml(s.evidenceTier)}</td>
-                                    <td>${esc(s.safetyProfile?.rating || '—')}</td>
-                                </tr>
-`;
+        html += `
+                    <tr>
+                        <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none;">${esc(s.name)}</a></strong></td>
+                        <td>${esc(s.dosageRange || '—')}</td>
+                        <td>${tierBadgeHtml(s.evidenceTier)}</td>
+                        <td>${esc(s.safetyProfile?.rating || '—')}</td>
+                    </tr>`;
     });
-    html += `                            </tbody>
-                        </table>
-                    </div>
-                    <div class="content-callout content-callout-warning">
-                        <strong>Note:</strong> Dosage ranges are derived from clinical trial protocols and may not account for individual variation in body weight, metabolism, concurrent medications, or health status. Consult a healthcare provider for personalized dosing.
-                    </div>
-                </section>
-`;
-
-    // ── Safety & Interactions ─────────────────────────────────────────────
     html += `
-                <section class="content-section" id="safety">
-                    <h2>Safety &amp; Interactions</h2>
-                    <p>${guide.safetyIntro}</p>
-                    <ul>
-`;
-    guide.safetyNotes.forEach(note => {
-        html += `                        <li>${note}</li>\n`;
-    });
-    html += `                    </ul>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mt-4 p-4 rounded-lg" style="background: rgba(251, 191, 36, 0.06); border: 1px solid rgba(251, 191, 36, 0.15);">
+        <p class="text-sm" style="color: var(--text-primary);"><i class="fas fa-exclamation-triangle mr-2" style="color: #fbbf24;"></i><strong>Note:</strong> Dosage ranges are derived from clinical trial protocols and may not account for individual variation. Consult a healthcare provider for personalized dosing.</p>
+    </div>
+</section>`;
 
-                    <h3>Individual Supplement Safety Profiles</h3>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Common Side Effects</th>
-                                    <th>Key Drug Interactions</th>
-                                    <th>Safety Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-`;
+    // ── Safety & Interactions ────────────────────────────────────────────
+    html += `
+<section id="safety" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Safety &amp; Interactions</h2>
+    <p class="mb-4" style="color: var(--text-primary);">${guide.safetyIntro}</p>
+    <ul class="space-y-2 mb-8 pl-5" style="list-style-type: disc; color: var(--text-primary);">`;
+    guide.safetyNotes.forEach(note => {
+        html += `
+        <li class="text-sm">${note}</li>`;
+    });
+    html += `
+    </ul>
+
+    <h3 class="text-lg mb-4" style="color: var(--text-bright);">Individual Supplement Safety Profiles</h3>
+    <div class="evidence-card p-6">
+        <div class="interaction-table-wrap">
+            <table class="interaction-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Common Side Effects</th>
+                        <th>Key Drug Interactions</th>
+                        <th>Safety Rating</th>
+                    </tr>
+                </thead>
+                <tbody>`;
     core.forEach(s => {
         const sideEffects = (s.safetyProfile?.commonSideEffects || []).slice(0, 3).join(', ') || '—';
         const interactions = (s.safetyProfile?.drugInteractions || []).slice(0, 3).join(', ') || '—';
-        html += `                                <tr>
-                                    <td><strong>${esc(s.name)}</strong></td>
-                                    <td style="font-size:0.85rem">${esc(sideEffects)}</td>
-                                    <td style="font-size:0.85rem">${esc(interactions)}</td>
-                                    <td>${esc(s.safetyProfile?.rating || '—')}</td>
-                                </tr>
-`;
+        const rating = s.safetyProfile?.rating || '—';
+        const riskClass = rating.toLowerCase().includes('high') ? 'risk-high'
+            : rating.toLowerCase().includes('moderate') ? 'risk-moderate' : 'risk-low';
+        html += `
+                    <tr>
+                        <td><strong>${esc(s.name)}</strong></td>
+                        <td>${esc(sideEffects)}</td>
+                        <td>${esc(interactions)}</td>
+                        <td><span class="${riskClass}">${esc(rating)}</span></td>
+                    </tr>`;
     });
-    html += `                            </tbody>
-                        </table>
-                    </div>
-                </section>
-`;
-
-    // ── Research Gaps ─────────────────────────────────────────────────────
     html += `
-                <section class="content-section" id="research-gaps">
-                    <h2>Research Gaps &amp; Limitations</h2>
-                    <p>While the evidence base for ${guide.shortTitle.toLowerCase()} supplements continues to grow, several important gaps remain in the current literature:</p>
-                    <ul>
-`;
-    guide.researchGaps.forEach(gap => {
-        html += `                        <li>${esc(gap)}</li>\n`;
-    });
-    html += `                    </ul>
-                </section>
-`;
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>`;
 
-    // ── Additional Supporting Supplements ─────────────────────────────────
+    // ── Research Gaps ────────────────────────────────────────────────────
+    html += `
+<section id="research-gaps" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Research Gaps &amp; Limitations</h2>
+    <p class="mb-4" style="color: var(--text-primary);">While the evidence base for ${guide.shortTitle.toLowerCase()} supplements continues to grow, several important gaps remain:</p>
+    <ul class="space-y-2 pl-5" style="list-style-type: disc; color: var(--text-primary);">`;
+    guide.researchGaps.forEach(gap => {
+        html += `
+        <li class="text-sm">${esc(gap)}</li>`;
+    });
+    html += `
+    </ul>
+</section>`;
+
+    // ── Additional Supporting Supplements ────────────────────────────────
     if (supporting.length > 0) {
         html += `
-                <section class="content-section" id="additional">
-                    <h2>Additional Supplements with Relevant Evidence</h2>
-                    <p>The following ${supporting.length} supplements show some evidence related to ${guide.shortTitle.toLowerCase()} but are not among the primary recommendations. They may have relevant benefits as secondary effects or within specific subpopulations.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Evidence</th>
-                                    <th>Category</th>
-                                    <th>Relevant Benefit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-`;
+<section id="additional" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Additional Supplements</h2>
+    <p class="mb-6" style="color: var(--text-primary);">The following ${supporting.length} supplements show some evidence related to ${guide.shortTitle.toLowerCase()} but are not among the primary recommendations.</p>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Evidence</th>
+                        <th>Category</th>
+                        <th>Relevant Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>`;
         supporting.forEach(s => {
             const topBenefit = getDomainBenefit(s, guide.slug);
-            html += `                                <tr>
-                                    <td>${esc(s.name)}</td>
-                                    <td>${tierBadgeHtml(s.evidenceTier)}</td>
-                                    <td>${esc(normalizeCategory(s.category))}</td>
-                                    <td style="font-size:0.85rem">${esc(topBenefit)}</td>
-                                </tr>
-`;
+            html += `
+                    <tr>
+                        <td><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none;">${esc(s.name)}</a></td>
+                        <td>${tierBadgeHtml(s.evidenceTier)}</td>
+                        <td style="color: var(--text-muted);">${esc(normalizeCategory(s.category))}</td>
+                        <td style="font-size:0.85rem">${esc(topBenefit)}</td>
+                    </tr>`;
         });
-        html += `                            </tbody>
-                        </table>
-                    </div>
-                </section>
-`;
+        html += `
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>`;
     }
 
-    // ── References ────────────────────────────────────────────────────────
+    // ── Citations ────────────────────────────────────────────────────────
     html += `
-                <section class="content-section" id="references">
-                    <h2>References</h2>
-                    <p>All data in this guide is derived from the SupplementDB citation library of ${totalCitations}+ peer-reviewed research papers. Individual supplement citations are listed below.</p>
-                    <ol class="citation-list">
-`;
+<section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Citation Index</h2>
+    <p class="mb-6" style="color: var(--text-primary);">All data in this guide is derived from the SupplementDB citation library of ${totalCitations}+ peer-reviewed research papers.</p>
+    <div class="evidence-card p-6">
+        <div class="space-y-1">`;
     let citNum = 1;
     filtered.forEach(s => {
         (s.keyCitations || []).forEach(c => {
-            const doi = c.doi ? `<a class="citation-doi" href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener">${esc(c.doi)}</a>` : '';
-            const pmid = c.pmid ? ` PMID: ${esc(String(c.pmid))}` : '';
-            html += `                        <li>${esc(c.authors || '')} (${esc(String(c.year || ''))}).  ${esc(c.title || '')}. <em>${esc(c.journal || '')}</em>. ${doi}${pmid}</li>\n`;
+            const doi = c.doi ? ` <a class="pmid-link" href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener">${esc(c.doi)}</a>` : '';
+            const pmid = c.pmid ? ` <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/${esc(String(c.pmid))}" target="_blank" rel="noopener">PMID: ${esc(String(c.pmid))}</a>` : '';
+            html += `
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">${citNum}</span>
+                <span>${esc(c.authors || '')} (${esc(String(c.year || ''))}). ${esc(c.title || '')}. <em>${esc(c.journal || '')}</em>.${doi}${pmid}</span>
+            </div>`;
             citNum++;
         });
     });
-    html += `                    </ol>
-                </section>
-`;
-
-    // ── Email Capture ─────────────────────────────────────────────────────
     html += `
-                <!-- Email Capture -->
-                <section class="newsletter-section" id="subscribe">
-                    <div class="newsletter-inner">
-                        <h3><i class="fas fa-envelope-open-text"></i> Get ${esc(guide.title)} Research Updates</h3>
-                        <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
-                        <div id="guide-newsletter-container">
-                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
-                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                            </form>
-                            <p id="guide-newsletter-success" class="newsletter-success hidden">
-                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
-                            </p>
-                            <p id="guide-newsletter-already" class="newsletter-already hidden">
-                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
-                            </p>
-                        </div>
-                        <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../legal/privacy.html">Privacy Policy</a></p>
-                    </div>
-                </section>
-`;
+        </div>
+    </div>
+</section>`;
 
-    // ── Related Content ───────────────────────────────────────────────────
+    // ── Email Capture ────────────────────────────────────────────────────
     html += `
-                <!-- Related Content -->
-                <div class="related-content">
-                    <h3>Related Resources</h3>
-                    <div class="related-content-grid">
-`;
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
+        <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
+            <i class="fas fa-envelope-open-text mr-2" style="color: ${theme.accentLight};"></i>
+            Get ${esc(guide.shortTitle)} Research Updates
+        </h3>
+        <p class="mb-6 text-sm" style="color: var(--text-muted); max-width: 440px; margin: 0 auto 1.5rem;">
+            Stay informed when new studies are published or evidence tiers are updated for these supplements.
+        </p>
+        <div id="guide-newsletter-container">
+            <form id="guide-newsletter-form" class="newsletter-form flex gap-3 max-w-md mx-auto flex-wrap justify-center">
+                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required
+                    class="flex-1 min-w-0 px-4 py-2.5 rounded-lg text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text-bright); outline: none;">
+                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    style="background: ${theme.accent};"><i class="fas fa-paper-plane mr-1"></i> Subscribe</button>
+            </form>
+            <p id="guide-newsletter-message" class="newsletter-message" style="display:none; color: var(--text-bright);"></p>
+        </div>
+        <p class="text-xs mt-4" style="color: var(--text-muted); opacity: 0.6;"><i class="fas fa-lock mr-1"></i> No spam. <a href="../legal/privacy.html" style="color: var(--glow); opacity: 0.7;">Privacy Policy</a></p>
+    </div>
+</section>`;
+
+    // ── Related Content ──────────────────────────────────────────────────
+    html += `
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="related-content evidence-card p-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Related Resources</h3>
+        <div class="related-content-grid grid grid-cols-1 sm:grid-cols-2 gap-3">`;
     guide.relatedLinks.forEach(link => {
-        html += `                        <a href="${link.href}"><i class="fas ${link.icon}"></i> ${esc(link.text)}</a>\n`;
+        html += `
+            <a href="${link.href}" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas ${link.icon}" style="color: ${theme.accentLight}; width: 16px; text-align: center;"></i> ${esc(link.text)}
+            </a>`;
     });
-    html += `                    </div>
-                </div>
+    html += `
+        </div>
+    </div>
+</section>
 
-            </div><!-- end main column -->
+</main>
 
-            <!-- Sidebar TOC (desktop only) -->
-            <aside class="content-toc" aria-label="Table of Contents">
-                <h4>Contents</h4>
-                <ul>
-`;
-    tocItems.forEach(item => {
-        html += `                    <li><a href="#${item.id}">${esc(item.label)}</a></li>\n`;
+<!-- Footer -->
+<footer class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t" style="border-color: var(--border);">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="../index.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-pills" style="color: ${theme.accentLight};"></i>
+                <span>Return to Supplement Database</span>
+            </a>
+            <a href="../methodology.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-flask"></i>
+                <span>Research Methodology</span>
+            </a>
+        </div>
+        <p class="text-xs text-center sm:text-right" style="color: var(--text-muted); max-width: 400px;">
+            This guide is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.
+        </p>
+    </div>
+    <div class="text-center mt-8">
+        <p class="text-xs" style="color: rgba(139, 148, 158, 0.5);">
+            &copy; 2025&ndash;2026 SupplementDB. Evidence-Based Supplement Database.
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
+
+// Smooth scroll for anchor links with nav offset
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            var navHeight = document.querySelector('.guide-nav').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
     });
-    html += `                </ul>
-            </aside>
-        </div>
-    </main>
+});
 
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
-            <p class="mt-2 text-sm text-gray-400">
-                <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
-                <a href="../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
-            </p>
-            <p class="mt-2 text-sm text-gray-500">
-                <a href="../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
-                <a href="../legal/terms.html" style="color:#9ca3af;">Terms</a>
-            </p>
-        </div>
-    </footer>
+// PostHog custom event tracking
+(function() {
+    if (typeof posthog === 'undefined') return;
 
-    <!-- Smooth scroll for TOC -->
-    <script>
-        document.querySelectorAll('.content-toc a').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.replaceState(null, '', this.getAttribute('href'));
+    posthog.capture('guide_viewed', {
+        guide_slug: '${guide.slug}',
+        guide_title: '${esc(guide.title).replace(/'/g, "\\'")}',
+        supplement_count: ${filtered.length},
+        citation_count: ${totalCitations},
+        tier1_count: ${tierCounts[1] || 0},
+        tier2_count: ${tierCounts[2] || 0},
+        tier3_count: ${tierCounts[3] || 0}
+    });
+
+    var sectionsMeta = {
+        'summary': { name: 'Quick Evidence Summary', depth: 'top' },
+        'tier1': { name: 'Tier 1: Strong Evidence', depth: 'upper' },
+        'tier2': { name: 'Tier 2: Moderate Evidence', depth: 'middle' },
+        'tier3': { name: 'Tier 3: Preliminary Evidence', depth: 'lower' },
+        'safety': { name: 'Safety Considerations', depth: 'deep' },
+        'citations': { name: 'Citation Index', depth: 'bottom' }
+    };
+
+    var trackedSections = {};
+    var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !trackedSections[entry.target.id]) {
+                trackedSections[entry.target.id] = true;
+                var meta = sectionsMeta[entry.target.id];
+                if (meta) {
+                    posthog.capture('guide_section_viewed', {
+                        guide_slug: '${guide.slug}',
+                        section_id: entry.target.id,
+                        section_name: meta.name,
+                        scroll_depth: meta.depth
+                    });
                 }
-            });
+            }
         });
-        // Highlight active TOC item on scroll
-        var tocLinks = document.querySelectorAll('.content-toc a');
-        var sections = Array.from(tocLinks).map(function(a) {
-            return document.querySelector(a.getAttribute('href'));
-        }).filter(Boolean);
-        window.addEventListener('scroll', function() {
-            var scrollY = window.scrollY + 120;
-            var active = sections[0];
-            sections.forEach(function(sec) { if (sec.offsetTop <= scrollY) active = sec; });
-            tocLinks.forEach(function(a) {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + (active ? active.id : ''));
-            });
-        });
+    }, { threshold: 0.2 });
 
-        // Guide newsletter handler
-        window.handleGuideNewsletter = function(e) {
-            e.preventDefault();
-            var email = document.getElementById('guide-newsletter-email').value.trim();
-            if (!email) return false;
-            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-            if (subscribed.indexOf(email) !== -1) {
-                document.getElementById('guide-newsletter-form').classList.add('hidden');
-                document.getElementById('guide-newsletter-already').classList.remove('hidden');
-                return false;
-            }
-            if (typeof posthog !== 'undefined') {
-                posthog.identify(email);
-                posthog.people.set({
-                    email: email,
-                    newsletter_subscribed: true,
-                    subscribed_guide: '${guide.slug}',
-                    signup_source: 'guide_${guide.slug}',
-                    signup_date: new Date().toISOString()
-                });
-                posthog.capture('guide_email_captured', {
-                    source: 'guide',
-                    guide_slug: '${guide.slug}',
-                    email: email
-                });
-            }
-            subscribed.push(email);
-            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-            document.getElementById('guide-newsletter-form').classList.add('hidden');
-            document.getElementById('guide-newsletter-success').classList.remove('hidden');
-            return false;
-        };
-    </script>
-    <script src="../js/share-bar.js"></script>
+    Object.keys(sectionsMeta).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+    });
+
+    document.querySelectorAll('.pmid-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var href = this.getAttribute('href') || '';
+            posthog.capture('guide_citation_clicked', {
+                guide_slug: '${guide.slug}',
+                citation_type: href.includes('pubmed') ? 'pmid' : (href.includes('doi.org') ? 'doi' : 'other'),
+                citation_url: href,
+                citation_text: this.textContent.trim()
+            });
+        });
+    });
+
+    document.querySelectorAll('.guide-nav a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            posthog.capture('guide_nav_clicked', {
+                guide_slug: '${guide.slug}',
+                nav_target: this.getAttribute('href')
+            });
+        });
+    });
+
+    var elapsed = 0;
+    var timeThresholds = [30, 60, 120, 300];
+    var timeIndex = 0;
+    var timerCheck = setInterval(function() {
+        elapsed++;
+        if (timeIndex < timeThresholds.length && elapsed >= timeThresholds[timeIndex]) {
+            posthog.capture('guide_time_on_page', {
+                guide_slug: '${guide.slug}',
+                seconds: timeThresholds[timeIndex]
+            });
+            timeIndex++;
+        }
+        if (timeIndex >= timeThresholds.length) clearInterval(timerCheck);
+    }, 1000);
+})();
+
+// Mobile nav toggle
+document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-nav-menu');
+    menu.classList.toggle('hidden');
+    this.querySelector('i').classList.toggle('fa-bars');
+    this.querySelector('i').classList.toggle('fa-times');
+});
+document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-nav-menu').classList.add('hidden');
+        var btn = document.getElementById('mobile-nav-toggle');
+        btn.querySelector('i').classList.add('fa-bars');
+        btn.querySelector('i').classList.remove('fa-times');
+    });
+});
+</script>
+
+<script src="../js/share-bar.js"></script>
+<script src="../js/newsletter.js"></script>
+<script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-${guide.slug}");</script>
+
+<!-- Auth & Content Gate -->
+<script src="../js/auth.js"></script>
+<script src="../js/convex-client.js"></script>
+<script src="../js/rbac.js"></script>
+<script src="../js/auth-ui.js"></script>
+<script src="../js/content-gate.js"></script>
 </body>
 </html>`;
 

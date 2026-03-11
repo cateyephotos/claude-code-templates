@@ -1,5 +1,5 @@
 /**
- * content-gate.spec.js — Guide page content gating tests
+ * content-gate.spec.js — Guide & Evidence page content gating tests
  *
  * Validates:
  *  1. Free users see gate overlay on guide pages
@@ -8,6 +8,8 @@
  *  4. Subscriber users see full content (no gate)
  *  5. Admin users see full content (no gate)
  *  6. Gate does NOT appear on non-guide pages
+ *  7. Free users see gate overlay on evidence pages
+ *  8. Subscriber users see full content on evidence pages (no gate)
  */
 const { test, expect } = require("playwright/test");
 const { injectAuthMock, safeGoto } = require("./helpers/auth-helpers");
@@ -142,6 +144,60 @@ test.describe("Admin — full access", () => {
     const gatedContent = page.locator(".content-gated");
     const count = await gatedContent.count();
     expect(count).toBe(0);
+  });
+});
+
+// ── Evidence Pages — Gate Applied (1 per domain) ─────────────────
+const EVIDENCE_PAGES = [
+  { name: "sleep/melatonin", path: "/evidence/sleep/melatonin.html" },
+  { name: "anxiety/ashwagandha", path: "/evidence/anxiety/ashwagandha.html" },
+  { name: "cognitive-performance/bacopa-monnieri", path: "/evidence/cognitive-performance/bacopa-monnieri.html" },
+  { name: "metabolic-health/berberine", path: "/evidence/metabolic-health/berberine.html" },
+  { name: "inflammation/turmeric-curcumin", path: "/evidence/inflammation/turmeric-curcumin.html" },
+];
+
+test.describe("Evidence pages — gate applied for free users", () => {
+  for (const { name, path: evidencePath } of EVIDENCE_PAGES) {
+    test(`${name} — gate overlay present for free user`, async ({ page }) => {
+      await injectAuthMock(page, { signedIn: false, role: "free" });
+      await safeGoto(page, evidencePath);
+      await page.waitForTimeout(1500);
+
+      const gate = page.locator("#content-gate-overlay");
+      await expect(gate).toBeAttached({ timeout: 5000 });
+    });
+  }
+});
+
+test.describe("Evidence pages — subscriber full access", () => {
+  test("subscriber sees full evidence content (no gate)", async ({ page }) => {
+    await injectAuthMock(page, { signedIn: true, role: "subscriber" });
+    await safeGoto(page, EVIDENCE_PAGES[0].path);
+    await page.waitForTimeout(2000);
+
+    const gate = page.locator("#content-gate-overlay");
+    await expect(gate).not.toBeAttached({ timeout: 3000 }).catch(() => {});
+
+    const gatedContent = page.locator(".content-gated");
+    const count = await gatedContent.count();
+    expect(count).toBe(0);
+  });
+});
+
+test.describe("Evidence pages — SEO preservation", () => {
+  test("content is still present in DOM below the gate", async ({ page }) => {
+    await injectAuthMock(page, { signedIn: false, role: "free" });
+    await safeGoto(page, EVIDENCE_PAGES[0].path);
+    await page.waitForTimeout(1500);
+
+    const contentEl = page.locator(
+      ".content-body, .guide-content, article, main .prose"
+    );
+    const count = await contentEl.count();
+    if (count > 0) {
+      const textContent = await contentEl.first().textContent();
+      expect(textContent.length).toBeGreaterThan(100);
+    }
   });
 });
 

@@ -6,28 +6,34 @@
  * behind a gradient overlay with a CTA to sign up.
  *
  * Gating strategy:
- *   - Free/anonymous: ~30% of article visible, gradient fade, CTA box
+ *   - Free/anonymous: content cut at [data-gate-cutoff] marker (or fallback %)
  *   - Subscriber/admin: full content, no gate
  *   - Content stays in DOM (CSS-only hiding) — SEO preserved
+ *
+ * Gate placement:
+ *   - If a [data-gate-cutoff] element exists inside the content, the gate
+ *     is placed at that element's offsetTop (shows ~3-4 summary rows).
+ *   - Otherwise falls back to VISIBLE_PERCENT of total height.
  *
  * Dependencies:
  *   - auth.js (window.SupplementDBAuth)
  *   - rbac.js (window.SupplementDBRBAC)
  *   - convex-client.js (window.SupplementDB) — for gate event tracking
  *
- * Affected pages: guides/*.html (8 evidence guide pages)
+ * Affected pages: guides/{slug}.html (20 evidence guide pages), evidence/{domain}/{supplement}.html
  */
 (function () {
   "use strict";
 
   // Only run on guide pages
   const path = window.location.pathname.toLowerCase();
-  if (!path.includes("/guides/") || path.includes("/admin/")) return;
+  if ((!path.includes("/guides/") && !path.includes("/evidence/")) || path.includes("/admin/")) return;
 
   // ── Configuration ──────────────────────────────────────────────
-  const VISIBLE_PERCENT = 30; // Percentage of content visible to free users
+  const VISIBLE_PERCENT = 15; // Fallback percentage if no cutoff marker found
   const GATE_ID = "content-gate-overlay";
   const GATED_CONTENT_SELECTOR = ".content-body, .guide-content, article, main, main .prose";
+  const CUTOFF_MARKER_SELECTOR = "[data-gate-cutoff]";
 
   // ── State ──────────────────────────────────────────────────────
   let gateApplied = false;
@@ -83,9 +89,21 @@
     const contentEl = findContentElement();
     if (!contentEl) return;
 
-    // Calculate height for visible portion
-    const fullHeight = contentEl.scrollHeight;
-    const visibleHeight = Math.max(300, (fullHeight * VISIBLE_PERCENT) / 100);
+    // Calculate height for visible portion.
+    // Priority: use [data-gate-cutoff] marker position if present,
+    // otherwise fall back to percentage of total height.
+    let visibleHeight;
+    const cutoffEl = contentEl.querySelector(CUTOFF_MARKER_SELECTOR);
+    if (cutoffEl) {
+      // offsetTop is relative to the content element's top
+      visibleHeight = cutoffEl.offsetTop;
+    } else {
+      const fullHeight = contentEl.scrollHeight;
+      visibleHeight = Math.max(300, (fullHeight * VISIBLE_PERCENT) / 100);
+    }
+
+    // Minimum height so the gate doesn't look broken
+    visibleHeight = Math.max(250, visibleHeight);
 
     // Apply CSS gate
     contentEl.classList.add("content-gated");

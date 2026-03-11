@@ -1,4 +1,4 @@
-// Utility: Load and parse supplements.js data
+// Utility: Load and parse supplements.js and problems.js data
 const fs = require('fs');
 const path = require('path');
 
@@ -12,6 +12,18 @@ function loadSupplementData() {
     const window = {};
     eval(src);
     return window.supplementDatabase || null;
+}
+
+function loadProblemData() {
+    const filePath = path.join(__dirname, '..', 'data', 'problems.js');
+    let src = fs.readFileSync(filePath, 'utf8');
+
+    // problems.js defines `const problemDatabase = [...]`
+    // and assigns to both module.exports and window.problemDatabase
+    // We use require() directly since it has proper module.exports
+    // Clear require cache to always get fresh data
+    delete require.cache[require.resolve(filePath)];
+    return require(filePath);
 }
 
 // Category normalization map: raw values from data → standardized names per style guide
@@ -90,6 +102,7 @@ function groupByCategory(supplements) {
 
 module.exports = {
     loadSupplementData,
+    loadProblemData,
     CATEGORY_MAP,
     normalizeCategory,
     slugify,

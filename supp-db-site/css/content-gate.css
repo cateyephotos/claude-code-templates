@@ -35,10 +35,71 @@
 [data-theme="dark"] .content-gate-gradient {
   background: linear-gradient(
     to bottom,
-    rgba(26, 26, 26, 0) 0%,
-    rgba(26, 26, 26, 0.7) 40%,
-    rgba(26, 26, 26, 1) 100%
+    rgba(13, 17, 23, 0) 0%,
+    rgba(13, 17, 23, 0.7) 40%,
+    rgba(13, 17, 23, 1) 100%
   );
+}
+
+/* ── Dark Theme — Full Overrides ──────────────────────────── */
+[data-theme="dark"] .content-gate-cta {
+  background: #0d1117;
+  padding: 0 1.5rem 3rem;
+}
+
+[data-theme="dark"] .content-gate-cta-inner {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 10px 30px -5px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .content-gate-icon {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%);
+}
+
+[data-theme="dark"] .content-gate-title {
+  font-family: 'DM Serif Display', serif;
+  color: #e6edf3;
+}
+
+[data-theme="dark"] .content-gate-description {
+  color: rgba(230, 237, 243, 0.6);
+}
+
+[data-theme="dark"] .content-gate-btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+[data-theme="dark"] .content-gate-btn-primary:hover {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+[data-theme="dark"] .content-gate-signin {
+  color: rgba(230, 237, 243, 0.4);
+}
+
+[data-theme="dark"] .content-gate-link {
+  color: #93c5fd;
+  text-decoration-color: rgba(147, 197, 253, 0.3);
+}
+
+[data-theme="dark"] .content-gate-link:hover {
+  text-decoration-color: #93c5fd;
+}
+
+[data-theme="dark"] .content-gate-trust {
+  color: rgba(230, 237, 243, 0.35);
+}
+
+[data-theme="dark"] .content-gate-trust i {
+  color: #6366f1;
+  opacity: 0.7;
 }
 
 /* ── CTA Container ──────────────────────────────────────────── */

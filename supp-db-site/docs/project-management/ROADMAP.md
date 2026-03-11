@@ -22,7 +22,7 @@
 | P6 | Stripe Checkout Integration | ✅ Complete | `251e0a5` | 113 |
 | P7 | Email Service + Newsletter Backend | ✅ Complete | `9918766` | 135 |
 | P8 | Guide Library Expansion (8→20) | ✅ Complete | (pending) | 277 |
-| P9 | Problem × Supplement Evidence Pages | 🔄 Next | — | — |
+| P9 | Problem × Supplement Evidence Pages (Wave 1) | ✅ Complete | (pending) | 383 |
 | P10 | Comparison Page Expansion | Planned | — | — |
 | P11 | Stack Analyzer Tool | Planned | — | — |
 | P12 | Bundle Pricing Optimization | Planned | — | — |
@@ -185,16 +185,24 @@ Expanded the evidence guide library from 8 to 20 guides, tripling the content-ga
 
 ---
 
-## 🔄 Phase 9: Problem × Supplement Evidence Pages (NEXT)
+## ✅ Phase 9: Problem × Supplement Evidence Pages — Wave 1 (COMPLETE)
 
-**Estimated Duration**: 4-5 days
+**Duration**: Completed 2026-03-10
 
-New page family creating 25-200 pages from existing data: `/evidence/{problem}/{supplement}.html`
+New page family: `/evidence/{problem}/{supplement}.html` — 25 pages across 5 domains.
 
-- New template with problem-specific evidence excerpts
-- Generator: `scripts/generate-evidence-pages.js`
-- Wave 1: 25 pages across Sleep, Anxiety, Cognitive, Metabolic, Inflammation
-- Internal linking: monographs ↔ evidence ↔ guides
+- Generator: `scripts/generate-evidence-pages.js` (700+ lines)
+- Extended `scripts/parse-data.js` with `loadProblemData()`
+- Domains: Sleep, Anxiety, Cognitive Performance, Metabolic Health, Inflammation
+- 5 supplements per domain (top by relevanceScore)
+- Rich problem-specific data for Sleep domain; graceful fallback to supplements.js for others
+- Content gate enabled on `/evidence/` pages (fixed `*/` JSDoc comment bug in content-gate.js)
+- Auth/gate scripts added to all generated guide pages (was missing from generator template)
+- Newsletter form aligned across all generated guides (uses newsletter.js properly)
+- JSON-LD Article schema, breadcrumbs (Home > Evidence > Domain > Supplement), cross-links
+- Sitemap updated with 25 new URLs at priority 0.8
+- 87 new tests in `tests/evidence-pages.spec.js`, content-gate tests expanded
+- **383 total tests passing**
 
 ---
 

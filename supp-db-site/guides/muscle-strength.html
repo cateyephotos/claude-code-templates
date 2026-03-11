@@ -38,719 +38,1505 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1773216342443">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Auth CDN -->
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Muscle Strength & Lean Mass","description":"Science-backed guide to supplements for muscle strength, lean mass, and physical performance. Ranked by clinical evidence. Dosages, mechanisms, and safety profiles.","datePublished":"2026-03-11","dateModified":"2026-03-11","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/muscle-strength.html"}}</script>
+
+    
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --accent: #dc2626;
+            --accent-light: #ef4444;
+            --accent-glow: rgba(220,38,38, 0.15);
+            --glow: #fca5a5;
+            --blue-muted: #7c8db5;
+            --slate: #8b949e;
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: rgba(220,38,38, 0.12);
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --tier1-from: #4ade80;
+            --tier1-to: #22c55e;
+            --tier2-from: #fbbf24;
+            --tier2-to: #f59e0b;
+            --tier3-from: #fb7185;
+            --tier3-to: #e11d48;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .guide-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-section {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(220,38,38, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                var(--navy-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .domain-icon-glow {
+            filter: drop-shadow(0 0 20px rgba(252,165,165, 0.3));
+        }
+
+        .tier-1-badge {
+            background: linear-gradient(135deg, var(--tier1-from), var(--tier1-to));
+            color: #052e16;
+        }
+        .tier-2-badge {
+            background: linear-gradient(135deg, var(--tier2-from), var(--tier2-to));
+            color: #451a03;
+        }
+        .tier-3-badge {
+            background: linear-gradient(135deg, var(--tier3-from), var(--tier3-to));
+            color: #fff;
+        }
+
+        .evidence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .evidence-card:hover {
+            border-color: rgba(220,38,38, 0.3);
+            box-shadow: 0 0 30px rgba(220,38,38, 0.06);
+        }
+
+        .cite-ref {
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: help;
+            vertical-align: super;
+            line-height: 0;
+            transition: color 0.2s;
+        }
+        .cite-ref:hover { color: var(--glow); }
+
+        .pmid-link {
+            color: var(--blue-muted);
+            font-size: 0.8rem;
+            font-family: 'DM Sans', monospace;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .pmid-link:hover {
+            opacity: 1;
+            color: var(--glow);
+            text-decoration: underline;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .summary-table thead th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        .summary-table thead th:first-child { border-radius: 8px 0 0 0; }
+        .summary-table thead th:last-child { border-radius: 0 8px 0 0; }
+        .summary-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(220,38,38, 0.06);
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+        .summary-table tbody tr { transition: background 0.2s; }
+        .summary-table tbody tr:hover { background: rgba(220,38,38, 0.04); }
+        .summary-table tbody tr:last-child td { border-bottom: none; }
+
+        .interaction-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.85rem;
+        }
+        .interaction-table th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .interaction-table th:first-child { border-radius: 8px 0 0 0; }
+        .interaction-table th:last-child { border-radius: 0 8px 0 0; }
+        .interaction-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(220,38,38, 0.06);
+            vertical-align: top;
+        }
+        .interaction-table tbody tr:last-child td { border-bottom: none; }
+
+        .risk-high { color: #f87171; font-weight: 600; }
+        .risk-moderate { color: #fbbf24; font-weight: 600; }
+        .risk-low { color: #4ade80; font-weight: 600; }
+
+        .tier-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .tier-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        .finding-highlight {
+            border-left: 3px solid var(--accent-light);
+            background: rgba(220,38,38, 0.05);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(220,38,38, 0.08);
+            border: 1px solid rgba(220,38,38, 0.15);
+            color: var(--glow);
+        }
+
+        .capture-section {
+            background:
+                radial-gradient(ellipse 70% 80% at 30% 50%, rgba(220,38,38, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 80% 40%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1040 0%, #0d1117 100%);
+            border: 1px solid rgba(220,38,38, 0.2);
+        }
+
+        .citation-entry {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(220,38,38, 0.05);
+            color: var(--text-muted);
+        }
+        .citation-entry:last-child { border-bottom: none; }
+        .citation-entry .cite-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(220,38,38, 0.1);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        @media (max-width: 768px) {
+            .summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table { min-width: 700px; }
+            .interaction-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .interaction-table { min-width: 600px; }
+            .evidence-card { margin-left: -4px; margin-right: -4px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        @media print {
+            .guide-nav, .capture-section, .no-print { display: none !important; }
+            body { background: #fff; color: #111; }
+            .evidence-card { border: 1px solid #ddd; background: #fff; }
+        }
+    </style>
 </head>
-<body class="content-page">
-    <!-- Navigation -->
-    <nav class="legal-nav">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
-                <i class="fas fa-pills text-xl"></i>
-                <span class="font-bold text-lg">SupplementDB</span>
+<body data-theme="dark">
+
+<!-- Sticky Navigation -->
+<nav class="guide-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+        <a href="../index.html" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="hidden sm:inline">Back to Database</span>
+            <span class="sm:hidden">Back</span>
+        </a>
+        <div class="flex items-center gap-1">
+            <i class="fas fa-pills text-sm" style="color: #ef4444;"></i>
+            <span class="text-sm font-semibold text-gray-300">SupplementDB</span>
+        </div>
+        <button id="mobile-nav-toggle" class="md:hidden text-gray-400 hover:text-white transition-colors p-1">
+            <i class="fas fa-bars text-sm"></i>
+        </button>
+        <div class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-500">
+            <a href="#summary" class="hover:text-gray-300 transition-colors">Summary</a>
+            <a href="#tier1" class="hover:text-gray-300 transition-colors">Tier 1</a>
+            <a href="#tier2" class="hover:text-gray-300 transition-colors">Tier 2</a>
+            <a href="#tier3" class="hover:text-gray-300 transition-colors">Tier 3</a>
+            <a href="#safety" class="hover:text-gray-300 transition-colors">Safety</a>
+            <a href="#citations" class="hover:text-gray-300 transition-colors">Citations</a>
+            <div id="auth-buttons"></div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile navigation dropdown -->
+<div id="mobile-nav-menu" class="hidden" style="position: fixed; top: 56px; left: 0; right: 0; z-index: 40; background: #0d1117; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="flex flex-col px-4 py-3 gap-1">
+        <a href="#summary" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Summary</a>
+        <a href="#tier1" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Tier 1</a>
+        <a href="#tier2" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Tier 2</a>
+        <a href="#tier3" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Tier 3</a>
+        <a href="#safety" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Safety</a>
+        <a href="#citations" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Citations</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+    <div class="max-w-3xl mx-auto relative z-10">
+        <!-- Domain icon -->
+        <div class="domain-icon-glow mb-6 inline-block">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 20v8M12 16v16M16 20v8M32 20v8M36 16v16M40 20v8" stroke="undefined" stroke-width="2" stroke-linecap="round" opacity="0.4"/><rect x="16" y="22" width="16" height="4" rx="2" fill="undefined" fill-opacity="0.3"/></svg>
+        </div>
+
+        <!-- Review badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(220,38,38, 0.12); color: #fca5a5; border: 1px solid rgba(220,38,38, 0.2);">
+            <i class="fas fa-clock text-xs" style="color: #ef4444; font-size: 0.65rem;"></i>
+            Last reviewed: 2026-03-11
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
+            Evidence-Based Supplements for Muscle Strength &amp; Lean Mass
+        </h1>
+
+        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+            A systematic review of 11 supplements across 20+ research citations, ranked by evidence strength.
+        </p>
+
+        <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+            <i class="fas fa-info-circle mr-1 opacity-60"></i>
+            This guide summarizes published research. It does not constitute medical advice.
+            <a href="../legal/disclaimer.html" style="color: #fca5a5; text-decoration: underline; opacity: 0.7;">Full disclaimer</a>.
+        </p>
+    </div>
+</header>
+
+<!-- Share Bar -->
+<div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <span class="share-bar-label" style="color: var(--text-muted);">Share this guide</span>
+        <div class="share-bar-buttons">
+            <button class="share-btn" data-share="twitter" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+            <button class="share-btn" data-share="linkedin" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+            <button class="share-btn" data-share="facebook" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-facebook"></i> Facebook</button>
+            <button class="share-btn share-btn-copy" data-share="copy" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fas fa-link"></i> Copy Link</button>
+        </div>
+    </div>
+</div>
+
+<!-- Trust Signal Bar -->
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
+    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 20+ Verified Citations</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+</div>
+
+<!-- Main content wrapper for content gating -->
+<main>
+
+<section id="summary" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="evidence-card p-6">
+        <h2 class="text-xl sm:text-2xl mb-6" style="color: var(--text-bright);">Quick Evidence Summary</h2>
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Tier</th>
+                        <th>Key Mechanism</th>
+                        <th>Primary Finding</th>
+                        <th>Dosage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><a href="../supplements/caffeine.html" style="color: var(--glow); text-decoration: none;">Caffeine</a></strong></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Adenosine receptor antagonism</td>
+                        <td style="font-size:0.82rem;">Exercise performance</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">50-400mg daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/creatine.html" style="color: var(--glow); text-decoration: none;">Creatine</a></strong></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">ATP regeneration</td>
+                        <td style="font-size:0.82rem;">Muscle strength</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">3-5g daily (maintenance) or 20g daily for 5 days (loading)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/iron.html" style="color: var(--glow); text-decoration: none;">Iron</a></strong></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Oxygen transport via hemoglobin</td>
+                        <td style="font-size:0.82rem;">Oxygen transport</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">8-65mg daily; RDA 8-18mg; therapeutic 25-65mg; athletes 100mg/day; bisglycinate preferred</td>
+                    </tr>
+                    <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>
+                    <tr>
+                        <td><strong><a href="../supplements/alpha-gpc.html" style="color: var(--glow); text-decoration: none;">Alpha-GPC</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Acetylcholine synthesis enhancement</td>
+                        <td style="font-size:0.82rem;">Growth hormone support</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">300-600mg daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/cordyceps.html" style="color: var(--glow); text-decoration: none;">Cordyceps</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">ATP and oxygen utilization enhancement</td>
+                        <td style="font-size:0.82rem;">Exercise performance</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">1-3g daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/fenugreek.html" style="color: var(--glow); text-decoration: none;">Fenugreek</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Alpha-amylase inhibition</td>
+                        <td style="font-size:0.82rem;">Blood glucose regulation</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">500-1000mg daily (seed extract)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/betaine.html" style="color: var(--glow); text-decoration: none;">Betaine</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Osmolyte function for cellular hydration</td>
+                        <td style="font-size:0.82rem;">Power output enhancement</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">2.5g daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/citrulline-malate.html" style="color: var(--glow); text-decoration: none;">Citrulline Malate</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Arginine-nitric oxide pathway enhancement</td>
+                        <td style="font-size:0.82rem;">Reduced muscle soreness</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">6-8g acute pre-workout</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color: var(--glow); text-decoration: none;">HMB (β-Hydroxy β-Methylbutyrate)</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">mTOR pathway activation for protein synthesis</td>
+                        <td style="font-size:0.82rem;">Muscle protein synthesis</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">3g daily or 38mg/kg body weight</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/taurine.html" style="color: var(--glow); text-decoration: none;">Taurine</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Calcium regulation in cells</td>
+                        <td style="font-size:0.82rem;">Cardiovascular health</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">1-6g daily (endurance performance); 0.5-1.5g daily (cardiovascular/general health)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/tribulus-terrestris.html" style="color: var(--glow); text-decoration: none;">Tribulus Terrestris</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</td>
+                        <td style="font-size:0.82rem;">Libido support (modest, especially women)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">250-750mg daily (standardized to 40-45% saponins)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="introduction" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Introduction</h2>
+    <p class="mb-4" style="color: var(--text-primary);">Muscle strength and lean mass are not merely aesthetic concerns — they are among the strongest predictors of all-cause mortality, metabolic health, and functional independence across the lifespan. Resistance training remains the foundational intervention, but specific supplements have robust evidence for augmenting strength gains and muscle development.</p>
+    <p class="mb-4" style="color: var(--text-primary);">This guide reviews the supplements with the strongest clinical evidence for supporting muscle strength, hypertrophy, and body composition. Evidence is drawn from meta-analyses of resistance training studies, sports nutrition trials, and systematic reviews from organizations including the International Society of Sports Nutrition (ISSN).</p>
+    <p class="mb-4" style="color: var(--text-primary);"><strong>Important:</strong> No supplement replaces consistent progressive resistance training and adequate protein intake (1.6-2.2g/kg/day). Supplements discussed here enhance — but do not substitute for — foundational training and nutrition principles.</p>
+
+    <!-- Featured Snippet -->
+    <div class="evidence-card p-5 mt-6" style="border-left: 3px solid var(--accent-light);">
+        <p class="text-sm" style="color: var(--text-primary);"><strong style="color: var(--text-bright);">Muscle Strength &amp; Lean Mass supplements</strong> Muscle and strength supplements are compounds studied for their effects on lean mass accretion, strength output, and exercise performance. The strongest evidence exists for creatine monohydrate (the most well-studied sports supplement, with consistent strength gains of 5-15%), beta-alanine (buffering muscular endurance), and caffeine (acute performance enhancement of 2-6%).</p>
+    </div>
+
+    <!-- Top supplement ranking -->
+    <div class="mt-8">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Top 8 Evidence-Based Supplements for Muscle Strength</h3>
+        <ol class="space-y-2 pl-5" style="list-style-type: decimal; color: var(--text-primary);">
+            <li class="text-sm"><a href="../supplements/caffeine.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Caffeine</a> <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span> &mdash; Exercise performance (50-400mg daily)</li>
+            <li class="text-sm"><a href="../supplements/creatine.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Creatine</a> <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span> &mdash; Muscle strength (3-5g daily (maintenance) or 20g daily for 5 days (loading))</li>
+            <li class="text-sm"><a href="../supplements/alpha-gpc.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Alpha-GPC</a> <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span> &mdash; Growth hormone support (300-600mg daily)</li>
+            <li class="text-sm"><a href="../supplements/betaine.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Betaine</a> <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span> &mdash; Power output enhancement (2.5g daily)</li>
+            <li class="text-sm"><a href="../supplements/citrulline-malate.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Citrulline Malate</a> <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span> &mdash; Reduced muscle soreness (6-8g acute pre-workout)</li>
+            <li class="text-sm"><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">HMB (β-Hydroxy β-Methylbutyrate)</a> <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span> &mdash; Muscle protein synthesis (3g daily or 38mg/kg body weight)</li>
+        </ol>
+    </div>
+</section>
+<div id="top-supplements">
+        <section id="tier1" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier 1 &mdash; Strong Evidence
+                </h2>
+            </div>
+            <div class="space-y-6">
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.00s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/caffeine.html" style="color: inherit; text-decoration: none;">Caffeine</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">1,3,7-Trimethylxanthine</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            50-400mg daily
+                        </span>
+                        <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Adenosine receptor antagonism</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Dopamine enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Adrenaline stimulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Calcium release in muscles</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">alertness</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Large improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">reaction_time</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercise_performance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate improvement</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Jitters, Anxiety, Insomnia
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.08s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/creatine.html" style="color: inherit; text-decoration: none;">Creatine</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">N-methylguanidino acetic acid</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            3-5g daily (maintenance) or 20g daily for 5 days (loading)
+                        </span>
+                        <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ATP regeneration</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Brain energy metabolism</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neuroprotection</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cellular energy buffering</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">memory</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate (83.3% of studies positive in aging; particularly strong in vegetarians)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">strength</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate to large (significant via 69-study meta-analysis; RVE-confirmed)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">bodyComposition</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (FFM +1.39 kg, body mass +0.89 kg; dose-response from 61 trials)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Excellent. Common: Water retention, Weight gain, GI upset if loading
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.16s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/iron.html" style="color: inherit; text-decoration: none;">Iron</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Iron (Fe)</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            8-65mg daily; RDA 8-18mg; therapeutic 25-65mg; athletes 100mg/day; bisglycinate preferred
+                        </span>
+                        <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Oxygen transport via hemoglobin</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cellular energy production (electron transport chain)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter synthesis (dopamine, serotonin)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> DNA synthesis support</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">cognitive_function</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate to large in iron deficiency (d=0.46 intelligence, d=0.53 short-term memory; Fiani 2025)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">energy_levels</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Large improvement in deficiency (fatigue d=0.34 RCT, d=1.01 pre-post; Fiani 2025)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercise_performance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">2-20% endurance improvement, 6-15% VO2max improvement (Pengelly 2024, 23 studies)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Fair. Common: Constipation, Stomach upset, Nausea
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="tier2" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier 2 &mdash; Moderate Evidence
+                </h2>
+            </div>
+            <div class="space-y-6">
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.00s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/alpha-gpc.html" style="color: inherit; text-decoration: none;">Alpha-GPC</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">L-α-glycerylphosphorylcholine</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            300-600mg daily
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Acetylcholine synthesis enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cell membrane phospholipid support</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Growth hormone release</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Dopamine and GABA modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">Key Benefit</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Growth hormone support</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">Key Benefit</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Athletic performance</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Headache, Dizziness, Insomnia
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.08s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/cordyceps.html" style="color: inherit; text-decoration: none;">Cordyceps</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Cordyceps sinensis/militaris</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            1-3g daily
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ATP and oxygen utilization enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Mitochondrial function improvement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Adaptogenic stress response</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Adenosine receptor modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercise_performance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">energy_levels</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">oxygen_utilization</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate improvement</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Excellent. Common: Very rare: mild nausea
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.16s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/fenugreek.html" style="color: inherit; text-decoration: none;">Fenugreek</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Trigonella foenum-graecum</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            500-1000mg daily (seed extract)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Alpha-amylase inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Delayed gastric emptying</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enhanced insulin sensitivity</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Steroidogenic enzyme modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">glucoseControl</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (10-25mg/dL fasting glucose reduction)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">testosterone</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate increase in deficient men</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: GI upset, Diarrhea, Maple syrup odor
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="tier3" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier 3 &mdash; Preliminary Evidence
+                </h2>
+            </div>
+            <div class="space-y-6">
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.00s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/betaine.html" style="color: inherit; text-decoration: none;">Betaine</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Trimethylglycine (TMG)</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            2.5g daily
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Osmolyte function for cellular hydration</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Methyl donor in homocysteine-to-methionine conversion</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Creatine synthesis support via methylation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein synthesis signaling via cellular volume</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">powerOutput</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">bodyComposition</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small improvement (fat loss, lean mass)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Fishy body odor (trimethylaminuria), Mild GI upset, Possible cholesterol elevation
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.08s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/citrulline-malate.html" style="color: inherit; text-decoration: none;">Citrulline Malate</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">L-Citrulline + DL-Malate</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            6-8g acute pre-workout
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Arginine-nitric oxide pathway enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Ammonia detoxification via urea cycle</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Malate contribution to aerobic energy production</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Vasodilation and improved blood flow</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercisePerformance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">muscleRecovery</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate reduction in soreness</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI discomfort at high doses, Possible nausea
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.16s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color: inherit; text-decoration: none;">HMB (β-Hydroxy β-Methylbutyrate)</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">β-Hydroxy β-Methylbutyrate</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            3g daily or 38mg/kg body weight
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> mTOR pathway activation for protein synthesis</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Ubiquitin-proteasome pathway inhibition (reduced protein breakdown)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis for cell membrane repair</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Leucine metabolite with anti-catabolic properties</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">muscleMass</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate gains in untrained populations</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">musclePreservation</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate during caloric restriction</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI discomfort, No major side effects at recommended doses
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.24s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/taurine.html" style="color: inherit; text-decoration: none;">Taurine</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">2-Aminoethanesulfonic acid</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            1-6g daily (endurance performance); 0.5-1.5g daily (cardiovascular/general health)
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Calcium regulation in cells</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant properties</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Bile acid conjugation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercise_performance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Hedges' g=0.40 (moderate, p=0.004) — Waldron 2018 meta-analysis, 10 studies</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">cardiovascular_markers</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Modest improvements in blood pressure and endothelial function; effect sizes not meta-analyzed</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">antioxidant_status</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate reduction in oxidative stress markers; human data limited</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> GRAS-designated amino acid; generally well tolerated up to 6g/day; very rare mild GI upset; no significant drug interactions documented in short-term clinical studies. Common: Very rare: mild GI upset
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.32s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/tribulus-terrestris.html" style="color: inherit; text-decoration: none;">Tribulus Terrestris</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Tribulus terrestris L.</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(220,38,38, 0.1); color: #fca5a5;">
+                            250-750mg daily (standardized to 40-45% saponins)
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide synthase (eNOS) enhancement — vascular and erectile function</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant and free radical scavenging activity</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory cytokine modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">testosterone</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Not significant in healthy men (Chhatre 2014 meta-analysis, 12 studies)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">sexual_function</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Modest improvement in sexual desire and arousal (Kamenov 2017, 11 studies, n=516; more pronounced in women)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">sports_performance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">No significant effects on body composition or strength (Chhatre 2014)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Generally well tolerated; hormonal caution in sensitive populations. Common: Stomach upset (high doses), Sleep disturbances (occasional)
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+</div>
+<section id="mechanisms" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Mechanisms of Action</h2>
+    <p class="mb-6" style="color: var(--text-primary);">Strength and muscle-building supplements work through distinct physiological mechanisms — from acute performance enhancement to chronic anabolic signaling and recovery optimization.</p>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Phosphocreatine Energy Buffer</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Creatine monohydrate increases intramuscular phosphocreatine stores by 20-40%, providing rapid ATP regeneration during high-intensity efforts. This translates to more repetitions per set, heavier loads, and greater total training volume — the primary driver of muscle hypertrophy.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/creatine.html" style="color: var(--glow); text-decoration: none;">Creatine</a>, <a href="../supplements/beta-alanine.html" style="color: var(--glow); text-decoration: none;">Beta-Alanine</a></p>
+    </div>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Protein Synthesis &amp; Anti-Catabolic Signaling</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Muscle growth requires net positive protein balance (synthesis > breakdown). Whey protein provides a rapid leucine bolus that activates mTOR signaling — the master switch for muscle protein synthesis. HMB (a leucine metabolite) additionally reduces protein breakdown during intense training or caloric deficits.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/whey-protein.html" style="color: var(--glow); text-decoration: none;">Whey Protein</a>, <a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color: var(--glow); text-decoration: none;">HMB (β-Hydroxy β-Methylbutyrate)</a>, <a href="../supplements/creatine.html" style="color: var(--glow); text-decoration: none;">Creatine</a></p>
+    </div>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Neuromuscular Activation &amp; Power Output</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Caffeine blocks adenosine receptors, increasing neuromuscular excitability and reducing perceived exertion. Alpha-GPC increases acetylcholine availability at the neuromuscular junction, potentially enhancing peak power output. Both act acutely — effects are measured within 30-60 minutes of ingestion.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/caffeine.html" style="color: var(--glow); text-decoration: none;">Caffeine</a>, <a href="../supplements/alpha-gpc.html" style="color: var(--glow); text-decoration: none;">Alpha-GPC</a>, <a href="../supplements/betaine.html" style="color: var(--glow); text-decoration: none;">Betaine</a></p>
+    </div>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Nitric Oxide &amp; Blood Flow Enhancement</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Citrulline is converted to arginine in the kidneys, increasing nitric oxide production. Enhanced blood flow delivers more oxygen and nutrients to working muscles while improving metabolic waste clearance. This translates to improved work capacity and reduced fatigue during high-repetition training.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/citrulline-malate.html" style="color: var(--glow); text-decoration: none;">Citrulline Malate</a>, <a href="../supplements/betaine.html" style="color: var(--glow); text-decoration: none;">Betaine</a>, <a href="../supplements/nitrate-beetroot.html" style="color: var(--glow); text-decoration: none;">Nitrate (Beetroot)</a></p>
+    </div>
+</section>
+<section id="dosage-guidelines" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Dosage Guidelines</h2>
+    <p class="mb-6" style="color: var(--text-primary);">The following dosage ranges reflect those used in published clinical trials. Individual needs may vary. Always start with the lower end and titrate upward as tolerated.</p>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Clinical Dosage Range</th>
+                        <th>Evidence Tier</th>
+                        <th>Safety Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><a href="../supplements/caffeine.html" style="color: var(--glow); text-decoration: none;">Caffeine</a></strong></td>
+                        <td>50-400mg daily</td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/creatine.html" style="color: var(--glow); text-decoration: none;">Creatine</a></strong></td>
+                        <td>3-5g daily (maintenance) or 20g daily for 5 days (loading)</td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/alpha-gpc.html" style="color: var(--glow); text-decoration: none;">Alpha-GPC</a></strong></td>
+                        <td>300-600mg daily</td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/betaine.html" style="color: var(--glow); text-decoration: none;">Betaine</a></strong></td>
+                        <td>2.5g daily</td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/citrulline-malate.html" style="color: var(--glow); text-decoration: none;">Citrulline Malate</a></strong></td>
+                        <td>6-8g acute pre-workout</td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color: var(--glow); text-decoration: none;">HMB (β-Hydroxy β-Methylbutyrate)</a></strong></td>
+                        <td>3g daily or 38mg/kg body weight</td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mt-4 p-4 rounded-lg" style="background: rgba(251, 191, 36, 0.06); border: 1px solid rgba(251, 191, 36, 0.15);">
+        <p class="text-sm" style="color: var(--text-primary);"><i class="fas fa-exclamation-triangle mr-2" style="color: #fbbf24;"></i><strong>Note:</strong> Dosage ranges are derived from clinical trial protocols and may not account for individual variation. Consult a healthcare provider for personalized dosing.</p>
+    </div>
+</section>
+<section id="safety" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Safety &amp; Interactions</h2>
+    <p class="mb-4" style="color: var(--text-primary);">Performance supplements are among the most well-studied supplement categories, but dosing precision, timing, and individual factors require attention.</p>
+    <ul class="space-y-2 mb-8 pl-5" style="list-style-type: disc; color: var(--text-primary);">
+        <li class="text-sm"><strong>Creatine misconceptions:</strong> Creatine monohydrate does NOT cause kidney damage in healthy individuals at recommended doses (3-5g/day). However, it raises serum creatinine (a kidney marker), which may falsely suggest renal impairment. Individuals with pre-existing kidney disease should consult a nephrologist.</li>
+        <li class="text-sm"><strong>Caffeine dosing:</strong> Performance benefits plateau at 3-6mg/kg bodyweight. Higher doses increase side effects (anxiety, tremor, tachycardia) without additional performance gains. Genetic fast/slow metabolizer status (CYP1A2) significantly affects individual response.</li>
+        <li class="text-sm"><strong>Beta-alanine paresthesia:</strong> Beta-alanine commonly causes harmless tingling (paresthesia) at doses above 800mg. This is not an allergic reaction. Sustained-release formulations or split dosing (800mg × 4/day) minimize this effect.</li>
+        <li class="text-sm"><strong>Stimulant stacking:</strong> Do NOT combine caffeine with other stimulants (DMAA, synephrine, yohimbine) without medical supervision. Cardiovascular risks (arrhythmia, hypertension) increase significantly with stimulant stacking.</li>
+        <li class="text-sm"><strong>HMB timing:</strong> HMB-free acid (HMB-FA) has faster absorption than calcium HMB (HMB-Ca). Take HMB-FA 30-60 minutes before training, HMB-Ca 60-120 minutes before. Benefits are most pronounced in untrained individuals or during caloric restriction.</li>
+        <li class="text-sm"><strong>Contamination risk:</strong> Sports supplements have the highest contamination/adulteration rates in the supplement industry. Use only NSF Certified for Sport or Informed Sport tested products, especially if subject to drug testing.</li>
+    </ul>
+
+    <h3 class="text-lg mb-4" style="color: var(--text-bright);">Individual Supplement Safety Profiles</h3>
+    <div class="evidence-card p-6">
+        <div class="interaction-table-wrap">
+            <table class="interaction-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Common Side Effects</th>
+                        <th>Key Drug Interactions</th>
+                        <th>Safety Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Caffeine</strong></td>
+                        <td>Jitters, Anxiety, Insomnia</td>
+                        <td>Stimulant medications, Blood thinners, Some antibiotics</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Creatine</strong></td>
+                        <td>Water retention, Weight gain, GI upset if loading</td>
+                        <td>Minimal known interactions</td>
+                        <td><span class="risk-low">Excellent</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alpha-GPC</strong></td>
+                        <td>Headache, Dizziness, Insomnia</td>
+                        <td>Cholinesterase inhibitors</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Betaine</strong></td>
+                        <td>Fishy body odor (trimethylaminuria), Mild GI upset, Possible cholesterol elevation</td>
+                        <td>May interact with cholesterol medications, No major drug interactions reported</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Citrulline Malate</strong></td>
+                        <td>Mild GI discomfort at high doses, Possible nausea</td>
+                        <td>PDE5 inhibitors (additive vasodilation), Nitrates, Blood pressure medications</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HMB (β-Hydroxy β-Methylbutyrate)</strong></td>
+                        <td>Mild GI discomfort, No major side effects at recommended doses</td>
+                        <td>Statins (shared cholesterol pathways), No major drug interactions reported</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="research-gaps" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Research Gaps &amp; Limitations</h2>
+    <p class="mb-4" style="color: var(--text-primary);">While the evidence base for muscle strength & lean mass supplements continues to grow, several important gaps remain:</p>
+    <ul class="space-y-2 pl-5" style="list-style-type: disc; color: var(--text-primary);">
+        <li class="text-sm">Optimal creatine dosing for different body compositions and training modalities is poorly refined beyond the standard 3-5g/day recommendation</li>
+        <li class="text-sm">Long-term effects of chronic caffeine use on training adaptation (does tolerance reduce performance benefits?) remain debated</li>
+        <li class="text-sm">Female-specific dosing guidelines for performance supplements are severely lacking — most research uses male participants</li>
+        <li class="text-sm">The interaction between intermittent fasting/caloric restriction and supplement timing for body composition is poorly studied</li>
+        <li class="text-sm">Plant-based protein supplements vs. whey for hypertrophy need larger head-to-head trials with matched leucine content</li>
+        <li class="text-sm">Alpha-GPC effects on power output have promising pilot data but need replication in larger, well-controlled trials</li>
+    </ul>
+</section>
+<section id="additional" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Additional Supplements</h2>
+    <p class="mb-6" style="color: var(--text-primary);">The following 5 supplements show some evidence related to muscle strength & lean mass but are not among the primary recommendations.</p>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Evidence</th>
+                        <th>Category</th>
+                        <th>Relevant Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="../supplements/iron.html" style="color: var(--glow); text-decoration: none;">Iron</a></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="color: var(--text-muted);">Essential Nutrients</td>
+                        <td style="font-size:0.85rem">Oxygen transport</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/cordyceps.html" style="color: var(--glow); text-decoration: none;">Cordyceps</a></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="color: var(--text-muted);">Herbal Extracts</td>
+                        <td style="font-size:0.85rem">Exercise performance</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/fenugreek.html" style="color: var(--glow); text-decoration: none;">Fenugreek</a></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="color: var(--text-muted);">Herbal Extracts</td>
+                        <td style="font-size:0.85rem">Blood glucose regulation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/taurine.html" style="color: var(--glow); text-decoration: none;">Taurine</a></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="color: var(--text-muted);">Amino Acids</td>
+                        <td style="font-size:0.85rem">Cardiovascular health</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/tribulus-terrestris.html" style="color: var(--glow); text-decoration: none;">Tribulus Terrestris</a></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="color: var(--text-muted);">Herbal Extracts</td>
+                        <td style="font-size:0.85rem">Libido support (modest, especially women)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Citation Index</h2>
+    <p class="mb-6" style="color: var(--text-primary);">All data in this guide is derived from the SupplementDB citation library of 20+ peer-reviewed research papers.</p>
+    <div class="evidence-card p-6">
+        <div class="space-y-1">
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">1</span>
+                <span>Nehlig (2010). Caffeine and cognitive performance. <em></em>. <a class="pmid-link" href="https://doi.org/10.1111/j.1469-8986.2010.00992.x" target="_blank" rel="noopener">10.1111/j.1469-8986.2010.00992.x</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">2</span>
+                <span>Kazeminasab et al. (2025). The effects of creatine supplementation on upper and lower body strength and power: a systematic review and meta-analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1080/02640414.2025.2468753" target="_blank" rel="noopener">10.1080/02640414.2025.2468753</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">3</span>
+                <span>Ashtary-Larky et al. (2025). Dose-response effects of creatine supplementation on body composition: a meta-analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.clnu.2025.07.012" target="_blank" rel="noopener">10.1016/j.clnu.2025.07.012</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">4</span>
+                <span>Naeini et al. (2025). The Effects of Creatine Supplementation on Kidney Function: A Systematic Review and Meta-Analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.clnu.2025.06.030" target="_blank" rel="noopener">10.1016/j.clnu.2025.06.030</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">5</span>
+                <span>Beard (2001). Iron deficiency and cognitive function. <em></em>. <a class="pmid-link" href="https://doi.org/10.1093/jn/131.2.568S" target="_blank" rel="noopener">10.1093/jn/131.2.568S</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">6</span>
+                <span>Fiani et al. (2025). Psychiatric and cognitive outcomes of iron supplementation in non-anemic individuals. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.neubiorev.2025.106372" target="_blank" rel="noopener">10.1016/j.neubiorev.2025.106372</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">7</span>
+                <span>Caballero-Apaza et al. (2026). Effect of iron supplements on cognitive development in children: an umbrella review. <em></em>. <a class="pmid-link" href="https://doi.org/10.3389/fnut.2026.1718507" target="_blank" rel="noopener">10.3389/fnut.2026.1718507</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">8</span>
+                <span>Jeon et al. (2024). Efficacy and safety of choline alphoscerate for amnestic mild cognitive impairment. <em></em>. <a class="pmid-link" href="https://doi.org/10.1186/s12877-024-05366-7" target="_blank" rel="noopener">10.1186/s12877-024-05366-7</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39300341" target="_blank" rel="noopener">PMID: 39300341</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">9</span>
+                <span>Tamura et al. (2021). Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Volunteers. <em></em>. <a class="pmid-link" href="https://doi.org/10.3390/nu13062091" target="_blank" rel="noopener">10.3390/nu13062091</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/34207484" target="_blank" rel="noopener">PMID: 34207484</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">10</span>
+                <span>Hirsch et al. (2017). Cordyceps sinensis for exercise performance. <em></em>. <a class="pmid-link" href="https://doi.org/10.1080/19390211.2016.1203386" target="_blank" rel="noopener">10.1080/19390211.2016.1203386</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">11</span>
+                <span>Neelakantan N, et al. (2014). Fenugreek supplementation in type 2 diabetes. <em>Nutr J</em>. <a class="pmid-link" href="https://doi.org/10.1186/1475-2891-13-7" target="_blank" rel="noopener">10.1186/1475-2891-13-7</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">12</span>
+                <span>Lee EC, et al. (2010). Ergogenic effects of betaine supplementation on strength and power performance. <em>J Int Soc Sports Nutr</em>. <a class="pmid-link" href="https://doi.org/10.1186/1550-2783-7-27" target="_blank" rel="noopener">10.1186/1550-2783-7-27</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">13</span>
+                <span>Pérez-Guisado J, Jakeman PM (2010). Citrulline malate enhances athletic anaerobic performance and relieves muscle soreness. <em>J Strength Cond Res</em>. <a class="pmid-link" href="https://doi.org/10.1519/JSC.0b013e3181cb28e0" target="_blank" rel="noopener">10.1519/JSC.0b013e3181cb28e0</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">14</span>
+                <span>Wilson JM, et al. (2014). β-Hydroxy-β-methylbutyrate free acid supplementation effects on muscle mass. <em>Br J Nutr</em>. <a class="pmid-link" href="https://doi.org/10.1017/S0007114513002665" target="_blank" rel="noopener">10.1017/S0007114513002665</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">15</span>
+                <span>Waldron M,Patterson SD,Tallent J,Jeffries O (2018). The Effects of an Oral Taurine Dose and Supplementation Period on Endurance Exercise Performance in Humans: A Meta-Analysis. <em>Sports Medicine</em>. <a class="pmid-link" href="https://doi.org/10.1007/s40279-018-0896-2" target="_blank" rel="noopener">10.1007/s40279-018-0896-2</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/29546641" target="_blank" rel="noopener">PMID: 29546641</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">16</span>
+                <span>Shao A,Hathcock JN (2008). Risk assessment for the amino acids taurine, L-glutamine and L-arginine. <em>Regulatory Toxicology and Pharmacology</em>. <a class="pmid-link" href="https://doi.org/10.1016/j.yrtph.2007.07.003" target="_blank" rel="noopener">10.1016/j.yrtph.2007.07.003</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/17766049" target="_blank" rel="noopener">PMID: 17766049</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">17</span>
+                <span>Huxtable RJ (1992). Physiological actions of taurine. <em>Physiological Reviews</em>. <a class="pmid-link" href="https://doi.org/10.1152/physrev.1992.72.1.101" target="_blank" rel="noopener">10.1152/physrev.1992.72.1.101</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/1731369" target="_blank" rel="noopener">PMID: 1731369</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">18</span>
+                <span>Kamenov Z et al. (2017). Effects of Tribulus terrestris on sexual function: A systematic review and meta-analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.maturitas.2017.01.011" target="_blank" rel="noopener">10.1016/j.maturitas.2017.01.011</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28364864" target="_blank" rel="noopener">PMID: 28364864</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">19</span>
+                <span>Chhatre S et al. (2014). Effects of Tribulus terrestris supplementation on body composition and exercise performance. <em></em>. <a class="pmid-link" href="https://doi.org/10.1123/ijsnem.2013-0118" target="_blank" rel="noopener">10.1123/ijsnem.2013-0118</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/24480665" target="_blank" rel="noopener">PMID: 24480665</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">20</span>
+                <span>Neychev VK et al. (2016). Safety evaluation of Tribulus terrestris supplementation: A systematic review. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.phymed.2016.10.010" target="_blank" rel="noopener">10.1016/j.phymed.2016.10.010</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/27823629" target="_blank" rel="noopener">PMID: 27823629</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
+        <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
+            <i class="fas fa-envelope-open-text mr-2" style="color: #ef4444;"></i>
+            Get Muscle Strength &amp; Lean Mass Research Updates
+        </h3>
+        <p class="mb-6 text-sm" style="color: var(--text-muted); max-width: 440px; margin: 0 auto 1.5rem;">
+            Stay informed when new studies are published or evidence tiers are updated for these supplements.
+        </p>
+        <div id="guide-newsletter-container">
+            <form id="guide-newsletter-form" class="newsletter-form flex gap-3 max-w-md mx-auto flex-wrap justify-center">
+                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required
+                    class="flex-1 min-w-0 px-4 py-2.5 rounded-lg text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text-bright); outline: none;">
+                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    style="background: #dc2626;"><i class="fas fa-paper-plane mr-1"></i> Subscribe</button>
+            </form>
+            <p id="guide-newsletter-message" class="newsletter-message" style="display:none; color: var(--text-bright);"></p>
+        </div>
+        <p class="text-xs mt-4" style="color: var(--text-muted); opacity: 0.6;"><i class="fas fa-lock mr-1"></i> No spam. <a href="../legal/privacy.html" style="color: var(--glow); opacity: 0.7;">Privacy Policy</a></p>
+    </div>
+</section>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="related-content evidence-card p-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Related Resources</h3>
+        <div class="related-content-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="../guides/recovery.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-bandage" style="color: #ef4444; width: 16px; text-align: center;"></i> Recovery &amp; Soreness Guide
             </a>
-            <div class="flex items-center space-x-4">
-                <a href="../guides/sleep.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">Sleep Guide</a>
-                <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
-                    <i class="fas fa-arrow-left mr-1"></i> Database
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="content-hero">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="content-breadcrumb" aria-label="Breadcrumb">
-                <a href="../index.html">Home</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <a href="../index.html#guides">Evidence Guides</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>Muscle Strength &amp; Lean Mass</span>
-            </nav>
-            <h1>Evidence-Based Supplements for Muscle Strength &amp; Lean Mass</h1>
-            <p class="hero-subtitle">A systematic review of supplements studied for strength gains, muscle hypertrophy, and body composition improvement — ranked by strength of clinical evidence.</p>
-            <div class="hero-meta">
-                <span class="hero-stat"><i class="fas fa-flask"></i> 11 Supplements Reviewed</span>
-                <span class="hero-stat"><i class="fas fa-file-lines"></i> 21+ Citations</span>
-                <span class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-11</span>
-                <span class="hero-stat"><span class="tier-badge tier-badge-1">Strong Evidence</span> 3</span>
-                <span class="hero-stat"><span class="tier-badge tier-badge-2">Moderate Evidence</span> 3</span>
-                <span class="hero-stat"><span class="tier-badge tier-badge-3">Preliminary Evidence</span> 5</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Share Bar -->
-    <div class="share-bar">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span class="share-bar-label">Share this guide</span>
-            <div class="share-bar-buttons">
-                <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
-                <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-                <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
-                <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-            </div>
+            <a href="../guides/energy-vitality.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-bolt" style="color: #ef4444; width: 16px; text-align: center;"></i> Energy &amp; Vitality Guide
+            </a>
+            <a href="../guides/nootropic-stacks.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-layer-group" style="color: #ef4444; width: 16px; text-align: center;"></i> Nootropic Stacks Guide
+            </a>
+            <a href="../guides/mens-health.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-mars" style="color: #ef4444; width: 16px; text-align: center;"></i> Men's Health Guide
+            </a>
+            <a href="../guides/womens-health.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-venus" style="color: #ef4444; width: 16px; text-align: center;"></i> Women's Health Guide
+            </a>
+            <a href="../guides/safety-interactions.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-triangle-exclamation" style="color: #ef4444; width: 16px; text-align: center;"></i> Safety &amp; Interactions Guide
+            </a>
+            <a href="../compare/creatine-vs-beta-alanine.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-scale-balanced" style="color: #ef4444; width: 16px; text-align: center;"></i> Creatine vs Beta-Alanine
+            </a>
+            <a href="../index.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-database" style="color: #ef4444; width: 16px; text-align: center;"></i> Full Supplement Database
+            </a>
+            <a href="../methodology.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-flask" style="color: #ef4444; width: 16px; text-align: center;"></i> Research Methodology
+            </a>
+            <a href="../faq.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-circle-question" style="color: #ef4444; width: 16px; text-align: center;"></i> FAQ
+            </a>
         </div>
     </div>
+</section>
 
-    <!-- Trust Signal Bar -->
-    <div class="trust-bar" style="max-width:64rem;margin:1rem auto;">
-        <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 21+ Verified Citations</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+</main>
+
+<!-- Footer -->
+<footer class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t" style="border-color: var(--border);">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="../index.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-pills" style="color: #ef4444;"></i>
+                <span>Return to Supplement Database</span>
+            </a>
+            <a href="../methodology.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-flask"></i>
+                <span>Research Methodology</span>
+            </a>
+        </div>
+        <p class="text-xs text-center sm:text-right" style="color: var(--text-muted); max-width: 400px;">
+            This guide is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.
+        </p>
     </div>
+    <div class="text-center mt-8">
+        <p class="text-xs" style="color: rgba(139, 148, 158, 0.5);">
+            &copy; 2025&ndash;2026 SupplementDB. Evidence-Based Supplement Database.
+        </p>
+    </div>
+</footer>
 
-    <!-- Main Content with optional TOC -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div style="display:grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: start;">
-            <div>
+<!-- Scripts -->
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
 
-                <div class="content-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div><strong>Medical Disclaimer:</strong> This guide is for informational and educational purposes only. It does not constitute medical advice, diagnosis, or treatment recommendations. Always consult a qualified healthcare professional before starting any supplement regimen. <a href="../legal/disclaimer.html" style="color:#92400e; text-decoration:underline;">Read full disclaimer</a>.</div>
-                </div>
+// Smooth scroll for anchor links with nav offset
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            var navHeight = document.querySelector('.guide-nav').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
 
-                <!-- Featured Snippet: Definition -->
-                <div class="snippet-definition">
-                    <p><strong>Muscle Strength &amp; Lean Mass supplements</strong> Muscle and strength supplements are compounds studied for their effects on lean mass accretion, strength output, and exercise performance. The strongest evidence exists for creatine monohydrate (the most well-studied sports supplement, with consistent strength gains of 5-15%), beta-alanine (buffering muscular endurance), and caffeine (acute performance enhancement of 2-6%).</p>
-                </div>
+// PostHog custom event tracking
+(function() {
+    if (typeof posthog === 'undefined') return;
 
-                <section class="content-section" id="introduction">
-                    <h2>Introduction</h2>
-                    <p>Muscle strength and lean mass are not merely aesthetic concerns — they are among the strongest predictors of all-cause mortality, metabolic health, and functional independence across the lifespan. Resistance training remains the foundational intervention, but specific supplements have robust evidence for augmenting strength gains and muscle development.</p>
-                    <p>This guide reviews the supplements with the strongest clinical evidence for supporting muscle strength, hypertrophy, and body composition. Evidence is drawn from meta-analyses of resistance training studies, sports nutrition trials, and systematic reviews from organizations including the International Society of Sports Nutrition (ISSN).</p>
-                    <p><strong>Important:</strong> No supplement replaces consistent progressive resistance training and adequate protein intake (1.6-2.2g/kg/day). Supplements discussed here enhance — but do not substitute for — foundational training and nutrition principles.</p>
-                </section>
+    posthog.capture('guide_viewed', {
+        guide_slug: 'muscle-strength',
+        guide_title: 'Evidence-Based Supplements for Muscle Strength &amp; Lean Mass',
+        supplement_count: 11,
+        citation_count: 20,
+        tier1_count: 3,
+        tier2_count: 3,
+        tier3_count: 5
+    });
 
-                <!-- Featured Snippet: Ranked List -->
-                <section class="content-section" id="top-supplements">
-                    <h2>Top 8 Evidence-Based Supplements for Muscle Strength</h2>
-                    <div class="snippet-list">
-                        <h2>Top 8 Evidence-Based Supplements for Muscle Strength</h2>
-                        <ol>
-                            <li><a href="../supplements/caffeine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Caffeine</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Exercise performance (50-400mg daily)</li>
-                            <li><a href="../supplements/creatine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Creatine</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Muscle strength (3-5g daily (maintenance) or 20g daily for 5 days (loading))</li>
-                            <li><a href="../supplements/alpha-gpc.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Alpha-GPC</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Growth hormone support (300-600mg daily)</li>
-                            <li><a href="../supplements/betaine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Betaine</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> &mdash; Power output enhancement (2.5g daily)</li>
-                            <li><a href="../supplements/citrulline-malate.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Citrulline Malate</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> &mdash; Reduced muscle soreness (6-8g acute pre-workout)</li>
-                            <li><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color:var(--accent);text-decoration:none;font-weight:700;">HMB (β-Hydroxy β-Methylbutyrate)</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> &mdash; Muscle protein synthesis (3g daily or 38mg/kg body weight)</li>
-                        </ol>
-                    </div>
+    var sectionsMeta = {
+        'summary': { name: 'Quick Evidence Summary', depth: 'top' },
+        'tier1': { name: 'Tier 1: Strong Evidence', depth: 'upper' },
+        'tier2': { name: 'Tier 2: Moderate Evidence', depth: 'middle' },
+        'tier3': { name: 'Tier 3: Preliminary Evidence', depth: 'lower' },
+        'safety': { name: 'Safety Considerations', depth: 'deep' },
+        'citations': { name: 'Citation Index', depth: 'bottom' }
+    };
 
-                    <div class="supplement-card-grid">
-                        <div class="supplement-card" id="supp-caffeine">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/caffeine.html" style="color:inherit;text-decoration:none;">Caffeine</a></h3>
-                                    <p class="card-scientific">1,3,7-Trimethylxanthine</p>
-                                </div>
-                                <span class="tier-badge tier-badge-1">Strong Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Exercise performance</li>
-                                <li>Fat burning</li>
-                                <li>Metabolic boost</li>
-                                <li>Mood enhancement</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>alertness:</strong> Large improvement</div>
-                                <div style="margin-bottom:0.25rem"><strong>reaction_time:</strong> Moderate improvement</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Adenosine receptor antagonism; Dopamine enhancement</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 50-400mg daily</div>
-                        </div>
-                        <div class="supplement-card" id="supp-creatine">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/creatine.html" style="color:inherit;text-decoration:none;">Creatine</a></h3>
-                                    <p class="card-scientific">N-methylguanidino acetic acid</p>
-                                </div>
-                                <span class="tier-badge tier-badge-1">Strong Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Muscle strength</li>
-                                <li>Power output</li>
-                                <li>Muscle mass</li>
-                                <li>Strength and power</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>memory:</strong> Small to moderate (83.3% of studies positive in aging; particularly strong in vegetarians)</div>
-                                <div style="margin-bottom:0.25rem"><strong>strength:</strong> Moderate to large (significant via 69-study meta-analysis; RVE-confirmed)</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> ATP regeneration; Brain energy metabolism</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 3-5g daily (maintenance) or 20g daily for 5 days (loading)</div>
-                        </div>
-                        <div class="supplement-card" id="supp-alpha-gpc">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/alpha-gpc.html" style="color:inherit;text-decoration:none;">Alpha-GPC</a></h3>
-                                    <p class="card-scientific">L-α-glycerylphosphorylcholine</p>
-                                </div>
-                                <span class="tier-badge tier-badge-2">Moderate Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Growth hormone support</li>
-                                <li>Athletic performance</li>
-                                <li>Neuroprotection</li>
-                                <li>Memory enhancement</li>
-                            </ul>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Acetylcholine synthesis enhancement; Cell membrane phospholipid support</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 300-600mg daily</div>
-                        </div>
-                        <div class="supplement-card" id="supp-betaine">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/betaine.html" style="color:inherit;text-decoration:none;">Betaine</a></h3>
-                                    <p class="card-scientific">Trimethylglycine (TMG)</p>
-                                </div>
-                                <span class="tier-badge tier-badge-3">Preliminary Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Power output enhancement</li>
-                                <li>Body composition improvement</li>
-                                <li>Cellular hydration</li>
-                                <li>Methylation support</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>powerOutput:</strong> Small to moderate improvement</div>
-                                <div style="margin-bottom:0.25rem"><strong>bodyComposition:</strong> Small improvement (fat loss, lean mass)</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Osmolyte function for cellular hydration; Methyl donor in homocysteine-to-methionine conversion</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 2.5g daily</div>
-                        </div>
-                        <div class="supplement-card" id="supp-citrulline-malate">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/citrulline-malate.html" style="color:inherit;text-decoration:none;">Citrulline Malate</a></h3>
-                                    <p class="card-scientific">L-Citrulline + DL-Malate</p>
-                                </div>
-                                <span class="tier-badge tier-badge-3">Preliminary Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Reduced muscle soreness</li>
-                                <li>Nitric oxide production</li>
-                                <li>Blood flow enhancement</li>
-                                <li>Exercise endurance</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>exercisePerformance:</strong> Small to moderate improvement</div>
-                                <div style="margin-bottom:0.25rem"><strong>muscleRecovery:</strong> Moderate reduction in soreness</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Arginine-nitric oxide pathway enhancement; Ammonia detoxification via urea cycle</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 6-8g acute pre-workout</div>
-                        </div>
-                        <div class="supplement-card" id="supp-hmb-hydroxy-methylbutyrate">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color:inherit;text-decoration:none;">HMB (β-Hydroxy β-Methylbutyrate)</a></h3>
-                                    <p class="card-scientific">β-Hydroxy β-Methylbutyrate</p>
-                                </div>
-                                <span class="tier-badge tier-badge-3">Preliminary Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Muscle protein synthesis</li>
-                                <li>Muscle preservation</li>
-                                <li>Lean mass support</li>
-                                <li>Recovery enhancement</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>muscleMass:</strong> Small to moderate gains in untrained populations</div>
-                                <div style="margin-bottom:0.25rem"><strong>musclePreservation:</strong> Moderate during caloric restriction</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> mTOR pathway activation for protein synthesis; Ubiquitin-proteasome pathway inhibition (reduced protein breakdown)</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 3g daily or 38mg/kg body weight</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="content-section" id="evidence-comparison">
-                    <h2>Evidence Comparison</h2>
-                    <p>The following table compares all 11 supplements reviewed in this guide by evidence tier, category, key benefit, dosage range, and number of cited studies.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table snippet-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Evidence</th>
-                                    <th>Category</th>
-                                    <th>Key Benefit</th>
-                                    <th>Dosage Range</th>
-                                    <th>Studies</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong><a href="../supplements/caffeine.html" style="color:inherit;text-decoration:none;">Caffeine</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td>Exercise performance</td>
-                                    <td style="font-size:0.8rem">50-400mg daily</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/creatine.html" style="color:inherit;text-decoration:none;">Creatine</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td>Muscle strength</td>
-                                    <td style="font-size:0.8rem">3-5g daily (maintenance) or 20g daily for 5 days (loading)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/iron.html" style="color:inherit;text-decoration:none;">Iron</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Essential Nutrients</td>
-                                    <td>Oxygen transport</td>
-                                    <td style="font-size:0.8rem">8-65mg daily; RDA 8-18mg; therapeutic 25-65mg; athletes 100mg/day; bisglycinate preferred</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/alpha-gpc.html" style="color:inherit;text-decoration:none;">Alpha-GPC</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Nootropics</td>
-                                    <td>Growth hormone support</td>
-                                    <td style="font-size:0.8rem">300-600mg daily</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/cordyceps.html" style="color:inherit;text-decoration:none;">Cordyceps</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td>Exercise performance</td>
-                                    <td style="font-size:0.8rem">1-3g daily</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/fenugreek.html" style="color:inherit;text-decoration:none;">Fenugreek</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td>Blood glucose regulation</td>
-                                    <td style="font-size:0.8rem">500-1000mg daily (seed extract)</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/betaine.html" style="color:inherit;text-decoration:none;">Betaine</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td>Power output enhancement</td>
-                                    <td style="font-size:0.8rem">2.5g daily</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/citrulline-malate.html" style="color:inherit;text-decoration:none;">Citrulline Malate</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td>Reduced muscle soreness</td>
-                                    <td style="font-size:0.8rem">6-8g acute pre-workout</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color:inherit;text-decoration:none;">HMB (β-Hydroxy β-Methylbutyrate)</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td>Muscle protein synthesis</td>
-                                    <td style="font-size:0.8rem">3g daily or 38mg/kg body weight</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/taurine.html" style="color:inherit;text-decoration:none;">Taurine</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Amino Acids</td>
-                                    <td>Cardiovascular health</td>
-                                    <td style="font-size:0.8rem">1-6g daily (endurance performance); 0.5-1.5g daily (cardiovascular/general health)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/tribulus-terrestris.html" style="color:inherit;text-decoration:none;">Tribulus Terrestris</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td>Libido support (modest, especially women)</td>
-                                    <td style="font-size:0.8rem">250-750mg daily (standardized to 40-45% saponins)</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="mechanisms">
-                    <h2>Mechanisms of Action</h2>
-                    <p>Strength and muscle-building supplements work through distinct physiological mechanisms — from acute performance enhancement to chronic anabolic signaling and recovery optimization.</p>
-
-                    <h3>Phosphocreatine Energy Buffer</h3>
-                    <p>Creatine monohydrate increases intramuscular phosphocreatine stores by 20-40%, providing rapid ATP regeneration during high-intensity efforts. This translates to more repetitions per set, heavier loads, and greater total training volume — the primary driver of muscle hypertrophy.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/creatine.html">Creatine</a>, <a href="../supplements/beta-alanine.html">Beta-Alanine</a></p>
-
-                    <h3>Protein Synthesis &amp; Anti-Catabolic Signaling</h3>
-                    <p>Muscle growth requires net positive protein balance (synthesis > breakdown). Whey protein provides a rapid leucine bolus that activates mTOR signaling — the master switch for muscle protein synthesis. HMB (a leucine metabolite) additionally reduces protein breakdown during intense training or caloric deficits.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/whey-protein.html">Whey Protein</a>, <a href="../supplements/hmb-hydroxy-methylbutyrate.html">HMB (β-Hydroxy β-Methylbutyrate)</a>, <a href="../supplements/creatine.html">Creatine</a></p>
-
-                    <h3>Neuromuscular Activation &amp; Power Output</h3>
-                    <p>Caffeine blocks adenosine receptors, increasing neuromuscular excitability and reducing perceived exertion. Alpha-GPC increases acetylcholine availability at the neuromuscular junction, potentially enhancing peak power output. Both act acutely — effects are measured within 30-60 minutes of ingestion.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/caffeine.html">Caffeine</a>, <a href="../supplements/alpha-gpc.html">Alpha-GPC</a>, <a href="../supplements/betaine.html">Betaine</a></p>
-
-                    <h3>Nitric Oxide &amp; Blood Flow Enhancement</h3>
-                    <p>Citrulline is converted to arginine in the kidneys, increasing nitric oxide production. Enhanced blood flow delivers more oxygen and nutrients to working muscles while improving metabolic waste clearance. This translates to improved work capacity and reduced fatigue during high-repetition training.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/citrulline-malate.html">Citrulline Malate</a>, <a href="../supplements/betaine.html">Betaine</a>, <a href="../supplements/nitrate-beetroot.html">Nitrate (Beetroot)</a></p>
-                </section>
-
-                <section class="content-section" id="dosage-guidelines">
-                    <h2>Dosage Guidelines</h2>
-                    <p>The following dosage ranges reflect those used in published clinical trials. Individual needs may vary. Always start with the lower end of the range and titrate upward as tolerated.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Clinical Dosage Range</th>
-                                    <th>Evidence Tier</th>
-                                    <th>Safety Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong><a href="../supplements/caffeine.html" style="color:inherit;text-decoration:none;">Caffeine</a></strong></td>
-                                    <td>50-400mg daily</td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/creatine.html" style="color:inherit;text-decoration:none;">Creatine</a></strong></td>
-                                    <td>3-5g daily (maintenance) or 20g daily for 5 days (loading)</td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Excellent</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/alpha-gpc.html" style="color:inherit;text-decoration:none;">Alpha-GPC</a></strong></td>
-                                    <td>300-600mg daily</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/betaine.html" style="color:inherit;text-decoration:none;">Betaine</a></strong></td>
-                                    <td>2.5g daily</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/citrulline-malate.html" style="color:inherit;text-decoration:none;">Citrulline Malate</a></strong></td>
-                                    <td>6-8g acute pre-workout</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color:inherit;text-decoration:none;">HMB (β-Hydroxy β-Methylbutyrate)</a></strong></td>
-                                    <td>3g daily or 38mg/kg body weight</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="content-callout content-callout-warning">
-                        <strong>Note:</strong> Dosage ranges are derived from clinical trial protocols and may not account for individual variation in body weight, metabolism, concurrent medications, or health status. Consult a healthcare provider for personalized dosing.
-                    </div>
-                </section>
-
-                <section class="content-section" id="safety">
-                    <h2>Safety &amp; Interactions</h2>
-                    <p>Performance supplements are among the most well-studied supplement categories, but dosing precision, timing, and individual factors require attention.</p>
-                    <ul>
-                        <li><strong>Creatine misconceptions:</strong> Creatine monohydrate does NOT cause kidney damage in healthy individuals at recommended doses (3-5g/day). However, it raises serum creatinine (a kidney marker), which may falsely suggest renal impairment. Individuals with pre-existing kidney disease should consult a nephrologist.</li>
-                        <li><strong>Caffeine dosing:</strong> Performance benefits plateau at 3-6mg/kg bodyweight. Higher doses increase side effects (anxiety, tremor, tachycardia) without additional performance gains. Genetic fast/slow metabolizer status (CYP1A2) significantly affects individual response.</li>
-                        <li><strong>Beta-alanine paresthesia:</strong> Beta-alanine commonly causes harmless tingling (paresthesia) at doses above 800mg. This is not an allergic reaction. Sustained-release formulations or split dosing (800mg × 4/day) minimize this effect.</li>
-                        <li><strong>Stimulant stacking:</strong> Do NOT combine caffeine with other stimulants (DMAA, synephrine, yohimbine) without medical supervision. Cardiovascular risks (arrhythmia, hypertension) increase significantly with stimulant stacking.</li>
-                        <li><strong>HMB timing:</strong> HMB-free acid (HMB-FA) has faster absorption than calcium HMB (HMB-Ca). Take HMB-FA 30-60 minutes before training, HMB-Ca 60-120 minutes before. Benefits are most pronounced in untrained individuals or during caloric restriction.</li>
-                        <li><strong>Contamination risk:</strong> Sports supplements have the highest contamination/adulteration rates in the supplement industry. Use only NSF Certified for Sport or Informed Sport tested products, especially if subject to drug testing.</li>
-                    </ul>
-
-                    <h3>Individual Supplement Safety Profiles</h3>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Common Side Effects</th>
-                                    <th>Key Drug Interactions</th>
-                                    <th>Safety Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Caffeine</strong></td>
-                                    <td style="font-size:0.85rem">Jitters, Anxiety, Insomnia</td>
-                                    <td style="font-size:0.85rem">Stimulant medications, Blood thinners, Some antibiotics</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Creatine</strong></td>
-                                    <td style="font-size:0.85rem">Water retention, Weight gain, GI upset if loading</td>
-                                    <td style="font-size:0.85rem">Minimal known interactions</td>
-                                    <td>Excellent</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Alpha-GPC</strong></td>
-                                    <td style="font-size:0.85rem">Headache, Dizziness, Insomnia</td>
-                                    <td style="font-size:0.85rem">Cholinesterase inhibitors</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Betaine</strong></td>
-                                    <td style="font-size:0.85rem">Fishy body odor (trimethylaminuria), Mild GI upset, Possible cholesterol elevation</td>
-                                    <td style="font-size:0.85rem">May interact with cholesterol medications, No major drug interactions reported</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Citrulline Malate</strong></td>
-                                    <td style="font-size:0.85rem">Mild GI discomfort at high doses, Possible nausea</td>
-                                    <td style="font-size:0.85rem">PDE5 inhibitors (additive vasodilation), Nitrates, Blood pressure medications</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>HMB (β-Hydroxy β-Methylbutyrate)</strong></td>
-                                    <td style="font-size:0.85rem">Mild GI discomfort, No major side effects at recommended doses</td>
-                                    <td style="font-size:0.85rem">Statins (shared cholesterol pathways), No major drug interactions reported</td>
-                                    <td>Good</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="research-gaps">
-                    <h2>Research Gaps &amp; Limitations</h2>
-                    <p>While the evidence base for muscle strength & lean mass supplements continues to grow, several important gaps remain in the current literature:</p>
-                    <ul>
-                        <li>Optimal creatine dosing for different body compositions and training modalities is poorly refined beyond the standard 3-5g/day recommendation</li>
-                        <li>Long-term effects of chronic caffeine use on training adaptation (does tolerance reduce performance benefits?) remain debated</li>
-                        <li>Female-specific dosing guidelines for performance supplements are severely lacking — most research uses male participants</li>
-                        <li>The interaction between intermittent fasting/caloric restriction and supplement timing for body composition is poorly studied</li>
-                        <li>Plant-based protein supplements vs. whey for hypertrophy need larger head-to-head trials with matched leucine content</li>
-                        <li>Alpha-GPC effects on power output have promising pilot data but need replication in larger, well-controlled trials</li>
-                    </ul>
-                </section>
-
-                <section class="content-section" id="additional">
-                    <h2>Additional Supplements with Relevant Evidence</h2>
-                    <p>The following 5 supplements show some evidence related to muscle strength & lean mass but are not among the primary recommendations. They may have relevant benefits as secondary effects or within specific subpopulations.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Evidence</th>
-                                    <th>Category</th>
-                                    <th>Relevant Benefit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Iron</td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Essential Nutrients</td>
-                                    <td style="font-size:0.85rem">Oxygen transport</td>
-                                </tr>
-                                <tr>
-                                    <td>Cordyceps</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td style="font-size:0.85rem">Exercise performance</td>
-                                </tr>
-                                <tr>
-                                    <td>Fenugreek</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td style="font-size:0.85rem">Blood glucose regulation</td>
-                                </tr>
-                                <tr>
-                                    <td>Taurine</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Amino Acids</td>
-                                    <td style="font-size:0.85rem">Cardiovascular health</td>
-                                </tr>
-                                <tr>
-                                    <td>Tribulus Terrestris</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td style="font-size:0.85rem">Libido support (modest, especially women)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="references">
-                    <h2>References</h2>
-                    <p>All data in this guide is derived from the SupplementDB citation library of 21+ peer-reviewed research papers. Individual supplement citations are listed below.</p>
-                    <ol class="citation-list">
-                        <li>Nehlig (2010).  Caffeine and cognitive performance. <em></em>. <a class="citation-doi" href="https://doi.org/10.1111/j.1469-8986.2010.00992.x" target="_blank" rel="noopener">10.1111/j.1469-8986.2010.00992.x</a></li>
-                        <li>Kazeminasab et al. (2025).  The effects of creatine supplementation on upper and lower body strength and power: a systematic review and meta-analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1080/02640414.2025.2468753" target="_blank" rel="noopener">10.1080/02640414.2025.2468753</a></li>
-                        <li>Ashtary-Larky et al. (2025).  Dose-response effects of creatine supplementation on body composition: a meta-analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.clnu.2025.07.012" target="_blank" rel="noopener">10.1016/j.clnu.2025.07.012</a></li>
-                        <li>Naeini et al. (2025).  The Effects of Creatine Supplementation on Kidney Function: A Systematic Review and Meta-Analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.clnu.2025.06.030" target="_blank" rel="noopener">10.1016/j.clnu.2025.06.030</a></li>
-                        <li>Beard (2001).  Iron deficiency and cognitive function. <em></em>. <a class="citation-doi" href="https://doi.org/10.1093/jn/131.2.568S" target="_blank" rel="noopener">10.1093/jn/131.2.568S</a></li>
-                        <li>Fiani et al. (2025).  Psychiatric and cognitive outcomes of iron supplementation in non-anemic individuals. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.neubiorev.2025.106372" target="_blank" rel="noopener">10.1016/j.neubiorev.2025.106372</a></li>
-                        <li>Caballero-Apaza et al. (2026).  Effect of iron supplements on cognitive development in children: an umbrella review. <em></em>. <a class="citation-doi" href="https://doi.org/10.3389/fnut.2026.1718507" target="_blank" rel="noopener">10.3389/fnut.2026.1718507</a></li>
-                        <li>Jeon et al. (2024).  Efficacy and safety of choline alphoscerate for amnestic mild cognitive impairment. <em></em>. <a class="citation-doi" href="https://doi.org/10.1186/s12877-024-05366-7" target="_blank" rel="noopener">10.1186/s12877-024-05366-7</a> PMID: 39300341</li>
-                        <li>Sagaro &amp; Amenta (2025).  Comparison of effects of choline alphoscerate and citicoline in dementia: SR and MA. <em></em>.  PMID: 41426989</li>
-                        <li>Tamura et al. (2021).  Alpha-Glycerylphosphorylcholine Increases Motivation in Healthy Volunteers. <em></em>. <a class="citation-doi" href="https://doi.org/10.3390/nu13062091" target="_blank" rel="noopener">10.3390/nu13062091</a> PMID: 34207484</li>
-                        <li>Hirsch et al. (2017).  Cordyceps sinensis for exercise performance. <em></em>. <a class="citation-doi" href="https://doi.org/10.1080/19390211.2016.1203386" target="_blank" rel="noopener">10.1080/19390211.2016.1203386</a></li>
-                        <li>Neelakantan N, et al. (2014).  Fenugreek supplementation in type 2 diabetes. <em>Nutr J</em>. <a class="citation-doi" href="https://doi.org/10.1186/1475-2891-13-7" target="_blank" rel="noopener">10.1186/1475-2891-13-7</a></li>
-                        <li>Lee EC, et al. (2010).  Ergogenic effects of betaine supplementation on strength and power performance. <em>J Int Soc Sports Nutr</em>. <a class="citation-doi" href="https://doi.org/10.1186/1550-2783-7-27" target="_blank" rel="noopener">10.1186/1550-2783-7-27</a></li>
-                        <li>Pérez-Guisado J, Jakeman PM (2010).  Citrulline malate enhances athletic anaerobic performance and relieves muscle soreness. <em>J Strength Cond Res</em>. <a class="citation-doi" href="https://doi.org/10.1519/JSC.0b013e3181cb28e0" target="_blank" rel="noopener">10.1519/JSC.0b013e3181cb28e0</a></li>
-                        <li>Wilson JM, et al. (2014).  β-Hydroxy-β-methylbutyrate free acid supplementation effects on muscle mass. <em>Br J Nutr</em>. <a class="citation-doi" href="https://doi.org/10.1017/S0007114513002665" target="_blank" rel="noopener">10.1017/S0007114513002665</a></li>
-                        <li>Waldron M,Patterson SD,Tallent J,Jeffries O (2018).  The Effects of an Oral Taurine Dose and Supplementation Period on Endurance Exercise Performance in Humans: A Meta-Analysis. <em>Sports Medicine</em>. <a class="citation-doi" href="https://doi.org/10.1007/s40279-018-0896-2" target="_blank" rel="noopener">10.1007/s40279-018-0896-2</a> PMID: 29546641</li>
-                        <li>Shao A,Hathcock JN (2008).  Risk assessment for the amino acids taurine, L-glutamine and L-arginine. <em>Regulatory Toxicology and Pharmacology</em>. <a class="citation-doi" href="https://doi.org/10.1016/j.yrtph.2007.07.003" target="_blank" rel="noopener">10.1016/j.yrtph.2007.07.003</a> PMID: 17766049</li>
-                        <li>Huxtable RJ (1992).  Physiological actions of taurine. <em>Physiological Reviews</em>. <a class="citation-doi" href="https://doi.org/10.1152/physrev.1992.72.1.101" target="_blank" rel="noopener">10.1152/physrev.1992.72.1.101</a> PMID: 1731369</li>
-                        <li>Kamenov Z et al. (2017).  Effects of Tribulus terrestris on sexual function: A systematic review and meta-analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.maturitas.2017.01.011" target="_blank" rel="noopener">10.1016/j.maturitas.2017.01.011</a> PMID: 28364864</li>
-                        <li>Chhatre S et al. (2014).  Effects of Tribulus terrestris supplementation on body composition and exercise performance. <em></em>. <a class="citation-doi" href="https://doi.org/10.1123/ijsnem.2013-0118" target="_blank" rel="noopener">10.1123/ijsnem.2013-0118</a> PMID: 24480665</li>
-                        <li>Neychev VK et al. (2016).  Safety evaluation of Tribulus terrestris supplementation: A systematic review. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.phymed.2016.10.010" target="_blank" rel="noopener">10.1016/j.phymed.2016.10.010</a> PMID: 27823629</li>
-                    </ol>
-                </section>
-
-                <!-- Email Capture -->
-                <section class="newsletter-section" id="subscribe">
-                    <div class="newsletter-inner">
-                        <h3><i class="fas fa-envelope-open-text"></i> Get Evidence-Based Supplements for Muscle Strength &amp; Lean Mass Research Updates</h3>
-                        <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
-                        <div id="guide-newsletter-container">
-                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
-                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                            </form>
-                            <p id="guide-newsletter-success" class="newsletter-success hidden">
-                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
-                            </p>
-                            <p id="guide-newsletter-already" class="newsletter-already hidden">
-                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
-                            </p>
-                        </div>
-                        <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../legal/privacy.html">Privacy Policy</a></p>
-                    </div>
-                </section>
-
-                <!-- Related Content -->
-                <div class="related-content">
-                    <h3>Related Resources</h3>
-                    <div class="related-content-grid">
-                        <a href="../guides/recovery.html"><i class="fas fa-bandage"></i> Recovery &amp; Soreness Guide</a>
-                        <a href="../guides/energy-vitality.html"><i class="fas fa-bolt"></i> Energy &amp; Vitality Guide</a>
-                        <a href="../guides/nootropic-stacks.html"><i class="fas fa-layer-group"></i> Nootropic Stacks Guide</a>
-                        <a href="../guides/mens-health.html"><i class="fas fa-mars"></i> Men's Health Guide</a>
-                        <a href="../guides/womens-health.html"><i class="fas fa-venus"></i> Women's Health Guide</a>
-                        <a href="../guides/safety-interactions.html"><i class="fas fa-triangle-exclamation"></i> Safety &amp; Interactions Guide</a>
-                        <a href="../compare/creatine-vs-beta-alanine.html"><i class="fas fa-scale-balanced"></i> Creatine vs Beta-Alanine</a>
-                        <a href="../index.html"><i class="fas fa-database"></i> Full Supplement Database</a>
-                        <a href="../methodology.html"><i class="fas fa-flask"></i> Research Methodology</a>
-                        <a href="../faq.html"><i class="fas fa-circle-question"></i> FAQ</a>
-                    </div>
-                </div>
-
-            </div><!-- end main column -->
-
-            <!-- Sidebar TOC (desktop only) -->
-            <aside class="content-toc" aria-label="Table of Contents">
-                <h4>Contents</h4>
-                <ul>
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#top-supplements">Top Supplements</a></li>
-                    <li><a href="#evidence-comparison">Evidence Comparison</a></li>
-                    <li><a href="#mechanisms">Mechanisms of Action</a></li>
-                    <li><a href="#dosage-guidelines">Dosage Guidelines</a></li>
-                    <li><a href="#safety">Safety &amp; Interactions</a></li>
-                    <li><a href="#research-gaps">Research Gaps</a></li>
-                    <li><a href="#additional">Additional Supplements</a></li>
-                    <li><a href="#references">References</a></li>
-                </ul>
-            </aside>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
-            <p class="mt-2 text-sm text-gray-400">
-                <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
-                <a href="../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
-            </p>
-            <p class="mt-2 text-sm text-gray-500">
-                <a href="../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
-                <a href="../legal/terms.html" style="color:#9ca3af;">Terms</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Smooth scroll for TOC -->
-    <script>
-        document.querySelectorAll('.content-toc a').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.replaceState(null, '', this.getAttribute('href'));
+    var trackedSections = {};
+    var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !trackedSections[entry.target.id]) {
+                trackedSections[entry.target.id] = true;
+                var meta = sectionsMeta[entry.target.id];
+                if (meta) {
+                    posthog.capture('guide_section_viewed', {
+                        guide_slug: 'muscle-strength',
+                        section_id: entry.target.id,
+                        section_name: meta.name,
+                        scroll_depth: meta.depth
+                    });
                 }
-            });
+            }
         });
-        // Highlight active TOC item on scroll
-        var tocLinks = document.querySelectorAll('.content-toc a');
-        var sections = Array.from(tocLinks).map(function(a) {
-            return document.querySelector(a.getAttribute('href'));
-        }).filter(Boolean);
-        window.addEventListener('scroll', function() {
-            var scrollY = window.scrollY + 120;
-            var active = sections[0];
-            sections.forEach(function(sec) { if (sec.offsetTop <= scrollY) active = sec; });
-            tocLinks.forEach(function(a) {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + (active ? active.id : ''));
-            });
-        });
+    }, { threshold: 0.2 });
 
-        // Guide newsletter handler
-        window.handleGuideNewsletter = function(e) {
-            e.preventDefault();
-            var email = document.getElementById('guide-newsletter-email').value.trim();
-            if (!email) return false;
-            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-            if (subscribed.indexOf(email) !== -1) {
-                document.getElementById('guide-newsletter-form').classList.add('hidden');
-                document.getElementById('guide-newsletter-already').classList.remove('hidden');
-                return false;
-            }
-            if (typeof posthog !== 'undefined') {
-                posthog.identify(email);
-                posthog.people.set({
-                    email: email,
-                    newsletter_subscribed: true,
-                    subscribed_guide: 'muscle-strength',
-                    signup_source: 'guide_muscle-strength',
-                    signup_date: new Date().toISOString()
-                });
-                posthog.capture('guide_email_captured', {
-                    source: 'guide',
-                    guide_slug: 'muscle-strength',
-                    email: email
-                });
-            }
-            subscribed.push(email);
-            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-            document.getElementById('guide-newsletter-form').classList.add('hidden');
-            document.getElementById('guide-newsletter-success').classList.remove('hidden');
-            return false;
-        };
-    </script>
-    <script src="../js/share-bar.js"></script>
+    Object.keys(sectionsMeta).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+    });
+
+    document.querySelectorAll('.pmid-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var href = this.getAttribute('href') || '';
+            posthog.capture('guide_citation_clicked', {
+                guide_slug: 'muscle-strength',
+                citation_type: href.includes('pubmed') ? 'pmid' : (href.includes('doi.org') ? 'doi' : 'other'),
+                citation_url: href,
+                citation_text: this.textContent.trim()
+            });
+        });
+    });
+
+    document.querySelectorAll('.guide-nav a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            posthog.capture('guide_nav_clicked', {
+                guide_slug: 'muscle-strength',
+                nav_target: this.getAttribute('href')
+            });
+        });
+    });
+
+    var elapsed = 0;
+    var timeThresholds = [30, 60, 120, 300];
+    var timeIndex = 0;
+    var timerCheck = setInterval(function() {
+        elapsed++;
+        if (timeIndex < timeThresholds.length && elapsed >= timeThresholds[timeIndex]) {
+            posthog.capture('guide_time_on_page', {
+                guide_slug: 'muscle-strength',
+                seconds: timeThresholds[timeIndex]
+            });
+            timeIndex++;
+        }
+        if (timeIndex >= timeThresholds.length) clearInterval(timerCheck);
+    }, 1000);
+})();
+
+// Mobile nav toggle
+document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-nav-menu');
+    menu.classList.toggle('hidden');
+    this.querySelector('i').classList.toggle('fa-bars');
+    this.querySelector('i').classList.toggle('fa-times');
+});
+document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-nav-menu').classList.add('hidden');
+        var btn = document.getElementById('mobile-nav-toggle');
+        btn.querySelector('i').classList.add('fa-bars');
+        btn.querySelector('i').classList.remove('fa-times');
+    });
+});
+</script>
+
+<script src="../js/share-bar.js"></script>
+<script src="../js/newsletter.js"></script>
+<script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-muscle-strength");</script>
+
+<!-- Auth & Content Gate -->
+<script src="../js/auth.js"></script>
+<script src="../js/convex-client.js"></script>
+<script src="../js/rbac.js"></script>
+<script src="../js/auth-ui.js"></script>
+<script src="../js/content-gate.js"></script>
 </body>
 </html>

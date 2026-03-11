@@ -38,759 +38,1646 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1773216342411">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Auth CDN -->
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Joint Health & Mobility","description":"Science-backed guide to the best supplements for joint pain, cartilage support, and mobility. Ranked by evidence from peer-reviewed studies with dosages and safety profiles.","datePublished":"2026-03-11","dateModified":"2026-03-11","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/joint-health.html"}}</script>
+
+    
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --accent: #d97706;
+            --accent-light: #f59e0b;
+            --accent-glow: rgba(217,119,6, 0.15);
+            --glow: #fcd34d;
+            --blue-muted: #7c8db5;
+            --slate: #8b949e;
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: rgba(217,119,6, 0.12);
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --tier1-from: #4ade80;
+            --tier1-to: #22c55e;
+            --tier2-from: #fbbf24;
+            --tier2-to: #f59e0b;
+            --tier3-from: #fb7185;
+            --tier3-to: #e11d48;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .guide-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-section {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217,119,6, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                var(--navy-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .domain-icon-glow {
+            filter: drop-shadow(0 0 20px rgba(252,211,77, 0.3));
+        }
+
+        .tier-1-badge {
+            background: linear-gradient(135deg, var(--tier1-from), var(--tier1-to));
+            color: #052e16;
+        }
+        .tier-2-badge {
+            background: linear-gradient(135deg, var(--tier2-from), var(--tier2-to));
+            color: #451a03;
+        }
+        .tier-3-badge {
+            background: linear-gradient(135deg, var(--tier3-from), var(--tier3-to));
+            color: #fff;
+        }
+
+        .evidence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .evidence-card:hover {
+            border-color: rgba(217,119,6, 0.3);
+            box-shadow: 0 0 30px rgba(217,119,6, 0.06);
+        }
+
+        .cite-ref {
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: help;
+            vertical-align: super;
+            line-height: 0;
+            transition: color 0.2s;
+        }
+        .cite-ref:hover { color: var(--glow); }
+
+        .pmid-link {
+            color: var(--blue-muted);
+            font-size: 0.8rem;
+            font-family: 'DM Sans', monospace;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .pmid-link:hover {
+            opacity: 1;
+            color: var(--glow);
+            text-decoration: underline;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .summary-table thead th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        .summary-table thead th:first-child { border-radius: 8px 0 0 0; }
+        .summary-table thead th:last-child { border-radius: 0 8px 0 0; }
+        .summary-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(217,119,6, 0.06);
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+        .summary-table tbody tr { transition: background 0.2s; }
+        .summary-table tbody tr:hover { background: rgba(217,119,6, 0.04); }
+        .summary-table tbody tr:last-child td { border-bottom: none; }
+
+        .interaction-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.85rem;
+        }
+        .interaction-table th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .interaction-table th:first-child { border-radius: 8px 0 0 0; }
+        .interaction-table th:last-child { border-radius: 0 8px 0 0; }
+        .interaction-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(217,119,6, 0.06);
+            vertical-align: top;
+        }
+        .interaction-table tbody tr:last-child td { border-bottom: none; }
+
+        .risk-high { color: #f87171; font-weight: 600; }
+        .risk-moderate { color: #fbbf24; font-weight: 600; }
+        .risk-low { color: #4ade80; font-weight: 600; }
+
+        .tier-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .tier-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        .finding-highlight {
+            border-left: 3px solid var(--accent-light);
+            background: rgba(217,119,6, 0.05);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(217,119,6, 0.08);
+            border: 1px solid rgba(217,119,6, 0.15);
+            color: var(--glow);
+        }
+
+        .capture-section {
+            background:
+                radial-gradient(ellipse 70% 80% at 30% 50%, rgba(217,119,6, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 80% 40%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1040 0%, #0d1117 100%);
+            border: 1px solid rgba(217,119,6, 0.2);
+        }
+
+        .citation-entry {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(217,119,6, 0.05);
+            color: var(--text-muted);
+        }
+        .citation-entry:last-child { border-bottom: none; }
+        .citation-entry .cite-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(217,119,6, 0.1);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        @media (max-width: 768px) {
+            .summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table { min-width: 700px; }
+            .interaction-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .interaction-table { min-width: 600px; }
+            .evidence-card { margin-left: -4px; margin-right: -4px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        @media print {
+            .guide-nav, .capture-section, .no-print { display: none !important; }
+            body { background: #fff; color: #111; }
+            .evidence-card { border: 1px solid #ddd; background: #fff; }
+        }
+    </style>
 </head>
-<body class="content-page">
-    <!-- Navigation -->
-    <nav class="legal-nav">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
-                <i class="fas fa-pills text-xl"></i>
-                <span class="font-bold text-lg">SupplementDB</span>
+<body data-theme="dark">
+
+<!-- Sticky Navigation -->
+<nav class="guide-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+        <a href="../index.html" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="hidden sm:inline">Back to Database</span>
+            <span class="sm:hidden">Back</span>
+        </a>
+        <div class="flex items-center gap-1">
+            <i class="fas fa-pills text-sm" style="color: #f59e0b;"></i>
+            <span class="text-sm font-semibold text-gray-300">SupplementDB</span>
+        </div>
+        <button id="mobile-nav-toggle" class="md:hidden text-gray-400 hover:text-white transition-colors p-1">
+            <i class="fas fa-bars text-sm"></i>
+        </button>
+        <div class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-500">
+            <a href="#summary" class="hover:text-gray-300 transition-colors">Summary</a>
+            <a href="#tier1" class="hover:text-gray-300 transition-colors">Tier 1</a>
+            <a href="#tier2" class="hover:text-gray-300 transition-colors">Tier 2</a>
+            <a href="#tier3" class="hover:text-gray-300 transition-colors">Tier 3</a>
+            <a href="#safety" class="hover:text-gray-300 transition-colors">Safety</a>
+            <a href="#citations" class="hover:text-gray-300 transition-colors">Citations</a>
+            <div id="auth-buttons"></div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile navigation dropdown -->
+<div id="mobile-nav-menu" class="hidden" style="position: fixed; top: 56px; left: 0; right: 0; z-index: 40; background: #0d1117; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="flex flex-col px-4 py-3 gap-1">
+        <a href="#summary" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Summary</a>
+        <a href="#tier1" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Tier 1</a>
+        <a href="#tier2" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Tier 2</a>
+        <a href="#tier3" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Tier 3</a>
+        <a href="#safety" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Safety</a>
+        <a href="#citations" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Citations</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+    <div class="max-w-3xl mx-auto relative z-10">
+        <!-- Domain icon -->
+        <div class="domain-icon-glow mb-6 inline-block">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8c0 4 2 8 6 10m6-10c0 4-2 8-6 10m-6 10c0-4 2-8 6-10m6 10c0-4-2-8-6-10" stroke="undefined" stroke-width="1.5" opacity="0.4"/><circle cx="24" cy="18" r="5" stroke="undefined" stroke-width="2" fill="undefined" fill-opacity="0.2"/><circle cx="24" cy="30" r="5" stroke="undefined" stroke-width="2" fill="undefined" fill-opacity="0.2"/><circle cx="24" cy="24" r="3" fill="undefined" fill-opacity="0.4"/></svg>
+        </div>
+
+        <!-- Review badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(217,119,6, 0.12); color: #fcd34d; border: 1px solid rgba(217,119,6, 0.2);">
+            <i class="fas fa-clock text-xs" style="color: #f59e0b; font-size: 0.65rem;"></i>
+            Last reviewed: 2026-03-11
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
+            Evidence-Based Supplements for Joint Health &amp; Mobility
+        </h1>
+
+        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+            A systematic review of 13 supplements across 31+ research citations, ranked by evidence strength.
+        </p>
+
+        <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+            <i class="fas fa-info-circle mr-1 opacity-60"></i>
+            This guide summarizes published research. It does not constitute medical advice.
+            <a href="../legal/disclaimer.html" style="color: #fcd34d; text-decoration: underline; opacity: 0.7;">Full disclaimer</a>.
+        </p>
+    </div>
+</header>
+
+<!-- Share Bar -->
+<div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <span class="share-bar-label" style="color: var(--text-muted);">Share this guide</span>
+        <div class="share-bar-buttons">
+            <button class="share-btn" data-share="twitter" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+            <button class="share-btn" data-share="linkedin" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+            <button class="share-btn" data-share="facebook" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-facebook"></i> Facebook</button>
+            <button class="share-btn share-btn-copy" data-share="copy" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fas fa-link"></i> Copy Link</button>
+        </div>
+    </div>
+</div>
+
+<!-- Trust Signal Bar -->
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
+    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 31+ Verified Citations</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+    <span class="trust-bar-divider"></span>
+    <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+</div>
+
+<!-- Main content wrapper for content gating -->
+<main>
+
+<section id="summary" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="evidence-card p-6">
+        <h2 class="text-xl sm:text-2xl mb-6" style="color: var(--text-bright);">Quick Evidence Summary</h2>
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Tier</th>
+                        <th>Key Mechanism</th>
+                        <th>Primary Finding</th>
+                        <th>Dosage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><a href="../supplements/magnesium.html" style="color: var(--glow); text-decoration: none;">Magnesium</a></strong></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">GABA receptor modulation</td>
+                        <td style="font-size:0.82rem;">Bone health</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">200-400mg daily (elemental magnesium)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/turmeric-curcumin.html" style="color: var(--glow); text-decoration: none;">Turmeric/Curcumin</a></strong></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">NF-κB pathway inhibition</td>
+                        <td style="font-size:0.82rem;">Anti-inflammatory</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">500-1000mg daily (with piperine for absorption)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/black-seed-oil.html" style="color: var(--glow); text-decoration: none;">Black Seed Oil</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Thymoquinone antioxidant activity</td>
+                        <td style="font-size:0.82rem;">Anti-inflammatory effects</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">500-2000mg daily (oil or extract)</td>
+                    </tr>
+                    <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>
+                    <tr>
+                        <td><strong><a href="../supplements/boswellia.html" style="color: var(--glow); text-decoration: none;">Boswellia</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">5-lipoxygenase inhibition</td>
+                        <td style="font-size:0.82rem;">Joint health</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">300-800mg daily (standardized extract)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/chondroitin-sulfate.html" style="color: var(--glow); text-decoration: none;">Chondroitin Sulfate</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Cartilage matrix MMP/ADAMTS suppression</td>
+                        <td style="font-size:0.82rem;">Joint health support</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">800-1200mg daily (pharmaceutical-grade CS only)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/glucosamine.html" style="color: var(--glow); text-decoration: none;">Glucosamine</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Cartilage matrix GAG and proteoglycan synthesis (in vitro evidence)</td>
+                        <td style="font-size:0.82rem;">Joint pain reduction (contested)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">1500mg glucosamine sulfate daily (sulfate form preferred over HCl)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/krill-oil.html" style="color: var(--glow); text-decoration: none;">Krill Oil</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Phospholipid-bound omega-3 delivery</td>
+                        <td style="font-size:0.82rem;">Joint health</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">500-2000mg daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/panax-ginseng.html" style="color: var(--glow); text-decoration: none;">Panax Ginseng</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">HPA axis modulation</td>
+                        <td style="font-size:0.82rem;">Anti-inflammatory activity</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">200-400mg daily (standardized extract)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/quercetin.html" style="color: var(--glow); text-decoration: none;">Quercetin</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Senescent cell clearance</td>
+                        <td style="font-size:0.82rem;">Anti-inflammatory effects</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">500-1000mg daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/stinging-nettle.html" style="color: var(--glow); text-decoration: none;">Stinging Nettle</a></strong></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Histamine receptor antagonism</td>
+                        <td style="font-size:0.82rem;">Joint health</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">300-600mg daily (leaf extract)</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/astaxanthin.html" style="color: var(--glow); text-decoration: none;">Astaxanthin</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Potent antioxidant activity</td>
+                        <td style="font-size:0.82rem;">Skin health</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">4-12mg daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/citrulline-malate.html" style="color: var(--glow); text-decoration: none;">Citrulline Malate</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">Arginine-nitric oxide pathway enhancement</td>
+                        <td style="font-size:0.82rem;">Nitric oxide production</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">6-8g acute pre-workout</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/msm.html" style="color: var(--glow); text-decoration: none;">MSM</a></strong></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">NF-κB pathway inhibition reducing pro-inflammatory cytokine production</td>
+                        <td style="font-size:0.82rem;">Osteoarthritis joint pain reduction (contested)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">2000-3375mg daily</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="introduction" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Introduction</h2>
+    <p class="mb-4" style="color: var(--text-primary);">Osteoarthritis affects over 500 million people worldwide and is the most common cause of joint pain and disability in adults over 50. While joint replacement surgery and pharmaceutical pain management remain critical care options, a substantial body of peer-reviewed research has investigated the potential of dietary supplements to support joint health, promote a healthy inflammatory response, and slow cartilage degradation.</p>
+    <p class="mb-4" style="color: var(--text-primary);">This guide systematically reviews the supplements with the strongest clinical evidence for joint health outcomes including pain reduction, cartilage protection, mobility improvement, and inflammatory modulation.</p>
+    <p class="mb-4" style="color: var(--text-primary);"><strong>Important:</strong> This guide is for informational purposes only. Joint supplements are not replacements for prescribed treatments including disease-modifying therapies, physical therapy, or surgical intervention. Always consult a qualified healthcare professional before starting any supplement regimen, particularly if you have rheumatoid arthritis or other inflammatory joint conditions.</p>
+
+    <!-- Featured Snippet -->
+    <div class="evidence-card p-5 mt-6" style="border-left: 3px solid var(--accent-light);">
+        <p class="text-sm" style="color: var(--text-primary);"><strong style="color: var(--text-bright);">Joint Health supplements</strong> Joint health supplements are compounds studied in clinical trials for their effects on joint pain, cartilage integrity, mobility, and inflammation. The strongest evidence exists for glucosamine, chondroitin sulfate, and curcumin, with multiple meta-analyses and large-scale randomized controlled trials demonstrating measurable effects on osteoarthritis symptoms and structural joint outcomes.</p>
+    </div>
+
+    <!-- Top supplement ranking -->
+    <div class="mt-8">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Top 8 Evidence-Based Supplements for Joint Health</h3>
+        <ol class="space-y-2 pl-5" style="list-style-type: decimal; color: var(--text-primary);">
+            <li class="text-sm"><a href="../supplements/turmeric-curcumin.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Turmeric/Curcumin</a> <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span> &mdash; Anti-inflammatory (500-1000mg daily (with piperine for absorption))</li>
+            <li class="text-sm"><a href="../supplements/boswellia.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Boswellia</a> <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span> &mdash; Joint health (300-800mg daily (standardized extract))</li>
+            <li class="text-sm"><a href="../supplements/chondroitin-sulfate.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Chondroitin Sulfate</a> <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span> &mdash; Joint health support (800-1200mg daily (pharmaceutical-grade CS only))</li>
+            <li class="text-sm"><a href="../supplements/glucosamine.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Glucosamine</a> <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span> &mdash; Joint pain reduction (contested) (1500mg glucosamine sulfate daily (sulfate form preferred over HCl))</li>
+            <li class="text-sm"><a href="../supplements/stinging-nettle.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">Stinging Nettle</a> <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span> &mdash; Joint health (300-600mg daily (leaf extract))</li>
+            <li class="text-sm"><a href="../supplements/msm.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">MSM</a> <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span> &mdash; Osteoarthritis joint pain reduction (contested) (2000-3375mg daily)</li>
+        </ol>
+    </div>
+</section>
+<div id="top-supplements">
+        <section id="tier1" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier 1 &mdash; Strong Evidence
+                </h2>
+            </div>
+            <div class="space-y-6">
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.00s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/magnesium.html" style="color: inherit; text-decoration: none;">Magnesium</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Magnesium (various forms)</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            200-400mg daily (elemental magnesium)
+                        </span>
+                        <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> GABA receptor modulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NMDA receptor antagonism</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Muscle relaxation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter regulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">sleep</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (significant improvement in elderly)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">stress</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">bloodPressure</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small-moderate (SBP -2.81 mmHg, DBP -2.05 mmHg overall; up to -7.68 mmHg in hypertensives on medication; 38 RCTs)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Diarrhea, GI upset, Nausea
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.08s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/turmeric-curcumin.html" style="color: inherit; text-decoration: none;">Turmeric/Curcumin</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Curcuma longa</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            500-1000mg daily (with piperine for absorption)
+                        </span>
+                        <span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-κB pathway inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Amyloid-β formation inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cerebrovascular function enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neuroinflammation reduction</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">cognition</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate to large (SMD=0.82, 95% CI: 0.39-1.25)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">workingMemory</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Large (SMD=1.01 for cognitive aging populations)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">inflammation</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate to large (d=0.5-0.8)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: GI upset, Diarrhea, Nausea
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="tier2" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier 2 &mdash; Moderate Evidence
+                </h2>
+            </div>
+            <div class="space-y-6">
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.00s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/black-seed-oil.html" style="color: inherit; text-decoration: none;">Black Seed Oil</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Nigella sativa</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            500-2000mg daily (oil or extract)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Thymoquinone antioxidant activity</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory pathway modulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Metabolic pathway enhancement</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">antiInflammatory</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (significant biomarker improvements)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">metabolicSupport</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate in metabolic syndrome</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI upset, Allergic reactions (rare), Blood sugar changes
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.08s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/boswellia.html" style="color: inherit; text-decoration: none;">Boswellia</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Boswellia serrata</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            300-800mg daily (standardized extract)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-lipoxygenase inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Leukotriene synthesis reduction</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-kappaB pathway modulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Complement cascade inhibition</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">jointPain</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (30-40% pain reduction)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">inflammation</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Large (significant biomarker reduction)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Nausea, Acid reflux, Diarrhea
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.16s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/chondroitin-sulfate.html" style="color: inherit; text-decoration: none;">Chondroitin Sulfate</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Chondroitin sulfate sodium</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            800-1200mg daily (pharmaceutical-grade CS only)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cartilage matrix MMP/ADAMTS suppression</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory NF-κB pathway inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Synovial fluid enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Proteoglycan and aggrecan synthesis support</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">joint_pain</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate (SMD 0.18-0.35; pharmaceutical-grade only)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">structural_jsn</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Significant JSN reduction (6 RCTs, Hochberg 2008 meta-analysis)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">mobility</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small improvement</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: GI upset, Nausea, Heartburn
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.24s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/glucosamine.html" style="color: inherit; text-decoration: none;">Glucosamine</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Glucosamine sulfate</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            1500mg glucosamine sulfate daily (sulfate form preferred over HCl)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cartilage matrix GAG and proteoglycan synthesis (in vitro evidence)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-κB pathway inhibition — anti-inflammatory (in vitro; not confirmed in human RCTs at clinical significance)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Joint space narrowing reduction (clinical evidence: modest but present for GS)</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">joint_pain</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Sub-threshold: VAS WMD -5.7 to -7.4mm (MCID=15mm; does not meet clinical significance in most independent meta-analyses)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">joint_space_narrowing</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small but significant: SMD -0.42 (Gregori 2018, industry-conflicted); GS alone significant in Rabade 2024</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">function</p>
+                        <p class="text-sm" style="color: var(--text-primary);">WOMAC not significantly improved in independent meta-analyses</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI upset, Nausea, Heartburn
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.32s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/krill-oil.html" style="color: inherit; text-decoration: none;">Krill Oil</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Euphausia superba</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            500-2000mg daily
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Phospholipid-bound omega-3 delivery</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enhanced bioavailability</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Astaxanthin antioxidant activity</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory prostaglandin modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">omega3Bioavailability</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Large (2-3x better absorption than fish oil)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">antiInflammatory</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (C-reactive protein reduction)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Fishy taste, GI upset, Nausea
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.40s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/panax-ginseng.html" style="color: inherit; text-decoration: none;">Panax Ginseng</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Panax ginseng</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            200-400mg daily (standardized extract)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> HPA axis modulation</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter enhancement (dopamine, acetylcholine)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory activity (hs-CRP, IL-6 reduction)</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant effects (ROS reduction, SOD enhancement)</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">memoryOverall</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small effect SMD=0.19 (95% CI 0.02-0.36, Zeng 2024, 15 RCTs)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">memoryHighDose</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small-moderate effect SMD=0.33 (95% CI 0.04-0.61, Zeng 2024, high dose)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">mmse</p>
+                        <p class="text-sm" style="color: var(--text-primary);">MD=0.68 (95% CI 0.03-1.32, Kim 2025, 8 RCTs)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Insomnia, Headache, GI upset
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.48s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/quercetin.html" style="color: inherit; text-decoration: none;">Quercetin</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">3,3',4',5,7-pentahydroxyflavone</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            500-1000mg daily
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Senescent cell clearance</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory pathways</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Flavonoid receptor modulation</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">inflammation</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate reduction</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">senescent_cells</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Significant reduction (with dasatinib)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Headache, GI upset, Tingling sensations
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.56s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/stinging-nettle.html" style="color: inherit; text-decoration: none;">Stinging Nettle</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Urtica dioica</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            300-600mg daily (leaf extract)
+                        </span>
+                        <span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Histamine receptor antagonism</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-lipoxygenase inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> COX enzyme inhibition</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Rich mineral content</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">allergyRelief</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate (50-60% symptom reduction)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">antiInflammatory</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI upset, Skin irritation, Diuretic effects
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="tier3" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+            <div class="tier-divider mb-8">
+                <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                <h2 class="text-xl sm:text-2xl" style="color: var(--text-bright); white-space: nowrap;">
+                    Tier 3 &mdash; Preliminary Evidence
+                </h2>
+            </div>
+            <div class="space-y-6">
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.00s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/astaxanthin.html" style="color: inherit; text-decoration: none;">Astaxanthin</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Astaxanthin</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            4-12mg daily
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Potent antioxidant activity</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Membrane stabilization</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory effects</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Mitochondrial protection</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">antioxidant_status</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Large improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercise_recovery</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">skin_health</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate improvement</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Excellent. Common: Slight skin coloration (high doses)
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.08s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/citrulline-malate.html" style="color: inherit; text-decoration: none;">Citrulline Malate</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">L-Citrulline + DL-Malate</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            6-8g acute pre-workout
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Arginine-nitric oxide pathway enhancement</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Ammonia detoxification via urea cycle</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Malate contribution to aerobic energy production</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Vasodilation and improved blood flow</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercisePerformance</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Small to moderate improvement</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">muscleRecovery</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Moderate reduction in soreness</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI discomfort at high doses, Possible nausea
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-card p-6 sm:p-8 reveal" style="animation-delay: 0.16s;">
+                <div class="flex items-start justify-between mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal mb-1" style="color: var(--text-bright); font-family: 'DM Serif Display', serif;">
+                            <a href="../supplements/msm.html" style="color: inherit; text-decoration: none;">MSM</a>
+                        </h3>
+                        <p class="text-xs" style="color: var(--slate); font-style: italic;">Methylsulfonylmethane</p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full" style="background: rgba(217,119,6, 0.1); color: #fcd34d;">
+                            2000-3375mg daily
+                        </span>
+                        <span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-κB pathway inhibition reducing pro-inflammatory cytokine production</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Biological sulfur donor supporting collagen and connective tissue synthesis</span>
+                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity via free radical scavenging</span>
+                </div>
+                <div class="space-y-3 mb-5">
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">joint_pain</p>
+                        <p class="text-sm" style="color: var(--text-primary);">SMD 0.39–0.50 (statistically significant; below MCID in independent analysis)</p>
+                    </div>
+                    <div class="finding-highlight">
+                        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">exercise_recovery</p>
+                        <p class="text-sm" style="color: var(--text-primary);">Modest DOMS reduction (underpowered studies)</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+                    <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Safety Profile</p>
+                    <p class="text-sm" style="color: var(--text-primary);">
+                        <span class="risk-low">●</span> Good. Common: Mild GI upset (nausea, diarrhea), Headache, Fatigue
+                    </p>
+                </div>
+            </div>
+            </div>
+        </section>
+</div>
+<section id="mechanisms" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Mechanisms of Action</h2>
+    <p class="mb-6" style="color: var(--text-primary);">Joint health supplements work through several distinct pathways to support cartilage integrity, promote a healthy inflammatory response, and improve mobility. Understanding these mechanisms helps match supplements to specific joint health goals.</p>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Cartilage Matrix Support</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Joint cartilage is composed of a complex extracellular matrix including collagen, proteoglycans, and glycosaminoglycans. Several supplements provide building blocks for cartilage synthesis or inhibit enzymes that degrade cartilage matrix components (matrix metalloproteinases).</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/glucosamine.html" style="color: var(--glow); text-decoration: none;">Glucosamine</a>, <a href="../supplements/chondroitin-sulfate.html" style="color: var(--glow); text-decoration: none;">Chondroitin Sulfate</a>, <a href="../supplements/msm.html" style="color: var(--glow); text-decoration: none;">MSM</a></p>
+    </div>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Anti-Inflammatory Pathways</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Chronic low-grade inflammation is a primary driver of joint degeneration in osteoarthritis. Multiple supplements target distinct inflammatory pathways — including COX-2, 5-LOX, and NF-κB — to reduce inflammatory mediators in joint tissues.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/turmeric-curcumin.html" style="color: var(--glow); text-decoration: none;">Turmeric/Curcumin</a>, <a href="../supplements/boswellia.html" style="color: var(--glow); text-decoration: none;">Boswellia</a>, <a href="../supplements/omega-3-fatty-acids.html" style="color: var(--glow); text-decoration: none;">Omega-3 Fatty Acids</a>, <a href="../supplements/stinging-nettle.html" style="color: var(--glow); text-decoration: none;">Stinging Nettle</a></p>
+    </div>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Collagen Synthesis</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Type II collagen is the predominant collagen in articular cartilage. Some supplements support collagen production by providing precursors (MSM provides sulfur), stimulating chondrocyte activity, or providing antioxidant protection to preserve existing collagen structures.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/msm.html" style="color: var(--glow); text-decoration: none;">MSM</a>, <a href="../supplements/pine-bark-extract.html" style="color: var(--glow); text-decoration: none;">Pine Bark Extract</a>, <a href="../supplements/glucosamine.html" style="color: var(--glow); text-decoration: none;">Glucosamine</a></p>
+    </div>
+    <div class="evidence-card p-5 mb-4">
+        <h3 class="text-lg mb-2" style="color: var(--text-bright);">Synovial Fluid Maintenance</h3>
+        <p class="text-sm mb-3" style="color: var(--text-primary);">Synovial fluid lubricates joints and provides nutrients to avascular cartilage. Supplements that support hyaluronic acid production, reduce synovial inflammation, or improve joint fluid viscosity contribute to better joint mechanics and reduced friction-related damage.</p>
+        <p class="text-xs" style="color: var(--text-muted);"><strong>Key supplements:</strong> <a href="../supplements/chondroitin-sulfate.html" style="color: var(--glow); text-decoration: none;">Chondroitin Sulfate</a>, <a href="../supplements/omega-3-fatty-acids.html" style="color: var(--glow); text-decoration: none;">Omega-3 Fatty Acids</a>, <a href="../supplements/glucosamine.html" style="color: var(--glow); text-decoration: none;">Glucosamine</a></p>
+    </div>
+</section>
+<section id="dosage-guidelines" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Dosage Guidelines</h2>
+    <p class="mb-6" style="color: var(--text-primary);">The following dosage ranges reflect those used in published clinical trials. Individual needs may vary. Always start with the lower end and titrate upward as tolerated.</p>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Clinical Dosage Range</th>
+                        <th>Evidence Tier</th>
+                        <th>Safety Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><a href="../supplements/turmeric-curcumin.html" style="color: var(--glow); text-decoration: none;">Turmeric/Curcumin</a></strong></td>
+                        <td>500-1000mg daily (with piperine for absorption)</td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/boswellia.html" style="color: var(--glow); text-decoration: none;">Boswellia</a></strong></td>
+                        <td>300-800mg daily (standardized extract)</td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/chondroitin-sulfate.html" style="color: var(--glow); text-decoration: none;">Chondroitin Sulfate</a></strong></td>
+                        <td>800-1200mg daily (pharmaceutical-grade CS only)</td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/glucosamine.html" style="color: var(--glow); text-decoration: none;">Glucosamine</a></strong></td>
+                        <td>1500mg glucosamine sulfate daily (sulfate form preferred over HCl)</td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/stinging-nettle.html" style="color: var(--glow); text-decoration: none;">Stinging Nettle</a></strong></td>
+                        <td>300-600mg daily (leaf extract)</td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="../supplements/msm.html" style="color: var(--glow); text-decoration: none;">MSM</a></strong></td>
+                        <td>2000-3375mg daily</td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td>Good</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mt-4 p-4 rounded-lg" style="background: rgba(251, 191, 36, 0.06); border: 1px solid rgba(251, 191, 36, 0.15);">
+        <p class="text-sm" style="color: var(--text-primary);"><i class="fas fa-exclamation-triangle mr-2" style="color: #fbbf24;"></i><strong>Note:</strong> Dosage ranges are derived from clinical trial protocols and may not account for individual variation. Consult a healthcare provider for personalized dosing.</p>
+    </div>
+</section>
+<section id="safety" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Safety &amp; Interactions</h2>
+    <p class="mb-4" style="color: var(--text-primary);">Joint health supplements generally have favorable safety profiles in clinical trials, but several important considerations and medication interactions apply.</p>
+    <ul class="space-y-2 mb-8 pl-5" style="list-style-type: disc; color: var(--text-primary);">
+        <li class="text-sm"><strong>Shellfish allergy:</strong> Glucosamine derived from shellfish (most common form) is contraindicated in individuals with shellfish allergies. Vegetarian glucosamine derived from corn fermentation is available as an alternative.</li>
+        <li class="text-sm"><strong>Blood thinner interactions:</strong> Omega-3 fatty acids, boswellia, and curcumin may have mild antiplatelet or anticoagulant effects. Use caution when combining with warfarin, aspirin, or clopidogrel — INR monitoring may be necessary.</li>
+        <li class="text-sm"><strong>GI effects:</strong> Glucosamine, chondroitin, and MSM may cause mild GI symptoms (nausea, bloating, diarrhea) in some individuals. Taking with food often reduces these effects. These are generally milder than NSAID-related GI complications.</li>
+        <li class="text-sm"><strong>Diabetes considerations:</strong> Early concerns about glucosamine affecting blood sugar have not been confirmed in controlled trials, but individuals with diabetes should monitor glucose when starting supplementation.</li>
+        <li class="text-sm"><strong>Pregnancy and lactation:</strong> Most joint supplements lack adequate safety data for use during pregnancy or breastfeeding. Consult a healthcare provider before use.</li>
+        <li class="text-sm"><strong>Autoimmune arthritis:</strong> Supplements studied for osteoarthritis may not be appropriate for rheumatoid arthritis or other autoimmune joint conditions. Disease-modifying therapy should not be replaced with supplements.</li>
+    </ul>
+
+    <h3 class="text-lg mb-4" style="color: var(--text-bright);">Individual Supplement Safety Profiles</h3>
+    <div class="evidence-card p-6">
+        <div class="interaction-table-wrap">
+            <table class="interaction-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Common Side Effects</th>
+                        <th>Key Drug Interactions</th>
+                        <th>Safety Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Turmeric/Curcumin</strong></td>
+                        <td>GI upset, Diarrhea, Nausea</td>
+                        <td>Blood thinners, Diabetes medications</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Boswellia</strong></td>
+                        <td>Nausea, Acid reflux, Diarrhea</td>
+                        <td>Immunosuppressants, Anti-inflammatory medications</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chondroitin Sulfate</strong></td>
+                        <td>GI upset, Nausea, Heartburn</td>
+                        <td>Warfarin/blood thinners (INR monitoring recommended)</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Glucosamine</strong></td>
+                        <td>Mild GI upset, Nausea, Heartburn</td>
+                        <td>Warfarin (monitor INR), Diabetes medications (monitor blood glucose)</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stinging Nettle</strong></td>
+                        <td>Mild GI upset, Skin irritation, Diuretic effects</td>
+                        <td>Diuretics, Blood pressure medications, Diabetes medications</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>MSM</strong></td>
+                        <td>Mild GI upset (nausea, diarrhea), Headache, Fatigue</td>
+                        <td>Potential CYP450 inhibition — warfarin and narrow-TI drug caution advised</td>
+                        <td><span class="risk-low">Good</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="research-gaps" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Research Gaps &amp; Limitations</h2>
+    <p class="mb-4" style="color: var(--text-primary);">While the evidence base for joint health supplements continues to grow, several important gaps remain:</p>
+    <ul class="space-y-2 pl-5" style="list-style-type: disc; color: var(--text-primary);">
+        <li class="text-sm">Long-term structural disease modification by supplements (joint space narrowing, cartilage volume) remains debated despite large trials</li>
+        <li class="text-sm">Optimal combinations of joint supplements (e.g., glucosamine + chondroitin + MSM) lack factorial trial designs</li>
+        <li class="text-sm">Head-to-head comparisons with NSAIDs and other analgesics are limited for most supplements</li>
+        <li class="text-sm">Effects in early-stage vs. advanced osteoarthritis may differ significantly but are rarely stratified in trials</li>
+        <li class="text-sm">Bioavailability of oral supplements to joint tissues (synovial fluid concentrations) is poorly characterized</li>
+        <li class="text-sm">Exercise synergy — whether supplements enhance the benefits of physical therapy and exercise programs — needs more study</li>
+    </ul>
+</section>
+<section id="additional" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Additional Supplements</h2>
+    <p class="mb-6" style="color: var(--text-primary);">The following 7 supplements show some evidence related to joint health but are not among the primary recommendations.</p>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Supplement</th>
+                        <th>Evidence</th>
+                        <th>Category</th>
+                        <th>Relevant Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="../supplements/magnesium.html" style="color: var(--glow); text-decoration: none;">Magnesium</a></td>
+                        <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
+                        <td style="color: var(--text-muted);">Essential Nutrients</td>
+                        <td style="font-size:0.85rem">Bone health</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/black-seed-oil.html" style="color: var(--glow); text-decoration: none;">Black Seed Oil</a></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="color: var(--text-muted);">Herbal Extracts</td>
+                        <td style="font-size:0.85rem">Anti-inflammatory effects</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/krill-oil.html" style="color: var(--glow); text-decoration: none;">Krill Oil</a></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="color: var(--text-muted);">Essential Nutrients</td>
+                        <td style="font-size:0.85rem">Joint health</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/panax-ginseng.html" style="color: var(--glow); text-decoration: none;">Panax Ginseng</a></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="color: var(--text-muted);">Adaptogens</td>
+                        <td style="font-size:0.85rem">Anti-inflammatory activity</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/quercetin.html" style="color: var(--glow); text-decoration: none;">Quercetin</a></td>
+                        <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
+                        <td style="color: var(--text-muted);">Antioxidants</td>
+                        <td style="font-size:0.85rem">Anti-inflammatory effects</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/astaxanthin.html" style="color: var(--glow); text-decoration: none;">Astaxanthin</a></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="color: var(--text-muted);">Antioxidants</td>
+                        <td style="font-size:0.85rem">Skin health</td>
+                    </tr>
+                    <tr>
+                        <td><a href="../supplements/citrulline-malate.html" style="color: var(--glow); text-decoration: none;">Citrulline Malate</a></td>
+                        <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
+                        <td style="color: var(--text-muted);">Performance Enhancers</td>
+                        <td style="font-size:0.85rem">Nitric oxide production</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Citation Index</h2>
+    <p class="mb-6" style="color: var(--text-primary);">All data in this guide is derived from the SupplementDB citation library of 31+ peer-reviewed research papers.</p>
+    <div class="evidence-card p-6">
+        <div class="space-y-1">
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">1</span>
+                <span>Argeros et al. (2025). Magnesium Supplementation and Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials. <em></em>. <a class="pmid-link" href="https://doi.org/10.1161/HYPERTENSIONAHA.125.25129" target="_blank" rel="noopener">10.1161/HYPERTENSIONAHA.125.25129</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">2</span>
+                <span>Maqrashi et al. (2025). Effect of Magnesium Supplements on Improving Glucose Control, Blood Pressure and Lipid Profile in Patients With Type 2 Diabetes Mellitus. <em></em>. <a class="pmid-link" href="https://doi.org/10.18295/2075-0528.2848" target="_blank" rel="noopener">10.18295/2075-0528.2848</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">3</span>
+                <span>Cepeda et al. (2025). Unlocking the Power of Magnesium: A Systematic Review and Meta-Analysis Regarding Its Role in Oxidative Stress and Inflammation. <em></em>. <a class="pmid-link" href="https://doi.org/10.3390/antiox14060740" target="_blank" rel="noopener">10.3390/antiox14060740</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">4</span>
+                <span>Wang et al. (2025). Curcumin supplementation and cognitive function: A meta-analysis of randomized controlled trials. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.phymed.2025.156742" target="_blank" rel="noopener">10.1016/j.phymed.2025.156742</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">5</span>
+                <span>Yu et al. (2025). Effects of curcumin supplementation on cognitive aging: A meta-analysis of 10 RCTs. <em></em>. <a class="pmid-link" href="https://doi.org/10.1002/fsn3.70172" target="_blank" rel="noopener">10.1002/fsn3.70172</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">6</span>
+                <span>Xu et al. (2025). A comprehensive umbrella review of curcumin effects based on 25 meta-analyses. <em></em>. <a class="pmid-link" href="https://doi.org/10.3389/fphar.2025.1584866" target="_blank" rel="noopener">10.3389/fphar.2025.1584866</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">7</span>
+                <span>Ahmad A, et al. (2013). Nigella sativa and its active constituent thymoquinone: an overview. <em>Antioxidants (Basel)</em>. <a class="pmid-link" href="https://doi.org/10.3390/antiox2040158" target="_blank" rel="noopener">10.3390/antiox2040158</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">8</span>
+                <span>Ernst E (2008). Boswellia serrata extract for treatment of rheumatoid arthritis: a systematic review. <em>Phytomedicine</em>. <a class="pmid-link" href="https://doi.org/10.1016/j.phymed.2007.11.017" target="_blank" rel="noopener">10.1016/j.phymed.2007.11.017</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">9</span>
+                <span>Reginster JY et al. (2017). Pharmaceutical-grade chondroitin sulfate is as effective as celecoxib and superior to placebo (CONCEPT trial). <em></em>. <a class="pmid-link" href="https://doi.org/10.1136/annrheumdis-2016-210860" target="_blank" rel="noopener">10.1136/annrheumdis-2016-210860</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28533290" target="_blank" rel="noopener">PMID: 28533290</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">10</span>
+                <span>Clegg DO et al. (2006). Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis (GAIT trial). <em></em>. <a class="pmid-link" href="https://doi.org/10.1056/NEJMoa052771" target="_blank" rel="noopener">10.1056/NEJMoa052771</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/16495392" target="_blank" rel="noopener">PMID: 16495392</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">11</span>
+                <span>Gregori G et al. (2018). Association of pharmacological treatments with long-term pain control in knee osteoarthritis (JAMA NMA, n=22,037). <em></em>. <a class="pmid-link" href="https://doi.org/10.1001/jama.2018.19319" target="_blank" rel="noopener">10.1001/jama.2018.19319</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30535141" target="_blank" rel="noopener">PMID: 30535141</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">12</span>
+                <span>Runhaar J et al. (2017). Subgroup analyses of the effectiveness of oral glucosamine for knee and hip osteoarthritis: a systematic review and IPD meta-analysis from the OA trial bank. <em></em>. <a class="pmid-link" href="https://doi.org/10.1136/annrheumdis-2017-211149" target="_blank" rel="noopener">10.1136/annrheumdis-2017-211149</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28754801" target="_blank" rel="noopener">PMID: 28754801</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">13</span>
+                <span>Clegg DO et al. (2006). Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis (GAIT trial). <em></em>. <a class="pmid-link" href="https://doi.org/10.1056/NEJMoa052771" target="_blank" rel="noopener">10.1056/NEJMoa052771</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/16495392" target="_blank" rel="noopener">PMID: 16495392</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">14</span>
+                <span>Knapik JJ et al. (2018). Glucosamine and chondroitin sulfate supplements: examination of efficacy and safety (industry vs independent funding analysis). <em></em>. <a class="pmid-link" href="https://doi.org/10.55460/AUC0-QM7H" target="_blank" rel="noopener">10.55460/AUC0-QM7H</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30566740" target="_blank" rel="noopener">PMID: 30566740</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">15</span>
+                <span>Ulven SM, et al. (2011). Krill oil supplementation increases plasma concentrations of eicosapentaenoic and docosahexaenoic acids. <em>Lipids</em>. <a class="pmid-link" href="https://doi.org/10.1007/s11745-010-3490-4" target="_blank" rel="noopener">10.1007/s11745-010-3490-4</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">16</span>
+                <span>Zeng et al. (2024). Effects of Ginseng on Cognitive Function: A Systematic Review and Meta-Analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1002/ptr.8359" target="_blank" rel="noopener">10.1002/ptr.8359</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39474788" target="_blank" rel="noopener">PMID: 39474788</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">17</span>
+                <span>Kim et al. (2025). Cognitive Benefits of Ginseng: A Systematic Review and Meta-Analysis of Changes in MMSE and ADAS-Cog Scores. <em></em>. <a class="pmid-link" href="https://doi.org/10.1159/000547543" target="_blank" rel="noopener">10.1159/000547543</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/40774237" target="_blank" rel="noopener">PMID: 40774237</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">18</span>
+                <span>Jafari et al. (2025). The effect of ginseng supplementation on CVD risk factors: a comprehensive systematic review and dose-response meta-analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1017/S0007114525103607" target="_blank" rel="noopener">10.1017/S0007114525103607</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/40923100" target="_blank" rel="noopener">PMID: 40923100</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">19</span>
+                <span>Hickson LJ et al. (2019). Senolytics decrease senescent cells in humans: A pilot clinical trial. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.ebiom.2019.08.069" target="_blank" rel="noopener">10.1016/j.ebiom.2019.08.069</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">20</span>
+                <span>Rojano-Ortega D et al. (2023). Quercetin supplementation in sport and physical activity: a systematic review and meta-analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1007/s00394-023-03197-3" target="_blank" rel="noopener">10.1007/s00394-023-03197-3</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">21</span>
+                <span>Tabrizi R et al. (2019). The Effects of Quercetin Supplementation on Inflammatory Markers Among Patients with Metabolic Syndrome. <em></em>. <a class="pmid-link" href="https://doi.org/10.1093/advances/nmy071" target="_blank" rel="noopener">10.1093/advances/nmy071</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">22</span>
+                <span>Serban MC et al. (2016). Effect of quercetin on blood pressure: A systematic review and meta-analysis of randomized controlled trials. <em></em>. <a class="pmid-link" href="https://doi.org/10.1097/HJH.0000000000001041" target="_blank" rel="noopener">10.1097/HJH.0000000000001041</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">23</span>
+                <span>Andres S et al. (2018). Safety of quercetin: a systematic review and meta-analysis. <em></em>. <a class="pmid-link" href="https://doi.org/10.1002/mnfr.201700447" target="_blank" rel="noopener">10.1002/mnfr.201700447</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">24</span>
+                <span>Randall C, et al. (2000). Stinging nettle (Urtica dioica) in rheumatoid arthritis: a randomized controlled trial. <em>Phytother Res</em>. <a class="pmid-link" href="https://doi.org/10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K" target="_blank" rel="noopener">10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">25</span>
+                <span>Park JS, Chyun JH, Kim YK, Line LL, Chew BP (2010). Astaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans. <em>Journal of Clinical Biochemistry and Nutrition</em>. <a class="pmid-link" href="https://doi.org/10.3164/jcbn.09-91" target="_blank" rel="noopener">10.3164/jcbn.09-91</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/20553730" target="_blank" rel="noopener">PMID: 20553730</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">26</span>
+                <span>Tominaga K, Hongo N, Karato M, Yamashita E (2012). Cosmetic benefits of astaxanthin on humans subjects. <em>Acta Biochimica Polonica</em>. <a class="pmid-link" href="https://doi.org/10.18388/abp.2012_2088" target="_blank" rel="noopener">10.18388/abp.2012_2088</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/22428137" target="_blank" rel="noopener">PMID: 22428137</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">27</span>
+                <span>Earnest CP, Lupo M, White KM, Church TS (2011). Effect of astaxanthin on cycling time trial performance. <em>International Journal of Sports Medicine</em>. <a class="pmid-link" href="https://doi.org/10.1055/s-0030-1264780" target="_blank" rel="noopener">10.1055/s-0030-1264780</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/21800280" target="_blank" rel="noopener">PMID: 21800280</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">28</span>
+                <span>Pérez-Guisado J, Jakeman PM (2010). Citrulline malate enhances athletic anaerobic performance and relieves muscle soreness. <em>J Strength Cond Res</em>. <a class="pmid-link" href="https://doi.org/10.1519/JSC.0b013e3181cb28e0" target="_blank" rel="noopener">10.1519/JSC.0b013e3181cb28e0</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">29</span>
+                <span>Debbi EM,Agar G,Fichman G,Ziv YB,Kardosh R,Halperin N,Elbaz A,Beer Y,Debi R (2011). Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study. <em></em>. <a class="pmid-link" href="https://doi.org/10.1186/1472-6882-11-50" target="_blank" rel="noopener">10.1186/1472-6882-11-50</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/21708034" target="_blank" rel="noopener">PMID: 21708034</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">30</span>
+                <span>Butawan M,Benjamin RL,Bloomer RJ (2017). Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement. <em></em>. <a class="pmid-link" href="https://doi.org/10.3390/nu9030290" target="_blank" rel="noopener">10.3390/nu9030290</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/28300758" target="_blank" rel="noopener">PMID: 28300758</a></span>
+            </div>
+            <div class="citation-entry flex items-start">
+                <span class="cite-num">31</span>
+                <span>Crawford C,Boyd C,Avula B,Wang YH,Khan IA,Deuster PA (2019). Evidence for glucosamine and chondroitin-sulfate for musculoskeletal injury: A Systematic Review. <em></em>. <a class="pmid-link" href="https://doi.org/10.1186/s12891-019-2559-4" target="_blank" rel="noopener">10.1186/s12891-019-2559-4</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/30986309" target="_blank" rel="noopener">PMID: 30986309</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
+        <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
+            <i class="fas fa-envelope-open-text mr-2" style="color: #f59e0b;"></i>
+            Get Joint Health Research Updates
+        </h3>
+        <p class="mb-6 text-sm" style="color: var(--text-muted); max-width: 440px; margin: 0 auto 1.5rem;">
+            Stay informed when new studies are published or evidence tiers are updated for these supplements.
+        </p>
+        <div id="guide-newsletter-container">
+            <form id="guide-newsletter-form" class="newsletter-form flex gap-3 max-w-md mx-auto flex-wrap justify-center">
+                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required
+                    class="flex-1 min-w-0 px-4 py-2.5 rounded-lg text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text-bright); outline: none;">
+                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    style="background: #d97706;"><i class="fas fa-paper-plane mr-1"></i> Subscribe</button>
+            </form>
+            <p id="guide-newsletter-message" class="newsletter-message" style="display:none; color: var(--text-bright);"></p>
+        </div>
+        <p class="text-xs mt-4" style="color: var(--text-muted); opacity: 0.6;"><i class="fas fa-lock mr-1"></i> No spam. <a href="../legal/privacy.html" style="color: var(--glow); opacity: 0.7;">Privacy Policy</a></p>
+    </div>
+</section>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="related-content evidence-card p-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Related Resources</h3>
+        <div class="related-content-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="../guides/recovery.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-bandage" style="color: #f59e0b; width: 16px; text-align: center;"></i> Recovery &amp; Soreness Guide
             </a>
-            <div class="flex items-center space-x-4">
-                <a href="../guides/sleep.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">Sleep Guide</a>
-                <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
-                    <i class="fas fa-arrow-left mr-1"></i> Database
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="content-hero">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="content-breadcrumb" aria-label="Breadcrumb">
-                <a href="../index.html">Home</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <a href="../index.html#guides">Evidence Guides</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>Joint Health &amp; Mobility</span>
-            </nav>
-            <h1>Evidence-Based Supplements for Joint Health &amp; Mobility</h1>
-            <p class="hero-subtitle">A systematic review of supplements studied for joint pain relief, cartilage protection, and mobility improvement — ranked by strength of clinical evidence.</p>
-            <div class="hero-meta">
-                <span class="hero-stat"><i class="fas fa-flask"></i> 13 Supplements Reviewed</span>
-                <span class="hero-stat"><i class="fas fa-file-lines"></i> 31+ Citations</span>
-                <span class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-11</span>
-                <span class="hero-stat"><span class="tier-badge tier-badge-1">Strong Evidence</span> 2</span>
-                <span class="hero-stat"><span class="tier-badge tier-badge-2">Moderate Evidence</span> 8</span>
-                <span class="hero-stat"><span class="tier-badge tier-badge-3">Preliminary Evidence</span> 3</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Share Bar -->
-    <div class="share-bar">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span class="share-bar-label">Share this guide</span>
-            <div class="share-bar-buttons">
-                <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
-                <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-                <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
-                <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-            </div>
+            <a href="../guides/cardiovascular.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-heartbeat" style="color: #f59e0b; width: 16px; text-align: center;"></i> Cardiovascular Health Guide
+            </a>
+            <a href="../guides/energy-vitality.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-bolt" style="color: #f59e0b; width: 16px; text-align: center;"></i> Energy &amp; Vitality Guide
+            </a>
+            <a href="../guides/safety-interactions.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-triangle-exclamation" style="color: #f59e0b; width: 16px; text-align: center;"></i> Safety &amp; Interactions
+            </a>
+            <a href="../categories/herbal-extracts.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-seedling" style="color: #f59e0b; width: 16px; text-align: center;"></i> Browse Herbal Extracts
+            </a>
+            <a href="../compare/turmeric-vs-boswellia.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-scale-balanced" style="color: #f59e0b; width: 16px; text-align: center;"></i> Turmeric vs Boswellia
+            </a>
+            <a href="../index.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-database" style="color: #f59e0b; width: 16px; text-align: center;"></i> Full Supplement Database
+            </a>
+            <a href="../methodology.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-flask" style="color: #f59e0b; width: 16px; text-align: center;"></i> Research Methodology
+            </a>
+            <a href="../faq.html" class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-colors" style="color: var(--glow); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <i class="fas fa-circle-question" style="color: #f59e0b; width: 16px; text-align: center;"></i> FAQ
+            </a>
         </div>
     </div>
+</section>
 
-    <!-- Trust Signal Bar -->
-    <div class="trust-bar" style="max-width:64rem;margin:1rem auto;">
-        <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 31+ Verified Citations</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+</main>
+
+<!-- Footer -->
+<footer class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t" style="border-color: var(--border);">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="../index.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-pills" style="color: #f59e0b;"></i>
+                <span>Return to Supplement Database</span>
+            </a>
+            <a href="../methodology.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-flask"></i>
+                <span>Research Methodology</span>
+            </a>
+        </div>
+        <p class="text-xs text-center sm:text-right" style="color: var(--text-muted); max-width: 400px;">
+            This guide is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.
+        </p>
     </div>
+    <div class="text-center mt-8">
+        <p class="text-xs" style="color: rgba(139, 148, 158, 0.5);">
+            &copy; 2025&ndash;2026 SupplementDB. Evidence-Based Supplement Database.
+        </p>
+    </div>
+</footer>
 
-    <!-- Main Content with optional TOC -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div style="display:grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: start;">
-            <div>
+<!-- Scripts -->
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
 
-                <div class="content-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div><strong>Medical Disclaimer:</strong> This guide is for informational and educational purposes only. It does not constitute medical advice, diagnosis, or treatment recommendations. Always consult a qualified healthcare professional before starting any supplement regimen. <a href="../legal/disclaimer.html" style="color:#92400e; text-decoration:underline;">Read full disclaimer</a>.</div>
-                </div>
+// Smooth scroll for anchor links with nav offset
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            var navHeight = document.querySelector('.guide-nav').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
 
-                <!-- Featured Snippet: Definition -->
-                <div class="snippet-definition">
-                    <p><strong>Joint Health supplements</strong> Joint health supplements are compounds studied in clinical trials for their effects on joint pain, cartilage integrity, mobility, and inflammation. The strongest evidence exists for glucosamine, chondroitin sulfate, and curcumin, with multiple meta-analyses and large-scale randomized controlled trials demonstrating measurable effects on osteoarthritis symptoms and structural joint outcomes.</p>
-                </div>
+// PostHog custom event tracking
+(function() {
+    if (typeof posthog === 'undefined') return;
 
-                <section class="content-section" id="introduction">
-                    <h2>Introduction</h2>
-                    <p>Osteoarthritis affects over 500 million people worldwide and is the most common cause of joint pain and disability in adults over 50. While joint replacement surgery and pharmaceutical pain management remain critical care options, a substantial body of peer-reviewed research has investigated the potential of dietary supplements to support joint health, promote a healthy inflammatory response, and slow cartilage degradation.</p>
-                    <p>This guide systematically reviews the supplements with the strongest clinical evidence for joint health outcomes including pain reduction, cartilage protection, mobility improvement, and inflammatory modulation.</p>
-                    <p><strong>Important:</strong> This guide is for informational purposes only. Joint supplements are not replacements for prescribed treatments including disease-modifying therapies, physical therapy, or surgical intervention. Always consult a qualified healthcare professional before starting any supplement regimen, particularly if you have rheumatoid arthritis or other inflammatory joint conditions.</p>
-                </section>
+    posthog.capture('guide_viewed', {
+        guide_slug: 'joint-health',
+        guide_title: 'Evidence-Based Supplements for Joint Health &amp; Mobility',
+        supplement_count: 13,
+        citation_count: 31,
+        tier1_count: 2,
+        tier2_count: 8,
+        tier3_count: 3
+    });
 
-                <!-- Featured Snippet: Ranked List -->
-                <section class="content-section" id="top-supplements">
-                    <h2>Top 8 Evidence-Based Supplements for Joint Health</h2>
-                    <div class="snippet-list">
-                        <h2>Top 8 Evidence-Based Supplements for Joint Health</h2>
-                        <ol>
-                            <li><a href="../supplements/turmeric-curcumin.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Turmeric/Curcumin</a> <span class="tier-badge tier-badge-1">Strong Evidence</span> &mdash; Anti-inflammatory (500-1000mg daily (with piperine for absorption))</li>
-                            <li><a href="../supplements/boswellia.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Boswellia</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Joint health (300-800mg daily (standardized extract))</li>
-                            <li><a href="../supplements/chondroitin-sulfate.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Chondroitin Sulfate</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Joint health support (800-1200mg daily (pharmaceutical-grade CS only))</li>
-                            <li><a href="../supplements/glucosamine.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Glucosamine</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Joint pain reduction (contested) (1500mg glucosamine sulfate daily (sulfate form preferred over HCl))</li>
-                            <li><a href="../supplements/stinging-nettle.html" style="color:var(--accent);text-decoration:none;font-weight:700;">Stinging Nettle</a> <span class="tier-badge tier-badge-2">Moderate Evidence</span> &mdash; Joint health (300-600mg daily (leaf extract))</li>
-                            <li><a href="../supplements/msm.html" style="color:var(--accent);text-decoration:none;font-weight:700;">MSM</a> <span class="tier-badge tier-badge-3">Preliminary Evidence</span> &mdash; Osteoarthritis joint pain reduction (contested) (2000-3375mg daily)</li>
-                        </ol>
-                    </div>
+    var sectionsMeta = {
+        'summary': { name: 'Quick Evidence Summary', depth: 'top' },
+        'tier1': { name: 'Tier 1: Strong Evidence', depth: 'upper' },
+        'tier2': { name: 'Tier 2: Moderate Evidence', depth: 'middle' },
+        'tier3': { name: 'Tier 3: Preliminary Evidence', depth: 'lower' },
+        'safety': { name: 'Safety Considerations', depth: 'deep' },
+        'citations': { name: 'Citation Index', depth: 'bottom' }
+    };
 
-                    <div class="supplement-card-grid">
-                        <div class="supplement-card" id="supp-turmeric-curcumin">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/turmeric-curcumin.html" style="color:inherit;text-decoration:none;">Turmeric/Curcumin</a></h3>
-                                    <p class="card-scientific">Curcuma longa</p>
-                                </div>
-                                <span class="tier-badge tier-badge-1">Strong Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Anti-inflammatory</li>
-                                <li>Joint health</li>
-                                <li>Cardiovascular protection</li>
-                                <li>Mood support</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>cognition:</strong> Moderate to large (SMD=0.82, 95% CI: 0.39-1.25)</div>
-                                <div style="margin-bottom:0.25rem"><strong>workingMemory:</strong> Large (SMD=1.01 for cognitive aging populations)</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> NF-κB pathway inhibition; Amyloid-β formation inhibition</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 500-1000mg daily (with piperine for absorption)</div>
-                        </div>
-                        <div class="supplement-card" id="supp-boswellia">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/boswellia.html" style="color:inherit;text-decoration:none;">Boswellia</a></h3>
-                                    <p class="card-scientific">Boswellia serrata</p>
-                                </div>
-                                <span class="tier-badge tier-badge-2">Moderate Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Joint health</li>
-                                <li>Inflammatory reduction</li>
-                                <li>Neuroinflammation reduction</li>
-                                <li>Cognitive protection via anti-inflammatory effects</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>jointPain:</strong> Moderate (30-40% pain reduction)</div>
-                                <div style="margin-bottom:0.25rem"><strong>inflammation:</strong> Large (significant biomarker reduction)</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> 5-lipoxygenase inhibition; Leukotriene synthesis reduction</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 300-800mg daily (standardized extract)</div>
-                        </div>
-                        <div class="supplement-card" id="supp-chondroitin-sulfate">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/chondroitin-sulfate.html" style="color:inherit;text-decoration:none;">Chondroitin Sulfate</a></h3>
-                                    <p class="card-scientific">Chondroitin sulfate sodium</p>
-                                </div>
-                                <span class="tier-badge tier-badge-2">Moderate Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Joint health support</li>
-                                <li>Cartilage matrix structural support</li>
-                                <li>Osteoarthritis symptom relief</li>
-                                <li>Anti-inflammatory via NF-κB/MMP suppression</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>joint_pain:</strong> Small to moderate (SMD 0.18-0.35; pharmaceutical-grade only)</div>
-                                <div style="margin-bottom:0.25rem"><strong>structural_jsn:</strong> Significant JSN reduction (6 RCTs, Hochberg 2008 meta-analysis)</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Cartilage matrix MMP/ADAMTS suppression; Anti-inflammatory NF-κB pathway inhibition</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 800-1200mg daily (pharmaceutical-grade CS only)</div>
-                        </div>
-                        <div class="supplement-card" id="supp-glucosamine">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/glucosamine.html" style="color:inherit;text-decoration:none;">Glucosamine</a></h3>
-                                    <p class="card-scientific">Glucosamine sulfate</p>
-                                </div>
-                                <span class="tier-badge tier-badge-2">Moderate Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Joint pain reduction (contested)</li>
-                                <li>Joint space narrowing reduction</li>
-                                <li>Osteoarthritis symptom relief</li>
-                                <li>Cartilage matrix support</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>joint_pain:</strong> Sub-threshold: VAS WMD -5.7 to -7.4mm (MCID=15mm; does not meet clinical significance in most independent meta-analyses)</div>
-                                <div style="margin-bottom:0.25rem"><strong>joint_space_narrowing:</strong> Small but significant: SMD -0.42 (Gregori 2018, industry-conflicted); GS alone significant in Rabade 2024</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Cartilage matrix GAG and proteoglycan synthesis (in vitro evidence); NF-κB pathway inhibition — anti-inflammatory (in vitro; not confirmed in human RCTs at clinical significance)</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 1500mg glucosamine sulfate daily (sulfate form preferred over HCl)</div>
-                        </div>
-                        <div class="supplement-card" id="supp-stinging-nettle">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/stinging-nettle.html" style="color:inherit;text-decoration:none;">Stinging Nettle</a></h3>
-                                    <p class="card-scientific">Urtica dioica</p>
-                                </div>
-                                <span class="tier-badge tier-badge-2">Moderate Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Joint health</li>
-                                <li>Anti-inflammatory cognitive support</li>
-                                <li>Allergy relief</li>
-                                <li>Prostate support</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>allergyRelief:</strong> Moderate (50-60% symptom reduction)</div>
-                                <div style="margin-bottom:0.25rem"><strong>antiInflammatory:</strong> Small to moderate</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> Histamine receptor antagonism; 5-lipoxygenase inhibition</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 300-600mg daily (leaf extract)</div>
-                        </div>
-                        <div class="supplement-card" id="supp-msm">
-                            <div class="card-header">
-                                <div>
-                                    <h3 class="card-name"><a href="../supplements/msm.html" style="color:inherit;text-decoration:none;">MSM</a></h3>
-                                    <p class="card-scientific">Methylsulfonylmethane</p>
-                                </div>
-                                <span class="tier-badge tier-badge-3">Preliminary Evidence</span>
-                            </div>
-                            <ul class="card-benefits">
-                                <li>Osteoarthritis joint pain reduction (contested)</li>
-                                <li>Anti-inflammatory</li>
-                                <li>Exercise recovery</li>
-                            </ul>
-                            <div style="margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--accent-bg); border-radius: 6px; font-size: 0.8rem; color: var(--text-muted);">
-                                <div style="margin-bottom:0.25rem"><strong>joint_pain:</strong> SMD 0.39–0.50 (statistically significant; below MCID in independent analysis)</div>
-                                <div style="margin-bottom:0.25rem"><strong>exercise_recovery:</strong> Modest DOMS reduction (underpowered studies)</div>
-                            </div>
-                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><i class="fas fa-cogs" style="color:var(--accent); margin-right:0.25rem;"></i> NF-κB pathway inhibition reducing pro-inflammatory cytokine production; Biological sulfur donor supporting collagen and connective tissue synthesis</div>
-                            <div class="card-dosage"><i class="fas fa-prescription-bottle"></i> 2000-3375mg daily</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="content-section" id="evidence-comparison">
-                    <h2>Evidence Comparison</h2>
-                    <p>The following table compares all 13 supplements reviewed in this guide by evidence tier, category, key benefit, dosage range, and number of cited studies.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table snippet-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Evidence</th>
-                                    <th>Category</th>
-                                    <th>Key Benefit</th>
-                                    <th>Dosage Range</th>
-                                    <th>Studies</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong><a href="../supplements/magnesium.html" style="color:inherit;text-decoration:none;">Magnesium</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Essential Nutrients</td>
-                                    <td>Bone health</td>
-                                    <td style="font-size:0.8rem">200-400mg daily (elemental magnesium)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/turmeric-curcumin.html" style="color:inherit;text-decoration:none;">Turmeric/Curcumin</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Anti-inflammatory</td>
-                                    <td>Anti-inflammatory</td>
-                                    <td style="font-size:0.8rem">500-1000mg daily (with piperine for absorption)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/black-seed-oil.html" style="color:inherit;text-decoration:none;">Black Seed Oil</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td>Anti-inflammatory effects</td>
-                                    <td style="font-size:0.8rem">500-2000mg daily (oil or extract)</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/boswellia.html" style="color:inherit;text-decoration:none;">Boswellia</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Anti-inflammatory</td>
-                                    <td>Joint health</td>
-                                    <td style="font-size:0.8rem">300-800mg daily (standardized extract)</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/chondroitin-sulfate.html" style="color:inherit;text-decoration:none;">Chondroitin Sulfate</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Joint Support</td>
-                                    <td>Joint health support</td>
-                                    <td style="font-size:0.8rem">800-1200mg daily (pharmaceutical-grade CS only)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/glucosamine.html" style="color:inherit;text-decoration:none;">Glucosamine</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Joint Support</td>
-                                    <td>Joint pain reduction (contested)</td>
-                                    <td style="font-size:0.8rem">1500mg glucosamine sulfate daily (sulfate form preferred over HCl)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/krill-oil.html" style="color:inherit;text-decoration:none;">Krill Oil</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Essential Nutrients</td>
-                                    <td>Joint health</td>
-                                    <td style="font-size:0.8rem">500-2000mg daily</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/panax-ginseng.html" style="color:inherit;text-decoration:none;">Panax Ginseng</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Adaptogens</td>
-                                    <td>Anti-inflammatory activity</td>
-                                    <td style="font-size:0.8rem">200-400mg daily (standardized extract)</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/quercetin.html" style="color:inherit;text-decoration:none;">Quercetin</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Antioxidants</td>
-                                    <td>Anti-inflammatory effects</td>
-                                    <td style="font-size:0.8rem">500-1000mg daily</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/stinging-nettle.html" style="color:inherit;text-decoration:none;">Stinging Nettle</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td>Joint health</td>
-                                    <td style="font-size:0.8rem">300-600mg daily (leaf extract)</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/astaxanthin.html" style="color:inherit;text-decoration:none;">Astaxanthin</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Antioxidants</td>
-                                    <td>Skin health</td>
-                                    <td style="font-size:0.8rem">4-12mg daily</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/citrulline-malate.html" style="color:inherit;text-decoration:none;">Citrulline Malate</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td>Nitric oxide production</td>
-                                    <td style="font-size:0.8rem">6-8g acute pre-workout</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/msm.html" style="color:inherit;text-decoration:none;">MSM</a></strong></td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Joint Support</td>
-                                    <td>Osteoarthritis joint pain reduction (contested)</td>
-                                    <td style="font-size:0.8rem">2000-3375mg daily</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="mechanisms">
-                    <h2>Mechanisms of Action</h2>
-                    <p>Joint health supplements work through several distinct pathways to support cartilage integrity, promote a healthy inflammatory response, and improve mobility. Understanding these mechanisms helps match supplements to specific joint health goals.</p>
-
-                    <h3>Cartilage Matrix Support</h3>
-                    <p>Joint cartilage is composed of a complex extracellular matrix including collagen, proteoglycans, and glycosaminoglycans. Several supplements provide building blocks for cartilage synthesis or inhibit enzymes that degrade cartilage matrix components (matrix metalloproteinases).</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/glucosamine.html">Glucosamine</a>, <a href="../supplements/chondroitin-sulfate.html">Chondroitin Sulfate</a>, <a href="../supplements/msm.html">MSM</a></p>
-
-                    <h3>Anti-Inflammatory Pathways</h3>
-                    <p>Chronic low-grade inflammation is a primary driver of joint degeneration in osteoarthritis. Multiple supplements target distinct inflammatory pathways — including COX-2, 5-LOX, and NF-κB — to reduce inflammatory mediators in joint tissues.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/turmeric-curcumin.html">Turmeric/Curcumin</a>, <a href="../supplements/boswellia.html">Boswellia</a>, <a href="../supplements/omega-3-fatty-acids.html">Omega-3 Fatty Acids</a>, <a href="../supplements/stinging-nettle.html">Stinging Nettle</a></p>
-
-                    <h3>Collagen Synthesis</h3>
-                    <p>Type II collagen is the predominant collagen in articular cartilage. Some supplements support collagen production by providing precursors (MSM provides sulfur), stimulating chondrocyte activity, or providing antioxidant protection to preserve existing collagen structures.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/msm.html">MSM</a>, <a href="../supplements/pine-bark-extract.html">Pine Bark Extract</a>, <a href="../supplements/glucosamine.html">Glucosamine</a></p>
-
-                    <h3>Synovial Fluid Maintenance</h3>
-                    <p>Synovial fluid lubricates joints and provides nutrients to avascular cartilage. Supplements that support hyaluronic acid production, reduce synovial inflammation, or improve joint fluid viscosity contribute to better joint mechanics and reduced friction-related damage.</p>
-                    <p style="font-size:0.875rem; color:var(--text-muted)"><strong>Key supplements:</strong> <a href="../supplements/chondroitin-sulfate.html">Chondroitin Sulfate</a>, <a href="../supplements/omega-3-fatty-acids.html">Omega-3 Fatty Acids</a>, <a href="../supplements/glucosamine.html">Glucosamine</a></p>
-                </section>
-
-                <section class="content-section" id="dosage-guidelines">
-                    <h2>Dosage Guidelines</h2>
-                    <p>The following dosage ranges reflect those used in published clinical trials. Individual needs may vary. Always start with the lower end of the range and titrate upward as tolerated.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Clinical Dosage Range</th>
-                                    <th>Evidence Tier</th>
-                                    <th>Safety Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong><a href="../supplements/turmeric-curcumin.html" style="color:inherit;text-decoration:none;">Turmeric/Curcumin</a></strong></td>
-                                    <td>500-1000mg daily (with piperine for absorption)</td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/boswellia.html" style="color:inherit;text-decoration:none;">Boswellia</a></strong></td>
-                                    <td>300-800mg daily (standardized extract)</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/chondroitin-sulfate.html" style="color:inherit;text-decoration:none;">Chondroitin Sulfate</a></strong></td>
-                                    <td>800-1200mg daily (pharmaceutical-grade CS only)</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/glucosamine.html" style="color:inherit;text-decoration:none;">Glucosamine</a></strong></td>
-                                    <td>1500mg glucosamine sulfate daily (sulfate form preferred over HCl)</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/stinging-nettle.html" style="color:inherit;text-decoration:none;">Stinging Nettle</a></strong></td>
-                                    <td>300-600mg daily (leaf extract)</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong><a href="../supplements/msm.html" style="color:inherit;text-decoration:none;">MSM</a></strong></td>
-                                    <td>2000-3375mg daily</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Good</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="content-callout content-callout-warning">
-                        <strong>Note:</strong> Dosage ranges are derived from clinical trial protocols and may not account for individual variation in body weight, metabolism, concurrent medications, or health status. Consult a healthcare provider for personalized dosing.
-                    </div>
-                </section>
-
-                <section class="content-section" id="safety">
-                    <h2>Safety &amp; Interactions</h2>
-                    <p>Joint health supplements generally have favorable safety profiles in clinical trials, but several important considerations and medication interactions apply.</p>
-                    <ul>
-                        <li><strong>Shellfish allergy:</strong> Glucosamine derived from shellfish (most common form) is contraindicated in individuals with shellfish allergies. Vegetarian glucosamine derived from corn fermentation is available as an alternative.</li>
-                        <li><strong>Blood thinner interactions:</strong> Omega-3 fatty acids, boswellia, and curcumin may have mild antiplatelet or anticoagulant effects. Use caution when combining with warfarin, aspirin, or clopidogrel — INR monitoring may be necessary.</li>
-                        <li><strong>GI effects:</strong> Glucosamine, chondroitin, and MSM may cause mild GI symptoms (nausea, bloating, diarrhea) in some individuals. Taking with food often reduces these effects. These are generally milder than NSAID-related GI complications.</li>
-                        <li><strong>Diabetes considerations:</strong> Early concerns about glucosamine affecting blood sugar have not been confirmed in controlled trials, but individuals with diabetes should monitor glucose when starting supplementation.</li>
-                        <li><strong>Pregnancy and lactation:</strong> Most joint supplements lack adequate safety data for use during pregnancy or breastfeeding. Consult a healthcare provider before use.</li>
-                        <li><strong>Autoimmune arthritis:</strong> Supplements studied for osteoarthritis may not be appropriate for rheumatoid arthritis or other autoimmune joint conditions. Disease-modifying therapy should not be replaced with supplements.</li>
-                    </ul>
-
-                    <h3>Individual Supplement Safety Profiles</h3>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Common Side Effects</th>
-                                    <th>Key Drug Interactions</th>
-                                    <th>Safety Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Turmeric/Curcumin</strong></td>
-                                    <td style="font-size:0.85rem">GI upset, Diarrhea, Nausea</td>
-                                    <td style="font-size:0.85rem">Blood thinners, Diabetes medications</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Boswellia</strong></td>
-                                    <td style="font-size:0.85rem">Nausea, Acid reflux, Diarrhea</td>
-                                    <td style="font-size:0.85rem">Immunosuppressants, Anti-inflammatory medications</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Chondroitin Sulfate</strong></td>
-                                    <td style="font-size:0.85rem">GI upset, Nausea, Heartburn</td>
-                                    <td style="font-size:0.85rem">Warfarin/blood thinners (INR monitoring recommended)</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Glucosamine</strong></td>
-                                    <td style="font-size:0.85rem">Mild GI upset, Nausea, Heartburn</td>
-                                    <td style="font-size:0.85rem">Warfarin (monitor INR), Diabetes medications (monitor blood glucose)</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Stinging Nettle</strong></td>
-                                    <td style="font-size:0.85rem">Mild GI upset, Skin irritation, Diuretic effects</td>
-                                    <td style="font-size:0.85rem">Diuretics, Blood pressure medications, Diabetes medications</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>MSM</strong></td>
-                                    <td style="font-size:0.85rem">Mild GI upset (nausea, diarrhea), Headache, Fatigue</td>
-                                    <td style="font-size:0.85rem">Potential CYP450 inhibition — warfarin and narrow-TI drug caution advised</td>
-                                    <td>Good</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="research-gaps">
-                    <h2>Research Gaps &amp; Limitations</h2>
-                    <p>While the evidence base for joint health supplements continues to grow, several important gaps remain in the current literature:</p>
-                    <ul>
-                        <li>Long-term structural disease modification by supplements (joint space narrowing, cartilage volume) remains debated despite large trials</li>
-                        <li>Optimal combinations of joint supplements (e.g., glucosamine + chondroitin + MSM) lack factorial trial designs</li>
-                        <li>Head-to-head comparisons with NSAIDs and other analgesics are limited for most supplements</li>
-                        <li>Effects in early-stage vs. advanced osteoarthritis may differ significantly but are rarely stratified in trials</li>
-                        <li>Bioavailability of oral supplements to joint tissues (synovial fluid concentrations) is poorly characterized</li>
-                        <li>Exercise synergy — whether supplements enhance the benefits of physical therapy and exercise programs — needs more study</li>
-                    </ul>
-                </section>
-
-                <section class="content-section" id="additional">
-                    <h2>Additional Supplements with Relevant Evidence</h2>
-                    <p>The following 7 supplements show some evidence related to joint health but are not among the primary recommendations. They may have relevant benefits as secondary effects or within specific subpopulations.</p>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Supplement</th>
-                                    <th>Evidence</th>
-                                    <th>Category</th>
-                                    <th>Relevant Benefit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Magnesium</td>
-                                    <td><span class="tier-badge tier-badge-1">Strong Evidence</span></td>
-                                    <td>Essential Nutrients</td>
-                                    <td style="font-size:0.85rem">Bone health</td>
-                                </tr>
-                                <tr>
-                                    <td>Black Seed Oil</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Herbal Extracts</td>
-                                    <td style="font-size:0.85rem">Anti-inflammatory effects</td>
-                                </tr>
-                                <tr>
-                                    <td>Krill Oil</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Essential Nutrients</td>
-                                    <td style="font-size:0.85rem">Joint health</td>
-                                </tr>
-                                <tr>
-                                    <td>Panax Ginseng</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Adaptogens</td>
-                                    <td style="font-size:0.85rem">Anti-inflammatory activity</td>
-                                </tr>
-                                <tr>
-                                    <td>Quercetin</td>
-                                    <td><span class="tier-badge tier-badge-2">Moderate Evidence</span></td>
-                                    <td>Antioxidants</td>
-                                    <td style="font-size:0.85rem">Anti-inflammatory effects</td>
-                                </tr>
-                                <tr>
-                                    <td>Astaxanthin</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Antioxidants</td>
-                                    <td style="font-size:0.85rem">Skin health</td>
-                                </tr>
-                                <tr>
-                                    <td>Citrulline Malate</td>
-                                    <td><span class="tier-badge tier-badge-3">Preliminary Evidence</span></td>
-                                    <td>Performance Enhancers</td>
-                                    <td style="font-size:0.85rem">Nitric oxide production</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="references">
-                    <h2>References</h2>
-                    <p>All data in this guide is derived from the SupplementDB citation library of 31+ peer-reviewed research papers. Individual supplement citations are listed below.</p>
-                    <ol class="citation-list">
-                        <li>Argeros et al. (2025).  Magnesium Supplementation and Blood Pressure: A Systematic Review and Meta-Analysis of Randomized Controlled Trials. <em></em>. <a class="citation-doi" href="https://doi.org/10.1161/HYPERTENSIONAHA.125.25129" target="_blank" rel="noopener">10.1161/HYPERTENSIONAHA.125.25129</a></li>
-                        <li>Maqrashi et al. (2025).  Effect of Magnesium Supplements on Improving Glucose Control, Blood Pressure and Lipid Profile in Patients With Type 2 Diabetes Mellitus. <em></em>. <a class="citation-doi" href="https://doi.org/10.18295/2075-0528.2848" target="_blank" rel="noopener">10.18295/2075-0528.2848</a></li>
-                        <li>Cepeda et al. (2025).  Unlocking the Power of Magnesium: A Systematic Review and Meta-Analysis Regarding Its Role in Oxidative Stress and Inflammation. <em></em>. <a class="citation-doi" href="https://doi.org/10.3390/antiox14060740" target="_blank" rel="noopener">10.3390/antiox14060740</a></li>
-                        <li>Wang et al. (2025).  Curcumin supplementation and cognitive function: A meta-analysis of randomized controlled trials. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.phymed.2025.156742" target="_blank" rel="noopener">10.1016/j.phymed.2025.156742</a></li>
-                        <li>Yu et al. (2025).  Effects of curcumin supplementation on cognitive aging: A meta-analysis of 10 RCTs. <em></em>. <a class="citation-doi" href="https://doi.org/10.1002/fsn3.70172" target="_blank" rel="noopener">10.1002/fsn3.70172</a></li>
-                        <li>Xu et al. (2025).  A comprehensive umbrella review of curcumin effects based on 25 meta-analyses. <em></em>. <a class="citation-doi" href="https://doi.org/10.3389/fphar.2025.1584866" target="_blank" rel="noopener">10.3389/fphar.2025.1584866</a></li>
-                        <li>Ahmad A, et al. (2013).  Nigella sativa and its active constituent thymoquinone: an overview. <em>Antioxidants (Basel)</em>. <a class="citation-doi" href="https://doi.org/10.3390/antiox2040158" target="_blank" rel="noopener">10.3390/antiox2040158</a></li>
-                        <li>Ernst E (2008).  Boswellia serrata extract for treatment of rheumatoid arthritis: a systematic review. <em>Phytomedicine</em>. <a class="citation-doi" href="https://doi.org/10.1016/j.phymed.2007.11.017" target="_blank" rel="noopener">10.1016/j.phymed.2007.11.017</a></li>
-                        <li>Reginster JY et al. (2017).  Pharmaceutical-grade chondroitin sulfate is as effective as celecoxib and superior to placebo (CONCEPT trial). <em></em>. <a class="citation-doi" href="https://doi.org/10.1136/annrheumdis-2016-210860" target="_blank" rel="noopener">10.1136/annrheumdis-2016-210860</a> PMID: 28533290</li>
-                        <li>Clegg DO et al. (2006).  Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis (GAIT trial). <em></em>. <a class="citation-doi" href="https://doi.org/10.1056/NEJMoa052771" target="_blank" rel="noopener">10.1056/NEJMoa052771</a> PMID: 16495392</li>
-                        <li>Gregori G et al. (2018).  Association of pharmacological treatments with long-term pain control in knee osteoarthritis (JAMA NMA, n=22,037). <em></em>. <a class="citation-doi" href="https://doi.org/10.1001/jama.2018.19319" target="_blank" rel="noopener">10.1001/jama.2018.19319</a> PMID: 30535141</li>
-                        <li>Runhaar J et al. (2017).  Subgroup analyses of the effectiveness of oral glucosamine for knee and hip osteoarthritis: a systematic review and IPD meta-analysis from the OA trial bank. <em></em>. <a class="citation-doi" href="https://doi.org/10.1136/annrheumdis-2017-211149" target="_blank" rel="noopener">10.1136/annrheumdis-2017-211149</a> PMID: 28754801</li>
-                        <li>Clegg DO et al. (2006).  Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis (GAIT trial). <em></em>. <a class="citation-doi" href="https://doi.org/10.1056/NEJMoa052771" target="_blank" rel="noopener">10.1056/NEJMoa052771</a> PMID: 16495392</li>
-                        <li>Knapik JJ et al. (2018).  Glucosamine and chondroitin sulfate supplements: examination of efficacy and safety (industry vs independent funding analysis). <em></em>. <a class="citation-doi" href="https://doi.org/10.55460/AUC0-QM7H" target="_blank" rel="noopener">10.55460/AUC0-QM7H</a> PMID: 30566740</li>
-                        <li>Ulven SM, et al. (2011).  Krill oil supplementation increases plasma concentrations of eicosapentaenoic and docosahexaenoic acids. <em>Lipids</em>. <a class="citation-doi" href="https://doi.org/10.1007/s11745-010-3490-4" target="_blank" rel="noopener">10.1007/s11745-010-3490-4</a></li>
-                        <li>Zeng et al. (2024).  Effects of Ginseng on Cognitive Function: A Systematic Review and Meta-Analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1002/ptr.8359" target="_blank" rel="noopener">10.1002/ptr.8359</a> PMID: 39474788</li>
-                        <li>Kim et al. (2025).  Cognitive Benefits of Ginseng: A Systematic Review and Meta-Analysis of Changes in MMSE and ADAS-Cog Scores. <em></em>. <a class="citation-doi" href="https://doi.org/10.1159/000547543" target="_blank" rel="noopener">10.1159/000547543</a> PMID: 40774237</li>
-                        <li>Jafari et al. (2025).  The effect of ginseng supplementation on CVD risk factors: a comprehensive systematic review and dose-response meta-analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1017/S0007114525103607" target="_blank" rel="noopener">10.1017/S0007114525103607</a> PMID: 40923100</li>
-                        <li>Hickson LJ et al. (2019).  Senolytics decrease senescent cells in humans: A pilot clinical trial. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.ebiom.2019.08.069" target="_blank" rel="noopener">10.1016/j.ebiom.2019.08.069</a></li>
-                        <li>Rojano-Ortega D et al. (2023).  Quercetin supplementation in sport and physical activity: a systematic review and meta-analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1007/s00394-023-03197-3" target="_blank" rel="noopener">10.1007/s00394-023-03197-3</a></li>
-                        <li>Tabrizi R et al. (2019).  The Effects of Quercetin Supplementation on Inflammatory Markers Among Patients with Metabolic Syndrome. <em></em>. <a class="citation-doi" href="https://doi.org/10.1093/advances/nmy071" target="_blank" rel="noopener">10.1093/advances/nmy071</a></li>
-                        <li>Serban MC et al. (2016).  Effect of quercetin on blood pressure: A systematic review and meta-analysis of randomized controlled trials. <em></em>. <a class="citation-doi" href="https://doi.org/10.1097/HJH.0000000000001041" target="_blank" rel="noopener">10.1097/HJH.0000000000001041</a></li>
-                        <li>Andres S et al. (2018).  Safety of quercetin: a systematic review and meta-analysis. <em></em>. <a class="citation-doi" href="https://doi.org/10.1002/mnfr.201700447" target="_blank" rel="noopener">10.1002/mnfr.201700447</a></li>
-                        <li>Randall C, et al. (2000).  Stinging nettle (Urtica dioica) in rheumatoid arthritis: a randomized controlled trial. <em>Phytother Res</em>. <a class="citation-doi" href="https://doi.org/10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K" target="_blank" rel="noopener">10.1002/1099-1573(200006)14:4&lt;213::AID-PTR653&gt;3.0.CO;2-K</a></li>
-                        <li>Park JS, Chyun JH, Kim YK, Line LL, Chew BP (2010).  Astaxanthin decreased oxidative stress and inflammation and enhanced immune response in humans. <em>Journal of Clinical Biochemistry and Nutrition</em>. <a class="citation-doi" href="https://doi.org/10.3164/jcbn.09-91" target="_blank" rel="noopener">10.3164/jcbn.09-91</a> PMID: 20553730</li>
-                        <li>Tominaga K, Hongo N, Karato M, Yamashita E (2012).  Cosmetic benefits of astaxanthin on humans subjects. <em>Acta Biochimica Polonica</em>. <a class="citation-doi" href="https://doi.org/10.18388/abp.2012_2088" target="_blank" rel="noopener">10.18388/abp.2012_2088</a> PMID: 22428137</li>
-                        <li>Earnest CP, Lupo M, White KM, Church TS (2011).  Effect of astaxanthin on cycling time trial performance. <em>International Journal of Sports Medicine</em>. <a class="citation-doi" href="https://doi.org/10.1055/s-0030-1264780" target="_blank" rel="noopener">10.1055/s-0030-1264780</a> PMID: 21800280</li>
-                        <li>Pérez-Guisado J, Jakeman PM (2010).  Citrulline malate enhances athletic anaerobic performance and relieves muscle soreness. <em>J Strength Cond Res</em>. <a class="citation-doi" href="https://doi.org/10.1519/JSC.0b013e3181cb28e0" target="_blank" rel="noopener">10.1519/JSC.0b013e3181cb28e0</a></li>
-                        <li>Debbi EM,Agar G,Fichman G,Ziv YB,Kardosh R,Halperin N,Elbaz A,Beer Y,Debi R (2011).  Efficacy of methylsulfonylmethane supplementation on osteoarthritis of the knee: a randomized controlled study. <em></em>. <a class="citation-doi" href="https://doi.org/10.1186/1472-6882-11-50" target="_blank" rel="noopener">10.1186/1472-6882-11-50</a> PMID: 21708034</li>
-                        <li>Butawan M,Benjamin RL,Bloomer RJ (2017).  Methylsulfonylmethane: Applications and Safety of a Novel Dietary Supplement. <em></em>. <a class="citation-doi" href="https://doi.org/10.3390/nu9030290" target="_blank" rel="noopener">10.3390/nu9030290</a> PMID: 28300758</li>
-                        <li>Crawford C,Boyd C,Avula B,Wang YH,Khan IA,Deuster PA (2019).  Evidence for glucosamine and chondroitin-sulfate for musculoskeletal injury: A Systematic Review. <em></em>. <a class="citation-doi" href="https://doi.org/10.1186/s12891-019-2559-4" target="_blank" rel="noopener">10.1186/s12891-019-2559-4</a> PMID: 30986309</li>
-                    </ol>
-                </section>
-
-                <!-- Email Capture -->
-                <section class="newsletter-section" id="subscribe">
-                    <div class="newsletter-inner">
-                        <h3><i class="fas fa-envelope-open-text"></i> Get Evidence-Based Supplements for Joint Health &amp; Mobility Research Updates</h3>
-                        <p>Stay informed when new studies are published or evidence tiers are updated for these supplements.</p>
-                        <div id="guide-newsletter-container">
-                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
-                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                            </form>
-                            <p id="guide-newsletter-success" class="newsletter-success hidden">
-                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
-                            </p>
-                            <p id="guide-newsletter-already" class="newsletter-already hidden">
-                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
-                            </p>
-                        </div>
-                        <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../legal/privacy.html">Privacy Policy</a></p>
-                    </div>
-                </section>
-
-                <!-- Related Content -->
-                <div class="related-content">
-                    <h3>Related Resources</h3>
-                    <div class="related-content-grid">
-                        <a href="../guides/recovery.html"><i class="fas fa-bandage"></i> Recovery &amp; Soreness Guide</a>
-                        <a href="../guides/cardiovascular.html"><i class="fas fa-heartbeat"></i> Cardiovascular Health Guide</a>
-                        <a href="../guides/energy-vitality.html"><i class="fas fa-bolt"></i> Energy &amp; Vitality Guide</a>
-                        <a href="../guides/safety-interactions.html"><i class="fas fa-triangle-exclamation"></i> Safety &amp; Interactions</a>
-                        <a href="../categories/herbal-extracts.html"><i class="fas fa-seedling"></i> Browse Herbal Extracts</a>
-                        <a href="../compare/turmeric-vs-boswellia.html"><i class="fas fa-scale-balanced"></i> Turmeric vs Boswellia</a>
-                        <a href="../index.html"><i class="fas fa-database"></i> Full Supplement Database</a>
-                        <a href="../methodology.html"><i class="fas fa-flask"></i> Research Methodology</a>
-                        <a href="../faq.html"><i class="fas fa-circle-question"></i> FAQ</a>
-                    </div>
-                </div>
-
-            </div><!-- end main column -->
-
-            <!-- Sidebar TOC (desktop only) -->
-            <aside class="content-toc" aria-label="Table of Contents">
-                <h4>Contents</h4>
-                <ul>
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#top-supplements">Top Supplements</a></li>
-                    <li><a href="#evidence-comparison">Evidence Comparison</a></li>
-                    <li><a href="#mechanisms">Mechanisms of Action</a></li>
-                    <li><a href="#dosage-guidelines">Dosage Guidelines</a></li>
-                    <li><a href="#safety">Safety &amp; Interactions</a></li>
-                    <li><a href="#research-gaps">Research Gaps</a></li>
-                    <li><a href="#additional">Additional Supplements</a></li>
-                    <li><a href="#references">References</a></li>
-                </ul>
-            </aside>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
-            <p class="mt-2 text-sm text-gray-400">
-                <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
-                <a href="../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
-            </p>
-            <p class="mt-2 text-sm text-gray-500">
-                <a href="../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
-                <a href="../legal/terms.html" style="color:#9ca3af;">Terms</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Smooth scroll for TOC -->
-    <script>
-        document.querySelectorAll('.content-toc a').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.replaceState(null, '', this.getAttribute('href'));
+    var trackedSections = {};
+    var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !trackedSections[entry.target.id]) {
+                trackedSections[entry.target.id] = true;
+                var meta = sectionsMeta[entry.target.id];
+                if (meta) {
+                    posthog.capture('guide_section_viewed', {
+                        guide_slug: 'joint-health',
+                        section_id: entry.target.id,
+                        section_name: meta.name,
+                        scroll_depth: meta.depth
+                    });
                 }
-            });
+            }
         });
-        // Highlight active TOC item on scroll
-        var tocLinks = document.querySelectorAll('.content-toc a');
-        var sections = Array.from(tocLinks).map(function(a) {
-            return document.querySelector(a.getAttribute('href'));
-        }).filter(Boolean);
-        window.addEventListener('scroll', function() {
-            var scrollY = window.scrollY + 120;
-            var active = sections[0];
-            sections.forEach(function(sec) { if (sec.offsetTop <= scrollY) active = sec; });
-            tocLinks.forEach(function(a) {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + (active ? active.id : ''));
-            });
-        });
+    }, { threshold: 0.2 });
 
-        // Guide newsletter handler
-        window.handleGuideNewsletter = function(e) {
-            e.preventDefault();
-            var email = document.getElementById('guide-newsletter-email').value.trim();
-            if (!email) return false;
-            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-            if (subscribed.indexOf(email) !== -1) {
-                document.getElementById('guide-newsletter-form').classList.add('hidden');
-                document.getElementById('guide-newsletter-already').classList.remove('hidden');
-                return false;
-            }
-            if (typeof posthog !== 'undefined') {
-                posthog.identify(email);
-                posthog.people.set({
-                    email: email,
-                    newsletter_subscribed: true,
-                    subscribed_guide: 'joint-health',
-                    signup_source: 'guide_joint-health',
-                    signup_date: new Date().toISOString()
-                });
-                posthog.capture('guide_email_captured', {
-                    source: 'guide',
-                    guide_slug: 'joint-health',
-                    email: email
-                });
-            }
-            subscribed.push(email);
-            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-            document.getElementById('guide-newsletter-form').classList.add('hidden');
-            document.getElementById('guide-newsletter-success').classList.remove('hidden');
-            return false;
-        };
-    </script>
-    <script src="../js/share-bar.js"></script>
+    Object.keys(sectionsMeta).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+    });
+
+    document.querySelectorAll('.pmid-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var href = this.getAttribute('href') || '';
+            posthog.capture('guide_citation_clicked', {
+                guide_slug: 'joint-health',
+                citation_type: href.includes('pubmed') ? 'pmid' : (href.includes('doi.org') ? 'doi' : 'other'),
+                citation_url: href,
+                citation_text: this.textContent.trim()
+            });
+        });
+    });
+
+    document.querySelectorAll('.guide-nav a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            posthog.capture('guide_nav_clicked', {
+                guide_slug: 'joint-health',
+                nav_target: this.getAttribute('href')
+            });
+        });
+    });
+
+    var elapsed = 0;
+    var timeThresholds = [30, 60, 120, 300];
+    var timeIndex = 0;
+    var timerCheck = setInterval(function() {
+        elapsed++;
+        if (timeIndex < timeThresholds.length && elapsed >= timeThresholds[timeIndex]) {
+            posthog.capture('guide_time_on_page', {
+                guide_slug: 'joint-health',
+                seconds: timeThresholds[timeIndex]
+            });
+            timeIndex++;
+        }
+        if (timeIndex >= timeThresholds.length) clearInterval(timerCheck);
+    }, 1000);
+})();
+
+// Mobile nav toggle
+document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-nav-menu');
+    menu.classList.toggle('hidden');
+    this.querySelector('i').classList.toggle('fa-bars');
+    this.querySelector('i').classList.toggle('fa-times');
+});
+document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-nav-menu').classList.add('hidden');
+        var btn = document.getElementById('mobile-nav-toggle');
+        btn.querySelector('i').classList.add('fa-bars');
+        btn.querySelector('i').classList.remove('fa-times');
+    });
+});
+</script>
+
+<script src="../js/share-bar.js"></script>
+<script src="../js/newsletter.js"></script>
+<script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-joint-health");</script>
+
+<!-- Auth & Content Gate -->
+<script src="../js/auth.js"></script>
+<script src="../js/convex-client.js"></script>
+<script src="../js/rbac.js"></script>
+<script src="../js/auth-ui.js"></script>
+<script src="../js/content-gate.js"></script>
 </body>
 </html>
