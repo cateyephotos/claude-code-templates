@@ -4,7 +4,7 @@
 
 **Mission**: Build the most comprehensive, evidence-based supplement database for cognitive and mental health optimization — delivered as a MicroSaaS with subscription revenue.
 
-**Current Status**: Phase 7 COMPLETE — 127+ static pages, Clerk auth, Convex backend, Stripe payments, Resend email, 135 Playwright tests passing.
+**Current Status**: Phase 8 COMPLETE — 139+ static pages (20 evidence guides), Clerk auth, Convex backend, Stripe payments, Resend email, 277 Playwright tests passing.
 
 **Branch**: `feat/clinical-journal-design-migration`
 
@@ -20,9 +20,9 @@
 | P4 | Supplement Monograph Pages | ✅ Complete | `b7c2761` | — |
 | P5 | Auth + Backend + Admin Dashboard | ✅ Complete | `600c016` | 72 |
 | P6 | Stripe Checkout Integration | ✅ Complete | `251e0a5` | 113 |
-| P7 | Email Service + Newsletter Backend | ✅ Complete | (pending) | 135 |
-| P8 | Guide Library Expansion (8→20) | 🔄 Next | — | — |
-| P9 | Problem × Supplement Evidence Pages | Planned | — | — |
+| P7 | Email Service + Newsletter Backend | ✅ Complete | `9918766` | 135 |
+| P8 | Guide Library Expansion (8→20) | ✅ Complete | (pending) | 277 |
+| P9 | Problem × Supplement Evidence Pages | 🔄 Next | — | — |
 | P10 | Comparison Page Expansion | Planned | — | — |
 | P11 | Stack Analyzer Tool | Planned | — | — |
 | P12 | Bundle Pricing Optimization | Planned | — | — |
@@ -139,41 +139,53 @@ Double opt-in newsletter system with Resend email delivery, replacing localStora
 
 ---
 
-## 🔄 Phase 8: Guide Library Expansion — 8 → 20 (NEXT)
+## ✅ Phase 8: Guide Library Expansion — 8 → 20 (COMPLETE)
 
-**Estimated Duration**: 3-4 days
+**Tests**: 277 passing (+142 new)
 
-Expand the evidence guide library from 8 to 20 guides, tripling the content-gated conversion surface.
+Expanded the evidence guide library from 8 to 20 guides, tripling the content-gated conversion surface.
 
-### New Guides Planned (12)
+### New Guides Added (12)
 
-| Guide | Category | Data Readiness |
-|-------|----------|---------------|
-| Mood Support | Mental Health | Ready — ashwagandha, omega-3, magnesium, B vitamins |
-| Memory & Cognitive Aging | Cognitive | Ready — bacopa, citicoline, phosphatidylserine, omega-3, lion's mane |
-| Longevity & Healthy Aging | Aging | Partial — CoQ10, NAC, resveratrol, quercetin |
-| Brain Fog & Mental Clarity | Cognitive | Ready — citicoline, alpha-GPC, creatine, lion's mane, bacopa |
-| Stress Resilience & Cortisol | Stress | Ready — ashwagandha, rhodiola, phosphatidylserine, magnesium |
-| Supplement Safety & Interactions | Trust | Needs new template (non-problem-centered) |
-| Muscle Strength & Lean Mass | Fitness | Ready — creatine, beta-alanine, HMB, carnitine |
-| Recovery & Soreness | Fitness | Ready — creatine, omega-3, curcumin, taurine |
-| Healthy Aging (Women) | Aging | Partial — omega-3, magnesium, vitamin D, CoQ10, iron |
-| Healthy Aging (Men) | Aging | Partial — creatine, omega-3, CoQ10, magnesium, zinc, vitamin D |
-| Gut-Brain Axis Deep Dive | Digestive | Partial — probiotics, glutamine, fiber |
-| Nootropic Stacks | Cognitive | Ready — racetam stacks, caffeine+theanine, choline combos |
+| Guide | Slug | Supplements | File Size |
+|-------|------|-------------|-----------|
+| Mood Support & Depression | `mood-support` | 17 | 81.2KB |
+| Memory & Cognitive Aging | `memory-aging` | 21 | 87KB |
+| Longevity & Healthy Aging | `longevity` | 19 | 78.8KB |
+| Brain Fog & Mental Clarity | `brain-fog` | 18 | 74.8KB |
+| Stress Resilience & Cortisol | `stress-resilience` | 20 | 86.2KB |
+| Supplement Safety & Interactions | `safety-interactions` | 93 | 201.2KB |
+| Muscle Strength & Lean Mass | `muscle-strength` | 11 | 63KB |
+| Recovery & Soreness | `recovery` | 26 | 87.8KB |
+| Healthy Aging (Women) | `womens-health` | 14 | 73.2KB |
+| Healthy Aging (Men) | `mens-health` | 12 | 60.4KB |
+| Gut-Brain Axis Deep Dive | `gut-brain` | 16 | 68.7KB |
+| Nootropic Stacks | `nootropic-stacks` | 32 | 103.8KB |
 
 ### Deliverables
-- [ ] Expand `data/problems.js` from 7 → 13 health domains
-- [ ] Add 12 guide definitions to `scripts/generate-guide-pages.js` config
-- [ ] Generate all 20 guides with content gates
-- [ ] Newsletter forms on all new guides (using `js/newsletter.js`)
-- [ ] Internal linking updated across all page types
-- [ ] Sitemap regenerated
-- [ ] 20+ smoke tests for new guide pages
+- [x] Refactored `domainKeywords` to shared `DOMAIN_KEYWORDS` constant in generator
+- [x] Added 12 new domain keyword entries for supplement matching
+- [x] Added 12 new GUIDES array definitions with full content (intros, mechanisms, safety notes, research gaps, related links)
+- [x] Expanded `data/problems.js` from 7 → 13 health domains (6 new entries)
+- [x] Generated all 19 guide HTML files (+ 1 manual sleep.html = 20 total)
+- [x] Newsletter forms on all 20 guides (using shared `js/newsletter.js`)
+- [x] Homepage updated with 20 guide cards (unique gradient colors per guide)
+- [x] Internal cross-linking updated across all guide relatedLinks arrays
+- [x] Sitemap regenerated with 12 new guide URLs at priority 0.9
+- [x] `tests/guides-expansion.spec.js` created — 142 new tests
+- [x] `tests/content-gate.spec.js` expanded from 8 → 20 guide pages
+- [x] Safety guide special template includes all 93 supplements with 121+ internal links
+
+### Key Implementation Details
+- **Generator**: `scripts/generate-guide-pages.js` creates 19 HTML files from GUIDES config array
+- **Safety Guide**: Special `filterFn: (s) => true` includes all supplements — unique among guides
+- **Domain Keywords**: Shared `DOMAIN_KEYWORDS` constant eliminates duplication across `getDomainBenefit()` and `getDomainSortedBenefits()`
+- **Cross-Linking Clusters**: Mental health, performance, aging, demographics, and gut-brain guide groups cross-reference each other
+- **Test Suite**: 142 new tests covering page loads, h1 titles, JSON-LD, section structure, homepage cards, newsletter forms, JS errors, generator execution, and related resources
 
 ---
 
-## 📋 Phase 9: Problem × Supplement Evidence Pages (PLANNED)
+## 🔄 Phase 9: Problem × Supplement Evidence Pages (NEXT)
 
 **Estimated Duration**: 4-5 days
 
@@ -237,7 +249,7 @@ Guide bundles and pricing page optimization.
 | Email | Resend (transactional email delivery) |
 | Analytics | PostHog (client + server-side events) |
 | Hosting | Docker (nginx:alpine) — DigitalOcean/AWS ready |
-| Testing | Playwright (135 tests across 5 suites) |
+| Testing | Playwright (277 tests across 7 suites) |
 
 ### Database Tables (Convex)
 
@@ -255,15 +267,15 @@ Guide bundles and pricing page optimization.
 
 ## Page Count Projection
 
-| Page Family | Current | After P8 | After P9 | After P10 | Target |
-|-------------|---------|----------|----------|-----------|--------|
-| Supplement monographs | 93 | 93 | 93 | 93 | 93 |
-| Evidence guides | 8 | 20 | 20 | 20 | 20 |
-| Problem × Supplement | 0 | 0 | 25 | 25 | 200 |
-| Comparison pages | 10 | 10 | 10 | 50 | 175 |
-| Category pages | 6 | 6 | 6 | 6 | 6 |
-| Trust/legal/tools | 6 | 6 | 6 | 6 | 10+ |
-| **Total** | **127** | **139** | **164** | **204** | **~500** |
+| Page Family | Current | After P9 | After P10 | Target |
+|-------------|---------|----------|-----------|--------|
+| Supplement monographs | 93 | 93 | 93 | 93 |
+| Evidence guides | 20 | 20 | 20 | 20 |
+| Problem × Supplement | 0 | 25 | 25 | 200 |
+| Comparison pages | 10 | 10 | 50 | 175 |
+| Category pages | 6 | 6 | 6 | 6 |
+| Trust/legal/tools | 10 | 10 | 10 | 10+ |
+| **Total** | **139** | **164** | **204** | **~500** |
 
 ---
 
@@ -276,7 +288,7 @@ Guide bundles and pricing page optimization.
 - **Tier 4**: Preclinical studies, case reports, traditional use
 
 ### Testing Strategy
-- **Playwright E2E Tests**: 135 tests across 5 suites (auth, RBAC, gating, dashboard, newsletter)
+- **Playwright E2E Tests**: 277 tests across 7 suites (auth, RBAC, gating, dashboard, newsletter, guides-expansion, stripe-checkout)
 - **Mock Guard Pattern**: `window.__CLERK_MOCK__` prevents CDN script conflicts
 - **Convex Mutation Mocks**: `addInitScript` pattern for serverless function mocking
 - **Error Filtering**: PostHog/CORS/CDN noise excluded from test assertions

@@ -21,6 +21,18 @@ const GUIDE_PAGES = [
   "/guides/joint-health.html",
   "/guides/metabolic-health.html",
   "/guides/energy-vitality.html",
+  "/guides/mood-support.html",
+  "/guides/memory-aging.html",
+  "/guides/longevity.html",
+  "/guides/brain-fog.html",
+  "/guides/stress-resilience.html",
+  "/guides/safety-interactions.html",
+  "/guides/muscle-strength.html",
+  "/guides/recovery.html",
+  "/guides/womens-health.html",
+  "/guides/mens-health.html",
+  "/guides/gut-brain.html",
+  "/guides/nootropic-stacks.html",
 ];
 
 // ── Free User Gate ────────────────────────────────────────────────

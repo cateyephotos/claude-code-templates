@@ -93,9 +93,10 @@ This guide systematically reviews the supplements with the strongest clinical ev
         relatedLinks: [
             { href: '../guides/sleep.html', icon: 'fa-moon', text: 'Sleep Quality Guide' },
             { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/mood-support.html', icon: 'fa-face-smile', text: 'Mood Support Guide' },
+            { href: '../guides/stress-resilience.html', icon: 'fa-shield-heart', text: 'Stress Resilience Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/adaptogens.html', icon: 'fa-leaf', text: 'Browse Adaptogens' },
-            { href: '../categories/amino-acids.html', icon: 'fa-atom', text: 'Browse Amino Acids' },
-            { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
             { href: '../compare/ashwagandha-vs-rhodiola.html', icon: 'fa-scale-balanced', text: 'Ashwagandha vs Rhodiola' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
             { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
@@ -187,9 +188,11 @@ This guide systematically reviews the supplements with the strongest clinical ev
         ],
         relatedLinks: [
             { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
-            { href: '../guides/sleep.html', icon: 'fa-moon', text: 'Sleep Quality Guide' },
+            { href: '../guides/memory-aging.html', icon: 'fa-brain', text: 'Memory & Cognitive Aging Guide' },
+            { href: '../guides/brain-fog.html', icon: 'fa-cloud-sun', text: 'Brain Fog & Mental Clarity Guide' },
+            { href: '../guides/nootropic-stacks.html', icon: 'fa-layer-group', text: 'Nootropic Stacks Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/nootropics.html', icon: 'fa-brain', text: 'Browse Nootropics' },
-            { href: '../categories/amino-acids.html', icon: 'fa-atom', text: 'Browse Amino Acids' },
             { href: '../compare/bacopa-vs-ginkgo.html', icon: 'fa-scale-balanced', text: 'Bacopa vs Ginkgo' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
             { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
@@ -268,8 +271,9 @@ This guide systematically reviews the supplements with the strongest clinical ev
             'Quality and standardization issues in supplement manufacturing remain a significant concern for cardiovascular applications'
         ],
         relatedLinks: [
+            { href: '../guides/longevity.html', icon: 'fa-hourglass-half', text: 'Longevity & Healthy Aging Guide' },
             { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
-            { href: '../guides/sleep.html', icon: 'fa-moon', text: 'Sleep Quality Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
             { href: '../categories/antioxidants.html', icon: 'fa-shield-halved', text: 'Browse Antioxidants' },
             { href: '../compare/omega-3-vs-coq10.html', icon: 'fa-scale-balanced', text: 'Omega-3 vs CoQ10' },
@@ -351,11 +355,12 @@ This guide systematically reviews the supplements with the strongest clinical ev
             'Vaccine response modulation by immune supplements is an emerging but underdeveloped research area'
         ],
         relatedLinks: [
+            { href: '../guides/gut-brain.html', icon: 'fa-bacteria', text: 'Gut-Brain Axis Guide' },
             { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
             { href: '../guides/cardiovascular.html', icon: 'fa-heartbeat', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
             { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
-            { href: '../categories/antioxidants.html', icon: 'fa-shield-halved', text: 'Browse Antioxidants' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
             { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
             { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
@@ -433,10 +438,11 @@ This guide systematically reviews the supplements with the strongest clinical ev
             'Exercise synergy — whether supplements enhance the benefits of physical therapy and exercise programs — needs more study'
         ],
         relatedLinks: [
+            { href: '../guides/recovery.html', icon: 'fa-bandage', text: 'Recovery & Soreness Guide' },
             { href: '../guides/cardiovascular.html', icon: 'fa-heartbeat', text: 'Cardiovascular Health Guide' },
             { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
-            { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
             { href: '../compare/turmeric-vs-boswellia.html', icon: 'fa-scale-balanced', text: 'Turmeric vs Boswellia' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
             { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
@@ -518,6 +524,8 @@ While lifestyle modifications (diet, exercise, weight management) and pharmaceut
         relatedLinks: [
             { href: '../guides/cardiovascular.html', icon: 'fa-heartbeat', text: 'Cardiovascular Health Guide' },
             { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/longevity.html', icon: 'fa-hourglass-half', text: 'Longevity & Healthy Aging Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/herbal-extracts.html', icon: 'fa-seedling', text: 'Browse Herbal Extracts' },
             { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
@@ -600,13 +608,1008 @@ This guide systematically reviews the supplements with the strongest clinical ev
             'Female-specific responses to energy supplements are underrepresented in the literature, with most trials conducted predominantly in male participants'
         ],
         relatedLinks: [
+            { href: '../guides/muscle-strength.html', icon: 'fa-dumbbell', text: 'Muscle Strength Guide' },
+            { href: '../guides/recovery.html', icon: 'fa-bandage', text: 'Recovery & Soreness Guide' },
+            { href: '../guides/nootropic-stacks.html', icon: 'fa-layer-group', text: 'Nootropic Stacks Guide' },
             { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
-            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions' },
             { href: '../categories/performance-enhancers.html', icon: 'fa-dumbbell', text: 'Browse Performance Enhancers' },
-            { href: '../categories/essential-nutrients.html', icon: 'fa-capsules', text: 'Browse Essential Nutrients' },
-            { href: '../categories/antioxidants.html', icon: 'fa-shield-halved', text: 'Browse Antioxidants' },
             { href: '../compare/creatine-vs-beta-alanine.html', icon: 'fa-scale-balanced', text: 'Creatine vs Beta-Alanine' },
             { href: '../compare/coq10-vs-pqq.html', icon: 'fa-scale-balanced', text: 'CoQ10 vs PQQ' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    // ─── Phase 8 Guides (12 new) ────────────────────────────────────────────
+    {
+        slug: 'mood-support',
+        title: 'Evidence-Based Supplements for Mood Support & Depression',
+        shortTitle: 'Mood Support & Depression',
+        metaTitle: 'Best Supplements for Mood & Depression (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to supplements for mood support and depression. Ranked by clinical evidence from peer-reviewed studies. Includes dosages, mechanisms, and safety profiles.',
+        breadcrumb: 'Mood Support & Depression',
+        heroSubtitle: 'A systematic review of supplements studied for mood enhancement, depressive symptom reduction, and emotional well-being — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const moodKeys = ['depression','depressiveSymptoms','depressive_symptoms','mood','moodEnhancement',
+                'mood_enhancement','mood_improvement','serotonin','emotionalWellbeing',
+                'anxiety','anxietyReduction','cortisol','cortisolReduction',
+                'motivation','pms_total','pms_mood','wellbeing','well_being',
+                'happiness','sadness','hopelessness','bdnf','neurotransmitters'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => moodKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Ashwagandha', 'Omega-3 Fatty Acids', 'Magnesium', '5-HTP', 'SAMe',
+            'Rhodiola rosea', 'Inositol', 'Vitamin B6', 'Vitamin B12', 'Vitamin D3'
+        ],
+        snippetDefinition: 'Mood-support supplements are dietary compounds studied in peer-reviewed clinical trials for their effects on depressive symptoms, emotional regulation, and overall psychological well-being. The strongest evidence exists for omega-3 fatty acids (EPA-dominant formulations), SAMe, and ashwagandha, with multiple RCTs demonstrating significant mood improvements.',
+        snippetListTitle: 'Top 10 Evidence-Based Supplements for Mood Support',
+        introduction: `Depression and mood disorders affect over 280 million people worldwide, making them a leading cause of disability (WHO, 2023). While pharmacological treatments and psychotherapy remain first-line interventions, a growing body of clinical evidence supports specific nutritional and herbal supplements as adjunctive therapies for mood support.
+
+This guide systematically reviews supplements with the strongest clinical evidence for mood enhancement and depressive symptom reduction. Each recommendation is grounded in published randomized controlled trials (RCTs), systematic reviews, and meta-analyses — prioritizing large-scale studies and gold-standard methodologies.
+
+<strong>Important:</strong> This guide is for informational purposes only. Depression is a serious medical condition requiring professional care. Supplements discussed here are studied as adjuncts to — not replacements for — evidence-based psychiatric treatment. If you are experiencing persistent depressive symptoms, please consult a qualified healthcare provider.`,
+        mechanismsIntro: `Mood-support supplements work through several interconnected neurobiological pathways to influence serotonergic, dopaminergic, and neuroendocrine systems. Understanding these mechanisms helps identify targeted supplementation strategies.`,
+        mechanisms: [
+            {
+                name: 'Serotonergic Pathway Modulation',
+                description: 'Serotonin (5-HT) is a key neurotransmitter regulating mood, appetite, and sleep. Several supplements serve as serotonin precursors or enhance serotonergic signaling. 5-HTP crosses the blood-brain barrier and is directly converted to serotonin, while omega-3 fatty acids modulate serotonin receptor density and signal transduction.',
+                supplements: ['5-HTP', 'Omega-3 Fatty Acids', 'Vitamin B6', 'Inositol']
+            },
+            {
+                name: 'Methyl Donor & One-Carbon Metabolism',
+                description: 'The methylation cycle is critical for neurotransmitter synthesis and DNA regulation. SAMe is the principal methyl donor in the brain, participating in over 100 methylation reactions including the synthesis of dopamine, serotonin, and norepinephrine. B vitamins (B6, B12, folate) serve as essential cofactors in this cycle.',
+                supplements: ['SAMe', 'Vitamin B12', 'Vitamin B6', 'Magnesium']
+            },
+            {
+                name: 'HPA Axis & Stress Response Regulation',
+                description: 'Chronic stress dysregulates the hypothalamic-pituitary-adrenal (HPA) axis, leading to elevated cortisol and depressive symptoms. Adaptogens normalize HPA axis function, reducing cortisol output and improving stress resilience — a critical pathway linking chronic stress to depression.',
+                supplements: ['Ashwagandha', 'Rhodiola rosea', 'Magnesium']
+            },
+            {
+                name: 'Neuroinflammation & BDNF Support',
+                description: 'Neuroinflammation is increasingly recognized as a contributor to depression. Pro-inflammatory cytokines reduce brain-derived neurotrophic factor (BDNF), impairing neuroplasticity. Anti-inflammatory supplements may restore BDNF levels and support neuronal health.',
+                supplements: ['Omega-3 Fatty Acids', 'Vitamin D3', 'Ashwagandha']
+            }
+        ],
+        safetyIntro: `Mood-support supplements have important safety considerations, particularly regarding interactions with psychiatric medications and serotonergic compounds.`,
+        safetyNotes: [
+            '<strong>Serotonin syndrome risk:</strong> 5-HTP and SAMe must NOT be combined with SSRIs, SNRIs, MAOIs, or other serotonergic drugs without medical supervision. Serotonin syndrome is a potentially life-threatening condition requiring emergency care.',
+            '<strong>Bipolar disorder caution:</strong> SAMe, 5-HTP, and omega-3s may trigger mania or hypomania in individuals with bipolar disorder. Psychiatric supervision is essential before use.',
+            '<strong>Medication interactions:</strong> Ashwagandha may potentiate sedatives and thyroid medications. Rhodiola may interact with antidepressants and blood pressure medications. Always disclose supplement use to your prescriber.',
+            '<strong>Vitamin D toxicity:</strong> Vitamin D supplementation above 4,000 IU/day should be guided by blood testing (25-OH vitamin D levels) to avoid hypercalcemia.',
+            '<strong>Magnesium forms matter:</strong> Not all magnesium forms cross the blood-brain barrier effectively. Magnesium glycinate and threonate show the best evidence for mood and neurological effects. Magnesium oxide has poor bioavailability.',
+            '<strong>Pregnancy and lactation:</strong> Many mood supplements lack adequate pregnancy safety data. 5-HTP and SAMe should be avoided during pregnancy. Omega-3s and magnesium may be used with medical guidance.'
+        ],
+        researchGaps: [
+            'Head-to-head comparisons between mood supplements and standard antidepressants remain limited',
+            'Optimal duration of supplementation for sustained mood benefits is poorly characterized',
+            'Individual genetic variations in serotonin transporter polymorphisms (5-HTTLPR) may affect supplement response but are rarely studied',
+            'Combination protocols (e.g., omega-3 + vitamin D + B vitamins) need controlled trials to establish synergistic effects',
+            'Gender-specific responses to mood supplements are underrepresented, with most trials showing mixed-gender results without subgroup analysis',
+            'The gut-brain axis role in supplement-mediated mood improvement deserves more mechanistic investigation'
+        ],
+        relatedLinks: [
+            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../guides/stress-resilience.html', icon: 'fa-shield-heart', text: 'Stress Resilience Guide' },
+            { href: '../guides/brain-fog.html', icon: 'fa-cloud-sun', text: 'Brain Fog Guide' },
+            { href: '../guides/sleep.html', icon: 'fa-moon', text: 'Sleep Quality Guide' },
+            { href: '../guides/gut-brain.html', icon: 'fa-bacteria', text: 'Gut-Brain Axis Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/ashwagandha-vs-rhodiola.html', icon: 'fa-scale-balanced', text: 'Ashwagandha vs Rhodiola' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'memory-aging',
+        title: 'Evidence-Based Supplements for Memory & Cognitive Aging',
+        shortTitle: 'Memory & Cognitive Aging',
+        metaTitle: 'Best Supplements for Memory & Brain Aging (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to supplements for memory support and healthy cognitive aging. Ranked by clinical evidence from peer-reviewed studies. Dosages, mechanisms, and safety data.',
+        breadcrumb: 'Memory & Cognitive Aging',
+        heroSubtitle: 'A systematic review of supplements studied for memory preservation, neuroprotection, and age-related cognitive decline — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const memKeys = ['memory','memoryEnhancement','memoryImprovement','memoryHighDose','memoryOverall',
+                'memory_elderly','memory_enhancement','memory_mci','composite_memory',
+                'cognitive_aging','cognitive_decline','cognitive_protection',
+                'dementiaCognition','mciCognition','vciCognition',
+                'adas_cog_mci','adasCog','mmse','alzheimersFunctional',
+                'nerve_regeneration','neuroprotection','neurotransmitters',
+                'cerebral_blood_flow','cerebral_circulation','bdnf'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => memKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Bacopa monnieri', 'Citicoline', 'Phosphatidylserine', "Lion's Mane Mushroom",
+            'Ginkgo Biloba', 'Alpha-GPC', 'PQQ', 'Huperzine A'
+        ],
+        snippetDefinition: 'Memory and cognitive aging supplements are compounds studied in clinical trials for their effects on memory preservation, neuroprotection, and age-related cognitive decline. The strongest evidence exists for bacopa monnieri (consistent memory improvements across 12+ RCTs), citicoline (FDA-approved for cognitive decline in some countries), and phosphatidylserine.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Memory & Cognitive Aging',
+        introduction: `Age-related cognitive decline affects the majority of adults over 60, with memory being one of the earliest and most noticeably affected domains. While some cognitive decline is a normal part of aging, the trajectory from healthy aging to mild cognitive impairment (MCI) and potentially dementia is not inevitable.
+
+A growing body of clinical evidence has investigated whether targeted nutritional interventions can slow cognitive aging, preserve memory function, and support brain health across the lifespan. This guide reviews the supplements with the most robust evidence for memory enhancement and neuroprotection.
+
+<strong>Important:</strong> This guide is for informational purposes only. Significant memory problems or rapid cognitive changes require medical evaluation. Supplements are not proven treatments for Alzheimer's disease, dementia, or other neurodegenerative conditions. Always consult a healthcare professional before beginning any supplement regimen.`,
+        mechanismsIntro: `Memory-supporting supplements work through several complementary neurobiological mechanisms that target different aspects of memory formation, consolidation, and retrieval.`,
+        mechanisms: [
+            {
+                name: 'Cholinergic System Support',
+                description: 'Acetylcholine is essential for memory encoding and retrieval. Cholinergic decline is a hallmark of Alzheimer\'s disease. Supplements that provide choline precursors or inhibit acetylcholinesterase can maintain cholinergic signaling, supporting memory function in aging populations.',
+                supplements: ['Alpha-GPC', 'Citicoline', 'Huperzine A']
+            },
+            {
+                name: 'Nerve Growth Factor (NGF) Stimulation',
+                description: 'NGF supports the survival, development, and function of neurons in the hippocampus and cortex — regions critical for memory. Lion\'s mane mushroom contains hericenones and erinacines that cross the blood-brain barrier and stimulate NGF synthesis.',
+                supplements: ["Lion's Mane Mushroom", 'Bacopa monnieri', 'PQQ']
+            },
+            {
+                name: 'Phospholipid Membrane Integrity',
+                description: 'Neuronal membranes rich in phosphatidylserine (PS) are essential for signal transduction, neurotransmitter release, and synaptic plasticity. PS levels decline with age, and supplementation helps maintain membrane fluidity and receptor function critical for memory processes.',
+                supplements: ['Phosphatidylserine', 'Citicoline', 'Omega-3 Fatty Acids']
+            },
+            {
+                name: 'Cerebrovascular Blood Flow',
+                description: 'Adequate blood flow delivers oxygen and glucose to neurons and removes metabolic waste. Age-related vascular changes reduce cerebral perfusion. Ginkgo biloba improves microcirculation through vasodilation and platelet inhibition, supporting oxygen delivery to memory-critical brain regions.',
+                supplements: ['Ginkgo Biloba', 'Bacopa monnieri', 'Citicoline']
+            }
+        ],
+        safetyIntro: `Memory supplements are generally well-tolerated, but important safety considerations exist — particularly for older adults who may take multiple medications.`,
+        safetyNotes: [
+            '<strong>Blood-thinning interactions:</strong> Ginkgo biloba has significant antiplatelet properties and must not be combined with warfarin, aspirin, or other anticoagulants without medical supervision. Discontinue at least 2 weeks before surgery.',
+            '<strong>Cholinergic excess:</strong> Combining multiple cholinergic supplements (Alpha-GPC + Huperzine A + Citicoline) may cause headaches, nausea, diarrhea, or excessive sweating. Start with one agent and titrate.',
+            '<strong>Huperzine A interactions:</strong> Huperzine A is a potent acetylcholinesterase inhibitor and must not be combined with prescription cholinesterase inhibitors (donepezil, rivastigmine, galantamine) due to additive effects.',
+            '<strong>Phosphatidylserine source matters:</strong> Modern PS supplements are derived from soy or sunflower lecithin (not bovine cortex). Soy-derived PS may contain allergens. The FDA GRAS determination applies to soy-derived PS at up to 200mg/day.',
+            '<strong>PQQ dosing:</strong> PQQ is effective at low doses (10-20mg/day). High doses have not been studied for long-term safety. PQQ may interact with medications affecting mitochondrial function.',
+            '<strong>Dementia medication caution:</strong> If taking prescription medications for Alzheimer\'s or dementia, all supplements must be reviewed with a prescribing physician to avoid dangerous interactions.'
+        ],
+        researchGaps: [
+            'Prevention trials (starting supplements before cognitive decline) are rare — most studies recruit already-impaired participants',
+            'Optimal treatment duration for neuroprotective effects likely exceeds typical 12-week study periods',
+            'Genetic risk factors (APOE4 carriers) may differentially respond to memory supplements but are rarely stratified in analyses',
+            'Combination protocols targeting multiple mechanisms simultaneously need controlled evaluation',
+            'Biomarker-driven supplementation (choosing supplements based on individual deficiencies) represents an unexplored paradigm',
+            'The interaction between lifestyle factors (exercise, sleep, diet) and supplement efficacy for memory is poorly characterized'
+        ],
+        relatedLinks: [
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/longevity.html', icon: 'fa-hourglass-half', text: 'Longevity & Healthy Aging Guide' },
+            { href: '../guides/brain-fog.html', icon: 'fa-cloud-sun', text: 'Brain Fog Guide' },
+            { href: '../guides/cardiovascular.html', icon: 'fa-heart', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/nootropic-stacks.html', icon: 'fa-layer-group', text: 'Nootropic Stacks Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/bacopa-vs-ginkgo.html', icon: 'fa-scale-balanced', text: 'Bacopa vs Ginkgo Biloba' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'longevity',
+        title: 'Evidence-Based Supplements for Longevity & Healthy Aging',
+        shortTitle: 'Longevity & Healthy Aging',
+        metaTitle: 'Best Anti-Aging Supplements (2026) | Evidence-Based Longevity Guide',
+        metaDescription: 'Science-backed guide to supplements for longevity, healthy aging, and cellular rejuvenation. Ranked by clinical evidence. Dosages, mechanisms, and safety profiles.',
+        breadcrumb: 'Longevity & Healthy Aging',
+        heroSubtitle: 'A systematic review of supplements studied for lifespan extension, cellular repair, and age-related disease prevention — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const longevityKeys = ['nad_blood_levels','senescent_cells','antioxidant_status','antioxidantCapacity',
+                'antiInflammatory_CRP','FMD_endothelial','insulin_sensitivity',
+                'heart_function','cardiovascularHealth','mitochondrial_function',
+                'longevity','cellular_health','dna_repair','telomere',
+                'oxidative_stress','oxidative_stress_reduction','lipidPeroxidation',
+                'inflammation','inflammatory_markers','antiInflammatory','CRP_reduction',
+                'blood_pressure','cholesterol','LDL_cholesterol','HDL_cholesterol',
+                'endothelial_function','vascular_health'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => longevityKeys.includes(k));
+        },
+        coreSuppNames: [
+            'CoQ10', 'NAD+ Precursors', 'Quercetin', 'Resveratrol',
+            'PQQ', 'Astaxanthin', 'Alpha-Lipoic Acid', 'Omega-3 Fatty Acids'
+        ],
+        snippetDefinition: 'Longevity supplements are compounds studied for their effects on cellular aging, mitochondrial function, and age-related disease prevention. The strongest clinical evidence supports CoQ10 (mitochondrial electron transport), NAD+ precursors (cellular energy restoration), and omega-3 fatty acids (systemic inflammation reduction) for healthy aging outcomes.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Longevity & Healthy Aging',
+        introduction: `The biology of aging is increasingly understood as a modifiable process driven by cellular damage accumulation, mitochondrial dysfunction, chronic inflammation, and epigenetic changes. While no supplement has been proven to extend human lifespan, several compounds show compelling evidence for slowing specific hallmarks of aging and reducing age-related disease risk.
+
+This guide reviews supplements targeting the key biological mechanisms of aging: mitochondrial function, NAD+ metabolism, senescence, oxidative damage, and chronic inflammation. Evidence is drawn from randomized controlled trials, systematic reviews, and translational research.
+
+<strong>Important:</strong> This guide is for informational purposes only. Anti-aging supplement claims often exceed the evidence. No supplement has been proven to extend human lifespan. Focus on evidence-based interventions and consult a healthcare professional before starting any longevity protocol.`,
+        mechanismsIntro: `Longevity-oriented supplements target distinct hallmarks of aging. The biology of aging involves interconnected pathways, and multi-target approaches may offer synergistic benefits.`,
+        mechanisms: [
+            {
+                name: 'NAD+ Restoration & Sirtuin Activation',
+                description: 'NAD+ levels decline 50% between ages 40 and 60, impairing sirtuin activity — key regulators of DNA repair, mitochondrial biogenesis, and cellular stress responses. NAD+ precursors (NMN, NR) restore cellular NAD+ pools, reactivating sirtuins and supporting genomic stability.',
+                supplements: ['NAD+ Precursors', 'Resveratrol', 'PQQ']
+            },
+            {
+                name: 'Mitochondrial Biogenesis & Function',
+                description: 'Mitochondrial dysfunction is a hallmark of aging, contributing to reduced ATP production, increased reactive oxygen species (ROS), and cellular senescence. CoQ10 is essential for electron transport chain function, while PQQ stimulates mitochondrial biogenesis through PGC-1α activation.',
+                supplements: ['CoQ10', 'PQQ', 'Alpha-Lipoic Acid', 'Astaxanthin']
+            },
+            {
+                name: 'Senolytic & Anti-Senescence Activity',
+                description: 'Senescent cells accumulate with age and secrete pro-inflammatory factors (SASP) that damage surrounding tissue. Senolytic compounds selectively clear these cells. Quercetin, especially combined with dasatinib in preclinical models, has shown senolytic properties, though human evidence is still emerging.',
+                supplements: ['Quercetin', 'Resveratrol']
+            },
+            {
+                name: 'Systemic Inflammation (Inflammaging) Control',
+                description: 'Chronic low-grade inflammation ("inflammaging") drives most age-related diseases including cardiovascular disease, neurodegeneration, and cancer. Omega-3 fatty acids reduce CRP, IL-6, and TNF-α levels through specialized pro-resolving mediator (SPM) pathways.',
+                supplements: ['Omega-3 Fatty Acids', 'Astaxanthin', 'Alpha-Lipoic Acid', 'Quercetin']
+            }
+        ],
+        safetyIntro: `Longevity supplements have variable safety profiles, and long-term high-dose use requires careful monitoring. The anti-aging supplement market includes many unproven claims — evidence quality varies significantly.`,
+        safetyNotes: [
+            '<strong>Resveratrol bioavailability:</strong> Resveratrol has extremely poor oral bioavailability (<1%). High doses (>1g/day) may cause GI side effects without proportionally increasing efficacy. Trans-resveratrol formulations with enhanced absorption are preferred.',
+            '<strong>CoQ10 drug interactions:</strong> CoQ10 may reduce the effectiveness of warfarin (vitamin K-like effect on coagulation). Statin users often benefit from CoQ10 supplementation, but should coordinate with their prescriber.',
+            '<strong>NAD+ precursor safety:</strong> NMN and NR have favorable short-term safety profiles at 250-1000mg/day. Long-term (>1 year) human safety data is limited. Concerns about promoting growth in pre-existing cancers remain theoretical but unresolved.',
+            '<strong>Quercetin absorption:</strong> Quercetin has poor bioavailability. Co-administration with vitamin C or bromelain enhances absorption. Quercetin may inhibit CYP3A4 enzymes, potentially increasing blood levels of many medications.',
+            '<strong>Astaxanthin dosing:</strong> Astaxanthin at 4-12mg/day is well-tolerated. Higher doses have not been adequately studied. Astaxanthin may lower blood pressure — monitor if taking antihypertensives.',
+            '<strong>Alpha-Lipoic Acid caution:</strong> ALA may lower blood glucose levels and should be used cautiously in diabetics taking insulin or oral hypoglycemics. Start with lower doses and monitor blood sugar.'
+        ],
+        researchGaps: [
+            'Human longevity outcomes (actual lifespan extension) have not been demonstrated for any supplement in controlled trials',
+            'Optimal combinations and dosing for multi-target anti-aging protocols remain unestablished',
+            'Senolytic supplement effects in humans are extrapolated primarily from preclinical models',
+            'Long-term safety data (>2 years) for NAD+ precursors and senolytics is severely lacking',
+            'Biomarker-driven aging clocks (epigenetic, proteomic) could enable personalized longevity protocols but are rarely used in supplement trials',
+            'The interaction between caloric restriction, exercise, and longevity supplements needs systematic investigation'
+        ],
+        relatedLinks: [
+            { href: '../guides/memory-aging.html', icon: 'fa-brain', text: 'Memory & Cognitive Aging Guide' },
+            { href: '../guides/cardiovascular.html', icon: 'fa-heart', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/womens-health.html', icon: 'fa-venus', text: 'Women\'s Health Guide' },
+            { href: '../guides/mens-health.html', icon: 'fa-mars', text: 'Men\'s Health Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/coq10-vs-pqq.html', icon: 'fa-scale-balanced', text: 'CoQ10 vs PQQ' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'brain-fog',
+        title: 'Evidence-Based Supplements for Brain Fog & Mental Clarity',
+        shortTitle: 'Brain Fog & Mental Clarity',
+        metaTitle: 'Best Supplements for Brain Fog (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to supplements for brain fog, mental clarity, and cognitive energy. Ranked by clinical evidence. Dosages, mechanisms, and safety profiles.',
+        breadcrumb: 'Brain Fog & Mental Clarity',
+        heroSubtitle: 'A systematic review of supplements studied for mental clarity, cognitive energy, and focus — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const fogKeys = ['mental_clarity','mentalFatigue','cognitive_energy','cognitiveEnergy',
+                'focus','focusImprovement','attention','attentionEnhancement','attentionExecutive',
+                'executiveFunction','executive_function','workingMemory','workingMemoryHighDose',
+                'reaction_time','choiceReactionTime','visualReactionTime',
+                'cerebral_blood_flow','cerebral_circulation',
+                'cognitive_speed','processing_speed','alertness',
+                'cognitiveClarity','cognitiveEndurance','cognitive_under_stress',
+                'acute_cognition','concentration'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => fogKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Citicoline', 'Alpha-GPC', 'Creatine', "Lion's Mane Mushroom",
+            'Bacopa monnieri', 'L-Tyrosine', 'Caffeine', 'MCT Oil'
+        ],
+        snippetDefinition: 'Brain fog supplements are compounds studied for their effects on mental clarity, cognitive energy, and sustained attention. The strongest evidence supports citicoline (improved attention and processing speed), creatine (enhanced working memory and mental endurance), and caffeine + L-theanine (focused alertness without jitteriness).',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Brain Fog & Mental Clarity',
+        introduction: `Brain fog — characterized by difficulty concentrating, mental fatigue, forgetfulness, and reduced mental clarity — is one of the most common cognitive complaints in clinical practice. While not a formal medical diagnosis, it is a recognized symptom cluster associated with sleep deprivation, chronic stress, nutritional deficiencies, hormonal changes, and post-viral syndromes.
+
+This guide reviews supplements with clinical evidence for improving mental clarity, cognitive energy, and sustained focus. Rather than targeting a specific disease, these supplements address the underlying neurobiological mechanisms that contribute to the subjective experience of brain fog.
+
+<strong>Important:</strong> Persistent brain fog may indicate underlying conditions (thyroid dysfunction, anemia, sleep apnea, depression, post-COVID syndrome) that require medical evaluation. This guide is informational and does not replace professional medical assessment.`,
+        mechanismsIntro: `Supplements targeting brain fog work through distinct but complementary mechanisms — from direct neurotransmitter support to metabolic energy optimization in neuronal tissues.`,
+        mechanisms: [
+            {
+                name: 'Cholinergic Drive & Phospholipid Synthesis',
+                description: 'Acetylcholine is the primary neurotransmitter for sustained attention and mental clarity. Citicoline uniquely provides both a choline precursor (for acetylcholine synthesis) and cytidine (for phosphatidylcholine membrane repair), addressing brain fog at both neurotransmitter and structural levels.',
+                supplements: ['Citicoline', 'Alpha-GPC', "Lion's Mane Mushroom"]
+            },
+            {
+                name: 'Brain Creatine & ATP Buffering',
+                description: 'The brain consumes ~20% of total body energy despite representing only 2% of body mass. Creatine supplementation increases brain phosphocreatine stores, providing a rapid ATP buffer during demanding cognitive tasks — directly counteracting the "mental fatigue" component of brain fog.',
+                supplements: ['Creatine', 'MCT Oil', 'CoQ10']
+            },
+            {
+                name: 'Catecholamine Precursor Support',
+                description: 'Dopamine and norepinephrine are critical for motivation, focus, and cognitive drive. L-Tyrosine is the rate-limiting precursor for catecholamine synthesis and is particularly effective when catecholamine stores are depleted by stress, sleep deprivation, or multitasking.',
+                supplements: ['L-Tyrosine', 'Caffeine', 'Rhodiola rosea']
+            },
+            {
+                name: 'Balanced Alertness & Alpha-Wave Modulation',
+                description: 'Optimal mental clarity requires a balance between alertness and calm focus. L-Theanine promotes alpha-wave brain activity (associated with relaxed attention) while caffeine blocks adenosine receptors (promoting wakefulness). The combination produces "alert calm" — focused attention without anxiety or jitteriness.',
+                supplements: ['Caffeine', 'L-Theanine', 'Bacopa monnieri']
+            }
+        ],
+        safetyIntro: `Brain fog supplements are generally well-tolerated, but timing, dosing, and combinations require attention to avoid paradoxical effects or sleep disruption.`,
+        safetyNotes: [
+            '<strong>Caffeine timing:</strong> Caffeine (half-life 5-6 hours) can cause or worsen brain fog the following day if it disrupts sleep quality. Consume before noon and limit to 200-400mg/day.',
+            '<strong>L-Tyrosine and MAOIs:</strong> L-Tyrosine should not be combined with monoamine oxidase inhibitors (MAOIs) or medications for Parkinson\'s disease without medical supervision, as it may cause dangerous catecholamine elevation.',
+            '<strong>Cholinergic stacking:</strong> Combining citicoline + Alpha-GPC provides excessive choline precursors and may cause headaches, nausea, and cognitive dulling — the opposite of the intended effect. Use one primary choline source.',
+            '<strong>Creatine hydration:</strong> Creatine increases intracellular water retention. Ensure adequate fluid intake (2.5-3L/day) to avoid headaches that could mimic or worsen brain fog.',
+            '<strong>MCT Oil GI effects:</strong> Start with 5ml/day and increase gradually. Rapid introduction of MCT oil commonly causes nausea, cramping, and diarrhea. C8 (caprylic acid) formulations are better tolerated.',
+            '<strong>Individual response variation:</strong> Brain fog has diverse underlying causes. A supplement addressing cholinergic deficits won\'t help brain fog caused by sleep apnea or thyroid dysfunction. Identify root causes first.'
+        ],
+        researchGaps: [
+            'Post-COVID brain fog has no well-established supplement protocol despite immense patient demand',
+            'Objective measurement of "brain fog" is difficult — most studies rely on subjective questionnaires or proxy cognitive tests',
+            'Hormonal brain fog (perimenopause, postpartum, thyroid-related) is poorly studied with supplement interventions',
+            'Optimal timing of brain fog supplements (morning vs. split dosing) is almost never studied',
+            'The role of gut health and the microbiome in brain fog is an emerging area with limited controlled trial evidence',
+            'Individual variation in brain fog causes means personalized supplementation protocols would be ideal but remain undeveloped'
+        ],
+        relatedLinks: [
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/mood-support.html', icon: 'fa-face-smile', text: 'Mood Support Guide' },
+            { href: '../guides/stress-resilience.html', icon: 'fa-shield-heart', text: 'Stress Resilience Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/nootropic-stacks.html', icon: 'fa-layer-group', text: 'Nootropic Stacks Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/citicoline-vs-alpha-gpc.html', icon: 'fa-scale-balanced', text: 'Citicoline vs Alpha-GPC' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'stress-resilience',
+        title: 'Evidence-Based Supplements for Stress Resilience & Cortisol Management',
+        shortTitle: 'Stress Resilience & Cortisol',
+        metaTitle: 'Best Supplements for Stress & Cortisol (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to adaptogenic supplements for stress resilience and cortisol management. Ranked by clinical evidence. Dosages, mechanisms, and safety profiles.',
+        breadcrumb: 'Stress Resilience & Cortisol',
+        heroSubtitle: 'A systematic review of adaptogenic and stress-modulating supplements studied for cortisol reduction, HPA axis regulation, and burnout prevention — ranked by clinical evidence.',
+        filterFn: (s) => {
+            const stressKeys = ['cortisol','cortisolReduction','cortisol_reduction',
+                'stress','stressReduction','stressReactivity','stress_reduction','stress_markers',
+                'anxiety','anxietyReduction','anxiety_reduction',
+                'relaxation','sleepQuality','sleep_quality',
+                'mood','moodEnhancement','mood_enhancement',
+                'adaptogenic','hpa_axis','burnout','fatigue_stress',
+                'emotional_wellbeing','perceived_stress'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => stressKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Ashwagandha', 'Rhodiola rosea', 'Phosphatidylserine', 'Magnesium',
+            'Holy Basil', 'L-Theanine', 'GABA', 'Reishi Mushroom'
+        ],
+        snippetDefinition: 'Stress resilience supplements (adaptogens and neuromodulators) are compounds studied for their effects on cortisol levels, HPA axis regulation, and stress tolerance. The strongest evidence exists for ashwagandha (cortisol reduction of 23-30% in multiple RCTs), rhodiola rosea, and phosphatidylserine.',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Stress Resilience',
+        introduction: `Chronic stress is a primary driver of both mental and physical health deterioration, contributing to cardiovascular disease, immune suppression, metabolic dysfunction, and accelerated aging. The hypothalamic-pituitary-adrenal (HPA) axis — the body's central stress response system — becomes dysregulated under chronic stress, leading to persistently elevated cortisol with wide-ranging downstream effects.
+
+Adaptogenic supplements are a class of compounds that specifically target stress response pathways, helping the body maintain homeostasis under physical, chemical, and biological stressors. This guide reviews the adaptogens and stress-modulating supplements with the strongest clinical evidence.
+
+<strong>Important:</strong> This guide is for informational purposes only. Chronic stress may contribute to or coexist with anxiety disorders, depression, and other conditions requiring professional treatment. Supplements are not replacements for stress management strategies including sleep optimization, exercise, and psychotherapy.`,
+        mechanismsIntro: `Stress-resilience supplements work through complementary mechanisms targeting the HPA axis, neurotransmitter balance, and the neuroinflammatory cascade triggered by chronic stress.`,
+        mechanisms: [
+            {
+                name: 'HPA Axis Normalization',
+                description: 'Adaptogens like ashwagandha modulate cortisol output by acting on the hypothalamic-pituitary-adrenal axis. Rather than simply suppressing cortisol, true adaptogens normalize the stress response — lowering excessive cortisol while supporting appropriate acute stress reactions.',
+                supplements: ['Ashwagandha', 'Rhodiola rosea', 'Holy Basil']
+            },
+            {
+                name: 'GABAergic Calming Pathways',
+                description: 'GABA is the brain\'s primary inhibitory neurotransmitter, counterbalancing excitatory glutamate signaling. Enhanced GABAergic activity produces anxiolytic and calming effects without the sedation or dependency associated with pharmaceutical GABAergic agents (benzodiazepines).',
+                supplements: ['L-Theanine', 'GABA', 'Magnesium', 'Ashwagandha']
+            },
+            {
+                name: 'Cortisol-Binding & Phospholipid Regulation',
+                description: 'Phosphatidylserine blunts the cortisol response to physical and psychological stress by modulating ACTH release. Studies in athletes and stressed individuals show 15-30% reductions in exercise-induced and psychological stress cortisol with PS supplementation.',
+                supplements: ['Phosphatidylserine', 'Omega-3 Fatty Acids']
+            },
+            {
+                name: 'Neuroinflammation & Oxidative Stress Buffering',
+                description: 'Chronic stress increases neuroinflammation and oxidative damage in the brain, particularly in the hippocampus and prefrontal cortex. Reishi mushroom and magnesium reduce stress-induced neuroinflammation through NF-κB inhibition and NMDA receptor modulation respectively.',
+                supplements: ['Reishi Mushroom', 'Magnesium', 'Rhodiola rosea']
+            }
+        ],
+        safetyIntro: `Adaptogenic supplements have generally favorable safety profiles, but important considerations exist — particularly regarding thyroid function, autoimmune conditions, and medication interactions.`,
+        safetyNotes: [
+            '<strong>Ashwagandha thyroid effects:</strong> Ashwagandha can increase thyroid hormone levels (T3, T4) and should be used cautiously in hyperthyroid conditions or by those taking thyroid medications. Monitor thyroid function regularly.',
+            '<strong>Autoimmune caution:</strong> Ashwagandha and reishi mushroom can stimulate immune function, which may exacerbate autoimmune conditions (lupus, rheumatoid arthritis, multiple sclerosis). Consult an immunologist before use.',
+            '<strong>Sedation stacking:</strong> Combining multiple GABAergic supplements (L-theanine + GABA + magnesium) with alcohol or sedative medications may cause excessive drowsiness. Use caution with driving.',
+            '<strong>Rhodiola stimulant properties:</strong> Rhodiola has mild stimulant properties and should be taken in the morning. It may cause insomnia if taken in the afternoon. Avoid combining with prescription stimulants.',
+            '<strong>Magnesium forms:</strong> Magnesium glycinate is preferred for stress and anxiety (crosses BBB, calming glycine). Avoid magnesium oxide (poor absorption, primarily laxative effect). Doses above 400mg/day may cause loose stools.',
+            '<strong>Pregnancy and lactation:</strong> Most adaptogens lack adequate safety data for pregnancy. Ashwagandha may have abortifacient properties at high doses. Avoid all adaptogens during pregnancy unless specifically approved by a healthcare provider.'
+        ],
+        researchGaps: [
+            'Long-term adaptogen use (>6 months) effects on HPA axis sensitivity remain unknown — does chronic use cause dependency or blunting?',
+            'Optimal cycling protocols (e.g., 8 weeks on, 2 weeks off) are based on tradition rather than controlled evidence',
+            'Cortisol-lowering supplements in individuals with already-low cortisol (adrenal insufficiency) could be harmful but this population is rarely studied',
+            'Workplace burnout as a specific endpoint for adaptogen trials has received very limited attention despite massive prevalence',
+            'Combination adaptogenic protocols (ashwagandha + rhodiola + holy basil) need controlled evaluation for synergistic effects',
+            'Sex-specific cortisol responses to adaptogens are poorly characterized, with most trials inadequately powered for subgroup analysis'
+        ],
+        relatedLinks: [
+            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../guides/mood-support.html', icon: 'fa-face-smile', text: 'Mood Support Guide' },
+            { href: '../guides/sleep.html', icon: 'fa-moon', text: 'Sleep Quality Guide' },
+            { href: '../guides/brain-fog.html', icon: 'fa-cloud-sun', text: 'Brain Fog Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/ashwagandha-vs-rhodiola.html', icon: 'fa-scale-balanced', text: 'Ashwagandha vs Rhodiola' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'safety-interactions',
+        title: 'Supplement Safety, Drug Interactions & Contraindications',
+        shortTitle: 'Safety & Interactions',
+        metaTitle: 'Supplement Safety & Drug Interactions (2026) | Evidence-Based Guide',
+        metaDescription: 'Comprehensive guide to supplement safety, drug interactions, and contraindications. Covers all 93 supplements in the database with evidence-based safety profiles.',
+        breadcrumb: 'Safety & Interactions',
+        heroSubtitle: 'A comprehensive safety reference covering drug interactions, contraindications, and adverse effects for all supplements in the SupplementDB database.',
+        filterFn: (s) => true, // ALL supplements — this is a safety reference covering the full database
+        coreSuppNames: [
+            '5-HTP', 'Berberine', 'Red Yeast Rice', 'Ginkgo Biloba',
+            'Omega-3 Fatty Acids', 'Ashwagandha', 'Kanna', 'Garlic'
+        ],
+        snippetDefinition: 'This comprehensive safety guide covers drug interactions, contraindications, and adverse effect profiles for all 93 supplements in the SupplementDB database. Supplements with the most significant interaction potential include 5-HTP (serotonin syndrome risk), berberine (CYP450 inhibition), ginkgo biloba (bleeding risk), and kanna (SSRI contraindication).',
+        snippetListTitle: 'All Supplements: Safety & Interaction Profiles',
+        introduction: `Dietary supplements are widely used but not without risk. Drug-supplement interactions, contraindications for specific populations, and adverse effects are real concerns that deserve the same evidence-based scrutiny applied to pharmaceutical agents.
+
+This guide provides a comprehensive safety reference for all supplements in the SupplementDB database. Unlike our domain-specific guides that focus on efficacy, this resource prioritizes safety information: known drug interactions, contraindicated populations, dose-dependent adverse effects, and regulatory considerations.
+
+<strong>Critical Notice:</strong> This guide is for informational purposes only and does not constitute medical advice. Always disclose all supplement use to your healthcare providers, including physicians, pharmacists, and anesthesiologists. Drug-supplement interactions can have serious — and in some cases life-threatening — consequences. When in doubt, consult a qualified healthcare professional before starting or combining any supplement.`,
+        mechanismsIntro: `Understanding the pharmacological mechanisms through which supplements interact with drugs and body systems is essential for predicting and avoiding adverse interactions.`,
+        mechanisms: [
+            {
+                name: 'CYP450 Enzyme Inhibition & Induction',
+                description: 'The cytochrome P450 enzyme family metabolizes approximately 75% of all prescription drugs. Supplements that inhibit (e.g., berberine inhibits CYP2D6 and CYP3A4) or induce (e.g., St. John\'s Wort induces CYP3A4) these enzymes can dramatically alter drug blood levels, causing toxicity or therapeutic failure.',
+                supplements: ['Berberine', 'Quercetin', 'Resveratrol', 'Ginkgo Biloba']
+            },
+            {
+                name: 'Serotonergic Potentiation',
+                description: 'Supplements that increase serotonin levels (5-HTP, SAMe, kanna) or inhibit serotonin reuptake create additive risks when combined with serotonergic medications (SSRIs, SNRIs, triptans, MAOIs). Serotonin syndrome is a potentially fatal condition requiring emergency medical attention.',
+                supplements: ['5-HTP', 'SAMe', 'Kanna', 'Rhodiola rosea']
+            },
+            {
+                name: 'Anticoagulant & Antiplatelet Effects',
+                description: 'Multiple supplements have blood-thinning properties through various mechanisms: platelet aggregation inhibition (ginkgo, omega-3), vitamin K antagonism (high-dose vitamin E), or fibrinolytic activity (nattokinase). Combining these with prescription anticoagulants (warfarin, apixaban) or antiplatelet agents (aspirin, clopidogrel) increases bleeding risk.',
+                supplements: ['Ginkgo Biloba', 'Omega-3 Fatty Acids', 'Garlic', 'Vitamin E']
+            },
+            {
+                name: 'Thyroid & Endocrine Modulation',
+                description: 'Several supplements affect thyroid hormone levels, cortisol production, or sex hormone metabolism. Ashwagandha increases thyroid hormones, while supplements like DIM and calcium D-glucarate alter estrogen metabolism. These effects can interfere with hormone-sensitive conditions and medications.',
+                supplements: ['Ashwagandha', 'Berberine', 'Red Yeast Rice', 'Vitamin D3']
+            }
+        ],
+        safetyIntro: `The following safety notes represent the most critical, highest-risk interactions and contraindications across the supplement database. This is not exhaustive — consult individual supplement monographs for complete safety profiles.`,
+        safetyNotes: [
+            '<strong>CRITICAL — Serotonin syndrome:</strong> Never combine 5-HTP, SAMe, or kanna with SSRIs, SNRIs, MAOIs, triptans, or tramadol without medical supervision. Symptoms include confusion, rapid heart rate, high blood pressure, dilated pupils, muscle twitching, and hyperthermia. Seek emergency care immediately if suspected.',
+            '<strong>CRITICAL — Bleeding risk:</strong> Ginkgo biloba, omega-3 fatty acids (>3g/day), garlic, and vitamin E have anticoagulant effects. Discontinue all at least 2 weeks before surgery. Do not combine with warfarin, heparin, or novel oral anticoagulants without physician monitoring.',
+            '<strong>CRITICAL — Statin interactions:</strong> Red yeast rice contains monacolin K (identical to lovastatin) and should NEVER be combined with prescription statins due to additive risk of rhabdomyolysis. Berberine also interacts with statin metabolism via CYP3A4 inhibition.',
+            '<strong>Pregnancy contraindications:</strong> Many supplements lack adequate pregnancy safety data. Known contraindications include: ashwagandha (possible abortifacient), berberine (uterine contractions), high-dose vitamin A (teratogenic), kanna (no safety data). Always consult OB/GYN before any supplement use during pregnancy.',
+            '<strong>Immunosuppressant interactions:</strong> Immune-stimulating supplements (reishi, astragalus, echinacea, vitamin D at high doses) may counteract immunosuppressant medications used in organ transplant recipients and autoimmune conditions. This interaction can have life-threatening consequences.',
+            '<strong>Pre-surgical disclosure:</strong> All supplements must be disclosed to anesthesiologists before surgery. Common problematic supplements include valerian (potentiates anesthetics), ginkgo (bleeding), garlic (bleeding), and St. John\'s Wort (reduces effectiveness of many anesthetic agents).'
+        ],
+        researchGaps: [
+            'Systematic drug-supplement interaction databases are incomplete — many potential interactions have never been formally studied',
+            'Most supplement safety data comes from short-term trials (8-12 weeks) — long-term chronic use safety is largely unknown',
+            'Pharmacokinetic interaction studies between popular supplement combinations are essentially non-existent',
+            'Population-specific safety (elderly, pediatric, renally impaired) is poorly characterized for most supplements',
+            'Contamination and adulteration of supplement products remains a significant safety concern not captured in efficacy trial data',
+            'Reporting bias means adverse events from supplements are significantly underreported compared to pharmaceuticals'
+        ],
+        relatedLinks: [
+            { href: '../guides/mood-support.html', icon: 'fa-face-smile', text: 'Mood Support Guide' },
+            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../guides/cardiovascular.html', icon: 'fa-heart', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/longevity.html', icon: 'fa-hourglass-half', text: 'Longevity Guide' },
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../disclaimer.html', icon: 'fa-file-shield', text: 'Medical Disclaimer' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'muscle-strength',
+        title: 'Evidence-Based Supplements for Muscle Strength & Lean Mass',
+        shortTitle: 'Muscle Strength & Lean Mass',
+        metaTitle: 'Best Supplements for Muscle & Strength (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to supplements for muscle strength, lean mass, and physical performance. Ranked by clinical evidence. Dosages, mechanisms, and safety profiles.',
+        breadcrumb: 'Muscle Strength & Lean Mass',
+        heroSubtitle: 'A systematic review of supplements studied for strength gains, muscle hypertrophy, and body composition improvement — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const muscleKeys = ['strength','powerOutput','power_output','muscleMass','muscle_mass',
+                'bodyComposition','body_composition','lean_mass','leanMass',
+                'exercisePerformance','exercise_performance',
+                'testosterone','testosteroneBoost','testosterone_boost','free_testosterone',
+                'growth_hormone','anabolic','hypertrophy',
+                'endurance','muscleEndurance','muscle_endurance',
+                'bench_press','squat','deadlift','1rm',
+                'sprint_performance','anaerobic_power'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => muscleKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Creatine', 'Whey Protein', 'HMB (β-Hydroxy β-Methylbutyrate)', 'Beta-Alanine',
+            'Betaine', 'Caffeine', 'Citrulline Malate', 'Alpha-GPC'
+        ],
+        snippetDefinition: 'Muscle and strength supplements are compounds studied for their effects on lean mass accretion, strength output, and exercise performance. The strongest evidence exists for creatine monohydrate (the most well-studied sports supplement, with consistent strength gains of 5-15%), beta-alanine (buffering muscular endurance), and caffeine (acute performance enhancement of 2-6%).',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Muscle Strength',
+        introduction: `Muscle strength and lean mass are not merely aesthetic concerns — they are among the strongest predictors of all-cause mortality, metabolic health, and functional independence across the lifespan. Resistance training remains the foundational intervention, but specific supplements have robust evidence for augmenting strength gains and muscle development.
+
+This guide reviews the supplements with the strongest clinical evidence for supporting muscle strength, hypertrophy, and body composition. Evidence is drawn from meta-analyses of resistance training studies, sports nutrition trials, and systematic reviews from organizations including the International Society of Sports Nutrition (ISSN).
+
+<strong>Important:</strong> No supplement replaces consistent progressive resistance training and adequate protein intake (1.6-2.2g/kg/day). Supplements discussed here enhance — but do not substitute for — foundational training and nutrition principles.`,
+        mechanismsIntro: `Strength and muscle-building supplements work through distinct physiological mechanisms — from acute performance enhancement to chronic anabolic signaling and recovery optimization.`,
+        mechanisms: [
+            {
+                name: 'Phosphocreatine Energy Buffer',
+                description: 'Creatine monohydrate increases intramuscular phosphocreatine stores by 20-40%, providing rapid ATP regeneration during high-intensity efforts. This translates to more repetitions per set, heavier loads, and greater total training volume — the primary driver of muscle hypertrophy.',
+                supplements: ['Creatine', 'Beta-Alanine']
+            },
+            {
+                name: 'Protein Synthesis & Anti-Catabolic Signaling',
+                description: 'Muscle growth requires net positive protein balance (synthesis > breakdown). Whey protein provides a rapid leucine bolus that activates mTOR signaling — the master switch for muscle protein synthesis. HMB (a leucine metabolite) additionally reduces protein breakdown during intense training or caloric deficits.',
+                supplements: ['Whey Protein', 'HMB (β-Hydroxy β-Methylbutyrate)', 'Creatine']
+            },
+            {
+                name: 'Neuromuscular Activation & Power Output',
+                description: 'Caffeine blocks adenosine receptors, increasing neuromuscular excitability and reducing perceived exertion. Alpha-GPC increases acetylcholine availability at the neuromuscular junction, potentially enhancing peak power output. Both act acutely — effects are measured within 30-60 minutes of ingestion.',
+                supplements: ['Caffeine', 'Alpha-GPC', 'Betaine']
+            },
+            {
+                name: 'Nitric Oxide & Blood Flow Enhancement',
+                description: 'Citrulline is converted to arginine in the kidneys, increasing nitric oxide production. Enhanced blood flow delivers more oxygen and nutrients to working muscles while improving metabolic waste clearance. This translates to improved work capacity and reduced fatigue during high-repetition training.',
+                supplements: ['Citrulline Malate', 'Betaine', 'Nitrate (Beetroot)']
+            }
+        ],
+        safetyIntro: `Performance supplements are among the most well-studied supplement categories, but dosing precision, timing, and individual factors require attention.`,
+        safetyNotes: [
+            '<strong>Creatine misconceptions:</strong> Creatine monohydrate does NOT cause kidney damage in healthy individuals at recommended doses (3-5g/day). However, it raises serum creatinine (a kidney marker), which may falsely suggest renal impairment. Individuals with pre-existing kidney disease should consult a nephrologist.',
+            '<strong>Caffeine dosing:</strong> Performance benefits plateau at 3-6mg/kg bodyweight. Higher doses increase side effects (anxiety, tremor, tachycardia) without additional performance gains. Genetic fast/slow metabolizer status (CYP1A2) significantly affects individual response.',
+            '<strong>Beta-alanine paresthesia:</strong> Beta-alanine commonly causes harmless tingling (paresthesia) at doses above 800mg. This is not an allergic reaction. Sustained-release formulations or split dosing (800mg × 4/day) minimize this effect.',
+            '<strong>Stimulant stacking:</strong> Do NOT combine caffeine with other stimulants (DMAA, synephrine, yohimbine) without medical supervision. Cardiovascular risks (arrhythmia, hypertension) increase significantly with stimulant stacking.',
+            '<strong>HMB timing:</strong> HMB-free acid (HMB-FA) has faster absorption than calcium HMB (HMB-Ca). Take HMB-FA 30-60 minutes before training, HMB-Ca 60-120 minutes before. Benefits are most pronounced in untrained individuals or during caloric restriction.',
+            '<strong>Contamination risk:</strong> Sports supplements have the highest contamination/adulteration rates in the supplement industry. Use only NSF Certified for Sport or Informed Sport tested products, especially if subject to drug testing.'
+        ],
+        researchGaps: [
+            'Optimal creatine dosing for different body compositions and training modalities is poorly refined beyond the standard 3-5g/day recommendation',
+            'Long-term effects of chronic caffeine use on training adaptation (does tolerance reduce performance benefits?) remain debated',
+            'Female-specific dosing guidelines for performance supplements are severely lacking — most research uses male participants',
+            'The interaction between intermittent fasting/caloric restriction and supplement timing for body composition is poorly studied',
+            'Plant-based protein supplements vs. whey for hypertrophy need larger head-to-head trials with matched leucine content',
+            'Alpha-GPC effects on power output have promising pilot data but need replication in larger, well-controlled trials'
+        ],
+        relatedLinks: [
+            { href: '../guides/recovery.html', icon: 'fa-bandage', text: 'Recovery & Soreness Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/nootropic-stacks.html', icon: 'fa-layer-group', text: 'Nootropic Stacks Guide' },
+            { href: '../guides/mens-health.html', icon: 'fa-mars', text: 'Men\'s Health Guide' },
+            { href: '../guides/womens-health.html', icon: 'fa-venus', text: 'Women\'s Health Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/creatine-vs-beta-alanine.html', icon: 'fa-scale-balanced', text: 'Creatine vs Beta-Alanine' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'recovery',
+        title: 'Evidence-Based Supplements for Recovery & Soreness',
+        shortTitle: 'Recovery & Soreness',
+        metaTitle: 'Best Supplements for Recovery & DOMS (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to supplements for exercise recovery, muscle soreness (DOMS), and inflammation management. Ranked by clinical evidence with dosages and safety.',
+        breadcrumb: 'Recovery & Soreness',
+        heroSubtitle: 'A systematic review of supplements studied for accelerating recovery, reducing DOMS, and managing exercise-induced inflammation — ranked by clinical evidence.',
+        filterFn: (s) => {
+            const recoveryKeys = ['exercise_recovery','muscleRecovery','muscle_recovery','muscle_damage_CK',
+                'DOMS','soreness','delayed_onset_muscle_soreness',
+                'inflammation','inflammatory_markers','antiInflammatory','antiInflammatory_CRP','CRP_reduction',
+                'joint_pain','joint_pain_reduction','pain_management','pain_reduction',
+                'sleep_quality','sleepQuality','sleep','oxidative_stress_reduction',
+                'immune_recovery','immune_function'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            return eKeys.some(k => recoveryKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Omega-3 Fatty Acids', 'Turmeric/Curcumin', 'Taurine', 'MSM',
+            'Astaxanthin', 'Citrulline Malate', 'CoQ10', 'Rhodiola rosea'
+        ],
+        snippetDefinition: 'Recovery supplements are compounds studied for their effects on exercise-induced muscle damage (EIMD), delayed-onset muscle soreness (DOMS), and inflammatory markers following intense training. The strongest evidence supports omega-3 fatty acids (reduced inflammatory cytokines and CK levels), curcumin (significant DOMS reduction in meta-analyses), and taurine (cellular protection and osmotic regulation).',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Recovery',
+        introduction: `Exercise-induced muscle damage (EIMD) and delayed-onset muscle soreness (DOMS) are inevitable consequences of progressive overload — the fundamental driver of adaptation. While acute inflammation is necessary for muscle remodeling, excessive or prolonged inflammation impairs recovery, reduces training frequency, and increases injury risk.
+
+This guide reviews supplements with clinical evidence for accelerating recovery, reducing exercise-induced soreness, and managing the inflammatory response to training. Evidence prioritizes meta-analyses of athlete populations, controlled exercise challenge studies, and systematic reviews from sports medicine literature.
+
+<strong>Important:</strong> Recovery supplements complement — but do not replace — foundational recovery strategies: adequate sleep (7-9 hours), sufficient protein intake (1.6-2.2g/kg/day), progressive training periodization, and stress management.`,
+        mechanismsIntro: `Recovery supplements target multiple phases of the post-exercise inflammatory and repair cascade, from acute damage limitation to accelerated tissue remodeling.`,
+        mechanisms: [
+            {
+                name: 'Specialized Pro-Resolving Mediator (SPM) Pathways',
+                description: 'Omega-3 fatty acids (EPA and DHA) are precursors to specialized pro-resolving mediators (resolvins, protectins, maresins) that actively resolve inflammation rather than simply suppressing it. This distinction is critical — proper resolution of inflammation supports tissue repair while preventing chronic inflammatory states.',
+                supplements: ['Omega-3 Fatty Acids', 'Astaxanthin']
+            },
+            {
+                name: 'NF-κB & COX-2 Inhibition',
+                description: 'Curcumin is a potent inhibitor of NF-κB (master inflammatory transcription factor) and COX-2 (enzyme producing pro-inflammatory prostaglandins). Unlike NSAIDs, curcumin achieves anti-inflammatory effects without inhibiting COX-1 (which protects the gastric lining), offering a more favorable safety profile for chronic use.',
+                supplements: ['Turmeric/Curcumin', 'MSM', 'Astaxanthin']
+            },
+            {
+                name: 'Cellular Osmotic Protection & Membrane Stability',
+                description: 'Taurine is a conditionally essential amino acid that stabilizes cell membranes, regulates calcium flux, and maintains osmotic balance during the cellular stress of intense exercise. Eccentric exercise depletes intramuscular taurine, and supplementation helps preserve cellular integrity during damage-inducing training.',
+                supplements: ['Taurine', 'CoQ10', 'Magnesium']
+            },
+            {
+                name: 'Blood Flow Enhancement & Metabolic Waste Clearance',
+                description: 'Citrulline enhances nitric oxide production, improving blood flow to damaged tissues. Enhanced circulation accelerates delivery of immune cells and nutrients while removing metabolic waste products (lactate, ammonia) that contribute to post-exercise fatigue and soreness.',
+                supplements: ['Citrulline Malate', 'Rhodiola rosea']
+            }
+        ],
+        safetyIntro: `Recovery supplements are generally well-tolerated, but timing relative to training and potential interactions with anti-inflammatory medications require consideration.`,
+        safetyNotes: [
+            '<strong>Anti-inflammatory timing debate:</strong> Some evidence suggests that suppressing inflammation immediately post-exercise may blunt training adaptations (muscle growth, mitochondrial biogenesis). Consider using anti-inflammatory supplements only during competition periods or intensified training blocks, not chronically.',
+            '<strong>Curcumin bioavailability:</strong> Standard curcumin has extremely poor absorption (<1%). Use formulations with enhanced bioavailability (piperine, phospholipid complexes, nanoparticles). Curcumin may interact with blood-thinning medications.',
+            '<strong>Omega-3 dosing for recovery:</strong> Anti-inflammatory doses (2-4g EPA+DHA/day) are higher than general health doses (1g/day). High-dose omega-3 may increase bleeding time — inform your healthcare provider if taking anticoagulants or before surgery.',
+            '<strong>Taurine and energy drinks:</strong> Taurine in energy drinks is typically under-dosed (1g vs. studied doses of 2-6g/day) and combined with caffeine and sugar. Use standalone taurine supplements for recovery rather than energy drinks.',
+            '<strong>MSM dosing:</strong> MSM is well-tolerated at 1-3g/day. Higher doses (>6g/day) may cause GI discomfort. MSM has mild blood-thinning properties — use caution with anticoagulants.',
+            '<strong>NSAIDs vs. supplements:</strong> Chronic NSAID use for exercise recovery is associated with GI, renal, and cardiovascular risks. Evidence-based supplement alternatives (curcumin, omega-3) may provide similar anti-inflammatory benefits with superior safety profiles for long-term use.'
+        ],
+        researchGaps: [
+            'The "blunting hypothesis" (anti-inflammatory supplements reducing training adaptations) needs definitive long-term controlled trials',
+            'Optimal timing of recovery supplements relative to training (immediately post-exercise vs. daily chronic dosing) is poorly defined',
+            'Personalized recovery protocols based on training modality (endurance vs. resistance vs. HIIT) remain undeveloped',
+            'Female-specific recovery supplement responses are severely underrepresented in the literature',
+            'Eccentric vs. concentric exercise damage may respond differently to supplement interventions but are rarely differentiated',
+            'Combined recovery supplement protocols (omega-3 + curcumin + taurine) need controlled evaluation for synergistic effects'
+        ],
+        relatedLinks: [
+            { href: '../guides/muscle-strength.html', icon: 'fa-dumbbell', text: 'Muscle Strength Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/joint-health.html', icon: 'fa-bone', text: 'Joint Health Guide' },
+            { href: '../guides/immune-function.html', icon: 'fa-shield-virus', text: 'Immune Function Guide' },
+            { href: '../guides/sleep.html', icon: 'fa-moon', text: 'Sleep Quality Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/omega-3-vs-curcumin.html', icon: 'fa-scale-balanced', text: 'Omega-3 vs Curcumin' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'womens-health',
+        title: 'Evidence-Based Supplements for Women\'s Health & Aging',
+        shortTitle: 'Women\'s Health & Aging',
+        metaTitle: 'Best Supplements for Women (2026) | Evidence-Based Health Guide',
+        metaDescription: 'Science-backed guide to supplements for women\'s health including hormonal balance, bone health, and healthy aging. Ranked by clinical evidence with dosages and safety.',
+        breadcrumb: 'Women\'s Health & Aging',
+        heroSubtitle: 'A systematic review of supplements studied for women\'s hormonal health, bone density, and age-related concerns — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const womensKeys = ['pcos_symptoms','pms_total','pms_physical','pms_mood','pms_pain',
+                'ntd_prevention','iron_status','iron_deficiency',
+                'bone','bone_density','bone_health','osteoporosis',
+                'mood','moodEnhancement','depression','anxiety',
+                'menstrual','hormonal','estrogen','progesterone',
+                'fertility','pregnancy','prenatal',
+                'hot_flashes','menopause','perimenopause'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            const nameMatch = ['Iron', 'Folate', 'Calcium', 'Vitamin D3'].some(n =>
+                s.name.toLowerCase().includes(n.toLowerCase())
+            );
+            return nameMatch || eKeys.some(k => womensKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Omega-3 Fatty Acids', 'Magnesium', 'Vitamin D3', 'CoQ10',
+            'Iron', 'Folate', 'Inositol', 'Zinc'
+        ],
+        snippetDefinition: 'Women\'s health supplements are compounds studied for their effects on hormonal balance, bone health, fertility, and age-related conditions specific to women. The strongest evidence supports vitamin D3 + calcium (bone density preservation), inositol (PCOS symptom management), magnesium (PMS symptom reduction), and folate (neural tube defect prevention).',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Women\'s Health',
+        introduction: `Women face unique nutritional and health challenges across the lifespan — from menstrual health and fertility to pregnancy, perimenopause, and post-menopausal bone health. Hormonal fluctuations create distinct nutritional demands, and certain deficiencies (iron, folate, vitamin D, calcium) are significantly more prevalent in women.
+
+This guide reviews supplements with the strongest clinical evidence for women-specific health outcomes. Evidence prioritizes trials conducted in female populations, addressing conditions and life stages unique to or disproportionately affecting women.
+
+<strong>Important:</strong> This guide is for informational purposes only. Women's health involves complex hormonal interactions, and supplements can have unintended effects on hormone-sensitive conditions (PCOS, endometriosis, hormone-receptor-positive cancers). Always consult a healthcare provider — particularly regarding pregnancy, fertility treatments, and hormone therapy.`,
+        mechanismsIntro: `Women's health supplements work through hormonal modulation, nutritional repletion, and bone-specific metabolic pathways that are distinctly relevant to female physiology.`,
+        mechanisms: [
+            {
+                name: 'Insulin Signaling & Ovarian Function',
+                description: 'Inositol (specifically myo-inositol and D-chiro-inositol) acts as a second messenger in insulin signaling pathways. In PCOS, insulin resistance impairs ovarian function. Inositol improves insulin sensitivity, restores ovulatory cycles, and reduces androgen levels — addressing the metabolic root of PCOS.',
+                supplements: ['Inositol', 'Berberine', 'Magnesium']
+            },
+            {
+                name: 'Calcium & Vitamin D Bone Metabolism',
+                description: 'Estrogen decline during menopause accelerates bone resorption, increasing osteoporosis risk. Vitamin D3 enhances intestinal calcium absorption (from ~10-15% to 30-40%), while adequate calcium provides the substrate for bone mineralization. Combined supplementation reduces fracture risk in postmenopausal women.',
+                supplements: ['Vitamin D3', 'Calcium', 'Magnesium', 'Vitamin K2']
+            },
+            {
+                name: 'Iron Homeostasis & Oxygen Transport',
+                description: 'Menstrual blood loss makes iron deficiency the most common nutritional deficiency in women of reproductive age. Iron is essential for hemoglobin synthesis, oxygen transport, and energy metabolism. Iron deficiency — even without anemia — causes fatigue, cognitive impairment, and reduced exercise capacity.',
+                supplements: ['Iron', 'Vitamin C', 'Folate']
+            },
+            {
+                name: 'Neural Tube Development & Methylation',
+                description: 'Folate (as 5-MTHF or folic acid) is critical for neural tube closure during the first 28 days of embryonic development — often before pregnancy is confirmed. Adequate folate status reduces neural tube defect risk by 50-70%. The MTHFR polymorphism (present in ~40% of the population) may impair folic acid conversion.',
+                supplements: ['Folate', 'Vitamin B12', 'Choline']
+            }
+        ],
+        safetyIntro: `Women's health supplements require careful attention to reproductive status, hormonal conditions, and the significant physiological changes that occur across the female lifespan.`,
+        safetyNotes: [
+            '<strong>Iron overload risk:</strong> Iron supplementation should ONLY occur with confirmed deficiency (ferritin + iron panel testing). Iron overload is toxic to the liver, heart, and endocrine organs. Post-menopausal women have reduced iron needs and should not supplement without testing.',
+            '<strong>Hormone-sensitive conditions:</strong> Supplements affecting estrogen metabolism (soy isoflavones, DIM, black cohosh) require medical supervision in women with hormone-receptor-positive breast cancer, endometriosis, or uterine fibroids.',
+            '<strong>Pregnancy timing for folate:</strong> Folate supplementation (400-800mcg/day) should ideally begin 1-3 months before conception. Women with MTHFR polymorphisms may benefit from methylfolate (5-MTHF) rather than folic acid. Doses above 1mg/day should be medically supervised.',
+            '<strong>Calcium supplement form:</strong> Calcium carbonate requires stomach acid for absorption (take with meals). Calcium citrate is absorbed independently of stomach acid. Total daily calcium (diet + supplements) should not exceed 2,500mg to avoid hypercalcemia and cardiovascular concerns.',
+            '<strong>Vitamin D testing:</strong> Optimal 25-OH vitamin D levels for bone health are 30-50 ng/mL. Doses above 4,000 IU/day should be guided by blood testing. Vitamin D toxicity causes dangerous hypercalcemia.',
+            '<strong>Inositol and fertility treatments:</strong> Inositol may enhance outcomes in IVF protocols and ovulation induction, but should be coordinated with a reproductive endocrinologist — not self-directed during fertility treatment.'
+        ],
+        researchGaps: [
+            'Perimenopause-specific supplement protocols are severely understudied despite affecting all women typically between ages 40-55',
+            'Supplement interactions with hormonal contraceptives are poorly characterized',
+            'Optimal iron repletion strategies (dose, frequency, formulation) for menstruating women without anemia remain debated',
+            'The MTHFR polymorphism\'s impact on supplement requirements beyond folate deserves more investigation',
+            'Breast cancer risk modification through supplementation is an area of active but inconclusive research',
+            'Postpartum recovery supplementation (beyond basic prenatal vitamins) lacks evidence-based guidelines'
+        ],
+        relatedLinks: [
+            { href: '../guides/mens-health.html', icon: 'fa-mars', text: 'Men\'s Health Guide' },
+            { href: '../guides/longevity.html', icon: 'fa-hourglass-half', text: 'Longevity & Healthy Aging Guide' },
+            { href: '../guides/mood-support.html', icon: 'fa-face-smile', text: 'Mood Support Guide' },
+            { href: '../guides/cardiovascular.html', icon: 'fa-heart', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/immune-function.html', icon: 'fa-shield-virus', text: 'Immune Function Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/vitamin-d3-vs-calcium.html', icon: 'fa-scale-balanced', text: 'Vitamin D3 vs Calcium' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'mens-health',
+        title: 'Evidence-Based Supplements for Men\'s Health & Aging',
+        shortTitle: 'Men\'s Health & Aging',
+        metaTitle: 'Best Supplements for Men (2026) | Evidence-Based Health Guide',
+        metaDescription: 'Science-backed guide to supplements for men\'s health including testosterone support, prostate health, and healthy aging. Ranked by clinical evidence with dosages and safety.',
+        breadcrumb: 'Men\'s Health & Aging',
+        heroSubtitle: 'A systematic review of supplements studied for men\'s testosterone support, prostate health, and age-related concerns — ranked by strength of clinical evidence.',
+        filterFn: (s) => {
+            const mensKeys = ['testosterone','testosteroneBoost','testosterone_boost','free_testosterone',
+                'maleFertility','male_fertility','sperm','sperm_quality','sperm_motility',
+                'erectileFunction','erectile_function','erectile_dysfunction',
+                'strength','powerOutput','muscleMass','muscle_mass',
+                'cardiovascular','cardiovascularHealth','blood_pressure',
+                'prostate','psa','benign_prostatic_hyperplasia'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            const nameMatch = ['Creatine', 'Zinc', 'Vitamin D3'].some(n =>
+                s.name.toLowerCase().includes(n.toLowerCase())
+            );
+            return nameMatch || eKeys.some(k => mensKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Creatine', 'Omega-3 Fatty Acids', 'CoQ10', 'Magnesium',
+            'Zinc', 'Vitamin D3', 'Ashwagandha', 'Fenugreek'
+        ],
+        snippetDefinition: 'Men\'s health supplements are compounds studied for testosterone support, prostate health, fertility, and male-pattern aging. The strongest evidence supports creatine (strength and lean mass), ashwagandha (testosterone increase of 14-17% in RCTs), zinc (essential for testosterone synthesis), and vitamin D3 (associated with testosterone levels in deficient men).',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Men\'s Health',
+        introduction: `Men face distinct health challenges driven by testosterone decline (1-2% per year after age 30), increased cardiovascular risk, prostate enlargement, and lifestyle-related metabolic dysfunction. These interconnected concerns create specific nutritional demands that differ from general population guidelines.
+
+This guide reviews supplements with the strongest clinical evidence for men-specific health outcomes: testosterone optimization, prostate health, cardiovascular protection, and male fertility. Evidence prioritizes trials conducted in male populations with relevant endpoints.
+
+<strong>Important:</strong> This guide is for informational purposes only. Significant testosterone decline may indicate hypogonadism requiring medical evaluation. Prostate symptoms require urological assessment. Supplements are not replacements for proper medical diagnosis and treatment.`,
+        mechanismsIntro: `Men's health supplements target androgen signaling, cardiovascular protection, and reproductive function through distinct but interconnected physiological pathways.`,
+        mechanisms: [
+            {
+                name: 'Testosterone Synthesis & Free Testosterone',
+                description: 'Zinc and vitamin D are essential cofactors in testosterone biosynthesis. Zinc deficiency directly reduces testosterone production, while vitamin D receptors in Leydig cells mediate testicular steroidogenesis. Ashwagandha reduces cortisol (which suppresses testosterone) and may directly support DHEA-S and free testosterone levels.',
+                supplements: ['Zinc', 'Vitamin D3', 'Ashwagandha', 'Fenugreek']
+            },
+            {
+                name: 'Muscular & Metabolic Health',
+                description: 'Sarcopenia (age-related muscle loss) accelerates after 40 and is linked to metabolic syndrome, insulin resistance, and cardiovascular disease. Creatine is the most evidence-based supplement for preserving and building lean mass, with additional benefits for bone density and cognitive function in aging men.',
+                supplements: ['Creatine', 'Omega-3 Fatty Acids', 'Magnesium']
+            },
+            {
+                name: 'Cardiovascular & Endothelial Protection',
+                description: 'Heart disease remains the leading cause of death in men. Omega-3 fatty acids reduce triglycerides and inflammation, CoQ10 supports myocardial energy production, and magnesium regulates vascular tone and rhythm. These mechanisms complement but do not replace lifestyle interventions.',
+                supplements: ['Omega-3 Fatty Acids', 'CoQ10', 'Magnesium']
+            },
+            {
+                name: 'Sperm Quality & Male Fertility',
+                description: 'Male fertility has declined significantly over the past 50 years, with sperm counts dropping ~50%. Zinc is concentrated in seminal fluid and is essential for spermatogenesis. CoQ10 improves sperm motility through mitochondrial energy support. Ashwagandha has shown improvements in sperm count and motility in multiple RCTs.',
+                supplements: ['Zinc', 'CoQ10', 'Ashwagandha', 'Omega-3 Fatty Acids']
+            }
+        ],
+        safetyIntro: `Men's health supplements are generally safe but require awareness of hormonal interactions, prostate considerations, and cardiovascular medication interactions.`,
+        safetyNotes: [
+            '<strong>Testosterone boosters vs. TRT:</strong> No supplement replicates the effects of testosterone replacement therapy (TRT). Claims of dramatic testosterone increases from supplements are typically exaggerated. Supplements support optimization within natural ranges — not supraphysiological levels.',
+            '<strong>Zinc upper limit:</strong> Zinc supplementation above 40mg/day chronically can cause copper deficiency, leading to anemia and neurological problems. If taking zinc long-term, include 1-2mg copper supplementation.',
+            '<strong>Prostate considerations:</strong> Saw palmetto and zinc may affect PSA levels. Inform your urologist about all supplement use before PSA testing or prostate biopsies.',
+            '<strong>Ashwagandha thyroid effects:</strong> Ashwagandha can increase thyroid hormone levels. Men with hyperthyroidism or taking thyroid medication should use caution and monitor thyroid function.',
+            '<strong>Creatine and DHT:</strong> One small study suggested creatine may increase DHT (dihydrotestosterone). While not replicated, men with male pattern baldness or benign prostatic hyperplasia may wish to monitor for changes.',
+            '<strong>Fenugreek and blood sugar:</strong> Fenugreek has hypoglycemic properties. Diabetic men taking insulin or oral hypoglycemics should monitor blood glucose more frequently when starting fenugreek supplementation.'
+        ],
+        researchGaps: [
+            'The clinical significance of supplement-induced testosterone increases within normal ranges is debated — do small absolute increases translate to meaningful health outcomes?',
+            'Prostate cancer risk modification through supplementation remains inconclusive despite decades of research',
+            'Male fertility supplement protocols need larger RCTs with standardized semen analysis endpoints',
+            'Age-stratified responses to men\'s health supplements (30s vs. 50s vs. 70s) are rarely studied',
+            'The interaction between resistance training and supplement-mediated testosterone changes needs better characterization',
+            'Long-term safety of "testosterone-boosting" supplement combinations taken chronically is unknown'
+        ],
+        relatedLinks: [
+            { href: '../guides/womens-health.html', icon: 'fa-venus', text: 'Women\'s Health Guide' },
+            { href: '../guides/longevity.html', icon: 'fa-hourglass-half', text: 'Longevity & Healthy Aging Guide' },
+            { href: '../guides/muscle-strength.html', icon: 'fa-dumbbell', text: 'Muscle Strength Guide' },
+            { href: '../guides/cardiovascular.html', icon: 'fa-heart', text: 'Cardiovascular Health Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/ashwagandha-vs-fenugreek.html', icon: 'fa-scale-balanced', text: 'Ashwagandha vs Fenugreek' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'gut-brain',
+        title: 'Evidence-Based Supplements for the Gut-Brain Axis',
+        shortTitle: 'Gut-Brain Axis',
+        metaTitle: 'Best Supplements for Gut-Brain Health (2026) | Evidence-Based Guide',
+        metaDescription: 'Science-backed guide to supplements for gut-brain axis health, digestive function, and microbiome support. Ranked by clinical evidence with dosages and safety.',
+        breadcrumb: 'Gut-Brain Axis',
+        heroSubtitle: 'A systematic review of supplements studied for gut-brain communication, digestive health, and microbiome-mediated mood and cognitive effects — ranked by clinical evidence.',
+        filterFn: (s) => {
+            const gutKeys = ['digestive_symptoms','digestive_health','liver','liver_protection','liver_detox',
+                'nausea_reduction','detoxification','gut_health','microbiome',
+                'immune_function','immune_enhancement','immune_modulation',
+                'inflammation','inflammatory_markers','antiInflammatory',
+                'intestinal','barrier_function','probiotic',
+                'ibs','ibd','bloating','constipation'];
+            const eKeys = Object.keys(s.effectSizes || {});
+            const nameMatch = ['Ginger', 'Milk Thistle', 'Spirulina', 'Chlorella'].some(n =>
+                s.name.toLowerCase().includes(n.toLowerCase())
+            );
+            return nameMatch || eKeys.some(k => gutKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Ginger', 'Milk Thistle', 'Schisandra Berry', 'Spirulina',
+            'Chlorella', 'Omega-3 Fatty Acids', 'Vitamin D3', 'Choline'
+        ],
+        snippetDefinition: 'Gut-brain axis supplements are compounds studied for their effects on bidirectional communication between the gastrointestinal system and the central nervous system. The strongest evidence supports omega-3 fatty acids (anti-inflammatory, gut barrier integrity), ginger (nausea and motility), and probiotics (mood and digestive outcomes in multiple meta-analyses).',
+        snippetListTitle: 'Top 8 Evidence-Based Supplements for Gut-Brain Health',
+        introduction: `The gut-brain axis represents one of the most significant paradigm shifts in modern medicine — the recognition that the gastrointestinal system and the brain communicate bidirectionally through neural, hormonal, immune, and microbial pathways. The gut microbiome produces over 90% of the body's serotonin, modulates systemic inflammation, and directly influences mood, cognition, and stress resilience through the vagus nerve.
+
+This guide reviews supplements with clinical evidence for supporting gut-brain communication, digestive health, and the downstream cognitive and mood effects of intestinal health optimization.
+
+<strong>Important:</strong> This guide is for informational purposes only. Persistent digestive symptoms (IBS, IBD, unexplained abdominal pain, changes in bowel habits) require proper medical evaluation. The gut-brain axis is an emerging field — many claims exceed the current evidence base.`,
+        mechanismsIntro: `Gut-brain supplements work through overlapping pathways that influence the microbiome, intestinal barrier, enteric nervous system, and systemic inflammatory tone.`,
+        mechanisms: [
+            {
+                name: 'Intestinal Barrier & Tight Junction Integrity',
+                description: 'The intestinal barrier prevents bacterial endotoxins (LPS) from entering systemic circulation and triggering neuroinflammation. "Leaky gut" (increased intestinal permeability) is associated with depression, anxiety, and cognitive impairment. Supplements that strengthen tight junctions reduce this pathway of brain inflammation.',
+                supplements: ['Omega-3 Fatty Acids', 'Vitamin D3', 'Zinc']
+            },
+            {
+                name: 'Hepatic Detoxification & Gut-Liver-Brain Axis',
+                description: 'The liver processes toxins absorbed from the gut before they reach systemic circulation. Impaired liver function increases brain exposure to ammonia, inflammatory cytokines, and microbial metabolites. Milk thistle (silymarin) and schisandra support phase I and phase II liver detoxification pathways.',
+                supplements: ['Milk Thistle', 'Schisandra Berry', 'Choline']
+            },
+            {
+                name: 'Vagal Tone & Enteric Nervous System Signaling',
+                description: 'The vagus nerve is the primary communication highway between the gut and brain, transmitting ~80% of signals gut-to-brain (afferent). Ginger stimulates gastric motility and reduces nausea through vagal and serotonergic mechanisms. Omega-3 fatty acids improve vagal tone, which is associated with better emotional regulation.',
+                supplements: ['Ginger', 'Omega-3 Fatty Acids', 'Choline']
+            },
+            {
+                name: 'Heavy Metal Binding & Toxin Removal',
+                description: 'Environmental toxins accumulate in both the gut and brain, contributing to neuroinflammation and cognitive impairment. Chlorella and spirulina bind heavy metals (mercury, lead, cadmium) in the gastrointestinal tract, reducing absorption and supporting natural detoxification processes.',
+                supplements: ['Chlorella', 'Spirulina', 'Milk Thistle']
+            }
+        ],
+        safetyIntro: `Gut-brain supplements have variable safety profiles. Liver-supporting supplements require particular caution in individuals with existing liver disease, and probiotic supplements can cause temporary digestive discomfort.`,
+        safetyNotes: [
+            '<strong>Milk thistle and medications:</strong> Silymarin inhibits CYP2C9 and CYP3A4 enzymes, potentially increasing blood levels of many medications including warfarin, statins, and anti-diabetic drugs. Always disclose milk thistle use to your pharmacist and prescriber.',
+            '<strong>Spirulina and chlorella contamination:</strong> Blue-green algae supplements can be contaminated with microcystins (liver toxins) and heavy metals if sourced from contaminated waters. Use only third-party tested products from reputable manufacturers.',
+            '<strong>Ginger blood-thinning effects:</strong> Ginger has mild antiplatelet properties. While safe at culinary doses, therapeutic doses (1-2g/day) may enhance the effects of anticoagulant medications. Discontinue before surgery.',
+            '<strong>Probiotic caution in immunocompromised:</strong> Live probiotic supplements should be used cautiously in severely immunocompromised individuals (organ transplant recipients, those on immunosuppressive therapy) due to rare but documented bacteremia/fungemia risks.',
+            '<strong>Choline upper limit:</strong> Choline at doses above 3.5g/day may cause fishy body odor, nausea, and hypotension. Excessive choline can be converted to TMAO by gut bacteria, which is associated with cardiovascular risk in some studies.',
+            '<strong>Existing liver disease:</strong> While milk thistle is studied for liver protection, individuals with cirrhosis, hepatitis, or other active liver disease should only use supplements under hepatologist supervision.'
+        ],
+        researchGaps: [
+            'Microbiome-targeted supplementation (choosing supplements based on individual microbiome profiles) is conceptually promising but clinically unvalidated',
+            'The gut-brain axis in neurodegenerative diseases (Alzheimer\'s, Parkinson\'s) represents a rapidly growing but still preliminary research frontier',
+            'Psychobiotic supplements (probiotics specifically targeting mood outcomes) need larger, longer, and better-controlled trials',
+            'The interaction between diet, supplements, and the microbiome is extraordinarily complex and individually variable',
+            'Post-antibiotic gut-brain recovery protocols combining prebiotics, probiotics, and supportive supplements remain unstandardized',
+            'Gut barrier testing (zonulin, lactulose/mannitol) as a guide for supplementation is used clinically but not validated in controlled trials'
+        ],
+        relatedLinks: [
+            { href: '../guides/mood-support.html', icon: 'fa-face-smile', text: 'Mood Support Guide' },
+            { href: '../guides/immune-function.html', icon: 'fa-shield-virus', text: 'Immune Function Guide' },
+            { href: '../guides/anxiety-stress.html', icon: 'fa-heart-pulse', text: 'Anxiety & Stress Guide' },
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/metabolic-health.html', icon: 'fa-weight-scale', text: 'Metabolic Health Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
+            { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
+            { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
+        ]
+    },
+    {
+        slug: 'nootropic-stacks',
+        title: 'Evidence-Based Nootropic Stacks & Cognitive Combos',
+        shortTitle: 'Nootropic Stacks',
+        metaTitle: 'Best Nootropic Stacks (2026) | Evidence-Based Cognitive Combos Guide',
+        metaDescription: 'Science-backed guide to nootropic stacks and synergistic cognitive supplement combinations. Ranked by clinical evidence. Stack protocols, dosages, and safety.',
+        breadcrumb: 'Nootropic Stacks',
+        heroSubtitle: 'A systematic review of synergistic nootropic combinations, cognitive enhancement stacks, and evidence-based supplement pairing strategies — ranked by clinical evidence.',
+        filterFn: (s) => {
+            const nootropicKeys = ['memory','memoryEnhancement','memoryImprovement','memoryHighDose',
+                'cognition','cognitive_function','cognitive_speed','cognitive_energy',
+                'attention','attentionEnhancement','attentionExecutive',
+                'focus','focusImprovement','mental_clarity',
+                'alertness','mentalFatigue',
+                'neurotransmitters','dopamineSupport','serotonin',
+                'acute_cognition','reaction_time','choiceReactionTime',
+                'workingMemory','executiveFunction','learningImprovement','learning_capacity'];
+            const cat = normalizeCategory(s.category);
+            const eKeys = Object.keys(s.effectSizes || {});
+            return cat === 'Nootropics' || eKeys.some(k => nootropicKeys.includes(k));
+        },
+        coreSuppNames: [
+            'Caffeine', 'L-Theanine', 'Bacopa monnieri', 'Alpha-GPC',
+            'Citicoline', 'Creatine', "Lion's Mane Mushroom", 'Piracetam'
+        ],
+        snippetDefinition: 'Nootropic stacks are intentional combinations of cognitive-enhancing supplements designed to produce synergistic effects greater than individual components. The most well-studied stack is caffeine + L-theanine (enhanced attention without anxiety). Other evidence-based combinations include citicoline + bacopa (cholinergic + memory) and creatine + caffeine (energy + alertness), though stack-specific controlled trials remain limited.',
+        snippetListTitle: 'Top 8 Evidence-Based Nootropic Supplements for Stacking',
+        introduction: `Nootropic stacking — the practice of combining cognitive-enhancing supplements for synergistic effects — is one of the most popular yet least evidence-based areas of supplementation. While individual nootropics have varying levels of clinical evidence, controlled trials specifically testing combinations are rare.
+
+This guide reviews the individual nootropics most commonly used in stacks, evaluates the evidence for specific synergistic combinations, and provides evidence-based guidance for constructing cognitive enhancement protocols. We distinguish between well-studied combinations and theoretical synergies that lack controlled evaluation.
+
+<strong>Important:</strong> This guide is for informational purposes only. Stacking multiple supplements increases both potential benefits and potential risks. Start with single agents, establish individual tolerance, and add one compound at a time. Never combine nootropics with prescription cognitive or psychiatric medications without medical supervision.`,
+        mechanismsIntro: `Effective nootropic stacks combine supplements targeting complementary cognitive mechanisms, creating additive or synergistic effects while minimizing side effects through mechanism-based pairing.`,
+        mechanisms: [
+            {
+                name: 'Balanced Stimulation (Caffeine + L-Theanine)',
+                description: 'The most well-studied nootropic stack combines caffeine (adenosine antagonist, promotes alertness and focus) with L-theanine (promotes alpha-wave activity, reduces anxiety). L-theanine smooths the jittery edge of caffeine while preserving its cognitive benefits. Typical ratio: 2:1 (L-theanine:caffeine) — e.g., 200mg L-theanine + 100mg caffeine.',
+                supplements: ['Caffeine', 'L-Theanine']
+            },
+            {
+                name: 'Cholinergic Enhancement Stack',
+                description: 'Cholinergic stacks provide choline precursors (citicoline or Alpha-GPC) alongside compounds that enhance cholinergic utilization (racetams) or protect cholinergic neurons (bacopa, lion\'s mane). The rationale: increased acetylcholine production paired with enhanced receptor sensitivity or neuroprotection.',
+                supplements: ['Citicoline', 'Alpha-GPC', 'Bacopa monnieri', "Lion's Mane Mushroom"]
+            },
+            {
+                name: 'Brain Energy & Endurance',
+                description: 'Cognitive endurance stacks target the brain\'s massive energy demands (~20% of total ATP). Creatine replenishes phosphocreatine reserves, citicoline supports mitochondrial membrane integrity, and MCT oil provides rapid ketone-based fuel. This stack is designed for sustained cognitive performance under demanding conditions.',
+                supplements: ['Creatine', 'Citicoline', 'MCT Oil', 'CoQ10']
+            },
+            {
+                name: 'Neuroplasticity & Long-Term Cognitive Health',
+                description: 'Long-term cognitive optimization stacks focus on neurogenesis, synaptic plasticity, and neuroprotection. Lion\'s mane stimulates NGF, bacopa enhances dendritic arborization, and omega-3 DHA provides structural support for neuronal membranes. These effects develop over weeks to months of consistent use.',
+                supplements: ["Lion's Mane Mushroom", 'Bacopa monnieri', 'Omega-3 Fatty Acids', 'PQQ']
+            }
+        ],
+        safetyIntro: `Nootropic stacking introduces compounding risks. The more supplements combined, the greater the potential for interactions, side effects, and unpredictable synergies.`,
+        safetyNotes: [
+            '<strong>One at a time rule:</strong> Never start a full stack simultaneously. Add one compound at a time, waiting 1-2 weeks between additions to identify individual response, tolerance, and potential side effects.',
+            '<strong>Cholinergic overload:</strong> Do NOT stack multiple choline sources at full doses (e.g., citicoline 500mg + Alpha-GPC 600mg). Excessive acetylcholine causes headaches, brain fog (paradoxically), depression, and GI distress. Choose one primary choline source.',
+            '<strong>Stimulant ceiling:</strong> Caffeine is included in many nootropic products. Track total daily caffeine from all sources (coffee, tea, supplements, pre-workout) to avoid exceeding 400mg/day. Symptoms of excess: anxiety, tremor, insomnia, tachycardia.',
+            '<strong>Piracetam legal status:</strong> Piracetam is available by prescription in many countries and as a dietary supplement in others. Regulatory status varies — verify legality in your jurisdiction. Piracetam may increase the effects of blood-thinning medications.',
+            '<strong>Bacopa timing:</strong> Bacopa monnieri is fat-soluble and should be taken with meals. Effects develop gradually over 8-12 weeks — not acutely. Bacopa may cause lethargy in some individuals, making it better suited for evening dosing.',
+            '<strong>Psychiatric medication interactions:</strong> Do NOT combine nootropic stacks with prescription cognitive enhancers (modafinil, methylphenidate, amphetamines), SSRIs, or MAOIs without medical supervision. Multiple mechanism targeting increases unpredictable interaction risk.'
+        ],
+        researchGaps: [
+            'Controlled trials specifically testing nootropic stacks (rather than individual compounds) are extremely rare',
+            'Dose-response relationships within stacks (optimal ratio of each component) are almost entirely based on anecdotal evidence',
+            'Long-term effects of chronic nootropic stacking (>12 months) on brain chemistry and receptor regulation are unknown',
+            'Individual variation in stack response (due to genetics, baseline neurotransmitter levels, diet, sleep) makes standardized protocols unreliable',
+            'The "more is better" assumption of stacking has never been tested against optimized single-agent protocols',
+            'Withdrawal effects and dependency potential of chronic nootropic use need systematic investigation'
+        ],
+        relatedLinks: [
+            { href: '../guides/cognitive-performance.html', icon: 'fa-brain', text: 'Cognitive Performance Guide' },
+            { href: '../guides/brain-fog.html', icon: 'fa-cloud-sun', text: 'Brain Fog Guide' },
+            { href: '../guides/memory-aging.html', icon: 'fa-brain', text: 'Memory & Aging Guide' },
+            { href: '../guides/energy-vitality.html', icon: 'fa-bolt', text: 'Energy & Vitality Guide' },
+            { href: '../guides/muscle-strength.html', icon: 'fa-dumbbell', text: 'Muscle Strength Guide' },
+            { href: '../guides/safety-interactions.html', icon: 'fa-triangle-exclamation', text: 'Safety & Interactions Guide' },
+            { href: '../compare/citicoline-vs-alpha-gpc.html', icon: 'fa-scale-balanced', text: 'Citicoline vs Alpha-GPC' },
             { href: '../index.html', icon: 'fa-database', text: 'Full Supplement Database' },
             { href: '../methodology.html', icon: 'fa-flask', text: 'Research Methodology' },
             { href: '../faq.html', icon: 'fa-circle-question', text: 'FAQ' }
@@ -630,6 +1633,31 @@ function getBenefitsList(s) {
     return [...cog, ...non];
 }
 
+// ─── Domain Keywords (shared constant) ──────────────────────────────────────
+// Used by getDomainBenefit() and getDomainSortedBenefits() to match benefits
+// to guide domains. Kept as a single constant to avoid duplication.
+const DOMAIN_KEYWORDS = {
+    'anxiety-stress': ['anxiety', 'stress', 'calm', 'relax', 'cortisol', 'mood', 'sleep', 'gaba', 'serotonin', 'adaptogen'],
+    'cognitive-performance': ['memory', 'cognit', 'focus', 'attention', 'brain', 'learning', 'mental', 'neuroprotect', 'neurotrophic', 'acetylcholine'],
+    'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation'],
+    'immune-function': ['immune', 'infection', 'cold', 'flu', 'antioxidant', 'nk cell', 'cytokine', 'antibod', 'pathogen', 'antimicrobial', 'antiviral', 'white blood'],
+    'joint-health': ['joint', 'cartilage', 'inflammat', 'arthritis', 'pain', 'mobility', 'collagen', 'bone', 'connective tissue', 'synovial', 'musculoskeletal'],
+    'metabolic-health': ['glucose', 'insulin', 'blood sugar', 'metaboli', 'HbA1c', 'glycemic', 'diabetes', 'weight', 'fat', 'obesity', 'AMPK', 'thermogen'],
+    'energy-vitality': ['energy', 'fatigue', 'endurance', 'performance', 'ATP', 'mitochondri', 'oxygen', 'VO2', 'stamina', 'power', 'strength', 'exercise'],
+    'mood-support': ['mood', 'depression', 'serotonin', 'emotional', 'antidepressant', 'wellbeing', 'well-being', 'happiness', 'sadness', 'hopelessness'],
+    'memory-aging': ['memory', 'cognitive aging', 'dementia', 'alzheimer', 'neuroprotect', 'brain aging', 'neurodegenerat', 'recall', 'forgetful', 'age-related'],
+    'longevity': ['longevity', 'aging', 'anti-aging', 'lifespan', 'senescen', 'mitochondri', 'NAD', 'sirtuin', 'telomere', 'oxidative'],
+    'brain-fog': ['brain fog', 'mental clarity', 'focus', 'concentration', 'alertness', 'mental fatigue', 'cognitive energy', 'processing speed', 'sharpness', 'foggy'],
+    'stress-resilience': ['stress', 'cortisol', 'adaptogen', 'resilience', 'HPA', 'adrenal', 'burnout', 'overwhelm', 'calm', 'tension'],
+    'safety-interactions': ['safety', 'interaction', 'contraindication', 'side effect', 'adverse', 'toxicity', 'warning', 'caution', 'drug interaction', 'risk'],
+    'muscle-strength': ['muscle', 'strength', 'lean mass', 'hypertrophy', 'power', 'resistance', 'bodybuilding', 'anabolic', 'force', 'contractile'],
+    'recovery': ['recovery', 'soreness', 'DOMS', 'repair', 'regenerat', 'post-exercise', 'muscle damage', 'inflammation', 'healing', 'rest'],
+    'womens-health': ['women', 'female', 'menstrual', 'PMS', 'menopause', 'pregnancy', 'fertility', 'osteoporosis', 'iron', 'hormonal'],
+    'mens-health': ['men', 'male', 'testosterone', 'prostate', 'fertility', 'erectile', 'androgen', 'DHT', 'sperm', 'virility'],
+    'gut-brain': ['gut', 'digest', 'microbiome', 'probiotic', 'intestin', 'IBS', 'leaky gut', 'barrier', 'enteric', 'vagus'],
+    'nootropic-stacks': ['nootropic', 'stack', 'synerg', 'cognitive enhance', 'smart drug', 'brain boost', 'neuroenhance', 'racetam', 'choline', 'cognitive combo']
+};
+
 /**
  * Get the most domain-relevant benefit for snippet list display.
  * Falls back to first available benefit if no domain match found.
@@ -639,20 +1667,10 @@ function getDomainBenefit(s, guideSlug) {
     const non = s.primaryBenefits?.nonCognitive || [];
     const all = [...non, ...cog]; // non-cognitive first for non-cognitive domains
 
-    const domainKeywords = {
-        'anxiety-stress': ['anxiety', 'stress', 'calm', 'relax', 'cortisol', 'mood', 'sleep', 'gaba', 'serotonin', 'adaptogen'],
-        'cognitive-performance': ['memory', 'cognit', 'focus', 'attention', 'brain', 'learning', 'mental', 'neuroprotect', 'neurotrophic', 'acetylcholine'],
-        'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation'],
-        'immune-function': ['immune', 'infection', 'cold', 'flu', 'antioxidant', 'nk cell', 'cytokine', 'antibod', 'pathogen', 'antimicrobial', 'antiviral', 'white blood'],
-        'joint-health': ['joint', 'cartilage', 'inflammat', 'arthritis', 'pain', 'mobility', 'collagen', 'bone', 'connective tissue', 'synovial', 'musculoskeletal'],
-        'metabolic-health': ['glucose', 'insulin', 'blood sugar', 'metaboli', 'HbA1c', 'glycemic', 'diabetes', 'weight', 'fat', 'obesity', 'AMPK', 'thermogen'],
-        'energy-vitality': ['energy', 'fatigue', 'endurance', 'performance', 'ATP', 'mitochondri', 'oxygen', 'VO2', 'stamina', 'power', 'strength', 'exercise']
-    };
-
-    const keywords = domainKeywords[guideSlug] || [];
+    const keywords = DOMAIN_KEYWORDS[guideSlug] || [];
     if (keywords.length > 0) {
         // Search nonCognitive first for most domains, cognitive first for cognitive
-        const cogDomains = ['cognitive-performance'];
+        const cogDomains = ['cognitive-performance', 'memory-aging', 'brain-fog', 'nootropic-stacks'];
         const searchOrder = cogDomains.includes(guideSlug) ? [...cog, ...non] : [...non, ...cog];
         for (const benefit of searchOrder) {
             const lower = benefit.toLowerCase();
@@ -663,7 +1681,7 @@ function getDomainBenefit(s, guideSlug) {
     }
 
     // Fallback: for cognitive/energy guides prefer cognitive benefits, otherwise nonCognitive
-    const cogFirstGuides = ['cognitive-performance', 'energy-vitality'];
+    const cogFirstGuides = ['cognitive-performance', 'energy-vitality', 'memory-aging', 'brain-fog', 'nootropic-stacks'];
     if (cogFirstGuides.includes(guideSlug)) {
         return cog[0] || non[0] || 'General support';
     }
@@ -679,17 +1697,7 @@ function getDomainSortedBenefits(s, guideSlug) {
     const non = s.primaryBenefits?.nonCognitive || [];
     const all = guideSlug === 'cognitive-performance' ? [...cog, ...non] : [...non, ...cog];
 
-    const domainKeywords = {
-        'anxiety-stress': ['anxiety', 'stress', 'calm', 'relax', 'cortisol', 'mood', 'sleep', 'gaba', 'serotonin', 'adaptogen'],
-        'cognitive-performance': ['memory', 'cognit', 'focus', 'attention', 'brain', 'learning', 'mental', 'neuroprotect', 'neurotrophic', 'acetylcholine'],
-        'cardiovascular': ['cardiovascular', 'heart', 'blood pressure', 'cholesterol', 'lipid', 'triglyceride', 'vascular', 'endothel', 'arterial', 'cardiac', 'circulation'],
-        'immune-function': ['immune', 'infection', 'cold', 'flu', 'antioxidant', 'nk cell', 'cytokine', 'antibod', 'pathogen', 'antimicrobial', 'antiviral', 'white blood'],
-        'joint-health': ['joint', 'cartilage', 'inflammat', 'arthritis', 'pain', 'mobility', 'collagen', 'bone', 'connective tissue', 'synovial', 'musculoskeletal'],
-        'metabolic-health': ['glucose', 'insulin', 'blood sugar', 'metaboli', 'HbA1c', 'glycemic', 'diabetes', 'weight', 'fat', 'obesity', 'AMPK', 'thermogen'],
-        'energy-vitality': ['energy', 'fatigue', 'endurance', 'performance', 'ATP', 'mitochondri', 'oxygen', 'VO2', 'stamina', 'power', 'strength', 'exercise']
-    };
-
-    const keywords = domainKeywords[guideSlug] || [];
+    const keywords = DOMAIN_KEYWORDS[guideSlug] || [];
     if (keywords.length === 0) return all;
 
     const relevant = [];
