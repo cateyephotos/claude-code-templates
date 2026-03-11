@@ -20,14 +20,14 @@
  *   - rbac.js (window.SupplementDBRBAC)
  *   - convex-client.js (window.SupplementDB) — for gate event tracking
  *
- * Affected pages: guides/{slug}.html (20 evidence guide pages), evidence/{domain}/{supplement}.html
+ * Affected pages: guides/{slug}.html (20 evidence guide pages), evidence/{domain}/{supplement}.html, tools/{slug}.html
  */
 (function () {
   "use strict";
 
   // Only run on guide pages
   const path = window.location.pathname.toLowerCase();
-  if ((!path.includes("/guides/") && !path.includes("/evidence/")) || path.includes("/admin/")) return;
+  if ((!path.includes("/guides/") && !path.includes("/evidence/") && !path.includes("/tools/")) || path.includes("/admin/")) return;
 
   // ── Configuration ──────────────────────────────────────────────
   const VISIBLE_PERCENT = 15; // Fallback percentage if no cutoff marker found

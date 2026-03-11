@@ -1000,4 +1000,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <!-- Tools -->
+    <url>
+        <loc>https://supplementdb.co/tools/stack-analyzer.html</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

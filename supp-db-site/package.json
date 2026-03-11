@@ -21,6 +21,7 @@
     "playwright": "^1.55.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "cheerio": "^1.0.0",
     "resend": "^4.0.0",
     "sharp": "^0.34.5",

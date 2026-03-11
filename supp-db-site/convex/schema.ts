@@ -114,6 +114,42 @@ export default defineSchema({
     .index("by_guideSlug", ["guideSlug"])
     .index("by_eventType", ["eventType"]),
 
+  // Stack Analyzer — credit tracking and analysis history
+  analysisCredits: defineTable({
+    userId: v.string(),
+    tier: v.union(v.literal("free"), v.literal("subscriber")),
+    monthlyLimit: v.number(),
+    usedThisMonth: v.number(),
+    periodStart: v.number(), // Start of current billing month (epoch ms)
+    periodEnd: v.number(), // End of current billing month (epoch ms)
+    lastAnalysisAt: v.optional(v.number()),
+    totalAnalyses: v.number(), // Lifetime count
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_tier", ["tier"]),
+
+  // Stack Analyzer — analysis results history
+  stackAnalyses: defineTable({
+    userId: v.string(),
+    supplements: v.array(v.object({
+      id: v.number(),
+      name: v.string(),
+    })),
+    healthGoal: v.string(), // domain ID from problems.js
+    analysisDepth: v.union(v.literal("quick"), v.literal("standard"), v.literal("deep")),
+    result: v.any(), // Full Claude response (structured JSON)
+    model: v.string(),
+    inputTokens: v.number(),
+    outputTokens: v.number(),
+    costUsd: v.number(), // Estimated cost in USD
+    timestamp: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_timestamp", ["timestamp"])
+    .index("by_healthGoal", ["healthGoal"]),
+
   // Newsletter subscribers with double opt-in
   newsletterSubscribers: defineTable({
     email: v.string(),
