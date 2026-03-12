@@ -34,362 +34,784 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/content-gate.css?v=1773279599199">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../legal/legal-shared.css">
-    <link rel="stylesheet" href="../../css/content-shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Clerk Auth + Convex CDN -->
+    <!-- Auth CDN -->
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GABA for Anxiety & Stress Management","description":"Clinical evidence review of GABA for anxiety & stress management. Includes dosage protocols, mechanism analysis, safety profile, and peer-reviewed citations.","datePublished":"2026-03-12","dateModified":"2026-03-12","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/evidence/anxiety/gaba.html"},"about":{"@type":"Drug","name":"GABA","description":"Evidence-based supplement for anxiety & stress management"}}</script>
+
+    
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --accent: #7c3aed;
+            --accent-light: #8b5cf6;
+            --accent-glow: rgba(124,58,237, 0.15);
+            --glow: #c4b5fd;
+            --blue-muted: #7c8db5;
+            --slate: #8b949e;
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: rgba(124,58,237, 0.12);
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --tier1-from: #4ade80;
+            --tier1-to: #22c55e;
+            --tier2-from: #fbbf24;
+            --tier2-to: #f59e0b;
+            --tier3-from: #fb7185;
+            --tier3-to: #e11d48;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .guide-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-section {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                var(--navy-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .tier-1-badge {
+            background: linear-gradient(135deg, var(--tier1-from), var(--tier1-to));
+            color: #052e16;
+        }
+        .tier-2-badge {
+            background: linear-gradient(135deg, var(--tier2-from), var(--tier2-to));
+            color: #451a03;
+        }
+        .tier-3-badge {
+            background: linear-gradient(135deg, var(--tier3-from), var(--tier3-to));
+            color: #fff;
+        }
+
+        .evidence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .evidence-card:hover {
+            border-color: rgba(124,58,237, 0.3);
+            box-shadow: 0 0 30px rgba(124,58,237, 0.06);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .breadcrumb a {
+            color: var(--blue-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb a:hover { color: var(--glow); }
+        .breadcrumb .sep {
+            color: rgba(139, 148, 158, 0.4);
+            font-size: 0.6rem;
+        }
+        .breadcrumb .current { color: var(--text-muted); }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .hero-stat i { color: var(--accent-light); font-size: 0.7rem; }
+
+        .section-heading {
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .summary-table thead th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        .summary-table thead th:first-child { border-radius: 8px 0 0 0; }
+        .summary-table thead th:last-child { border-radius: 0 8px 0 0; }
+        .summary-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(124,58,237, 0.06);
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+        .summary-table tbody tr { transition: background 0.2s; }
+        .summary-table tbody tr:hover { background: rgba(124,58,237, 0.04); }
+        .summary-table tbody tr:last-child td { border-bottom: none; }
+
+        .finding-highlight {
+            border-left: 3px solid var(--accent-light);
+            background: rgba(124,58,237, 0.05);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+        }
+
+        .mech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(124,58,237, 0.08);
+            border: 1px solid rgba(124,58,237, 0.15);
+            color: var(--glow);
+        }
+
+        .key-study-card {
+            background: rgba(124,58,237, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        .key-study-card .study-title {
+            color: var(--text-bright);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .key-study-card .study-meta {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .pmid-link {
+            color: var(--blue-muted);
+            font-size: 0.8rem;
+            font-family: 'DM Sans', monospace;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .pmid-link:hover {
+            opacity: 1;
+            color: var(--glow);
+            text-decoration: underline;
+        }
+
+        .citation-entry {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(124,58,237, 0.05);
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+        }
+        .citation-entry:last-child { border-bottom: none; }
+        .cite-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(124,58,237, 0.1);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .capture-section {
+            background:
+                radial-gradient(ellipse 70% 80% at 30% 50%, rgba(124,58,237, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 80% 40%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1040 0%, #0d1117 100%);
+            border: 1px solid rgba(124,58,237, 0.2);
+        }
+
+        .disclaimer-box {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .disclaimer-box i { color: #f59e0b; margin-top: 2px; flex-shrink: 0; }
+        .disclaimer-box a { color: #f59e0b; text-decoration: underline; opacity: 0.8; }
+
+        .related-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: var(--glow);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .related-link:hover {
+            background: rgba(124,58,237, 0.06);
+            border-color: rgba(124,58,237, 0.2);
+        }
+        .related-link i { color: var(--accent-light); width: 16px; text-align: center; }
+
+        html { scroll-behavior: smooth; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table { min-width: 500px; }
+            .hero-stats { justify-content: center; }
+        }
+
+        @media print {
+            .guide-nav, .capture-section, .no-print { display: none !important; }
+            body { background: #fff; color: #111; }
+            .evidence-card { border: 1px solid #ddd; background: #fff; }
+        }
+    </style>
 </head>
-<body class="content-page">
-    <!-- Navigation -->
-    <nav class="legal-nav">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
-                <i class="fas fa-pills text-xl"></i>
-                <span class="font-bold text-lg">SupplementDB</span>
-            </a>
-            <div class="flex items-center space-x-4">
-                <a href="../../guides/anxiety-stress.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">Anxiety &amp; Stress Management Guide</a>
-                <a href="../../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
-                    <i class="fas fa-arrow-left mr-1"></i> Database
-                </a>
+<body data-theme="dark">
+
+<!-- Sticky Navigation -->
+<nav class="guide-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+        <a href="../../index.html" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="hidden sm:inline">Back to Database</span>
+            <span class="sm:hidden">Back</span>
+        </a>
+        <div class="flex items-center gap-1">
+            <i class="fas fa-pills text-sm" style="color: #8b5cf6;"></i>
+            <span class="text-sm font-semibold text-gray-300">SupplementDB</span>
+        </div>
+        <button id="mobile-nav-toggle" class="md:hidden text-gray-400 hover:text-white transition-colors p-1">
+            <i class="fas fa-bars text-sm"></i>
+        </button>
+        <div class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-500">
+            <a href="#evidence-overview" class="hover:text-gray-300 transition-colors">Overview</a>
+            <a href="#context" class="hover:text-gray-300 transition-colors">Context</a>
+            <a href="#evidence-detail" class="hover:text-gray-300 transition-colors">Evidence</a>
+            <a href="#mechanisms" class="hover:text-gray-300 transition-colors">Mechanisms</a>
+            <a href="#dosage" class="hover:text-gray-300 transition-colors">Dosage</a>
+            <a href="#safety" class="hover:text-gray-300 transition-colors">Safety</a>
+            <a href="#citations" class="hover:text-gray-300 transition-colors">Citations</a>
+            <div id="auth-buttons"></div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile navigation dropdown -->
+<div id="mobile-nav-menu" class="hidden" style="position: fixed; top: 56px; left: 0; right: 0; z-index: 40; background: #0d1117; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="flex flex-col px-4 py-3 gap-1">
+        <a href="#evidence-overview" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Overview</a>
+        <a href="#context" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Context</a>
+        <a href="#evidence-detail" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Evidence</a>
+        <a href="#mechanisms" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Mechanisms</a>
+        <a href="#dosage" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Dosage</a>
+        <a href="#safety" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Safety</a>
+        <a href="#citations" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">Citations</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<header class="hero-section pt-16 pb-12 sm:pt-20 sm:pb-16 px-4 text-center relative">
+    <div class="max-w-3xl mx-auto relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb justify-center mb-6" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span class="sep"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">Evidence</span>
+            <span class="sep"><i class="fas fa-chevron-right"></i></span>
+            <a href="../../guides/anxiety-stress.html">Anxiety &amp; Stress Management</a>
+            <span class="sep"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">GABA</span>
+        </nav>
+
+        <!-- Review badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5" style="background: rgba(124,58,237, 0.12); color: #c4b5fd; border: 1px solid rgba(124,58,237, 0.2);">
+            <i class="fas fa-spa text-xs" style="color: #8b5cf6; font-size: 0.65rem;"></i>
+            Evidence Review
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
+            GABA for Anxiety &amp; Stress Management
+        </h1>
+
+        <p class="text-base sm:text-lg mb-6" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+            Clinical evidence review — dosage, mechanisms, safety, and citations
+        </p>
+
+        <div class="hero-stats mb-4">
+            <span class="hero-stat"><span class="tier-3-badge" style="display:inline-block;padding:2px 10px;border-radius:100px;font-size:0.7rem;font-weight:700;letter-spacing:0.03em;">Preliminary Evidence</span></span>
+            <span class="hero-stat"><i class="fas fa-star"></i> Relevance: 80/100</span>
+            <span class="hero-stat"><i class="fas fa-file-lines"></i> 3+ Citations</span>
+            <span class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-12</span>
+        </div>
+
+        <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+            <i class="fas fa-info-circle mr-1 opacity-60"></i>
+            This review summarizes published research. It does not constitute medical advice.
+            <a href="../../legal/disclaimer.html" style="color: #c4b5fd; text-decoration: underline; opacity: 0.7;">Full disclaimer</a>.
+        </p>
+    </div>
+</header>
+
+<main>
+
+<section id="evidence-overview" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Evidence Overview</h2>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
+                    <tr>
+                        <td style="color: var(--text-muted); width: 200px;"><strong>Supplement</strong></td>
+                        <td style="color: var(--text-bright);">GABA <em style="color: var(--slate);">(Gamma-aminobutyric acid)</em></td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Health Domain</strong></td>
+                        <td style="color: var(--text-bright);">Anxiety &amp; Stress Management</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Evidence Tier</strong></td>
+                        <td><span class="tier-3-badge" style="display:inline-block;padding:2px 10px;border-radius:100px;font-size:0.7rem;font-weight:700;letter-spacing:0.03em;">Preliminary Evidence</span> <span style="color: var(--text-primary); margin-left: 8px;">Preliminary Evidence</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Relevance Score</strong></td>
+                        <td style="color: var(--text-bright);">80/100</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Category</strong></td>
+                        <td style="color: var(--text-bright);">Amino Acids</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Recommended Dosage</strong></td>
+                        <td style="color: var(--text-bright);">100-750mg daily (stress/anxiety); 500-750mg pre-bedtime (sleep)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="context" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Understanding Anxiety &amp; Stress Management</h2>
+    <div class="evidence-card p-6">
+        <p class="mb-4" style="color: var(--text-primary);">Anxiety involves dysregulation of the HPA stress axis, reduced GABAergic inhibition, serotonin imbalance, and heightened sympathetic nervous system activity. Supplements target anxiolytic pathways through neurotransmitter modulation and cortisol regulation.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+            <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" style="color: var(--accent-light); font-family: 'DM Sans', sans-serif; letter-spacing: 0.08em;">Key Physiological Systems</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> GABAergic system</li>
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> HPA axis</li>
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> Serotonergic pathway</li>
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> Adrenergic system</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" style="color: var(--accent-light); font-family: 'DM Sans', sans-serif; letter-spacing: 0.08em;">Key Signaling Molecules</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> GABA</li>
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> Serotonin</li>
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> Cortisol</li>
+                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> Norepinephrine</li>
+                </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="content-hero">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="content-breadcrumb" aria-label="Breadcrumb">
-                <a href="../../index.html">Home</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>Evidence</span>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <a href="../../guides/anxiety-stress.html">Anxiety &amp; Stress Management</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>GABA</span>
-            </nav>
-            <h1>GABA for Anxiety &amp; Stress Management</h1>
-            <p class="hero-subtitle">Clinical evidence review — dosage, mechanisms, safety, and citations</p>
-            <div class="hero-meta">
-                <span class="hero-stat"><span class="tier-badge" style="background:#d97706;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Preliminary Evidence</span></span>
-                <span class="hero-stat"><i class="fas fa-star"></i> Relevance: 80/100</span>
-                <span class="hero-stat"><i class="fas fa-file-lines"></i> 3+ Citations</span>
-                <span class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-12</span>
+<section id="evidence-detail" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Evidence for GABA in Anxiety &amp; Stress Management</h2>
+    <div class="evidence-card p-6 mb-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Measured Effect Sizes</h3>
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Outcome</th>
+                        <th>Effect Size</th>
+                        <th>Study Type</th>
+                        <th>Sample</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="color: var(--text-primary);">Stress Markers</td>
+                        <td style="color: var(--text-bright); font-weight: 600;">Small improvement in salivary chromogranin A and cortisol proxy measures</td>
+                        <td style="color: var(--text-muted);">—</td>
+                        <td style="color: var(--text-muted);">—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="mechanisms" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Mechanisms of Action</h2>
+    <div class="evidence-card p-6">
+        <p class="mb-4" style="color: var(--text-primary);">How GABA affects anxiety &amp; stress management through biological pathways:</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Primary inhibitory neurotransmitter (GABA-A and GABA-B receptor agonism)</span>
+            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Peripheral nervous system calming via enteric GABA receptors</span>
+            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gut-brain axis modulation</span>
+            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Sleep-wake cycle regulation via GABAergic interneurons</span>
+            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Stress response modulation through sympathetic nervous system inhibition</span>
+        </div>
+    </div>
+</section>
+
+<section id="dosage" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Dosage &amp; Protocol</h2>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
+                    <tr>
+                        <td style="color: var(--text-muted); width: 200px;"><strong>Recommended Dosage</strong></td>
+                        <td style="color: var(--text-bright);">100-750mg daily (stress/anxiety); 500-750mg pre-bedtime (sleep)</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Optimal Duration</strong></td>
+                        <td style="color: var(--text-bright);">4-8 weeks</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-xs mt-4" style="color: var(--text-muted);"><i class="fas fa-info-circle mr-1" style="color: var(--accent-light);"></i> Dosage ranges are based on clinical trial protocols. Individual needs may vary. Always start with the lower end and consult a healthcare provider.</p>
+    </div>
+</section>
+
+<section id="safety" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Safety Profile</h2>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
+                    <tr><td style="color: var(--text-muted); width: 200px;"><strong>Safety Rating</strong></td><td style="color: #4ade80; font-weight: 600;">GRAS-designated (Oketch-Rabah 2021); well-characterized safety up to 750mg/day in human studies. No significant drug interactions documented in short-term clinical trials.</td></tr>
+                    <tr><td style="color: var(--text-muted);"><strong>Contraindications</strong></td><td style="color: var(--text-primary);">Pregnancy and breastfeeding (insufficient safety data), Severe hepatic or renal impairment</td></tr>
+                    <tr><td style="color: var(--text-muted);"><strong>Drug Interactions</strong></td><td style="color: var(--text-primary);">Sedative medications (additive GABAergic effects), Benzodiazepines (potential enhancement), Anticonvulsants (potential interaction — consult physician)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="disclaimer-box mt-4">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>Always inform your healthcare provider about all supplements you are taking, especially if you use prescription medications.</div>
+        </div>
+    </div>
+</section>
+
+<section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Clinical Citations</h2>
+    <p class="mb-6" style="color: var(--text-primary);">Peer-reviewed research referenced in this evidence review:</p>
+    <div class="evidence-card p-6">
+        <div class="space-y-1">
+            <div class="citation-entry">
+                <span class="cite-num">1</span>
+                <span>Oketch-Rabah et al. (2021). Safety assessment of GABA as a food ingredient. <em></em>. <a class="pmid-link" href="https://doi.org/10.1016/j.fct.2020.111930" target="_blank" rel="noopener">10.1016/j.fct.2020.111930</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/33242518" target="_blank" rel="noopener">PMID: 33242518</a></span>
+            </div>
+            <div class="citation-entry">
+                <span class="cite-num">2</span>
+                <span>Abdou et al. (2006). Oral administration of gamma-aminobutyric acid affects mood and CNS activities during stress. <em></em>. <a class="pmid-link" href="https://doi.org/10.1007/s00726-005-0287-1" target="_blank" rel="noopener">10.1007/s00726-005-0287-1</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/16554972" target="_blank" rel="noopener">PMID: 16554972</a></span>
+            </div>
+            <div class="citation-entry">
+                <span class="cite-num">3</span>
+                <span>Bowery &amp; Smart (2006). GABA and glycine as neurotransmitters: a brief history. <em></em>. <a class="pmid-link" href="https://doi.org/10.1038/sj.bjp.0706443" target="_blank" rel="noopener">10.1038/sj.bjp.0706443</a> <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/16402094" target="_blank" rel="noopener">PMID: 16402094</a></span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Trust Signal Bar -->
-    <div class="trust-bar" style="max-width:64rem;margin:1rem auto;">
-        <span class="trust-bar-item"><i class="fas fa-check-circle"></i> Peer-Reviewed Sources</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../../methodology.html">Our Methodology</a></span>
+<section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Related Evidence</h2>
+
+    <div class="evidence-card p-6 mb-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Other Supplements for Anxiety &amp; Stress Management</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="./ashwagandha.html" class="related-link"><i class="fas fa-flask"></i> Ashwagandha for Anxiety &amp; Stress Management</a>
+            <a href="./l-theanine.html" class="related-link"><i class="fas fa-flask"></i> L-Theanine for Anxiety &amp; Stress Management</a>
+            <a href="./magnesium.html" class="related-link"><i class="fas fa-flask"></i> Magnesium for Anxiety &amp; Stress Management</a>
+            <a href="./passionflower.html" class="related-link"><i class="fas fa-flask"></i> Passionflower for Anxiety &amp; Stress Management</a>
+            <a href="./inositol.html" class="related-link"><i class="fas fa-flask"></i> Inositol for Anxiety &amp; Stress Management</a>
+        </div>
     </div>
 
-    <!-- Main Content with TOC -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div style="display:grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: start;">
-            <article>
-
-                <!-- Medical Disclaimer -->
-                <div class="content-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div><strong>Medical Disclaimer:</strong> This evidence review is for informational purposes only. It does not constitute medical advice. Always consult a qualified healthcare professional before starting any supplement. <a href="../../legal/disclaimer.html" style="color:#92400e; text-decoration:underline;">Read full disclaimer</a>.</div>
-                </div>
-
-                <section class="content-section" id="evidence-overview">
-                    <h2>Evidence Overview</h2>
-                    <div class="content-table-wrap" style="margin-bottom:1.5rem;">
-                        <table class="content-table">
-                            <tbody>
-                                <tr>
-                                    <td><strong>Supplement</strong></td>
-                                    <td>GABA <em>(Gamma-aminobutyric acid)</em></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Health Domain</strong></td>
-                                    <td>Anxiety &amp; Stress Management</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Evidence Tier</strong></td>
-                                    <td><span class="tier-badge" style="background:#d97706;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">Preliminary Evidence</span> (Preliminary Evidence)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Relevance Score</strong></td>
-                                    <td>80/100</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Category</strong></td>
-                                    <td>Amino Acids</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Recommended Dosage</strong></td>
-                                    <td>100-750mg daily (stress/anxiety); 500-750mg pre-bedtime (sleep)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="problem-context">
-                    <h2>Understanding Anxiety &amp; Stress Management</h2>
-                    <p>Anxiety involves dysregulation of the HPA stress axis, reduced GABAergic inhibition, serotonin imbalance, and heightened sympathetic nervous system activity. Supplements target anxiolytic pathways through neurotransmitter modulation and cortisol regulation.</p>
-                    <h3>Key Physiological Systems</h3>
-                    <ul>
-                        <li><strong>GABAergic system</strong></li>
-                        <li><strong>HPA axis</strong></li>
-                        <li><strong>Serotonergic pathway</strong></li>
-                        <li><strong>Adrenergic system</strong></li>
-                    </ul>
-                    <h3>Key Signaling Molecules</h3>
-                    <ul>
-                        <li>GABA</li>
-                        <li>Serotonin</li>
-                        <li>Cortisol</li>
-                        <li>Norepinephrine</li>
-                    </ul>
-                </section>
-
-                <section class="content-section" id="evidence-detail">
-                    <h2>Evidence for GABA in Anxiety &amp; Stress Management</h2>
-                    <h3>Measured Effect Sizes</h3>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Outcome</th>
-                                    <th>Effect Size</th>
-                                    <th>Study Type</th>
-                                    <th>Sample</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Stress Markers</td>
-                                    <td><strong>Small improvement in salivary chromogranin A and cortisol proxy measures</strong></td>
-                                    <td>—</td>
-                                    <td>—</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section class="content-section" id="mechanisms">
-                    <h2>Mechanisms of Action</h2>
-                    <p>How GABA affects anxiety &amp; stress management through biological pathways:</p>
-                    <ul>
-                        <li><strong>Primary inhibitory neurotransmitter (GABA-A and GABA-B receptor agonism)</strong></li>
-                        <li><strong>Peripheral nervous system calming via enteric GABA receptors</strong></li>
-                        <li><strong>Gut-brain axis modulation</strong></li>
-                        <li><strong>Sleep-wake cycle regulation via GABAergic interneurons</strong></li>
-                        <li><strong>Stress response modulation through sympathetic nervous system inhibition</strong></li>
-                    </ul>
-                </section>
-
-                <section class="content-section" id="dosage">
-                    <h2>Dosage &amp; Protocol</h2>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <tbody>
-                                <tr>
-                                    <td><strong>Recommended Dosage</strong></td>
-                                    <td>100-750mg daily (stress/anxiety); 500-750mg pre-bedtime (sleep)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Optimal Duration</strong></td>
-                                    <td>4-8 weeks</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p style="margin-top:1rem;font-size:0.9rem;color:#64748b;"><i class="fas fa-info-circle"></i> Dosage ranges are based on clinical trial protocols. Individual needs may vary. Always start with the lower end and consult a healthcare provider.</p>
-                </section>
-
-                <section class="content-section" id="safety">
-                    <h2>Safety Profile</h2>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <tbody>
-                                <tr><td><strong>Safety Rating</strong></td><td>GRAS-designated (Oketch-Rabah 2021); well-characterized safety up to 750mg/day in human studies. No significant drug interactions documented in short-term clinical trials.</td></tr>
-                                <tr><td><strong>Contraindications</strong></td><td>Pregnancy and breastfeeding (insufficient safety data), Severe hepatic or renal impairment</td></tr>
-                                <tr><td><strong>Drug Interactions</strong></td><td>Sedative medications (additive GABAergic effects), Benzodiazepines (potential enhancement), Anticonvulsants (potential interaction — consult physician)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p style="margin-top:1rem;font-size:0.9rem;color:#92400e;"><i class="fas fa-exclamation-triangle"></i> Always inform your healthcare provider about all supplements you are taking, especially if you use prescription medications.</p>
-                </section>
-
-                <section class="content-section" id="citations">
-                    <h2>Clinical Citations</h2>
-                    <p>Peer-reviewed research referenced in this evidence review:</p>
-                    <ol class="citation-list">
-                        <li>Oketch-Rabah et al. (2021). Safety assessment of GABA as a food ingredient. <em></em>. <a class="citation-doi" href="https://doi.org/10.1016/j.fct.2020.111930" target="_blank" rel="noopener">10.1016/j.fct.2020.111930</a> PMID: 33242518</li>
-                        <li>Abdou et al. (2006). Oral administration of gamma-aminobutyric acid affects mood and CNS activities during stress. <em></em>. <a class="citation-doi" href="https://doi.org/10.1007/s00726-005-0287-1" target="_blank" rel="noopener">10.1007/s00726-005-0287-1</a> PMID: 16554972</li>
-                        <li>Bowery &amp; Smart (2006). GABA and glycine as neurotransmitters: a brief history. <em></em>. <a class="citation-doi" href="https://doi.org/10.1038/sj.bjp.0706443" target="_blank" rel="noopener">10.1038/sj.bjp.0706443</a> PMID: 16402094</li>
-                    </ol>
-                </section>
-
-                <section class="content-section" id="related">
-                    <h2>Related Evidence</h2>
-                    <div class="related-content">
-                        <h3>Other Supplements for Anxiety &amp; Stress Management</h3>
-                        <div class="related-content-grid">
-                            <a href="/evidence/anxiety/ashwagandha.html"><i class="fas fa-flask"></i> Ashwagandha for Anxiety &amp; Stress Management</a>
-                            <a href="/evidence/anxiety/l-theanine.html"><i class="fas fa-flask"></i> L-Theanine for Anxiety &amp; Stress Management</a>
-                            <a href="/evidence/anxiety/magnesium.html"><i class="fas fa-flask"></i> Magnesium for Anxiety &amp; Stress Management</a>
-                            <a href="/evidence/anxiety/passionflower.html"><i class="fas fa-flask"></i> Passionflower for Anxiety &amp; Stress Management</a>
-                            <a href="/evidence/anxiety/inositol.html"><i class="fas fa-flask"></i> Inositol for Anxiety &amp; Stress Management</a>
-                        </div>
-                    </div>
-                    <div class="related-content" style="margin-top:1.5rem;">
-                        <h3>Related Resources</h3>
-                        <div class="related-content-grid">
-                            <a href="/guides/anxiety-stress.html"><i class="fas fa-book-open"></i> Anxiety &amp; Stress Management Complete Guide</a>
-                            <a href="/index.html#supplements"><i class="fas fa-pills"></i> GABA Full Profile</a>
-                            <a href="/guides/safety-interactions.html"><i class="fas fa-shield-alt"></i> Safety &amp; Interactions Guide</a>
-                            <a href="/methodology.html"><i class="fas fa-microscope"></i> Our Methodology</a>
-                            <a href="/evidence/sleep/gaba.html"><i class="fas fa-arrow-right"></i> GABA for Sleep Quality &amp; Insomnia</a>
-                            <a href="/evidence/stress-resilience/gaba.html"><i class="fas fa-arrow-right"></i> GABA for Stress Resilience &amp; Cortisol</a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Email Capture -->
-                <section class="newsletter-section" id="subscribe">
-                    <div class="newsletter-inner">
-                        <h3><i class="fas fa-envelope-open-text"></i> Get GABA Research Updates</h3>
-                        <p>Stay informed when new studies on GABA for anxiety &amp; stress management are published or evidence tiers are updated.</p>
-                        <div id="guide-newsletter-container">
-                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
-                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                            </form>
-                            <p id="guide-newsletter-success" class="newsletter-success hidden">
-                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
-                            </p>
-                            <p id="guide-newsletter-already" class="newsletter-already hidden">
-                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
-                            </p>
-                        </div>
-                        <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../../legal/privacy.html">Privacy Policy</a></p>
-                    </div>
-                </section>
-
-            </article><!-- end main column -->
-
-            <!-- Sidebar TOC (desktop only) -->
-            <aside class="content-toc" aria-label="Table of Contents">
-                <h4>Contents</h4>
-                <ul>
-                    <li><a href="#evidence-overview">Evidence Overview</a></li>
-                    <li><a href="#problem-context">Problem Context</a></li>
-                    <li><a href="#evidence-detail">Evidence Detail</a></li>
-                    <li><a href="#mechanisms">Mechanisms</a></li>
-                    <li><a href="#dosage">Dosage &amp; Protocol</a></li>
-                    <li><a href="#safety">Safety Profile</a></li>
-                    <li><a href="#citations">Clinical Citations</a></li>
-                    <li><a href="#related">Related Evidence</a></li>
-                </ul>
-            </aside>
+    <div class="evidence-card p-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Related Resources</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="../../guides/anxiety-stress.html" class="related-link"><i class="fas fa-book-open"></i> Anxiety &amp; Stress Management Complete Guide</a>
+            <a href="../../index.html#supplements" class="related-link"><i class="fas fa-pills"></i> GABA Full Profile</a>
+            <a href="../../guides/safety-interactions.html" class="related-link"><i class="fas fa-shield-alt"></i> Safety &amp; Interactions Guide</a>
+            <a href="../../methodology.html" class="related-link"><i class="fas fa-microscope"></i> Our Methodology</a>
+            <a href="../sleep/gaba.html" class="related-link"><i class="fas fa-arrow-right"></i> GABA for Sleep Quality &amp; Insomnia</a>
         </div>
-    </main>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
-            <p class="mt-2 text-sm text-gray-400">
-                <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
-                <a href="../../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
-            </p>
-            <p class="mt-2 text-sm text-gray-500">
-                <a href="../../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
-                <a href="../../legal/terms.html" style="color:#9ca3af;">Terms</a>
-            </p>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
+        <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
+            <i class="fas fa-envelope-open-text mr-2" style="color: #8b5cf6;"></i>
+            Get GABA Research Updates
+        </h3>
+        <p class="mb-6 text-sm" style="color: var(--text-muted); max-width: 440px; margin: 0 auto 1.5rem;">
+            Stay informed when new studies on GABA for anxiety &amp; stress management are published or evidence tiers are updated.
+        </p>
+        <div id="guide-newsletter-container">
+            <form id="guide-newsletter-form" class="newsletter-form flex gap-3 max-w-md mx-auto flex-wrap justify-center">
+                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required
+                    class="flex-1 min-w-0 px-4 py-2.5 rounded-lg text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text-bright); outline: none;">
+                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    style="background: #7c3aed;"><i class="fas fa-paper-plane mr-1"></i> Subscribe</button>
+            </form>
+            <p id="guide-newsletter-message" class="newsletter-message" style="display:none; color: var(--text-bright);"></p>
         </div>
-    </footer>
+        <p class="text-xs mt-4" style="color: var(--text-muted); opacity: 0.6;"><i class="fas fa-lock mr-1"></i> No spam. <a href="../../legal/privacy.html" style="color: var(--glow); opacity: 0.7;">Privacy Policy</a></p>
+    </div>
+</section>
 
-    <!-- Smooth scroll for TOC -->
-    <script>
-        document.querySelectorAll('.content-toc a').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.replaceState(null, '', this.getAttribute('href'));
+</main>
+
+<!-- Footer -->
+<footer class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t" style="border-color: var(--border);">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="../../index.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-pills" style="color: #8b5cf6;"></i>
+                <span>Return to Supplement Database</span>
+            </a>
+            <a href="../../guides/anxiety-stress.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-book-open"></i>
+                <span>Anxiety &amp; Stress Management Guide</span>
+            </a>
+        </div>
+        <p class="text-xs text-center sm:text-right" style="color: var(--text-muted); max-width: 400px;">
+            This review is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.
+        </p>
+    </div>
+    <div class="text-center mt-8">
+        <p class="text-xs" style="color: rgba(139, 148, 158, 0.5);">
+            &copy; 2025&ndash;2026 SupplementDB. Evidence-Based Supplement Database.
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
+
+// Smooth scroll for anchor links with nav offset
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            var navHeight = document.querySelector('.guide-nav').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
+
+// PostHog custom event tracking
+(function() {
+    if (typeof posthog === 'undefined') return;
+
+    posthog.capture('evidence_viewed', {
+        domain_slug: 'anxiety',
+        supplement_slug: 'gaba',
+        supplement_name: 'GABA',
+        domain_name: 'Anxiety &amp; Stress Management',
+        evidence_tier: 3,
+        relevance_score: 80,
+        citation_count: 3
+    });
+
+    var sectionsMeta = {
+        'evidence-overview': { name: 'Evidence Overview', depth: 'top' },
+        'context': { name: 'Problem Context', depth: 'upper' },
+        'evidence-detail': { name: 'Evidence Detail', depth: 'middle' },
+        'mechanisms': { name: 'Mechanisms', depth: 'middle' },
+        'dosage': { name: 'Dosage & Protocol', depth: 'lower' },
+        'safety': { name: 'Safety Profile', depth: 'lower' },
+        'citations': { name: 'Citations', depth: 'deep' },
+        'related': { name: 'Related Evidence', depth: 'bottom' }
+    };
+
+    var trackedSections = {};
+    var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !trackedSections[entry.target.id]) {
+                trackedSections[entry.target.id] = true;
+                var meta = sectionsMeta[entry.target.id];
+                if (meta) {
+                    posthog.capture('evidence_section_viewed', {
+                        domain_slug: 'anxiety',
+                        supplement_slug: 'gaba',
+                        section_id: entry.target.id,
+                        section_name: meta.name,
+                        scroll_depth: meta.depth
+                    });
                 }
+            }
+        });
+    }, { threshold: 0.2 });
+
+    Object.keys(sectionsMeta).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+    });
+
+    document.querySelectorAll('.pmid-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var href = this.getAttribute('href') || '';
+            posthog.capture('evidence_citation_clicked', {
+                domain_slug: 'anxiety',
+                supplement_slug: 'gaba',
+                citation_type: href.includes('pubmed') ? 'pmid' : (href.includes('doi.org') ? 'doi' : 'other'),
+                citation_url: href,
+                citation_text: this.textContent.trim()
             });
         });
-        var tocLinks = document.querySelectorAll('.content-toc a');
-        var sections = Array.from(tocLinks).map(function(a) {
-            return document.querySelector(a.getAttribute('href'));
-        }).filter(Boolean);
-        window.addEventListener('scroll', function() {
-            var scrollY = window.scrollY + 120;
-            var active = sections[0];
-            sections.forEach(function(sec) { if (sec.offsetTop <= scrollY) active = sec; });
-            tocLinks.forEach(function(a) {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + (active ? active.id : ''));
+    });
+
+    var elapsed = 0;
+    var timeThresholds = [30, 60, 120, 300];
+    var timeIndex = 0;
+    var timerCheck = setInterval(function() {
+        elapsed++;
+        if (timeIndex < timeThresholds.length && elapsed >= timeThresholds[timeIndex]) {
+            posthog.capture('evidence_time_on_page', {
+                domain_slug: 'anxiety',
+                supplement_slug: 'gaba',
+                seconds: timeThresholds[timeIndex]
             });
-        });
+            timeIndex++;
+        }
+        if (timeIndex >= timeThresholds.length) clearInterval(timerCheck);
+    }, 1000);
+})();
 
-        // Newsletter handler
-        window.handleGuideNewsletter = function(e) {
-            e.preventDefault();
-            var email = document.getElementById('guide-newsletter-email').value.trim();
-            if (!email) return false;
-            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-            if (subscribed.indexOf(email) !== -1) {
-                document.getElementById('guide-newsletter-form').classList.add('hidden');
-                document.getElementById('guide-newsletter-already').classList.remove('hidden');
-                return false;
-            }
-            if (typeof posthog !== 'undefined') {
-                posthog.identify(email);
-                posthog.people.set({
-                    email: email,
-                    newsletter_subscribed: true,
-                    subscribed_evidence: 'anxiety/gaba',
-                    signup_source: 'evidence_anxiety_gaba',
-                    signup_date: new Date().toISOString()
-                });
-                posthog.capture('evidence_email_captured', {
-                    source: 'evidence',
-                    domain_slug: 'anxiety',
-                    supplement_slug: 'gaba',
-                    email: email
-                });
-            }
-            subscribed.push(email);
-            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-            document.getElementById('guide-newsletter-form').classList.add('hidden');
-            document.getElementById('guide-newsletter-success').classList.remove('hidden');
-            return false;
-        };
-    </script>
+// Mobile nav toggle
+document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-nav-menu');
+    menu.classList.toggle('hidden');
+    this.querySelector('i').classList.toggle('fa-bars');
+    this.querySelector('i').classList.toggle('fa-times');
+});
+document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-nav-menu').classList.add('hidden');
+        var btn = document.getElementById('mobile-nav-toggle');
+        btn.querySelector('i').classList.add('fa-bars');
+        btn.querySelector('i').classList.remove('fa-times');
+    });
+});
+</script>
 
-    <!-- Auth, RBAC & Content Gate -->
-    <script src="../../js/auth.js"></script>
-    <script src="../../js/convex-client.js"></script>
-    <script src="../../js/rbac.js"></script>
-    <script src="../../js/auth-ui.js"></script>
+<script src="../../js/newsletter.js"></script>
+<script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "evidence-anxiety-gaba");</script>
 
-    <script src="../../js/content-gate.js"></script>
+<!-- Auth & Content Gate -->
+<script src="../../js/auth.js"></script>
+<script src="../../js/convex-client.js"></script>
+<script src="../../js/rbac.js"></script>
+<script src="../../js/auth-ui.js"></script>
+<script src="../../js/content-gate.js"></script>
 </body>
 </html>

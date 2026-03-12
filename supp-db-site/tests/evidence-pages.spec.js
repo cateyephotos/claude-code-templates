@@ -194,7 +194,7 @@ test.describe("Evidence pages — cross-links", () => {
     anxiety: "/guides/anxiety-stress.html",
     "cognitive-performance": "/guides/cognitive-performance.html",
     "metabolic-health": "/guides/metabolic-health.html",
-    inflammation: "/guides/joint-pain.html",
+    inflammation: "/guides/immune-function.html",
   };
 
   for (const { domain, path: pagePath, name } of DOMAIN_REPRESENTATIVES) {

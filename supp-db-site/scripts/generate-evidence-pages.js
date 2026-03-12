@@ -10,7 +10,7 @@
  *
  * Each page shows evidence for a specific supplement applied to a specific
  * health problem, with mechanism analysis, dosage protocols, safety info,
- * and clinical citations.
+ * and clinical citations. Uses the dark journal theme matching guide pages.
  *
  * Usage: node scripts/generate-evidence-pages.js
  */
@@ -48,7 +48,51 @@ const DOMAIN_TO_GUIDE = {
   anxiety: "anxiety-stress",
   "cognitive-performance": "cognitive-performance",
   "metabolic-health": "metabolic-health",
-  inflammation: "joint-pain",
+  inflammation: "immune-function",
+};
+
+// Dark journal accent themes per evidence domain (matches guide page palette)
+const EVIDENCE_THEMES = {
+  sleep: {
+    accent: "#6366f1",
+    accentLight: "#818cf6",
+    glow: "#a5b4fc",
+    glowRgb: "165,180,252",
+    accentRgb: "99,102,241",
+    faIcon: "fa-moon",
+  },
+  anxiety: {
+    accent: "#7c3aed",
+    accentLight: "#8b5cf6",
+    glow: "#c4b5fd",
+    glowRgb: "196,181,253",
+    accentRgb: "124,58,237",
+    faIcon: "fa-spa",
+  },
+  "cognitive-performance": {
+    accent: "#0891b2",
+    accentLight: "#06b6d4",
+    glow: "#67e8f9",
+    glowRgb: "103,232,249",
+    accentRgb: "8,145,178",
+    faIcon: "fa-brain",
+  },
+  "metabolic-health": {
+    accent: "#ea580c",
+    accentLight: "#f97316",
+    glow: "#fdba74",
+    glowRgb: "253,186,116",
+    accentRgb: "234,88,12",
+    faIcon: "fa-fire",
+  },
+  inflammation: {
+    accent: "#059669",
+    accentLight: "#10b981",
+    glow: "#6ee7b7",
+    glowRgb: "110,231,183",
+    accentRgb: "5,150,105",
+    faIcon: "fa-shield-virus",
+  },
 };
 
 // ── HTML Helpers ────────────────────────────────────────────────────────────────
@@ -62,10 +106,15 @@ function esc(str) {
     .replace(/"/g, "&quot;");
 }
 
+function tierBadgeClass(tier) {
+  if (tier === 1) return "tier-1-badge";
+  if (tier === 2) return "tier-2-badge";
+  return "tier-3-badge";
+}
+
 function tierBadgeHtml(tier) {
   const label = getTierLabel(tier);
-  const color = getTierColor(tier);
-  return `<span class="tier-badge" style="background:${color};color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">${esc(label)}</span>`;
+  return `<span class="${tierBadgeClass(tier)}" style="display:inline-block;padding:2px 10px;border-radius:100px;font-size:0.7rem;font-weight:700;letter-spacing:0.03em;">${esc(label)}</span>`;
 }
 
 // ── Data Merging ────────────────────────────────────────────────────────────────
@@ -125,9 +174,320 @@ function mergeSupplementData(problemSupp, fullSupplement) {
   };
 }
 
+// ── CSS Generator (dark journal theme) ──────────────────────────────────────────
+
+function generateEvidenceCSS(t) {
+  return `
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --accent: ${t.accent};
+            --accent-light: ${t.accentLight};
+            --accent-glow: rgba(${t.accentRgb}, 0.15);
+            --glow: ${t.glow};
+            --blue-muted: #7c8db5;
+            --slate: #8b949e;
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --border: rgba(${t.accentRgb}, 0.12);
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --tier1-from: #4ade80;
+            --tier1-to: #22c55e;
+            --tier2-from: #fbbf24;
+            --tier2-to: #f59e0b;
+            --tier3-from: #fb7185;
+            --tier3-to: #e11d48;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .guide-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-section {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(${t.accentRgb}, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                var(--navy-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .tier-1-badge {
+            background: linear-gradient(135deg, var(--tier1-from), var(--tier1-to));
+            color: #052e16;
+        }
+        .tier-2-badge {
+            background: linear-gradient(135deg, var(--tier2-from), var(--tier2-to));
+            color: #451a03;
+        }
+        .tier-3-badge {
+            background: linear-gradient(135deg, var(--tier3-from), var(--tier3-to));
+            color: #fff;
+        }
+
+        .evidence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .evidence-card:hover {
+            border-color: rgba(${t.accentRgb}, 0.3);
+            box-shadow: 0 0 30px rgba(${t.accentRgb}, 0.06);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .breadcrumb a {
+            color: var(--blue-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb a:hover { color: var(--glow); }
+        .breadcrumb .sep {
+            color: rgba(139, 148, 158, 0.4);
+            font-size: 0.6rem;
+        }
+        .breadcrumb .current { color: var(--text-muted); }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .hero-stat i { color: var(--accent-light); font-size: 0.7rem; }
+
+        .section-heading {
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .summary-table thead th {
+            background: var(--navy-light);
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        .summary-table thead th:first-child { border-radius: 8px 0 0 0; }
+        .summary-table thead th:last-child { border-radius: 0 8px 0 0; }
+        .summary-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(${t.accentRgb}, 0.06);
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+        .summary-table tbody tr { transition: background 0.2s; }
+        .summary-table tbody tr:hover { background: rgba(${t.accentRgb}, 0.04); }
+        .summary-table tbody tr:last-child td { border-bottom: none; }
+
+        .finding-highlight {
+            border-left: 3px solid var(--accent-light);
+            background: rgba(${t.accentRgb}, 0.05);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+        }
+
+        .mech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(${t.accentRgb}, 0.08);
+            border: 1px solid rgba(${t.accentRgb}, 0.15);
+            color: var(--glow);
+        }
+
+        .key-study-card {
+            background: rgba(${t.accentRgb}, 0.06);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        .key-study-card .study-title {
+            color: var(--text-bright);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .key-study-card .study-meta {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .pmid-link {
+            color: var(--blue-muted);
+            font-size: 0.8rem;
+            font-family: 'DM Sans', monospace;
+            opacity: 0.8;
+            transition: opacity 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .pmid-link:hover {
+            opacity: 1;
+            color: var(--glow);
+            text-decoration: underline;
+        }
+
+        .citation-entry {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(${t.accentRgb}, 0.05);
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+        }
+        .citation-entry:last-child { border-bottom: none; }
+        .cite-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(${t.accentRgb}, 0.1);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .capture-section {
+            background:
+                radial-gradient(ellipse 70% 80% at 30% 50%, rgba(${t.accentRgb}, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 80% 40%, rgba(118, 75, 162, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1040 0%, #0d1117 100%);
+            border: 1px solid rgba(${t.accentRgb}, 0.2);
+        }
+
+        .disclaimer-box {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .disclaimer-box i { color: #f59e0b; margin-top: 2px; flex-shrink: 0; }
+        .disclaimer-box a { color: #f59e0b; text-decoration: underline; opacity: 0.8; }
+
+        .related-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: var(--glow);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .related-link:hover {
+            background: rgba(${t.accentRgb}, 0.06);
+            border-color: rgba(${t.accentRgb}, 0.2);
+        }
+        .related-link i { color: var(--accent-light); width: 16px; text-align: center; }
+
+        html { scroll-behavior: smooth; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table { min-width: 500px; }
+            .hero-stats { justify-content: center; }
+        }
+
+        @media print {
+            .guide-nav, .capture-section, .no-print { display: none !important; }
+            body { background: #fff; color: #111; }
+            .evidence-card { border: 1px solid #ddd; background: #fff; }
+        }
+    </style>`;
+}
+
 // ── Page Generator ──────────────────────────────────────────────────────────────
 
 function generateEvidencePage(domain, merged, allDomains) {
+  const theme = EVIDENCE_THEMES[domain.slug] || EVIDENCE_THEMES.sleep;
   const pageTitle = `${merged.name} for ${domain.name}`;
   const metaTitle = `${merged.name} for ${domain.name} — Evidence & Dosage | SupplementDB`;
   const metaDescription = `Clinical evidence review of ${merged.name} for ${domain.name.toLowerCase()}. Includes dosage protocols, mechanism analysis, safety profile, and peer-reviewed citations.`;
@@ -136,18 +496,16 @@ function generateEvidencePage(domain, merged, allDomains) {
 
   // Count citations
   const citationCount = (merged.keyCitations || []).length;
-  const enhancedBenefits = merged.enhancedCitations?.benefits || [];
 
-  // TOC items
-  const tocItems = [
-    { id: "evidence-overview", label: "Evidence Overview" },
-    { id: "problem-context", label: "Problem Context" },
-    { id: "evidence-detail", label: "Evidence Detail" },
+  // Nav links for section navigation
+  const navLinks = [
+    { id: "evidence-overview", label: "Overview" },
+    { id: "context", label: "Context" },
+    { id: "evidence-detail", label: "Evidence" },
     { id: "mechanisms", label: "Mechanisms" },
-    { id: "dosage", label: "Dosage & Protocol" },
-    { id: "safety", label: "Safety Profile" },
-    { id: "citations", label: "Clinical Citations" },
-    { id: "related", label: "Related Evidence" },
+    { id: "dosage", label: "Dosage" },
+    { id: "safety", label: "Safety" },
+    { id: "citations", label: "Citations" },
   ];
 
   // JSON-LD
@@ -211,315 +569,381 @@ function generateEvidencePage(domain, merged, allDomains) {
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/content-gate.css?v=${Date.now()}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../legal/legal-shared.css">
-    <link rel="stylesheet" href="../../css/content-shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Clerk Auth + Convex CDN -->
+    <!-- Auth CDN -->
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+
+    ${generateEvidenceCSS(theme)}
 </head>
-<body class="content-page">
-    <!-- Navigation -->
-    <nav class="legal-nav">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <a href="../../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
-                <i class="fas fa-pills text-xl"></i>
-                <span class="font-bold text-lg">SupplementDB</span>
-            </a>
-            <div class="flex items-center space-x-4">
-                <a href="../../guides/${guideSlug}.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">${esc(domain.name)} Guide</a>
-                <a href="../../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
-                    <i class="fas fa-arrow-left mr-1"></i> Database
-                </a>
-            </div>
-        </div>
-    </nav>
+<body data-theme="dark">
 
-    <!-- Hero Section -->
-    <section class="content-hero">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="content-breadcrumb" aria-label="Breadcrumb">
-                <a href="../../index.html">Home</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>Evidence</span>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <a href="../../guides/${guideSlug}.html">${esc(domain.name)}</a>
-                <span class="separator"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i></span>
-                <span>${esc(merged.name)}</span>
-            </nav>
-            <h1>${esc(pageTitle)}</h1>
-            <p class="hero-subtitle">Clinical evidence review — dosage, mechanisms, safety, and citations</p>
-            <div class="hero-meta">
-                <span class="hero-stat">${tierBadgeHtml(merged.evidenceTier)}</span>
-                <span class="hero-stat"><i class="fas fa-star"></i> Relevance: ${merged.relevanceScore}/100</span>
-                <span class="hero-stat"><i class="fas fa-file-lines"></i> ${citationCount}+ Citations</span>
-                <span class="hero-stat"><i class="fas fa-calendar"></i> Updated ${TODAY}</span>
-            </div>
+<!-- Sticky Navigation -->
+<nav class="guide-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+        <a href="../../index.html" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="hidden sm:inline">Back to Database</span>
+            <span class="sm:hidden">Back</span>
+        </a>
+        <div class="flex items-center gap-1">
+            <i class="fas fa-pills text-sm" style="color: ${theme.accentLight};"></i>
+            <span class="text-sm font-semibold text-gray-300">SupplementDB</span>
         </div>
-    </section>
-
-    <!-- Trust Signal Bar -->
-    <div class="trust-bar" style="max-width:64rem;margin:1rem auto;">
-        <span class="trust-bar-item"><i class="fas fa-check-circle"></i> Peer-Reviewed Sources</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
-        <span class="trust-bar-divider"></span>
-        <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../../methodology.html">Our Methodology</a></span>
+        <button id="mobile-nav-toggle" class="md:hidden text-gray-400 hover:text-white transition-colors p-1">
+            <i class="fas fa-bars text-sm"></i>
+        </button>
+        <div class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-500">
+            ${navLinks.map((l) => `<a href="#${l.id}" class="hover:text-gray-300 transition-colors">${l.label}</a>`).join("\n            ")}
+            <div id="auth-buttons"></div>
+        </div>
     </div>
+</nav>
 
-    <!-- Main Content with TOC -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div style="display:grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: start;">
-            <article>
+<!-- Mobile navigation dropdown -->
+<div id="mobile-nav-menu" class="hidden" style="position: fixed; top: 56px; left: 0; right: 0; z-index: 40; background: #0d1117; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="flex flex-col px-4 py-3 gap-1">
+        ${navLinks.map((l) => `<a href="#${l.id}" class="text-sm font-medium text-gray-400 hover:text-white transition-colors py-2 border-b border-white/5">${l.label}</a>`).join("\n        ")}
+    </div>
+</div>
 
-                <!-- Medical Disclaimer -->
-                <div class="content-disclaimer">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div><strong>Medical Disclaimer:</strong> This evidence review is for informational purposes only. It does not constitute medical advice. Always consult a qualified healthcare professional before starting any supplement. <a href="../../legal/disclaimer.html" style="color:#92400e; text-decoration:underline;">Read full disclaimer</a>.</div>
-                </div>
+<!-- Hero Section -->
+<header class="hero-section pt-16 pb-12 sm:pt-20 sm:pb-16 px-4 text-center relative">
+    <div class="max-w-3xl mx-auto relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb justify-center mb-6" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span class="sep"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">Evidence</span>
+            <span class="sep"><i class="fas fa-chevron-right"></i></span>
+            <a href="../../guides/${guideSlug}.html">${esc(domain.name)}</a>
+            <span class="sep"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">${esc(merged.name)}</span>
+        </nav>
+
+        <!-- Review badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5" style="background: rgba(${theme.accentRgb}, 0.12); color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.2);">
+            <i class="fas ${theme.faIcon} text-xs" style="color: ${theme.accentLight}; font-size: 0.65rem;"></i>
+            Evidence Review
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
+            ${esc(pageTitle)}
+        </h1>
+
+        <p class="text-base sm:text-lg mb-6" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+            Clinical evidence review — dosage, mechanisms, safety, and citations
+        </p>
+
+        <div class="hero-stats mb-4">
+            <span class="hero-stat">${tierBadgeHtml(merged.evidenceTier)}</span>
+            <span class="hero-stat"><i class="fas fa-star"></i> Relevance: ${merged.relevanceScore}/100</span>
+            <span class="hero-stat"><i class="fas fa-file-lines"></i> ${citationCount}+ Citations</span>
+            <span class="hero-stat"><i class="fas fa-calendar"></i> Updated ${TODAY}</span>
+        </div>
+
+        <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+            <i class="fas fa-info-circle mr-1 opacity-60"></i>
+            This review summarizes published research. It does not constitute medical advice.
+            <a href="../../legal/disclaimer.html" style="color: ${theme.glow}; text-decoration: underline; opacity: 0.7;">Full disclaimer</a>.
+        </p>
+    </div>
+</header>
+
+<main>
 `;
 
   // ── Section 1: Evidence Overview ────────────────────────────────────────
   html += `
-                <section class="content-section" id="evidence-overview">
-                    <h2>Evidence Overview</h2>
-                    <div class="content-table-wrap" style="margin-bottom:1.5rem;">
-                        <table class="content-table">
-                            <tbody>
-                                <tr>
-                                    <td><strong>Supplement</strong></td>
-                                    <td>${esc(merged.name)}${merged.scientificName ? ` <em>(${esc(merged.scientificName)})</em>` : ""}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Health Domain</strong></td>
-                                    <td>${esc(domain.name)}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Evidence Tier</strong></td>
-                                    <td>${tierBadgeHtml(merged.evidenceTier)} (${esc(getTierLabel(merged.evidenceTier))})</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Relevance Score</strong></td>
-                                    <td>${merged.relevanceScore}/100</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Category</strong></td>
-                                    <td>${esc(normalizeCategory(merged.category))}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Recommended Dosage</strong></td>
-                                    <td>${esc(merged.dosageRange)}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+<section id="evidence-overview" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Evidence Overview</h2>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
+                    <tr>
+                        <td style="color: var(--text-muted); width: 200px;"><strong>Supplement</strong></td>
+                        <td style="color: var(--text-bright);">${esc(merged.name)}${merged.scientificName ? ` <em style="color: var(--slate);">(${esc(merged.scientificName)})</em>` : ""}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Health Domain</strong></td>
+                        <td style="color: var(--text-bright);">${esc(domain.name)}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Evidence Tier</strong></td>
+                        <td>${tierBadgeHtml(merged.evidenceTier)} <span style="color: var(--text-primary); margin-left: 8px;">${esc(getTierLabel(merged.evidenceTier))}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Relevance Score</strong></td>
+                        <td style="color: var(--text-bright);">${merged.relevanceScore}/100</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Category</strong></td>
+                        <td style="color: var(--text-bright);">${esc(normalizeCategory(merged.category))}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Recommended Dosage</strong></td>
+                        <td style="color: var(--text-bright);">${esc(merged.dosageRange)}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 `;
 
   // ── Section 2: Problem Context ──────────────────────────────────────────
   const physiology = domain.physiologyOverview;
   html += `
-                <section class="content-section" id="problem-context">
-                    <h2>Understanding ${esc(domain.name)}</h2>
-                    <p>${esc(physiology.summary)}</p>
-                    <h3>Key Physiological Systems</h3>
-                    <ul>
+<section id="context" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Understanding ${esc(domain.name)}</h2>
+    <div class="evidence-card p-6">
+        <p class="mb-4" style="color: var(--text-primary);">${esc(physiology.summary)}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+            <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" style="color: var(--accent-light); font-family: 'DM Sans', sans-serif; letter-spacing: 0.08em;">Key Physiological Systems</h3>
+                <ul class="space-y-2">
 `;
   (physiology.systems || []).forEach((sys) => {
-    html += `                        <li><strong>${esc(sys)}</strong></li>\n`;
+    html += `                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> ${esc(sys)}</li>\n`;
   });
-  html += `                    </ul>
-                    <h3>Key Signaling Molecules</h3>
-                    <ul>
+  html += `                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" style="color: var(--accent-light); font-family: 'DM Sans', sans-serif; letter-spacing: 0.08em;">Key Signaling Molecules</h3>
+                <ul class="space-y-2">
 `;
   (physiology.keyNeurotransmitters || []).forEach((nt) => {
-    html += `                        <li>${esc(nt)}</li>\n`;
+    html += `                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-primary);"><i class="fas fa-circle mt-2" style="font-size: 4px; color: var(--accent-light);"></i> ${esc(nt)}</li>\n`;
   });
-  html += `                    </ul>
-                </section>
+  html += `                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 `;
 
   // ── Section 3: Evidence Detail ──────────────────────────────────────────
   html += `
-                <section class="content-section" id="evidence-detail">
-                    <h2>Evidence for ${esc(merged.name)} in ${esc(domain.name)}</h2>
+<section id="evidence-detail" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Evidence for ${esc(merged.name)} in ${esc(domain.name)}</h2>
 `;
 
-  // Problem-specific effects (rich domains like sleep, mood-depression)
+  // Problem-specific effects (rich domains like sleep)
   if (merged.specificEffects) {
-    html += `                    <h3>Problem-Specific Effects</h3>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <tbody>
+    html += `    <div class="evidence-card p-6 mb-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Problem-Specific Effects</h3>
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
 `;
     for (const [key, value] of Object.entries(merged.specificEffects)) {
-      if (key === "populations") {
-        html += `                                <tr>
-                                    <td><strong>Studied Populations</strong></td>
-                                    <td>${esc(Array.isArray(value) ? value.join(", ") : String(value))}</td>
-                                </tr>\n`;
-      } else {
-        const label = key
-          .replace(/([A-Z])/g, " $1")
-          .replace(/^./, (s) => s.toUpperCase());
-        html += `                                <tr>
-                                    <td><strong>${esc(label)}</strong></td>
-                                    <td>${esc(String(value))}</td>
-                                </tr>\n`;
-      }
+      const label =
+        key === "populations"
+          ? "Studied Populations"
+          : key
+              .replace(/([A-Z])/g, " $1")
+              .replace(/^./, (s) => s.toUpperCase());
+      const val = Array.isArray(value) ? value.join(", ") : String(value);
+      html += `                    <tr>
+                        <td style="color: var(--text-muted); width: 200px;"><strong>${esc(label)}</strong></td>
+                        <td style="color: var(--text-bright);">${esc(val)}</td>
+                    </tr>\n`;
     }
-    html += `                            </tbody>
-                        </table>
-                    </div>\n`;
+    html += `                </tbody>
+            </table>
+        </div>
+    </div>\n`;
   }
 
   // Key evidence study
   if (merged.keyEvidence) {
     const ke = merged.keyEvidence;
-    html += `                    <h3>Key Study</h3>
-                    <div style="background:#f0f9ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;border-radius:0 0.5rem 0.5rem 0;margin-bottom:1.5rem;">
-                        <p style="margin:0 0 0.5rem 0;font-weight:600;">${esc(ke.title || "")}</p>
-                        <p style="margin:0 0 0.25rem 0;font-size:0.9rem;color:#475569;">${esc(ke.authors || "")} (${esc(String(ke.year || ""))}). <em>${esc(ke.journal || "")}</em>.</p>
-                        <p style="margin:0;font-size:0.85rem;color:#64748b;">
-                            ${ke.studyType ? `Study type: ${esc(ke.studyType)}` : ""}
-                            ${ke.sampleSize ? ` &middot; Sample: ${esc(ke.sampleSize)}` : ""}
-                            ${ke.pmid ? ` &middot; PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(ke.pmid)}/" target="_blank" rel="noopener" style="color:#2563eb;">${esc(ke.pmid)}</a>` : ""}
-                        </p>
-                    </div>\n`;
+    html += `    <div class="key-study-card mb-6">
+        <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--accent-light); font-family: 'DM Sans', sans-serif; letter-spacing: 0.06em;">Key Study</p>
+        <p class="study-title" style="color: var(--text-bright);">${esc(ke.title || "")}</p>
+        <p class="study-meta">${esc(ke.authors || "")} (${esc(String(ke.year || ""))}). <em>${esc(ke.journal || "")}</em>.</p>
+        <p class="study-meta mt-1">
+            ${ke.studyType ? `Study type: ${esc(ke.studyType)}` : ""}
+            ${ke.sampleSize ? ` &middot; Sample: ${esc(ke.sampleSize)}` : ""}
+            ${ke.pmid ? ` &middot; <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/${esc(ke.pmid)}/" target="_blank" rel="noopener">PMID: ${esc(ke.pmid)}</a>` : ""}
+        </p>
+    </div>\n`;
   }
 
   // Guide notes
   if (merged.guideNotes) {
-    html += `                    <p><strong>Clinical Notes:</strong> ${esc(merged.guideNotes)}</p>\n`;
+    html += `    <div class="finding-highlight mb-6">
+        <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">Clinical Notes</p>
+        <p class="text-sm" style="color: var(--text-primary);">${esc(merged.guideNotes)}</p>
+    </div>\n`;
   }
 
-  // effectSizes relevant to this domain
+  // Effect sizes relevant to this domain
   const relevantEffects = getRelevantEffectSizes(
     merged.effectSizes,
     domain.slug
   );
   if (relevantEffects.length > 0) {
-    html += `                    <h3>Measured Effect Sizes</h3>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Outcome</th>
-                                    <th>Effect Size</th>
-                                    <th>Study Type</th>
-                                    <th>Sample</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+    html += `    <div class="evidence-card p-6 mb-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Measured Effect Sizes</h3>
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Outcome</th>
+                        <th>Effect Size</th>
+                        <th>Study Type</th>
+                        <th>Sample</th>
+                    </tr>
+                </thead>
+                <tbody>
 `;
     relevantEffects.forEach((ef) => {
-      html += `                                <tr>
-                                    <td>${esc(ef.label)}</td>
-                                    <td><strong>${esc(ef.value)}</strong></td>
-                                    <td>${esc(ef.studyType || "—")}</td>
-                                    <td>${esc(ef.sample || "—")}</td>
-                                </tr>\n`;
+      html += `                    <tr>
+                        <td style="color: var(--text-primary);">${esc(ef.label)}</td>
+                        <td style="color: var(--text-bright); font-weight: 600;">${esc(ef.value)}</td>
+                        <td style="color: var(--text-muted);">${esc(ef.studyType || "—")}</td>
+                        <td style="color: var(--text-muted);">${esc(ef.sample || "—")}</td>
+                    </tr>\n`;
     });
-    html += `                            </tbody>
-                        </table>
-                    </div>\n`;
+    html += `                </tbody>
+            </table>
+        </div>
+    </div>\n`;
   }
 
-  html += `                </section>
+  html += `</section>
 `;
 
   // ── Section 4: Mechanisms ───────────────────────────────────────────────
   html += `
-                <section class="content-section" id="mechanisms">
-                    <h2>Mechanisms of Action</h2>
-                    <p>How ${esc(merged.name)} affects ${esc(domain.name.toLowerCase())} through biological pathways:</p>
-                    <ul>
+<section id="mechanisms" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Mechanisms of Action</h2>
+    <div class="evidence-card p-6">
+        <p class="mb-4" style="color: var(--text-primary);">How ${esc(merged.name)} affects ${esc(domain.name.toLowerCase())} through biological pathways:</p>
+        <div class="flex flex-wrap gap-2 mb-6">
 `;
   const mechanisms = merged.mechanisms || [];
   if (mechanisms.length > 0) {
     mechanisms.forEach((m) => {
-      html += `                        <li><strong>${esc(String(m))}</strong></li>\n`;
+      html += `            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ${esc(String(m))}</span>\n`;
     });
   } else {
-    // Fallback to full mechanismsOfAction array
     (merged.mechanismsOfAction || []).forEach((m) => {
       const name = m.mechanism || m.name || String(m);
-      const desc = m.description ? ` — ${m.description}` : "";
-      html += `                        <li><strong>${esc(name)}</strong>${esc(desc)}</li>\n`;
+      html += `            <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ${esc(name)}</span>\n`;
     });
   }
-  html += `                    </ul>
-                </section>
+  html += `        </div>
+`;
+
+  // Show detailed mechanisms if available from full supplement data
+  if (
+    merged.mechanismsOfAction.length > 0 &&
+    merged.mechanismsOfAction[0].description
+  ) {
+    html += `        <div class="space-y-3">
+`;
+    merged.mechanismsOfAction.slice(0, 5).forEach((m) => {
+      const name = m.mechanism || m.name || String(m);
+      const desc = m.description || "";
+      if (desc) {
+        html += `            <div class="finding-highlight">
+                <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--accent-light);">${esc(name)}</p>
+                <p class="text-sm" style="color: var(--text-primary);">${esc(desc)}</p>
+            </div>\n`;
+      }
+    });
+    html += `        </div>
+`;
+  }
+
+  html += `    </div>
+</section>
 `;
 
   // ── Section 5: Dosage ──────────────────────────────────────────────────
   html += `
-                <section class="content-section" id="dosage">
-                    <h2>Dosage &amp; Protocol</h2>
-                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <tbody>
-                                <tr>
-                                    <td><strong>Recommended Dosage</strong></td>
-                                    <td>${esc(merged.dosageRange)}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Optimal Duration</strong></td>
-                                    <td>${esc(merged.optimalDuration || "Consult healthcare provider for duration guidance")}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p style="margin-top:1rem;font-size:0.9rem;color:#64748b;"><i class="fas fa-info-circle"></i> Dosage ranges are based on clinical trial protocols. Individual needs may vary. Always start with the lower end and consult a healthcare provider.</p>
-                </section>
+<section id="dosage" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Dosage &amp; Protocol</h2>
+    <div class="evidence-card p-6">
+        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
+                    <tr>
+                        <td style="color: var(--text-muted); width: 200px;"><strong>Recommended Dosage</strong></td>
+                        <td style="color: var(--text-bright);">${esc(merged.dosageRange)}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--text-muted);"><strong>Optimal Duration</strong></td>
+                        <td style="color: var(--text-bright);">${esc(merged.optimalDuration || "Consult healthcare provider for duration guidance")}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-xs mt-4" style="color: var(--text-muted);"><i class="fas fa-info-circle mr-1" style="color: var(--accent-light);"></i> Dosage ranges are based on clinical trial protocols. Individual needs may vary. Always start with the lower end and consult a healthcare provider.</p>
+    </div>
+</section>
 `;
 
   // ── Section 6: Safety ──────────────────────────────────────────────────
   html += `
-                <section class="content-section" id="safety">
-                    <h2>Safety Profile</h2>
+<section id="safety" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Safety Profile</h2>
+    <div class="evidence-card p-6">
 `;
   if (typeof merged.safetyProfile === "string") {
-    html += `                    <p>${esc(merged.safetyProfile)}</p>\n`;
+    html += `        <p style="color: var(--text-primary);">${esc(merged.safetyProfile)}</p>\n`;
   } else if (merged.safetyProfile && typeof merged.safetyProfile === "object") {
     const sp = merged.safetyProfile;
-    html += `                    <div class="content-table-wrap">
-                        <table class="content-table">
-                            <tbody>
+    html += `        <div class="summary-table-wrap">
+            <table class="summary-table">
+                <tbody>
 `;
-    if (sp.rating)
-      html += `                                <tr><td><strong>Safety Rating</strong></td><td>${esc(sp.rating)}</td></tr>\n`;
+    if (sp.rating) {
+      const riskClass = sp.rating.toLowerCase().includes("high")
+        ? "color: #f87171; font-weight: 600;"
+        : sp.rating.toLowerCase().includes("moderate")
+          ? "color: #fbbf24; font-weight: 600;"
+          : "color: #4ade80; font-weight: 600;";
+      html += `                    <tr><td style="color: var(--text-muted); width: 200px;"><strong>Safety Rating</strong></td><td style="${riskClass}">${esc(sp.rating)}</td></tr>\n`;
+    }
     if (sp.sideEffects && sp.sideEffects.length)
-      html += `                                <tr><td><strong>Common Side Effects</strong></td><td>${esc(sp.sideEffects.join(", "))}</td></tr>\n`;
+      html += `                    <tr><td style="color: var(--text-muted);"><strong>Common Side Effects</strong></td><td style="color: var(--text-primary);">${esc(sp.sideEffects.join(", "))}</td></tr>\n`;
     if (sp.contraindications && sp.contraindications.length)
-      html += `                                <tr><td><strong>Contraindications</strong></td><td>${esc(sp.contraindications.join(", "))}</td></tr>\n`;
+      html += `                    <tr><td style="color: var(--text-muted);"><strong>Contraindications</strong></td><td style="color: var(--text-primary);">${esc(sp.contraindications.join(", "))}</td></tr>\n`;
     if (sp.drugInteractions && sp.drugInteractions.length)
-      html += `                                <tr><td><strong>Drug Interactions</strong></td><td>${esc(sp.drugInteractions.join(", "))}</td></tr>\n`;
+      html += `                    <tr><td style="color: var(--text-muted);"><strong>Drug Interactions</strong></td><td style="color: var(--text-primary);">${esc(sp.drugInteractions.join(", "))}</td></tr>\n`;
     if (sp.maxDosage)
-      html += `                                <tr><td><strong>Maximum Dosage</strong></td><td>${esc(sp.maxDosage)}</td></tr>\n`;
-    html += `                            </tbody>
-                        </table>
-                    </div>\n`;
+      html += `                    <tr><td style="color: var(--text-muted);"><strong>Maximum Dosage</strong></td><td style="color: var(--text-primary);">${esc(sp.maxDosage)}</td></tr>\n`;
+    html += `                </tbody>
+            </table>
+        </div>\n`;
   } else {
-    html += `                    <p>Safety data for this specific application is being compiled. Refer to the general supplement safety profile and consult a healthcare professional.</p>\n`;
+    html += `        <p style="color: var(--text-primary);">Safety data for this specific application is being compiled. Refer to the general supplement safety profile and consult a healthcare professional.</p>\n`;
   }
-  html += `                    <p style="margin-top:1rem;font-size:0.9rem;color:#92400e;"><i class="fas fa-exclamation-triangle"></i> Always inform your healthcare provider about all supplements you are taking, especially if you use prescription medications.</p>
-                </section>
+  html += `        <div class="disclaimer-box mt-4">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>Always inform your healthcare provider about all supplements you are taking, especially if you use prescription medications.</div>
+        </div>
+    </div>
+</section>
 `;
 
   // ── Section 7: Citations ───────────────────────────────────────────────
   html += `
-                <section class="content-section" id="citations">
-                    <h2>Clinical Citations</h2>
-                    <p>Peer-reviewed research referenced in this evidence review:</p>
-                    <ol class="citation-list">
+<section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Clinical Citations</h2>
+    <p class="mb-6" style="color: var(--text-primary);">Peer-reviewed research referenced in this evidence review:</p>
+    <div class="evidence-card p-6">
+        <div class="space-y-1">
 `;
   let citNum = 0;
 
@@ -528,14 +952,16 @@ function generateEvidencePage(domain, merged, allDomains) {
     const ke = merged.keyEvidence;
     citNum++;
     const pmidLink = ke.pmid
-      ? ` <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(ke.pmid)}/" target="_blank" rel="noopener" style="color:#2563eb;">PMID: ${esc(ke.pmid)}</a>`
+      ? ` <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/${esc(ke.pmid)}/" target="_blank" rel="noopener">PMID: ${esc(ke.pmid)}</a>`
       : "";
-    html += `                        <li>${esc(ke.authors || "Unknown authors")} (${esc(String(ke.year || ""))}). ${esc(ke.title || "")}. <em>${esc(ke.journal || "")}</em>.${pmidLink}</li>\n`;
+    html += `            <div class="citation-entry">
+                <span class="cite-num">${citNum}</span>
+                <span>${esc(ke.authors || "Unknown authors")} (${esc(String(ke.year || ""))}). ${esc(ke.title || "")}. <em>${esc(ke.journal || "")}</em>.${pmidLink}</span>
+            </div>\n`;
   }
 
   // keyCitations from supplement data
   (merged.keyCitations || []).forEach((c) => {
-    // Skip if same as keyEvidence
     if (
       merged.keyEvidence &&
       c.pmid &&
@@ -544,149 +970,217 @@ function generateEvidencePage(domain, merged, allDomains) {
       return;
     citNum++;
     const doi = c.doi
-      ? ` <a class="citation-doi" href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener">${esc(c.doi)}</a>`
+      ? ` <a class="pmid-link" href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener">${esc(c.doi)}</a>`
       : "";
-    const pmid = c.pmid ? ` PMID: ${esc(String(c.pmid))}` : "";
-    html += `                        <li>${esc(c.authors || "")} (${esc(String(c.year || ""))}). ${esc(c.title || "")}. <em>${esc(c.journal || "")}</em>.${doi}${pmid}</li>\n`;
+    const pmid = c.pmid
+      ? ` <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/${esc(String(c.pmid))}" target="_blank" rel="noopener">PMID: ${esc(String(c.pmid))}</a>`
+      : "";
+    html += `            <div class="citation-entry">
+                <span class="cite-num">${citNum}</span>
+                <span>${esc(c.authors || "")} (${esc(String(c.year || ""))}). ${esc(c.title || "")}. <em>${esc(c.journal || "")}</em>.${doi}${pmid}</span>
+            </div>\n`;
   });
 
   if (citNum === 0) {
-    html += `                        <li>Citations for this evidence review are being compiled from the SupplementDB database.</li>\n`;
+    html += `            <div class="citation-entry">
+                <span class="cite-num">—</span>
+                <span>Citations for this evidence review are being compiled from the SupplementDB database.</span>
+            </div>\n`;
   }
 
-  html += `                    </ol>
-                </section>
+  html += `        </div>
+    </div>
+</section>
 `;
 
   // ── Section 8: Related Evidence ─────────────────────────────────────────
-  html += buildRelatedSection(domain, merged, allDomains, guideSlug);
+  html += buildRelatedSection(domain, merged, allDomains, guideSlug, theme);
 
-  // ── Newsletter CTA ──────────────────────────────────────────────────────
+  // ── Email Capture ──────────────────────────────────────────────────────
   html += `
-                <!-- Email Capture -->
-                <section class="newsletter-section" id="subscribe">
-                    <div class="newsletter-inner">
-                        <h3><i class="fas fa-envelope-open-text"></i> Get ${esc(merged.name)} Research Updates</h3>
-                        <p>Stay informed when new studies on ${esc(merged.name)} for ${esc(domain.name.toLowerCase())} are published or evidence tiers are updated.</p>
-                        <div id="guide-newsletter-container">
-                            <form id="guide-newsletter-form" class="newsletter-form" onsubmit="return handleGuideNewsletter(event)">
-                                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required>
-                                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                            </form>
-                            <p id="guide-newsletter-success" class="newsletter-success hidden">
-                                <i class="fas fa-check-circle"></i> Subscribed! We'll notify you of relevant research updates.
-                            </p>
-                            <p id="guide-newsletter-already" class="newsletter-already hidden">
-                                <i class="fas fa-info-circle"></i> You're already subscribed. Thank you!
-                            </p>
-                        </div>
-                        <p class="newsletter-privacy"><i class="fas fa-lock"></i> No spam. <a href="../../legal/privacy.html">Privacy Policy</a></p>
-                    </div>
-                </section>
-`;
-
-  // ── Close main column, add TOC sidebar ──────────────────────────────────
-  html += `
-            </article><!-- end main column -->
-
-            <!-- Sidebar TOC (desktop only) -->
-            <aside class="content-toc" aria-label="Table of Contents">
-                <h4>Contents</h4>
-                <ul>
-`;
-  tocItems.forEach((item) => {
-    html += `                    <li><a href="#${item.id}">${esc(item.label)}</a></li>\n`;
-  });
-  html += `                </ul>
-            </aside>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
+        <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
+            <i class="fas fa-envelope-open-text mr-2" style="color: ${theme.accentLight};"></i>
+            Get ${esc(merged.name)} Research Updates
+        </h3>
+        <p class="mb-6 text-sm" style="color: var(--text-muted); max-width: 440px; margin: 0 auto 1.5rem;">
+            Stay informed when new studies on ${esc(merged.name)} for ${esc(domain.name.toLowerCase())} are published or evidence tiers are updated.
+        </p>
+        <div id="guide-newsletter-container">
+            <form id="guide-newsletter-form" class="newsletter-form flex gap-3 max-w-md mx-auto flex-wrap justify-center">
+                <input type="email" id="guide-newsletter-email" placeholder="your@email.com" required
+                    class="flex-1 min-w-0 px-4 py-2.5 rounded-lg text-sm"
+                    style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text-bright); outline: none;">
+                <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    style="background: ${theme.accent};"><i class="fas fa-paper-plane mr-1"></i> Subscribe</button>
+            </form>
+            <p id="guide-newsletter-message" class="newsletter-message" style="display:none; color: var(--text-bright);"></p>
         </div>
-    </main>
+        <p class="text-xs mt-4" style="color: var(--text-muted); opacity: 0.6;"><i class="fas fa-lock mr-1"></i> No spam. <a href="../../legal/privacy.html" style="color: var(--glow); opacity: 0.7;">Privacy Policy</a></p>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025&ndash;2026 SupplementDB. All rights reserved.</p>
-            <p class="mt-2 text-sm text-gray-400">
-                <strong>Medical Disclaimer:</strong> This information is for educational purposes only and should not replace professional medical advice.
-                <a href="../../legal/disclaimer.html" style="color:#9ca3af; text-decoration:underline;">Full disclaimer</a>
-            </p>
-            <p class="mt-2 text-sm text-gray-500">
-                <a href="../../about.html" style="color:#9ca3af;">About</a> &middot;
-                <a href="../../methodology.html" style="color:#9ca3af;">Methodology</a> &middot;
-                <a href="../../faq.html" style="color:#9ca3af;">FAQ</a> &middot;
-                <a href="../../legal/privacy.html" style="color:#9ca3af;">Privacy</a> &middot;
-                <a href="../../legal/terms.html" style="color:#9ca3af;">Terms</a>
-            </p>
+</main>
+
+<!-- Footer -->
+<footer class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t" style="border-color: var(--border);">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="../../index.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-pills" style="color: ${theme.accentLight};"></i>
+                <span>Return to Supplement Database</span>
+            </a>
+            <a href="../../guides/${guideSlug}.html" class="flex items-center gap-2 text-sm font-medium transition-colors" style="color: var(--blue-muted);">
+                <i class="fas fa-book-open"></i>
+                <span>${esc(domain.name)} Guide</span>
+            </a>
         </div>
-    </footer>
+        <p class="text-xs text-center sm:text-right" style="color: var(--text-muted); max-width: 400px;">
+            This review is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.
+        </p>
+    </div>
+    <div class="text-center mt-8">
+        <p class="text-xs" style="color: rgba(139, 148, 158, 0.5);">
+            &copy; 2025&ndash;2026 SupplementDB. Evidence-Based Supplement Database.
+        </p>
+    </div>
+</footer>
 
-    <!-- Smooth scroll for TOC -->
-    <script>
-        document.querySelectorAll('.content-toc a').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.replaceState(null, '', this.getAttribute('href'));
+<!-- Scripts -->
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
+
+// Smooth scroll for anchor links with nav offset
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            var navHeight = document.querySelector('.guide-nav').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
+
+// PostHog custom event tracking
+(function() {
+    if (typeof posthog === 'undefined') return;
+
+    posthog.capture('evidence_viewed', {
+        domain_slug: '${domain.slug}',
+        supplement_slug: '${merged.slug}',
+        supplement_name: '${esc(merged.name).replace(/'/g, "\\'")}',
+        domain_name: '${esc(domain.name).replace(/'/g, "\\'")}',
+        evidence_tier: ${merged.evidenceTier},
+        relevance_score: ${merged.relevanceScore},
+        citation_count: ${citationCount}
+    });
+
+    var sectionsMeta = {
+        'evidence-overview': { name: 'Evidence Overview', depth: 'top' },
+        'context': { name: 'Problem Context', depth: 'upper' },
+        'evidence-detail': { name: 'Evidence Detail', depth: 'middle' },
+        'mechanisms': { name: 'Mechanisms', depth: 'middle' },
+        'dosage': { name: 'Dosage & Protocol', depth: 'lower' },
+        'safety': { name: 'Safety Profile', depth: 'lower' },
+        'citations': { name: 'Citations', depth: 'deep' },
+        'related': { name: 'Related Evidence', depth: 'bottom' }
+    };
+
+    var trackedSections = {};
+    var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !trackedSections[entry.target.id]) {
+                trackedSections[entry.target.id] = true;
+                var meta = sectionsMeta[entry.target.id];
+                if (meta) {
+                    posthog.capture('evidence_section_viewed', {
+                        domain_slug: '${domain.slug}',
+                        supplement_slug: '${merged.slug}',
+                        section_id: entry.target.id,
+                        section_name: meta.name,
+                        scroll_depth: meta.depth
+                    });
                 }
+            }
+        });
+    }, { threshold: 0.2 });
+
+    Object.keys(sectionsMeta).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+    });
+
+    document.querySelectorAll('.pmid-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var href = this.getAttribute('href') || '';
+            posthog.capture('evidence_citation_clicked', {
+                domain_slug: '${domain.slug}',
+                supplement_slug: '${merged.slug}',
+                citation_type: href.includes('pubmed') ? 'pmid' : (href.includes('doi.org') ? 'doi' : 'other'),
+                citation_url: href,
+                citation_text: this.textContent.trim()
             });
         });
-        var tocLinks = document.querySelectorAll('.content-toc a');
-        var sections = Array.from(tocLinks).map(function(a) {
-            return document.querySelector(a.getAttribute('href'));
-        }).filter(Boolean);
-        window.addEventListener('scroll', function() {
-            var scrollY = window.scrollY + 120;
-            var active = sections[0];
-            sections.forEach(function(sec) { if (sec.offsetTop <= scrollY) active = sec; });
-            tocLinks.forEach(function(a) {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + (active ? active.id : ''));
+    });
+
+    var elapsed = 0;
+    var timeThresholds = [30, 60, 120, 300];
+    var timeIndex = 0;
+    var timerCheck = setInterval(function() {
+        elapsed++;
+        if (timeIndex < timeThresholds.length && elapsed >= timeThresholds[timeIndex]) {
+            posthog.capture('evidence_time_on_page', {
+                domain_slug: '${domain.slug}',
+                supplement_slug: '${merged.slug}',
+                seconds: timeThresholds[timeIndex]
             });
-        });
+            timeIndex++;
+        }
+        if (timeIndex >= timeThresholds.length) clearInterval(timerCheck);
+    }, 1000);
+})();
 
-        // Newsletter handler
-        window.handleGuideNewsletter = function(e) {
-            e.preventDefault();
-            var email = document.getElementById('guide-newsletter-email').value.trim();
-            if (!email) return false;
-            var subscribed = JSON.parse(localStorage.getItem('sdb_newsletter') || '[]');
-            if (subscribed.indexOf(email) !== -1) {
-                document.getElementById('guide-newsletter-form').classList.add('hidden');
-                document.getElementById('guide-newsletter-already').classList.remove('hidden');
-                return false;
-            }
-            if (typeof posthog !== 'undefined') {
-                posthog.identify(email);
-                posthog.people.set({
-                    email: email,
-                    newsletter_subscribed: true,
-                    subscribed_evidence: '${domain.slug}/${merged.slug}',
-                    signup_source: 'evidence_${domain.slug}_${merged.slug}',
-                    signup_date: new Date().toISOString()
-                });
-                posthog.capture('evidence_email_captured', {
-                    source: 'evidence',
-                    domain_slug: '${domain.slug}',
-                    supplement_slug: '${merged.slug}',
-                    email: email
-                });
-            }
-            subscribed.push(email);
-            localStorage.setItem('sdb_newsletter', JSON.stringify(subscribed));
-            document.getElementById('guide-newsletter-form').classList.add('hidden');
-            document.getElementById('guide-newsletter-success').classList.remove('hidden');
-            return false;
-        };
-    </script>
+// Mobile nav toggle
+document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-nav-menu');
+    menu.classList.toggle('hidden');
+    this.querySelector('i').classList.toggle('fa-bars');
+    this.querySelector('i').classList.toggle('fa-times');
+});
+document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-nav-menu').classList.add('hidden');
+        var btn = document.getElementById('mobile-nav-toggle');
+        btn.querySelector('i').classList.add('fa-bars');
+        btn.querySelector('i').classList.remove('fa-times');
+    });
+});
+</script>
 
-    <!-- Auth, RBAC & Content Gate -->
-    <script src="../../js/auth.js"></script>
-    <script src="../../js/convex-client.js"></script>
-    <script src="../../js/rbac.js"></script>
-    <script src="../../js/auth-ui.js"></script>
+<script src="../../js/newsletter.js"></script>
+<script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "evidence-${domain.slug}-${merged.slug}");</script>
 
-    <script src="../../js/content-gate.js"></script>
+<!-- Auth & Content Gate -->
+<script src="../../js/auth.js"></script>
+<script src="../../js/convex-client.js"></script>
+<script src="../../js/rbac.js"></script>
+<script src="../../js/auth-ui.js"></script>
+<script src="../../js/content-gate.js"></script>
 </body>
 </html>`;
 
@@ -695,48 +1189,51 @@ function generateEvidencePage(domain, merged, allDomains) {
 
 // ── Related Section Builder ─────────────────────────────────────────────────────
 
-function buildRelatedSection(domain, merged, allDomains, guideSlug) {
+function buildRelatedSection(domain, merged, allDomains, guideSlug, theme) {
   let html = `
-                <section class="content-section" id="related">
-                    <h2>Related Evidence</h2>
-                    <div class="related-content">
-                        <h3>Other Supplements for ${esc(domain.name)}</h3>
-                        <div class="related-content-grid">
+<section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="section-heading">Related Evidence</h2>
+
+    <div class="evidence-card p-6 mb-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Other Supplements for ${esc(domain.name)}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 `;
 
-  // Sibling supplements in same domain
+  // Sibling supplements in same domain (use relative paths)
   const siblings = domain.supplements
     .filter((s) => s.supplementId !== merged.id)
     .slice(0, 5);
   siblings.forEach((s) => {
     const siblingSlug = slugify(s.name);
-    html += `                            <a href="/evidence/${domain.slug}/${siblingSlug}.html"><i class="fas fa-flask"></i> ${esc(s.name)} for ${esc(domain.name)}</a>\n`;
+    html += `            <a href="./${siblingSlug}.html" class="related-link"><i class="fas fa-flask"></i> ${esc(s.name)} for ${esc(domain.name)}</a>\n`;
   });
 
-  html += `                        </div>
-                    </div>
-                    <div class="related-content" style="margin-top:1.5rem;">
-                        <h3>Related Resources</h3>
-                        <div class="related-content-grid">
-                            <a href="/guides/${guideSlug}.html"><i class="fas fa-book-open"></i> ${esc(domain.name)} Complete Guide</a>
-                            <a href="/index.html#supplements"><i class="fas fa-pills"></i> ${esc(merged.name)} Full Profile</a>
-                            <a href="/guides/safety-interactions.html"><i class="fas fa-shield-alt"></i> Safety &amp; Interactions Guide</a>
-                            <a href="/methodology.html"><i class="fas fa-microscope"></i> Our Methodology</a>
+  html += `        </div>
+    </div>
+
+    <div class="evidence-card p-6">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">Related Resources</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="../../guides/${guideSlug}.html" class="related-link"><i class="fas fa-book-open"></i> ${esc(domain.name)} Complete Guide</a>
+            <a href="../../index.html#supplements" class="related-link"><i class="fas fa-pills"></i> ${esc(merged.name)} Full Profile</a>
+            <a href="../../guides/safety-interactions.html" class="related-link"><i class="fas fa-shield-alt"></i> Safety &amp; Interactions Guide</a>
+            <a href="../../methodology.html" class="related-link"><i class="fas fa-microscope"></i> Our Methodology</a>
 `;
 
   // Cross-domain evidence pages for same supplement
   const otherDomains = allDomains.filter(
     (d) =>
-      d.id !== domain.id &&
+      d.slug !== domain.slug &&
+      WAVE_1_DOMAINS.includes(d.slug) &&
       d.supplements.some((s) => s.supplementId === merged.id)
   );
   otherDomains.slice(0, 3).forEach((d) => {
-    html += `                            <a href="/evidence/${d.slug}/${merged.slug}.html"><i class="fas fa-arrow-right"></i> ${esc(merged.name)} for ${esc(d.name)}</a>\n`;
+    html += `            <a href="../${d.slug}/${merged.slug}.html" class="related-link"><i class="fas fa-arrow-right"></i> ${esc(merged.name)} for ${esc(d.name)}</a>\n`;
   });
 
-  html += `                        </div>
-                    </div>
-                </section>
+  html += `        </div>
+    </div>
+</section>
 `;
   return html;
 }
@@ -747,7 +1244,6 @@ function buildRelatedSection(domain, merged, allDomains, guideSlug) {
 function getRelevantEffectSizes(effectSizes, domainSlug) {
   if (!effectSizes || typeof effectSizes !== "object") return [];
 
-  // Map domain slugs to relevant effect size key patterns
   const domainKeyPatterns = {
     sleep: [
       "sleep",
@@ -813,7 +1309,11 @@ function getRelevantEffectSizes(effectSizes, domainSlug) {
     if (typeof value === "object" && value !== null) {
       results.push({
         label: formatEffectSizeKey(key),
-        value: value.value || value.effectSize || value.mean || JSON.stringify(value),
+        value:
+          value.value ||
+          value.effectSize ||
+          value.mean ||
+          JSON.stringify(value),
         studyType: value.studyType || value.study_type || "—",
         sample: value.sampleSize || value.sample || value.n || "—",
       });
@@ -827,7 +1327,7 @@ function getRelevantEffectSizes(effectSizes, domainSlug) {
     }
   }
 
-  return results.slice(0, 8); // Limit to 8 most relevant
+  return results.slice(0, 8);
 }
 
 function formatEffectSizeKey(key) {
@@ -865,11 +1365,21 @@ function main() {
     suppById[s.id] = s;
   });
 
-  // Filter to Wave 1 domains
-  const wave1Domains = problems.filter((d) => WAVE_1_DOMAINS.includes(d.id));
-  console.log(
-    `Wave 1 domains: ${wave1Domains.map((d) => d.id).join(", ")}\n`
+  // Filter to Wave 1 domains by slug
+  const wave1Domains = problems.filter((d) =>
+    WAVE_1_DOMAINS.includes(d.slug)
   );
+  console.log(
+    `Wave 1 domains: ${wave1Domains.map((d) => d.slug).join(", ")}\n`
+  );
+
+  if (wave1Domains.length === 0) {
+    console.error(
+      "No Wave 1 domains found. Available slugs:",
+      problems.map((d) => d.slug).join(", ")
+    );
+    process.exit(1);
+  }
 
   const outBase = path.join(__dirname, "..", "evidence");
   let totalPages = 0;
@@ -877,7 +1387,6 @@ function main() {
 
   // Generate pages for each domain
   wave1Domains.forEach((domain) => {
-    // Create domain directory
     const domainDir = path.join(outBase, domain.slug);
     if (!fs.existsSync(domainDir)) {
       fs.mkdirSync(domainDir, { recursive: true });
@@ -901,13 +1410,8 @@ function main() {
         return;
       }
 
-      // Merge data from both sources
       const merged = mergeSupplementData(problemSupp, fullSupplement);
-
-      // Generate HTML
       const html = generateEvidencePage(domain, merged, problems);
-
-      // Write file
       const filePath = path.join(domainDir, `${merged.slug}.html`);
       fs.writeFileSync(filePath, html, "utf8");
 
