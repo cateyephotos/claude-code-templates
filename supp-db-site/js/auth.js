@@ -19,10 +19,13 @@
   if (window.__CLERK_MOCK__) return;
 
   // ── Configuration ──────────────────────────────────────────────
-  // Injected by Docker entrypoint; falls back for local dev
-  const CLERK_PUBLISHABLE_KEY =
-    document.querySelector('meta[name="clerk-publishable-key"]')?.content ||
-    "__CLERK_PUBLISHABLE_KEY__";
+  // Reads key from <meta name="clerk-key"> — Docker entrypoint substitutes __CLERK_PUBLISHABLE_KEY__
+  // The Clerk CDN script is NOT included in HTML to prevent auto-boot errors.
+  // Instead, auth.js dynamically loads it only when a valid key is present.
+  const CLERK_CDN_URL = "https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js";
+  const clerkMeta = document.querySelector('meta[name="clerk-key"]');
+  const rawKey = clerkMeta?.content || "";
+  const CLERK_PUBLISHABLE_KEY = rawKey.startsWith("pk_") ? rawKey : "";
 
   // ── State ──────────────────────────────────────────────────────
   const state = {
@@ -62,7 +65,10 @@
 
     /** Open Clerk sign-in modal */
     openSignIn() {
-      if (!state.clerk) return;
+      if (!state.clerk) {
+        showAuthUnavailableToast();
+        return;
+      }
       state.clerk.openSignIn({
         afterSignInUrl: window.location.href,
         afterSignUpUrl: window.location.href,
@@ -71,7 +77,10 @@
 
     /** Open Clerk sign-up modal */
     openSignUp() {
-      if (!state.clerk) return;
+      if (!state.clerk) {
+        showAuthUnavailableToast();
+        return;
+      }
       state.clerk.openSignUp({
         afterSignInUrl: window.location.href,
         afterSignUpUrl: window.location.href,
@@ -127,29 +136,28 @@
     },
   };
 
+  // ── Dynamic script loader ─────────────────────────────────────
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.crossOrigin = "anonymous";
+      script.onload = resolve;
+      script.onerror = () => reject(new Error("[Auth] Failed to load Clerk CDN from " + src));
+      document.head.appendChild(script);
+    });
+  }
+
   // ── Initialization ─────────────────────────────────────────────
   async function initClerk() {
     if (state.isLoading || state.isLoaded) return;
     state.isLoading = true;
 
-    // Wait for Clerk CDN to load
-    if (typeof window.Clerk === "undefined") {
+    // Validate key — must be a real Clerk publishable key (pk_test_... or pk_live_...)
+    if (!CLERK_PUBLISHABLE_KEY || !CLERK_PUBLISHABLE_KEY.startsWith("pk_")) {
       console.warn(
-        "[Auth] Clerk CDN not loaded. Auth features will be unavailable."
-      );
-      state.isLoaded = true;
-      state.isLoading = false;
-      dispatch("auth:loaded");
-      return;
-    }
-
-    // Validate key
-    if (
-      !CLERK_PUBLISHABLE_KEY ||
-      CLERK_PUBLISHABLE_KEY === "__CLERK_PUBLISHABLE_KEY__"
-    ) {
-      console.warn(
-        "[Auth] Clerk publishable key not configured. Auth features will be unavailable."
+        "[Auth] Clerk publishable key not configured. Auth features will be unavailable.",
+        "Set CLERK_PUBLISHABLE_KEY in your .env file and restart Docker."
       );
       state.isLoaded = true;
       state.isLoading = false;
@@ -158,6 +166,15 @@
     }
 
     try {
+      // Dynamically load Clerk CDN only when we have a valid key
+      if (typeof window.Clerk === "undefined") {
+        await loadScript(CLERK_CDN_URL);
+      }
+
+      if (typeof window.Clerk === "undefined") {
+        throw new Error("Clerk CDN loaded but window.Clerk is not defined");
+      }
+
       const clerk = new window.Clerk(CLERK_PUBLISHABLE_KEY);
       await clerk.load();
 
@@ -206,6 +223,49 @@
     document.dispatchEvent(
       new CustomEvent(eventName, { detail: detail || {} })
     );
+  }
+
+  // ── Toast notification for missing auth config ─────────────────
+  let toastTimeout = null;
+  function showAuthUnavailableToast() {
+    // Prevent duplicate toasts
+    const existing = document.getElementById("auth-toast");
+    if (existing) {
+      clearTimeout(toastTimeout);
+      existing.remove();
+    }
+
+    const toast = document.createElement("div");
+    toast.id = "auth-toast";
+    toast.setAttribute("role", "alert");
+    toast.style.cssText =
+      "position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:99999;" +
+      "background:#1e293b;color:#f1f5f9;padding:14px 24px;border-radius:10px;" +
+      "box-shadow:0 8px 30px rgba(0,0,0,0.4);font-family:'DM Sans',system-ui,sans-serif;" +
+      "font-size:14px;line-height:1.5;max-width:420px;text-align:center;" +
+      "border:1px solid rgba(99,102,241,0.3);animation:authToastIn .3s ease";
+
+    toast.innerHTML =
+      '<div style="font-weight:600;margin-bottom:4px;color:#818cf8">Authentication Unavailable</div>' +
+      '<div style="color:#94a3b8">CLERK_PUBLISHABLE_KEY is not configured. ' +
+      'Create a <code style="background:#334155;padding:1px 5px;border-radius:3px;font-size:12px">.env</code> file ' +
+      'with your Clerk key and restart Docker.</div>';
+
+    // Add animation keyframes if not already present
+    if (!document.getElementById("auth-toast-styles")) {
+      const style = document.createElement("style");
+      style.id = "auth-toast-styles";
+      style.textContent =
+        "@keyframes authToastIn{from{opacity:0;transform:translateX(-50%) translateY(-10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}" +
+        "@keyframes authToastOut{from{opacity:1;transform:translateX(-50%) translateY(0)}to{opacity:0;transform:translateX(-50%) translateY(-10px)}}";
+      document.head.appendChild(style);
+    }
+
+    document.body.appendChild(toast);
+    toastTimeout = setTimeout(() => {
+      toast.style.animation = "authToastOut .3s ease forwards";
+      setTimeout(() => toast.remove(), 300);
+    }, 5000);
   }
 
   // ── Auto-initialize when DOM is ready ──────────────────────────
