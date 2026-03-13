@@ -185,6 +185,76 @@ async function safeGoto(page, url) {
 }
 
 /**
+ * Inject a mock for Convex guidePurchases queries and actions.
+ *
+ * Call AFTER injectAuthMock (scripts execute in insertion order) so this
+ * script can override the SupplementDB object set up by injectAuthMock.
+ *
+ * Uses Object.defineProperty with a setter so that any later overwrite by
+ * convex-client.js is also intercepted and patched.
+ *
+ * @param {import('playwright/test').Page} page
+ * @param {object}      opts
+ * @param {string|null} opts.status       - "pdf_ready" | "paid" | "pdf_generating" | "failed" | null (not found yet)
+ * @param {string}      opts.sessionId    - Stripe checkout session ID to simulate
+ * @param {string}      opts.guideSlug    - Guide slug (e.g. "sleep")
+ * @param {string}      opts.guideName    - Guide display name
+ * @param {string}      opts.downloadUrl  - Signed PDF URL returned by getPdfDownloadUrl
+ * @param {string|null} opts.errorMessage - Error detail for "failed" status
+ */
+async function injectConvexPurchaseMock(page, {
+  status = "pdf_ready",
+  sessionId = "cs_test_123",
+  guideSlug = "sleep",
+  guideName = "Sleep Optimization Guide",
+  downloadUrl = "https://cdn.supplementdb.com/test-sleep.pdf",
+  errorMessage = null,
+} = {}) {
+  await page.addInitScript(
+    ({ status, sessionId, guideSlug, guideName, downloadUrl, errorMessage }) => {
+      const purchaseRecord = status === null
+        ? null
+        : { sessionId, status, guideSlug, guideName, errorMessage };
+
+      function buildPatchedDB(base) {
+        const orig = base && typeof base === "object" ? base : {};
+        const origQuery  = orig.query  ? orig.query.bind(orig)  : () => Promise.resolve(null);
+        const origAction = orig.action ? orig.action.bind(orig) : () => Promise.resolve(null);
+        return Object.assign({}, orig, {
+          query(name, args) {
+            if (name === "guidePurchases:getBySessionId") {
+              return Promise.resolve(purchaseRecord);
+            }
+            return origQuery(name, args);
+          },
+          action(name, args) {
+            if (name === "guidePurchases:getPdfDownloadUrl") {
+              return Promise.resolve({ url: downloadUrl, guideName });
+            }
+            return origAction(name, args);
+          },
+        });
+      }
+
+      // Patch the value already set by injectAuthMock and intercept future
+      // writes (e.g. from convex-client.js) via a getter/setter pair.
+      let _db = buildPatchedDB(window.SupplementDB);
+      try {
+        Object.defineProperty(window, "SupplementDB", {
+          get() { return _db; },
+          set(v)  { _db = buildPatchedDB(v); },
+          configurable: true,
+        });
+      } catch (_) {
+        // defineProperty may fail if already non-configurable — fall back
+        window.SupplementDB = _db;
+      }
+    },
+    { status, sessionId, guideSlug, guideName, downloadUrl, errorMessage }
+  );
+}
+
+/**
  * Filter out known non-critical console errors (PostHog, CORS, CDN, etc.).
  * Returns only errors that indicate genuine JS bugs in our code.
  */
@@ -208,6 +278,7 @@ function filterCriticalErrors(errors) {
 module.exports = {
   waitForModules,
   injectAuthMock,
+  injectConvexPurchaseMock,
   collectConsoleErrors,
   filterCriticalErrors,
   safeGoto,
