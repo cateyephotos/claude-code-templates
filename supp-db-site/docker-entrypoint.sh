@@ -1,73 +1,116 @@
 #!/bin/sh
 set -e
 
-# docker-entrypoint.sh — Environment Variable Substitution
+# docker-entrypoint.sh — Staging-based Environment Variable Substitution
 #
-# Replaces placeholder tokens in HTML and JS files with actual
-# environment variable values before starting nginx.
+# Copies all site files to a writable staging directory (/usr/share/nginx/html-dist),
+# performs placeholder substitution there, then starts nginx serving from staging.
 #
-# Placeholders:
+# This pattern works in ALL environments:
+#   • Local dev with :ro volume mount — source is read-only, staging is always writable
+#   • Production / Docker build — files baked into image, staging copy is still made
+#
+# Placeholders always replaced (with empty string if var unset):
 #   __CLERK_PUBLISHABLE_KEY__  → CLERK_PUBLISHABLE_KEY env var
-#   __CONVEX_URL__             → CONVEX_URL env var (defaults to production URL)
+#   __CONVEX_URL__             → CONVEX_URL env var
 #   __POSTHOG_KEY__            → POSTHOG_KEY env var
-#   __SITE_URL__               → SITE_URL env var (defaults to http://localhost:8080)
+#   __SITE_URL__               → SITE_URL env var
 
-HTML_DIR="/usr/share/nginx/html"
+SRC_DIR="/usr/share/nginx/html"
+DIST_DIR="/usr/share/nginx/html-dist"
+
+# find_and_replace PLACEHOLDER VALUE
+# Replaces all occurrences of PLACEHOLDER with VALUE in *.html and *.js under DIST_DIR.
+# Written as an inline function to avoid `eval` (which would misinterpret | as shell pipes).
+find_and_replace() {
+    find "$DIST_DIR" -maxdepth 3 -type f \( -name '*.html' -o -name '*.js' \) \
+        -not -path '*/node_modules/*' \
+        -not -path '*/playwright-report/*' \
+        -not -path '*/.playwright-mcp/*' \
+        -not -path '*/test-results/*' \
+        -exec sed -i "s|${1}|${2}|g" {} +
+}
 
 echo "🔧 SupplementDB Docker Entrypoint"
+echo "   Source:  $SRC_DIR"
+echo "   Staging: $DIST_DIR"
+echo ""
+
+# ── Copy source files to writable staging directory ───────────────
+# Always done regardless of :ro status — DIST_DIR is never mounted read-only.
+echo "   Copying site files to staging directory..."
+mkdir -p "$DIST_DIR"
+cp -r "$SRC_DIR"/. "$DIST_DIR"/
+echo "   ✅ Files copied to staging"
+echo ""
+
+# ── Environment variable substitution in DIST_DIR ────────────────
+# Placeholders are ALWAYS replaced (using empty string if the var is unset).
+# This ensures no literal __PLACEHOLDER__ tokens are ever served to the browser.
 echo "   Substituting environment variables..."
 
-# ── Read-only filesystem detection ─────────────────────────────
-# When mounted with :ro (local dev), skip sed substitution entirely.
-# The HTML files already contain hardcoded values for local development.
-if ! touch "$HTML_DIR/.write-test" 2>/dev/null; then
-    echo "   ⚠️  Read-only filesystem detected — skipping env substitution"
-    echo "   (HTML files use hardcoded values for local dev)"
-    echo ""
+# Clerk Publishable Key ── injected into <meta name="clerk-key"> in HTML
+find_and_replace "__CLERK_PUBLISHABLE_KEY__" "${CLERK_PUBLISHABLE_KEY:-}"
+if [ -n "$CLERK_PUBLISHABLE_KEY" ]; then
+    echo "   ✅ CLERK_PUBLISHABLE_KEY injected"
 else
-    rm -f "$HTML_DIR/.write-test"
-
-    # Limit find to top-level site files — skip node_modules, test artifacts, etc.
-    FIND_OPTS="-maxdepth 3 -type f \( -name '*.html' -o -name '*.js' \) -not -path '*/node_modules/*' -not -path '*/playwright-report/*' -not -path '*/.playwright-mcp/*' -not -path '*/test-results/*'"
-
-    # ── Clerk Publishable Key ──────────────────────────────────────
-    if [ -n "$CLERK_PUBLISHABLE_KEY" ]; then
-        # Substitute placeholder in <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
-        # auth.js reads this and dynamically loads Clerk CDN only when it's a valid pk_ key
-        eval find "$HTML_DIR" $FIND_OPTS -exec sed -i "s|__CLERK_PUBLISHABLE_KEY__|${CLERK_PUBLISHABLE_KEY}|g" {} +
-        echo "   ✅ CLERK_PUBLISHABLE_KEY injected"
-    else
-        echo "   ⚠️  CLERK_PUBLISHABLE_KEY not set — auth features will be unavailable"
-    fi
-
-    # ── Convex URL ─────────────────────────────────────────────────
-    if [ -n "$CONVEX_URL" ]; then
-        eval find "$HTML_DIR" $FIND_OPTS -exec sed -i "s|__CONVEX_URL__|${CONVEX_URL}|g" {} +
-        echo "   ✅ CONVEX_URL injected"
-    else
-        echo "   ⚠️  CONVEX_URL not set — using default (https://robust-frog-754.convex.cloud)"
-    fi
-
-    # ── PostHog Key ────────────────────────────────────────────────
-    if [ -n "$POSTHOG_KEY" ]; then
-        eval find "$HTML_DIR" $FIND_OPTS -exec sed -i "s|__POSTHOG_KEY__|${POSTHOG_KEY}|g" {} +
-        echo "   ✅ POSTHOG_KEY injected"
-    else
-        echo "   ⚠️  POSTHOG_KEY not set — PostHog analytics will use hardcoded key"
-    fi
-
-    # ── Site URL ──────────────────────────────────────────────────
-    if [ -n "$SITE_URL" ]; then
-        eval find "$HTML_DIR" $FIND_OPTS -exec sed -i "s|__SITE_URL__|${SITE_URL}|g" {} +
-        echo "   ✅ SITE_URL injected"
-    else
-        echo "   ⚠️  SITE_URL not set — using default (http://localhost:8080)"
-    fi
-
-    echo "   Environment substitution complete."
-    echo ""
+    echo "   ⚠️  CLERK_PUBLISHABLE_KEY not set — Clerk auth will be unavailable"
+    echo "      Add CLERK_PUBLISHABLE_KEY=pk_test_... to your .env and run:"
+    echo "      docker-compose up --build supp-db"
 fi
 
-# ── Start nginx ────────────────────────────────────────────────
-echo "🚀 Starting nginx..."
+# Convex URL ── backend WebSocket endpoint
+find_and_replace "__CONVEX_URL__" "${CONVEX_URL:-}"
+if [ -n "$CONVEX_URL" ]; then
+    echo "   ✅ CONVEX_URL injected"
+else
+    echo "   ⚠️  CONVEX_URL not set — using hardcoded default"
+fi
+
+# PostHog Key ── analytics
+find_and_replace "__POSTHOG_KEY__" "${POSTHOG_KEY:-}"
+if [ -n "$POSTHOG_KEY" ]; then
+    echo "   ✅ POSTHOG_KEY injected"
+else
+    echo "   ⚠️  POSTHOG_KEY not set — PostHog analytics disabled"
+fi
+
+# Site URL ── used in Stripe checkout and email links
+find_and_replace "__SITE_URL__" "${SITE_URL:-}"
+if [ -n "$SITE_URL" ]; then
+    echo "   ✅ SITE_URL injected"
+else
+    echo "   ⚠️  SITE_URL not set — using default (http://localhost:8080)"
+fi
+
+echo "   Environment substitution complete."
+echo ""
+
+# ── Hot-reload watcher for local dev (:ro volume mount) ──────────
+# If source dir is :ro mounted, start an inotify watcher in the background.
+# On any file change: re-copy source → staging, then re-run all substitutions.
+# This gives hot-reload behavior without needing write access to the mounted dir.
+if ! touch "$SRC_DIR/.write-test" 2>/dev/null; then
+    echo "   🔄 Read-only volume detected — starting hot-reload watcher"
+    echo "      Changes to supp-db-site/ will be reflected automatically"
+    echo ""
+
+    (
+        while true; do
+            inotifywait -r -e modify,create,delete,move "$SRC_DIR" 2>/dev/null || sleep 2
+            echo "   🔄 [hot-reload] Change detected — resyncing staging..."
+            cp -r "$SRC_DIR"/. "$DIST_DIR"/
+            find_and_replace "__CLERK_PUBLISHABLE_KEY__" "${CLERK_PUBLISHABLE_KEY:-}" 2>/dev/null || true
+            find_and_replace "__CONVEX_URL__"             "${CONVEX_URL:-}"            2>/dev/null || true
+            find_and_replace "__POSTHOG_KEY__"            "${POSTHOG_KEY:-}"           2>/dev/null || true
+            find_and_replace "__SITE_URL__"               "${SITE_URL:-}"              2>/dev/null || true
+            echo "   ✅ [hot-reload] Staging synced and substitutions applied"
+        done
+    ) &
+else
+    rm -f "$SRC_DIR/.write-test"
+fi
+
+# ── Start nginx ────────────────────────────────────────────────────
+echo "🚀 Starting nginx (serving from $DIST_DIR)..."
 exec nginx -g "daemon off;"
