@@ -20,6 +20,7 @@ const {
   injectAuthMock,
   safeGoto,
   collectConsoleErrors,
+  filterCriticalErrors,
 } = require("./helpers/auth-helpers");
 
 // ════════════════════════════════════════════════════════════════
@@ -1124,5 +1125,190 @@ test.describe("Zero console errors", () => {
         !e.includes("unpkg.com")
     );
     expect(criticalErrors).toHaveLength(0);
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// Mobile Viewport Tests (@mobile)
+// Picked up by: npm run test:mobile
+//   → npx playwright test tests/stripe-checkout.spec.js --grep @mobile
+// Viewport: iPhone SE — 375×812
+// ════════════════════════════════════════════════════════════════
+
+const MOBILE_VIEWPORT = { width: 375, height: 812 };
+
+// ── @mobile: Pricing page layout ─────────────────────────────────────────────
+
+test.describe("@mobile pricing page — layout and plan cards", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize(MOBILE_VIEWPORT);
+    await injectAuthMock(page, { signedIn: false, role: "free" });
+  });
+
+  test("@mobile pricing page — renders all 3 plan cards at mobile viewport", async ({
+    page,
+  }) => {
+    const errors = collectConsoleErrors(page);
+    await safeGoto(page, "/pricing.html");
+
+    const cards = page.locator(".plan-card");
+    await expect(cards).toHaveCount(3);
+
+    // Each card visible individually
+    await expect(page.locator(".plan-card[data-plan='free']")).toBeVisible();
+    await expect(page.locator(".plan-card[data-plan='monthly']")).toBeVisible();
+    await expect(page.locator(".plan-card[data-plan='annual']")).toBeVisible();
+
+    const critical = filterCriticalErrors(errors);
+    expect(critical).toHaveLength(0);
+  });
+
+  test("@mobile pricing page — no horizontal overflow at 375px", async ({
+    page,
+  }) => {
+    await safeGoto(page, "/pricing.html");
+
+    const overflow = await page.evaluate(
+      () => document.body.scrollWidth > window.innerWidth
+    );
+    expect(overflow).toBe(false);
+  });
+
+  test("@mobile pricing page — anonymous CTA buttons are visible and tappable", async ({
+    page,
+  }) => {
+    await safeGoto(page, "/pricing.html");
+
+    const ctaFree = page.locator("#cta-free");
+    const ctaMonthly = page.locator("#cta-monthly");
+    const ctaAnnual = page.locator("#cta-annual");
+
+    await expect(ctaFree).toBeVisible();
+    await expect(ctaMonthly).toBeVisible();
+    await expect(ctaAnnual).toBeVisible();
+
+    // WCAG minimum touch target: 44px height
+    for (const btn of [ctaFree, ctaMonthly, ctaAnnual]) {
+      const box = await btn.boundingBox();
+      expect(box).not.toBeNull();
+      expect(box.height).toBeGreaterThanOrEqual(44);
+    }
+  });
+});
+
+// ── @mobile: FAQ accordion ────────────────────────────────────────────────────
+
+test.describe("@mobile pricing page — FAQ accordion", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize(MOBILE_VIEWPORT);
+    await injectAuthMock(page, { signedIn: false, role: "free" });
+  });
+
+  test("@mobile FAQ accordion — first item expands on tap", async ({ page }) => {
+    await safeGoto(page, "/pricing.html");
+
+    const firstQuestion = page.locator(".faq-item:first-of-type .faq-question");
+    const firstAnswer = page.locator(".faq-item:first-of-type .faq-answer");
+    const firstItem = page.locator(".faq-item:first-of-type");
+
+    // Initially collapsed
+    await expect(firstItem).not.toHaveClass(/open/);
+
+    await firstQuestion.click();
+
+    // After click/tap, item should be open and answer visible
+    await expect(firstItem).toHaveClass(/open/, { timeout: 3000 });
+    await expect(firstAnswer).toBeVisible();
+  });
+
+  test("@mobile FAQ accordion — first item collapses on second tap", async ({
+    page,
+  }) => {
+    await safeGoto(page, "/pricing.html");
+
+    const firstQuestion = page.locator(".faq-item:first-of-type .faq-question");
+    const firstItem = page.locator(".faq-item:first-of-type");
+
+    // Open
+    await firstQuestion.click();
+    await expect(firstItem).toHaveClass(/open/, { timeout: 3000 });
+
+    // Close
+    await firstQuestion.click();
+    await expect(firstItem).not.toHaveClass(/open/, { timeout: 3000 });
+  });
+});
+
+// ── @mobile: Signed-in user CTAs ─────────────────────────────────────────────
+
+test.describe("@mobile pricing page — signed-in free user CTAs", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize(MOBILE_VIEWPORT);
+    await injectAuthMock(page, { signedIn: true, role: "free" });
+  });
+
+  test("@mobile free user — free plan CTA shows Current Plan", async ({ page }) => {
+    await safeGoto(page, "/pricing.html");
+
+    const ctaFree = page.locator("#cta-free");
+    await expect(ctaFree).toBeVisible();
+    await expect(ctaFree).toContainText(/current plan/i);
+  });
+
+  test("@mobile free user — paid plan CTAs are visible and tappable", async ({
+    page,
+  }) => {
+    await safeGoto(page, "/pricing.html");
+
+    const ctaMonthly = page.locator("#cta-monthly");
+    const ctaAnnual = page.locator("#cta-annual");
+
+    await expect(ctaMonthly).toBeVisible();
+    await expect(ctaAnnual).toBeVisible();
+
+    // Both must meet 44px touch-target minimum
+    for (const btn of [ctaMonthly, ctaAnnual]) {
+      const box = await btn.boundingBox();
+      expect(box).not.toBeNull();
+      expect(box.height).toBeGreaterThanOrEqual(44);
+    }
+  });
+});
+
+// ── @mobile: Success page ─────────────────────────────────────────────────────
+
+test.describe("@mobile success page — no overflow", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize(MOBILE_VIEWPORT);
+    await injectAuthMock(page, { signedIn: true, role: "subscriber" });
+  });
+
+  test("@mobile success page — no horizontal overflow with session_id", async ({
+    page,
+  }) => {
+    const errors = collectConsoleErrors(page);
+    await safeGoto(page, "/success.html?session_id=cs_test_mobile");
+
+    const overflow = await page.evaluate(
+      () => document.body.scrollWidth > window.innerWidth
+    );
+    expect(overflow).toBe(false);
+
+    const critical = filterCriticalErrors(errors);
+    expect(critical).toHaveLength(0);
+  });
+
+  test("@mobile success page — error state visible without session_id", async ({
+    page,
+  }) => {
+    await safeGoto(page, "/success.html");
+
+    // Error state must be reachable on mobile (no hidden overflow)
+    await expect(page.locator("#state-error")).toBeVisible({ timeout: 6000 });
+
+    const overflow = await page.evaluate(
+      () => document.body.scrollWidth > window.innerWidth
+    );
+    expect(overflow).toBe(false);
   });
 });
