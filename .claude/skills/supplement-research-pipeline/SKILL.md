@@ -152,6 +152,41 @@ For each paper, extract into the CitationEvidence schema (see `references/databa
 
 Validate ALL DOIs using citation-management skill (CrossRef verification).
 
+**Step 3.5 — Citation Integrity Verification (MANDATORY — cannot be skipped)**
+```
+Goal: Confirm every PMID and DOI in the citation dataset resolves to the correct paper.
+Tools: PubMed E-utilities API, CrossRef API, verify-citations.js
+```
+
+Run the verifier before writing ANY data to the database:
+```bash
+node supp-db-site/scripts/verify-citations.js --id {id}
+```
+
+**For newly researched supplements (before any file is written):**
+Manually verify each PMID at `https://pubmed.ncbi.nlm.nih.gov/{pmid}/` and each DOI at `https://doi.org/{doi}` before including them. Do not trust memory. Copy the paper title *exactly* as returned by the API — do not paraphrase.
+
+**For existing supplements being updated:**
+Run `verify-citations.js --id {id}` after writing the enhanced citations file. The script exits with code 1 if any CRITICAL issues are found. CRITICAL issues MUST be resolved before proceeding to Mode 6 import.
+
+**Issue resolution protocol:**
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| `PMID_NOT_FOUND` | PMID was hallucinated or mis-remembered | Search PubMed for the actual paper by title/author. Replace with the verified PMID. NEVER guess. |
+| `DOI_NOT_FOUND` | DOI is broken or fabricated | Verify at `https://doi.org/{doi}`. Find the correct DOI via CrossRef search. |
+| `TITLE_MISMATCH_CRITICAL` (< 25% similarity) | PMID points to a completely different paper | The PMID was assigned to the wrong paper. Re-search PubMed to find the correct PMID for the stated claim. |
+| `TITLE_MISMATCH` (25–50% similarity) | Possible wrong PMID or heavily paraphrased title | Verify by opening the PubMed page. If wrong paper, find correct PMID. If correct paper, update the `title` field to match exactly. |
+| `NO_IDENTIFIER` | Citation has no PMID or DOI | Unverifiable citation — remove or find a verified replacement. |
+
+**Anti-hallucination rules — enforce before writing:**
+1. **Never compose a PMID from memory.** PMIDs must come from a live PubMed search result or the PubMed URL in your browser.
+2. **Never reconstruct a DOI** from a paper title, journal, or year. Retrieve from CrossRef or the publisher's page.
+3. **The `title` field must be the exact paper title** from PubMed/CrossRef — not a summary, paraphrase, or claim description.
+4. **Every `findings` field must be grounded in the paper's abstract.** Do not extrapolate beyond what the abstract states.
+5. **Never assign a PMID to a paper you have not confirmed resolves to that specific study.** Multiple papers on the same supplement may share similar titles.
+6. **If you cannot find a verified PMID/DOI, do not include the citation.** Write `"pmid": ""` and `"doi": ""` and flag for human review rather than fabricating identifiers.
+
 **Step 4 — Evidence Grading**
 ```
 Goal: Assign evidence tier and quality scores.
@@ -931,6 +966,11 @@ Before marking Mode 6 complete, verify:
 - [ ] `supplements.js` — new entry appended, all required fields populated, no syntax errors
 - [ ] `{id}_{slug}_enhanced.js` — file exists, exports `window.enhancedCitations[ID]`, all citation arrays non-empty
 - [ ] `EnhancedCitationLoader.js` — new `{ id, file }` entry present in `enhancedFiles` array
+- [ ] **Citation integrity gate** (MANDATORY — MUST be 0 CRITICAL before proceeding):
+  ```bash
+  node supp-db-site/scripts/verify-citations.js --id {id}
+  ```
+  Exit code 0 = pass. Exit code 1 = CRITICAL issues present — fix before proceeding. Exit code 2 = script error.
 - [ ] **seed.js dry-run passes**: `node supp-db-site/seed.js --id {id} --dry-run` — 0 errors
 - [ ] `supplements/{slug}.html` — page loads, JSON-LD present, no broken asset references
 - [ ] Add new comparison entry to `COMPARISONS` array in `scripts/generate-compare-pages.js`, then run `node scripts/generate-compare-pages.js` to regenerate all 10 compare pages
@@ -1287,9 +1327,22 @@ Rules:
 
 Before finalizing ANY output from this pipeline:
 
+### Citation Integrity (MANDATORY — run before any import)
+- [ ] **`verify-citations.js` passes with 0 CRITICAL issues**: `node supp-db-site/scripts/verify-citations.js --id {id}`
+- [ ] All PMIDs exist in PubMed (PMID_NOT_FOUND = 0)
+- [ ] All DOIs resolve in CrossRef (DOI_NOT_FOUND = 0)
+- [ ] All stored titles match actual paper titles (TITLE_MISMATCH_CRITICAL = 0)
+- [ ] Every citation has at least one identifier (PMID or DOI) — NO_IDENTIFIER = 0
+- [ ] `title` fields contain exact paper titles, not claim descriptions or paraphrases
+
+### Anti-Hallucination Verification
+- [ ] No PMID was composed from memory — all come from live PubMed search results
+- [ ] No DOI was reconstructed from journal/year/author — all retrieved from CrossRef or publisher
+- [ ] Each `findings` field is traceable to a specific sentence in the paper's abstract
+- [ ] No citation appears more than once under different claims without that being intentional
+- [ ] Supplement name appears in the paper's title, MeSH terms, or abstract (paper is actually about this supplement)
+
 ### Data Integrity
-- [ ] All DOIs validated via CrossRef (use citation-management skill)
-- [ ] All PMIDs verified (cross-reference with PubMed)
 - [ ] No placeholder text (every field is real data or explicitly marked as "Data not available")
 - [ ] All files are valid JavaScript (no syntax errors)
 

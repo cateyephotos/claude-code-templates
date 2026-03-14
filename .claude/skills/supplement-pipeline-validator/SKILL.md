@@ -14,11 +14,12 @@ metadata:
 
 ## Overview
 
-This skill performs a comprehensive health check of the entire supplement data pipeline, tracing data from raw structured sources through to HTML generation readiness. It operates in three passes:
+This skill performs a comprehensive health check of the entire supplement data pipeline, tracing data from raw structured sources through to HTML generation readiness. It operates in four passes:
 
 1. **Layer 1 Audit** — `supplements.js` field completeness for all 93 supplements
 2. **Layer 2 Audit** — `enhanced_citations/` file existence and schema correctness
-3. **Layer 3 Check** — `seed.js` dry-run to confirm HTML generation readiness
+3. **Pass 2.5 — Citation Integrity** — PMID/DOI live verification against PubMed and CrossRef (anti-hallucination gate)
+4. **Layer 3 Check** — `seed.js` dry-run to confirm HTML generation readiness
 
 The output is a prioritised action list grouped by supplement, with specific fix instructions for each gap.
 
@@ -35,7 +36,7 @@ The output is a prioritised action list grouped by supplement, with specific fix
 - `/validate-pipeline` — Full validation of all 93 supplements
 - `/validate-pipeline --id {id}` — Validate one supplement by ID
 - `/validate-pipeline --slug {slug}` — Validate one supplement by slug
-- `/validate-pipeline --layer {1|2|3}` — Run only one pass
+- `/validate-pipeline --layer {1|2|2.5|3}` — Run only one pass
 
 ---
 
@@ -164,6 +165,101 @@ Scores:
 
 ---
 
+### Pass 2.5 — Citation Integrity: PMID/DOI Live Verification
+
+**Goal:** Detect hallucinated, non-existent, or misattributed citations before they reach the published database. This is the anti-hallucination gate — must pass with 0 CRITICAL issues before generating HTML pages.
+
+**Step 2.5A — Run the citation verifier**
+```bash
+# Verify all supplements (makes live API calls — takes ~5 min for 93 supps)
+node supp-db-site/scripts/verify-citations.js
+
+# Verify one supplement by ID (fast — use after any Mode 1/2 research run)
+node supp-db-site/scripts/verify-citations.js --id {id}
+
+# Dry-run: count items and identifiers without making API calls
+node supp-db-site/scripts/verify-citations.js --dry-run
+
+# Only check PMIDs (skip CrossRef DOI lookups)
+node supp-db-site/scripts/verify-citations.js --pmid-only
+
+# Print summary counts only (no per-item detail)
+node supp-db-site/scripts/verify-citations.js --summary
+```
+
+**Exit codes:**
+- `0` = Pass (0 CRITICAL issues)
+- `1` = Fail (CRITICAL issues found — block import)
+- `2` = Script error (fix the script)
+
+**Step 2.5B — Interpret issue severities**
+
+| Issue Type | Severity | Meaning | Action Required |
+|---|---|---|---|
+| `PMID_NOT_FOUND` | 🔴 CRITICAL | PMID does not exist in PubMed — hallucinated | Delete and re-search PubMed |
+| `DOI_NOT_FOUND` | 🔴 CRITICAL | DOI does not resolve in CrossRef | Verify DOI format; find correct DOI |
+| `TITLE_MISMATCH_CRITICAL` | 🔴 CRITICAL | PMID resolves to a completely different paper (similarity < 25%) | Wrong PMID — find correct one |
+| `NO_IDENTIFIER` | 🟠 HIGH | Citation has neither PMID nor DOI | Must add at least one identifier |
+| `TITLE_MISMATCH` | 🟠 HIGH | Title has low similarity to PubMed record (25–50%) | Manually verify correct PMID |
+| `YEAR_MISMATCH` | 🟡 MEDIUM | Stored year differs from PubMed by > 2 years | Correct year field |
+| `NO_TITLE_FIELD` | ⚪ LOW | Flat-format citation has no `title` field (has `claim` instead) | Migrate to canonical schema |
+
+**Step 2.5C — Fix CRITICAL issues**
+
+When `PMID_NOT_FOUND`:
+```
+1. Search PubMed for the paper using title + first author + year
+   URL: https://pubmed.ncbi.nlm.nih.gov/?term={search+terms}
+2. Locate the correct PMID from results
+3. Update citationId, pmid, title, year to match real paper
+4. Re-run: node supp-db-site/scripts/verify-citations.js --id {id}
+```
+
+When `TITLE_MISMATCH_CRITICAL`:
+```
+1. Visit https://pubmed.ncbi.nlm.nih.gov/{pmid}/
+2. Read the actual paper — is it the right study?
+3. If wrong: search PubMed for the paper by title/author/year
+4. If right: update the title field to match the exact PubMed title
+```
+
+When `DOI_NOT_FOUND`:
+```
+1. Visit https://doi.org/{doi} — does it resolve?
+2. If not: try https://www.doi.org/{doi} (encoding issues)
+3. Check CrossRef: https://api.crossref.org/works/{doi}
+4. If unfixable: remove doi field; use pmid only
+```
+
+**Step 2.5D — Dual citation schema detection**
+
+The verifier handles both citation formats in enhanced_citations files:
+
+**Canonical grouped format** (preferred — `group.evidence` is an array):
+```javascript
+citations.mechanisms[{ mechanism: "...", evidence: [{ pmid, title, ... }] }]
+```
+→ Title comparison enabled for all items.
+
+**Flat format** (legacy — item IS the citation):
+```javascript
+citations.mechanisms[{ claim: "...", pmid: "...", title: "..." }]
+```
+→ Title comparison only if `title` field present (not `claim` field). Emits LOW `NO_TITLE_FIELD` if missing title.
+
+Flat-format files should be migrated to canonical format using:
+```bash
+node supp-db-site/scripts/migrate-enhanced-citations.js
+```
+
+**Step 2.5E — API rate limits**
+
+- **PubMed E-utilities**: 3 requests/sec without API key; 10/sec with key. Verifier uses 350ms delay.
+- **CrossRef**: polite pool (100ms delay) — no registration required.
+- For all-93 verification: ~5 minutes total. Normal after data updates.
+
+---
+
 ### Pass 3 — Layer 3: HTML Generation Readiness
 
 **Goal:** Confirm seed.js can generate a valid HTML page for each supplement.
@@ -238,6 +334,12 @@ LAYER 2 (enhanced_citations):
   🟠 Partial:             {n} supplements
   🔴 No evidence:         {n} supplements
   ⛔ Missing file:         {n} supplements
+
+PASS 2.5 (citation integrity):
+  🔴 CRITICAL issues:     {n}  ← BLOCKS import until fixed
+  🟠 HIGH (no ID / mismatch): {n}
+  🟡 MEDIUM (year drift): {n}
+  ⚪ LOW (no title field): {n}
 
 LAYER 3 (HTML generation):
   ✓ Ready:               {n} supplements
@@ -353,6 +455,13 @@ node supp-db-site/seed.js --dry-run
 node supp-db-site/scripts/audit-enhanced-citations.js
 node supp-db-site/scripts/audit-enhanced-citations.js --id 33   # single supplement
 
+# Pass 2.5 — Citation integrity (PMID/DOI live verification — anti-hallucination gate)
+node supp-db-site/scripts/verify-citations.js                   # all supplements
+node supp-db-site/scripts/verify-citations.js --id 35          # single supplement
+node supp-db-site/scripts/verify-citations.js --dry-run        # count only, no API calls
+node supp-db-site/scripts/verify-citations.js --summary        # counts only
+node supp-db-site/scripts/verify-citations.js --pmid-only      # skip CrossRef DOI checks
+
 # Layer 3 — HTML completeness check (use script file, not -e)
 node supp-db-site/scripts/check-html-completeness.js
 
@@ -396,7 +505,42 @@ Then add the supplement to `MIGRATIONS` array in the script if it's a new supple
 
 **Fix:** Write the check as a `.js` file in `scripts/` and run with `node scripts/check-name.js` — never use `node -e` for multi-line scripts with `!`.
 
-### 3. Seed.js Slug Divergence
+### 3. Hallucinated PMIDs/DOIs (SILENT — wrong papers cited or non-existent PMIDs)
+
+**Symptom:** `verify-citations.js` reports `PMID_NOT_FOUND` or `TITLE_MISMATCH_CRITICAL` issues. Evidence cards on the supplement page link to unrelated papers or return 404 on PubMed.
+
+**Root cause:** During Mode 1/2 research, a PMID was composed from memory or reconstructed incorrectly rather than retrieved from a live PubMed search. The citation data appears structurally valid but points to the wrong paper or no paper.
+
+**Real examples found (2026-03-14 — Tribulus Terrestris ID 35):**
+- PMID `26755425` — does not exist in PubMed (hallucinated)
+- PMID `18345236` — resolves to a laser diode paper in Optics Letters (wrong field entirely)
+- PMID `37398644` — resolves to a human-murine autoantibody paper (unrelated)
+
+**Detection:**
+```bash
+node supp-db-site/scripts/verify-citations.js --id 35
+# Look for: PMID_NOT_FOUND, TITLE_MISMATCH_CRITICAL
+```
+
+**Fix:**
+```bash
+# 1. Identify the affected supplement and citation
+node supp-db-site/scripts/verify-citations.js --id {id}
+
+# 2. For each CRITICAL issue, search PubMed for the correct paper:
+#    https://pubmed.ncbi.nlm.nih.gov/?term={supplement+name}+{author}+{year}
+
+# 3. Update the enhanced citation file with the verified PMID and exact title
+
+# 4. Re-run verify — must reach exit code 0 before proceeding
+node supp-db-site/scripts/verify-citations.js --id {id}
+```
+
+**Prevention:** The supplement-research-pipeline SKILL.md Step 3.5 mandates running `verify-citations.js` before writing any citation data to the database. Never assign a PMID from memory — always retrieve from live PubMed search results.
+
+**Status:** Tribulus Terrestris (ID 35) confirmed hallucinated PMIDs — pending correction via Mode 2 evidence update with verified sources.
+
+### 4. Seed.js Slug Divergence
 
 **Symptom:** `seed.js` generates a file at a different path than the one app.js links to, causing 404s on supplement pages.
 
@@ -445,6 +589,7 @@ This validator is designed to be run **before and after** supplement-research-pi
 |---|---|---|
 | Before Mode 1 (new research) | Baseline health check | `/validate-pipeline` |
 | After Mode 1 (data written) | Verify new data is correct | `/validate-pipeline --id {new_id}` |
+| **After Mode 1/2 citations written** | **Citation integrity gate (MANDATORY)** | `node supp-db-site/scripts/verify-citations.js --id {id}` |
 | Before Mode 7 (generate pages) | Confirm 0 errors | `node seed.js --dry-run` |
 | After Mode 7 (pages generated) | Verify HTML completeness | See Pass 3 Step 3B |
 | Periodic health check | Catch data drift | `/validate-pipeline` monthly |
