@@ -28,7 +28,6 @@
     <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
     <meta name="convex-url" content="https://robust-frog-754.convex.cloud">
 
-    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/auth.css">
 
     <!-- Tailwind + Font Awesome + Google Fonts -->
@@ -112,6 +111,15 @@
                 <button class="admin-nav-item" data-section="activity">
                     <i class="fas fa-stream"></i>
                     <span>Activity Log</span>
+                </button>
+            </div>
+
+            <div class="admin-nav-section">
+                <div class="admin-nav-label">System</div>
+                <button class="admin-nav-item" data-section="config">
+                    <i class="fas fa-cog"></i>
+                    <span>Configuration</span>
+                    <span id="config-nav-badge" class="config-nav-status-dot hidden"></span>
                 </button>
             </div>
         </aside>
@@ -481,6 +489,137 @@
                 </div>
             </section>
 
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Configuration                             -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-config" class="admin-section">
+                <h2 class="admin-section-title">Configuration &amp; Services</h2>
+
+                <!-- System Health Banner -->
+                <div id="config-health-banner" class="config-health-banner config-health-loading">
+                    <div class="config-health-banner-icon">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                    </div>
+                    <div class="config-health-banner-text">
+                        <strong>Checking configuration&hellip;</strong>
+                        <span>Loading service status from Convex environment.</span>
+                    </div>
+                    <a href="https://dashboard.convex.dev" target="_blank" rel="noopener" class="config-convex-link">
+                        <i class="fas fa-external-link-alt mr-1"></i>Convex Dashboard
+                    </a>
+                </div>
+
+                <!-- Service Cards Grid -->
+                <div id="config-services-grid" class="config-services-grid">
+                    <!-- Populated by admin-config.js -->
+                    <div class="admin-chart-card config-card-skeleton">
+                        <div class="admin-skeleton" style="height:160px;"></div>
+                    </div>
+                    <div class="admin-chart-card config-card-skeleton">
+                        <div class="admin-skeleton" style="height:160px;"></div>
+                    </div>
+                    <div class="admin-chart-card config-card-skeleton">
+                        <div class="admin-skeleton" style="height:160px;"></div>
+                    </div>
+                    <div class="admin-chart-card config-card-skeleton">
+                        <div class="admin-skeleton" style="height:160px;"></div>
+                    </div>
+                    <div class="admin-chart-card config-card-skeleton">
+                        <div class="admin-skeleton" style="height:160px;"></div>
+                    </div>
+                    <div class="admin-chart-card config-card-skeleton">
+                        <div class="admin-skeleton" style="height:160px;"></div>
+                    </div>
+                </div>
+
+                <!-- Stack Analyzer Usage Panel -->
+                <h3 class="admin-section-title" style="font-size:1.15rem; margin-top:2rem;">
+                    <i class="fas fa-robot mr-2" style="color:#7c3aed;"></i>Stack Analyzer — Live Usage &amp; Cost
+                </h3>
+
+                <!-- Stack Analyzer Status + API Key Banner -->
+                <div id="stack-api-status" class="config-api-status config-api-status-loading">
+                    <div class="admin-skeleton" style="height:52px;"></div>
+                </div>
+
+                <!-- Usage Stat Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">Analyses This Month</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-analyses-month">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#7c3aed;"><i class="fas fa-robot"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Cost This Month</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-cost-month">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#f59e0b;"><i class="fas fa-dollar-sign"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Users This Month</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-users-month">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#2563eb;"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">All-Time Analyses</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-analyses-total">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#2d5a3d;"><i class="fas fa-history"></i></div>
+                    </div>
+                </div>
+
+                <!-- Secondary Usage Cards -->
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <div class="admin-card-label">All-Time Cost</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-cost-total">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#f59e0b;"><i class="fas fa-coins"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Active Credit Users</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-credit-users">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#0d9488;"><i class="fas fa-id-card"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Input Tokens (Month)</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-input-tokens">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#9ca3af;"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-label">Output Tokens (Month)</div>
+                        <div class="admin-card-value admin-skeleton" id="cfg-output-tokens">&mdash;</div>
+                        <div class="admin-card-icon" style="color:#9ca3af;"><i class="fas fa-arrow-left"></i></div>
+                    </div>
+                </div>
+
+                <!-- Depth Breakdown + Model -->
+                <div class="admin-chart-grid">
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Analysis Depth Breakdown <span class="text-xs font-normal text-gray-400 ml-1">(this month)</span></h3>
+                        <div id="cfg-depth-breakdown" class="config-depth-breakdown">
+                            <div class="admin-skeleton" style="height:120px;"></div>
+                        </div>
+                    </div>
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Model &amp; Pricing Reference</h3>
+                        <div id="cfg-model-info" class="config-model-info">
+                            <div class="admin-skeleton" style="height:120px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How-to-update note -->
+                <div class="config-howto-note">
+                    <i class="fas fa-info-circle mr-2" style="color:#2563eb;"></i>
+                    <div>
+                        <strong>How to update environment variables:</strong>
+                        Environment variables are set in the
+                        <a href="https://dashboard.convex.dev" target="_blank" rel="noopener">Convex Dashboard</a>
+                        under <strong>Settings → Environment Variables</strong>.
+                        Changes take effect within seconds — no redeploy required.
+                        Never commit secrets to git.
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
 
@@ -494,5 +633,6 @@
     <script src="../js/admin-metrics.js"></script>
     <script src="../js/analytics-enhanced.js"></script>
     <script src="../js/admin-dashboard.js"></script>
+    <script src="../js/admin-config.js"></script>
 </body>
 </html>
