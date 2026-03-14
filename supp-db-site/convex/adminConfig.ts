@@ -290,6 +290,17 @@ export const getStackAnalyzerStats = query({
     const thisMonthInputTokens = thisMonthAnalyses.reduce((sum, a) => sum + (a.inputTokens ?? 0), 0);
     const thisMonthOutputTokens = thisMonthAnalyses.reduce((sum, a) => sum + (a.outputTokens ?? 0), 0);
 
+    // Weighted API Tokens (WAT) — input × 1 + output × 5 (matches Haiku relative pricing)
+    // 1M WAT = $1.00 API cost (input-parity basis). This is the single profitability metric.
+    const thisMonthWAT = thisMonthInputTokens + (thisMonthOutputTokens * 5);
+    const allTimeWAT = totalInputTokens + (totalOutputTokens * 5);
+    const avgWatThisMonth = thisMonthAnalyses.length > 0
+      ? Math.round(thisMonthWAT / thisMonthAnalyses.length)
+      : 0;
+    const avgWatAllTime = allAnalyses.length > 0
+      ? Math.round(allTimeWAT / allAnalyses.length)
+      : 0;
+
     const uniqueUsersAllTime = new Set(allAnalyses.map((a) => a.userId)).size;
     const uniqueUsersThisMonth = new Set(thisMonthAnalyses.map((a) => a.userId)).size;
 
@@ -315,6 +326,8 @@ export const getStackAnalyzerStats = query({
       allTime: {
         analyses: allAnalyses.length,
         costUsd: totalCostAllTime,
+        weightedTokens: allTimeWAT,
+        avgWatPerAnalysis: avgWatAllTime,
         uniqueUsers: uniqueUsersAllTime,
         inputTokens: totalInputTokens,
         outputTokens: totalOutputTokens,
@@ -322,6 +335,8 @@ export const getStackAnalyzerStats = query({
       thisMonth: {
         analyses: thisMonthAnalyses.length,
         costUsd: totalCostThisMonth,
+        weightedTokens: thisMonthWAT,
+        avgWatPerAnalysis: avgWatThisMonth,
         uniqueUsers: uniqueUsersThisMonth,
         inputTokens: thisMonthInputTokens,
         outputTokens: thisMonthOutputTokens,

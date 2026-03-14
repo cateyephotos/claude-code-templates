@@ -222,10 +222,22 @@
   // ── Render: Stat Cards ────────────────────────────────────────
   function renderStackStats(stats) {
     setText("cfg-analyses-month", fmt(stats.thisMonth.analyses));
-    setText("cfg-cost-month", fmtUsd(stats.thisMonth.costUsd));
+
+    // WAT (Weighted API Tokens) = input×1 + output×5, where 1M WAT = $1.00 API cost.
+    // This is the primary profitability metric — tracks true spend proportional to Haiku pricing.
+    const watMonth = stats.thisMonth.weightedTokens || 0;
+    const watTotal = stats.allTime.weightedTokens || 0;
+    setText("cfg-cost-month", fmtTokens(watMonth) + " WAT");
+    setText("cfg-cost-total", fmtTokens(watTotal) + " WAT");
+
+    // USD sub-labels — secondary reference only, for margin calculations
+    const subMonth = el("cfg-cost-month-usd");
+    if (subMonth) subMonth.textContent = "≈ " + fmtUsd(stats.thisMonth.costUsd) + " API cost";
+    const subTotal = el("cfg-cost-total-usd");
+    if (subTotal) subTotal.textContent = "≈ " + fmtUsd(stats.allTime.costUsd) + " API cost";
+
     setText("cfg-users-month", fmt(stats.thisMonth.uniqueUsers));
     setText("cfg-analyses-total", fmt(stats.allTime.analyses));
-    setText("cfg-cost-total", fmtUsd(stats.allTime.costUsd));
     setText("cfg-credit-users",
       fmt((stats.creditUsers.free || 0) + (stats.creditUsers.subscriber || 0)) +
       " (" + fmt(stats.creditUsers.free) + " free / " + fmt(stats.creditUsers.subscriber) + " pro)"
@@ -267,13 +279,18 @@
   }
 
   // ── Render: Model Info ────────────────────────────────────────
+  // WAT = Weighted API Tokens (input×1 + output×5). 1M WAT = $1.00 API cost (Haiku input parity).
+  // Profitability floor: avgWAT/analysis × 25 pro analyses / 1M × $1 = API cost per pro user/month.
   function renderModelInfo(model, allTime) {
     const container = el("cfg-model-info");
     if (!container) return;
 
-    const costPerAnalysisAvg = allTime.analyses > 0
-      ? (allTime.costUsd / allTime.analyses)
-      : 0.006;
+    const avgWat = allTime.avgWatPerAnalysis || 0;
+    // API cost for one pro user at 25 analyses/month
+    const apiCostPerProUser = (avgWat * 25) / 1_000_000;
+    const proMarginLabel = avgWat > 0
+      ? fmtTokens(avgWat * 25) + " WAT ≈ " + fmtUsd(apiCostPerProUser) + " API/user/mo"
+      : "Insufficient data";
 
     container.innerHTML = `
       <div class="config-model-row">
@@ -281,16 +298,20 @@
         <span class="config-model-row-value">${model || "claude-haiku-4-5-20250315"}</span>
       </div>
       <div class="config-model-row">
-        <span class="config-model-row-label">Input token price</span>
-        <span class="config-model-row-value">$1.00 / 1M tokens</span>
+        <span class="config-model-row-label">WAT formula</span>
+        <span class="config-model-row-value">input×1 + output×5</span>
       </div>
       <div class="config-model-row">
-        <span class="config-model-row-label">Output token price</span>
-        <span class="config-model-row-value">$5.00 / 1M tokens</span>
+        <span class="config-model-row-label">WAT rate</span>
+        <span class="config-model-row-value">$1.00 / 1M WAT</span>
       </div>
       <div class="config-model-row">
-        <span class="config-model-row-label">Avg cost / analysis</span>
-        <span class="config-model-row-value">${allTime.analyses > 0 ? "$" + costPerAnalysisAvg.toFixed(4) : "~$0.006"}</span>
+        <span class="config-model-row-label">Avg WAT / analysis</span>
+        <span class="config-model-row-value">${avgWat > 0 ? fmtTokens(avgWat) + " WAT" : "~4,500 WAT (est.)"}</span>
+      </div>
+      <div class="config-model-row">
+        <span class="config-model-row-label">Pro plan (25 analyses)</span>
+        <span class="config-model-row-value config-model-row-profit">${proMarginLabel}</span>
       </div>
       <div class="config-model-row">
         <span class="config-model-row-label">All-time input tokens</span>
