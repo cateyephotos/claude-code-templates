@@ -1,6 +1,6 @@
 ---
 name: supplement-research-pipeline
-description: End-to-end orchestration skill for researching, evaluating, publishing, and importing supplement evidence. Searches PubMed, bioRxiv, Consensus, and clinical trial registries. Grades evidence using GRADE framework. Outputs directly into the supplement database schema (supplements.js, enhanced_citations/), generates newsletter digests for lay and scientific audiences, and produces research update reports. Mode 6 (/import-supplement) provides a full import pipeline: appends new entries to supplements.js, creates enhanced citation JS files, updates the EnhancedCitationLoader.js registry, generates static per-supplement HTML pages, and generates static comparison HTML pages — enabling complete end-to-end import of newly researched supplements into the live site. Activates literature-review, scientific-writing, citation-management, scientific-critical-thinking, pubmed-database, chembl-database, clinicaltrials-database, and statistical-analysis skills as needed.
+description: End-to-end orchestration skill for researching, evaluating, publishing, and importing supplement evidence. Searches PubMed, bioRxiv, Consensus, and clinical trial registries. Grades evidence using GRADE framework. Outputs directly into the supplement database schema (supplements.js, enhanced_citations/), generates newsletter digests for lay and scientific audiences, and produces research update reports. Mode 6 (/import-supplement) provides a full import pipeline: appends new entries to supplements.js, creates enhanced citation JS files, updates the EnhancedCitationLoader.js registry, generates static per-supplement HTML pages via seed.js (the canonical forward-path HTML generator), and generates static comparison HTML pages — enabling complete end-to-end import of newly researched supplements into the live site. Mode 7 (/generate-pages) runs seed.js to regenerate HTML pages for any or all supplements directly from structured data. Activates literature-review, scientific-writing, citation-management, scientific-critical-thinking, pubmed-database, chembl-database, clinicaltrials-database, and statistical-analysis skills as needed.
 allowed-tools: Read Write Edit Bash
 license: MIT license
 metadata:
@@ -652,23 +652,57 @@ Verify the entry is appended in ascending ID order to keep the array sorted.
 
 ---
 
-#### Sub-task D — Generate Static Supplement HTML Page
+#### Sub-task D — Generate Static Supplement HTML Page via `seed.js`
 
-Write `supplements/{slug}.html` following the exact structure of the existing supplement pages. Read an existing supplement page (e.g., `supplements/bacopa-monnieri.html`) to obtain the full HTML shell, then substitute all supplement-specific content.
+**CANONICAL METHOD**: Use `seed.js` — the forward-path HTML generator that reads structured data directly into the melatonin-design template. Do NOT hand-author HTML or copy-paste from existing pages.
 
-Required page sections (in order):
-1. `<head>` — title, meta description, canonical URL, Open Graph tags, JSON-LD (Article + BreadcrumbList schemas)
-2. Hero section — supplement name, scientific name, evidence tier badge (inline style: `style="background:#2563eb;color:#fff;padding:0.15rem 0.6rem;border-radius:4px;font-size:0.8rem;"`), category pill
-3. Quick Summary card — evidence tier, dosage range, safety rating, primary benefits
-4. Evidence Overview — researchQualityScore bar, evidence strength table by domain
-5. Mechanisms section — mechanism cards with strength badges
-6. Benefits section — benefit cards with evidence quality badges
-7. Safety Profile — side effects, contraindications, drug interactions
-8. Dosage & Timing — dosage table with evidence base
-9. Key Citations — rendered study cards with DOI + PubMed links
-10. Related Supplements — links to supplements sharing the same category or benefits
+```bash
+# Generate one supplement by slug (after appending to supplements.js + creating enhanced citations file)
+node supp-db-site/seed.js --slug {slug} --out supp-db-site/supplements/
 
-Set canonical URL to `https://supplementdb.co/supplements/{slug}.html`.
+# Generate one supplement by ID
+node supp-db-site/seed.js --id {id} --out supp-db-site/supplements/
+
+# Validate without writing files first
+node supp-db-site/seed.js --slug {slug} --dry-run
+
+# Regenerate all supplements (rare — typically only for template changes)
+node supp-db-site/seed.js --out supp-db-site/supplements/
+```
+
+**What seed.js does:**
+- Reads `data/supplements.js` → base supplement fields
+- Reads `data/enhanced_citations/{id}_*_enhanced.js` → citation arrays for the evidence section
+- Derives URL slug via `slugify(name)` (no slug field in supplements.js)
+- Renders all 10 monograph sections using the melatonin-design HTML template
+- Supports all 4 enhanced citation file patterns: `window.xyzEnhanced`, `const xyzEnhanced`, `window.enhancedCitations[id]`, `window.enhancedCitations["key"]`
+
+**Dry-run validation before writing** (always do this after new data is added):
+```bash
+node supp-db-site/seed.js --dry-run
+# Output: per-supplement validation with ✓/✗/⚠ status
+# ✗ = critical error (missing name/category/tier) — blocks write
+# ⚠ = warning (empty fields, no enhanced citations) — writes anyway
+# Target: 0 errors before running without --dry-run
+```
+
+The page is written to `supplements/{slug}.html` and includes all 10 required sections:
+1. `<head>` — title, meta, canonical, Open Graph, JSON-LD
+2. Hero — name, scientific name, evidence tier badge, category pill, stats
+3. Quick Facts — evidence tier, category, dosage, duration, safety, forms, cost
+4. Overview — summary paragraph, key findings, study populations
+5. Mechanisms — mechanism cards from `mechanismsOfAction[]`
+6. Benefits — cognitive + non-cognitive benefit columns
+7. Effect Sizes — table from `effectSizes{}` object (camelCase keys → Title Case labels)
+8. Dosage & Administration — dosage grid + population tags
+9. Safety — side effects, contraindications, drug interactions cards
+10. Evidence — citation group cards from enhanced_citations file (mechanisms/benefits/safety/dosage)
+11. References — numbered list from `keyCitations[]`
+12. Related — category browse + guide links
+
+Set canonical URL controlled by `BASE_URL` env var (default: `https://supplementdb.com`).
+
+**Fallback (no seed.js):** If seed.js is unavailable, read an existing supplement page (e.g., `supplements/bacopa-monnieri.html`) to obtain the full HTML shell and manually substitute supplement-specific content — but this method is error-prone and NOT recommended.
 
 ---
 
@@ -897,12 +931,191 @@ Before marking Mode 6 complete, verify:
 - [ ] `supplements.js` — new entry appended, all required fields populated, no syntax errors
 - [ ] `{id}_{slug}_enhanced.js` — file exists, exports `window.enhancedCitations[ID]`, all citation arrays non-empty
 - [ ] `EnhancedCitationLoader.js` — new `{ id, file }` entry present in `enhancedFiles` array
+- [ ] **seed.js dry-run passes**: `node supp-db-site/seed.js --id {id} --dry-run` — 0 errors
 - [ ] `supplements/{slug}.html` — page loads, JSON-LD present, no broken asset references
 - [ ] Add new comparison entry to `COMPARISONS` array in `scripts/generate-compare-pages.js`, then run `node scripts/generate-compare-pages.js` to regenerate all 10 compare pages
 - [ ] `compare/{slug-a}-vs-{slug-b}.html` — Mockup B layout present (progress-track, hero-vs-row, split-compare, decision-cards, stack-box), all 10 sections, references populated
 - [ ] Add emoji to `SUPPLEMENT_EMOJIS` in `generate-compare-pages.js` if the new supplement is not already mapped
 - [ ] Run `node -e "require('./data/supplements.js')"` (or equivalent syntax check) to verify JS validity
 - [ ] Check browser console for errors on the supplement page and comparison page(s)
+
+---
+
+### Mode 7: HTML Page Generation (`/generate-pages`)
+
+Regenerate HTML monograph pages directly from structured data using `seed.js`. This is the canonical way to update or regenerate pages after data changes — no old HTML intermediate required.
+
+**When to use:**
+- After Mode 6 imports a new supplement (to generate its page)
+- After Mode 2 updates evidence in supplements.js or enhanced_citations (to reflect changes)
+- After template/CSS changes to melatonin.html (to regenerate all pages)
+- To fix a broken or outdated monograph page
+
+**Input:** Optional supplement name/slug/ID filter
+**Output:** HTML monograph page(s) in `supplements/`
+
+#### Workflow
+
+**Step 1 — Dry-run validation**
+```bash
+# Validate all supplements (no writes)
+node supp-db-site/seed.js --dry-run
+
+# Validate one supplement
+node supp-db-site/seed.js --slug {slug} --dry-run
+node supp-db-site/seed.js --id {id} --dry-run
+```
+Review output:
+- `✗` lines = critical errors (missing required fields) — fix in supplements.js before proceeding
+- `⚠` lines = warnings (empty optional fields, missing enhanced citations) — acceptable for generation
+- Target: 0 errors before writing
+
+**Step 2 — Generate pages**
+```bash
+# One supplement to staging
+node supp-db-site/seed.js --slug {slug} --out supp-db-site/supplements-new/
+
+# One supplement directly to live
+node supp-db-site/seed.js --slug {slug} --out supp-db-site/supplements/
+
+# All supplements to live (after template changes)
+node supp-db-site/seed.js --out supp-db-site/supplements/
+```
+
+**Step 3 — Verify output**
+```bash
+# Check file was created and has expected sections
+node -e "
+const fs=require('fs');
+const html=fs.readFileSync('supp-db-site/supplements/{slug}.html','utf8');
+['hero','quick-facts','mechanism-grid','benefits-grid','effect-table',
+ 'dosage-grid','safety-card','citation-group','ref-item','related-card']
+.forEach(c => console.log(c + ':', html.includes(c)));
+"
+```
+
+**Step 4 (optional) — Playwright spot-check**
+Open the generated page in Docker staging and verify visual rendering. Use Playwright MCP to screenshot and check for visual regressions.
+
+---
+
+## Canonical Data Schema: supplements.js → seed.js → HTML
+
+This table is the authoritative mapping from structured data fields to rendered HTML sections. Use it when:
+- Writing new supplements.js entries (ensure all fields are populated)
+- Writing enhanced citation files (ensure the field names match exactly)
+- Debugging why a section is empty or missing
+
+### supplements.js Field → HTML Section Mapping
+
+| supplements.js Field | HTML Section | seed.js Variable | Notes |
+|---|---|---|---|
+| `id` | All | `supp.id` | Used to find enhanced file |
+| `name` | `<title>`, Hero, Breadcrumbs | `supp.name` | Required — blocks generation if missing |
+| `scientificName` | Hero sub-heading, Quick Facts | `supp.scientificName` | |
+| `category` | Hero pill, Quick Facts, Related cards | `supp.category` | Required |
+| `commonNames[]` | Hero sub-heading | `supp.commonNames` | |
+| `evidenceTier` | Hero badge, Quick Facts | `supp.evidenceTier` | Required — 1–4 |
+| `evidenceTierRationale` | Overview paragraph | `supp.evidenceTierRationale` | |
+| `primaryBenefits.cognitive[]` | Section 4 — Benefits (left column) | `d.cognBenefits` | |
+| `primaryBenefits.nonCognitive[]` | Section 4 — Benefits (right column) | `d.nonCognBenefits` | |
+| `dosageRange` | Quick Facts, Section 6 Dosage grid | `supp.dosageRange` | |
+| `optimalDuration` | Quick Facts, Section 6 Dosage grid | `supp.optimalDuration` | |
+| `studyPopulations[]` | Overview paragraph + population tags | `supp.studyPopulations` | |
+| `mechanismsOfAction[]` | Section 3 — Mechanisms grid | `d.mechanisms` | |
+| `safetyProfile.rating` | Quick Facts, Section 7 header | `d.safetyRating` | |
+| `safetyProfile.commonSideEffects[]` | Section 7 — Safety card (amber) | `d.sideEffects` | |
+| `safetyProfile.contraindications[]` | Section 7 — Safety card (red) | `d.contraindications` | |
+| `safetyProfile.drugInteractions[]` | Section 7 — Safety card (orange) | `d.drugInteractions` | |
+| `effectSizes{}` | Section 5 — Effect Sizes table | `d.effectSizes[]` | Object keys → Title Case labels |
+| `commercialAvailability.forms[]` | Quick Facts | `supp.commercialAvailability.forms` | |
+| `commercialAvailability.costRange` | Quick Facts | `supp.commercialAvailability.costRange` | |
+| `commercialAvailability.qualityMarkers[]` | Quick Facts | `supp.commercialAvailability.qualityMarkers` | |
+| `keyCitations[]` | Section 9 — References | `d.references` | Format: `{author} ({year}). ...` |
+| `enhancedCitations.evidenceProfile.totalCitations` | Hero stats, Section 6 | `citCount` | |
+
+### enhanced_citations Fields → HTML Evidence Cards
+
+The enhanced citations file populates **Section 8: Evidence** (the citation group cards). Each item in a citation array maps to one evidence card:
+
+| enhanced_citations field | Evidence card element | CSS class / notes |
+|---|---|---|
+| `item.claim` (or `.mechanism`/`.healthDomain`/`.safetyAspect`/`.dosageRange`) | Card title (`evidence-card-title`) | First non-null of these keys |
+| `item.evidence` (or `.evidenceLevel`/`.strength`) | Tag 0 — colour-coded evidence badge | CSS class from `evidenceTagClass()` |
+| `item.studyType` | Tag 1 | Plain `evidence-tag` |
+| `item.year` | Tag 2 | Plain `evidence-tag` |
+| `item.participants` (or `.sampleSize`) | Tag 3 | Plain `evidence-tag` |
+| `item.duration` | Tag 4 (benefits/dosage) | Plain `evidence-tag` |
+| `item.details` (or `.findings`) | Prose paragraph (`evidence-prose`) | |
+| `item.pmid` | PubMed link (`study-link`) | `https://pubmed.ncbi.nlm.nih.gov/{pmid}/` |
+| `item.doi` | DOI link (fallback if no pmid) | `https://doi.org/{doi}` |
+
+**Evidence tag CSS class rules** (`evidenceTagClass(text)`):
+| Text contains | CSS class | Visual |
+|---|---|---|
+| "Strong", "Level 1", "Level 2", "Well-established", "Good safety" | `evidence-tag-tier-1` | Green |
+| "Moderate", "Level 3", "Caution" | `evidence-tag-tier-2` | Amber |
+| "Weak", "Limited", "Insufficient", "Level 4", "Level 5", "Preliminary" | `evidence-tag-tier-3` | Red |
+
+**Citation group order** (determined by array key in enhanced citations file):
+1. `citations.mechanisms[]` → "Mechanisms of Action" group
+2. `citations.benefits[]` → "Clinical Benefits" group
+3. `citations.safety[]` → "Safety & Tolerability" group
+4. `citations.dosage[]` → "Dosage Research" group
+
+### effectSizes Format Note
+
+`supplements.js` stores `effectSizes` as a **plain object** with camelCase keys:
+```javascript
+"effectSizes": {
+  "memoryConsolidation": "Large effect (Cohen's d = 0.95)",
+  "attentionFocus": "Moderate effect (Cohen's d = 0.52)"
+}
+```
+`seed.js` converts this to an array for rendering:
+```javascript
+[
+  { domain: "Memory Consolidation", value: "Large effect (Cohen's d = 0.95)" },
+  { domain: "Attention Focus",      value: "Moderate effect (Cohen's d = 0.52)" }
+]
+```
+The camelCase→Title Case conversion uses: `.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())`.
+
+### slug Derivation
+
+`supplements.js` has **no slug field**. The URL slug is derived at runtime by `seed.js`:
+```javascript
+function slugify(name) {
+  return name
+    .toLowerCase()
+    .replace(/[''`]/g, '')      // remove apostrophes (Lion's → lions)
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+```
+Examples: `"Lion's Mane Mushroom"` → `lions-mane-mushroom`, `"L-Theanine"` → `l-theanine`, `"5-HTP"` → `5-htp`.
+
+### Enhanced Citation File Loading Patterns
+
+`seed.js` handles all 4 assignment patterns found in enhanced_citations files:
+
+| Pattern | Example | Loader behavior |
+|---|---|---|
+| `window.xyzEnhanced = {...}` | `8_melatonin_enhanced.js` | Direct: `window` ctx key |
+| `const xyzEnhanced = {...}` | `5_creatine_enhanced.js` | Appends `window.__enh=xyzEnhanced;` |
+| `window.enhancedCitations[id] = {...}` | `13_acetyl_l_carnitine_enhanced.js` | Reads first key of `ctx.window.enhancedCitations` |
+| `window.enhancedCitations["key"] = {...}` | `7_vitamin_d3_enhanced.js` | Reads first key of `ctx.window.enhancedCitations` |
+
+**Canonical pattern for NEW files** (preferred):
+```javascript
+const {camelCaseName}Enhanced = { ... };
+window.enhancedCitations = window.enhancedCitations || {};
+window.enhancedCitations[ID] = {camelCaseName}Enhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {camelCaseName}Enhanced;
+}
+```
 
 ---
 
