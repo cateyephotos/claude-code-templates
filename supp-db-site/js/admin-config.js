@@ -324,10 +324,55 @@
     `;
   }
 
+  // ── API Key Status ────────────────────────────────────────────
+  async function loadKeyStatus() {
+    try {
+      const statuses = await convexQuery("adminSettings:getSettingsStatus", {});
+
+      // Anthropic key
+      const ak = statuses["ANTHROPIC_API_KEY"];
+      if (ak) {
+        const badge = el("anthropic-key-badge");
+        const sourceEl = el("anthropic-key-source");
+        const editLabel = el("anthropic-edit-label");
+        if (badge) {
+          badge.textContent = ak.isSet ? "Set" : "Not Set";
+          badge.className = "config-key-badge " + (ak.isSet ? "badge-set" : "badge-missing");
+        }
+        if (sourceEl) {
+          sourceEl.textContent = ak.isSet
+            ? (ak.source === "admin_ui" ? "via Admin UI" : "via Convex env var")
+            : "";
+        }
+        if (editLabel) editLabel.textContent = ak.isSet ? "Update Key" : "Set Key";
+      }
+
+      // Resend key
+      const rk = statuses["RESEND_API_KEY"];
+      if (rk) {
+        const badge = el("resend-key-badge");
+        const sourceEl = el("resend-key-source");
+        const editLabel = el("resend-edit-label");
+        if (badge) {
+          badge.textContent = rk.isSet ? "Set" : "Not Set";
+          badge.className = "config-key-badge " + (rk.isSet ? "badge-set" : "badge-missing");
+        }
+        if (sourceEl) {
+          sourceEl.textContent = rk.isSet
+            ? (rk.source === "admin_ui" ? "via Admin UI" : "via Convex env var")
+            : "";
+        }
+        if (editLabel) editLabel.textContent = rk.isSet ? "Update Key" : "Set Key";
+      }
+    } catch (err) {
+      console.warn("[admin-config] Could not load key status:", err);
+    }
+  }
+
   // ── Main Load ─────────────────────────────────────────────────
   async function loadConfigSection() {
     try {
-      // Fetch both queries in parallel
+      // Fetch all data in parallel
       const [healthData, statsData] = await Promise.all([
         convexQuery("adminConfig:getConfigHealth", {}),
         convexQuery("adminConfig:getStackAnalyzerStats", {}),
@@ -342,6 +387,9 @@
       renderStackStats(statsData);
       renderDepthBreakdown(statsData.depthBreakdown, statsData.thisMonth.analyses);
       renderModelInfo(statsData.model, statsData.allTime);
+
+      // Load API key management status (separate query — may fail if table not ready)
+      loadKeyStatus();
 
     } catch (err) {
       console.error("[admin-config] Failed to load config data:", err);
@@ -406,7 +454,93 @@
     setTimeout(hookSectionObserver, 300);
   }
 
-  // Expose reload for manual refresh button (consistent with admin-dashboard.js)
-  window.AdminConfig = { reload: function () { loaded = false; loadConfigSection(); } };
+  // ── API Key Form Handlers ─────────────────────────────────────
+  async function saveKey(convexKey, prefix) {
+    const input = el(prefix + "-key-input");
+    const feedback = el(prefix + "-key-feedback");
+    if (!input || !feedback) return;
+
+    const value = input.value.trim();
+    if (!value) {
+      feedback.textContent = "Please enter a key value.";
+      feedback.className = "config-key-feedback config-key-feedback-error";
+      feedback.classList.remove("hidden");
+      return;
+    }
+
+    // Disable form during save
+    input.disabled = true;
+    feedback.textContent = "Saving…";
+    feedback.className = "config-key-feedback config-key-feedback-info";
+    feedback.classList.remove("hidden");
+
+    try {
+      await window.SupplementDB.mutation("adminSettings:upsertSetting", { key: convexKey, value });
+      feedback.textContent = "✅ Key saved successfully.";
+      feedback.className = "config-key-feedback config-key-feedback-success";
+      input.value = "";
+      // Reload status to show updated badge
+      await loadKeyStatus();
+      // Reload health banner in case this key fixed an error state
+      loaded = false;
+      setTimeout(() => { loaded = false; loadConfigSection(); }, 800);
+    } catch (err) {
+      feedback.textContent = "❌ Error: " + (err.message || "Failed to save key.");
+      feedback.className = "config-key-feedback config-key-feedback-error";
+    } finally {
+      input.disabled = false;
+    }
+  }
+
+  function toggleKeyForm(prefix) {
+    const form = el(prefix + "-key-form");
+    if (!form) return;
+    const isHidden = form.classList.contains("hidden");
+    form.classList.toggle("hidden", !isHidden);
+    if (!isHidden) {
+      // Closing — clear feedback
+      const feedback = el(prefix + "-key-feedback");
+      if (feedback) feedback.classList.add("hidden");
+    } else {
+      // Opening — focus input
+      const input = el(prefix + "-key-input");
+      if (input) setTimeout(() => input.focus(), 50);
+    }
+  }
+
+  async function testAnthropicKey() {
+    const resultEl = el("anthropic-test-result");
+    const testBtn = el("anthropic-test-btn");
+    if (!resultEl) return;
+
+    resultEl.className = "config-test-result config-test-result-loading";
+    resultEl.textContent = "Testing connection…";
+    resultEl.classList.remove("hidden");
+    if (testBtn) testBtn.disabled = true;
+
+    try {
+      const result = await window.SupplementDB.action("adminSettings:testAnthropicConnection", {});
+      if (result.success) {
+        resultEl.className = "config-test-result config-test-result-success";
+        resultEl.innerHTML = `<i class="fas fa-check-circle mr-1"></i>Connected — <strong>${result.model}</strong> responded in ${result.latencyMs}ms (source: ${result.source === "admin_ui" ? "Admin UI key" : "env var"})`;
+      } else {
+        resultEl.className = "config-test-result config-test-result-error";
+        resultEl.innerHTML = `<i class="fas fa-times-circle mr-1"></i>${result.error || "Connection failed"}`;
+      }
+    } catch (err) {
+      resultEl.className = "config-test-result config-test-result-error";
+      resultEl.innerHTML = `<i class="fas fa-times-circle mr-1"></i>Test failed: ${err.message || "Unknown error"}`;
+    } finally {
+      if (testBtn) testBtn.disabled = false;
+    }
+  }
+
+  // Expose functions for use from HTML onclick handlers and manual reload
+  window.AdminConfig = {
+    reload: function () { loaded = false; loadConfigSection(); },
+    saveKey,
+    toggleKeyForm,
+    testAnthropicKey,
+  };
 
 })();

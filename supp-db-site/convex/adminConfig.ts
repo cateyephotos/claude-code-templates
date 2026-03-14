@@ -271,8 +271,13 @@ export const getStackAnalyzerStats = query({
   handler: async (ctx) => {
     await requireAdmin(ctx);
 
-    const apiKeyConfigured = typeof process.env.ANTHROPIC_API_KEY === "string" &&
-      process.env.ANTHROPIC_API_KEY.length > 0;
+    // Check DB setting first, then env var
+    const dbApiKey = await ctx.db
+      .query("adminSettings")
+      .withIndex("by_key", (q: any) => q.eq("key", "ANTHROPIC_API_KEY"))
+      .unique();
+    const apiKeyConfigured = (dbApiKey && dbApiKey.value.length > 0) ||
+      (typeof process.env.ANTHROPIC_API_KEY === "string" && process.env.ANTHROPIC_API_KEY.length > 0);
 
     // All analyses
     const allAnalyses = await ctx.db.query("stackAnalyses").collect();

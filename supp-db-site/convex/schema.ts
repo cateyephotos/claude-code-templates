@@ -150,6 +150,35 @@ export default defineSchema({
     .index("by_timestamp", ["timestamp"])
     .index("by_healthGoal", ["healthGoal"]),
 
+  // One-time guide PDF purchases
+  guidePurchases: defineTable({
+    userId: v.string(),                // Clerk user ID
+    guideSlug: v.string(),             // e.g. "sleep", "creatine"
+    guideName: v.string(),             // Display name, e.g. "Sleep Optimization Guide"
+    stripeSessionId: v.string(),       // Stripe Checkout Session ID (cs_...)
+    stripePaymentIntentId: v.optional(v.string()),
+    stripeCustomerId: v.optional(v.string()),
+    amountTotal: v.number(),           // Amount paid in cents
+    currency: v.string(),              // e.g. "usd"
+    status: v.union(
+      v.literal("pending"),            // Awaiting Stripe confirmation
+      v.literal("paid"),               // Payment confirmed, PDF not yet generated
+      v.literal("pdf_generating"),     // PDF being generated
+      v.literal("pdf_ready"),          // PDF stored and ready for download
+      v.literal("failed")             // PDF generation failed
+    ),
+    pdfStorageId: v.optional(v.string()),  // Convex storage ID for the generated PDF
+    emailSentAt: v.optional(v.number()),   // When download email was sent
+    errorMessage: v.optional(v.string()),  // If status is "failed"
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_stripeSessionId", ["stripeSessionId"])
+    .index("by_guideSlug", ["guideSlug"])
+    .index("by_status", ["status"])
+    .index("by_user_guide", ["userId", "guideSlug"]),
+
   // Newsletter subscribers with double opt-in
   newsletterSubscribers: defineTable({
     email: v.string(),
@@ -173,4 +202,13 @@ export default defineSchema({
     .index("by_unsubscribeToken", ["unsubscribeToken"])
     .index("by_status", ["status"])
     .index("by_source", ["source"]),
+
+  // Admin-configurable settings (API keys etc.) — encrypted at rest in Convex DB
+  // Raw values never returned to browser; admin UI shows masked values only.
+  adminSettings: defineTable({
+    key: v.string(),       // e.g. "ANTHROPIC_API_KEY"
+    value: v.string(),     // raw secret value (encrypted at rest)
+    updatedAt: v.number(),
+    updatedBy: v.string(), // Clerk user ID of admin who set it
+  }).index("by_key", ["key"]),
 });

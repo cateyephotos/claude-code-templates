@@ -537,6 +537,89 @@
                     <i class="fas fa-robot mr-2" style="color:#7c3aed;"></i>Stack Analyzer — Live Usage &amp; Cost
                 </h3>
 
+                <!-- API Key Management -->
+                <div class="admin-chart-card config-api-key-card" style="margin-bottom:1rem;">
+                    <h3 class="admin-chart-title" style="margin-bottom:0.75rem;">
+                        <i class="fas fa-key mr-2" style="color:#7c3aed;"></i>API Key Management
+                    </h3>
+                    <div id="api-key-anthropic" class="config-api-key-row">
+                        <div class="config-api-key-info">
+                            <div class="config-api-key-label">
+                                <span class="config-api-key-name">ANTHROPIC_API_KEY</span>
+                                <span id="anthropic-key-badge" class="config-key-badge badge-loading">checking…</span>
+                                <span id="anthropic-key-source" class="config-key-source"></span>
+                            </div>
+                            <div class="config-api-key-desc">Required for the Stack Analyzer (Claude AI). Get yours at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener" class="config-docs-link">console.anthropic.com</a></div>
+                        </div>
+                        <div class="config-api-key-actions">
+                            <button id="anthropic-test-btn" class="config-btn config-btn-outline" onclick="AdminConfig.testAnthropicKey()" title="Test current key against the Claude API">
+                                <i class="fas fa-plug mr-1"></i>Test
+                            </button>
+                            <button id="anthropic-edit-btn" class="config-btn config-btn-primary" onclick="AdminConfig.toggleKeyForm('anthropic')">
+                                <i class="fas fa-edit mr-1"></i><span id="anthropic-edit-label">Set Key</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Inline key entry form (hidden by default) -->
+                    <div id="anthropic-key-form" class="config-key-form hidden">
+                        <div class="config-key-form-row">
+                            <input
+                                type="password"
+                                id="anthropic-key-input"
+                                class="config-key-input"
+                                placeholder="sk-ant-api03-…"
+                                autocomplete="off"
+                                spellcheck="false"
+                            />
+                            <button class="config-btn config-btn-primary" onclick="AdminConfig.saveKey('ANTHROPIC_API_KEY', 'anthropic')">
+                                <i class="fas fa-save mr-1"></i>Save
+                            </button>
+                            <button class="config-btn config-btn-ghost" onclick="AdminConfig.toggleKeyForm('anthropic')">
+                                Cancel
+                            </button>
+                        </div>
+                        <div id="anthropic-key-feedback" class="config-key-feedback hidden"></div>
+                    </div>
+                    <!-- Test result -->
+                    <div id="anthropic-test-result" class="config-test-result hidden"></div>
+
+                    <!-- RESEND_API_KEY row -->
+                    <div class="config-api-key-row" style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--admin-card-border);">
+                        <div class="config-api-key-info">
+                            <div class="config-api-key-label">
+                                <span class="config-api-key-name">RESEND_API_KEY</span>
+                                <span id="resend-key-badge" class="config-key-badge badge-loading">checking…</span>
+                                <span id="resend-key-source" class="config-key-source"></span>
+                            </div>
+                            <div class="config-api-key-desc">For transactional emails and newsletter. Get yours at <a href="https://resend.com/api-keys" target="_blank" rel="noopener" class="config-docs-link">resend.com</a></div>
+                        </div>
+                        <div class="config-api-key-actions">
+                            <button class="config-btn config-btn-primary" onclick="AdminConfig.toggleKeyForm('resend')">
+                                <i class="fas fa-edit mr-1"></i><span id="resend-edit-label">Set Key</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="resend-key-form" class="config-key-form hidden">
+                        <div class="config-key-form-row">
+                            <input
+                                type="password"
+                                id="resend-key-input"
+                                class="config-key-input"
+                                placeholder="re_…"
+                                autocomplete="off"
+                                spellcheck="false"
+                            />
+                            <button class="config-btn config-btn-primary" onclick="AdminConfig.saveKey('RESEND_API_KEY', 'resend')">
+                                <i class="fas fa-save mr-1"></i>Save
+                            </button>
+                            <button class="config-btn config-btn-ghost" onclick="AdminConfig.toggleKeyForm('resend')">
+                                Cancel
+                            </button>
+                        </div>
+                        <div id="resend-key-feedback" class="config-key-feedback hidden"></div>
+                    </div>
+                </div>
+
                 <!-- Stack Analyzer Status + API Key Banner -->
                 <div id="stack-api-status" class="config-api-status config-api-status-loading">
                     <div class="admin-skeleton" style="height:52px;"></div>

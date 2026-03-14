@@ -1,6 +1,6 @@
 import { action, mutation } from "./_generated/server";
 import { v } from "convex/values";
-import { api } from "./_generated/api";
+import { api, internal } from "./_generated/api";
 import Anthropic from "@anthropic-ai/sdk";
 
 /**
@@ -24,14 +24,8 @@ import Anthropic from "@anthropic-ai/sdk";
 
 // ── Claude Client ──────────────────────────────────────────────
 
-function getClaude(): Anthropic {
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) {
-    throw new Error(
-      "ANTHROPIC_API_KEY environment variable is not set. Configure it in the Convex dashboard."
-    );
-  }
-  return new Anthropic({ apiKey: key });
+function getClaude(apiKey: string): Anthropic {
+  return new Anthropic({ apiKey });
 }
 
 // ── Analysis JSON Schema ───────────────────────────────────────
@@ -299,7 +293,15 @@ export const analyzeStack = action({
     });
 
     // ── Build Claude Request ────────────────────────────────
-    const claude = getClaude();
+    // Resolve API key: admin UI DB setting takes priority over env var
+    const dbKey = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_API_KEY" });
+    const anthropicKey = dbKey || process.env.ANTHROPIC_API_KEY;
+    if (!anthropicKey) {
+      throw new Error(
+        "ANTHROPIC_API_KEY is not configured. Set it in Admin → Configuration → API Keys."
+      );
+    }
+    const claude = getClaude(anthropicKey);
     const systemPrompt = buildSystemPrompt(args.depth);
     const userMessage = buildUserMessage(
       args.supplements,
