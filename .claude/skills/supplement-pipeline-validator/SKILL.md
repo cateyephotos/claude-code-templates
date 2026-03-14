@@ -343,35 +343,66 @@ Supplements with `readiness_score < 60` should be prioritised for Mode 1 or Mode
 
 ## Quick Validation Commands
 
+**IMPORTANT: On Windows, `node -e '...'` with `!` in code fails even in single-quotes due to shell history expansion. Always use dedicated script files instead of inline `-e` strings.**
+
 ```bash
-# Full pipeline health check
+# Full pipeline health check (Layer 1 + seed.js)
 node supp-db-site/seed.js --dry-run
 
-# Check how many supplements have 0 enhanced citation warnings
-node supp-db-site/seed.js --dry-run 2>&1 | grep "✓.*\[" | grep -v "⚠" | wc -l
+# Layer 2 — Enhanced citations schema audit (use script file, not -e)
+node supp-db-site/scripts/audit-enhanced-citations.js
+node supp-db-site/scripts/audit-enhanced-citations.js --id 33   # single supplement
+
+# Layer 3 — HTML completeness check (use script file, not -e)
+node supp-db-site/scripts/check-html-completeness.js
+
+# Fix non-canonical enhanced citation files (flat array → grouped schema)
+node supp-db-site/scripts/migrate-enhanced-citations.js --dry-run
+node supp-db-site/scripts/migrate-enhanced-citations.js
 
 # List all supplements with errors (blocks HTML generation)
 node supp-db-site/seed.js --dry-run 2>&1 | grep "✗"
 
 # List all supplements with "file not found" (no enhanced citations)
 node supp-db-site/seed.js --dry-run 2>&1 | grep "file not found"
-
-# Check total HTML pages generated
-node -e "const fs=require('fs'); console.log(fs.readdirSync('supp-db-site/supplements').filter(f=>f.endsWith('.html')).length + ' HTML pages');"
-
-# Count incomplete pages (missing key sections)
-node -e "
-const fs=require('fs'),path=require('path');
-const dir='supp-db-site/supplements';
-const pages=fs.readdirSync(dir).filter(f=>f.endsWith('.html'));
-let ok=0,warn=0;
-pages.forEach(f=>{
-  const h=fs.readFileSync(path.join(dir,f),'utf8');
-  if(h.includes('citation-group'))ok++;else warn++;
-});
-console.log('With evidence section:',ok,'| Without:',warn);
-"
 ```
+
+## Known Failure Modes (from 2026-03-14 pipeline test)
+
+### 1. Non-Canonical Flat Array Schema (SILENT — no error, empty evidence sections)
+
+**Symptom:** `audit-enhanced-citations.js` reports `score: 0%` with `✗ Missing .citations property` OR arrays show `0` items even though the file has real research data.
+
+**Root cause:** The enhanced citation file uses a flat array (`citations: [...]` or `enhancedCitations: [...]`) instead of the canonical grouped object (`citations: { mechanisms: [], benefits: [], safety: [], dosage: [] }`).
+
+**Detection:**
+```bash
+node supp-db-site/scripts/audit-enhanced-citations.js 2>&1 | grep "score:0%"
+```
+
+**Fix:** Run migration script to restructure into canonical groups:
+```bash
+node supp-db-site/scripts/migrate-enhanced-citations.js
+```
+Then add the supplement to `MIGRATIONS` array in the script if it's a new supplement.
+
+**Affected supplements (fixed 2026-03-14):** L-Tyrosine (33), Tribulus Terrestris (35), Fenugreek (65), Mucuna Pruriens (69), Stinging Nettle (73)
+
+### 2. Bash `!` Escaping on Windows
+
+**Symptom:** `node -e '...'` with logical-not (`!`) operator in the code fails with `SyntaxError: Invalid or unexpected token` or `Expected unicode escape` — even in single-quoted strings.
+
+**Root cause:** Windows bash history-expansion processes `!` before Node.js sees it.
+
+**Fix:** Write the check as a `.js` file in `scripts/` and run with `node scripts/check-name.js` — never use `node -e` for multi-line scripts with `!`.
+
+### 3. Seed.js Slug Divergence
+
+**Symptom:** `seed.js` generates a file at a different path than the one app.js links to, causing 404s on supplement pages.
+
+**Root cause:** `slugify()` in seed.js had apostrophe stripping (`Lion's → lions`) while app.js and parse-data.js did not (`Lion's → lion-s`).
+
+**Fix:** All three systems must use identical `slugify()`. The canonical function is in `parse-data.js` — copy it exactly, **do not strip apostrophes before the replace**. The apostrophe becomes `-` via `[^a-z0-9]+` → `-`, producing `lion-s-mane-mushroom`.
 
 ---
 
