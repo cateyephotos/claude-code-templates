@@ -115,24 +115,46 @@ echo "   ✅ Build version $BUILD_VERSION injected into JS/CSS URLs"
 echo ""
 
 # ── Hot-reload watcher for local dev (:ro volume mount) ──────────
-# If source dir is :ro mounted, start an inotify watcher in the background.
-# On any file change: re-copy source → staging, then re-run all substitutions.
-# This gives hot-reload behavior without needing write access to the mounted dir.
+# Uses a polling loop rather than inotifywait so it works on Windows Docker
+# Desktop (WSL2 bind mounts do NOT emit inotify events for host-side changes).
+#
+# Strategy: every 2 seconds, compute a fast checksum of all *.html and *.js
+# files in SRC_DIR (excluding large data/ directories). If the checksum changes,
+# re-copy source → staging and re-run env substitutions.
+#
+# Falls back gracefully if md5sum is unavailable.
 if ! touch "$SRC_DIR/.write-test" 2>/dev/null; then
-    echo "   🔄 Read-only volume detected — starting hot-reload watcher"
+    echo "   🔄 Read-only volume detected — starting polling hot-reload watcher (2s interval)"
     echo "      Changes to supp-db-site/ will be reflected automatically"
+    echo "      (Polling mode: compatible with Windows Docker Desktop / WSL2)"
     echo ""
 
+    do_sync() {
+        cp -r "$SRC_DIR"/. "$DIST_DIR"/
+        find_and_replace "__CLERK_PUBLISHABLE_KEY__" "${CLERK_PUBLISHABLE_KEY:-}" 2>/dev/null || true
+        find_and_replace "__CONVEX_URL__"             "${CONVEX_URL:-}"            2>/dev/null || true
+        find_and_replace "__POSTHOG_KEY__"            "${POSTHOG_KEY:-}"           2>/dev/null || true
+        find_and_replace "__SITE_URL__"               "${SITE_URL:-}"              2>/dev/null || true
+        echo "   ✅ [hot-reload] Staging synced at $(date '+%H:%M:%S')"
+    }
+
     (
+        # Compute initial checksum of HTML/JS sources (skip large data dirs)
+        PREV_SUM=$(find "$SRC_DIR" -maxdepth 4 -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' \) \
+            -not -path '*/node_modules/*' -not -path '*/data/*' -not -path '*/enhanced_citations/*' \
+            | sort | xargs md5sum 2>/dev/null | md5sum 2>/dev/null || echo "init")
+
         while true; do
-            inotifywait -r -e modify,create,delete,move "$SRC_DIR" 2>/dev/null || sleep 2
-            echo "   🔄 [hot-reload] Change detected — resyncing staging..."
-            cp -r "$SRC_DIR"/. "$DIST_DIR"/
-            find_and_replace "__CLERK_PUBLISHABLE_KEY__" "${CLERK_PUBLISHABLE_KEY:-}" 2>/dev/null || true
-            find_and_replace "__CONVEX_URL__"             "${CONVEX_URL:-}"            2>/dev/null || true
-            find_and_replace "__POSTHOG_KEY__"            "${POSTHOG_KEY:-}"           2>/dev/null || true
-            find_and_replace "__SITE_URL__"               "${SITE_URL:-}"              2>/dev/null || true
-            echo "   ✅ [hot-reload] Staging synced and substitutions applied"
+            sleep 2
+            CURR_SUM=$(find "$SRC_DIR" -maxdepth 4 -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' \) \
+                -not -path '*/node_modules/*' -not -path '*/data/*' -not -path '*/enhanced_citations/*' \
+                | sort | xargs md5sum 2>/dev/null | md5sum 2>/dev/null || echo "check")
+
+            if [ "$CURR_SUM" != "$PREV_SUM" ]; then
+                echo "   🔄 [hot-reload] Change detected — resyncing staging..."
+                do_sync
+                PREV_SUM="$CURR_SUM"
+            fi
         done
     ) &
 else
