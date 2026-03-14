@@ -23,7 +23,7 @@
   // ── Configuration ──────────────────────────────────────────────
   const CONVEX_URL =
     document.querySelector('meta[name="convex-url"]')?.content ||
-    "https://robust-frog-754.convex.cloud";
+    "__CONVEX_URL__";
 
   // ── State ──────────────────────────────────────────────────────
   let client = null;
@@ -153,6 +153,50 @@
     },
   };
 
+  // ── Convex CDN loader ──────────────────────────────────────────
+  // Candidate CDN URLs for the Convex browser global bundle.
+  // Tries each in order until one loads successfully.
+  const CONVEX_CDN_URLS = [
+    "https://cdn.jsdelivr.net/npm/convex@1.17.4/dist/browser.bundle.js",
+    "https://unpkg.com/convex@1.17.4/dist/browser.bundle.js",
+  ];
+
+  function loadConvexCDN() {
+    return new Promise((resolve) => {
+      if (typeof window.convex !== "undefined") {
+        resolve(true);
+        return;
+      }
+
+      let attemptIndex = 0;
+
+      function tryNext() {
+        if (attemptIndex >= CONVEX_CDN_URLS.length) {
+          console.warn("[Convex] All CDN sources failed. Backend features will be unavailable.");
+          resolve(false);
+          return;
+        }
+
+        const url = CONVEX_CDN_URLS[attemptIndex++];
+        const script = document.createElement("script");
+        script.src = url;
+        script.crossOrigin = "anonymous";
+        script.onload = () => {
+          if (typeof window.convex !== "undefined") {
+            resolve(true);
+          } else {
+            // Script loaded but didn't expose window.convex — try next
+            tryNext();
+          }
+        };
+        script.onerror = () => tryNext();
+        document.head.appendChild(script);
+      }
+
+      tryNext();
+    });
+  }
+
   // ── Initialization ─────────────────────────────────────────────
   function ensureInitialized() {
     if (isInitialized) return Promise.resolve();
@@ -164,17 +208,23 @@
   async function initConvex() {
     if (isInitialized) return;
 
-    // Wait for Convex CDN to load
+    // Dynamically load Convex CDN if not already present (avoids static script
+    // tag failures that would log ERR_FAILED in the console on every page load).
     if (typeof window.convex === "undefined") {
-      console.warn(
-        "[Convex] Convex CDN not loaded. Backend features will be unavailable."
-      );
+      await loadConvexCDN();
+    }
+
+    // If still unavailable after CDN attempts, degrade gracefully
+    if (typeof window.convex === "undefined") {
       isInitialized = true;
       return;
     }
 
-    // Validate URL
-    if (!CONVEX_URL || CONVEX_URL === "__CONVEX_URL__") {
+    // Validate URL — check it looks like a real Convex cloud URL.
+    // Do NOT check for the literal placeholder string here because docker-entrypoint.sh
+    // replaces __CONVEX_URL__ everywhere (including in string comparisons), which would
+    // corrupt this check in the staging environment.
+    if (!CONVEX_URL || !CONVEX_URL.startsWith("https://")) {
       console.warn(
         "[Convex] Convex URL not configured. Backend features will be unavailable."
       );

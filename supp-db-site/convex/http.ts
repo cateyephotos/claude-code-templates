@@ -167,6 +167,51 @@ http.route({
             break;
           }
 
+          // ── Guide PDF purchase (one-time payment) ─────────────────
+          if (data.metadata?.type === "guide_purchase") {
+            const guideSlug = data.metadata?.guideSlug;
+            const guideName = data.metadata?.guideName || guideSlug;
+
+            if (!guideSlug) {
+              console.error("checkout.session.completed: guide_purchase missing guideSlug in metadata");
+              break;
+            }
+
+            // 1. Record the purchase in Convex DB (idempotent)
+            const purchaseId = await ctx.runMutation(
+              internal.guidePurchases.recordGuidePurchase,
+              {
+                userId: clerkId,
+                guideSlug,
+                guideName,
+                stripeSessionId: data.id,
+                stripePaymentIntentId: data.payment_intent ?? undefined,
+                stripeCustomerId: data.customer ?? undefined,
+                amountTotal: data.amount_total ?? 0,
+                currency: data.currency ?? "usd",
+              }
+            );
+
+            // 2. Schedule PDF generation (runs immediately in background)
+            await ctx.scheduler.runAfter(
+              0,
+              internal.pdfGenerator.generateAndStorePdf,
+              {
+                purchaseId,
+                guideSlug,
+                guideName,
+                userId: clerkId,
+                sessionId: data.id,
+              }
+            );
+
+            console.log(
+              `✅ checkout.session.completed (guide): ${clerkId} → ${guideSlug} (purchase: ${purchaseId})`
+            );
+            break;
+          }
+
+          // ── Subscription purchase (recurring) ─────────────────────
           const plan = data.metadata?.plan === "annual" ? "annual" : "monthly";
 
           // 1. Upsert subscription in Convex DB
@@ -331,6 +376,104 @@ http.route({
         headers: { "Content-Type": "application/json" },
       }
     );
+  }),
+});
+
+/**
+ * Bootstrap admin endpoint — one-time use to promote a user to admin.
+ *
+ * This endpoint bypasses Clerk auth intentionally: it's the escape hatch
+ * for initial setup before the Clerk JWT template is configured.
+ *
+ * Required Convex env var: ADMIN_BOOTSTRAP_SECRET (any strong random string)
+ * Set it in: Convex Dashboard → Settings → Environment Variables
+ *
+ * Usage (after setting the env var):
+ *   curl -X POST https://<your-convex-url>/admin-bootstrap \
+ *     -H "Content-Type: application/json" \
+ *     -d '{"email":"you@example.com","secret":"your-bootstrap-secret"}'
+ *
+ * Or from the browser console on any page:
+ *   fetch('https://robust-frog-754.convex.cloud/admin-bootstrap', {
+ *     method: 'POST',
+ *     headers: {'Content-Type':'application/json'},
+ *     body: JSON.stringify({email:'you@example.com', secret:'your-secret'})
+ *   }).then(r=>r.json()).then(console.log)
+ *
+ * Security: Disable by removing ADMIN_BOOTSTRAP_SECRET env var after use.
+ */
+http.route({
+  path: "/admin-bootstrap",
+  method: "POST",
+  handler: httpAction(async (ctx, request) => {
+    const corsHeaders = {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    };
+
+    // Read and validate body
+    let body: any;
+    try {
+      body = await request.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid JSON body" }),
+        { status: 400, headers: corsHeaders }
+      );
+    }
+
+    const { email, secret, clerkId } = body;
+
+    if (!secret) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Missing 'secret' field" }),
+        { status: 400, headers: corsHeaders }
+      );
+    }
+
+    if (!email && !clerkId) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Provide 'email' or 'clerkId'" }),
+        { status: 400, headers: corsHeaders }
+      );
+    }
+
+    // Validate bootstrap secret
+    const bootstrapSecret = process.env.ADMIN_BOOTSTRAP_SECRET;
+    if (!bootstrapSecret) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "ADMIN_BOOTSTRAP_SECRET env var not set. Add it in Convex Dashboard → Settings → Environment Variables.",
+        }),
+        { status: 503, headers: corsHeaders }
+      );
+    }
+
+    if (secret !== bootstrapSecret) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid bootstrap secret" }),
+        { status: 403, headers: corsHeaders }
+      );
+    }
+
+    // Promote user to admin
+    try {
+      const result = await ctx.runMutation(internal.users.bootstrapAdminRole, {
+        email: email || null,
+        clerkId: clerkId || null,
+      });
+
+      return new Response(JSON.stringify({ success: true, ...result }), {
+        status: 200,
+        headers: corsHeaders,
+      });
+    } catch (err: any) {
+      return new Response(
+        JSON.stringify({ success: false, error: err.message }),
+        { status: 500, headers: corsHeaders }
+      );
+    }
   }),
 });
 

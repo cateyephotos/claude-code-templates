@@ -1,4 +1,4 @@
-import { mutation, query, internalMutation } from "./_generated/server";
+import { mutation, query, internalMutation, internalQuery } from "./_generated/server";
 import { v } from "convex/values";
 import { requireAdmin, getAuthUser } from "./auth";
 
@@ -101,6 +101,20 @@ export const updateRole = mutation({
 });
 
 /**
+ * Get user by Clerk ID — internal only.
+ * Used by server-side actions (e.g. pdfGenerator) that need the user's email.
+ */
+export const getByClerkIdInternal = internalQuery({
+  args: { clerkId: v.string() },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("users")
+      .withIndex("by_clerkId", (q) => q.eq("clerkId", args.clerkId))
+      .first();
+  },
+});
+
+/**
  * Get user by Clerk ID.
  */
 export const getByClerkId = query({
@@ -158,6 +172,80 @@ export const getUserCount = query({
     await requireAdmin(ctx);
     const users = await ctx.db.query("users").collect();
     return users.length;
+  },
+});
+
+/**
+ * Bootstrap admin role — internal mutation, called from /admin-bootstrap HTTP endpoint.
+ *
+ * No Clerk auth required — the HTTP endpoint validates a shared secret env var instead.
+ * Creates the user record if it doesn't exist (for pre-webhook setup).
+ * Removes ADMIN_BOOTSTRAP_SECRET from Convex env vars after use to disable this path.
+ */
+export const bootstrapAdminRole = internalMutation({
+  args: {
+    email: v.union(v.string(), v.null()),
+    clerkId: v.union(v.string(), v.null()),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+
+    // Try to find existing user
+    let user = null;
+
+    if (args.clerkId) {
+      user = await ctx.db
+        .query("users")
+        .withIndex("by_clerkId", (q) => q.eq("clerkId", args.clerkId!))
+        .first();
+    }
+
+    if (!user && args.email) {
+      user = await ctx.db
+        .query("users")
+        .withIndex("by_email", (q) => q.eq("email", args.email!))
+        .first();
+    }
+
+    if (user) {
+      // Promote existing user to admin
+      const prevRole = user.role;
+      await ctx.db.patch(user._id, { role: "admin", lastLoginAt: now });
+      return {
+        action: "promoted",
+        email: user.email,
+        clerkId: user.clerkId,
+        prevRole,
+        newRole: "admin",
+        message: `User ${user.email} promoted to admin. Remove ADMIN_BOOTSTRAP_SECRET from Convex env vars now.`,
+      };
+    }
+
+    // User doesn't exist yet (webhook not set up) — create a placeholder record
+    if (!args.email || !args.clerkId) {
+      throw new Error(
+        "User not found in DB. Provide both 'email' and 'clerkId' to create a placeholder admin record."
+      );
+    }
+
+    const newId = await ctx.db.insert("users", {
+      clerkId: args.clerkId,
+      email: args.email,
+      name: args.email.split("@")[0],
+      role: "admin",
+      createdAt: now,
+      lastLoginAt: now,
+    });
+
+    return {
+      action: "created",
+      email: args.email,
+      clerkId: args.clerkId,
+      prevRole: null,
+      newRole: "admin",
+      userId: newId,
+      message: `Admin record created for ${args.email}. Remove ADMIN_BOOTSTRAP_SECRET from Convex env vars now.`,
+    };
   },
 });
 

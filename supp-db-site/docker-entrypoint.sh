@@ -23,11 +23,16 @@ DIST_DIR="/usr/share/nginx/html-dist"
 # Replaces all occurrences of PLACEHOLDER with VALUE in *.html and *.js under DIST_DIR.
 # Written as an inline function to avoid `eval` (which would misinterpret | as shell pipes).
 find_and_replace() {
+    # Exclude large data directories (data/, enhanced_citations/) — placeholders
+    # only appear in HTML pages and top-level JS files, not in static data files.
     find "$DIST_DIR" -maxdepth 3 -type f \( -name '*.html' -o -name '*.js' \) \
         -not -path '*/node_modules/*' \
         -not -path '*/playwright-report/*' \
         -not -path '*/.playwright-mcp/*' \
         -not -path '*/test-results/*' \
+        -not -path '*/data/*' \
+        -not -path '*/reports/*' \
+        -not -path '*/mockups/*' \
         -exec sed -i "s|${1}|${2}|g" {} +
 }
 
@@ -84,6 +89,29 @@ else
 fi
 
 echo "   Environment substitution complete."
+echo ""
+
+# ── Build version cache-busting ───────────────────────────────────
+# Appends ?v=TIMESTAMP to all local /js/ and /css/ src/href attributes in HTML.
+# This invalidates browser caches on every container restart, preventing stale
+# JS/CSS from being served after updates (especially when nginx used to send
+# "Cache-Control: public, immutable" which persists across deployments).
+BUILD_VERSION=$(date +%s)
+echo "   🔨 Injecting build version: $BUILD_VERSION"
+
+# Inject version into: src="../js/foo.js" → src="../js/foo.js?v=BUILD_VERSION"
+# Handles: ../js/, ./js/, /js/ relative paths — stops at the closing quote.
+# Skips URLs that already contain a query string (?) to avoid double-versioning.
+find "$DIST_DIR" -maxdepth 5 -type f -name "*.html" \
+    -not -path '*/node_modules/*' \
+    -not -path '*/playwright-report/*' \
+    -not -path '*/test-results/*' \
+    -exec sed -i \
+        -e 's|src="\([^"?]*\)\.js"|src="\1.js?v='"$BUILD_VERSION"'"|g' \
+        -e 's|href="\([^"?]*\)\.css"|href="\1.css?v='"$BUILD_VERSION"'"|g' \
+        {} +
+
+echo "   ✅ Build version $BUILD_VERSION injected into JS/CSS URLs"
 echo ""
 
 # ── Hot-reload watcher for local dev (:ro volume mount) ──────────

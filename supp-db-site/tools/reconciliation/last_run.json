@@ -1,0 +1,6031 @@
+{
+  "timestamp": "2026-03-08T23:45:24.523Z",
+  "layers": {
+    "registry": [
+      {
+        "id": 1,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Unique ID",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "xref": [
+      {
+        "id": 1,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Registered in loader",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 1,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Has data file on disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 1,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Loader→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 1,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "File→Registry match",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 1,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Loader filename matches disk",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Bacopa monnieri\" references category \"Nootropic\" which doesn't exist in categories array"
+      },
+      {
+        "id": 2,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Ashwagandha\" references category \"Adaptogen\" which doesn't exist in categories array"
+      },
+      {
+        "id": 4,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Omega-3 Fatty Acids\" references category \"Essential Fatty Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 5,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Creatine\" references category \"Performance Enhancer\" which doesn't exist in categories array"
+      },
+      {
+        "id": 6,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Magnesium\" references category \"Essential Mineral\" which doesn't exist in categories array"
+      },
+      {
+        "id": 7,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Vitamin D3\" references category \"Vitamin\" which doesn't exist in categories array"
+      },
+      {
+        "id": 8,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Melatonin\" references category \"Sleep Aid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 9,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"L-Theanine\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 10,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Rhodiola rosea\" references category \"Adaptogen\" which doesn't exist in categories array"
+      },
+      {
+        "id": 11,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Lion's Mane Mushroom\" references category \"Nootropic\" which doesn't exist in categories array"
+      },
+      {
+        "id": 12,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Phosphatidylserine\" references category \"Phospholipid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 13,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Acetyl-L-Carnitine\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 14,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Ginkgo Biloba\" references category \"Herbal Extract\" which doesn't exist in categories array"
+      },
+      {
+        "id": 15,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Panax Ginseng\" references category \"Adaptogen\" which doesn't exist in categories array"
+      },
+      {
+        "id": 16,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Alpha-GPC\" references category \"Choline Compound\" which doesn't exist in categories array"
+      },
+      {
+        "id": 17,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Berberine\" references category \"Plant Alkaloid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 18,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"CoQ10\" references category \"Antioxidant\" which doesn't exist in categories array"
+      },
+      {
+        "id": 19,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Quercetin\" references category \"Flavonoid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 21,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Green Tea Extract\" references category \"Polyphenol\" which doesn't exist in categories array"
+      },
+      {
+        "id": 25,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"PQQ\" references category \"Antioxidant\" which doesn't exist in categories array"
+      },
+      {
+        "id": 27,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Resveratrol\" references category \"Polyphenol\" which doesn't exist in categories array"
+      },
+      {
+        "id": 28,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Glucosamine\" references category \"Joint Support\" which doesn't exist in categories array"
+      },
+      {
+        "id": 29,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"MSM\" references category \"Joint Support\" which doesn't exist in categories array"
+      },
+      {
+        "id": 30,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Whey Protein\" references category \"Protein\" which doesn't exist in categories array"
+      },
+      {
+        "id": 32,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Chondroitin Sulfate\" references category \"Joint Support\" which doesn't exist in categories array"
+      },
+      {
+        "id": 33,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"L-Tyrosine\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 34,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"5-HTP\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 35,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"Taurine\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 40,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"GABA\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 41,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Listed in category array",
+        "passed": false,
+        "detail": "\"Reishi Mushroom\" has category=\"Herbal Supplement\" but is NOT listed in that category's supplements array"
+      },
+      {
+        "id": 52,
+        "label": "Listed in category array",
+        "passed": false,
+        "detail": "\"Cordyceps\" has category=\"Herbal Supplement\" but is NOT listed in that category's supplements array"
+      },
+      {
+        "id": 53,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Category exists",
+        "passed": false,
+        "detail": "\"PEA (Phenylethylamine)\" references category \"Amino Acid\" which doesn't exist in categories array"
+      },
+      {
+        "id": 58,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Listed in category array",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "citations": [
+      {
+        "id": 1,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 1,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 12,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 13,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 14,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 15,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 16,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 40,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 43,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 49,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 50,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 51,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 52,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 53,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 54,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 55,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 56,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 57,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 58,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 59,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 60,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 61,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 62,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 63,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 64,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 65,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 66,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 67,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 68,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 69,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 70,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 71,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 72,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 73,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 74,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 75,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 77,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 78,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 79,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 80,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 81,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 82,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 83,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 84,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 85,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 86,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 87,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 88,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 89,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Has PMIDs",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "Has DOIs",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "flags": [
+      {
+        "id": 1,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 2,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 3,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 4,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 5,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 6,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 7,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 8,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 9,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 10,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 11,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Lion's Mane Mushroom\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 12,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Phosphatidylserine\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 13,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Acetyl-L-Carnitine\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 14,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Ginkgo Biloba\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 15,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Panax Ginseng\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 16,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 17,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 18,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 19,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 20,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 21,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 22,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 23,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 24,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 25,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 26,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 27,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 28,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 29,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 30,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 31,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 32,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 33,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 34,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 35,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 36,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 37,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 38,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 39,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Taurine\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 40,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 41,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 42,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Selenium\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 43,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 44,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 45,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 46,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 47,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 48,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Garlic\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 49,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Echinacea\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 50,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Caffeine\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 51,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Reishi Mushroom\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 52,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Cordyceps\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 53,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Spirulina\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 54,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Chlorella\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 55,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Huperzine A\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 56,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Vinpocetine\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 57,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"PEA (Phenylethylamine)\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 58,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"MCT Oil\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 59,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Hawthorn Berry\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 60,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Red Yeast Rice\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 61,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Chromium\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 62,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Vanadium\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 63,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Bitter Melon\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 64,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Gymnema Sylvestre\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 65,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Fenugreek\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 66,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Cinnamon Extract\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 67,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Holy Basil\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 68,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Schisandra Berry\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 69,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Mucuna Pruriens\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 70,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Forskolin\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 71,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Boswellia\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 72,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Milk Thistle\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 73,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Stinging Nettle\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 74,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Elderberry\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 75,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 76,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Sulbutiamine\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 77,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"DMAE\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 78,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Centella Asiatica\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 79,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Passionflower\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 80,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Aniracetam\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 81,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Piracetam\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 82,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Kanna\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 83,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Black Seed Oil\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 84,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Moringa\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 85,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Pine Bark Extract\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 86,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Grape Seed Extract\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 87,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Krill Oil\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 88,
+        "label": "isEnhanced flag set",
+        "passed": false,
+        "detail": "\"Zeaxanthin\" has data file but enhancedCitations.isEnhanced is not true"
+      },
+      {
+        "id": 89,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 90,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 91,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 92,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": 93,
+        "label": "isEnhanced flag consistent",
+        "passed": true,
+        "detail": ""
+      }
+    ]
+  },
+  "summary": {
+    "total_checks": 930,
+    "passed": 851,
+    "warnings": 0,
+    "errors": 79
+  },
+  "fixable": [
+    {
+      "type": "missing_category",
+      "id": 1,
+      "category": "Nootropic",
+      "name": "Bacopa monnieri"
+    },
+    {
+      "type": "missing_category",
+      "id": 3,
+      "category": "Adaptogen",
+      "name": "Ashwagandha"
+    },
+    {
+      "type": "missing_category",
+      "id": 4,
+      "category": "Essential Fatty Acid",
+      "name": "Omega-3 Fatty Acids"
+    },
+    {
+      "type": "missing_category",
+      "id": 5,
+      "category": "Performance Enhancer",
+      "name": "Creatine"
+    },
+    {
+      "type": "missing_category",
+      "id": 6,
+      "category": "Essential Mineral",
+      "name": "Magnesium"
+    },
+    {
+      "type": "missing_category",
+      "id": 7,
+      "category": "Vitamin",
+      "name": "Vitamin D3"
+    },
+    {
+      "type": "missing_category",
+      "id": 8,
+      "category": "Sleep Aid",
+      "name": "Melatonin"
+    },
+    {
+      "type": "missing_category",
+      "id": 9,
+      "category": "Amino Acid",
+      "name": "L-Theanine"
+    },
+    {
+      "type": "missing_category",
+      "id": 10,
+      "category": "Adaptogen",
+      "name": "Rhodiola rosea"
+    },
+    {
+      "type": "missing_category",
+      "id": 11,
+      "category": "Nootropic",
+      "name": "Lion's Mane Mushroom"
+    },
+    {
+      "type": "missing_category",
+      "id": 12,
+      "category": "Phospholipid",
+      "name": "Phosphatidylserine"
+    },
+    {
+      "type": "missing_category",
+      "id": 13,
+      "category": "Amino Acid",
+      "name": "Acetyl-L-Carnitine"
+    },
+    {
+      "type": "missing_category",
+      "id": 14,
+      "category": "Herbal Extract",
+      "name": "Ginkgo Biloba"
+    },
+    {
+      "type": "missing_category",
+      "id": 15,
+      "category": "Adaptogen",
+      "name": "Panax Ginseng"
+    },
+    {
+      "type": "missing_category",
+      "id": 16,
+      "category": "Choline Compound",
+      "name": "Alpha-GPC"
+    },
+    {
+      "type": "missing_category",
+      "id": 17,
+      "category": "Plant Alkaloid",
+      "name": "Berberine"
+    },
+    {
+      "type": "missing_category",
+      "id": 18,
+      "category": "Antioxidant",
+      "name": "CoQ10"
+    },
+    {
+      "type": "missing_category",
+      "id": 20,
+      "category": "Flavonoid",
+      "name": "Quercetin"
+    },
+    {
+      "type": "missing_category",
+      "id": 24,
+      "category": "Polyphenol",
+      "name": "Green Tea Extract"
+    },
+    {
+      "type": "missing_category",
+      "id": 26,
+      "category": "Antioxidant",
+      "name": "PQQ"
+    },
+    {
+      "type": "missing_category",
+      "id": 27,
+      "category": "Polyphenol",
+      "name": "Resveratrol"
+    },
+    {
+      "type": "missing_category",
+      "id": 28,
+      "category": "Joint Support",
+      "name": "Glucosamine"
+    },
+    {
+      "type": "missing_category",
+      "id": 29,
+      "category": "Joint Support",
+      "name": "MSM"
+    },
+    {
+      "type": "missing_category",
+      "id": 31,
+      "category": "Protein",
+      "name": "Whey Protein"
+    },
+    {
+      "type": "missing_category",
+      "id": 32,
+      "category": "Joint Support",
+      "name": "Chondroitin Sulfate"
+    },
+    {
+      "type": "missing_category",
+      "id": 33,
+      "category": "Amino Acid",
+      "name": "L-Tyrosine"
+    },
+    {
+      "type": "missing_category",
+      "id": 34,
+      "category": "Amino Acid",
+      "name": "5-HTP"
+    },
+    {
+      "type": "missing_category",
+      "id": 39,
+      "category": "Amino Acid",
+      "name": "Taurine"
+    },
+    {
+      "type": "missing_category",
+      "id": 40,
+      "category": "Amino Acid",
+      "name": "GABA"
+    },
+    {
+      "type": "missing_from_category",
+      "id": 51,
+      "name": "Reishi Mushroom",
+      "category": "Herbal Supplement"
+    },
+    {
+      "type": "missing_from_category",
+      "id": 52,
+      "name": "Cordyceps",
+      "category": "Herbal Supplement"
+    },
+    {
+      "type": "missing_category",
+      "id": 57,
+      "category": "Amino Acid",
+      "name": "PEA (Phenylethylamine)"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 11,
+      "name": "Lion's Mane Mushroom"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 12,
+      "name": "Phosphatidylserine"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 13,
+      "name": "Acetyl-L-Carnitine"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 14,
+      "name": "Ginkgo Biloba"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 15,
+      "name": "Panax Ginseng"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 39,
+      "name": "Taurine"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 42,
+      "name": "Selenium"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 48,
+      "name": "Garlic"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 49,
+      "name": "Echinacea"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 50,
+      "name": "Caffeine"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 51,
+      "name": "Reishi Mushroom"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 52,
+      "name": "Cordyceps"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 53,
+      "name": "Spirulina"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 54,
+      "name": "Chlorella"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 55,
+      "name": "Huperzine A"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 56,
+      "name": "Vinpocetine"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 57,
+      "name": "PEA (Phenylethylamine)"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 58,
+      "name": "MCT Oil"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 59,
+      "name": "Hawthorn Berry"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 60,
+      "name": "Red Yeast Rice"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 61,
+      "name": "Chromium"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 62,
+      "name": "Vanadium"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 63,
+      "name": "Bitter Melon"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 64,
+      "name": "Gymnema Sylvestre"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 65,
+      "name": "Fenugreek"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 66,
+      "name": "Cinnamon Extract"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 67,
+      "name": "Holy Basil"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 68,
+      "name": "Schisandra Berry"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 69,
+      "name": "Mucuna Pruriens"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 70,
+      "name": "Forskolin"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 71,
+      "name": "Boswellia"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 72,
+      "name": "Milk Thistle"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 73,
+      "name": "Stinging Nettle"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 74,
+      "name": "Elderberry"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 76,
+      "name": "Sulbutiamine"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 77,
+      "name": "DMAE"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 78,
+      "name": "Centella Asiatica"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 79,
+      "name": "Passionflower"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 80,
+      "name": "Aniracetam"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 81,
+      "name": "Piracetam"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 82,
+      "name": "Kanna"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 83,
+      "name": "Black Seed Oil"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 84,
+      "name": "Moringa"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 85,
+      "name": "Pine Bark Extract"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 86,
+      "name": "Grape Seed Extract"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 87,
+      "name": "Krill Oil"
+    },
+    {
+      "type": "missing_enhanced_flag",
+      "id": 88,
+      "name": "Zeaxanthin"
+    }
+  ],
+  "fatal": null
+}

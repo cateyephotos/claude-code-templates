@@ -1,0 +1,721 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Guide is Ready | SupplementDB</title>
+    <meta name="description" content="Your SupplementDB evidence guide PDF is being generated. Download it below.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
+    <link rel="stylesheet" href="css/auth.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy-deep: #0d1117;
+            --navy: #161b22;
+            --navy-light: #1c2333;
+            --indigo: #4f46e5;
+            --indigo-light: #6366f1;
+            --border: rgba(99, 102, 241, 0.12);
+            --text-primary: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --card-bg: rgba(22, 27, 34, 0.7);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; }
+
+        .success-nav {
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .success-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .success-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* State icons */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .success-icon.loading {
+            background: rgba(99, 102, 241, 0.15);
+            color: #6366f1;
+        }
+
+        .success-icon.complete {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            animation: successPop 0.4s ease-out;
+        }
+
+        .success-icon.warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        .success-icon.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-title {
+            font-size: 1.75rem;
+            color: var(--text-bright);
+            margin: 0 0 0.75rem;
+        }
+
+        .success-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0 0 2rem;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .success-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .success-btn.primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            color: white;
+        }
+
+        .success-btn.primary:hover:not(:disabled) {
+            background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+
+        .success-btn.primary:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .success-btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .success-btn.secondary:hover {
+            background: rgba(99, 102, 241, 0.05);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        /* Spinner */
+        .success-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-top-color: #6366f1;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Progress bar */
+        .progress-track {
+            height: 4px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
+            border-radius: 2px;
+            animation: progressPulse 2s ease-in-out infinite;
+            width: 60%;
+        }
+
+        @keyframes progressPulse {
+            0%   { width: 20%; opacity: 0.6; }
+            50%  { width: 80%; opacity: 1; }
+            100% { width: 20%; opacity: 0.6; }
+        }
+
+        /* Email note banner */
+        .email-note {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            background: rgba(79, 70, 229, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-top: 1.75rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .email-note i {
+            color: #6366f1;
+            flex-shrink: 0;
+        }
+
+        /* Guide name badge */
+        .guide-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 999px;
+            padding: 0.375rem 1rem;
+            font-size: 0.875rem;
+            color: #818cf8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Actions row */
+        .success-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        /* Error detail */
+        .error-detail {
+            background: rgba(239, 68, 68, 0.06);
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.875rem;
+            color: #f87171;
+            text-align: left;
+        }
+
+        @media (max-width: 640px) {
+            .success-card {
+                padding: 2rem 1.25rem;
+            }
+            .success-title {
+                font-size: 1.5rem;
+            }
+            .success-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="success-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+            <a href="index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-pills text-xl"></i>
+                <span class="font-bold text-lg">SupplementDB</span>
+            </a>
+            <div id="auth-buttons"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="success-container">
+        <div class="success-card">
+
+            <!-- ── Loading State (default) ────────────────────────────── -->
+            <div id="state-loading">
+                <div class="success-icon loading">
+                    <div class="success-spinner"></div>
+                </div>
+                <h1 class="success-title">Generating Your PDF</h1>
+                <p class="success-description">
+                    We're rendering your evidence guide into a beautifully formatted PDF.
+                    This usually takes 10–20 seconds.
+                </p>
+                <div class="progress-track">
+                    <div class="progress-bar"></div>
+                </div>
+                <p style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    Please keep this page open&hellip;
+                </p>
+            </div>
+
+            <!-- ── Success State (pdf_ready) ──────────────────────────── -->
+            <div id="state-success" style="display: none;">
+                <div class="success-icon complete">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="guide-badge" id="guide-badge" style="display: none;">
+                    <i class="fas fa-book"></i>
+                    <span id="guide-name-label"></span>
+                </div>
+                <h1 class="success-title">Your PDF is Ready!</h1>
+                <p class="success-description">
+                    Your evidence guide has been generated with full dosage protocols,
+                    mechanism analysis, and clinical citations.
+                </p>
+                <div class="success-actions">
+                    <button id="download-btn" class="success-btn primary" onclick="triggerDownload()">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                    <a id="guide-link" href="guides/" class="success-btn secondary">
+                        <i class="fas fa-book-open"></i>
+                        View Online Guide
+                    </a>
+                </div>
+                <div class="email-note">
+                    <i class="fas fa-envelope"></i>
+                    <span>We also sent a download link to your email — check your inbox to access this guide anytime.</span>
+                </div>
+            </div>
+
+            <!-- ── Still Processing State (poll timeout, not failed) ───── -->
+            <div id="state-processing" style="display: none;">
+                <div class="success-icon warning">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h1 class="success-title">Still Generating</h1>
+                <p class="success-description">
+                    Your payment was confirmed, but the PDF is taking longer than expected.
+                    Your download link will be emailed to you as soon as it's ready — usually within a few minutes.
+                </p>
+                <div class="success-actions">
+                    <button class="success-btn primary" onclick="window.location.reload()">
+                        <i class="fas fa-rotate"></i>
+                        Check Again
+                    </button>
+                    <a href="index.html" class="success-btn secondary">
+                        Back to Database
+                    </a>
+                </div>
+                <div class="email-note" style="margin-top: 1.75rem;">
+                    <i class="fas fa-envelope"></i>
+                    <span>The download link will arrive in your inbox once generation completes. No action needed.</span>
+                </div>
+            </div>
+
+            <!-- ── Failed State (status === "failed" from Convex) ─────── -->
+            <div id="state-failed" style="display: none;">
+                <div class="success-icon error">
+                    <i class="fas fa-triangle-exclamation"></i>
+                </div>
+                <h1 class="success-title">PDF Generation Failed</h1>
+                <div class="error-detail" id="failed-detail" style="display: none;"></div>
+                <p class="success-description">
+                    Your payment was successful, but we encountered an error generating the PDF.
+                    Our team has been notified. Please contact support and we'll send you the guide manually.
+                </p>
+                <div class="success-actions">
+                    <a href="mailto:support@supplementdb.com?subject=PDF%20Generation%20Failed" class="success-btn primary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Support
+                    </a>
+                    <a href="index.html" class="success-btn secondary">
+                        Back to Database
+                    </a>
+                </div>
+            </div>
+
+            <!-- ── Error State (no session, auth error, invalid session) ── -->
+            <div id="state-error" style="display: none;">
+                <div class="success-icon error">
+                    <i class="fas fa-circle-exclamation"></i>
+                </div>
+                <h1 class="success-title">Something Went Wrong</h1>
+                <p class="success-description" id="error-message">
+                    We couldn't retrieve your purchase. Please try again or contact support.
+                </p>
+                <div class="success-actions">
+                    <a href="guides/" class="success-btn primary">
+                        Browse Guides
+                    </a>
+                    <a href="index.html" class="success-btn secondary">
+                        Back to Database
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Auth & Convex scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/convex-client.js"></script>
+    <script src="js/rbac.js"></script>
+    <script src="js/auth-ui.js"></script>
+
+    <script>
+    /**
+     * Guide purchase success page.
+     *
+     * Flow:
+     *   1. Read ?session_id=cs_xxx from URL (required)
+     *   2. Wait for Clerk auth to load (auth:loaded event)
+     *   3. Require user to be signed in
+     *   4. Poll guidePurchases:getBySessionId every 2s for up to 30s
+     *   5. On status "pdf_ready":  call getPdfDownloadUrl, show download button
+     *   6. On status "failed":     show failed state immediately
+     *   7. On poll timeout:        show "still processing" state
+     *   8. On click "Download PDF": re-fetch signed URL and trigger download
+     */
+    (function () {
+      "use strict";
+
+      var POLL_INTERVAL_MS = 2000;   // 2 s between polls
+      var MAX_POLL_MS      = 30000;  // 30 s total (PDF generation may take ~15-20 s)
+      var AUTH_FALLBACK_MS = 3000;   // Start polling even without auth event after 3 s
+
+      // ── DOM refs ────────────────────────────────────────────────────
+      var stateLoading    = document.getElementById("state-loading");
+      var stateSuccess    = document.getElementById("state-success");
+      var stateProcessing = document.getElementById("state-processing");
+      var stateFailed     = document.getElementById("state-failed");
+      var stateError      = document.getElementById("state-error");
+
+      var errorMessage    = document.getElementById("error-message");
+      var failedDetail    = document.getElementById("failed-detail");
+      var downloadBtn     = document.getElementById("download-btn");
+      var guideLink       = document.getElementById("guide-link");
+      var guideBadge      = document.getElementById("guide-badge");
+      var guideNameLabel  = document.getElementById("guide-name-label");
+
+      // ── State tracking ──────────────────────────────────────────────
+      var pdfDownloadUrl  = null;
+      var guideSlug       = null;
+      var guideName       = null;
+      var pollTimer       = null;
+      var pollStartTime   = null;
+      var urlFetching     = false;
+
+      // ── Helpers ─────────────────────────────────────────────────────
+      function showState(el) {
+        stateLoading.style.display    = "none";
+        stateSuccess.style.display    = "none";
+        stateProcessing.style.display = "none";
+        stateFailed.style.display     = "none";
+        stateError.style.display      = "none";
+        el.style.display              = "block";
+      }
+
+      function showError(msg) {
+        if (errorMessage) errorMessage.textContent = msg || "An unexpected error occurred.";
+        showState(stateError);
+      }
+
+      function phCapture(event, props) {
+        try {
+          if (typeof posthog !== "undefined") {
+            posthog.capture(event, props || {});
+          }
+        } catch (_) { /* silent */ }
+      }
+
+      // ── URL params ───────────────────────────────────────────────────
+      var params    = new URLSearchParams(window.location.search);
+      var sessionId = params.get("session_id");
+
+      if (!sessionId) {
+        showError("No checkout session found. Please complete checkout from the guide page.");
+        phCapture("guide_success_missing_session");
+        return; // Stop all further execution
+      }
+
+      phCapture("guide_success_page_loaded", { session_id: sessionId });
+
+      // ── Auth gate ────────────────────────────────────────────────────
+      function startPolling() {
+        var auth = window.SupplementDBAuth;
+        if (auth && auth.isLoaded) {
+          beginPoll();
+          return;
+        }
+
+        var fallbackTimer = setTimeout(function () {
+          beginPoll();
+        }, AUTH_FALLBACK_MS);
+
+        document.addEventListener("auth:loaded", function () {
+          clearTimeout(fallbackTimer);
+          beginPoll();
+        }, { once: true });
+      }
+
+      function beginPoll() {
+        var auth = window.SupplementDBAuth;
+        if (!auth || !auth.isSignedIn) {
+          showError("Please sign in to access your guide purchase.");
+          phCapture("guide_success_auth_required", { session_id: sessionId });
+          return;
+        }
+
+        pollStartTime = Date.now();
+        poll();
+      }
+
+      // ── Polling loop ─────────────────────────────────────────────────
+      async function poll() {
+        if (Date.now() - pollStartTime >= MAX_POLL_MS) {
+          showState(stateProcessing);
+          phCapture("guide_success_poll_timeout", { session_id: sessionId });
+          return;
+        }
+
+        try {
+          if (!window.SupplementDB || !window.SupplementDB.query) {
+            // Convex client not initialised yet — retry
+            pollTimer = setTimeout(poll, POLL_INTERVAL_MS);
+            return;
+          }
+
+          var purchase = await window.SupplementDB.query(
+            "guidePurchases:getBySessionId",
+            { sessionId: sessionId }
+          );
+
+          if (!purchase) {
+            // Not found yet — session may not have been recorded by webhook yet
+            pollTimer = setTimeout(poll, POLL_INTERVAL_MS);
+            return;
+          }
+
+          // Cache guide metadata for use in UI
+          guideSlug = purchase.guideSlug;
+          guideName = purchase.guideName;
+
+          if (purchase.status === "pdf_ready") {
+            await onPdfReady(purchase);
+            return;
+          }
+
+          if (purchase.status === "failed") {
+            onPdfFailed(purchase);
+            return;
+          }
+
+          // status is "paid" or "pdf_generating" — keep polling
+          pollTimer = setTimeout(poll, POLL_INTERVAL_MS);
+
+        } catch (err) {
+          console.warn("[guide-success] Poll error:", err);
+          pollTimer = setTimeout(poll, POLL_INTERVAL_MS);
+        }
+      }
+
+      // ── PDF ready handler ─────────────────────────────────────────────
+      async function onPdfReady(purchase) {
+        var elapsed = Date.now() - pollStartTime;
+
+        phCapture("guide_success_pdf_ready", {
+          session_id: sessionId,
+          guide_slug: purchase.guideSlug,
+          poll_elapsed_ms: elapsed,
+        });
+
+        // Fetch the signed download URL while the success state loads
+        try {
+          var result = await window.SupplementDB.action(
+            "guidePurchases:getPdfDownloadUrl",
+            { sessionId: sessionId }
+          );
+
+          if (result && result.url) {
+            pdfDownloadUrl = result.url;
+            if (result.guideName) guideName = result.guideName;
+          }
+        } catch (err) {
+          console.warn("[guide-success] Failed to pre-fetch download URL:", err);
+          // Don't block the success state — user can still try the download button
+        }
+
+        // Update guide badge and link
+        if (guideName) {
+          guideNameLabel.textContent = guideName;
+          guideBadge.style.display = "inline-flex";
+        }
+
+        if (guideSlug && guideLink) {
+          guideLink.href = "guides/" + guideSlug + ".html";
+        }
+
+        showState(stateSuccess);
+      }
+
+      // ── PDF failed handler ────────────────────────────────────────────
+      function onPdfFailed(purchase) {
+        phCapture("guide_success_pdf_failed", {
+          session_id: sessionId,
+          guide_slug: purchase.guideSlug,
+          error: purchase.errorMessage,
+        });
+
+        if (purchase.errorMessage && failedDetail) {
+          failedDetail.textContent = "Error: " + purchase.errorMessage;
+          failedDetail.style.display = "block";
+        }
+
+        showState(stateFailed);
+      }
+
+      // ── Download trigger (exposed globally for onclick) ───────────────
+      window.triggerDownload = async function () {
+        if (downloadBtn) {
+          downloadBtn.disabled = true;
+          downloadBtn.innerHTML = '<span class="btn-spinner"></span> Preparing&hellip;';
+        }
+
+        try {
+          // Always fetch a fresh signed URL on click (1-hour expiry)
+          var result = await window.SupplementDB.action(
+            "guidePurchases:getPdfDownloadUrl",
+            { sessionId: sessionId }
+          );
+
+          if (!result || !result.url) {
+            throw new Error("No download URL returned.");
+          }
+
+          var url = result.url;
+          var filename = (result.guideName || guideSlug || "guide")
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^a-z0-9-]/g, "");
+          filename = "supplementdb-" + filename + ".pdf";
+
+          // Trigger browser download
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = filename;
+          a.target = "_blank";
+          a.rel = "noopener";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+
+          phCapture("guide_pdf_downloaded", {
+            session_id: sessionId,
+            guide_slug: guideSlug,
+          });
+
+        } catch (err) {
+          console.error("[guide-success] Download failed:", err);
+          phCapture("guide_pdf_download_error", {
+            session_id: sessionId,
+            guide_slug: guideSlug,
+            error: err.message,
+          });
+          alert("Download failed. Please try again or check your email for the download link.");
+        } finally {
+          if (downloadBtn) {
+            downloadBtn.disabled = false;
+            downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download PDF';
+          }
+        }
+      };
+
+      // ── Boot ──────────────────────────────────────────────────────────
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startPolling);
+      } else {
+        startPolling();
+      }
+
+    })();
+    </script>
+</body>
+</html>
