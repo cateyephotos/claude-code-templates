@@ -493,7 +493,12 @@
             <!-- SECTION: Configuration                             -->
             <!-- ═══════════════════════════════════════════════════ -->
             <section id="section-config" class="admin-section">
-                <h2 class="admin-section-title">Configuration &amp; Services</h2>
+                <div class="admin-section-title-row">
+                    <h2 class="admin-section-title">Configuration &amp; Services</h2>
+                    <button id="config-recheck-btn" class="config-recheck-btn" onclick="AdminConfig.recheckAll()">
+                        <i class="fas fa-sync-alt"></i> Re-check
+                    </button>
+                </div>
 
                 <!-- System Health Banner -->
                 <div id="config-health-banner" class="config-health-banner config-health-loading">

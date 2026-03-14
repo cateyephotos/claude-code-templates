@@ -1,5 +1,9 @@
 import { query } from "./_generated/server";
 
+// Keys that can be set via the Admin UI (stored in adminSettings table).
+// For these we check the DB in addition to process.env.
+const ADMIN_UI_SETTABLE_KEYS = new Set(["ANTHROPIC_API_KEY", "RESEND_API_KEY"]);
+
 /**
  * adminConfig.ts — Admin configuration health check.
  *
@@ -50,6 +54,8 @@ const CONFIG_CATALOGUE = [
         required: true,
         description: "Required for Stack Analyzer. Get from console.anthropic.com",
         docsUrl: "https://console.anthropic.com/settings/keys",
+        resolutionType: "admin_ui" as const,
+        resolutionHint: "Enter your Anthropic API key directly in the API Key Management section below — no Convex Dashboard needed.",
       },
     ],
   },
@@ -65,6 +71,8 @@ const CONFIG_CATALOGUE = [
         required: true,
         description: "Stripe secret key (sk_live_... or sk_test_...)",
         docsUrl: "https://dashboard.stripe.com/apikeys",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "Go to Stripe Dashboard → Developers → API Keys → copy the Secret key. Then add it as STRIPE_SECRET_KEY in Convex Dashboard → Settings → Environment Variables.",
       },
       {
         key: "STRIPE_WEBHOOK_SECRET",
@@ -72,6 +80,8 @@ const CONFIG_CATALOGUE = [
         required: true,
         description: "Stripe webhook endpoint signing secret (whsec_...)",
         docsUrl: "https://dashboard.stripe.com/webhooks",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "In Stripe Dashboard → Developers → Webhooks → Add endpoint. URL: https://acoustic-chinchilla-759.convex.site/stripe-webhook. Events: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, invoice.payment_failed. Copy the Signing Secret (whsec_...) and add as STRIPE_WEBHOOK_SECRET in Convex env vars.",
       },
       {
         key: "STRIPE_MONTHLY_PRICE_ID",
@@ -79,6 +89,8 @@ const CONFIG_CATALOGUE = [
         required: true,
         description: "Stripe Price ID for the Pro Monthly plan (price_...)",
         docsUrl: "https://dashboard.stripe.com/products",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "In Stripe Dashboard → Products → create a 'Pro Monthly' product with a recurring monthly price. Copy the Price ID (price_...) and add as STRIPE_MONTHLY_PRICE_ID in Convex env vars.",
       },
       {
         key: "STRIPE_ANNUAL_PRICE_ID",
@@ -86,6 +98,8 @@ const CONFIG_CATALOGUE = [
         required: true,
         description: "Stripe Price ID for the Pro Annual plan (price_...)",
         docsUrl: "https://dashboard.stripe.com/products",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "In Stripe Dashboard → Products → add a yearly price to your Pro product. Copy the Price ID (price_...) and add as STRIPE_ANNUAL_PRICE_ID in Convex env vars.",
       },
       {
         key: "STRIPE_GUIDE_PRICE_ID",
@@ -93,6 +107,8 @@ const CONFIG_CATALOGUE = [
         required: false,
         description: "Stripe Price ID for one-time guide purchases (optional)",
         docsUrl: "https://dashboard.stripe.com/products",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "In Stripe Dashboard → Products → create a one-time price for guide purchases. Copy the Price ID and add as STRIPE_GUIDE_PRICE_ID in Convex env vars.",
       },
     ],
   },
@@ -106,8 +122,10 @@ const CONFIG_CATALOGUE = [
         key: "CLERK_SECRET_KEY",
         label: "Clerk Secret Key",
         required: true,
-        description: "Clerk backend secret key (sk_live_... or sk_test_...)",
+        description: "Clerk backend secret key — needed for role sync after Stripe events",
         docsUrl: "https://dashboard.clerk.com/last-active?path=api-keys",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "In Clerk Dashboard → API Keys → copy the Secret key (sk_live_... or sk_test_...). Add it as CLERK_SECRET_KEY in Convex Dashboard → Settings → Environment Variables.",
       },
     ],
   },
@@ -123,6 +141,8 @@ const CONFIG_CATALOGUE = [
         required: true,
         description: "Resend API key for sending emails (re_...)",
         docsUrl: "https://resend.com/api-keys",
+        resolutionType: "admin_ui" as const,
+        resolutionHint: "Enter your Resend API key directly in the API Key Management section below — no Convex Dashboard needed.",
       },
       {
         key: "RESEND_FROM_ADDRESS",
@@ -131,6 +151,8 @@ const CONFIG_CATALOGUE = [
         description: 'Sender address (default: "SupplementDB <onboarding@resend.dev>")',
         defaultValue: "SupplementDB <onboarding@resend.dev>",
         docsUrl: "https://resend.com/domains",
+        resolutionType: "convex_env" as const,
+        resolutionHint: "Set RESEND_FROM_ADDRESS in Convex env vars to your verified sending address. Verify your domain first at resend.com/domains.",
       },
     ],
   },
@@ -203,10 +225,23 @@ export const getConfigHealth = query({
   handler: async (ctx) => {
     await requireAdmin(ctx);
 
+    // Pre-fetch all adminSettings DB entries for keys that can be set via admin UI
+    const adminSettingsRows = await ctx.db.query("adminSettings").collect();
+    const adminSettingsMap = new Map(adminSettingsRows.map((r: any) => [r.key, r.value]));
+
     const services = CONFIG_CATALOGUE.map((service) => {
       const vars = service.vars.map((v) => {
-        const rawValue = process.env[v.key];
-        const isSet = typeof rawValue === "string" && rawValue.length > 0;
+        const envValue = process.env[v.key];
+        const envIsSet = typeof envValue === "string" && envValue.length > 0;
+
+        // For admin-UI-settable keys, also check the adminSettings DB
+        const dbValue = ADMIN_UI_SETTABLE_KEYS.has(v.key) ? adminSettingsMap.get(v.key) : undefined;
+        const dbIsSet = typeof dbValue === "string" && dbValue.length > 0;
+
+        const isSet = envIsSet || dbIsSet;
+        const source = dbIsSet ? "admin_ui" : envIsSet ? "env_var" : "not_set";
+        const rawValue = dbIsSet ? dbValue : envValue;
+
         return {
           key: v.key,
           label: v.label,
@@ -214,7 +249,10 @@ export const getConfigHealth = query({
           description: v.description,
           defaultValue: "defaultValue" in v ? v.defaultValue : undefined,
           docsUrl: v.docsUrl,
+          resolutionType: "resolutionType" in v ? v.resolutionType : "convex_env",
+          resolutionHint: "resolutionHint" in v ? v.resolutionHint : "",
           isSet,
+          source,
           masked: maskValue(rawValue),
         };
       });

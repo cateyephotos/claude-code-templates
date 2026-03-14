@@ -136,13 +136,16 @@
         if (v.isSet) {
           rowClass += " var-set";
           iconHtml = '<i class="fas fa-check-circle config-var-status-icon icon-set"></i>';
-          statusText = "";
+          // Show source tag for admin-UI-set keys so user can see where it's coming from
+          const sourceTag = v.source === "admin_ui"
+            ? ' <span class="config-var-source-tag">via Admin UI</span>'
+            : "";
+          statusText = `<span class="config-var-masked">${v.masked || "••••"}</span>${sourceTag}`;
         } else if (v.required) {
           rowClass += " var-missing-required";
           iconHtml = '<i class="fas fa-times-circle config-var-status-icon icon-missing"></i>';
-          statusText = '<span class="config-var-masked" style="color:#dc2626;font-family:inherit;font-size:0.75rem;">NOT SET — REQUIRED</span>';
+          statusText = '<span class="config-var-status-missing">NOT SET — REQUIRED</span>';
         } else if (v.defaultValue) {
-          rowClass += "";
           iconHtml = '<i class="fas fa-info-circle config-var-status-icon icon-default"></i>';
           statusText = `<span class="config-var-masked">default</span>`;
         } else {
@@ -151,23 +154,55 @@
           statusText = '<span class="config-var-masked">not set</span>';
         }
 
-        const maskedHtml = v.isSet
-          ? `<span class="config-var-masked">${v.masked || "••••"}</span>`
-          : statusText;
+        const maskedHtml = v.isSet ? statusText : statusText;
 
         const docsHtml = v.docsUrl
           ? `<a href="${v.docsUrl}" target="_blank" rel="noopener" class="config-var-docs-link" title="Open docs"><i class="fas fa-external-link-alt"></i></a>`
           : "";
 
+        // Resolution path — only shown when NOT set
+        let resolutionHtml = "";
+        if (!v.isSet) {
+          if (v.resolutionType === "admin_ui") {
+            // Scroll to the inline form — anchor by key name
+            const anchorId = v.key === "ANTHROPIC_API_KEY" ? "api-key-anthropic"
+              : v.key === "RESEND_API_KEY" ? "api-key-resend"
+              : null;
+            if (anchorId) {
+              resolutionHtml = `
+                <div class="config-var-resolution">
+                  <button class="config-resolve-btn config-resolve-btn-inline"
+                    onclick="AdminConfig.scrollToKeyForm('${anchorId}','${v.key === 'ANTHROPIC_API_KEY' ? 'anthropic' : 'resend'}')">
+                    <i class="fas fa-arrow-down"></i> Set via Admin UI
+                  </button>
+                </div>`;
+            }
+          } else if (v.resolutionType === "convex_env" && v.resolutionHint) {
+            const hintId = "hint-" + v.key.toLowerCase().replace(/_/g, "-");
+            resolutionHtml = `
+              <div class="config-var-resolution">
+                <button class="config-resolve-btn config-resolve-btn-external"
+                  onclick="AdminConfig.toggleHint('${hintId}')">
+                  <i class="fas fa-wrench"></i> How to fix
+                </button>
+                ${v.docsUrl ? `<a href="${v.docsUrl}" target="_blank" rel="noopener" class="config-resolve-btn config-resolve-btn-link"><i class="fas fa-external-link-alt"></i> Open</a>` : ""}
+              </div>
+              <div id="${hintId}" class="config-var-hint hidden">${v.resolutionHint}</div>`;
+          }
+        }
+
         return `
           <div class="${rowClass}">
-            ${iconHtml}
-            <div class="config-var-info">
-              <div class="config-var-key">${v.key}</div>
-              <div class="config-var-label">${v.label}</div>
+            <div class="config-var-row-main">
+              ${iconHtml}
+              <div class="config-var-info">
+                <div class="config-var-key">${v.key}</div>
+                <div class="config-var-label">${v.label}</div>
+              </div>
+              ${maskedHtml}
+              ${v.isSet ? docsHtml : ""}
             </div>
-            ${maskedHtml}
-            ${docsHtml}
+            ${resolutionHtml}
           </div>
         `;
       }).join("");
@@ -188,6 +223,25 @@
         </div>
       `;
     }).join("");
+  }
+
+  // ── Resolution helpers ─────────────────────────────────────────
+
+  function scrollToKeyForm(anchorId, prefix) {
+    const target = document.getElementById(anchorId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Auto-open the inline key form
+      const form = document.getElementById(prefix + "-key-form");
+      if (form && form.classList.contains("hidden")) {
+        toggleKeyForm(prefix);
+      }
+    }
+  }
+
+  function toggleHint(hintId) {
+    const hint = document.getElementById(hintId);
+    if (hint) hint.classList.toggle("hidden");
   }
 
   // ── Render: Stack Analyzer API Status Banner ──────────────────
@@ -641,15 +695,27 @@
     }
   }
 
+  // ── Re-check all services (triggered by section Refresh button) ──
+  async function recheckAll() {
+    const btn = el("config-recheck-btn");
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Checking…'; }
+    loaded = false;
+    await loadConfigSection();
+    if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-sync-alt"></i> Re-check'; }
+  }
+
   // Expose functions for use from HTML onclick handlers and manual reload
   window.AdminConfig = {
     reload: function () { loaded = false; loadConfigSection(); },
+    recheckAll,
     saveKey,
     toggleKeyForm,
     testAnthropicKey,
     fetchModels,
     saveModel,
     onModelSelectChange,
+    scrollToKeyForm,
+    toggleHint,
   };
 
 })();
