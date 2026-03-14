@@ -60,9 +60,10 @@ const h   = s => (s != null ? String(s) : '').trim();
 const esc = s => h(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 function slugify(name) {
-    return h(name)
+    // CANONICAL: must match parse-data.js slugify() and app.js card link derivation
+    // Do NOT strip apostrophes — Lion's → lion-s-mane-mushroom (matches existing files + app.js)
+    return String(name)
         .toLowerCase()
-        .replace(/[''`]/g, '')     // drop apostrophes (Lion's → lions → lion-s handled below)
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '');

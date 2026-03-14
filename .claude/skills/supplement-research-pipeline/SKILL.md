@@ -936,8 +936,9 @@ Before marking Mode 6 complete, verify:
 - [ ] Add new comparison entry to `COMPARISONS` array in `scripts/generate-compare-pages.js`, then run `node scripts/generate-compare-pages.js` to regenerate all 10 compare pages
 - [ ] `compare/{slug-a}-vs-{slug-b}.html` — Mockup B layout present (progress-track, hero-vs-row, split-compare, decision-cards, stack-box), all 10 sections, references populated
 - [ ] Add emoji to `SUPPLEMENT_EMOJIS` in `generate-compare-pages.js` if the new supplement is not already mapped
+- [ ] **Regenerate category pages**: `node supp-db-site/scripts/generate-category-pages.js` — updates all 6 category pillar pages (`categories/*.html`) with the new supplement card, table row, and JSON-LD entry
 - [ ] Run `node -e "require('./data/supplements.js')"` (or equivalent syntax check) to verify JS validity
-- [ ] Check browser console for errors on the supplement page and comparison page(s)
+- [ ] Check browser console for errors on the supplement page, comparison page(s), and the relevant category page
 
 ---
 
@@ -994,8 +995,39 @@ const html=fs.readFileSync('supp-db-site/supplements/{slug}.html','utf8');
 "
 ```
 
-**Step 4 (optional) — Playwright spot-check**
+**Step 4 — Regenerate category pages**
+```bash
+node supp-db-site/scripts/generate-category-pages.js
+```
+This updates all 6 category pillar pages (`categories/*.html`) — required whenever supplements.js changes. The generator reads `data/supplements.js` via `parse-data.js` and rebuilds supplement cards, data tables, tier distributions, JSON-LD, and hero stats from live data.
+
+**Step 5 (optional) — Playwright spot-check**
 Open the generated page in Docker staging and verify visual rendering. Use Playwright MCP to screenshot and check for visual regressions.
+
+---
+
+## Slug Derivation — Canonical Function
+
+**All three systems (app.js, seed.js, parse-data.js) MUST use identical slug logic:**
+
+```javascript
+function slugify(name) {
+    return String(name)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+```
+
+| Supplement name | Slug |
+|---|---|
+| `Lion's Mane Mushroom` | `lion-s-mane-mushroom` |
+| `L-Theanine` | `l-theanine` |
+| `5-HTP` | `5-htp` |
+| `HMB (β-Hydroxy β-Methylbutyrate)` | `hmb--hydroxy--methylbutyrate-` → `hmb-hydroxy-methylbutyrate` |
+
+Do NOT strip apostrophes before slugifying — `Lion's` → `lion-s` (with hyphen) is the existing canonical slug on disk, in app.js card links, and in category page links.
 
 ---
 
