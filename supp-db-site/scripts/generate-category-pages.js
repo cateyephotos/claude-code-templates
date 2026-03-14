@@ -18,17 +18,61 @@ const {
 
 // ---- Configuration ----
 
+// All normalized categories that should have pillar pages (min 2 supplements)
 const TARGET_CATEGORIES = [
-    'Herbal Extracts',
-    'Essential Nutrients',
-    'Antioxidants',
-    'Nootropics',
+    'Adaptogens',
     'Amino Acids',
-    'Performance Enhancers'
+    'Anti-inflammatory',
+    'Antioxidants',
+    'Essential Nutrients',
+    'Herbal Extracts',
+    'Joint Support',
+    'Metabolic Support',
+    'Nootropics',
+    'Performance Enhancers',
+    'Polyphenols',
+    'Sleep Support'
 ];
 
 const CATEGORY_DESCRIPTIONS = {
+    'Adaptogens': {
+        short: 'Stress-modulating botanicals that help the body maintain physiological equilibrium',
+        intro: 'Adaptogens are a pharmacological class of herbal preparations studied for their ability to non-specifically increase resistance to biological, chemical, and physical stressors. This category includes Ashwagandha (Withania somnifera), Rhodiola rosea, Panax Ginseng, Holy Basil (Tulsi), and Schisandra Berry — compounds with centuries of use in Ayurvedic and traditional Chinese medicine now supported by modern randomized controlled trials. Ashwagandha holds the strongest evidence base in this category (Tier 1) with consistent meta-analytic support for cortisol reduction and stress resilience.',
+        safety: 'Adaptogens in this category are generally well-tolerated with favorable safety profiles. Key considerations: Ashwagandha should be avoided during pregnancy (uterine stimulant effects); Panax Ginseng may interact with anticoagulants, diabetes medications, and stimulants — cycle use to avoid tolerance buildup; Rhodiola rosea is contraindicated in bipolar disorder; and all adaptogens may have additive effects with psychiatric or hormonal medications. Quality control is important — standardized extracts verified by third-party testing are strongly preferred.',
+        useCases: 'Stress resilience, cortisol regulation, fatigue reduction, cognitive performance under stress, athletic recovery, immune modulation, and hormonal balance.'
+    },
+    'Anti-inflammatory': {
+        short: 'Compounds with clinically validated anti-inflammatory activity across multiple pathways',
+        intro: 'This category encompasses supplements studied for their effects on inflammatory pathways, including NF-κB signaling, COX enzyme inhibition, and cytokine modulation. The two primary compounds — Turmeric/Curcumin (Tier 1) and Boswellia (Tier 2) — have substantial clinical evidence across conditions including osteoarthritis, inflammatory bowel disease, and metabolic syndrome. Curcumin is notable for its multi-target anti-inflammatory profile, simultaneously inhibiting multiple pro-inflammatory mediators at physiological doses.',
+        safety: 'Both compounds in this category have excellent safety profiles at standard doses. Key considerations: Curcumin enhances absorption significantly when combined with piperine (black pepper extract) — standard extracts without piperine have very low bioavailability; Boswellia formulations vary widely in AKBA (active constituent) content — standardized to ≥30% AKBA is recommended; and both compounds may potentiate anticoagulant effects when combined with blood thinners. High-dose curcumin supplements should be used cautiously alongside antiplatelet medications.',
+        useCases: 'Musculoskeletal pain, inflammatory bowel conditions, arthritis management, post-exercise recovery, metabolic inflammation, and chronic pain support.'
+    },
+    'Joint Support': {
+        short: 'Compounds studied for cartilage health, joint lubrication, and connective tissue integrity',
+        intro: 'Joint support supplements target the structural and biochemical components of cartilage, synovial fluid, and connective tissue. This category includes Glucosamine (Tier 2), Chondroitin Sulfate (Tier 2), and MSM (Tier 3). Glucosamine and Chondroitin are among the most widely studied joint supplements, with the large GAIT trial and multiple systematic reviews providing nuanced data — they show modest but consistent benefits for moderate-to-severe osteoarthritis pain, with less benefit in mild cases. MSM provides additional sulfur compounds thought to support connective tissue integrity.',
+        safety: 'Joint support supplements are among the safest in the database. Glucosamine is derived from shellfish — avoid if allergic; synthetic glucosamine HCl is available as an alternative. Chondroitin may have mild anticoagulant effects. These supplements are often taken long-term (6+ months) to assess efficacy — short-term trials are poor predictors of benefit. Blood glucose monitoring is recommended for diabetics using glucosamine, as mild effects on insulin sensitivity have been reported in some studies.',
+        useCases: 'Osteoarthritis management, cartilage support, joint pain reduction, mobility improvement, post-injury recovery, and preventive joint health in active individuals.'
+    },
+    'Metabolic Support': {
+        short: 'Compounds targeting energy metabolism, NAD+ biology, and metabolic pathway optimization',
+        intro: 'Metabolic support supplements target fundamental biochemical pathways governing cellular energy production, mitochondrial function, and glucose metabolism. This category includes NAD+ Precursors (NMN and NR — Tier 2) and Red Yeast Rice (Tier 2). NAD+ precursors have attracted substantial research interest for their roles in sirtuins, DNA repair, and mitochondrial biogenesis — compounds that decline with age and may be restored through supplementation. Red Yeast Rice contains naturally occurring monacolins (including monacolin K, chemically identical to lovastatin) and has clinical evidence for LDL reduction.',
+        safety: 'Safety profiles differ significantly within this category. NAD+ precursors (NMN, NR) have favorable short-term safety data, though long-term human studies are still emerging; flushing reactions are occasionally reported with high doses. Red Yeast Rice carries the same safety considerations as statin medications — myopathy and rhabdomyolysis are rare but documented; contraindicated with liver disease, during pregnancy, and with certain drugs that inhibit CYP3A4. Do not combine Red Yeast Rice with prescription statins. Consult a physician before use.',
+        useCases: 'Cellular energy production, NAD+ restoration, cholesterol management, mitochondrial health, metabolic aging support, and sirtuin pathway activation.'
+    },
+    'Polyphenols': {
+        short: 'Bioactive plant compounds with antioxidant, anti-inflammatory, and signaling pathway activity',
+        intro: 'Polyphenols are a large class of plant-derived compounds characterized by multiple phenol rings, encompassing flavonoids, stilbenes, lignans, and phenolic acids. This category captures polyphenol supplements that do not fit cleanly into other categories, including Resveratrol and Green Tea Extract (EGCG). These compounds have attracted intense research interest for their roles in activating longevity-associated pathways (SIRT1, AMPK, NF-κB), modulating inflammatory signaling, and providing cardiovascular protection. The challenge with many polyphenols is bioavailability — most have poor oral absorption that limits translation of in vitro findings to clinical outcomes.',
+        safety: 'Polyphenol supplements are generally well-tolerated. Key considerations: high-dose EGCG supplements have been associated with hepatotoxicity in rare cases — doses above 800mg/day of EGCG carry elevated risk and should be avoided; Resveratrol may interact with anticoagulants and has estrogen-like activity at high doses; and polyphenol supplements taken in isolation (as concentrated extracts) may behave differently than food-matrix polyphenols in terms of both efficacy and safety.',
+        useCases: 'Cardiovascular protection, longevity pathway activation, antioxidant defense, metabolic health, neuroprotection, and cellular aging support.'
+    },
+    'Sleep Support': {
+        short: 'Compounds studied for sleep onset, sleep quality, and circadian rhythm regulation',
+        intro: 'Sleep support supplements target the neurochemical and physiological mechanisms governing sleep architecture, including melatonin signaling, GABAergic activity, adenosine metabolism, and hypothalamic-pituitary-adrenal (HPA) axis regulation. Melatonin (the primary compound in this category) holds Tier 1 evidence for circadian rhythm disorders and jet lag, with robust evidence from multiple meta-analyses. Related compounds including Magnesium (covered in Essential Nutrients), Ashwagandha (covered in Adaptogens), and L-Theanine (covered in Amino Acids) also have sleep-relevant evidence but are categorized under their primary mechanism.',
+        safety: 'Sleep support supplements require careful dosing and timing considerations. Melatonin is most effective at low doses (0.5–3mg) taken 30–60 minutes before target bedtime — higher doses do not necessarily improve efficacy and may disrupt circadian phase. Short-term use for jet lag and shift work has the strongest evidence base; long-term daily use should involve periodic reassessment. Melatonin may interact with anticoagulants, immunosuppressants, and sedative medications. Avoid use during pregnancy without medical supervision. Do not combine with alcohol.',
+        useCases: 'Sleep onset latency reduction, jet lag mitigation, circadian rhythm adjustment for shift workers, sleep quality improvement, and age-related sleep architecture changes.'
+    },
     'Herbal Extracts': {
+        short: 'Plant-derived supplements with traditional and modern clinical evidence',
         short: 'Plant-derived supplements with traditional and modern clinical evidence',
         intro: 'Herbal extracts represent one of the oldest forms of supplementation, with many compounds having centuries of traditional use now validated by modern clinical research. This category encompasses a diverse range of plant-derived compounds, from adaptogens such as Ginkgo Biloba to metabolic regulators such as Berberine, each studied for distinct health domains including cognitive function, cardiovascular health, immune support, and metabolic regulation.',
         safety: 'Most herbal extracts in this category carry favorable safety profiles when used at studied dosages. However, several key considerations apply: drug interactions are common with herbs that affect cytochrome P450 enzymes (notably Ginkgo Biloba, Milk Thistle, and Berberine); standardization varies significantly between products — always verify extract standardization matches the form used in clinical studies; and pregnant or breastfeeding individuals should consult healthcare providers before using any herbal supplement.',

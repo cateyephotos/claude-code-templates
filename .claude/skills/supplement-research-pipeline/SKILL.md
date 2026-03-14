@@ -936,7 +936,8 @@ Before marking Mode 6 complete, verify:
 - [ ] Add new comparison entry to `COMPARISONS` array in `scripts/generate-compare-pages.js`, then run `node scripts/generate-compare-pages.js` to regenerate all 10 compare pages
 - [ ] `compare/{slug-a}-vs-{slug-b}.html` — Mockup B layout present (progress-track, hero-vs-row, split-compare, decision-cards, stack-box), all 10 sections, references populated
 - [ ] Add emoji to `SUPPLEMENT_EMOJIS` in `generate-compare-pages.js` if the new supplement is not already mapped
-- [ ] **Regenerate category pages**: `node supp-db-site/scripts/generate-category-pages.js` — updates all 6 category pillar pages (`categories/*.html`) with the new supplement card, table row, and JSON-LD entry
+- [ ] **Regenerate category pages**: `node supp-db-site/scripts/generate-category-pages.js` — updates all 12 category pillar pages (`categories/*.html`) with the new supplement card, table row, and JSON-LD entry
+- [ ] **Update site-wide stats**: `node supp-db-site/scripts/generate-stats.js` — recomputes totalSupplements, totalCitations, per-category counts from live data; writes `data/site-stats.json` and patches all hardcoded counts in `index.html`
 - [ ] Run `node -e "require('./data/supplements.js')"` (or equivalent syntax check) to verify JS validity
 - [ ] Check browser console for errors on the supplement page, comparison page(s), and the relevant category page
 
@@ -995,14 +996,103 @@ const html=fs.readFileSync('supp-db-site/supplements/{slug}.html','utf8');
 "
 ```
 
-**Step 4 — Regenerate category pages**
+**Step 4 — Regenerate category pages + update site-wide stats**
 ```bash
 node supp-db-site/scripts/generate-category-pages.js
+node supp-db-site/scripts/generate-stats.js
 ```
-This updates all 6 category pillar pages (`categories/*.html`) — required whenever supplements.js changes. The generator reads `data/supplements.js` via `parse-data.js` and rebuilds supplement cards, data tables, tier distributions, JSON-LD, and hero stats from live data.
+`generate-category-pages.js` rebuilds all 12 category pillar pages (`categories/*.html`) — supplement cards, data tables, tier distributions, JSON-LD, hero stats — from live data via `parse-data.js`.
+
+`generate-stats.js` is the **single source of truth** for site-wide counts. It:
+- Reads `data/supplements.js`
+- Computes `totalSupplements`, `totalCitations` (sum of `keyCitations.length`), `avgEvidenceTier`, per-category and per-health-domain counts
+- Writes `data/site-stats.json` (machine-readable reference for future tooling)
+- Patches all hardcoded citation/supplement counts in `index.html` (meta descriptions, hero stats, footer text)
+
+Run with `--dry-run` to preview patches without writing: `node supp-db-site/scripts/generate-stats.js --dry-run`
 
 **Step 5 (optional) — Playwright spot-check**
 Open the generated page in Docker staging and verify visual rendering. Use Playwright MCP to screenshot and check for visual regressions.
+
+---
+
+## Category Taxonomy and Health Domain Reference
+
+### Supplement Categories (12 normalized, with pillar pages)
+
+The database uses **normalized categories** via `parse-data.js` `normalizeCategory()`. When assigning a category to a new supplement, use one of these 12 normalized names. Running `generate-category-pages.js` will automatically include the supplement in its category page.
+
+| Normalized Category | Pillar Page | Current Count | Raw aliases accepted |
+|---|---|---|---|
+| Adaptogens | `categories/adaptogens.html` | 5 | Adaptogen |
+| Amino Acids | `categories/amino-acids.html` | 7 | Amino Acid |
+| Anti-inflammatory | `categories/anti-inflammatory.html` | 2 | — |
+| Antioxidants | `categories/antioxidants.html` | 12 | Antioxidant, Flavonoid |
+| Essential Nutrients | `categories/essential-nutrients.html` | 18 | Vitamin, Mineral, Essential Nutrient, Essential Fatty Acid, B-Vitamin Related, Essential Mineral |
+| Herbal Extracts | `categories/herbal-extracts.html` | 23 | Herbal Extract, Herbal Supplement, Plant Alkaloid |
+| Joint Support | `categories/joint-support.html` | 3 | — |
+| Metabolic Support | `categories/metabolic-support.html` | 2 | — |
+| Nootropics | `categories/nootropics.html` | 10 | Nootropic, Choline Compound, Phospholipid |
+| Performance Enhancers | `categories/performance-enhancers.html` | 8 | Performance Enhancer, Protein |
+| Polyphenols | `categories/polyphenols.html` | 2 | Polyphenol |
+| Sleep Support | `categories/sleep-support.html` | 1 | Sleep Aid |
+
+**Adding a new category:** If a new supplement's category doesn't map to any of the 12 above, add an entry to `CATEGORY_MAP` in `scripts/parse-data.js` and a description to `CATEGORY_DESCRIPTIONS` in `scripts/generate-category-pages.js`. Then add it to `TARGET_CATEGORIES` in that file. Running `generate-category-pages.js` will create the new pillar page automatically.
+
+### Health Domains (20 — dynamically populated in homepage filter)
+
+Health domains are stored in `supplementDatabase.healthDomains[]` in `data/supplements.js`. They drive:
+1. The **homepage filter dropdown** (`#healthDomainFilter`) — dynamically populated by `app.js` ✓ auto-updates
+2. The **guide pillar pages** in `guides/` — human-authored comprehensive pages, NOT auto-generated
+3. The **guide card subtitles** in `index.html` — may have hardcoded supplement counts (use `generate-stats.js` to update)
+
+Current 20 health domains with supplement counts:
+
+| Health Domain | Supplement Count | Guide Page |
+|---|---|---|
+| Memory Enhancement | 40 | `guides/memory-aging.html` |
+| Neuroprotection | 30 | `guides/cognitive-performance.html` |
+| Mood Stabilization | 23 | `guides/mood-support.html` |
+| Stress Resilience | 22 | `guides/stress-resilience.html` |
+| Cardiovascular Health | 22 | `guides/cardiovascular.html` |
+| Blood Sugar Control | 21 | `guides/metabolic-health.html` |
+| Antioxidant Support | 21 | `guides/longevity.html` |
+| Immune System Support | 19 | `guides/immune-function.html` |
+| Focus & Attention | 15 | `guides/cognitive-performance.html` |
+| Energy & Vitality | 15 | `guides/energy-vitality.html` |
+| Anxiety Reduction | 12 | `guides/anxiety-stress.html` |
+| Sleep Quality | 9 | `guides/sleep.html` |
+| Metabolic Support | 8 | `guides/metabolic-health.html` |
+| Eye Health & Vision | 8 | _(no dedicated guide)_ |
+| Joint Health & Mobility | 7 | `guides/joint-health.html` |
+| Digestive Health | 5 | `guides/gut-brain.html` |
+| Protein Synthesis & Recovery | 5 | `guides/recovery.html` |
+| Hormonal Balance | 3 | `guides/mens-health.html` / `guides/womens-health.html` |
+| Anti-Aging | 2 | `guides/longevity.html` |
+| Appetite Control | 1 | _(no dedicated guide)_ |
+
+**Adding a new health domain:** Add the domain to `supplementDatabase.healthDomains[]` in `data/supplements.js`. The homepage filter will auto-include it on next page load. If a guide page is warranted (≥5 supplements, distinct use-case), create `guides/{slug}.html` manually using the existing guide page template.
+
+### Single Source of Truth: Site-Wide Stats
+
+**`data/site-stats.json`** is the machine-readable single source of truth, generated by `generate-stats.js`. It contains:
+```json
+{
+  "generated": "YYYY-MM-DD",
+  "totalSupplements": 93,
+  "totalCitations": 182,
+  "avgEvidenceTier": 2.05,
+  "tierDist": { "1": 15, "2": 58, "3": 20 },
+  "perCategory": { "Herbal Extracts": { "supplements": 23, "citations": 28 }, ... },
+  "perDomain": { "Memory Enhancement": 40, ... }
+}
+```
+
+Any front-end component, static HTML, or documentation that needs a count MUST:
+1. Read from `data/site-stats.json` if loading dynamically, OR
+2. Be regenerated via `generate-stats.js` (which patches hardcoded values in `index.html`)
+
+After any import run, always execute: `node supp-db-site/scripts/generate-stats.js`
 
 ---
 

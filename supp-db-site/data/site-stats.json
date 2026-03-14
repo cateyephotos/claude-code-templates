@@ -1,0 +1,83 @@
+{
+  "generated": "2026-03-14",
+  "totalSupplements": 93,
+  "totalCitations": 182,
+  "avgEvidenceTier": 2.05,
+  "tierDist": {
+    "1": 15,
+    "2": 58,
+    "3": 20
+  },
+  "perCategory": {
+    "Nootropics": {
+      "supplements": 10,
+      "citations": 14
+    },
+    "Anti-inflammatory": {
+      "supplements": 2,
+      "citations": 4
+    },
+    "Adaptogens": {
+      "supplements": 5,
+      "citations": 10
+    },
+    "Essential Nutrients": {
+      "supplements": 18,
+      "citations": 48
+    },
+    "Performance Enhancers": {
+      "supplements": 8,
+      "citations": 12
+    },
+    "Sleep Support": {
+      "supplements": 1,
+      "citations": 2
+    },
+    "Amino Acids": {
+      "supplements": 7,
+      "citations": 19
+    },
+    "Herbal Extracts": {
+      "supplements": 23,
+      "citations": 28
+    },
+    "Antioxidants": {
+      "supplements": 12,
+      "citations": 25
+    },
+    "Polyphenols": {
+      "supplements": 2,
+      "citations": 7
+    },
+    "Metabolic Support": {
+      "supplements": 2,
+      "citations": 4
+    },
+    "Joint Support": {
+      "supplements": 3,
+      "citations": 9
+    }
+  },
+  "perDomain": {
+    "Memory Enhancement": 40,
+    "Focus & Attention": 15,
+    "Sleep Quality": 10,
+    "Anxiety Reduction": 12,
+    "Stress Resilience": 22,
+    "Neuroprotection": 30,
+    "Mood Stabilization": 23,
+    "Cardiovascular Health": 24,
+    "Metabolic Support": 14,
+    "Anti-Aging": 3,
+    "Energy & Vitality": 15,
+    "Joint Health & Mobility": 7,
+    "Protein Synthesis & Recovery": 5,
+    "Immune System Support": 19,
+    "Hormonal Balance": 3,
+    "Eye Health & Vision": 8,
+    "Digestive Health": 5,
+    "Blood Sugar Control": 21,
+    "Appetite Control": 1,
+    "Antioxidant Support": 21
+  }
+}
