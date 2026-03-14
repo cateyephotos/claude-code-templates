@@ -685,8 +685,27 @@
                     </div>
                     <div class="admin-chart-card">
                         <h3 class="admin-chart-title">Model &amp; Pricing Reference</h3>
+                        <!-- Model selector -->
+                        <div class="config-model-selector-row">
+                            <div class="config-model-selector-label">
+                                <span>Active model</span>
+                                <span class="config-model-source-tag" id="model-source-tag"></span>
+                            </div>
+                            <div class="config-model-selector-controls">
+                                <select id="model-select" class="config-model-select" onchange="AdminConfig.onModelSelectChange(this.value)">
+                                    <option value="">Loading…</option>
+                                </select>
+                                <button class="config-btn config-btn-secondary" id="model-fetch-btn" onclick="AdminConfig.fetchModels()" title="Fetch latest models from Anthropic API">
+                                    <i class="fas fa-sync-alt"></i> Refresh
+                                </button>
+                                <button class="config-btn config-btn-primary" id="model-save-btn" onclick="AdminConfig.saveModel()" style="display:none;">
+                                    Save
+                                </button>
+                            </div>
+                            <div id="model-feedback" class="config-key-feedback hidden"></div>
+                        </div>
                         <div id="cfg-model-info" class="config-model-info">
-                            <div class="admin-skeleton" style="height:120px;"></div>
+                            <div class="admin-skeleton" style="height:100px;"></div>
                         </div>
                     </div>
                 </div>

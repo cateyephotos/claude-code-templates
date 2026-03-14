@@ -143,7 +143,7 @@ http.route({
       return new Response("Stripe not configured", { status: 500 });
     }
 
-    const stripe = new Stripe(stripeSecretKey, { apiVersion: "2024-12-18.acacia" });
+    const stripe = new Stripe(stripeSecretKey, { apiVersion: "2025-02-24.acacia" });
 
     let event: Stripe.Event;
     try {
@@ -394,11 +394,13 @@ http.route({
  *     -d '{"email":"you@example.com","secret":"your-bootstrap-secret"}'
  *
  * Or from the browser console on any page:
- *   fetch('https://robust-frog-754.convex.cloud/admin-bootstrap', {
+ *   fetch('https://acoustic-chinchilla-759.convex.site/admin-bootstrap', {
  *     method: 'POST',
  *     headers: {'Content-Type':'application/json'},
  *     body: JSON.stringify({email:'you@example.com', secret:'your-secret'})
  *   }).then(r=>r.json()).then(console.log)
+ *
+ * NOTE: Use .convex.site (not .convex.cloud) — HTTP actions are served at the .site domain.
  *
  * Security: Disable by removing ADMIN_BOOTSTRAP_SECRET env var after use.
  */

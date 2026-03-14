@@ -319,7 +319,7 @@ export const getStackAnalyzerStats = query({
     // Model being used (most recent)
     const recentModel = allAnalyses.length > 0
       ? allAnalyses.sort((a, b) => b.timestamp - a.timestamp)[0].model
-      : "claude-haiku-4-5-20250315";
+      : "claude-haiku-4-5-20251001";
 
     // Credit records: users who have used the feature
     const allCredits = await ctx.db.query("analysisCredits").collect();

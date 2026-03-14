@@ -281,22 +281,38 @@
   // ── Render: Model Info ────────────────────────────────────────
   // WAT = Weighted API Tokens (input×1 + output×5). 1M WAT = $1.00 API cost (Haiku input parity).
   // Profitability floor: avgWAT/analysis × 25 pro analyses / 1M × $1 = API cost per pro user/month.
+  // ── Model selector state ──────────────────────────────────────
+  // Tracks the original selected value so we can show Save only on actual change
+  let _currentModelId = "";
+  const DEFAULT_MODEL = "claude-haiku-4-5-20251001";
+
   function renderModelInfo(model, allTime) {
     const container = el("cfg-model-info");
     if (!container) return;
 
+    const activeModel = model || DEFAULT_MODEL;
+
+    // Initialise the selector with the active model if it hasn't been populated yet
+    const sel = el("model-select");
+    if (sel && sel.options.length <= 1) {
+      // Placeholder until fetchModels() is called — show current model as sole option
+      sel.innerHTML = `<option value="${activeModel}">${activeModel}</option>`;
+      _currentModelId = activeModel;
+    }
+
+    const sourceTag = el("model-source-tag");
+    if (sourceTag && sel) {
+      // Will be updated once fetchModels() loads full list
+      sourceTag.textContent = "";
+    }
+
     const avgWat = allTime.avgWatPerAnalysis || 0;
-    // API cost for one pro user at 25 analyses/month
     const apiCostPerProUser = (avgWat * 25) / 1_000_000;
     const proMarginLabel = avgWat > 0
       ? fmtTokens(avgWat * 25) + " WAT ≈ " + fmtUsd(apiCostPerProUser) + " API/user/mo"
       : "Insufficient data";
 
     container.innerHTML = `
-      <div class="config-model-row">
-        <span class="config-model-row-label">Active model</span>
-        <span class="config-model-row-value">${model || "claude-haiku-4-5-20250315"}</span>
-      </div>
       <div class="config-model-row">
         <span class="config-model-row-label">WAT formula</span>
         <span class="config-model-row-value">input×1 + output×5</span>
@@ -322,6 +338,96 @@
         <span class="config-model-row-value">${fmtTokens(allTime.outputTokens)}</span>
       </div>
     `;
+
+    // Auto-fetch live model list once stats are rendered
+    fetchModels();
+  }
+
+  // ── Model selector functions ──────────────────────────────────
+
+  async function fetchModels() {
+    const sel = el("model-select");
+    const fetchBtn = el("model-fetch-btn");
+    const sourceTag = el("model-source-tag");
+    if (!sel) return;
+
+    if (fetchBtn) fetchBtn.disabled = true;
+    try {
+      const result = await window.SupplementDB.action("adminSettings:fetchAvailableModels", {});
+
+      if (!result.success || !result.models.length) {
+        // Keep current placeholder — surface error subtly
+        if (sourceTag) sourceTag.textContent = result.error ? "⚠ " + result.error : "";
+        return;
+      }
+
+      const selected = result.selectedModel || DEFAULT_MODEL;
+      _currentModelId = selected;
+
+      // Rebuild dropdown with live model list
+      sel.innerHTML = result.models
+        .map((m) => `<option value="${m.id}"${m.id === selected ? " selected" : ""}>${m.name}</option>`)
+        .join("");
+
+      // Tag the source
+      if (sourceTag) {
+        const isDefault = selected === DEFAULT_MODEL && !result.models.find(
+          (m) => m.id === selected && selected !== DEFAULT_MODEL
+        );
+        sourceTag.textContent = isDefault ? "(default)" : "(custom)";
+      }
+
+      // Hide Save until user changes selection
+      const saveBtn = el("model-save-btn");
+      if (saveBtn) saveBtn.style.display = "none";
+
+    } catch (err) {
+      if (sourceTag) sourceTag.textContent = "⚠ Could not fetch models";
+    } finally {
+      if (fetchBtn) fetchBtn.disabled = false;
+    }
+  }
+
+  function onModelSelectChange(value) {
+    const saveBtn = el("model-save-btn");
+    if (!saveBtn) return;
+    // Show Save only when selection differs from what's stored
+    saveBtn.style.display = value !== _currentModelId ? "inline-flex" : "none";
+  }
+
+  async function saveModel() {
+    const sel = el("model-select");
+    const feedback = el("model-feedback");
+    const saveBtn = el("model-save-btn");
+    if (!sel || !feedback) return;
+
+    const value = sel.value;
+    if (!value) return;
+
+    feedback.textContent = "Saving…";
+    feedback.className = "config-key-feedback config-key-feedback-info";
+    feedback.classList.remove("hidden");
+    if (saveBtn) saveBtn.disabled = true;
+
+    try {
+      await window.SupplementDB.mutation("adminSettings:upsertSetting", {
+        key: "ANTHROPIC_MODEL",
+        value,
+      });
+      _currentModelId = value;
+      feedback.textContent = "✅ Model updated to " + value;
+      feedback.className = "config-key-feedback config-key-feedback-success";
+      if (saveBtn) { saveBtn.style.display = "none"; }
+      // Refresh stats so the "Active model" row reflects the change
+      loaded = false;
+      setTimeout(() => { loaded = false; loadConfigSection(); }, 600);
+    } catch (err) {
+      feedback.textContent = "❌ " + (err.message || "Failed to save");
+      feedback.className = "config-key-feedback config-key-feedback-error";
+    } finally {
+      feedback.classList.remove("hidden");
+      if (saveBtn) saveBtn.disabled = false;
+    }
   }
 
   // ── API Key Status ────────────────────────────────────────────
@@ -541,6 +647,9 @@
     saveKey,
     toggleKeyForm,
     testAnthropicKey,
+    fetchModels,
+    saveModel,
+    onModelSelectChange,
   };
 
 })();

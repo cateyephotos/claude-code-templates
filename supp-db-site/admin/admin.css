@@ -1156,6 +1156,58 @@
   font-size: 0.7rem;
 }
 
+/* Model selector row — sits above the metrics table */
+.config-model-selector-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 0 1rem;
+  border-bottom: 1px solid var(--admin-card-border);
+  margin-bottom: 0.75rem;
+}
+
+.config-model-selector-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--admin-text-secondary);
+  font-weight: 500;
+}
+
+.config-model-source-tag {
+  font-size: 0.7rem;
+  color: var(--admin-text-muted);
+  font-style: italic;
+}
+
+.config-model-selector-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.config-model-select {
+  flex: 1;
+  min-width: 0;
+  max-width: 320px;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid var(--admin-card-border);
+  border-radius: 6px;
+  background: var(--admin-bg);
+  color: var(--admin-text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.config-model-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
 /* WAT card sub-label — shows USD equivalent below the WAT value */
 .admin-card-sublabel {
   font-size: 0.7rem;

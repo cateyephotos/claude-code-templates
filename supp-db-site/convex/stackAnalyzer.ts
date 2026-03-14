@@ -302,6 +302,11 @@ export const analyzeStack = action({
       );
     }
     const claude = getClaude(anthropicKey);
+
+    // Resolve model: admin UI DB setting → default
+    const dbModel = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_MODEL" });
+    const model = dbModel || "claude-haiku-4-5-20251001";
+
     const systemPrompt = buildSystemPrompt(args.depth);
     const userMessage = buildUserMessage(
       args.supplements,
@@ -315,7 +320,7 @@ export const analyzeStack = action({
     let response;
     try {
       response = await claude.messages.create({
-        model: "claude-haiku-4-5-20250315",
+        model,
         max_tokens: maxTokens,
         system: systemPrompt,
         messages: [
@@ -385,7 +390,7 @@ export const analyzeStack = action({
       healthGoal: args.healthGoal.id,
       analysisDepth: args.depth,
       result: analysis,
-      model: response.model || "claude-haiku-4-5-20250315",
+      model: response.model || "claude-haiku-4-5-20251001",
       inputTokens,
       outputTokens,
       costUsd,
@@ -393,7 +398,7 @@ export const analyzeStack = action({
 
     return {
       analysis,
-      model: response.model || "claude-haiku-4-5-20250315",
+      model: response.model || "claude-haiku-4-5-20251001",
       tokensUsed: { input: inputTokens, output: outputTokens },
       creditsRemaining: creditResult.remaining,
       creditsUsed: creditResult.usedThisMonth,

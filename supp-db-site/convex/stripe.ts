@@ -22,7 +22,7 @@ function getStripe(): Stripe {
   if (!key) {
     throw new Error("STRIPE_SECRET_KEY environment variable is not set. Configure it in the Convex dashboard.");
   }
-  return new Stripe(key, { apiVersion: "2024-12-18.acacia" });
+  return new Stripe(key, { apiVersion: "2025-02-24.acacia" });
 }
 
 function getSiteUrl(): string {
@@ -155,6 +155,123 @@ export const createPortalSession = action({
       customer: sub.stripeCustomerId,
       return_url: `${siteUrl}/pricing.html`,
     });
+
+    return { url: session.url };
+  },
+});
+
+// ── Guide name lookup ────────────────────────────────────────────────
+const GUIDE_NAMES: Record<string, string> = {
+  sleep: "Sleep Optimization Guide",
+  creatine: "Creatine Evidence Guide",
+  magnesium: "Magnesium Evidence Guide",
+  "vitamin-d": "Vitamin D Evidence Guide",
+  omega3: "Omega-3 Evidence Guide",
+  ashwagandha: "Ashwagandha Evidence Guide",
+  rhodiola: "Rhodiola Rosea Evidence Guide",
+  melatonin: "Melatonin Evidence Guide",
+  "berberine": "Berberine Evidence Guide",
+  "lion-s-mane": "Lion's Mane Evidence Guide",
+};
+
+function getGuideName(slug: string): string {
+  return GUIDE_NAMES[slug] ?? slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ") + " Evidence Guide";
+}
+
+/**
+ * Create a Stripe Checkout Session for a one-time guide PDF purchase.
+ *
+ * Required Convex env vars:
+ *   STRIPE_GUIDE_PRICE_ID — Stripe Price ID for guide PDFs (one-time, not recurring)
+ *                           Create a Product + Price in Stripe dashboard:
+ *                             - Type: One-time
+ *                             - Suggested price: $9.99–$19.99 USD
+ *
+ * The guide slug is passed through metadata so the webhook handler knows
+ * which guide to generate the PDF for.
+ */
+export const createGuideCheckoutSession = action({
+  args: {
+    guideSlug: v.string(),
+  },
+  handler: async (ctx, args): Promise<{ url: string }> => {
+    // Require authentication
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Authentication required. Please sign in first.");
+    }
+
+    const clerkId = identity.subject;
+
+    // Get user from Convex DB
+    const user = await ctx.runQuery(api.users.getByClerkId, { clerkId });
+    if (!user) {
+      throw new Error("User not found. Please try signing in again.");
+    }
+
+    const stripe = getStripe();
+    const siteUrl = getSiteUrl();
+
+    const priceId = process.env.STRIPE_GUIDE_PRICE_ID;
+    if (!priceId) {
+      throw new Error(
+        "STRIPE_GUIDE_PRICE_ID environment variable is not set. " +
+          "Create a one-time Price in the Stripe dashboard and add it to Convex env vars."
+      );
+    }
+
+    // Validate guide slug (alphanumeric + hyphens only)
+    if (!/^[a-z0-9-]+$/.test(args.guideSlug)) {
+      throw new Error("Invalid guide slug.");
+    }
+
+    const guideName = getGuideName(args.guideSlug);
+
+    // Look up or create Stripe customer
+    let customerId: string | undefined;
+    const customers = await stripe.customers.list({
+      email: user.email,
+      limit: 1,
+    });
+    if (customers.data.length > 0) {
+      customerId = customers.data[0].id;
+    }
+
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
+      mode: "payment",
+      line_items: [
+        {
+          price: priceId,
+          quantity: 1,
+        },
+      ],
+      success_url: `${siteUrl}/guide-success.html?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${siteUrl}/guides/${args.guideSlug}.html?cancelled=true`,
+      client_reference_id: clerkId,
+      metadata: {
+        type: "guide_purchase",
+        userId: clerkId,
+        guideSlug: args.guideSlug,
+        guideName,
+      },
+      // Enable promotion codes for guide purchases too
+      allow_promotion_codes: true,
+    };
+
+    if (customerId) {
+      sessionParams.customer = customerId;
+    } else {
+      sessionParams.customer_email = user.email;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
+
+    if (!session.url) {
+      throw new Error("Failed to create checkout session. Please try again.");
+    }
 
     return { url: session.url };
   },
