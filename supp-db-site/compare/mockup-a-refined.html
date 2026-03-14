@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup A — Refined Layout | Lion's Mane vs Bacopa | SupplementDB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ══════════════════════════════════════════
+           MOCKUP A — Evolutionary Refinement
+           Same design language, fixed layout gaps
+           ══════════════════════════════════════════ */
+
+        :root {
+            --accent: #2d5a3d;
+            --accent-light: #3a7a52;
+            --accent-bg: #f0f7f2;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --bg-page: #fafaf8;
+            --bg-card: #ffffff;
+            --bg-nav: #1a1a2e;
+            --radius: 8px;
+            --serif: 'Source Serif 4', Georgia, serif;
+            --sans: 'DM Sans', system-ui, sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg-page);
+            color: var(--text-primary);
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            background: var(--bg-nav);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .nav-brand {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .nav-links a:hover { color: #fff; }
+
+        /* ── Content Body — THE KEY FIX ── */
+        .content-body {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ── Breadcrumb ── */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding: 1rem 0;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb .sep { color: var(--border); font-size: 0.65rem; }
+        .breadcrumb .current { color: var(--text-secondary); font-weight: 500; }
+
+        /* ── Guide Hero ── */
+        .guide-hero {
+            background: linear-gradient(135deg, #fff 0%, var(--accent-bg) 100%);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 2rem 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .guide-hero h1 {
+            font-family: var(--serif);
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.25;
+            margin-bottom: 0.625rem;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            max-width: 600px;
+        }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .hero-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 0.3rem 0.75rem;
+        }
+        .hero-stat i { color: var(--accent); }
+
+        /* ── Share Bar ── */
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            flex-wrap: wrap;
+            padding: 0.875rem 0 0;
+            margin-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .share-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: var(--sans);
+            font-size: 0.775rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+        /* ── Trust Bar ── */
+        .trust-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0.625rem 1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin: 0 0 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .trust-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.775rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .trust-item i { color: var(--accent); }
+        .trust-item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .trust-divider { width: 1px; height: 1rem; background: var(--border); }
+
+        /* ── THE KEY LAYOUT FIX — Guide Grid ── */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 3rem;
+            align-items: start;
+            padding: 1.5rem 0 4rem;
+        }
+
+        /* ── Sidebar ── */
+        .guide-sidebar {
+            position: sticky;
+            top: 76px;
+            max-height: calc(100vh - 96px);
+            overflow-y: auto;
+        }
+        .sidebar-toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.125rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-toc h4 {
+            font-family: var(--sans);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.875rem;
+        }
+        .sidebar-toc ul { list-style: none; }
+        .sidebar-toc a {
+            display: block;
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.35rem 0.75rem;
+            border-left: 2px solid transparent;
+            border-radius: 0 4px 4px 0;
+            transition: all 0.15s;
+            line-height: 1.4;
+            margin-bottom: 1px;
+        }
+        .sidebar-toc a:hover,
+        .sidebar-toc a.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        /* ── Main Content — constrained reading width ── */
+        .guide-main { min-width: 0; }
+
+        /* ── Content Sections ── */
+        .content-section {
+            margin-bottom: 2.75rem;
+            scroll-margin-top: 80px;
+        }
+        .content-section h2 {
+            font-family: var(--serif);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-bg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .content-section h2 i { font-size: 0.9em; }
+        .content-section h3 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.625rem;
+        }
+        .content-section p {
+            color: var(--text-secondary);
+            margin-bottom: 0.875rem;
+        }
+        .content-section ul,
+        .content-section ol {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            margin-bottom: 0.875rem;
+        }
+        .content-section li { margin-bottom: 0.4rem; line-height: 1.65; }
+
+        /* ── Verdict / Highlight Box ── */
+        .verdict-box {
+            background: var(--accent-bg);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1.25rem 1.5rem;
+        }
+        .verdict-box p {
+            color: var(--text-primary) !important;
+            margin: 0 !important;
+            font-size: 0.975rem;
+            line-height: 1.75;
+        }
+
+        /* ── Tables ── */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin: 1rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            background: #fff;
+        }
+        th {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.775rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) td { background: #f9fafb; }
+
+        /* ── Compare Cards ── */
+        .compare-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.125rem;
+            margin: 1.25rem 0;
+        }
+        .compare-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .compare-card-title {
+            font-family: var(--serif);
+            font-size: 0.975rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        .compare-card-title a { color: inherit; text-decoration: none; }
+        .compare-card-meta { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+        .compare-card h4 {
+            font-size: 0.775rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+        .compare-card ul {
+            font-size: 0.82rem;
+            padding-left: 1rem;
+            margin: 0;
+            color: var(--text-secondary);
+        }
+        .compare-card li { margin-bottom: 0.3rem; }
+
+        /* ── Benefits Split ── */
+        .benefits-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.125rem;
+            margin: 1.25rem 0;
+        }
+
+        /* ── Stacking Callout ── */
+        .stack-callout {
+            background: var(--accent-bg);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1.125rem 1.5rem;
+            margin: 1rem 0;
+        }
+        .stack-callout p { margin: 0; color: var(--text-primary); font-size: 0.925rem; line-height: 1.75; }
+
+        /* ── Related Links ── */
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 0.625rem;
+            margin: 1rem 0;
+        }
+        .related-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.15s;
+        }
+        .related-link:hover { border-color: var(--accent); background: var(--accent-bg); color: var(--accent); }
+        .related-link i { color: var(--accent); }
+
+        /* ── Disclaimer ── */
+        .disclaimer {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin-top: 2rem;
+        }
+        .disclaimer h3 {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.375rem;
+        }
+        .disclaimer p { font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.65; }
+
+        /* ── Tier Badge ── */
+        .tier-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 100px;
+            white-space: nowrap;
+            vertical-align: middle;
+            margin-left: 0.25rem;
+        }
+
+        /* ── References ── */
+        .ref-list {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-left: 1.5rem;
+            margin: 0.75rem 0;
+        }
+        .ref-list li { margin-bottom: 0.5rem; line-height: 1.6; }
+        .ref-list a { color: var(--accent); }
+
+        /* ── Footer ── */
+        .site-footer {
+            background: var(--bg-nav);
+            color: rgba(255,255,255,0.6);
+            padding: 2.5rem 1.5rem;
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .site-footer strong { color: #fff; }
+        .site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.75rem; }
+        .site-footer a:hover { color: #fff; }
+        .footer-links { margin: 1rem 0; }
+
+        /* ── Mockup Badge ── */
+        .mockup-badge {
+            position: fixed;
+            bottom: 1.25rem;
+            right: 1.25rem;
+            background: var(--bg-nav);
+            color: #fff;
+            padding: 0.5rem 1.125rem;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            z-index: 200;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 920px) {
+            .guide-layout { grid-template-columns: 1fr; }
+            .guide-sidebar { display: none; }
+            .compare-cards,
+            .benefits-split { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .guide-hero { padding: 1.25rem; }
+            .guide-hero h1 { font-size: 1.4rem; }
+            .content-body { padding: 0 1rem; }
+            .content-section h2 { font-size: 1.2rem; }
+            th, td { padding: 0.5rem 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="mockup-badge">Mockup A — Evolutionary</div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">
+            <i class="fas fa-pills"></i>
+            SupplementDB
+        </a>
+        <div class="nav-links">
+            <a href="../guides/sleep.html" class="hidden-mobile">Sleep Guide</a>
+            <a href="../index.html"><i class="fas fa-arrow-left"></i> Database</a>
+        </div>
+    </div>
+</nav>
+
+<div class="content-body">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep"><i class="fas fa-chevron-right"></i></span>
+        <a href="../index.html#guides">Compare</a>
+        <span class="sep"><i class="fas fa-chevron-right"></i></span>
+        <span class="current">Lion's Mane Mushroom vs Bacopa monnieri</span>
+    </nav>
+
+    <!-- Hero -->
+    <header class="guide-hero">
+        <h1>Lion's Mane vs Bacopa Monnieri: Evidence-Based Comparison for Cognitive Enhancement</h1>
+        <p class="hero-subtitle">An evidence-based head-to-head comparison for cognitive enhancement — analyzing clinical evidence, mechanisms, dosages, and safety profiles to help you make an informed decision.</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <i class="fas fa-flask"></i>
+                Lion's Mane:
+                <span class="tier-badge" style="background:#2563eb;color:#fff;">Tier 2: Moderate Evidence</span>
+            </div>
+            <div class="hero-stat">
+                <i class="fas fa-flask"></i>
+                Bacopa:
+                <span class="tier-badge" style="background:#2563eb;color:#fff;">Tier 2: Moderate Evidence</span>
+            </div>
+            <div class="hero-stat"><i class="fas fa-book-open"></i> 4+ Citations</div>
+            <div class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-10</div>
+        </div>
+        <div class="share-bar">
+            <span class="share-label">Share</span>
+            <button class="share-btn"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+            <button class="share-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+            <button class="share-btn"><i class="fa-brands fa-facebook"></i> Facebook</button>
+            <button class="share-btn"><i class="fas fa-link"></i> Copy Link</button>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <span class="trust-item"><i class="fas fa-check-circle"></i> 4+ Verified Citations</span>
+        <span class="trust-divider"></span>
+        <span class="trust-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+        <span class="trust-divider"></span>
+        <span class="trust-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+        <span class="trust-divider"></span>
+        <span class="trust-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
+    </div>
+
+    <!-- Guide Layout -->
+    <div class="guide-layout">
+
+        <!-- Sidebar TOC -->
+        <aside class="guide-sidebar">
+            <nav class="sidebar-toc">
+                <h4>In This Guide</h4>
+                <ul>
+                    <li><a href="#verdict" class="active">Quick Verdict</a></li>
+                    <li><a href="#at-a-glance">At a Glance</a></li>
+                    <li><a href="#evidence">Evidence Comparison</a></li>
+                    <li><a href="#benefits">Benefits Comparison</a></li>
+                    <li><a href="#mechanisms">Mechanisms of Action</a></li>
+                    <li><a href="#dosage">Dosage &amp; Timing</a></li>
+                    <li><a href="#safety">Safety Profiles</a></li>
+                    <li><a href="#who-should-choose">Who Should Choose Which</a></li>
+                    <li><a href="#stacking">Can You Stack Them?</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="guide-main">
+
+            <!-- Quick Verdict -->
+            <section class="content-section" id="verdict">
+                <h2><i class="fas fa-gavel"></i> Quick Verdict: Lion's Mane vs Bacopa monnieri</h2>
+                <div class="verdict-box">
+                    <p>Both Lion's Mane Mushroom and Bacopa monnieri are Tier 2 (Moderate Evidence) nootropics that support cognitive function through distinct and complementary mechanisms. Bacopa monnieri has stronger evidence for memory consolidation and learning facilitation, working through acetylcholinesterase inhibition and synaptic transmission enhancement — though it requires 8–12 weeks for full effects. Lion's Mane is unique among nootropics for stimulating nerve growth factor (NGF) synthesis, supporting neurogenesis and nerve regeneration. Choose Bacopa for proven memory enhancement; choose Lion's Mane for neurotrophic support and long-term neuroprotection.</p>
+                </div>
+            </section>
+
+            <!-- At a Glance -->
+            <section class="content-section" id="at-a-glance">
+                <h2><i class="fas fa-table"></i> At a Glance</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Lion's Mane Mushroom</th>
+                                <th>Bacopa monnieri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Evidence Tier</strong></td>
+                                <td><span class="tier-badge" style="background:#2563eb;color:#fff;">Tier 2: Moderate</span></td>
+                                <td><span class="tier-badge" style="background:#2563eb;color:#fff;">Tier 2: Moderate</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Category</strong></td>
+                                <td>Nootropics</td>
+                                <td>Nootropics</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scientific Name</strong></td>
+                                <td><em>Hericium erinaceus</em></td>
+                                <td><em>Bacopa monnieri</em></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clinical Dosage</strong></td>
+                                <td>500–1000 mg/day (standardized extract)</td>
+                                <td>300 mg/day (55% bacosides)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key Studies</strong></td>
+                                <td>2 citations</td>
+                                <td>2 citations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Benefits</strong></td>
+                                <td>NGF stimulation; Neuroprotection; Memory support</td>
+                                <td>Memory enhancement; Attention; Learning facilitation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Side Effects</strong></td>
+                                <td>Mild skin rash (rare), GI upset</td>
+                                <td>Mild GI upset, Nausea, Headache</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Drug Interactions</strong></td>
+                                <td>None known</td>
+                                <td>May enhance cholinesterase inhibitors</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Evidence Comparison -->
+            <section class="content-section" id="evidence">
+                <h2><i class="fas fa-chart-bar"></i> Evidence Comparison</h2>
+                <div class="compare-cards">
+                    <div class="compare-card">
+                        <div class="compare-card-title">
+                            <a href="../supplements/lion-s-mane-mushroom.html">Lion's Mane Mushroom</a>
+                            <span class="tier-badge" style="background:#2563eb;color:#fff;">Tier 2</span>
+                        </div>
+                        <div class="compare-card-meta">Nootropics · 2 key citations</div>
+                        <h4>Studied Effects:</h4>
+                        <ul>
+                            <li><strong>Cognition (MMSE):</strong> +1.17 weighted mean increase (Menon 2025, 5 RCTs)</li>
+                            <li><strong>Alzheimer's prevention:</strong> Significant MMSE &amp; CASI improvement vs placebo (Li 2020, n=41)</li>
+                            <li><strong>Acute cognition:</strong> Improved Stroop task within 60 min (Docherty 2023, n=41)</li>
+                            <li><strong>Nerve regeneration:</strong> Strong preclinical (erinacine A bioavailability 24.39%)</li>
+                        </ul>
+                    </div>
+                    <div class="compare-card">
+                        <div class="compare-card-title">
+                            <a href="../supplements/bacopa-monnieri.html">Bacopa monnieri</a>
+                            <span class="tier-badge" style="background:#2563eb;color:#fff;">Tier 2</span>
+                        </div>
+                        <div class="compare-card-meta">Nootropics · 2 key citations</div>
+                        <h4>Studied Effects:</h4>
+                        <ul>
+                            <li><strong>Memory:</strong> Large effect (d=0.95) for word recall</li>
+                            <li><strong>Attention:</strong> Medium effect (d=0.52) for working memory</li>
+                            <li><strong>High-dose working memory:</strong> SMD=2.03 at ≥600 mg/day (Tiemtad 2026, 29 RCTs)</li>
+                            <li><strong>Executive function:</strong> Ranked #1 in elderly (SUCRA 91.3%; Feng 2026)</li>
+                            <li><strong>Stress reactivity:</strong> Significant reduction at 300 mg (Lopresti 2025)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Comparison -->
+            <section class="content-section" id="benefits">
+                <h2><i class="fas fa-check-double"></i> Benefits Comparison</h2>
+                <h3>Shared Benefits</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lion's Mane Mushroom</th>
+                                <th>Bacopa monnieri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Neuroprotection</td><td>Neuroprotection</td></tr>
+                            <tr><td>Memory support</td><td>Memory enhancement</td></tr>
+                            <tr><td>Cognitive enhancement in MCI</td><td>Memory enhancement</td></tr>
+                            <tr><td>Mood and anxiety improvement</td><td>Attention improvement</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="benefits-split">
+                    <div>
+                        <h3>Unique to Lion's Mane</h3>
+                        <ul class="content-section">
+                            <li>Nerve growth factor stimulation</li>
+                            <li>Digestive health</li>
+                            <li>Immune support</li>
+                            <li>Nerve regeneration</li>
+                            <li>Gut microbiota diversity</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Unique to Bacopa monnieri</h3>
+                        <ul class="content-section">
+                            <li>Learning facilitation</li>
+                            <li>Stress management</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mechanisms of Action -->
+            <section class="content-section" id="mechanisms">
+                <h2><i class="fas fa-cogs"></i> Mechanisms of Action</h2>
+                <div class="compare-cards">
+                    <div class="compare-card">
+                        <div class="compare-card-title"><a href="../supplements/lion-s-mane-mushroom.html">Lion's Mane Mushroom</a></div>
+                        <ol style="font-size:0.875rem;padding-left:1.25rem;margin:0.75rem 0;color:var(--text-secondary);">
+                            <li style="margin-bottom:0.4rem;">NGF (Nerve Growth Factor) stimulation</li>
+                            <li style="margin-bottom:0.4rem;">Neurogenesis promotion</li>
+                            <li style="margin-bottom:0.4rem;">Myelin regeneration</li>
+                            <li>Neuroprotective compounds (hericenones, erinacines)</li>
+                        </ol>
+                    </div>
+                    <div class="compare-card">
+                        <div class="compare-card-title"><a href="../supplements/bacopa-monnieri.html">Bacopa monnieri</a></div>
+                        <ol style="font-size:0.875rem;padding-left:1.25rem;margin:0.75rem 0;color:var(--text-secondary);">
+                            <li style="margin-bottom:0.4rem;">Acetylcholinesterase inhibition</li>
+                            <li style="margin-bottom:0.4rem;">Antioxidant neuroprotection</li>
+                            <li style="margin-bottom:0.4rem;">Enhanced synaptic transmission</li>
+                            <li>BDNF and neuroplasticity enhancement</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dosage & Timing -->
+            <section class="content-section" id="dosage">
+                <h2><i class="fas fa-prescription-bottle"></i> Dosage &amp; Timing</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Lion's Mane Mushroom</th>
+                                <th>Bacopa monnieri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Clinical Dosage</strong></td>
+                                <td>500–1000 mg/day (standardized extract)</td>
+                                <td>300 mg/day (standardized to 55% bacosides)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Safety Profiles -->
+            <section class="content-section" id="safety">
+                <h2><i class="fas fa-shield-alt"></i> Safety Profiles</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Safety Aspect</th>
+                                <th>Lion's Mane Mushroom</th>
+                                <th>Bacopa monnieri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Common Side Effects</strong></td>
+                                <td>Mild skin rash (rare), GI upset, Contact dermatitis</td>
+                                <td>Mild GI upset, Nausea, Headache</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Drug Interactions</strong></td>
+                                <td>None known</td>
+                                <td>May enhance effects of cholinesterase inhibitors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contraindications</strong></td>
+                                <td>Mushroom allergies</td>
+                                <td>Pregnancy, Breastfeeding</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Who Should Choose Which -->
+            <section class="content-section" id="who-should-choose">
+                <h2><i class="fas fa-user-check"></i> Who Should Choose Which?</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>If Your Goal Is…</th>
+                                <th>Choose</th>
+                                <th>Why</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Memory &amp; learning</strong></td>
+                                <td><strong>Bacopa monnieri</strong></td>
+                                <td style="font-size:0.825rem;">Strongest evidence for memory consolidation and learning facilitation through cholinergic enhancement; multiple RCTs in healthy adults.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Neurogenesis &amp; nerve repair</strong></td>
+                                <td><strong>Lion's Mane</strong></td>
+                                <td style="font-size:0.825rem;">Unique ability to stimulate NGF synthesis; may support nerve regeneration and myelination.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Age-related cognitive decline</strong></td>
+                                <td><strong>Both viable</strong></td>
+                                <td style="font-size:0.825rem;">Bacopa supports memory retention while Lion's Mane may support structural brain health through neurotrophic factors.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Students &amp; exam prep</strong></td>
+                                <td><strong>Bacopa monnieri</strong></td>
+                                <td style="font-size:0.825rem;">Better evidence for attention, working memory, and information processing speed in healthy young adults.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Long-term neuroprotection</strong></td>
+                                <td><strong>Lion's Mane</strong></td>
+                                <td style="font-size:0.825rem;">NGF stimulation may support long-term neuronal health and resilience; emerging evidence for mood and immune modulation.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anxiety alongside cognition</strong></td>
+                                <td><strong>Bacopa monnieri</strong></td>
+                                <td style="font-size:0.825rem;">Has demonstrated anxiolytic properties alongside cognitive benefits in clinical trials.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Stacking -->
+            <section class="content-section" id="stacking">
+                <h2><i class="fas fa-layer-group"></i> Can You Stack Lion's Mane and Bacopa?</h2>
+                <div class="stack-callout">
+                    <p>Yes — Lion's Mane and Bacopa work through complementary mechanisms and can be safely combined. Lion's Mane stimulates NGF synthesis (neurotrophic pathway) while Bacopa modulates acetylcholinesterase and synaptic transmission (cholinergic pathway). This combination addresses both structural neuronal growth and neurochemical signaling for comprehensive cognitive support. Standard dosing: Lion's Mane 500–1000 mg (fruiting body extract) and Bacopa 300 mg (55% bacosides) with meals. No known adverse interactions between these compounds.</p>
+                </div>
+            </section>
+
+            <!-- Related Content -->
+            <section class="content-section" id="related">
+                <h2><i class="fas fa-link"></i> Related Content</h2>
+                <div class="related-grid">
+                    <a href="../guides/cognitive-performance.html" class="related-link">
+                        <i class="fas fa-book-reader"></i>
+                        <strong>Cognitive Performance Guide</strong>
+                    </a>
+                    <a href="../categories/nootropics.html" class="related-link">
+                        <i class="fas fa-th-large"></i>
+                        <strong>Nootropics Category</strong>
+                    </a>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section class="content-section" id="references">
+                <h2><i class="fas fa-book"></i> References</h2>
+                <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:0.75rem;">Key citations from the SupplementDB evidence database.</p>
+                <h3><a href="../supplements/lion-s-mane-mushroom.html" style="color:inherit;text-decoration:none;">Lion's Mane Mushroom</a> (2 key citations)</h3>
+                <ol class="ref-list">
+                    <li>Menon et al. (2025). Benefits, side effects, and uses of <em>Hericium erinaceus</em> as a supplement: a systematic review. DOI: <a href="https://doi.org/10.3389/fnut.2025.1641246" target="_blank">10.3389/fnut.2025.1641246</a></li>
+                    <li>Docherty et al. (2023). The Acute and Chronic Effects of Lion's Mane Mushroom Supplementation on Cognitive Function, Stress and Mood in Young Adults. DOI: <a href="https://doi.org/10.3390/nu15224842" target="_blank">10.3390/nu15224842</a></li>
+                </ol>
+                <h3><a href="../supplements/bacopa-monnieri.html" style="color:inherit;text-decoration:none;">Bacopa monnieri</a> (2 key citations)</h3>
+                <ol class="ref-list">
+                    <li>Tiemtad S, et al. (2026). Bacopa monnieri versus Ginkgo biloba for enhancing cognitive function: a network meta-analysis. DOI: <a href="https://doi.org/10.1016/j.phymed.2026.157915" target="_blank">10.1016/j.phymed.2026.157915</a></li>
+                    <li>Roodenrys S, et al. (2002). Chronic effects of Brahmi (Bacopa monnieri) on human memory. DOI: <a href="https://doi.org/10.1016/S0893-133X(01)00419-5" target="_blank">10.1016/S0893-133X(01)00419-5</a></li>
+                </ol>
+            </section>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <h3><i class="fas fa-exclamation-triangle" style="color:#d97706;margin-right:0.4rem;"></i> Medical Disclaimer</h3>
+                <p>This comparison is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Always consult your physician before starting any new supplement regimen.</p>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div style="max-width:800px;margin:0 auto;">
+        <p style="margin-bottom:0.5rem;"><strong>SupplementDB</strong> — Evidence-based supplement research</p>
+        <p style="margin-bottom:1rem;">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+        <div class="footer-links">
+            <a href="../index.html">Database</a>
+            <a href="../about.html">About</a>
+            <a href="../methodology.html">Methodology</a>
+            <a href="../faq.html">FAQ</a>
+            <a href="../legal/terms.html">Terms</a>
+            <a href="../legal/privacy.html">Privacy</a>
+        </div>
+        <p>© 2026 SupplementDB. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Sidebar active link on scroll
+    const links = document.querySelectorAll('.sidebar-toc a');
+    const sections = Array.from(links).map(l => {
+        const id = l.getAttribute('href').replace('#','');
+        return { el: document.getElementById(id), link: l };
+    }).filter(s => s.el);
+
+    function updateActive() {
+        let current = sections[0];
+        sections.forEach(s => {
+            if (s.el && s.el.getBoundingClientRect().top <= 100) current = s;
+        });
+        links.forEach(l => l.classList.remove('active'));
+        if (current) current.link.classList.add('active');
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+</script>
+
+</body>
+</html>
