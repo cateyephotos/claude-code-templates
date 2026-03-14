@@ -73,7 +73,6 @@ const CATEGORY_DESCRIPTIONS = {
     },
     'Herbal Extracts': {
         short: 'Plant-derived supplements with traditional and modern clinical evidence',
-        short: 'Plant-derived supplements with traditional and modern clinical evidence',
         intro: 'Herbal extracts represent one of the oldest forms of supplementation, with many compounds having centuries of traditional use now validated by modern clinical research. This category encompasses a diverse range of plant-derived compounds, from adaptogens such as Ginkgo Biloba to metabolic regulators such as Berberine, each studied for distinct health domains including cognitive function, cardiovascular health, immune support, and metabolic regulation.',
         safety: 'Most herbal extracts in this category carry favorable safety profiles when used at studied dosages. However, several key considerations apply: drug interactions are common with herbs that affect cytochrome P450 enzymes (notably Ginkgo Biloba, Milk Thistle, and Berberine); standardization varies significantly between products — always verify extract standardization matches the form used in clinical studies; and pregnant or breastfeeding individuals should consult healthcare providers before using any herbal supplement.',
         useCases: 'Cognitive support, cardiovascular health, immune modulation, blood sugar regulation, liver support, anti-inflammatory effects, and adaptogenic stress resilience.'
