@@ -22,7 +22,9 @@
   // Reads key from <meta name="clerk-key"> — Docker entrypoint substitutes __CLERK_PUBLISHABLE_KEY__
   // The Clerk CDN script is NOT included in HTML to prevent auto-boot errors.
   // Instead, auth.js dynamically loads it only when a valid key is present.
-  const CLERK_CDN_URL = "https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js";
+  // Pinned to @4 — v4 exports window.Clerk as a class (no auto-boot), supports full UI components.
+  // Do NOT use @latest: v5+ auto-boots on script load and requires a different init path.
+  const CLERK_CDN_URL = "https://unpkg.com/@clerk/clerk-js@4/dist/clerk.browser.js";
   const clerkMeta = document.querySelector('meta[name="clerk-key"]');
   const rawKey = clerkMeta?.content || "";
   const CLERK_PUBLISHABLE_KEY = rawKey.startsWith("pk_") ? rawKey : "";
@@ -137,11 +139,15 @@
   };
 
   // ── Dynamic script loader ─────────────────────────────────────
-  function loadScript(src) {
+  // Pass publishableKey so Clerk v5+ auto-boot can find it via data-clerk-publishable-key.
+  function loadScript(src, publishableKey) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
       script.src = src;
       script.crossOrigin = "anonymous";
+      if (publishableKey) {
+        script.setAttribute("data-clerk-publishable-key", publishableKey);
+      }
       script.onload = resolve;
       script.onerror = () => reject(new Error("[Auth] Failed to load Clerk CDN from " + src));
       document.head.appendChild(script);
@@ -166,17 +172,29 @@
     }
 
     try {
-      // Dynamically load Clerk CDN only when we have a valid key
+      // Dynamically load Clerk CDN with the publishable key as a script attribute.
+      // Clerk v5+ uses data-clerk-publishable-key for auto-boot; v4 ignores the attribute
+      // and expects new Clerk(key) instead.
       if (typeof window.Clerk === "undefined") {
-        await loadScript(CLERK_CDN_URL);
+        await loadScript(CLERK_CDN_URL, CLERK_PUBLISHABLE_KEY);
       }
 
       if (typeof window.Clerk === "undefined") {
         throw new Error("Clerk CDN loaded but window.Clerk is not defined");
       }
 
-      const clerk = new window.Clerk(CLERK_PUBLISHABLE_KEY);
-      await clerk.load();
+      // Clerk v4 exports the class as window.Clerk (typeof === "function") — instantiate manually.
+      // Clerk v5+ exports an already-created instance (typeof === "object") — call .load() directly.
+      let clerk;
+      if (typeof window.Clerk === "function") {
+        // v4 style
+        clerk = new window.Clerk(CLERK_PUBLISHABLE_KEY);
+        await clerk.load();
+      } else {
+        // v5+ style — instance was created during auto-boot with data-clerk-publishable-key
+        await window.Clerk.load();
+        clerk = window.Clerk;
+      }
 
       state.clerk = clerk;
       state.isLoaded = true;
