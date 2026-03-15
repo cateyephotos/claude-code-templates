@@ -84,7 +84,17 @@
   }
 
   function applyGate() {
-    if (gateApplied) return;
+    if (gateApplied) {
+      // Gate CSS is already applied — just refresh the overlay content to reflect
+      // the current auth state. This handles the case where the overlay was created
+      // before auth loaded (showing anonymous CTA) and now needs to show the correct
+      // signed-in CTA (e.g., "Upgrade to Pro" instead of "Start Free Account").
+      const existingOverlay = document.getElementById(GATE_ID);
+      if (existingOverlay) {
+        existingOverlay.replaceWith(createGateOverlay());
+      }
+      return;
+    }
 
     const contentEl = findContentElement();
     if (!contentEl) return;
@@ -109,11 +119,9 @@
     contentEl.classList.add("content-gated");
     contentEl.style.maxHeight = visibleHeight + "px";
 
-    // Insert gate overlay if not already present
-    if (!document.getElementById(GATE_ID)) {
-      const overlay = createGateOverlay();
-      contentEl.parentNode.insertBefore(overlay, contentEl.nextSibling);
-    }
+    // Insert gate overlay
+    const overlay = createGateOverlay();
+    contentEl.parentNode.insertBefore(overlay, contentEl.nextSibling);
 
     gateApplied = true;
 

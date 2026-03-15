@@ -123,7 +123,142 @@ export const sendConfirmationEmail = internalAction({
   },
 });
 
-// ── Welcome Email ────────────────────────────────────────────
+// ── Guide Download Email ─────────────────────────────────────
+
+export const sendGuideDownloadEmail = internalAction({
+  args: {
+    email: v.string(),
+    guideName: v.string(),
+    guideSlug: v.string(),
+    sessionId: v.string(),
+    amountTotal: v.number(),
+    currency: v.string(),
+  },
+  handler: async (_ctx, args) => {
+    const resend = getResend();
+    const siteUrl = getSiteUrl();
+    const downloadUrl = `${siteUrl}/guide-success.html?session_id=${args.sessionId}`;
+
+    const formattedAmount = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: args.currency.toUpperCase(),
+    }).format(args.amountTotal / 100);
+
+    try {
+      const { data, error } = await resend.emails.send({
+        from: getFromAddress(),
+        to: [args.email],
+        subject: `Your ${args.guideName} is ready to download`,
+        html: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background-color:#0d1117;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#0d1117;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:#161b22;border-radius:12px;border:1px solid rgba(99,102,241,0.15);overflow:hidden;">
+          <!-- Header -->
+          <tr>
+            <td style="padding:32px 32px 24px;text-align:center;border-bottom:1px solid rgba(99,102,241,0.1);">
+              <span style="font-size:24px;margin-right:8px;">&#128138;</span>
+              <span style="color:#f0f6fc;font-size:20px;font-weight:700;letter-spacing:-0.3px;">SupplementDB</span>
+            </td>
+          </tr>
+          <!-- Body -->
+          <tr>
+            <td style="padding:32px;">
+              <div style="text-align:center;margin-bottom:24px;">
+                <span style="font-size:48px;">&#128196;</span>
+              </div>
+              <h1 style="color:#f0f6fc;font-size:22px;font-weight:600;margin:0 0 16px;line-height:1.3;text-align:center;">
+                Your PDF is ready!
+              </h1>
+              <p style="color:#8b949e;font-size:15px;line-height:1.6;margin:0 0 8px;">
+                Thank you for your purchase. Your copy of <strong style="color:#c9d1d9;">${args.guideName}</strong> is now available for download.
+              </p>
+              <p style="color:#484f58;font-size:13px;line-height:1.5;margin:0 0 24px;">
+                ${formattedAmount} ${args.currency.toUpperCase()} &middot; One-time purchase
+              </p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="padding:8px 0 24px;">
+                    <a href="${downloadUrl}" style="display:inline-block;background:linear-gradient(135deg,#4f46e5,#6366f1);color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;padding:14px 32px;border-radius:8px;">
+                      Download Your PDF
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#0d1117;border-radius:8px;margin-bottom:24px;">
+                <tr>
+                  <td style="padding:16px 20px;">
+                    <p style="color:#8b949e;font-size:13px;font-weight:600;margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">
+                      What's inside
+                    </p>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="padding:6px 0;color:#c9d1d9;font-size:13px;line-height:1.5;">
+                          <span style="color:#4f46e5;margin-right:8px;">&#9679;</span>
+                          Full evidence review with citations
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:6px 0;color:#c9d1d9;font-size:13px;line-height:1.5;">
+                          <span style="color:#4f46e5;margin-right:8px;">&#9679;</span>
+                          Dosage protocols and timing guidance
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:6px 0;color:#c9d1d9;font-size:13px;line-height:1.5;">
+                          <span style="color:#4f46e5;margin-right:8px;">&#9679;</span>
+                          Safety profile and interactions
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding:6px 0;color:#c9d1d9;font-size:13px;line-height:1.5;">
+                          <span style="color:#4f46e5;margin-right:8px;">&#9679;</span>
+                          Quality sourcing recommendations
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <p style="color:#484f58;font-size:12px;line-height:1.5;margin:0;text-align:center;">
+                The download link above will take you to your personalized download page. Sign in with the same account you used at checkout.
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding:20px 32px;border-top:1px solid rgba(99,102,241,0.1);text-align:center;">
+              <p style="color:#484f58;font-size:12px;margin:0;">
+                SupplementDB &middot; Evidence-based supplement research
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`,
+      });
+
+      if (error) {
+        console.error(`Failed to send guide download email to ${args.email}:`, error);
+      } else {
+        console.log(`Guide download email sent to ${args.email} for ${args.guideSlug} (id: ${data?.id})`);
+      }
+    } catch (error) {
+      console.error(`Error sending guide download email to ${args.email}:`, error);
+    }
+  },
+});
+
+// ── Welcome Email ─────────────────────────────────────────────
 
 export const sendWelcomeEmail = internalAction({
   args: {

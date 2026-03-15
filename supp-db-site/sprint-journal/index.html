@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SupplementDB — Sprint Journal</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  /* ── Header ───────────────────────────────────────────────────────────── */
+
+  .journal-header {
+    text-align: center;
+    padding: 2.5rem 1rem 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #30363d;
+  }
+
+  .journal-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #58a6ff;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.5px;
+  }
+
+  .journal-header .subtitle {
+    color: #8b949e;
+    font-size: 0.95rem;
+  }
+
+  /* ── Aggregate Stats ──────────────────────────────────────────────────── */
+
+  .stats-bar {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+
+  .stats-bar .stat-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .stat-card .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8b949e;
+  }
+
+  .stat-value.commits-val { color: #58a6ff; }
+  .stat-value.features-val { color: #3fb950; }
+  .stat-value.fixes-val { color: #f85149; }
+  .stat-value.lines-val { color: #bc8cff; }
+
+  /* ── Timeline ─────────────────────────────────────────────────────────── */
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #30363d;
+  }
+
+  /* ── Entry ─────────────────────────────────────────────────────────────── */
+
+  .sprint-entry {
+    position: relative;
+    margin-bottom: 1.25rem;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .sprint-entry::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
+    background: #58a6ff;
+    border-radius: 50%;
+    border: 2px solid #0d1117;
+    z-index: 1;
+  }
+
+  .sprint-entry:hover { border-color: #58a6ff40; }
+
+  .entry-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    gap: 1rem;
+  }
+
+  .entry-header:hover { background: #1c2128; }
+
+  .entry-date-block {
+    display: flex;
+    flex-direction: column;
+    min-width: 130px;
+  }
+
+  .entry-day {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #58a6ff;
+  }
+
+  .entry-date {
+    font-size: 0.85rem;
+    color: #8b949e;
+  }
+
+  .entry-time {
+    font-size: 0.75rem;
+    color: #8b949e;
+    font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+
+  .entry-summary { flex: 1; }
+
+  .entry-stats-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-badge {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+  }
+
+  .stat-badge.commits { background: #58a6ff20; color: #58a6ff; }
+  .stat-badge.files { background: #bc8cff20; color: #bc8cff; }
+  .stat-badge.additions { background: #3fb95020; color: #3fb950; }
+  .stat-badge.deletions { background: #f8514920; color: #f85149; }
+
+  .scope-tags { margin-top: 0.35rem; display: flex; gap: 0.35rem; flex-wrap: wrap; }
+
+  .scope-tag {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: #30363d;
+    color: #8b949e;
+  }
+
+  .toggle-icon {
+    font-size: 0.7rem;
+    color: #8b949e;
+    transition: transform 0.2s;
+  }
+
+  .sprint-entry.collapsed .toggle-icon { transform: rotate(-90deg); }
+  .sprint-entry.collapsed .entry-body { display: none; }
+
+  /* ── Entry Body ────────────────────────────────────────────────────────── */
+
+  .entry-body {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid #30363d;
+  }
+
+  .session-note {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid #58a6ff;
+    background: #58a6ff08;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+  }
+
+  .category-section { margin-top: 1rem; }
+
+  .category-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+    color: #c9d1d9;
+  }
+
+  .cat-icon { font-size: 1rem; }
+
+  .cat-count {
+    font-size: 0.7rem;
+    background: #30363d;
+    color: #8b949e;
+    padding: 0.05rem 0.4rem;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+
+  .commit-list { display: flex; flex-direction: column; gap: 0.25rem; }
+
+  .commit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: background 0.15s;
+  }
+
+  .commit-item:hover { background: #1c2128; }
+
+  .commit-hash {
+    font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+    font-size: 0.75rem;
+    color: #58a6ff;
+    background: #58a6ff15;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .commit-msg { flex: 1; color: #c9d1d9; }
+
+  .commit-stats {
+    font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .stat-add { color: #3fb950; }
+  .stat-del { color: #f85149; }
+
+  /* ── Footer ────────────────────────────────────────────────────────────── */
+
+  .journal-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.8rem;
+  }
+
+  /* ── Filter Bar ────────────────────────────────────────────────────────── */
+
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: #58a6ff20;
+    border-color: #58a6ff;
+    color: #58a6ff;
+  }
+
+  .search-input {
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    outline: none;
+    width: 200px;
+    transition: border-color 0.15s;
+  }
+
+  .search-input:focus { border-color: #58a6ff; }
+  .search-input::placeholder { color: #8b949e; }
+
+  /* ── Responsive ────────────────────────────────────────────────────────── */
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .timeline { padding-left: 1rem; }
+    .entry-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .entry-date-block { flex-direction: row; gap: 0.5rem; align-items: baseline; min-width: auto; }
+    .stats-bar { gap: 0.5rem; }
+    .stat-card { min-width: 90px; padding: 0.5rem 0.75rem; }
+    .commit-stats { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="journal-header">
+    <h1>📓 SupplementDB</h1>
+    <p class="subtitle">Sprint Journal &mdash; Development Timeline</p>
+    <div class="stats-bar">
+      <div class="stat-card">
+        <span class="stat-value commits-val">65</span>
+        <span class="stat-label">Commits</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value features-val">36</span>
+        <span class="stat-label">Features</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value fixes-val">18</span>
+        <span class="stat-label">Fixes</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value lines-val">1,158,984</span>
+        <span class="stat-label">Lines Changed</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" style="color:#c9d1d9">7</span>
+        <span class="stat-label">Sessions</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterEntries('all')">All</button>
+    <button class="filter-btn" onclick="filterEntries('feature')">Features</button>
+    <button class="filter-btn" onclick="filterEntries('fix')">Fixes</button>
+    <button class="filter-btn" onclick="filterEntries('data')">Data</button>
+    <button class="filter-btn" onclick="filterEntries('test')">Tests</button>
+    <input type="text" class="search-input" placeholder="Search commits..." oninput="searchEntries(this.value)">
+  </div>
+
+  <section class="timeline">
+    
+      <article class="sprint-entry" id="entry-2026-03-15">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Sunday</span>
+            <span class="entry-date">Mar 15, 2026</span>
+            <span class="entry-time">01:23 - 12:25</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">18 commits</span>
+              <span class="stat-badge files">720 files</span>
+              <span class="stat-badge additions">+130,892</span>
+              <span class="stat-badge deletions">-189,767</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">citations</span><span class="scope-tag">healing</span><span class="scope-tag">data</span><span class="scope-tag">test</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">9</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">079f7eb</code>
+            <span class="commit-msg">feat(citations): normalize all 93 enhanced citation files to canonical Pattern C schema</span>
+            <span class="commit-stats">
+              <span class="stat-add">+29806</span>
+              <span class="stat-del">-8893</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">76ca727</code>
+            <span class="commit-msg">feat(healing): add Claude-orchestrated self-healing engine</span>
+            <span class="commit-stats">
+              <span class="stat-add">+4902</span>
+              <span class="stat-del">-4</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">1f0702f</code>
+            <span class="commit-msg">feat(healing): add PubMed esearch API for claim-based citation lookup</span>
+            <span class="commit-stats">
+              <span class="stat-add">+45</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">22e2f08</code>
+            <span class="commit-msg">feat(healing): add writeEnhancedFile for round-trip enhanced citation editing</span>
+            <span class="commit-stats">
+              <span class="stat-add">+64</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">775ffdb</code>
+            <span class="commit-msg">feat(healing): Phase 1 - flag evidence quality with PubMed cross-validation</span>
+            <span class="commit-stats">
+              <span class="stat-add">+217</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">389dddf</code>
+            <span class="commit-msg">feat(healing): Phase 2 - PubMed-driven re-research engine for claim-based citation lookup</span>
+            <span class="commit-stats">
+              <span class="stat-add">+200</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">c0d726a</code>
+            <span class="commit-msg">feat(healing): Phase 3 - replacement verifier with relevance threshold and archival</span>
+            <span class="commit-stats">
+              <span class="stat-add">+211</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">4d431cc</code>
+            <span class="commit-msg">feat(healing): Phase 4 - page regeneration orchestrator with visual diff</span>
+            <span class="commit-stats">
+              <span class="stat-add">+120</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">a27fbf0</code>
+            <span class="commit-msg">feat(healing): end-to-end remediation orchestrator with 4-phase pipeline</span>
+            <span class="commit-stats">
+              <span class="stat-add">+106</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">6</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">dcfbc68</code>
+            <span class="commit-msg">fix(healing): align site-checker slug logic with canonical slugify</span>
+            <span class="commit-stats">
+              <span class="stat-add">+3</span>
+              <span class="stat-del">-3</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">fbfcdd3</code>
+            <span class="commit-msg">fix(data): clear misassigned DOIs, normalize N/A placeholders, fix duplicate titles</span>
+            <span class="commit-stats">
+              <span class="stat-add">+277</span>
+              <span class="stat-del">-32</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">46c9924</code>
+            <span class="commit-msg">fix(data): verified DOI resolution + clear wrong PMIDs</span>
+            <span class="commit-stats">
+              <span class="stat-add">+748</span>
+              <span class="stat-del">-21</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">98c198a</code>
+            <span class="commit-msg">fix(healing): include pmid_not_found/no_pmid in re-research filter + remediate Bacopa</span>
+            <span class="commit-stats">
+              <span class="stat-add">+452</span>
+              <span class="stat-del">-416</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">ee5b3ee</code>
+            <span class="commit-msg">fix(data): batch remediation - re-researched citations for 53 supplements</span>
+            <span class="commit-stats">
+              <span class="stat-add">+18354</span>
+              <span class="stat-del">-8817</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">acebcb9</code>
+            <span class="commit-msg">fix(test): update rhodiola test for post-remediation data</span>
+            <span class="commit-stats">
+              <span class="stat-add">+5</span>
+              <span class="stat-del">-2</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📊</span>
+              Data Updates
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">aee955b</code>
+            <span class="commit-msg">data(healing): Phase 1 quality flags - reliability scores for all 93 supplements</span>
+            <span class="commit-stats">
+              <span class="stat-add">+17862</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🧹</span>
+              Chores
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">b9919a7</code>
+            <span class="commit-msg">chore: regenerate all pages with remediated citation data</span>
+            <span class="commit-stats">
+              <span class="stat-add">+39734</span>
+              <span class="stat-del">-152823</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔹</span>
+              Other
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">ee5a5b5</code>
+            <span class="commit-msg">On dev: pre-merge stash</span>
+            <span class="commit-stats">
+              <span class="stat-add">+17786</span>
+              <span class="stat-del">-18754</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-14">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Saturday</span>
+            <span class="entry-date">Mar 14, 2026</span>
+            <span class="entry-time">02:35 - 17:30</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">15 commits</span>
+              <span class="stat-badge files">597 files</span>
+              <span class="stat-badge additions">+364,490</span>
+              <span class="stat-badge deletions">-65,728</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">compare</span><span class="scope-tag">supplements</span><span class="scope-tag">pipeline</span><span class="scope-tag">nav</span><span class="scope-tag">admin</span><span class="scope-tag">infra</span><span class="scope-tag">docker</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">11</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">0919870</code>
+            <span class="commit-msg">feat(compare): Mockup B revolutionary layout for all 10 comparison pages</span>
+            <span class="commit-stats">
+              <span class="stat-add">+11029</span>
+              <span class="stat-del">-4900</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">f54398f</code>
+            <span class="commit-msg">feat(supplements): redesign all 93 monograph pages to unified melatonin design system</span>
+            <span class="commit-stats">
+              <span class="stat-add">+322102</span>
+              <span class="stat-del">-39849</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">25fc5e0</code>
+            <span class="commit-msg">feat(pipeline): add seed.js forward-path generator and skill updates</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1812</span>
+              <span class="stat-del">-15</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">6f47b69</code>
+            <span class="commit-msg">feat(pipeline): complete category/stats coverage + single source of truth</span>
+            <span class="commit-stats">
+              <span class="stat-add">+2610</span>
+              <span class="stat-del">-80</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">1e0db3d</code>
+            <span class="commit-msg">feat(pipeline): add citation integrity verifier + anti-hallucination skill guardrails</span>
+            <span class="commit-stats">
+              <span class="stat-add">+680</span>
+              <span class="stat-del">-6</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">17ec81a</code>
+            <span class="commit-msg">feat(nav): surface Stack Analyzer across all site entry points</span>
+            <span class="commit-stats">
+              <span class="stat-add">+100</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">0fbef64</code>
+            <span class="commit-msg">feat(admin): add Configuration &amp; Services panel with env var health + Stack Analyzer usage</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1255</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">97bcbdc</code>
+            <span class="commit-msg">feat(admin): replace dollar cost metrics with WAT (Weighted API Token) profitability metric</span>
+            <span class="commit-stats">
+              <span class="stat-add">+79</span>
+              <span class="stat-del">-15</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">2adb58b</code>
+            <span class="commit-msg">feat(admin): add API key management UI — set ANTHROPIC_API_KEY from browser without Convex dashboard</span>
+            <span class="commit-stats">
+              <span class="stat-add">+729</span>
+              <span class="stat-del">-15</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">0d0416e</code>
+            <span class="commit-msg">feat(admin): dynamic model selection + fix Anthropic model names</span>
+            <span class="commit-stats">
+              <span class="stat-add">+409</span>
+              <span class="stat-del">-16</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">8bd4fa8</code>
+            <span class="commit-msg">feat(admin): config resolution paths + health check false-positive fix</span>
+            <span class="commit-stats">
+              <span class="stat-add">+233</span>
+              <span class="stat-del">-16</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">ca19f42</code>
+            <span class="commit-msg">fix(pipeline): close static-HTML gaps, fix slug divergence, regenerate all pages</span>
+            <span class="commit-stats">
+              <span class="stat-add">+12473</span>
+              <span class="stat-del">-18374</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">f27c97c</code>
+            <span class="commit-msg">fix(pipeline): migrate 5 non-canonical enhanced citation files to canonical schema</span>
+            <span class="commit-stats">
+              <span class="stat-add">+3732</span>
+              <span class="stat-del">-2279</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">493bac1</code>
+            <span class="commit-msg">fix(infra): Convex auth config, admin bootstrap endpoint, prod URL migration, Docker perf</span>
+            <span class="commit-stats">
+              <span class="stat-add">+7213</span>
+              <span class="stat-del">-149</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">91034d8</code>
+            <span class="commit-msg">fix(docker): replace inotifywait hot-reload with polling watcher for Windows compat</span>
+            <span class="commit-stats">
+              <span class="stat-add">+34</span>
+              <span class="stat-del">-12</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-13">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Friday</span>
+            <span class="entry-date">Mar 13, 2026</span>
+            <span class="entry-time">02:51 - 23:47</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">7 commits</span>
+              <span class="stat-badge files">125 files</span>
+              <span class="stat-badge additions">+1,748</span>
+              <span class="stat-badge deletions">-59</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">seo</span><span class="scope-tag">bro-46</span><span class="scope-tag">docker</span><span class="scope-tag">auth</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">b4b9c00</code>
+            <span class="commit-msg">feat(seo): add Schema.org BreadcrumbList + Article JSON-LD to all pages (BRO-45)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+459</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">2</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">ebb18d6</code>
+            <span class="commit-msg">fix(docker): resolve Clerk auth toast by fixing env substitution in :ro volume mounts</span>
+            <span class="commit-stats">
+              <span class="stat-add">+131</span>
+              <span class="stat-del">-52</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">a23f1d8</code>
+            <span class="commit-msg">fix(auth): resolve Clerk sign-in modal by pinning to clerk-js@4 CDN</span>
+            <span class="commit-stats">
+              <span class="stat-add">+25</span>
+              <span class="stat-del">-7</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🧪</span>
+              Tests
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">525da45</code>
+            <span class="commit-msg">test(bro-46): add direct API tests for pdf-generator service</span>
+            <span class="commit-stats">
+              <span class="stat-add">+296</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">b208936</code>
+            <span class="commit-msg">test(bro-46): add guide-success UI state tests</span>
+            <span class="commit-stats">
+              <span class="stat-add">+280</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">8c551a2</code>
+            <span class="commit-msg">test(bro-46): add stripe webhook idempotency test</span>
+            <span class="commit-stats">
+              <span class="stat-add">+371</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">2cf7732</code>
+            <span class="commit-msg">test(bro-46): add mobile checkout flow tests @mobile</span>
+            <span class="commit-stats">
+              <span class="stat-add">+186</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-11">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Wednesday</span>
+            <span class="entry-date">Mar 11, 2026</span>
+            <span class="entry-time">04:07 - 21:44</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">5 commits</span>
+              <span class="stat-badge files">320 files</span>
+              <span class="stat-badge additions">+88,757</span>
+              <span class="stat-badge deletions">-28,284</span>
+            </div>
+            
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">2</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">f949570</code>
+            <span class="commit-msg">feat: Stack Analyzer MVP — AI-powered supplement stack evaluation tool</span>
+            <span class="commit-stats">
+              <span class="stat-add">+4110</span>
+              <span class="stat-del">-21</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">7774db3</code>
+            <span class="commit-msg">feat: Phase 9 — Evidence pages dark journal theme (25 pages, 5 domains)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+19588</span>
+              <span class="stat-del">-8558</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">2</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">78a69cf</code>
+            <span class="commit-msg">fix: comprehensive citation audit — correct 94 PMIDs, verify 180/182 citations</span>
+            <span class="commit-stats">
+              <span class="stat-add">+63785</span>
+              <span class="stat-del">-18130</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">46c4a4f</code>
+            <span class="commit-msg">fix: prevent Clerk CDN auto-boot error and add auth unavailable toast</span>
+            <span class="commit-stats">
+              <span class="stat-add">+584</span>
+              <span class="stat-del">-429</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📝</span>
+              Documentation
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">2701ff9</code>
+            <span class="commit-msg">docs: replace PRD v2 with lean v3 reflecting current platform scope</span>
+            <span class="commit-stats">
+              <span class="stat-add">+690</span>
+              <span class="stat-del">-1146</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-10">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Tuesday</span>
+            <span class="entry-date">Mar 10, 2026</span>
+            <span class="entry-time">00:13 - 21:03</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">7 commits</span>
+              <span class="stat-badge files">332 files</span>
+              <span class="stat-badge additions">+55,477</span>
+              <span class="stat-badge deletions">-22,421</span>
+            </div>
+            
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">5</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">4dbda78</code>
+            <span class="commit-msg">feat: clinical journal design system for supplement monograph pages + homepage card fix</span>
+            <span class="commit-stats">
+              <span class="stat-add">+19975</span>
+              <span class="stat-del">-19137</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">600c016</code>
+            <span class="commit-msg">feat: Clerk auth + Convex backend + RBAC + admin SaaS metrics dashboard</span>
+            <span class="commit-stats">
+              <span class="stat-add">+12479</span>
+              <span class="stat-del">-2054</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">251e0a5</code>
+            <span class="commit-msg">feat: Stripe Checkout integration with pricing page, success flow, and dual-path role sync</span>
+            <span class="commit-stats">
+              <span class="stat-add">+3498</span>
+              <span class="stat-del">-111</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">9918766</code>
+            <span class="commit-msg">feat: Phase 7 — Email service + newsletter backend with double opt-in and Resend integration</span>
+            <span class="commit-stats">
+              <span class="stat-add">+2969</span>
+              <span class="stat-del">-701</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">8990a1b</code>
+            <span class="commit-msg">feat: Phase 8 — Guide library expansion from 8 to 20 evidence guides</span>
+            <span class="commit-stats">
+              <span class="stat-add">+15049</span>
+              <span class="stat-del">-418</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📝</span>
+              Documentation
+              <span class="cat-count">2</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">5d0f96a</code>
+            <span class="commit-msg">docs: add PRD v2.0 reflecting current SaaS-ready product state</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1146</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">80a8a61</code>
+            <span class="commit-msg">docs: add engineering roadmap from consultant review analysis</span>
+            <span class="commit-stats">
+              <span class="stat-add">+361</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-09">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Monday</span>
+            <span class="entry-date">Mar 9, 2026</span>
+            <span class="entry-time">11:52 - 22:49</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">6 commits</span>
+              <span class="stat-badge files">245 files</span>
+              <span class="stat-badge additions">+78,844</span>
+              <span class="stat-badge deletions">-650</span>
+            </div>
+            
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">5</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">afe8e75</code>
+            <span class="commit-msg">feat: Phase 1 — Foundation &amp; Discoverability (SEO, E-E-A-T, structured data)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+2515</span>
+              <span class="stat-del">-9</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">19f48e7</code>
+            <span class="commit-msg">feat: Phase 2 — Content Authority &amp; Growth (category pages, guides, comparisons)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+12767</span>
+              <span class="stat-del">-37</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">e49e33e</code>
+            <span class="commit-msg">feat: Phase 3 — Brand &amp; Strategic Positioning</span>
+            <span class="commit-stats">
+              <span class="stat-add">+3025</span>
+              <span class="stat-del">-73</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">3cc992c</code>
+            <span class="commit-msg">feat: FDA compliance audit + Research Methodology page with trust infrastructure (P1+P2)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+2427</span>
+              <span class="stat-del">-69</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">b7c2761</code>
+            <span class="commit-msg">feat: P3 content expansion + P4 supplement monograph pages (103 new pages)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+57706</span>
+              <span class="stat-del">-462</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📝</span>
+              Documentation
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">62c7ad7</code>
+            <span class="commit-msg">docs: add Sprint Journal for daily work tracking and sprint reflections</span>
+            <span class="commit-stats">
+              <span class="stat-add">+404</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-08">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Sunday</span>
+            <span class="entry-date">Mar 8, 2026</span>
+            <span class="entry-time">13:19 - 22:35</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">7 commits</span>
+              <span class="stat-badge files">138 files</span>
+              <span class="stat-badge additions">+128,747</span>
+              <span class="stat-badge deletions">-3,120</span>
+            </div>
+            
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">3</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">175da5a</code>
+            <span class="commit-msg">feat: migrate UI to Clinical Journal design with evidence pip indicators</span>
+            <span class="commit-stats">
+              <span class="stat-add">+273</span>
+              <span class="stat-del">-209</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">8c2d8a2</code>
+            <span class="commit-msg">feat: add supplement database reconciliation skill and engine</span>
+            <span class="commit-stats">
+              <span class="stat-add">+899</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">d1cb288</code>
+            <span class="commit-msg">feat: add complete legal compliance suite — 6 pages + shared stylesheet</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1793</span>
+              <span class="stat-del">-4</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">a639900</code>
+            <span class="commit-msg">fix: comprehensive PMID/DOI citation audit — 99/102 perfect matches across 7 supplements</span>
+            <span class="commit-stats">
+              <span class="stat-add">+4756</span>
+              <span class="stat-del">-181</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">1a42f71</code>
+            <span class="commit-msg">fix: comprehensive PMID/DOI audit across all 93 supplement citation files</span>
+            <span class="commit-stats">
+              <span class="stat-add">+120769</span>
+              <span class="stat-del">-2719</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">b99c5a2</code>
+            <span class="commit-msg">fix: reconcile orphan supplement IDs 90-93 into main database</span>
+            <span class="commit-stats">
+              <span class="stat-add">+252</span>
+              <span class="stat-del">-2</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">ff935a8</code>
+            <span class="commit-msg">fix: add 7 supplements to category arrays for full reconciliation</span>
+            <span class="commit-stats">
+              <span class="stat-add">+5</span>
+              <span class="stat-del">-5</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+  </section>
+
+  <footer class="journal-footer">
+    Generated 2026-03-15 16:53:46 &bull;
+    Covering Mar 8, 2026 to Mar 15, 2026
+  </footer>
+</div>
+
+<script>
+function toggleEntry(header) {
+  header.closest('.sprint-entry').classList.toggle('collapsed');
+}
+
+// Start with all entries expanded (first 3) or collapsed (rest)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.sprint-entry').forEach((el, i) => {
+    if (i >= 3) el.classList.add('collapsed');
+  });
+});
+
+function filterEntries(category) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  document.querySelectorAll('.sprint-entry').forEach(entry => {
+    if (category === 'all') {
+      entry.style.display = '';
+      return;
+    }
+    const hasCat = entry.querySelector('.category-header')?.textContent
+      .toLowerCase().includes(category === 'feature' ? 'features' : category === 'fix' ? 'fixes' : category);
+    entry.style.display = hasCat ? '' : 'none';
+  });
+}
+
+function searchEntries(query) {
+  const q = query.toLowerCase();
+  document.querySelectorAll('.sprint-entry').forEach(entry => {
+    if (!q) { entry.style.display = ''; return; }
+    const text = entry.textContent.toLowerCase();
+    entry.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

@@ -30,7 +30,9 @@
     "test:healing": "npx playwright test tests/healing-engine/",
     "heal:flag": "node healing-engine/scripts/flag-evidence-quality.js",
     "heal:remediate": "node healing-engine/scripts/remediate-supplement.js",
-    "heal:regenerate": "node healing-engine/scripts/regenerate-and-diff.js"
+    "heal:regenerate": "node healing-engine/scripts/regenerate-and-diff.js",
+    "journal": "cd .. && node supp-db-site/sprint-journal/generate.js --since-last --config supp-db-site/sprint-journal/config.json --output supp-db-site/sprint-journal",
+    "journal:full": "cd .. && node supp-db-site/sprint-journal/generate.js --config supp-db-site/sprint-journal/config.json --output supp-db-site/sprint-journal"
   },
   "devDependencies": {
     "cheerio": "^1.2.0",

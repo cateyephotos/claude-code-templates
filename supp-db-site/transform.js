@@ -125,7 +125,7 @@ function extract($, filename) {
     d.twTitle            = h($('meta[name="twitter:title"]').attr('content'));
     d.twDesc             = h($('meta[name="twitter:description"]').attr('content'));
     d.clerkKey           = h($('meta[name="clerk-key"]').attr('content'))  || '__CLERK_PUBLISHABLE_KEY__';
-    d.convexUrl          = h($('meta[name="convex-url"]').attr('content')) || 'https://robust-frog-754.convex.cloud';
+    d.convexUrl          = h($('meta[name="convex-url"]').attr('content')) || '__CONVEX_URL__';
 
     // PostHog — preserve verbatim
     d.posthog = '';

@@ -10,7 +10,7 @@
  *   or: npm run test:idempotency
  *
  * Required env vars (set these in your shell or .env before running):
- *   CONVEX_URL              — e.g. https://robust-frog-754.convex.cloud
+ *   CONVEX_URL              — e.g. __CONVEX_URL__
  *   STRIPE_WEBHOOK_SECRET   — whsec_xxx (the Convex dashboard webhook secret)
  *
  * Optional env vars:
@@ -26,7 +26,7 @@ const Stripe = require("stripe");
 // ── Config ──────────────────────────────────────────────────────────────────
 
 const CONVEX_URL =
-  process.env.CONVEX_URL || "https://robust-frog-754.convex.cloud";
+  process.env.CONVEX_URL || "__CONVEX_URL__";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 const CONVEX_DEPLOY_KEY = process.env.CONVEX_DEPLOY_KEY || "";
 

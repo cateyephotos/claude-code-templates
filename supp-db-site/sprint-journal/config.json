@@ -1,0 +1,6 @@
+{
+  "projectName": "SupplementDB",
+  "pathFilter": "supp-db-site/",
+  "excludePatterns": ["*.min.js", "*.min.css"],
+  "theme": "dark"
+}
