@@ -3,260 +3,267 @@
 // Date: 2025-08-25
 // Research Quality Score: 82% (Tier 2 Standard)
 
-const centellaAsiaticaEnhanced = {
-  "id": 78,
-  "name": "Centella Asiatica",
-  "scientificName": "Centella asiatica",
-  "category": "Herbal Supplement",
-  "commonNames": ["Gotu Kola", "Brahmi", "Asiatic Pennywort", "Indian Pennywort"],
-  
-  "evidenceProfile": {
-    "overallQuality": "Tier 2",
-    "totalCitations": 13,
-    "researchQualityScore": 82,
-    "lastEvidenceUpdate": "2025-08-25",
-    "evidenceStrength": {
-      "mechanisms": "Strong",
-      "clinicalBenefits": "Moderate",
-      "safety": "Well-established",
-      "dosage": "Evidence-based"
+const supplement_unknown_enhanced = {
+    id:  78,
+    name:  "Centella Asiatica",
+    scientificName:  "Centella asiatica",
+    category:  "Herbal Supplement",
+    commonNames:  [
+        "Gotu Kola",
+        "Brahmi",
+        "Asiatic Pennywort",
+        "Indian Pennywort"
+    ],
+    evidenceProfile:  {
+        overallQuality:  "Tier 2",
+        totalCitations:  13,
+        researchQualityScore:  82,
+        lastEvidenceUpdate:  "2025-08-25",
+        evidenceStrength:  {
+            mechanisms:  "Strong",
+            clinicalBenefits:  "Moderate",
+            safety:  "Well-established",
+            dosage:  "Evidence-based"
+        },
+        researchMaturity:  "Established",
+        publicationSpan:  "1992-2024",
+        keyFindings:  "Traditional herbal supplement with moderate evidence for cognitive function, wound healing, and anxiety support",
+        geographicDiversity:  [
+            "India",
+            "Thailand",
+            "Malaysia",
+            "Global"
+        ],
+        studyTypes:  [
+            "RCT",
+            "Clinical Trials",
+            "Mechanistic Studies",
+            "Safety Studies"
+        ]
     },
-    "researchMaturity": "Established",
-    "publicationSpan": "1992-2024",
-    "keyFindings": "Traditional herbal supplement with moderate evidence for cognitive function, wound healing, and anxiety support",
-    "geographicDiversity": ["India", "Thailand", "Malaysia", "Global"],
-    "studyTypes": ["RCT", "Clinical Trials", "Mechanistic Studies", "Safety Studies"]
-  },
-
-  "citations": {
-    "mechanisms": [
-      {
-        "claim": "Neuroprotection through antioxidant and anti-inflammatory pathways",
-        "strength": "Strong",
-        "mechanismType": "Neuroprotection",
-        "tissueTarget": "Brain tissue",
-        "studies": [
-          {
-            "title": "Centella asiatica: phytochemistry and mechanisms of neuroprotection and cognitive enhancement",
-            "authors": "Gray NE, Morré J, Kelley J, et al.",
-            "journal": "Phytochemistry Reviews",
-            "year": 2018,
-            "volume": "17",
-            "issue": "1",
-            "pages": "161-194",
-            "doi": "10.1007/s11101-017-9528-y",
-            "pmid": "31736679",
-            "studyType": "mechanistic_review",
-            "evidenceLevel": "Level 1",
-            "participants": "Review of multiple studies",
-            "duration": "N/A",
-            "dosage": "Various",
-            "findings": "Asiaticoside and madecassoside provide neuroprotection via antioxidant and anti-inflammatory mechanisms",
-            "effectSize": "Strong neuroprotective effects",
-            "pValue": "N/A",
-            "confidenceInterval": "N/A"
-          }
+    citations:  {
+        mechanisms:  [
+            {
+                claim:  "Neuroprotection through antioxidant and anti-inflammatory pathways",
+                strength:  "Strong",
+                mechanismType:  "Neuroprotection",
+                tissueTarget:  "Brain tissue",
+                evidence:  [
+                    {
+                        title:  "Centella asiatica: phytochemistry and mechanisms of neuroprotection and cognitive enhancement",
+                        authors:  "Gray NE, Morré J, Kelley J, et al.",
+                        journal:  "Phytochemistry Reviews",
+                        year:  2018,
+                        volume:  "17",
+                        issue:  "1",
+                        pages:  "161-194",
+                        doi:  "10.1007/s11101-017-9528-y",
+                        pmid:  "31736679",
+                        studyType:  "mechanistic_review",
+                        evidenceLevel:  "Level 1",
+                        participants:  "Review of multiple studies",
+                        duration:  "N/A",
+                        dosage:  "Various",
+                        findings:  "Asiaticoside and madecassoside provide neuroprotection via antioxidant and anti-inflammatory mechanisms",
+                        effectSize:  "Strong neuroprotective effects",
+                        pValue:  "N/A",
+                        confidenceInterval:  "N/A"
+                    }
+                ]
+            },
+            {
+                claim:  "Enhancement of dendritic arborization and synaptic plasticity",
+                strength:  "Strong",
+                mechanismType:  "Neuroplasticity enhancement",
+                tissueTarget:  "Hippocampal neurons",
+                evidence:  [
+                    {
+                        title:  "Centella asiatica extract enhances hippocampal mitochondrial bioenergetics",
+                        authors:  "Gray NE, Alcazar Magana A, Lak P, et al.",
+                        journal:  "Journal of Ethnopharmacology",
+                        year:  2018,
+                        volume:  "215",
+                        pages:  "432-442",
+                        doi:  "10.1016/j.jep.2017.12.020",
+                        pmid:  "29253615",
+                        studyType:  "mechanistic_study",
+                        evidenceLevel:  "Level 2",
+                        participants:  "Animal studies",
+                        duration:  "4-8 weeks",
+                        dosage:  "100-300 mg/kg",
+                        findings:  "Enhanced dendritic arborization and improved mitochondrial function in hippocampus",
+                        effectSize:  "Large improvement in neuroplasticity markers",
+                        pValue:  "<0.001",
+                        confidenceInterval:  "95% CI provided"
+                    }
+                ]
+            }
+        ],
+        benefits:  [
+            {
+                claim:  "Improves cognitive function and memory in healthy adults",
+                strength:  "Moderate",
+                benefitType:  "Cognitive enhancement",
+                populationTarget:  "Healthy adults",
+                evidence:  [
+                    {
+                        title:  "Effects of Centella asiatica on cognitive function in healthy elderly volunteers",
+                        authors:  "Wattanathorn J, Mator L, Muchimapura S, et al.",
+                        journal:  "Journal of Ethnopharmacology",
+                        year:  2008,
+                        volume:  "116",
+                        issue:  "2",
+                        pages:  "325-332",
+                        doi:  "10.1016/j.jep.2007.11.038",
+                        pmid:  "18191355",
+                        studyType:  "randomized_controlled_trial",
+                        evidenceLevel:  "Level 2",
+                        participants:  "28 healthy elderly volunteers",
+                        duration:  "2 months",
+                        dosage:  "250, 500, 750 mg daily",
+                        findings:  "Significant improvement in working memory and mood at all doses",
+                        effectSize:  "Moderate improvement (Cohen's d = 0.48)",
+                        pValue:  "<0.05",
+                        confidenceInterval:  "95% CI: 0.18-0.78"
+                    }
+                ]
+            },
+            {
+                claim:  "Reduces anxiety and improves mood",
+                strength:  "Moderate",
+                benefitType:  "Anxiolytic effects",
+                populationTarget:  "Adults with anxiety",
+                evidence:  [
+                    {
+                        title:  "Anxiolytic activity of Centella asiatica in animal models",
+                        authors:  "Bradwejn J, Zhou Y, Koszycki D, Shlik J",
+                        journal:  "Journal of Clinical Psychopharmacology",
+                        year:  2000,
+                        volume:  "20",
+                        issue:  "6",
+                        pages:  "680-684",
+                        doi:  "10.1097/00004714-200012000-00016",
+                        pmid:  "11106142",
+                        studyType:  "clinical_trial",
+                        evidenceLevel:  "Level 2",
+                        participants:  "33 patients with generalized anxiety disorder",
+                        duration:  "60 days",
+                        dosage:  "12 g daily (dried herb)",
+                        findings:  "Significant reduction in anxiety scores and startle response",
+                        effectSize:  "Moderate anxiety reduction",
+                        pValue:  "<0.01",
+                        confidenceInterval:  "95% CI provided"
+                    }
+                ]
+            }
+        ],
+        safety:  [
+            {
+                claim:  "Generally well-tolerated with minimal side effects",
+                strength:  "Strong",
+                safetyType:  "General tolerability",
+                riskLevel:  "Low",
+                evidence:  [
+                    {
+                        title:  "Safety assessment of Centella asiatica in clinical trials",
+                        authors:  "European Medicines Agency",
+                        journal:  "EMA Assessment Report",
+                        year:  2022,
+                        volume:  "N/A",
+                        pages:  "1-45",
+                        doi:  "N/A",
+                        pmid:  "N/A",
+                        studyType:  "safety_review",
+                        evidenceLevel:  "Level 1",
+                        participants:  "Multiple clinical studies reviewed",
+                        duration:  "Various",
+                        dosage:  "100-1000 mg daily",
+                        findings:  "Generally well-tolerated; rare side effects include mild GI upset, drowsiness",
+                        effectSize:  "N/A",
+                        pValue:  "N/A",
+                        confidenceInterval:  "N/A"
+                    }
+                ]
+            }
+        ],
+        dosage:  [
+            {
+                claim:  "Optimal cognitive effects at 500-1000 mg daily",
+                strength:  "Moderate",
+                dosageType:  "Cognitive enhancement",
+                populationTarget:  "Adults",
+                evidence:  [
+                    {
+                        title:  "Dose-response relationship of Centella asiatica in cognitive enhancement",
+                        authors:  "Wattanathorn J, Mator L, Muchimapura S, et al.",
+                        journal:  "Journal of Ethnopharmacology",
+                        year:  2008,
+                        volume:  "116",
+                        issue:  "2",
+                        pages:  "325-332",
+                        doi:  "10.1016/j.jep.2007.11.038",
+                        pmid:  "18191355",
+                        studyType:  "dose_response_study",
+                        evidenceLevel:  "Level 2",
+                        participants:  "28 healthy elderly volunteers",
+                        duration:  "2 months",
+                        dosage:  "250, 500, 750 mg daily",
+                        findings:  "Dose-dependent improvement with optimal effects at 500-750 mg daily",
+                        effectSize:  "Dose-dependent cognitive enhancement",
+                        pValue:  "<0.05",
+                        confidenceInterval:  "95% CI provided"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "claim": "Enhancement of dendritic arborization and synaptic plasticity",
-        "strength": "Strong",
-        "mechanismType": "Neuroplasticity enhancement",
-        "tissueTarget": "Hippocampal neurons",
-        "studies": [
-          {
-            "title": "Centella asiatica extract enhances hippocampal mitochondrial bioenergetics",
-            "authors": "Gray NE, Alcazar Magana A, Lak P, et al.",
-            "journal": "Journal of Ethnopharmacology",
-            "year": 2018,
-            "volume": "215",
-            "pages": "432-442",
-            "doi": "10.1016/j.jep.2017.12.020",
-            "pmid": "29253615",
-            "studyType": "mechanistic_study",
-            "evidenceLevel": "Level 2",
-            "participants": "Animal studies",
-            "duration": "4-8 weeks",
-            "dosage": "100-300 mg/kg",
-            "findings": "Enhanced dendritic arborization and improved mitochondrial function in hippocampus",
-            "effectSize": "Large improvement in neuroplasticity markers",
-            "pValue": "<0.001",
-            "confidenceInterval": "95% CI provided"
-          }
+    },
+    interactions:  {
+        drugInteractions:  [
+            {
+                substance:  "Sedative medications",
+                interactionType:  "Potential enhancement",
+                severity:  "Moderate",
+                description:  "May enhance sedative effects",
+                recommendation:  "Use caution with CNS depressants"
+            }
+        ],
+        supplementInteractions:  [
+            {
+                substance:  "Other adaptogens",
+                interactionType:  "Synergistic",
+                severity:  "Beneficial",
+                description:  "May enhance stress-protective effects",
+                recommendation:  "Consider as part of adaptogen complex"
+            }
         ]
-      }
-    ],
-
-    "benefits": [
-      {
-        "claim": "Improves cognitive function and memory in healthy adults",
-        "strength": "Moderate",
-        "benefitType": "Cognitive enhancement",
-        "populationTarget": "Healthy adults",
-        "studies": [
-          {
-            "title": "Effects of Centella asiatica on cognitive function in healthy elderly volunteers",
-            "authors": "Wattanathorn J, Mator L, Muchimapura S, et al.",
-            "journal": "Journal of Ethnopharmacology",
-            "year": 2008,
-            "volume": "116",
-            "issue": "2",
-            "pages": "325-332",
-            "doi": "10.1016/j.jep.2007.11.038",
-            "pmid": "18191355",
-            "studyType": "randomized_controlled_trial",
-            "evidenceLevel": "Level 2",
-            "participants": "28 healthy elderly volunteers",
-            "duration": "2 months",
-            "dosage": "250, 500, 750 mg daily",
-            "findings": "Significant improvement in working memory and mood at all doses",
-            "effectSize": "Moderate improvement (Cohen's d = 0.48)",
-            "pValue": "<0.05",
-            "confidenceInterval": "95% CI: 0.18-0.78"
-          }
+    },
+    additional:  {
+        clinicalConsiderations:  [
+            "Standardize to asiaticoside content (10-40%)",
+            "Take with food to improve absorption",
+            "Effects may take 4-8 weeks to become apparent",
+            "May cause drowsiness in some individuals"
+        ],
+        qualityMarkers:  [
+            "Standardized to triterpene content",
+            "Third-party tested for heavy metals",
+            "Organic certification preferred",
+            "Proper extraction methods (water/ethanol)"
+        ],
+        researchGaps:  [
+            "Limited large-scale clinical trials in healthy populations",
+            "Optimal standardization methods need refinement",
+            "Long-term safety data beyond 6 months needed",
+            "Interaction studies with pharmaceuticals required"
         ]
-      },
-      {
-        "claim": "Reduces anxiety and improves mood",
-        "strength": "Moderate",
-        "benefitType": "Anxiolytic effects",
-        "populationTarget": "Adults with anxiety",
-        "studies": [
-          {
-            "title": "Anxiolytic activity of Centella asiatica in animal models",
-            "authors": "Bradwejn J, Zhou Y, Koszycki D, Shlik J",
-            "journal": "Journal of Clinical Psychopharmacology",
-            "year": 2000,
-            "volume": "20",
-            "issue": "6",
-            "pages": "680-684",
-            "doi": "10.1097/00004714-200012000-00016",
-            "pmid": "11106142",
-            "studyType": "clinical_trial",
-            "evidenceLevel": "Level 2",
-            "participants": "33 patients with generalized anxiety disorder",
-            "duration": "60 days",
-            "dosage": "12 g daily (dried herb)",
-            "findings": "Significant reduction in anxiety scores and startle response",
-            "effectSize": "Moderate anxiety reduction",
-            "pValue": "<0.01",
-            "confidenceInterval": "95% CI provided"
-          }
-        ]
-      }
-    ],
-
-    "safety": [
-      {
-        "claim": "Generally well-tolerated with minimal side effects",
-        "strength": "Strong",
-        "safetyType": "General tolerability",
-        "riskLevel": "Low",
-        "studies": [
-          {
-            "title": "Safety assessment of Centella asiatica in clinical trials",
-            "authors": "European Medicines Agency",
-            "journal": "EMA Assessment Report",
-            "year": 2022,
-            "volume": "N/A",
-            "pages": "1-45",
-            "doi": "N/A",
-            "pmid": "N/A",
-            "studyType": "safety_review",
-            "evidenceLevel": "Level 1",
-            "participants": "Multiple clinical studies reviewed",
-            "duration": "Various",
-            "dosage": "100-1000 mg daily",
-            "findings": "Generally well-tolerated; rare side effects include mild GI upset, drowsiness",
-            "effectSize": "N/A",
-            "pValue": "N/A",
-            "confidenceInterval": "N/A"
-          }
-        ]
-      }
-    ],
-
-    "dosage": [
-      {
-        "claim": "Optimal cognitive effects at 500-1000 mg daily",
-        "strength": "Moderate",
-        "dosageType": "Cognitive enhancement",
-        "populationTarget": "Adults",
-        "studies": [
-          {
-            "title": "Dose-response relationship of Centella asiatica in cognitive enhancement",
-            "authors": "Wattanathorn J, Mator L, Muchimapura S, et al.",
-            "journal": "Journal of Ethnopharmacology",
-            "year": 2008,
-            "volume": "116",
-            "issue": "2",
-            "pages": "325-332",
-            "doi": "10.1016/j.jep.2007.11.038",
-            "pmid": "18191355",
-            "studyType": "dose_response_study",
-            "evidenceLevel": "Level 2",
-            "participants": "28 healthy elderly volunteers",
-            "duration": "2 months",
-            "dosage": "250, 500, 750 mg daily",
-            "findings": "Dose-dependent improvement with optimal effects at 500-750 mg daily",
-            "effectSize": "Dose-dependent cognitive enhancement",
-            "pValue": "<0.05",
-            "confidenceInterval": "95% CI provided"
-          }
-        ]
-      }
-    ]
-  },
-
-  "interactions": {
-    "drugInteractions": [
-      {
-        "substance": "Sedative medications",
-        "interactionType": "Potential enhancement",
-        "severity": "Moderate",
-        "description": "May enhance sedative effects",
-        "recommendation": "Use caution with CNS depressants"
-      }
-    ],
-    "supplementInteractions": [
-      {
-        "substance": "Other adaptogens",
-        "interactionType": "Synergistic",
-        "severity": "Beneficial",
-        "description": "May enhance stress-protective effects",
-        "recommendation": "Consider as part of adaptogen complex"
-      }
-    ]
-  },
-
-  "additional": {
-    "clinicalConsiderations": [
-      "Standardize to asiaticoside content (10-40%)",
-      "Take with food to improve absorption",
-      "Effects may take 4-8 weeks to become apparent",
-      "May cause drowsiness in some individuals"
-    ],
-    "qualityMarkers": [
-      "Standardized to triterpene content",
-      "Third-party tested for heavy metals",
-      "Organic certification preferred",
-      "Proper extraction methods (water/ethanol)"
-    ],
-    "researchGaps": [
-      "Limited large-scale clinical trials in healthy populations",
-      "Optimal standardization methods need refinement",
-      "Long-term safety data beyond 6 months needed",
-      "Interaction studies with pharmaceuticals required"
-    ]
-  }
+    }
 };
 
-// Export for module systems
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = centellaAsiaticaEnhanced;
+if (typeof window !== 'undefined') {
+    window.enhancedCitations = window.enhancedCitations || {};
+    window.enhancedCitations[78] = supplement_unknown_enhanced;
 }
 
-// Global assignment for browser environments
-if (typeof window !== 'undefined') {
-  window.centellaAsiaticaEnhanced = centellaAsiaticaEnhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = supplement_unknown_enhanced;
 }

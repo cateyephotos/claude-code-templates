@@ -25,8 +25,24 @@
  *   node scripts/verify-citations.js --summary        # counts only, no per-item detail
  *   node scripts/verify-citations.js --pmid-only      # skip DOI verification
  *   node scripts/verify-citations.js --doi-only       # skip PMID verification
+ *   node scripts/verify-citations.js --schema         # run schema validation (delegates to validate-schema.js)
+ *   node scripts/verify-citations.js --schema --id 33 # schema validation for one supplement
  */
 'use strict';
+
+// ---- Schema validation delegation ----
+// When --schema is passed, delegate to validate-schema.js and exit
+if (process.argv.includes('--schema')) {
+    const { execFileSync } = require('child_process');
+    const schemaScript = require('path').join(__dirname, 'validate-schema.js');
+    const args = process.argv.slice(2).filter(a => a !== '--schema');
+    try {
+        execFileSync(process.execPath, [schemaScript, ...args], { stdio: 'inherit' });
+        process.exit(0);
+    } catch (e) {
+        process.exit(e.status || 1);
+    }
+}
 
 const fs   = require('fs');
 const path = require('path');

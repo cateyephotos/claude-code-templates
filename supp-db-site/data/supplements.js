@@ -1,13 +1,13 @@
 // Evidence-Based Supplement Database
 const supplementDatabase = {
   "metadata": {
-    "version": "2.0",
-    "lastUpdated": "2025-08-17",
-    "totalSupplements": 89,
-    "completedSupplements": 89,
-    "targetSupplements": 89,
+    "version": "2.1",
+    "lastUpdated": "2026-03-15",
+    "totalSupplements": 93,
+    "completedSupplements": 93,
+    "targetSupplements": 93,
     "evidenceBasedOn": "501+ research papers from systematic searches",
-    "expansionStatus": "Phase 1 COMPLETE - All 89 target supplements successfully added with comprehensive evidence tracking"
+    "expansionStatus": "Phase 1 COMPLETE - All 93 supplements added with comprehensive evidence tracking and citation schema normalization"
   },
   
   "supplements": [

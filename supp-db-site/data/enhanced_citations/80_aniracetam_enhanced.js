@@ -3,261 +3,266 @@
 // Date: 2025-08-25
 // Research Quality Score: 78% (Tier 3 High-Priority Standard)
 
-const aniracetamEnhanced = {
-  "id": 80,
-  "name": "Aniracetam",
-  "scientificName": "N-anisoyl-2-pyrrolidinone",
-  "category": "Nootropics",
-  "commonNames": ["Ampamet", "Draganon", "N-anisoyl-2-pyrrolidinone"],
-  
-  "evidenceProfile": {
-    "overallQuality": "Tier 3",
-    "totalCitations": 12,
-    "researchQualityScore": 78,
-    "lastEvidenceUpdate": "2025-08-25",
-    "evidenceStrength": {
-      "mechanisms": "Strong",
-      "clinicalBenefits": "Moderate",
-      "safety": "Limited data",
-      "dosage": "Limited guidance"
+const supplement_unknown_enhanced = {
+    id:  80,
+    name:  "Aniracetam",
+    scientificName:  "N-anisoyl-2-pyrrolidinone",
+    category:  "Nootropics",
+    commonNames:  [
+        "Ampamet",
+        "Draganon",
+        "N-anisoyl-2-pyrrolidinone"
+    ],
+    evidenceProfile:  {
+        overallQuality:  "Tier 3",
+        totalCitations:  12,
+        researchQualityScore:  78,
+        lastEvidenceUpdate:  "2025-08-25",
+        evidenceStrength:  {
+            mechanisms:  "Strong",
+            clinicalBenefits:  "Moderate",
+            safety:  "Limited data",
+            dosage:  "Limited guidance"
+        },
+        researchMaturity:  "Developing",
+        publicationSpan:  "1990-2025",
+        keyFindings:  "Nootropic compound with moderate evidence for cognitive enhancement and memory support",
+        geographicDiversity:  [
+            "Japan",
+            "Europe",
+            "USA"
+        ],
+        studyTypes:  [
+            "RCT",
+            "Preclinical Studies",
+            "Mechanistic Studies",
+            "Case Studies"
+        ]
     },
-    "researchMaturity": "Developing",
-    "publicationSpan": "1990-2025",
-    "keyFindings": "Nootropic compound with moderate evidence for cognitive enhancement and memory support",
-    "geographicDiversity": ["Japan", "Europe", "USA"],
-    "studyTypes": ["RCT", "Preclinical Studies", "Mechanistic Studies", "Case Studies"]
-  },
-
-  "citations": {
-    "mechanisms": [
-      {
-        "claim": "AMPA receptor positive modulation enhances synaptic transmission",
-        "strength": "Strong",
-        "mechanismType": "Glutamate receptor modulation",
-        "tissueTarget": "Hippocampus and cortex",
-        "studies": [
-          {
-            "title": "Aniracetam ameliorates attention deficit hyperactivity disorder via AMPA receptor modulation",
-            "authors": "Kim J, Lee S, Park H, et al.",
-            "journal": "eNeuro",
-            "year": 2025,
-            "volume": "12",
-            "issue": "3",
-            "pages": "ENEURO.0578-24.2025",
-            "doi": "10.1523/ENEURO.0578-24.2025",
-            "pmid": "40118526",
-            "studyType": "mechanistic_study",
-            "evidenceLevel": "Level 2",
-            "participants": "Animal model",
-            "duration": "4 weeks",
-            "dosage": "50-100 mg/kg",
-            "findings": "Aniracetam enhances AMPA receptor function and improves attention deficits",
-            "effectSize": "Large improvement in attention tasks",
-            "pValue": "<0.001",
-            "confidenceInterval": "95% CI provided"
-          }
+    citations:  {
+        mechanisms:  [
+            {
+                claim:  "AMPA receptor positive modulation enhances synaptic transmission",
+                strength:  "Strong",
+                mechanismType:  "Glutamate receptor modulation",
+                tissueTarget:  "Hippocampus and cortex",
+                evidence:  [
+                    {
+                        title:  "Aniracetam ameliorates attention deficit hyperactivity disorder via AMPA receptor modulation",
+                        authors:  "Kim J, Lee S, Park H, et al.",
+                        journal:  "eNeuro",
+                        year:  2025,
+                        volume:  "12",
+                        issue:  "3",
+                        pages:  "ENEURO.0578-24.2025",
+                        doi:  "10.1523/ENEURO.0578-24.2025",
+                        pmid:  "40118526",
+                        studyType:  "mechanistic_study",
+                        evidenceLevel:  "Level 2",
+                        participants:  "Animal model",
+                        duration:  "4 weeks",
+                        dosage:  "50-100 mg/kg",
+                        findings:  "Aniracetam enhances AMPA receptor function and improves attention deficits",
+                        effectSize:  "Large improvement in attention tasks",
+                        pValue:  "<0.001",
+                        confidenceInterval:  "95% CI provided"
+                    }
+                ]
+            },
+            {
+                claim:  "Cholinergic system modulation improves cognitive function",
+                strength:  "Moderate",
+                mechanismType:  "Cholinergic enhancement",
+                tissueTarget:  "Cholinergic neurons",
+                evidence:  [
+                    {
+                        title:  "Aniracetam enhances cognition by modulating cholinergic activity",
+                        authors:  "Nakamura K, Tanaka M",
+                        journal:  "Pharmacology Biochemistry and Behavior",
+                        year:  2001,
+                        volume:  "70",
+                        issue:  "4",
+                        pages:  "531-535",
+                        doi:  "10.1016/S0091-3057(01)00676-4",
+                        pmid:  "11796155",
+                        studyType:  "mechanistic_study",
+                        evidenceLevel:  "Level 3",
+                        participants:  "Animal studies",
+                        duration:  "Acute and chronic",
+                        dosage:  "10-100 mg/kg",
+                        findings:  "Aniracetam increases acetylcholine release and enhances cholinergic transmission",
+                        effectSize:  "Moderate enhancement",
+                        pValue:  "<0.05",
+                        confidenceInterval:  "N/A"
+                    }
+                ]
+            }
+        ],
+        benefits:  [
+            {
+                claim:  "Improves memory and cognitive function in elderly patients",
+                strength:  "Moderate",
+                benefitType:  "Cognitive enhancement",
+                populationTarget:  "Elderly with cognitive impairment",
+                evidence:  [
+                    {
+                        title:  "Clinical efficacy of aniracetam in cognitive impairment",
+                        authors:  "Senin U, Abate G, Fieschi C, et al.",
+                        journal:  "Archives of Gerontology and Geriatrics",
+                        year:  1991,
+                        volume:  "13",
+                        issue:  "2",
+                        pages:  "201-208",
+                        doi:  "10.1016/0167-4943(91)90056-P",
+                        pmid:  "15374421",
+                        studyType:  "randomized_controlled_trial",
+                        evidenceLevel:  "Level 2",
+                        participants:  "109 elderly patients",
+                        duration:  "6 months",
+                        dosage:  "1500 mg daily",
+                        findings:  "Significant improvement in cognitive function scores vs placebo",
+                        effectSize:  "Moderate (Cohen's d = 0.45)",
+                        pValue:  "<0.01",
+                        confidenceInterval:  "95% CI: 0.15-0.75"
+                    }
+                ]
+            },
+            {
+                claim:  "Reduces anxiety and improves mood",
+                strength:  "Moderate",
+                benefitType:  "Anxiolytic effects",
+                populationTarget:  "Adults with anxiety",
+                evidence:  [
+                    {
+                        title:  "Anxiolytic effects of aniracetam in clinical populations",
+                        authors:  "Nakamura K, Kurasawa M",
+                        journal:  "Psychopharmacology",
+                        year:  2001,
+                        volume:  "154",
+                        issue:  "1",
+                        pages:  "35-42",
+                        doi:  "10.1007/s002130000624",
+                        pmid:  "11292009",
+                        studyType:  "clinical_trial",
+                        evidenceLevel:  "Level 2",
+                        participants:  "60 patients",
+                        duration:  "4 weeks",
+                        dosage:  "750-1500 mg daily",
+                        findings:  "Significant reduction in anxiety scores and improved mood ratings",
+                        effectSize:  "Moderate anxiety reduction",
+                        pValue:  "<0.05",
+                        confidenceInterval:  "95% CI provided"
+                    }
+                ]
+            }
+        ],
+        safety:  [
+            {
+                claim:  "Generally well-tolerated with mild side effects",
+                strength:  "Moderate",
+                safetyType:  "General tolerability",
+                riskLevel:  "Low to moderate",
+                evidence:  [
+                    {
+                        title:  "Piracetam and piracetam-like drugs: from basic science to novel clinical applications to CNS disorders",
+                        authors:  "Malykh AG, Sadaie MR",
+                        journal:  "Drugs",
+                        year:  2010,
+                        volume:  "70",
+                        issue:  "3",
+                        pages:  "287-312",
+                        doi:  "10.2165/11319230-000000000-00000",
+                        pmid:  "20166767",
+                        studyType:  "safety_review",
+                        evidenceLevel:  "Level 2",
+                        participants:  "Multiple studies reviewed",
+                        duration:  "Various",
+                        dosage:  "750-3000 mg daily",
+                        findings:  "Mild side effects including headache, nervousness, and GI upset",
+                        effectSize:  "N/A",
+                        pValue:  "N/A",
+                        confidenceInterval:  "N/A"
+                    }
+                ]
+            }
+        ],
+        dosage:  [
+            {
+                claim:  "Optimal cognitive effects at 750-1500 mg daily",
+                strength:  "Limited",
+                dosageType:  "Cognitive enhancement",
+                populationTarget:  "Adults",
+                evidence:  [
+                    {
+                        title:  "Dose-response relationship of aniracetam in cognitive enhancement",
+                        authors:  "Cumin R, Bandle EF, Gamzu E, Haefely WE",
+                        journal:  "Psychopharmacology",
+                        year:  1982,
+                        volume:  "78",
+                        issue:  "2",
+                        pages:  "104-111",
+                        doi:  "10.1007/BF00432244",
+                        pmid:  "6817363",
+                        studyType:  "dose_response_study",
+                        evidenceLevel:  "Level 3",
+                        participants:  "Animal and limited human data",
+                        duration:  "Various",
+                        dosage:  "100-3000 mg daily",
+                        findings:  "Optimal effects observed at 750-1500 mg daily in human studies",
+                        effectSize:  "Dose-dependent",
+                        pValue:  "Variable",
+                        confidenceInterval:  "Limited data"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "claim": "Cholinergic system modulation improves cognitive function",
-        "strength": "Moderate",
-        "mechanismType": "Cholinergic enhancement",
-        "tissueTarget": "Cholinergic neurons",
-        "studies": [
-          {
-            "title": "Aniracetam enhances cognition by modulating cholinergic activity",
-            "authors": "Nakamura K, Tanaka M",
-            "journal": "Pharmacology Biochemistry and Behavior",
-            "year": 2001,
-            "volume": "70",
-            "issue": "4",
-            "pages": "531-535",
-            "doi": "10.1016/S0091-3057(01)00676-4",
-            "pmid": "11796155",
-            "studyType": "mechanistic_study",
-            "evidenceLevel": "Level 3",
-            "participants": "Animal studies",
-            "duration": "Acute and chronic",
-            "dosage": "10-100 mg/kg",
-            "findings": "Aniracetam increases acetylcholine release and enhances cholinergic transmission",
-            "effectSize": "Moderate enhancement",
-            "pValue": "<0.05",
-            "confidenceInterval": "N/A"
-          }
+    },
+    interactions:  {
+        drugInteractions:  [
+            {
+                substance:  "CNS depressants",
+                interactionType:  "Potential enhancement",
+                severity:  "Moderate",
+                description:  "May enhance sedative effects",
+                recommendation:  "Use caution with alcohol and sedatives"
+            }
+        ],
+        supplementInteractions:  [
+            {
+                substance:  "Other racetams",
+                interactionType:  "Additive",
+                severity:  "Unknown",
+                description:  "Effects of combination unknown",
+                recommendation:  "Avoid concurrent use without medical supervision"
+            }
         ]
-      }
-    ],
-
-    "benefits": [
-      {
-        "claim": "Improves memory and cognitive function in elderly patients",
-        "strength": "Moderate",
-        "benefitType": "Cognitive enhancement",
-        "populationTarget": "Elderly with cognitive impairment",
-        "studies": [
-          {
-            "title": "Clinical efficacy of aniracetam in cognitive impairment",
-            "authors": "Senin U, Abate G, Fieschi C, et al.",
-            "journal": "Archives of Gerontology and Geriatrics",
-            "year": 1991,
-            "volume": "13",
-            "issue": "2",
-            "pages": "201-208",
-            "doi": "10.1016/0167-4943(91)90056-P",
-            "pmid": "15374421",
-            "studyType": "randomized_controlled_trial",
-            "evidenceLevel": "Level 2",
-            "participants": "109 elderly patients",
-            "duration": "6 months",
-            "dosage": "1500 mg daily",
-            "findings": "Significant improvement in cognitive function scores vs placebo",
-            "effectSize": "Moderate (Cohen's d = 0.45)",
-            "pValue": "<0.01",
-            "confidenceInterval": "95% CI: 0.15-0.75"
-          }
+    },
+    additional:  {
+        clinicalConsiderations:  [
+            "Limited human safety data compared to piracetam",
+            "Start with lower doses (750 mg) and assess tolerance",
+            "Take with food to improve absorption and reduce GI upset",
+            "Effects may be more pronounced than piracetam"
+        ],
+        qualityMarkers:  [
+            "Pharmaceutical grade synthesis",
+            "Third-party tested for purity",
+            "Proper storage (protect from light and moisture)"
+        ],
+        researchGaps:  [
+            "Limited long-term safety data in healthy adults",
+            "Optimal dosing protocols need refinement",
+            "Interaction studies with other nootropics needed",
+            "More robust clinical trials in healthy populations required"
         ]
-      },
-      {
-        "claim": "Reduces anxiety and improves mood",
-        "strength": "Moderate",
-        "benefitType": "Anxiolytic effects",
-        "populationTarget": "Adults with anxiety",
-        "studies": [
-          {
-            "title": "Anxiolytic effects of aniracetam in clinical populations",
-            "authors": "Nakamura K, Kurasawa M",
-            "journal": "Psychopharmacology",
-            "year": 2001,
-            "volume": "154",
-            "issue": "1",
-            "pages": "35-42",
-            "doi": "10.1007/s002130000624",
-            "pmid": "11292009",
-            "studyType": "clinical_trial",
-            "evidenceLevel": "Level 2",
-            "participants": "60 patients",
-            "duration": "4 weeks",
-            "dosage": "750-1500 mg daily",
-            "findings": "Significant reduction in anxiety scores and improved mood ratings",
-            "effectSize": "Moderate anxiety reduction",
-            "pValue": "<0.05",
-            "confidenceInterval": "95% CI provided"
-          }
-        ]
-      }
-    ],
-
-    "safety": [
-      {
-        "claim": "Generally well-tolerated with mild side effects",
-        "strength": "Moderate",
-        "safetyType": "General tolerability",
-        "riskLevel": "Low to moderate",
-        "studies": [
-          {
-            "title": "Piracetam and piracetam-like drugs: from basic science to novel clinical applications to CNS disorders",
-            "authors": "Malykh AG, Sadaie MR",
-            "journal": "Drugs",
-            "year": 2010,
-            "volume": "70",
-            "issue": "3",
-            "pages": "287-312",
-            "doi": "10.2165/11319230-000000000-00000",
-            "pmid": "20166767",
-            "studyType": "safety_review",
-            "evidenceLevel": "Level 2",
-            "participants": "Multiple studies reviewed",
-            "duration": "Various",
-            "dosage": "750-3000 mg daily",
-            "findings": "Mild side effects including headache, nervousness, and GI upset",
-            "effectSize": "N/A",
-            "pValue": "N/A",
-            "confidenceInterval": "N/A"
-          }
-        ]
-      }
-    ],
-
-    "dosage": [
-      {
-        "claim": "Optimal cognitive effects at 750-1500 mg daily",
-        "strength": "Limited",
-        "dosageType": "Cognitive enhancement",
-        "populationTarget": "Adults",
-        "studies": [
-          {
-            "title": "Dose-response relationship of aniracetam in cognitive enhancement",
-            "authors": "Cumin R, Bandle EF, Gamzu E, Haefely WE",
-            "journal": "Psychopharmacology",
-            "year": 1982,
-            "volume": "78",
-            "issue": "2",
-            "pages": "104-111",
-            "doi": "10.1007/BF00432244",
-            "pmid": "6817363",
-            "studyType": "dose_response_study",
-            "evidenceLevel": "Level 3",
-            "participants": "Animal and limited human data",
-            "duration": "Various",
-            "dosage": "100-3000 mg daily",
-            "findings": "Optimal effects observed at 750-1500 mg daily in human studies",
-            "effectSize": "Dose-dependent",
-            "pValue": "Variable",
-            "confidenceInterval": "Limited data"
-          }
-        ]
-      }
-    ]
-  },
-
-  "interactions": {
-    "drugInteractions": [
-      {
-        "substance": "CNS depressants",
-        "interactionType": "Potential enhancement",
-        "severity": "Moderate",
-        "description": "May enhance sedative effects",
-        "recommendation": "Use caution with alcohol and sedatives"
-      }
-    ],
-    "supplementInteractions": [
-      {
-        "substance": "Other racetams",
-        "interactionType": "Additive",
-        "severity": "Unknown",
-        "description": "Effects of combination unknown",
-        "recommendation": "Avoid concurrent use without medical supervision"
-      }
-    ]
-  },
-
-  "additional": {
-    "clinicalConsiderations": [
-      "Limited human safety data compared to piracetam",
-      "Start with lower doses (750 mg) and assess tolerance",
-      "Take with food to improve absorption and reduce GI upset",
-      "Effects may be more pronounced than piracetam"
-    ],
-    "qualityMarkers": [
-      "Pharmaceutical grade synthesis",
-      "Third-party tested for purity",
-      "Proper storage (protect from light and moisture)"
-    ],
-    "researchGaps": [
-      "Limited long-term safety data in healthy adults",
-      "Optimal dosing protocols need refinement",
-      "Interaction studies with other nootropics needed",
-      "More robust clinical trials in healthy populations required"
-    ]
-  }
+    }
 };
 
-// Export for module systems
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = aniracetamEnhanced;
+if (typeof window !== 'undefined') {
+    window.enhancedCitations = window.enhancedCitations || {};
+    window.enhancedCitations[80] = supplement_unknown_enhanced;
 }
 
-// Global assignment for browser environments
-if (typeof window !== 'undefined') {
-  window.aniracetamEnhanced = aniracetamEnhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = supplement_unknown_enhanced;
 }

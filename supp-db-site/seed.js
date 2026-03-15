@@ -209,7 +209,31 @@ function buildEvidenceGroups(citations) {
     for (const { key, title } of MAP) {
         const items = citations[key];
         if (items && items.length) {
-            groups.push({ groupTitle: title, cards: items.map(buildCard) });
+            const flatCards = [];
+            for (const item of items) {
+                // Support both `evidence` and `studies` as the nested array key
+                const nestedArr = Array.isArray(item.evidence) ? item.evidence
+                                : Array.isArray(item.studies)  ? item.studies
+                                : null;
+                if (nestedArr) {
+                    // Pattern C: nested group with evidence/studies array – flatten
+                    for (const ev of nestedArr) {
+                        flatCards.push(buildCard({
+                            ...ev,
+                            claim: item.mechanism || item.healthDomain || item.safetyAspect || item.dosageRange || item.claim || '',
+                            evidence: item.strength || item.evidenceQuality || ev.evidenceLevel || '',
+                            details: ev.findings || ev.details || '',
+                            participants: ev.sampleSize || ev.participants || '',
+                        }));
+                    }
+                } else {
+                    // Pattern A/B: flat item – pass directly
+                    flatCards.push(buildCard(item));
+                }
+            }
+            if (flatCards.length) {
+                groups.push({ groupTitle: title, cards: flatCards });
+            }
         }
     }
     return groups;
