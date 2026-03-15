@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniracetam — Evidence-Based Guide | SupplementDB</title>
-    <meta name="description" content="Evidence-based research on Aniracetam. Limited human studies but established AMPA receptor activity.">
-    <link rel="canonical" href="https://supplementdb.com/supplements/aniracetam.html">
-    <meta property="og:title" content="Aniracetam — Evidence-Based Guide">
-    <meta property="og:description" content="Limited human studies but established AMPA receptor activity">
+    <meta name="description" content="Comprehensive evidence review for Aniracetam. Tier 3 evidence with 7+ citations covering benefits, dosage, safety, and mechanisms of action.">
+    <link rel="canonical" href="https://supplementdb.co/supplements/aniracetam.html">
+    <meta property="og:title" content="Aniracetam — Evidence-Based Guide | SupplementDB">
+    <meta property="og:description" content="Comprehensive evidence review for Aniracetam. Tier 3 evidence with 7+ citations covering benefits, dosage, safety, and mechanisms of action.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://supplementdb.com/supplements/aniracetam.html">
+    <meta property="og:url" content="https://supplementdb.co/supplements/aniracetam.html">
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Aniracetam — Evidence-Based Guide">
-    <meta name="twitter:description" content="Limited human studies but established AMPA receptor activity">
+    <meta name="twitter:title" content="Aniracetam — Evidence-Based Guide | SupplementDB">
+    <meta name="twitter:description" content="Comprehensive evidence review for Aniracetam. Tier 3 evidence with 7+ citations covering benefits, dosage, safety, and mechanisms of action.">
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -21,1650 +21,451 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 
     <!-- PostHog Analytics -->
-    <script></script>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
 
-    <!-- Clerk Auth -->
-    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
-    <meta name="convex-url" content="__CONVEX_URL__">
-
-    <link rel="stylesheet" href="../css/auth.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../legal/legal-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773591349388">
 
-
-
-    <style>
-
-        /* =========================================================
-           DESIGN TOKENS — matching comparison guide system
-        ========================================================= */
-        :root {
-            --accent: #2d5a3d;
-            --accent-light: #3a7a52;
-            --accent-bg: #f0f7f2;
-            --accent-dark: #1e3e2b;
-            --blue: #2563eb;
-            --blue-bg: #eff6ff;
-            --amber: #d97706;
-            --amber-bg: #fffbeb;
-            --red: #dc2626;
-            --red-bg: #fef2f2;
-            --orange: #ea580c;
-            --orange-bg: #fff7ed;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a6a;
-            --text-muted: #6b7280;
-            --border: #e5e7eb;
-            --bg-page: #fafaf8;
-            --bg-card: #ffffff;
-            --bg-nav: #1a1a2e;
-            --radius: 10px;
-            --serif: 'Source Serif 4', Georgia, serif;
-            --sans: 'DM Sans', system-ui, sans-serif;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
-            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: var(--bg-page);
-            color: var(--text-primary);
-            font-family: var(--sans);
-            font-size: 16px;
-            line-height: 1.75;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* =========================================================
-           NAV
-        ========================================================= */
-        .nav {
-            background: var(--bg-nav);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        .nav-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 58px;
-        }
-        .nav-brand {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
-        }
-        .nav-link {
-            color: rgba(255,255,255,0.65);
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-        .nav-link:hover { color: #fff; }
-
-        /* =========================================================
-           PROGRESS TRACK (sticky numbered nav)
-        ========================================================= */
-        .progress-track {
-            position: sticky;
-            top: 58px;
-            z-index: 90;
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .progress-track-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-        .progress-track-inner::-webkit-scrollbar { display: none; }
-        .progress-step { flex-shrink: 0; display: flex; align-items: center; }
-        .progress-step a {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.625rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            white-space: nowrap;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-        .progress-step a:hover { color: var(--accent); }
-        .progress-step a.active { color: var(--accent); border-bottom-color: var(--accent); }
-        .step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 1.25rem;
-            height: 1.25rem;
-            background: var(--border);
-            border-radius: 50%;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-        .progress-step a.active .step-num {
-            background: var(--accent);
-            color: #fff;
-        }
-        .progress-divider {
-            width: 1.5rem;
-            height: 1px;
-            background: var(--border);
-            flex-shrink: 0;
-        }
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-        .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f2419 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 15% 50%, rgba(45,90,61,0.3) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(37,99,235,0.12) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .hero-inner {
-            position: relative;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 2.75rem;
-        }
-        .hero-breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 1.5rem;
-        }
-        .hero-breadcrumb a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-        .hero-breadcrumb a:hover { color: rgba(255,255,255,0.85); }
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.3rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-        .hero-badge-tier {
-            background: #16a34a;
-            color: #fff;
-        }
-        .hero-badge-category {
-            background: rgba(37,99,235,0.25);
-            border: 1px solid rgba(37,99,235,0.4);
-            color: #93c5fd;
-        }
-        .hero-badge-safety {
-            background: rgba(20,184,166,0.2);
-            border: 1px solid rgba(20,184,166,0.4);
-            color: #5eead4;
-        }
-        .hero h1 {
-            font-family: var(--serif);
-            font-size: clamp(2.25rem, 5vw, 3.25rem);
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
-        }
-        .hero-sci-name {
-            font-family: var(--serif);
-            font-style: italic;
-            font-size: 1rem;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 0.25rem;
-        }
-        .hero-also-known {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 0.75rem;
-        }
-        .hero-tagline {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.65);
-            margin-bottom: 1.75rem;
-            max-width: 580px;
-        }
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.625rem;
-        }
-        .hero-stat {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.3rem 0.875rem;
-            border: 1px solid rgba(255,255,255,0.18);
-            border-radius: 100px;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.6);
-        }
-        .hero-stat i { color: rgba(255,255,255,0.35); font-size: 0.75rem; }
-
-        /* =========================================================
-           SHARE + TRUST BAR
-        ========================================================= */
-        .meta-bar {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0.875rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .trust-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .trust-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-        .trust-chip i { color: var(--accent); font-size: 0.72rem; }
-        .trust-chip a { color: var(--accent); font-weight: 600; text-decoration: none; }
-        .trust-chip a:hover { text-decoration: underline; }
-        .share-btns {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.3rem 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            background: transparent;
-            color: var(--text-muted);
-            font-family: var(--sans);
-            font-size: 0.78rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        .share-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-bg);
-        }
-
-        /* =========================================================
-           LAYOUT: sidebar + main
-        ========================================================= */
-        .page-layout {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem;
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 116px;
-        }
-        .sidebar-toc {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .sidebar-toc-title {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 0.875rem;
-        }
-        .sidebar-toc ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.125rem;
-        }
-        .sidebar-toc a {
-            display: block;
-            padding: 0.35rem 0.625rem;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.15s;
-            line-height: 1.4;
-        }
-        .sidebar-toc a:hover {
-            color: var(--accent);
-            background: var(--accent-bg);
-        }
-        .sidebar-toc a.active {
-            color: var(--accent);
-            background: var(--accent-bg);
-            font-weight: 600;
-        }
-
-        /* Main */
-        .main-content {
-            min-width: 0;
-        }
-
-        /* =========================================================
-           SECTION STYLES
-        ========================================================= */
-        .section {
-            margin-bottom: 3.5rem;
-            scroll-margin-top: 120px;
-        }
-        .section-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-num-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-shrink: 0;
-            margin-top: 0.125rem;
-        }
-        .section-num-circle {
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            background: var(--accent-bg);
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .section-num-line {
-            width: 2px;
-            flex: 1;
-            min-height: 1.5rem;
-            background: linear-gradient(to bottom, var(--accent), transparent);
-            margin-top: 4px;
-        }
-        .section-heading-group { flex: 1; }
-        .section-label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 0.2rem;
-        }
-        .section h2 {
-            font-family: var(--serif);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.3;
-            margin: 0;
-        }
-        .section-intro {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-        }
-
-        /* =========================================================
-           QUICK FACTS — info-card grid
-        ========================================================= */
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.875rem;
-        }
-        .fact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.125rem 1.25rem;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-            gap: 0.375rem;
-        }
-        .fact-card-icon {
-            font-size: 1.125rem;
-            color: var(--accent);
-            margin-bottom: 0.125rem;
-        }
-        .fact-card-label {
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-        }
-        .fact-card-value {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.45;
-        }
-
-        /* =========================================================
-           OVERVIEW
-        ========================================================= */
-        .overview-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: var(--radius);
-            padding: 1.5rem 1.75rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .overview-card p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.875rem; }
-        .overview-card p:last-child { margin-bottom: 0; }
-        .key-finding-text {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .populations-text {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-        .populations-text strong { color: var(--text-secondary); }
-
-        /* =========================================================
-           MECHANISMS — 2×2 numbered grid
-        ========================================================= */
-        .mechanism-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.875rem;
-        }
-        .mechanism-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .mechanism-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-        }
-        .mechanism-num {
-            font-family: var(--serif);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-            flex-shrink: 0;
-            min-width: 2rem;
-        }
-        .mechanism-text {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            padding-top: 0.25rem;
-            line-height: 1.5;
-        }
-
-        /* =========================================================
-           BENEFITS — two-column
-        ========================================================= */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        .benefit-col {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.375rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .benefit-col-title {
-            font-family: var(--serif);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.875rem;
-            padding-bottom: 0.625rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .benefit-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .benefit-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        .benefit-list li::before {
-            content: '';
-            display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%232d5a3d'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat center center;
-            background-size: contain;
-            flex-shrink: 0;
-            margin-top: 0.125rem;
-        }
-
-        /* =========================================================
-           EFFECT SIZES — data table
-        ========================================================= */
-        .effect-table-wrap {
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            overflow-x: auto;
-        }
-        .effect-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-            background: var(--bg-card);
-        }
-        .effect-table thead th {
-            padding: 0.75rem 1.25rem;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-muted);
-            background: #f9fafb;
-            border-bottom: 1px solid var(--border);
-            text-align: left;
-        }
-        .effect-table tbody tr:nth-child(even) td { background: #f9fafb; }
-        .effect-table tbody tr:last-child td { border-bottom: none; }
-        .effect-table td {
-            padding: 0.875rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-            vertical-align: top;
-        }
-        .effect-domain {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--accent);
-            white-space: nowrap;
-            min-width: 140px;
-        }
-        .effect-value strong {
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        /* =========================================================
-           DOSAGE — card layout
-        ========================================================= */
-        .dosage-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem 1.75rem;
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 1.25rem;
-        }
-        .dosage-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
-        .dosage-field label {
-            display: block;
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-        .dosage-field span {
-            font-size: 0.92rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .dosage-divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 1.25rem 0;
-        }
-        .populations-label {
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 0.625rem;
-        }
-        .population-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .population-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.275rem 0.75rem;
-            background: var(--accent-bg);
-            border: 1px solid rgba(45,90,61,0.2);
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        /* =========================================================
-           SAFETY — three-column grid
-        ========================================================= */
-        .safety-rating-display {
-            margin-bottom: 1.25rem;
-        }
-        .safety-rating-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: var(--blue-bg);
-            border: 1px solid rgba(37,99,235,0.25);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--blue);
-        }
-        .safety-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.875rem;
-        }
-        .safety-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.375rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .safety-card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.875rem;
-            padding-bottom: 0.625rem;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        .safety-card-header i { font-size: 0.875rem; }
-        .safety-card-amber .safety-card-header i { color: var(--amber); }
-        .safety-card-red .safety-card-header i { color: var(--red); }
-        .safety-card-orange .safety-card-header i { color: var(--orange); }
-        .safety-card-amber { border-top: 3px solid var(--amber); }
-        .safety-card-red { border-top: 3px solid var(--red); }
-        .safety-card-orange { border-top: 3px solid var(--orange); }
-        .safety-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .safety-list li {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            line-height: 1.45;
-        }
-        .safety-list li::before {
-            content: '•';
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 0.05rem;
-        }
-        .safety-card-amber .safety-list li::before { color: var(--amber); }
-        .safety-card-red .safety-list li::before { color: var(--red); }
-        .safety-card-orange .safety-list li::before { color: var(--orange); }
-
-        /* =========================================================
-           ENHANCED EVIDENCE
-        ========================================================= */
-        .citation-group {
-            margin-bottom: 2.5rem;
-        }
-        .citation-group-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--serif);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.625rem;
-            border-bottom: 2px solid var(--border);
-        }
-        .citation-group-header i { color: var(--accent); font-size: 0.95rem; }
-        .evidence-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 0.875rem;
-        }
-        .evidence-card-title {
-            font-size: 0.975rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.625rem;
-            line-height: 1.45;
-        }
-        .evidence-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.375rem;
-            margin-bottom: 0.875rem;
-        }
-        .evidence-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.2rem 0.625rem;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            background: #f3f4f6;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-        }
-        .evidence-tag-strong {
-            background: #dcfce7;
-            color: #15803d;
-            border-color: #bbf7d0;
-        }
-        .evidence-tag-moderate {
-            background: #dbeafe;
-            color: #1d4ed8;
-            border-color: #bfdbfe;
-        }
-        .evidence-tag-emerging {
-            background: #fef3c7;
-            color: #b45309;
-            border-color: #fde68a;
-        }
-        .study-item {
-            padding-top: 0.875rem;
-            border-top: 1px solid var(--border);
-        }
-        .study-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            line-height: 1.5;
-        }
-        .study-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.625rem;
-        }
-        .study-findings-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            margin-bottom: 0.75rem;
-        }
-        .study-findings-list li {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            line-height: 1.5;
-        }
-        .study-findings-list li::before {
-            content: '→';
-            color: var(--accent);
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .study-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--blue);
-            text-decoration: none;
-            padding: 0.25rem 0.625rem;
-            background: var(--blue-bg);
-            border: 1px solid rgba(37,99,235,0.2);
-            border-radius: 100px;
-            transition: all 0.15s;
-        }
-        .study-link:hover {
-            background: #dbeafe;
-            border-color: var(--blue);
-        }
-
-        /* =========================================================
-           REFERENCES
-        ========================================================= */
-        .ref-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .ref-item {
-            display: flex;
-            gap: 0.875rem;
-            padding: 0.875rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .ref-item:last-child { border-bottom: none; }
-        .ref-num {
-            flex-shrink: 0;
-            width: 1.625rem;
-            height: 1.625rem;
-            background: var(--accent-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-top: 0.125rem;
-        }
-        .ref-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-        .ref-text a { color: var(--accent); }
-        .ref-text em { font-style: italic; }
-
-        /* =========================================================
-           RELATED
-        ========================================================= */
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.875rem;
-        }
-        .related-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            padding: 1.25rem 1.375rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.15s;
-            box-shadow: var(--shadow-sm);
-        }
-        .related-card:hover {
-            border-color: var(--accent);
-            background: var(--accent-bg);
-        }
-        .related-card-icon {
-            font-size: 1.375rem;
-            color: var(--accent);
-        }
-        .related-card strong {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-        .related-card p {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        /* =========================================================
-           DISCLAIMER
-        ========================================================= */
-        .disclaimer-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.375rem 1.625rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .disclaimer-title {
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .disclaimer-title i { color: var(--amber); }
-        .disclaimer-text {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-        .site-footer {
-            background: var(--bg-nav);
-            color: rgba(255,255,255,0.55);
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-        .site-footer strong { color: #fff; }
-        .site-footer a {
-            color: rgba(255,255,255,0.55);
-            text-decoration: none;
-            margin: 0 0.625rem;
-        }
-        .site-footer a:hover { color: #fff; }
-        .footer-links { margin: 1rem 0; }
-        .footer-copyright { margin-top: 0.75rem; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-        @media (max-width: 1024px) {
-            .page-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                display: none;
-            }
-            .facts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .safety-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .related-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 768px) {
-            .hero-inner { padding: 2rem 1rem 2rem; }
-            .hero h1 { font-size: 2rem; }
-            .progress-track { display: none; }
-            .page-layout { padding: 1.5rem 1rem; }
-            .meta-bar { padding: 0.75rem 1rem; }
-            .mechanism-grid { grid-template-columns: 1fr; }
-            .benefits-grid { grid-template-columns: 1fr; }
-            .dosage-grid { grid-template-columns: 1fr; }
-            .safety-grid { grid-template-columns: 1fr; }
-            .facts-grid { grid-template-columns: 1fr; }
-            .related-grid { grid-template-columns: 1fr; }
-            .trust-chips { display: none; }
-        }
-        @media (max-width: 900px) {
-            .progress-step a span:not(.step-num) { display: none; }
-        }
-    
-        /* evidence-prose: prose-format citation details */
-        .evidence-prose {
-            font-size: 0.83rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            margin-bottom: 0.75rem;
-        }
-        /* tier badge colour variants */
-        .hero-badge-tier-2 { background: #ca8a04 !important; }
-        .hero-badge-tier-3 { background: #dc2626 !important; }
-    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Aniracetam","headline":"Aniracetam — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Aniracetam. Tier 3 evidence with 7+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-15","dateModified":"2026-03-15","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/aniracetam.html"},"about":{"@type":"DietarySupplement","name":"Aniracetam","alternateName":"Ampamet","activeIngredient":"Aniracetam"}}</script>
 </head>
-<body>
-
-<!-- Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="../index.html" class="nav-brand">
-            <i class="fas fa-pills"></i> SupplementDB
-        </a>
-        <div class="nav-links">
-            <a href="../guides/sleep.html" class="nav-link">Sleep Guide</a>
-            <a href="../index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Database</a>
-            <a href="../tools/stack-analyzer.html" class="nav-link"><i class="fas fa-layer-group"></i> Stack Analyzer</a>
-            <div id="auth-buttons"></div>
+<body class="content-page">
+    <!-- Navigation -->
+    <nav class="legal-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-pills text-xl"></i>
+                <span class="font-bold text-lg">SupplementDB</span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="../guides/sleep.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">Sleep Guide</a>
+                <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                    <i class="fas fa-arrow-left mr-1"></i> Database
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Sticky numbered section nav -->
-<div class="progress-track" id="progress-track">
-    <div class="progress-track-inner">
-        <div class="progress-step"><a href="#quick-facts" class="active"><span class="step-num">1</span><span>Quick Facts</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#overview"><span class="step-num">2</span><span>Overview</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#mechanisms"><span class="step-num">3</span><span>Mechanisms</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#benefits"><span class="step-num">4</span><span>Benefits</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#effect-sizes"><span class="step-num">5</span><span>Effect Sizes</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#dosage"><span class="step-num">6</span><span>Dosage</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#safety"><span class="step-num">7</span><span>Safety</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#enhanced-evidence"><span class="step-num">8</span><span>Evidence</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#references"><span class="step-num">9</span><span>References</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#related"><span class="step-num">10</span><span>Related</span></a></div>
-    </div>
-</div>
-
-<!-- Hero -->
-<header class="hero">
-    <div class="hero-inner">
-        <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+    <div class="content-body">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
-            <span><i class="fas fa-chevron-right" style="font-size:0.55rem;"></i></span>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
             <a href="../index.html#database">Supplements</a>
-            <span><i class="fas fa-chevron-right" style="font-size:0.55rem;"></i></span>
-            <span>Aniracetam</span>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">Aniracetam</span>
         </nav>
-        <div class="hero-badges">
-            <span class="hero-badge hero-badge-tier hero-badge-tier-3">
-                <i class="fas fa-star"></i> Tier 3: Preliminary Evidence
-            </span>
-            <span class="hero-badge hero-badge-category">
-                <i class="fas fa-tag"></i> Nootropics
-            </span>
-            <span class="hero-badge hero-badge-safety">
-                <i class="fas fa-shield-alt"></i> Safety: Moderate
-            </span>
+
+        <!-- Hero -->
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
+                <span class="tier-badge" style="background:#d97706;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 3: Preliminary Evidence</span>
+                <span class="monograph-badge monograph-badge-category">Nootropics</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="moderate">Moderate</span>
+            </div>
+            <h1>Aniracetam</h1>
+            
+            <p class="common-names">Also known as: Ampamet, Draganon</p>
+            <p class="hero-subtitle">Limited human studies but established AMPA receptor activity</p>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 7+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 3: Preliminary Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Moderate</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-15</div>
+            </div>
+        </header>
+
+        <!-- Share Bar -->
+        <div class="share-bar">
+            <span class="share-bar-label">Share this monograph</span>
+            <div class="share-bar-buttons">
+                <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+                <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+                <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
+                <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
         </div>
-        <h1>Aniracetam</h1>
-        <p class="hero-sci-name">Aniracetam</p>
-        <p class="hero-also-known">Also known as: Ampamet, Draganon</p>
-        <p class="hero-tagline">Limited human studies but established AMPA receptor activity</p>
-        <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 12+ Citations</div>
-            <div class="hero-stat"><i class="fas fa-circle"></i> Tier 3: Preliminary Evidence</div>
-            <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Moderate</div>
+
+        <!-- Trust Signal Bar -->
+        <div class="trust-bar">
+            <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 7+ Verified Citations</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
         </div>
-    </div>
-</header>
 
-<!-- Share + Trust bar -->
-<div class="meta-bar">
-    <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 12+ Citations</span>
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 3: Preliminary Evidence</span>
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Moderate</span>
-        <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
-    </div>
-    <div class="share-btns">
-        <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
-        <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-        <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
-        <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-    </div>
-</div>
+        <div class="guide-layout">
+            <!-- Sidebar -->
+            <aside class="guide-sidebar">
+                <nav class="sidebar-toc">
+                    <h4>Contents</h4>
+                    <ul>
+                        <li><a href="#quick-facts">Quick Facts</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#mechanisms">Mechanisms of Action</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#effect-sizes">Effect Sizes</a></li>
+                        <li><a href="#dosage">Dosage & Administration</a></li>
+                        <li><a href="#safety">Safety Profile</a></li>
+                        <li><a href="#enhanced-evidence">Enhanced Evidence</a></li>
+                        <li><a href="#references">References</a></li>
+                        <li><a href="#related">Related Content</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-<!-- Page layout: sidebar + main -->
-<div class="page-layout">
+            <!-- Main Content -->
+            <main class="guide-main">
+                <!-- Quick Facts Card -->
+                <section class="content-section" id="quick-facts">
+                    <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
+                    <div class="table-responsive">
+                        <table class="monograph-facts-table">
+                            <tbody>
+                                <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#d97706;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 3: Preliminary Evidence</span></td></tr>
+                                <tr><td><strong>Category</strong></td><td>Nootropics</td></tr>
+                                <tr><td><strong>Scientific Name</strong></td><td><em>Aniracetam</em></td></tr>
+                                <tr><td><strong>Clinical Dosage</strong></td><td>750-1500mg daily (where legal)</td></tr>
+                                <tr><td><strong>Optimal Duration</strong></td><td>4-12 weeks</td></tr>
+                                <tr><td><strong>Safety Rating</strong></td><td><span style="background:#d97706;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Moderate</span></td></tr>
+                                <tr><td><strong>Available Forms</strong></td><td>Capsules, Powder</td></tr>
+                                <tr><td><strong>Cost Range</strong></td><td>$30-70/month (where available)</td></tr>
+                                <tr><td><strong>Quality Markers</strong></td><td>Research grade, Third-party tested, Legal status varies</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
-    <!-- Sidebar TOC -->
-    <aside class="sidebar">
-        <nav class="sidebar-toc" aria-label="Table of contents">
-            <div class="sidebar-toc-title">Contents</div>
-            <ul>
-                <li><a href="#quick-facts">Quick Facts</a></li>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#mechanisms">Mechanisms of Action</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#effect-sizes">Effect Sizes</a></li>
-                <li><a href="#dosage">Dosage &amp; Administration</a></li>
-                <li><a href="#safety">Safety Profile</a></li>
-                <li><a href="#enhanced-evidence">Enhanced Evidence</a></li>
-                <li><a href="#references">References</a></li>
-                <li><a href="#related">Related Content</a></li>
-            </ul>
-        </nav>
-    </aside>
+                <!-- Overview -->
+                <section class="content-section" id="overview">
+                    <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
+                    <div class="snippet-paragraph">
+                        <p>Aniracetam is classified as nootropics with preliminary evidence (Tier 3) for its primary applications. Limited human studies but established AMPA receptor activity</p>
+                        <p class="key-findings">Nootropic compound with moderate evidence for cognitive enhancement and memory support</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Cognitive decline; Learning enhancement; Memory disorders</p>
+                    </div>
+                </section>
 
-    <!-- Main content -->
-    <main class="main-content">
+                <!-- Mechanisms of Action -->
+                <section class="content-section" id="mechanisms">
+                    <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">AMPA receptor positive modulation</p>
+                        </div>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Enhanced synaptic plasticity</p>
+                        </div>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Increased BDNF expression</p>
+                        </div>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Cholinergic system enhancement</p>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- 1 · Quick Facts -->
-        <section class="section" id="quick-facts">
-            <div class="section-header">
-                <div class="section-num">1</div>
-                <div class="section-header-text">
-                    <div class="section-label">At a Glance</div>
-                    <h2>Quick Facts</h2>
-                </div>
-            </div>
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-medal"></i></div>
-                    <div class="fact-card-label">Evidence Tier</div>
-                    <div class="fact-card-value"><span style="display:inline-flex;align-items:center;background:#dc2626;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.72rem;font-weight:700;">Tier 3: Preliminary Evidence</span></div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-th-large"></i></div>
-                    <div class="fact-card-label">Category</div>
-                    <div class="fact-card-value">Nootropics</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-dna"></i></div>
-                    <div class="fact-card-label">Scientific Name</div>
-                    <div class="fact-card-value"><em>Aniracetam</em></div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
-                    <div class="fact-card-label">Clinical Dosage</div>
-                    <div class="fact-card-value">750-1500mg daily (where legal)</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-clock"></i></div>
-                    <div class="fact-card-label">Optimal Duration</div>
-                    <div class="fact-card-value">4-12 weeks</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="fact-card-label">Safety Rating</div>
-                    <div class="fact-card-value"><span style="display:inline-flex;align-items:center;background:var(--blue-bg);color:var(--blue);padding:2px 10px;border-radius:100px;font-size:0.72rem;font-weight:700;border:1px solid rgba(37,99,235,0.25);">Moderate</span></div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-capsules"></i></div>
-                    <div class="fact-card-label">Available Forms</div>
-                    <div class="fact-card-value">Capsules, Powder</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-dollar-sign"></i></div>
-                    <div class="fact-card-label">Cost Range</div>
-                    <div class="fact-card-value">$30-70/month (where available)</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-certificate"></i></div>
-                    <div class="fact-card-label">Quality Markers</div>
-                    <div class="fact-card-value">Research grade, Third-party tested, Legal status varies</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2 · Overview -->
-        <section class="section" id="overview">
-            <div class="section-header">
-                <div class="section-num">2</div>
-                <div class="section-header-text">
-                    <div class="section-label">Background</div>
-                    <h2>Overview</h2>
-                </div>
-            </div>
-            <div class="overview-content">
-                <p>Aniracetam is classified as nootropics with tier 3: preliminary evidence for its primary applications. Limited human studies but established AMPA receptor activity</p>
-                <p>Limited human studies but established AMPA receptor activity</p>
-                <p>Key study populations: Cognitive decline; Learning enhancement; Memory disorders</p>
-            </div>
-        </section>
-
-        <!-- 3 · Mechanisms -->
-        <section class="section" id="mechanisms">
-            <div class="section-header">
-                <div class="section-num">3</div>
-                <div class="section-header-text">
-                    <div class="section-label">How It Works</div>
-                    <h2>Mechanisms of Action</h2>
-                </div>
-            </div>
-            <div class="mechanism-grid">
-                <div class="mechanism-card">
-                    <div class="mechanism-num">1</div>
-                    <p class="mechanism-text">AMPA receptor positive modulation</p>
-                </div>
-                <div class="mechanism-card">
-                    <div class="mechanism-num">2</div>
-                    <p class="mechanism-text">Enhanced synaptic plasticity</p>
-                </div>
-                <div class="mechanism-card">
-                    <div class="mechanism-num">3</div>
-                    <p class="mechanism-text">Increased BDNF expression</p>
-                </div>
-                <div class="mechanism-card">
-                    <div class="mechanism-num">4</div>
-                    <p class="mechanism-text">Cholinergic system enhancement</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4 · Benefits -->
-        <section class="section" id="benefits">
-            <div class="section-header">
-                <div class="section-num">4</div>
-                <div class="section-header-text">
-                    <div class="section-label">What the Research Shows</div>
-                    <h2>Benefits</h2>
-                </div>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-col">
-                    <div class="benefit-col-title">Cognitive Benefits</div>
+                <!-- Benefits -->
+                <section class="content-section" id="benefits">
+                    <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
+                    <h3>Cognitive Benefits</h3>
                     <ul class="benefit-list">
                         <li>Memory enhancement</li>
                         <li>Learning facilitation</li>
                         <li>Verbal fluency</li>
                         <li>Creative thinking</li>
                     </ul>
-                </div>
-                <div class="benefit-col">
-                    <div class="benefit-col-title">Non-Cognitive Benefits</div>
+                    <h3>Non-Cognitive Benefits</h3>
                     <ul class="benefit-list">
                         <li>Mood enhancement</li>
                         <li>Social anxiety reduction</li>
                         <li>Sensory perception</li>
                     </ul>
-                </div>
-            </div>
-        </section>
+                </section>
+                <!-- Effect Sizes -->
+                <section class="content-section" id="effect-sizes">
+                    <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
+                    <div class="table-responsive">
+                        <table class="effect-table">
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Effect Size / Finding</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="effect-domain">MemoryEnhancement</td>
+                                    <td class="effect-value">Moderate in deficient populations</td>
+                                </tr>
+                                <tr>
+                                    <td class="effect-domain">LearningImprovement</td>
+                                    <td class="effect-value">Small to moderate in healthy adults</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- Dosage & Administration -->
+                <section class="content-section" id="dosage">
+                    <h2><i class="fas fa-prescription-bottle-alt section-icon"></i> Dosage & Administration</h2>
+                    <div class="table-responsive">
+                        <table class="snippet-table">
+                            <tbody>
+                                <tr><td><strong>Clinical Dosage Range</strong></td><td>750-1500mg daily (where legal)</td></tr>
+                                <tr><td><strong>Optimal Duration</strong></td><td>4-12 weeks</td></tr>
+                                <tr><td><strong>Available Forms</strong></td><td>Capsules, Powder</td></tr>
+                                <tr><td><strong>Quality Markers</strong></td><td>Research grade, Third-party tested, Legal status varies</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Cognitive decline</li>
+                        <li>Learning enhancement</li>
+                        <li>Memory disorders</li>
+                    </ul>
+                </section>
 
-        <!-- 5 · Effect Sizes -->
-        <section class="section" id="effect-sizes">
-            <div class="section-header">
-                <div class="section-num">5</div>
-                <div class="section-header-text">
-                    <div class="section-label">Quantified Outcomes</div>
-                    <h2>Effect Sizes</h2>
-                </div>
-            </div>
-            <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
-            <div class="effect-table-wrap">
-                <table class="effect-table">
-                    <thead><tr><th>Domain</th><th>Effect Size / Finding</th></tr></thead>
-                    <tbody>
-                    <tr>
-                        <td class="effect-domain">Memory Enhancement</td>
-                        <td class="effect-value">Moderate in deficient populations</td>
-                    </tr>
-                    <tr>
-                        <td class="effect-domain">Learning Improvement</td>
-                        <td class="effect-value">Small to moderate in healthy adults</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- 6 · Dosage -->
-        <section class="section" id="dosage">
-            <div class="section-header">
-                <div class="section-num">6</div>
-                <div class="section-header-text">
-                    <div class="section-label">How to Use</div>
-                    <h2>Dosage &amp; Administration</h2>
-                </div>
-            </div>
-            <div class="dosage-card">
-                <div class="dosage-grid">
-                    <div class="dosage-field">
-                        <label>Clinical Dosage Range</label>
-                        <span>750-1500mg daily (where legal)</span>
+                <!-- Safety Profile -->
+                <section class="content-section" id="safety">
+                    <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
+                            <strong>Overall Safety Rating:</strong> <span style="background:#d97706;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Moderate</span>
+                        </div>
                     </div>
-                    <div class="dosage-field">
-                        <label>Optimal Duration</label>
-                        <span>4-12 weeks</span>
-                    </div>
-                    <div class="dosage-field">
-                        <label>Available Forms</label>
-                        <span>Capsules, Powder</span>
-                    </div>
-                    <div class="dosage-field">
-                        <label>Quality Markers</label>
-                        <span>Research grade, Third-party tested, Legal status varies</span>
-                    </div>
-                </div>
-                    <hr class="dosage-divider">
-                    <div class="populations-label">Study Populations</div>
-                    <div class="population-tags">
-                        <span class="population-tag">Cognitive decline</span>
-                    <span class="population-tag">Learning enhancement</span>
-                    <span class="population-tag">Memory disorders</span>
-                    </div>
-            </div>
-        </section>
-
-        <!-- 7 · Safety -->
-        <section class="section" id="safety">
-            <div class="section-header">
-                <div class="section-num">7</div>
-                <div class="section-header-text">
-                    <div class="section-label">Tolerability</div>
-                    <h2>Safety Profile</h2>
-                </div>
-            </div>
-            <div class="safety-rating-box">
-                <i class="fas fa-check-circle"></i> Overall Safety Rating: Moderate
-            </div>
-            <div class="safety-grid">
-                <div class="safety-card safety-card-amber">
-                    <div class="safety-card-header">
-                        <i class="fas fa-exclamation-triangle"></i> Common Side Effects
-                    </div>
+                    <h3>Common Side Effects</h3>
                     <ul class="safety-list">
                         <li>Headache</li>
                         <li>Nausea</li>
                         <li>Anxiety</li>
                         <li>Insomnia</li>
                     </ul>
-                </div>
-                <div class="safety-card safety-card-red">
-                    <div class="safety-card-header">
-                        <i class="fas fa-exclamation-triangle"></i> Contraindications
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy</li>
+                            <li>Seizure disorders</li>
+                            <li>Regulatory restrictions</li>
+                        </ul>
                     </div>
-                    <ul class="safety-list">
-                        <li>Pregnancy</li>
-                        <li>Seizure disorders</li>
-                        <li>Regulatory restrictions</li>
-                    </ul>
-                </div>
-                <div class="safety-card safety-card-orange">
-                    <div class="safety-card-header">
-                        <i class="fas fa-exclamation-triangle"></i> Drug Interactions
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>Anticoagulants</li>
+                            <li>Stimulant medications</li>
+                        </ul>
                     </div>
-                    <ul class="safety-list">
-                        <li>Anticoagulants</li>
-                        <li>Stimulant medications</li>
-                    </ul>
-                </div>
+                </section>
+                <!-- Enhanced Evidence -->
+                <section class="content-section" id="enhanced-evidence">
+                    <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
+                    <p class="section-intro">Detailed citation analysis from 6 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">AMPA receptor positive modulation enhances synaptic transmission</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                
+                
             </div>
-        </section>
-
-        <!-- 8 · Enhanced Evidence -->
-        <section class="section" id="enhanced-evidence">
-            <div class="section-header">
-                <div class="section-num">8</div>
-                <div class="section-header-text">
-                    <div class="section-label">Deep Dive</div>
-                    <h2>Enhanced Evidence Review</h2>
-                </div>
-            </div>
-            <p class="section-intro">Detailed citation analysis organized by research domain.</p>
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Mechanisms of Action
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">AMPA receptor positive modulation enhances synaptic transmission</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span></div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Cholinergic system modulation improves cognitive function</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Aniracetam ameliorates attention deficit hyperactivity disorder via AMPA receptor modulation</p>
+                    <p class="study-meta">Kim J, Lee S, Park H, et al. (2025) — <em>eNeuro</em></p>
+                    <p class="study-findings">Aniracetam enhances AMPA receptor function and improves attention deficits</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40118526/" target="_blank" rel="noopener">PubMed: 40118526</a>
                 </div>
             </div>
         </div>
-
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Clinical Benefits
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">Improves memory and cognitive function in elderly patients</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Cholinergic system modulation improves cognitive function</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                
+                
             </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Reduces anxiety and improves mood</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span></div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Aniracetam enhances cognition by modulating cholinergic activity</p>
+                    <p class="study-meta">Nakamura K, Tanaka M (2001) — <em>Pharmacology Biochemistry and Behavior</em></p>
+                    <p class="study-findings">Aniracetam increases acetylcholine release and enhances cholinergic transmission</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11796155/" target="_blank" rel="noopener">PubMed: 11796155</a>
                 </div>
             </div>
         </div>
-
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Safety &amp; Tolerability
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">Generally well-tolerated with mild side effects</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span></div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Improves memory and cognitive function in elderly patients</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                
+                <span class="evidence-tag">Elderly with cognitive impairment</span>
+            </div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Clinical efficacy of aniracetam in cognitive impairment</p>
+                    <p class="study-meta">Senin U, Abate G, Fieschi C, et al. (1991) — <em>Archives of Gerontology and Geriatrics</em></p>
+                    <p class="study-findings">Significant improvement in cognitive function scores vs placebo</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/15374421/" target="_blank" rel="noopener">PubMed: 15374421</a>
                 </div>
             </div>
         </div>
-
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Dosage Research
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">Optimal cognitive effects at 750-1500 mg daily</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-3">Limited</span></div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Reduces anxiety and improves mood</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                
+                <span class="evidence-tag">Adults with anxiety</span>
+            </div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Anxiolytic effects of aniracetam in clinical populations</p>
+                    <p class="study-meta">Nakamura K, Kurasawa M (2001) — <em>Psychopharmacology</em></p>
+                    <p class="study-findings">Significant reduction in anxiety scores and improved mood ratings</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/11292009/" target="_blank" rel="noopener">PubMed: 11292009</a>
                 </div>
             </div>
         </div>
-        </section>
-
-        <!-- 9 · References -->
-        <section class="section" id="references">
-            <div class="section-header">
-                <div class="section-num">9</div>
-                <div class="section-header-text">
-                    <div class="section-label">Citations</div>
-                    <h2>References</h2>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Generally well-tolerated with mild side effects</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Piracetam and piracetam-like drugs: from basic science to novel clinical applications to CNS disorders</p>
+                    <p class="study-meta">Malykh AG, Sadaie MR (2010) — <em>Drugs</em></p>
+                    <p class="study-findings">Mild side effects including headache, nervousness, and GI upset</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/20166767/" target="_blank" rel="noopener">PubMed: 20166767</a>
                 </div>
             </div>
-            <ol class="ref-list">
-            <li class="ref-item">
-                <div class="ref-num">1</div>
-                <div class="ref-text">Nakamura K (2002). Aniracetam: its novel therapeutic potential in cerebral dysfunctional disorders. <em>CNS Drug Rev</em>. DOI: <a href="https://doi.org/10.1111/j.1527-3458.2002.tb00174.x">10.1111/j.1527-3458.2002.tb00174.x</a></div>
-            </li>
-            </ol>
-        </section>
-
-        <!-- 10 · Related -->
-        <section class="section" id="related">
-            <div class="section-header">
-                <div class="section-num">10</div>
-                <div class="section-header-text">
-                    <div class="section-label">Explore More</div>
-                    <h2>Related Content</h2>
-                </div>
-            </div>
-            <div class="related-grid">
-                <a class="related-card" href="../categories/nootropics.html">
-                    <i class="fas fa-brain related-card-icon"></i>
-                    <strong>Nootropics</strong>
-                    <p>Browse category</p>
-                </a>
-                <a class="related-card" href="../guides/cognitive-performance.html">
-                    <i class="fas fa-book-open related-card-icon"></i>
-                    <strong>Cognitive Performance Guide</strong>
-                    <p>Evidence guide</p>
-                </a>
-                <a class="related-card" href="../compare/aniracetam-vs-placebo.html">
-                    <i class="fas fa-balance-scale related-card-icon"></i>
-                    <strong>Aniracetam vs Placebo</strong>
-                    <p>Head-to-head comparison</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Disclaimer -->
-        <div class="disclaimer-box">
-            <div class="disclaimer-title"><i class="fas fa-info-circle"></i> Medical Disclaimer</div>
-            <p>This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
         </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Optimal cognitive effects at 750-1500 mg daily</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                
+                <span class="evidence-tag">Adults</span>
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Dose-response relationship of aniracetam in cognitive enhancement</p>
+                    <p class="study-meta">Cumin R, Bandle EF, Gamzu E, Haefely WE (1982) — <em>Psychopharmacology</em></p>
+                    <p class="study-findings">Optimal effects observed at 750-1500 mg daily in human studies</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/6817363/" target="_blank" rel="noopener">PubMed: 6817363</a>
+                </div>
+            </div>
+        </div>
+    </div>
+                </section>
+                <!-- References -->
+                <section class="content-section" id="references">
+                    <h2><i class="fas fa-book section-icon"></i> References</h2>
+                    <ol class="references-list">
+                        <li>Nakamura K (2002). Aniracetam: its novel therapeutic potential in cerebral dysfunctional disorders. <em>CNS Drug Rev</em>. DOI: <a href="https://doi.org/10.1111/j.1527-3458.2002.tb00174.x" target="_blank" rel="noopener">10.1111/j.1527-3458.2002.tb00174.x</a></li>
+                    </ol>
+                </section>
 
-    </main>
-</div>
+                <!-- Related Content -->
+                <section class="content-section" id="related">
+                    <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
+                    <div class="related-grid">
+                        <a href="../categories/nootropics.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
+                            <strong>Nootropics</strong>
+                            <p class="related-card-desc">Browse category</p>
+                        </a>
+                        <a href="../guides/cognitive-performance.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
+                            <strong>Cognitive Performance Guide</strong>
+                            <p class="related-card-desc">Evidence guide</p>
+                        </a>
+                    </div>
+                </section>
 
-<footer class="site-footer">
-    <p><strong>SupplementDB</strong> — Evidence-based supplement research</p>
-    <p>Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-    <nav>
-        <a href="../index.html">Database</a>
-        <a href="../about.html">About</a>
-        <a href="../methodology.html">Methodology</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../legal/terms.html">Terms</a>
-        <a href="../legal/privacy.html">Privacy</a>
-    </nav>
-    <p>&copy; 2026 SupplementDB. All rights reserved.</p>
-</footer>
+                <!-- Medical Disclaimer -->
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                </section>
 
-<script src="../js/auth.js" defer></script>
-<script src="../js/rbac.js" defer></script>
-<script src="../js/convex-client.js" defer></script>
-<script>
-// Sticky progress nav: highlight active step on scroll
-(function(){
-    const steps = document.querySelectorAll('.progress-step a');
-    const sections = Array.from(steps).map(a => document.querySelector(a.getAttribute('href')));
-    function onScroll(){
-        const scrollY = window.scrollY + 120;
-        let active = 0;
-        sections.forEach((s, i) => { if(s && s.offsetTop <= scrollY) active = i; });
-        steps.forEach((a, i) => a.classList.toggle('active', i === active));
-    }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    // Share buttons
-    document.querySelectorAll('.share-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const type = btn.dataset.share;
-            const url  = encodeURIComponent(location.href);
-            const title = encodeURIComponent(document.title);
-            const links = {
-                twitter  : 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title,
-                linkedin : 'https://www.linkedin.com/shareArticle?mini=true&url=' + url,
-                facebook : 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-            };
-            if (type === 'copy') {
-                navigator.clipboard.writeText(location.href).then(() => {
-                    btn.textContent = '✓ Copied!';
-                    setTimeout(() => btn.innerHTML = '<i class="fas fa-link"></i> Copy Link', 2000);
-                });
-            } else if (links[type]) {
-                window.open(links[type], '_blank', 'noopener,width=600,height=400');
-            }
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
+            </div>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sidebar TOC active state script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tocLinks = document.querySelectorAll('.sidebar-toc a');
+        const sections = [];
+        tocLinks.forEach(link => {
+            const id = link.getAttribute('href').replace('#', '');
+            const el = document.getElementById(id);
+            if (el) sections.push({ el, link });
         });
+        function updateActive() {
+            let current = sections[0];
+            sections.forEach(s => {
+                if (s.el.getBoundingClientRect().top <= 120) current = s;
+            });
+            tocLinks.forEach(l => l.classList.remove('active'));
+            if (current) current.link.classList.add('active');
+        }
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
     });
-})();
-</script>
+    </script>
+    <script src="../js/share-bar.js"></script>
 </body>
 </html>

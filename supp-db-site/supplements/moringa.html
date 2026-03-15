@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moringa — Evidence-Based Guide | SupplementDB</title>
-    <meta name="description" content="Evidence-based research on Moringa. Growing clinical evidence for nutritional and health benefits.">
-    <link rel="canonical" href="https://supplementdb.com/supplements/moringa.html">
-    <meta property="og:title" content="Moringa — Evidence-Based Guide">
-    <meta property="og:description" content="Growing clinical evidence for nutritional and health benefits">
+    <meta name="description" content="Comprehensive evidence review for Moringa (Moringa oleifera). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.">
+    <link rel="canonical" href="https://supplementdb.co/supplements/moringa.html">
+    <meta property="og:title" content="Moringa — Evidence-Based Guide | SupplementDB">
+    <meta property="og:description" content="Comprehensive evidence review for Moringa (Moringa oleifera). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://supplementdb.com/supplements/moringa.html">
+    <meta property="og:url" content="https://supplementdb.co/supplements/moringa.html">
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Moringa — Evidence-Based Guide">
-    <meta name="twitter:description" content="Growing clinical evidence for nutritional and health benefits">
+    <meta name="twitter:title" content="Moringa — Evidence-Based Guide | SupplementDB">
+    <meta name="twitter:description" content="Comprehensive evidence review for Moringa (Moringa oleifera). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.">
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -21,1708 +21,562 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 
     <!-- PostHog Analytics -->
-    <script></script>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: true,
+            autocapture: true
+        });
+    </script>
 
-    <!-- Clerk Auth -->
-    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
-    <meta name="convex-url" content="__CONVEX_URL__">
-
-    <link rel="stylesheet" href="../css/auth.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../legal/legal-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css?v=1773591349412">
 
-
-
-    <style>
-
-        /* =========================================================
-           DESIGN TOKENS — matching comparison guide system
-        ========================================================= */
-        :root {
-            --accent: #2d5a3d;
-            --accent-light: #3a7a52;
-            --accent-bg: #f0f7f2;
-            --accent-dark: #1e3e2b;
-            --blue: #2563eb;
-            --blue-bg: #eff6ff;
-            --amber: #d97706;
-            --amber-bg: #fffbeb;
-            --red: #dc2626;
-            --red-bg: #fef2f2;
-            --orange: #ea580c;
-            --orange-bg: #fff7ed;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a6a;
-            --text-muted: #6b7280;
-            --border: #e5e7eb;
-            --bg-page: #fafaf8;
-            --bg-card: #ffffff;
-            --bg-nav: #1a1a2e;
-            --radius: 10px;
-            --serif: 'Source Serif 4', Georgia, serif;
-            --sans: 'DM Sans', system-ui, sans-serif;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
-            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: var(--bg-page);
-            color: var(--text-primary);
-            font-family: var(--sans);
-            font-size: 16px;
-            line-height: 1.75;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* =========================================================
-           NAV
-        ========================================================= */
-        .nav {
-            background: var(--bg-nav);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        .nav-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 58px;
-        }
-        .nav-brand {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
-        }
-        .nav-link {
-            color: rgba(255,255,255,0.65);
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-        .nav-link:hover { color: #fff; }
-
-        /* =========================================================
-           PROGRESS TRACK (sticky numbered nav)
-        ========================================================= */
-        .progress-track {
-            position: sticky;
-            top: 58px;
-            z-index: 90;
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .progress-track-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-        .progress-track-inner::-webkit-scrollbar { display: none; }
-        .progress-step { flex-shrink: 0; display: flex; align-items: center; }
-        .progress-step a {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.625rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            white-space: nowrap;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-        .progress-step a:hover { color: var(--accent); }
-        .progress-step a.active { color: var(--accent); border-bottom-color: var(--accent); }
-        .step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 1.25rem;
-            height: 1.25rem;
-            background: var(--border);
-            border-radius: 50%;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-        .progress-step a.active .step-num {
-            background: var(--accent);
-            color: #fff;
-        }
-        .progress-divider {
-            width: 1.5rem;
-            height: 1px;
-            background: var(--border);
-            flex-shrink: 0;
-        }
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-        .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f2419 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 15% 50%, rgba(45,90,61,0.3) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(37,99,235,0.12) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .hero-inner {
-            position: relative;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 2.75rem;
-        }
-        .hero-breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 1.5rem;
-        }
-        .hero-breadcrumb a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-        .hero-breadcrumb a:hover { color: rgba(255,255,255,0.85); }
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.3rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-        .hero-badge-tier {
-            background: #16a34a;
-            color: #fff;
-        }
-        .hero-badge-category {
-            background: rgba(37,99,235,0.25);
-            border: 1px solid rgba(37,99,235,0.4);
-            color: #93c5fd;
-        }
-        .hero-badge-safety {
-            background: rgba(20,184,166,0.2);
-            border: 1px solid rgba(20,184,166,0.4);
-            color: #5eead4;
-        }
-        .hero h1 {
-            font-family: var(--serif);
-            font-size: clamp(2.25rem, 5vw, 3.25rem);
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
-        }
-        .hero-sci-name {
-            font-family: var(--serif);
-            font-style: italic;
-            font-size: 1rem;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 0.25rem;
-        }
-        .hero-also-known {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 0.75rem;
-        }
-        .hero-tagline {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.65);
-            margin-bottom: 1.75rem;
-            max-width: 580px;
-        }
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.625rem;
-        }
-        .hero-stat {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.3rem 0.875rem;
-            border: 1px solid rgba(255,255,255,0.18);
-            border-radius: 100px;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.6);
-        }
-        .hero-stat i { color: rgba(255,255,255,0.35); font-size: 0.75rem; }
-
-        /* =========================================================
-           SHARE + TRUST BAR
-        ========================================================= */
-        .meta-bar {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0.875rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .trust-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .trust-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-        .trust-chip i { color: var(--accent); font-size: 0.72rem; }
-        .trust-chip a { color: var(--accent); font-weight: 600; text-decoration: none; }
-        .trust-chip a:hover { text-decoration: underline; }
-        .share-btns {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.3rem 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            background: transparent;
-            color: var(--text-muted);
-            font-family: var(--sans);
-            font-size: 0.78rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        .share-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-bg);
-        }
-
-        /* =========================================================
-           LAYOUT: sidebar + main
-        ========================================================= */
-        .page-layout {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem;
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 116px;
-        }
-        .sidebar-toc {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .sidebar-toc-title {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 0.875rem;
-        }
-        .sidebar-toc ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.125rem;
-        }
-        .sidebar-toc a {
-            display: block;
-            padding: 0.35rem 0.625rem;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.15s;
-            line-height: 1.4;
-        }
-        .sidebar-toc a:hover {
-            color: var(--accent);
-            background: var(--accent-bg);
-        }
-        .sidebar-toc a.active {
-            color: var(--accent);
-            background: var(--accent-bg);
-            font-weight: 600;
-        }
-
-        /* Main */
-        .main-content {
-            min-width: 0;
-        }
-
-        /* =========================================================
-           SECTION STYLES
-        ========================================================= */
-        .section {
-            margin-bottom: 3.5rem;
-            scroll-margin-top: 120px;
-        }
-        .section-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-num-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-shrink: 0;
-            margin-top: 0.125rem;
-        }
-        .section-num-circle {
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            background: var(--accent-bg);
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .section-num-line {
-            width: 2px;
-            flex: 1;
-            min-height: 1.5rem;
-            background: linear-gradient(to bottom, var(--accent), transparent);
-            margin-top: 4px;
-        }
-        .section-heading-group { flex: 1; }
-        .section-label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 0.2rem;
-        }
-        .section h2 {
-            font-family: var(--serif);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.3;
-            margin: 0;
-        }
-        .section-intro {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-        }
-
-        /* =========================================================
-           QUICK FACTS — info-card grid
-        ========================================================= */
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.875rem;
-        }
-        .fact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.125rem 1.25rem;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-            gap: 0.375rem;
-        }
-        .fact-card-icon {
-            font-size: 1.125rem;
-            color: var(--accent);
-            margin-bottom: 0.125rem;
-        }
-        .fact-card-label {
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-        }
-        .fact-card-value {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.45;
-        }
-
-        /* =========================================================
-           OVERVIEW
-        ========================================================= */
-        .overview-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: var(--radius);
-            padding: 1.5rem 1.75rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .overview-card p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.875rem; }
-        .overview-card p:last-child { margin-bottom: 0; }
-        .key-finding-text {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .populations-text {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-        .populations-text strong { color: var(--text-secondary); }
-
-        /* =========================================================
-           MECHANISMS — 2×2 numbered grid
-        ========================================================= */
-        .mechanism-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.875rem;
-        }
-        .mechanism-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .mechanism-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-        }
-        .mechanism-num {
-            font-family: var(--serif);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-            flex-shrink: 0;
-            min-width: 2rem;
-        }
-        .mechanism-text {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            padding-top: 0.25rem;
-            line-height: 1.5;
-        }
-
-        /* =========================================================
-           BENEFITS — two-column
-        ========================================================= */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        .benefit-col {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.375rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .benefit-col-title {
-            font-family: var(--serif);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.875rem;
-            padding-bottom: 0.625rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .benefit-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .benefit-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        .benefit-list li::before {
-            content: '';
-            display: inline-block;
-            width: 1rem;
-            height: 1rem;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%232d5a3d'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat center center;
-            background-size: contain;
-            flex-shrink: 0;
-            margin-top: 0.125rem;
-        }
-
-        /* =========================================================
-           EFFECT SIZES — data table
-        ========================================================= */
-        .effect-table-wrap {
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            overflow-x: auto;
-        }
-        .effect-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-            background: var(--bg-card);
-        }
-        .effect-table thead th {
-            padding: 0.75rem 1.25rem;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-muted);
-            background: #f9fafb;
-            border-bottom: 1px solid var(--border);
-            text-align: left;
-        }
-        .effect-table tbody tr:nth-child(even) td { background: #f9fafb; }
-        .effect-table tbody tr:last-child td { border-bottom: none; }
-        .effect-table td {
-            padding: 0.875rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-            vertical-align: top;
-        }
-        .effect-domain {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--accent);
-            white-space: nowrap;
-            min-width: 140px;
-        }
-        .effect-value strong {
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        /* =========================================================
-           DOSAGE — card layout
-        ========================================================= */
-        .dosage-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem 1.75rem;
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 1.25rem;
-        }
-        .dosage-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
-        .dosage-field label {
-            display: block;
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-        .dosage-field span {
-            font-size: 0.92rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .dosage-divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 1.25rem 0;
-        }
-        .populations-label {
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 0.625rem;
-        }
-        .population-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .population-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.275rem 0.75rem;
-            background: var(--accent-bg);
-            border: 1px solid rgba(45,90,61,0.2);
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        /* =========================================================
-           SAFETY — three-column grid
-        ========================================================= */
-        .safety-rating-display {
-            margin-bottom: 1.25rem;
-        }
-        .safety-rating-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: var(--blue-bg);
-            border: 1px solid rgba(37,99,235,0.25);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--blue);
-        }
-        .safety-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.875rem;
-        }
-        .safety-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.375rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .safety-card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.875rem;
-            padding-bottom: 0.625rem;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        .safety-card-header i { font-size: 0.875rem; }
-        .safety-card-amber .safety-card-header i { color: var(--amber); }
-        .safety-card-red .safety-card-header i { color: var(--red); }
-        .safety-card-orange .safety-card-header i { color: var(--orange); }
-        .safety-card-amber { border-top: 3px solid var(--amber); }
-        .safety-card-red { border-top: 3px solid var(--red); }
-        .safety-card-orange { border-top: 3px solid var(--orange); }
-        .safety-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .safety-list li {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            line-height: 1.45;
-        }
-        .safety-list li::before {
-            content: '•';
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 0.05rem;
-        }
-        .safety-card-amber .safety-list li::before { color: var(--amber); }
-        .safety-card-red .safety-list li::before { color: var(--red); }
-        .safety-card-orange .safety-list li::before { color: var(--orange); }
-
-        /* =========================================================
-           ENHANCED EVIDENCE
-        ========================================================= */
-        .citation-group {
-            margin-bottom: 2.5rem;
-        }
-        .citation-group-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--serif);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.625rem;
-            border-bottom: 2px solid var(--border);
-        }
-        .citation-group-header i { color: var(--accent); font-size: 0.95rem; }
-        .evidence-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 0.875rem;
-        }
-        .evidence-card-title {
-            font-size: 0.975rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.625rem;
-            line-height: 1.45;
-        }
-        .evidence-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.375rem;
-            margin-bottom: 0.875rem;
-        }
-        .evidence-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.2rem 0.625rem;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            background: #f3f4f6;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-        }
-        .evidence-tag-strong {
-            background: #dcfce7;
-            color: #15803d;
-            border-color: #bbf7d0;
-        }
-        .evidence-tag-moderate {
-            background: #dbeafe;
-            color: #1d4ed8;
-            border-color: #bfdbfe;
-        }
-        .evidence-tag-emerging {
-            background: #fef3c7;
-            color: #b45309;
-            border-color: #fde68a;
-        }
-        .study-item {
-            padding-top: 0.875rem;
-            border-top: 1px solid var(--border);
-        }
-        .study-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            line-height: 1.5;
-        }
-        .study-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.625rem;
-        }
-        .study-findings-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            margin-bottom: 0.75rem;
-        }
-        .study-findings-list li {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            line-height: 1.5;
-        }
-        .study-findings-list li::before {
-            content: '→';
-            color: var(--accent);
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .study-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--blue);
-            text-decoration: none;
-            padding: 0.25rem 0.625rem;
-            background: var(--blue-bg);
-            border: 1px solid rgba(37,99,235,0.2);
-            border-radius: 100px;
-            transition: all 0.15s;
-        }
-        .study-link:hover {
-            background: #dbeafe;
-            border-color: var(--blue);
-        }
-
-        /* =========================================================
-           REFERENCES
-        ========================================================= */
-        .ref-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .ref-item {
-            display: flex;
-            gap: 0.875rem;
-            padding: 0.875rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .ref-item:last-child { border-bottom: none; }
-        .ref-num {
-            flex-shrink: 0;
-            width: 1.625rem;
-            height: 1.625rem;
-            background: var(--accent-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-top: 0.125rem;
-        }
-        .ref-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-        .ref-text a { color: var(--accent); }
-        .ref-text em { font-style: italic; }
-
-        /* =========================================================
-           RELATED
-        ========================================================= */
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.875rem;
-        }
-        .related-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            padding: 1.25rem 1.375rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.15s;
-            box-shadow: var(--shadow-sm);
-        }
-        .related-card:hover {
-            border-color: var(--accent);
-            background: var(--accent-bg);
-        }
-        .related-card-icon {
-            font-size: 1.375rem;
-            color: var(--accent);
-        }
-        .related-card strong {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-        .related-card p {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        /* =========================================================
-           DISCLAIMER
-        ========================================================= */
-        .disclaimer-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.375rem 1.625rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .disclaimer-title {
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .disclaimer-title i { color: var(--amber); }
-        .disclaimer-text {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-        .site-footer {
-            background: var(--bg-nav);
-            color: rgba(255,255,255,0.55);
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-        .site-footer strong { color: #fff; }
-        .site-footer a {
-            color: rgba(255,255,255,0.55);
-            text-decoration: none;
-            margin: 0 0.625rem;
-        }
-        .site-footer a:hover { color: #fff; }
-        .footer-links { margin: 1rem 0; }
-        .footer-copyright { margin-top: 0.75rem; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-        @media (max-width: 1024px) {
-            .page-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                display: none;
-            }
-            .facts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .safety-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .related-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 768px) {
-            .hero-inner { padding: 2rem 1rem 2rem; }
-            .hero h1 { font-size: 2rem; }
-            .progress-track { display: none; }
-            .page-layout { padding: 1.5rem 1rem; }
-            .meta-bar { padding: 0.75rem 1rem; }
-            .mechanism-grid { grid-template-columns: 1fr; }
-            .benefits-grid { grid-template-columns: 1fr; }
-            .dosage-grid { grid-template-columns: 1fr; }
-            .safety-grid { grid-template-columns: 1fr; }
-            .facts-grid { grid-template-columns: 1fr; }
-            .related-grid { grid-template-columns: 1fr; }
-            .trust-chips { display: none; }
-        }
-        @media (max-width: 900px) {
-            .progress-step a span:not(.step-num) { display: none; }
-        }
-    
-        /* evidence-prose: prose-format citation details */
-        .evidence-prose {
-            font-size: 0.83rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            margin-bottom: 0.75rem;
-        }
-        /* tier badge colour variants */
-        .hero-badge-tier-2 { background: #ca8a04 !important; }
-        .hero-badge-tier-3 { background: #dc2626 !important; }
-    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Moringa","headline":"Moringa — Evidence-Based Guide | SupplementDB","description":"Comprehensive evidence review for Moringa (Moringa oleifera). Tier 2 evidence with 13+ citations covering benefits, dosage, safety, and mechanisms of action.","datePublished":"2026-03-15","dateModified":"2026-03-15","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/supplements/moringa.html"},"about":{"@type":"DietarySupplement","name":"Moringa","alternateName":"Drumstick Tree","activeIngredient":"Moringa oleifera"}}</script>
 </head>
-<body>
-
-<!-- Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="../index.html" class="nav-brand">
-            <i class="fas fa-pills"></i> SupplementDB
-        </a>
-        <div class="nav-links">
-            <a href="../guides/sleep.html" class="nav-link">Sleep Guide</a>
-            <a href="../index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Database</a>
-            <a href="../tools/stack-analyzer.html" class="nav-link"><i class="fas fa-layer-group"></i> Stack Analyzer</a>
-            <div id="auth-buttons"></div>
+<body class="content-page">
+    <!-- Navigation -->
+    <nav class="legal-nav">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-pills text-xl"></i>
+                <span class="font-bold text-lg">SupplementDB</span>
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="../guides/sleep.html" class="text-gray-300 hover:text-white text-sm transition-colors hidden sm:inline">Sleep Guide</a>
+                <a href="../index.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                    <i class="fas fa-arrow-left mr-1"></i> Database
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Sticky numbered section nav -->
-<div class="progress-track" id="progress-track">
-    <div class="progress-track-inner">
-        <div class="progress-step"><a href="#quick-facts" class="active"><span class="step-num">1</span><span>Quick Facts</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#overview"><span class="step-num">2</span><span>Overview</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#mechanisms"><span class="step-num">3</span><span>Mechanisms</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#benefits"><span class="step-num">4</span><span>Benefits</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#effect-sizes"><span class="step-num">5</span><span>Effect Sizes</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#dosage"><span class="step-num">6</span><span>Dosage</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#safety"><span class="step-num">7</span><span>Safety</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#enhanced-evidence"><span class="step-num">8</span><span>Evidence</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#references"><span class="step-num">9</span><span>References</span></a></div>
-        <div class="progress-divider"></div>
-        <div class="progress-step"><a href="#related"><span class="step-num">10</span><span>Related</span></a></div>
-    </div>
-</div>
-
-<!-- Hero -->
-<header class="hero">
-    <div class="hero-inner">
-        <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+    <div class="content-body">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
-            <span><i class="fas fa-chevron-right" style="font-size:0.55rem;"></i></span>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
             <a href="../index.html#database">Supplements</a>
-            <span><i class="fas fa-chevron-right" style="font-size:0.55rem;"></i></span>
-            <span>Moringa</span>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">Moringa</span>
         </nav>
-        <div class="hero-badges">
-            <span class="hero-badge hero-badge-tier hero-badge-tier-2">
-                <i class="fas fa-star"></i> Tier 2: Moderate Evidence
-            </span>
-            <span class="hero-badge hero-badge-category">
-                <i class="fas fa-tag"></i> Herbal Supplement
-            </span>
-            <span class="hero-badge hero-badge-safety">
-                <i class="fas fa-shield-alt"></i> Safety: Excellent
-            </span>
+
+        <!-- Hero -->
+        <header class="guide-hero monograph-hero">
+            <div class="monograph-badges">
+                <span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span>
+                <span class="monograph-badge monograph-badge-category">Herbal Extracts</span>
+                <span class="monograph-badge monograph-badge-safety" data-safety="excellent">Excellent</span>
+            </div>
+            <h1>Moringa</h1>
+            <p class="scientific-name">Moringa oleifera</p>
+            <p class="common-names">Also known as: Drumstick Tree, Miracle Tree, Horseradish Tree</p>
+            <p class="hero-subtitle">Growing clinical evidence for nutritional and health benefits</p>
+            <div class="monograph-stats">
+                <div class="monograph-stat"><i class="fas fa-book-open"></i> 13+ Citations</div>
+                <div class="monograph-stat"><i class="fas fa-flask"></i> Tier 2: Moderate Evidence</div>
+                <div class="monograph-stat"><i class="fas fa-shield-alt"></i> Safety: Excellent</div>
+                <div class="monograph-stat"><i class="fas fa-calendar"></i> Updated 2026-03-15</div>
+            </div>
+        </header>
+
+        <!-- Share Bar -->
+        <div class="share-bar">
+            <span class="share-bar-label">Share this monograph</span>
+            <div class="share-bar-buttons">
+                <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
+                <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+                <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
+                <button class="share-btn share-btn-copy" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
         </div>
-        <h1>Moringa</h1>
-        <p class="hero-sci-name">Moringa oleifera</p>
-        <p class="hero-also-known">Also known as: Drumstick Tree, Miracle Tree, Horseradish Tree</p>
-        <p class="hero-tagline">Growing clinical evidence for nutritional and health benefits</p>
-        <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 12+ Citations</div>
-            <div class="hero-stat"><i class="fas fa-circle"></i> Tier 2: Moderate Evidence</div>
-            <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Excellent</div>
-            <div class="hero-stat"><i class="fas fa-circle"></i> Updated 2025-01-28</div>
+
+        <!-- Trust Signal Bar -->
+        <div class="trust-bar">
+            <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 13+ Verified Citations</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
+            <span class="trust-bar-divider"></span>
+            <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
         </div>
-    </div>
-</header>
 
-<!-- Share + Trust bar -->
-<div class="meta-bar">
-    <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 12+ Citations</span>
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 2: Moderate Evidence</span>
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Excellent</span>
-        <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
-    </div>
-    <div class="share-btns">
-        <button class="share-btn" data-share="twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
-        <button class="share-btn" data-share="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-        <button class="share-btn" data-share="facebook"><i class="fa-brands fa-facebook"></i> Facebook</button>
-        <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-    </div>
-</div>
+        <div class="guide-layout">
+            <!-- Sidebar -->
+            <aside class="guide-sidebar">
+                <nav class="sidebar-toc">
+                    <h4>Contents</h4>
+                    <ul>
+                        <li><a href="#quick-facts">Quick Facts</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#mechanisms">Mechanisms of Action</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#effect-sizes">Effect Sizes</a></li>
+                        <li><a href="#dosage">Dosage & Administration</a></li>
+                        <li><a href="#safety">Safety Profile</a></li>
+                        <li><a href="#enhanced-evidence">Enhanced Evidence</a></li>
+                        <li><a href="#references">References</a></li>
+                        <li><a href="#related">Related Content</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-<!-- Page layout: sidebar + main -->
-<div class="page-layout">
+            <!-- Main Content -->
+            <main class="guide-main">
+                <!-- Quick Facts Card -->
+                <section class="content-section" id="quick-facts">
+                    <h2><i class="fas fa-info-circle section-icon"></i> Quick Facts</h2>
+                    <div class="table-responsive">
+                        <table class="monograph-facts-table">
+                            <tbody>
+                                <tr><td><strong>Evidence Tier</strong></td><td><span class="tier-badge" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Tier 2: Moderate Evidence</span></td></tr>
+                                <tr><td><strong>Category</strong></td><td>Herbal Extracts</td></tr>
+                                <tr><td><strong>Scientific Name</strong></td><td><em>Moringa oleifera</em></td></tr>
+                                <tr><td><strong>Clinical Dosage</strong></td><td>500-1500mg daily (leaf powder/extract)</td></tr>
+                                <tr><td><strong>Optimal Duration</strong></td><td>4-12 weeks</td></tr>
+                                <tr><td><strong>Safety Rating</strong></td><td><span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span></td></tr>
+                                <tr><td><strong>Available Forms</strong></td><td>Powder, Capsules, Tea, Fresh leaves</td></tr>
+                                <tr><td><strong>Cost Range</strong></td><td>$12-30/month</td></tr>
+                                <tr><td><strong>Quality Markers</strong></td><td>Organic certification, Leaf-only products, Third-party tested</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
-    <!-- Sidebar TOC -->
-    <aside class="sidebar">
-        <nav class="sidebar-toc" aria-label="Table of contents">
-            <div class="sidebar-toc-title">Contents</div>
-            <ul>
-                <li><a href="#quick-facts">Quick Facts</a></li>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#mechanisms">Mechanisms of Action</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#effect-sizes">Effect Sizes</a></li>
-                <li><a href="#dosage">Dosage &amp; Administration</a></li>
-                <li><a href="#safety">Safety Profile</a></li>
-                <li><a href="#enhanced-evidence">Enhanced Evidence</a></li>
-                <li><a href="#references">References</a></li>
-                <li><a href="#related">Related Content</a></li>
-            </ul>
-        </nav>
-    </aside>
+                <!-- Overview -->
+                <section class="content-section" id="overview">
+                    <h2><i class="fas fa-file-alt section-icon"></i> Overview</h2>
+                    <div class="snippet-paragraph">
+                        <p>Moringa is classified as herbal extracts with moderate evidence (Tier 2) for its primary applications. Growing clinical evidence for nutritional and health benefits</p>
+                        <p class="key-findings">Moringa oleifera possesses strong preclinical evidence for anti-inflammatory and antioxidant mechanisms via NF-κB/Nrf2 pathways, but the most rigorous meta-analysis of human RCTs with GRADE assessment (Crișan et al. 2025, 9 RCTs, 649 participants) found very low certainty for all cardiometabolic outcomes with no consistent significant benefits</p>
+                        <p class="study-populations"><strong>Key study populations:</strong> Nutritional deficiency; Antioxidant support; General wellness</p>
+                    </div>
+                </section>
 
-    <!-- Main content -->
-    <main class="main-content">
+                <!-- Mechanisms of Action -->
+                <section class="content-section" id="mechanisms">
+                    <h2><i class="fas fa-cogs section-icon"></i> Mechanisms of Action</h2>
+                    <div class="mechanism-grid">
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">1</div>
+                            <p class="mechanism-text">Dense nutritional profile</p>
+                        </div>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">2</div>
+                            <p class="mechanism-text">Potent antioxidant activity</p>
+                        </div>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">3</div>
+                            <p class="mechanism-text">Anti-inflammatory compounds</p>
+                        </div>
+                        <div class="mechanism-card">
+                            <div class="mechanism-num">4</div>
+                            <p class="mechanism-text">Micronutrient replenishment</p>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- 1 · Quick Facts -->
-        <section class="section" id="quick-facts">
-            <div class="section-header">
-                <div class="section-num">1</div>
-                <div class="section-header-text">
-                    <div class="section-label">At a Glance</div>
-                    <h2>Quick Facts</h2>
-                </div>
-            </div>
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-medal"></i></div>
-                    <div class="fact-card-label">Evidence Tier</div>
-                    <div class="fact-card-value"><span style="display:inline-flex;align-items:center;background:#ca8a04;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.72rem;font-weight:700;">Tier 2: Moderate Evidence</span></div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-th-large"></i></div>
-                    <div class="fact-card-label">Category</div>
-                    <div class="fact-card-value">Herbal Supplement</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-dna"></i></div>
-                    <div class="fact-card-label">Scientific Name</div>
-                    <div class="fact-card-value"><em>Moringa oleifera</em></div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
-                    <div class="fact-card-label">Clinical Dosage</div>
-                    <div class="fact-card-value">500-1500mg daily (leaf powder/extract)</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-clock"></i></div>
-                    <div class="fact-card-label">Optimal Duration</div>
-                    <div class="fact-card-value">4-12 weeks</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="fact-card-label">Safety Rating</div>
-                    <div class="fact-card-value"><span style="display:inline-flex;align-items:center;background:var(--blue-bg);color:var(--blue);padding:2px 10px;border-radius:100px;font-size:0.72rem;font-weight:700;border:1px solid rgba(37,99,235,0.25);">Excellent</span></div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-capsules"></i></div>
-                    <div class="fact-card-label">Available Forms</div>
-                    <div class="fact-card-value">Powder, Capsules, Tea, Fresh leaves</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-dollar-sign"></i></div>
-                    <div class="fact-card-label">Cost Range</div>
-                    <div class="fact-card-value">$12-30/month</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-card-icon"><i class="fas fa-certificate"></i></div>
-                    <div class="fact-card-label">Quality Markers</div>
-                    <div class="fact-card-value">Organic certification, Leaf-only products, Third-party tested</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2 · Overview -->
-        <section class="section" id="overview">
-            <div class="section-header">
-                <div class="section-num">2</div>
-                <div class="section-header-text">
-                    <div class="section-label">Background</div>
-                    <h2>Overview</h2>
-                </div>
-            </div>
-            <div class="overview-content">
-                <p>Moringa is classified as herbal supplement with tier 2: moderate evidence for its primary applications. Growing clinical evidence for nutritional and health benefits</p>
-                <p>Growing clinical evidence for nutritional and health benefits</p>
-                <p>Key study populations: Nutritional deficiency; Antioxidant support; General wellness</p>
-            </div>
-        </section>
-
-        <!-- 3 · Mechanisms -->
-        <section class="section" id="mechanisms">
-            <div class="section-header">
-                <div class="section-num">3</div>
-                <div class="section-header-text">
-                    <div class="section-label">How It Works</div>
-                    <h2>Mechanisms of Action</h2>
-                </div>
-            </div>
-            <div class="mechanism-grid">
-                <div class="mechanism-card">
-                    <div class="mechanism-num">1</div>
-                    <p class="mechanism-text">Dense nutritional profile</p>
-                </div>
-                <div class="mechanism-card">
-                    <div class="mechanism-num">2</div>
-                    <p class="mechanism-text">Potent antioxidant activity</p>
-                </div>
-                <div class="mechanism-card">
-                    <div class="mechanism-num">3</div>
-                    <p class="mechanism-text">Anti-inflammatory compounds</p>
-                </div>
-                <div class="mechanism-card">
-                    <div class="mechanism-num">4</div>
-                    <p class="mechanism-text">Micronutrient replenishment</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4 · Benefits -->
-        <section class="section" id="benefits">
-            <div class="section-header">
-                <div class="section-num">4</div>
-                <div class="section-header-text">
-                    <div class="section-label">What the Research Shows</div>
-                    <h2>Benefits</h2>
-                </div>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-col">
-                    <div class="benefit-col-title">Cognitive Benefits</div>
+                <!-- Benefits -->
+                <section class="content-section" id="benefits">
+                    <h2><i class="fas fa-check-circle section-icon"></i> Benefits</h2>
+                    <h3>Cognitive Benefits</h3>
                     <ul class="benefit-list">
                         <li>Nutritional cognitive support</li>
                         <li>Antioxidant neuroprotection</li>
                         <li>Energy enhancement</li>
                     </ul>
-                </div>
-                <div class="benefit-col">
-                    <div class="benefit-col-title">Non-Cognitive Benefits</div>
+                    <h3>Non-Cognitive Benefits</h3>
                     <ul class="benefit-list">
                         <li>Comprehensive nutrition</li>
                         <li>Antioxidant support</li>
                         <li>Anti-inflammatory effects</li>
                         <li>Energy boost</li>
                     </ul>
-                </div>
-            </div>
-        </section>
+                </section>
+                <!-- Effect Sizes -->
+                <section class="content-section" id="effect-sizes">
+                    <h2><i class="fas fa-chart-bar section-icon"></i> Effect Sizes</h2>
+                    <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
+                    <div class="table-responsive">
+                        <table class="effect-table">
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Effect Size / Finding</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="effect-domain">NutritionalSupport</td>
+                                    <td class="effect-value">Large (significant micronutrient provision)</td>
+                                </tr>
+                                <tr>
+                                    <td class="effect-domain">AntioxidantActivity</td>
+                                    <td class="effect-value">Large (high ORAC values)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- Dosage & Administration -->
+                <section class="content-section" id="dosage">
+                    <h2><i class="fas fa-prescription-bottle-alt section-icon"></i> Dosage & Administration</h2>
+                    <div class="table-responsive">
+                        <table class="snippet-table">
+                            <tbody>
+                                <tr><td><strong>Clinical Dosage Range</strong></td><td>500-1500mg daily (leaf powder/extract)</td></tr>
+                                <tr><td><strong>Optimal Duration</strong></td><td>4-12 weeks</td></tr>
+                                <tr><td><strong>Available Forms</strong></td><td>Powder, Capsules, Tea, Fresh leaves</td></tr>
+                                <tr><td><strong>Quality Markers</strong></td><td>Organic certification, Leaf-only products, Third-party tested</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Study Populations</h3>
+                    <ul class="benefit-list">
+                        <li>Nutritional deficiency</li>
+                        <li>Antioxidant support</li>
+                        <li>General wellness</li>
+                    </ul>
+                </section>
 
-        <!-- 5 · Effect Sizes -->
-        <section class="section" id="effect-sizes">
-            <div class="section-header">
-                <div class="section-num">5</div>
-                <div class="section-header-text">
-                    <div class="section-label">Quantified Outcomes</div>
-                    <h2>Effect Sizes</h2>
-                </div>
-            </div>
-            <p class="section-intro">Quantified effect sizes from clinical research, where available.</p>
-            <div class="effect-table-wrap">
-                <table class="effect-table">
-                    <thead><tr><th>Domain</th><th>Effect Size / Finding</th></tr></thead>
-                    <tbody>
-                    <tr>
-                        <td class="effect-domain">Nutritional Support</td>
-                        <td class="effect-value">Large (significant micronutrient provision)</td>
-                    </tr>
-                    <tr>
-                        <td class="effect-domain">Antioxidant Activity</td>
-                        <td class="effect-value">Large (high ORAC values)</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- 6 · Dosage -->
-        <section class="section" id="dosage">
-            <div class="section-header">
-                <div class="section-num">6</div>
-                <div class="section-header-text">
-                    <div class="section-label">How to Use</div>
-                    <h2>Dosage &amp; Administration</h2>
-                </div>
-            </div>
-            <div class="dosage-card">
-                <div class="dosage-grid">
-                    <div class="dosage-field">
-                        <label>Clinical Dosage Range</label>
-                        <span>500-1500mg daily (leaf powder/extract)</span>
+                <!-- Safety Profile -->
+                <section class="content-section" id="safety">
+                    <h2><i class="fas fa-shield-alt section-icon"></i> Safety Profile</h2>
+                    <div class="safety-rating-box">
+                        <div class="safety-rating-label">
+                            <strong>Overall Safety Rating:</strong> <span style="background:#16a34a;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap;">Excellent</span>
+                        </div>
                     </div>
-                    <div class="dosage-field">
-                        <label>Optimal Duration</label>
-                        <span>4-12 weeks</span>
-                    </div>
-                    <div class="dosage-field">
-                        <label>Available Forms</label>
-                        <span>Powder, Capsules, Tea, Fresh leaves</span>
-                    </div>
-                    <div class="dosage-field">
-                        <label>Quality Markers</label>
-                        <span>Organic certification, Leaf-only products, Third-party tested</span>
-                    </div>
-                </div>
-                    <hr class="dosage-divider">
-                    <div class="populations-label">Study Populations</div>
-                    <div class="population-tags">
-                        <span class="population-tag">Nutritional deficiency</span>
-                    <span class="population-tag">Antioxidant support</span>
-                    <span class="population-tag">General wellness</span>
-                    </div>
-            </div>
-        </section>
-
-        <!-- 7 · Safety -->
-        <section class="section" id="safety">
-            <div class="section-header">
-                <div class="section-num">7</div>
-                <div class="section-header-text">
-                    <div class="section-label">Tolerability</div>
-                    <h2>Safety Profile</h2>
-                </div>
-            </div>
-            <div class="safety-rating-box">
-                <i class="fas fa-check-circle"></i> Overall Safety Rating: Excellent
-            </div>
-            <div class="safety-grid">
-                <div class="safety-card safety-card-amber">
-                    <div class="safety-card-header">
-                        <i class="fas fa-exclamation-triangle"></i> Common Side Effects
-                    </div>
+                    <h3>Common Side Effects</h3>
                     <ul class="safety-list">
                         <li>Mild GI upset (high doses)</li>
                         <li>Diarrhea (excessive intake)</li>
                     </ul>
-                </div>
-                <div class="safety-card safety-card-red">
-                    <div class="safety-card-header">
-                        <i class="fas fa-exclamation-triangle"></i> Contraindications
+                    <h3>Contraindications</h3>
+                    <div class="safety-contraindications">
+                        <ul>
+                            <li>Pregnancy (root/bark)</li>
+                            <li>Medication absorption concerns</li>
+                        </ul>
                     </div>
-                    <ul class="safety-list">
-                        <li>Pregnancy (root/bark)</li>
-                        <li>Medication absorption concerns</li>
-                    </ul>
-                </div>
-                <div class="safety-card safety-card-orange">
-                    <div class="safety-card-header">
-                        <i class="fas fa-exclamation-triangle"></i> Drug Interactions
+                    <h3>Drug Interactions</h3>
+                    <div class="safety-interactions">
+                        <ul>
+                            <li>May affect medication absorption</li>
+                            <li>Blood thinning medications</li>
+                        </ul>
                     </div>
-                    <ul class="safety-list">
-                        <li>May affect medication absorption</li>
-                        <li>Blood thinning medications</li>
-                    </ul>
-                </div>
+                </section>
+                <!-- Enhanced Evidence -->
+                <section class="content-section" id="enhanced-evidence">
+                    <h2><i class="fas fa-microscope section-icon"></i> Enhanced Evidence Review</h2>
+                    <p class="section-intro">Detailed citation analysis from 12 peer-reviewed sources, organized by research domain.</p>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-cogs"></i>Mechanisms of Action</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Quercetin and kaempferol inhibit COX/LOX pro-inflammatory enzymes while isothiocyanates modulate NF-κB signaling and suppress TNF-α and IL-1β production</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong</span>
+                <span class="evidence-tag">Replicated across multiple research groups</span>
+                
             </div>
-        </section>
-
-        <!-- 8 · Enhanced Evidence -->
-        <section class="section" id="enhanced-evidence">
-            <div class="section-header">
-                <div class="section-num">8</div>
-                <div class="section-header-text">
-                    <div class="section-label">Deep Dive</div>
-                    <h2>Enhanced Evidence Review</h2>
-                </div>
-            </div>
-            <p class="section-intro">Detailed citation analysis organized by research domain.</p>
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Mechanisms of Action
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">Quercetin and kaempferol inhibit COX/LOX pro-inflammatory enzymes while isothiocyanates modulate NF-κB signaling and suppress TNF-α and IL-1β production</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Phytoconstituents maintain brain antioxidant enzyme levels, mitochondrial functions, and neurogenesis through NF-kB/Nrf2/HO-1 signaling</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Comprehensive review of 89 in vivo, 24 in vitro, and 8 clinical studies showing multi-pathway cardioprotective mechanisms</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Bioactive Compounds in Moringa oleifera: Mechanisms of Action, Focus on Their Anti-Inflammatory Properties</p>
+                    <p class="study-meta">Chiș A, Noubissi PA, Pop OL, Mureșan CI, Fokam Tagne MA, Kamgang R, Fodor A, Sitar-Tăut AV, Cozma A, Orășan OH, Heghes SC, Vulturar R, Suharoschi R (2024) — <em>Plants (Basel)</em></p>
+                    <p class="study-findings">Quercetin and kaempferol inhibit pro-inflammatory enzymes cyclooxygenase (COX) and lipoxygenase (LOX),Isothiocyanates modulate NF-κB pathway and inhibit TNF-α and IL-1β production,Flavonoids and polyphenols reduce oxidative stress contributing to anti-inflammatory effects,Demonstrated effects on cardiovascular protection, anti-hypertensive activities, type 2 diabetes, IBD, and NAFLD</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38202328/" target="_blank" rel="noopener">PubMed: 38202328</a>
                 </div>
             </div>
         </div>
-
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Clinical Benefits
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">The most rigorous meta-analysis of 9 RCTs with 649 participants found very low certainty evidence for all cardiometabolic outcomes, with only modest diastolic BP reduction that was not robust in sensitivity analyses</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Phytoconstituents maintain brain antioxidant enzyme levels, mitochondrial functions, and neurogenesis through NF-kB/Nrf2/HO-1 signaling</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Consistent findings across models</span>
+                
             </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Double-blind RCT showed 2400 mg/day moringa leaf powder decreased FBG and HbA1c in prediabetic subjects compared to placebo, where placebo showed increases</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Meta-analysis of 44 studies in 699 diabetic rodents showed large pooled effect size of -3.92 for blood glucose reduction</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Meta-analysis of 7 studies showed significant improvements in CD4 count, WBC, platelet count, and BMI in adults living with HIV</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Systematic review of galactagogues including Moringa oleifera capsules found low certainty evidence of increased breastmilk production in preterm infant mothers</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object],[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Neuroprotective potential of Moringa oleifera mediated by NF-kB/Nrf2/HO-1 signaling pathway: A review</p>
+                    <p class="study-meta">Mundkar M, Bijalwan A, Soni D, Kumar P (2022) — <em>J Food Biochem</em></p>
+                    <p class="study-findings">β-carotene, quercetin, kaempferol, ascorbic acid, glucomoringin, and isothiocyanates identified as key bioactives,Compounds maintain brain antioxidant enzyme levels and mitochondrial functions,Nrf2/HO-1 activation provides cytoprotective antioxidant defense,NF-κB suppression reduces neuroinflammation in neurodegenerative disease models</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/36206551/" target="_blank" rel="noopener">PubMed: 36206551</a>
                 </div>
             </div>
         </div>
-
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Safety &amp; Tolerability
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">Comprehensive review found no adverse effects in human studies, with animal safety studies indicating a high degree of safety for aqueous leaf extracts</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object],[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Comprehensive review of 89 in vivo, 24 in vitro, and 8 clinical studies showing multi-pathway cardioprotective mechanisms</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Broad preclinical replication</span>
+                
             </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">Narrative review of 12 studies found moringa administration during pregnancy and postnatal period influences maternal health variables with no reported contraindications</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
-                </div>
-            </div>
-            <div class="evidence-card">
-                <p class="evidence-card-title">14-day toxicity study established NOAEL of 257 mg/kg bw/day for moringa seed extract (100 mg/kg bw/day moringa isothiocyanate-1); mortality observed only at very high doses</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object]</span></div>
-                <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">A molecular perspective on cardioprotective potential of Moringa oleifera Lam. and its nano-formulations</p>
+                    <p class="study-meta">Thanikachalam PV, Mallapu P, Dhalapathy VV, Hydar MI, Ramesh K, Ramamurthy S, Bharathy P (2026) — <em>Phytomedicine</em></p>
+                    <p class="study-findings">Leaves most studied plant part (78%), mainly as aqueous and ethanolic extracts,Key bioactives: flavonoids (quercetin, kaempferol), glucosinolates, and isothiocyanates,Multi-pathway modulation: NF-κB, Nrf2/Keap1, PI3K/Akt, PPAR, AMPK, and MAPK,Clinical trials showed improvements in BP, lipids, and oxidative stress but with variable rigor and small samples</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41678916/" target="_blank" rel="noopener">PubMed: 41678916</a>
                 </div>
             </div>
         </div>
-
-        <div class="citation-group">
-            <h3 class="citation-group-header">
-                <i class="fas fa-microscope"></i> Dosage Research
-            </h3>
-                        <div class="evidence-card">
-                <p class="evidence-card-title">Clinical trials used 2400 mg/day leaf powder capsules; meta-analysis subgroup analysis suggested potential benefits at doses &lt;10 g/day</p>
-                <div class="evidence-tags"><span class="evidence-tag">[object Object],[object Object]</span></div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-chart-line"></i>Clinical Benefits</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">The most rigorous meta-analysis of 9 RCTs with 649 participants found very low certainty evidence for all cardiometabolic outcomes, with only modest diastolic BP reduction that was not robust in sensitivity analyses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Mixed results across studies</span>
+                
+            </div>
+            <div class="study-list">
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
-                    </a>
+                    <p class="study-title">Moringa oleifera supplementation and cardiometabolic outcomes in adults: a systematic review and meta-analysis with GRADE assessment</p>
+                    <p class="study-meta">Crișan M et al. (2025) — <em>Nutrients</em></p>
+                    <p class="study-findings">GRADE certainty rated 'very low' for ALL cardiometabolic outcomes assessed,No significant effects on most outcomes including fasting glucose, HbA1c, total cholesterol, LDL, triglycerides,Only modest diastolic BP reduction (SMD -0.41) observed but not robust in sensitivity analyses,Subgroup analysis suggested potential benefits at doses &lt;10 g/day, age &lt;50, and interventions ≥12 weeks</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41305552/" target="_blank" rel="noopener">PubMed: 41305552</a>
                 </div>
             </div>
         </div>
-        </section>
-
-        <!-- 9 · References -->
-        <section class="section" id="references">
-            <div class="section-header">
-                <div class="section-num">9</div>
-                <div class="section-header-text">
-                    <div class="section-label">Citations</div>
-                    <h2>References</h2>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Double-blind RCT showed 2400 mg/day moringa leaf powder decreased FBG and HbA1c in prediabetic subjects compared to placebo, where placebo showed increases</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Single study - not replicated</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera Leaf Supplementation as a Glycemic Control Strategy in Subjects with Prediabetes</p>
+                    <p class="study-meta">Gómez-Martínez S, Díaz-Prieto LE, Vicente Castro I, Jurado C, Iturmendi N, Martín-Ridaura MC, Calle N, Dueñas M, Picón MJ, Marcos A, Nova E (2021) — <em>Nutrients</em></p>
+                    <p class="study-findings">2400 mg/day moringa leaf powder capsules vs placebo,Significant favorable changes in fasting blood glucose rate of change vs placebo,HbA1c showed opposite directions: decreased in moringa, increased in placebo,No differences found in gut microbiota or appetite-controlling hormones</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener">PubMed: 35010932</a>
                 </div>
             </div>
-            <ol class="ref-list">
-            <li class="ref-item">
-                <div class="ref-num">1</div>
-                <div class="ref-text">Anwar F, et al. (2007). Moringa oleifera: a food plant with multiple medicinal uses. <em>Phytother Res</em>. DOI: <a href="https://doi.org/10.1002/ptr.2023">10.1002/ptr.2023</a></div>
-            </li>
-            </ol>
-        </section>
-
-        <!-- 10 · Related -->
-        <section class="section" id="related">
-            <div class="section-header">
-                <div class="section-num">10</div>
-                <div class="section-header-text">
-                    <div class="section-label">Explore More</div>
-                    <h2>Related Content</h2>
-                </div>
-            </div>
-            <div class="related-grid">
-                <a class="related-card" href="../categories/nootropics.html">
-                    <i class="fas fa-brain related-card-icon"></i>
-                    <strong>Herbal Supplement</strong>
-                    <p>Browse category</p>
-                </a>
-                <a class="related-card" href="../guides/cognitive-performance.html">
-                    <i class="fas fa-brain related-card-icon"></i>
-                    <strong>Cognitive Performance Guide</strong>
-                    <p>Evidence guide</p>
-                </a>
-                <a class="related-card" href="../compare/moringa-vs-placebo.html">
-                    <i class="fas fa-balance-scale related-card-icon"></i>
-                    <strong>Moringa vs Placebo</strong>
-                    <p>Head-to-head comparison</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Disclaimer -->
-        <div class="disclaimer-box">
-            <div class="disclaimer-title"><i class="fas fa-info-circle"></i> Medical Disclaimer</div>
-            <p>This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
         </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Meta-analysis of 44 studies in 699 diabetic rodents showed large pooled effect size of -3.92 for blood glucose reduction</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-strong">Strong (Preclinical)</span>
+                <span class="evidence-tag">Extensively replicated in animal models</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera supplementation in diabetic rodents: systematic review and meta-analysis</p>
+                    <p class="study-meta">Watanabe S et al. (2021) — <em>Molecules</em></p>
+                    <p class="study-findings">Pooled effect size -3.92 for blood glucose reduction in diabetic rodent models,Consistent hypoglycemic effects across diverse moringa preparations,Effects observed with leaf extracts, leaf powder, and seed extracts,Strong preclinical signal supporting antidiabetic potential requiring human translation</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/34207664/" target="_blank" rel="noopener">PubMed: 34207664</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Meta-analysis of 7 studies showed significant improvements in CD4 count, WBC, platelet count, and BMI in adults living with HIV</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-moderate">Moderate</span>
+                <span class="evidence-tag">Multiple studies in specific population</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Effects of Moringa oleifera supplementation on immunological and nutritional outcomes in HIV adults: a meta-analysis</p>
+                    <p class="study-meta">Jin X et al. (2025) — <em>BMC Complement Med Ther</em></p>
+                    <p class="study-findings">Significant improvement in CD4 cell count with moringa supplementation,Increased white blood cell (WBC) and platelet (PLT) counts observed,BMI improvement indicating nutritional support benefits,Suggests adjunctive role for moringa alongside antiretroviral therapy</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/40989801/" target="_blank" rel="noopener">PubMed: 40989801</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Systematic review of galactagogues including Moringa oleifera capsules found low certainty evidence of increased breastmilk production in preterm infant mothers</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Limited replication</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Herbal galactagogues to improve breastmilk production and lactation in mothers of preterm babies: a systematic review of clinical trials</p>
+                    <p class="study-meta">Cragg A, Levene I, Darabi S, Willcox M (2025) — <em>Eur J Clin Nutr</em></p>
+                    <p class="study-findings">Low certainty evidence that Moringa oleifera leaf capsules increase breastmilk production,Most RCTs scored 'some concerns' for risk of bias,Traditional use as galactagogue partially supported by limited clinical data,Higher-quality trials needed to confirm galactagogue effects</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41350450/" target="_blank" rel="noopener">PubMed: 41350450</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">The effect of Moringa oleifera capsule in increasing breastmilk volume in early postpartum patients: A double-blind, randomized controlled trial</p>
+                    <p class="study-meta">Fungtammasan S, Phupong V (2021) — <em>PLoS One</em></p>
+                    <p class="study-findings">Double-blind, placebo-controlled trial protocol registered (NCT04487613),Evaluating moringa oleifera leaves capsules for breastmilk volume,Designed to address conflicting data on galactagogue effects,Outcome data pending from registered clinical trial</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/33822798/" target="_blank" rel="noopener">PubMed: 33822798</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-shield-alt"></i>Safety &amp; Tolerability</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Comprehensive review found no adverse effects in human studies, with animal safety studies indicating a high degree of safety for aqueous leaf extracts</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Good Safety Profile</span>
+                <span class="evidence-tag">Confirmed across multiple populations</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Review of the Safety and Efficacy of Moringa oleifera</p>
+                    <p class="study-meta">Stohs SJ, Hartman MJ (2015) — <em>Phytother Res</em></p>
+                    <p class="study-findings">No adverse effects reported in any human studies reviewed (5 published studies at time of review),Animal safety studies with aqueous leaf extracts indicate high degree of safety,Long history of traditional food use in South Asia and Africa,Standardization of products remains an issue for consistent dosing</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/25808883/" target="_blank" rel="noopener">PubMed: 25808883</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera: a systematic review of its botany, traditional uses, phytochemistry, pharmacology and toxicity</p>
+                    <p class="study-meta">Liu R, Liu J, Huang Q, Liu S, Jiang Y (2022) — <em>J Pharm Pharmacol</em></p>
+                    <p class="study-findings">163 chemical components identified including flavonoids, carbamates, glucosinolates, and phenols,Moringa is toxic at certain high doses; overuse can cause genotoxicity,Pharmacological studies insufficient for evidence-based medicine conclusions,Majority of constituent studies conducted only in vitro; clinical data limited</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/34718669/" target="_blank" rel="noopener">PubMed: 34718669</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Narrative review of 12 studies found moringa administration during pregnancy and postnatal period influences maternal health variables with no reported contraindications</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Preliminary Safety Data</span>
+                <span class="evidence-tag">Limited data in specific population</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">The Impact of Moringa oleifera Supplementation on Anemia and other Variables during Pregnancy and Breastfeeding: A Narrative Review</p>
+                    <p class="study-meta">Rotella R, Soriano JM, Llopis-González A, Morales-Suarez-Varela M (2023) — <em>Nutrients</em></p>
+                    <p class="study-findings">None of 12 analyzed studies reported contraindications during pregnancy and lactation,Moringa influenced maternal haematochemical profile and milk production,Child socio-personal development improved in some studies,Reduced morbidity incidence in first 6 months of life in some studies</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/37375577/" target="_blank" rel="noopener">PubMed: 37375577</a>
+                </div>
+            </div>
+        </div>
+        <div class="evidence-card">
+            <p class="evidence-card-title">14-day toxicity study established NOAEL of 257 mg/kg bw/day for moringa seed extract (100 mg/kg bw/day moringa isothiocyanate-1); mortality observed only at very high doses</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag ">Preclinical Safety Data</span>
+                <span class="evidence-tag">Single formal toxicity study</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">A 14-day repeated-dose oral toxicological evaluation of an isothiocyanate-enriched hydro-alcoholic extract from Moringa oleifera Lam. seeds in rats</p>
+                    <p class="study-meta">Kim Y, Jaja-Chimedza A, Merrill D, Mendes O, Raskin I (2018) — <em>Toxicol Rep</em></p>
+                    <p class="study-findings">NOAEL determined at 257 mg/kg bw/day MSE (providing 100 mg/kg bw/day MIC-1),Mortality only at highest dose (2571 mg/kg bw/day) with GI distention and organ damage,Low and mid-low dose groups showed no adverse effects,Increased liver weights at mid-high and high doses in females</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29854612/" target="_blank" rel="noopener">PubMed: 29854612</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="citation-group">
+        <h4 class="citation-group-header"><i class="fas fa-prescription-bottle-alt"></i>Dosage Research</h4>
+        <div class="evidence-card">
+            <p class="evidence-card-title">Clinical trials used 2400 mg/day leaf powder capsules; meta-analysis subgroup analysis suggested potential benefits at doses &lt;10 g/day</p>
+            <div class="evidence-tags">
+                <span class="evidence-tag evidence-tag-preliminary">Limited</span>
+                <span class="evidence-tag">Inconsistent dosing across studies</span>
+                
+            </div>
+            <div class="study-list">
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera Leaf Supplementation as a Glycemic Control Strategy in Subjects with Prediabetes</p>
+                    <p class="study-meta">Gómez-Martínez S, Díaz-Prieto LE, Vicente Castro I, Jurado C, Iturmendi N, Martín-Ridaura MC, Calle N, Dueñas M, Picón MJ, Marcos A, Nova E (2021) — <em>Nutrients</em></p>
+                    <p class="study-findings">Used 2400 mg/day (6 capsules) of Moringa oleifera dry leaf powder,Dosage well tolerated with no reported adverse effects,Effective for glycemic control markers in prediabetic population,Capsule form provided standardized delivery of leaf powder</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener">PubMed: 35010932</a>
+                </div>
+                <div class="study-item">
+                    <p class="study-title">Moringa oleifera supplementation and cardiometabolic outcomes in adults: a systematic review and meta-analysis with GRADE assessment</p>
+                    <p class="study-meta">Crișan M et al. (2025) — <em>Nutrients</em></p>
+                    <p class="study-findings">Subgroup analysis suggested potential benefits at doses &lt;10 g/day,Interventions ≥12 weeks may show more benefit than shorter durations,Participants aged &lt;50 may respond better than older populations,Standardization of preparations and doses is a major challenge across studies</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/41305552/" target="_blank" rel="noopener">PubMed: 41305552</a>
+                </div>
+            </div>
+        </div>
+    </div>
+                </section>
+                <!-- References -->
+                <section class="content-section" id="references">
+                    <h2><i class="fas fa-book section-icon"></i> References</h2>
+                    <ol class="references-list">
+                        <li>Anwar F, et al. (2007). Moringa oleifera: a food plant with multiple medicinal uses. <em>Phytother Res</em>. DOI: <a href="https://doi.org/10.1002/ptr.2023" target="_blank" rel="noopener">10.1002/ptr.2023</a></li>
+                    </ol>
+                </section>
 
-    </main>
-</div>
+                <!-- Related Content -->
+                <section class="content-section" id="related">
+                    <h2><i class="fas fa-link section-icon"></i> Related Content</h2>
+                    <div class="related-grid">
+                        <a href="../categories/herbal-extracts.html" class="related-card">
+                            <i class="fas fa-th-large related-card-icon"></i>
+                            <strong>Herbal Extracts</strong>
+                            <p class="related-card-desc">Browse category</p>
+                        </a>
+                        <a href="../guides/immune-function.html" class="related-card">
+                            <i class="fas fa-book-reader related-card-icon"></i>
+                            <strong>Immune Function Guide</strong>
+                            <p class="related-card-desc">Evidence guide</p>
+                        </a>
+                    </div>
+                </section>
 
-<footer class="site-footer">
-    <p><strong>SupplementDB</strong> — Evidence-based supplement research</p>
-    <p>Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
-    <nav>
-        <a href="../index.html">Database</a>
-        <a href="../about.html">About</a>
-        <a href="../methodology.html">Methodology</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../legal/terms.html">Terms</a>
-        <a href="../legal/privacy.html">Privacy</a>
-    </nav>
-    <p>&copy; 2026 SupplementDB. All rights reserved.</p>
-</footer>
+                <!-- Medical Disclaimer -->
+                <section class="content-section disclaimer-box">
+                    <h3 class="disclaimer-title"><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p class="disclaimer-text">This monograph is for informational purposes only and does not constitute medical advice. The evidence presented is based on published research and does not replace consultation with a qualified healthcare provider. Supplement efficacy varies by individual, and interactions with medications or health conditions require professional evaluation. Always consult your physician before starting any new supplement regimen.</p>
+                </section>
 
-<script src="../js/auth.js" defer></script>
-<script src="../js/rbac.js" defer></script>
-<script src="../js/convex-client.js" defer></script>
-<script>
-// Sticky progress nav: highlight active step on scroll
-(function(){
-    const steps = document.querySelectorAll('.progress-step a');
-    const sections = Array.from(steps).map(a => document.querySelector(a.getAttribute('href')));
-    function onScroll(){
-        const scrollY = window.scrollY + 120;
-        let active = 0;
-        sections.forEach((s, i) => { if(s && s.offsetTop <= scrollY) active = i; });
-        steps.forEach((a, i) => a.classList.toggle('active', i === active));
-    }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    // Share buttons
-    document.querySelectorAll('.share-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const type = btn.dataset.share;
-            const url  = encodeURIComponent(location.href);
-            const title = encodeURIComponent(document.title);
-            const links = {
-                twitter  : 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title,
-                linkedin : 'https://www.linkedin.com/shareArticle?mini=true&url=' + url,
-                facebook : 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-            };
-            if (type === 'copy') {
-                navigator.clipboard.writeText(location.href).then(() => {
-                    btn.textContent = '✓ Copied!';
-                    setTimeout(() => btn.innerHTML = '<i class="fas fa-link"></i> Copy Link', 2000);
-                });
-            } else if (links[type]) {
-                window.open(links[type], '_blank', 'noopener,width=600,height=400');
-            }
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="monograph-footer">
+        <div class="monograph-footer-inner">
+            <p class="footer-brand"><strong>SupplementDB</strong> &mdash; Evidence-based supplement research</p>
+            <p class="footer-disclaimer">Data sourced from peer-reviewed studies. Not medical advice. Consult a healthcare provider.</p>
+            <div class="footer-links">
+                <a href="../index.html">Database</a>
+                <a href="../about.html">About</a>
+                <a href="../methodology.html">Methodology</a>
+                <a href="../faq.html">FAQ</a>
+                <a href="../legal/terms.html">Terms</a>
+                <a href="../legal/privacy.html">Privacy</a>
+            </div>
+            <p class="footer-copyright">&copy; 2026 SupplementDB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sidebar TOC active state script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tocLinks = document.querySelectorAll('.sidebar-toc a');
+        const sections = [];
+        tocLinks.forEach(link => {
+            const id = link.getAttribute('href').replace('#', '');
+            const el = document.getElementById(id);
+            if (el) sections.push({ el, link });
         });
+        function updateActive() {
+            let current = sections[0];
+            sections.forEach(s => {
+                if (s.el.getBoundingClientRect().top <= 120) current = s;
+            });
+            tocLinks.forEach(l => l.classList.remove('active'));
+            if (current) current.link.classList.add('active');
+        }
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
     });
-})();
-</script>
+    </script>
+    <script src="../js/share-bar.js"></script>
 </body>
 </html>
