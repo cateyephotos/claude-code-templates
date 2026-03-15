@@ -211,6 +211,39 @@ http.route({
             break;
           }
 
+          // ── Credit pack purchase (one-time payment) ────────────────
+          if (data.metadata?.type === "credit_purchase") {
+            const packId = data.metadata?.packId;
+            const packName = data.metadata?.packName || packId;
+            const credits = parseInt(data.metadata?.credits || "0", 10);
+
+            if (!packId || credits <= 0) {
+              console.error("checkout.session.completed: credit_purchase missing packId or credits in metadata");
+              break;
+            }
+
+            // Add credits to user's account (idempotent via session ID check)
+            await ctx.runMutation(
+              internal.analysisCredits.addPurchasedCredits,
+              {
+                userId: clerkId,
+                credits,
+                packId,
+                packName,
+                amountCents: data.amount_total ?? 0,
+                currency: data.currency ?? "usd",
+                stripeSessionId: data.id,
+                stripePaymentIntentId: data.payment_intent ?? undefined,
+                stripeCustomerId: data.customer ?? undefined,
+              }
+            );
+
+            console.log(
+              `✅ checkout.session.completed (credits): ${clerkId} → +${credits} credits (${packName})`
+            );
+            break;
+          }
+
           // ── Subscription purchase (recurring) ─────────────────────
           const plan = data.metadata?.plan === "annual" ? "annual" : "monthly";
 

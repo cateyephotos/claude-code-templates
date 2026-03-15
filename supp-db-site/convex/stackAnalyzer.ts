@@ -1,5 +1,6 @@
 import { action, mutation } from "./_generated/server";
 import { v } from "convex/values";
+import { ConvexError } from "convex/values";
 import { api, internal } from "./_generated/api";
 import Anthropic from "@anthropic-ai/sdk";
 
@@ -196,7 +197,19 @@ IMPORTANT RULES:
 4. Suggest additions only from well-studied supplements (Tier 1-2)
 5. Do not invent or hallucinate clinical evidence
 6. Base all mechanism analysis on established pharmacology
-7. Consider bioavailability and absorption interactions`;
+7. Consider bioavailability and absorption interactions
+
+OUTPUT FORMAT:
+You MUST respond with ONLY a valid JSON object — no markdown, no code fences, no explanatory text before or after. The JSON must contain these required fields:
+- overallScore (number 1-100)
+- evidenceStrength ("strong"|"moderate"|"limited"|"insufficient")
+- stackSummary (string, 2-3 sentences)
+- synergyAnalysis (array of {pair: [string,string], type: "synergistic"|"redundant"|"antagonistic"|"neutral", explanation: string})
+- mechanismCoverage (array of {mechanism: string, coveredBy: string[], strength: "well-covered"|"partially-covered"|"gap"})
+- safetyFlags (array of {severity: "caution"|"warning"|"critical", supplements: string[], description: string})
+- dosageProtocol (array of {supplement: string, recommendedDose: string, timing: string, withFood: boolean, notes: string})
+- suggestedAdditions (array of {name: string, reason: string, evidenceTier: number}, max 3)
+- suggestedRemovals (array of {name: string, reason: string}, max 2)`;
 }
 
 // ── Supplement Context Builder ──────────────────────────────────
@@ -272,17 +285,17 @@ export const analyzeStack = action({
     // ── Auth Check ──────────────────────────────────────────
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) {
-      throw new Error("Authentication required. Please sign in to use the Stack Analyzer.");
+      throw new ConvexError("Authentication required. Please sign in to use the Stack Analyzer.");
     }
 
     const clerkId = identity.subject;
 
     // ── Input Validation ────────────────────────────────────
     if (args.supplements.length < 2) {
-      throw new Error("Please select at least 2 supplements to analyze.");
+      throw new ConvexError("Please select at least 2 supplements to analyze.");
     }
     if (args.supplements.length > 15) {
-      throw new Error("Maximum 15 supplements per analysis. Please reduce your selection.");
+      throw new ConvexError("Maximum 15 supplements per analysis. Please reduce your selection.");
     }
 
     // ── Credit Check + Consume ──────────────────────────────
@@ -290,6 +303,7 @@ export const analyzeStack = action({
     // If Claude fails, we don't refund — this prevents abuse.
     const creditResult = await ctx.runMutation(api.analysisCredits.consumeCredit, {
       userId: clerkId,
+      depth: args.depth,
     });
 
     // ── Build Claude Request ────────────────────────────────
@@ -297,7 +311,7 @@ export const analyzeStack = action({
     const dbKey = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_API_KEY" });
     const anthropicKey = dbKey || process.env.ANTHROPIC_API_KEY;
     if (!anthropicKey) {
-      throw new Error(
+      throw new ConvexError(
         "ANTHROPIC_API_KEY is not configured. Set it in Admin → Configuration → API Keys."
       );
     }
@@ -328,54 +342,136 @@ export const analyzeStack = action({
             role: "user",
             content: userMessage,
           },
+          // Prefill assistant response with '{' to force JSON output
+          {
+            role: "assistant",
+            content: "{",
+          },
         ],
-        // Structured output via JSON schema
-        // This guarantees valid JSON matching our schema
       });
     } catch (error: any) {
       // Handle specific Anthropic API errors
       if (error?.status === 429) {
-        throw new Error("The analysis service is temporarily busy. Please try again in a moment.");
+        throw new ConvexError("The analysis service is temporarily busy. Please try again in a moment.");
       }
       if (error?.status === 401) {
-        throw new Error("Analysis service configuration error. Please contact support.");
+        throw new ConvexError("Analysis service configuration error. Please contact support.");
       }
       if (error?.status === 400) {
-        throw new Error("Invalid analysis request. Please try different supplement selections.");
+        throw new ConvexError("Invalid analysis request. Please try different supplement selections.");
       }
-      throw new Error("Analysis failed. Please try again. If this persists, contact support.");
+      throw new ConvexError("Analysis failed. Please try again. If this persists, contact support.");
     }
 
     // ── Parse Response ──────────────────────────────────────
     const textBlock = response.content.find((block: any) => block.type === "text");
     if (!textBlock || textBlock.type !== "text") {
-      throw new Error("Analysis produced no results. Please try again.");
+      throw new ConvexError("Analysis produced no results. Please try again.");
     }
 
     let analysis;
-    try {
-      // Claude should return JSON — extract it from the response text
-      const text = textBlock.text;
-      // Try to parse the entire response as JSON first
-      try {
-        analysis = JSON.parse(text);
-      } catch {
-        // If that fails, extract JSON from markdown code blocks
-        const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-        if (jsonMatch) {
-          analysis = JSON.parse(jsonMatch[1].trim());
-        } else {
-          // Try to find a JSON object in the text
-          const objMatch = text.match(/\{[\s\S]*\}/);
-          if (objMatch) {
-            analysis = JSON.parse(objMatch[0]);
-          } else {
-            throw new Error("Could not parse analysis result");
+    const rawText = textBlock.text;
+
+    // Strategy: try multiple extraction approaches in order of reliability
+    const parseAttempts: Array<{ name: string; fn: () => any }> = [
+      {
+        // 1. Direct parse — response is raw JSON (most common with prefill)
+        //    Prepend '{' since we used assistant prefill
+        name: "prefill_json",
+        fn: () => JSON.parse("{" + rawText),
+      },
+      {
+        // 2. Direct parse — response is complete JSON on its own
+        name: "direct_json",
+        fn: () => JSON.parse(rawText),
+      },
+      {
+        // 3. Trim whitespace / BOM and try again
+        name: "trimmed_json",
+        fn: () => JSON.parse(rawText.trim().replace(/^\uFEFF/, "")),
+      },
+      {
+        // 4. Extract from markdown code fences: ```json ... ``` or ``` ... ```
+        name: "code_fence",
+        fn: () => {
+          const m = rawText.match(/```(?:json)?\s*\n?([\s\S]*?)\n?\s*```/);
+          if (!m) throw new Error("no code fence");
+          return JSON.parse(m[1].trim());
+        },
+      },
+      {
+        // 5. Find outermost { ... } braces (greedy)
+        name: "brace_extract",
+        fn: () => {
+          const start = rawText.indexOf("{");
+          if (start === -1) throw new Error("no opening brace");
+          // Find matching closing brace by counting depth
+          let depth = 0;
+          let end = -1;
+          for (let i = start; i < rawText.length; i++) {
+            if (rawText[i] === "{") depth++;
+            else if (rawText[i] === "}") {
+              depth--;
+              if (depth === 0) { end = i; break; }
+            }
           }
+          if (end === -1) throw new Error("no matching closing brace");
+          return JSON.parse(rawText.substring(start, end + 1));
+        },
+      },
+      {
+        // 6. Strip trailing commas (common LLM mistake) and retry brace extract
+        name: "trailing_comma_fix",
+        fn: () => {
+          const start = rawText.indexOf("{");
+          if (start === -1) throw new Error("no opening brace");
+          let depth = 0;
+          let end = -1;
+          for (let i = start; i < rawText.length; i++) {
+            if (rawText[i] === "{") depth++;
+            else if (rawText[i] === "}") {
+              depth--;
+              if (depth === 0) { end = i; break; }
+            }
+          }
+          if (end === -1) throw new Error("no matching closing brace");
+          let jsonStr = rawText.substring(start, end + 1);
+          // Remove trailing commas before } or ]
+          jsonStr = jsonStr.replace(/,\s*([\]}])/g, "$1");
+          return JSON.parse(jsonStr);
+        },
+      },
+    ];
+
+    let lastError: any = null;
+    for (const attempt of parseAttempts) {
+      try {
+        analysis = attempt.fn();
+        // Validate it has at least the required top-level field
+        if (analysis && typeof analysis === "object" && "overallScore" in analysis) {
+          break; // Success — valid analysis object
         }
+        // Parsed but missing key fields — keep trying
+        if (analysis && typeof analysis === "object") {
+          break; // Accept any valid object with data
+        }
+        lastError = new Error(`Parsed but got ${typeof analysis}`);
+        analysis = undefined;
+      } catch (e) {
+        lastError = e;
+        analysis = undefined;
       }
-    } catch (parseError) {
-      throw new Error("Analysis result could not be interpreted. Please try again.");
+    }
+
+    if (!analysis) {
+      // Log the raw response for debugging (truncated to avoid huge logs)
+      console.error(
+        "[StackAnalyzer] All parse attempts failed. Raw response (first 500 chars):",
+        rawText.substring(0, 500)
+      );
+      throw new ConvexError(
+        "Analysis result could not be interpreted. The AI returned an unexpected format. Please try again."
+      );
     }
 
     // ── Token Usage ─────────────────────────────────────────
@@ -400,9 +496,11 @@ export const analyzeStack = action({
       analysis,
       model: response.model || "claude-haiku-4-5-20251001",
       tokensUsed: { input: inputTokens, output: outputTokens },
-      creditsRemaining: creditResult.remaining,
+      creditsRemaining: creditResult.totalAvailable,
       creditsUsed: creditResult.usedThisMonth,
       creditsLimit: creditResult.monthlyLimit,
+      purchasedCredits: creditResult.purchasedCredits,
+      creditCost: creditResult.creditCost,
     };
   },
 });

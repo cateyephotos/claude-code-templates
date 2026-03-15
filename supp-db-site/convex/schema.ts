@@ -120,6 +120,7 @@ export default defineSchema({
     tier: v.union(v.literal("free"), v.literal("subscriber")),
     monthlyLimit: v.number(),
     usedThisMonth: v.number(),
+    purchasedCredits: v.optional(v.number()), // Bonus credits from purchases (never expire, not reset monthly)
     periodStart: v.number(), // Start of current billing month (epoch ms)
     periodEnd: v.number(), // End of current billing month (epoch ms)
     lastAnalysisAt: v.optional(v.number()),
@@ -129,6 +130,30 @@ export default defineSchema({
   })
     .index("by_userId", ["userId"])
     .index("by_tier", ["tier"]),
+
+  // Stack Analyzer — credit purchase history (one-time Stripe payments)
+  creditPurchases: defineTable({
+    userId: v.string(),
+    packId: v.string(),                // e.g. "starter", "pro", "bulk"
+    packName: v.string(),              // e.g. "Starter Pack"
+    creditsAdded: v.number(),          // Number of analysis credits added
+    amountCents: v.number(),           // Amount paid in cents
+    currency: v.string(),              // e.g. "usd"
+    stripeSessionId: v.string(),       // Stripe Checkout Session ID
+    stripePaymentIntentId: v.optional(v.string()),
+    stripeCustomerId: v.optional(v.string()),
+    status: v.union(
+      v.literal("pending"),
+      v.literal("completed"),
+      v.literal("failed"),
+      v.literal("refunded")
+    ),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_stripeSessionId", ["stripeSessionId"])
+    .index("by_status", ["status"]),
 
   // Stack Analyzer — analysis results history
   stackAnalyses: defineTable({
