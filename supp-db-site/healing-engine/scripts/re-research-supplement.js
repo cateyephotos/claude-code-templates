@@ -97,7 +97,7 @@ async function reResearchSupplement(filename, options = {}) {
         );
         // If quality data exists, only re-research mismatched/unverifiable claims
         needsReresearch = claimItems.some(
-          i => i.status === 'mismatched' || i.status === 'unverifiable'
+          i => i.status === 'mismatched' || i.status === 'unverifiable' || i.status === 'pmid_not_found' || i.status === 'no_pmid'
         );
       }
       // When onlyMismatched is set but no quality sidecar exists, research all claims
