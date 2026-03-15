@@ -17,3 +17,38 @@ test.describe('PubMed esearch', () => {
     expect(results.length).toBe(0);
   });
 });
+
+test.describe('Re-research Engine', () => {
+  test('reResearchClaim finds relevant PubMed papers for a specific claim', async () => {
+    const { reResearchClaim } = require(path.join(__dirname, '..', '..', 'healing-engine', 'scripts', 're-research-supplement'));
+
+    const candidates = await reResearchClaim({
+      claimText: 'Curcumin inhibits NF-kB inflammatory pathway',
+      supplementName: 'Curcumin',
+      section: 'mechanisms',
+      maxCandidates: 5
+    });
+
+    expect(Array.isArray(candidates)).toBe(true);
+    expect(candidates.length).toBeGreaterThan(0);
+    expect(candidates[0]).toHaveProperty('pmid');
+    expect(candidates[0]).toHaveProperty('title');
+    expect(candidates[0]).toHaveProperty('doi');
+    expect(candidates[0]).toHaveProperty('relevanceScore');
+    expect(candidates[0].relevanceScore).toBeGreaterThan(0);
+  }, 30000);
+
+  test('reResearchSupplement processes all claims for a supplement', async () => {
+    const { reResearchSupplement } = require(path.join(__dirname, '..', '..', 'healing-engine', 'scripts', 're-research-supplement'));
+
+    const result = await reResearchSupplement('12_phosphatidylserine_enhanced.js', {
+      maxCandidatesPerClaim: 3,
+      onlyMismatched: true
+    });
+
+    expect(result).toBeTruthy();
+    expect(result.file).toBe('12_phosphatidylserine_enhanced.js');
+    expect(Array.isArray(result.claims)).toBe(true);
+    expect(result.claims.length).toBeGreaterThan(0);
+  }, 120000);
+});
