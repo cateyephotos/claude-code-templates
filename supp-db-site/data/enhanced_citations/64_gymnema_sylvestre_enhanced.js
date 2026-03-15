@@ -527,7 +527,7 @@ const gymnemaSylvestreEnhanced = {
             "journal": "Journal of Dietary Supplements",
             "year": 2010,
             "doi": "",
-            "pmid": "22432517",
+            "pmid": "",
             "studyType": "Open-label Clinical Trial",
             "sampleSize": "Type 2 diabetes patients",
             "duration": "3 months",

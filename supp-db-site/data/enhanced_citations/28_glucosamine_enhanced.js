@@ -270,7 +270,7 @@ window.enhancedCitations[28] = {
                         ],
                         year:  1982,
                         journal:  "International Journal of Clinical Pharmacology Research",
-                        pmid:  "7118331",
+                        pmid:  "",
                         evidenceLevel:  "Level 1",
                         keyFindings:  "Glucosamine demonstrated superior safety profile compared to NSAIDs with minimal gastrointestinal side effects."
                     }

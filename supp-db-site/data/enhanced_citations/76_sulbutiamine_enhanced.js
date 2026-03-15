@@ -174,7 +174,7 @@ const supplement_unknown_enhanced = {
                         issue:  "5",
                         pages:  "1401",
                         doi:  "",
-                        pmid:  "32414132",
+                        pmid:  "",
                         studyType:  "safety_review",
                         evidenceLevel:  "Level 1",
                         participants:  "Multiple studies reviewed",

@@ -228,7 +228,7 @@ const supplement_unknown_enhanced = {
                         volume:  "9",
                         pages:  "965130",
                         doi:  "",
-                        pmid:  "36185698",
+                        pmid:  "",
                         studyType:  "dose_response_study",
                         evidenceLevel:  "Level 1",
                         participants:  "58 adults",

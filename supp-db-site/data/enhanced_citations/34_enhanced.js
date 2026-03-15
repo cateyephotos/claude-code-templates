@@ -232,7 +232,7 @@ const fiveHTPEnhanced = {
             "volume": 10,
             "issue": 6,
             "pages": "365-378",
-            "pmid": "1521674",
+            "pmid": "",
             "keyFindings": ["Clinical trial showing 5-HTP's efficacy in fibromyalgia pain management"],
             "evidenceLevel": "Clinical Trial"
           }

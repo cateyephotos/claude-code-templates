@@ -222,7 +222,7 @@ const cordycepsEnhanced = {
             "journal": "Nutrients",
             "year": 2024,
             "doi": "",
-            "pmid": "38201932",
+            "pmid": "",
             "studyType": "Narrative Review",
             "sampleSize": "N/A",
             "duration": "N/A",
