@@ -528,9 +528,12 @@
       issues.push("Choose a health goal");
     }
 
-    const hasCredits = currentCredits === null || (currentCredits && currentCredits.remaining > 0);
-    if (currentCredits && currentCredits.remaining <= 0) {
-      issues.push("No credits remaining this month");
+    const totalAvailable = currentCredits
+      ? (currentCredits.totalAvailable ?? (currentCredits.remaining + (currentCredits.purchasedCredits || 0)))
+      : null;
+    const hasCredits = totalAvailable === null || totalAvailable > 0;
+    if (currentCredits && totalAvailable <= 0) {
+      issues.push("No credits remaining — buy a credit pack or wait for monthly reset");
     }
 
     btn.disabled = issues.length > 0 || isAnalyzing;

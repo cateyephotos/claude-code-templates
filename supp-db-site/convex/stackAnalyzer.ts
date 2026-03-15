@@ -1,4 +1,4 @@
-import { action, mutation } from "./_generated/server";
+import { action, mutation, internalMutation } from "./_generated/server";
 import { v } from "convex/values";
 import { ConvexError } from "convex/values";
 import { api, internal } from "./_generated/api";
@@ -480,7 +480,7 @@ export const analyzeStack = action({
     const costUsd = estimateCost(inputTokens, outputTokens);
 
     // ── Save Analysis to History ────────────────────────────
-    await ctx.runMutation(api.stackAnalyzer.saveAnalysis, {
+    await ctx.runMutation(internal.stackAnalyzer.saveAnalysis, {
       userId: clerkId,
       supplements: args.supplements.map((s) => ({ id: s.id, name: s.name })),
       healthGoal: args.healthGoal.id,
@@ -508,8 +508,9 @@ export const analyzeStack = action({
 /**
  * Internal mutation to save analysis results.
  * Called from the analyzeStack action after successful Claude API call.
+ * NOT callable from clients — only from other Convex functions.
  */
-export const saveAnalysis = mutation({
+export const saveAnalysis = internalMutation({
   args: {
     userId: v.string(),
     supplements: v.array(v.object({ id: v.number(), name: v.string() })),
