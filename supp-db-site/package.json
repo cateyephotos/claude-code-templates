@@ -27,7 +27,10 @@
     "heal:citations": "node healing-engine/run-healing.js --stage citation-healing --json",
     "heal:site": "node healing-engine/run-healing.js --stage site-check --json",
     "heal:quality": "node healing-engine/run-healing.js --stage content-quality --json",
-    "test:healing": "npx playwright test tests/healing-engine/"
+    "test:healing": "npx playwright test tests/healing-engine/",
+    "heal:flag": "node healing-engine/scripts/flag-evidence-quality.js",
+    "heal:remediate": "node healing-engine/scripts/remediate-supplement.js",
+    "heal:regenerate": "node healing-engine/scripts/regenerate-and-diff.js"
   },
   "devDependencies": {
     "cheerio": "^1.2.0",
