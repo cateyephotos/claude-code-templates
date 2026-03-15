@@ -130,6 +130,59 @@
 
 .sa-credit-upgrade:hover { color: #a78bfa; }
 
+.sa-credit-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.sa-credit-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.sa-credit-count {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+.sa-credit-fill {
+  flex: 1;
+  height: 6px;
+  background: rgba(99, 102, 241, 0.12);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sa-credit-fill--low {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.sa-credit-tier {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--indigo-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sa-upgrade-link {
+  font-size: 0.75rem;
+  color: var(--indigo-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sa-upgrade-link:hover { color: #a78bfa; }
+
 /* ── Section Panels ──────────────────────────────────────────── */
 .sa-panel {
   background: var(--card-bg);
@@ -141,8 +194,9 @@
 
 .sa-panel-header {
   display: flex;
-  align-items: center;
-  gap: 0.625rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.625rem;
   margin-bottom: 1.25rem;
 }
 
@@ -168,6 +222,67 @@
   border-radius: 999px;
   background: rgba(99, 102, 241, 0.12);
   color: var(--indigo-light);
+}
+
+/* ── Panel Title / Subtitle ─────────────────────────────────── */
+.sa-panel-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.125rem;
+  color: var(--text-bright);
+  margin: 0;
+}
+
+.sa-panel-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+  flex-basis: 100%;
+}
+
+/* ── Form Fields ────────────────────────────────────────────── */
+.sa-field {
+  margin-bottom: 1.25rem;
+}
+
+.sa-field-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.sa-field-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.sa-field-count--valid {
+  color: var(--indigo-light);
+}
+
+.sa-field-count--max {
+  color: #f59e0b;
+}
+
+.sa-field-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.375rem;
+}
+
+.sa-actions {
+  margin-top: 1.25rem;
+}
+
+.sa-analyze-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /* ── Multi-Select (Supplement Picker) ────────────────────────── */
@@ -339,6 +454,19 @@
 .sa-dropdown-item .tier-dot.tier-2 { background: #fbbf24; }
 .sa-dropdown-item .tier-dot.tier-3 { background: #fb7185; }
 
+.sa-dropdown-item-name {
+  flex: 1;
+}
+
+.sa-dropdown-item-tier {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
 .sa-dropdown-empty {
   padding: 1.5rem;
   text-align: center;
@@ -475,6 +603,21 @@
 
 .sa-analyze-btn.loading {
   pointer-events: none;
+}
+
+.sa-analyze-btn-text { display: flex; align-items: center; gap: 0.5rem; }
+.sa-analyze-btn.loading .sa-analyze-btn-text { display: none; }
+
+.sa-analyze-btn-loading { display: none; align-items: center; gap: 0.5rem; }
+.sa-analyze-btn.loading .sa-analyze-btn-loading { display: flex; }
+
+.sa-spinner-sm {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: sa-spin 0.6s linear infinite;
 }
 
 .sa-analyze-btn .sa-spinner {
@@ -889,6 +1032,32 @@
 .sa-history-date {
   font-size: 0.6875rem;
   color: var(--text-muted);
+}
+
+/* ── Results & History Panels ────────────────────────────────── */
+.sa-results-panel {
+  margin-top: 1.5rem;
+}
+
+.sa-history-panel {
+  margin-top: 1.5rem;
+}
+
+.sa-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.sa-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(99, 102, 241, 0.2);
+  border-top-color: var(--indigo-light);
+  border-radius: 50%;
+  animation: sa-spin 0.6s linear infinite;
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */

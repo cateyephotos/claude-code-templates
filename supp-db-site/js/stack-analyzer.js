@@ -237,7 +237,7 @@
         <!-- Health Goal Select -->
         <div class="sa-field">
           <label class="sa-field-label" for="sa-goal-select">Health Goal</label>
-          <select class="sa-select" id="sa-goal-select">
+          <select class="sa-goal-select" id="sa-goal-select">
             <option value="">Choose a health goal...</option>
             ${HEALTH_GOALS.map(g => `<option value="${g.id}">${g.name}</option>`).join("")}
           </select>
@@ -246,32 +246,32 @@
         <!-- Depth Selector -->
         <div class="sa-field">
           <label class="sa-field-label">Analysis Depth</label>
-          <div class="sa-depth-selector" id="sa-depth-selector">
+          <div class="sa-depth-options" id="sa-depth-selector">
             <label class="sa-depth-option">
               <input type="radio" name="sa-depth" value="quick" />
               <div class="sa-depth-card">
-                <div class="sa-depth-icon"><i class="fas fa-bolt"></i></div>
-                <div class="sa-depth-name">Quick</div>
-                <div class="sa-depth-desc">Key interactions & safety flags</div>
-                <div class="sa-depth-tokens">~$0.003</div>
+                <div class="sa-depth-card-icon"><i class="fas fa-bolt"></i></div>
+                <div class="sa-depth-card-title">Quick</div>
+                <div class="sa-depth-card-desc">Key interactions & safety flags</div>
+                <div class="sa-depth-card-cost">~$0.003</div>
               </div>
             </label>
             <label class="sa-depth-option">
               <input type="radio" name="sa-depth" value="standard" checked />
               <div class="sa-depth-card">
-                <div class="sa-depth-icon"><i class="fas fa-microscope"></i></div>
-                <div class="sa-depth-name">Standard</div>
-                <div class="sa-depth-desc">Full analysis with mechanisms</div>
-                <div class="sa-depth-tokens">~$0.006</div>
+                <div class="sa-depth-card-icon"><i class="fas fa-microscope"></i></div>
+                <div class="sa-depth-card-title">Standard</div>
+                <div class="sa-depth-card-desc">Full analysis with mechanisms</div>
+                <div class="sa-depth-card-cost">~$0.006</div>
               </div>
             </label>
             <label class="sa-depth-option">
               <input type="radio" name="sa-depth" value="deep" />
               <div class="sa-depth-card">
-                <div class="sa-depth-icon"><i class="fas fa-dna"></i></div>
-                <div class="sa-depth-name">Deep</div>
-                <div class="sa-depth-desc">Comprehensive with full protocols</div>
-                <div class="sa-depth-tokens">~$0.009</div>
+                <div class="sa-depth-card-icon"><i class="fas fa-dna"></i></div>
+                <div class="sa-depth-card-title">Deep</div>
+                <div class="sa-depth-card-desc">Comprehensive with full protocols</div>
+                <div class="sa-depth-card-cost">~$0.009</div>
               </div>
             </label>
           </div>
@@ -335,25 +335,26 @@
 
     // Search input events
     searchInput.addEventListener("focus", () => {
-      dropdown.classList.add("sa-multiselect-dropdown--open");
+      dropdown.classList.add("open");
       renderDropdown(searchInput.value);
     });
 
     searchInput.addEventListener("input", () => {
+      dropdown.classList.add("open");
       renderDropdown(searchInput.value);
     });
 
     // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {
       if (!selectEl.contains(e.target)) {
-        dropdown.classList.remove("sa-multiselect-dropdown--open");
+        dropdown.classList.remove("open");
       }
     });
 
     // Keyboard navigation
     searchInput.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        dropdown.classList.remove("sa-multiselect-dropdown--open");
+        dropdown.classList.remove("open");
         searchInput.blur();
       }
       if (e.key === "Backspace" && searchInput.value === "" && selectedSupplements.length > 0) {
@@ -380,26 +381,26 @@
 
       if (supps.length === 0) continue;
 
-      html += `<div class="sa-dd-category">${escapeHtml(cat)}</div>`;
+      html += `<div class="sa-dropdown-group-label">${escapeHtml(cat)}</div>`;
       for (const s of supps) {
-        const tierClass = `tier-${s.evidenceTier}`;
         html += `
-          <button class="sa-dd-item" data-supp-id="${s.id}" type="button">
-            <span class="sa-dd-item-name">${escapeHtml(s.name)}</span>
-            <span class="sa-dd-item-tier ${tierClass}">T${s.evidenceTier}</span>
-          </button>
+          <div class="sa-dropdown-item" data-supp-id="${s.id}" role="button" tabindex="0">
+            <span class="tier-dot tier-${s.evidenceTier}"></span>
+            <span class="sa-dropdown-item-name">${escapeHtml(s.name)}</span>
+            <span class="sa-dropdown-item-tier">T${s.evidenceTier}</span>
+          </div>
         `;
       }
     }
 
     if (!html) {
-      html = `<div class="sa-dd-empty">No supplements found</div>`;
+      html = `<div class="sa-dropdown-empty">No supplements match your search</div>`;
     }
 
     dropdown.innerHTML = html;
 
     // Attach click handlers
-    dropdown.querySelectorAll(".sa-dd-item").forEach(btn => {
+    dropdown.querySelectorAll(".sa-dropdown-item").forEach(btn => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
