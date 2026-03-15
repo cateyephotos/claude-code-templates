@@ -19,17 +19,36 @@
     "generate:supplements": "node scripts/generate-supplement-pages.js",
     "generate:guides": "node scripts/generate-guide-pages.js",
     "generate:compare": "node scripts/generate-compare-pages.js",
-    "audit:fda": "node scripts/audit-fda-claims.js"
+    "audit:fda": "node scripts/audit-fda-claims.js",
+    "heal": "node healing-engine/run-healing.js",
+    "heal:dry-run": "node healing-engine/run-healing.js --dry-run --skip-browser --skip-links",
+    "heal:full": "node healing-engine/run-healing.js --json",
+    "heal:data": "node healing-engine/run-healing.js --stage data-validation --json",
+    "heal:citations": "node healing-engine/run-healing.js --stage citation-healing --json",
+    "heal:site": "node healing-engine/run-healing.js --stage site-check --json",
+    "heal:quality": "node healing-engine/run-healing.js --stage content-quality --json",
+    "test:healing": "npx playwright test tests/healing-engine/"
   },
   "devDependencies": {
+    "cheerio": "^1.2.0",
     "convex": "^1.17.0",
-    "playwright": "^1.55.0"
+    "playwright": "^1.55.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
-    "cheerio": "^1.0.0",
     "resend": "^4.0.0",
     "sharp": "^0.34.5",
     "stripe": "^17.7.0"
-  }
+  },
+  "description": "A comprehensive interactive website featuring evidence-based supplements with standardized citation display, backed by 471+ research papers and systematic reviews. **Now achieving 95%+ reliability with uniform citation formatting across all supplements.**",
+  "main": "analyze-expansion-opportunities.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
 }
