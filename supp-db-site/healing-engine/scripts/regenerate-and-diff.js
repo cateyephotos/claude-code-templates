@@ -7,7 +7,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
 const GENERATORS = [
-  { name: 'supplement-pages', script: 'scripts/generate-supplement-pages.js' },
+  { name: 'supplement-pages', script: 'seed.js', args: '--out supplements/' },
   { name: 'guide-pages', script: 'scripts/generate-guide-pages.js' },
   { name: 'compare-pages', script: 'scripts/generate-compare-pages.js' },
   { name: 'evidence-pages', script: 'scripts/generate-evidence-pages.js' },
@@ -32,7 +32,8 @@ async function regenerateAllPages(options = {}) {
     }
 
     try {
-      execSync(`node "${scriptPath}"`, {
+      const genArgs = gen.args ? ` ${gen.args}` : '';
+      execSync(`node "${scriptPath}"${genArgs}`, {
         cwd: ROOT,
         stdio: 'pipe',
         maxBuffer: 50 * 1024 * 1024,

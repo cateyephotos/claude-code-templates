@@ -16,7 +16,7 @@
     "convex:dev": "npx convex dev",
     "convex:deploy": "npx convex deploy",
     "inject-auth": "node scripts/inject-auth.js",
-    "generate:supplements": "node scripts/generate-supplement-pages.js",
+    "generate:supplements": "node seed.js --out supplements/",
     "generate:guides": "node scripts/generate-guide-pages.js",
     "generate:compare": "node scripts/generate-compare-pages.js",
     "audit:fda": "node scripts/audit-fda-claims.js",
