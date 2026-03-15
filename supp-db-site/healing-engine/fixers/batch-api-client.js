@@ -148,4 +148,27 @@ function simpleSimilarity(a, b) {
   return (2 * intersection.length) / (wordsA.size + wordsB.size);
 }
 
-module.exports = { lookupPmidBatch, lookupDoiCrossref, verifyCitation, simpleSimilarity };
+async function searchPubMed(query, options = {}) {
+  const maxResults = options.maxResults || 10;
+  const params = new URLSearchParams({
+    db: 'pubmed',
+    term: query,
+    retmax: String(maxResults),
+    retmode: 'json',
+    sort: 'relevance'
+  });
+  const url = `${config.apis.pubmed.esearchUrl || config.apis.pubmed.baseUrl + 'esearch.fcgi'}?${params}`;
+
+  try {
+    const resp = await httpGet(url);
+    if (resp.data && resp.data.esearchresult && resp.data.esearchresult.idlist) {
+      return resp.data.esearchresult.idlist;
+    }
+    return [];
+  } catch (e) {
+    logger.warn(`PubMed esearch failed: ${e.message}`);
+    return [];
+  }
+}
+
+module.exports = { lookupPmidBatch, lookupDoiCrossref, verifyCitation, simpleSimilarity, searchPubMed };

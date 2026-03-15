@@ -49,6 +49,8 @@ module.exports = {
       batchSize: 200,
       retryAttempts: 3,
       retryDelayMs: 1000,
+      esearchUrl: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi',
+      efetchUrl: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi',
     },
     crossref: {
       baseUrl: 'https://api.crossref.org/',
