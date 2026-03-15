@@ -22,9 +22,12 @@ test.describe('Flag Evidence Quality', () => {
   test('flagSingleFile handles title-less files correctly', async () => {
     const { flagSingleFile } = require(path.join(__dirname, '..', '..', 'healing-engine', 'scripts', 'flag-evidence-quality'));
 
-    // Rhodiola has no titles — all should be 'unverifiable'
+    // Rhodiola originally had no titles — after remediation some may be verified
     const result = await flagSingleFile('10_rhodiola_rosea_enhanced.js');
     expect(result).toBeTruthy();
-    expect(result.unverifiable).toBe(result.totalEvidence);
+    expect(result.totalEvidence).toBeGreaterThan(0);
+    // Most items should still lack titles (unverifiable/no_pmid/pmid_not_found)
+    const nonVerified = result.unverifiable + (result.no_pmid || 0) + (result.pmid_not_found || 0);
+    expect(nonVerified).toBeGreaterThanOrEqual(Math.floor(result.totalEvidence * 0.5));
   }, 60000);
 });
