@@ -281,7 +281,7 @@ export const analyzeStack = action({
     }),
     depth: v.union(v.literal("quick"), v.literal("standard"), v.literal("deep")),
   },
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<any> => {
     // ── Auth Check ──────────────────────────────────────────
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) {
@@ -301,15 +301,15 @@ export const analyzeStack = action({
     // ── Credit Check + Consume ──────────────────────────────
     // We consume the credit BEFORE calling Claude to prevent races.
     // If Claude fails, we don't refund — this prevents abuse.
-    const creditResult = await ctx.runMutation(api.analysisCredits.consumeCredit, {
+    const creditResult: any = await ctx.runMutation(api.analysisCredits.consumeCredit, {
       userId: clerkId,
       depth: args.depth,
     });
 
     // ── Build Claude Request ────────────────────────────────
     // Resolve API key: admin UI DB setting takes priority over env var
-    const dbKey = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_API_KEY" });
-    const anthropicKey = dbKey || process.env.ANTHROPIC_API_KEY;
+    const dbKey: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_API_KEY" });
+    const anthropicKey: string | undefined = dbKey || process.env.ANTHROPIC_API_KEY;
     if (!anthropicKey) {
       throw new ConvexError(
         "ANTHROPIC_API_KEY is not configured. Set it in Admin → Configuration → API Keys."
@@ -318,8 +318,8 @@ export const analyzeStack = action({
     const claude = getClaude(anthropicKey);
 
     // Resolve model: admin UI DB setting → default
-    const dbModel = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_MODEL" });
-    const model = dbModel || "claude-haiku-4-5-20251001";
+    const dbModel: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_MODEL" });
+    const model: string = dbModel || "claude-haiku-4-5-20251001";
 
     const systemPrompt = buildSystemPrompt(args.depth);
     const userMessage = buildUserMessage(

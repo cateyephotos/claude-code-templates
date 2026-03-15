@@ -189,21 +189,21 @@ export const deleteSetting = mutation({
 
 export const testAnthropicConnection = action({
   args: {},
-  handler: async (ctx) => {
+  handler: async (ctx): Promise<{ success: boolean; model?: string; error?: string; latencyMs: number; source?: string }> => {
     // Admin check via internal query (actions can't access ctx.db directly)
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) throw new Error("Authentication required");
 
-    const isAdmin = await ctx.runQuery(internal.adminSettings.checkIsAdmin, {
+    const isAdmin: boolean = await ctx.runQuery(internal.adminSettings.checkIsAdmin, {
       clerkId: identity.subject,
     });
     if (!isAdmin) throw new Error("Admin access required");
 
     // Get key: DB first, then env var
-    const dbKey = await ctx.runQuery(internal.adminSettings.getRawSetting, {
+    const dbKey: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, {
       key: "ANTHROPIC_API_KEY",
     });
-    const apiKey = dbKey || process.env.ANTHROPIC_API_KEY;
+    const apiKey: string | undefined = dbKey || process.env.ANTHROPIC_API_KEY;
 
     if (!apiKey) {
       return {
@@ -214,10 +214,10 @@ export const testAnthropicConnection = action({
     }
 
     // Resolve configured model — use stored preference, fall back to default
-    const dbModel = await ctx.runQuery(internal.adminSettings.getRawSetting, {
+    const dbModel: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, {
       key: "ANTHROPIC_MODEL",
     });
-    const model = dbModel || DEFAULT_ANTHROPIC_MODEL;
+    const model: string = dbModel || DEFAULT_ANTHROPIC_MODEL;
 
     const start = Date.now();
     try {
@@ -247,20 +247,20 @@ export const testAnthropicConnection = action({
 
 export const fetchAvailableModels = action({
   args: {},
-  handler: async (ctx) => {
+  handler: async (ctx): Promise<{ success: boolean; error?: string; models: Array<{ id: string; name: string; createdAt: string }>; selectedModel?: string }> => {
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) throw new Error("Authentication required");
 
-    const isAdmin = await ctx.runQuery(internal.adminSettings.checkIsAdmin, {
+    const isAdmin: boolean = await ctx.runQuery(internal.adminSettings.checkIsAdmin, {
       clerkId: identity.subject,
     });
     if (!isAdmin) throw new Error("Admin access required");
 
     // Get API key: DB first, then env var
-    const dbKey = await ctx.runQuery(internal.adminSettings.getRawSetting, {
+    const dbKey: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, {
       key: "ANTHROPIC_API_KEY",
     });
-    const apiKey = dbKey || process.env.ANTHROPIC_API_KEY;
+    const apiKey: string | undefined = dbKey || process.env.ANTHROPIC_API_KEY;
 
     if (!apiKey) {
       return {
@@ -272,7 +272,7 @@ export const fetchAvailableModels = action({
 
     try {
       // Call Anthropic Models API to get the live list
-      const res = await fetch("https://api.anthropic.com/v1/models?limit=100", {
+      const res: Response = await fetch("https://api.anthropic.com/v1/models?limit=100", {
         headers: {
           "x-api-key": apiKey,
           "anthropic-version": "2023-06-01",
@@ -297,7 +297,7 @@ export const fetchAvailableModels = action({
       }));
 
       // Get the currently selected model
-      const selectedModel = await ctx.runQuery(internal.adminSettings.getRawSetting, {
+      const selectedModel: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, {
         key: "ANTHROPIC_MODEL",
       });
 

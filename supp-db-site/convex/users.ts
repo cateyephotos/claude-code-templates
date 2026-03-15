@@ -11,6 +11,7 @@ export const upsertUser = mutation({
     clerkId: v.string(),
     email: v.string(),
     name: v.string(),
+    role: v.optional(v.union(v.literal("admin"), v.literal("subscriber"), v.literal("free"))),
     avatarUrl: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -27,6 +28,7 @@ export const upsertUser = mutation({
         name: args.name,
         avatarUrl: args.avatarUrl,
         lastLoginAt: now,
+        ...(args.role ? { role: args.role } : {}),
       });
       return existing._id;
     }
@@ -36,7 +38,7 @@ export const upsertUser = mutation({
       clerkId: args.clerkId,
       email: args.email,
       name: args.name,
-      role: "free",
+      role: args.role || "free",
       avatarUrl: args.avatarUrl,
       createdAt: now,
       lastLoginAt: now,
