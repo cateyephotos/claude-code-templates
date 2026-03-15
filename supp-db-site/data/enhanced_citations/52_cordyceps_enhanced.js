@@ -221,7 +221,7 @@ const cordycepsEnhanced = {
             "authors": "Sharma H, Upadhyay SK, Chand U, Sood S, Pathak D",
             "journal": "Nutrients",
             "year": 2024,
-            "doi": "10.3390/nu16010102",
+            "doi": "",
             "pmid": "38201932",
             "studyType": "Narrative Review",
             "sampleSize": "N/A",

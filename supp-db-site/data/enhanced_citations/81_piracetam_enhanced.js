@@ -113,7 +113,7 @@ const supplement_unknown_enhanced = {
                         year:  2022,
                         volume:  "13",
                         pages:  "884087",
-                        doi:  "10.3389/fphar.2022.884087",
+                        doi:  "",
                         pmid:  "36059957",
                         studyType:  "systematic_review",
                         evidenceLevel:  "Level 1",

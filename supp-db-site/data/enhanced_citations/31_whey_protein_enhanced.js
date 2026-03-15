@@ -135,7 +135,7 @@ window.enhancedCitations[31] = {
                         year:  2015,
                         journal:  "Sports Medicine",
                         pmid:  "25169440",
-                        doi:  "10.1007/s40279-014-0242-2",
+                        doi:  "",
                         evidenceLevel:  "Level 1",
                         keyFindings:  "Whey protein supplementation significantly enhances muscle mass, strength, and power gains when combined with resistance training."
                     },
@@ -155,7 +155,7 @@ window.enhancedCitations[31] = {
                         year:  2007,
                         journal:  "Journal of the International Society of Sports Nutrition",
                         pmid:  "17908288",
-                        doi:  "10.1186/1550-2783-4-6",
+                        doi:  "",
                         evidenceLevel:  "Level 1",
                         keyFindings:  "Whey protein is highly effective for promoting muscle protein synthesis and supporting training adaptations in athletes."
                     }
@@ -250,7 +250,7 @@ window.enhancedCitations[31] = {
                         year:  2015,
                         journal:  "Sports Medicine",
                         pmid:  "25169440",
-                        doi:  "10.1007/s40279-014-0242-2",
+                        doi:  "",
                         evidenceLevel:  "Level 1",
                         keyFindings:  "Whey protein supplementation demonstrates excellent safety profile with minimal adverse effects in healthy individuals."
                     }

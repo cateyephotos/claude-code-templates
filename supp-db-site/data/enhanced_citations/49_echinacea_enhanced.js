@@ -348,7 +348,7 @@ const echinaceaEnhanced = {
             "authors": "Goel V, Lovlin R, Barton R, Lyon MR, Bauer R, Lee TDG, Basu TK",
             "journal": "Journal of Clinical Pharmacy and Therapeutics",
             "year": 2004,
-            "doi": "10.1111/j.1365-2710.2003.00542.x",
+            "doi": "",
             "pmid": "14748902",
             "studyType": "Randomized Controlled Trial",
             "sampleSize": "282 subjects",

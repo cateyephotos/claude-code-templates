@@ -413,7 +413,7 @@ const pineBarkExtractEnhanced = {
                         confidenceInterval: "Not applicable (safety outcome)"
                     },
                     {
-                        title: "Pycnogenol for the treatment of chronic disorders (Cochrane Review safety assessment)",
+                        title: "Pine bark (Pinus spp.) extract for treating chronic disorders",
                         authors: "Robertson N, Schoonees A, Brand A, Volmink J",
                         journal: "Cochrane Database of Systematic Reviews",
                         year: 2020,
@@ -482,7 +482,7 @@ const pineBarkExtractEnhanced = {
                 target: "Standardized Pycnogenol (65-75% procyanidins from Pinus pinaster bark)",
                 evidence: [
                     {
-                        title: "The effects of pycnogenol on cardiometabolic biomarkers: A systematic review and meta-analysis of randomized controlled trials (dosage analysis)",
+                        title: "The effects of pycnogenol on cardiometabolic biomarkers: A systematic review and meta-analysis of randomized controlled trials",
                         authors: "Malekahmadi M, Moradi Moghaddam O, Firouzi S, Daryabeygi-Khotbehsara R, Feinle-Bisset C, Sharifi-Zahabi E",
                         journal: "Pharmacological Research",
                         year: 2019,

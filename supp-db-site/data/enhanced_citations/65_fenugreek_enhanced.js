@@ -281,7 +281,7 @@ const fenugreekEnhanced = {
             "year": 1990,
             "journal": "Nutrition Research",
             "doi": "10.1016/S0271-5317(05)80631-4",
-            "pmid": "N/A",
+            "pmid": "",
             "studyType": "Clinical Study",
             "evidenceLevel": "Level 3",
             "findings": "Significant reduction in fasting blood glucose. Improved glucose tolerance test results. Reduction in urinary glucose excretion",

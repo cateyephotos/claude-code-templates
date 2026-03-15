@@ -327,7 +327,7 @@ const forskolinEnhanced = {
             "confidenceInterval": "95%"
           },
           {
-            "title": "Coleus forskohlii Extract Supplementation in Conjunction with a Hypocaloric Diet Reduces the Risk Factors of Metabolic Syndrome",
+            "title": "Coleus forskohlii Extract Supplementation in Conjunction with a Hypocaloric Diet Reduces the Risk Factors of Metabolic Syndrome in Overweight and Obese Subjects: A Randomized Controlled Trial",
             "authors": "Loftus HL, Astell KJ, Mathai ML, Su XQ",
             "journal": "Nutrients",
             "year": 2015,
