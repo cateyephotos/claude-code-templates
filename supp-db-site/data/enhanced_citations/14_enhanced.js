@@ -3,13 +3,18 @@
 // Quality Score: 74 (Tier 3 Gold Standard)
 // Total Citations: 15 verified DOIs
 
-const ginkgoBilobaEnhanced = {
+window.enhancedCitations = window.enhancedCitations || {};
+
+window.enhancedData = {
   "id": 14,
   "name": "Ginkgo Biloba",
   "scientificName": "Ginkgo biloba L.",
   "category": "Circulation Support",
-  "commonNames": ["Ginkgo", "Maidenhair Tree", "EGb 761"],
-  
+  "commonNames": [
+    "Ginkgo",
+    "Maidenhair Tree",
+    "EGb 761"
+  ],
   "evidenceProfile": {
     "overallQuality": "Tier 2",
     "totalCitations": 19,
@@ -25,7 +30,6 @@ const ginkgoBilobaEnhanced = {
     "publicationSpan": "2004-2026",
     "keyFindings": "Most extensively studied herbal nootropic. New Cochrane review 2026 (82 RCTs, n=10613) shows small-moderate benefits in dementia (low certainty) but probably no effect in MCI (moderate certainty). GB extracts ranked top for VCI cognition (d=0.83) in 173-trial MA. High-dose Bacopa outperformed Ginkgo for working memory in 29-RCT NMA. Overview of 16 SRs confirms favorable cognition/behavior findings but poor SR quality."
   },
-
   "keyFindings": [
     "Cochrane review 2026 (82 RCTs, n=10613): small-moderate benefits in dementia at 6 months; probably no effect in MCI",
     "GB extracts ranked top for VCI cognition (Cohen's d=0.83, 95% CI 0.00-1.67) and function (d=0.50) in 173-trial MA",
@@ -33,7 +37,6 @@ const ginkgoBilobaEnhanced = {
     "Overview of 16 SRs: most favor EGb 761 for cognition and behavioral symptoms; safe; but poor SR methodological quality",
     "EGb 761 at 240 mg/day stabilizes or slows cognitive decline in dementia (Weinmann 2010, Gauthier 2024)"
   ],
-
   "evidenceGaps": [
     "MCI evidence shows no benefit (moderate certainty per Cochrane 2026) — limits cognitive enhancement claims in non-demented populations",
     "No Ginkgo-specific meta-analysis for tinnitus, peripheral circulation, or healthy adult cognition",
@@ -43,7 +46,6 @@ const ginkgoBilobaEnhanced = {
     "Long-term cognitive outcome data (>2 years) limited despite large trial base",
     "Duplicate safety DOI in enhanced file (Cybulsky 2004 appears twice)"
   ],
-
   "mode2UpdateLog": {
     "date": "2026-03-05",
     "operator": "Claude (automated pipeline)",
@@ -52,10 +54,18 @@ const ginkgoBilobaEnhanced = {
     "papersIncluded": 4,
     "qualityScoreChange": "74 → 80 (+3 from Cochrane 2026, +1 Tiemtad NMA, +1 Masserini VCI MA, +1 Pfuhlmann overview)",
     "tierChange": "Tier 3 → Tier 2 (reconciled with supplements.js; justified by Cochrane + multiple NMAs)",
-    "newCitations": ["Wieland 2026 (PMID 41641880)", "Tiemtad 2026 (PMID 41678913)", "Masserini 2025 (PMID 41198594)", "Pfuhlmann 2025 (PMID 40121884)"],
-    "integrityIssues": ["Safety citations are all cell culture — no clinical safety data", "Duplicate safety DOI (Cybulsky 2004 appears twice)", "Tier mismatch resolved (enhanced Tier 3 → Tier 2)"]
+    "newCitations": [
+      "Wieland 2026 (PMID 41641880)",
+      "Tiemtad 2026 (PMID 41678913)",
+      "Masserini 2025 (PMID 41198594)",
+      "Pfuhlmann 2025 (PMID 40121884)"
+    ],
+    "integrityIssues": [
+      "Safety citations are all cell culture — no clinical safety data",
+      "Duplicate safety DOI (Cybulsky 2004 appears twice)",
+      "Tier mismatch resolved (enhanced Tier 3 → Tier 2)"
+    ]
   },
-
   "citations": {
     "mechanisms": [
       {
@@ -66,50 +76,63 @@ const ginkgoBilobaEnhanced = {
         "target": "Neural tissue and neurotransmitter systems",
         "evidence": [
           {
-        "id": "ginkgo_mech_002",
-        "doi": "10.1002/bmc.5980",
-        "pmid": "39189506",
-        "title": "Identification and quantification of the antioxidants in Ginkgo biloba leaf",
-        "authors": ["Hu X", "Chen W", "Wang L", "Zhang Y", "Liu M"],
-        "journal": "Biomedical Chromatography",
-        "year": 2024,
-        "volume": "38",
-        "issue": "7",
-        "pages": "e5980",
-        "studyType": "analytical_study",
-        "evidenceLevel": "Level 3",
-        "sampleSize": "Laboratory analysis",
-        "keyFindings": [
-          "Identified specific antioxidant constituents in G. biloba leaves",
-          "Quantified flavonoid and terpenoid concentrations",
-          "Antioxidant activity closely related to therapeutic efficacy"
-        ],
-        "verificationDate": "2025-08-19"
-      },
-      {
-        "id": "ginkgo_mech_003",
-        "doi": "10.1186/s12906-015-0719-z",
-        "pmid": "26268459",
-        "title": "Effect of Ginkgo biloba extract on experimental cardiac remodeling",
-        "authors": ["Mesquita TH", "Lin M", "Ibrahim D", "Feng D", "Kawai T", "Lopes AC", "Cruz FES"],
-        "journal": "BMC Complementary and Alternative Medicine", 
-        "year": 2015,
-        "volume": "15",
-        "pages": "173",
-        "studyType": "animal_study",
-        "evidenceLevel": "Level 3",
-        "sampleSize": "40 rats",
-        "keyFindings": [
-          "Improved cardiac function through antioxidant mechanisms",
-          "Reduced inflammatory markers and oxidative stress",
-          "Protected against experimental cardiac remodeling"
-        ],
-        "verificationDate": "2025-08-19"
+            "id": "ginkgo_mech_002",
+            "doi": "10.1002/bmc.5980",
+            "pmid": "39189506",
+            "title": "Identification and quantification of the antioxidants in Ginkgo biloba leaf",
+            "authors": [
+              "Hu X",
+              "Chen W",
+              "Wang L",
+              "Zhang Y",
+              "Liu M"
+            ],
+            "journal": "Biomedical Chromatography",
+            "year": 2024,
+            "volume": "38",
+            "issue": "7",
+            "pages": "e5980",
+            "studyType": "analytical_study",
+            "evidenceLevel": "Level 3",
+            "sampleSize": "Laboratory analysis",
+            "keyFindings": [
+              "Identified specific antioxidant constituents in G. biloba leaves",
+              "Quantified flavonoid and terpenoid concentrations",
+              "Antioxidant activity closely related to therapeutic efficacy"
+            ],
+            "verificationDate": "2025-08-19"
+          },
+          {
+            "id": "ginkgo_mech_003",
+            "doi": "10.1186/s12906-015-0719-z",
+            "pmid": "26268459",
+            "title": "Effect of Ginkgo biloba extract on experimental cardiac remodeling",
+            "authors": [
+              "Mesquita TH",
+              "Lin M",
+              "Ibrahim D",
+              "Feng D",
+              "Kawai T",
+              "Lopes AC",
+              "Cruz FES"
+            ],
+            "journal": "BMC Complementary and Alternative Medicine",
+            "year": 2015,
+            "volume": "15",
+            "pages": "173",
+            "studyType": "animal_study",
+            "evidenceLevel": "Level 3",
+            "sampleSize": "40 rats",
+            "keyFindings": [
+              "Improved cardiac function through antioxidant mechanisms",
+              "Reduced inflammatory markers and oxidative stress",
+              "Protected against experimental cardiac remodeling"
+            ],
+            "verificationDate": "2025-08-19"
           }
         ]
       }
     ],
-
     "benefits": [
       {
         "healthDomain": "Cognitive Enhancement",
@@ -121,12 +144,21 @@ const ginkgoBilobaEnhanced = {
         "target": "Central nervous system",
         "evidence": [
           {
-            "type": "clinical_study",
-            "strength": "Level 2",
-            "description": "Quantitative MR perfusion imaging showed increased cerebral blood flow and enhanced perfusion in multiple brain regions",
-            "citation": "Yoshioka A, et al. (2011). Effects of Ginkgo biloba on cerebral blood flow assessed by quantitative MR perfusion imaging. Neuroradiology, 53(3), 185-191.",
-            "doi": "10.1007/s00221-010-2488-8",
-            "pmid": "21107543",
+            "citationId": "pe_2002",
+            "title": "Ginkgo biloba: A Cognitive Enhancer?",
+            "authors": [
+              "Gold PE",
+              "Cahill L",
+              "Wenk GL"
+            ],
+            "year": 2002,
+            "journal": "Psychological science in the public interest : a journal of the American Psychological Society",
+            "doi": "10.1111/1529-1006.00006",
+            "pmid": "26151474",
+            "studyType": "",
+            "evidenceLevel": "",
+            "findings": "",
+            "methodology": "",
             "sampleSize": "24 healthy volunteers"
           }
         ]
@@ -136,7 +168,12 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.3390/antiox13060651",
         "pmid": "38929090",
         "title": "Ginkgo biloba: A Leaf of Hope in the Fight against Alzheimer's Dementia: Clinical Trial Systematic Review",
-        "authors": ["Santos IS", "Ribeiro D", "Fernandes E", "Freitas M"],
+        "authors": [
+          "Santos IS",
+          "Ribeiro D",
+          "Fernandes E",
+          "Freitas M"
+        ],
         "journal": "Antioxidants",
         "year": 2024,
         "volume": "13",
@@ -157,7 +194,13 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1186/1471-2318-10-14",
         "pmid": "20236541",
         "title": "Effects of Ginkgo biloba in dementia: systematic review and meta-analysis",
-        "authors": ["Weinmann S", "Roll S", "Schwarzbach C", "Vauth C", "Willich SN"],
+        "authors": [
+          "Weinmann S",
+          "Roll S",
+          "Schwarzbach C",
+          "Vauth C",
+          "Willich SN"
+        ],
         "journal": "BMC Geriatrics",
         "year": 2010,
         "volume": "10",
@@ -177,7 +220,11 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.2147/NDT.S18741",
         "pmid": "21573082",
         "title": "Alleviating neuropsychiatric symptoms in dementia: the effects of Ginkgo biloba extract EGb 761. Findings from a randomized controlled trial",
-        "authors": ["Bachinskaya N", "Hoerr R", "Ihl R"],
+        "authors": [
+          "Bachinskaya N",
+          "Hoerr R",
+          "Ihl R"
+        ],
         "journal": "Neuropsychiatric Disease and Treatment",
         "year": 2011,
         "volume": "7",
@@ -198,7 +245,15 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1002/hup.2534",
         "pmid": "27147264",
         "title": "Effects of Ginkgo biloba extract EGb 761® on cognitive control functions, mental activity of the prefrontal cortex and stress reactivity in elderly adults with subjective memory impairment",
-        "authors": ["Beck SM", "Ruge H", "Schindler C", "Burkart M", "Miller R", "Kirschbaum C", "Goschke T"],
+        "authors": [
+          "Beck SM",
+          "Ruge H",
+          "Schindler C",
+          "Burkart M",
+          "Miller R",
+          "Kirschbaum C",
+          "Goschke T"
+        ],
         "journal": "Human Psychopharmacology: Clinical and Experimental",
         "year": 2016,
         "volume": "31",
@@ -219,7 +274,13 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1002/ptr.6646",
         "pmid": "32097990",
         "title": "The effects of Ginkgo biloba on metabolic syndrome: a review",
-        "authors": ["Sarahroodi S", "Esmaeili S", "Mikaili P", "Hemmati Z", "Saberi Y"],
+        "authors": [
+          "Sarahroodi S",
+          "Esmaeili S",
+          "Mikaili P",
+          "Hemmati Z",
+          "Saberi Y"
+        ],
         "journal": "Phytotherapy Research",
         "year": 2020,
         "volume": "34",
@@ -240,7 +301,13 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1002/14651858.CD013661.pub2",
         "pmid": "41641880",
         "title": "Ginkgo biloba for cognitive impairment and dementia",
-        "authors": ["Wieland LS", "Mossenta M", "Engdahl R", "Picard A", "D'Adamo CR"],
+        "authors": [
+          "Wieland LS",
+          "Mossenta M",
+          "Engdahl R",
+          "Picard A",
+          "D'Adamo CR"
+        ],
         "journal": "Cochrane Database of Systematic Reviews",
         "year": 2026,
         "issue": "5",
@@ -266,7 +333,12 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1016/j.phymed.2026.157915",
         "pmid": "41678913",
         "title": "Comparative effects of Bacopa monnieri and Ginkgo biloba on cognitive functions: A systematic review and network meta-analysis.",
-        "authors": ["Tiemtad S", "Teeranachaideekul V", "Chantasart D", "Junyaprasert VB"],
+        "authors": [
+          "Tiemtad S",
+          "Teeranachaideekul V",
+          "Chantasart D",
+          "Junyaprasert VB"
+        ],
         "journal": "Phytomedicine",
         "year": 2026,
         "volume": "143",
@@ -292,7 +364,14 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1002/alz.70840",
         "pmid": "41198594",
         "title": "Therapeutic strategies in vascular cognitive impairment: A systematic review and meta-analysis.",
-        "authors": ["Masserini F", "Ciccone A", "Persichetti E", "Cavallini MC", "Annoni G", "Santangelo R"],
+        "authors": [
+          "Masserini F",
+          "Ciccone A",
+          "Persichetti E",
+          "Cavallini MC",
+          "Annoni G",
+          "Santangelo R"
+        ],
         "journal": "Alzheimer's & Dementia",
         "year": 2025,
         "studyType": "meta_analysis",
@@ -316,7 +395,11 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1016/j.phymed.2025.156565",
         "pmid": "40121884",
         "title": "Ginkgo biloba leaf extract EGb 761 for the treatment of various diseases: Overview of systematic reviews.",
-        "authors": ["Pfuhlmann K", "Hoerr R", "Gauthier S"],
+        "authors": [
+          "Pfuhlmann K",
+          "Hoerr R",
+          "Gauthier S"
+        ],
         "journal": "Phytomedicine",
         "year": 2025,
         "volume": "140",
@@ -338,7 +421,6 @@ const ginkgoBilobaEnhanced = {
         "verificationDate": "2026-03-05"
       }
     ],
-
     "safety": [
       {
         "safetyAspect": "General tolerability",
@@ -364,7 +446,12 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1038/sj.bjp.0705805",
         "pmid": "15024120",
         "title": "The leaf extract of Ginkgo Biloba L. suppresses oxidized LDL-stimulated fibronectin production through an antioxidant action in rat mesangial cells",
-        "authors": ["Cybulsky AV", "Takano T", "Papillon J", "McTavish AJ"],
+        "authors": [
+          "Cybulsky AV",
+          "Takano T",
+          "Papillon J",
+          "McTavish AJ"
+        ],
         "journal": "British Journal of Pharmacology",
         "year": 2004,
         "volume": "141",
@@ -385,7 +472,13 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1016/j.intimp.2015.02.001",
         "pmid": "25681539",
         "title": "Ginkgolide A reduces inflammatory response in high-glucose-stimulated human umbilical vein endothelial cells through STAT3-mediated pathway",
-        "authors": ["Zhang Z", "Xu G", "Ma M", "Yang J", "Liu X"],
+        "authors": [
+          "Zhang Z",
+          "Xu G",
+          "Ma M",
+          "Yang J",
+          "Liu X"
+        ],
         "journal": "International Immunopharmacology",
         "year": 2015,
         "volume": "25",
@@ -402,14 +495,23 @@ const ginkgoBilobaEnhanced = {
         "verificationDate": "2025-08-19"
       }
     ],
-    
     "dosage": [
       {
         "id": "ginkgo_dose_001",
         "doi": "10.3233/JAD-140837",
         "pmid": "25114079",
         "title": "Efficacy and adverse effects of ginkgo biloba for cognitive impairment and dementia: a systematic review and meta-analysis",
-        "authors": ["Tan MS", "Yu JT", "Tan CC", "Wang HF", "Meng XF", "Wang C", "Jiang T", "Zhu XC", "Tan L"],
+        "authors": [
+          "Tan MS",
+          "Yu JT",
+          "Tan CC",
+          "Wang HF",
+          "Meng XF",
+          "Wang C",
+          "Jiang T",
+          "Zhu XC",
+          "Tan L"
+        ],
         "journal": "Journal of Alzheimer's Disease",
         "year": 2015,
         "volume": "43",
@@ -430,7 +532,18 @@ const ginkgoBilobaEnhanced = {
         "doi": "10.1155/2022/8288818",
         "pmid": "35265150",
         "title": "Ginkgo biloba: A Treasure of Functional Phytochemicals with Multimedicinal Applications",
-        "authors": ["Noor-E-Tabassum", "Das R", "Lami MS", "Chakraborty AJ", "Mitra S", "Tallei TE", "Idroes R", "Mohamed AA", "Hossain MJ", "Dhama K"],
+        "authors": [
+          "Noor-E-Tabassum",
+          "Das R",
+          "Lami MS",
+          "Chakraborty AJ",
+          "Mitra S",
+          "Tallei TE",
+          "Idroes R",
+          "Mohamed AA",
+          "Hossain MJ",
+          "Dhama K"
+        ],
         "journal": "Evidence-Based Complementary and Alternative Medicine",
         "year": 2022,
         "volume": "2022",
@@ -447,7 +560,6 @@ const ginkgoBilobaEnhanced = {
       }
     ]
   },
-
   "qualityAssurance": {
     "doiVerificationDate": "2025-08-19",
     "verificationMethod": "Manual verification against CrossRef API and PubMed",
@@ -466,11 +578,8 @@ const ginkgoBilobaEnhanced = {
   }
 };
 
-// Global assignment for Phase 2B enhanced citations
-window.enhancedCitations = window.enhancedCitations || {};
-window.enhancedCitations[14] = ginkgoBilobaEnhanced;
+window.enhancedCitations[14] = window.enhancedData;
 
-// Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = ginkgoBilobaEnhanced;
+    module.exports = window.enhancedData;
 }

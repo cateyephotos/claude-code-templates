@@ -2,14 +2,14 @@
   "file": "14_enhanced.js",
   "supplementId": 14,
   "supplementName": "Ginkgo Biloba",
-  "timestamp": "2026-03-15T15:55:07.939Z",
+  "timestamp": "2026-03-15T16:14:13.948Z",
   "totalEvidence": 4,
-  "verified": 0,
+  "verified": 3,
   "mismatched": 0,
   "questionable": 0,
-  "unverifiable": 4,
+  "unverifiable": 1,
   "noPmid": 0,
-  "reliabilityScore": 0,
+  "reliabilityScore": 75,
   "items": [
     {
       "section": "mechanisms",
@@ -19,9 +19,10 @@
       "doi": "10.1002/bmc.5980",
       "title": "Identification and quantification of the antioxidants in Ginkgo biloba leaf",
       "year": 2024,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Identification and quantification of the antioxidants in Ginkgo biloba leaf.",
+      "pubmedDoi": "10.1002/bmc.5980"
     },
     {
       "section": "mechanisms",
@@ -31,21 +32,23 @@
       "doi": "10.1186/s12906-015-0719-z",
       "title": "Effect of Ginkgo biloba extract on experimental cardiac remodeling",
       "year": 2015,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effect of Ginkgo biloba extract on experimental cardiac remodeling.",
+      "pubmedDoi": "10.1186/s12906-015-0719-z"
     },
     {
       "section": "benefits",
       "citationIdx": 0,
       "evidenceIdx": 0,
-      "pmid": "21107543",
-      "doi": "10.1007/s00221-010-2488-8",
-      "title": "",
-      "year": null,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "pmid": "26151474",
+      "doi": "10.1111/1529-1006.00006",
+      "title": "Ginkgo biloba: A Cognitive Enhancer?",
+      "year": 2002,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Ginkgo biloba: A Cognitive Enhancer?",
+      "pubmedDoi": "10.1111/1529-1006.00006"
     },
     {
       "section": "safety",

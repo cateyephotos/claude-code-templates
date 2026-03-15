@@ -2,14 +2,14 @@
   "file": "66_cinnamon_extract_enhanced.js",
   "supplementId": 66,
   "supplementName": "Cinnamon Extract",
-  "timestamp": "2026-03-15T15:55:38.344Z",
+  "timestamp": "2026-03-15T16:14:50.258Z",
   "totalEvidence": 20,
-  "verified": 0,
+  "verified": 19,
   "mismatched": 0,
-  "questionable": 0,
-  "unverifiable": 20,
+  "questionable": 1,
+  "unverifiable": 0,
   "noPmid": 0,
-  "reliabilityScore": 0,
+  "reliabilityScore": 95,
   "items": [
     {
       "section": "benefits",
@@ -19,9 +19,10 @@
       "doi": "10.2337/diacare.26.12.3215",
       "title": "Cinnamon improves glucose and lipids of people with type 2 diabetes",
       "year": 2003,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamon improves glucose and lipids of people with type 2 diabetes.",
+      "pubmedDoi": "10.2337/diacare.26.12.3215"
     },
     {
       "section": "benefits",
@@ -31,9 +32,10 @@
       "doi": "10.1016/j.clnu.2018.03.003",
       "title": "Effect of cinnamon on glycemic control and lipid profile in patients with type 2 diabetes mellitus: A randomized, triple-blind clinical trial",
       "year": 2018,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 0.667,
+      "pubmedTitle": "Efficacy of cinnamon in patients with type II diabetes mellitus: A randomized controlled clinical trial.",
+      "pubmedDoi": "10.1016/j.clnu.2018.03.003"
     },
     {
       "section": "benefits",
@@ -43,9 +45,10 @@
       "doi": "10.1093/nutrit/nuae058",
       "title": "Effects of cinnamon supplementation on metabolic biomarkers in individuals with type 2 diabetes: a systematic review and meta-analysis",
       "year": 2025,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of cinnamon supplementation on metabolic biomarkers in individuals with type 2 diabetes: a systematic review and meta-analysis.",
+      "pubmedDoi": "10.1093/nutrit/nuae058"
     },
     {
       "section": "benefits",
@@ -55,9 +58,10 @@
       "doi": "10.1370/afm.1517",
       "title": "Cinnamon use in type 2 diabetes: an updated systematic review and meta-analysis",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamon use in type 2 diabetes: an updated systematic review and meta-analysis.",
+      "pubmedDoi": "10.1370/afm.1517"
     },
     {
       "section": "benefits",
@@ -67,9 +71,10 @@
       "doi": "10.1016/j.ctim.2019.01.002",
       "title": "The impact of cinnamon on anthropometric indices and glycemic status in patients with type 2 diabetes: A systematic review and meta-analysis of clinical trials",
       "year": 2019,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The impact of cinnamon on anthropometric indices and glycemic status in patients with type 2 diabetes: A systematic review and meta-analysis of clinical trials.",
+      "pubmedDoi": "10.1016/j.ctim.2019.01.002"
     },
     {
       "section": "benefits",
@@ -79,9 +84,10 @@
       "doi": "10.1111/j.1463-1326.2009.01094.x",
       "title": "The potential of cinnamon to reduce blood glucose levels in patients with type 2 diabetes and insulin resistance",
       "year": 2009,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The potential of cinnamon to reduce blood glucose levels in patients with type 2 diabetes and insulin resistance.",
+      "pubmedDoi": "10.1111/j.1463-1326.2009.01094.x"
     },
     {
       "section": "benefits",
@@ -91,9 +97,10 @@
       "doi": "10.2337/diacare.26.12.3215",
       "title": "Cinnamon improves glucose and lipids of people with type 2 diabetes",
       "year": 2003,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamon improves glucose and lipids of people with type 2 diabetes.",
+      "pubmedDoi": "10.2337/diacare.26.12.3215"
     },
     {
       "section": "benefits",
@@ -103,9 +110,10 @@
       "doi": "10.1093/nutrit/nuae058",
       "title": "Effects of cinnamon supplementation on metabolic biomarkers in individuals with type 2 diabetes: a systematic review and meta-analysis",
       "year": 2025,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of cinnamon supplementation on metabolic biomarkers in individuals with type 2 diabetes: a systematic review and meta-analysis.",
+      "pubmedDoi": "10.1093/nutrit/nuae058"
     },
     {
       "section": "benefits",
@@ -115,9 +123,10 @@
       "doi": "10.1016/j.clnu.2018.03.003",
       "title": "Effect of cinnamon on glycemic control and lipid profile in patients with type 2 diabetes mellitus: A randomized, triple-blind clinical trial",
       "year": 2018,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 0.667,
+      "pubmedTitle": "Efficacy of cinnamon in patients with type II diabetes mellitus: A randomized controlled clinical trial.",
+      "pubmedDoi": "10.1016/j.clnu.2018.03.003"
     },
     {
       "section": "safety",
@@ -127,9 +136,10 @@
       "doi": "10.1002/mnfr.200900281",
       "title": "Toxicology and risk assessment of coumarin: focus on human data",
       "year": 2010,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Toxicology and risk assessment of coumarin: focus on human data.",
+      "pubmedDoi": "10.1002/mnfr.200900281"
     },
     {
       "section": "safety",
@@ -139,9 +149,10 @@
       "doi": "10.3389/fphar.2016.00174",
       "title": "The Relation between Hepatotoxicity and the Total Coumarin Intake from Traditional Japanese Medicines Containing Cinnamon Bark",
       "year": 2016,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The Relation between Hepatotoxicity and the Total Coumarin Intake from Traditional Japanese Medicines Containing Cinnamon Bark.",
+      "pubmedDoi": "10.3389/fphar.2016.00174"
     },
     {
       "section": "safety",
@@ -151,9 +162,10 @@
       "doi": "10.1021/jf102112p",
       "title": "Quantification of coumarin in cinnamon and cinnamon food products with HPLC-UV",
       "year": 2010,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "questionable",
+      "similarity": 0.4,
+      "pubmedTitle": "Quantification of flavoring constituents in cinnamon: high variation of coumarin in cassia bark from the German retail market and in authentic samples from indonesia.",
+      "pubmedDoi": "10.1021/jf102112p"
     },
     {
       "section": "safety",
@@ -163,9 +175,10 @@
       "doi": "10.2337/diacare.26.12.3215",
       "title": "Cinnamon improves glucose and lipids of people with type 2 diabetes",
       "year": 2003,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamon improves glucose and lipids of people with type 2 diabetes.",
+      "pubmedDoi": "10.2337/diacare.26.12.3215"
     },
     {
       "section": "safety",
@@ -175,9 +188,10 @@
       "doi": "10.1016/j.clnu.2018.03.003",
       "title": "Effect of cinnamon on glycemic control and lipid profile in patients with type 2 diabetes mellitus: A randomized, triple-blind clinical trial",
       "year": 2018,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 0.667,
+      "pubmedTitle": "Efficacy of cinnamon in patients with type II diabetes mellitus: A randomized controlled clinical trial.",
+      "pubmedDoi": "10.1016/j.clnu.2018.03.003"
     },
     {
       "section": "mechanisms",
@@ -187,9 +201,10 @@
       "doi": "10.1002/jcb.25058",
       "title": "Cinnamaldehyde and nitric oxide attenuate advanced glycation end products-induced the Jak/STAT signaling in human renal tubular cells",
       "year": 2015,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamaldehyde and nitric oxide attenuate advanced glycation end products-induced the Jak/STAT signaling in human renal tubular cells.",
+      "pubmedDoi": "10.1002/jcb.25058"
     },
     {
       "section": "mechanisms",
@@ -199,9 +214,10 @@
       "doi": "10.3390/molecules27030853",
       "title": "Antidiabetic Potential of Volatile Cinnamon Oil: A Review and Exploration of Mechanisms Using In Silico Molecular Docking Simulations",
       "year": 2022,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Antidiabetic Potential of Volatile Cinnamon Oil: A Review and Exploration of Mechanisms Using In Silico Molecular Docking Simulations.",
+      "pubmedDoi": "10.3390/molecules27030853"
     },
     {
       "section": "mechanisms",
@@ -211,9 +227,10 @@
       "doi": "10.3390/nu8010017",
       "title": "Polyphenols and Glycemic Control",
       "year": 2016,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Polyphenols and Glycemic Control.",
+      "pubmedDoi": "10.3390/nu8010017"
     },
     {
       "section": "dosage",
@@ -223,9 +240,10 @@
       "doi": "10.1093/nutrit/nuae058",
       "title": "Effects of cinnamon supplementation on metabolic biomarkers in individuals with type 2 diabetes: a systematic review and meta-analysis",
       "year": 2025,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of cinnamon supplementation on metabolic biomarkers in individuals with type 2 diabetes: a systematic review and meta-analysis.",
+      "pubmedDoi": "10.1093/nutrit/nuae058"
     },
     {
       "section": "dosage",
@@ -235,9 +253,10 @@
       "doi": "10.2337/diacare.26.12.3215",
       "title": "Cinnamon improves glucose and lipids of people with type 2 diabetes",
       "year": 2003,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamon improves glucose and lipids of people with type 2 diabetes.",
+      "pubmedDoi": "10.2337/diacare.26.12.3215"
     },
     {
       "section": "dosage",
@@ -247,9 +266,10 @@
       "doi": "10.1002/14651858.CD007170.pub2",
       "title": "Cinnamon for diabetes mellitus",
       "year": 2012,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Cinnamon for diabetes mellitus.",
+      "pubmedDoi": "10.1002/14651858.CD007170.pub2"
     }
   ]
 }

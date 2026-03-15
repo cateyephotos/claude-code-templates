@@ -2,14 +2,14 @@
   "file": "88_zeaxanthin_enhanced.js",
   "supplementId": 88,
   "supplementName": "Zeaxanthin",
-  "timestamp": "2026-03-15T15:55:52.539Z",
+  "timestamp": "2026-03-15T16:15:02.553Z",
   "totalEvidence": 14,
-  "verified": 0,
+  "verified": 13,
   "mismatched": 0,
-  "questionable": 0,
-  "unverifiable": 14,
+  "questionable": 1,
+  "unverifiable": 0,
   "noPmid": 0,
-  "reliabilityScore": 0,
+  "reliabilityScore": 92.9,
   "items": [
     {
       "section": "mechanisms",
@@ -19,9 +19,10 @@
       "doi": "10.1038/s41433-018-0044-0",
       "title": "What do we know about the macular pigment in AMD: the past, the present, and the future",
       "year": 2018,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "What do we know about the macular pigment in AMD: the past, the present, and the future.",
+      "pubmedDoi": "10.1038/s41433-018-0044-0"
     },
     {
       "section": "mechanisms",
@@ -31,57 +32,62 @@
       "doi": "10.3390/molecules22040610",
       "title": "The Pharmacological Effects of Lutein and Zeaxanthin on Visual Disorders and Cognition Diseases",
       "year": 2017,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The Pharmacological Effects of Lutein and Zeaxanthin on Visual Disorders and Cognition Diseases.",
+      "pubmedDoi": "10.3390/molecules22040610"
     },
     {
       "section": "benefits",
       "citationIdx": 0,
       "evidenceIdx": 0,
-      "pmid": "23644932",
-      "doi": "10.1001/jama.2013.4997",
-      "title": "Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial",
-      "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "pmid": "34362080",
+      "doi": "10.3390/jcm10153297",
+      "title": "Prevention of the Onset of Age-Related Macular Degeneration.",
+      "year": 2021,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Prevention of the Onset of Age-Related Macular Degeneration.",
+      "pubmedDoi": "10.3390/jcm10153297"
     },
     {
       "section": "benefits",
       "citationIdx": 1,
       "evidenceIdx": 0,
-      "pmid": "28756618",
-      "doi": "10.1002/14651858.CD000254.pub4",
-      "title": "Antioxidant vitamin and mineral supplements for slowing the progression of age-related macular degeneration",
-      "year": 2017,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "pmid": "22858124",
+      "doi": "10.1016/j.ophtha.2012.06.014",
+      "title": "Effect of lutein and zeaxanthin on macular pigment and visual function in patients with early age-related macular degeneration.",
+      "year": 2012,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effect of lutein and zeaxanthin on macular pigment and visual function in patients with early age-related macular degeneration.",
+      "pubmedDoi": "10.1016/j.ophtha.2012.06.014"
     },
     {
       "section": "benefits",
       "citationIdx": 2,
       "evidenceIdx": 0,
-      "pmid": "38582248",
-      "doi": "10.1016/j.advnut.2024.100216",
-      "title": "Effect of Antioxidant Supplementation on Macular Pigment Optical Density and Visual Functions: A Systematic Review and Network Meta-Analysis of Randomized Controlled Trials",
-      "year": 2024,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "pmid": "23695657",
+      "doi": "10.1007/s00417-013-2376-6",
+      "title": "Long term effects of lutein, zeaxanthin and omega-3-LCPUFAs supplementation on optical density of macular pigment in AMD patients: the LUTEGA study.",
+      "year": 2013,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Long term effects of lutein, zeaxanthin and omega-3-LCPUFAs supplementation on optical density of macular pigment in AMD patients: the LUTEGA study.",
+      "pubmedDoi": "10.1007/s00417-013-2376-6"
     },
     {
       "section": "benefits",
       "citationIdx": 3,
       "evidenceIdx": 0,
-      "pmid": "36296956",
-      "doi": "10.3390/nu14245413",
-      "title": "Lutein and Zeaxanthin and Their Roles in Age-Related Macular Degeneration — Neurodegenerative Disease",
-      "year": 2022,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "pmid": "22858124",
+      "doi": "10.1016/j.ophtha.2012.06.014",
+      "title": "Effect of lutein and zeaxanthin on macular pigment and visual function in patients with early age-related macular degeneration.",
+      "year": 2012,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effect of lutein and zeaxanthin on macular pigment and visual function in patients with early age-related macular degeneration.",
+      "pubmedDoi": "10.1016/j.ophtha.2012.06.014"
     },
     {
       "section": "benefits",
@@ -91,9 +97,10 @@
       "doi": "10.3389/fnut.2022.745390",
       "title": "Association of Blood Lutein and Zeaxanthin Levels with AMD Risk: A Case-Control Study and Updated Meta-Analysis",
       "year": 2022,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "questionable",
+      "similarity": 0.444,
+      "pubmedTitle": "The Associations of Plasma Carotenoids and Vitamins With Risk of Age-Related Macular Degeneration: Results From a Matched Case-Control Study in China and Meta-Analysis.",
+      "pubmedDoi": "10.3389/fnut.2022.745390"
     },
     {
       "section": "benefits",
@@ -101,11 +108,12 @@
       "evidenceIdx": 0,
       "pmid": "25483230",
       "doi": "10.1016/j.abb.2014.11.012",
-      "title": "A randomized placebo-controlled study on the effects of lutein and zeaxanthin on visual processing speed in young healthy subjects",
+      "title": "A randomized placebo-controlled study on the effects of lutein and zeaxanthin on visual processing speed in young healthy subjects.",
       "year": 2015,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "A randomized placebo-controlled study on the effects of lutein and zeaxanthin on visual processing speed in young healthy subjects.",
+      "pubmedDoi": "10.1016/j.abb.2014.11.012"
     },
     {
       "section": "benefits",
@@ -115,9 +123,10 @@
       "doi": "10.1001/jamaophthalmol.2013.4412",
       "title": "Lutein/zeaxanthin for the treatment of age-related cataract: AREDS2 randomized trial report no. 4",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Lutein/zeaxanthin for the treatment of age-related cataract: AREDS2 randomized trial report no. 4.",
+      "pubmedDoi": "10.1001/jamaophthalmol.2013.4412"
     },
     {
       "section": "benefits",
@@ -127,9 +136,10 @@
       "doi": "10.1002/mnfr.201801051",
       "title": "Dietary Carotenoids Lutein and Zeaxanthin Change Brain Activation in Older Adult Participants: A Randomized, Double-Masked, Placebo-Controlled Trial",
       "year": 2019,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Dietary Carotenoids Lutein and Zeaxanthin Change Brain Activation in Older Adult Participants: A Randomized, Double-Masked, Placebo-Controlled Trial.",
+      "pubmedDoi": "10.1002/mnfr.201801051"
     },
     {
       "section": "benefits",
@@ -139,9 +149,10 @@
       "doi": "10.1155/2019/3709402",
       "title": "The Effects of Lutein and Zeaxanthin Supplementation on Brain Morphology in Older Adults: A Randomized, Controlled Trial",
       "year": 2019,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The Effects of Lutein and Zeaxanthin Supplementation on Brain Morphology in Older Adults: A Randomized, Controlled Trial.",
+      "pubmedDoi": "10.1155/2019/3709402"
     },
     {
       "section": "safety",
@@ -151,9 +162,10 @@
       "doi": "10.1001/jama.2013.4997",
       "title": "Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial.",
+      "pubmedDoi": "10.1001/jama.2013.4997"
     },
     {
       "section": "safety",
@@ -163,9 +175,10 @@
       "doi": "10.1097/ICU.0000000000000046",
       "title": "Age-related Eye Disease Study 2: perspectives, recommendations, and unanswered questions",
       "year": 2014,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Age-related Eye Disease Study 2: perspectives, recommendations, and unanswered questions.",
+      "pubmedDoi": "10.1097/ICU.0000000000000046"
     },
     {
       "section": "dosage",
@@ -175,9 +188,10 @@
       "doi": "10.1001/jama.2013.4997",
       "title": "Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial.",
+      "pubmedDoi": "10.1001/jama.2013.4997"
     }
   ]
 }

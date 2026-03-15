@@ -2,14 +2,14 @@
   "file": "7_vitamin_d3_enhanced.js",
   "supplementId": 7,
   "supplementName": "Vitamin D3",
-  "timestamp": "2026-03-15T15:55:48.568Z",
+  "timestamp": "2026-03-15T16:14:55.342Z",
   "totalEvidence": 6,
-  "verified": 4,
-  "mismatched": 1,
+  "verified": 0,
+  "mismatched": 0,
   "questionable": 0,
-  "unverifiable": 1,
+  "unverifiable": 6,
   "noPmid": 0,
-  "reliabilityScore": 66.7,
+  "reliabilityScore": 0,
   "items": [
     {
       "section": "benefits",
@@ -19,10 +19,9 @@
       "doi": "10.1056/NEJMoa2202106",
       "title": "Supplemental Vitamin D and Incident Fractures in Midlife and Older Adults",
       "year": 2022,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Supplemental Vitamin D and Incident Fractures in Midlife and Older Adults.",
-      "pubmedDoi": "10.1056/NEJMoa2202106"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -32,10 +31,9 @@
       "doi": "10.3390/nu15020316",
       "title": "Effect of supplemental vitamin D3 on bone mineral density: a systematic review and meta-analysis",
       "year": 2023,
-      "status": "mismatched",
-      "similarity": 0.065,
-      "pubmedTitle": "Fecal and Tissue Microbiota Are Associated with Tumor T-Cell Infiltration and Mesenteric Lymph Node Involvement in Colorectal Cancer.",
-      "pubmedDoi": "10.3390/nu15020316"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -45,10 +43,9 @@
       "doi": "10.1186/s40001-025-02412-x",
       "title": "Vitamin D and calcium supplementation in women undergoing pharmacological management for postmenopausal osteoporosis: a level I of evidence systematic review",
       "year": 2025,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Vitamin D and calcium supplementation in women undergoing pharmacological management for postmenopausal osteoporosis: a level I of evidence systematic review.",
-      "pubmedDoi": "10.1186/s40001-025-02412-x"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -58,10 +55,9 @@
       "doi": "10.7326/M23-2598",
       "title": "Long-Term Effect of Randomization to Calcium and Vitamin D Supplementation on Health in Older Women: Postintervention Follow-up of a Randomized Clinical Trial",
       "year": 2024,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Long-Term Effect of Randomization to Calcium and Vitamin D Supplementation on Health in Older Women : Postintervention Follow-up of a Randomized Clinical Trial.",
-      "pubmedDoi": "10.7326/M23-2598"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "safety",
@@ -71,10 +67,9 @@
       "doi": "10.1002/jbmr.3958",
       "title": "Effects of Supplemental Vitamin D on Bone Health Outcomes in Women and Men in the VITamin D and OmegA-3 TriaL (VITAL)",
       "year": 2020,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Effects of Supplemental Vitamin D on Bone Health Outcomes in Women and Men in the VITamin D and OmegA-3 TriaL (VITAL).",
-      "pubmedDoi": "10.1002/jbmr.3958"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "mechanisms",

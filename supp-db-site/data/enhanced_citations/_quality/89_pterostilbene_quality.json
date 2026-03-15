@@ -2,14 +2,14 @@
   "file": "89_pterostilbene_enhanced.js",
   "supplementId": 89,
   "supplementName": "Pterostilbene",
-  "timestamp": "2026-03-15T15:55:52.644Z",
+  "timestamp": "2026-03-15T16:15:03.262Z",
   "totalEvidence": 15,
-  "verified": 0,
-  "mismatched": 0,
+  "verified": 12,
+  "mismatched": 3,
   "questionable": 0,
-  "unverifiable": 15,
+  "unverifiable": 0,
   "noPmid": 0,
-  "reliabilityScore": 0,
+  "reliabilityScore": 80,
   "items": [
     {
       "section": "mechanisms",
@@ -19,9 +19,10 @@
       "doi": "10.3109/10408363.2013.805182",
       "title": "Pterostilbene: Biomedical applications",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Pterostilbene: Biomedical applications.",
+      "pubmedDoi": "10.3109/10408363.2013.805182"
     },
     {
       "section": "mechanisms",
@@ -31,9 +32,10 @@
       "doi": "10.1021/acs.jafc.9b07519",
       "title": "Pterostilbene, a Dimethyl Ether Derivative of Resveratrol, Reduces Fat Accumulation in Rats Fed an Obesogenic Diet",
       "year": 2020,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "mismatched",
+      "similarity": 0.167,
+      "pubmedTitle": "Occurrence, Bioavailability, Anti-inflammatory, and Anticancer Effects of Pterostilbene.",
+      "pubmedDoi": "10.1021/acs.jafc.9b07860"
     },
     {
       "section": "mechanisms",
@@ -43,9 +45,10 @@
       "doi": "10.1016/j.jpha.2024.101043",
       "title": "Pterostilbene: A natural neuroprotective stilbene with anti-Alzheimer's disease properties",
       "year": 2024,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Pterostilbene: A natural neuroprotective stilbene with anti-Alzheimer's disease properties.",
+      "pubmedDoi": "10.1016/j.jpha.2024.101043"
     },
     {
       "section": "mechanisms",
@@ -55,9 +58,10 @@
       "doi": "10.3390/antiox13080935",
       "title": "Pterostilbene, a Resveratrol Derivative, Improves Ovary Function by Upregulating Antioxidant Defenses in the Aging Chickens via Increased SIRT1/Nrf2 Expression",
       "year": 2024,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Pterostilbene, a Resveratrol Derivative, Improves Ovary Function by Upregulating Antioxidant Defenses in the Aging Chickens via Increased SIRT1/Nrf2 Expression.",
+      "pubmedDoi": "10.3390/antiox13080935"
     },
     {
       "section": "mechanisms",
@@ -67,9 +71,10 @@
       "doi": "10.1002/biof.1409",
       "title": "Anti-obesity effects of resveratrol and pterostilbene",
       "year": 2018,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 0.714,
+      "pubmedTitle": "Antiobesity molecular mechanisms of action: Resveratrol and pterostilbene.",
+      "pubmedDoi": "10.1002/biof.1409"
     },
     {
       "section": "benefits",
@@ -79,9 +84,10 @@
       "doi": "10.1155/2014/459165",
       "title": "Pterostilbene on metabolic parameters: a randomized, double-blind, and placebo-controlled trial",
       "year": 2014,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Pterostilbene on metabolic parameters: a randomized, double-blind, and placebo-controlled trial.",
+      "pubmedDoi": "10.1155/2014/459165"
     },
     {
       "section": "benefits",
@@ -91,9 +97,10 @@
       "doi": "10.1186/s12882-020-02006-1",
       "title": "Nicotinamide Riboside with Pterostilbene (NRPT) Increases NAD+ in Patients with Acute Kidney Injury (AKI): A Randomized, Double-Blind, Placebo-Controlled, Stepwise, Safety Study of Escalating Doses of NRPT in Patients with AKI",
       "year": 2020,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Nicotinamide riboside with pterostilbene (NRPT) increases NAD(+) in patients with acute kidney injury (AKI): a randomized, double-blind, placebo-controlled, stepwise safety study of escalating doses of NRPT in patients with AKI.",
+      "pubmedDoi": "10.1186/s12882-020-02006-1"
     },
     {
       "section": "benefits",
@@ -103,21 +110,23 @@
       "doi": "10.1002/hep.32643",
       "title": "A randomized, double-blind, placebo-controlled study of nicotinamide riboside with pterostilbene (NRPT) for non-alcoholic fatty liver disease",
       "year": 2022,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "mismatched",
+      "similarity": 0.235,
+      "pubmedTitle": "Letter to the editor: l-ornithine l-aspartate in acute treatment of severe hepatic encephalopathy: A double-blind randomized controlled trial.",
+      "pubmedDoi": "10.1002/hep.32643"
     },
     {
       "section": "benefits",
       "citationIdx": 3,
       "evidenceIdx": 0,
-      "pmid": "18954071",
-      "doi": "10.1021/jf802279h",
-      "title": "Cellular and behavioral effects of stilbene resveratrol analogues: implications for reducing the deleterious effects of aging",
-      "year": 2008,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "pmid": "41707875",
+      "doi": "10.1016/j.bbr.2026.116112",
+      "title": "Effect of pterostilbene on cognitive function, and histone deacetylase and BDNF/CREB pathway following ischemia reperfusion injury in mice.",
+      "year": 2026,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effect of pterostilbene on cognitive function, and histone deacetylase and BDNF/CREB pathway following ischemia reperfusion injury in mice.",
+      "pubmedDoi": "10.1016/j.bbr.2026.116112"
     },
     {
       "section": "benefits",
@@ -127,9 +136,10 @@
       "doi": "10.33594/000000017",
       "title": "Pterostilbene Improves Cognitive Performance in Aged Rats: An in Vivo Study",
       "year": 2019,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Pterostilbene Improves Cognitive Performance in Aged Rats: An in Vivo Study.",
+      "pubmedDoi": "10.33594/000000017"
     },
     {
       "section": "benefits",
@@ -139,9 +149,10 @@
       "doi": "10.1172/jci.insight.158314",
       "title": "Nicotinamide riboside plus pterostilbene supplementation in elderly adults: a double-blind, randomized, placebo-controlled trial",
       "year": 2022,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 0.69,
+      "pubmedTitle": "A randomized placebo-controlled trial of nicotinamide riboside and pterostilbene supplementation in experimental muscle injury in elderly individuals.",
+      "pubmedDoi": "10.1172/jci.insight.158314"
     },
     {
       "section": "safety",
@@ -151,9 +162,10 @@
       "doi": "10.1155/2013/463595",
       "title": "Analysis of safety from a human clinical trial with pterostilbene",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Analysis of safety from a human clinical trial with pterostilbene.",
+      "pubmedDoi": "10.1155/2013/463595"
     },
     {
       "section": "safety",
@@ -163,9 +175,10 @@
       "doi": "10.1016/j.phrs.2025.107162",
       "title": "Comprehensive review: pterostilbene pharmacology and safety",
       "year": 2025,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "mismatched",
+      "similarity": 0.211,
+      "pubmedTitle": "Pterostilbene as a Multifaceted Anticancer Agent: Molecular Mechanisms, Therapeutic Potential and Future Directions.",
+      "pubmedDoi": "10.1007/s12032-025-02721-5"
     },
     {
       "section": "dosage",
@@ -175,9 +188,10 @@
       "doi": "10.1155/2014/459165",
       "title": "Pterostilbene on metabolic parameters: a randomized, double-blind, and placebo-controlled trial",
       "year": 2014,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Pterostilbene on metabolic parameters: a randomized, double-blind, and placebo-controlled trial.",
+      "pubmedDoi": "10.1155/2014/459165"
     },
     {
       "section": "dosage",
@@ -187,9 +201,10 @@
       "doi": "10.1002/biof.1396",
       "title": "Resveratrol, pterostilbene, and dementia",
       "year": 2017,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Resveratrol, pterostilbene, and dementia.",
+      "pubmedDoi": "10.1002/biof.1396"
     }
   ]
 }

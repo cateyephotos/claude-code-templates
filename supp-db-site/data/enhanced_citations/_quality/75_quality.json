@@ -2,14 +2,14 @@
   "file": "75_enhanced.js",
   "supplementId": 75,
   "supplementName": "Citicoline",
-  "timestamp": "2026-03-15T15:55:45.266Z",
+  "timestamp": "2026-03-15T16:14:53.845Z",
   "totalEvidence": 13,
-  "verified": 10,
-  "mismatched": 1,
+  "verified": 0,
+  "mismatched": 0,
   "questionable": 0,
-  "unverifiable": 0,
+  "unverifiable": 11,
   "noPmid": 2,
-  "reliabilityScore": 76.9,
+  "reliabilityScore": 0,
   "items": [
     {
       "section": "mechanisms",
@@ -43,10 +43,9 @@
       "doi": "10.1093/jn/nxab119",
       "title": "Citicoline and Memory Function in Healthy Older Adults: A Randomized, Double-Blind, Placebo-Controlled Clinical Trial",
       "year": 2021,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Citicoline and Memory Function in Healthy Older Adults: A Randomized, Double-Blind, Placebo-Controlled Clinical Trial.",
-      "pubmedDoi": "10.1093/jn/nxab119"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -56,10 +55,9 @@
       "doi": "10.1001/jama.2012.13256",
       "title": "Effect of citicoline on functional and cognitive status among patients with traumatic brain injury: Citicoline Brain Injury Treatment Trial (COBRIT)",
       "year": 2012,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Effect of citicoline on functional and cognitive status among patients with traumatic brain injury: Citicoline Brain Injury Treatment Trial (COBRIT).",
-      "pubmedDoi": "10.1001/jama.2012.13256"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -69,10 +67,9 @@
       "doi": "10.1161/01.str.0000038691.03334.71",
       "title": "Oral citicoline in acute ischemic stroke: an individual patient data pooling analysis of clinical trials",
       "year": 2002,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Oral citicoline in acute ischemic stroke: an individual patient data pooling analysis of clinical trials.",
-      "pubmedDoi": "10.1161/01.str.0000038691.03334.71"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -82,10 +79,9 @@
       "doi": "10.1177/1087054715593633",
       "title": "The Effect of Citicoline Supplementation on Motor Speed and Attention in Adolescent Males",
       "year": 2019,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "The Effect of Citicoline Supplementation on Motor Speed and Attention in Adolescent Males.",
-      "pubmedDoi": "10.1177/1087054715593633"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -95,10 +91,9 @@
       "doi": "10.2147/cia.s38420",
       "title": "Effectiveness and safety of citicoline in mild vascular cognitive impairment: the IDEALE study",
       "year": 2013,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Effectiveness and safety of citicoline in mild vascular cognitive impairment: the IDEALE study.",
-      "pubmedDoi": "10.2147/CIA.S38420"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "benefits",
@@ -108,10 +103,9 @@
       "doi": "10.3390/nu15020386",
       "title": "Is Citicoline Effective in Preventing and Slowing Down Dementia?-A Systematic Review and a Meta-Analysis",
       "year": 2023,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Is Citicoline Effective in Preventing and Slowing Down Dementia?-A Systematic Review and a Meta-Analysis.",
-      "pubmedDoi": "10.3390/nu15020386"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "safety",
@@ -121,10 +115,9 @@
       "doi": "10.1358/mf.2006.28.1.977348",
       "title": "Citicoline: pharmacological and clinical review, 2006 update",
       "year": 2006,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Citicoline: pharmacological and clinical review, 2006 update.",
-      "pubmedDoi": ""
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "safety",
@@ -134,10 +127,9 @@
       "doi": "10.1002/1531-8249(200011)48:5<713::AID-ANA4>3.0.CO;2-#",
       "title": "Effect of citicoline on ischemic lesions as measured by diffusion-weighted magnetic resonance imaging",
       "year": 2000,
-      "status": "mismatched",
-      "similarity": 0.065,
-      "pubmedTitle": "Immunogenicity of interferon-beta in multiple sclerosis patients: influence of preparation, dosage, dose frequency, and route of administration. Danish Multiple Sclerosis Study Group.",
-      "pubmedDoi": ""
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "safety",
@@ -147,10 +139,9 @@
       "doi": "10.1177/26331055231152496",
       "title": "Role of Citicoline in Patients With Mild Cognitive Impairment",
       "year": 2023,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Role of Citicoline in Patients With Mild Cognitive Impairment.",
-      "pubmedDoi": "10.1177/26331055231152496"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "dosage",
@@ -160,10 +151,9 @@
       "doi": "10.2147/ciaa.2006.1.3.247",
       "title": "Citicoline (Cognizin) in the treatment of cognitive impairment",
       "year": 2006,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "Citicoline (Cognizin) in the treatment of cognitive impairment.",
-      "pubmedDoi": "10.2147/ciia.2006.1.3.247"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     },
     {
       "section": "dosage",
@@ -173,10 +163,9 @@
       "doi": "10.3390/brainsci3031395",
       "title": "The role of citicoline in neuroprotection and neurorepair in ischemic stroke",
       "year": 2013,
-      "status": "verified",
-      "similarity": 1,
-      "pubmedTitle": "The role of citicoline in neuroprotection and neurorepair in ischemic stroke.",
-      "pubmedDoi": "10.3390/brainsci3031395"
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
     }
   ]
 }

@@ -2,14 +2,14 @@
   "file": "9_l_theanine_enhanced.js",
   "supplementId": 9,
   "supplementName": "L-Theanine",
-  "timestamp": "2026-03-15T15:55:55.344Z",
+  "timestamp": "2026-03-15T16:15:06.559Z",
   "totalEvidence": 17,
-  "verified": 0,
+  "verified": 1,
   "mismatched": 0,
   "questionable": 0,
-  "unverifiable": 17,
+  "unverifiable": 16,
   "noPmid": 0,
-  "reliabilityScore": 0,
+  "reliabilityScore": 5.9,
   "items": [
     {
       "section": "mechanisms",
@@ -19,9 +19,10 @@
       "doi": "",
       "title": "",
       "year": 2008,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "L-theanine, a natural constituent in tea, and its effect on mental state.",
+      "pubmedDoi": ""
     },
     {
       "section": "mechanisms",
@@ -31,9 +32,10 @@
       "doi": "",
       "title": "",
       "year": 2019,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "GABA and l-theanine mixture decreases sleep latency and improves NREM sleep.",
+      "pubmedDoi": "10.1080/13880209.2018.1557698"
     },
     {
       "section": "mechanisms",
@@ -43,9 +45,10 @@
       "doi": "",
       "title": "",
       "year": 2024,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "Uncovering the effects and mechanisms of tea and its components on depression, anxiety, and sleep disorders: A comprehensive review.",
+      "pubmedDoi": "10.1016/j.foodres.2024.115191"
     },
     {
       "section": "mechanisms",
@@ -55,9 +58,10 @@
       "doi": "",
       "title": "",
       "year": 2022,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The Cognitive-Enhancing Outcomes of Caffeine and L-theanine: A Systematic Review.",
+      "pubmedDoi": "10.7759/cureus.20828"
     },
     {
       "section": "benefits",
@@ -67,9 +71,10 @@
       "doi": "",
       "title": "",
       "year": 2020,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The Effects of Green Tea Amino Acid L-Theanine Consumption on the Ability to Manage Stress and Anxiety Levels: a Systematic Review.",
+      "pubmedDoi": "10.1007/s11130-019-00771-5"
     },
     {
       "section": "benefits",
@@ -79,9 +84,10 @@
       "doi": "",
       "title": "",
       "year": 2019,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "Psychotropic effects of (L)-theanine and its clinical properties: From the management of anxiety and stress to a potential use in schizophrenia.",
+      "pubmedDoi": "10.1016/j.phrs.2019.104395"
     },
     {
       "section": "benefits",
@@ -91,21 +97,23 @@
       "doi": "",
       "title": "",
       "year": 2019,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults: A Randomized Controlled Trial.",
+      "pubmedDoi": "10.3390/nu11102362"
     },
     {
       "section": "benefits",
       "citationIdx": 3,
       "evidenceIdx": 0,
       "pmid": "33751906",
-      "doi": "",
-      "title": "",
+      "doi": "10.1089/jmf.2020.4803",
+      "title": "Effects of l-Theanine on Cognitive Function in Middle-Aged and Older Subjects: A Randomized Placebo-Controlled Study.",
       "year": 2021,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of l-Theanine on Cognitive Function in Middle-Aged and Older Subjects: A Randomized Placebo-Controlled Study.",
+      "pubmedDoi": "10.1089/jmf.2020.4803"
     },
     {
       "section": "benefits",
@@ -115,9 +123,10 @@
       "doi": "",
       "title": "",
       "year": 2008,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The combined effects of L-theanine and caffeine on cognitive performance and mood.",
+      "pubmedDoi": "10.1179/147683008X301513"
     },
     {
       "section": "benefits",
@@ -127,9 +136,10 @@
       "doi": "",
       "title": "",
       "year": 2010,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The combination of L-theanine and caffeine improves cognitive performance and increases subjective alertness.",
+      "pubmedDoi": "10.1179/147683010X12611460764840"
     },
     {
       "section": "benefits",
@@ -139,9 +149,10 @@
       "doi": "",
       "title": "",
       "year": 2011,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The effects of L-theanine (Suntheanine®) on objective sleep quality in boys with attention deficit hyperactivity disorder (ADHD): a randomized, double-blind, placebo-controlled clinical trial.",
+      "pubmedDoi": ""
     },
     {
       "section": "benefits",
@@ -151,9 +162,10 @@
       "doi": "",
       "title": "",
       "year": 2020,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "Effects of L-theanine-caffeine combination on sustained attention and inhibitory control among children with ADHD: a proof-of-concept neuroimaging RCT.",
+      "pubmedDoi": "10.1038/s41598-020-70037-7"
     },
     {
       "section": "safety",
@@ -163,9 +175,10 @@
       "doi": "",
       "title": "",
       "year": 2025,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "l-theanine: From tea leaf to trending supplement - does the science match the hype for brain health and relaxation?",
+      "pubmedDoi": "10.1016/j.nutres.2024.12.008"
     },
     {
       "section": "safety",
@@ -175,9 +188,10 @@
       "doi": "",
       "title": "",
       "year": 2011,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The effects of L-theanine (Suntheanine®) on objective sleep quality in boys with attention deficit hyperactivity disorder (ADHD): a randomized, double-blind, placebo-controlled clinical trial.",
+      "pubmedDoi": ""
     },
     {
       "section": "safety",
@@ -187,9 +201,10 @@
       "doi": "",
       "title": "",
       "year": 2019,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "Psychotropic effects of (L)-theanine and its clinical properties: From the management of anxiety and stress to a potential use in schizophrenia.",
+      "pubmedDoi": "10.1016/j.phrs.2019.104395"
     },
     {
       "section": "dosage",
@@ -199,9 +214,10 @@
       "doi": "",
       "title": "",
       "year": 2020,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The Effects of Green Tea Amino Acid L-Theanine Consumption on the Ability to Manage Stress and Anxiety Levels: a Systematic Review.",
+      "pubmedDoi": "10.1007/s11130-019-00771-5"
     },
     {
       "section": "dosage",
@@ -211,9 +227,10 @@
       "doi": "",
       "title": "",
       "year": 2008,
-      "status": "pmid_not_found",
+      "status": "unverifiable",
       "similarity": null,
-      "pubmedTitle": null
+      "pubmedTitle": "The combined effects of L-theanine and caffeine on cognitive performance and mood.",
+      "pubmedDoi": "10.1179/147683008X301513"
     }
   ]
 }

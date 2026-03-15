@@ -2,14 +2,14 @@
   "file": "19_enhanced.js",
   "supplementId": 19,
   "supplementName": "B-Complex Vitamins",
-  "timestamp": "2026-03-15T15:55:09.657Z",
+  "timestamp": "2026-03-15T16:14:20.265Z",
   "totalEvidence": 14,
-  "verified": 0,
+  "verified": 11,
   "mismatched": 0,
   "questionable": 0,
-  "unverifiable": 11,
+  "unverifiable": 0,
   "noPmid": 3,
-  "reliabilityScore": 0,
+  "reliabilityScore": 78.6,
   "items": [
     {
       "section": "mechanisms",
@@ -19,9 +19,10 @@
       "doi": "10.3390/nu8020068",
       "title": "B Vitamins and the Brain: Mechanisms, Dose and Efficacy—A Review",
       "year": 2016,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "B Vitamins and the Brain: Mechanisms, Dose and Efficacy--A Review.",
+      "pubmedDoi": "10.3390/nu8020068"
     },
     {
       "section": "mechanisms",
@@ -31,9 +32,10 @@
       "doi": "10.1016/j.cbi.2006.04.014",
       "title": "Mitochondrial function and toxicity: role of the B vitamin family on mitochondrial energy metabolism",
       "year": 2006,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Mitochondrial function and toxicity: role of the B vitamin family on mitochondrial energy metabolism.",
+      "pubmedDoi": "10.1016/j.cbi.2006.04.014"
     },
     {
       "section": "mechanisms",
@@ -43,9 +45,10 @@
       "doi": "10.1016/S1474-4422(06)70598-1",
       "title": "Vitamin B12, folic acid, and the nervous system",
       "year": 2006,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Vitamin B12, folic acid, and the nervous system.",
+      "pubmedDoi": "10.1016/S1474-4422(06)70598-1"
     },
     {
       "section": "mechanisms",
@@ -67,9 +70,10 @@
       "doi": "10.3233/JAD-171042",
       "title": "Homocysteine and dementia: an international consensus statement",
       "year": 2018,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Homocysteine and Dementia: An International Consensus Statement.",
+      "pubmedDoi": "10.3233/JAD-171042"
     },
     {
       "section": "benefits",
@@ -79,9 +83,10 @@
       "doi": "10.1093/nutrit/nuab057",
       "title": "B vitamins and prevention of cognitive decline and incident dementia: a systematic review and meta-analysis",
       "year": 2022,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "B vitamins and prevention of cognitive decline and incident dementia: a systematic review and meta-analysis.",
+      "pubmedDoi": "10.1093/nutrit/nuab057"
     },
     {
       "section": "benefits",
@@ -91,9 +96,10 @@
       "doi": "10.3390/nu13030923",
       "title": "Effects of Vitamin B12 Supplementation on Cognitive Function, Depressive Symptoms, and Fatigue: A Systematic Review, Meta-Analysis, and Meta-Regression",
       "year": 2021,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of Vitamin B12 Supplementation on Cognitive Function, Depressive Symptoms, and Fatigue: A Systematic Review, Meta-Analysis, and Meta-Regression.",
+      "pubmedDoi": "10.3390/nu13030923"
     },
     {
       "section": "benefits",
@@ -103,9 +109,10 @@
       "doi": "10.1097/PSY.0b013e31827d5fbd",
       "title": "Effects of vitamin and mineral supplementation on stress, mild psychiatric symptoms, and mood in nonclinical samples: a meta-analysis",
       "year": 2013,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of vitamin and mineral supplementation on stress, mild psychiatric symptoms, and mood in nonclinical samples: a meta-analysis.",
+      "pubmedDoi": "10.1097/PSY.0b013e31827d5fbd"
     },
     {
       "section": "benefits",
@@ -115,9 +122,10 @@
       "doi": "10.3390/nu11092232",
       "title": "A Systematic Review and Meta-Analysis of B Vitamin Supplementation on Depressive Symptoms, Anxiety, and Stress: Effects on Healthy and 'At-Risk' Individuals",
       "year": 2019,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "A Systematic Review and Meta-Analysis of B Vitamin Supplementation on Depressive Symptoms, Anxiety, and Stress: Effects on Healthy and 'At-Risk' Individuals.",
+      "pubmedDoi": "10.3390/nu11092232"
     },
     {
       "section": "benefits",
@@ -127,9 +135,10 @@
       "doi": "10.1001/archinternmed.2010.348",
       "title": "Effects of lowering homocysteine levels with B vitamins on cardiovascular disease, cancer, and cause-specific mortality: Meta-analysis of 8 randomized trials involving 37 485 individuals",
       "year": 2010,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Effects of lowering homocysteine levels with B vitamins on cardiovascular disease, cancer, and cause-specific mortality: Meta-analysis of 8 randomized trials involving 37 485 individuals.",
+      "pubmedDoi": "10.1001/archinternmed.2010.348"
     },
     {
       "section": "benefits",
@@ -139,9 +148,10 @@
       "doi": "10.1177/147323000703500301",
       "title": "The role of vitamins and minerals in energy metabolism and well-being",
       "year": 2007,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The role of vitamins and minerals in energy metabolism and well-being.",
+      "pubmedDoi": "10.1177/147323000703500301"
     },
     {
       "section": "safety",
@@ -175,9 +185,10 @@
       "doi": "10.1177/147323000703500301",
       "title": "The role of vitamins and minerals in energy metabolism and well-being",
       "year": 2007,
-      "status": "pmid_not_found",
-      "similarity": null,
-      "pubmedTitle": null
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The role of vitamins and minerals in energy metabolism and well-being.",
+      "pubmedDoi": "10.1177/147323000703500301"
     }
   ]
 }
