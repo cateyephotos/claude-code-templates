@@ -1,0 +1,92 @@
+{
+  "file": "78_centella_asiatica_enhanced.js",
+  "supplementId": 78,
+  "supplementName": "Centella Asiatica",
+  "timestamp": "2026-03-15T15:55:47.459Z",
+  "totalEvidence": 6,
+  "verified": 1,
+  "mismatched": 3,
+  "questionable": 1,
+  "unverifiable": 0,
+  "noPmid": 1,
+  "reliabilityScore": 16.7,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "31736679",
+      "doi": "10.1007/s11101-017-9528-y",
+      "title": "Centella asiatica: phytochemistry and mechanisms of neuroprotection and cognitive enhancement",
+      "year": 2018,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Centella asiatica - Phytochemistry and mechanisms of neuroprotection and cognitive enhancement.",
+      "pubmedDoi": "10.1007/s11101-017-9528-y"
+    },
+    {
+      "section": "mechanisms",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "29253615",
+      "doi": "10.1016/j.jep.2017.12.020",
+      "title": "Centella asiatica extract enhances hippocampal mitochondrial bioenergetics",
+      "year": 2018,
+      "status": "mismatched",
+      "similarity": 0,
+      "pubmedTitle": "Immunomodulatory effects of Sceletium tortuosum (Trimesemine™) elucidated in vitro: Implications for chronic disease.",
+      "pubmedDoi": "10.1016/j.jep.2017.12.020"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "18191355",
+      "doi": "",
+      "title": "Effects of Centella asiatica on cognitive function in healthy elderly volunteers",
+      "year": 2008,
+      "status": "questionable",
+      "similarity": 0.462,
+      "pubmedTitle": "Positive modulation of cognition and mood in the healthy elderly volunteer following the administration of Centella asiatica.",
+      "pubmedDoi": "10.1016/j.jep.2007.11.038"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "11106142",
+      "doi": "10.1097/00004714-200012000-00016",
+      "title": "Anxiolytic activity of Centella asiatica in animal models",
+      "year": 2000,
+      "status": "mismatched",
+      "similarity": 0.154,
+      "pubmedTitle": "Epidemiologic investigation of the relative clearance of haloperidol by mixed-effect modeling using routine clinical pharmacokinetic data in Japanese patients.",
+      "pubmedDoi": "10.1097/00004714-200012000-00016"
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Safety assessment of Centella asiatica in clinical trials",
+      "year": 2022,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "dosage",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "18191355",
+      "doi": "",
+      "title": "Dose-response relationship of Centella asiatica in cognitive enhancement",
+      "year": 2008,
+      "status": "mismatched",
+      "similarity": 0.348,
+      "pubmedTitle": "Positive modulation of cognition and mood in the healthy elderly volunteer following the administration of Centella asiatica.",
+      "pubmedDoi": "10.1016/j.jep.2007.11.038"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "file": "14_enhanced.js",
+  "supplementId": 14,
+  "supplementName": "Ginkgo Biloba",
+  "timestamp": "2026-03-15T15:55:07.939Z",
+  "totalEvidence": 4,
+  "verified": 0,
+  "mismatched": 0,
+  "questionable": 0,
+  "unverifiable": 4,
+  "noPmid": 0,
+  "reliabilityScore": 0,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "39189506",
+      "doi": "10.1002/bmc.5980",
+      "title": "Identification and quantification of the antioxidants in Ginkgo biloba leaf",
+      "year": 2024,
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 1,
+      "pmid": "26268459",
+      "doi": "10.1186/s12906-015-0719-z",
+      "title": "Effect of Ginkgo biloba extract on experimental cardiac remodeling",
+      "year": 2015,
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "21107543",
+      "doi": "10.1007/s00221-010-2488-8",
+      "title": "",
+      "year": null,
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "15024120",
+      "doi": "10.1038/sj.bjp.0705805",
+      "title": "",
+      "year": null,
+      "status": "pmid_not_found",
+      "similarity": null,
+      "pubmedTitle": null
+    }
+  ]
+}

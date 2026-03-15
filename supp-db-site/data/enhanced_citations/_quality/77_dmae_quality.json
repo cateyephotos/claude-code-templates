@@ -1,0 +1,92 @@
+{
+  "file": "77_dmae_enhanced.js",
+  "supplementId": 77,
+  "supplementName": "DMAE",
+  "timestamp": "2026-03-15T15:55:46.947Z",
+  "totalEvidence": 6,
+  "verified": 1,
+  "mismatched": 4,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 1,
+  "reliabilityScore": 16.7,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "36059957",
+      "doi": "10.3389/fphar.2022.884087",
+      "title": "Deanol as a putative acetylcholine precursor in cognitive enhancement",
+      "year": 2022,
+      "status": "mismatched",
+      "similarity": 0,
+      "pubmedTitle": "Identification of endoplasmic reticulum stress-associated genes and subtypes for prediction of Alzheimer's disease based on interpretable machine learning.",
+      "pubmedDoi": "10.3389/fphar.2022.975774"
+    },
+    {
+      "section": "mechanisms",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "904770",
+      "doi": "10.1016/0028-3908(77)90080-6",
+      "title": "Effects of dimethylaminoethanol on membrane phospholipid metabolism",
+      "year": 1977,
+      "status": "mismatched",
+      "similarity": 0.174,
+      "pubmedTitle": "Antagonism by cholinergic drugs of behavioural effects in cats of an anticholinergic psychotomimetic drug and enhancement by nicotine.",
+      "pubmedDoi": "10.1016/0028-3908(77)90080-6"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "406630",
+      "doi": "10.1007/BF00426711",
+      "title": "Effects of dimethylaminoethanol pyroglutamate on cognitive performance",
+      "year": 1977,
+      "status": "mismatched",
+      "similarity": 0,
+      "pubmedTitle": "An automated method for studying exploratory and stereotyped behaviour in rats.",
+      "pubmedDoi": "10.1007/BF00426711"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "1122681",
+      "doi": "10.1002/cpt1975174395",
+      "title": "Deanol in the treatment of disorders of behavior in children",
+      "year": 1975,
+      "status": "mismatched",
+      "similarity": 0.19,
+      "pubmedTitle": "Acetylation of procainamide in man and its relationship to isonicotinic acid hydrazide acetylation phenotype.",
+      "pubmedDoi": "10.1002/cpt1975174395"
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "15675889",
+      "doi": "10.2165/00128071-200506010-00005",
+      "title": "The role of dimethylaminoethanol in cosmetic dermatology",
+      "year": 2005,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "The role of dimethylaminoethanol in cosmetic dermatology.",
+      "pubmedDoi": "10.2165/00128071-200506010-00005"
+    },
+    {
+      "section": "dosage",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Dimethylaminoethanol as a dietary supplement: dosage considerations",
+      "year": 2024,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    }
+  ]
+}

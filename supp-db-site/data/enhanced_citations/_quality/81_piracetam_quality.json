@@ -1,0 +1,93 @@
+{
+  "file": "81_piracetam_enhanced.js",
+  "supplementId": 81,
+  "supplementName": "Piracetam",
+  "timestamp": "2026-03-15T15:55:49.860Z",
+  "totalEvidence": 6,
+  "verified": 2,
+  "mismatched": 4,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 0,
+  "reliabilityScore": 33.3,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "8061686",
+      "doi": "10.1016/0165-0173(94)90011-6",
+      "title": "Piracetam and other structurally related nootropics",
+      "year": 1994,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Piracetam and other structurally related nootropics.",
+      "pubmedDoi": "10.1016/0165-0173(94)90011-6"
+    },
+    {
+      "section": "mechanisms",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "2813665",
+      "doi": "10.1007/BF00442557",
+      "title": "Piracetam and acetylcholine release in the hippocampus",
+      "year": 1989,
+      "status": "mismatched",
+      "similarity": 0.111,
+      "pubmedTitle": "Dose-related plasma levels of clozapine: influence of smoking behaviour, sex and age.",
+      "pubmedDoi": "10.1007/BF00442557"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "36059957",
+      "doi": "",
+      "title": "Nootropics as cognitive enhancers: types, dosage and side effects of smart drugs",
+      "year": 2022,
+      "status": "mismatched",
+      "similarity": 0.138,
+      "pubmedTitle": "Identification of endoplasmic reticulum stress-associated genes and subtypes for prediction of Alzheimer's disease based on interpretable machine learning.",
+      "pubmedDoi": "10.3389/fphar.2022.975774"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "12678719",
+      "doi": "10.1177/1533210102009004497",
+      "title": "Piracetam in the treatment of cognitive impairment in the elderly",
+      "year": 2002,
+      "status": "mismatched",
+      "similarity": 0,
+      "pubmedTitle": "Kringle structures and antiangiogenesis.",
+      "pubmedDoi": "10.2174/1568011023353705"
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "10338106",
+      "doi": "10.1055/s-2007-979234",
+      "title": "The clinical safety of high-dose piracetam in acute stroke treatment",
+      "year": 1999,
+      "status": "verified",
+      "similarity": 0.857,
+      "pubmedTitle": "The clinical safety of high-dose piracetam--its use in the treatment of acute stroke.",
+      "pubmedDoi": "10.1055/s-2007-979234"
+    },
+    {
+      "section": "dosage",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "15834536",
+      "doi": "10.1007/s00213-005-2232-z",
+      "title": "Dose-response relationship of piracetam in cognitive enhancement",
+      "year": 2005,
+      "status": "mismatched",
+      "similarity": 0.25,
+      "pubmedTitle": "Neurocircuitry in alcoholism: a substrate of disruption and repair.",
+      "pubmedDoi": "10.1007/s00213-005-2267-6"
+    }
+  ]
+}

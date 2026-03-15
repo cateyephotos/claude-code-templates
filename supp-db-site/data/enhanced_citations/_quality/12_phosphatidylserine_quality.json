@@ -1,0 +1,51 @@
+{
+  "file": "12_phosphatidylserine_enhanced.js",
+  "supplementId": 12,
+  "supplementName": "Phosphatidylserine",
+  "timestamp": "2026-03-15T15:55:07.343Z",
+  "totalEvidence": 3,
+  "verified": 0,
+  "mismatched": 0,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 3,
+  "reliabilityScore": 0,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Phosphatidylserine in the Brain: Metabolism and Function",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Effects of a food supplement containing phosphatidylserine on cognitive function in Chinese older adults with mild cognitive impairment: A randomized double-blind, placebo-controlled trial",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Safety of phosphatidylserine containing omega-3 fatty acids in non-demented elderly: a double-blind placebo-controlled trial followed by an open-label extension",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    }
+  ]
+}

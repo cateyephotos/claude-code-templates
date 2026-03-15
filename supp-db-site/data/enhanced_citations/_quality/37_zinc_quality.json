@@ -1,0 +1,51 @@
+{
+  "file": "37_zinc_enhanced.js",
+  "supplementId": 37,
+  "supplementName": "Zinc",
+  "timestamp": "2026-03-15T15:55:19.475Z",
+  "totalEvidence": 3,
+  "verified": 0,
+  "mismatched": 0,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 3,
+  "reliabilityScore": 0,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Zinc in the Brain: Friend or Foe?",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Zinc supplementation for the treatment of attention deficit hyperactivity disorder symptomatology in children: a pilot randomized controlled trial",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Zinc",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    }
+  ]
+}

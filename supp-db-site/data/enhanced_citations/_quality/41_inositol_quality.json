@@ -1,0 +1,51 @@
+{
+  "file": "41_inositol_enhanced.js",
+  "supplementId": "inositol-enhanced",
+  "supplementName": "Inositol Enhanced",
+  "timestamp": "2026-03-15T15:55:21.641Z",
+  "totalEvidence": 3,
+  "verified": 0,
+  "mismatched": 0,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 3,
+  "reliabilityScore": 0,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Inositol phosphates and cell signalling",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Effects of myo-inositol in women with PCOS: a systematic review and meta-analysis",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Safety and efficacy of inositol supplements in clinical conditions: a systematic review",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    }
+  ]
+}

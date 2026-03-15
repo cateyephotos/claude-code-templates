@@ -1,0 +1,63 @@
+{
+  "file": "26_pqq_enhanced.js",
+  "supplementId": 26,
+  "supplementName": "PQQ",
+  "timestamp": "2026-03-15T15:55:13.471Z",
+  "totalEvidence": 4,
+  "verified": 0,
+  "mismatched": 0,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 4,
+  "reliabilityScore": 0,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Pyrroloquinoline quinone: a potential neuroprotective compound for neurodegenerative diseases targeting metabolism",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Pyrroloquinoline quinone disodium salt improves brain function in both younger and older adults",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Comprehensive safety assessment across human trials",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 1,
+      "pmid": "",
+      "doi": "",
+      "title": "Pyrroloquinoline Quinone (PQQ): Its impact on human health and potential benefits",
+      "year": null,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    }
+  ]
+}

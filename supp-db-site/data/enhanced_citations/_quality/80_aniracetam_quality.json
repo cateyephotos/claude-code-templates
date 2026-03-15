@@ -1,0 +1,93 @@
+{
+  "file": "80_aniracetam_enhanced.js",
+  "supplementId": 80,
+  "supplementName": "Aniracetam",
+  "timestamp": "2026-03-15T15:55:48.958Z",
+  "totalEvidence": 6,
+  "verified": 2,
+  "mismatched": 4,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 0,
+  "reliabilityScore": 33.3,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "40118526",
+      "doi": "10.1523/ENEURO.0578-24.2025",
+      "title": "Aniracetam ameliorates attention deficit hyperactivity disorder via AMPA receptor modulation",
+      "year": 2025,
+      "status": "verified",
+      "similarity": 0.6,
+      "pubmedTitle": "Aniracetam Ameliorates Attention Deficit Hyperactivity Disorder Behavior in Adolescent Mice.",
+      "pubmedDoi": "10.1523/ENEURO.0578-24.2025"
+    },
+    {
+      "section": "mechanisms",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "11796155",
+      "doi": "10.1016/S0091-3057(01)00676-4",
+      "title": "Aniracetam enhances cognition by modulating cholinergic activity",
+      "year": 2001,
+      "status": "mismatched",
+      "similarity": 0,
+      "pubmedTitle": "Visual hallucinations are associated with lower alpha bungarotoxin binding in dementia with Lewy bodies.",
+      "pubmedDoi": "10.1016/s0091-3057(01)00644-x"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "15374421",
+      "doi": "10.1016/0167-4943(91)90056-P",
+      "title": "Clinical efficacy of aniracetam in cognitive impairment",
+      "year": 1991,
+      "status": "mismatched",
+      "similarity": 0.125,
+      "pubmedTitle": "Measurement of competence: reliability and validity of the TMIG Index of Competence.",
+      "pubmedDoi": "10.1016/0167-4943(91)90053-s"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "11292009",
+      "doi": "10.1007/s002130000624",
+      "title": "Anxiolytic effects of aniracetam in clinical populations",
+      "year": 2001,
+      "status": "mismatched",
+      "similarity": 0.2,
+      "pubmedTitle": "Effect of intravenous injection speed on responses to cocaine and hydromorphone in humans.",
+      "pubmedDoi": "10.1007/s002130000624"
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "20166767",
+      "doi": "10.2165/11319230-000000000-00000",
+      "title": "Piracetam and piracetam-like drugs: from basic science to novel clinical applications to CNS disorders",
+      "year": 2010,
+      "status": "verified",
+      "similarity": 1,
+      "pubmedTitle": "Piracetam and piracetam-like drugs: from basic science to novel clinical applications to CNS disorders.",
+      "pubmedDoi": "10.2165/11319230-000000000-00000"
+    },
+    {
+      "section": "dosage",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "6817363",
+      "doi": "10.1007/BF00432244",
+      "title": "Dose-response relationship of aniracetam in cognitive enhancement",
+      "year": 1982,
+      "status": "mismatched",
+      "similarity": 0.273,
+      "pubmedTitle": "Effects of the novel compound aniracetam (Ro 13-5057) upon impaired learning and memory in rodents.",
+      "pubmedDoi": "10.1007/BF00432244"
+    }
+  ]
+}

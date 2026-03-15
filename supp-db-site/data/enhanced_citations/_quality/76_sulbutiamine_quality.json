@@ -1,0 +1,92 @@
+{
+  "file": "76_sulbutiamine_enhanced.js",
+  "supplementId": 76,
+  "supplementName": "Sulbutiamine",
+  "timestamp": "2026-03-15T15:55:46.244Z",
+  "totalEvidence": 6,
+  "verified": 0,
+  "mismatched": 5,
+  "questionable": 0,
+  "unverifiable": 0,
+  "noPmid": 1,
+  "reliabilityScore": 0,
+  "items": [
+    {
+      "section": "mechanisms",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "32414132",
+      "doi": "",
+      "title": "Role of the synthetic B1 vitamin sulbutiamine on health",
+      "year": 2020,
+      "status": "mismatched",
+      "similarity": 0.167,
+      "pubmedTitle": "Influence of In Vitro Digestion on Composition, Bioaccessibility and Antioxidant Activity of Food Polyphenols-A Non-Systematic Review.",
+      "pubmedDoi": "10.3390/nu12051401"
+    },
+    {
+      "section": "mechanisms",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "10513588",
+      "doi": "10.1016/S0166-4328(99)00042-1",
+      "title": "Sulbutiamine modulates dopaminergic transmission in the prefrontal cortex",
+      "year": 1999,
+      "status": "mismatched",
+      "similarity": 0.1,
+      "pubmedTitle": "Environmental modulation of amphetamine-induced c-fos expression in D1 versus D2 striatal neurons.",
+      "pubmedDoi": "10.1016/s0166-4328(99)00041-8"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "16208142",
+      "doi": "10.1016/S0755-4982(05)84117-4",
+      "title": "Treatment of asthenia with sulbutiamine: a double-blind study",
+      "year": 2005,
+      "status": "mismatched",
+      "similarity": 0,
+      "pubmedTitle": "Mitogen-activated protein kinase activation by hydrogen peroxide is mediated through tyrosine kinase-dependent, protein kinase C-independent pathways in vascular smooth muscle cells: upregulation in spontaneously hypertensive rats.",
+      "pubmedDoi": "10.1097/01.hjh.0000185715.60788.1b"
+    },
+    {
+      "section": "benefits",
+      "citationIdx": 1,
+      "evidenceIdx": 0,
+      "pmid": "3927356",
+      "doi": "10.1007/BF00431710",
+      "title": "Cognitive effects of sulbutiamine in elderly patients",
+      "year": 1985,
+      "status": "mismatched",
+      "similarity": 0.222,
+      "pubmedTitle": "Cianopramine and amitriptyline in the treatment of depressed patients--a placebo-controlled study.",
+      "pubmedDoi": "10.1007/BF00431710"
+    },
+    {
+      "section": "safety",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "",
+      "doi": "",
+      "title": "Safety profile of sulbutiamine in clinical practice",
+      "year": 2020,
+      "status": "no_pmid",
+      "similarity": null,
+      "pubmedTitle": null
+    },
+    {
+      "section": "dosage",
+      "citationIdx": 0,
+      "evidenceIdx": 0,
+      "pmid": "6646394",
+      "doi": "10.1159/000117969",
+      "title": "Dose-response relationship of sulbutiamine in asthenia treatment",
+      "year": 1982,
+      "status": "mismatched",
+      "similarity": 0.133,
+      "pubmedTitle": "Effects of smoking on rapid information processing performance.",
+      "pubmedDoi": "10.1159/000117969"
+    }
+  ]
+}
