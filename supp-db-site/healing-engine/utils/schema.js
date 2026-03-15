@@ -80,6 +80,48 @@ function resetIssueCounter() {
   issueCounter = 0;
 }
 
+function writeEnhancedFile(filePath, data, options = {}) {
+  let header = '';
+  let format = 'const'; // default
+
+  // If sourceFile provided, detect format from it
+  if (options.sourceFile && fs.existsSync(options.sourceFile)) {
+    const source = fs.readFileSync(options.sourceFile, 'utf8');
+    // Preserve comment header
+    const headerLines = [];
+    for (const line of source.split('\n')) {
+      if (line.startsWith('//')) headerLines.push(line);
+      else break;
+    }
+    header = headerLines.join('\n') + (headerLines.length ? '\n\n' : '');
+
+    if (source.includes('window.enhancedCitations')) format = 'window';
+    else if (source.includes('module.exports')) format = 'module';
+    else format = 'const';
+  }
+
+  const json = JSON.stringify(data, null, 2);
+
+  let content;
+  if (format === 'window') {
+    const varName = data.supplementName
+      ? data.supplementName.replace(/[^a-zA-Z0-9]/g, '') + 'Enhanced'
+      : 'enhancedData';
+    const lcVarName = varName.charAt(0).toLowerCase() + varName.slice(1);
+    const id = data.supplementId || data.id || 0;
+    content = `${header}window.enhancedCitations = window.enhancedCitations || {};\n\nwindow.${lcVarName} = ${json};\n\nwindow.enhancedCitations[${id}] = window.${lcVarName};\n\nif (typeof module !== 'undefined' && module.exports) {\n    module.exports = window.${lcVarName};\n}\n`;
+  } else if (format === 'module') {
+    content = `${header}module.exports = ${json};\n`;
+  } else {
+    const rawName = data.name || data.supplementName || 'enhanced';
+    const varName = rawName.replace(/[^a-zA-Z0-9]/g, '');
+    const lcVarName = varName.charAt(0).toLowerCase() + varName.slice(1) + 'Enhanced';
+    content = `${header}const ${lcVarName} = ${json};\n\nif (typeof module !== 'undefined') module.exports = ${lcVarName};\nif (typeof window !== 'undefined') window.enhancedCitations = Object.assign(window.enhancedCitations || {}, { ${lcVarName} });\n`;
+  }
+
+  fs.writeFileSync(filePath, content, 'utf8');
+}
+
 module.exports = {
   loadEnhancedFile,
   loadSupplementsJs,
@@ -87,4 +129,5 @@ module.exports = {
   createStageResult,
   getTierForCategory,
   resetIssueCounter,
+  writeEnhancedFile,
 };

@@ -107,3 +107,24 @@ test.describe('Schema Utils', () => {
     expect(issue.severity).toBe('medium');
   });
 });
+
+test.describe('writeEnhancedFile', () => {
+  test('writeEnhancedFile preserves file format and round-trips', () => {
+    const { loadEnhancedFile, writeEnhancedFile } = require(path.join(UTILS, 'schema.js'));
+    const fs = require('fs');
+    const testFile = path.join(__dirname, '..', '..', 'data', 'enhanced_citations', '8_melatonin_enhanced.js');
+    const data = loadEnhancedFile(testFile);
+    expect(data).toBeTruthy();
+
+    // Write to a temp file and read back
+    const tmpFile = path.join(__dirname, '_test_write_enhanced.js');
+    writeEnhancedFile(tmpFile, data, { sourceFile: testFile });
+    const roundTripped = loadEnhancedFile(tmpFile);
+    expect(roundTripped.id || roundTripped.supplementId).toBe(data.id || data.supplementId);
+    expect(roundTripped.citations).toBeTruthy();
+    expect(Object.keys(roundTripped.citations).length).toBeGreaterThan(0);
+
+    // Cleanup
+    fs.unlinkSync(tmpFile);
+  });
+});
