@@ -22,12 +22,12 @@ function checkSupplementPages() {
   const pagesDir = config.paths.supplementPages;
 
   for (const supp of supplements) {
+    // Use same slugify logic as parse-data.js: replace all non-alphanumeric sequences with dashes
     const slug = supp.name.toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-');
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
     const possibleFiles = [
       `${slug}.html`,
-      `${supp.name.toLowerCase().replace(/\s+/g, '-')}.html`,
     ];
 
     const found = possibleFiles.some(f => fs.existsSync(path.join(pagesDir, f)));
