@@ -918,60 +918,164 @@
   }
 
   // ── Results Rendering ──────────────────────────────────────────
+  function normalizeAnalysisResult(analysis, goalsMeta) {
+    if (analysis.goals && Array.isArray(analysis.goals)) {
+      return analysis; // Already in new format
+    }
+    // Legacy single-goal format — wrap into goals[0]
+    const meta = goalsMeta?.[0] || {};
+    return {
+      ...analysis,
+      goals: [{
+        goalId: meta.id || "unknown",
+        goalName: meta.name || "Unknown Goal",
+        overallScore: analysis.overallScore,
+        evidenceStrength: analysis.evidenceStrength,
+        stackSummary: analysis.stackSummary,
+        mechanismCoverage: analysis.mechanismCoverage || [],
+      }],
+    };
+  }
+
   function renderResults(result) {
     const content = $("#sa-results-content");
     const panel = $("#sa-results-panel");
     if (!content || !panel) return;
 
-    const a = result.analysis;
-    if (!a) {
-      content.innerHTML = `<p class="sa-text-muted">No analysis data returned.</p>`;
+    const raw = result.analysis;
+    if (!raw) {
+      content.innerHTML = '<p class="sa-text-muted">No analysis data returned.</p>';
       return;
     }
 
     panel.style.display = "block";
+    const goalsMeta = selectedGoals.map(g => ({ id: g.id, name: g.name }));
+    const a = normalizeAnalysisResult(raw, goalsMeta);
+    const isDualGoal = a.goals.length > 1;
 
-    const scoreColor = getScoreColor(a.overallScore);
-    const evidenceBadge = getEvidenceBadge(a.evidenceStrength);
+    if (isDualGoal) {
+      renderDualGoalResults(content, a, result);
+    } else {
+      renderSingleGoalResults(content, a.goals[0], a, result);
+    }
+
+    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function renderSingleGoalResults(content, goal, shared, result) {
+    const scoreColor = getScoreColor(goal.overallScore);
+    const evidenceBadge = getEvidenceBadge(goal.evidenceStrength);
 
     content.innerHTML = `
+      <!-- Export Buttons -->
+      <div class="sa-export-bar">
+        <div class="sa-export-btn-group">
+          <button class="sa-export-btn" id="sa-copy-btn" title="Copy results">
+            <i class="fas fa-copy"></i> Copy
+            <div class="sa-copy-dropdown" id="sa-copy-dropdown" style="display:none">
+              <button class="sa-copy-option" data-format="markdown">Copy as Markdown</button>
+              <button class="sa-copy-option" data-format="text">Copy as Text</button>
+            </div>
+          </button>
+          <button class="sa-export-btn" id="sa-email-btn" title="Email results">
+            <i class="fas fa-envelope"></i> Email
+          </button>
+        </div>
+      </div>
+
       <!-- Score Header -->
       <div class="sa-result-header">
-        <div class="sa-score-ring" style="--score-color: ${scoreColor}; --score-pct: ${a.overallScore}">
+        <div class="sa-score-ring" style="--score-color: ${scoreColor}; --score-pct: ${goal.overallScore}">
           <svg viewBox="0 0 120 120" class="sa-score-svg">
             <circle cx="60" cy="60" r="52" class="sa-score-track" />
             <circle cx="60" cy="60" r="52" class="sa-score-fill"
-              style="stroke-dasharray: ${(a.overallScore / 100) * 326.73} 326.73; stroke: ${scoreColor}" />
+              style="stroke-dasharray: ${(goal.overallScore / 100) * 326.73} 326.73; stroke: ${scoreColor}" />
           </svg>
-          <div class="sa-score-value">${a.overallScore}</div>
+          <div class="sa-score-value">${goal.overallScore}</div>
           <div class="sa-score-label">Overall</div>
         </div>
         <div class="sa-result-summary">
           <div class="sa-result-badges">
             ${evidenceBadge}
             <span class="sa-badge sa-badge--depth">${capitalize(selectedDepth)} Analysis</span>
-            <span class="sa-badge sa-badge--goal">${escapeHtml(selectedGoals.map(g => g.name).join(" + ") || "")}</span>
+            <span class="sa-badge sa-badge--goal">${escapeHtml(goal.goalName || selectedGoals.map(g => g.name).join(" + ") || "")}</span>
           </div>
-          <p class="sa-result-text">${escapeHtml(a.stackSummary || "")}</p>
+          <p class="sa-result-text">${escapeHtml(goal.stackSummary || "")}</p>
         </div>
       </div>
 
-      <!-- Synergy Analysis -->
-      ${a.synergyAnalysis?.length ? renderSynergySection(a.synergyAnalysis) : ""}
+      <!-- Shared Sections -->
+      ${shared.synergyAnalysis?.length ? renderSynergySection(shared.synergyAnalysis) : ""}
+      ${goal.mechanismCoverage?.length ? renderMechanismSection(goal.mechanismCoverage) : ""}
+      ${shared.safetyFlags?.length ? renderSafetySection(shared.safetyFlags) : ""}
+      ${shared.dosageProtocol?.length ? renderDosageSection(shared.dosageProtocol) : ""}
+      ${shared.suggestedAdditions?.length || shared.suggestedRemovals?.length ? renderSuggestionsSection(shared.suggestedAdditions, shared.suggestedRemovals) : ""}
 
-      <!-- Mechanism Coverage -->
-      ${a.mechanismCoverage?.length ? renderMechanismSection(a.mechanismCoverage) : ""}
+      <!-- Meta Footer -->
+      <div class="sa-result-meta">
+        <span><i class="fas fa-microchip"></i> ${escapeHtml(result.model || "claude-haiku-4-5")}</span>
+        <span><i class="fas fa-coins"></i> ${result.creditsRemaining ?? "—"} credits remaining</span>
+        <span><i class="fas fa-arrow-right-arrow-left"></i> ${(result.tokensUsed?.input || 0) + (result.tokensUsed?.output || 0)} tokens</span>
+      </div>
+    `;
+  }
 
-      <!-- Safety Flags -->
-      ${a.safetyFlags?.length ? renderSafetySection(a.safetyFlags) : ""}
+  function renderDualGoalResults(content, analysis, result) {
+    const g1 = analysis.goals[0];
+    const g2 = analysis.goals[1];
+    const compat = analysis.multiGoalCompatibility;
 
-      <!-- Dosage Protocol -->
-      ${a.dosageProtocol?.length ? renderDosageSection(a.dosageProtocol) : ""}
+    content.innerHTML = `
+      <!-- Export Buttons -->
+      <div class="sa-export-bar">
+        <div class="sa-export-btn-group">
+          <button class="sa-export-btn" id="sa-copy-btn" title="Copy results">
+            <i class="fas fa-copy"></i> Copy
+            <div class="sa-copy-dropdown" id="sa-copy-dropdown" style="display:none">
+              <button class="sa-copy-option" data-format="markdown">Copy as Markdown</button>
+              <button class="sa-copy-option" data-format="text">Copy as Text</button>
+            </div>
+          </button>
+          <button class="sa-export-btn" id="sa-email-btn" title="Email results">
+            <i class="fas fa-envelope"></i> Email
+          </button>
+        </div>
+      </div>
 
-      <!-- Suggested Additions -->
-      ${a.suggestedAdditions?.length ? renderSuggestionsSection(a.suggestedAdditions, a.suggestedRemovals) : ""}
+      <!-- Dual Score Header -->
+      <div class="sa-dual-scores">
+        ${renderScoreDonut(g1)}
+        <div class="sa-vs-divider">vs</div>
+        ${renderScoreDonut(g2)}
+      </div>
 
-      <!-- Meta -->
+      <!-- Tab Bar -->
+      <div class="sa-tab-bar" role="tablist">
+        <button class="sa-tab active" role="tab" aria-selected="true" aria-controls="sa-tab-combined" data-tab="combined">Combined</button>
+        <button class="sa-tab" role="tab" aria-selected="false" aria-controls="sa-tab-goal-0" data-tab="goal-0">${escapeHtml(g1.goalName)}</button>
+        <button class="sa-tab" role="tab" aria-selected="false" aria-controls="sa-tab-goal-1" data-tab="goal-1">${escapeHtml(g2.goalName)}</button>
+      </div>
+
+      <!-- Combined Tab -->
+      <div class="sa-tab-panel active" id="sa-tab-combined" role="tabpanel">
+        ${compat ? renderCompatibilityCard(compat) : ""}
+        ${analysis.synergyAnalysis?.length ? renderSynergySection(analysis.synergyAnalysis) : ""}
+        ${analysis.safetyFlags?.length ? renderSafetySection(analysis.safetyFlags) : ""}
+        ${analysis.dosageProtocol?.length ? renderDosageSection(analysis.dosageProtocol) : ""}
+        ${analysis.suggestedAdditions?.length || analysis.suggestedRemovals?.length ? renderSuggestionsSection(analysis.suggestedAdditions, analysis.suggestedRemovals) : ""}
+      </div>
+
+      <!-- Goal 1 Tab -->
+      <div class="sa-tab-panel" id="sa-tab-goal-0" role="tabpanel" style="display:none">
+        ${renderGoalTabContent(g1)}
+      </div>
+
+      <!-- Goal 2 Tab -->
+      <div class="sa-tab-panel" id="sa-tab-goal-1" role="tabpanel" style="display:none">
+        ${renderGoalTabContent(g2)}
+      </div>
+
+      <!-- Meta Footer -->
       <div class="sa-result-meta">
         <span><i class="fas fa-microchip"></i> ${escapeHtml(result.model || "claude-haiku-4-5")}</span>
         <span><i class="fas fa-coins"></i> ${result.creditsRemaining ?? "—"} credits remaining</span>
@@ -979,7 +1083,88 @@
       </div>
     `;
 
-    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    initTabSwitching();
+  }
+
+  function renderScoreDonut(goal) {
+    const scoreColor = getScoreColor(goal.overallScore);
+    return `
+      <div class="sa-goal-score">
+        <div class="sa-score-ring sa-score-ring--small" style="--score-color: ${scoreColor}; --score-pct: ${goal.overallScore}">
+          <svg viewBox="0 0 80 80" class="sa-score-svg">
+            <circle cx="40" cy="40" r="34" class="sa-score-track" />
+            <circle cx="40" cy="40" r="34" class="sa-score-fill" style="stroke-dasharray: ${(goal.overallScore / 100) * 213.63} 213.63; stroke: ${scoreColor}" />
+          </svg>
+          <div class="sa-score-value">${goal.overallScore}</div>
+        </div>
+        <div class="sa-goal-score-label">${escapeHtml(goal.goalName)}</div>
+      </div>
+    `;
+  }
+
+  function renderCompatibilityCard(compat) {
+    return `
+      <div class="sa-compat-card">
+        <h3 class="sa-result-section-title"><i class="fas fa-link"></i> Multi-Goal Compatibility</h3>
+        <p class="sa-compat-note">${escapeHtml(compat.compatibilityNote || "")}</p>
+        ${compat.sharedMechanisms?.length ? `
+          <div class="sa-compat-section">
+            <h4><i class="fas fa-check-double"></i> Shared Mechanisms</h4>
+            <div class="sa-compat-tags">${compat.sharedMechanisms.map(m => '<span class="sa-compat-tag sa-compat-tag--shared">' + escapeHtml(m) + '</span>').join("")}</div>
+          </div>
+        ` : ""}
+        ${compat.conflicts?.length ? `
+          <div class="sa-compat-section">
+            <h4><i class="fas fa-exclamation-triangle"></i> Conflicts</h4>
+            <div class="sa-compat-tags">${compat.conflicts.map(c => '<span class="sa-compat-tag sa-compat-tag--conflict">' + escapeHtml(c) + '</span>').join("")}</div>
+          </div>
+        ` : ""}
+      </div>
+    `;
+  }
+
+  function renderGoalTabContent(goal) {
+    const evidenceBadge = getEvidenceBadge(goal.evidenceStrength);
+    return `
+      <div class="sa-goal-tab-content">
+        <div class="sa-result-summary">
+          ${evidenceBadge}
+          <p class="sa-result-text">${escapeHtml(goal.stackSummary || "")}</p>
+        </div>
+        ${goal.mechanismCoverage?.length ? renderMechanismSection(goal.mechanismCoverage) : ""}
+      </div>
+    `;
+  }
+
+  function initTabSwitching() {
+    const tabs = $$(".sa-tab");
+    const panels = $$(".sa-tab-panel");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => { t.classList.remove("active"); t.setAttribute("aria-selected", "false"); });
+        panels.forEach(p => { p.classList.remove("active"); p.style.display = "none"; });
+
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        const targetId = "sa-tab-" + tab.dataset.tab;
+        const panel = document.getElementById(targetId);
+        if (panel) { panel.classList.add("active"); panel.style.display = "block"; }
+      });
+
+      // Keyboard: arrow keys between tabs
+      tab.addEventListener("keydown", (e) => {
+        const tabList = Array.from(tabs);
+        const idx = tabList.indexOf(tab);
+        if (e.key === "ArrowRight" && idx < tabList.length - 1) {
+          e.preventDefault(); tabList[idx + 1].focus(); tabList[idx + 1].click();
+        }
+        if (e.key === "ArrowLeft" && idx > 0) {
+          e.preventDefault(); tabList[idx - 1].focus(); tabList[idx - 1].click();
+        }
+      });
+    });
   }
 
   function renderSynergySection(synergies) {
