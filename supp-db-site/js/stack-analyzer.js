@@ -874,11 +874,21 @@
       loadHistory();
 
       trackEvent("stack_analyzer_success", {
-        score: result.analysis?.overallScore,
-        evidence_strength: result.analysis?.evidenceStrength,
+        score: result.analysis?.goals?.[0]?.overallScore ?? result.analysis?.overallScore,
+        evidence_strength: result.analysis?.goals?.[0]?.evidenceStrength ?? result.analysis?.evidenceStrength,
+        goal_count: selectedGoals.length,
         tokens_input: result.tokensUsed?.input,
         tokens_output: result.tokensUsed?.output,
       });
+
+      // Fire dedicated dual-goal event
+      if (selectedGoals.length > 1) {
+        trackEvent("stack_analyzer_dual_goal", {
+          goal1_id: selectedGoals[0].id,
+          goal2_id: selectedGoals[1].id,
+          depth: selectedDepth,
+        });
+      }
     } catch (err) {
       const msg = err?.message || "Analysis failed. Please try again.";
       if (resultsContent) {
@@ -1226,9 +1236,10 @@
     panel.style.display = "block";
 
     const rows = analyses.map(a => {
-      const score = a.result?.overallScore ?? "—";
+      const score = a.result?.goals?.[0]?.overallScore ?? a.result?.overallScore ?? "—";
       const scoreColor = typeof score === "number" ? getScoreColor(score) : "var(--text-muted)";
-      const goal = HEALTH_GOALS.find(g => g.id === a.healthGoal);
+      const goalIds = a.healthGoals || (a.healthGoal ? [a.healthGoal] : []);
+      const goalNames = goalIds.map(id => HEALTH_GOALS.find(g => g.id === id)?.name || id).join(" + ");
       const suppNames = (a.supplements || []).map(s => s.name).join(", ");
       const date = a.timestamp ? new Date(a.timestamp).toLocaleDateString("en-US", {
         month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"
@@ -1240,7 +1251,7 @@
           <div class="sa-history-info">
             <div class="sa-history-supps">${escapeHtml(suppNames)}</div>
             <div class="sa-history-meta">
-              <span>${escapeHtml(goal?.name || a.healthGoal)}</span>
+              <span>${escapeHtml(goalNames)}</span>
               <span>${capitalize(a.analysisDepth || "standard")}</span>
               <span>${date}</span>
             </div>
