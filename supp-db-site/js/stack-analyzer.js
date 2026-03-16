@@ -539,7 +539,110 @@
       } else {
         selectedGoals = [];
       }
+      populateSecondGoalDropdown();
+      renderGoalChips();
+      renderDropdown($("#sa-supp-search")?.value || "");
+      showSecondGoalDisclosure();
       updateValidation();
+    });
+
+    // "Add second goal" button toggles second dropdown visibility
+    const addGoalBtn = $("#sa-add-goal-btn");
+    if (addGoalBtn) {
+      addGoalBtn.addEventListener("click", () => {
+        const secondSelect = $("#sa-second-goal-select");
+        if (!secondSelect) return;
+        const isHidden = secondSelect.style.display === "none" || secondSelect.style.display === "";
+        secondSelect.style.display = isHidden ? "block" : "none";
+        const disclosure = $("#sa-second-goal-disclosure");
+        if (disclosure) disclosure.setAttribute("aria-expanded", String(isHidden));
+        if (isHidden) {
+          populateSecondGoalDropdown();
+          const goalSelect2 = $("#sa-goal-select-2");
+          if (goalSelect2) goalSelect2.focus();
+        }
+      });
+    }
+
+    // Second goal dropdown change
+    const goalSelect2El = $("#sa-goal-select-2");
+    if (goalSelect2El) {
+      goalSelect2El.addEventListener("change", () => {
+        const val2 = goalSelect2El.value;
+        const secondGoal = val2 ? HEALTH_GOALS.find(g => g.id === val2) : null;
+        if (secondGoal) {
+          selectedGoals = [selectedGoals[0], secondGoal].filter(Boolean);
+        } else {
+          selectedGoals = selectedGoals.slice(0, 1);
+        }
+        renderGoalChips();
+        renderDropdown($("#sa-supp-search")?.value || "");
+        showSecondGoalDisclosure();
+        updateValidation();
+      });
+    }
+  }
+
+  // ── Populate Second Goal Dropdown ─────────────────────────────
+  function populateSecondGoalDropdown() {
+    const goalSelect2 = $("#sa-goal-select-2");
+    if (!goalSelect2 || selectedGoals.length === 0) return;
+    const excludeId = selectedGoals[0].id;
+    goalSelect2.innerHTML = '<option value="">Choose second goal...</option>' +
+      HEALTH_GOALS
+        .filter(g => g.id !== excludeId)
+        .map(g => '<option value="' + g.id + '">' + g.name + '</option>')
+        .join("");
+  }
+
+  // ── Show/Hide Second Goal Disclosure ──────────────────────────
+  function showSecondGoalDisclosure() {
+    const disclosure = $("#sa-second-goal-disclosure");
+    if (disclosure) {
+      disclosure.style.display = selectedGoals.length >= 1 ? "block" : "none";
+    }
+  }
+
+  // ── Goal Chips ─────────────────────────────────────────────────
+  function renderGoalChips() {
+    const chipsEl = $("#sa-goal-chips");
+    if (!chipsEl) return;
+
+    chipsEl.innerHTML = selectedGoals.map((g, i) =>
+      '<span class="sa-goal-chip ' + (i === 1 ? 'sa-goal-chip--secondary' : '') + '" data-index="' + i + '">' +
+        '<i class="fas fa-bullseye"></i>' +
+        '<span>' + escapeHtml(g.name) + '</span>' +
+        '<button class="sa-chip-remove" data-goal-index="' + i + '" type="button" aria-label="Remove ' + escapeHtml(g.name) + '">' +
+          '<i class="fas fa-xmark"></i>' +
+        '</button>' +
+      '</span>'
+    ).join("");
+
+    // Remove handlers with goal promotion logic
+    chipsEl.querySelectorAll(".sa-chip-remove").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const idx = parseInt(btn.dataset.goalIndex, 10);
+        selectedGoals.splice(idx, 1);
+        // If we removed first goal and second exists, it auto-promotes (array shifts)
+        // Also sync the primary dropdown to reflect the new state
+        const goalSelect = $("#sa-goal-select");
+        if (goalSelect) {
+          goalSelect.value = selectedGoals[0]?.id || "";
+        }
+        // Hide second goal select if back to <=1 goals
+        if (selectedGoals.length < 2) {
+          const secondSelect = $("#sa-second-goal-select");
+          if (secondSelect) secondSelect.style.display = "none";
+          const goalSelect2 = $("#sa-goal-select-2");
+          if (goalSelect2) goalSelect2.value = "";
+        }
+        renderGoalChips();
+        showSecondGoalDisclosure();
+        renderDropdown($("#sa-supp-search")?.value || "");
+        updateValidation();
+      });
     });
   }
 
@@ -596,9 +699,17 @@
       issues.push("Choose a health goal");
     }
 
-    const hasCredits = currentCredits === null || (currentCredits && currentCredits.remaining > 0);
     if (currentCredits && currentCredits.remaining <= 0) {
       issues.push("No credits remaining this month");
+    }
+
+    // Compute credit cost: 1 base + 1 surcharge for second goal
+    const goalCount = selectedGoals.length;
+    const totalCreditCost = 1 + (goalCount > 1 ? 1 : 0);
+
+    // Check if enough credits for the selected configuration
+    if (currentCredits && currentCredits.remaining > 0 && currentCredits.remaining < totalCreditCost) {
+      issues.push(`Need ${totalCreditCost} credits (only ${currentCredits.remaining} remaining)`);
     }
 
     btn.disabled = issues.length > 0 || isAnalyzing;
@@ -606,8 +717,18 @@
     if (hint) {
       if (issues.length > 0 && selectedSupplements.length > 0) {
         hint.textContent = issues.join(" · ");
+        hint.classList.remove("sa-analyze-hint--cost");
+        hint.style.display = "block";
+      } else if (issues.length === 0 && selectedGoals.length > 0) {
+        // Show credit cost when form is valid
+        const costText = totalCreditCost === 1
+          ? "1 credit"
+          : `${totalCreditCost} credits (includes +1 for second goal)`;
+        hint.textContent = `Costs ${costText}`;
+        hint.classList.add("sa-analyze-hint--cost");
         hint.style.display = "block";
       } else {
+        hint.classList.remove("sa-analyze-hint--cost");
         hint.style.display = "none";
       }
     }
