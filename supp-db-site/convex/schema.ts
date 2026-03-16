@@ -137,7 +137,8 @@ export default defineSchema({
       id: v.number(),
       name: v.string(),
     })),
-    healthGoal: v.string(), // domain ID from problems.js
+    healthGoal: v.optional(v.string()),           // legacy — kept for existing docs
+    healthGoals: v.optional(v.array(v.string())), // new — [goalId] or [goalId1, goalId2]
     analysisDepth: v.union(v.literal("quick"), v.literal("standard"), v.literal("deep")),
     result: v.any(), // Full Claude response (structured JSON)
     model: v.string(),
