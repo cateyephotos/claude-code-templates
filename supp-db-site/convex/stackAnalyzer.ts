@@ -1,7 +1,8 @@
-import { action, mutation } from "./_generated/server";
+import { action, mutation, internalMutation, internalQuery } from "./_generated/server";
 import { v } from "convex/values";
 import { api, internal } from "./_generated/api";
 import Anthropic from "@anthropic-ai/sdk";
+import { Resend } from "resend";
 
 /**
  * Stack Analyzer — AI-powered supplement stack evaluation via Claude API.
@@ -453,6 +454,103 @@ export const analyzeStack = action({
       creditsUsed: creditResult.usedThisMonth,
       creditsLimit: creditResult.monthlyLimit,
     };
+  },
+});
+
+/**
+ * Action to email analysis results to a recipient via Resend.
+ * Rate-limited to 5 emails per user per hour.
+ */
+export const emailResults = action({
+  args: {
+    recipientEmail: v.string(),
+    subject: v.string(),
+    analysisMarkdown: v.string(),
+  },
+  handler: async (ctx, args): Promise<void> => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Authentication required.");
+    }
+
+    if (!args.recipientEmail.includes("@") || !args.recipientEmail.includes(".")) {
+      throw new Error("Invalid email address.");
+    }
+
+    const clerkId = identity.subject;
+    const oneHourAgo = Date.now() - 3600000;
+    const recentEmails = await ctx.runQuery(internal.stackAnalyzer.countRecentEmails, {
+      userId: clerkId,
+      since: oneHourAgo,
+    });
+    if (recentEmails >= 5) {
+      throw new Error("You've reached the email limit (5/hour). Please try again later.");
+    }
+
+    const dbResendKey: string | null = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "RESEND_API_KEY" });
+    const resendKey = dbResendKey || process.env.RESEND_API_KEY;
+    if (!resendKey) {
+      throw new Error("Email service not configured.");
+    }
+
+    const htmlBody = markdownToEmailHtml(args.analysisMarkdown);
+
+    const resend = new Resend(resendKey);
+    try {
+      await resend.emails.send({
+        from: "SupplementDB <noreply@supplementdb.com>",
+        to: args.recipientEmail,
+        subject: args.subject,
+        html: htmlBody,
+      });
+    } catch (err: any) {
+      console.error("[emailResults] Resend error:", err);
+      throw new Error("Email could not be sent. Please try again.");
+    }
+
+    await ctx.runMutation(internal.stackAnalyzer.logEmailSent, {
+      userId: clerkId,
+      recipientEmail: args.recipientEmail,
+    });
+  },
+});
+
+function markdownToEmailHtml(md: string): string {
+  let html = md
+    .replace(/^### (.*$)/gm, '<h3 style="color:#818cf8;font-family:DM Sans,sans-serif">$1</h3>')
+    .replace(/^## (.*$)/gm, '<h2 style="color:#f1f5f9;font-family:DM Serif Display,serif">$1</h2>')
+    .replace(/^# (.*$)/gm, '<h1 style="color:#f1f5f9;font-family:DM Serif Display,serif">$1</h1>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+
+  return '<div style="background:#0b1120;color:#94a3b8;font-family:DM Sans,Arial,sans-serif;padding:32px;max-width:640px;margin:0 auto;">' +
+    html +
+    '<hr style="border:1px solid rgba(99,102,241,0.12);margin:24px 0">' +
+    '<p style="font-size:12px;color:#64748b;">Sent from <a href="https://supplementdb.com" style="color:#818cf8">SupplementDB</a></p>' +
+    '</div>';
+}
+
+export const countRecentEmails = internalQuery({
+  args: { userId: v.string(), since: v.number() },
+  handler: async (ctx, args) => {
+    const emails = await ctx.db
+      .query("emailLog")
+      .withIndex("by_userId", q => q.eq("userId", args.userId))
+      .filter(q => q.gte(q.field("sentAt"), args.since))
+      .collect();
+    return emails.length;
+  },
+});
+
+export const logEmailSent = internalMutation({
+  args: { userId: v.string(), recipientEmail: v.string() },
+  handler: async (ctx, args) => {
+    await ctx.db.insert("emailLog", {
+      userId: args.userId,
+      recipientEmail: args.recipientEmail,
+      sentAt: Date.now(),
+    });
   },
 });
 

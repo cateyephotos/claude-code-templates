@@ -212,4 +212,12 @@ export default defineSchema({
     updatedAt: v.number(),
     updatedBy: v.string(), // Clerk user ID of admin who set it
   }).index("by_key", ["key"]),
+
+  // Stack Analyzer — email send log for rate limiting
+  emailLog: defineTable({
+    userId: v.string(),
+    recipientEmail: v.string(),
+    sentAt: v.number(),
+  })
+    .index("by_userId", ["userId"]),
 });
