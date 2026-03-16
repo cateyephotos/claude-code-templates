@@ -28,6 +28,58 @@ const {
   normalizeCategory,
 } = require("./parse-data");
 
+const ENHANCED_DIR = path.join(__dirname, "..", "data", "enhanced_citations");
+
+// ── Enhanced Citation Loader (Server-Side) ───────────────────────────────
+// Loads enhanced citation data for a supplement to get accurate total counts.
+
+function loadEnhancedCitation(supplement) {
+    const id = supplement.id;
+    try {
+        if (!fs.existsSync(ENHANCED_DIR)) return null;
+        const files = fs.readdirSync(ENHANCED_DIR);
+        const matchFile = files.find(f => f.startsWith(`${id}_`) && f.endsWith('_enhanced.js'));
+        if (!matchFile) return null;
+
+        const src = fs.readFileSync(path.join(ENHANCED_DIR, matchFile), 'utf8');
+        const window = { enhancedCitations: {} };
+        eval(src);
+
+        if (window.enhancedCitations[id] && (window.enhancedCitations[id].citations || window.enhancedCitations[id].enhancedCitations)) {
+            return window.enhancedCitations[id];
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations && val.supplementId === id) return val;
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations) return val;
+        }
+        return null;
+    } catch (e) {
+        console.warn(`  ⚠ Could not load enhanced citations for ID ${id}: ${e.message}`);
+        return null;
+    }
+}
+
+/**
+ * Count total citations for a supplement, including both keyCitations
+ * and enhanced citations (mechanisms, benefits, safety, dosage).
+ */
+function countSupplementCitations(s) {
+    let count = (s.keyCitations || []).length;
+    const enhanced = loadEnhancedCitation(s);
+    if (enhanced && enhanced.citations) {
+        const cits = enhanced.citations;
+        count += (cits.mechanisms || []).length + (cits.benefits || []).length +
+                 (cits.safety || []).length + (cits.dosage || []).length;
+    }
+    return count;
+}
+
 // ── Configuration ──────────────────────────────────────────────────────────────
 
 const WAVE_1_DOMAINS = [
@@ -494,8 +546,8 @@ function generateEvidencePage(domain, merged, allDomains) {
   const canonicalUrl = `${BASE_URL}/evidence/${domain.slug}/${merged.slug}.html`;
   const guideSlug = DOMAIN_TO_GUIDE[domain.slug] || domain.slug;
 
-  // Count citations
-  const citationCount = (merged.keyCitations || []).length;
+  // Count citations — include both keyCitations and enhanced citations
+  const citationCount = countSupplementCitations(merged);
 
   // Nav links for section navigation
   const navLinks = [

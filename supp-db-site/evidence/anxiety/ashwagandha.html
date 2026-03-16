@@ -34,16 +34,20 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/content-gate.css?v=1773553483174">
+    <link rel="stylesheet" href="../../css/content-gate.css?v=1773633708942">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Auth config — Docker entrypoint substitutes placeholders at runtime -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
 
     <!-- Auth CDN -->
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ashwagandha for Anxiety & Stress Management","description":"Clinical evidence review of Ashwagandha for anxiety & stress management. Includes dosage protocols, mechanism analysis, safety profile, and peer-reviewed citations.","datePublished":"2026-03-15","dateModified":"2026-03-15","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/evidence/anxiety/ashwagandha.html"},"about":{"@type":"Drug","name":"Ashwagandha","description":"Evidence-based supplement for anxiety & stress management"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ashwagandha for Anxiety & Stress Management","description":"Clinical evidence review of Ashwagandha for anxiety & stress management. Includes dosage protocols, mechanism analysis, safety profile, and peer-reviewed citations.","datePublished":"2026-03-16","dateModified":"2026-03-16","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/evidence/anxiety/ashwagandha.html"},"about":{"@type":"Drug","name":"Ashwagandha","description":"Evidence-based supplement for anxiety & stress management"}}</script>
 
     
     <style>
@@ -425,8 +429,8 @@
         <div class="hero-stats mb-4">
             <span class="hero-stat"><span class="tier-2-badge" style="display:inline-block;padding:2px 10px;border-radius:100px;font-size:0.7rem;font-weight:700;letter-spacing:0.03em;">Moderate Evidence</span></span>
             <span class="hero-stat"><i class="fas fa-star"></i> Relevance: 95/100</span>
-            <span class="hero-stat"><i class="fas fa-file-lines"></i> 3+ Citations</span>
-            <span class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-15</span>
+            <span class="hero-stat"><i class="fas fa-file-lines"></i> 18+ Citations</span>
+            <span class="hero-stat"><i class="fas fa-calendar"></i> Updated 2026-03-16</span>
         </div>
 
         <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
@@ -733,7 +737,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         domain_name: 'Anxiety &amp; Stress Management',
         evidence_tier: 2,
         relevance_score: 95,
-        citation_count: 3
+        citation_count: 18
     });
 
     var sectionsMeta = {

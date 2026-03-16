@@ -17,6 +17,59 @@ const {
     getTierColor,
 } = require('./parse-data');
 
+const ENHANCED_DIR = path.join(__dirname, '..', 'data', 'enhanced_citations');
+
+// ── Enhanced Citation Loader (Server-Side) ───────────────────────────────
+// Mirrors the loader in generate-supplement-pages.js so guide pages can
+// include enhanced citations in their total citation counts.
+
+function loadEnhancedCitation(supplement) {
+    const id = supplement.id;
+    try {
+        if (!fs.existsSync(ENHANCED_DIR)) return null;
+        const files = fs.readdirSync(ENHANCED_DIR);
+        const matchFile = files.find(f => f.startsWith(`${id}_`) && f.endsWith('_enhanced.js'));
+        if (!matchFile) return null;
+
+        const src = fs.readFileSync(path.join(ENHANCED_DIR, matchFile), 'utf8');
+        const window = { enhancedCitations: {} };
+        eval(src);
+
+        if (window.enhancedCitations[id] && (window.enhancedCitations[id].citations || window.enhancedCitations[id].enhancedCitations)) {
+            return window.enhancedCitations[id];
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations && val.supplementId === id) return val;
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations) return val;
+        }
+        return null;
+    } catch (e) {
+        console.warn(`  ⚠ Could not load enhanced citations for ID ${id}: ${e.message}`);
+        return null;
+    }
+}
+
+/**
+ * Count total citations for a supplement, including both keyCitations
+ * and enhanced citations (mechanisms, benefits, safety, dosage).
+ */
+function countSupplementCitations(s) {
+    let count = (s.keyCitations || []).length;
+    const enhanced = loadEnhancedCitation(s);
+    if (enhanced && enhanced.citations) {
+        const cits = enhanced.citations;
+        count += (cits.mechanisms || []).length + (cits.benefits || []).length +
+                 (cits.safety || []).length + (cits.dosage || []).length;
+    }
+    return count;
+}
+
 // ─── Guide Definitions ──────────────────────────────────────────────────────
 const GUIDES = [
     {
@@ -2065,8 +2118,8 @@ function generateGuidePage(guide, allSupplements) {
     const core = filtered.filter(s => coreSet.has(s.name.toLowerCase()));
     const supporting = filtered.filter(s => !coreSet.has(s.name.toLowerCase()));
 
-    // Stats
-    const totalCitations = filtered.reduce((sum, s) => sum + (s.keyCitations || []).length, 0);
+    // Stats — count both keyCitations AND enhanced citations per supplement
+    const totalCitations = filtered.reduce((sum, s) => sum + countSupplementCitations(s), 0);
     const tierCounts = {};
     filtered.forEach(s => { tierCounts[s.evidenceTier] = (tierCounts[s.evidenceTier] || 0) + 1; });
 

@@ -16,6 +16,51 @@ const TODAY = new Date().toISOString().split('T')[0];
 const SITE_URL = 'https://supplementdb.co';
 const POSTHOG_KEY = 'phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7';
 const OUTPUT_DIR = path.join(__dirname, '..', 'compare');
+const ENHANCED_DIR = path.join(__dirname, '..', 'data', 'enhanced_citations');
+
+// ── Enhanced Citation Loader (Server-Side) ───────────────────────────────
+
+function loadEnhancedCitation(supplement) {
+    const id = supplement.id;
+    try {
+        if (!fs.existsSync(ENHANCED_DIR)) return null;
+        const files = fs.readdirSync(ENHANCED_DIR);
+        const matchFile = files.find(f => f.startsWith(`${id}_`) && f.endsWith('_enhanced.js'));
+        if (!matchFile) return null;
+
+        const src = fs.readFileSync(path.join(ENHANCED_DIR, matchFile), 'utf8');
+        const window = { enhancedCitations: {} };
+        eval(src);
+
+        if (window.enhancedCitations[id] && (window.enhancedCitations[id].citations || window.enhancedCitations[id].enhancedCitations)) {
+            return window.enhancedCitations[id];
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations && val.supplementId === id) return val;
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations) return val;
+        }
+        return null;
+    } catch (e) {
+        return null;
+    }
+}
+
+function countSupplementCitations(s) {
+    let count = (s.keyCitations || []).length;
+    const enhanced = loadEnhancedCitation(s);
+    if (enhanced && enhanced.citations) {
+        const cits = enhanced.citations;
+        count += (cits.mechanisms || []).length + (cits.benefits || []).length +
+                 (cits.safety || []).length + (cits.dosage || []).length;
+    }
+    return count;
+}
 
 // ── HTML Helpers ──────────────────────────────────────────────────────────
 
@@ -582,7 +627,7 @@ function generateComparePage(comp) {
             contraindications,
             effectEntries,
             citations,
-            citationCount: citations.length
+            citationCount: countSupplementCitations(s)
         };
     });
     const [dA, dB] = suppData;
