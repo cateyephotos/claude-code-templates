@@ -8,18 +8,20 @@ import Anthropic from "@anthropic-ai/sdk";
  *
  * Architecture:
  *   - Fixed inputs only (no free text) → predictable token usage
- *   - Constrained to pulldown selections: supplements (from DB), health goal, depth
+ *   - Constrained to pulldown selections: supplements (from DB), health goals (1 or 2), depth
  *   - Model: claude-haiku-4-5 for cost efficiency (~$0.006/analysis)
  *   - Structured JSON output via output_config schema
  *   - Credit-gated: free = 3/month, subscriber = 25/month
+ *   - Multi-goal: dual goal analyses consume 2 credits and produce a goals[] array
  *
  * Required Convex env vars:
  *   ANTHROPIC_API_KEY — Claude API key
  *
  * Token budget (fixed per depth):
- *   Quick:    ~1,200 input + ~400 output = ~$0.003
- *   Standard: ~2,000 input + ~800 output = ~$0.006
- *   Deep:     ~2,500 input + ~1,200 output = ~$0.009
+ *   Quick:    ~1,200 input + ~400 output = ~$0.003  (single-goal)
+ *   Standard: ~2,000 input + ~800 output = ~$0.006  (single-goal)
+ *   Deep:     ~2,500 input + ~1,200 output = ~$0.009 (single-goal)
+ *   Dual-goal budgets are ~1.5× the single-goal budgets.
  */
 
 // ── Claude Client ──────────────────────────────────────────────
@@ -33,18 +35,54 @@ function getClaude(apiKey: string): Anthropic {
 const STACK_ANALYSIS_SCHEMA = {
   type: "object" as const,
   properties: {
-    overallScore: {
-      type: "number" as const,
-      description: "Overall stack quality score from 1-100",
+    goals: {
+      type: "array" as const,
+      items: {
+        type: "object" as const,
+        properties: {
+          goalId: { type: "string" as const },
+          goalName: { type: "string" as const },
+          overallScore: {
+            type: "number" as const,
+            description: "Overall stack quality score from 1-100 for this goal",
+          },
+          evidenceStrength: {
+            type: "string" as const,
+            enum: ["strong", "moderate", "limited", "insufficient"],
+          },
+          stackSummary: {
+            type: "string" as const,
+            description: "2-3 sentence summary for this health goal",
+          },
+          mechanismCoverage: {
+            type: "array" as const,
+            items: {
+              type: "object" as const,
+              properties: {
+                mechanism: { type: "string" as const },
+                coveredBy: { type: "array" as const, items: { type: "string" as const } },
+                strength: {
+                  type: "string" as const,
+                  enum: ["well-covered", "partially-covered", "gap"],
+                },
+              },
+              required: ["mechanism", "coveredBy", "strength"],
+            },
+          },
+        },
+        required: ["goalId", "goalName", "overallScore", "evidenceStrength", "stackSummary", "mechanismCoverage"],
+      },
+      description: "Per-goal analysis. Single goal = 1 entry, dual goal = 2 entries.",
     },
-    evidenceStrength: {
-      type: "string" as const,
-      enum: ["strong", "moderate", "limited", "insufficient"],
-      description: "Overall evidence quality for this combination",
-    },
-    stackSummary: {
-      type: "string" as const,
-      description: "2-3 sentence summary of the stack analysis for the specified health goal",
+    multiGoalCompatibility: {
+      type: "object" as const,
+      properties: {
+        sharedMechanisms: { type: "array" as const, items: { type: "string" as const } },
+        conflicts: { type: "array" as const, items: { type: "string" as const } },
+        compatibilityNote: { type: "string" as const },
+      },
+      required: ["sharedMechanisms", "conflicts", "compatibilityNote"],
+      description: "Present only for dual-goal analyses",
     },
     synergyAnalysis: {
       type: "array" as const,
@@ -68,25 +106,6 @@ const STACK_ANALYSIS_SCHEMA = {
         required: ["pair", "type", "explanation"],
       },
       description: "Pairwise interaction analysis between supplements in the stack",
-    },
-    mechanismCoverage: {
-      type: "array" as const,
-      items: {
-        type: "object" as const,
-        properties: {
-          mechanism: { type: "string" as const },
-          coveredBy: {
-            type: "array" as const,
-            items: { type: "string" as const },
-          },
-          strength: {
-            type: "string" as const,
-            enum: ["well-covered", "partially-covered", "gap"],
-          },
-        },
-        required: ["mechanism", "coveredBy", "strength"],
-      },
-      description: "How well the stack covers key biological mechanisms for the health goal",
     },
     safetyFlags: {
       type: "array" as const,
@@ -149,11 +168,8 @@ const STACK_ANALYSIS_SCHEMA = {
     },
   },
   required: [
-    "overallScore",
-    "evidenceStrength",
-    "stackSummary",
+    "goals",
     "synergyAnalysis",
-    "mechanismCoverage",
     "safetyFlags",
     "dosageProtocol",
     "suggestedAdditions",
@@ -163,16 +179,20 @@ const STACK_ANALYSIS_SCHEMA = {
 
 // ── System Prompt Builder ──────────────────────────────────────
 
-function buildSystemPrompt(depth: string): string {
+function buildSystemPrompt(depth: string, goalCount: number): string {
   const depthInstructions = {
     quick: "Provide a concise analysis focusing on overall score, top interactions, and critical safety flags. Keep explanations brief (1 sentence each).",
     standard: "Provide a thorough analysis covering all sections. Include mechanism coverage analysis and dosage protocol. Explanations should be 1-2 sentences each.",
     deep: "Provide a comprehensive analysis with detailed mechanism coverage, full synergy mapping, complete dosage protocol with timing windows, and thorough safety review. Explanations should be detailed (2-3 sentences each).",
   };
 
+  const goalInstruction = goalCount > 1
+    ? `You are evaluating this stack against TWO health goals. For EACH goal, provide a separate entry in the "goals" array with its own overallScore, evidenceStrength, stackSummary, and mechanismCoverage. Also provide a "multiGoalCompatibility" object with sharedMechanisms, conflicts, and compatibilityNote. Shared sections (synergyAnalysis, safetyFlags, dosageProtocol, suggestedAdditions, suggestedRemovals) should consider BOTH goals holistically.`
+    : `You are evaluating this stack for a single health goal. Provide exactly ONE entry in the "goals" array.`;
+
   return `You are SupplementDB's Stack Analyzer, an evidence-based supplement interaction and synergy analysis engine.
 
-ROLE: Evaluate supplement stacks for a specific health goal. Assess synergies, redundancies, safety, and mechanism coverage using clinical evidence.
+ROLE: Evaluate supplement stacks for specific health goals. Assess synergies, redundancies, safety, and mechanism coverage using clinical evidence.
 
 EVIDENCE TIER FRAMEWORK (use for all assessments):
 - Tier 1 (Strong): Multiple large RCTs, systematic reviews, or meta-analyses
@@ -189,6 +209,8 @@ SCORING GUIDELINES:
 
 ANALYSIS DEPTH: ${depthInstructions[depth as keyof typeof depthInstructions] || depthInstructions.standard}
 
+${goalInstruction}
+
 IMPORTANT RULES:
 1. Never recommend exceeding evidence-supported dosages
 2. Always flag known drug interactions
@@ -203,7 +225,7 @@ IMPORTANT RULES:
 
 function buildUserMessage(
   supplements: Array<{ id: number; name: string; category: string; evidenceTier: number; dosageRange: string; mechanisms: string[] }>,
-  healthGoal: { id: string; name: string },
+  healthGoals: Array<{ id: string; name: string }>,
   depth: string
 ): string {
   const supplementList = supplements.map((s, i) => {
@@ -212,16 +234,20 @@ function buildUserMessage(
    Typical dose: ${s.dosageRange}${mechStr ? `\n   ${mechStr}` : ""}`;
   }).join("\n");
 
+  const goalSection = healthGoals.length > 1
+    ? `Primary Health Goal: ${healthGoals[0].name} (${healthGoals[0].id})\nSecondary Health Goal: ${healthGoals[1].name} (${healthGoals[1].id})`
+    : `Health Goal: ${healthGoals[0].name} (${healthGoals[0].id})`;
+
   return `ANALYZE THIS SUPPLEMENT STACK:
 
-Health Goal: ${healthGoal.name} (${healthGoal.id})
+${goalSection}
 
 Supplements in stack:
 ${supplementList}
 
 Analysis depth: ${depth}
 
-Evaluate this stack for the specified health goal. Assess synergies, redundancies, mechanism coverage, safety, and provide an optimized dosage protocol.`;
+Evaluate this stack for the specified health goal(s). Assess synergies, redundancies, mechanism coverage, safety, and provide an optimized dosage protocol.`;
 }
 
 // ── Token Cost Estimation ──────────────────────────────────────
@@ -240,14 +266,25 @@ const MAX_TOKENS_BY_DEPTH = {
   deep: 3072,
 } as const;
 
+const MAX_TOKENS_DUAL_GOAL = {
+  quick: 1600,
+  standard: 3200,
+  deep: 4800,
+} as const;
+
+function getMaxTokens(depth: string, goalCount: number): number {
+  const table = goalCount > 1 ? MAX_TOKENS_DUAL_GOAL : MAX_TOKENS_BY_DEPTH;
+  return table[depth as keyof typeof table] || MAX_TOKENS_BY_DEPTH.standard;
+}
+
 // ── Main Action ────────────────────────────────────────────────
 
 /**
  * Analyze a supplement stack using Claude API.
  *
  * All inputs are constrained (no free text):
- *   - supplements: Array of {id, name} from the supplement database
- *   - healthGoal: Domain ID from problems.js
+ *   - supplements: Array of {id, name, ...} from the supplement database
+ *   - healthGoals: Array of 1 or 2 domain IDs from problems.js (dual-goal costs 2 credits)
  *   - depth: "quick" | "standard" | "deep"
  */
 export const analyzeStack = action({
@@ -262,10 +299,12 @@ export const analyzeStack = action({
         mechanisms: v.array(v.string()),
       })
     ),
-    healthGoal: v.object({
-      id: v.string(),
-      name: v.string(),
-    }),
+    healthGoals: v.array(
+      v.object({
+        id: v.string(),
+        name: v.string(),
+      })
+    ),
     depth: v.union(v.literal("quick"), v.literal("standard"), v.literal("deep")),
   },
   handler: async (ctx, args) => {
@@ -284,12 +323,22 @@ export const analyzeStack = action({
     if (args.supplements.length > 15) {
       throw new Error("Maximum 15 supplements per analysis. Please reduce your selection.");
     }
+    if (args.healthGoals.length < 1) {
+      throw new Error("Please select at least one health goal.");
+    }
+    if (args.healthGoals.length > 2) {
+      throw new Error("Maximum 2 health goals per analysis.");
+    }
+
+    const goalCount = args.healthGoals.length;
 
     // ── Credit Check + Consume ──────────────────────────────
     // We consume the credit BEFORE calling Claude to prevent races.
     // If Claude fails, we don't refund — this prevents abuse.
+    // Dual-goal analyses consume 2 credits (goalCount is passed through).
     const creditResult = await ctx.runMutation(api.analysisCredits.consumeCredit, {
       userId: clerkId,
+      goalCount,
     });
 
     // ── Build Claude Request ────────────────────────────────
@@ -307,14 +356,14 @@ export const analyzeStack = action({
     const dbModel = await ctx.runQuery(internal.adminSettings.getRawSetting, { key: "ANTHROPIC_MODEL" });
     const model = dbModel || "claude-haiku-4-5-20251001";
 
-    const systemPrompt = buildSystemPrompt(args.depth);
+    const systemPrompt = buildSystemPrompt(args.depth, goalCount);
     const userMessage = buildUserMessage(
       args.supplements,
-      args.healthGoal,
+      args.healthGoals,
       args.depth
     );
 
-    const maxTokens = MAX_TOKENS_BY_DEPTH[args.depth] || MAX_TOKENS_BY_DEPTH.standard;
+    const maxTokens = getMaxTokens(args.depth, goalCount);
 
     // ── Call Claude API ─────────────────────────────────────
     let response;
@@ -387,7 +436,7 @@ export const analyzeStack = action({
     await ctx.runMutation(api.stackAnalyzer.saveAnalysis, {
       userId: clerkId,
       supplements: args.supplements.map((s) => ({ id: s.id, name: s.name })),
-      healthGoal: args.healthGoal.id,
+      healthGoals: args.healthGoals.map((g) => g.id),
       analysisDepth: args.depth,
       result: analysis,
       model: response.model || "claude-haiku-4-5-20251001",
@@ -408,14 +457,14 @@ export const analyzeStack = action({
 });
 
 /**
- * Internal mutation to save analysis results.
+ * Mutation to save analysis results to history.
  * Called from the analyzeStack action after successful Claude API call.
  */
 export const saveAnalysis = mutation({
   args: {
     userId: v.string(),
     supplements: v.array(v.object({ id: v.number(), name: v.string() })),
-    healthGoal: v.string(),
+    healthGoals: v.array(v.string()),
     analysisDepth: v.union(v.literal("quick"), v.literal("standard"), v.literal("deep")),
     result: v.any(),
     model: v.string(),
@@ -427,7 +476,7 @@ export const saveAnalysis = mutation({
     await ctx.db.insert("stackAnalyses", {
       userId: args.userId,
       supplements: args.supplements,
-      healthGoal: args.healthGoal,
+      healthGoals: args.healthGoals,
       analysisDepth: args.analysisDepth,
       result: args.result,
       model: args.model,
