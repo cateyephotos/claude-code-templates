@@ -426,12 +426,25 @@
     });
   }
 
-  function renderDropdown(filter) {
-    const dropdown = $("#sa-supp-dropdown");
-    if (!dropdown) return;
+  function renderDropdownItem(s, relevanceScore, isDualRelevant) {
+    const relevanceHtml = relevanceScore !== null && relevanceScore !== undefined
+      ? '<span class="sa-relevance-indicator">' +
+          '<span class="sa-relevance-bar"><span class="sa-relevance-fill ' + (relevanceScore >= 80 ? 'high' : relevanceScore >= 50 ? 'medium' : 'low') + '" style="width:' + relevanceScore + '%"></span></span>' +
+          '<span class="sa-relevance-score ' + (relevanceScore >= 80 ? 'high' : relevanceScore >= 50 ? 'medium' : 'low') + '">' + relevanceScore + '</span>' +
+        '</span>'
+      : "";
+    const dualBadge = isDualRelevant ? '<span class="sa-dual-badge" title="Relevant to both goals">●●</span>' : "";
 
-    const query = filter.toLowerCase().trim();
-    const selectedIds = new Set(selectedSupplements.map(s => s.id));
+    return '<div class="sa-dropdown-item" data-supp-id="' + s.id + '" role="button" tabindex="0">' +
+        '<span class="tier-dot tier-' + s.evidenceTier + '"></span>' +
+        '<span class="sa-dropdown-item-name">' + escapeHtml(s.name) + '</span>' +
+        dualBadge +
+        relevanceHtml +
+        '<span class="sa-dropdown-item-tier">T' + s.evidenceTier + '</span>' +
+      '</div>';
+  }
+
+  function renderCategorySortedDropdown(dropdown, query, selectedIds) {
     let html = "";
 
     for (const cat of SORTED_CATEGORIES) {
@@ -446,23 +459,69 @@
 
       html += `<div class="sa-dropdown-group-label">${escapeHtml(cat)}</div>`;
       for (const s of supps) {
-        html += `
-          <div class="sa-dropdown-item" data-supp-id="${s.id}" role="button" tabindex="0">
-            <span class="tier-dot tier-${s.evidenceTier}"></span>
-            <span class="sa-dropdown-item-name">${escapeHtml(s.name)}</span>
-            <span class="sa-dropdown-item-tier">T${s.evidenceTier}</span>
-          </div>
-        `;
+        html += renderDropdownItem(s, null, false);
       }
     }
 
     if (!html) {
-      html = `<div class="sa-dropdown-empty">No supplements match your search</div>`;
+      html = '<div class="sa-dropdown-empty">No supplements match your search</div>';
     }
 
     dropdown.innerHTML = html;
+  }
 
-    // Attach click handlers
+  function renderRelevanceSortedDropdown(dropdown, query, selectedIds) {
+    const scored = SUPPLEMENT_DB
+      .filter(s => !selectedIds.has(s.id))
+      .filter(s => {
+        if (!query) return true;
+        return s.name.toLowerCase().includes(query) || s.category.toLowerCase().includes(query);
+      })
+      .map(s => {
+        const score = getCombinedRelevance(selectedGoals, s.id);
+        const isDualRelevant = selectedGoals.length > 1 &&
+          selectedGoals.every(g => getRelevanceScore(g.id, s.id) >= 50);
+        return { ...s, relevanceScore: score, isDualRelevant };
+      })
+      .sort((a, b) => b.relevanceScore - a.relevanceScore);
+
+    const high = scored.filter(s => s.relevanceScore >= 80);
+    const moderate = scored.filter(s => s.relevanceScore >= 50 && s.relevanceScore < 80);
+    const other = scored.filter(s => s.relevanceScore < 50);
+
+    let html = "";
+
+    if (high.length) {
+      html += '<div class="sa-dropdown-group-label sa-relevance-high"><i class="fas fa-bullseye"></i> Highly Relevant <span class="sa-group-count">' + high.length + '</span></div>';
+      for (const s of high) html += renderDropdownItem(s, s.relevanceScore, s.isDualRelevant);
+    }
+    if (moderate.length) {
+      html += '<div class="sa-dropdown-group-label sa-relevance-moderate"><i class="fas fa-search"></i> Moderately Relevant <span class="sa-group-count">' + moderate.length + '</span></div>';
+      for (const s of moderate) html += renderDropdownItem(s, s.relevanceScore, s.isDualRelevant);
+    }
+    if (other.length) {
+      html += '<div class="sa-dropdown-group-label sa-relevance-other"><i class="fas fa-list"></i> Other Supplements <span class="sa-group-count">' + other.length + '</span></div>';
+      for (const s of other) html += renderDropdownItem(s, s.relevanceScore, false);
+    }
+
+    if (!html) html = '<div class="sa-dropdown-empty">No supplements match your search</div>';
+    dropdown.innerHTML = html;
+  }
+
+  function renderDropdown(filter) {
+    const dropdown = $("#sa-supp-dropdown");
+    if (!dropdown) return;
+
+    const query = filter.toLowerCase().trim();
+    const selectedIds = new Set(selectedSupplements.map(s => s.id));
+
+    if (smartSortEnabled && selectedGoals.length > 0 && relevanceData) {
+      renderRelevanceSortedDropdown(dropdown, query, selectedIds);
+    } else {
+      renderCategorySortedDropdown(dropdown, query, selectedIds);
+    }
+
+    // Attach click handlers (shared for both modes)
     dropdown.querySelectorAll(".sa-dropdown-item").forEach(btn => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -470,10 +529,7 @@
         const id = parseInt(btn.dataset.suppId, 10);
         addSupplement(id);
         const searchInput = $("#sa-supp-search");
-        if (searchInput) {
-          searchInput.value = "";
-          searchInput.focus();
-        }
+        if (searchInput) { searchInput.value = ""; searchInput.focus(); }
         renderDropdown("");
       });
     });
