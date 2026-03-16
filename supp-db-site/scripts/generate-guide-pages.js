@@ -2324,6 +2324,34 @@ function generateGuidePage(guide, allSupplements) {
     </div>
 </header>
 
+<!-- PDF Purchase CTA -->
+<div id="guide-pdf-cta" class="guide-pdf-cta" data-guide-slug="${guide.slug}" data-guide-name="${esc(guide.shortTitle || guide.title)}" style="display:none;">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="pdf-cta-card" style="background: linear-gradient(135deg, rgba(${theme.accentRgb}, 0.08), rgba(${theme.accentRgb}, 0.03)); border: 1px solid rgba(${theme.accentRgb}, 0.15); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 200px;">
+                <p style="color: var(--text-bright); font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin: 0 0 0.25rem 0;">
+                    <i class="fas fa-file-pdf" style="color: ${theme.glow}; margin-right: 0.5rem;"></i>Get this guide as a PDF
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0;">
+                    Offline reading &bull; Printable &bull; ${totalCitations}+ citations &bull; Dosage tables included
+                </p>
+            </div>
+            <!-- Purchase button (not yet purchased) -->
+            <button id="pdf-purchase-btn" onclick="handleGuidePurchase()" style="display:none; background: ${theme.glow}; color: #0d1117; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-shopping-cart" style="margin-right: 0.4rem;"></i>Get PDF Guide
+            </button>
+            <!-- Download button (already purchased) -->
+            <button id="pdf-download-btn" onclick="handleGuideDownload()" style="display:none; background: #22c55e; color: #0d1117; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-download" style="margin-right: 0.4rem;"></i>Download PDF
+            </button>
+            <!-- Sign in prompt (not authenticated) -->
+            <button id="pdf-signin-btn" onclick="window.SupplementDBAuth && window.SupplementDBAuth.openSignIn()" style="display:none; background: transparent; color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.3); padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-sign-in-alt" style="margin-right: 0.4rem;"></i>Sign in to Purchase
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- Share Bar -->
 <div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -2809,6 +2837,118 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/rbac.js"></script>
 <script src="../js/auth-ui.js"></script>
 <script src="../js/content-gate.js"></script>
+
+<!-- PDF Purchase CTA Logic -->
+<script>
+(function() {
+    var cta = document.getElementById('guide-pdf-cta');
+    if (!cta) return;
+    var slug = cta.dataset.guideSlug;
+    var purchaseBtn = document.getElementById('pdf-purchase-btn');
+    var downloadBtn = document.getElementById('pdf-download-btn');
+    var signinBtn = document.getElementById('pdf-signin-btn');
+    var sessionId = null;
+
+    function showCta() { cta.style.display = 'block'; }
+
+    function setButtonState(state) {
+        purchaseBtn.style.display = 'none';
+        downloadBtn.style.display = 'none';
+        signinBtn.style.display = 'none';
+        if (state === 'purchase') purchaseBtn.style.display = 'inline-flex';
+        else if (state === 'download') downloadBtn.style.display = 'inline-flex';
+        else if (state === 'signin') signinBtn.style.display = 'inline-flex';
+        showCta();
+    }
+
+    async function checkOwnership() {
+        try {
+            if (!window.SupplementDB || !window.SupplementDB.isInitialized) {
+                await new Promise(function(r) { setTimeout(r, 1500); });
+            }
+            if (!window.SupplementDBAuth || !window.SupplementDBAuth.isSignedIn) {
+                setButtonState('signin');
+                return;
+            }
+            var ownership = await window.SupplementDB.query('guidePurchases:checkGuideOwnership', { guideSlug: slug });
+            if (ownership && ownership.hasPdf) {
+                sessionId = ownership.stripeSessionId;
+                setButtonState('download');
+            } else if (ownership && (ownership.status === 'paid' || ownership.status === 'pdf_generating')) {
+                setButtonState('download');
+                downloadBtn.textContent = 'Processing...';
+                downloadBtn.disabled = true;
+            } else {
+                setButtonState('purchase');
+            }
+        } catch (e) {
+            console.warn('[PDF CTA] Ownership check failed:', e.message);
+            setButtonState('purchase');
+        }
+    }
+
+    // Wait for auth to initialize, then check ownership
+    if (window.SupplementDBAuth && window.SupplementDBAuth.isLoaded) {
+        checkOwnership();
+    } else {
+        document.addEventListener('auth:loaded', function() {
+            checkOwnership();
+        }, { once: true });
+        // Fallback: if auth:loaded never fires within 8s, show signin
+        setTimeout(function() {
+            if (cta.style.display === 'none') {
+                setButtonState('signin');
+            }
+        }, 8000);
+    }
+
+    // Expose handlers globally
+    window.handleGuidePurchase = async function() {
+        purchaseBtn.disabled = true;
+        purchaseBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:0.4rem;"></i>Redirecting...';
+        try {
+            var result = await window.SupplementDB.action('stripe:createGuideCheckoutSession', { guideSlug: slug });
+            if (result && result.url) {
+                window.location.href = result.url;
+            } else {
+                throw new Error('No checkout URL returned');
+            }
+        } catch (e) {
+            purchaseBtn.disabled = false;
+            purchaseBtn.innerHTML = '<i class="fas fa-shopping-cart" style="margin-right:0.4rem;"></i>Get PDF Guide';
+            if (e.message && e.message.includes('Authentication required')) {
+                setButtonState('signin');
+            } else {
+                alert('Unable to start checkout: ' + e.message);
+            }
+        }
+    };
+
+    window.handleGuideDownload = async function() {
+        downloadBtn.disabled = true;
+        downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:0.4rem;"></i>Preparing...';
+        try {
+            var result = await window.SupplementDB.action('guidePurchases:getGuideDownloadUrlBySlug', { guideSlug: slug });
+            if (result && result.url) {
+                var a = document.createElement('a');
+                a.href = result.url;
+                a.download = 'supplementdb-' + (result.guideName || slug) + '.pdf';
+                a.target = '_blank';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                window.location.href = '/guide-success.html?session_id=' + (sessionId || '');
+            }
+        } catch (e) {
+            alert('Download failed: ' + e.message);
+        } finally {
+            downloadBtn.disabled = false;
+            downloadBtn.innerHTML = '<i class="fas fa-download" style="margin-right:0.4rem;"></i>Download PDF';
+        }
+    };
+})();
+</script>
 </body>
 </html>`;
 

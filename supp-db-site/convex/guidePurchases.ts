@@ -221,6 +221,39 @@ export const getMyGuidePurchases = query({
   },
 });
 
+/**
+ * Check if the authenticated user owns a specific guide.
+ * Returns purchase status or null if not purchased.
+ * Used by guide pages to show "Download PDF" vs "Get PDF" button.
+ */
+export const checkGuideOwnership = query({
+  args: {
+    guideSlug: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) return null;
+
+    const clerkId = identity.subject;
+
+    const purchase = await ctx.db
+      .query("guidePurchases")
+      .withIndex("by_user_guide", (q) =>
+        q.eq("userId", clerkId).eq("guideSlug", args.guideSlug)
+      )
+      .first();
+
+    if (!purchase) return null;
+
+    return {
+      status: purchase.status,
+      hasPdf: !!purchase.pdfStorageId,
+      stripeSessionId: purchase.stripeSessionId,
+      guideName: purchase.guideName,
+    };
+  },
+});
+
 // ── Public Actions ──────────────────────────────────────────────────
 
 /**
@@ -275,7 +308,59 @@ export const getPdfDownloadUrl = action({
   },
 });
 
+/**
+ * Get a signed download URL for a purchased guide PDF by slug.
+ * Used by the guide page CTA button when user already owns the guide.
+ */
+export const getGuideDownloadUrlBySlug = action({
+  args: {
+    guideSlug: v.string(),
+  },
+  handler: async (ctx, args): Promise<{ url: string; guideName: string } | null> => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Authentication required.");
+    }
+
+    const clerkId = identity.subject;
+
+    const purchase = await ctx.runQuery(
+      internal.guidePurchases.getFullPurchaseByUserGuide,
+      { clerkId, guideSlug: args.guideSlug }
+    );
+
+    if (!purchase?.pdfStorageId) return null;
+
+    const url = await ctx.storage.getUrl(purchase.pdfStorageId as any);
+    if (!url) return null;
+
+    return { url, guideName: purchase.guideName };
+  },
+});
+
 // ── Internal Queries (for use by other internal functions) ──────────
+
+/**
+ * Get the full purchase record by user + guide slug.
+ * Internal only — used by getGuideDownloadUrlBySlug.
+ */
+export const getFullPurchaseByUserGuide = internalQuery({
+  args: {
+    clerkId: v.string(),
+    guideSlug: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const purchase = await ctx.db
+      .query("guidePurchases")
+      .withIndex("by_user_guide", (q) =>
+        q.eq("userId", args.clerkId).eq("guideSlug", args.guideSlug)
+      )
+      .first();
+
+    if (!purchase) return null;
+    return purchase;
+  },
+});
 
 /**
  * Get the full purchase record including pdfStorageId.
