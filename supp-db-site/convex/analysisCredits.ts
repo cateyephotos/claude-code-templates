@@ -115,16 +115,22 @@ export const hasCreditsAvailable = query({
 // ── Mutations ──────────────────────────────────────────────────
 
 /**
- * Consume one credit. Called after a successful Stack Analyzer run.
- * Returns the updated credit info or throws if no credits remain.
+ * Consume credits for an analysis. Called after a successful Stack Analyzer run.
+ * Single-goal analysis: 1 credit
+ * Dual-goal analysis: 2 credits (1 base + 1 surcharge)
+ * Returns the updated credit info or throws if insufficient credits remain.
  */
 export const consumeCredit = mutation({
   args: {
     userId: v.string(),
+    goalCount: v.optional(v.number()),
   },
   handler: async (ctx, args) => {
     const { start, end } = getCurrentPeriod();
     const now = Date.now();
+
+    // Calculate cost: single goal = 1 credit, dual goal = 2 credits
+    const cost = 1 + ((args.goalCount ?? 1) > 1 ? 1 : 0);
 
     const record = await ctx.db
       .query("analysisCredits")
@@ -137,7 +143,7 @@ export const consumeCredit = mutation({
         userId: args.userId,
         tier: "free",
         monthlyLimit: CREDIT_LIMITS.free,
-        usedThisMonth: 1,
+        usedThisMonth: cost,
         periodStart: start,
         periodEnd: end,
         lastAnalysisAt: now,
@@ -146,9 +152,9 @@ export const consumeCredit = mutation({
         updatedAt: now,
       });
       return {
-        remaining: CREDIT_LIMITS.free - 1,
+        remaining: CREDIT_LIMITS.free - cost,
         monthlyLimit: CREDIT_LIMITS.free,
-        usedThisMonth: 1,
+        usedThisMonth: cost,
         totalAnalyses: 1,
       };
     }
@@ -166,17 +172,18 @@ export const consumeCredit = mutation({
     }
 
     // Check limit
-    if (used >= record.monthlyLimit) {
+    if (used + cost > record.monthlyLimit) {
       throw new Error(
-        `Monthly analysis limit reached (${record.monthlyLimit}/${record.monthlyLimit}). ` +
+        `Insufficient credits for this analysis. ` +
+        `Cost: ${cost} credit${cost > 1 ? "s" : ""}, Remaining: ${record.monthlyLimit - used}. ` +
         (record.tier === "free"
           ? "Upgrade to Pro for 25 analyses/month."
           : "Your credits will reset at the start of next month.")
       );
     }
 
-    // Consume credit
-    const newUsed = used + 1;
+    // Consume credit(s)
+    const newUsed = used + cost;
     const newTotal = record.totalAnalyses + 1;
 
     await ctx.db.patch(record._id, {
