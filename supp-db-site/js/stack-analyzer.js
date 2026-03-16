@@ -69,10 +69,47 @@
 
   // ── State ──────────────────────────────────────────────────────
   let selectedSupplements = [];  // Array of supplement objects
-  let selectedGoal = null;       // Health goal object
+  let selectedGoals = [];        // Array of health goal objects (max 2)
   let selectedDepth = "standard"; // "quick" | "standard" | "deep"
   let isAnalyzing = false;
   let currentCredits = null;
+  let smartSortEnabled = false;  // Whether Smart Sort toggle is active
+  let relevanceData = null;      // Loaded from problems.js on demand
+
+  // ── Relevance Data (lazy-loaded from problems.js) ────────────────
+  async function loadRelevanceData() {
+    if (relevanceData) return relevanceData;
+    try {
+      // problems.js defines `const problemDatabase = [...]` globally when loaded
+      // It's already included in the HTML page via script tag
+      if (typeof problemDatabase !== "undefined") {
+        relevanceData = {};
+        for (const domain of problemDatabase) {
+          relevanceData[domain.id] = {};
+          for (const supp of (domain.supplements || [])) {
+            relevanceData[domain.id][supp.supplementId] = {
+              relevanceScore: supp.relevanceScore || 0,
+              mechanismMatch: supp.mechanismMatch || [],
+            };
+          }
+        }
+        return relevanceData;
+      }
+    } catch (e) {
+      console.warn("[StackAnalyzer] Could not load relevance data:", e);
+    }
+    return null;
+  }
+
+  function getRelevanceScore(goalId, supplementId) {
+    if (!relevanceData || !relevanceData[goalId]) return 0;
+    return relevanceData[goalId][supplementId]?.relevanceScore || 0;
+  }
+
+  function getCombinedRelevance(goals, supplementId) {
+    if (!goals.length || !relevanceData) return 0;
+    return Math.max(...goals.map(g => getRelevanceScore(g.id, supplementId)));
+  }
 
   // ── DOM References ─────────────────────────────────────────────
   const $ = (sel) => document.querySelector(sel);
@@ -234,13 +271,38 @@
           </p>
         </div>
 
-        <!-- Health Goal Select -->
+        <!-- Smart Sort Toggle -->
         <div class="sa-field">
+          <div class="sa-smart-sort-toggle" id="sa-smart-sort-toggle" role="switch" aria-checked="false" aria-label="Enable smart sort by health goal" tabindex="0">
+            <div class="sa-toggle-switch" id="sa-toggle-switch"></div>
+            <div class="sa-toggle-content">
+              <span class="sa-toggle-label"><i class="fas fa-lightbulb"></i> Smart Sort by Health Goal</span>
+              <span class="sa-toggle-hint">Groups supplements by relevance to your goal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Goal Selection (always visible — goal is required for analysis) -->
+        <div class="sa-field sa-goal-section" id="sa-goal-section">
           <label class="sa-field-label" for="sa-goal-select">Health Goal</label>
           <select class="sa-goal-select" id="sa-goal-select">
             <option value="">Choose a health goal...</option>
             ${HEALTH_GOALS.map(g => `<option value="${g.id}">${g.name}</option>`).join("")}
           </select>
+          <div class="sa-goal-chips" id="sa-goal-chips"></div>
+
+          <!-- Progressive disclosure: second goal (shown after first goal selected) -->
+          <div class="sa-second-goal-disclosure" id="sa-second-goal-disclosure" style="display:none" aria-expanded="false">
+            <button class="sa-add-goal-btn" id="sa-add-goal-btn" type="button">
+              <i class="fas fa-plus"></i> Add second health goal
+              <span class="sa-add-goal-cost">(+1 credit)</span>
+            </button>
+            <div class="sa-second-goal-select" id="sa-second-goal-select" style="display:none">
+              <select class="sa-goal-select sa-goal-select--secondary" id="sa-goal-select-2">
+                <option value="">Choose second goal...</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <!-- Depth Selector -->
@@ -321,6 +383,7 @@
     initGoalSelect();
     initDepthSelector();
     initAnalyzeButton();
+    initSmartSortToggle();
   }
 
   // ── Supplement Multi-Select ────────────────────────────────────
@@ -469,8 +532,42 @@
 
     goalSelect.addEventListener("change", () => {
       const val = goalSelect.value;
-      selectedGoal = val ? HEALTH_GOALS.find(g => g.id === val) : null;
+      const primaryGoal = val ? HEALTH_GOALS.find(g => g.id === val) : null;
+      if (primaryGoal) {
+        // Replace the first element (primary goal); preserve second goal if set
+        selectedGoals = [primaryGoal, ...selectedGoals.slice(1)];
+      } else {
+        selectedGoals = [];
+      }
       updateValidation();
+    });
+  }
+
+  // ── Smart Sort Toggle ──────────────────────────────────────────
+  function initSmartSortToggle() {
+    const toggle = $("#sa-smart-sort-toggle");
+    if (!toggle) return;
+
+    async function handleToggle() {
+      smartSortEnabled = !smartSortEnabled;
+      toggle.setAttribute("aria-checked", String(smartSortEnabled));
+      const switchEl = $("#sa-toggle-switch");
+      if (switchEl) switchEl.classList.toggle("on", smartSortEnabled);
+
+      if (smartSortEnabled) {
+        await loadRelevanceData();
+      }
+      // Re-render dropdown with new sorting mode
+      renderDropdown($("#sa-supp-search")?.value || "");
+      updateValidation();
+    }
+
+    toggle.addEventListener("click", handleToggle);
+    toggle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleToggle();
+      }
     });
   }
 
@@ -495,7 +592,7 @@
     if (selectedSupplements.length < MIN_SUPPLEMENTS) {
       issues.push(`Select at least ${MIN_SUPPLEMENTS} supplements`);
     }
-    if (!selectedGoal) {
+    if (selectedGoals.length === 0) {
       issues.push("Choose a health goal");
     }
 
@@ -570,7 +667,8 @@
     // Track in PostHog
     trackEvent("stack_analyzer_run", {
       supplement_count: selectedSupplements.length,
-      health_goal: selectedGoal?.id,
+      health_goals: selectedGoals.map(g => g.id),
+      goal_count: selectedGoals.length,
       depth: selectedDepth,
     });
 
@@ -585,10 +683,7 @@
           dosageRange: s.dosageRange,
           mechanisms: s.mechanisms || [],
         })),
-        healthGoal: {
-          id: selectedGoal.id,
-          name: selectedGoal.name,
-        },
+        healthGoals: selectedGoals.map(g => ({ id: g.id, name: g.name })),
         depth: selectedDepth,
       };
 
@@ -668,7 +763,7 @@
           <div class="sa-result-badges">
             ${evidenceBadge}
             <span class="sa-badge sa-badge--depth">${capitalize(selectedDepth)} Analysis</span>
-            <span class="sa-badge sa-badge--goal">${escapeHtml(selectedGoal?.name || "")}</span>
+            <span class="sa-badge sa-badge--goal">${escapeHtml(selectedGoals.map(g => g.name).join(" + ") || "")}</span>
           </div>
           <p class="sa-result-text">${escapeHtml(a.stackSummary || "")}</p>
         </div>
