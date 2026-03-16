@@ -38,16 +38,20 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/content-gate.css?v=1773553622806">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1773635287767">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Auth config — Docker entrypoint substitutes placeholders at runtime -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
 
     <!-- Auth CDN -->
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Joint Health & Mobility","description":"Science-backed guide to the best supplements for joint pain, cartilage support, and mobility. Ranked by evidence from peer-reviewed studies with dosages and safety profiles.","datePublished":"2026-03-15","dateModified":"2026-03-15","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/joint-health.html"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Joint Health & Mobility","description":"Science-backed guide to the best supplements for joint pain, cartilage support, and mobility. Ranked by evidence from peer-reviewed studies with dosages and safety profiles.","datePublished":"2026-03-16","dateModified":"2026-03-16","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/joint-health.html"}}</script>
 
     
     <style>
@@ -307,6 +311,11 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* First content section visible immediately — no blank-page flash */
+        main > .reveal:first-child {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         a:focus-visible, button:focus-visible, input:focus-visible {
             outline: 2px solid var(--accent-light);
@@ -362,25 +371,25 @@
 </div>
 
 <!-- Hero Section -->
-<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+<header class="hero-section pt-12 pb-8 sm:pt-16 sm:pb-12 px-4 text-center relative">
     <div class="max-w-3xl mx-auto relative z-10">
         <!-- Domain icon -->
-        <div class="domain-icon-glow mb-6 inline-block">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8c0 4 2 8 6 10m6-10c0 4-2 8-6 10m-6 10c0-4 2-8 6-10m6 10c0-4-2-8-6-10" stroke="undefined" stroke-width="1.5" opacity="0.4"/><circle cx="24" cy="18" r="5" stroke="undefined" stroke-width="2" fill="undefined" fill-opacity="0.2"/><circle cx="24" cy="30" r="5" stroke="undefined" stroke-width="2" fill="undefined" fill-opacity="0.2"/><circle cx="24" cy="24" r="3" fill="undefined" fill-opacity="0.4"/></svg>
+        <div class="domain-icon-glow mb-4 inline-block">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8c0 4 2 8 6 10m6-10c0 4-2 8-6 10m-6 10c0-4 2-8 6-10m6 10c0-4-2-8-6-10" stroke="#fcd34d" stroke-width="1.5" opacity="0.4"/><circle cx="24" cy="18" r="5" stroke="#fcd34d" stroke-width="2" fill="#fcd34d" fill-opacity="0.2"/><circle cx="24" cy="30" r="5" stroke="#fcd34d" stroke-width="2" fill="#fcd34d" fill-opacity="0.2"/><circle cx="24" cy="24" r="3" fill="#fcd34d" fill-opacity="0.4"/></svg>
         </div>
 
         <!-- Review badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(217,119,6, 0.12); color: #fcd34d; border: 1px solid rgba(217,119,6, 0.2);">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style="background: rgba(217,119,6, 0.12); color: #fcd34d; border: 1px solid rgba(217,119,6, 0.2);">
             <i class="fas fa-clock text-xs" style="color: #f59e0b; font-size: 0.65rem;"></i>
-            Last reviewed: 2026-03-15
+            Last reviewed: 2026-03-16
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
             Evidence-Based Supplements for Joint Health &amp; Mobility
         </h1>
 
-        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
-            A systematic review of 13 supplements across 31+ research citations, ranked by evidence strength.
+        <p class="text-base sm:text-lg mb-4" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+            A systematic review of 13 supplements across 178+ research citations, ranked by evidence strength.
         </p>
 
         <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
@@ -390,6 +399,34 @@
         </p>
     </div>
 </header>
+
+<!-- PDF Purchase CTA -->
+<div id="guide-pdf-cta" class="guide-pdf-cta" data-guide-slug="joint-health" data-guide-name="Joint Health" style="display:none;">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="pdf-cta-card" style="background: linear-gradient(135deg, rgba(217,119,6, 0.08), rgba(217,119,6, 0.03)); border: 1px solid rgba(217,119,6, 0.15); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 200px;">
+                <p style="color: var(--text-bright); font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin: 0 0 0.25rem 0;">
+                    <i class="fas fa-file-pdf" style="color: #fcd34d; margin-right: 0.5rem;"></i>Get this guide as a PDF
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0;">
+                    Offline reading &bull; Printable &bull; 178+ citations &bull; Dosage tables included
+                </p>
+            </div>
+            <!-- Purchase button (not yet purchased) -->
+            <button id="pdf-purchase-btn" onclick="handleGuidePurchase()" style="display:none; background: #fcd34d; color: #0d1117; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-shopping-cart" style="margin-right: 0.4rem;"></i>Get PDF Guide
+            </button>
+            <!-- Download button (already purchased) -->
+            <button id="pdf-download-btn" onclick="handleGuideDownload()" style="display:none; background: #22c55e; color: #0d1117; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-download" style="margin-right: 0.4rem;"></i>Download PDF
+            </button>
+            <!-- Sign in prompt (not authenticated) -->
+            <button id="pdf-signin-btn" onclick="window.SupplementDBAuth && window.SupplementDBAuth.openSignIn()" style="display:none; background: transparent; color: #fcd34d; border: 1px solid rgba(217,119,6, 0.3); padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-sign-in-alt" style="margin-right: 0.4rem;"></i>Sign in to Purchase
+            </button>
+        </div>
+    </div>
+</div>
 
 <!-- Share Bar -->
 <div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
@@ -405,8 +442,8 @@
 </div>
 
 <!-- Trust Signal Bar -->
-<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
-    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 31+ Verified Citations</span>
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:0.75rem auto;">
+    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 178+ Verified Citations</span>
     <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
     <span class="trust-bar-divider"></span>
@@ -1327,7 +1364,7 @@
 </section>
 <section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
     <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Citation Index</h2>
-    <p class="mb-6" style="color: var(--text-primary);">All data in this guide is derived from the SupplementDB citation library of 31+ peer-reviewed research papers.</p>
+    <p class="mb-6" style="color: var(--text-primary);">All data in this guide is derived from the SupplementDB citation library of 178+ peer-reviewed research papers.</p>
     <div class="evidence-card p-6">
         <div class="space-y-1">
             <div class="citation-entry flex items-start">
@@ -1545,6 +1582,17 @@
 // Scroll reveal animation
 document.addEventListener('DOMContentLoaded', function() {
     var reveals = document.querySelectorAll('.reveal');
+
+    // Immediately reveal any sections already in or near the viewport
+    // (prevents blank-page flash on first load / hard refresh)
+    reveals.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100) {
+            el.classList.add('visible');
+        }
+    });
+
+    // Observe remaining hidden sections for scroll-triggered reveal
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -1552,8 +1600,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(function(el) {
+        if (!el.classList.contains('visible')) observer.observe(el);
+    });
 });
 
 // Smooth scroll for anchor links with nav offset
@@ -1577,7 +1627,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         guide_slug: 'joint-health',
         guide_title: 'Evidence-Based Supplements for Joint Health &amp; Mobility',
         supplement_count: 13,
-        citation_count: 31,
+        citation_count: 178,
         tier1_count: 2,
         tier2_count: 8,
         tier3_count: 3
@@ -1679,5 +1729,117 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/rbac.js"></script>
 <script src="../js/auth-ui.js"></script>
 <script src="../js/content-gate.js"></script>
+
+<!-- PDF Purchase CTA Logic -->
+<script>
+(function() {
+    var cta = document.getElementById('guide-pdf-cta');
+    if (!cta) return;
+    var slug = cta.dataset.guideSlug;
+    var purchaseBtn = document.getElementById('pdf-purchase-btn');
+    var downloadBtn = document.getElementById('pdf-download-btn');
+    var signinBtn = document.getElementById('pdf-signin-btn');
+    var sessionId = null;
+
+    function showCta() { cta.style.display = 'block'; }
+
+    function setButtonState(state) {
+        purchaseBtn.style.display = 'none';
+        downloadBtn.style.display = 'none';
+        signinBtn.style.display = 'none';
+        if (state === 'purchase') purchaseBtn.style.display = 'inline-flex';
+        else if (state === 'download') downloadBtn.style.display = 'inline-flex';
+        else if (state === 'signin') signinBtn.style.display = 'inline-flex';
+        showCta();
+    }
+
+    async function checkOwnership() {
+        try {
+            if (!window.SupplementDB || !window.SupplementDB.isInitialized) {
+                await new Promise(function(r) { setTimeout(r, 1500); });
+            }
+            if (!window.SupplementDBAuth || !window.SupplementDBAuth.isSignedIn) {
+                setButtonState('signin');
+                return;
+            }
+            var ownership = await window.SupplementDB.query('guidePurchases:checkGuideOwnership', { guideSlug: slug });
+            if (ownership && ownership.hasPdf) {
+                sessionId = ownership.stripeSessionId;
+                setButtonState('download');
+            } else if (ownership && (ownership.status === 'paid' || ownership.status === 'pdf_generating')) {
+                setButtonState('download');
+                downloadBtn.textContent = 'Processing...';
+                downloadBtn.disabled = true;
+            } else {
+                setButtonState('purchase');
+            }
+        } catch (e) {
+            console.warn('[PDF CTA] Ownership check failed:', e.message);
+            setButtonState('purchase');
+        }
+    }
+
+    // Wait for auth to initialize, then check ownership
+    if (window.SupplementDBAuth && window.SupplementDBAuth.isLoaded) {
+        checkOwnership();
+    } else {
+        document.addEventListener('auth:loaded', function() {
+            checkOwnership();
+        }, { once: true });
+        // Fallback: if auth:loaded never fires within 8s, show signin
+        setTimeout(function() {
+            if (cta.style.display === 'none') {
+                setButtonState('signin');
+            }
+        }, 8000);
+    }
+
+    // Expose handlers globally
+    window.handleGuidePurchase = async function() {
+        purchaseBtn.disabled = true;
+        purchaseBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:0.4rem;"></i>Redirecting...';
+        try {
+            var result = await window.SupplementDB.action('stripe:createGuideCheckoutSession', { guideSlug: slug });
+            if (result && result.url) {
+                window.location.href = result.url;
+            } else {
+                throw new Error('No checkout URL returned');
+            }
+        } catch (e) {
+            purchaseBtn.disabled = false;
+            purchaseBtn.innerHTML = '<i class="fas fa-shopping-cart" style="margin-right:0.4rem;"></i>Get PDF Guide';
+            if (e.message && e.message.includes('Authentication required')) {
+                setButtonState('signin');
+            } else {
+                alert('Unable to start checkout: ' + e.message);
+            }
+        }
+    };
+
+    window.handleGuideDownload = async function() {
+        downloadBtn.disabled = true;
+        downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:0.4rem;"></i>Preparing...';
+        try {
+            var result = await window.SupplementDB.action('guidePurchases:getGuideDownloadUrlBySlug', { guideSlug: slug });
+            if (result && result.url) {
+                var a = document.createElement('a');
+                a.href = result.url;
+                a.download = 'supplementdb-' + (result.guideName || slug) + '.pdf';
+                a.target = '_blank';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                window.location.href = '/guide-success.html?session_id=' + (sessionId || '');
+            }
+        } catch (e) {
+            alert('Download failed: ' + e.message);
+        } finally {
+            downloadBtn.disabled = false;
+            downloadBtn.innerHTML = '<i class="fas fa-download" style="margin-right:0.4rem;"></i>Download PDF';
+        }
+    };
+})();
+</script>
 </body>
 </html>

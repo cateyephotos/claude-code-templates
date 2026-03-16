@@ -160,6 +160,97 @@ export const createPortalSession = action({
   },
 });
 
+// ── Credit Pack Purchase ────────────────────────────────────────────
+
+/**
+ * Credit pack definitions — must match CREDIT_PACKS in analysisCredits.ts.
+ * Duplicated here to avoid cross-module import issues in Convex actions.
+ */
+const CREDIT_PACK_INFO: Record<string, { name: string; credits: number; priceCents: number }> = {
+  starter: { name: "Starter Pack", credits: 10, priceCents: 500 },
+  pro: { name: "Pro Pack", credits: 25, priceCents: 1000 },
+  bulk: { name: "Bulk Pack", credits: 75, priceCents: 2500 },
+};
+
+/**
+ * Create a Stripe Checkout Session for a one-time credit pack purchase.
+ * Uses Stripe's "payment" mode (not subscription).
+ */
+export const createCreditCheckoutSession = action({
+  args: {
+    packId: v.string(),
+  },
+  handler: async (ctx, args): Promise<{ url: string }> => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Authentication required. Please sign in first.");
+    }
+
+    const pack = CREDIT_PACK_INFO[args.packId];
+    if (!pack) {
+      throw new Error(`Invalid credit pack: ${args.packId}. Available packs: ${Object.keys(CREDIT_PACK_INFO).join(", ")}`);
+    }
+
+    const clerkId = identity.subject;
+    const user = await ctx.runQuery(api.users.getByClerkId, { clerkId });
+    if (!user) {
+      throw new Error("User not found. Please try signing in again.");
+    }
+
+    const stripe = getStripe();
+    const siteUrl = getSiteUrl();
+
+    // Look up existing Stripe customer
+    let customerId: string | undefined;
+    const customers = await stripe.customers.list({ email: user.email, limit: 1 });
+    if (customers.data.length > 0) {
+      customerId = customers.data[0].id;
+    }
+
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
+      mode: "payment",
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            unit_amount: pack.priceCents,
+            product_data: {
+              name: `${pack.name} — ${pack.credits} Analysis Credits`,
+              description: `${pack.credits} Stack Analyzer credits for SupplementDB. Credits never expire.`,
+            },
+          },
+          quantity: 1,
+        },
+      ],
+      success_url: `${siteUrl}/tools/stack-analyzer.html?credits_purchased=${args.packId}&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${siteUrl}/tools/stack-analyzer.html?credits_cancelled=true`,
+      client_reference_id: clerkId,
+      metadata: {
+        type: "credit_purchase",
+        userId: clerkId,
+        packId: args.packId,
+        packName: pack.name,
+        credits: String(pack.credits),
+      },
+      allow_promotion_codes: true,
+    };
+
+    if (customerId) {
+      sessionParams.customer = customerId;
+    } else {
+      sessionParams.customer_email = user.email;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
+
+    if (!session.url) {
+      throw new Error("Failed to create checkout session. Please try again.");
+    }
+
+    return { url: session.url };
+  },
+});
+
 // ── Guide name lookup ────────────────────────────────────────────────
 const GUIDE_NAMES: Record<string, string> = {
   sleep: "Sleep Optimization Guide",

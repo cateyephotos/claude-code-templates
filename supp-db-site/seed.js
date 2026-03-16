@@ -436,9 +436,18 @@ function supplementToMonograph(supp, enhanced) {
     const tierText  = TIER_LABELS[tierNum] || `Tier ${tierNum}`;
     const safetyRat = h(supp.safetyProfile?.rating || 'See label');
     const slug      = slugify(supp.name);
-    const citCount  = enhanced?.evidenceProfile?.totalCitations
-                   || supp.enhancedCitations?.evidenceProfile?.totalCitations
-                   || supp.keyCitations?.length || 0;
+    // Dynamically count citations from actual arrays rather than trusting
+    // stale metadata in evidenceProfile.totalCitations (which drifts).
+    const citCount  = (() => {
+        let count = (supp.keyCitations || []).length;
+        const enh = enhanced || supp.enhancedCitations;
+        if (enh && enh.citations) {
+            const c = enh.citations;
+            count += (c.mechanisms || []).length + (c.benefits || []).length +
+                     (c.safety || []).length + (c.dosage || []).length;
+        }
+        return count;
+    })();
     const lastUpd   = enhanced?.lastUpdated
                    || supp.enhancedCitations?.evidenceProfile?.lastEvidenceUpdate
                    || '';

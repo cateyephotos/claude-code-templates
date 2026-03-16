@@ -127,6 +127,7 @@
     renderAnalyzer(app);
     loadCredits();
     loadHistory();
+    checkCreditPurchaseParams();
   }
 
   // ── Auth Gate (unauthenticated users) ──────────────────────────
@@ -197,7 +198,35 @@
           <div class="sa-credit-meter">
             <div class="sa-credit-fill" id="sa-credit-fill" style="width: 0%"></div>
           </div>
-          <span class="sa-credit-tier" id="sa-credit-tier"></span>
+          <div class="sa-credit-actions">
+            <span class="sa-credit-tier" id="sa-credit-tier"></span>
+            <button class="sa-buy-credits-btn" id="sa-buy-credits-btn" title="Buy more analysis credits">
+              <i class="fas fa-coins"></i> Buy Credits
+            </button>
+          </div>
+        </div>
+        <div class="sa-credit-breakdown" id="sa-credit-breakdown"></div>
+      </div>
+
+      <!-- Buy Credits Modal -->
+      <div class="sa-modal-overlay" id="sa-credits-modal" style="display:none">
+        <div class="sa-modal">
+          <div class="sa-modal-header">
+            <h3><i class="fas fa-coins"></i> Buy Analysis Credits</h3>
+            <button class="sa-modal-close" id="sa-modal-close"><i class="fas fa-times"></i></button>
+          </div>
+          <p class="sa-modal-desc">Credits never expire. Use them for any analysis depth.</p>
+          <div class="sa-credit-cost-info">
+            <span class="sa-cost-item"><i class="fas fa-bolt"></i> Quick = 1 credit</span>
+            <span class="sa-cost-item"><i class="fas fa-flask"></i> Standard = 2 credits</span>
+            <span class="sa-cost-item"><i class="fas fa-microscope"></i> Deep = 3 credits</span>
+          </div>
+          <div class="sa-packs-grid" id="sa-packs-grid">
+            <!-- Pack cards rendered by JS -->
+          </div>
+          <p class="sa-modal-footer-text">
+            <i class="fas fa-lock"></i> Secure checkout via Stripe. Credits are added instantly after payment.
+          </p>
         </div>
       </div>
 
@@ -499,9 +528,12 @@
       issues.push("Choose a health goal");
     }
 
-    const hasCredits = currentCredits === null || (currentCredits && currentCredits.remaining > 0);
-    if (currentCredits && currentCredits.remaining <= 0) {
-      issues.push("No credits remaining this month");
+    const totalAvailable = currentCredits
+      ? (currentCredits.totalAvailable ?? (currentCredits.remaining + (currentCredits.purchasedCredits || 0)))
+      : null;
+    const hasCredits = totalAvailable === null || totalAvailable > 0;
+    if (currentCredits && totalAvailable <= 0) {
+      issues.push("No credits remaining — buy a credit pack or wait for monthly reset");
     }
 
     btn.disabled = issues.length > 0 || isAnalyzing;
@@ -608,7 +640,8 @@
         tokens_output: result.tokensUsed?.output,
       });
     } catch (err) {
-      const msg = err?.message || "Analysis failed. Please try again.";
+      // ConvexError sends data in err.data; regular Error sends err.message
+      const msg = err?.data || err?.message || "Analysis failed. Please try again.";
       if (resultsContent) {
         resultsContent.innerHTML = `
           <div class="sa-error-state">
@@ -635,6 +668,41 @@
     }
   }
 
+  // ── Score Interpretation Helpers ────────────────────────────────
+  function getScoreVerdict(score) {
+    if (score >= 85) return { label: "Excellent", desc: "This is a well-optimized stack with strong evidence-backed synergies and minimal safety concerns.", emoji: "🏆" };
+    if (score >= 70) return { label: "Good", desc: "A solid foundation with meaningful synergies. Some optimizations could improve efficacy or reduce redundancy.", emoji: "✅" };
+    if (score >= 50) return { label: "Adequate", desc: "This stack covers some bases, but has notable gaps in mechanism coverage or includes redundant supplements.", emoji: "⚠️" };
+    if (score >= 30) return { label: "Needs Work", desc: "Significant gaps, safety concerns, or weak evidence. Consider the optimization suggestions below.", emoji: "🔧" };
+    return { label: "Poor", desc: "Major issues detected — conflicting supplements, critical safety flags, or insufficient evidence for this combination.", emoji: "⛔" };
+  }
+
+  function getEvidenceExplanation(strength) {
+    const map = {
+      strong: "Backed by multiple large RCTs, systematic reviews, or meta-analyses. High confidence in the findings.",
+      moderate: "Supported by several randomized trials with moderate sample sizes and generally consistent results.",
+      limited: "Based on few small trials, preliminary studies, or mostly animal/in-vitro data. Use with appropriate caution.",
+      insufficient: "Minimal controlled evidence available. Largely anecdotal or theoretical at this stage.",
+    };
+    return map[strength] || map.moderate;
+  }
+
+  function countSynergyTypes(synergies) {
+    const counts = { synergistic: 0, redundant: 0, antagonistic: 0, neutral: 0 };
+    (synergies || []).forEach(s => { if (counts[s.type] !== undefined) counts[s.type]++; });
+    return counts;
+  }
+
+  function categorizeTiming(timing) {
+    const t = (timing || "").toLowerCase();
+    if (t.includes("morning") || t.includes("breakfast") || t.includes("am") || t.includes("wake")) return "morning";
+    if (t.includes("afternoon") || t.includes("lunch") || t.includes("midday") || t.includes("noon")) return "afternoon";
+    if (t.includes("evening") || t.includes("dinner") || t.includes("night") || t.includes("bed") || t.includes("pm") || t.includes("sleep")) return "evening";
+    if (t.includes("pre-workout") || t.includes("pre workout") || t.includes("before exercise")) return "pre-workout";
+    if (t.includes("post-workout") || t.includes("post workout") || t.includes("after exercise")) return "post-workout";
+    return "anytime";
+  }
+
   // ── Results Rendering ──────────────────────────────────────────
   function renderResults(result) {
     const content = $("#sa-results-content");
@@ -651,55 +719,357 @@
 
     const scoreColor = getScoreColor(a.overallScore);
     const evidenceBadge = getEvidenceBadge(a.evidenceStrength);
+    const verdict = getScoreVerdict(a.overallScore);
+    const evidenceExplanation = getEvidenceExplanation(a.evidenceStrength);
+    const synCounts = countSynergyTypes(a.synergyAnalysis);
+    const mechWell = (a.mechanismCoverage || []).filter(m => m.strength === "well-covered").length;
+    const mechTotal = (a.mechanismCoverage || []).length;
+    const safetyCount = (a.safetyFlags || []).length;
+    const criticalCount = (a.safetyFlags || []).filter(f => f.severity === "critical").length;
 
     content.innerHTML = `
-      <!-- Score Header -->
-      <div class="sa-result-header">
-        <div class="sa-score-ring" style="--score-color: ${scoreColor}; --score-pct: ${a.overallScore}">
-          <svg viewBox="0 0 120 120" class="sa-score-svg">
-            <circle cx="60" cy="60" r="52" class="sa-score-track" />
-            <circle cx="60" cy="60" r="52" class="sa-score-fill"
-              style="stroke-dasharray: ${(a.overallScore / 100) * 326.73} 326.73; stroke: ${scoreColor}" />
-          </svg>
-          <div class="sa-score-value">${a.overallScore}</div>
-          <div class="sa-score-label">Overall</div>
+      <!-- ═══ SCORE HERO ═══ -->
+      <div class="sa-result-header sa-reveal" style="--reveal-delay: 0">
+        <div class="sa-score-hero">
+          <div class="sa-score-ring" style="--score-color: ${scoreColor}; --score-pct: ${a.overallScore}">
+            <svg viewBox="0 0 120 120" class="sa-score-svg">
+              <circle cx="60" cy="60" r="52" class="sa-score-track" />
+              <circle cx="60" cy="60" r="52" class="sa-score-fill"
+                style="stroke-dasharray: ${(a.overallScore / 100) * 326.73} 326.73; stroke: ${scoreColor}" />
+            </svg>
+            <div class="sa-score-value">
+              <span class="sa-score-number" data-target="${a.overallScore}">0</span>
+              <span class="sa-score-max">/100</span>
+            </div>
+          </div>
+          <div class="sa-score-verdict" style="--verdict-color: ${scoreColor}">
+            <span class="sa-verdict-emoji">${verdict.emoji}</span>
+            <span class="sa-verdict-label">${verdict.label}</span>
+          </div>
         </div>
+
         <div class="sa-result-summary">
           <div class="sa-result-badges">
             ${evidenceBadge}
-            <span class="sa-badge sa-badge--depth">${capitalize(selectedDepth)} Analysis</span>
-            <span class="sa-badge sa-badge--goal">${escapeHtml(selectedGoal?.name || "")}</span>
+            <span class="sa-badge sa-badge--depth"><i class="fas fa-layer-group"></i> ${capitalize(selectedDepth)}</span>
+            <span class="sa-badge sa-badge--goal"><i class="fas fa-bullseye"></i> ${escapeHtml(selectedGoal?.name || "")}</span>
           </div>
           <p class="sa-result-text">${escapeHtml(a.stackSummary || "")}</p>
+          <div class="sa-verdict-explanation">
+            <p>${verdict.desc}</p>
+          </div>
         </div>
       </div>
 
-      <!-- Synergy Analysis -->
+      <!-- ═══ QUICK STATS BAR ═══ -->
+      <div class="sa-quick-stats sa-reveal" style="--reveal-delay: 1">
+        <div class="sa-stat-card">
+          <div class="sa-stat-icon sa-stat-synergy"><i class="fas fa-arrow-up-right-dots"></i></div>
+          <div class="sa-stat-data">
+            <span class="sa-stat-value">${synCounts.synergistic}</span>
+            <span class="sa-stat-label">Synergies</span>
+          </div>
+        </div>
+        <div class="sa-stat-card">
+          <div class="sa-stat-icon sa-stat-redundant"><i class="fas fa-clone"></i></div>
+          <div class="sa-stat-data">
+            <span class="sa-stat-value">${synCounts.redundant}</span>
+            <span class="sa-stat-label">Redundant</span>
+          </div>
+        </div>
+        <div class="sa-stat-card">
+          <div class="sa-stat-icon sa-stat-coverage"><i class="fas fa-dna"></i></div>
+          <div class="sa-stat-data">
+            <span class="sa-stat-value">${mechWell}/${mechTotal}</span>
+            <span class="sa-stat-label">Covered</span>
+          </div>
+        </div>
+        <div class="sa-stat-card">
+          <div class="sa-stat-icon sa-stat-safety ${criticalCount > 0 ? 'sa-stat-critical' : ''}"><i class="fas fa-shield-halved"></i></div>
+          <div class="sa-stat-data">
+            <span class="sa-stat-value">${safetyCount}</span>
+            <span class="sa-stat-label">Safety ${safetyCount === 1 ? 'Flag' : 'Flags'}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SCORE CONTEXT BAND ═══ -->
+      <div class="sa-score-context sa-reveal" style="--reveal-delay: 2">
+        <div class="sa-context-title"><i class="fas fa-chart-bar"></i> Score Breakdown</div>
+        <div class="sa-score-band">
+          <div class="sa-band-segment sa-band-poor" style="width:29%"><span>Poor</span></div>
+          <div class="sa-band-segment sa-band-needs" style="width:20%"><span>Needs Work</span></div>
+          <div class="sa-band-segment sa-band-adequate" style="width:20%"><span>Adequate</span></div>
+          <div class="sa-band-segment sa-band-good" style="width:15%"><span>Good</span></div>
+          <div class="sa-band-segment sa-band-excellent" style="width:16%"><span>Excellent</span></div>
+          <div class="sa-band-marker" style="left: ${a.overallScore}%">
+            <div class="sa-band-marker-pip"></div>
+            <div class="sa-band-marker-label">${a.overallScore}</div>
+          </div>
+        </div>
+        <details class="sa-interpret-details">
+          <summary><i class="fas fa-circle-question"></i> How is this score calculated?</summary>
+          <div class="sa-interpret-content">
+            <p>The score weighs four dimensions:</p>
+            <ul>
+              <li><strong>Evidence Quality (30%)</strong> — Are your supplements backed by RCTs, meta-analyses, or only preliminary data?</li>
+              <li><strong>Synergy & Interactions (25%)</strong> — Do your supplements amplify each other's effects, or are some redundant or antagonistic?</li>
+              <li><strong>Mechanism Coverage (25%)</strong> — Does your stack address the key biological pathways for your health goal?</li>
+              <li><strong>Safety Profile (20%)</strong> — Are there known interactions, contraindications, or dosage concerns?</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ═══ EVIDENCE EXPLANATION ═══ -->
+      <div class="sa-evidence-panel sa-reveal" style="--reveal-delay: 3">
+        <div class="sa-evidence-header">
+          <div class="sa-evidence-visual">
+            ${renderEvidenceMeter(a.evidenceStrength)}
+          </div>
+          <div class="sa-evidence-text">
+            <h4>Evidence: ${capitalize(a.evidenceStrength)}</h4>
+            <p>${evidenceExplanation}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SYNERGY NETWORK ═══ -->
       ${a.synergyAnalysis?.length ? renderSynergySection(a.synergyAnalysis) : ""}
 
-      <!-- Mechanism Coverage -->
+      <!-- ═══ MECHANISM COVERAGE ═══ -->
       ${a.mechanismCoverage?.length ? renderMechanismSection(a.mechanismCoverage) : ""}
 
-      <!-- Safety Flags -->
+      <!-- ═══ SAFETY FLAGS ═══ -->
       ${a.safetyFlags?.length ? renderSafetySection(a.safetyFlags) : ""}
 
-      <!-- Dosage Protocol -->
+      <!-- ═══ DOSAGE TIMELINE ═══ -->
       ${a.dosageProtocol?.length ? renderDosageSection(a.dosageProtocol) : ""}
 
-      <!-- Suggested Additions -->
-      ${a.suggestedAdditions?.length ? renderSuggestionsSection(a.suggestedAdditions, a.suggestedRemovals) : ""}
+      <!-- ═══ OPTIMIZATION SUGGESTIONS ═══ -->
+      ${a.suggestedAdditions?.length || a.suggestedRemovals?.length ? renderSuggestionsSection(a.suggestedAdditions, a.suggestedRemovals) : ""}
 
-      <!-- Meta -->
-      <div class="sa-result-meta">
+      <!-- ═══ META FOOTER ═══ -->
+      <div class="sa-result-meta sa-reveal" style="--reveal-delay: 9">
         <span><i class="fas fa-microchip"></i> ${escapeHtml(result.model || "claude-haiku-4-5")}</span>
-        <span><i class="fas fa-coins"></i> ${result.creditsRemaining ?? "—"} credits remaining</span>
+        <span><i class="fas fa-coins"></i> ${result.creditsRemaining ?? "—"} credits left</span>
         <span><i class="fas fa-arrow-right-arrow-left"></i> ${(result.tokensUsed?.input || 0) + (result.tokensUsed?.output || 0)} tokens</span>
+        <span class="sa-meta-disclaimer"><i class="fas fa-info-circle"></i> For informational purposes only — not medical advice</span>
       </div>
     `;
+
+    // Animate score counter
+    animateScoreCounter(content);
+
+    // Staggered reveal with IntersectionObserver
+    initRevealAnimations(content);
+
+    // Initialize synergy network if present
+    initSynergyNetwork(content, a.synergyAnalysis || []);
 
     panel.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  // ── Evidence Meter SVG ──────────────────────────────────────────
+  function renderEvidenceMeter(strength) {
+    const levels = ["insufficient", "limited", "moderate", "strong"];
+    const activeIdx = levels.indexOf(strength);
+    const bars = levels.map((lvl, i) => {
+      const active = i <= activeIdx;
+      const height = 8 + i * 6;
+      const colors = ["#8b949e", "#fb7185", "#fbbf24", "#4ade80"];
+      return `<div class="sa-ev-bar ${active ? 'active' : ''}" style="height: ${height}px; background: ${active ? colors[i] : 'rgba(99,102,241,0.1)'}"></div>`;
+    }).join("");
+    return `<div class="sa-evidence-meter">${bars}</div>`;
+  }
+
+  // ── Animated Score Counter ──────────────────────────────────────
+  function animateScoreCounter(container) {
+    const el = container.querySelector(".sa-score-number[data-target]");
+    if (!el) return;
+    const target = parseInt(el.dataset.target, 10);
+    let current = 0;
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.round(eased * target);
+      el.textContent = current;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // ── Staggered Reveal Animations ─────────────────────────────────
+  function initRevealAnimations(container) {
+    const sections = container.querySelectorAll(".sa-reveal");
+    if (!("IntersectionObserver" in window)) {
+      sections.forEach(s => s.classList.add("sa-revealed"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("sa-revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+    sections.forEach(s => observer.observe(s));
+  }
+
+  // ── Interactive Synergy Network ─────────────────────────────────
+  function initSynergyNetwork(container, synergies) {
+    const canvas = container.querySelector("#sa-synergy-canvas");
+    if (!canvas || !synergies.length) return;
+
+    // Extract unique supplement names
+    const nameSet = new Set();
+    synergies.forEach(s => { (s.pair || []).forEach(n => nameSet.add(n)); });
+    const names = Array.from(nameSet);
+    if (names.length < 2) return;
+
+    const width = canvas.offsetWidth || 400;
+    const height = Math.max(250, names.length * 30);
+    canvas.style.height = height + "px";
+
+    // Position nodes in a circle
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = Math.min(cx, cy) - 50;
+    const nodes = names.map((name, i) => {
+      const angle = (i / names.length) * 2 * Math.PI - Math.PI / 2;
+      return {
+        name,
+        x: cx + radius * Math.cos(angle),
+        y: cy + radius * Math.sin(angle),
+      };
+    });
+
+    // Build SVG
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", height);
+    svg.classList.add("sa-network-svg");
+
+    // Draw edges
+    const edgeColors = {
+      synergistic: "#4ade80",
+      redundant: "#fbbf24",
+      antagonistic: "#ef4444",
+      neutral: "#8b949e",
+    };
+    const edgeDashes = {
+      synergistic: "",
+      redundant: "6,3",
+      antagonistic: "2,2",
+      neutral: "8,4",
+    };
+
+    synergies.forEach((syn, idx) => {
+      const n1 = nodes.find(n => n.name === syn.pair?.[0]);
+      const n2 = nodes.find(n => n.name === syn.pair?.[1]);
+      if (!n1 || !n2) return;
+
+      const line = document.createElementNS(svgNS, "line");
+      line.setAttribute("x1", n1.x);
+      line.setAttribute("y1", n1.y);
+      line.setAttribute("x2", n2.x);
+      line.setAttribute("y2", n2.y);
+      line.setAttribute("stroke", edgeColors[syn.type] || "#8b949e");
+      line.setAttribute("stroke-width", syn.type === "synergistic" ? "2.5" : "1.5");
+      line.setAttribute("stroke-opacity", "0.7");
+      if (edgeDashes[syn.type]) line.setAttribute("stroke-dasharray", edgeDashes[syn.type]);
+      line.classList.add("sa-net-edge");
+      line.dataset.idx = idx;
+      svg.appendChild(line);
+    });
+
+    // Draw nodes
+    nodes.forEach((node, i) => {
+      const g = document.createElementNS(svgNS, "g");
+      g.classList.add("sa-net-node");
+
+      const circle = document.createElementNS(svgNS, "circle");
+      circle.setAttribute("cx", node.x);
+      circle.setAttribute("cy", node.y);
+      circle.setAttribute("r", "16");
+      circle.setAttribute("fill", "rgba(99,102,241,0.2)");
+      circle.setAttribute("stroke", "rgba(99,102,241,0.5)");
+      circle.setAttribute("stroke-width", "2");
+      g.appendChild(circle);
+
+      // Label with text wrapping for long names
+      const shortName = node.name.length > 12 ? node.name.substring(0, 11) + "…" : node.name;
+      const text = document.createElementNS(svgNS, "text");
+      text.setAttribute("x", node.x);
+      text.setAttribute("y", node.y + 28);
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("fill", "var(--text-primary, #c9d1d9)");
+      text.setAttribute("font-size", "10");
+      text.setAttribute("font-weight", "500");
+      text.textContent = shortName;
+      g.appendChild(text);
+
+      // Hover: show full name in tooltip
+      const title = document.createElementNS(svgNS, "title");
+      title.textContent = node.name;
+      g.appendChild(title);
+
+      svg.appendChild(g);
+    });
+
+    canvas.innerHTML = "";
+    canvas.appendChild(svg);
+
+    // Add hover interaction — highlight connected edges
+    const edgeEls = svg.querySelectorAll(".sa-net-edge");
+    const nodeEls = svg.querySelectorAll(".sa-net-node");
+    nodeEls.forEach((nodeEl, i) => {
+      nodeEl.addEventListener("mouseenter", () => {
+        const nodeName = nodes[i].name;
+        edgeEls.forEach((edge, eIdx) => {
+          const syn = synergies[eIdx];
+          const connected = syn.pair?.includes(nodeName);
+          edge.setAttribute("stroke-opacity", connected ? "1" : "0.15");
+          edge.setAttribute("stroke-width", connected ? "3" : "1");
+        });
+        nodeEls.forEach((ne, ni) => {
+          if (ni === i) return;
+          const isLinked = synergies.some(s => s.pair?.includes(nodeName) && s.pair?.includes(nodes[ni].name));
+          ne.querySelector("circle").setAttribute("fill-opacity", isLinked ? "1" : "0.3");
+        });
+      });
+      nodeEl.addEventListener("mouseleave", () => {
+        edgeEls.forEach((edge, eIdx) => {
+          const syn = synergies[eIdx];
+          edge.setAttribute("stroke-opacity", "0.7");
+          edge.setAttribute("stroke-width", syn.type === "synergistic" ? "2.5" : "1.5");
+        });
+        nodeEls.forEach(ne => {
+          ne.querySelector("circle").setAttribute("fill-opacity", "1");
+        });
+      });
+    });
+
+    // Network legend
+    const legendEl = container.querySelector(".sa-network-legend");
+    if (legendEl) {
+      legendEl.innerHTML = `
+        <span class="sa-net-legend-item"><span class="sa-net-legend-line" style="background:#4ade80"></span> Synergistic</span>
+        <span class="sa-net-legend-item"><span class="sa-net-legend-line sa-dashed" style="background:#fbbf24"></span> Redundant</span>
+        <span class="sa-net-legend-item"><span class="sa-net-legend-line sa-dotted" style="background:#ef4444"></span> Antagonistic</span>
+        <span class="sa-net-legend-item"><span class="sa-net-legend-line sa-long-dash" style="background:#8b949e"></span> Neutral</span>
+      `;
+    }
+  }
+
+  // ── Synergy Section ─────────────────────────────────────────────
   function renderSynergySection(synergies) {
     const rows = synergies.map(s => {
       const typeClass = `sa-synergy-${s.type}`;
@@ -726,15 +1096,27 @@
     }).join("");
 
     return `
-      <div class="sa-result-section">
+      <div class="sa-result-section sa-reveal" style="--reveal-delay: 4">
         <h3 class="sa-result-section-title">
-          <i class="fas fa-link"></i> Synergy Analysis
+          <i class="fas fa-project-diagram"></i> Synergy Network
+          <button class="sa-view-toggle" data-view="network" title="Toggle view">
+            <i class="fas fa-diagram-project"></i>
+          </button>
         </h3>
+        <details class="sa-interpret-details">
+          <summary><i class="fas fa-circle-question"></i> Understanding synergies</summary>
+          <div class="sa-interpret-content">
+            <p><strong>Synergistic</strong> pairs amplify each other — e.g., Vitamin C enhances iron absorption. <strong>Redundant</strong> pairs target the same pathway, so you may be over-investing. <strong>Antagonistic</strong> pairs can cancel or reduce each other's effects. Hover over nodes in the network to see connections.</p>
+          </div>
+        </details>
+        <div class="sa-network-legend"></div>
+        <div id="sa-synergy-canvas" class="sa-synergy-canvas"></div>
         <div class="sa-synergy-list">${rows}</div>
       </div>
     `;
   }
 
+  // ── Mechanism Section with Ring Indicators ──────────────────────
   function renderMechanismSection(mechanisms) {
     const rows = mechanisms.map(m => {
       const strengthClass = `sa-mech-${m.strength}`;
@@ -743,37 +1125,68 @@
         "partially-covered": "Partial",
         "gap": "Gap",
       }[m.strength] || m.strength;
+      const strengthIcon = {
+        "well-covered": "fa-circle-check",
+        "partially-covered": "fa-circle-half-stroke",
+        "gap": "fa-circle-xmark",
+      }[m.strength] || "fa-circle";
 
-      const pct = m.strength === "well-covered" ? 100 : m.strength === "partially-covered" ? 60 : 20;
+      const pct = m.strength === "well-covered" ? 100 : m.strength === "partially-covered" ? 60 : 15;
+      // Mini ring: circumference for r=14 = 87.96
+      const circ = 87.96;
+      const dashArr = `${(pct / 100) * circ} ${circ}`;
+      const ringColor = m.strength === "well-covered" ? "#4ade80" : m.strength === "partially-covered" ? "#fbbf24" : "#fb7185";
 
       return `
         <div class="sa-mech-row ${strengthClass}">
-          <div class="sa-mech-info">
-            <span class="sa-mech-name">${escapeHtml(m.mechanism)}</span>
-            <span class="sa-mech-covered">
-              ${(m.coveredBy || []).map(n => `<span class="sa-mech-pill">${escapeHtml(n)}</span>`).join("")}
-            </span>
+          <div class="sa-mech-ring">
+            <svg viewBox="0 0 36 36" class="sa-mech-ring-svg">
+              <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="3" />
+              <circle cx="18" cy="18" r="14" fill="none" stroke="${ringColor}" stroke-width="3"
+                stroke-linecap="round" stroke-dasharray="${dashArr}" transform="rotate(-90 18 18)" />
+            </svg>
+            <i class="fas ${strengthIcon} sa-mech-ring-icon" style="color: ${ringColor}"></i>
           </div>
-          <div class="sa-mech-bar-wrap">
-            <div class="sa-mech-bar">
-              <div class="sa-mech-bar-fill" style="width: ${pct}%"></div>
+          <div class="sa-mech-info">
+            <div class="sa-mech-top">
+              <span class="sa-mech-name">${escapeHtml(m.mechanism)}</span>
+              <span class="sa-mech-strength-label ${strengthClass}">${strengthLabel}</span>
             </div>
-            <span class="sa-mech-strength">${strengthLabel}</span>
+            <div class="sa-mech-covered">
+              ${(m.coveredBy || []).map(n => `<span class="sa-mech-pill">${escapeHtml(n)}</span>`).join("")}
+            </div>
           </div>
         </div>
       `;
     }).join("");
 
+    // Summary stats
+    const wellCount = mechanisms.filter(m => m.strength === "well-covered").length;
+    const partialCount = mechanisms.filter(m => m.strength === "partially-covered").length;
+    const gapCount = mechanisms.filter(m => m.strength === "gap").length;
+
     return `
-      <div class="sa-result-section">
+      <div class="sa-result-section sa-reveal" style="--reveal-delay: 5">
         <h3 class="sa-result-section-title">
-          <i class="fas fa-sitemap"></i> Mechanism Coverage
+          <i class="fas fa-dna"></i> Mechanism Coverage
         </h3>
+        <details class="sa-interpret-details">
+          <summary><i class="fas fa-circle-question"></i> What is mechanism coverage?</summary>
+          <div class="sa-interpret-content">
+            <p>Each health goal involves key biological pathways. <strong>Well Covered</strong> means multiple supplements in your stack target this pathway with good evidence. <strong>Partial</strong> means some support, but not robust. <strong>Gap</strong> means this critical pathway is unaddressed — consider the suggestions section below.</p>
+          </div>
+        </details>
+        <div class="sa-mech-summary">
+          <span class="sa-mech-stat sa-mech-stat-well"><i class="fas fa-circle-check"></i> ${wellCount} well covered</span>
+          <span class="sa-mech-stat sa-mech-stat-partial"><i class="fas fa-circle-half-stroke"></i> ${partialCount} partial</span>
+          <span class="sa-mech-stat sa-mech-stat-gap"><i class="fas fa-circle-xmark"></i> ${gapCount} ${gapCount === 1 ? 'gap' : 'gaps'}</span>
+        </div>
         <div class="sa-mech-list">${rows}</div>
       </div>
     `;
   }
 
+  // ── Safety Section ──────────────────────────────────────────────
   function renderSafetySection(flags) {
     const rows = flags.map(f => {
       const sevIcon = {
@@ -788,7 +1201,7 @@
           <div class="sa-safety-content">
             <div class="sa-safety-header">
               <span class="sa-safety-severity">${capitalize(f.severity)}</span>
-              <span class="sa-safety-supps">${(f.supplements || []).map(n => escapeHtml(n)).join(", ")}</span>
+              <span class="sa-safety-supps">${(f.supplements || []).map(n => escapeHtml(n)).join(" · ")}</span>
             </div>
             <p class="sa-safety-desc">${escapeHtml(f.description || "")}</p>
           </div>
@@ -797,69 +1210,145 @@
     }).join("");
 
     return `
-      <div class="sa-result-section">
+      <div class="sa-result-section sa-reveal" style="--reveal-delay: 6">
         <h3 class="sa-result-section-title">
           <i class="fas fa-shield-halved"></i> Safety Flags
         </h3>
+        <details class="sa-interpret-details">
+          <summary><i class="fas fa-circle-question"></i> How to read safety flags</summary>
+          <div class="sa-interpret-content">
+            <p><strong>Caution</strong> — minor considerations, generally safe at recommended doses. <strong>Warning</strong> — meaningful interaction risk; monitor or adjust dosing. <strong>Critical</strong> — potentially dangerous interaction; consult a healthcare professional before combining.</p>
+          </div>
+        </details>
         <div class="sa-safety-list">${rows}</div>
       </div>
     `;
   }
 
+  // ── Dosage Timeline ─────────────────────────────────────────────
   function renderDosageSection(protocol) {
-    const rows = protocol.map(p => `
+    // Group by time of day
+    const groups = { morning: [], afternoon: [], "pre-workout": [], "post-workout": [], evening: [], anytime: [] };
+    const groupMeta = {
+      morning: { icon: "fa-sun", label: "Morning", color: "#fbbf24" },
+      afternoon: { icon: "fa-cloud-sun", label: "Afternoon", color: "#f97316" },
+      "pre-workout": { icon: "fa-dumbbell", label: "Pre-Workout", color: "#818cf8" },
+      "post-workout": { icon: "fa-heart-pulse", label: "Post-Workout", color: "#4ade80" },
+      evening: { icon: "fa-moon", label: "Evening", color: "#818cf8" },
+      anytime: { icon: "fa-clock", label: "Any Time", color: "#8b949e" },
+    };
+
+    protocol.forEach(p => {
+      const slot = categorizeTiming(p.timing);
+      groups[slot].push(p);
+    });
+
+    let timelineHtml = '<div class="sa-timeline">';
+
+    Object.entries(groups).forEach(([slot, items]) => {
+      if (!items.length) return;
+      const meta = groupMeta[slot];
+      timelineHtml += `
+        <div class="sa-timeline-slot">
+          <div class="sa-timeline-marker">
+            <div class="sa-timeline-dot" style="--dot-color: ${meta.color}">
+              <i class="fas ${meta.icon}"></i>
+            </div>
+            <span class="sa-timeline-label">${meta.label}</span>
+          </div>
+          <div class="sa-timeline-items">
+            ${items.map(p => `
+              <div class="sa-timeline-card">
+                <div class="sa-timeline-card-header">
+                  <span class="sa-timeline-supp">${escapeHtml(p.supplement)}</span>
+                  <span class="sa-timeline-dose">${escapeHtml(p.recommendedDose)}</span>
+                </div>
+                <div class="sa-timeline-card-meta">
+                  <span class="sa-timeline-food ${p.withFood ? 'with-food' : 'empty-stomach'}">
+                    <i class="fas ${p.withFood ? 'fa-utensils' : 'fa-glass-water'}"></i>
+                    ${p.withFood ? 'With food' : 'Empty stomach'}
+                  </span>
+                </div>
+                ${p.notes ? `<p class="sa-timeline-notes">${escapeHtml(p.notes)}</p>` : ""}
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    });
+
+    timelineHtml += '</div>';
+
+    // Also keep a collapsible table for detailed reference
+    const tableRows = protocol.map(p => `
       <tr>
         <td class="sa-dose-name">${escapeHtml(p.supplement)}</td>
         <td>${escapeHtml(p.recommendedDose)}</td>
         <td>${escapeHtml(p.timing)}</td>
-        <td>${p.withFood ? '<i class="fas fa-utensils" title="Take with food"></i> Yes' : '<i class="fas fa-glass-water" title="Take on empty stomach"></i> No'}</td>
+        <td>${p.withFood ? '<i class="fas fa-utensils"></i> Yes' : '<i class="fas fa-glass-water"></i> No'}</td>
         <td class="sa-dose-notes">${escapeHtml(p.notes || "")}</td>
       </tr>
     `).join("");
 
     return `
-      <div class="sa-result-section">
+      <div class="sa-result-section sa-reveal" style="--reveal-delay: 7">
         <h3 class="sa-result-section-title">
-          <i class="fas fa-prescription-bottle-medical"></i> Dosage Protocol
+          <i class="fas fa-prescription-bottle-medical"></i> Daily Protocol
         </h3>
-        <div class="sa-dosage-table-wrap">
-          <table class="sa-dosage-table">
-            <thead>
-              <tr>
-                <th>Supplement</th>
-                <th>Dose</th>
-                <th>Timing</th>
-                <th>With Food</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>${rows}</tbody>
-          </table>
-        </div>
+        <details class="sa-interpret-details">
+          <summary><i class="fas fa-circle-question"></i> Timing tips</summary>
+          <div class="sa-interpret-content">
+            <p>Timing matters for absorption. Fat-soluble supplements (D3, CoQ10, curcumin) absorb better with food. Minerals like magnesium and zinc can compete for absorption if taken together. Stimulants should be avoided late in the day.</p>
+          </div>
+        </details>
+        ${timelineHtml}
+        <details class="sa-table-details">
+          <summary><i class="fas fa-table"></i> View detailed table</summary>
+          <div class="sa-dosage-table-wrap">
+            <table class="sa-dosage-table">
+              <thead>
+                <tr><th>Supplement</th><th>Dose</th><th>Timing</th><th>With Food</th><th>Notes</th></tr>
+              </thead>
+              <tbody>${tableRows}</tbody>
+            </table>
+          </div>
+        </details>
       </div>
     `;
   }
 
+  // ── Suggestions Section ─────────────────────────────────────────
   function renderSuggestionsSection(additions, removals) {
-    let html = `<div class="sa-result-section">
+    let html = `<div class="sa-result-section sa-reveal" style="--reveal-delay: 8">
       <h3 class="sa-result-section-title">
-        <i class="fas fa-lightbulb"></i> Optimization Suggestions
+        <i class="fas fa-lightbulb"></i> Stack Optimization
       </h3>
+      <details class="sa-interpret-details">
+        <summary><i class="fas fa-circle-question"></i> How to use these suggestions</summary>
+        <div class="sa-interpret-content">
+          <p>Additions are supplements that could fill gaps in your stack's mechanism coverage or add synergistic value. Removals are supplements that are redundant or counterproductive for your specific goal. Evidence tiers indicate research confidence (Tier 1 = strongest).</p>
+        </div>
+      </details>
       <div class="sa-suggestions-grid">`;
 
     if (additions?.length) {
       html += `
         <div class="sa-suggestion-group sa-suggestion-add">
           <h4><i class="fas fa-plus-circle"></i> Consider Adding</h4>
-          ${additions.map(a => `
-            <div class="sa-suggestion-card">
-              <div class="sa-suggestion-header">
-                <span class="sa-suggestion-name">${escapeHtml(a.name)}</span>
-                <span class="sa-suggestion-tier">Tier ${a.evidenceTier}</span>
+          ${additions.map(a => {
+            const tierColor = a.evidenceTier === 1 ? "#4ade80" : a.evidenceTier === 2 ? "#fbbf24" : "#fb7185";
+            return `
+              <div class="sa-suggestion-card">
+                <div class="sa-suggestion-header">
+                  <span class="sa-suggestion-name">${escapeHtml(a.name)}</span>
+                  <span class="sa-suggestion-tier" style="--tier-color: ${tierColor}">
+                    <i class="fas fa-flask"></i> Tier ${a.evidenceTier}
+                  </span>
+                </div>
+                <p class="sa-suggestion-reason">${escapeHtml(a.reason)}</p>
               </div>
-              <p class="sa-suggestion-reason">${escapeHtml(a.reason)}</p>
-            </div>
-          `).join("")}
+            `;
+          }).join("")}
         </div>
       `;
     }
@@ -903,18 +1392,19 @@
     const fillEl = $("#sa-credit-fill");
     const tierEl = $("#sa-credit-tier");
     const barEl = $("#sa-credit-bar");
+    const breakdownEl = $("#sa-credit-breakdown");
+
+    const purchased = credits.purchasedCredits || 0;
+    const totalAvail = credits.totalAvailable ?? (credits.remaining + purchased);
 
     if (countEl) {
-      countEl.textContent = `${credits.remaining} / ${credits.monthlyLimit}`;
+      countEl.textContent = `${totalAvail} credit${totalAvail !== 1 ? 's' : ''} available`;
     }
 
     if (fillEl) {
-      const pct = credits.monthlyLimit > 0
-        ? Math.round((credits.remaining / credits.monthlyLimit) * 100)
-        : 0;
-      fillEl.style.width = pct + "%";
-
-      // Color states
+      const total = credits.monthlyLimit + purchased;
+      const pct = total > 0 ? Math.round((totalAvail / total) * 100) : 0;
+      fillEl.style.width = Math.min(pct, 100) + "%";
       fillEl.classList.toggle("sa-credit-fill--low", pct <= 20);
       fillEl.classList.toggle("sa-credit-fill--medium", pct > 20 && pct <= 50);
     }
@@ -926,9 +1416,154 @@
         : '<a href="/pricing.html" class="sa-upgrade-link">Upgrade</a>';
     }
 
+    // Breakdown: monthly vs purchased
+    if (breakdownEl) {
+      const parts = [];
+      parts.push(`<span class="sa-breakdown-item"><i class="fas fa-calendar"></i> ${credits.remaining}/${credits.monthlyLimit} monthly</span>`);
+      if (purchased > 0) {
+        parts.push(`<span class="sa-breakdown-item sa-breakdown-purchased"><i class="fas fa-coins"></i> ${purchased} purchased</span>`);
+      }
+      // Show credit costs per depth
+      const costs = credits.creditCosts || { quick: 1, standard: 2, deep: 3 };
+      parts.push(`<span class="sa-breakdown-costs"><i class="fas fa-bolt"></i> Quick=${costs.quick} · Standard=${costs.standard} · Deep=${costs.deep}</span>`);
+      breakdownEl.innerHTML = parts.join("");
+    }
+
     if (barEl) {
       barEl.style.display = "block";
     }
+
+    // Wire up Buy Credits button
+    const buyBtn = $("#sa-buy-credits-btn");
+    if (buyBtn && !buyBtn._wired) {
+      buyBtn._wired = true;
+      buyBtn.addEventListener("click", () => openCreditsModal());
+    }
+  }
+
+  // ── Buy Credits Modal ───────────────────────────────────────────
+  async function openCreditsModal() {
+    const modal = $("#sa-credits-modal");
+    const grid = $("#sa-packs-grid");
+    if (!modal || !grid) return;
+
+    // Move modal to <body> to escape any parent transforms/stacking contexts
+    // (the #analyzer section has a CSS transform from sa-reveal that breaks position:fixed)
+    if (modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
+
+    modal.style.display = "flex";
+
+    // Load packs from server
+    try {
+      const data = await window.SupplementDB.query("analysisCredits:getCreditPacks");
+      renderPackCards(grid, data.packs);
+    } catch (err) {
+      // Fallback to hardcoded packs
+      renderPackCards(grid, [
+        { id: "starter", name: "Starter Pack", credits: 10, priceUsd: 5.00, analyses: { quick: 10, standard: 5, deep: 3 }, badge: null, perCreditCents: 50 },
+        { id: "pro", name: "Pro Pack", credits: 25, priceUsd: 10.00, analyses: { quick: 25, standard: 12, deep: 8 }, badge: "Best Value", perCreditCents: 40 },
+        { id: "bulk", name: "Bulk Pack", credits: 75, priceUsd: 25.00, analyses: { quick: 75, standard: 37, deep: 25 }, badge: "Most Credits", perCreditCents: 33 },
+      ]);
+    }
+
+    // Close handlers
+    const closeBtn = $("#sa-modal-close");
+    if (closeBtn) {
+      closeBtn.onclick = () => { modal.style.display = "none"; };
+    }
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+
+  function renderPackCards(grid, packs) {
+    grid.innerHTML = packs.map(pack => `
+      <div class="sa-pack-card ${pack.badge ? 'sa-pack-featured' : ''}">
+        ${pack.badge ? `<div class="sa-pack-badge">${pack.badge}</div>` : ""}
+        <h4 class="sa-pack-name">${pack.name}</h4>
+        <div class="sa-pack-price">
+          <span class="sa-pack-dollar">$${pack.priceUsd.toFixed(2)}</span>
+          <span class="sa-pack-per">${pack.perCreditCents}\u00a2/credit</span>
+        </div>
+        <div class="sa-pack-credits">
+          <span class="sa-pack-credit-count">${pack.credits}</span>
+          <span class="sa-pack-credit-label">credits</span>
+        </div>
+        <div class="sa-pack-analyses">
+          <div class="sa-pack-analysis-row">
+            <i class="fas fa-bolt"></i>
+            <span>${pack.analyses.quick} Quick analyses</span>
+          </div>
+          <div class="sa-pack-analysis-row">
+            <i class="fas fa-flask"></i>
+            <span>${pack.analyses.standard} Standard analyses</span>
+          </div>
+          <div class="sa-pack-analysis-row">
+            <i class="fas fa-microscope"></i>
+            <span>${pack.analyses.deep} Deep analyses</span>
+          </div>
+        </div>
+        <button class="sa-pack-buy-btn" data-pack="${pack.id}">
+          <i class="fas fa-shopping-cart"></i> Buy for $${pack.priceUsd.toFixed(2)}
+        </button>
+      </div>
+    `).join("");
+
+    // Wire buy buttons
+    grid.querySelectorAll(".sa-pack-buy-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const packId = btn.dataset.pack;
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
+        try {
+          const result = await window.SupplementDB.action("stripe:createCreditCheckoutSession", { packId });
+          if (result?.url) {
+            window.location.href = result.url;
+          }
+        } catch (err) {
+          const msg = err?.data || err?.message || "Failed to start checkout";
+          btn.disabled = false;
+          btn.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${msg}`;
+          setTimeout(() => {
+            btn.innerHTML = `<i class="fas fa-shopping-cart"></i> Buy for $${btn.closest('.sa-pack-card').querySelector('.sa-pack-dollar').textContent.slice(1)}`;
+          }, 3000);
+        }
+      });
+    });
+  }
+
+  // Check for post-purchase URL params
+  function checkCreditPurchaseParams() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("credits_purchased")) {
+      const pack = params.get("credits_purchased");
+      // Clean URL
+      const url = new URL(window.location);
+      url.searchParams.delete("credits_purchased");
+      url.searchParams.delete("session_id");
+      window.history.replaceState({}, "", url.toString());
+
+      // Show success toast
+      showCreditPurchaseSuccess(pack);
+      // Refresh credits
+      setTimeout(() => loadCredits(), 1000);
+    }
+  }
+
+  function showCreditPurchaseSuccess(packId) {
+    const packNames = { starter: "Starter Pack", pro: "Pro Pack", bulk: "Bulk Pack" };
+    const name = packNames[packId] || "Credit Pack";
+    const toast = document.createElement("div");
+    toast.className = "sa-toast sa-toast-success";
+    toast.innerHTML = `<i class="fas fa-check-circle"></i> ${name} purchased! Credits added to your account.`;
+    document.body.appendChild(toast);
+    setTimeout(() => { toast.classList.add("sa-toast-show"); }, 50);
+    setTimeout(() => {
+      toast.classList.remove("sa-toast-show");
+      setTimeout(() => toast.remove(), 300);
+    }, 5000);
   }
 
   // ── History ────────────────────────────────────────────────────

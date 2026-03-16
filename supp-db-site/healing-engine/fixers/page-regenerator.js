@@ -17,11 +17,11 @@ function regeneratePages(supplementIds, options = {}) {
 
   if (dryRun) return result;
 
-  const scriptPath = path.join(config.paths.root, 'generate-supplement-pages.js');
+  const scriptPath = path.join(config.paths.root, 'seed.js');
 
   try {
     logger.info(`Regenerating ${supplementIds.length} supplement pages...`);
-    const output = execSync(`node "${scriptPath}"`, {
+    const output = execSync(`node "${scriptPath}" --out supplements/`, {
       cwd: config.paths.root,
       timeout: 120000,
       encoding: 'utf8',

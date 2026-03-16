@@ -17,6 +17,59 @@ const {
     getTierColor,
 } = require('./parse-data');
 
+const ENHANCED_DIR = path.join(__dirname, '..', 'data', 'enhanced_citations');
+
+// ── Enhanced Citation Loader (Server-Side) ───────────────────────────────
+// Mirrors the loader in generate-supplement-pages.js so guide pages can
+// include enhanced citations in their total citation counts.
+
+function loadEnhancedCitation(supplement) {
+    const id = supplement.id;
+    try {
+        if (!fs.existsSync(ENHANCED_DIR)) return null;
+        const files = fs.readdirSync(ENHANCED_DIR);
+        const matchFile = files.find(f => f.startsWith(`${id}_`) && f.endsWith('_enhanced.js'));
+        if (!matchFile) return null;
+
+        const src = fs.readFileSync(path.join(ENHANCED_DIR, matchFile), 'utf8');
+        const window = { enhancedCitations: {} };
+        eval(src);
+
+        if (window.enhancedCitations[id] && (window.enhancedCitations[id].citations || window.enhancedCitations[id].enhancedCitations)) {
+            return window.enhancedCitations[id];
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations && val.supplementId === id) return val;
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations) return val;
+        }
+        return null;
+    } catch (e) {
+        console.warn(`  ⚠ Could not load enhanced citations for ID ${id}: ${e.message}`);
+        return null;
+    }
+}
+
+/**
+ * Count total citations for a supplement, including both keyCitations
+ * and enhanced citations (mechanisms, benefits, safety, dosage).
+ */
+function countSupplementCitations(s) {
+    let count = (s.keyCitations || []).length;
+    const enhanced = loadEnhancedCitation(s);
+    if (enhanced && enhanced.citations) {
+        const cits = enhanced.citations;
+        count += (cits.mechanisms || []).length + (cits.benefits || []).length +
+                 (cits.safety || []).length + (cits.dosage || []).length;
+    }
+    return count;
+}
+
 // ─── Guide Definitions ──────────────────────────────────────────────────────
 const GUIDES = [
     {
@@ -1683,8 +1736,8 @@ const DOMAIN_THEMES = {
 };
 
 // ─── Domain SVG Hero Icons ───────────────────────────────────────────────────
-function getDomainHeroIcon(slug, theme) {
-    const c = theme.glow;
+function getDomainHeroIcon(slug, glowColor) {
+    const c = glowColor;
     const icons = {
         'anxiety-stress': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 28c4-8 8-12 12-12s8 4 12 12 8 12 12 12" stroke="${c}" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 24c6-10 12-14 16-14s10 4 16 14" stroke="${c}" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/><circle cx="24" cy="24" r="4" fill="${c}" fill-opacity="0.25"/></svg>`,
         'cognitive-performance': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6C14 6 6 14 6 24s8 18 18 18 18-8 18-18S34 6 24 6z" stroke="${c}" stroke-width="1.5" fill="none" opacity="0.3"/><path d="M24 10c-2 4-6 6-10 6m10-6c2 4 6 6 10 6M24 38c-2-4-6-6-10-6m10 6c2-4 6-6 10-6" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="24" cy="24" r="6" fill="${c}" fill-opacity="0.2"/><circle cx="24" cy="24" r="2" fill="${c}" fill-opacity="0.5"/></svg>`,
@@ -1969,6 +2022,11 @@ function generateGuideCSS(t) {
             opacity: 1;
             transform: translateY(0);
         }
+        /* First content section visible immediately — no blank-page flash */
+        main > .reveal:first-child {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         a:focus-visible, button:focus-visible, input:focus-visible {
             outline: 2px solid var(--accent-light);
@@ -2065,8 +2123,8 @@ function generateGuidePage(guide, allSupplements) {
     const core = filtered.filter(s => coreSet.has(s.name.toLowerCase()));
     const supporting = filtered.filter(s => !coreSet.has(s.name.toLowerCase()));
 
-    // Stats
-    const totalCitations = filtered.reduce((sum, s) => sum + (s.keyCitations || []).length, 0);
+    // Stats — count both keyCitations AND enhanced citations per supplement
+    const totalCitations = filtered.reduce((sum, s) => sum + countSupplementCitations(s), 0);
     const tierCounts = {};
     filtered.forEach(s => { tierCounts[s.evidenceTier] = (tierCounts[s.evidenceTier] || 0) + 1; });
 
@@ -2255,6 +2313,10 @@ function generateGuidePage(guide, allSupplements) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Auth config — Docker entrypoint substitutes placeholders at runtime -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
     <!-- Auth CDN -->
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
@@ -2295,15 +2357,15 @@ function generateGuidePage(guide, allSupplements) {
 </div>
 
 <!-- Hero Section -->
-<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+<header class="hero-section pt-12 pb-8 sm:pt-16 sm:pb-12 px-4 text-center relative">
     <div class="max-w-3xl mx-auto relative z-10">
         <!-- Domain icon -->
-        <div class="domain-icon-glow mb-6 inline-block">
+        <div class="domain-icon-glow mb-4 inline-block">
             ${heroIcon}
         </div>
 
         <!-- Review badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(${theme.accentRgb}, 0.12); color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.2);">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style="background: rgba(${theme.accentRgb}, 0.12); color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.2);">
             <i class="fas fa-clock text-xs" style="color: ${theme.accentLight}; font-size: 0.65rem;"></i>
             Last reviewed: ${today}
         </div>
@@ -2312,7 +2374,7 @@ function generateGuidePage(guide, allSupplements) {
             ${esc(guide.title)}
         </h1>
 
-        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+        <p class="text-base sm:text-lg mb-4" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
             A systematic review of ${filtered.length} supplements across ${totalCitations}+ research citations, ranked by evidence strength.
         </p>
 
@@ -2323,6 +2385,34 @@ function generateGuidePage(guide, allSupplements) {
         </p>
     </div>
 </header>
+
+<!-- PDF Purchase CTA -->
+<div id="guide-pdf-cta" class="guide-pdf-cta" data-guide-slug="${guide.slug}" data-guide-name="${esc(guide.shortTitle || guide.title)}" style="display:none;">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="pdf-cta-card" style="background: linear-gradient(135deg, rgba(${theme.accentRgb}, 0.08), rgba(${theme.accentRgb}, 0.03)); border: 1px solid rgba(${theme.accentRgb}, 0.15); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 200px;">
+                <p style="color: var(--text-bright); font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin: 0 0 0.25rem 0;">
+                    <i class="fas fa-file-pdf" style="color: ${theme.glow}; margin-right: 0.5rem;"></i>Get this guide as a PDF
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0;">
+                    Offline reading &bull; Printable &bull; ${totalCitations}+ citations &bull; Dosage tables included
+                </p>
+            </div>
+            <!-- Purchase button (not yet purchased) -->
+            <button id="pdf-purchase-btn" onclick="handleGuidePurchase()" style="display:none; background: ${theme.glow}; color: #0d1117; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-shopping-cart" style="margin-right: 0.4rem;"></i>Get PDF Guide
+            </button>
+            <!-- Download button (already purchased) -->
+            <button id="pdf-download-btn" onclick="handleGuideDownload()" style="display:none; background: #22c55e; color: #0d1117; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-download" style="margin-right: 0.4rem;"></i>Download PDF
+            </button>
+            <!-- Sign in prompt (not authenticated) -->
+            <button id="pdf-signin-btn" onclick="window.SupplementDBAuth && window.SupplementDBAuth.openSignIn()" style="display:none; background: transparent; color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.3); padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.2s;">
+                <i class="fas fa-sign-in-alt" style="margin-right: 0.4rem;"></i>Sign in to Purchase
+            </button>
+        </div>
+    </div>
+</div>
 
 <!-- Share Bar -->
 <div class="share-bar dark-theme" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
@@ -2338,7 +2428,7 @@ function generateGuidePage(guide, allSupplements) {
 </div>
 
 <!-- Trust Signal Bar -->
-<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:0.75rem auto;">
     <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
     <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
@@ -2675,6 +2765,17 @@ function generateGuidePage(guide, allSupplements) {
 // Scroll reveal animation
 document.addEventListener('DOMContentLoaded', function() {
     var reveals = document.querySelectorAll('.reveal');
+
+    // Immediately reveal any sections already in or near the viewport
+    // (prevents blank-page flash on first load / hard refresh)
+    reveals.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100) {
+            el.classList.add('visible');
+        }
+    });
+
+    // Observe remaining hidden sections for scroll-triggered reveal
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -2682,8 +2783,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(function(el) {
+        if (!el.classList.contains('visible')) observer.observe(el);
+    });
 });
 
 // Smooth scroll for anchor links with nav offset
@@ -2809,6 +2912,118 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/rbac.js"></script>
 <script src="../js/auth-ui.js"></script>
 <script src="../js/content-gate.js"></script>
+
+<!-- PDF Purchase CTA Logic -->
+<script>
+(function() {
+    var cta = document.getElementById('guide-pdf-cta');
+    if (!cta) return;
+    var slug = cta.dataset.guideSlug;
+    var purchaseBtn = document.getElementById('pdf-purchase-btn');
+    var downloadBtn = document.getElementById('pdf-download-btn');
+    var signinBtn = document.getElementById('pdf-signin-btn');
+    var sessionId = null;
+
+    function showCta() { cta.style.display = 'block'; }
+
+    function setButtonState(state) {
+        purchaseBtn.style.display = 'none';
+        downloadBtn.style.display = 'none';
+        signinBtn.style.display = 'none';
+        if (state === 'purchase') purchaseBtn.style.display = 'inline-flex';
+        else if (state === 'download') downloadBtn.style.display = 'inline-flex';
+        else if (state === 'signin') signinBtn.style.display = 'inline-flex';
+        showCta();
+    }
+
+    async function checkOwnership() {
+        try {
+            if (!window.SupplementDB || !window.SupplementDB.isInitialized) {
+                await new Promise(function(r) { setTimeout(r, 1500); });
+            }
+            if (!window.SupplementDBAuth || !window.SupplementDBAuth.isSignedIn) {
+                setButtonState('signin');
+                return;
+            }
+            var ownership = await window.SupplementDB.query('guidePurchases:checkGuideOwnership', { guideSlug: slug });
+            if (ownership && ownership.hasPdf) {
+                sessionId = ownership.stripeSessionId;
+                setButtonState('download');
+            } else if (ownership && (ownership.status === 'paid' || ownership.status === 'pdf_generating')) {
+                setButtonState('download');
+                downloadBtn.textContent = 'Processing...';
+                downloadBtn.disabled = true;
+            } else {
+                setButtonState('purchase');
+            }
+        } catch (e) {
+            console.warn('[PDF CTA] Ownership check failed:', e.message);
+            setButtonState('purchase');
+        }
+    }
+
+    // Wait for auth to initialize, then check ownership
+    if (window.SupplementDBAuth && window.SupplementDBAuth.isLoaded) {
+        checkOwnership();
+    } else {
+        document.addEventListener('auth:loaded', function() {
+            checkOwnership();
+        }, { once: true });
+        // Fallback: if auth:loaded never fires within 8s, show signin
+        setTimeout(function() {
+            if (cta.style.display === 'none') {
+                setButtonState('signin');
+            }
+        }, 8000);
+    }
+
+    // Expose handlers globally
+    window.handleGuidePurchase = async function() {
+        purchaseBtn.disabled = true;
+        purchaseBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:0.4rem;"></i>Redirecting...';
+        try {
+            var result = await window.SupplementDB.action('stripe:createGuideCheckoutSession', { guideSlug: slug });
+            if (result && result.url) {
+                window.location.href = result.url;
+            } else {
+                throw new Error('No checkout URL returned');
+            }
+        } catch (e) {
+            purchaseBtn.disabled = false;
+            purchaseBtn.innerHTML = '<i class="fas fa-shopping-cart" style="margin-right:0.4rem;"></i>Get PDF Guide';
+            if (e.message && e.message.includes('Authentication required')) {
+                setButtonState('signin');
+            } else {
+                alert('Unable to start checkout: ' + e.message);
+            }
+        }
+    };
+
+    window.handleGuideDownload = async function() {
+        downloadBtn.disabled = true;
+        downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:0.4rem;"></i>Preparing...';
+        try {
+            var result = await window.SupplementDB.action('guidePurchases:getGuideDownloadUrlBySlug', { guideSlug: slug });
+            if (result && result.url) {
+                var a = document.createElement('a');
+                a.href = result.url;
+                a.download = 'supplementdb-' + (result.guideName || slug) + '.pdf';
+                a.target = '_blank';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                window.location.href = '/guide-success.html?session_id=' + (sessionId || '');
+            }
+        } catch (e) {
+            alert('Download failed: ' + e.message);
+        } finally {
+            downloadBtn.disabled = false;
+            downloadBtn.innerHTML = '<i class="fas fa-download" style="margin-right:0.4rem;"></i>Download PDF';
+        }
+    };
+})();
+</script>
 </body>
 </html>`;
 

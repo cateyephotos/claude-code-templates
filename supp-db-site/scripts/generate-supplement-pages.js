@@ -1,10 +1,27 @@
 #!/usr/bin/env node
 /**
  * generate-supplement-pages.js
- * Auto-generates individual supplement monograph pages from supplements.js data
- * and enhanced citations. Produces 93 deep-dive reference pages.
- * Phase 4 of the SupplementDB content plan.
+ *
+ * ⚠️  DEPRECATED — DO NOT USE FOR MONOGRAPH PAGE GENERATION.
+ *
+ * This script produces the OLD simplified template (external CSS, no progress
+ * track, no numbered sections, no fact-card grid). It was superseded by
+ * seed.js which generates the SETTLED "melatonin design system" theme with
+ * inline CSS, sticky numbered progress track, card-based quick facts, and
+ * section number circles.
+ *
+ * Use instead:
+ *   node seed.js --out supplements/          # regenerate all 93 pages
+ *   node seed.js --slug ashwagandha          # regenerate one page
+ *   npm run generate:supplements             # (now wired to seed.js)
+ *
+ * This file is kept for reference only. Running it will exit with an error.
  */
+
+console.error('ERROR: generate-supplement-pages.js is DEPRECATED.');
+console.error('Use seed.js instead:  node seed.js --out supplements/');
+console.error('Or:                   npm run generate:supplements');
+process.exit(1);
 
 const fs = require('fs');
 const path = require('path');

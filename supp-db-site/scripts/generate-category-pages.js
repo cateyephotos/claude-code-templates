@@ -16,6 +16,52 @@ const {
     groupByCategory
 } = require('./parse-data');
 
+const ENHANCED_DIR = path.join(__dirname, '..', 'data', 'enhanced_citations');
+
+// ── Enhanced Citation Loader (Server-Side) ───────────────────────────────
+
+function loadEnhancedCitation(supplement) {
+    const id = supplement.id;
+    try {
+        if (!fs.existsSync(ENHANCED_DIR)) return null;
+        const files = fs.readdirSync(ENHANCED_DIR);
+        const matchFile = files.find(f => f.startsWith(`${id}_`) && f.endsWith('_enhanced.js'));
+        if (!matchFile) return null;
+
+        const src = fs.readFileSync(path.join(ENHANCED_DIR, matchFile), 'utf8');
+        const window = { enhancedCitations: {} };
+        eval(src);
+
+        if (window.enhancedCitations[id] && (window.enhancedCitations[id].citations || window.enhancedCitations[id].enhancedCitations)) {
+            return window.enhancedCitations[id];
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations && val.supplementId === id) return val;
+        }
+        for (const key of Object.keys(window)) {
+            if (key === 'enhancedCitations') continue;
+            const val = window[key];
+            if (val && typeof val === 'object' && val.citations) return val;
+        }
+        return null;
+    } catch (e) {
+        return null;
+    }
+}
+
+function countSupplementCitations(s) {
+    let count = (s.keyCitations || []).length;
+    const enhanced = loadEnhancedCitation(s);
+    if (enhanced && enhanced.citations) {
+        const cits = enhanced.citations;
+        count += (cits.mechanisms || []).length + (cits.benefits || []).length +
+                 (cits.safety || []).length + (cits.dosage || []).length;
+    }
+    return count;
+}
+
 // ---- Configuration ----
 
 // All normalized categories that should have pillar pages (min 2 supplements)
@@ -129,8 +175,8 @@ function generateCategoryPage(categoryName, supplements) {
     // Average tier
     const avgTier = (sorted.reduce((sum, s) => sum + s.evidenceTier, 0) / count).toFixed(1);
 
-    // Total citations
-    const totalCitations = sorted.reduce((sum, s) => sum + (s.keyCitations?.length || 0), 0);
+    // Total citations — include both keyCitations and enhanced citations
+    const totalCitations = sorted.reduce((sum, s) => sum + countSupplementCitations(s), 0);
 
     // Build supplement table rows
     const tableRows = sorted.map(s => {
@@ -143,7 +189,7 @@ function generateCategoryPage(categoryName, supplements) {
                                 <td><span class="tier-badge tier-badge-${s.evidenceTier}">${getTierLabel(s.evidenceTier)}</span></td>
                                 <td>${benefits.map(b => escHtml(b)).join(', ') || '—'}</td>
                                 <td>${escHtml(s.dosageRange || 'See research')}</td>
-                                <td>${s.keyCitations?.length || 0}</td>
+                                <td>${countSupplementCitations(s)}</td>
                             </tr>`;
     }).join('\n');
 
@@ -162,7 +208,7 @@ function generateCategoryPage(categoryName, supplements) {
                         </div>
                         ${s.scientificName && s.scientificName !== s.name ? `<p style="font-style:italic;color:var(--text-muted);font-size:0.85rem;margin:0 0 0.75rem">${escHtml(s.scientificName)}</p>` : ''}
                         <div class="supplement-card-meta">
-                            <span><i class="fas fa-flask"></i> ${s.keyCitations?.length || 0} citations</span>
+                            <span><i class="fas fa-flask"></i> ${countSupplementCitations(s)} citations</span>
                             <span><i class="fas fa-capsules"></i> ${escHtml(s.dosageRange || 'Varies')}</span>
                             ${s.safetyProfile?.rating ? `<span><i class="fas fa-shield-alt"></i> Safety: ${escHtml(s.safetyProfile.rating)}</span>` : ''}
                         </div>
