@@ -38,7 +38,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/content-gate.css?v=1773633701019">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1773635287767">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -311,6 +311,11 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* First content section visible immediately — no blank-page flash */
+        main > .reveal:first-child {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         a:focus-visible, button:focus-visible, input:focus-visible {
             outline: 2px solid var(--accent-light);
@@ -366,15 +371,15 @@
 </div>
 
 <!-- Hero Section -->
-<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+<header class="hero-section pt-12 pb-8 sm:pt-16 sm:pb-12 px-4 text-center relative">
     <div class="max-w-3xl mx-auto relative z-10">
         <!-- Domain icon -->
-        <div class="domain-icon-glow mb-6 inline-block">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8c0 4 2 8 6 10m6-10c0 4-2 8-6 10m-6 10c0-4 2-8 6-10m6 10c0-4-2-8-6-10" stroke="undefined" stroke-width="1.5" opacity="0.4"/><circle cx="24" cy="18" r="5" stroke="undefined" stroke-width="2" fill="undefined" fill-opacity="0.2"/><circle cx="24" cy="30" r="5" stroke="undefined" stroke-width="2" fill="undefined" fill-opacity="0.2"/><circle cx="24" cy="24" r="3" fill="undefined" fill-opacity="0.4"/></svg>
+        <div class="domain-icon-glow mb-4 inline-block">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8c0 4 2 8 6 10m6-10c0 4-2 8-6 10m-6 10c0-4 2-8 6-10m6 10c0-4-2-8-6-10" stroke="#fcd34d" stroke-width="1.5" opacity="0.4"/><circle cx="24" cy="18" r="5" stroke="#fcd34d" stroke-width="2" fill="#fcd34d" fill-opacity="0.2"/><circle cx="24" cy="30" r="5" stroke="#fcd34d" stroke-width="2" fill="#fcd34d" fill-opacity="0.2"/><circle cx="24" cy="24" r="3" fill="#fcd34d" fill-opacity="0.4"/></svg>
         </div>
 
         <!-- Review badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(217,119,6, 0.12); color: #fcd34d; border: 1px solid rgba(217,119,6, 0.2);">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style="background: rgba(217,119,6, 0.12); color: #fcd34d; border: 1px solid rgba(217,119,6, 0.2);">
             <i class="fas fa-clock text-xs" style="color: #f59e0b; font-size: 0.65rem;"></i>
             Last reviewed: 2026-03-16
         </div>
@@ -383,7 +388,7 @@
             Evidence-Based Supplements for Joint Health &amp; Mobility
         </h1>
 
-        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+        <p class="text-base sm:text-lg mb-4" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
             A systematic review of 13 supplements across 178+ research citations, ranked by evidence strength.
         </p>
 
@@ -437,7 +442,7 @@
 </div>
 
 <!-- Trust Signal Bar -->
-<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:0.75rem auto;">
     <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 178+ Verified Citations</span>
     <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
@@ -1577,6 +1582,17 @@
 // Scroll reveal animation
 document.addEventListener('DOMContentLoaded', function() {
     var reveals = document.querySelectorAll('.reveal');
+
+    // Immediately reveal any sections already in or near the viewport
+    // (prevents blank-page flash on first load / hard refresh)
+    reveals.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100) {
+            el.classList.add('visible');
+        }
+    });
+
+    // Observe remaining hidden sections for scroll-triggered reveal
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -1584,8 +1600,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(function(el) {
+        if (!el.classList.contains('visible')) observer.observe(el);
+    });
 });
 
 // Smooth scroll for anchor links with nav offset

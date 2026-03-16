@@ -1736,8 +1736,8 @@ const DOMAIN_THEMES = {
 };
 
 // ─── Domain SVG Hero Icons ───────────────────────────────────────────────────
-function getDomainHeroIcon(slug, theme) {
-    const c = theme.glow;
+function getDomainHeroIcon(slug, glowColor) {
+    const c = glowColor;
     const icons = {
         'anxiety-stress': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 28c4-8 8-12 12-12s8 4 12 12 8 12 12 12" stroke="${c}" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 24c6-10 12-14 16-14s10 4 16 14" stroke="${c}" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/><circle cx="24" cy="24" r="4" fill="${c}" fill-opacity="0.25"/></svg>`,
         'cognitive-performance': `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6C14 6 6 14 6 24s8 18 18 18 18-8 18-18S34 6 24 6z" stroke="${c}" stroke-width="1.5" fill="none" opacity="0.3"/><path d="M24 10c-2 4-6 6-10 6m10-6c2 4 6 6 10 6M24 38c-2-4-6-6-10-6m10 6c2-4 6-6 10-6" stroke="${c}" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="24" cy="24" r="6" fill="${c}" fill-opacity="0.2"/><circle cx="24" cy="24" r="2" fill="${c}" fill-opacity="0.5"/></svg>`,
@@ -2019,6 +2019,11 @@ function generateGuideCSS(t) {
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
         .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* First content section visible immediately — no blank-page flash */
+        main > .reveal:first-child {
             opacity: 1;
             transform: translateY(0);
         }
@@ -2352,15 +2357,15 @@ function generateGuidePage(guide, allSupplements) {
 </div>
 
 <!-- Hero Section -->
-<header class="hero-section pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 text-center relative">
+<header class="hero-section pt-12 pb-8 sm:pt-16 sm:pb-12 px-4 text-center relative">
     <div class="max-w-3xl mx-auto relative z-10">
         <!-- Domain icon -->
-        <div class="domain-icon-glow mb-6 inline-block">
+        <div class="domain-icon-glow mb-4 inline-block">
             ${heroIcon}
         </div>
 
         <!-- Review badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(${theme.accentRgb}, 0.12); color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.2);">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style="background: rgba(${theme.accentRgb}, 0.12); color: ${theme.glow}; border: 1px solid rgba(${theme.accentRgb}, 0.2);">
             <i class="fas fa-clock text-xs" style="color: ${theme.accentLight}; font-size: 0.65rem;"></i>
             Last reviewed: ${today}
         </div>
@@ -2369,7 +2374,7 @@ function generateGuidePage(guide, allSupplements) {
             ${esc(guide.title)}
         </h1>
 
-        <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
+        <p class="text-base sm:text-lg mb-4" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
             A systematic review of ${filtered.length} supplements across ${totalCitations}+ research citations, ranked by evidence strength.
         </p>
 
@@ -2423,7 +2428,7 @@ function generateGuidePage(guide, allSupplements) {
 </div>
 
 <!-- Trust Signal Bar -->
-<div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
+<div class="trust-bar dark-theme" style="max-width:64rem;margin:0.75rem auto;">
     <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
     <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
@@ -2760,6 +2765,17 @@ function generateGuidePage(guide, allSupplements) {
 // Scroll reveal animation
 document.addEventListener('DOMContentLoaded', function() {
     var reveals = document.querySelectorAll('.reveal');
+
+    // Immediately reveal any sections already in or near the viewport
+    // (prevents blank-page flash on first load / hard refresh)
+    reveals.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100) {
+            el.classList.add('visible');
+        }
+    });
+
+    // Observe remaining hidden sections for scroll-triggered reveal
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -2767,8 +2783,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(function(el) {
+        if (!el.classList.contains('visible')) observer.observe(el);
+    });
 });
 
 // Smooth scroll for anchor links with nav offset
