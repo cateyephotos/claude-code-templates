@@ -100,6 +100,7 @@ emailSubscribers: defineTable({
   ),
   enrolledAt: v.number(),
   nextSendAt: v.number(),            // Unix timestamp ms; when to send next step
+  deferredSince: v.optional(v.number()), // Unix timestamp ms; set when first deferred outside scheduling window; cleared on send
   source: v.string(),                // "event:email_opt_in" | "manual:admin"
 })
 .index("by_sequence", ["sequenceId"])
@@ -165,7 +166,8 @@ At send time, subject/preheader/body fields support `{{variable}}` tokens resolv
 - `createStep` — mutation (admin): appends step with next available `stepIndex`
 - `updateStep` — mutation (admin): update step content/delay/status
 - `deleteStep` — mutation (admin): removes step; reassigns `stepIndex` values for remaining steps
-- `reorderSteps` — mutation (admin): accepts new ordered array of step IDs; atomically reassigns all `stepIndex` values from 0
+- `reorderSteps` — mutation (admin): accepts new ordered array of step IDs; atomically reassigns all `stepIndex` values from 0; **only permitted when sequence `status === "draft"` or `"paused"` — blocked if sequence is "active" with enrolled subscribers to prevent stepIndex shift under active sends**
+- `deleteSequence` — mutation (admin): only allowed if `status === "draft"` AND no `emailSubscribers` records exist for this sequence (guard against manual-enrolled draft subscribers); cascades to delete `emailSteps`, `emailSubscribers`, and `emailEvents` records for this sequence
 - `getSequenceAnalytics` — query (admin): open/click/bounce rates per step; aggregate funnel counts; filtered by time range
 
 **`convex/emailSubscribers.ts`** — Enrollment and progression (mutations and queries only)
@@ -186,6 +188,7 @@ export const triggerEmailQueue = internalMutation({
       .withIndex("by_status_next_send", q =>
         q.eq("status", "active").lte("nextSendAt", now)
       )
+      .order("asc")  // process oldest-due-first to prevent subscriber starvation
       .take(50); // batch size to avoid timeout
     for (const subscriber of due) {
       await ctx.scheduler.runAfter(0, internal.emailCron.processSingleSubscriber, {
@@ -201,13 +204,16 @@ export const processSingleSubscriber = internalAction({
   handler: async (ctx, { subscriberId }) => {
     // 1. Load subscriber + sequence + current step
     // 2. Check smart scheduling: is now within sendTime window? Is today excluded?
-    //    - If outside window AND (now - nextSendAt) < maxDeferHours: reschedule +1hr, return
-    //    - If outside window AND deferred too long: send anyway (failsafe)
+    //    - If outside window:
+    //      a. If deferredSince is null: set deferredSince = now via mutation, reschedule +1hr, return
+    //      b. If (now - deferredSince) < maxDeferHours*3600000: reschedule +1hr, return
+    //      c. If (now - deferredSince) >= maxDeferHours*3600000: send anyway (failsafe), clear deferredSince
+    //    - If inside window: clear deferredSince if set, proceed to send
     // 3. Resolve {{variable}} tokens via ctx.runQuery
-    // 4. Render HTML from body blocks (+ mandatory unsubscribe footer)
+    // 4. Render HTML from body blocks (+ mandatory unsubscribe footer injected last)
     // 5. Send via Resend; receive messageId
-    // 6. ctx.runMutation to: create emailEvents "sent" record with resendMessageId
-    // 7. ctx.runMutation to: advance currentStepIndex or mark "completed"
+    // 6. ctx.runMutation to: create emailEvents "sent" record with resendMessageId; clear deferredSince
+    // 7. ctx.runMutation to: advance currentStepIndex and calculate next nextSendAt, or mark "completed"
   }
 });
 ```
