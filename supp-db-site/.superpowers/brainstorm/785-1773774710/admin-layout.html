@@ -1,0 +1,54 @@
+<h2>Where should Email Sequences live in the admin?</h2>
+<p class="subtitle">Your admin dashboard already has a sidebar with navigation. Pick where the email system fits.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>New Sidebar Section</h3>
+      <p>Add an "Email Campaigns" item to the existing admin sidebar, alongside your current dashboard sections. Clicking it reveals sub-pages: Sequences, Templates, Analytics. Everything stays in one admin shell.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Dedicated Email Tab</h3>
+      <p>Add a top-level tab/icon in the admin header bar. Email management gets its own full-width workspace separate from the analytics dashboard. Like switching between "Analytics" and "Email" modes.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Expandable Sidebar Group</h3>
+      <p>Add a collapsible "Email" group in the sidebar that expands to show: Sequences, Subscribers, Analytics. Keeps the sidebar organized as you add more admin features over time. Most scalable.</p>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 2rem;">
+  <h3>Current Admin Sidebar Reference</h3>
+  <div class="mockup">
+    <div class="mockup-header">Existing Admin Layout</div>
+    <div class="mockup-body" style="display: flex; gap: 0; min-height: 300px;">
+      <div style="width: 220px; background: #f0f0ec; padding: 1.2rem; border-right: 1px solid #ddd; font-size: 0.85rem;">
+        <div style="font-weight: 700; color: #2d5a3d; margin-bottom: 1.2rem; font-size: 1rem;">SupplementDB</div>
+        <div style="padding: 0.5rem 0; color: #2d5a3d; font-weight: 600;">Dashboard</div>
+        <div style="padding: 0.5rem 0; color: #666;">Analytics</div>
+        <div style="padding: 0.5rem 0; color: #666;">Supplements</div>
+        <div style="padding: 0.5rem 0; color: #666;">Users</div>
+        <div style="padding: 0.5rem 0; color: #666;">Settings</div>
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ccc;">
+          <div style="padding: 0.5rem 0; color: #2d5a3d; font-weight: 600; background: #e8f0ea; border-radius: 6px; padding-left: 0.5rem;">
+            <span style="opacity: 0.6;">+ NEW:</span> Email Campaigns
+          </div>
+          <div style="padding: 0.3rem 0 0.3rem 1.2rem; color: #888; font-size: 0.8rem;">Sequences</div>
+          <div style="padding: 0.3rem 0 0.3rem 1.2rem; color: #888; font-size: 0.8rem;">Subscribers</div>
+          <div style="padding: 0.3rem 0 0.3rem 1.2rem; color: #888; font-size: 0.8rem;">Analytics</div>
+        </div>
+      </div>
+      <div style="flex: 1; padding: 1.5rem; display: flex; align-items: center; justify-content: center; color: #999;">
+        Main content area
+      </div>
+    </div>
+  </div>
+</div>

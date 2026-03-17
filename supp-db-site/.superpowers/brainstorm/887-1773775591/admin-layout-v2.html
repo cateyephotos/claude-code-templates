@@ -1,0 +1,75 @@
+<h2>Where should Email Sequences live in the admin?</h2>
+<p class="subtitle">Click an option to see its mockup. Your admin already has a sidebar with navigation.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this); showMockup('a')">
+    <div class="card-image" style="aspect-ratio: 16/8; padding: 0.75rem; background: var(--bg-tertiary);">
+      <div style="display: flex; height: 100%; width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); font-size: 0.65rem;">
+        <div style="width: 130px; background: #f0f0ec; padding: 0.5rem; border-right: 1px solid #ddd;">
+          <div style="font-weight: 700; color: #2d5a3d; margin-bottom: 0.5rem; font-size: 0.7rem;">SupplementDB</div>
+          <div style="padding: 0.2rem 0; color: #666;">Dashboard</div>
+          <div style="padding: 0.2rem 0; color: #666;">Analytics</div>
+          <div style="padding: 0.2rem 0; color: #666;">Supplements</div>
+          <div style="padding: 0.2rem 0; color: #666;">Users</div>
+          <div style="border-top: 1px solid #ccc; margin-top: 0.4rem; padding-top: 0.4rem;">
+            <div style="color: #2d5a3d; font-weight: 600; background: #e8f0ea; border-radius: 4px; padding: 0.15rem 0.3rem;">Email Campaigns</div>
+          </div>
+        </div>
+        <div style="flex: 1; padding: 0.5rem; color: #999; display: flex; align-items: center; justify-content: center;">Sequences list</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: New Sidebar Item</h3>
+      <p>Add "Email Campaigns" as a flat item in the existing sidebar. Simple, one level.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this); showMockup('b')">
+    <div class="card-image" style="aspect-ratio: 16/8; padding: 0.75rem; background: var(--bg-tertiary);">
+      <div style="display: flex; flex-direction: column; height: 100%; width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); font-size: 0.65rem;">
+        <div style="display: flex; background: #fafaf8; border-bottom: 1px solid #ddd; padding: 0.3rem 0.5rem; gap: 0.75rem;">
+          <div style="font-weight: 700; color: #2d5a3d; font-size: 0.7rem;">SupplementDB</div>
+          <div style="color: #666; padding: 0.1rem 0.4rem; border-bottom: 2px solid transparent;">Analytics</div>
+          <div style="color: #2d5a3d; font-weight: 600; padding: 0.1rem 0.4rem; border-bottom: 2px solid #2d5a3d; background: #e8f0ea; border-radius: 4px 4px 0 0;">Email</div>
+          <div style="color: #666; padding: 0.1rem 0.4rem;">Settings</div>
+        </div>
+        <div style="flex: 1; padding: 0.5rem; color: #999; display: flex; align-items: center; justify-content: center;">Full-width email workspace</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Dedicated Header Tab</h3>
+      <p>Top-level tab in header bar. Email gets its own full-width workspace, separate from sidebar.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this); showMockup('c')">
+    <div class="card-image" style="aspect-ratio: 16/8; padding: 0.75rem; background: var(--bg-tertiary);">
+      <div style="display: flex; height: 100%; width: 100%; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); font-size: 0.65rem;">
+        <div style="width: 130px; background: #f0f0ec; padding: 0.5rem; border-right: 1px solid #ddd;">
+          <div style="font-weight: 700; color: #2d5a3d; margin-bottom: 0.5rem; font-size: 0.7rem;">SupplementDB</div>
+          <div style="padding: 0.2rem 0; color: #666;">Dashboard</div>
+          <div style="padding: 0.2rem 0; color: #666;">Analytics</div>
+          <div style="border-top: 1px solid #ccc; margin-top: 0.3rem; padding-top: 0.3rem;">
+            <div style="color: #2d5a3d; font-weight: 600;">Email &#9662;</div>
+            <div style="padding-left: 0.5rem; color: #888; font-size: 0.6rem;">
+              <div style="padding: 0.15rem 0;">Sequences</div>
+              <div style="padding: 0.15rem 0; background: #e8f0ea; border-radius: 3px; padding-left: 0.3rem;">Subscribers</div>
+              <div style="padding: 0.15rem 0;">Analytics</div>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1; padding: 0.5rem; color: #999; display: flex; align-items: center; justify-content: center;">Subscriber list</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Expandable Sidebar Group</h3>
+      <p>Collapsible "Email" group with sub-items: Sequences, Subscribers, Analytics. Most scalable.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showMockup(choice) {
+  // Visual feedback is handled by toggleSelect; this is a hook for future detail panels
+}
+</script>
