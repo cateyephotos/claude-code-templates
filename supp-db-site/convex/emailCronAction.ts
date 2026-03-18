@@ -109,3 +109,188 @@ export const sendTestEmailAction = internalAction({
     }
   },
 });
+
+// ── Next Send Time Calculator ────────────────────────────────
+
+function calculateNextSendAt(
+  delayDays: number,
+  sendTime: { hour: number; minute: number; timezone: string },
+  excludeDays: string[]
+): number {
+  const now = new Date();
+  const target = new Date(now);
+  target.setDate(target.getDate() + delayDays);
+
+  const tzOffsets: Record<string, number> = {
+    "America/New_York": -5, "America/Chicago": -6,
+    "America/Denver": -7, "America/Los_Angeles": -8, "UTC": 0,
+  };
+  const offset = tzOffsets[sendTime.timezone] ?? -5;
+  target.setUTCHours(sendTime.hour - offset, sendTime.minute, 0, 0);
+
+  if (target.getTime() <= now.getTime() && delayDays === 0) {
+    target.setDate(target.getDate() + 1);
+  }
+
+  const dayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  let attempts = 0;
+  while (excludeDays.includes(dayNames[target.getUTCDay()]) && attempts < 7) {
+    target.setDate(target.getDate() + 1);
+    attempts++;
+  }
+  return target.getTime();
+}
+
+// ── Sequence Queue Processor ─────────────────────────────────
+
+export const processSingleSubscriber = internalAction({
+  args: { subscriberId: v.id("emailSubscribers") },
+  handler: async (ctx, { subscriberId }) => {
+    // 1. Load subscriber
+    const subscriber = await ctx.runQuery(internal.emailCron.getSubscriberData, { subscriberId });
+    if (!subscriber || subscriber.status !== "active") return;
+
+    const { sequence, step, newsletterSub } = subscriber;
+    if (!sequence || !step) {
+      console.error(`Missing sequence/step for subscriber ${subscriberId}`);
+      return;
+    }
+
+    // Check if sequence is still active
+    if (sequence.status !== "active") return;
+
+    // Check if newsletter subscriber is unsubscribed (canonical authority)
+    if (newsletterSub?.status === "unsubscribed") {
+      await ctx.runMutation(internal.emailSubscribers.unenrollSubscriber, {
+        subscriberId,
+        reason: "unsubscribed",
+      });
+      return;
+    }
+
+    // 2. Smart scheduling check
+    const now = Date.now();
+    const dayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    const currentDay = dayNames[new Date().getUTCDay()];
+
+    const tzOffsets: Record<string, number> = {
+      "America/New_York": -5,
+      "America/Chicago": -6,
+      "America/Denver": -7,
+      "America/Los_Angeles": -8,
+      "UTC": 0,
+    };
+    const offset = tzOffsets[sequence.sendTime.timezone] ?? -5;
+    const localHour = (new Date().getUTCHours() + offset + 24) % 24;
+
+    const isExcludedDay = sequence.excludeDays.includes(currentDay);
+    const isOutsideWindow = localHour < sequence.sendTime.hour || localHour > sequence.sendTime.hour + 2;
+
+    if (isExcludedDay || isOutsideWindow) {
+      const deferredSince = subscriber.deferredSince;
+      const maxDeferMs = sequence.maxDeferHours * 60 * 60 * 1000;
+
+      if (!deferredSince) {
+        await ctx.runMutation(internal.emailCron.updateDeferral, {
+          subscriberId,
+          deferredSince: now,
+          nextSendAt: now + 60 * 60 * 1000,
+        });
+        return;
+      }
+
+      if (now - deferredSince < maxDeferMs) {
+        await ctx.runMutation(internal.emailCron.updateDeferral, {
+          subscriberId,
+          deferredSince,
+          nextSendAt: now + 60 * 60 * 1000,
+        });
+        return;
+      }
+
+      console.log(`Failsafe: subscriber ${subscriberId} exceeded maxDeferHours, sending anyway`);
+    }
+
+    // 3. Resolve {{variable}} tokens
+    const siteConfig = await ctx.runQuery(internal.siteConfig.getAll, {});
+    const siteUrl = process.env.SITE_URL || "http://localhost:8080";
+
+    let unsubscribeUrl = `${siteUrl}/unsubscribe.html`;
+    if (newsletterSub?.unsubscribeToken) {
+      unsubscribeUrl += `?token=${newsletterSub.unsubscribeToken}`;
+    }
+
+    const variables: Record<string, string> = {
+      supplement_count: siteConfig.supplementCount || "90+",
+      paper_count: siteConfig.paperCount || "400+",
+      evidence_tier_count: siteConfig.evidenceTierCount || "4",
+      current_year: new Date().getFullYear().toString(),
+      user_name: subscriber.email.split("@")[0],
+      unsubscribe_url: unsubscribeUrl,
+      site_url: siteUrl,
+    };
+
+    // 4. Render HTML
+    const subject = resolveVariables(step.subject, variables);
+    const html = renderEmailHtml(step.bodyBlocks, variables, unsubscribeUrl);
+
+    // 5. Send via Resend
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY not set, skipping email send");
+      return;
+    }
+
+    const resend = new Resend(apiKey);
+    const fromAddress = process.env.RESEND_FROM_ADDRESS || "SupplementDB <onboarding@resend.dev>";
+
+    try {
+      const { data, error } = await resend.emails.send({
+        from: fromAddress,
+        to: [subscriber.email],
+        subject,
+        html,
+      });
+
+      if (error) {
+        console.error(`Failed to send email to ${subscriber.email}:`, error);
+        return;
+      }
+
+      const messageId = data?.id || "unknown";
+      console.log(`Sequence email sent to ${subscriber.email} (step ${step.stepIndex}, msgId: ${messageId})`);
+
+      // 6. Record sent event
+      await ctx.runMutation(internal.emailCron.recordSentEvent, {
+        subscriberId,
+        stepId: step._id,
+        sequenceId: sequence._id,
+        resendMessageId: messageId,
+      });
+
+      // 7. Advance to next step or mark completed
+      const allSteps = await ctx.runQuery(internal.emailCron.getSequenceSteps, {
+        sequenceId: sequence._id,
+      });
+      const nextStep = allSteps.find((s: any) => s.stepIndex === step.stepIndex + 1 && s.status === "active");
+
+      if (nextStep) {
+        const nextSendAt = calculateNextSendAt(nextStep.delayDays, sequence.sendTime, sequence.excludeDays);
+        await ctx.runMutation(internal.emailCron.advanceSubscriber, {
+          subscriberId,
+          nextStepIndex: nextStep.stepIndex,
+          nextSendAt,
+          completed: false,
+        });
+      } else {
+        await ctx.runMutation(internal.emailCron.advanceSubscriber, {
+          subscriberId,
+          nextStepIndex: step.stepIndex + 1,
+          completed: true,
+        });
+      }
+    } catch (err) {
+      console.error(`Error sending email to ${subscriber.email}:`, err);
+    }
+  },
+});
