@@ -10,18 +10,25 @@ const http = httpRouter();
  * Receives user.created, user.updated, user.deleted events from Clerk.
  *
  * Setup: In Clerk Dashboard → Webhooks → Add Endpoint:
- *   URL: https://robust-frog-754.convex.cloud/clerk-webhook
+ *   URL: <your-convex-site-url>/clerk-webhook
  *   Events: user.created, user.updated, user.deleted
  *
- * For production, validate the Svix signature using the webhook secret.
- * Svix verification requires the svix npm package in a Convex action,
- * but for the initial setup we use a simplified approach.
+ * Requires CLERK_WEBHOOK_SECRET environment variable (the Svix signing secret
+ * from the Clerk Dashboard webhook endpoint settings).
+ * Verifies HMAC-SHA256 signature to prevent unauthorized requests.
  */
 http.route({
   path: "/clerk-webhook",
   method: "POST",
   handler: httpAction(async (ctx, request) => {
-    // Get the Svix headers for signature verification
+    // 1. Require webhook secret
+    const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
+    if (!webhookSecret) {
+      console.error("CLERK_WEBHOOK_SECRET not configured");
+      return new Response("Webhook secret not configured", { status: 500 });
+    }
+
+    // 2. Get the Svix headers for signature verification
     const svixId = request.headers.get("svix-id");
     const svixTimestamp = request.headers.get("svix-timestamp");
     const svixSignature = request.headers.get("svix-signature");
@@ -30,9 +37,45 @@ http.route({
       return new Response("Missing Svix headers", { status: 400 });
     }
 
+    // 3. Read raw body for signature verification
+    const rawBody = await request.text();
+
+    // 4. Verify timestamp is within tolerance (5 minutes)
+    const timestampSec = parseInt(svixTimestamp, 10);
+    const nowSec = Math.floor(Date.now() / 1000);
+    if (Math.abs(nowSec - timestampSec) > 300) {
+      return new Response("Webhook timestamp too old", { status: 400 });
+    }
+
+    // 5. Verify HMAC signature (Svix uses base64-encoded HMAC-SHA256)
+    // The signing content is: "{svix-id}.{svix-timestamp}.{body}"
+    const signContent = `${svixId}.${svixTimestamp}.${rawBody}`;
+    // Svix secret is base64-encoded with "whsec_" prefix
+    const secretBytes = atob(webhookSecret.replace("whsec_", ""));
+    const encoder = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      "raw",
+      encoder.encode(secretBytes),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["sign"]
+    );
+    const signatureBytes = await crypto.subtle.sign("HMAC", key, encoder.encode(signContent));
+    const expectedSig = btoa(String.fromCharCode(...new Uint8Array(signatureBytes)));
+
+    // Svix sends multiple signatures separated by spaces in "v1,{sig}" format
+    const providedSigs = svixSignature.split(" ").map((s: string) => s.replace("v1,", ""));
+    const isValid = providedSigs.some((sig: string) => sig === expectedSig);
+
+    if (!isValid) {
+      console.error("Clerk webhook signature verification failed");
+      return new Response("Invalid signature", { status: 401 });
+    }
+
+    // 6. Parse the verified body
     let body: any;
     try {
-      body = await request.json();
+      body = JSON.parse(rawBody);
     } catch {
       return new Response("Invalid JSON body", { status: 400 });
     }
