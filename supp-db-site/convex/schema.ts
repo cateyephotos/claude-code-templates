@@ -220,4 +220,98 @@ export default defineSchema({
     sentAt: v.number(),
   })
     .index("by_userId", ["userId"]),
+
+  // ── Email Sequence System ──────────────────────────────────
+
+  // Email sequences (campaigns)
+  emailSequences: defineTable({
+    name: v.string(),
+    description: v.string(),
+    trigger: v.object({
+      type: v.union(v.literal("event"), v.literal("manual"), v.literal("both")),
+      event: v.optional(v.string()),
+    }),
+    status: v.union(v.literal("draft"), v.literal("active"), v.literal("paused")),
+    sendTime: v.object({
+      hour: v.number(),
+      minute: v.number(),
+      timezone: v.string(),
+    }),
+    excludeDays: v.array(v.string()),
+    maxDeferHours: v.number(),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  }),
+
+  // Email steps within a sequence
+  emailSteps: defineTable({
+    sequenceId: v.id("emailSequences"),
+    stepIndex: v.number(),
+    subject: v.string(),
+    preheader: v.string(),
+    bodyBlocks: v.array(v.object({
+      type: v.union(v.literal("text"), v.literal("cta"), v.literal("divider")),
+      content: v.optional(v.string()),
+      label: v.optional(v.string()),
+      url: v.optional(v.string()),
+    })),
+    delayDays: v.number(),
+    status: v.union(v.literal("active"), v.literal("disabled")),
+  })
+    .index("by_sequence", ["sequenceId", "stepIndex"]),
+
+  // Subscribers enrolled in email sequences
+  emailSubscribers: defineTable({
+    email: v.string(),
+    newsletterSubscriberId: v.optional(v.id("newsletterSubscribers")),
+    sequenceId: v.id("emailSequences"),
+    currentStepIndex: v.number(),
+    status: v.union(
+      v.literal("active"),
+      v.literal("completed"),
+      v.literal("unsubscribed"),
+      v.literal("paused")
+    ),
+    enrolledAt: v.number(),
+    nextSendAt: v.number(),
+    deferredSince: v.optional(v.number()),
+    source: v.string(),
+  })
+    .index("by_sequence", ["sequenceId"])
+    .index("by_status_next_send", ["status", "nextSendAt"])
+    .index("by_email_sequence", ["email", "sequenceId"])
+    .index("by_email", ["email"]),
+
+  // Email delivery/engagement events from Resend webhooks
+  emailEvents: defineTable({
+    subscriberId: v.id("emailSubscribers"),
+    stepId: v.id("emailSteps"),
+    sequenceId: v.id("emailSequences"),
+    resendMessageId: v.string(),
+    type: v.union(
+      v.literal("sent"),
+      v.literal("delivered"),
+      v.literal("opened"),
+      v.literal("clicked"),
+      v.literal("bounced"),
+      v.literal("unsubscribed")
+    ),
+    metadata: v.optional(v.object({
+      link: v.optional(v.string()),
+    })),
+    timestamp: v.number(),
+  })
+    .index("by_subscriber", ["subscriberId"])
+    .index("by_step", ["stepId"])
+    .index("by_sequence_type", ["sequenceId", "type"])
+    .index("by_resend_message_id", ["resendMessageId"]),
+
+  // Site-wide configuration for dynamic email variables
+  siteConfig: defineTable({
+    key: v.string(),
+    value: v.string(),
+    updatedAt: v.number(),
+    updatedBy: v.string(),
+  })
+    .index("by_key", ["key"]),
 });
