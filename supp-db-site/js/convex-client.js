@@ -21,9 +21,10 @@
   if (window.__CLERK_MOCK__) return;
 
   // ── Configuration ──────────────────────────────────────────────
-  const CONVEX_URL =
+  const CONVEX_URL = (
     document.querySelector('meta[name="convex-url"]')?.content ||
-    "__CONVEX_URL__";
+    "__CONVEX_URL__"
+  ).trim();
 
   // ── State ──────────────────────────────────────────────────────
   let client = null;
