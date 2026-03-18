@@ -110,6 +110,60 @@ export const sendTestEmailAction = internalAction({
   },
 });
 
+// ── DST-Aware Timezone Offset ────────────────────────────────
+
+/**
+ * Get UTC offset in hours for a timezone on a specific date (DST-aware).
+ * Uses Intl.DateTimeFormat which is available in both Convex serverless and Node.js.
+ * Returns negative values for west of UTC (e.g., -5 for EST, -4 for EDT).
+ */
+function getTimezoneOffset(timezone: string, date: Date): number {
+  try {
+    const targetFormatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: timezone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+    const utcFormatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "UTC",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+
+    const targetParts = targetFormatter.formatToParts(date);
+    const utcParts = utcFormatter.formatToParts(date);
+
+    const getValue = (parts: Intl.DateTimeFormatPart[], type: string): number =>
+      parseInt(parts.find((p) => p.type === type)?.value || "0", 10);
+
+    const targetHour = getValue(targetParts, "hour");
+    const utcHour = getValue(utcParts, "hour");
+    const targetDay = getValue(targetParts, "day");
+    const utcDay = getValue(utcParts, "day");
+
+    // Calculate hour difference, accounting for day boundary
+    let hourDiff = targetHour - utcHour;
+    if (targetDay > utcDay) hourDiff += 24;
+    if (targetDay < utcDay) hourDiff -= 24;
+
+    // Return as negative offset for west-of-UTC (e.g., EST = -5, EDT = -4)
+    return -hourDiff;
+  } catch {
+    // Fallback to EST if timezone not recognized
+    return -5;
+  }
+}
+
 // ── Next Send Time Calculator ────────────────────────────────
 
 function calculateNextSendAt(
@@ -121,11 +175,11 @@ function calculateNextSendAt(
   const target = new Date(now);
   target.setDate(target.getDate() + delayDays);
 
-  const tzOffsets: Record<string, number> = {
-    "America/New_York": -5, "America/Chicago": -6,
-    "America/Denver": -7, "America/Los_Angeles": -8, "UTC": 0,
-  };
-  const offset = tzOffsets[sendTime.timezone] ?? -5;
+  // Get the real UTC offset for the target date in the given timezone (DST-aware)
+  const offset = getTimezoneOffset(sendTime.timezone, target);
+
+  // Set hours in UTC equivalent of the target timezone
+  // e.g., 9 AM EST (offset=-5): 9 - (-5) = 14 UTC
   target.setUTCHours(sendTime.hour - offset, sendTime.minute, 0, 0);
 
   if (target.getTime() <= now.getTime() && delayDays === 0) {
@@ -173,14 +227,7 @@ export const processSingleSubscriber = internalAction({
     const dayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const currentDay = dayNames[new Date().getUTCDay()];
 
-    const tzOffsets: Record<string, number> = {
-      "America/New_York": -5,
-      "America/Chicago": -6,
-      "America/Denver": -7,
-      "America/Los_Angeles": -8,
-      "UTC": 0,
-    };
-    const offset = tzOffsets[sequence.sendTime.timezone] ?? -5;
+    const offset = getTimezoneOffset(sequence.sendTime.timezone, new Date());
     const localHour = (new Date().getUTCHours() + offset + 24) % 24;
 
     const isExcludedDay = sequence.excludeDays.includes(currentDay);
