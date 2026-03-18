@@ -1,4 +1,4 @@
-import { query, mutation, internalQuery } from "./_generated/server";
+import { query, mutation, internalQuery, internalMutation } from "./_generated/server";
 import { v } from "convex/values";
 import { requireAdmin } from "./auth";
 
@@ -60,5 +60,33 @@ export const set = mutation({
       updatedAt: now,
       updatedBy: admin.clerkId,
     });
+  },
+});
+
+// Internal mutation for CLI seeding (no admin auth required)
+export const seedDefaults = internalMutation({
+  args: {},
+  handler: async (ctx) => {
+    const defaults: Record<string, string> = {
+      supplementCount: "93",
+      paperCount: "471",
+      evidenceTierCount: "4",
+    };
+
+    for (const [key, value] of Object.entries(defaults)) {
+      const existing = await ctx.db
+        .query("siteConfig")
+        .withIndex("by_key", (q) => q.eq("key", key))
+        .first();
+      if (!existing) {
+        await ctx.db.insert("siteConfig", {
+          key,
+          value,
+          updatedAt: Date.now(),
+          updatedBy: "system:seed",
+        });
+      }
+    }
+    console.log("siteConfig defaults seeded");
   },
 });
