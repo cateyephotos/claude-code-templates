@@ -254,7 +254,7 @@ export const sendGuideDownloadEmail = internalAction({
         console.log(`Guide download email sent to ${args.email} for ${args.guideSlug} (id: ${data?.id})`);
 
         // Enroll in pdf_purchase sequences
-        if (data?.id) {
+        if (!error) {
           try {
             const sequences = await ctx.runQuery(internal.emailCron.getActiveSequencesByEvent, {
               event: "pdf_purchase",
@@ -384,7 +384,7 @@ export const sendWelcomeEmail = internalAction({
         console.log(`Welcome email sent to ${args.email} (id: ${data?.id})`);
 
         // Enroll in email_opt_in sequences
-        if (data?.id) {
+        if (!error) {
           try {
             const sequences = await ctx.runQuery(internal.emailCron.getActiveSequencesByEvent, {
               event: "email_opt_in",

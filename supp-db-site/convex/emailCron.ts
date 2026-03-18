@@ -158,6 +158,15 @@ export const processWebhookEvent = internalMutation({
     timestamp: v.number(),
   },
   handler: async (ctx, args) => {
+    // Validate eventType against allowed union before inserting
+    const allowedTypes = ["sent", "delivered", "opened", "clicked", "bounced", "unsubscribed"] as const;
+    type EmailEventType = (typeof allowedTypes)[number];
+    if (!allowedTypes.includes(args.eventType as EmailEventType)) {
+      console.warn(`Webhook: unknown event type "${args.eventType}", skipping`);
+      return;
+    }
+    const validatedType = args.eventType as EmailEventType;
+
     // Find the original "sent" event by resendMessageId
     const sentEvent = await ctx.db
       .query("emailEvents")
@@ -175,7 +184,7 @@ export const processWebhookEvent = internalMutation({
       stepId: sentEvent.stepId,
       sequenceId: sentEvent.sequenceId,
       resendMessageId: args.resendMessageId,
-      type: args.eventType as any,
+      type: validatedType,
       metadata: args.link ? { link: args.link } : undefined,
       timestamp: args.timestamp,
     });

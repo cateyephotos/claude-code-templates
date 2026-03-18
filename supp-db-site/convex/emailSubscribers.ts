@@ -78,7 +78,7 @@ export const enrollSubscriber = internalMutation({
         q.eq("email", email).eq("sequenceId", args.sequenceId)
       )
       .first();
-    if (existing && (existing.status === "active" || existing.status === "completed")) {
+    if (existing && (existing.status === "active" || existing.status === "completed" || existing.status === "paused")) {
       return { status: "already_enrolled" as const, subscriberId: existing._id };
     }
 
@@ -157,7 +157,8 @@ export const manualEnroll = mutation({
 
     for (const rawEmail of args.emails) {
       const email = rawEmail.trim().toLowerCase();
-      if (!email || !email.includes("@")) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
         results.push({ email: rawEmail, status: "invalid_email" });
         continue;
       }
@@ -170,7 +171,7 @@ export const manualEnroll = mutation({
         )
         .first();
 
-      if (existing && (existing.status === "active" || existing.status === "completed")) {
+      if (existing && (existing.status === "active" || existing.status === "completed" || existing.status === "paused")) {
         results.push({ email, status: "already_enrolled" });
         continue;
       }
