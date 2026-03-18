@@ -115,9 +115,16 @@ export const hasCreditsAvailable = query({
 // ── Mutations ──────────────────────────────────────────────────
 
 /**
- * Consume credits for an analysis. Called after a successful Stack Analyzer run.
+ * Consume credits for an analysis. Called before the Claude API call.
  * Single-goal analysis: 1 credit
  * Dual-goal analysis: 2 credits (1 base + 1 surcharge)
+ *
+ * Race condition safety: Convex mutations are transactional — each mutation sees
+ * a consistent snapshot and writes are serialized. Two concurrent consumeCredit
+ * calls for the same user will be serialized by Convex's OCC (optimistic
+ * concurrency control). If a conflict is detected, Convex automatically retries
+ * the mutation with a fresh read, so double-consumption cannot occur.
+ *
  * Returns the updated credit info or throws if insufficient credits remain.
  */
 export const consumeCredit = mutation({
@@ -139,7 +146,13 @@ export const consumeCredit = mutation({
 
     if (!record) {
       // First use — initialize with free tier
-      const newRecord = await ctx.db.insert("analysisCredits", {
+      // Cost check: even first-time users must have enough credits
+      if (cost > CREDIT_LIMITS.free) {
+        throw new Error(
+          `Insufficient credits. This analysis costs ${cost} credits but free tier only allows ${CREDIT_LIMITS.free}.`
+        );
+      }
+      await ctx.db.insert("analysisCredits", {
         userId: args.userId,
         tier: "free",
         monthlyLimit: CREDIT_LIMITS.free,
@@ -183,6 +196,8 @@ export const consumeCredit = mutation({
     }
 
     // Consume credit(s)
+    // Convex OCC ensures this patch is atomic — if another mutation modified
+    // this record concurrently, Convex will retry this mutation with fresh data.
     const newUsed = used + cost;
     const newTotal = record.totalAnalyses + 1;
 

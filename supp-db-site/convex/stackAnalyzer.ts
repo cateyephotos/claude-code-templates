@@ -253,8 +253,9 @@ Evaluate this stack for the specified health goal(s). Assess synergies, redundan
 
 // ── Token Cost Estimation ──────────────────────────────────────
 
-const HAIKU_INPUT_COST = 1.0 / 1_000_000; // $1 per 1M input tokens
-const HAIKU_OUTPUT_COST = 5.0 / 1_000_000; // $5 per 1M output tokens
+// Anthropic Haiku 4.5 pricing (as of 2025-Q1)
+const HAIKU_INPUT_COST = 0.80 / 1_000_000; // $0.80 per 1M input tokens
+const HAIKU_OUTPUT_COST = 4.0 / 1_000_000;  // $4.00 per 1M output tokens
 
 function estimateCost(inputTokens: number, outputTokens: number): number {
   return inputTokens * HAIKU_INPUT_COST + outputTokens * HAIKU_OUTPUT_COST;
@@ -276,6 +277,26 @@ const MAX_TOKENS_DUAL_GOAL = {
 function getMaxTokens(depth: string, goalCount: number): number {
   const table = goalCount > 1 ? MAX_TOKENS_DUAL_GOAL : MAX_TOKENS_BY_DEPTH;
   return table[depth as keyof typeof table] || MAX_TOKENS_BY_DEPTH.standard;
+}
+
+// ── Input Token Estimation ────────────────────────────────────
+// Rough estimate: ~4 chars per token for English text (conservative)
+const CHARS_PER_TOKEN = 4;
+const MAX_INPUT_TOKENS = 8000; // Leave headroom in Haiku's 200k context
+
+function estimateInputTokens(systemPrompt: string, userMessage: string): number {
+  const totalChars = systemPrompt.length + userMessage.length;
+  return Math.ceil(totalChars / CHARS_PER_TOKEN);
+}
+
+// ── Supplement Deduplication ──────────────────────────────────
+function deduplicateSupplements<T extends { id: number }>(supplements: T[]): T[] {
+  const seen = new Set<number>();
+  return supplements.filter((s) => {
+    if (seen.has(s.id)) return false;
+    seen.add(s.id);
+    return true;
+  });
 }
 
 // ── Main Action ────────────────────────────────────────────────
@@ -317,13 +338,20 @@ export const analyzeStack = action({
 
     const clerkId = identity.subject;
 
-    // ── Input Validation ────────────────────────────────────
-    if (args.supplements.length < 2) {
+    // ── Input Validation + Deduplication ─────────────────────
+    const supplements = deduplicateSupplements(args.supplements);
+    if (supplements.length < 2) {
       throw new Error("Please select at least 2 supplements to analyze.");
     }
-    if (args.supplements.length > 15) {
+    if (supplements.length > 15) {
       throw new Error("Maximum 15 supplements per analysis. Please reduce your selection.");
     }
+    // Truncate excessive mechanisms to prevent token bloat (max 8 per supplement)
+    const sanitizedSupplements = supplements.map((s) => ({
+      ...s,
+      mechanisms: s.mechanisms.slice(0, 8),
+    }));
+
     if (args.healthGoals.length < 1) {
       throw new Error("Please select at least one health goal.");
     }
@@ -359,28 +387,43 @@ export const analyzeStack = action({
 
     const systemPrompt = buildSystemPrompt(args.depth, goalCount);
     const userMessage = buildUserMessage(
-      args.supplements,
+      sanitizedSupplements,
       args.healthGoals,
       args.depth
     );
 
+    // ── Input Token Estimation Check ────────────────────────
+    const estimatedInput = estimateInputTokens(systemPrompt, userMessage);
+    if (estimatedInput > MAX_INPUT_TOKENS) {
+      throw new Error(
+        `This stack is too large for analysis (~${estimatedInput.toLocaleString()} input tokens). ` +
+        `Please reduce to fewer supplements or select supplements with fewer mechanisms.`
+      );
+    }
+
     const maxTokens = getMaxTokens(args.depth, goalCount);
 
-    // ── Call Claude API ─────────────────────────────────────
+    // ── Call Claude API with tool_use for structured output ─
     let response;
     try {
       response = await claude.messages.create({
         model,
         max_tokens: maxTokens,
-        system: systemPrompt,
+        system: systemPrompt + "\n\nYou MUST call the `stack_analysis` tool with your complete analysis. Do NOT respond with plain text.",
         messages: [
           {
             role: "user",
             content: userMessage,
           },
         ],
-        // Structured output via JSON schema
-        // This guarantees valid JSON matching our schema
+        tools: [
+          {
+            name: "stack_analysis",
+            description: "Submit the complete supplement stack analysis with structured data for all sections.",
+            input_schema: STACK_ANALYSIS_SCHEMA,
+          },
+        ],
+        tool_choice: { type: "tool", name: "stack_analysis" },
       });
     } catch (error: any) {
       // Handle specific Anthropic API errors
@@ -393,39 +436,46 @@ export const analyzeStack = action({
       if (error?.status === 400) {
         throw new Error("Invalid analysis request. Please try different supplement selections.");
       }
+      if (error?.status === 500 || error?.status === 503) {
+        throw new Error("Analysis service is temporarily unavailable. Please try again in a few minutes.");
+      }
       throw new Error("Analysis failed. Please try again. If this persists, contact support.");
     }
 
-    // ── Parse Response ──────────────────────────────────────
-    const textBlock = response.content.find((block: any) => block.type === "text");
-    if (!textBlock || textBlock.type !== "text") {
-      throw new Error("Analysis produced no results. Please try again.");
-    }
-
+    // ── Extract Structured Tool Output ──────────────────────
+    // With tool_choice forcing tool use, the response contains a tool_use block
+    const toolBlock = response.content.find((block: any) => block.type === "tool_use");
     let analysis;
-    try {
-      // Claude should return JSON — extract it from the response text
-      const text = textBlock.text;
-      // Try to parse the entire response as JSON first
+
+    if (toolBlock && toolBlock.type === "tool_use") {
+      // Structured output — guaranteed valid JSON matching our schema
+      analysis = toolBlock.input;
+    } else {
+      // Fallback: try text-based extraction (legacy compatibility)
+      const textBlock = response.content.find((block: any) => block.type === "text");
+      if (!textBlock || textBlock.type !== "text") {
+        throw new Error("Analysis produced no results. Please try again.");
+      }
       try {
-        analysis = JSON.parse(text);
-      } catch {
-        // If that fails, extract JSON from markdown code blocks
-        const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-        if (jsonMatch) {
-          analysis = JSON.parse(jsonMatch[1].trim());
-        } else {
-          // Try to find a JSON object in the text
-          const objMatch = text.match(/\{[\s\S]*\}/);
-          if (objMatch) {
-            analysis = JSON.parse(objMatch[0]);
+        const text = textBlock.text;
+        try {
+          analysis = JSON.parse(text);
+        } catch {
+          const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+          if (jsonMatch) {
+            analysis = JSON.parse(jsonMatch[1].trim());
           } else {
-            throw new Error("Could not parse analysis result");
+            const objMatch = text.match(/\{[\s\S]*\}/);
+            if (objMatch) {
+              analysis = JSON.parse(objMatch[0]);
+            } else {
+              throw new Error("Could not parse analysis result");
+            }
           }
         }
+      } catch (parseError) {
+        throw new Error("Analysis result could not be interpreted. Please try again.");
       }
-    } catch (parseError) {
-      throw new Error("Analysis result could not be interpreted. Please try again.");
     }
 
     // ── Token Usage ─────────────────────────────────────────
@@ -436,7 +486,7 @@ export const analyzeStack = action({
     // ── Save Analysis to History ────────────────────────────
     await ctx.runMutation(api.stackAnalyzer.saveAnalysis, {
       userId: clerkId,
-      supplements: args.supplements.map((s) => ({ id: s.id, name: s.name })),
+      supplements: sanitizedSupplements.map((s) => ({ id: s.id, name: s.name })),
       healthGoals: args.healthGoals.map((g) => g.id),
       analysisDepth: args.depth,
       result: analysis,
@@ -516,13 +566,38 @@ export const emailResults = action({
 });
 
 function markdownToEmailHtml(md: string): string {
-  let html = md
-    .replace(/^### (.*$)/gm, '<h3 style="color:#818cf8;font-family:DM Sans,sans-serif">$1</h3>')
-    .replace(/^## (.*$)/gm, '<h2 style="color:#f1f5f9;font-family:DM Serif Display,serif">$1</h2>')
-    .replace(/^# (.*$)/gm, '<h1 style="color:#f1f5f9;font-family:DM Serif Display,serif">$1</h1>')
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n\n/g, '<br><br>')
-    .replace(/\n/g, '<br>');
+  // Process code blocks first (before other transformations)
+  let html = md.replace(/```[\s\S]*?```/g, (match) => {
+    const code = match.replace(/```\w*\n?/, "").replace(/```$/, "").trim();
+    return `<pre style="background:#1e293b;color:#e2e8f0;padding:12px;border-radius:6px;font-family:monospace;font-size:13px;overflow-x:auto">${code}</pre>`;
+  });
+
+  // Inline code
+  html = html.replace(/`([^`]+)`/g, '<code style="background:#1e293b;color:#e2e8f0;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:13px">$1</code>');
+
+  // Headings
+  html = html.replace(/^### (.*$)/gm, '<h3 style="color:#818cf8;font-family:DM Sans,sans-serif;margin:16px 0 8px">$1</h3>');
+  html = html.replace(/^## (.*$)/gm, '<h2 style="color:#f1f5f9;font-family:DM Serif Display,serif;margin:20px 0 10px">$1</h2>');
+  html = html.replace(/^# (.*$)/gm, '<h1 style="color:#f1f5f9;font-family:DM Serif Display,serif;margin:24px 0 12px">$1</h1>');
+
+  // Bold and italic
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:#818cf8;text-decoration:underline">$1</a>');
+
+  // Unordered lists (- item or * item)
+  html = html.replace(/^[\-\*] (.+)$/gm, '<li style="margin:4px 0;color:#94a3b8">$1</li>');
+  // Wrap consecutive <li> tags in <ul>
+  html = html.replace(/((?:<li[^>]*>.*?<\/li>\s*)+)/g, '<ul style="padding-left:20px;margin:8px 0">$1</ul>');
+
+  // Ordered lists (1. item)
+  html = html.replace(/^\d+\. (.+)$/gm, '<li style="margin:4px 0;color:#94a3b8">$1</li>');
+
+  // Paragraphs (double newline)
+  html = html.replace(/\n\n/g, '<br><br>');
+  html = html.replace(/\n/g, '<br>');
 
   return '<div style="background:#0b1120;color:#94a3b8;font-family:DM Sans,Arial,sans-serif;padding:32px;max-width:640px;margin:0 auto;">' +
     html +
