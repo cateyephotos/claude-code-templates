@@ -511,23 +511,166 @@
     }
   }
 
-  // ── Analytics View (placeholder - added in Task 16) ─────────
+  // ── Analytics View ───────────────────────────────────────────
   async function renderAnalytics() {
     app.innerHTML = `
       <div class="email-container">
-        <div class="email-header"><h2>Email Analytics</h2></div>
+        <div class="email-header">
+          <h2>Email Analytics</h2>
+        </div>
         <div class="email-subnav">
           <button class="email-subnav-btn" data-view="list">Sequences</button>
           <button class="email-subnav-btn active" data-view="analytics">Analytics</button>
         </div>
-        <p style="color:#888;text-align:center;padding:3rem;">Analytics view loading in next update...</p>
+        <div style="display:flex;gap:0.75rem;margin-bottom:1.5rem;align-items:center;">
+          <div class="email-form-group" style="margin:0;">
+            <select class="email-select" id="analytics-sequence" style="width:auto;">
+              <option value="">Select a sequence...</option>
+            </select>
+          </div>
+          <div class="email-form-group" style="margin:0;">
+            <select class="email-select" id="analytics-range" style="width:auto;">
+              <option value="7d">Last 7 days</option>
+              <option value="30d" selected>Last 30 days</option>
+              <option value="all">All time</option>
+            </select>
+          </div>
+          <button class="email-btn email-btn--secondary email-btn--sm" onclick="emailApp.enrollModal()">
+            <i class="fas fa-user-plus"></i> Manually Enroll
+          </button>
+        </div>
+        <div id="analytics-content">
+          <p style="color:#888;text-align:center;padding:2rem;">Select a sequence to view analytics.</p>
+        </div>
       </div>
     `;
+
+    // Bind subnav
     app.querySelectorAll(".email-subnav-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         if (btn.dataset.view === "list") { currentView = "list"; render(); }
       });
     });
+
+    // Load sequences into dropdown
+    try {
+      const sequences = await queryConvex("emailSequences:listSequences");
+      const select = document.getElementById("analytics-sequence");
+      sequences.forEach((seq) => {
+        const opt = document.createElement("option");
+        opt.value = seq._id;
+        opt.textContent = seq.name;
+        select.appendChild(opt);
+      });
+
+      select.addEventListener("change", loadAnalytics);
+      document.getElementById("analytics-range").addEventListener("change", loadAnalytics);
+    } catch (err) {
+      document.getElementById("analytics-content").innerHTML =
+        `<p style="color:#c62828;">Error: ${escapeHtml(err.message)}</p>`;
+    }
+  }
+
+  async function loadAnalytics() {
+    const sequenceId = document.getElementById("analytics-sequence").value;
+    const timeRange = document.getElementById("analytics-range").value;
+    const container = document.getElementById("analytics-content");
+
+    if (!sequenceId) {
+      container.innerHTML = `<p style="color:#888;text-align:center;padding:2rem;">Select a sequence to view analytics.</p>`;
+      return;
+    }
+
+    container.innerHTML = `<p style="color:#888;text-align:center;padding:2rem;">Loading analytics...</p>`;
+
+    try {
+      const statusFilter = document.getElementById("analytics-sub-status")?.value || "";
+      const subArgs = { sequenceId, limit: 50 };
+      if (statusFilter) subArgs.status = statusFilter;
+
+      const [analytics, subscribers] = await Promise.all([
+        queryConvex("emailSequences:getSequenceAnalytics", { sequenceId, timeRange }),
+        queryConvex("emailSubscribers:listSubscribers", subArgs),
+      ]);
+
+      const funnel = analytics.funnel;
+      const stepRows = analytics.steps.map((s) => `
+        <tr>
+          <td style="font-weight:500;">${escapeHtml(s.subject)}</td>
+          <td>${s.sent}</td>
+          <td>${s.deliveredPct}%</td>
+          <td>${s.openedPct}%</td>
+          <td>${s.clickedPct}%</td>
+          <td>${s.bouncedPct}%</td>
+          <td>${s.unsubscribed}</td>
+        </tr>
+      `).join("");
+
+      const subRows = subscribers.map((sub) => `
+        <tr>
+          <td>${escapeHtml(sub.email)}</td>
+          <td><span class="email-badge email-badge--${sub.status}">${sub.status}</span></td>
+          <td>Step ${sub.currentStepIndex + 1}</td>
+          <td style="font-size:0.8rem;color:#888;">${formatDate(sub.enrolledAt)}</td>
+          <td style="font-size:0.8rem;color:#888;">${sub.lastEventType ? sub.lastEventType + " " + formatDate(sub.lastEventAt) : "—"}</td>
+        </tr>
+      `).join("");
+
+      container.innerHTML = `
+        <!-- Funnel Cards -->
+        <div class="email-funnel">
+          <div class="email-funnel-card">
+            <div class="email-funnel-value">${funnel.sent}</div>
+            <div class="email-funnel-label">Sent</div>
+          </div>
+          <div class="email-funnel-card">
+            <div class="email-funnel-value">${funnel.delivered}</div>
+            <div class="email-funnel-label">Delivered</div>
+          </div>
+          <div class="email-funnel-card">
+            <div class="email-funnel-value">${funnel.opened}</div>
+            <div class="email-funnel-label">Opened</div>
+          </div>
+          <div class="email-funnel-card">
+            <div class="email-funnel-value">${funnel.clicked}</div>
+            <div class="email-funnel-label">Clicked</div>
+          </div>
+        </div>
+
+        <!-- Per-Step Table -->
+        <div class="email-editor-section" style="margin-bottom:1.5rem;">
+          <h3>Per-Step Performance</h3>
+          <table class="email-table">
+            <thead>
+              <tr><th>Subject</th><th>Sent</th><th>Delivered</th><th>Opened</th><th>Clicked</th><th>Bounced</th><th>Unsubs</th></tr>
+            </thead>
+            <tbody>${stepRows || '<tr><td colspan="7" style="text-align:center;color:#888;">No data yet</td></tr>'}</tbody>
+          </table>
+        </div>
+
+        <!-- Subscriber Table -->
+        <div class="email-editor-section">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+            <h3>Subscribers</h3>
+            <select class="email-select" id="analytics-sub-status" style="width:auto;font-size:0.8rem;" onchange="emailApp.refreshAnalytics()">
+              <option value="">All statuses</option>
+              <option value="active">Active</option>
+              <option value="completed">Completed</option>
+              <option value="paused">Paused</option>
+              <option value="unsubscribed">Unsubscribed</option>
+            </select>
+          </div>
+          <table class="email-table">
+            <thead>
+              <tr><th>Email</th><th>Status</th><th>Current Step</th><th>Enrolled</th><th>Last Event</th></tr>
+            </thead>
+            <tbody>${subRows || '<tr><td colspan="5" style="text-align:center;color:#888;">No subscribers</td></tr>'}</tbody>
+          </table>
+        </div>
+      `;
+    } catch (err) {
+      container.innerHTML = `<p style="color:#c62828;">Error: ${escapeHtml(err.message)}</p>`;
+    }
   }
 
   // ── Utility Functions ────────────────────────────────────────
@@ -640,9 +783,84 @@
         alert("Error: " + err.message);
       }
     },
-    enrollModal: () => {
-      alert("Manual enrollment modal coming in next update.");
+    enrollModal: async () => {
+      // Create modal overlay
+      const overlay = document.createElement("div");
+      overlay.className = "email-modal-overlay";
+      overlay.innerHTML = `
+        <div class="email-modal">
+          <h3>Manually Enroll Subscribers</h3>
+          <div class="email-form-group">
+            <label class="email-label">Sequence</label>
+            <select class="email-select" id="enroll-sequence">
+              <option value="">Select sequence...</option>
+            </select>
+          </div>
+          <div class="email-form-group">
+            <label class="email-label">Email Addresses (one per line)</label>
+            <textarea class="email-textarea" id="enroll-emails" rows="6" placeholder="user1@example.com&#10;user2@example.com"></textarea>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:0.5rem;margin-top:1rem;">
+            <button class="email-btn email-btn--secondary" onclick="this.closest('.email-modal-overlay').remove()">Cancel</button>
+            <button class="email-btn email-btn--primary" id="enroll-submit">
+              <i class="fas fa-user-plus"></i> Enroll
+            </button>
+          </div>
+          <div id="enroll-results" style="margin-top:1rem;font-size:0.8rem;"></div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      // Close on backdrop click
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.remove();
+      });
+
+      // Load sequences into dropdown
+      try {
+        const sequences = await queryConvex("emailSequences:listSequences");
+        const select = document.getElementById("enroll-sequence");
+        sequences.filter((s) => s.status === "active").forEach((seq) => {
+          const opt = document.createElement("option");
+          opt.value = seq._id;
+          opt.textContent = seq.name;
+          select.appendChild(opt);
+        });
+      } catch (err) {
+        console.error("Failed to load sequences:", err);
+      }
+
+      // Bind submit
+      document.getElementById("enroll-submit").addEventListener("click", async () => {
+        const sequenceId = document.getElementById("enroll-sequence").value;
+        const emailsRaw = document.getElementById("enroll-emails").value;
+
+        if (!sequenceId) { alert("Select a sequence."); return; }
+
+        const emails = emailsRaw.split("\n").map((e) => e.trim()).filter(Boolean);
+        if (emails.length === 0) { alert("Enter at least one email."); return; }
+
+        const resultsDiv = document.getElementById("enroll-results");
+        resultsDiv.innerHTML = `<p style="color:#888;">Enrolling ${emails.length} email(s)...</p>`;
+
+        try {
+          const results = await mutateConvex("emailSubscribers:manualEnroll", {
+            emails,
+            sequenceId,
+          });
+
+          const summary = results.map((r) =>
+            `<div style="color:${r.status === "enrolled" ? "#2d5a3d" : "#c62828"};">${escapeHtml(r.email)}: ${r.status}</div>`
+          ).join("");
+
+          resultsDiv.innerHTML = summary;
+        } catch (err) {
+          resultsDiv.innerHTML = `<p style="color:#c62828;">Error: ${escapeHtml(err.message)}</p>`;
+        }
+      });
     },
+    refreshAnalytics: loadAnalytics,
   };
 
   // ── Initialize on section activation ─────────────────────────
