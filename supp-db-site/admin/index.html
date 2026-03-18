@@ -42,6 +42,7 @@
 
     <!-- Admin Dashboard Styles -->
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="email.css">
 
     <style>
         /* Admin page overrides */
@@ -120,6 +121,13 @@
                     <i class="fas fa-cog"></i>
                     <span>Configuration</span>
                     <span id="config-nav-badge" class="config-nav-status-dot hidden"></span>
+                </button>
+            </div>
+            <div class="admin-nav-section">
+                <div class="admin-nav-label">Marketing</div>
+                <button class="admin-nav-item" data-section="email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Sequences</span>
                 </button>
             </div>
         </aside>
@@ -729,6 +737,13 @@
                 </div>
             </section>
 
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Email Sequences                            -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-email" class="admin-section">
+                <div id="email-app"></div>
+            </section>
+
         </main>
     </div>
 
@@ -743,5 +758,6 @@
     <script src="../js/analytics-enhanced.js"></script>
     <script src="../js/admin-dashboard.js"></script>
     <script src="../js/admin-config.js"></script>
+    <script src="email.js"></script>
 </body>
 </html>

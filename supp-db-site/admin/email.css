@@ -1,0 +1,300 @@
+/* ═══════════════════════════════════════════════════════════════
+   EMAIL SEQUENCES ADMIN PANEL STYLES
+   Extends admin.css — uses same color scheme (#2d5a3d green accent,
+   #fafaf8 bg, Source Serif 4 headings, DM Sans body)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.email-container { max-width: 1200px; margin: 0 auto; }
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.email-header h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ── Sub-navigation (Sequences | Analytics) ─────────────────── */
+.email-subnav {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 1.5rem;
+}
+
+.email-subnav-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #666;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.email-subnav-btn:hover { color: #2d5a3d; }
+.email-subnav-btn.active {
+  color: #2d5a3d;
+  border-bottom-color: #2d5a3d;
+  font-weight: 600;
+}
+
+/* ── Sequences Table ────────────────────────────────────────── */
+.email-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.email-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.email-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.email-table tr:hover { background: #f8f8f6; cursor: pointer; }
+
+/* ── Status Badges ──────────────────────────────────────────── */
+.email-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.email-badge--draft { background: #f3f3f3; color: #888; }
+.email-badge--active { background: #e8f5e9; color: #2d5a3d; }
+.email-badge--paused { background: #fff3e0; color: #e65100; }
+.email-badge--completed { background: #e3f2fd; color: #1565c0; }
+.email-badge--unsubscribed { background: #fce4ec; color: #c62828; }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.email-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid transparent;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.email-btn--primary {
+  background: #2d5a3d;
+  color: white;
+  border-color: #2d5a3d;
+}
+.email-btn--primary:hover { background: #245032; }
+
+.email-btn--secondary {
+  background: white;
+  color: #333;
+  border-color: #ddd;
+}
+.email-btn--secondary:hover { background: #f8f8f6; border-color: #ccc; }
+
+.email-btn--danger {
+  background: white;
+  color: #c62828;
+  border-color: #e57373;
+}
+.email-btn--danger:hover { background: #fce4ec; }
+
+.email-btn--sm { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+
+/* ── Editor Layout ──────────────────────────────────────────── */
+.email-editor { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.email-editor-section {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.email-editor-section h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+/* ── Form Elements ──────────────────────────────────────────── */
+.email-form-group { margin-bottom: 1rem; }
+.email-form-group:last-child { margin-bottom: 0; }
+
+.email-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.email-input, .email-select, .email-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  background: #fafaf8;
+  transition: border-color 0.15s;
+}
+
+.email-input:focus, .email-select:focus, .email-textarea:focus {
+  border-color: #2d5a3d;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(45, 90, 61, 0.1);
+}
+
+.email-textarea { min-height: 100px; resize: vertical; }
+
+/* ── Step Cards ─────────────────────────────────────────────── */
+.email-step-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: #fafaf8;
+  position: relative;
+}
+
+.email-step-card--disabled { opacity: 0.5; }
+
+.email-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.email-step-number {
+  font-weight: 700;
+  color: #2d5a3d;
+  font-size: 0.85rem;
+}
+
+.email-step-actions { display: flex; gap: 0.5rem; align-items: center; }
+
+/* ── Body Block Editor ──────────────────────────────────────── */
+.email-block {
+  border: 1px dashed #ddd;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: white;
+}
+
+.email-block-type {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Sticky Action Bar ──────────────────────────────────────── */
+.email-action-bar {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  z-index: 10;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Analytics ──────────────────────────────────────────────── */
+.email-funnel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.email-funnel-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.email-funnel-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: 'Source Serif 4', serif;
+}
+
+.email-funnel-label {
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* ── Modal ──────────────────────────────────────────────────── */
+.email-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.email-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.email-modal h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .email-funnel { grid-template-columns: repeat(2, 1fr); }
+  .email-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
