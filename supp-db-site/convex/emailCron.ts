@@ -147,3 +147,57 @@ export const getSequenceSteps = internalQuery({
     return steps;
   },
 });
+
+// ── Webhook Event Processing ─────────────────────────────────
+
+export const processWebhookEvent = internalMutation({
+  args: {
+    resendMessageId: v.string(),
+    eventType: v.string(),
+    link: v.optional(v.string()),
+    timestamp: v.number(),
+  },
+  handler: async (ctx, args) => {
+    // Find the original "sent" event by resendMessageId
+    const sentEvent = await ctx.db
+      .query("emailEvents")
+      .withIndex("by_resend_message_id", (q) => q.eq("resendMessageId", args.resendMessageId))
+      .first();
+
+    if (!sentEvent) {
+      console.warn(`Webhook: no sent event found for messageId ${args.resendMessageId}`);
+      return;
+    }
+
+    // Insert the new event
+    await ctx.db.insert("emailEvents", {
+      subscriberId: sentEvent.subscriberId,
+      stepId: sentEvent.stepId,
+      sequenceId: sentEvent.sequenceId,
+      resendMessageId: args.resendMessageId,
+      type: args.eventType as any,
+      metadata: args.link ? { link: args.link } : undefined,
+      timestamp: args.timestamp,
+    });
+
+    // Handle unsubscribe: pause subscriber + propagate to newsletter
+    if (args.eventType === "unsubscribed") {
+      const subscriber = await ctx.db.get(sentEvent.subscriberId);
+      if (subscriber) {
+        await ctx.db.patch(subscriber._id, { status: "unsubscribed" });
+
+        // Propagate to newsletterSubscribers if linked
+        if (subscriber.newsletterSubscriberId) {
+          const newsletterSub = await ctx.db.get(subscriber.newsletterSubscriberId);
+          if (newsletterSub && newsletterSub.status !== "unsubscribed") {
+            await ctx.db.patch(subscriber.newsletterSubscriberId, {
+              status: "unsubscribed",
+              unsubscribedAt: Date.now(),
+              updatedAt: Date.now(),
+            });
+          }
+        }
+      }
+    }
+  },
+});

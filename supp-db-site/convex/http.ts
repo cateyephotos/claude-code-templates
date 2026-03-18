@@ -479,4 +479,107 @@ http.route({
   }),
 });
 
+// ── Resend Webhook ───────────────────────────────────────────
+
+http.route({
+  path: "/resend-webhook",
+  method: "POST",
+  handler: httpAction(async (ctx, request) => {
+    // 1. Validate webhook signature using Svix
+    const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
+    if (!webhookSecret) {
+      console.error("RESEND_WEBHOOK_SECRET not configured");
+      return new Response("Webhook secret not configured", { status: 500 });
+    }
+
+    const svixId = request.headers.get("svix-id");
+    const svixTimestamp = request.headers.get("svix-timestamp");
+    const svixSignature = request.headers.get("svix-signature");
+
+    if (!svixId || !svixTimestamp || !svixSignature) {
+      return new Response("Missing webhook signature headers", { status: 400 });
+    }
+
+    // Read raw body for signature verification
+    const rawBody = await request.text();
+
+    // Verify timestamp is within tolerance (5 minutes)
+    const timestampSec = parseInt(svixTimestamp, 10);
+    const nowSec = Math.floor(Date.now() / 1000);
+    if (Math.abs(nowSec - timestampSec) > 300) {
+      return new Response("Webhook timestamp too old", { status: 400 });
+    }
+
+    // Verify HMAC signature (Svix uses base64-encoded HMAC-SHA256)
+    // The signing content is: "{svix-id}.{svix-timestamp}.{body}"
+    const signContent = `${svixId}.${svixTimestamp}.${rawBody}`;
+    // Svix secret is base64-encoded with "whsec_" prefix
+    const secretBytes = atob(webhookSecret.replace("whsec_", ""));
+    const encoder = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      "raw",
+      encoder.encode(secretBytes),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["sign"]
+    );
+    const signatureBytes = await crypto.subtle.sign("HMAC", key, encoder.encode(signContent));
+    const expectedSig = btoa(String.fromCharCode(...new Uint8Array(signatureBytes)));
+
+    // Svix sends multiple signatures separated by spaces; check if any match
+    const providedSigs = svixSignature.split(" ").map((s: string) => s.replace("v1,", ""));
+    const isValid = providedSigs.some((sig: string) => sig === expectedSig);
+
+    if (!isValid) {
+      console.error("Resend webhook signature verification failed");
+      return new Response("Invalid signature", { status: 401 });
+    }
+
+    let body: any;
+    try {
+      body = JSON.parse(rawBody);
+    } catch {
+      return new Response("Invalid JSON", { status: 400 });
+    }
+
+    // 2. Parse event
+    const eventType = body.type as string;
+    const messageId = body.data?.email_id as string;
+
+    if (!eventType || !messageId) {
+      return new Response("Missing event type or message ID", { status: 400 });
+    }
+
+    // Map Resend event types to our event types
+    const typeMap: Record<string, string> = {
+      "email.sent": "sent",
+      "email.delivered": "delivered",
+      "email.opened": "opened",
+      "email.clicked": "clicked",
+      "email.bounced": "bounced",
+      "email.unsubscribed": "unsubscribed",
+      "email.complained": "unsubscribed",  // complaints also treated as unsubscribe
+    };
+
+    const mappedType = typeMap[eventType];
+    if (!mappedType) {
+      // Unknown event type — acknowledge but ignore
+      return new Response(JSON.stringify({ received: true, ignored: true }), { status: 200 });
+    }
+
+    // 3. Look up the original "sent" event by resendMessageId
+    await ctx.runMutation(internal.emailCron.processWebhookEvent, {
+      resendMessageId: messageId,
+      eventType: mappedType,
+      link: body.data?.click?.link || undefined,
+      timestamp: Date.now(),
+    });
+
+    return new Response(JSON.stringify({ received: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }),
+});
+
 export default http;
