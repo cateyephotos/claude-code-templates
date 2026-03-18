@@ -201,3 +201,16 @@ export const processWebhookEvent = internalMutation({
     }
   },
 });
+
+export const getActiveSequencesByEvent = internalQuery({
+  args: { event: v.string() },
+  handler: async (ctx, args) => {
+    const allSequences = await ctx.db.query("emailSequences").collect();
+    return allSequences.filter(
+      (s) =>
+        s.status === "active" &&
+        (s.trigger.type === "event" || s.trigger.type === "both") &&
+        s.trigger.event === args.event
+    );
+  },
+});

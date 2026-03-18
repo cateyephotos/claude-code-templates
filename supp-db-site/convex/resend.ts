@@ -1,6 +1,7 @@
 import { internalAction } from "./_generated/server";
 import { v } from "convex/values";
 import { Resend } from "resend";
+import { internal } from "./_generated/api";
 
 /**
  * Email sending actions for SupplementDB newsletter.
@@ -134,7 +135,7 @@ export const sendGuideDownloadEmail = internalAction({
     amountTotal: v.number(),
     currency: v.string(),
   },
-  handler: async (_ctx, args) => {
+  handler: async (ctx, args) => {
     const resend = getResend();
     const siteUrl = getSiteUrl();
     const downloadUrl = `${siteUrl}/guide-success.html?session_id=${args.sessionId}`;
@@ -251,6 +252,24 @@ export const sendGuideDownloadEmail = internalAction({
         console.error(`Failed to send guide download email to ${args.email}:`, error);
       } else {
         console.log(`Guide download email sent to ${args.email} for ${args.guideSlug} (id: ${data?.id})`);
+
+        // Enroll in pdf_purchase sequences
+        if (data?.id) {
+          try {
+            const sequences = await ctx.runQuery(internal.emailCron.getActiveSequencesByEvent, {
+              event: "pdf_purchase",
+            });
+            for (const seq of sequences) {
+              await ctx.runMutation(internal.emailSubscribers.enrollSubscriber, {
+                email: args.email,
+                sequenceId: seq._id,
+                source: "event:pdf_purchase",
+              });
+            }
+          } catch (enrollErr) {
+            console.error("Failed to enroll in email sequences:", enrollErr);
+          }
+        }
       }
     } catch (error) {
       console.error(`Error sending guide download email to ${args.email}:`, error);
@@ -265,7 +284,7 @@ export const sendWelcomeEmail = internalAction({
     email: v.string(),
     unsubscribeToken: v.string(),
   },
-  handler: async (_ctx, args) => {
+  handler: async (ctx, args) => {
     const resend = getResend();
     const siteUrl = getSiteUrl();
     const unsubscribeUrl = `${siteUrl}/unsubscribe.html?token=${args.unsubscribeToken}`;
@@ -363,6 +382,24 @@ export const sendWelcomeEmail = internalAction({
         console.error(`Failed to send welcome email to ${args.email}:`, error);
       } else {
         console.log(`Welcome email sent to ${args.email} (id: ${data?.id})`);
+
+        // Enroll in email_opt_in sequences
+        if (data?.id) {
+          try {
+            const sequences = await ctx.runQuery(internal.emailCron.getActiveSequencesByEvent, {
+              event: "email_opt_in",
+            });
+            for (const seq of sequences) {
+              await ctx.runMutation(internal.emailSubscribers.enrollSubscriber, {
+                email: args.email,
+                sequenceId: seq._id,
+                source: "event:email_opt_in",
+              });
+            }
+          } catch (enrollErr) {
+            console.error("Failed to enroll in email sequences:", enrollErr);
+          }
+        }
       }
     } catch (error) {
       console.error(`Error sending welcome email to ${args.email}:`, error);

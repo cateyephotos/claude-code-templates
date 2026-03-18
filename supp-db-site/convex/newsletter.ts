@@ -215,6 +215,17 @@ export const unsubscribe = mutation({
       updatedAt: now,
     });
 
+    // Propagate: pause all active email sequence subscriptions for this email
+    const emailSubs = await ctx.db
+      .query("emailSubscribers")
+      .withIndex("by_email", (q) => q.eq("email", subscriber.email))
+      .collect();
+    for (const es of emailSubs) {
+      if (es.status === "active") {
+        await ctx.db.patch(es._id, { status: "unsubscribed" });
+      }
+    }
+
     return { status: "unsubscribed" as const };
   },
 });
