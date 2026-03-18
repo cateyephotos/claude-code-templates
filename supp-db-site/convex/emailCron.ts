@@ -70,9 +70,11 @@ export const recordSentEvent = internalMutation({
       timestamp: Date.now(),
     });
 
-    // Clear deferredSince on successful send
+    // Clear deferredSince on successful send + denormalize last event
     await ctx.db.patch(args.subscriberId, {
       deferredSince: undefined,
+      lastEventType: "sent",
+      lastEventAt: Date.now(),
     });
   },
 });
@@ -187,6 +189,12 @@ export const processWebhookEvent = internalMutation({
       type: validatedType,
       metadata: args.link ? { link: args.link } : undefined,
       timestamp: args.timestamp,
+    });
+
+    // Denormalize last event onto subscriber
+    await ctx.db.patch(sentEvent.subscriberId, {
+      lastEventType: validatedType,
+      lastEventAt: args.timestamp,
     });
 
     // Handle unsubscribe: pause subscriber + propagate to newsletter

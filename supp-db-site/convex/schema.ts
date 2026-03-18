@@ -275,6 +275,8 @@ export default defineSchema({
     enrolledAt: v.number(),
     nextSendAt: v.number(),
     deferredSince: v.optional(v.number()),
+    lastEventType: v.optional(v.string()),
+    lastEventAt: v.optional(v.number()),
     source: v.string(),
   })
     .index("by_sequence", ["sequenceId"])

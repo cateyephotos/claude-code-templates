@@ -289,24 +289,12 @@ export const listSubscribers = query({
 
     // Sort by enrolledAt descending, take limit
     subscribers.sort((a, b) => b.enrolledAt - a.enrolledAt);
-    subscribers = subscribers.slice(0, limit);
 
-    // Enrich with last event info
-    const enriched = [];
-    for (const sub of subscribers) {
-      const lastEvent = await ctx.db
-        .query("emailEvents")
-        .withIndex("by_subscriber", (q) => q.eq("subscriberId", sub._id))
-        .order("desc")
-        .first();
-
-      enriched.push({
-        ...sub,
-        lastEventType: lastEvent?.type ?? null,
-        lastEventAt: lastEvent?.timestamp ?? null,
-      });
-    }
-
-    return enriched;
+    // Use denormalized lastEvent fields instead of N+1 queries
+    return subscribers.slice(0, limit).map((sub) => ({
+      ...sub,
+      lastEventType: sub.lastEventType ?? null,
+      lastEventAt: sub.lastEventAt ?? null,
+    }));
   },
 });
