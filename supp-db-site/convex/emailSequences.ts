@@ -333,19 +333,22 @@ export const getSequenceAnalytics = query({
       .collect();
     steps.sort((a, b) => a.stepIndex - b.stepIndex);
 
-    // Gather all events for this sequence
-    const allEvents = await ctx.db
-      .query("emailEvents")
-      .withIndex("by_sequence_type", (q) => q.eq("sequenceId", args.sequenceId))
-      .collect();
-
-    const filteredEvents = cutoff > 0
-      ? allEvents.filter((e) => e.timestamp >= cutoff)
-      : allEvents;
+    // Gather events for this sequence, filtering by timestamp at the DB level
+    const allEvents = cutoff > 0
+      ? await ctx.db
+          .query("emailEvents")
+          .withIndex("by_sequence_timestamp", (q) =>
+            q.eq("sequenceId", args.sequenceId).gte("timestamp", cutoff)
+          )
+          .collect()
+      : await ctx.db
+          .query("emailEvents")
+          .withIndex("by_sequence_timestamp", (q) => q.eq("sequenceId", args.sequenceId))
+          .collect();
 
     // Build per-step analytics
     const stepAnalytics = steps.map((step) => {
-      const stepEvents = filteredEvents.filter((e) => e.stepId === step._id);
+      const stepEvents = allEvents.filter((e) => e.stepId === step._id);
       const sent = stepEvents.filter((e) => e.type === "sent").length;
       const delivered = stepEvents.filter((e) => e.type === "delivered").length;
       const opened = stepEvents.filter((e) => e.type === "opened").length;
@@ -367,10 +370,10 @@ export const getSequenceAnalytics = query({
     });
 
     // Aggregate funnel
-    const totalSent = filteredEvents.filter((e) => e.type === "sent").length;
-    const totalDelivered = filteredEvents.filter((e) => e.type === "delivered").length;
-    const totalOpened = filteredEvents.filter((e) => e.type === "opened").length;
-    const totalClicked = filteredEvents.filter((e) => e.type === "clicked").length;
+    const totalSent = allEvents.filter((e) => e.type === "sent").length;
+    const totalDelivered = allEvents.filter((e) => e.type === "delivered").length;
+    const totalOpened = allEvents.filter((e) => e.type === "opened").length;
+    const totalClicked = allEvents.filter((e) => e.type === "clicked").length;
 
     return {
       funnel: { sent: totalSent, delivered: totalDelivered, opened: totalOpened, clicked: totalClicked },

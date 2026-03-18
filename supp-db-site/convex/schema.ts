@@ -304,6 +304,7 @@ export default defineSchema({
     .index("by_subscriber", ["subscriberId"])
     .index("by_step", ["stepId"])
     .index("by_sequence_type", ["sequenceId", "type"])
+    .index("by_sequence_timestamp", ["sequenceId", "timestamp"])
     .index("by_resend_message_id", ["resendMessageId"]),
 
   // Site-wide configuration for dynamic email variables
