@@ -61,7 +61,7 @@ http.route({
       ["sign"]
     );
     const signatureBytes = await crypto.subtle.sign("HMAC", key, encoder.encode(signContent));
-    const expectedSig = btoa(String.fromCharCode(...new Uint8Array(signatureBytes)));
+    const expectedSig = btoa(String.fromCharCode(...Array.from(new Uint8Array(signatureBytes))));
 
     // Svix sends multiple signatures separated by spaces in "v1,{sig}" format
     const providedSigs = svixSignature.split(" ").map((s: string) => s.replace("v1,", ""));
@@ -437,7 +437,7 @@ http.route({
  *     -d '{"email":"you@example.com","secret":"your-bootstrap-secret"}'
  *
  * Or from the browser console on any page:
- *   fetch('https://acoustic-chinchilla-759.convex.site/admin-bootstrap', {
+ *   fetch('https://robust-frog-754.convex.site/admin-bootstrap', {
  *     method: 'POST',
  *     headers: {'Content-Type':'application/json'},
  *     body: JSON.stringify({email:'you@example.com', secret:'your-secret'})
@@ -567,7 +567,7 @@ http.route({
       ["sign"]
     );
     const signatureBytes = await crypto.subtle.sign("HMAC", key, encoder.encode(signContent));
-    const expectedSig = btoa(String.fromCharCode(...new Uint8Array(signatureBytes)));
+    const expectedSig = btoa(String.fromCharCode(...Array.from(new Uint8Array(signatureBytes))));
 
     // Svix sends multiple signatures separated by spaces; check if any match
     const providedSigs = svixSignature.split(" ").map((s: string) => s.replace("v1,", ""));

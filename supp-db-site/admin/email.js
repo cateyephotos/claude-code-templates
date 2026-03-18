@@ -1,6 +1,6 @@
 /**
  * Email Sequences Admin Panel
- * Uses the existing Convex client (window.convex) and Clerk auth from admin/index.html.
+ * Uses the existing Convex client wrapper (window.SupplementDB) and Clerk auth from admin/index.html.
  *
  * Sub-views: Sequences List | Sequence Editor | Analytics
  */
@@ -19,18 +19,18 @@
 
   // ── Convex Client Wrapper ────────────────────────────────────
   function getClient() {
-    return window.convex;
+    return window.SupplementDB;
   }
 
   async function queryConvex(fnName, args = {}) {
     const client = getClient();
-    if (!client) throw new Error("Convex client not available");
+    if (!client) throw new Error("Convex client not available — ensure convex-client.js is loaded");
     return client.query(fnName, args);
   }
 
   async function mutateConvex(fnName, args = {}) {
     const client = getClient();
-    if (!client) throw new Error("Convex client not available");
+    if (!client) throw new Error("Convex client not available — ensure convex-client.js is loaded");
     return client.mutation(fnName, args);
   }
 

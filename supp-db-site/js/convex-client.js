@@ -157,8 +157,8 @@
   // Candidate CDN URLs for the Convex browser global bundle.
   // Tries each in order until one loads successfully.
   const CONVEX_CDN_URLS = [
-    "https://cdn.jsdelivr.net/npm/convex@1.17.4/dist/browser.bundle.js",
-    "https://unpkg.com/convex@1.17.4/dist/browser.bundle.js",
+    "https://cdn.jsdelivr.net/npm/convex@1.32.0/dist/browser.bundle.js",
+    "https://unpkg.com/convex@1.32.0/dist/browser.bundle.js",
   ];
 
   function loadConvexCDN() {

@@ -81,7 +81,7 @@ const CONFIG_CATALOGUE = [
         description: "Stripe webhook endpoint signing secret (whsec_...)",
         docsUrl: "https://dashboard.stripe.com/webhooks",
         resolutionType: "convex_env" as const,
-        resolutionHint: "In Stripe Dashboard → Developers → Webhooks → Add endpoint. URL: https://acoustic-chinchilla-759.convex.site/stripe-webhook. Events: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, invoice.payment_failed. Copy the Signing Secret (whsec_...) and add as STRIPE_WEBHOOK_SECRET in Convex env vars.",
+        resolutionHint: "In Stripe Dashboard → Developers → Webhooks → Add endpoint. URL: https://robust-frog-754.convex.site/stripe-webhook. Events: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, invoice.payment_failed. Copy the Signing Secret (whsec_...) and add as STRIPE_WEBHOOK_SECRET in Convex env vars.",
       },
       {
         key: "STRIPE_MONTHLY_PRICE_ID",

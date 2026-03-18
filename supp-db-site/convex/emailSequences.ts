@@ -1,6 +1,5 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
-import { internal } from "./_generated/api";
 import { requireAdmin } from "./auth";
 
 /**
@@ -412,7 +411,8 @@ export const sendTestEmail = mutation({
     if (!firstStep) throw new Error("No active steps to test");
 
     // Dispatch test send via scheduler (uses the existing Resend action pattern)
-    await ctx.scheduler.runAfter(0, internal.emailCronAction.sendTestEmailAction, {
+    const { internal: internalApi } = await import("./_generated/api");
+    await ctx.scheduler.runAfter(0, internalApi.emailCronAction.sendTestEmailAction, {
       recipientEmail: args.recipientEmail,
       stepId: firstStep._id,
       sequenceId: args.sequenceId,
