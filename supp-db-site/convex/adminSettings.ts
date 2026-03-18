@@ -189,7 +189,7 @@ export const deleteSetting = mutation({
 
 export const testAnthropicConnection = action({
   args: {},
-  handler: async (ctx) => {
+  handler: async (ctx): Promise<{ success: boolean; model?: string; error?: string; latencyMs: number; source?: string }> => {
     // Admin check via internal query (actions can't access ctx.db directly)
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) throw new Error("Authentication required");
@@ -247,7 +247,7 @@ export const testAnthropicConnection = action({
 
 export const fetchAvailableModels = action({
   args: {},
-  handler: async (ctx) => {
+  handler: async (ctx): Promise<{ success: boolean; error?: string; models: Array<{ id: string; name: string; createdAt: string }>; selectedModel?: string }> => {
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) throw new Error("Authentication required");
 

@@ -308,7 +308,7 @@ export const analyzeStack = action({
     ),
     depth: v.union(v.literal("quick"), v.literal("standard"), v.literal("deep")),
   },
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<{ analysis: any; model: string; tokensUsed: { input: number; output: number }; creditsRemaining: number; creditsUsed: number; creditsLimit: number }> => {
     // ── Auth Check ──────────────────────────────────────────
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) {

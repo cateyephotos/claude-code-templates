@@ -124,6 +124,7 @@ export default defineSchema({
     periodEnd: v.number(), // End of current billing month (epoch ms)
     lastAnalysisAt: v.optional(v.number()),
     totalAnalyses: v.number(), // Lifetime count
+    purchasedCredits: v.optional(v.number()), // Extra purchased credits
     createdAt: v.number(),
     updatedAt: v.number(),
   })
