@@ -12,7 +12,7 @@ const pqqEnhanced = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 14,
+    "totalCitations": 8,
     "researchQualityScore": 89,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -29,77 +29,9 @@ const pqqEnhanced = {
 
   "citations": {
     "mechanisms": [
-      {
-        "mechanism": "Primary mechanism of action",
-        "strength": "Moderate",
-        "mechanismType": "Neurotransmitter modulation",
-        "tissueTarget": "Neural tissue and neurotransmitter systems",
-        "target": "Neural tissue and neurotransmitter systems",
-        "evidence": [
-      {
-        "id": "pqq_mech_1",
-        "type": "mechanistic",
-        "title": "Pyrroloquinoline quinone: a potential neuroprotective compound for neurodegenerative diseases targeting metabolism",
-        "authors": ["Canovai A", "Williams PA"]
-      }
-    ],
-        "journal": "Neural Regeneration Research",
-        "year": 2024,
-        "volume": "20",
-        "issue": "1",
-        "pages": "54-65",
-        "doi": "10.4103/1673-5374.391310",
-        "pmid": "38488562",
-        "pmcid": "PMC11246121",
-        "studyType": "Comprehensive Mechanistic Review",
-        "evidenceLevel": "Level 1",
-        "keyFindings": "PQQ induces mitochondrial biogenesis through PGC-1α activation, increases intracellular NAD+ content, enhances NAMPT gene expression, and promotes NAD biosynthetic pathways",
-        "mechanismType": "Mitochondrial biogenesis and NAD+ enhancement",
-        "tissueTarget": "Mitochondria, neuronal cells, metabolic tissues",
-        "target": "Mitochondria, neuronal cells, metabolic tissues",
-        "clinicalRelevance": "Excellent - establishes primary molecular mechanisms for metabolic neuroprotection"
-      },
-      {
-        "id": "pqq_mech_2",
-        "type": "mechanistic",
-        "title": "Pyrroloquinoline-Quinone Is More Than an Antioxidant: A Vitamin-like Accessory Factor Important in Health and Disease Prevention",
-        "authors": ["Akagawa M", "Nakano M", "Ikemoto K"],
-        "journal": "Antioxidants",
-        "year": 2021,
-        "volume": "10",
-        "issue": "10",
-        "pages": "1594",
-        "doi": "10.3390/antiox10101594",
-        "pmid": "34679729",
-        "pmcid": "PMC8533503",
-        "studyType": "Comprehensive Review",
-        "evidenceLevel": "Level 2",
-        "keyFindings": "PQQ acts as cofactor for quinoproteins, stimulates mitochondrial biogenesis through cAMP response element-binding protein phosphorylation and increased PGC-1α expression",
-        "mechanismType": "Vitamin-like cofactor and mitochondrial signaling",
-        "tissueTarget": "Mitochondrial respiratory complexes, cellular signaling pathways",
-        "target": "Mitochondrial respiratory complexes, cellular signaling pathways",
-        "clinicalRelevance": "Very High - explains vitamin-like essential functions"
-      },
-      {
-        "id": "pqq_mech_3",
-        "type": "mechanistic",
-        "title": "Pyrroloquinoline quinone promotes mitochondrial biogenesis in rotenone-induced Parkinson's disease model via AMPK activation",
-        "authors": ["Zhang P", "Xu Y", "Sun J", "Li X", "Wang L", "Jin J"],
-        "journal": "Redox Biology",
-        "year": 2021,
-        "volume": "41",
-        "pages": "101888",
-        "doi": "10.1016/j.redox.2021.101888",
-        "pmid": "33602616",
-        "pmcid": "PMC8115282",
-        "studyType": "Molecular Mechanism Study",
-        "evidenceLevel": "Level 2",
-        "keyFindings": "PQQ activated AMPK signaling pathway, increased PGC-1α and TFAM expression, and promoted mitochondrial biogenesis in Parkinson's disease model with 85% improvement in mitochondrial function",
-        "mechanismType": "AMPK-mediated mitochondrial biogenesis",
-        "tissueTarget": "Substantia nigra, dopaminergic neurons",
-        "target": "Substantia nigra, dopaminergic neurons",
-        "clinicalRelevance": "High - demonstrates therapeutic potential in neurodegenerative diseases"
-      },
+      
+      
+      
       {
         "id": "pqq_mech_4",
         "type": "mechanistic",
@@ -157,49 +89,8 @@ const pqqEnhanced = {
         "effectSize": "Medium to large effect on memory function",
         "clinicalRelevance": "Excellent - demonstrates age-specific cognitive benefits across adult lifespan"
       },
-      {
-        "id": "pqq_benefit_2",
-        "type": "clinical_benefit",
-        "title": "Effect of Dietary Pyrroloquinoline Quinone Disodium Salt on Cognitive Function in Healthy Volunteers",
-        "authors": ["Itoh Y", "Hine K", "Miura H", "Uetake T", "Nakano M", "Takemura N", "Sakatani K"],
-        "journal": "The Journal of Nutritional Biochemistry",
-        "year": 2021,
-        "volume": "93",
-        "pages": "108627",
-        "doi": "10.1016/j.jnutbio.2021.108627",
-        "pmid": "33705946",
-        "studyType": "RCT - Parallel Group",
-        "evidenceLevel": "Level 1",
-        "sampleSize": 65,
-        "duration": "12 weeks",
-        "population": "Healthy Japanese adults aged 40-70",
-        "dosage": "20 mg daily",
-        "keyFindings": "Significant improvements in short-term memory, attention, and judgment. Enhanced cerebral blood flow in frontal cortex measured by NIRS",
-        "effectSize": "Moderate effect on cognitive domains",
-        "clinicalRelevance": "Very High - demonstrates cognitive enhancement with objective brain imaging"
-      },
-      {
-        "id": "pqq_benefit_3",
-        "type": "clinical_benefit",
-        "title": "The impact of six-week dihydrogen-pyrroloquinoline quinone supplementation on mitochondrial biomarkers, brain metabolism, and cognition in elderly individuals with mild cognitive impairment",
-        "authors": ["Solis MY", "Artioli GG", "Otaduy MCG", "Leite CC", "Arruda W", "Veiga RR", "Gualano B"],
-        "journal": "GeroScience", 
-        "year": 2024,
-        "volume": "46",
-        "issue": "4",
-        "pages": "4001-4018",
-        "doi": "10.1007/s11357-024-01279-5",
-        "pmid": "38987464",
-        "studyType": "RCT - MCI Population",
-        "evidenceLevel": "Level 1",
-        "sampleSize": 34,
-        "duration": "6 weeks",
-        "population": "Elderly with mild cognitive impairment (mean age 71.9 years)",
-        "dosage": "Dihydrogen-PQQ mixture twice daily",
-        "keyFindings": "Significant elevation in serum BDNF levels (p=0.01), improved ADAS-Cog orientation scores (p=0.03), increased cerebral oxygenation from 48.4% to 52.8% (p=0.005)",
-        "effectSize": "Large effect on brain metabolism and cognitive orientation",
-        "clinicalRelevance": "Excellent - demonstrates therapeutic potential in MCI with objective biomarkers"
-      },
+      
+      
       {
         "id": "pqq_benefit_4",
         "type": "clinical_benefit",
@@ -246,46 +137,7 @@ const pqqEnhanced = {
       }
     ],
     "safety": [
-      {
-        "safetyAspect": "General tolerability",
-        "claim": "Generally well tolerated with minimal side effects",
-        "riskLevel": "Low",
-        "target": "Multiple organ systems",
-        "tissueTarget": "Multiple organ systems",
-        "evidence": [
-      {
-        "id": "pqq_safety_1",
-        "type": "safety",
-        "title": "Comprehensive safety assessment across human trials",
-        "studyType": "Safety Meta-analysis",
-        "evidenceLevel": "Level 1",
-        "sampleSize": "300+ participants across studies",
-        "keyFindings": "Excellent safety profile with no serious adverse events reported. FDA approved as generally recognized as safe (GRAS) in 2018",
-        "adverseEvents": "Minimal: mild digestive discomfort (<5% of participants), headache (rare)",
-        "contraindications": "None established",
-        "drugInteractions": "None reported",
-        "clinicalRelevance": "Very High - extensive safety database across multiple populations"
-      },
-      {
-        "id": "pqq_safety_2",
-        "type": "safety",
-        "title": "Pyrroloquinoline Quinone (PQQ): Its impact on human health and potential benefits",
-        "authors": ["Yan T", "Li S", "Jiang L", "Xu J", "Wang Y", "Liu N"]
-      }
-    ],
-        "journal": "Current Research in Food Science",
-        "year": 2024,
-        "volume": "8",
-        "pages": "100721",
-        "doi": "10.1016/j.crfs.2024.100721",
-        "pmid": "38577420",
-        "pmcid": "PMC11541945",
-        "studyType": "Safety Review",
-        "evidenceLevel": "Level 2",
-        "keyFindings": "Recommended safe dosage: 100-200 mg/kg body weight. 62% absorption rate, 81% excretion through kidneys within 24 hours. No significant toxicity in animal or human studies",
-        "adverseEvents": "No long-term adverse effects observed",
-        "clinicalRelevance": "High - establishes comprehensive safety profile for various populations"
-      }
+      
     ],
     "dosage": [
       {

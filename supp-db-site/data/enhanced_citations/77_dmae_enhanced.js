@@ -15,7 +15,7 @@ const supplement_unknown_enhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 3",
-        totalCitations:  10,
+        totalCitations:  6,
         researchQualityScore:  72,
         lastEvidenceUpdate:  "2025-08-25",
         evidenceStrength:  {
@@ -47,25 +47,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Cholinergic enhancement",
                 tissueTarget:  "Cholinergic neurons",
                 evidence:  [
-                    {
-                        title:  "Deanol as a putative acetylcholine precursor in cognitive enhancement",
-                        authors:  "Suliman NA, Taib CNM, Moklas MAM, et al.",
-                        journal:  "Frontiers in Pharmacology",
-                        year:  2022,
-                        volume:  "13",
-                        pages:  "884087",
-                        doi:  "10.3389/fphar.2022.884087",
-                        pmid:  "36059957",
-                        studyType:  "mechanistic_review",
-                        evidenceLevel:  "Level 2",
-                        participants:  "Review of multiple studies",
-                        duration:  "N/A",
-                        dosage:  "Various",
-                        findings:  "DMAE may increase acetylcholine synthesis, though direct evidence is limited",
-                        effectSize:  "Theoretical enhancement",
-                        pValue:  "N/A",
-                        confidenceInterval:  "N/A"
-                    }
+                    
                 ]
             },
             {
@@ -74,26 +56,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Membrane function",
                 tissueTarget:  "Neuronal membranes",
                 evidence:  [
-                    {
-                        title:  "Effects of dimethylaminoethanol on membrane phospholipid metabolism",
-                        authors:  "Zahniser NR, Chou D, Hanin I",
-                        journal:  "Neuropharmacology",
-                        year:  1977,
-                        volume:  "16",
-                        issue:  "7-8",
-                        pages:  "485-492",
-                        doi:  "10.1016/0028-3908(77)90080-6",
-                        pmid:  "904770",
-                        studyType:  "mechanistic_study",
-                        evidenceLevel:  "Level 3",
-                        participants:  "Animal studies",
-                        duration:  "Acute",
-                        dosage:  "50-200 mg/kg",
-                        findings:  "DMAE affects phospholipid metabolism and membrane stability",
-                        effectSize:  "Moderate biochemical changes",
-                        pValue:  "<0.05",
-                        confidenceInterval:  "N/A"
-                    }
+                    
                 ]
             }
         ],
@@ -104,26 +67,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Cognitive enhancement",
                 populationTarget:  "Elderly adults",
                 evidence:  [
-                    {
-                        title:  "Effects of dimethylaminoethanol pyroglutamate on cognitive performance",
-                        authors:  "Ferris SH, Sathananthan G, Gershon S, Clark C",
-                        journal:  "Psychopharmacology",
-                        year:  1977,
-                        volume:  "52",
-                        issue:  "3",
-                        pages:  "251-255",
-                        doi:  "10.1007/BF00426711",
-                        pmid:  "406630",
-                        studyType:  "randomized_controlled_trial",
-                        evidenceLevel:  "Level 2",
-                        participants:  "27 elderly subjects",
-                        duration:  "4 weeks",
-                        dosage:  "600 mg daily",
-                        findings:  "Modest improvements in some cognitive measures vs placebo",
-                        effectSize:  "Small improvement",
-                        pValue:  "<0.05",
-                        confidenceInterval:  "Limited data"
-                    }
+                    
                 ]
             },
             {
@@ -132,26 +76,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Mood and alertness",
                 populationTarget:  "Adults with mood concerns",
                 evidence:  [
-                    {
-                        title:  "Deanol in the treatment of disorders of behavior in children",
-                        authors:  "Lewis JA, Young R",
-                        journal:  "Clinical Pharmacology & Therapeutics",
-                        year:  1975,
-                        volume:  "17",
-                        issue:  "4",
-                        pages:  "395-401",
-                        doi:  "10.1002/cpt1975174395",
-                        pmid:  "1122681",
-                        studyType:  "clinical_trial",
-                        evidenceLevel:  "Level 3",
-                        participants:  "Children with behavioral issues",
-                        duration:  "8 weeks",
-                        dosage:  "300-500 mg daily",
-                        findings:  "Some improvement in attention and behavior",
-                        effectSize:  "Small to moderate",
-                        pValue:  "Variable",
-                        confidenceInterval:  "Limited data"
-                    }
+                    
                 ]
             }
         ],

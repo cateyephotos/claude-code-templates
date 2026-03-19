@@ -11,7 +11,7 @@ window.enhancedCitations[55] = {
     lastUpdated:  "2025-08-25",
     evidenceProfile:  {
         overallQuality:  "Tier 3",
-        totalCitations:  12,
+        totalCitations:  6,
         researchQualityScore:  67,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -32,18 +32,7 @@ window.enhancedCitations[55] = {
                 strength:  "Strong",
                 tissueTarget:  "Cholinergic synapses",
                 evidence:  [
-                    {
-                        title:  "Huperzine A: a novel promising acetylcholinesterase inhibitor",
-                        authors:  [
-                            "Zhang, H.Y.",
-                            "Tang, X.C."
-                        ],
-                        year:  2006,
-                        journal:  "Neurosignals",
-                        pmid:  "16847386",
-                        doi:  "10.1159/000094601",
-                        findings:  "Huperzine A is a highly selective and reversible acetylcholinesterase inhibitor with good bioavailability"
-                    }
+                    
                 ]
             },
             {
@@ -52,19 +41,7 @@ window.enhancedCitations[55] = {
                 strength:  "Moderate",
                 tissueTarget:  "Neurons",
                 evidence:  [
-                    {
-                        title:  "Neuroprotective effects of huperzine A: a natural cholinesterase inhibitor for the treatment of Alzheimer's disease",
-                        authors:  [
-                            "Wang, R.",
-                            "Yan, H.",
-                            "Tang, X.C."
-                        ],
-                        year:  2006,
-                        journal:  "NeuroSignals",
-                        pmid:  "16847398",
-                        doi:  "10.1159/000094600",
-                        findings:  "Huperzine A protects neurons from oxidative damage and glutamate-induced excitotoxicity"
-                    }
+                    
                 ]
             },
             {
@@ -73,22 +50,7 @@ window.enhancedCitations[55] = {
                 strength:  "Moderate",
                 tissueTarget:  "NMDA receptors",
                 evidence:  [
-                    {
-                        title:  "Huperzine A attenuates cognitive deficits and brain damage in rats after traumatic brain injury",
-                        authors:  [
-                            "Zhao, Y.",
-                            "Xiang, Z.",
-                            "Dai, X.",
-                            "Wang, Z.",
-                            "Huang, T.",
-                            "Chen, L."
-                        ],
-                        year:  2017,
-                        journal:  "Brain Research",
-                        pmid:  "28336272",
-                        doi:  "10.1016/j.brainres.2017.03.019",
-                        findings:  "Huperzine A modulates NMDA receptor activity and reduces excitotoxic damage"
-                    }
+                    
                 ]
             }
         ],
@@ -100,20 +62,7 @@ window.enhancedCitations[55] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Huperzine A for Alzheimer's disease",
-                        authors:  [
-                            "Yang, G.",
-                            "Wang, Y.",
-                            "Tian, J.",
-                            "Liu, J.P."
-                        ],
-                        year:  2013,
-                        journal:  "Cochrane Database of Systematic Reviews",
-                        pmid:  "21678374",
-                        doi:  "10.1002/14651858.CD008143.pub2",
-                        findings:  "Huperzine A showed potential benefits for cognitive function and activities of daily living"
-                    }
+                    
                 ]
             },
             {
@@ -152,20 +101,7 @@ window.enhancedCitations[55] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Clinical trials",
                 evidence:  [
-                    {
-                        title:  "Efficacy and safety of huperzine A in patients with Alzheimer's disease: a meta-analysis of randomized controlled trials",
-                        authors:  [
-                            "Xing, S.H.",
-                            "Zhu, C.X.",
-                            "Zhang, R.",
-                            "An, L."
-                        ],
-                        year:  2014,
-                        journal:  "Dementia and Geriatric Cognitive Disorders",
-                        pmid:  "357040",
-                        doi:  "10.1159/000357040",
-                        findings:  "Meta-analysis showed huperzine A improved cognitive function in Alzheimer's disease patients"
-                    }
+                    
                 ]
             },
             {
@@ -199,19 +135,7 @@ window.enhancedCitations[55] = {
                 safetyAspect:  "General Safety",
                 riskLevel:  "Low",
                 evidence:  [
-                    {
-                        title:  "Safety evaluation of huperzine A supplementation",
-                        authors:  [
-                            "Little, J.T.",
-                            "Walsh, S.",
-                            "Aisen, P.S."
-                        ],
-                        year:  2008,
-                        journal:  "Current Alzheimer Research",
-                        pmid:  "18537543",
-                        doi:  "10.2174/156720508784533318",
-                        findings:  "Huperzine A showed good tolerability with mostly mild gastrointestinal side effects"
-                    }
+                    
                 ]
             },
             {

@@ -13,7 +13,7 @@ const betaAlanineEnhanced = {
   // Enhanced Evidence Profile for Performance Supplements
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 12,
+    "totalCitations": 10,
     "researchQualityScore": 85,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -315,34 +315,8 @@ const betaAlanineEnhanced = {
             "monitoringRecommendations": "No special monitoring required for healthy individuals",
             "endogenousProduction": "Beta-alanine produced naturally, minimizing toxicity risk",
             "conclusion": "Safe for healthy populations when used as directed"
-          },
-          {
-            "citationId": "reynolds_2023_safety",
-            "title": "A Systematic Risk Assessment and Meta-Analysis on the Use of Oral β-Alanine Supplementation",
-            "authors": ["Reynolds KA", "Johnson EC", "Jäger R", "Cervenka I", "Bello A", "Hodgson DD", "Hillyard M", "Britto RR", "Stecker RA"],
-            "year": 2023,
-            "journal": "Advances in Nutrition", 
-            "volume": "14", "issue": "4", "pages": "671-688",
-            "doi": "10.1016/j.advnut.2023.04.001",
-            "pmid": "37028708",
-            "studyType": "Systematic risk assessment and meta-analysis",
-            "evidenceLevel": "Level 1",
-            "analysisScope": {
-              "studiesReviewed": "57 studies",
-              "totalParticipants": "Over 1,500 individuals",
-              "durationRange": "2 weeks to 1 year supplementation"
-            },
-            "safetyOutcomes": {
-              "overallSafetyProfile": "Excellent safety profile confirmed",
-              "adverseEventRate": "<5% experiencing mild paresthesia",
-              "seriousAdverseEvents": "Zero serious adverse events attributed to beta-alanine",
-              "laboratoryParameters": "No clinically significant changes in blood markers",
-              "dropoutRates": "Similar between beta-alanine and placebo groups"
-            },
-            "riskAssessment": "Low risk for healthy adults at recommended dosages",
-            "regulatoryStatus": "Generally recognized as safe (GRAS) by FDA",
-            "populationSafety": "Safe across diverse populations including athletes and recreationally active individuals"
           }
+          
         ]
       }
     ],
@@ -391,31 +365,8 @@ const betaAlanineEnhanced = {
               "dividedDoses": "≤1.6g per dose to minimize paresthesia"
             },
             "significance": "First study to establish maintenance dosing protocols"
-          },
-          {
-            "citationId": "blancquaert_2015_loading",
-            "title": "β-alanine dose for maintaining moderately elevated muscle carnosine levels",
-            "authors": ["Blancquaert L", "Everaert I", "Missinne M", "Baguet A", "Stegen S", "Volkaert A", "Petrovic M", "Vervaet C", "Achten E", "De Maeyer M", "De Henauw S", "Derave W"],
-            "year": 2015,
-            "journal": "Medicine & Science in Sports & Exercise",
-            "volume": "47", "issue": "7", "pages": "1510-1518",
-            "doi": "10.1249/MSS.0000000000000568",
-            "pmid": "25386711",
-            "studyType": "Dose-optimization study",
-            "evidenceLevel": "Level 2",
-            "loadingComparison": {
-              "standardLoading": "6.4g daily for 4 weeks (industry standard)",
-              "moderateLoading": "3.2g daily for 8 weeks",
-              "maintenanceOptimal": "1.2g daily most effective maintenance dose"
-            },
-            "costBenefitAnalysis": {
-              "standardProtocol": "Higher initial cost, faster results",
-              "moderateProtocol": "Lower cost, similar final outcomes",
-              "maintenanceEssential": "Critical for sustaining performance benefits"
-            },
-            "athleticApplication": "Moderate loading suitable for recreational athletes with budget constraints",
-            "performanceOutcomes": "Both protocols produced equivalent exercise performance improvements"
           }
+          
         ]
       }
     ]

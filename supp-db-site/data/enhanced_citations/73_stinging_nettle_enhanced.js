@@ -12,7 +12,7 @@ const stingingNettleEnhanced = {
 
   evidenceProfile: {
     "overallQuality": "Tier 2",
-    "totalCitations": 13,
+    "totalCitations": 5,
     "researchQualityScore": 80,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -51,38 +51,8 @@ const stingingNettleEnhanced = {
             "methodology": "In Vitro Study. Sample: Laboratory study.",
             "participants": "Laboratory study"
           },
-          {
-            "citationId": "7",
-            "title": "Inhibition of human 5α-reductase type 1 and type 2 by polyphenolic compounds from Urtica dioica roots",
-            "authors": [
-              "Nahata A, Dixit VK"
-            ],
-            "year": 2012,
-            "journal": "Planta Medica",
-            "doi": "10.1055/s-0031-1298548",
-            "pmid": "22588834",
-            "studyType": "In Vitro Study",
-            "evidenceLevel": "Level 4",
-            "findings": "Significant inhibition of both 5α-reductase type 1 and type 2. Polyphenolic compounds identified as active components. Mechanism similar to finasteride but with plant compounds",
-            "methodology": "In Vitro Study. Sample: Laboratory enzyme inhibition study.",
-            "participants": "Laboratory enzyme inhibition study"
-          },
-          {
-            "citationId": "9",
-            "title": "Anti-inflammatory and antinociceptive activities of nettle extract (Urtica dioica)",
-            "authors": [
-              "Riehemann K, Behnke B, Schulze-Osthoff K"
-            ],
-            "year": 1999,
-            "journal": "Journal of Ethnopharmacology",
-            "doi": "10.1016/s0378-8741(99)00087-3",
-            "pmid": "10617073",
-            "studyType": "Experimental Study",
-            "evidenceLevel": "Level 3",
-            "findings": "Strong anti-inflammatory activity in multiple pathways. Inhibition of TNF-α and other inflammatory cytokines. Potential benefits for prostate inflammation and pain",
-            "methodology": "Experimental Study. Sample: Animal and cell culture models.",
-            "participants": "Animal and cell culture models"
-          },
+          
+          
           {
             "citationId": "10",
             "title": "Comparative antilipoperoxidant, antinecrotic and scavenging properties of terpenes and biflavones from Ginkgo and some flavonoids",
@@ -98,39 +68,9 @@ const stingingNettleEnhanced = {
             "findings": "Significant aromatase enzyme inhibition. Reduced conversion of testosterone to estrogen. May help maintain favorable testosterone:estrogen ratio",
             "methodology": "In Vitro Study. Sample: Enzyme inhibition study.",
             "participants": "Enzyme inhibition study"
-          },
-          {
-            "citationId": "12",
-            "title": "Stinging nettle leaf extract inhibits prostaglandin E2 and leukotriene B4 synthesis",
-            "authors": [
-              "Obertreis B, Giller K, Teucher T, et al."
-            ],
-            "year": 1996,
-            "journal": "Arzneimittelforschung",
-            "doi": "10.1055/s-0031-1300384",
-            "pmid": "8821521",
-            "studyType": "In Vitro Study",
-            "evidenceLevel": "Level 4",
-            "findings": "Inhibition of PGE2 and LTB4 synthesis. Reduced inflammatory mediator production. Potential benefits for chronic prostate inflammation",
-            "methodology": "In Vitro Study. Sample: Cell culture inflammation models.",
-            "participants": "Cell culture inflammation models"
-          },
-          {
-            "citationId": "13",
-            "title": "Urtica dioica root extract: in vitro and in vivo studies of its effects on the growth of human prostate cells",
-            "authors": [
-              "Durak I, Biri H, Devrim E, et al."
-            ],
-            "year": 2004,
-            "journal": "Journal of Ethnopharmacology",
-            "doi": "10.1016/j.jep.2004.03.049",
-            "pmid": "15234770",
-            "studyType": "In Vitro and In Vivo Study",
-            "evidenceLevel": "Level 4",
-            "findings": "Inhibition of human prostate cell proliferation. Antioxidant effects protecting prostate tissue. Reduced oxidative stress markers in prostate",
-            "methodology": "In Vitro and In Vivo Study. Sample: Human prostate cell lines and animal models.",
-            "participants": "Human prostate cell lines and animal models"
           }
+          
+          
         ]
       }
     ],
@@ -144,22 +84,7 @@ const stingingNettleEnhanced = {
         "tissueTarget": "Prostate, Synovial joints",
         "target": "Prostate, Synovial joints",
         "evidence": [
-          {
-            "citationId": "1",
-            "title": "The efficacy and safety of Urtica dioica in treating benign prostatic hyperplasia: A systematic review and meta-analysis",
-            "authors": [
-              "Chrubasik JE, Roufogalis BD, Wagner ML, et al."
-            ],
-            "year": 2007,
-            "journal": "World Journal of Urology",
-            "doi": "10.1007/s00345-006-0149-x",
-            "pmid": "17219220",
-            "studyType": "Systematic Review and Meta-Analysis",
-            "evidenceLevel": "Level 1",
-            "findings": "Significant improvement in International Prostate Symptom Score (IPSS). Enhanced peak urinary flow rate and reduced prostate volume. Low risk of adverse events and excellent safety profile",
-            "methodology": "Systematic Review and Meta-Analysis. Sample: 5 RCTs, 1,128 patients.",
-            "participants": "5 RCTs, 1,128 patients"
-          },
+          
           {
             "citationId": "2",
             "title": "The Efficacy of Stinging Nettle (Urtica Dioica) in Patients with Benign Prostatic Hyperplasia: A Randomized Double-Blind Study in 100 Patients",
@@ -192,22 +117,7 @@ const stingingNettleEnhanced = {
             "methodology": "Randomized Clinical Trial. Sample: 100 men with BPH aged 40-80.",
             "participants": "100 men with BPH aged 40-80"
           },
-          {
-            "citationId": "4",
-            "title": "A comprehensive review on the stinging nettle effect and efficacy profiles. Part II: urticae radix",
-            "authors": [
-              "Chrubasik S, Enderlein W, Bauer R, Grabner W"
-            ],
-            "year": 1997,
-            "journal": "Phytomedicine",
-            "doi": "10.1016/S0944-7113(97)80076-5",
-            "pmid": "23195472",
-            "studyType": "Comprehensive Review",
-            "evidenceLevel": "Level 3",
-            "findings": "Nettle root extract comparable to finasteride in BPH treatment. Anti-inflammatory and anti-proliferative effects on prostate tissue. Inhibition of sex hormone binding globulin (SHBG) activity",
-            "methodology": "Comprehensive Review. Sample: Multiple BPH studies review.",
-            "participants": "Multiple BPH studies review"
-          },
+          
           {
             "citationId": "5",
             "title": "Urtica dioica; an efficient plant in Iranian traditional medicine: A systematic review",
@@ -256,22 +166,7 @@ const stingingNettleEnhanced = {
             "methodology": "In Vitro Study. Sample: Laboratory enzyme inhibition study.",
             "participants": "Laboratory enzyme inhibition study"
           },
-          {
-            "citationId": "8",
-            "title": "Clinical efficacy of nettle extract in the treatment of benign prostatic hyperplasia in comparison with finasteride",
-            "authors": [
-              "Lopatkin N, Sivkov A, Walther C, et al."
-            ],
-            "year": 2005,
-            "journal": "Urologiia",
-            "doi": "10.17816/uroved20052014-19",
-            "pmid": "15889403",
-            "studyType": "Randomized Controlled Trial",
-            "evidenceLevel": "Level 2",
-            "findings": "Nettle root extract non-inferior to finasteride after 24 weeks. Similar improvements in IPSS and quality of life scores. Better tolerance and fewer side effects than finasteride",
-            "methodology": "Randomized Controlled Trial. Sample: 543 men with BPH.",
-            "participants": "543 men with BPH"
-          },
+          
           {
             "citationId": "9",
             "title": "Anti-inflammatory and antinociceptive activities of nettle extract (Urtica dioica)",
@@ -304,22 +199,7 @@ const stingingNettleEnhanced = {
             "methodology": "In Vitro Study. Sample: Enzyme inhibition study.",
             "participants": "Enzyme inhibition study"
           },
-          {
-            "citationId": "11",
-            "title": "Effects of Urtica dioica and Pygeum africanum extracts on prostatic hyperplasia in rats",
-            "authors": [
-              "Lichius JJ, Muth C"
-            ],
-            "year": 1997,
-            "journal": "Pharmacological Research",
-            "doi": "10.1006/phrs.1997.0103",
-            "pmid": "9264045",
-            "studyType": "Animal Study",
-            "evidenceLevel": "Level 4",
-            "findings": "Significant reduction in prostate weight and hyperplasia. Comparable effects to Pygeum africanum. Inhibition of testosterone-induced prostate growth",
-            "methodology": "Animal Study. Sample: Testosterone-induced BPH in rats.",
-            "participants": "Testosterone-induced BPH in rats"
-          },
+          
           {
             "citationId": "12",
             "title": "Stinging nettle leaf extract inhibits prostaglandin E2 and leukotriene B4 synthesis",

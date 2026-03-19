@@ -11,7 +11,7 @@ const creatineEnhanced = {
 
   "evidenceProfile": {
     "overallQuality": "Tier 1",
-    "totalCitations": 18,
+    "totalCitations": 17,
     "researchQualityScore": 93,
     "lastEvidenceUpdate": "2026-03-04",
     "evidenceStrength": {
@@ -37,23 +37,7 @@ const creatineEnhanced = {
         "tissueTarget": "Skeletal muscle and high-energy demand tissues",
         "target": "Skeletal muscle and high-energy demand tissues",
         "evidence": [
-          {
-            "citationId": "persky_2003_pcr_system",
-            "title": "Clinical pharmacology of the dietary supplement creatine monohydrate",
-            "authors": ["Persky AM", "Brazeau GA"],
-            "year": 2003,
-            "journal": "Pharmacological Reviews",
-            "volume": "55",
-            "issue": "2",
-            "pages": "209-237",
-            "doi": "10.1124/pr.55.2.1",
-            "pmid": "12773628",
-            "studyType": "Comprehensive pharmacological review",
-            "evidenceLevel": "Level 3",
-            "findings": "Creatine is phosphorylated to phosphocreatine (PCr) by creatine kinase, serving as a temporal and spatial energy buffer. PCr rapidly regenerates ATP during high-intensity exercise, with intramuscular PCr stores increasing 10-40% following supplementation.",
-            "methodology": "Review of creatine pharmacokinetics, pharmacodynamics, and clinical pharmacology across human studies",
-            "clinicalTranslation": "High - fundamental mechanism underlying all performance benefits"
-          },
+          
           {
             "citationId": "harris_1992_muscle_creatine",
             "title": "Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation",

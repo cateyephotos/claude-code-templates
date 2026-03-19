@@ -16,7 +16,7 @@ const supplement_unknown_enhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  13,
+        totalCitations:  11,
         researchQualityScore:  82,
         lastEvidenceUpdate:  "2025-08-25",
         evidenceStrength:  {
@@ -77,25 +77,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Neuroplasticity enhancement",
                 tissueTarget:  "Hippocampal neurons",
                 evidence:  [
-                    {
-                        title:  "Centella asiatica extract enhances hippocampal mitochondrial bioenergetics",
-                        authors:  "Gray NE, Alcazar Magana A, Lak P, et al.",
-                        journal:  "Journal of Ethnopharmacology",
-                        year:  2018,
-                        volume:  "215",
-                        pages:  "432-442",
-                        doi:  "10.1016/j.jep.2017.12.020",
-                        pmid:  "29253615",
-                        studyType:  "mechanistic_study",
-                        evidenceLevel:  "Level 2",
-                        participants:  "Animal studies",
-                        duration:  "4-8 weeks",
-                        dosage:  "100-300 mg/kg",
-                        findings:  "Enhanced dendritic arborization and improved mitochondrial function in hippocampus",
-                        effectSize:  "Large improvement in neuroplasticity markers",
-                        pValue:  "<0.001",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ],
@@ -134,26 +116,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Anxiolytic effects",
                 populationTarget:  "Adults with anxiety",
                 evidence:  [
-                    {
-                        title:  "Anxiolytic activity of Centella asiatica in animal models",
-                        authors:  "Bradwejn J, Zhou Y, Koszycki D, Shlik J",
-                        journal:  "Journal of Clinical Psychopharmacology",
-                        year:  2000,
-                        volume:  "20",
-                        issue:  "6",
-                        pages:  "680-684",
-                        doi:  "10.1097/00004714-200012000-00016",
-                        pmid:  "11106142",
-                        studyType:  "clinical_trial",
-                        evidenceLevel:  "Level 2",
-                        participants:  "33 patients with generalized anxiety disorder",
-                        duration:  "60 days",
-                        dosage:  "12 g daily (dried herb)",
-                        findings:  "Significant reduction in anxiety scores and startle response",
-                        effectSize:  "Moderate anxiety reduction",
-                        pValue:  "<0.01",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ],

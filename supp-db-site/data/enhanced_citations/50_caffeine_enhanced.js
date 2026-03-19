@@ -12,7 +12,7 @@ window.caffeineEnhanced = {
   "version": "1.0",
   "evidenceProfile": {
     "overallQuality": "Tier 1",
-    "totalCitations": 25,
+    "totalCitations": 22,
     "researchQualityScore": 94,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -51,21 +51,8 @@ window.caffeineEnhanced = {
             "findings": "",
             "methodology": "",
             "keyFindings": "Caffeine blocks adenosine A1 and A2A receptors, preventing adenosine-induced drowsiness and enhancing alertness through dopaminergic and noradrenergic pathways."
-          },
-          {
-            "title": "Mechanisms of action of caffeine: implications for the behavioral and cognitive effects of the methylxanthine",
-            "authors": [
-              "Nehlig, A.",
-              "Daval, J.L.",
-              "Debry, G."
-            ],
-            "year": 1992,
-            "journal": "Behavioural Brain Research",
-            "pmid": "1418466",
-            "doi": "10.1016/S0166-4328(05)80274-6",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "Caffeine enhances dopamine signaling in the nucleus accumbens and increases norepinephrine release, contributing to improved mood and cognitive performance."
           }
+          
         ]
       },
       {
@@ -74,21 +61,7 @@ window.caffeineEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "General population",
         "evidence": [
-          {
-            "title": "Phosphodiesterase inhibition by caffeine and its metabolites",
-            "authors": [
-              "Smellie, F.W.",
-              "Davis, C.W.",
-              "Daly, J.W.",
-              "Wells, J.N."
-            ],
-            "year": 1979,
-            "journal": "Life Sciences",
-            "pmid": "226776",
-            "doi": "10.1016/0024-3205(79)90087-6",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Caffeine inhibits phosphodiesterase enzymes, leading to increased cyclic AMP levels and enhanced cellular signaling pathways."
-          }
+          
         ]
       },
       {
@@ -269,23 +242,7 @@ window.caffeineEnhanced = {
         "replicationStatus": "Extensively documented",
         "populationTarget": "Healthy adults",
         "evidence": [
-          {
-            "title": "Systematic review of the potential adverse effects of caffeine consumption in healthy adults, pregnant women, adolescents, and children",
-            "authors": [
-              "Nawrot, P.",
-              "Jordan, S.",
-              "Eastwood, J.",
-              "Rotstein, J.",
-              "Hugenholtz, A.",
-              "Feeley, M."
-            ],
-            "year": 2003,
-            "journal": "Food and Chemical Toxicology",
-            "pmid": "12804695",
-            "doi": "10.1016/S0278-6915(03)00104-7",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "Caffeine consumption up to 400 mg/day is not associated with adverse health effects in healthy adults. Higher doses may cause anxiety, insomnia, and cardiovascular effects."
-          }
+          
         ]
       },
       {

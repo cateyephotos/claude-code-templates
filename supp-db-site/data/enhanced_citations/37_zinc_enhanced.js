@@ -11,7 +11,7 @@ const zincEnhanced = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
+    "totalCitations": 9,
     "researchQualityScore": 88,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -28,39 +28,8 @@ const zincEnhanced = {
 
   "citations": {
     "mechanisms": [
-      {
-        "mechanism": "Primary mechanism of action",
-        "strength": "Moderate",
-        "mechanismType": "Neurotransmitter modulation",
-        "tissueTarget": "Neural tissue and neurotransmitter systems",
-        "target": "Neural tissue and neurotransmitter systems",
-        "evidence": [
-      {
-        "title": "Zinc in the Brain: Friend or Foe?",
-        "authors": ["Prakash, A.", "Bharti, K.", "Majeed, A.B.A."]
-      }
-    ],
-        "journal": "International Journal of Molecular Sciences",
-        "year": 2015,
-        "volume": 16,
-        "issue": 9,
-        "pages": "19997-20022",
-        "doi": "10.3390/ijms160919997",
-        "pmid": "26307969",
-        "significance": "Comprehensive review of zinc's role in brain function and neurotransmitter systems"
-      },
-      {
-        "title": "Zinc in Cognitive Impairment and Aging",
-        "authors": ["Machado, R.A.A.", "Schneider, R.", "Moura, D.J.", "Fonini, L.S.", "Teixeira, G.R.", "Doleski, P.H.", "Lopes, S.T.A.", "da Silva, A.S."],
-        "journal": "International Journal of Molecular Sciences",
-        "year": 2022,
-        "volume": 23,
-        "issue": 13,
-        "pages": "7251",
-        "doi": "10.3390/ijms23137251",
-        "pmid": "35806253",
-        "significance": "Recent review of zinc's role in cognitive function and aging-related decline"
-      },
+      
+      
       {
         "title": "Zinc and the aging brain",
         "authors": ["Prasad, A.S."],
@@ -72,45 +41,11 @@ const zincEnhanced = {
         "doi": "10.1007/s12263-013-0379-x",
         "pmid": "35806253",
         "significance": "Mechanisms of zinc in brain aging and neurodegeneration"
-      },
-      {
-        "title": "The role of zinc in neurotransmitter pathways",
-        "authors": ["Takeda, A."],
-        "journal": "Brain Research Reviews",
-        "year": 2000,
-        "volume": 34,
-        "issue": 3,
-        "pages": "137-148",
-        "doi": "10.1016/s0165-0173(00)00044-8",
-        "pmid": "24366781",
-        "significance": "Foundational research on zinc's role in dopamine and serotonin synthesis"
       }
     ],
 
     "benefits": [
-      {
-        "healthDomain": "Cognitive Enhancement", 
-        "specificClaim": "Supports cognitive function and mental performance",
-        "strength": "Moderate",
-        "evidenceQuality": "Moderate",
-        "replicationStatus": "Multiple studies",
-        "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
-        "evidence": [
-      {
-        "title": "Zinc supplementation for the treatment of attention deficit hyperactivity disorder symptomatology in children: a pilot randomized controlled trial",
-        "authors": ["Bilici, M.", "Yildirim, F.", "Kandil, S.", "Bekaroglu, M.", "Yildirmis, S.", "Deger, O.", "Ulgen, M.", "Yildiran, A.", "Aksu, H."]
-      }
-    ],
-        "journal": "Journal of Child and Adolescent Psychopharmacology",
-        "year": 2004,
-        "volume": 14,
-        "issue": 1,
-        "pages": "143-147",
-        "doi": "10.1089/104454604773840553",
-        "pmid": "15142398",
-        "significance": "Landmark trial showing zinc supplementation reduced ADHD symptoms by 25.4% vs placebo"
-      },
+      
       {
         "title": "The Role of Iron and Zinc in the Treatment of ADHD among Children and Adolescents: A Systematic Review of Randomized Clinical Trials",
         "authors": ["Konofal, E.", "Lecendreux, M.", "Deron, J.", "Marchand, M.", "Cortese, S.", "Zaim, M.", "Mouren, M.C.", "Arnulf, I."],
@@ -147,18 +82,7 @@ const zincEnhanced = {
         "pmid": "21309695",
         "significance": "US trial showing zinc enhances stimulant medication effectiveness in ADHD"
       },
-      {
-        "title": "Zinc supplementation in treatment of depression: A meta-analysis",
-        "authors": ["Lai, J.", "Moxey, A.", "Nowak, G.", "Vashum, K.", "Bailey, K.", "McEvoy, M."],
-        "journal": "Psychoneuroendocrinology",
-        "year": 2012,
-        "volume": 37,
-        "issue": 9,
-        "pages": "1499-1510",
-        "doi": "10.1016/j.psyneuen.2012.03.013",
-        "pmid": "22520299",
-        "significance": "Meta-analysis showing zinc supplementation reduces depression symptoms"
-      },
+      
       {
         "title": "Zinc and immune function: the biological basis of altered resistance to infection",
         "authors": ["Shankar, A.H.", "Prasad, A.S."],
@@ -240,18 +164,6 @@ const zincEnhanced = {
         "chapter": "12",
         "pages": "442-501",
         "significance": "Official safety guidelines establishing 40mg/day upper limit for adults"
-      },
-      {
-        "title": "Zinc supplementation and copper status in young men",
-        "authors": ["Festa, R.A.", "Thiele, D.J."],
-        "journal": "American Journal of Clinical Nutrition",
-        "year": 2011,
-        "volume": 94,
-        "issue": 2,
-        "pages": "508-516",
-        "doi": "10.3945/ajcn.111.018556",
-        "pmid": "21677057",
-        "significance": "Safety study showing zinc-copper balance considerations at therapeutic doses"
       }
     ],
 
@@ -263,18 +175,6 @@ const zincEnhanced = {
         "year": 2024,
         "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
         "significance": "Official RDA recommendations: 8-11mg daily for adults"
-      },
-      {
-        "title": "Zinc bioavailability and interactions with other nutrients",
-        "authors": ["Lonnerdal, B."],
-        "journal": "American Journal of Clinical Nutrition",
-        "year": 2000,
-        "volume": 71,
-        "issue": 5,
-        "pages": "1181S-1184S",
-        "doi": "10.1093/ajcn/71.5.1181s",
-        "pmid": "10799391",
-        "significance": "Optimal absorption timing and nutrient interactions for zinc supplementation"
       }
     ]
   },

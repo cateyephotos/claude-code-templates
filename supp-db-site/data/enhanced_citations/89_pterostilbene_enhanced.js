@@ -12,7 +12,7 @@ window.pterostilbeneEnhanced = {
   "version": "2.0",
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 14,
+    "totalCitations": 11,
     "researchQualityScore": 42,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -56,27 +56,8 @@ window.pterostilbeneEnhanced = {
             "effectSize": "Bioavailability approximately 80% for pterostilbene vs ~20% for resveratrol in animal models",
             "pValue": "Not applicable (narrative review)",
             "confidenceInterval": "Not applicable"
-          },
-          {
-            "title": "Pterostilbene, a Dimethyl Ether Derivative of Resveratrol, Reduces Fat Accumulation in Rats Fed an Obesogenic Diet",
-            "authors": "Lin WS, Leland JV, Ho CT, Pan MH",
-            "journal": "Journal of Agricultural and Food Chemistry",
-            "year": 2020,
-            "pmid": "32064876",
-            "doi": "10.1021/acs.jafc.9b07519",
-            "studyType": "Review with Animal Data",
-            "sampleSize": "Multiple cell lines and animal models",
-            "duration": "Literature review through 2019",
-            "keyFindings": [
-              "Pterostilbene is more lipophilic with higher intestinal permeability and cellular uptake than resveratrol",
-              "Anti-inflammatory activity through NF-kB modulation confirmed across multiple models",
-              "Anticancer effects via caspase activation, cell cycle arrest, autophagy, and angiogenesis inhibition",
-              "Less toxicity observed compared to resveratrol in preclinical studies"
-            ],
-            "effectSize": "Enhanced cellular uptake and tissue distribution vs resveratrol",
-            "pValue": "Varies by individual study",
-            "confidenceInterval": "Not applicable"
           }
+          
         ]
       },
       {
@@ -241,27 +222,7 @@ window.pterostilbeneEnhanced = {
         "tissueTarget": "Liver, hepatocytes",
         "target": "ALT, GGT, ceramide 14:0, hepatic steatosis",
         "evidence": [
-          {
-            "title": "A randomized, double-blind, placebo-controlled study of nicotinamide riboside with pterostilbene (NRPT) for non-alcoholic fatty liver disease",
-            "authors": "Dellinger RW, Holmes HE, Gong Y, Simko JS, McCormick DB",
-            "journal": "Hepatology",
-            "year": 2022,
-            "pmid": "35788964",
-            "doi": "10.1002/hep.32643",
-            "studyType": "Randomized Double-Blind Placebo-Controlled Trial",
-            "sampleSize": "111 adults with NAFLD",
-            "duration": "6 months",
-            "keyFindings": [
-              "Primary endpoint (hepatic fat reduction) was NOT met — no significant change vs placebo",
-              "Significant decrease in ALT and GGT (liver inflammation markers)",
-              "Significant reduction in toxic ceramide 14:0 levels",
-              "Safe and well-tolerated over 6-month treatment period",
-              "NOTE: Combination product (NR + PT) — cannot attribute effects to pterostilbene alone"
-            ],
-            "effectSize": "Significant ALT and GGT reduction; primary endpoint (hepatic fat) NS",
-            "pValue": "Primary endpoint p > 0.05 (NS); secondary endpoints p < 0.05 for ALT, GGT, ceramide",
-            "confidenceInterval": "Not reported in abstract"
-          }
+          
         ]
       },
       {
@@ -391,28 +352,8 @@ window.pterostilbeneEnhanced = {
             "effectSize": "No significant adverse effects on biochemical safety markers",
             "pValue": "No significant differences from placebo on safety endpoints",
             "confidenceInterval": "Not reported"
-          },
-          {
-            "title": "Comprehensive review: pterostilbene pharmacology and safety",
-            "authors": "Ali R, Bharadwaj A, Gupta K, Mehta R",
-            "journal": "Comprehensive Review (multiple sources)",
-            "year": 2025,
-            "pmid": "40411697",
-            "doi": "10.1016/j.phrs.2025.107162",
-            "studyType": "Comprehensive Review",
-            "sampleSize": "Multiple preclinical and clinical studies reviewed",
-            "duration": "Literature review through 2024",
-            "keyFindings": [
-              "Phase II clinical trial (NCT03671811) in endometrial cancer confirmed pterostilbene safety",
-              "Modulated immune-related gene expression and suppressed mTOR signaling",
-              "Challenges include low water solubility and limited systemic bioavailability",
-              "Long-term safety data in humans remains limited",
-              "Potential CYP enzyme interactions should be considered"
-            ],
-            "effectSize": "Safe in clinical trial settings; bioavailability challenges noted",
-            "pValue": "Varies by study",
-            "confidenceInterval": "Not applicable"
           }
+          
         ]
       }
     ],

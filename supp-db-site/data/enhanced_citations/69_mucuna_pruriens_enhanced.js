@@ -12,7 +12,7 @@ const mucunaPruriensEnhanced = {
 
   evidenceProfile: {
     "overallQuality": "Tier 2",
-    "totalCitations": 12,
+    "totalCitations": 6,
     "researchQualityScore": 79,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -51,22 +51,7 @@ const mucunaPruriensEnhanced = {
             "methodology": "Experimental Study. Sample: Animal and cell culture models.",
             "participants": "Animal and cell culture models"
           },
-          {
-            "citationId": "6",
-            "title": "L-DOPA in Mucuna pruriens and its effect on mitochondria and dopaminergic neurons: implications for Parkinson's disease treatment",
-            "authors": [
-              "Kasture S, Pontis S, Pinna A, et al."
-            ],
-            "year": 2009,
-            "journal": "Phytotherapy Research",
-            "doi": "10.1002/ptr.2848",
-            "pmid": "19441062",
-            "studyType": "Experimental Study",
-            "evidenceLevel": "Level 3",
-            "findings": "Enhanced mitochondrial function in dopaminergic neurons. Superior bioavailability compared to synthetic L-DOPA. Neuroprotective effects beyond dopamine replacement",
-            "methodology": "Experimental Study. Sample: Animal and cellular models.",
-            "participants": "Animal and cellular models"
-          },
+          
           {
             "citationId": "8",
             "title": "Dopamine: Functions, Signaling, and Association with Neurological Diseases",
@@ -82,39 +67,9 @@ const mucunaPruriensEnhanced = {
             "findings": "Dopamine critical for motivation, reward, and sexual behavior. Links between dopamine deficiency and reduced libido. Therapeutic potential of dopamine enhancement for male vitality",
             "methodology": "Comprehensive Review. Sample: Review of dopamine research.",
             "participants": "Review of dopamine research"
-          },
-          {
-            "citationId": "11",
-            "title": "L-Dopa from Mucuna pruriens and L-dopa plus carbidopa: bioavailability and effects on testosterone and growth hormone",
-            "authors": [
-              "Katzenschlager R, Evans A, Manson A, et al."
-            ],
-            "year": 2004,
-            "journal": "Journal of Neural Transmission",
-            "doi": "10.1007/s00702-004-0220-1",
-            "pmid": "15517433",
-            "studyType": "Clinical Study",
-            "evidenceLevel": "Level 3",
-            "findings": "Natural L-DOPA from MP shows superior bioavailability. Potential effects on testosterone and growth hormone levels. Better tolerance compared to synthetic L-DOPA preparations",
-            "methodology": "Clinical Study. Sample: 8 healthy volunteers.",
-            "participants": "8 healthy volunteers"
-          },
-          {
-            "citationId": "12",
-            "title": "Mucuna pruriens seed extract pretreatment protects against paraquat-induced dopaminergic neurodegeneration in the rat substantia nigra",
-            "authors": [
-              "Lieu CA, Kunselman AR, Manyam BV, et al."
-            ],
-            "year": 2010,
-            "journal": "NeuroReport",
-            "doi": "10.1097/WNR.0b013e3283328c3a",
-            "pmid": "19952963",
-            "studyType": "Animal Study",
-            "evidenceLevel": "Level 4",
-            "findings": "Neuroprotective effects against dopaminergic cell death. Preservation of dopamine neurons under toxic stress. Potential therapeutic applications for neurodegenerative conditions",
-            "methodology": "Animal Study. Sample: Rats with induced dopaminergic neurodegeneration.",
-            "participants": "Rats with induced dopaminergic neurodegeneration"
           }
+          
+          
         ]
       }
     ],
@@ -192,22 +147,7 @@ const mucunaPruriensEnhanced = {
             "methodology": "Systematic Review. Sample: Multiple studies on male infertility.",
             "participants": "Multiple studies on male infertility"
           },
-          {
-            "citationId": "5",
-            "title": "Role of Mucuna pruriens in the management of male infertility",
-            "authors": [
-              "Kotta S, Ansari SH, Ali J"
-            ],
-            "year": 2013,
-            "journal": "Phytotherapy Research",
-            "doi": "10.1002/ptr.4656",
-            "pmid": "22407838",
-            "studyType": "Review",
-            "evidenceLevel": "Level 3",
-            "findings": "L-DOPA content responsible for dopaminergic and fertility effects. Multiple mechanisms: hormonal, antioxidant, and neuroprotective. Traditional use validated by modern clinical research",
-            "methodology": "Review. Sample: Comprehensive review of MP research.",
-            "participants": "Comprehensive review of MP research"
-          },
+          
           {
             "citationId": "6",
             "title": "L-DOPA in Mucuna pruriens and its effect on mitochondria and dopaminergic neurons: implications for Parkinson's disease treatment",
@@ -256,38 +196,8 @@ const mucunaPruriensEnhanced = {
             "methodology": "Comprehensive Review. Sample: Review of dopamine research.",
             "participants": "Review of dopamine research"
           },
-          {
-            "citationId": "9",
-            "title": "The effect of Mucuna pruriens on metabolic syndrome and its associated complications",
-            "authors": [
-              "Lampariello LR, Cortelazzo A, Guerranti R, et al."
-            ],
-            "year": 2012,
-            "journal": "European Journal of Nutrition",
-            "doi": "10.1007/s00394-011-0253-y",
-            "pmid": "21989597",
-            "studyType": "Clinical Study",
-            "evidenceLevel": "Level 3",
-            "findings": "Improvements in glucose metabolism and insulin sensitivity. Reduced inflammatory markers and oxidative stress. Potential benefits for metabolic aspects of male health",
-            "methodology": "Clinical Study. Sample: Metabolic syndrome patients.",
-            "participants": "Metabolic syndrome patients"
-          },
-          {
-            "citationId": "10",
-            "title": "Antioxidant potential of Mucuna pruriens (L.) DC. var. utilis (Wall. ex Wight) Bak. ex Burck and its effect on male fertility",
-            "authors": [
-              "Misra L, Wagner H"
-            ],
-            "year": 2006,
-            "journal": "Current Pharmaceutical Design",
-            "doi": "10.2174/138161206776360943",
-            "pmid": "16611115",
-            "studyType": "Review",
-            "evidenceLevel": "Level 3",
-            "findings": "Strong antioxidant activity protecting sperm from oxidative damage. Multiple bioactive compounds beyond L-DOPA contributing to effects. Traditional use in Ayurvedic medicine for male vitality validated",
-            "methodology": "Review. Sample: Review of antioxidant and fertility research.",
-            "participants": "Review of antioxidant and fertility research"
-          },
+          
+          
           {
             "citationId": "11",
             "title": "L-Dopa from Mucuna pruriens and L-dopa plus carbidopa: bioavailability and effects on testosterone and growth hormone",

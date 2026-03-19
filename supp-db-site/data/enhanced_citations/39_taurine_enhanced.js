@@ -13,7 +13,7 @@ const taurineEnhanced = {
   // Enhanced Evidence Profile for Performance Supplements
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 11,
+    "totalCitations": 7,
     "researchQualityScore": 73,
     "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
@@ -282,71 +282,8 @@ const taurineEnhanced = {
         "evidenceQuality": "Moderate",
         "tissueTarget": "Cardiovascular system",
         "evidence": [
-          {
-            "citationId": "militante_2013_cardiovascular",
-            "title": "The role of taurine in diabetes and the development of diabetic complications",
-            "authors": ["Militante JD", "Lombardini JB"],
-            "year": 2002,
-            "journal": "Amino Acids",
-            "volume": "23", "issue": "4", "pages": "381-389",
-            "doi": "10.1007/s00726-002-0212-0",
-            "pmid": "12436205",
-            "studyType": "Comprehensive review",
-            "evidenceLevel": "Level 1",
-            "findings": "Taurine provides cardiovascular protection through multiple mechanisms including blood pressure regulation",
-            "cardiovascularMechanisms": {
-              "bloodPressure": "Reduces both systolic and diastolic blood pressure",
-              "endothelialFunction": "Improves endothelial-dependent vasodilation",
-              "vascularHealth": "Enhances vascular reactivity and compliance",
-              "cardiacFunction": "Improves cardiac contractility and rhythm"
-            },
-            "antioxidantEffects": {
-              "vascularProtection": "Protects blood vessels from oxidative damage",
-              "inflammationReduction": "Reduces vascular inflammation",
-              "nitricOxide": "May enhance nitric oxide bioavailability",
-              "lipidPeroxidation": "Prevents lipid peroxidation in vascular tissue"
-            },
-            "metabolicBenefits": {
-              "glucoseMetabolism": "Improves glucose tolerance and insulin sensitivity",
-              "lipidProfile": "May improve cholesterol and triglyceride levels",
-              "metabolicSyndrome": "Protective effects against metabolic syndrome"
-            },
-            "clinicalRelevance": "Cardiovascular benefits may enhance exercise capacity and recovery",
-            "significance": "Established cardiovascular protective mechanisms"
-          },
-          {
-            "citationId": "zhang_2016_aging",
-            "title": "Functional Role of Taurine in Aging and Cardiovascular Health: An Updated Overview",
-            "authors": ["Zhang M", "Bi LF", "Fang JH", "Su XL", "Da GL", "Kuwamori T", "Kagamimori S"],
-            "year": 2004,
-            "journal": "European Journal of Pharmacology",
-            "volume": "502", "issue": "1-2", "pages": "215-226",
-            "doi": "10.1016/j.ejphar.2004.08.019",
-            "pmid": "15464081",
-            "studyType": "Review with recent updates",
-            "evidenceLevel": "Level 1",
-            "findings": "Taurine levels decline with aging, and supplementation provides cardiovascular and longevity benefits",
-            "agingEffects": {
-              "taurineDecline": "Taurine levels decrease significantly with age",
-              "supplementationBenefits": "Supplementation may slow aging processes",
-              "longevityEffects": "Animal studies show increased lifespan with taurine",
-              "cellularHealth": "Maintains cellular function during aging"
-            },
-            "cardivascularAging": {
-              "heartFunction": "Preserves cardiac function in aging",
-              "vascularHealth": "Maintains vascular elasticity and function",
-              "bloodPressureRegulation": "Helps maintain healthy blood pressure with age",
-              "metabolicHealth": "Supports metabolic function in older adults"
-            },
-            "mechanismOfAction": {
-              "mitochondrialProtection": "Protects mitochondrial function",
-              "stemCellHealth": "May support stem cell function and regeneration",
-              "inflammationControl": "Reduces chronic inflammatory processes",
-              "oxidativeStress": "Powerful antioxidant effects throughout the body"
-            },
-            "exerciseRelevance": "Cardiovascular benefits particularly important for aging athletes",
-            "significance": "Links taurine supplementation to healthy aging and longevity"
-          }
+          
+          
         ]
       },
       {
@@ -356,45 +293,7 @@ const taurineEnhanced = {
         "evidenceQuality": "Moderate",
         "tissueTarget": "Central nervous system",
         "evidence": [
-          {
-            "citationId": "kim_2023_neurological",
-            "title": "Emergence of taurine as a therapeutic agent for neurological disorders",
-            "authors": ["Kim HY", "Kim HV", "Yoon JH", "Kang BR", "Cho SM", "Lee S", "Kim JY", "Kim Y", "Cho Y", "Woo J", "Kim Y"],
-            "year": 2023,
-            "journal": "Biomedicine & Pharmacotherapy",
-            "volume": "165", "pages": "115242",
-            "doi": "10.1016/j.biopha.2023.115242",
-            "pmid": "37531786",
-            "studyType": "Comprehensive review",
-            "evidenceLevel": "Level 1",
-            "findings": "Taurine shows therapeutic potential for neurological disorders through multiple neuroprotective mechanisms",
-            "neuroprotectiveMechanisms": {
-              "gabaModulation": "Enhances GABA-mediated inhibitory signaling",
-              "glutamateProtection": "Protects against glutamate excitotoxicity",
-              "calciumRegulation": "Maintains neuronal calcium homeostasis",
-              "oxidativeStress": "Reduces neuronal oxidative damage"
-            },
-            "cognitiveEffects": {
-              "memoryFunction": "May improve memory formation and retention",
-              "learningCapacity": "Supports learning and cognitive flexibility",
-              "neurotransmitterBalance": "Optimizes neurotransmitter systems",
-              "brainPlasticity": "May enhance synaptic plasticity"
-            },
-            "neurologicalApplications": {
-              "strokeProtection": "Neuroprotective effects in stroke models",
-              "seizureControl": "May help control seizure activity",
-              "neurodegeneration": "Potential benefits in neurodegenerative diseases",
-              "traumaticBrainInjury": "Protective effects against brain trauma"
-            },
-            "exerciseRelevance": {
-              "mentalFatigue": "May reduce mental fatigue during exercise",
-              "motorControl": "Enhanced motor control and coordination",
-              "perceivedExertion": "May reduce perceived exertion during exercise",
-              "neuroprotection": "Protects against exercise-induced neural stress"
-            },
-            "clinicalTranslation": "Emerging therapeutic applications in neurological medicine",
-            "significance": "Recent evidence for taurine's neurological therapeutic potential"
-          }
+          
         ]
       }
     ],
@@ -407,50 +306,7 @@ const taurineEnhanced = {
         "riskLevel": "Very Low",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
-          {
-            "citationId": "shao_2008_safety",
-            "title": "Risk assessment for the amino acids taurine, L-glutamine and L-arginine",
-            "authors": ["Shao A", "Hathcock JN"],
-            "year": 2008,
-            "journal": "Regulatory Toxicology and Pharmacology",
-            "volume": "50", "issue": "2", "pages": "215-219",
-            "doi": "10.1016/j.yrtph.2007.07.003",
-            "pmid": "17719159",
-            "studyType": "Safety review and assessment",
-            "evidenceLevel": "Level 1",
-            "safetyFindings": {
-              "adverseEvents": "No serious adverse events in clinical studies",
-              "doseSafety": "Safe at doses up to 10g daily",
-              "longTermSafety": "No safety concerns with chronic supplementation",
-              "populationSafety": "Safe across all age groups and populations"
-            },
-            "doseRangeSafety": {
-              "therapeuticDose": "1-6g daily - excellent safety profile",
-              "highDose": "Up to 10g daily - well tolerated",
-              "pediatricSafety": "Safe for use in children and adolescents",
-              "geriatricSafety": "Particularly beneficial for older adults"
-            },
-            "contraindications": {
-              "pregnancy": "Generally considered safe during pregnancy",
-              "breastfeeding": "Safe during lactation",
-              "medicalConditions": "No specific contraindications identified",
-              "drugInteractions": "No significant drug interactions reported"
-            },
-            "physiologicalSafety": {
-              "renalFunction": "No adverse effects on kidney function",
-              "hepaticFunction": "No liver toxicity reported",
-              "cardiovascularSafety": "Cardiovascular benefits outweigh any risks",
-              "neurologicalSafety": "Neuroprotective rather than neurotoxic"
-            },
-            "regulatoryStatus": {
-              "fdaStatus": "Generally recognized as safe (GRAS)",
-              "supplementUse": "Widely available as dietary supplement",
-              "foodAdditive": "Common food additive in energy drinks",
-              "internationalAcceptance": "Accepted as safe internationally"
-            },
-            "conclusion": "Taurine described as one of the safest amino acids for supplementation",
-            "significance": "Established exceptional safety profile across all populations"
-          }
+          
         ]
       }
     ],

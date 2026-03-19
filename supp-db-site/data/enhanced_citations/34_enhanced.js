@@ -11,7 +11,7 @@ const fiveHTPEnhanced = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 12,
+    "totalCitations": 10,
     "researchQualityScore": 75,
     "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
@@ -249,30 +249,8 @@ const fiveHTPEnhanced = {
       }
     ],
     "dosage": [
-      {
-        "title": "Dose-response relationship of 5-HTP in depression treatment",
-        "authors": ["van Praag, H.M."],
-        "journal": "Journal of Neural Transmission",
-        "year": 1982,
-        "volume": 53,
-        "issue": 1,
-        "pages": "41-54",
-        "doi": "10.1007/BF01243381",
-        "pmid": "3298325",
-        "significance": "Dose-response study establishing therapeutic ranges for depression (50-300mg daily)"
-      },
-      {
-        "title": "Therapeutic doses of 5-hydroxytryptophan and clinical response",
-        "authors": ["Zmilacher, K.", "Battegay, R.", "Gastpar, M."],
-        "journal": "Neuropsychobiology",
-        "year": 1988,
-        "volume": 20,
-        "issue": 1,
-        "pages": "28-35",
-        "doi": "10.1159/000118469",
-        "pmid": "3265988",
-        "significance": "Clinical study establishing optimal dosing protocols (100-300mg daily)"
-      },
+      
+      
       {
         "title": "Pharmacokinetics of 5-hydroxytryptophan and metabolites",
         "authors": ["Magnussen, I.", "Jensen, T.S.", "Rand, J.H.", "Van Woert, M.H."],

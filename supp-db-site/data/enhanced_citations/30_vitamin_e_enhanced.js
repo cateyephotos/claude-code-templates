@@ -12,7 +12,7 @@ window.vitaminEEnhanced = {
   "version": "1.0",
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
+    "totalCitations": 12,
     "researchQualityScore": 78,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -49,20 +49,8 @@ window.vitaminEEnhanced = {
             "findings": "",
             "methodology": "",
             "keyFindings": "Vitamin E acts as the primary lipid-soluble antioxidant in cell membranes, protecting polyunsaturated fatty acids from lipid peroxidation."
-          },
-          {
-            "title": "Mechanisms of vitamin E transport",
-            "authors": [
-              "Traber, M.G.",
-              "Atkinson, J."
-            ],
-            "year": 2007,
-            "journal": "Annual Review of Nutrition",
-            "pmid": "17506664",
-            "doi": "10.1146/annurev.nutr.27.061406.093819",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "Alpha-tocopherol transfer protein regulates vitamin E distribution and maintains optimal tissue concentrations for antioxidant protection."
           }
+          
         ]
       },
       {
@@ -199,23 +187,7 @@ window.vitaminEEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "General population",
         "evidence": [
-          {
-            "title": "Photoprotective effects of vitamin E",
-            "authors": [
-              "Burke, K.E.",
-              "Clive, J.",
-              "Combs, G.F.",
-              "Commisso, J.",
-              "Keen, C.L.",
-              "Nakamura, R.M."
-            ],
-            "year": 2000,
-            "journal": "Nutrition and Cancer",
-            "pmid": "11341040",
-            "doi": "10.1207/S15327914NC381_4",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Vitamin E supplementation provides modest protection against UV-induced skin damage and may reduce risk of skin cancer."
-          }
+          
         ]
       }
     ],
@@ -251,22 +223,7 @@ window.vitaminEEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "Individuals on anticoagulants",
         "evidence": [
-          {
-            "title": "High-dose vitamin E supplementation and hemorrhagic stroke",
-            "authors": [
-              "Schürks, M.",
-              "Glynn, R.J.",
-              "Rist, P.M.",
-              "Tzourio, C.",
-              "Kurth, T."
-            ],
-            "year": 2010,
-            "journal": "Neurology",
-            "pmid": "20975057",
-            "doi": "10.1212/WNL.0b013e3181f25759",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "High-dose vitamin E supplementation (>400 IU/day) may increase risk of hemorrhagic stroke, particularly in individuals with bleeding disorders."
-          }
+          
         ]
       },
       {
@@ -275,24 +232,7 @@ window.vitaminEEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "Individuals on blood thinners",
         "evidence": [
-          {
-            "title": "Vitamin E and warfarin interaction",
-            "authors": [
-              "Booth, S.L.",
-              "Golly, I.",
-              "Sacheck, J.M.",
-              "Roubenoff, R.",
-              "Dallal, G.E.",
-              "Hamada, K.",
-              "Blumberg, J.B."
-            ],
-            "year": 2004,
-            "journal": "American Journal of Clinical Nutrition",
-            "pmid": "15321791",
-            "doi": "10.1093/ajcn/80.3.628",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "High-dose vitamin E may enhance anticoagulant effects of warfarin, requiring careful monitoring of INR levels."
-          }
+          
         ]
       }
     ]

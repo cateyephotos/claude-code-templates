@@ -20,7 +20,7 @@ window.seleniumEnhanced = {
   "version": "1.0",
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 14,
+    "totalCitations": 12,
     "researchQualityScore": 82,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -81,20 +81,7 @@ window.seleniumEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "General population",
         "evidence": [
-          {
-            "title": "Selenium and immune function",
-            "authors": [
-              "Arthur, J.R.",
-              "McKenzie, R.C.",
-              "Beckett, G.J."
-            ],
-            "year": 2003,
-            "journal": "American Journal of Clinical Nutrition",
-            "pmid": "12816794",
-            "doi": "10.1093/ajcn/77.6.1457S",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "Selenium deficiency impairs immune function, while adequate levels support T-cell proliferation and antibody production."
-          }
+          
         ]
       },
       {
@@ -266,27 +253,7 @@ window.seleniumEnhanced = {
         "replicationStatus": "Well-documented",
         "populationTarget": "Individuals taking high-dose supplements",
         "evidence": [
-          {
-            "title": "Selenium poisoning: clinical features and treatment",
-            "authors": [
-              "MacFarquhar, J.K.",
-              "Broussard, D.L.",
-              "Melstrom, P.",
-              "Hutchinson, R.",
-              "Wolkin, A.",
-              "Martin, C.",
-              "Burk, R.F.",
-              "Dunn, J.R.",
-              "Green, A.L.",
-              "Hammond, R."
-            ],
-            "year": 2010,
-            "journal": "Clinical Toxicology",
-            "pmid": "20698816",
-            "doi": "10.3109/15563650.2010.514315",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Chronic selenium toxicity (selenosis) causes hair loss, nail brittleness, garlic breath, and neurological symptoms at doses >900 μg/day."
-          }
+          
         ]
       },
       {

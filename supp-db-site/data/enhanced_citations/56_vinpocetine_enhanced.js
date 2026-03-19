@@ -11,7 +11,7 @@ window.enhancedCitations[56] = {
     lastUpdated:  "2025-08-25",
     evidenceProfile:  {
         overallQuality:  "Tier 3",
-        totalCitations:  11,
+        totalCitations:  4,
         researchQualityScore:  64,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -32,18 +32,7 @@ window.enhancedCitations[56] = {
                 strength:  "Strong",
                 tissueTarget:  "Cerebral blood vessels",
                 evidence:  [
-                    {
-                        title:  "Vinpocetine: a nootropic agent with neuroprotective properties",
-                        authors:  [
-                            "Szatmari, S.Z.",
-                            "Whitehouse, P.J."
-                        ],
-                        year:  2003,
-                        journal:  "CNS Drug Reviews",
-                        pmid:  "14530799",
-                        doi:  "10.1111/j.1527-3458.2003.tb00254.x",
-                        findings:  "Vinpocetine inhibits phosphodiesterase-1 and increases cerebral blood flow through vasodilation"
-                    }
+                    
                 ]
             },
             {
@@ -52,18 +41,7 @@ window.enhancedCitations[56] = {
                 strength:  "Moderate",
                 tissueTarget:  "Neuronal membranes",
                 evidence:  [
-                    {
-                        title:  "Vinpocetine blocks voltage-gated Na+ channels and reduces neuronal excitability",
-                        authors:  [
-                            "Sitges, M.",
-                            "Nekrassov, V."
-                        ],
-                        year:  1999,
-                        journal:  "Neurochemical Research",
-                        pmid:  "10447511",
-                        doi:  "10.1023/a:1007565100674",
-                        findings:  "Vinpocetine blocks voltage-gated sodium channels and reduces excessive neuronal firing"
-                    }
+                    
                 ]
             },
             {
@@ -125,19 +103,7 @@ window.enhancedCitations[56] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Clinical studies",
                 evidence:  [
-                    {
-                        title:  "Effects of vinpocetine on cerebral blood flow and cognitive performance",
-                        authors:  [
-                            "Hindmarch, I.",
-                            "Fuchs, H.H.",
-                            "Erzigkeit, H."
-                        ],
-                        year:  1991,
-                        journal:  "European Journal of Clinical Pharmacology",
-                        pmid:  "2076719",
-                        doi:  "10.1007/BF00315411",
-                        findings:  "Vinpocetine increased cerebral blood flow and improved cognitive performance in elderly subjects"
-                    }
+                    
                 ]
             },
             {
@@ -147,21 +113,7 @@ window.enhancedCitations[56] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Clinical trials",
                 evidence:  [
-                    {
-                        title:  "Vinpocetine in acute ischaemic stroke: a randomized controlled trial",
-                        authors:  [
-                            "Feigin, V.L.",
-                            "Doronin, B.M.",
-                            "Popova, T.F.",
-                            "Gribatcheva, E.V.",
-                            "Tchervov, D.V."
-                        ],
-                        year:  2001,
-                        journal:  "Journal of the Neurological Sciences",
-                        pmid:  "11378839",
-                        doi:  "10.1016/s0022-510x(01)00491-4",
-                        findings:  "Vinpocetine showed benefits for functional recovery in acute ischemic stroke patients"
-                    }
+                    
                 ]
             },
             {
@@ -171,18 +123,7 @@ window.enhancedCitations[56] = {
                 evidenceQuality:  "Limited",
                 replicationStatus:  "Small studies",
                 evidence:  [
-                    {
-                        title:  "Cognitive effects of vinpocetine in healthy volunteers",
-                        authors:  [
-                            "Subhan, Z.",
-                            "Hindmarch, I."
-                        ],
-                        year:  1985,
-                        journal:  "European Journal of Clinical Pharmacology",
-                        pmid:  "3319646",
-                        doi:  "10.1007/BF00637552",
-                        findings:  "Vinpocetine improved some measures of cognitive performance in healthy young adults"
-                    }
+                    
                 ]
             },
             {
@@ -192,19 +133,7 @@ window.enhancedCitations[56] = {
                 evidenceQuality:  "Limited",
                 replicationStatus:  "Small studies",
                 evidence:  [
-                    {
-                        title:  "Vinpocetine in the treatment of tinnitus",
-                        authors:  [
-                            "Holgers, K.M.",
-                            "Axelsson, A.",
-                            "Pringle, I."
-                        ],
-                        year:  1994,
-                        journal:  "British Journal of Audiology",
-                        pmid:  "9276099",
-                        doi:  "10.3109/03005364000000019",
-                        findings:  "Vinpocetine showed some benefits for tinnitus symptoms in a small clinical trial"
-                    }
+                    
                 ]
             }
         ],
@@ -214,18 +143,7 @@ window.enhancedCitations[56] = {
                 safetyAspect:  "General Safety",
                 riskLevel:  "Low",
                 evidence:  [
-                    {
-                        title:  "Safety profile of vinpocetine supplementation",
-                        authors:  [
-                            "Vas, A.",
-                            "Gulyas, B."
-                        ],
-                        year:  2005,
-                        journal:  "CNS Drug Reviews",
-                        pmid:  "16007238",
-                        doi:  "10.1111/j.1527-3458.2005.tb00268.x",
-                        findings:  "Vinpocetine showed good safety profile with minimal adverse effects in clinical studies"
-                    }
+                    
                 ]
             },
             {

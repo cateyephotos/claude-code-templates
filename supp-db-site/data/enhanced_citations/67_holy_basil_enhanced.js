@@ -16,7 +16,7 @@ const supplement_unknown_enhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  14,
+        totalCitations:  13,
         researchQualityScore:  84,
         lastEvidenceUpdate:  "2025-08-25",
         evidenceStrength:  {
@@ -77,26 +77,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Neuroprotection",
                 tissueTarget:  "Brain tissue",
                 evidence:  [
-                    {
-                        title:  "Neuroprotective effects of Ocimum sanctum against oxidative stress",
-                        authors:  "Samson J, Sheeladevi R, Ravindran R",
-                        journal:  "Neurochemical Research",
-                        year:  2007,
-                        volume:  "32",
-                        issue:  "4-5",
-                        pages:  "718-728",
-                        doi:  "10.1007/s11064-006-9265-y",
-                        pmid:  "17268847",
-                        studyType:  "mechanistic_study",
-                        evidenceLevel:  "Level 2",
-                        participants:  "Animal studies",
-                        duration:  "4-8 weeks",
-                        dosage:  "200-400 mg/kg",
-                        findings:  "Significant neuroprotection through antioxidant mechanisms and reduced oxidative stress",
-                        effectSize:  "Large neuroprotective effects",
-                        pValue:  "<0.001",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ],

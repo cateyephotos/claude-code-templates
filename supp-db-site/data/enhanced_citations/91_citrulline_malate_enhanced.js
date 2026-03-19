@@ -13,7 +13,7 @@ const citrullineMalateEnhanced = {
   // Enhanced Evidence Profile for Performance Supplements
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 11,
+    "totalCitations": 10,
     "researchQualityScore": 78,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -100,28 +100,7 @@ const citrullineMalateEnhanced = {
         "tissueTarget": "Liver and skeletal muscle mitochondria",
         "target": "Liver and skeletal muscle mitochondria",
         "evidence": [
-          {
-            "citationId": "takeda_2017_malate",
-            "title": "Effects of citrulline supplementation on fatigue and exercise performance in mice",
-            "authors": ["Takeda K", "Machida M", "Kohara A", "Omi N", "Takemasa T"],
-            "year": 2017,
-            "journal": "Journal of Nutritional Science",
-            "volume": "6", "pages": "e6",
-            "doi": "10.1017/jns.2016.44",
-            "pmid": "28620479",
-            "studyType": "Animal mechanistic study",
-            "evidenceLevel": "Level 4",
-            "findings": "Citrulline supplementation enhanced ammonia metabolism and reduced fatigue markers",
-            "malateContribution": {
-              "tcaCycle": "Malate component enhances TCA cycle efficiency",
-              "atpProduction": "Improved mitochondrial ATP synthesis capacity",
-              "ammoniaDetox": "Enhanced urea cycle function reduces ammonia toxicity",
-              "lactateBuffering": "Improved lactate metabolism and pH regulation"
-            },
-            "fatigueReduction": "Delayed onset of fatigue through multiple metabolic pathways",
-            "limitations": ["Animal study", "Requires human validation"],
-            "translationalValue": "Provides mechanistic basis for fatigue reduction in humans"
-          }
+          
         ]
       }
     ],

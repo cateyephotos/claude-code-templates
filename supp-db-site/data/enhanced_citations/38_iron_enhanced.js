@@ -18,7 +18,7 @@ window.enhancedData = {
   ],
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 17,
+    "totalCitations": 11,
     "researchQualityScore": 89,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -64,21 +64,7 @@ window.enhancedData = {
       "tissueTarget": "Brain Tissue",
       "target": "Brain Tissue",
       "evidence": [
-        {
-          "title": "Iron and neurodevelopment: the brain at risk",
-          "authors": [
-            "Georgieff, M.K."
-          ],
-          "journal": "Current Opinion in Pediatrics",
-          "year": 2011,
-          "doi": "10.1097/MOP.0b013e3283444b89",
-          "pmid": "21301340",
-          "keyFindings": [
-            "Iron essential for dopamine and serotonin synthesis",
-            "Brain iron deficiency affects myelination"
-          ],
-          "evidenceLevel": "Expert review with clinical evidence"
-        }
+        
       ]
     },
     {
@@ -88,21 +74,7 @@ window.enhancedData = {
       "tissueTarget": "Bone Marrow",
       "target": "Bone Marrow",
       "evidence": [
-        {
-          "title": "The biology of iron deficiency anemia",
-          "authors": [
-            "Camaschella, C."
-          ],
-          "journal": "Nature Reviews Disease Primers",
-          "year": 2015,
-          "doi": "10.1038/nrdp.2015.21",
-          "pmid": "27189421",
-          "keyFindings": [
-            "Iron deficiency disrupts erythropoiesis",
-            "Molecular mechanisms of iron homeostasis"
-          ],
-          "evidenceLevel": "Comprehensive mechanistic review"
-        }
+        
       ]
     },
     {
@@ -265,30 +237,7 @@ window.enhancedData = {
         "healthDomain": "Superior bioavailability of ferrous bisglycinate over conventional iron forms",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "moretti_2015_benefits",
-            "title": "The effects of oral ferrous bisglycinate supplementation on hemoglobin and ferritin concentrations in adults and children: a systematic review and meta-analysis",
-            "authors": [
-              "Moretti, D.",
-              "Goede, J.S.",
-              "Zeder, C.",
-              "Jiskra, M.",
-              "Chatzinakou, V.",
-              "Tjalsma, H.",
-              "Melse-Boonstra, A.",
-              "Brittenham, G.",
-              "Swinkels, D.W.",
-              "Zimmermann, M.B."
-            ],
-            "year": 2015,
-            "journal": "American Journal of Clinical Nutrition",
-            "doi": "10.3945/ajcn.114.103036",
-            "pmid": "25877495",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Superior bioavailability of ferrous bisglycinate over conventional iron forms",
-            "methodology": ""
-          }
+          
         ]
       },
       {
@@ -367,23 +316,7 @@ window.enhancedData = {
         "healthDomain": "Systematic review linking iron deficiency to cognitive impairment and fatigue",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "blanton_2020_benefits",
-            "title": "Iron deficiency, cognition, mental health and fatigue in women of childbearing age",
-            "authors": [
-              "Blanton, C.",
-              "Green, M.W.",
-              "Kretsch, M.J."
-            ],
-            "year": 2020,
-            "journal": "Journal of Nutritional Science",
-            "doi": "10.1017/jns.2020.14",
-            "pmid": "32595966",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Systematic review linking iron deficiency to cognitive impairment and fatigue",
-            "methodology": ""
-          }
+          
         ]
       }
     ],
@@ -413,21 +346,7 @@ window.enhancedData = {
         "safetyAspect": "Review of iron supplement tolerability showing chelated forms have fewer side effects",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "santiago_2012_safety",
-            "title": "Gastrointestinal effects of iron supplementation",
-            "authors": [
-              "Santiago, P."
-            ],
-            "year": 2012,
-            "journal": "Critical Reviews in Food Science and Nutrition",
-            "doi": "10.1080/10408398.2010.511931",
-            "pmid": "22823350",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Review of iron supplement tolerability showing chelated forms have fewer side effects",
-            "methodology": ""
-          }
+          
         ]
       }
     ],
@@ -457,25 +376,7 @@ window.enhancedData = {
         "dosageRange": "Optimal dosing strategies for iron supplementation - lower doses better absorbed",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "tolkien_2015_dosage",
-            "title": "Optimizing oral iron therapy for iron deficiency anemia",
-            "authors": [
-              "Tolkien, Z.",
-              "Stecher, L.",
-              "Mander, A.P.",
-              "Pereira, D.I.",
-              "Powell, J.J."
-            ],
-            "year": 2015,
-            "journal": "European Journal of Haematology",
-            "doi": "10.1111/ejh.12543",
-            "pmid": "25753400",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Optimal dosing strategies for iron supplementation - lower doses better absorbed",
-            "methodology": ""
-          }
+          
         ]
       },
       {

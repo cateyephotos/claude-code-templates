@@ -13,7 +13,7 @@ const alphaGPCEnhanced = {
   // Enhanced Evidence Profile
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 14,
+    "totalCitations": 13,
     "researchQualityScore": 81,
     "lastEvidenceUpdate": "2026-03-05",
     "evidenceStrength": {
@@ -508,42 +508,7 @@ const alphaGPCEnhanced = {
         "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
-          {
-            "citationId": "parnetti_2007_clinical",
-            "title": "Cholinesterase inhibitors in Alzheimer's disease: from the preclinical to the clinical evidence",
-            "authors": ["Parnetti L", "Amenta F", "Gallai V"],
-            "year": 2007,
-            "journal": "Expert Review of Neurotherapeutics",
-            "volume": "7", "issue": "10", "pages": "1307-1322",
-            "doi": "10.1586/14737175.7.10.1307",
-            "pmid": "17939769",
-            "studyType": "Clinical review and interaction analysis",
-            "evidenceLevel": "Level 3",
-            "interactionAnalysis": {
-              "cholinesteraseInhibitors": {
-                "interactionType": "Potential synergistic effect",
-                "clinicalEvidence": "No documented adverse interactions",
-                "mechanism": "Complementary cholinergic enhancement",
-                "recommendation": "Monitor for enhanced cholinergic effects"
-              },
-              "cognitiveEnhancers": {
-                "interactionType": "Additive benefits possible",
-                "safety": "No safety concerns identified",
-                "evidence": "Combination studies show safety"
-              }
-            },
-            "contraindications": {
-              "pregnancy": "Insufficient safety data - avoid use",
-              "breastfeeding": "Unknown excretion in breast milk",
-              "pediatric": "No established safety in children <12 years"
-            },
-            "specialConsiderations": {
-              "cardiovascular": "Monitor patients with significant heart disease",
-              "hepatic": "No dose adjustment needed in mild-moderate liver disease",
-              "renal": "No dose adjustment needed in kidney disease"
-            },
-            "conclusion": "Low interaction risk with standard monitoring protocols"
-          }
+          
         ]
       }
     ],

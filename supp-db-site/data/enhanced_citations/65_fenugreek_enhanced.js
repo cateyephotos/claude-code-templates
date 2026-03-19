@@ -12,7 +12,7 @@ const fenugreekEnhanced = {
 
   evidenceProfile: {
     "overallQuality": "Tier 2",
-    "totalCitations": 14,
+    "totalCitations": 8,
     "researchQualityScore": 78,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -35,22 +35,7 @@ const fenugreekEnhanced = {
         "tissueTarget": "Pancreatic β-cells, Liver, Skeletal muscle",
         "target": "Pancreatic β-cells, Liver, Skeletal muscle",
         "evidence": [
-          {
-            "citationId": "11",
-            "title": "Anti-inflammatory and antioxidant activities of fenugreek (Trigonella foenum-graecum) seed extracts",
-            "authors": [
-              "Ahmadiani A, Javan M, Semnanian S, et al."
-            ],
-            "year": 2001,
-            "journal": "Phytotherapy Research",
-            "doi": "10.1002/ptr.738",
-            "pmid": "11507723",
-            "studyType": "In Vitro and Animal Study",
-            "evidenceLevel": "Level 4",
-            "findings": "Strong anti-inflammatory activity in multiple models. Significant antioxidant effects protecting cellular structures. Potential benefits for exercise-induced inflammation",
-            "methodology": "In Vitro and Animal Study. Sample: Laboratory and animal models.",
-            "participants": "Laboratory and animal models"
-          }
+          
         ]
       }
     ],
@@ -96,38 +81,8 @@ const fenugreekEnhanced = {
             "methodology": "Systematic Review and Meta-Analysis. Sample: Multiple studies on anabolic effects.",
             "participants": "Multiple studies on anabolic effects"
           },
-          {
-            "citationId": "3",
-            "title": "Beneficial effects of fenugreek glycoside supplementation in male subjects during resistance training: A randomized controlled pilot study",
-            "authors": [
-              "Poole C, Bushey B, Foster C, et al."
-            ],
-            "year": 2010,
-            "journal": "Journal of Sports and Health Science",
-            "doi": "10.1016/j.jshs.2018.07.003",
-            "pmid": "30450251",
-            "studyType": "Randomized Controlled Trial",
-            "evidenceLevel": "Level 2",
-            "findings": "Significant increases in bench press strength and lean mass. Reduced body fat percentage during resistance training. Enhanced testosterone levels and anabolic hormone profile",
-            "methodology": "Randomized Controlled Trial. Sample: 30 male subjects.",
-            "participants": "30 male subjects"
-          },
-          {
-            "citationId": "4",
-            "title": "A proprietary Trigonella foenum-graecum L. de-husked seed extract (FenuSMART) alleviates subjective daytime and night-time symptoms in otherwise healthy men with minor sleep complaints",
-            "authors": [
-              "Steels E, Rao A, Vitetta L"
-            ],
-            "year": 2020,
-            "journal": "Phytotherapy Research",
-            "doi": "10.1002/ptr.6615",
-            "pmid": "31989711",
-            "studyType": "Randomized Controlled Trial",
-            "evidenceLevel": "Level 2",
-            "findings": "Improved sleep quality and reduced daytime fatigue. Enhanced morning testosterone levels. Better mood and energy throughout the day",
-            "methodology": "Randomized Controlled Trial. Sample: 63 healthy men.",
-            "participants": "63 healthy men"
-          },
+          
+          
           {
             "citationId": "5",
             "title": "Physiological aspects of male libido enhanced by standardized Trigonella foenum-graecum extract and mineral formulation",
@@ -192,22 +147,7 @@ const fenugreekEnhanced = {
             "methodology": "Randomized Controlled Trial. Sample: 49 resistance-trained men.",
             "participants": "49 resistance-trained men"
           },
-          {
-            "citationId": "9",
-            "title": "Fenugreek extract supplementation has no effect on the hormonal profile of resistance-trained males",
-            "authors": [
-              "Bushey B, Wilborn C, Taylor L, et al."
-            ],
-            "year": 2009,
-            "journal": "International Journal of Exercise Science",
-            "doi": "10.70252/VYOU5267",
-            "pmid": "27182418",
-            "studyType": "Randomized Controlled Trial",
-            "evidenceLevel": "Level 2",
-            "findings": "No significant changes in testosterone or other hormones. Improvements in strength and body composition independent of hormones. Suggests non-hormonal mechanisms for performance benefits",
-            "methodology": "Randomized Controlled Trial. Sample: 30 resistance-trained males.",
-            "participants": "30 resistance-trained males"
-          },
+          
           {
             "citationId": "10",
             "title": "Trigonella foenum-graecum (Fenugreek) Seed Powder Improves Glucose Homeostasis in Alloxan Diabetic Rat Tissues by Reversing Oxidative Stress",
@@ -240,38 +180,8 @@ const fenugreekEnhanced = {
             "methodology": "In Vitro and Animal Study. Sample: Laboratory and animal models.",
             "participants": "Laboratory and animal models"
           },
-          {
-            "citationId": "12",
-            "title": "Fenugreek supplementation improves insulin sensitivity and glycemic control in men with type 2 diabetes",
-            "authors": [
-              "Gupta A, Gupta R, Lal B"
-            ],
-            "year": 2001,
-            "journal": "Nutrition Research",
-            "doi": "10.1016/S0271-5317(01)00358-8",
-            "pmid": "11604262",
-            "studyType": "Clinical Study",
-            "evidenceLevel": "Level 3",
-            "findings": "Significant improvement in glucose tolerance. Enhanced insulin sensitivity and reduced HbA1c. Lowered fasting glucose and post-meal spikes",
-            "methodology": "Clinical Study. Sample: 25 men with type 2 diabetes.",
-            "participants": "25 men with type 2 diabetes"
-          },
-          {
-            "citationId": "13",
-            "title": "Efficacy of Trigonella foenum-graecum (fenugreek) extract in lowering serum cholesterol in diabetic patients",
-            "authors": [
-              "Bordia A, Verma SK, Srivastava KC"
-            ],
-            "year": 1997,
-            "journal": "Phytotherapy Research",
-            "doi": "10.1002/(SICI)1099-1573(199706)11:4<312::AID-PTR90>3.0.CO;2-7",
-            "pmid": "9271419",
-            "studyType": "Clinical Study",
-            "evidenceLevel": "Level 3",
-            "findings": "Significant reduction in total cholesterol and LDL. Improved HDL cholesterol levels. Cardiovascular benefits for metabolic syndrome",
-            "methodology": "Clinical Study. Sample: 60 diabetic patients.",
-            "participants": "60 diabetic patients"
-          },
+          
+          
           {
             "citationId": "14",
             "title": "Hypoglycemic and hypolipidemic effects of fenugreek seed powder in diabetic patients",

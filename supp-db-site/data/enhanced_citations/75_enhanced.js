@@ -15,7 +15,7 @@ const citicolineEnhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 1",
-        totalCitations:  15,
+        totalCitations:  14,
         researchQualityScore:  88,
         lastEvidenceUpdate:  "2025-08-22",
         evidenceStrength:  {
@@ -238,23 +238,7 @@ const citicolineEnhanced = {
                 safetyAspect:  "Effect of citicoline on ischemic lesions as measured by diffusion-weighted magnetic resonance...",
                 strength:  "Moderate",
                 evidence:  [
-                    {
-                        citationId:  "warach_2000_safety",
-                        title:  "Effect of citicoline on ischemic lesions as measured by diffusion-weighted magnetic resonance imaging",
-                        authors:  [
-                            "Warach S",
-                            "Pettigrew LC",
-                            "Dashe JF"
-                        ],
-                        year:  2000,
-                        journal:  "Annals of Neurology",
-                        doi:  "10.1002/1531-8249(200011)48:5<713::AID-ANA4>3.0.CO;2-#",
-                        pmid:  "11079533",
-                        studyType:  "",
-                        evidenceLevel:  "Level 3",
-                        findings:  "",
-                        methodology:  ""
-                    }
+                    
                 ]
             },
             {

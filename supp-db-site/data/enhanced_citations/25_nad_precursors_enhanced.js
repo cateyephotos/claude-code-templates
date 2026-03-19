@@ -11,7 +11,7 @@ const nadPrecursorsEnhanced = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 12,
+    "totalCitations": 8,
     "researchQualityScore": 76,
     "lastEvidenceUpdate": "2025-08-19",
     "evidenceStrength": {
@@ -33,24 +33,7 @@ const nadPrecursorsEnhanced = {
         "tissueTarget": "Mitochondrial and Cellular",
         "target": "Mitochondrial and Cellular",
         "evidence": [
-          {
-            "title": "The Science Behind NMN–A Stable, Reliable NAD+Activator and Anti-Aging Molecule",
-            "authors": ["Poddar, S.K.", "Sifat, A.E.", "Haque, S.", "Nahid, N.A.", "Chowdhury, S.", "Mehedi, I."],
-            "journal": "Molecules",
-            "year": 2019,
-            "volume": "24",
-            "issue": "9",
-            "pages": "1720",
-            "doi": "10.3390/molecules24091720",
-            "pmid": "31058803",
-            "pmcid": "PMC7238909",
-            "keyFindings": [
-              "NMN effectively increases NAD+ levels in various tissues",
-              "Activates sirtuin-mediated longevity pathways and DNA repair mechanisms",
-              "Supports mitochondrial biogenesis and cellular energy metabolism"
-            ],
-            "evidenceLevel": "Comprehensive Review"
-          },
+          
           {
             "title": "Nicotinamide Riboside—The Current State of Research and Therapeutic Uses",
             "authors": ["Mehmel, M.", "Jovanović, N.", "Spitz, U."],
@@ -282,24 +265,7 @@ const nadPrecursorsEnhanced = {
         "tissueTarget": "Multiple organ systems",
         "target": "Multiple organ systems",
         "evidence": [
-          {
-            "title": "NAD+ Precursors Nicotinamide Mononucleotide (NMN) and Nicotinamide Riboside (NR): Potential Dietary Contribution to Health",
-            "authors": ["Okabe, K.", "Yaku, K.", "Tobe, K.", "Nakagawa, T."],
-            "journal": "Current Nutrition Reports",
-            "year": 2019,
-            "volume": "8",
-            "issue": "3",
-            "pages": "228-240",
-            "doi": "10.1007/s13668-019-00281-7",
-            "pmid": "31317480",
-            "pmcid": "PMC10240123",
-            "keyFindings": [
-              "NR has GRAS (Generally Recognized As Safe) status",
-              "No serious side effects reported in multiple clinical trials",
-              "Favorable safety profile compared to other NAD+ precursors"
-            ],
-            "evidenceLevel": "Safety Review"
-          },
+          
           {
             "title": "What is really known about the effects of nicotinamide riboside supplementation in humans",
             "authors": ["Airhart, S.E.", "Shireman, L.M.", "Risler, L.J.", "Anderson, G.D.", "Nagana Gowda, G.A.", "Raftery, D.", "Tian, R.", "Shen, D.D.", "O'Brien, K.D."],
@@ -323,41 +289,7 @@ const nadPrecursorsEnhanced = {
     ],
 
     "dosage": [
-      {
-        "id": "dos_001",
-        "title": "The therapeutic perspective of NAD+ precursors in age-related diseases",
-        "authors": ["Abdellatif, M.", "Sedej, S.", "Kroemer, G."],
-        "journal": "Biochemical and Biophysical Research Communications",
-        "year": 2021,
-        "volume": "575",
-        "pages": "1-8",
-        "doi": "10.1016/j.bbrc.2021.08.056",
-        "pmid": "34455221",
-        "keyFindings": [
-          "NMN dosing ranges 250-1000 mg daily for therapeutic effects",
-          "NR effective doses typically 300-3000 mg daily",
-          "Optimal timing and duration considerations for clinical applications"
-        ],
-        "evidenceLevel": "Clinical Review"
-      },
-      {
-        "id": "dos_002",
-        "title": "Nicotinamide mononucleotide (NMN) as an anti-aging health product – Promises and safety concerns",
-        "authors": ["Yoshino, M.", "Yoshino, J.", "Kayser, B.D.", "Patti, G.J.", "Franczyk, M.P.", "Mills, K.F.", "Sindelar, M.", "Pietka, T.", "Patterson, B.W.", "Imai, S.I.", "Klein, S."],
-        "journal": "Journal of Nutritional Biochemistry",
-        "year": 2021,
-        "volume": "77",
-        "pages": "108329",
-        "doi": "10.1016/j.jnutbio.2019.108329",
-        "pmid": "32004932",
-        "pmcid": "PMC6949036",
-        "keyFindings": [
-          "Single oral dose of 500 mg NMN increases blood NAD+ levels",
-          "Dose-dependent increases in NAD+ metabolites observed",
-          "Safety established for single and multiple dosing protocols"
-        ],
-        "evidenceLevel": "Pharmacokinetic Study"
-      }
+      
     ]
   },
 

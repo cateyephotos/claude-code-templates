@@ -13,7 +13,7 @@ const berberineEnhanced = {
   // Enhanced Evidence Profile
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 14,
+    "totalCitations": 8,
     "researchQualityScore": 83, // Calculated from study quality metrics
     "lastEvidenceUpdate": "2025-08-19",
     "evidenceStrength": {
@@ -183,33 +183,7 @@ const berberineEnhanced = {
         "target": "Intestinal microbiota",
         "target": "Intestinal microbiota",
         "evidence": [
-          {
-            "citationId": "zhang_2020_microbiome",
-            "title": "Berberine modulates gut microbiota and reduces insulin resistance via the TLR4/MyD88 pathway",
-            "authors": ["Zhang Y", "Gu Y", "Ren H", "Wang S", "Zhong H", "Zhao X", "Ma J", "Gu X", "Xue Y", "Huang S", "Yang J", "Chen L", "Chen G", "Qu S", "Liang J", "Qin L", "Huang Q", "Peng Y", "Li Q", "Wang X", "Kong P", "Hou G", "Gao M", "Shi Z", "Li W", "Yao L", "Fang C", "Li Q", "Zhang X"],
-            "year": 2020,
-            "journal": "World Journal of Gastroenterology",
-            "volume": "26", "issue": "38", "pages": "5864-5878",
-            "doi": "10.3748/wjg.v26.i38.5864",
-            "pmid": "33132638",
-            "studyType": "Animal study with mechanistic analysis",
-            "evidenceLevel": "Level 4",
-            "findings": "Berberine increased beneficial bacteria (Akkermansia, Bifidobacterium) and reduced inflammatory markers",
-            "methodology": "High-fat diet mouse model, 16S rRNA sequencing, metabolic assessments",
-            "microbialChanges": {
-              "beneficial": "2-3 fold increase in Akkermansia muciniphila",
-              "scfa": "Increased short-chain fatty acid production",
-              "diversity": "Improved overall microbial diversity",
-              "pathogenic": "Reduced Firmicutes/Bacteroidetes ratio"
-            },
-            "metabolicOutcomes": {
-              "glucose": "Improved glucose tolerance",
-              "inflammation": "Reduced systemic inflammation (IL-6, TNF-α)",
-              "barrier": "Enhanced intestinal barrier function",
-              "endotoxin": "Reduced plasma LPS levels"
-            },
-            "mechanismInsight": "Gut-liver axis modulation contributing to metabolic benefits"
-          }
+          
         ]
       },
       {
@@ -220,28 +194,7 @@ const berberineEnhanced = {
         "target": "Vascular endothelium, immune cells",
         "target": "Vascular endothelium, immune cells",
         "evidence": [
-          {
-            "citationId": "cicero_2007_cardiovascular",
-            "title": "Berberine and its ProLipid™ formulation reduce cholesterol synthesis and increase cholesterol removal mechanisms in HepG2 cells",
-            "authors": ["Cicero AF", "Rovati LC", "Setnikar I"],
-            "year": 2007,
-            "journal": "Life Sciences",
-            "volume": "81", "issue": "4", "pages": "289-296",
-            "doi": "10.1016/j.lfs.2007.05.009",
-            "pmid": "17568620",
-            "studyType": "In vitro mechanistic study",
-            "evidenceLevel": "Level 4",
-            "findings": "Berberine reduced cellular cholesterol by 35% and inflammatory markers by 25-40%",
-            "methodology": "HepG2 cell culture, cholesterol metabolism assays",
-            "antiInflammatory": {
-              "nfKappab": "Inhibited NF-κB activation",
-              "cytokines": "Reduced IL-1β, IL-6, TNF-α production",
-              "adhesion": "Decreased VCAM-1 and ICAM-1 expression",
-              "oxidativeStress": "Enhanced antioxidant enzyme activity"
-            },
-            "cardiovascularRelevance": "Potential for atherosclerosis prevention",
-            "clinicalTranslation": "Moderate - inflammatory effects seen in human studies"
-          }
+          
         ]
       }
     ],
@@ -257,48 +210,7 @@ const berberineEnhanced = {
         "tissueTarget": "Central nervous system",
         "target": "Central nervous system",
         "evidence": [
-          {
-            "citationId": "yin_2012_diabetes",
-            "title": "Efficacy of berberine in patients with type 2 diabetes mellitus",
-            "authors": ["Yin J", "Xing H", "Ye J"],
-            "year": 2012,
-            "journal": "Metabolism",
-            "volume": "61", "issue": "8", "pages": "1479-1494",
-            "doi": "10.1016/j.metabol.2012.06.009",
-            "pmid": "22841520",
-            "studyType": "Systematic review and meta-analysis",
-            "evidenceLevel": "Level 1",
-            "studiesIncluded": 14,
-            "totalParticipants": 1068,
-            "inclusionCriteria": ["RCTs", "Type 2 diabetes patients", "Berberine vs placebo or standard care", "≥4 weeks duration"],
-            "primaryOutcomes": ["HbA1c", "Fasting glucose", "Postprandial glucose"],
-            "pooledResults": {
-              "hba1c": {
-                "reduction": "0.71% (95% CI: -0.94 to -0.49)",
-                "pValue": "p < 0.001",
-                "clinicalSignificance": "Moderate effect, clinically meaningful"
-              },
-              "fastingGlucose": {
-                "reduction": "2.4 mmol/L (95% CI: -3.1 to -1.7)",
-                "pValue": "p < 0.001", 
-                "equivalentReduction": "43 mg/dL decrease"
-              },
-              "postprandialGlucose": {
-                "reduction": "2.7 mmol/L (95% CI: -3.5 to -1.8)",
-                "pValue": "p < 0.001",
-                "clinicalRelevance": "Significant postprandial control"
-              }
-            },
-            "doseAnalysis": {
-              "optimalDose": "1000-1500mg daily in divided doses",
-              "durationEffect": "Benefits increase over 12+ weeks",
-              "doseResponse": "Plateau effects above 1500mg daily"
-            },
-            "heterogeneity": "I² = 34% (low to moderate heterogeneity)",
-            "qualityAssessment": "Average Jadad score: 6.2/8 (high quality)",
-            "comparisonToMetformin": "Similar glucose-lowering efficacy to metformin 1500mg",
-            "conclusion": "Strong evidence for glucose control comparable to standard diabetes medications"
-          },
+          
           {
             "citationId": "zhang_2010_diabetes_rct",
             "title": "Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid berberine",
@@ -468,44 +380,7 @@ const berberineEnhanced = {
         "target": "Central nervous system",
         "tissueTarget": "Central nervous system",
         "evidence": [
-          {
-            "citationId": "hu_2012_obesity",
-            "title": "Lipid-lowering effect of berberine in human subjects and rats",
-            "authors": ["Hu Y", "Ehli EA", "Kittelsrud J", "Ronan PJ", "Munger K", "Downey T", "Bohlen K", "Callahan L", "Munson V", "Janis M", "Benner J", "Davies GE"],
-            "year": 2012,
-            "journal": "Phytomedicine",
-            "volume": "19", "issue": "10", "pages": "861-867",
-            "doi": "10.1016/j.phymed.2012.05.009",
-            "pmid": "22739416",
-            "studyType": "Randomized controlled trial",
-            "evidenceLevel": "Level 2",
-            "sampleSize": "n=144",
-            "population": "Adults with metabolic syndrome",
-            "duration": "12 weeks",
-            "dosage": "300mg three times daily (900mg total)",
-            "primaryOutcome": "Body weight and body composition",
-            "results": {
-              "weightLoss": {
-                "berberine": "5.2 kg average loss",
-                "placebo": "0.9 kg average loss",
-                "difference": "4.3 kg greater loss with berberine (p < 0.001)"
-              },
-              "bodyComposition": {
-                "fatMass": "7.8% reduction (p < 0.01)",
-                "visceralFat": "12.4% reduction (p < 0.01)",
-                "leanMass": "Preserved throughout weight loss"
-              },
-              "metabolicParameters": {
-                "wt_circumference": "6.3 cm reduction (p < 0.001)",
-                "bmi": "1.8 kg/m² reduction (p < 0.001)",
-                "bodyFatPercentage": "2.3% reduction (p < 0.01)"
-              }
-            },
-            "mechanismInsight": "Weight loss correlated with improved insulin sensitivity and AMPK activation",
-            "safetyProfile": "Well tolerated with minimal side effects",
-            "limitation": ["12-week duration", "No long-term follow-up"],
-            "significance": "First major RCT demonstrating weight loss benefits"
-          }
+          
         ]
       }
     ],
@@ -564,54 +439,7 @@ const berberineEnhanced = {
         "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
-          {
-            "citationId": "wang_2017_interactions",
-            "title": "Pharmacokinetic and pharmacodynamic interactions of berberine with conventional drugs",
-            "authors": ["Wang K", "Feng X", "Chai L", "Cao S", "Qiu F"],
-            "year": 2017,
-            "journal": "European Journal of Drug Metabolism and Pharmacokinetics",
-            "volume": "42", "issue": "6", "pages": "871-884",
-            "doi": "10.1007/s13318-017-0395-x",
-            "pmid": "28168552",
-            "studyType": "Pharmacokinetic interaction review",
-            "evidenceLevel": "Level 3",
-            "interactionAnalysis": {
-              "antidiabeticDrugs": {
-                "interactionType": "Additive glucose-lowering effects",
-                "affectedDrugs": ["Metformin", "Sulfonylureas", "Insulin"],
-                "mechanism": "Synergistic AMPK activation and glucose uptake",
-                "clinicalEvidence": "Enhanced glucose control in combination studies",
-                "riskLevel": "Low to moderate",
-                "management": "Monitor blood glucose, consider dose adjustment",
-                "hypoglycemiaRisk": "Increased risk with sulfonylureas and insulin"
-              },
-              "anticoagulants": {
-                "interactionType": "Potential enhancement of anticoagulant effects",
-                "affectedDrugs": ["Warfarin", "Novel anticoagulants"],
-                "mechanism": "Possible CYP450 enzyme inhibition",
-                "clinicalEvidence": "Limited case reports, theoretical risk",
-                "monitoring": "INR monitoring recommended with warfarin",
-                "recommendation": "Caution and increased monitoring"
-              },
-              "cyp450Enzymes": {
-                "inhibition": "Mild inhibition of CYP2D6 and CYP3A4",
-                "clinicalSignificance": "Minimal at therapeutic doses",
-                "affectedDrugs": "Potential for interactions with narrow therapeutic index drugs"
-              }
-            },
-            "contraindications": {
-              "pregnancy": "Insufficient safety data - avoid use",
-              "breastfeeding": "Unknown excretion in breast milk",
-              "pediatric": "No established safety in children",
-              "severeHepaticDisease": "Use caution in severe liver dysfunction"
-            },
-            "specialPopulations": {
-              "elderly": "Generally well tolerated, may need dose adjustment",
-              "renalImpairment": "No dose adjustment needed in mild-moderate impairment",
-              "hepaticImpairment": "Monitor liver function in pre-existing liver disease"
-            },
-            "conclusion": "Generally low interaction risk with appropriate monitoring"
-          }
+          
         ]
       }
     ],
@@ -627,42 +455,7 @@ const berberineEnhanced = {
         "target": "Central nervous system",
         "tissueTarget": "Central nervous system",
         "evidence": [
-          {
-            "citationId": "yin_2008_dose",
-            "title": "Efficacy and safety of berberine for the treatment of type 2 diabetes: a systematic review and meta-analysis",
-            "authors": ["Yin J", "Ye J", "Jia W"],
-            "year": 2012,
-            "journal": "Endocrine",
-            "volume": "42", "issue": "1", "pages": "29-38",
-            "doi": "10.1007/s12020-012-9656-z",
-            "pmid": "22661190",
-            "studyType": "Dose-response meta-analysis",
-            "evidenceLevel": "Level 1",
-            "doseComparison": {
-              "lowDose": "300-900mg daily - modest effects",
-              "standardDose": "1000-1500mg daily - optimal benefits",
-              "highDose": ">1500mg daily - no additional benefit, increased side effects"
-            },
-            "findings": {
-              "efficacy": "1000-1500mg showed optimal benefit-to-risk ratio",
-              "doseResponse": "Plateau effect above 1500mg daily",
-              "tolerability": "GI side effects increase significantly >1500mg",
-              "timing": "Divided doses (2-3 times daily) preferred",
-              "foodTiming": "Administration with meals reduces GI side effects by 65%"
-            },
-            "metabolicOutcomes": {
-              "glucose": "Maximum glucose reduction at 1000-1500mg range",
-              "lipids": "Optimal lipid benefits at 1200-1500mg daily",
-              "weight": "Weight loss benefits plateau at 1000mg daily"
-            },
-            "safetyOptimization": {
-              "startingDose": "Start with 500mg twice daily",
-              "escalation": "Increase by 500mg weekly as tolerated",
-              "maintenanceDose": "1000-1500mg daily in 2-3 divided doses",
-              "foodRecommendation": "Always take with meals"
-            },
-            "recommendation": "1000-1500mg daily in divided doses provides optimal efficacy with good tolerability"
-          },
+          
           {
             "citationId": "zhang_2008_dosing",
             "title": "Treatment of type 2 diabetes and dyslipidemia with the natural plant alkaloid berberine",

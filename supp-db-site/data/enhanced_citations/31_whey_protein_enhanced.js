@@ -12,7 +12,7 @@ window.wheyProteinEnhanced = {
   "version": "1.0",
   "evidenceProfile": {
     "overallQuality": "Tier 1",
-    "totalCitations": 18,
+    "totalCitations": 15,
     "researchQualityScore": 89,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -105,18 +105,7 @@ window.wheyProteinEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "General population",
         "evidence": [
-          {
-            "title": "Immunomodulatory effects of whey proteins and their enzymatic hydrolysates",
-            "authors": [
-              "Krissansen, G.W."
-            ],
-            "year": 2007,
-            "journal": "Pharmacology & Therapeutics",
-            "pmid": "17316816",
-            "doi": "10.1016/j.pharmthera.2007.01.003",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Whey protein contains bioactive peptides including lactoferrin and immunoglobulins that enhance immune function and antimicrobial activity."
-          }
+          
         ]
       }
     ],
@@ -225,20 +214,7 @@ window.wheyProteinEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "Individuals seeking weight management",
         "evidence": [
-          {
-            "title": "Effects of whey protein on satiety and food intake",
-            "authors": [
-              "Luhovyy, B.L.",
-              "Akhavan, T.",
-              "Anderson, G.H."
-            ],
-            "year": 2007,
-            "journal": "Journal of the American College of Nutrition",
-            "pmid": "17914132",
-            "doi": "10.1080/07315724.2007.10719634",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Whey protein consumption increases satiety hormones and reduces subsequent food intake, supporting weight management goals."
-          }
+          
         ]
       }
     ],
@@ -296,18 +272,7 @@ window.wheyProteinEnhanced = {
         "replicationStatus": "Multiple case reports",
         "populationTarget": "Individuals with milk allergies",
         "evidence": [
-          {
-            "title": "Milk protein allergy and whey protein supplements",
-            "authors": [
-              "Wal, J.M."
-            ],
-            "year": 2004,
-            "journal": "Allergy",
-            "pmid": "15147439",
-            "doi": "10.1111/j.1398-9995.2004.00499.x",
-            "evidenceLevel": "Level 3",
-            "keyFindings": "Individuals with milk protein allergies should avoid whey protein supplements due to risk of allergic reactions, including anaphylaxis in severe cases."
-          }
+          
         ]
       }
     ]

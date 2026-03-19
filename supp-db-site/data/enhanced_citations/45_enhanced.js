@@ -24,7 +24,7 @@ window.enhancedData = {
   "isEnhanced": true,
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 17,
+    "totalCitations": 7,
     "researchQualityScore": 70,
     "lastEvidenceUpdate": "2026-03-06",
     "publicationSpan": "1993-2018",
@@ -136,25 +136,7 @@ window.enhancedData = {
         "mechanism": "Pioneering research identifying lutein and zeaxanthin as primary macular carotenoids",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "bone_1993_mechanisms",
-            "title": "Carotenoids in the retina and whole eye",
-            "authors": [
-              "Bone, R.A.",
-              "Landrum, J.T.",
-              "Hime, G.W.",
-              "Cains, A.",
-              "Zamor, J."
-            ],
-            "year": 1993,
-            "journal": "Investigative Ophthalmology & Visual Science",
-            "doi": "",
-            "pmid": "8407219",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Pioneering research identifying lutein and zeaxanthin as primary macular carotenoids",
-            "methodology": ""
-          }
+          
         ]
       }
     ],
@@ -184,83 +166,21 @@ window.enhancedData = {
         "healthDomain": "Systematic review confirming lutein eye health benefits in elderly; most recent comprehensive...",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "buscemi_2018_benefits",
-            "title": "A systematic review on the role of lutein for eye health in the elderly population",
-            "authors": [
-              "Buscemi, S.",
-              "Corleo, D.",
-              "Di Pace, F.",
-              "Petroni, M.L.",
-              "Satriano, A.",
-              "Marchesini, G."
-            ],
-            "year": 2018,
-            "journal": "Nutrients",
-            "doi": "10.3390/nu10070750",
-            "pmid": "29933554",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Systematic review confirming lutein eye health benefits in elderly; most recent comprehensive synthesis",
-            "methodology": ""
-          }
+          
         ]
       },
       {
         "healthDomain": "RCT demonstrating lutein increases macular pigment density and improves visual function in early AMD",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "richer_2004_benefits",
-            "title": "Effects of lutein supplementation on macular pigment optical density and visual function in patients with early age-related macular degeneration",
-            "authors": [
-              "Richer, S.",
-              "Stiles, W.",
-              "Statkute, L.",
-              "Pulido, J.",
-              "Frankowski, J.",
-              "Rudy, D.",
-              "Pei, K.",
-              "Tsipursky, M.",
-              "Nyland, J."
-            ],
-            "year": 2004,
-            "journal": "Ophthalmology",
-            "doi": "10.1016/j.ophtha.2003.05.006",
-            "pmid": "14711733",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "RCT demonstrating lutein increases macular pigment density and improves visual function in early AMD",
-            "methodology": ""
-          }
+          
         ]
       },
       {
         "healthDomain": "Large prospective study (Nurses Health Study cohort) showing lutein protective effects against...",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "chasantaber_1999_benefits",
-            "title": "Dietary carotenoids, vitamins A, C, and E, and risk of cataract in women: a prospective study",
-            "authors": [
-              "Chasan-Taber, L.",
-              "Willett, W.C.",
-              "Seddon, J.M.",
-              "Stampfer, M.J.",
-              "Rosner, B.",
-              "Colditz, G.A.",
-              "Speizer, F.E.",
-              "Hankinson, S.E."
-            ],
-            "year": 1999,
-            "journal": "Archives of Ophthalmology",
-            "doi": "10.1001/archopht.117.11.1469",
-            "pmid": "10565517",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Large prospective study (Nurses Health Study cohort) showing lutein protective effects against cataract formation",
-            "methodology": ""
-          }
+          
         ]
       },
       {
@@ -290,31 +210,7 @@ window.enhancedData = {
         "healthDomain": "RCT demonstrating improvement in contrast sensitivity and visual function with lutein...",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "weigert_2011_benefits",
-            "title": "Effects of lutein and zeaxanthin supplementation on contrast sensitivity in age-related macular degeneration: a randomized controlled trial",
-            "authors": [
-              "Weigert, G.",
-              "Kaya, S.",
-              "Pemp, B.",
-              "Sacu, S.",
-              "Lasta, M.",
-              "Werkmeister, R.M.",
-              "Dragostinoff, N.",
-              "Simader, C.",
-              "Garhöfer, G.",
-              "Schmidt-Erfurth, U.",
-              "Schmetterer, L."
-            ],
-            "year": 2011,
-            "journal": "Ophthalmology",
-            "doi": "10.1016/j.ophtha.2011.06.023",
-            "pmid": "21856009",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "RCT demonstrating improvement in contrast sensitivity and visual function with lutein supplementation in AMD",
-            "methodology": ""
-          }
+          
         ]
       }
     ],
@@ -323,80 +219,21 @@ window.enhancedData = {
         "safetyAspect": "Comprehensive toxicology assessment confirming lutein excellent safety profile with no adverse...",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "ranard_2017_safety",
-            "title": "Safety assessment of lutein and zeaxanthin (LuteMax 2020): subchronic toxicity and genotoxicity studies",
-            "authors": [
-              "Ranard, K.M.",
-              "Jeon, S.",
-              "Mohn, E.S.",
-              "Griffiths, J.C.",
-              "Johnson, E.J.",
-              "Erdman, J.W."
-            ],
-            "year": 2017,
-            "journal": "Food and Chemical Toxicology",
-            "doi": "10.1016/j.fct.2016.12.018",
-            "pmid": "27989839",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Comprehensive toxicology assessment confirming lutein excellent safety profile with no adverse effects at supplemental doses",
-            "methodology": ""
-          }
+          
         ]
       },
       {
         "safetyAspect": "Long-term safety study confirming no adverse effects of lutein supplementation at clinical doses",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "obana_2008_safety",
-            "title": "Safety of lutein and zeaxanthin supplementation",
-            "authors": [
-              "Obana, A.",
-              "Hiramitsu, T.",
-              "Gohto, Y.",
-              "Ohira, A.",
-              "Mizuno, S.",
-              "Hirano, T.",
-              "Bernstein, P.S.",
-              "Fujii, H.",
-              "Iseki, K.",
-              "Tanito, M.",
-              "Hotta, Y."
-            ],
-            "year": 2008,
-            "journal": "Investigative Ophthalmology & Visual Science",
-            "doi": "10.1167/iovs.07-1435",
-            "pmid": "18676630",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Long-term safety study confirming no adverse effects of lutein supplementation at clinical doses",
-            "methodology": ""
-          }
+          
         ]
       },
       {
         "safetyAspect": "GRAS status documentation for dietary supplement lutein; establishes regulatory safety basis",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "higueraciapara_2004_safety",
-            "title": "Generally recognized as safe (GRAS) determination for lutein from Tagetes erecta",
-            "authors": [
-              "Higuera-Ciapara, I.",
-              "Felix-Valenzuela, L.",
-              "Goycoolea, F.M."
-            ],
-            "year": 2004,
-            "journal": "Journal of AOAC International",
-            "doi": "",
-            "pmid": "15287677",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "GRAS status documentation for dietary supplement lutein; establishes regulatory safety basis",
-            "methodology": ""
-          }
+          
         ]
       }
     ],
@@ -405,24 +242,7 @@ window.enhancedData = {
         "dosageRange": "Bioavailability study comparing lutein formulations; oil-based forms (FloraGLO) have superior...",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "bowen_2002_dosage",
-            "title": "Bioavailability of lutein from different formulations and food sources",
-            "authors": [
-              "Bowen, P.E.",
-              "Herbst-Espinosa, S.M.",
-              "Hussain, E.A.",
-              "Stacewicz-Sapuntzakis, M."
-            ],
-            "year": 2002,
-            "journal": "Nutrition",
-            "doi": "10.1016/s0899-9007(01)00768-5",
-            "pmid": "11985953",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Bioavailability study comparing lutein formulations; oil-based forms (FloraGLO) have superior absorption; fat-soluble vitamin absorption characteristics",
-            "methodology": ""
-          }
+          
         ]
       },
       {
@@ -457,24 +277,7 @@ window.enhancedData = {
         "dosageRange": "Pharmacokinetic study defining tissue accumulation, optimal dosing intervals, and retinal uptake...",
         "strength": "Moderate",
         "evidence": [
-          {
-            "citationId": "bone_2003_dosage",
-            "title": "Lutein pharmacokinetics and tissue distribution in healthy volunteers",
-            "authors": [
-              "Bone, R.A.",
-              "Landrum, J.T.",
-              "Guerra, L.H.",
-              "Ruiz, C.A."
-            ],
-            "year": 2003,
-            "journal": "Experimental Eye Research",
-            "doi": "10.1016/s0014-4835(02)00307-9",
-            "pmid": "12634107",
-            "studyType": "",
-            "evidenceLevel": "Level 3",
-            "findings": "Pharmacokinetic study defining tissue accumulation, optimal dosing intervals, and retinal uptake kinetics",
-            "methodology": ""
-          }
+          
         ]
       }
     ]

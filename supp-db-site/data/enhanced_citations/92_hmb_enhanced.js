@@ -13,7 +13,7 @@ const hmbEnhanced = {
   // Enhanced Evidence Profile for Performance Supplements
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 10,
+    "totalCitations": 8,
     "researchQualityScore": 82,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -66,34 +66,8 @@ const hmbEnhanced = {
             },
             "clinicalTranslation": "High - mechanisms well-established across multiple research groups",
             "significance": "Most comprehensive and recent position statement on HMB mechanisms"
-          },
-          {
-            "citationId": "holecek_2018_mechanisms",
-            "title": "Beta-hydroxy-beta-methylbutyrate supplementation and skeletal muscle in healthy and muscle-wasting conditions",
-            "authors": ["Holecek M"],
-            "year": 2018,
-            "journal": "Journal of Cachexia, Sarcopenia and Muscle",
-            "volume": "9", "issue": "5", "pages": "897-905",
-            "doi": "10.1002/jcsm.12340",
-            "pmid": "30084166",
-            "studyType": "Comprehensive mechanistic review",
-            "evidenceLevel": "Level 1",
-            "findings": "HMB affects muscle protein turnover through multiple pathways beyond mTOR",
-            "mechanismValidation": {
-              "cholesterolSynthesis": "HMB is precursor to HMG-CoA, involved in cholesterol synthesis",
-              "membraneStability": "Enhances muscle cell membrane integrity and repair",
-              "inflammationReduction": "Anti-inflammatory effects reduce muscle damage",
-              "calciumHandling": "Improves calcium regulation in muscle fibers",
-              "satelliteCells": "Stimulates muscle satellite cell proliferation and differentiation"
-            },
-            "clinicalApplications": {
-              "healthyIndividuals": "Modest benefits in trained individuals",
-              "muscleWasting": "Significant benefits in catabolic conditions",
-              "aging": "Particularly effective in older adults with sarcopenia",
-              "disuse": "Prevents muscle atrophy during immobilization"
-            },
-            "significance": "Comprehensive mechanistic understanding beyond simple protein synthesis"
           }
+          
         ]
       },
       {
@@ -170,39 +144,8 @@ const hmbEnhanced = {
             "populationSpecific": "Benefits more pronounced in sarcopenic vs healthy populations",
             "methodology": "PRISMA-compliant systematic review with risk of bias assessment",
             "significance": "Most recent meta-analysis in clinical sarcopenia population"
-          },
-          {
-            "citationId": "bear_2020_young_adults",
-            "title": "Supplementation with the Leucine Metabolite β-hydroxy-β-methylbutyrate (HMB) does not Improve Resistance Exercise-Induced Changes in Body Composition or Strength in Young Subjects",
-            "authors": ["Bear DE", "Langan A", "Dimidi E", "Wandrag L", "Harridge SD", "Hart N", "Connolly B", "Whelan K"],
-            "year": 2020,
-            "journal": "Journal of Nutrition",
-            "volume": "150", "issue": "7", "pages": "1789-1798",
-            "doi": "10.1093/jn/nxaa092",
-            "pmid": "32271921",
-            "studyType": "Systematic review and meta-analysis",
-            "evidenceLevel": "Level 1",
-            "studyScope": {
-              "totalStudies": 15,
-              "totalParticipants": 424,
-              "population": "Healthy young adults (mean age 23 years)",
-              "interventionType": "HMB + resistance exercise training"
-            },
-            "primaryResults": {
-              "totalBodyMass": "Small effect (+0.34 kg), but potentially unreliable",
-              "fatFreeMass": "No significant improvement (MD = 0.39 kg, p = 0.17)",
-              "fatMass": "No significant reduction",
-              "1RMStrength": "No significant improvement (MD = 1.11 kg, p = 0.47)"
-            },
-            "populationContext": {
-              "ageEffect": "Limited benefits in healthy young adults",
-              "trainingStatus": "No additional benefits beyond resistance training alone",
-              "proteinIntake": "Adequate protein intake may negate HMB benefits"
-            },
-            "conclusion": "HMB supplementation not recommended for young, healthy individuals",
-            "methodologyQuality": "High quality meta-analysis with bias assessment",
-            "contrastWithOlderAdults": "Highlights age-dependent efficacy of HMB"
           }
+          
         ]
       },
       {

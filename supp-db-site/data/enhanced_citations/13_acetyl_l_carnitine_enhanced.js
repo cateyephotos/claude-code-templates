@@ -11,7 +11,7 @@ window.enhancedCitations[13] = {
     lastUpdated:  "2025-08-25",
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  16,
+        totalCitations:  9,
         researchQualityScore:  79,
         lastEvidenceUpdate:  "2026-03-05",
         evidenceStrength:  {
@@ -65,19 +65,7 @@ window.enhancedCitations[13] = {
                 strength:  "Strong",
                 tissueTarget:  "Brain tissue",
                 evidence:  [
-                    {
-                        title:  "Acetyl-L-carnitine: metabolism and applications in clinical practice",
-                        authors:  [
-                            "Pettegrew, J.W.",
-                            "Levine, J.",
-                            "McClure, R.J."
-                        ],
-                        year:  2000,
-                        journal:  "Neurochemical Research",
-                        pmid:  "11028937",
-                        doi:  "10.1023/a:1007659928358",
-                        findings:  "ALCAR crosses the blood-brain barrier more efficiently than L-carnitine and supports neuronal energy metabolism"
-                    }
+                    
                 ]
             },
             {
@@ -86,18 +74,7 @@ window.enhancedCitations[13] = {
                 strength:  "Strong",
                 tissueTarget:  "Mitochondria",
                 evidence:  [
-                    {
-                        title:  "The role of carnitine in mitochondrial fatty acid oxidation",
-                        authors:  [
-                            "Houten, S.M.",
-                            "Wanders, R.J."
-                        ],
-                        year:  2010,
-                        journal:  "Biochimica et Biophysica Acta",
-                        pmid:  "20036321",
-                        doi:  "10.1016/j.bbalip.2010.01.015",
-                        findings:  "Carnitine is essential for mitochondrial fatty acid oxidation and energy production"
-                    }
+                    
                 ]
             },
             {
@@ -106,21 +83,7 @@ window.enhancedCitations[13] = {
                 strength:  "Moderate",
                 tissueTarget:  "Cholinergic neurons",
                 evidence:  [
-                    {
-                        title:  "Acetyl-L-carnitine and Alzheimer's disease: pharmacological considerations beyond the cholinergic sphere",
-                        authors:  [
-                            "Parnetti, L.",
-                            "Mignini, F.",
-                            "Tomassoni, D.",
-                            "Traini, E.",
-                            "Amenta, F."
-                        ],
-                        year:  2007,
-                        journal:  "Annals of the New York Academy of Sciences",
-                        pmid:  "17872076",
-                        doi:  "10.1196/annals.1403.008",
-                        findings:  "ALCAR provides acetyl groups for acetylcholine synthesis and supports cholinergic function"
-                    }
+                    
                 ]
             }
         ],
@@ -153,22 +116,7 @@ window.enhancedCitations[13] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Limited studies",
                 evidence:  [
-                    {
-                        title:  "Effects of acetyl-L-carnitine on physical and mental fatigue",
-                        authors:  [
-                            "Malaguarnera, M.",
-                            "Cammalleri, L.",
-                            "Gargante, M.P.",
-                            "Vacante, M.",
-                            "Colonna, V.",
-                            "Motta, M."
-                        ],
-                        year:  2007,
-                        journal:  "Aging Clinical and Experimental Research",
-                        pmid:  "17607085",
-                        doi:  "10.1007/BF03324688",
-                        findings:  "ALCAR supplementation reduced physical and mental fatigue in elderly subjects"
-                    }
+                    
                 ]
             },
             {
@@ -200,18 +148,7 @@ window.enhancedCitations[13] = {
                 evidenceQuality:  "Limited",
                 replicationStatus:  "Preliminary studies",
                 evidence:  [
-                    {
-                        title:  "Acetyl-L-carnitine augmentation of sertraline treatment of geriatric depression",
-                        authors:  [
-                            "Zanardi, R.",
-                            "Smeraldi, E."
-                        ],
-                        year:  2006,
-                        journal:  "American Journal of Geriatric Psychiatry",
-                        pmid:  "16473973",
-                        doi:  "10.1097/01.JGP.0000196627.12010.d1",
-                        findings:  "ALCAR augmentation improved antidepressant response in elderly patients with depression"
-                    }
+                    
                 ]
             },
             {
@@ -221,24 +158,7 @@ window.enhancedCitations[13] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Acetyl-L-carnitine for peripheral neuropathy",
-                        authors:  [
-                            "Bianchi, G.",
-                            "Vitali, G.",
-                            "Caraceni, A.",
-                            "Ravaglia, S.",
-                            "Capri, G.",
-                            "Cundari, S.",
-                            "Zanna, C.",
-                            "Gianni, L."
-                        ],
-                        year:  2005,
-                        journal:  "Tumori",
-                        pmid:  "16001973",
-                        doi:  "",
-                        findings:  "ALCAR showed benefits for chemotherapy-induced peripheral neuropathy"
-                    }
+                    
                 ]
             },
             {
@@ -301,17 +221,7 @@ window.enhancedCitations[13] = {
                 safetyAspect:  "General Safety",
                 riskLevel:  "Low",
                 evidence:  [
-                    {
-                        title:  "Safety and tolerability of acetyl-L-carnitine supplementation",
-                        authors:  [
-                            "Malaguarnera, M."
-                        ],
-                        year:  2012,
-                        journal:  "Drugs in R&D",
-                        pmid:  "22934754",
-                        doi:  "10.2165/11635200-000000000-00000",
-                        findings:  "ALCAR supplementation showed good safety profile with minimal adverse effects"
-                    }
+                    
                 ]
             },
             {

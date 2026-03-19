@@ -15,7 +15,7 @@ const supplement_unknown_enhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  14,
+        totalCitations:  11,
         researchQualityScore:  85,
         lastEvidenceUpdate:  "2025-08-25",
         evidenceStrength:  {
@@ -76,26 +76,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Cholinergic enhancement",
                 tissueTarget:  "Cholinergic neurons",
                 evidence:  [
-                    {
-                        title:  "Piracetam and acetylcholine release in the hippocampus",
-                        authors:  "Pepeu G, Spignoli G",
-                        journal:  "Psychopharmacology",
-                        year:  1989,
-                        volume:  "99",
-                        issue:  "Suppl",
-                        pages:  "S6-S10",
-                        doi:  "10.1007/BF00442557",
-                        pmid:  "2813665",
-                        studyType:  "mechanistic_study",
-                        evidenceLevel:  "Level 3",
-                        participants:  "Animal studies",
-                        duration:  "Acute and chronic",
-                        dosage:  "100-300 mg/kg",
-                        findings:  "Piracetam increases acetylcholine release in hippocampus by 30-40%",
-                        effectSize:  "Moderate to large",
-                        pValue:  "<0.01",
-                        confidenceInterval:  "N/A"
-                    }
+                    
                 ]
             }
         ],
@@ -133,26 +114,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Cognitive protection",
                 populationTarget:  "Elderly with mild cognitive impairment",
                 evidence:  [
-                    {
-                        title:  "Piracetam in the treatment of cognitive impairment in the elderly",
-                        authors:  "Waegemans T, Wilsher CR, Danniau A, et al.",
-                        journal:  "American Journal of Clinical Medicine",
-                        year:  2002,
-                        volume:  "9",
-                        issue:  "4",
-                        pages:  "497-507",
-                        doi:  "10.1177/1533210102009004497",
-                        pmid:  "12678719",
-                        studyType:  "meta_analysis",
-                        evidenceLevel:  "Level 1",
-                        participants:  "1488 patients across 19 studies",
-                        duration:  "2-24 weeks",
-                        dosage:  "1200-4800 mg daily",
-                        findings:  "Significant improvement in cognitive function scores vs placebo",
-                        effectSize:  "Moderate (Cohen's d = 0.54)",
-                        pValue:  "<0.001",
-                        confidenceInterval:  "95% CI: 0.31-0.77"
-                    }
+                    
                 ]
             }
         ],
@@ -193,26 +155,7 @@ const supplement_unknown_enhanced = {
                 dosageType:  "Cognitive enhancement",
                 populationTarget:  "Healthy adults",
                 evidence:  [
-                    {
-                        title:  "Dose-response relationship of piracetam in cognitive enhancement",
-                        authors:  "Winblad B",
-                        journal:  "Psychopharmacology",
-                        year:  2005,
-                        volume:  "180",
-                        issue:  "4",
-                        pages:  "613-619",
-                        doi:  "10.1007/s00213-005-2232-z",
-                        pmid:  "15834536",
-                        studyType:  "dose_response_study",
-                        evidenceLevel:  "Level 2",
-                        participants:  "156 healthy volunteers",
-                        duration:  "4 weeks",
-                        dosage:  "400-2400 mg daily",
-                        findings:  "Optimal effects at 1200-2400 mg daily, minimal effects below 800 mg",
-                        effectSize:  "Dose-dependent",
-                        pValue:  "<0.05",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ]

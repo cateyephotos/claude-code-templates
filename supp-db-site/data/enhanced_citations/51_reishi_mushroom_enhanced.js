@@ -11,7 +11,7 @@ window.enhancedCitations[51] = {
     version:  "1.0",
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  14,
+        totalCitations:  6,
         researchQualityScore:  75,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -46,21 +46,8 @@ window.enhancedCitations[51] = {
                         doi:  "10.1002/14651858.CD007731.pub2",
                         evidenceLevel:  "Level 1",
                         keyFindings:  "Reishi's triterpenes and polysaccharides modulate stress response through HPA axis regulation and cortisol balance."
-                    },
-                    {
-                        title:  "Adaptogenic activity of Ganoderma lucidum extract",
-                        authors:  [
-                            "Wachtel-Galor, S.",
-                            "Yuen, J.",
-                            "Buswell, J.A.",
-                            "Benzie, I.F."
-                        ],
-                        year:  2011,
-                        journal:  "Herbal Medicine: Biomolecular and Clinical Aspects",
-                        pmid:  "22593941",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Reishi demonstrates adaptogenic properties by normalizing physiological functions and enhancing stress resistance."
                     }
+                    
                 ]
             },
             {
@@ -69,20 +56,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Extensively replicated",
                 populationTarget:  "General population",
                 evidence:  [
-                    {
-                        title:  "Immunomodulating activity of Ganoderma lucidum polysaccharides",
-                        authors:  [
-                            "Zhu, X.L.",
-                            "Chen, A.F.",
-                            "Lin, Z.B."
-                        ],
-                        year:  2007,
-                        journal:  "Journal of Ethnopharmacology",
-                        pmid:  "17306481",
-                        doi:  "10.1016/j.jep.2007.01.013",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Reishi polysaccharides enhance immune function by stimulating macrophages, T-cells, and natural killer cell activity."
-                    }
+                    
                 ]
             },
             {
@@ -91,19 +65,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Multiple studies",
                 populationTarget:  "Individuals with liver concerns",
                 evidence:  [
-                    {
-                        title:  "Hepatoprotective effects of Ganoderma lucidum",
-                        authors:  [
-                            "Lin, Z.B.",
-                            "Zhang, H.N."
-                        ],
-                        year:  2004,
-                        journal:  "Acta Pharmacologica Sinica",
-                        pmid:  "15301735",
-                        doi:  "10.1111/j.1745-7254.2004.tb00659.x",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Reishi triterpenes protect liver cells from damage and support detoxification enzyme activity."
-                    }
+                    
                 ]
             }
         ],
@@ -142,23 +104,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Multiple studies",
                 populationTarget:  "Adults with cardiovascular risk factors",
                 evidence:  [
-                    {
-                        title:  "Cholesterol-lowering effect of Ganoderma lucidum in hypercholesterolemic subjects",
-                        authors:  [
-                            "Chu, T.T.",
-                            "Benzie, I.F.",
-                            "Lam, C.W.",
-                            "Fok, B.S.",
-                            "Lee, K.K.",
-                            "Tomlinson, B."
-                        ],
-                        year:  2012,
-                        journal:  "British Journal of Nutrition",
-                        pmid:  "22017823",
-                        doi:  "10.1017/S0007114511006099",
-                        evidenceLevel:  "Level 1",
-                        keyFindings:  "Reishi supplementation (1.44g daily) significantly reduced LDL cholesterol and improved HDL/LDL ratio in hypercholesterolemic patients."
-                    }
+                    
                 ]
             },
             {
@@ -191,19 +137,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Multiple studies",
                 populationTarget:  "Individuals with liver dysfunction",
                 evidence:  [
-                    {
-                        title:  "Ganoderma lucidum for hepatitis B: systematic review and meta-analysis",
-                        authors:  [
-                            "Li, Y.Q.",
-                            "Wang, S.F."
-                        ],
-                        year:  2006,
-                        journal:  "Journal of Alternative and Complementary Medicine",
-                        pmid:  "16813508",
-                        doi:  "10.1089/acm.2006.12.435",
-                        evidenceLevel:  "Level 1",
-                        keyFindings:  "Meta-analysis showed Reishi supplementation improved liver function markers and reduced hepatitis B viral load."
-                    }
+                    
                 ]
             }
         ],
@@ -214,20 +148,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Extensively documented",
                 populationTarget:  "General population",
                 evidence:  [
-                    {
-                        title:  "Safety assessment of Ganoderma lucidum supplementation",
-                        authors:  [
-                            "Wachtel-Galor, S.",
-                            "Tomlinson, B.",
-                            "Benzie, I.F."
-                        ],
-                        year:  2004,
-                        journal:  "British Journal of Nutrition",
-                        pmid:  "15522164",
-                        doi:  "10.1079/BJN20041159",
-                        evidenceLevel:  "Level 1",
-                        keyFindings:  "Reishi supplementation up to 1.44g daily for 12 weeks showed excellent safety profile with no significant adverse effects."
-                    }
+                    
                 ]
             },
             {
@@ -236,27 +157,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Limited case reports",
                 populationTarget:  "Individuals on medications",
                 evidence:  [
-                    {
-                        title:  "Potential interactions of Ganoderma lucidum with medications",
-                        authors:  [
-                            "Chang, C.J.",
-                            "Lin, C.S.",
-                            "Lu, C.C.",
-                            "Martel, J.",
-                            "Ko, Y.F.",
-                            "Ojcius, D.M.",
-                            "Tseng, S.F.",
-                            "Wu, T.R.",
-                            "Chen, Y.Y.",
-                            "Young, J.D."
-                        ],
-                        year:  2015,
-                        journal:  "International Journal of Molecular Sciences",
-                        pmid:  "25739077",
-                        doi:  "10.3390/ijms16035036",
-                        evidenceLevel:  "Level 3",
-                        keyFindings:  "Reishi may interact with anticoagulant medications and immunosuppressive drugs, requiring monitoring in clinical settings."
-                    }
+                    
                 ]
             },
             {
@@ -265,19 +166,7 @@ window.enhancedCitations[51] = {
                 replicationStatus:  "Isolated case reports",
                 populationTarget:  "Sensitive individuals",
                 evidence:  [
-                    {
-                        title:  "Adverse effects of Ganoderma lucidum: systematic review",
-                        authors:  [
-                            "Yuen, J.W.",
-                            "Gohel, M.D."
-                        ],
-                        year:  2005,
-                        journal:  "Phytotherapy Research",
-                        pmid:  "16177974",
-                        doi:  "10.1002/ptr.1735",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Rare reports of dizziness, skin rash, and gastrointestinal upset. Overall incidence of adverse effects <5% of users."
-                    }
+                    
                 ]
             }
         ]

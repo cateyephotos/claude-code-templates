@@ -13,7 +13,7 @@ const betaineEnhanced = {
   // Enhanced Evidence Profile for Performance Supplements
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 10,
+    "totalCitations": 9,
     "researchQualityScore": 80,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -303,34 +303,7 @@ const betaineEnhanced = {
         "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
-          {
-            "citationId": "steenge_2003_cholesterol",
-            "title": "Betaine supplementation lowers plasma homocysteine but does not affect body weight, body composition, or resting energy expenditure in human subjects",
-            "authors": ["Steenge GR", "Verhoef P", "Katan MB"],
-            "year": 2003,
-            "journal": "American Journal of Clinical Nutrition",
-            "volume": "78", "issue": "6", "pages": "1157-1164",
-            "doi": "10.1093/ajcn/78.6.1157",
-            "pmid": "14668277",
-            "studyType": "Randomized controlled trial",
-            "evidenceLevel": "Level 2",
-            "safetyFindings": {
-              "adverseEvents": "No serious adverse events reported",
-              "cholesterolEffects": "Modest increases in total and LDL cholesterol",
-              "gastrointestinalTolerance": "Well tolerated with minimal GI effects",
-              "metabolicParameters": "No effects on resting energy expenditure"
-            },
-            "cholesterolData": {
-              "totalCholesterol": "Small but significant increases at high doses",
-              "ldlCholesterol": "Modest elevation observed",
-              "hdlCholesterol": "No significant changes",
-              "doseResponse": "Effects more pronounced at doses >4g daily"
-            },
-            "dosage": "6g daily for 6 weeks",
-            "population": "Healthy adults",
-            "clinicalRelevance": "Cholesterol monitoring may be warranted at high doses",
-            "balanceOfRisk": "Homocysteine benefits may offset cholesterol increases"
-          },
+          
           {
             "citationId": "schwab_2011_safety",
             "title": "Betaine supplementation decreases plasma homocysteine concentrations but does not affect body weight, body composition, or resting energy expenditure in human subjects",

@@ -16,7 +16,7 @@ const supplement_unknown_enhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  12,
+        totalCitations:  7,
         researchQualityScore:  80,
         lastEvidenceUpdate:  "2025-08-25",
         evidenceStrength:  {
@@ -49,26 +49,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Thiamine enhancement",
                 tissueTarget:  "Brain tissue",
                 evidence:  [
-                    {
-                        title:  "Role of the synthetic B1 vitamin sulbutiamine on health",
-                        authors:  "Bettendorff L, Weekers L, Wins P, Schoffeniels E",
-                        journal:  "Nutrients",
-                        year:  2020,
-                        volume:  "12",
-                        issue:  "5",
-                        pages:  "1401",
-                        doi:  "",
-                        pmid:  "32414132",
-                        studyType:  "mechanistic_review",
-                        evidenceLevel:  "Level 1",
-                        participants:  "Review of multiple studies",
-                        duration:  "N/A",
-                        dosage:  "Various",
-                        findings:  "Sulbutiamine crosses blood-brain barrier more effectively than thiamine, increasing brain thiamine levels",
-                        effectSize:  "Large enhancement of brain thiamine",
-                        pValue:  "N/A",
-                        confidenceInterval:  "N/A"
-                    }
+                    
                 ]
             },
             {
@@ -77,26 +58,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Neurotransmitter modulation",
                 tissueTarget:  "Dopaminergic neurons",
                 evidence:  [
-                    {
-                        title:  "Sulbutiamine modulates dopaminergic transmission in the prefrontal cortex",
-                        authors:  "Tiev KP, Cabane L, Imbert I",
-                        journal:  "Behavioural Brain Research",
-                        year:  1999,
-                        volume:  "103",
-                        issue:  "2",
-                        pages:  "203-208",
-                        doi:  "10.1016/S0166-4328(99)00042-1",
-                        pmid:  "10513588",
-                        studyType:  "mechanistic_study",
-                        evidenceLevel:  "Level 2",
-                        participants:  "Animal studies",
-                        duration:  "Acute and chronic",
-                        dosage:  "12.5-50 mg/kg",
-                        findings:  "Sulbutiamine enhances dopamine transmission in prefrontal cortex",
-                        effectSize:  "Moderate dopaminergic enhancement",
-                        pValue:  "<0.01",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ],
@@ -107,26 +69,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Fatigue reduction",
                 populationTarget:  "Adults with chronic fatigue",
                 evidence:  [
-                    {
-                        title:  "Treatment of asthenia with sulbutiamine: a double-blind study",
-                        authors:  "Bizot JC, Herpin A, Pothion S, et al.",
-                        journal:  "La Presse Médicale",
-                        year:  2005,
-                        volume:  "34",
-                        issue:  "16",
-                        pages:  "1165-1168",
-                        doi:  "10.1016/S0755-4982(05)84117-4",
-                        pmid:  "16208142",
-                        studyType:  "randomized_controlled_trial",
-                        evidenceLevel:  "Level 2",
-                        participants:  "326 patients with asthenia",
-                        duration:  "4 weeks",
-                        dosage:  "400 mg daily",
-                        findings:  "Significant reduction in fatigue scores vs placebo",
-                        effectSize:  "Moderate improvement (Cohen's d = 0.52)",
-                        pValue:  "<0.001",
-                        confidenceInterval:  "95% CI: 0.28-0.76"
-                    }
+                    
                 ]
             },
             {
@@ -135,26 +78,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Cognitive enhancement",
                 populationTarget:  "Elderly adults",
                 evidence:  [
-                    {
-                        title:  "Cognitive effects of sulbutiamine in elderly patients",
-                        authors:  "Micheau J, Durkin TP, Destrade C, et al.",
-                        journal:  "Psychopharmacology",
-                        year:  1985,
-                        volume:  "86",
-                        issue:  "1-2",
-                        pages:  "212-216",
-                        doi:  "10.1007/BF00431710",
-                        pmid:  "3927356",
-                        studyType:  "clinical_trial",
-                        evidenceLevel:  "Level 2",
-                        participants:  "60 elderly patients",
-                        duration:  "8 weeks",
-                        dosage:  "600 mg daily",
-                        findings:  "Improvement in memory tests and cognitive function scores",
-                        effectSize:  "Small to moderate improvement",
-                        pValue:  "<0.05",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ],
@@ -195,26 +119,7 @@ const supplement_unknown_enhanced = {
                 dosageType:  "Fatigue treatment",
                 populationTarget:  "Adults with asthenia",
                 evidence:  [
-                    {
-                        title:  "Dose-response relationship of sulbutiamine in asthenia treatment",
-                        authors:  "Leathwood P, Pollet P",
-                        journal:  "Neuropsychobiology",
-                        year:  1982,
-                        volume:  "8",
-                        issue:  "5",
-                        pages:  "275-279",
-                        doi:  "10.1159/000117969",
-                        pmid:  "6646394",
-                        studyType:  "dose_response_study",
-                        evidenceLevel:  "Level 2",
-                        participants:  "120 patients",
-                        duration:  "4 weeks",
-                        dosage:  "200-600 mg daily",
-                        findings:  "Optimal effects at 400-600 mg daily; minimal effects below 200 mg",
-                        effectSize:  "Dose-dependent improvement",
-                        pValue:  "<0.01",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ]

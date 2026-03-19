@@ -12,7 +12,7 @@ window.gingerEnhanced = {
   "version": "1.0",
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
+    "totalCitations": 13,
     "researchQualityScore": 81,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -211,23 +211,7 @@ window.gingerEnhanced = {
         "replicationStatus": "Limited studies",
         "populationTarget": "Adults with cardiovascular risk factors",
         "evidence": [
-          {
-            "title": "Effects of ginger supplementation on cardiovascular risk factors",
-            "authors": [
-              "Arablou, T.",
-              "Aryaeian, N.",
-              "Valizadeh, M.",
-              "Sharifi, F.",
-              "Hosseini, A.",
-              "Djalali, M."
-            ],
-            "year": 2014,
-            "journal": "International Journal of Cardiology",
-            "pmid": "25528314",
-            "doi": "10.1016/j.ijcard.2014.11.167",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Ginger supplementation (3g daily) improved lipid profiles and reduced inflammatory markers in type 2 diabetes patients."
-          }
+          
         ]
       }
     ],
@@ -260,22 +244,7 @@ window.gingerEnhanced = {
         "replicationStatus": "Limited case reports",
         "populationTarget": "Individuals on anticoagulants",
         "evidence": [
-          {
-            "title": "Ginger and anticoagulant interactions",
-            "authors": [
-              "Kruth, P.",
-              "Brosi, E.",
-              "Fux, R.",
-              "Mörike, K.",
-              "Gleiter, C.H."
-            ],
-            "year": 2004,
-            "journal": "Pharmacoepidemiology and Drug Safety",
-            "pmid": "15386712",
-            "doi": "10.1002/pds.966",
-            "evidenceLevel": "Level 3",
-            "keyFindings": "High-dose ginger may enhance anticoagulant effects, requiring caution in patients taking blood thinners."
-          }
+          
         ]
       },
       {
@@ -284,20 +253,7 @@ window.gingerEnhanced = {
         "replicationStatus": "Multiple reports",
         "populationTarget": "Individuals with sensitive stomachs",
         "evidence": [
-          {
-            "title": "Adverse effects of ginger supplementation",
-            "authors": [
-              "Chrubasik, S.",
-              "Pittler, M.H.",
-              "Roufogalis, B.D."
-            ],
-            "year": 2005,
-            "journal": "Phytomedicine",
-            "pmid": "16360941",
-            "doi": "10.1016/j.phymed.2004.09.002",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "High doses of ginger (>4g daily) may cause heartburn, diarrhea, and stomach irritation in sensitive individuals."
-          }
+          
         ]
       }
     ]

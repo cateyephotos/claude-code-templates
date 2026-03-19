@@ -21,7 +21,7 @@ const inositolEnhanced = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
+    "totalCitations": 4,
     "researchQualityScore": 89,
     "lastEvidenceUpdate": "2025-08-20",
     "evidenceStrength": {
@@ -70,56 +70,11 @@ const inositolEnhanced = {
         "doi": "10.1126/science.3024320",
         "pmid": "3024320",
         "significance": "Cellular mechanisms of inositol in phosphoinositide metabolism and calcium signaling"
-      },
-      {
-        "title": "Myo-inositol and D-chiro-inositol in PCOS: mechanisms of action",
-        "authors": ["Bevilacqua, A.", "Bizzarri, M."],
-        "journal": "Endocrine Connections",
-        "year": 2018,
-        "volume": 7,
-        "issue": 11,
-        "pages": "R188-R196", 
-        "doi": "10.1530/EC-18-0456",
-        "pmid": "30772871",
-        "significance": "Insulin sensitizing mechanisms and steroidogenesis regulation in reproductive health"
-      },
-      {
-        "title": "Inositol and folate resistant neural tube defects",
-        "authors": ["Greene, N.D.", "Copp, A.J."],
-        "journal": "Biochimica et Biophysica Acta",
-        "year": 2014,
-        "volume": 1842,
-        "issue": 11,
-        "pages": "1992-1998",
-        "doi": "10.1016/j.bbadis.2014.05.014", 
-        "pmid": "24859566",
-        "significance": "Neural development mechanisms independent of folate metabolism"
       }
     ],
 
     "benefits": [
-      {
-        "healthDomain": "Cognitive Enhancement", 
-        "specificClaim": "Supports cognitive function and mental performance",
-        "strength": "Moderate",
-        "evidenceQuality": "Moderate",
-        "replicationStatus": "Multiple studies",
-        "tissueTarget": "Central nervous system",
-        "target": "Central nervous system",
-        "evidence": [
-      {
-        "title": "Effects of myo-inositol in women with PCOS: a systematic review and meta-analysis",
-        "authors": ["Unfer, V.", "Nestler, J.E.", "Kamenov, Z.A.", "Prapas, N.", "Facchinetti, F."]
-      }
-    ],
-        "journal": "European Review for Medical and Pharmacological Sciences", 
-        "year": 2017,
-        "volume": 21,
-        "issue": 2,
-        "pages": "102-110",
-        "pmid": "28165553",
-        "significance": "Comprehensive evidence for PCOS management: improved ovulation, insulin sensitivity, hormone balance"
-      },
+      
       {
         "title": "Double-blind, placebo-controlled, crossover trial of inositol treatment for panic disorder",
         "authors": ["Benjamin, J.", "Levine, J.", "Fux, M.", "Aviv, A.", "Levy, D.", "Belmaker, R.H."],
@@ -143,80 +98,16 @@ const inositolEnhanced = {
         "doi": "10.1097/00004714-200106000-00014",
         "pmid": "11386498",
         "significance": "Clinical trial showing efficacy comparable to SSRIs for panic disorder"
-      },
-      {
-        "title": "Inositol for depression: a systematic review and meta-analysis of randomized controlled trials",
-        "authors": ["Taylor, M.J.", "Wilder, H.", "Bhagwagar, Z.", "Geddes, J."],
-        "journal": "Psychological Medicine",
-        "year": 2004,
-        "volume": 34,
-        "issue": 7,
-        "pages": "1327-1332",
-        "doi": "10.1017/S0033291704002734",
-        "pmid": "15697057",
-        "significance": "Mood regulation benefits in depressive disorders"
-      },
-      {
-        "title": "Inositol supplements during pregnancy for preventing gestational diabetes", 
-        "authors": ["Brown, J.", "Crawford, T.J.", "French, J.", "Nie, G.", "Russell, N.", "Trimmer, K.", "Wickham, B."],
-        "journal": "Cochrane Database of Systematic Reviews",
-        "year": 2018,
-        "issue": 12,
-        "pages": "CD013594",
-        "doi": "10.1002/14651858.CD013594",
-        "pmid": "32343003",
-        "significance": "Gestational diabetes prevention through improved insulin sensitivity"
-      },
-      {
-        "title": "The effect of a combination of myo-inositol and D-chiro-inositol on metabolic parameters in PCOS patients",
-        "authors": ["Nordio, M.", "Basciani, S.", "Camajani, E."],
-        "journal": "European Review for Medical and Pharmacological Sciences",
-        "year": 2019,
-        "volume": 23,
-        "issue": 5,
-        "pages": "1891-1895",
-        "doi": "10.26355/eurrev_201903_17218",
-        "pmid": "30915725",
-        "significance": "Synergistic effects of 40:1 ratio combination for metabolic improvement"
-      },
-      {
-        "title": "Inositol hexakisphosphate suppresses tumor growth in nude mice",
-        "authors": ["Vucenik, I.", "Yang, G.Y.", "Shamsuddin, A.M."],
-        "journal": "Cancer Letters",
-        "year": 1995,
-        "volume": 88,
-        "issue": 2,
-        "pages": "141-146",
-        "doi": "10.1016/0304-3835(94)03626-2",
-        "pmid": "7889459",
-        "significance": "Anticancer potential through cell cycle regulation and apoptosis induction"
-      },
-      {
-        "title": "Myo-inositol effects in women with PCOS: a meta-analysis of randomized controlled trials",
-        "authors": ["Zeng, Y.", "Yang, K."],
-        "journal": "Endocrine Connections",
-        "year": 2018,
-        "volume": 7,
-        "issue": 9,
-        "pages": "1098-1106",
-        "doi": "10.1530/EC-18-0237",
-        "pmid": "29973373",
-        "significance": "Comprehensive metabolic benefits: insulin resistance, lipid profiles, reproductive function"
       }
+      
+      
+      
+      
+      
     ],
 
     "deficiency": [
-      {
-        "title": "Inositol deficiency and metabolic syndrome: insights from animal models",
-        "authors": ["Croze, M.L.", "Soulage, C.O."],
-        "journal": "Mediators of Inflammation", 
-        "year": 2013,
-        "volume": 2013,
-        "pages": "967067",
-        "doi": "10.1155/2013/967067",
-        "pmid": "23533314",
-        "significance": "Metabolic consequences of deficiency including insulin resistance and inflammatory markers"
-      },
+      
       {
         "title": "Decreased levels of inositol in cerebrospinal fluid in patients with depression",
         "authors": ["Shimon, H.", "Agam, G.", "Belmaker, R.H.", "Hyde, T.M.", "Kleinman, J.E."],
@@ -232,27 +123,7 @@ const inositolEnhanced = {
     ],
 
     "safety": [
-      {
-        "safetyAspect": "General tolerability",
-        "claim": "Generally well tolerated with minimal side effects",
-        "riskLevel": "Low",
-        "target": "Multiple organ systems",
-        "tissueTarget": "Multiple organ systems",
-        "evidence": [
-      {
-        "title": "Safety and efficacy of inositol supplements in clinical conditions: a systematic review",
-        "authors": ["Kalman, D.", "Colker, C.M.", "Wilets, I.", "Roufs, J.B.", "Antonio, J."]
-      }
-    ],
-        "journal": "Life Sciences",
-        "year": 2004,
-        "volume": 74,
-        "issue": 19,
-        "pages": "2327-2336",
-        "doi": "10.1016/j.lfs.2003.09.032",
-        "pmid": "14609730",
-        "significance": "Comprehensive safety profile with minimal adverse effects at therapeutic doses"
-      },
+      
       {
         "title": "Long-term safety of inositol treatment in polycystic ovary syndrome",
         "authors": ["Carlomagno, G.", "Unfer, V.", "Roseff, S."],
@@ -267,29 +138,8 @@ const inositolEnhanced = {
     ],
 
     "dosage": [
-      {
-        "title": "Optimal dosing of myo-inositol for PCOS management: a dose-finding study",
-        "authors": ["Pizzo, A.", "Laganà, A.S.", "Barbaro, L."],
-        "journal": "European Review for Medical and Pharmacological Sciences",
-        "year": 2014,
-        "volume": 18,
-        "issue": 13,
-        "pages": "1896-1903",
-        "pmid": "25010617",
-        "significance": "Establishing 2-4g daily as optimal therapeutic dose for PCOS"
-      },
-      {
-        "title": "Dose-response relationship of inositol in panic disorder treatment",
-        "authors": ["Levine, J.", "Barak, Y.", "Gonzalves, M.", "Szor, H.", "Elizur, A.", "Kofman, O.", "Belmaker, R.H."],
-        "journal": "Journal of Clinical Psychopharmacology",
-        "year": 1995,
-        "volume": 15,
-        "issue": 1,
-        "pages": "25-27",
-        "doi": "10.1097/00004714-199502000-00004",
-        "pmid": "7714223",
-        "significance": "Establishing 12-18g daily dosing for psychiatric applications"
-      },
+      
+      
       {
         "title": "Bioavailability and pharmacokinetics of myo-inositol supplements",
         "authors": ["Clements Jr, R.S.", "Darnell, B."],

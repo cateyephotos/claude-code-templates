@@ -15,7 +15,7 @@ window.enhancedCitations["7_womens_health"] = {
 
   // Quality metrics for this research phase
   qualityMetrics: {
-    totalCitations: 15,
+    totalCitations: 13,
     tier1Sources: 9,
     tier2Sources: 5,
     tier3Sources: 1,
@@ -73,26 +73,7 @@ window.enhancedCitations["7_womens_health"] = {
               optimal_population: "High-risk women with deficiency"
             }
           },
-          {
-            citationId: "hu_2023_bmd_meta",
-            title: "Effect of supplemental vitamin D3 on bone mineral density: a systematic review and meta-analysis",
-            authors: ["Hu ZC", "Tang Q", "Sang CM", "et al."],
-            year: 2023,
-            journal: "Nutrients",
-            volume: "15", "issue": "2", "pages": "316",
-            doi: "10.3390/nu15020316",
-            pmid: "36678187",
-            studyType: "Systematic Review & Meta-Analysis",
-            sampleSize: "Multiple RCTs, >10,000 participants",
-            evidenceLevel: "Level 1",
-            findings: "Protective effect of vitamin D3 on lumbar spine and femoral neck BMD with dose-response relationship",
-            clinicalRelevance: "Tier 1 - Comprehensive 2023 meta-analysis on vitamin D3 and bone health",
-            quantitativeResults: {
-              lumbar_spine_improvement: "Significant BMD increase",
-              femoral_neck_improvement: "Significant BMD increase",
-              dose_response: "Higher doses show greater benefits"
-            }
-          },
+          
           {
             citationId: "palcu_2025_osteoporosis",
             title: "Vitamin D and calcium supplementation in women undergoing pharmacological management for postmenopausal osteoporosis: a level I of evidence systematic review",
@@ -190,25 +171,7 @@ window.enhancedCitations["7_womens_health"] = {
         tissueTarget: "Reproductive tissues, bone tissue",
         target: "Reproductive tissues, bone tissue",
         evidence: [
-          {
-            citationId: "silva_2023_bone_remodeling",
-            title: "Supplementation of vitamin D isolated or calcium-associated with bone remodeling and fracture risk in postmenopausal women without osteoporosis: A systematic review of randomized clinical trials",
-            authors: ["Silva BC", "Costa AG", "Cusano NE", "et al."],
-            year: 2023,
-            journal: "Clinics",
-            volume: "78", "issue": "", "pages": "100179",
-            doi: "10.1016/j.clinsp.2023.100179",
-            pmid: "36868201",
-            studyType: "Systematic Review",
-            sampleSize: "Postmenopausal women without osteoporosis",
-            evidenceLevel: "Level 2",
-            findings: "Vitamin D plus calcium reduces PTH secretion in postmenopausal women with improved bone turnover markers",
-            mechanismDetail: {
-              pth_regulation: "Reduces parathyroid hormone secretion",
-              bone_turnover: "Improves bone turnover markers",
-              calcium_synergy: "Enhanced effects when combined with calcium"
-            }
-          }
+          
         ]
       }
     ]

@@ -12,7 +12,7 @@ window.glucosamineEnhanced = {
   "version": "1.0",
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
+    "totalCitations": 9,
     "researchQualityScore": 80,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -33,27 +33,7 @@ window.glucosamineEnhanced = {
         "replicationStatus": "Extensively replicated",
         "populationTarget": "Individuals with joint concerns",
         "evidence": [
-          {
-            "title": "Glucosamine sulfate use and delay of progression of knee osteoarthritis: a 3-year, randomized, placebo-controlled, double-blind study",
-            "authors": [
-              "Reginster, J.Y.",
-              "Deroisy, R.",
-              "Rovati, L.C.",
-              "Lee, R.L.",
-              "Lejeune, E.",
-              "Bruyere, O.",
-              "Giacovelli, G.",
-              "Henrotin, Y.",
-              "Dacre, J.E.",
-              "Gossett, C."
-            ],
-            "year": 2001,
-            "journal": "Archives of Internal Medicine",
-            "pmid": "11606146",
-            "doi": "10.1001/archinte.161.19.2309",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "Glucosamine sulfate stimulates proteoglycan synthesis in cartilage and provides structural building blocks for glycosaminoglycan formation."
-          },
+          
           {
             "title": "Effects of glucosamine on cartilage metabolism",
             "authors": [
@@ -76,24 +56,7 @@ window.glucosamineEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "Individuals with inflammatory joint conditions",
         "evidence": [
-          {
-            "title": "Glucosamine inhibits IL-1β-induced inflammatory responses in human chondrocytes",
-            "authors": [
-              "Largo, R.",
-              "Alvarez-Soria, M.A.",
-              "Díez-Ortego, I.",
-              "Calvo, E.",
-              "Sánchez-Pernaute, O.",
-              "Egido, J.",
-              "Herrero-Beaumont, G."
-            ],
-            "year": 2003,
-            "journal": "Osteoarthritis and Cartilage",
-            "pmid": "12801478",
-            "doi": "10.1016/S1063-4584(03)00134-9",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Glucosamine reduces inflammatory cytokine production and inhibits NF-κB activation in chondrocytes."
-          }
+          
         ]
       },
       {
@@ -102,25 +65,7 @@ window.glucosamineEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "Individuals with cartilage degradation",
         "evidence": [
-          {
-            "title": "Glucosamine sulfate inhibits the dedifferentiation of human osteoarthritic chondrocytes",
-            "authors": [
-              "Gouze, J.N.",
-              "Bordji, K.",
-              "Gulberti, S.",
-              "Terlain, B.",
-              "Netter, P.",
-              "Magdalou, J.",
-              "Fournel-Gigleux, S.",
-              "Ouzzine, M."
-            ],
-            "year": 2001,
-            "journal": "Osteoarthritis and Cartilage",
-            "pmid": "11300747",
-            "doi": "10.1053/joca.2000.0381",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Glucosamine inhibits matrix metalloproteinase activity and prevents cartilage matrix degradation."
-          }
+          
         ]
       }
     ],
@@ -148,28 +93,8 @@ window.glucosamineEnhanced = {
             "findings": "",
             "methodology": "",
             "keyFindings": "Large-scale trial showed modest pain reduction in severe osteoarthritis, with greater effects in combination with chondroitin sulfate."
-          },
-          {
-            "title": "Effectiveness of glucosamine for symptoms of knee osteoarthritis: results from an internet-based randomized double-blind controlled trial",
-            "authors": [
-              "Kwoh, C.K.",
-              "Roemer, F.W.",
-              "Hannon, M.J.",
-              "Moore, C.E.",
-              "Jakicic, J.M.",
-              "Guermazi, A.",
-              "Green, S.M.",
-              "Tschon, M.",
-              "Soher, B.J.",
-              "Evans, R.W."
-            ],
-            "year": 2014,
-            "journal": "American Journal of Medicine",
-            "pmid": "24858063",
-            "doi": "10.1016/j.amjmed.2014.05.025",
-            "evidenceLevel": "Level 1",
-            "keyFindings": "Glucosamine sulfate provided significant pain relief and functional improvement compared to placebo in knee osteoarthritis patients."
           }
+          
         ]
       },
       {
@@ -232,25 +157,7 @@ window.glucosamineEnhanced = {
         "replicationStatus": "Limited studies",
         "populationTarget": "General population",
         "evidence": [
-          {
-            "title": "Regular use of glucosamine sulfate and mortality in a prospective cohort study",
-            "authors": [
-              "Ma, H.",
-              "Li, X.",
-              "Zhou, T.",
-              "Sun, D.",
-              "Liang, Z.",
-              "Li, Y.",
-              "Heianza, Y.",
-              "Qi, L."
-            ],
-            "year": 2019,
-            "journal": "European Journal of Epidemiology",
-            "pmid": "31055709",
-            "doi": "10.1007/s10654-019-00524-3",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Large cohort study suggested glucosamine use associated with reduced cardiovascular disease risk and all-cause mortality."
-          }
+          
         ]
       }
     ],
@@ -280,23 +187,7 @@ window.glucosamineEnhanced = {
         "replicationStatus": "Multiple studies",
         "populationTarget": "Individuals with diabetes",
         "evidence": [
-          {
-            "title": "Effects of glucosamine on glucose metabolism",
-            "authors": [
-              "Pouwels, M.J.",
-              "Jacobs, J.R.",
-              "Span, P.N.",
-              "Lutterman, J.A.",
-              "Smits, P.",
-              "Tack, C.J."
-            ],
-            "year": 2001,
-            "journal": "Diabetes Care",
-            "pmid": "11375373",
-            "doi": "10.2337/diacare.24.8.1366",
-            "evidenceLevel": "Level 2",
-            "keyFindings": "Short-term glucosamine use may affect insulin sensitivity in some individuals, requiring monitoring in diabetic patients."
-          }
+          
         ]
       },
       {
@@ -305,20 +196,7 @@ window.glucosamineEnhanced = {
         "replicationStatus": "Case reports and reviews",
         "populationTarget": "Individuals with shellfish allergies",
         "evidence": [
-          {
-            "title": "Glucosamine and shellfish allergy",
-            "authors": [
-              "Gray, H.C.",
-              "Hutcheson, P.S.",
-              "Slavin, R.G."
-            ],
-            "year": 2004,
-            "journal": "Annals of Allergy, Asthma & Immunology",
-            "pmid": "15061602",
-            "doi": "10.1016/S1081-1206(10)61566-1",
-            "evidenceLevel": "Level 3",
-            "keyFindings": "Most glucosamine supplements are safe for shellfish-allergic individuals as they contain minimal allergenic proteins, but caution advised."
-          }
+          
         ]
       }
     ]

@@ -11,7 +11,7 @@ window.enhancedCitations[87] = {
     lastUpdated:  "2025-08-25",
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  15,
+        totalCitations:  12,
         researchQualityScore:  82,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -73,25 +73,7 @@ window.enhancedCitations[87] = {
                 strength:  "Moderate",
                 tissueTarget:  "Cell membranes",
                 evidence:  [
-                    {
-                        title:  "Krill oil versus fish oil in modulation of inflammation and lipid metabolism",
-                        authors:  [
-                            "Ulven, S.M.",
-                            "Kirkhus, B.",
-                            "Lamglait, A.",
-                            "Basu, S.",
-                            "Elind, E.",
-                            "Haider, T.",
-                            "Berge, K.",
-                            "Vik, H.",
-                            "Pedersen, J.I."
-                        ],
-                        year:  2011,
-                        journal:  "Lipids in Health and Disease",
-                        pmid:  "21261967",
-                        doi:  "10.1186/1476-511X-10-19",
-                        findings:  "Krill oil phospholipids integrate more readily into cell membranes than fish oil"
-                    }
+                    
                 ]
             }
         ],
@@ -103,19 +85,7 @@ window.enhancedCitations[87] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Evaluation of the effects of Neptune Krill Oil on the clinical course of hyperlipidemia",
-                        authors:  [
-                            "Bunea, R.",
-                            "El Farrah, K.",
-                            "Deutsch, L."
-                        ],
-                        year:  2004,
-                        journal:  "Alternative Medicine Review",
-                        pmid:  "15648814",
-                        doi:  "",
-                        findings:  "Krill oil supplementation improved cholesterol and triglyceride levels in hyperlipidemic patients"
-                    }
+                    
                 ]
             },
             {
@@ -125,24 +95,7 @@ window.enhancedCitations[87] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Krill oil supplementation lowers serum triglycerides without increasing LDL cholesterol in adults with borderline high or high triglyceride levels",
-                        authors:  [
-                            "Maki, K.C.",
-                            "Reeves, M.S.",
-                            "Farmer, M.",
-                            "Griinari, M.",
-                            "Berge, K.",
-                            "Vik, H.",
-                            "Hubacher, R.",
-                            "Rains, T.M."
-                        ],
-                        year:  2009,
-                        journal:  "Nutrition Research",
-                        pmid:  "19854375",
-                        doi:  "10.1016/j.nutres.2009.09.004",
-                        findings:  "Krill oil reduced inflammatory markers and improved lipid profiles"
-                    }
+                    
                 ]
             },
             {

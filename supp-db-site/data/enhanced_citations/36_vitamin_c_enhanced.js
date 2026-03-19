@@ -11,7 +11,7 @@ window.enhancedCitations[36] = {
     version:  "1.0",
     evidenceProfile:  {
         overallQuality:  "Tier 1",
-        totalCitations:  20,
+        totalCitations:  16,
         researchQualityScore:  90,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -81,19 +81,7 @@ window.enhancedCitations[36] = {
                 replicationStatus:  "Extensively replicated",
                 populationTarget:  "General population",
                 evidence:  [
-                    {
-                        title:  "Vitamin C in health and disease: its role in the metabolism of cells and redox state in the brain",
-                        authors:  [
-                            "Harrison, F.E.",
-                            "May, J.M."
-                        ],
-                        year:  2009,
-                        journal:  "Brain Research Reviews",
-                        pmid:  "19619584",
-                        doi:  "10.1016/j.brainresrev.2009.07.001",
-                        evidenceLevel:  "Level 1",
-                        keyFindings:  "Vitamin C is essential for collagen synthesis through its role as a cofactor for prolyl and lysyl hydroxylases, critical for collagen stability and tissue integrity."
-                    }
+                    
                 ]
             },
             {
@@ -146,21 +134,7 @@ window.enhancedCitations[36] = {
                 replicationStatus:  "Multiple studies",
                 populationTarget:  "Adults at cardiovascular risk",
                 evidence:  [
-                    {
-                        title:  "Vitamin C and cardiovascular disease: a systematic review",
-                        authors:  [
-                            "Ashor, A.W.",
-                            "Lara, J.",
-                            "Mathers, J.C.",
-                            "Siervo, M."
-                        ],
-                        year:  2014,
-                        journal:  "Journal of Nutritional Science",
-                        pmid:  "25191614",
-                        doi:  "10.1017/jns.2014.2",
-                        evidenceLevel:  "Level 1",
-                        keyFindings:  "Vitamin C supplementation shows beneficial effects on endothelial function and may reduce cardiovascular disease risk through improved vascular health."
-                    }
+                    
                 ]
             },
             {
@@ -238,20 +212,7 @@ window.enhancedCitations[36] = {
                 replicationStatus:  "Multiple studies",
                 populationTarget:  "Individuals with history of kidney stones",
                 evidence:  [
-                    {
-                        title:  "Vitamin C intake and the risk of kidney stones",
-                        authors:  [
-                            "Taylor, E.N.",
-                            "Stampfer, M.J.",
-                            "Curhan, G.C."
-                        ],
-                        year:  2004,
-                        journal:  "Journal of the American Society of Nephrology",
-                        pmid:  "15213266",
-                        doi:  "10.1097/01.ASN.0000135520.78748.8C",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Very high vitamin C intake (>1000 mg/day) may increase kidney stone risk in susceptible individuals, particularly men with history of stones."
-                    }
+                    
                 ]
             },
             {
@@ -260,20 +221,7 @@ window.enhancedCitations[36] = {
                 replicationStatus:  "Multiple studies",
                 populationTarget:  "Individuals on specific medications",
                 evidence:  [
-                    {
-                        title:  "Drug interactions with vitamin C",
-                        authors:  [
-                            "Weinstein, M.",
-                            "Babyn, P.",
-                            "Zlotkin, S."
-                        ],
-                        year:  2001,
-                        journal:  "Canadian Medical Association Journal",
-                        pmid:  "11468135",
-                        doi:  "10.1503/cmaj.164.13.1847",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Vitamin C may interact with certain medications including warfarin and chemotherapy drugs, requiring monitoring in clinical settings."
-                    }
+                    
                 ]
             }
         ]

@@ -17,7 +17,7 @@ window.enhancedData = {
   ],
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 19,
+    "totalCitations": 18,
     "researchQualityScore": 80,
     "lastEvidenceUpdate": "2026-03-05",
     "evidenceStrength": {
@@ -429,15 +429,7 @@ window.enhancedData = {
         "target": "Multiple organ systems",
         "tissueTarget": "Multiple organ systems",
         "evidence": [
-          {
-            "type": "in_vitro",
-            "strength": "Level 3",
-            "description": "Demonstrates antioxidant protective mechanisms and suppresses oxidative stress-induced cellular damage",
-            "citation": "Cybulsky AV, et al. (2004). The leaf extract of Ginkgo Biloba L. suppresses oxidized LDL-stimulated fibronectin production through an antioxidant action in rat mesangial cells. British Journal of Pharmacology, 141(8), 1225-1231.",
-            "doi": "10.1038/sj.bjp.0705805",
-            "pmid": "15024120",
-            "sampleSize": "Cell culture study"
-          }
+          
         ]
       },
       {

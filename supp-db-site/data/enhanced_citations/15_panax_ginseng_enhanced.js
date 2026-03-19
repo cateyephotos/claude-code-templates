@@ -12,7 +12,7 @@ window.panaxGinsengEnhanced = {
   "lastUpdated": "2025-08-25",
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 22,
+    "totalCitations": 15,
     "researchQualityScore": 83,
     "lastEvidenceUpdate": "2026-03-05",
     "evidenceStrength": {
@@ -98,25 +98,7 @@ window.panaxGinsengEnhanced = {
         "strength": "Moderate",
         "tissueTarget": "Endothelial cells",
         "evidence": [
-          {
-            "title": "Panax ginseng effects on nitric oxide, blood pressure, and arterial wall properties in healthy individuals",
-            "authors": [
-              "Jovanovski, E.",
-              "Jenkins, A.",
-              "Dias, A.G.",
-              "Peeva, V.",
-              "Sievenpiper, J.",
-              "Arnason, J.T.",
-              "Rahelic, D.",
-              "Josse, R.G.",
-              "Vuksan, V."
-            ],
-            "year": 2010,
-            "journal": "American Journal of Hypertension",
-            "pmid": "20431529",
-            "doi": "10.1038/ajh.2010.70",
-            "findings": "Ginseng enhances nitric oxide production and improves arterial stiffness in healthy individuals"
-          }
+          
         ]
       },
       {
@@ -125,25 +107,7 @@ window.panaxGinsengEnhanced = {
         "strength": "Moderate",
         "tissueTarget": "Central nervous system",
         "evidence": [
-          {
-            "title": "Mechanisms of ginsenoside-induced long-term potentiation of hippocampal synapses",
-            "authors": [
-              "Mook-Jung, I.",
-              "Hong, H.S.",
-              "Boo, J.H.",
-              "Lee, K.H.",
-              "Yun, S.H.",
-              "Cheong, M.Y.",
-              "Joo, I.",
-              "Huh, K.",
-              "Jung, M.W."
-            ],
-            "year": 2001,
-            "journal": "Synapse",
-            "pmid": "11169620",
-            "doi": "10.1002/1098-2396(200103)39:4<319::AID-SYN1014>3.0.CO;2-3",
-            "findings": "Ginsenosides enhance synaptic transmission and modulate neurotransmitter release"
-          }
+          
         ]
       },
       {
@@ -152,23 +116,7 @@ window.panaxGinsengEnhanced = {
         "strength": "Strong",
         "tissueTarget": "Multiple tissues",
         "evidence": [
-          {
-            "title": "Antioxidant effects of Panax ginseng C.A. Meyer in healthy and diabetic aged rats",
-            "authors": [
-              "Ramesh, T.",
-              "Kim, S.W.",
-              "Sung, J.H.",
-              "Hwang, S.Y.",
-              "Sohn, S.H.",
-              "Yoo, S.K.",
-              "Kim, S.K."
-            ],
-            "year": 2012,
-            "journal": "Nutrients",
-            "pmid": "23201840",
-            "doi": "10.3390/nu4111590",
-            "findings": "Ginseng demonstrates potent antioxidant activity and reduces oxidative stress markers"
-          }
+          
         ]
       }
     ],
@@ -180,23 +128,7 @@ window.panaxGinsengEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Multiple studies",
         "evidence": [
-          {
-            "title": "Effects of Panax ginseng on cognitive performance in Alzheimer disease",
-            "authors": [
-              "Heo, J.H.",
-              "Lee, S.T.",
-              "Chu, K.",
-              "Oh, M.J.",
-              "Park, H.J.",
-              "Shim, J.Y.",
-              "Kim, M."
-            ],
-            "year": 2008,
-            "journal": "Alzheimer Disease and Associated Disorders",
-            "pmid": "18580597",
-            "doi": "10.1097/WAD.0b013e318169651b",
-            "findings": "Ginseng supplementation improved cognitive performance in Alzheimer's disease patients"
-          }
+          
         ]
       },
       {
@@ -233,20 +165,7 @@ window.panaxGinsengEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Multiple studies",
         "evidence": [
-          {
-            "title": "Immunomodulatory effects of Panax ginseng C.A. Meyer in the mouse",
-            "authors": [
-              "Kenarova, B.",
-              "Neychev, H.",
-              "Hadjiivanova, C.",
-              "Petkov, V.D."
-            ],
-            "year": 1990,
-            "journal": "Phytotherapy Research",
-            "pmid": "19839297",
-            "doi": "10.1002/ptr.2650040508",
-            "findings": "Ginseng demonstrated immunomodulatory effects and enhanced immune response"
-          }
+          
         ]
       },
       {
@@ -305,19 +224,7 @@ window.panaxGinsengEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Multiple studies",
         "evidence": [
-          {
-            "title": "Effects of ginseng on stress-related depression, anxiety, and the hypothalamic-pituitary-adrenal axis",
-            "authors": [
-              "Reay, J.L.",
-              "Scholey, A.B.",
-              "Kennedy, D.O."
-            ],
-            "year": 2010,
-            "journal": "Journal of Ginseng Research",
-            "pmid": "23717137",
-            "doi": "10.5142/jgr.2010.34.4.261",
-            "findings": "Ginseng showed adaptogenic effects on stress response and mood regulation"
-          }
+          
         ]
       },
       {
@@ -470,18 +377,7 @@ window.panaxGinsengEnhanced = {
         "safetyAspect": "General Safety",
         "riskLevel": "Low",
         "evidence": [
-          {
-            "title": "Safety and efficacy of ginseng",
-            "authors": [
-              "Coon, J.T.",
-              "Ernst, E."
-            ],
-            "year": 2002,
-            "journal": "Public Health Nutrition",
-            "pmid": "12027278",
-            "doi": "10.1079/phn2002168",
-            "findings": "Ginseng is generally well-tolerated with minimal adverse effects at therapeutic doses"
-          }
+          
         ]
       },
       {

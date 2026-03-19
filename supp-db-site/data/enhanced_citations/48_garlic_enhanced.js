@@ -11,7 +11,7 @@ window.enhancedCitations[48] = {
     version:  "1.0",
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  18,
+        totalCitations:  15,
         researchQualityScore:  84,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -32,19 +32,7 @@ window.enhancedCitations[48] = {
                 replicationStatus:  "Extensively replicated",
                 populationTarget:  "Adults with cardiovascular risk factors",
                 evidence:  [
-                    {
-                        title:  "Garlic for the prevention of cardiovascular morbidity and mortality in hypertensive patients",
-                        authors:  [
-                            "Silagy, C.A.",
-                            "Neil, H.A."
-                        ],
-                        year:  1994,
-                        journal:  "Cochrane Database of Systematic Reviews",
-                        pmid:  "10796682",
-                        doi:  "10.1002/14651858.CD000383",
-                        evidenceLevel:  "Level 1",
-                        keyFindings:  "Garlic's allicin and sulfur compounds reduce blood pressure through vasodilation and nitric oxide enhancement."
-                    },
+                    
                     {
                         title:  "Effect of garlic on cardiovascular disorders: a review",
                         authors:  [
@@ -224,18 +212,7 @@ window.enhancedCitations[48] = {
                 replicationStatus:  "Multiple case reports and studies",
                 populationTarget:  "Individuals on anticoagulant therapy",
                 evidence:  [
-                    {
-                        title:  "Garlic and anticoagulant therapy",
-                        authors:  [
-                            "Burnham, B.E."
-                        ],
-                        year:  1995,
-                        journal:  "Plastic and Reconstructive Surgery",
-                        pmid:  "7480271",
-                        doi:  "10.1097/00006534-199503000-00026",
-                        evidenceLevel:  "Level 3",
-                        keyFindings:  "Garlic may enhance anticoagulant effects and increase bleeding risk, requiring caution in patients on warfarin or other blood thinners."
-                    }
+                    
                 ]
             },
             {
@@ -244,20 +221,7 @@ window.enhancedCitations[48] = {
                 replicationStatus:  "Multiple reports",
                 populationTarget:  "Sensitive individuals",
                 evidence:  [
-                    {
-                        title:  "Adverse effects of garlic supplementation",
-                        authors:  [
-                            "Borrelli, F.",
-                            "Capasso, R.",
-                            "Izzo, A.A."
-                        ],
-                        year:  2007,
-                        journal:  "Journal of Ethnopharmacology",
-                        pmid:  "17291700",
-                        doi:  "10.1016/j.jep.2007.01.008",
-                        evidenceLevel:  "Level 2",
-                        keyFindings:  "Common side effects include heartburn, nausea, and flatulence. Rare allergic reactions including contact dermatitis have been reported."
-                    }
+                    
                 ]
             }
         ]

@@ -31,7 +31,7 @@ window.enhancedCitations[44] = {
     lastUpdated:  "2025-08-25",
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  17,
+        totalCitations:  8,
         researchQualityScore:  83,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -52,24 +52,7 @@ window.enhancedCitations[44] = {
                 strength:  "Strong",
                 tissueTarget:  "All cellular compartments",
                 evidence:  [
-                    {
-                        title:  "Lipoic acid as a novel treatment for Alzheimer's disease and related dementias",
-                        authors:  [
-                            "Holmquist, L.",
-                            "Stuchbury, G.",
-                            "Berbaum, K.",
-                            "Muscat, S.",
-                            "Young, S.",
-                            "Hager, K.",
-                            "Engel, J.",
-                            "Münch, G."
-                        ],
-                        year:  2007,
-                        journal:  "Pharmacology & Therapeutics",
-                        pmid:  "17316817",
-                        doi:  "10.1016/j.pharmthera.2007.01.001",
-                        findings:  "Alpha-lipoic acid acts as a universal antioxidant, working in both aqueous and lipid phases"
-                    }
+                    
                 ]
             },
             {
@@ -78,18 +61,7 @@ window.enhancedCitations[44] = {
                 strength:  "Strong",
                 tissueTarget:  "Cellular antioxidant systems",
                 evidence:  [
-                    {
-                        title:  "Alpha-lipoic acid: a multifunctional antioxidant that improves insulin sensitivity in patients with type 2 diabetes",
-                        authors:  [
-                            "Evans, J.L.",
-                            "Goldfine, I.D."
-                        ],
-                        year:  2000,
-                        journal:  "Diabetes Technology & Therapeutics",
-                        pmid:  "11469271",
-                        doi:  "10.1089/152091500750049479",
-                        findings:  "ALA regenerates vitamin C, vitamin E, and glutathione, extending their antioxidant activity"
-                    }
+                    
                 ]
             },
             {
@@ -149,21 +121,7 @@ window.enhancedCitations[44] = {
                 evidenceQuality:  "High",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Alpha-lipoic acid for the prevention of diabetic macular edema",
-                        authors:  [
-                            "Haritoglou, C.",
-                            "Gerss, J.",
-                            "Hammes, H.P.",
-                            "Kampik, A.",
-                            "Ulbig, M.W."
-                        ],
-                        year:  2011,
-                        journal:  "Ophthalmologica",
-                        pmid:  "21540600",
-                        doi:  "10.1159/000323825",
-                        findings:  "ALA supplementation improved insulin sensitivity and glucose metabolism in diabetic patients"
-                    }
+                    
                 ]
             },
             {
@@ -173,24 +131,7 @@ window.enhancedCitations[44] = {
                 evidenceQuality:  "High",
                 replicationStatus:  "Multiple clinical trials",
                 evidence:  [
-                    {
-                        title:  "Treatment of diabetic polyneuropathy with the antioxidant thioctic acid (alpha-lipoic acid): a two year multicenter randomized double-blind placebo-controlled trial (ALADIN II)",
-                        authors:  [
-                            "Reljanovic, M.",
-                            "Reichel, G.",
-                            "Rett, K.",
-                            "Lobisch, M.",
-                            "Schuette, K.",
-                            "Möller, W.",
-                            "Tritschler, H.J.",
-                            "Mehnert, H."
-                        ],
-                        year:  1999,
-                        journal:  "Free Radical Research",
-                        pmid:  "10517533",
-                        doi:  "10.1080/10715769900300851",
-                        findings:  "ALA significantly reduced neuropathic symptoms and improved nerve conduction in diabetic patients"
-                    }
+                    
                 ]
             },
             {
@@ -200,19 +141,7 @@ window.enhancedCitations[44] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Alpha-lipoic acid for weight loss: a systematic review and meta-analysis of randomized controlled trials",
-                        authors:  [
-                            "Namazi, N.",
-                            "Larijani, B.",
-                            "Azadbakht, L."
-                        ],
-                        year:  2018,
-                        journal:  "Clinical Nutrition",
-                        pmid:  "28987467",
-                        doi:  "10.1016/j.clnu.2017.09.017",
-                        findings:  "Meta-analysis showed ALA supplementation resulted in significant weight loss compared to placebo"
-                    }
+                    
                 ]
             },
             {
@@ -222,23 +151,7 @@ window.enhancedCitations[44] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Limited studies",
                 evidence:  [
-                    {
-                        title:  "Alpha-lipoic acid supplementation and diabetes treatment: a systematic review and meta-analysis of randomized controlled trials",
-                        authors:  [
-                            "Akbari, M.",
-                            "Ostadmohammadi, V.",
-                            "Lankarani, K.B.",
-                            "Tabrizi, R.",
-                            "Kolahdooz, F.",
-                            "Khatibi, S.R.",
-                            "Asemi, Z."
-                        ],
-                        year:  2018,
-                        journal:  "Metabolism",
-                        pmid:  "29409822",
-                        doi:  "10.1016/j.metabol.2018.01.023",
-                        findings:  "ALA showed neuroprotective effects and may support cognitive function in diabetic patients"
-                    }
+                    
                 ]
             },
             {
@@ -268,20 +181,7 @@ window.enhancedCitations[44] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Alpha-lipoic acid and cardiovascular disease",
-                        authors:  [
-                            "Rochette, L.",
-                            "Ghibu, S.",
-                            "Muresan, A.",
-                            "Vergely, C."
-                        ],
-                        year:  2015,
-                        journal:  "Nutrition Research Reviews",
-                        pmid:  "26809946",
-                        doi:  "10.1017/S0954422415000116",
-                        findings:  "ALA supplementation improved endothelial function and reduced cardiovascular risk markers"
-                    }
+                    
                 ]
             },
             {
@@ -291,21 +191,7 @@ window.enhancedCitations[44] = {
                 evidenceQuality:  "High",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Alpha-lipoic acid supplementation and inflammation: a systematic review and meta-analysis of randomized controlled trials",
-                        authors:  [
-                            "Derosa, G.",
-                            "Maffioli, P.",
-                            "Simental-Mendía, L.E.",
-                            "Bo, S.",
-                            "Sahebkar, A."
-                        ],
-                        year:  2016,
-                        journal:  "International Journal of Molecular Sciences",
-                        pmid:  "27314342",
-                        doi:  "10.3390/ijms17060947",
-                        findings:  "Meta-analysis showed ALA significantly reduced inflammatory markers and oxidative stress"
-                    }
+                    
                 ]
             }
         ],
@@ -315,28 +201,7 @@ window.enhancedCitations[44] = {
                 safetyAspect:  "General Safety",
                 riskLevel:  "Low",
                 evidence:  [
-                    {
-                        title:  "Safety and tolerability of alpha-lipoic acid supplementation",
-                        authors:  [
-                            "Ziegler, D.",
-                            "Ametov, A.",
-                            "Barinov, A.",
-                            "Dyck, P.J.",
-                            "Gurieva, I.",
-                            "Low, P.A.",
-                            "Munzel, U.",
-                            "Yakhno, N.",
-                            "Raz, I.",
-                            "Novosadova, M.",
-                            "Maus, J.",
-                            "Samigullin, R."
-                        ],
-                        year:  2006,
-                        journal:  "Diabetes Care",
-                        pmid:  "16644601",
-                        doi:  "10.2337/diacare.29.12.2365",
-                        findings:  "ALA supplementation was well-tolerated with minimal adverse effects in clinical trials"
-                    }
+                    
                 ]
             },
             {

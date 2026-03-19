@@ -15,7 +15,7 @@ const supplement_unknown_enhanced = {
     ],
     evidenceProfile:  {
         overallQuality:  "Tier 3",
-        totalCitations:  12,
+        totalCitations:  8,
         researchQualityScore:  78,
         lastEvidenceUpdate:  "2025-08-25",
         evidenceStrength:  {
@@ -75,26 +75,7 @@ const supplement_unknown_enhanced = {
                 mechanismType:  "Cholinergic enhancement",
                 tissueTarget:  "Cholinergic neurons",
                 evidence:  [
-                    {
-                        title:  "Aniracetam enhances cognition by modulating cholinergic activity",
-                        authors:  "Nakamura K, Tanaka M",
-                        journal:  "Pharmacology Biochemistry and Behavior",
-                        year:  2001,
-                        volume:  "70",
-                        issue:  "4",
-                        pages:  "531-535",
-                        doi:  "10.1016/S0091-3057(01)00676-4",
-                        pmid:  "11796155",
-                        studyType:  "mechanistic_study",
-                        evidenceLevel:  "Level 3",
-                        participants:  "Animal studies",
-                        duration:  "Acute and chronic",
-                        dosage:  "10-100 mg/kg",
-                        findings:  "Aniracetam increases acetylcholine release and enhances cholinergic transmission",
-                        effectSize:  "Moderate enhancement",
-                        pValue:  "<0.05",
-                        confidenceInterval:  "N/A"
-                    }
+                    
                 ]
             }
         ],
@@ -105,26 +86,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Cognitive enhancement",
                 populationTarget:  "Elderly with cognitive impairment",
                 evidence:  [
-                    {
-                        title:  "Clinical efficacy of aniracetam in cognitive impairment",
-                        authors:  "Senin U, Abate G, Fieschi C, et al.",
-                        journal:  "Archives of Gerontology and Geriatrics",
-                        year:  1991,
-                        volume:  "13",
-                        issue:  "2",
-                        pages:  "201-208",
-                        doi:  "10.1016/0167-4943(91)90056-P",
-                        pmid:  "15374421",
-                        studyType:  "randomized_controlled_trial",
-                        evidenceLevel:  "Level 2",
-                        participants:  "109 elderly patients",
-                        duration:  "6 months",
-                        dosage:  "1500 mg daily",
-                        findings:  "Significant improvement in cognitive function scores vs placebo",
-                        effectSize:  "Moderate (Cohen's d = 0.45)",
-                        pValue:  "<0.01",
-                        confidenceInterval:  "95% CI: 0.15-0.75"
-                    }
+                    
                 ]
             },
             {
@@ -133,26 +95,7 @@ const supplement_unknown_enhanced = {
                 benefitType:  "Anxiolytic effects",
                 populationTarget:  "Adults with anxiety",
                 evidence:  [
-                    {
-                        title:  "Anxiolytic effects of aniracetam in clinical populations",
-                        authors:  "Nakamura K, Kurasawa M",
-                        journal:  "Psychopharmacology",
-                        year:  2001,
-                        volume:  "154",
-                        issue:  "1",
-                        pages:  "35-42",
-                        doi:  "10.1007/s002130000624",
-                        pmid:  "11292009",
-                        studyType:  "clinical_trial",
-                        evidenceLevel:  "Level 2",
-                        participants:  "60 patients",
-                        duration:  "4 weeks",
-                        dosage:  "750-1500 mg daily",
-                        findings:  "Significant reduction in anxiety scores and improved mood ratings",
-                        effectSize:  "Moderate anxiety reduction",
-                        pValue:  "<0.05",
-                        confidenceInterval:  "95% CI provided"
-                    }
+                    
                 ]
             }
         ],
@@ -193,26 +136,7 @@ const supplement_unknown_enhanced = {
                 dosageType:  "Cognitive enhancement",
                 populationTarget:  "Adults",
                 evidence:  [
-                    {
-                        title:  "Dose-response relationship of aniracetam in cognitive enhancement",
-                        authors:  "Cumin R, Bandle EF, Gamzu E, Haefely WE",
-                        journal:  "Psychopharmacology",
-                        year:  1982,
-                        volume:  "78",
-                        issue:  "2",
-                        pages:  "104-111",
-                        doi:  "10.1007/BF00432244",
-                        pmid:  "6817363",
-                        studyType:  "dose_response_study",
-                        evidenceLevel:  "Level 3",
-                        participants:  "Animal and limited human data",
-                        duration:  "Various",
-                        dosage:  "100-3000 mg daily",
-                        findings:  "Optimal effects observed at 750-1500 mg daily in human studies",
-                        effectSize:  "Dose-dependent",
-                        pValue:  "Variable",
-                        confidenceInterval:  "Limited data"
-                    }
+                    
                 ]
             }
         ]

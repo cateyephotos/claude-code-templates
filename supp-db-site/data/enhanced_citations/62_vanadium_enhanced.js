@@ -12,7 +12,7 @@ window.vanadiumEnhanced = {
   "lastUpdated": "2025-08-25",
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 12,
+    "totalCitations": 9,
     "researchQualityScore": 65,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -33,18 +33,7 @@ window.vanadiumEnhanced = {
         "strength": "Moderate",
         "tissueTarget": "Muscle and liver cells",
         "evidence": [
-          {
-            "title": "Vanadium compounds as insulin mimetics",
-            "authors": [
-              "Shechter, Y.",
-              "Karlish, S.J."
-            ],
-            "year": 1980,
-            "journal": "Nature",
-            "pmid": "6988725",
-            "doi": "10.1038/284556a0",
-            "findings": "Vanadium compounds mimic insulin action by activating insulin receptor signaling pathways"
-          }
+          
         ]
       },
       {
@@ -53,21 +42,7 @@ window.vanadiumEnhanced = {
         "strength": "Moderate",
         "tissueTarget": "Insulin-sensitive tissues",
         "evidence": [
-          {
-            "title": "Vanadium and diabetes",
-            "authors": [
-              "Goldfine, A.B.",
-              "Simonson, D.C.",
-              "Folli, F.",
-              "Patti, M.E.",
-              "Kahn, C.R."
-            ],
-            "year": 1995,
-            "journal": "Molecular and Cellular Biochemistry",
-            "pmid": "8544514",
-            "doi": "10.1007/BF00926190",
-            "findings": "Vanadium inhibits protein tyrosine phosphatases, enhancing insulin sensitivity"
-          }
+          
         ]
       },
       {
@@ -76,19 +51,7 @@ window.vanadiumEnhanced = {
         "strength": "Moderate",
         "tissueTarget": "Multiple tissues",
         "evidence": [
-          {
-            "title": "Mechanisms of vanadium action as an insulin-mimetic agent",
-            "authors": [
-              "Cam, M.C.",
-              "Brownsey, R.W.",
-              "McNeill, J.H."
-            ],
-            "year": 2000,
-            "journal": "Canadian Journal of Physiology and Pharmacology",
-            "pmid": "10946018",
-            "doi": "10.1139/y00-035",
-            "findings": "Vanadium affects glucose metabolism through multiple pathways including glycogen synthesis"
-          }
+          
         ]
       }
     ],

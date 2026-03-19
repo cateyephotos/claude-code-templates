@@ -11,7 +11,7 @@ window.enhancedCitations[53] = {
     lastUpdated:  "2025-08-25",
     evidenceProfile:  {
         overallQuality:  "Tier 2",
-        totalCitations:  16,
+        totalCitations:  10,
         researchQualityScore:  74,
         lastEvidenceUpdate:  "2025-01-28",
         evidenceStrength:  {
@@ -32,22 +32,7 @@ window.enhancedCitations[53] = {
                 strength:  "Strong",
                 tissueTarget:  "Multiple tissues",
                 evidence:  [
-                    {
-                        title:  "Phycocyanin: a potent peroxyl radical scavenger with cytoprotective and anti-inflammatory effects",
-                        authors:  [
-                            "Romay, C.",
-                            "Armesto, J.",
-                            "Remirez, D.",
-                            "González, R.",
-                            "Ledon, N.",
-                            "García, I."
-                        ],
-                        year:  1998,
-                        journal:  "Applied Biochemistry and Biotechnology",
-                        pmid:  "9894091",
-                        doi:  "10.1007/BF02787916",
-                        findings:  "Phycocyanin in spirulina acts as a powerful antioxidant and provides cytoprotective effects"
-                    }
+                    
                 ]
             },
             {
@@ -56,20 +41,7 @@ window.enhancedCitations[53] = {
                 strength:  "Strong",
                 tissueTarget:  "Protein synthesis pathways",
                 evidence:  [
-                    {
-                        title:  "Nutritional and therapeutic potential of Spirulina",
-                        authors:  [
-                            "Habib, M.A.",
-                            "Parvin, M.",
-                            "Huntington, T.C.",
-                            "Hasan, M.R."
-                        ],
-                        year:  2008,
-                        journal:  "Current Pharmaceutical Biotechnology",
-                        pmid:  "18289052",
-                        doi:  "10.2174/138920108783497668",
-                        findings:  "Spirulina provides complete protein with high biological value and all essential amino acids"
-                    }
+                    
                 ]
             },
             {
@@ -78,26 +50,7 @@ window.enhancedCitations[53] = {
                 strength:  "Moderate",
                 tissueTarget:  "Immune cells",
                 evidence:  [
-                    {
-                        title:  "Immunomodulatory effects of spirulina supplementation in patients with chronic obstructive pulmonary disease",
-                        authors:  [
-                            "Zheng, J.",
-                            "Inoguchi, T.",
-                            "Sasaki, S.",
-                            "Maeda, Y.",
-                            "McCarty, M.F.",
-                            "Fujii, M.",
-                            "Ikeda, N.",
-                            "Kobayashi, K.",
-                            "Sonoda, N.",
-                            "Takayanagi, R."
-                        ],
-                        year:  2013,
-                        journal:  "Nutrition Research",
-                        pmid:  "23507224",
-                        doi:  "10.1016/j.nutres.2013.01.004",
-                        findings:  "Spirulina polysaccharides enhance immune function and modulate inflammatory responses"
-                    }
+                    
                 ]
             },
             {
@@ -178,24 +131,7 @@ window.enhancedCitations[53] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Effects of spirulina on the immune system",
-                        authors:  [
-                            "Selmi, C.",
-                            "Leung, P.S.",
-                            "Fischer, L.",
-                            "German, B.",
-                            "Yang, C.Y.",
-                            "Kenny, T.P.",
-                            "Cysewski, G.R.",
-                            "Gershwin, M.E."
-                        ],
-                        year:  2011,
-                        journal:  "Cellular and Molecular Immunology",
-                        pmid:  "21860405",
-                        doi:  "10.1038/cmi.2011.25",
-                        findings:  "Spirulina enhances immune function and may reduce susceptibility to infections"
-                    }
+                    
                 ]
             },
             {
@@ -254,21 +190,7 @@ window.enhancedCitations[53] = {
                 evidenceQuality:  "Moderate",
                 replicationStatus:  "Multiple studies",
                 evidence:  [
-                    {
-                        title:  "Effects of spirulina supplementation on diabetes mellitus: a systematic review",
-                        authors:  [
-                            "Mazokopakis, E.E.",
-                            "Karefilakis, C.M.",
-                            "Tsartsalis, A.N.",
-                            "Milkas, A.N.",
-                            "Ganotakis, E.S."
-                        ],
-                        year:  2014,
-                        journal:  "Review of Diabetic Studies",
-                        pmid:  "25396406",
-                        doi:  "10.1900/RDS.2014.11.181",
-                        findings:  "Systematic review showed spirulina may help improve glycemic control in diabetes"
-                    }
+                    
                 ]
             },
             {
@@ -299,22 +221,7 @@ window.enhancedCitations[53] = {
                 safetyAspect:  "General Safety",
                 riskLevel:  "Very Low",
                 evidence:  [
-                    {
-                        title:  "Safety assessment of spirulina supplementation",
-                        authors:  [
-                            "Chamorro, G.",
-                            "Salazar, M.",
-                            "Araújo, K.G.",
-                            "dos Santos, C.P.",
-                            "Ceballos, G.",
-                            "Castillo, L.F."
-                        ],
-                        year:  2002,
-                        journal:  "Food and Chemical Toxicology",
-                        pmid:  "11893517",
-                        doi:  "10.1016/s0278-6915(01)00101-8",
-                        findings:  "Comprehensive safety studies show spirulina has an excellent safety profile"
-                    }
+                    
                 ]
             },
             {
