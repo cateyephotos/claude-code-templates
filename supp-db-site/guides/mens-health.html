@@ -38,18 +38,18 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/content-gate.css?v=1773553622863">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1773925333397">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Auth CDN -->
+    <!-- Auth: Clerk + Convex env injection (substituted by docker-entrypoint.sh / vercel-build.js) -->
     <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
     <meta name="convex-url" content="__CONVEX_URL__">
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Men's Health & Aging","description":"Science-backed guide to supplements for men's health including testosterone support, prostate health, and healthy aging. Ranked by clinical evidence with dosages and safety.","datePublished":"2026-03-15","dateModified":"2026-03-15","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/mens-health.html"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Men's Health & Aging","description":"Science-backed guide to supplements for men's health including testosterone support, prostate health, and healthy aging. Ranked by clinical evidence with dosages and safety.","datePublished":"2026-03-19","dateModified":"2026-03-19","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/mens-health.html"}}</script>
 
     
     <style>
@@ -258,6 +258,8 @@
             border: 1px solid rgba(37,99,235, 0.15);
             color: var(--glow);
         }
+        a.mech-pill { text-decoration: none; color: inherit; cursor: pointer; }
+        a.mech-pill:hover { opacity: 0.8; }
 
         .capture-section {
             background:
@@ -279,7 +281,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 22px;
+            min-width: 26px;
             height: 22px;
             border-radius: 4px;
             background: rgba(37,99,235, 0.1);
@@ -288,7 +290,16 @@
             font-weight: 700;
             margin-right: 10px;
             flex-shrink: 0;
+            padding: 0 4px;
         }
+
+        /* Citation tabs */
+        .cite-tabs { display:flex; gap:0.25rem; flex-wrap:wrap; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.75rem; }
+        .cite-tab { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:var(--text-muted); padding:0.4rem 0.75rem; border-radius:6px; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:all 0.15s; }
+        .cite-tab:hover { background:rgba(255,255,255,0.08); color:var(--text-primary); }
+        .cite-tab.active { background:rgba(37,99,235,0.15); border-color:rgba(37,99,235,0.3); color:var(--accent-light); }
+        .cite-tab-count { font-size:0.7rem; background:rgba(255,255,255,0.06); padding:0.1rem 0.35rem; border-radius:8px; margin-left:0.25rem; }
+        .cite-tab.active .cite-tab-count { background:rgba(37,99,235,0.2); }
 
         html { scroll-behavior: smooth; }
 
@@ -320,13 +331,6 @@
             body { background: #fff; color: #111; }
             .evidence-card { border: 1px solid #ddd; background: #fff; }
         }
-    
-        .cite-tabs { display:flex; gap:0.25rem; flex-wrap:wrap; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.75rem; }
-        .cite-tab { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:var(--text-muted); padding:0.4rem 0.75rem; border-radius:6px; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:all 0.15s; }
-        .cite-tab:hover { background:rgba(255,255,255,0.08); color:var(--text-primary); }
-        .cite-tab.active { background:rgba(99,102,241,0.15); border-color:rgba(99,102,241,0.3); color:#a5b4fc; }
-        .cite-tab-count { font-size:0.7rem; background:rgba(255,255,255,0.06); padding:0.1rem 0.35rem; border-radius:8px; margin-left:0.25rem; }
-        .cite-tab.active .cite-tab-count { background:rgba(99,102,241,0.2); }
     </style>
 </head>
 <body data-theme="dark">
@@ -381,7 +385,7 @@
         <!-- Review badge -->
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(37,99,235, 0.12); color: #bfdbfe; border: 1px solid rgba(37,99,235, 0.2);">
             <i class="fas fa-clock text-xs" style="color: #3b82f6; font-size: 0.65rem;"></i>
-            Last reviewed: 2026-03-15
+            Last reviewed: 2026-03-19
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
@@ -445,21 +449,21 @@
                     <tr>
                         <td><strong><a href="../supplements/creatine.html" style="color: var(--glow); text-decoration: none;">Creatine</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">ATP regeneration</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#atp-regeneration" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">ATP regeneration</a></td>
                         <td style="font-size:0.82rem;">Memory enhancement</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">3-5g daily (maintenance) or 20g daily for 5 days (loading)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/vitamin-c.html" style="color: var(--glow); text-decoration: none;">Vitamin C</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#powerful-antioxidant-activity-mda-reduction-tac-increase-gpx" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</a></td>
                         <td style="font-size:0.82rem;">Mental fatigue reduction</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500mg-2g daily; optimal antioxidant and immune benefit at 500-1000mg</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/vitamin-d3.html" style="color: var(--glow); text-decoration: none;">Vitamin D3</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Vitamin D receptor activation</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#vitamin-d-receptor-activation" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Vitamin D receptor activation</a></td>
                         <td style="font-size:0.82rem;">Bone health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">1000-4000 IU daily (based on blood levels; 2000-4000 IU optimal for metabolic benefit)</td>
                     </tr>
@@ -467,63 +471,63 @@
                     <tr>
                         <td><strong><a href="../supplements/zinc.html" style="color: var(--glow); text-decoration: none;">Zinc</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Enzyme cofactor (300+ enzymes and 2000+ proteins)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#enzyme-cofactor-300-enzymes-and-2000-proteins" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Enzyme cofactor (300+ enzymes and 2000+ proteins)</a></td>
                         <td style="font-size:0.82rem;">Attention enhancement</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">8-40mg daily; therapeutic range 15-30mg; bisglycinate preferred for absorption</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/acetyl-l-carnitine.html" style="color: var(--glow); text-decoration: none;">Acetyl-L-Carnitine</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Mitochondrial energy production</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#mitochondrial-energy-production" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Mitochondrial energy production</a></td>
                         <td style="font-size:0.82rem;">Male fertility support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500-2000mg daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/fenugreek.html" style="color: var(--glow); text-decoration: none;">Fenugreek</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Alpha-amylase inhibition</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#alpha-amylase-inhibition" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Alpha-amylase inhibition</a></td>
                         <td style="font-size:0.82rem;">Testosterone support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500-1000mg daily (seed extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/garlic.html" style="color: var(--glow); text-decoration: none;">Garlic</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Allicin and sulfur compounds</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#allicin-and-sulfur-compounds" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Allicin and sulfur compounds</a></td>
                         <td style="font-size:0.82rem;">Cardiovascular health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">600mg-2g daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/hawthorn-berry.html" style="color: var(--glow); text-decoration: none;">Hawthorn Berry</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">ACE inhibition</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#ace-inhibition" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">ACE inhibition</a></td>
                         <td style="font-size:0.82rem;">Heart health support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">160-1800mg daily (standardized extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/red-yeast-rice.html" style="color: var(--glow); text-decoration: none;">Red Yeast Rice</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">HMG-CoA reductase inhibition</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#hmg-coa-reductase-inhibition" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">HMG-CoA reductase inhibition</a></td>
                         <td style="font-size:0.82rem;">Improved brain circulation via cholesterol management</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">1200-2400mg daily (standardized extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/betaine.html" style="color: var(--glow); text-decoration: none;">Betaine</a></strong></td>
                         <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Osmolyte function for cellular hydration</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#osmolyte-function-for-cellular-hydration" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Osmolyte function for cellular hydration</a></td>
                         <td style="font-size:0.82rem;">Power output enhancement</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">2.5g daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/hmb-hydroxy-methylbutyrate.html" style="color: var(--glow); text-decoration: none;">HMB (β-Hydroxy β-Methylbutyrate)</a></strong></td>
                         <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">mTOR pathway activation for protein synthesis</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#mtor-pathway-activation-for-protein-synthesis" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">mTOR pathway activation for protein synthesis</a></td>
                         <td style="font-size:0.82rem;">Recovery enhancement</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">3g daily or 38mg/kg body weight</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/tribulus-terrestris.html" style="color: var(--glow); text-decoration: none;">Tribulus Terrestris</a></strong></td>
                         <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#steroidal-saponin-protodioscin-activity-potential-lh-and-tes" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</a></td>
                         <td style="font-size:0.82rem;">Libido support (modest, especially women)</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">250-750mg daily (standardized to 40-45% saponins)</td>
                     </tr>
@@ -579,10 +583,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ATP regeneration</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Brain energy metabolism</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neuroprotection</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cellular energy buffering</span>
+                    <a href="../guides/mechanisms.html#atp-regeneration" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ATP regeneration</a>
+                    <a href="../guides/mechanisms.html#brain-energy-metabolism" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Brain energy metabolism</a>
+                    <a href="../guides/mechanisms.html#neuroprotection" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neuroprotection</a>
+                    <a href="../guides/mechanisms.html#cellular-energy-buffering" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cellular energy buffering</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -621,10 +625,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Collagen synthesis cofactor</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter synthesis support</span>
+                    <a href="../guides/mechanisms.html#powerful-antioxidant-activity-mda-reduction-tac-increase-gpx" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</a>
+                    <a href="../guides/mechanisms.html#collagen-synthesis-cofactor" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Collagen synthesis cofactor</a>
+                    <a href="../guides/mechanisms.html#immune-system-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</a>
+                    <a href="../guides/mechanisms.html#neurotransmitter-synthesis-support" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter synthesis support</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -663,10 +667,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Vitamin D receptor activation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Calcium homeostasis</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune modulation (innate and adaptive)</span>
+                    <a href="../guides/mechanisms.html#vitamin-d-receptor-activation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Vitamin D receptor activation</a>
+                    <a href="../guides/mechanisms.html#calcium-homeostasis" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Calcium homeostasis</a>
+                    <a href="../guides/mechanisms.html#gene-expression-regulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</a>
+                    <a href="../guides/mechanisms.html#immune-modulation-innate-and-adaptive" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune modulation (innate and adaptive)</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -705,10 +709,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enzyme cofactor (300+ enzymes and 2000+ proteins)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein structure stabilization (zinc finger motifs)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter metabolism (dopamine, serotonin, GABA)</span>
+                    <a href="../guides/mechanisms.html#enzyme-cofactor-300-enzymes-and-2000-proteins" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enzyme cofactor (300+ enzymes and 2000+ proteins)</a>
+                    <a href="../guides/mechanisms.html#protein-structure-stabilization-zinc-finger-motifs" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein structure stabilization (zinc finger motifs)</a>
+                    <a href="../guides/mechanisms.html#gene-expression-regulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</a>
+                    <a href="../guides/mechanisms.html#neurotransmitter-metabolism-dopamine-serotonin-gaba" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter metabolism (dopamine, serotonin, GABA)</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -757,10 +761,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Mitochondrial energy production</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Acetylcholine synthesis support</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotrophin factor enhancement</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Oxidative stress reduction</span>
+                    <a href="../guides/mechanisms.html#mitochondrial-energy-production" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Mitochondrial energy production</a>
+                    <a href="../guides/mechanisms.html#acetylcholine-synthesis-support" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Acetylcholine synthesis support</a>
+                    <a href="../guides/mechanisms.html#neurotrophin-factor-enhancement" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotrophin factor enhancement</a>
+                    <a href="../guides/mechanisms.html#oxidative-stress-reduction" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Oxidative stress reduction</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -799,10 +803,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Alpha-amylase inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Delayed gastric emptying</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enhanced insulin sensitivity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Steroidogenic enzyme modulation</span>
+                    <a href="../guides/mechanisms.html#alpha-amylase-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Alpha-amylase inhibition</a>
+                    <a href="../guides/mechanisms.html#delayed-gastric-emptying" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Delayed gastric emptying</a>
+                    <a href="../guides/mechanisms.html#enhanced-insulin-sensitivity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enhanced insulin sensitivity</a>
+                    <a href="../guides/mechanisms.html#steroidogenic-enzyme-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Steroidogenic enzyme modulation</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -837,10 +841,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Allicin and sulfur compounds</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide production</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis inhibition</span>
+                    <a href="../guides/mechanisms.html#allicin-and-sulfur-compounds" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Allicin and sulfur compounds</a>
+                    <a href="../guides/mechanisms.html#antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#nitric-oxide-production" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide production</a>
+                    <a href="../guides/mechanisms.html#cholesterol-synthesis-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis inhibition</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -879,10 +883,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ACE inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant cardiovascular protection</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Improved coronary blood flow</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cardiac muscle strengthening</span>
+                    <a href="../guides/mechanisms.html#ace-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ACE inhibition</a>
+                    <a href="../guides/mechanisms.html#antioxidant-cardiovascular-protection" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant cardiovascular protection</a>
+                    <a href="../guides/mechanisms.html#improved-coronary-blood-flow" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Improved coronary blood flow</a>
+                    <a href="../guides/mechanisms.html#cardiac-muscle-strengthening" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cardiac muscle strengthening</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -917,10 +921,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> HMG-CoA reductase inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Natural statin activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis reduction</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant cardiovascular effects</span>
+                    <a href="../guides/mechanisms.html#hmg-coa-reductase-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> HMG-CoA reductase inhibition</a>
+                    <a href="../guides/mechanisms.html#natural-statin-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Natural statin activity</a>
+                    <a href="../guides/mechanisms.html#cholesterol-synthesis-reduction" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis reduction</a>
+                    <a href="../guides/mechanisms.html#antioxidant-cardiovascular-effects" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant cardiovascular effects</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -965,10 +969,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Osmolyte function for cellular hydration</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Methyl donor in homocysteine-to-methionine conversion</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Creatine synthesis support via methylation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein synthesis signaling via cellular volume</span>
+                    <a href="../guides/mechanisms.html#osmolyte-function-for-cellular-hydration" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Osmolyte function for cellular hydration</a>
+                    <a href="../guides/mechanisms.html#methyl-donor-in-homocysteine-to-methionine-conversion" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Methyl donor in homocysteine-to-methionine conversion</a>
+                    <a href="../guides/mechanisms.html#creatine-synthesis-support-via-methylation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Creatine synthesis support via methylation</a>
+                    <a href="../guides/mechanisms.html#protein-synthesis-signaling-via-cellular-volume" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein synthesis signaling via cellular volume</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1003,10 +1007,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> mTOR pathway activation for protein synthesis</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Ubiquitin-proteasome pathway inhibition (reduced protein breakdown)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis for cell membrane repair</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Leucine metabolite with anti-catabolic properties</span>
+                    <a href="../guides/mechanisms.html#mtor-pathway-activation-for-protein-synthesis" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> mTOR pathway activation for protein synthesis</a>
+                    <a href="../guides/mechanisms.html#ubiquitin-proteasome-pathway-inhibition-reduced-protein-brea" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Ubiquitin-proteasome pathway inhibition (reduced protein breakdown)</a>
+                    <a href="../guides/mechanisms.html#cholesterol-synthesis-for-cell-membrane-repair" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis for cell membrane repair</a>
+                    <a href="../guides/mechanisms.html#leucine-metabolite-with-anti-catabolic-properties" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Leucine metabolite with anti-catabolic properties</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1041,10 +1045,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide synthase (eNOS) enhancement — vascular and erectile function</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant and free radical scavenging activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory cytokine modulation</span>
+                    <a href="../guides/mechanisms.html#steroidal-saponin-protodioscin-activity-potential-lh-and-tes" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</a>
+                    <a href="../guides/mechanisms.html#nitric-oxide-synthase-enos-enhancement-vascular-and-erectile" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide synthase (eNOS) enhancement — vascular and erectile function</a>
+                    <a href="../guides/mechanisms.html#antioxidant-and-free-radical-scavenging-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant and free radical scavenging activity</a>
+                    <a href="../guides/mechanisms.html#anti-inflammatory-cytokine-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory cytokine modulation</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1510,8 +1514,6 @@
     </div>
 </section>
 
-
-
 <section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
     <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
         <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
@@ -1731,14 +1733,7 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/newsletter.js"></script>
 <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-mens-health");</script>
 
-<!-- Auth & Content Gate -->
-<script src="../js/auth.js"></script>
-<script src="../js/convex-client.js"></script>
-<script src="../js/rbac.js"></script>
-<script src="../js/auth-ui.js"></script>
-<script src="../js/content-gate.js"></script>
-    <script src="../js/guide-cta.js" defer></script>
-
+<!-- Citation Tab Switching -->
 <script>
     function switchCiteTab(tabName) {
         document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
@@ -1757,5 +1752,12 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
         if (panel) panel.style.display = '';
     }
 </script>
+
+<!-- Auth & Content Gate -->
+<script src="../js/auth.js"></script>
+<script src="../js/convex-client.js"></script>
+<script src="../js/rbac.js"></script>
+<script src="../js/auth-ui.js"></script>
+<script src="../js/content-gate.js"></script>
 </body>
 </html>

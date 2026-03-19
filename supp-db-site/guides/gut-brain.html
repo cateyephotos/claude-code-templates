@@ -38,18 +38,18 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/content-gate.css?v=1773553622866">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1773925333406">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Auth CDN -->
+    <!-- Auth: Clerk + Convex env injection (substituted by docker-entrypoint.sh / vercel-build.js) -->
     <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
     <meta name="convex-url" content="__CONVEX_URL__">
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for the Gut-Brain Axis","description":"Science-backed guide to supplements for gut-brain axis health, digestive function, and microbiome support. Ranked by clinical evidence with dosages and safety.","datePublished":"2026-03-15","dateModified":"2026-03-15","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/gut-brain.html"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for the Gut-Brain Axis","description":"Science-backed guide to supplements for gut-brain axis health, digestive function, and microbiome support. Ranked by clinical evidence with dosages and safety.","datePublished":"2026-03-19","dateModified":"2026-03-19","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/gut-brain.html"}}</script>
 
     
     <style>
@@ -258,6 +258,8 @@
             border: 1px solid rgba(101,163,13, 0.15);
             color: var(--glow);
         }
+        a.mech-pill { text-decoration: none; color: inherit; cursor: pointer; }
+        a.mech-pill:hover { opacity: 0.8; }
 
         .capture-section {
             background:
@@ -279,7 +281,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 22px;
+            min-width: 26px;
             height: 22px;
             border-radius: 4px;
             background: rgba(101,163,13, 0.1);
@@ -288,7 +290,16 @@
             font-weight: 700;
             margin-right: 10px;
             flex-shrink: 0;
+            padding: 0 4px;
         }
+
+        /* Citation tabs */
+        .cite-tabs { display:flex; gap:0.25rem; flex-wrap:wrap; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.75rem; }
+        .cite-tab { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:var(--text-muted); padding:0.4rem 0.75rem; border-radius:6px; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:all 0.15s; }
+        .cite-tab:hover { background:rgba(255,255,255,0.08); color:var(--text-primary); }
+        .cite-tab.active { background:rgba(101,163,13,0.15); border-color:rgba(101,163,13,0.3); color:var(--accent-light); }
+        .cite-tab-count { font-size:0.7rem; background:rgba(255,255,255,0.06); padding:0.1rem 0.35rem; border-radius:8px; margin-left:0.25rem; }
+        .cite-tab.active .cite-tab-count { background:rgba(101,163,13,0.2); }
 
         html { scroll-behavior: smooth; }
 
@@ -320,13 +331,6 @@
             body { background: #fff; color: #111; }
             .evidence-card { border: 1px solid #ddd; background: #fff; }
         }
-    
-        .cite-tabs { display:flex; gap:0.25rem; flex-wrap:wrap; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.75rem; }
-        .cite-tab { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:var(--text-muted); padding:0.4rem 0.75rem; border-radius:6px; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:all 0.15s; }
-        .cite-tab:hover { background:rgba(255,255,255,0.08); color:var(--text-primary); }
-        .cite-tab.active { background:rgba(99,102,241,0.15); border-color:rgba(99,102,241,0.3); color:#a5b4fc; }
-        .cite-tab-count { font-size:0.7rem; background:rgba(255,255,255,0.06); padding:0.1rem 0.35rem; border-radius:8px; margin-left:0.25rem; }
-        .cite-tab.active .cite-tab-count { background:rgba(99,102,241,0.2); }
     </style>
 </head>
 <body data-theme="dark">
@@ -381,7 +385,7 @@
         <!-- Review badge -->
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(101,163,13, 0.12); color: #bef264; border: 1px solid rgba(101,163,13, 0.2);">
             <i class="fas fa-clock text-xs" style="color: #84cc16; font-size: 0.65rem;"></i>
-            Last reviewed: 2026-03-15
+            Last reviewed: 2026-03-19
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
@@ -445,21 +449,21 @@
                     <tr>
                         <td><strong><a href="../supplements/magnesium.html" style="color: var(--glow); text-decoration: none;">Magnesium</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">GABA receptor modulation</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#gaba-receptor-modulation" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">GABA receptor modulation</a></td>
                         <td style="font-size:0.82rem;">Sleep enhancement</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">200-400mg daily (elemental magnesium)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/turmeric-curcumin.html" style="color: var(--glow); text-decoration: none;">Turmeric/Curcumin</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">NF-κB pathway inhibition</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#nf-b-pathway-inhibition" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">NF-κB pathway inhibition</a></td>
                         <td style="font-size:0.82rem;">Anti-inflammatory</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500-1000mg daily (with piperine for absorption)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/vitamin-c.html" style="color: var(--glow); text-decoration: none;">Vitamin C</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#powerful-antioxidant-activity-mda-reduction-tac-increase-gpx" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</a></td>
                         <td style="font-size:0.82rem;">Immune system support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500mg-2g daily; optimal antioxidant and immune benefit at 500-1000mg</td>
                     </tr>
@@ -467,91 +471,91 @@
                     <tr>
                         <td><strong><a href="../supplements/vitamin-d3.html" style="color: var(--glow); text-decoration: none;">Vitamin D3</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Vitamin D receptor activation</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#vitamin-d-receptor-activation" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Vitamin D receptor activation</a></td>
                         <td style="font-size:0.82rem;">Bone health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">1000-4000 IU daily (based on blood levels; 2000-4000 IU optimal for metabolic benefit)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/zinc.html" style="color: var(--glow); text-decoration: none;">Zinc</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Enzyme cofactor (300+ enzymes and 2000+ proteins)</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#enzyme-cofactor-300-enzymes-and-2000-proteins" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Enzyme cofactor (300+ enzymes and 2000+ proteins)</a></td>
                         <td style="font-size:0.82rem;">Immune system support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">8-40mg daily; therapeutic range 15-30mg; bisglycinate preferred for absorption</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/black-seed-oil.html" style="color: var(--glow); text-decoration: none;">Black Seed Oil</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Thymoquinone antioxidant activity</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#thymoquinone-antioxidant-activity" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Thymoquinone antioxidant activity</a></td>
                         <td style="font-size:0.82rem;">Immune system support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500-2000mg daily (oil or extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/boswellia.html" style="color: var(--glow); text-decoration: none;">Boswellia</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">5-lipoxygenase inhibition</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#5-lipoxygenase-inhibition" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">5-lipoxygenase inhibition</a></td>
                         <td style="font-size:0.82rem;">Joint health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">300-800mg daily (standardized extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/garlic.html" style="color: var(--glow); text-decoration: none;">Garlic</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Allicin and sulfur compounds</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#allicin-and-sulfur-compounds" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Allicin and sulfur compounds</a></td>
                         <td style="font-size:0.82rem;">Cardiovascular health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">600mg-2g daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/ginger.html" style="color: var(--glow); text-decoration: none;">Ginger</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">COX and LOX inhibition</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#cox-and-lox-inhibition" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">COX and LOX inhibition</a></td>
                         <td style="font-size:0.82rem;">Digestive health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500mg-2g daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/krill-oil.html" style="color: var(--glow); text-decoration: none;">Krill Oil</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Phospholipid-bound omega-3 delivery</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#phospholipid-bound-omega-3-delivery" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Phospholipid-bound omega-3 delivery</a></td>
                         <td style="font-size:0.82rem;">Cardiovascular health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500-2000mg daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/milk-thistle.html" style="color: var(--glow); text-decoration: none;">Milk Thistle</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Antioxidant liver protection</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#antioxidant-liver-protection" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Antioxidant liver protection</a></td>
                         <td style="font-size:0.82rem;">Liver protection</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">200-600mg daily (80% silymarin extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/panax-ginseng.html" style="color: var(--glow); text-decoration: none;">Panax Ginseng</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">HPA axis modulation</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#hpa-axis-modulation" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">HPA axis modulation</a></td>
                         <td style="font-size:0.82rem;">Physical performance</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">200-400mg daily (standardized extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/quercetin.html" style="color: var(--glow); text-decoration: none;">Quercetin</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Senescent cell clearance</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#senescent-cell-clearance" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Senescent cell clearance</a></td>
                         <td style="font-size:0.82rem;">Senolytic activity</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">500-1000mg daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/spirulina.html" style="color: var(--glow); text-decoration: none;">Spirulina</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">High protein and micronutrient content</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#high-protein-and-micronutrient-content" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">High protein and micronutrient content</a></td>
                         <td style="font-size:0.82rem;">Immune support</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">1-8g daily</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/stinging-nettle.html" style="color: var(--glow); text-decoration: none;">Stinging Nettle</a></strong></td>
                         <td><span class="tier-2-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Moderate Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Histamine receptor antagonism</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#histamine-receptor-antagonism" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Histamine receptor antagonism</a></td>
                         <td style="font-size:0.82rem;">Allergy relief</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">300-600mg daily (leaf extract)</td>
                     </tr>
                     <tr>
                         <td><strong><a href="../supplements/chlorella.html" style="color: var(--glow); text-decoration: none;">Chlorella</a></strong></td>
                         <td><span class="tier-3-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Preliminary Evidence</span></td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">Chlorophyll detoxification support</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);"><a href="../guides/mechanisms.html#chlorophyll-detoxification-support" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">Chlorophyll detoxification support</a></td>
                         <td style="font-size:0.82rem;">Digestive health</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">3-10g daily</td>
                     </tr>
@@ -608,10 +612,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> GABA receptor modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NMDA receptor antagonism</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Muscle relaxation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter regulation</span>
+                    <a href="../guides/mechanisms.html#gaba-receptor-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> GABA receptor modulation</a>
+                    <a href="../guides/mechanisms.html#nmda-receptor-antagonism" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NMDA receptor antagonism</a>
+                    <a href="../guides/mechanisms.html#muscle-relaxation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Muscle relaxation</a>
+                    <a href="../guides/mechanisms.html#neurotransmitter-synthesis" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter regulation</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -650,10 +654,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-κB pathway inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Amyloid-β formation inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cerebrovascular function enhancement</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neuroinflammation reduction</span>
+                    <a href="../guides/mechanisms.html#nf-b-pathway-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-κB pathway inhibition</a>
+                    <a href="../guides/mechanisms.html#amyloid-formation-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Amyloid-β formation inhibition</a>
+                    <a href="../guides/mechanisms.html#cerebrovascular-function-enhancement" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cerebrovascular function enhancement</a>
+                    <a href="../guides/mechanisms.html#neuroinflammation-reduction" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neuroinflammation reduction</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -692,10 +696,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Collagen synthesis cofactor</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter synthesis support</span>
+                    <a href="../guides/mechanisms.html#powerful-antioxidant-activity-mda-reduction-tac-increase-gpx" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</a>
+                    <a href="../guides/mechanisms.html#collagen-synthesis-cofactor" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Collagen synthesis cofactor</a>
+                    <a href="../guides/mechanisms.html#immune-system-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</a>
+                    <a href="../guides/mechanisms.html#neurotransmitter-synthesis-support" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter synthesis support</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -734,10 +738,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Vitamin D receptor activation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Calcium homeostasis</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune modulation (innate and adaptive)</span>
+                    <a href="../guides/mechanisms.html#vitamin-d-receptor-activation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Vitamin D receptor activation</a>
+                    <a href="../guides/mechanisms.html#calcium-homeostasis" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Calcium homeostasis</a>
+                    <a href="../guides/mechanisms.html#gene-expression-regulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</a>
+                    <a href="../guides/mechanisms.html#immune-modulation-innate-and-adaptive" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune modulation (innate and adaptive)</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -776,10 +780,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enzyme cofactor (300+ enzymes and 2000+ proteins)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein structure stabilization (zinc finger motifs)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter metabolism (dopamine, serotonin, GABA)</span>
+                    <a href="../guides/mechanisms.html#enzyme-cofactor-300-enzymes-and-2000-proteins" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enzyme cofactor (300+ enzymes and 2000+ proteins)</a>
+                    <a href="../guides/mechanisms.html#protein-structure-stabilization-zinc-finger-motifs" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein structure stabilization (zinc finger motifs)</a>
+                    <a href="../guides/mechanisms.html#gene-expression-regulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Gene expression regulation</a>
+                    <a href="../guides/mechanisms.html#neurotransmitter-metabolism-dopamine-serotonin-gaba" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter metabolism (dopamine, serotonin, GABA)</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -828,10 +832,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Thymoquinone antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory pathway modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Metabolic pathway enhancement</span>
+                    <a href="../guides/mechanisms.html#thymoquinone-antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Thymoquinone antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#anti-inflammatory-pathway-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory pathway modulation</a>
+                    <a href="../guides/mechanisms.html#immune-system-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</a>
+                    <a href="../guides/mechanisms.html#metabolic-pathway-enhancement" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Metabolic pathway enhancement</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -866,10 +870,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-lipoxygenase inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Leukotriene synthesis reduction</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-kappaB pathway modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Complement cascade inhibition</span>
+                    <a href="../guides/mechanisms.html#5-lipoxygenase-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-lipoxygenase inhibition</a>
+                    <a href="../guides/mechanisms.html#leukotriene-synthesis-reduction" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Leukotriene synthesis reduction</a>
+                    <a href="../guides/mechanisms.html#nf-kappab-pathway-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> NF-kappaB pathway modulation</a>
+                    <a href="../guides/mechanisms.html#complement-cascade-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Complement cascade inhibition</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -904,10 +908,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Allicin and sulfur compounds</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide production</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis inhibition</span>
+                    <a href="../guides/mechanisms.html#allicin-and-sulfur-compounds" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Allicin and sulfur compounds</a>
+                    <a href="../guides/mechanisms.html#antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#nitric-oxide-production" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide production</a>
+                    <a href="../guides/mechanisms.html#cholesterol-synthesis-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Cholesterol synthesis inhibition</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -946,10 +950,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> COX and LOX inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-HT3 receptor antagonism</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Prostaglandin modulation</span>
+                    <a href="../guides/mechanisms.html#cox-and-lox-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> COX and LOX inhibition</a>
+                    <a href="../guides/mechanisms.html#5-ht3-receptor-antagonism" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-HT3 receptor antagonism</a>
+                    <a href="../guides/mechanisms.html#antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#prostaglandin-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Prostaglandin modulation</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -988,10 +992,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Phospholipid-bound omega-3 delivery</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enhanced bioavailability</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Astaxanthin antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory prostaglandin modulation</span>
+                    <a href="../guides/mechanisms.html#phospholipid-bound-omega-3-delivery" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Phospholipid-bound omega-3 delivery</a>
+                    <a href="../guides/mechanisms.html#enhanced-bioavailability" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Enhanced bioavailability</a>
+                    <a href="../guides/mechanisms.html#astaxanthin-antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Astaxanthin antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#anti-inflammatory-prostaglandin-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory prostaglandin modulation</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1026,10 +1030,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant liver protection</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Hepatocyte membrane stabilization</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein synthesis stimulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory effects</span>
+                    <a href="../guides/mechanisms.html#antioxidant-liver-protection" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant liver protection</a>
+                    <a href="../guides/mechanisms.html#hepatocyte-membrane-stabilization" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Hepatocyte membrane stabilization</a>
+                    <a href="../guides/mechanisms.html#protein-synthesis-stimulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Protein synthesis stimulation</a>
+                    <a href="../guides/mechanisms.html#anti-inflammatory-effects" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory effects</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1064,10 +1068,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> HPA axis modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter enhancement (dopamine, acetylcholine)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory activity (hs-CRP, IL-6 reduction)</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant effects (ROS reduction, SOD enhancement)</span>
+                    <a href="../guides/mechanisms.html#hpa-axis-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> HPA axis modulation</a>
+                    <a href="../guides/mechanisms.html#neurotransmitter-synthesis" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Neurotransmitter enhancement (dopamine, acetylcholine)</a>
+                    <a href="../guides/mechanisms.html#anti-inflammatory-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory activity (hs-CRP, IL-6 reduction)</a>
+                    <a href="../guides/mechanisms.html#antioxidant-effects" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant effects (ROS reduction, SOD enhancement)</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1106,10 +1110,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Senescent cell clearance</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory pathways</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Flavonoid receptor modulation</span>
+                    <a href="../guides/mechanisms.html#senescent-cell-clearance" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Senescent cell clearance</a>
+                    <a href="../guides/mechanisms.html#anti-inflammatory-pathways" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Anti-inflammatory pathways</a>
+                    <a href="../guides/mechanisms.html#antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#flavonoid-receptor-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Flavonoid receptor modulation</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1144,10 +1148,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> High protein and micronutrient content</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Phycocyanin antioxidant activity</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide production</span>
+                    <a href="../guides/mechanisms.html#high-protein-and-micronutrient-content" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> High protein and micronutrient content</a>
+                    <a href="../guides/mechanisms.html#phycocyanin-antioxidant-activity" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Phycocyanin antioxidant activity</a>
+                    <a href="../guides/mechanisms.html#immune-system-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system modulation</a>
+                    <a href="../guides/mechanisms.html#nitric-oxide-production" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Nitric oxide production</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1186,10 +1190,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Histamine receptor antagonism</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-lipoxygenase inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> COX enzyme inhibition</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Rich mineral content</span>
+                    <a href="../guides/mechanisms.html#histamine-receptor-antagonism" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Histamine receptor antagonism</a>
+                    <a href="../guides/mechanisms.html#5-lipoxygenase-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> 5-lipoxygenase inhibition</a>
+                    <a href="../guides/mechanisms.html#cox-enzyme-inhibition" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> COX enzyme inhibition</a>
+                    <a href="../guides/mechanisms.html#rich-mineral-content" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Rich mineral content</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1234,10 +1238,10 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Chlorophyll detoxification support</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Heavy metal binding</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system enhancement</span>
-                    <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant protection</span>
+                    <a href="../guides/mechanisms.html#chlorophyll-detoxification-support" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Chlorophyll detoxification support</a>
+                    <a href="../guides/mechanisms.html#heavy-metal-binding" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Heavy metal binding</a>
+                    <a href="../guides/mechanisms.html#immune-system-modulation" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Immune system enhancement</a>
+                    <a href="../guides/mechanisms.html#antioxidant-protection" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> Antioxidant protection</a>
                 </div>
                 <div class="space-y-3 mb-5">
                     <div class="finding-highlight">
@@ -1700,8 +1704,6 @@
     </div>
 </section>
 
-
-
 <section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
     <div class="capture-section rounded-xl p-8 sm:p-12 text-center">
         <h3 class="text-2xl mb-3" style="color: var(--text-bright);">
@@ -1918,14 +1920,7 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/newsletter.js"></script>
 <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-gut-brain");</script>
 
-<!-- Auth & Content Gate -->
-<script src="../js/auth.js"></script>
-<script src="../js/convex-client.js"></script>
-<script src="../js/rbac.js"></script>
-<script src="../js/auth-ui.js"></script>
-<script src="../js/content-gate.js"></script>
-    <script src="../js/guide-cta.js" defer></script>
-
+<!-- Citation Tab Switching -->
 <script>
     function switchCiteTab(tabName) {
         document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
@@ -1944,5 +1939,12 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
         if (panel) panel.style.display = '';
     }
 </script>
+
+<!-- Auth & Content Gate -->
+<script src="../js/auth.js"></script>
+<script src="../js/convex-client.js"></script>
+<script src="../js/rbac.js"></script>
+<script src="../js/auth-ui.js"></script>
+<script src="../js/content-gate.js"></script>
 </body>
 </html>
