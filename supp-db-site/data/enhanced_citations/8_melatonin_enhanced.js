@@ -584,7 +584,7 @@ const melatoninEnhanced = {
         "volume": 26,
         "issue": 10,
         "pages": "2479-2491",
-        "pmid": "20712869",
+        "pmid": "21845053",
         "studyType": "Open-label Safety Study",
         "sampleSize": "244 participants",
         "keyFindings": [

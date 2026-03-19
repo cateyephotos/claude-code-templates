@@ -306,7 +306,7 @@ const fiveHTPEnhanced = {
         "issue": 1,
         "pages": "41-54",
         "doi": "10.1007/BF01243381",
-        "pmid": "2905380",
+        "pmid": "3298325",
         "significance": "Dose-response study establishing therapeutic ranges for depression (50-300mg daily)"
       },
       {
