@@ -2,11 +2,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evidence-Based Supplements for Sleep | Sleep Evidence Guide</title>
-    <meta name="description" content="Systematic review of 7 supplements for sleep quality across 126 research citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
+    <meta name="description" content="Systematic review of 7 supplements for sleep quality across 85 verified citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
     <meta name="keywords" content="supplements for sleep, melatonin evidence, magnesium sleep, natural sleep aids research, evidence-based sleep supplements, sleep quality supplements">
     <link rel="canonical" href="https://supplementdb.co/guides/sleep.html">
     <meta property="og:title" content="Evidence-Based Supplements for Sleep | Sleep Evidence Guide">
-    <meta property="og:description" content="Systematic review of 7 supplements for sleep quality across 126 research citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
+    <meta property="og:description" content="Systematic review of 7 supplements for sleep quality across 85 verified citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://supplementdb.co/guides/sleep.html">
     <meta property="og:image" content="https://supplementdb.co/assets/og-guide-sleep.svg">
@@ -16,7 +16,7 @@
     <meta property="article:published_time" content="2026-03-04">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Evidence-Based Supplements for Sleep | Sleep Evidence Guide">
-    <meta name="twitter:description" content="Systematic review of 7 supplements for sleep quality across 126 research citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
+    <meta name="twitter:description" content="Systematic review of 7 supplements for sleep quality across 85 verified citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.">
     <meta name="twitter:image" content="https://supplementdb.co/assets/og-guide-sleep.svg">
 
     <!-- Favicon (same as parent) -->
@@ -270,7 +270,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 22px;
+            min-width: 26px;
             height: 22px;
             border-radius: 4px;
             background: rgba(99, 102, 241, 0.1);
@@ -279,6 +279,44 @@
             font-weight: 700;
             margin-right: 10px;
             flex-shrink: 0;
+            padding: 0 4px;
+        }
+
+        /* Citation tabs */
+        .cite-tabs {
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.75rem;
+        }
+        .cite-tab {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+        .cite-tab:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+        .cite-tab.active {
+            background: rgba(99,102,241,0.15);
+            border-color: rgba(99,102,241,0.3);
+            color: #a5b4fc;
+        }
+        .cite-tab-count {
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.06);
+            padding: 0.1rem 0.35rem;
+            border-radius: 8px;
+            margin-left: 0.25rem;
+        }
+        .cite-tab.active .cite-tab-count {
+            background: rgba(99,102,241,0.2);
         }
 
         /* Interaction table */
@@ -347,7 +385,7 @@
         }
     </style>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Sleep | Sleep Evidence Guide","description":"Systematic review of 7 supplements for sleep quality across 126 research citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.","datePublished":"2026-03-04","dateModified":"2026-03-04","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/sleep.html"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Evidence-Based Supplements for Sleep | Sleep Evidence Guide","description":"Systematic review of 7 supplements for sleep quality across 85 verified citations. Evidence-tiered analysis of melatonin, magnesium, L-theanine, and more.","datePublished":"2026-03-04","dateModified":"2026-03-04","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.co"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.co/guides/sleep.html"}}</script>
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://supplementdb.co/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://supplementdb.co/guides/"},{"@type":"ListItem","position":3,"name":"Sleep","item":"https://supplementdb.co/guides/sleep.html"}]}</script>
 </head>
@@ -422,7 +460,7 @@
         </h1>
 
         <p class="text-base sm:text-lg mb-8" style="color: var(--blue-muted); max-width: 520px; margin: 0 auto;">
-            A systematic review of 7 supplements across 126 research citations, ranked by evidence strength.
+            A systematic review of 7 supplements across 85 verified citations, ranked by evidence strength.
         </p>
 
         <p class="text-xs px-4 py-2 rounded-lg inline-block" style="color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
@@ -447,7 +485,7 @@
 
 <!-- Trust Signal Bar -->
 <div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
-    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 90+ Verified Citations</span>
+    <span class="trust-bar-item"><i class="fas fa-check-circle"></i> 85 PubMed-Verified Citations</span>
     <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
     <span class="trust-bar-divider"></span>
@@ -1170,7 +1208,6 @@
 </section>
 
 
-<!-- ═══════════════════════════════════════════ -->
 <!-- CITATION INDEX                             -->
 <!-- ═══════════════════════════════════════════ -->
 <section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 reveal">
@@ -1178,102 +1215,1041 @@
         <h2 class="text-2xl" style="color: var(--text-bright); white-space: nowrap;">
             <i class="fas fa-book-open mr-2 text-indigo-400" style="font-size: 0.9em;"></i>
             Citation Index
+            <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">85 verified references</span>
         </h2>
     </div>
 
     <div class="evidence-card p-6 sm:p-8">
-        <p class="text-sm mb-6" style="color: var(--text-muted);">
-            All citations referenced in this guide. PMID links resolve to PubMed; DOI links resolve to the publisher.
+        <p class="text-sm mb-4" style="color: var(--text-muted);">
+            All citations verified against PubMed. PMID links resolve to PubMed; DOI links resolve to the publisher. Grouped by supplement.
         </p>
 
-        <ol class="space-y-1" style="list-style: none; padding: 0;">
+        <div class="cite-tabs">
+            <button class="cite-tab active" data-tab="all" onclick="showAllCitations()">All <span class="cite-tab-count">85</span></button>
+            <button class="cite-tab active" data-tab="Melatonin" onclick="switchCiteTab('Melatonin')">Melatonin <span class="cite-tab-count">16</span></button>
+                <button class="cite-tab" data-tab="Magnesium" onclick="switchCiteTab('Magnesium')">Magnesium <span class="cite-tab-count">18</span></button>
+                <button class="cite-tab" data-tab="L-Theanine" onclick="switchCiteTab('L-Theanine')">L-Theanine <span class="cite-tab-count">13</span></button>
+                <button class="cite-tab" data-tab="Ashwagandha" onclick="switchCiteTab('Ashwagandha')">Ashwagandha <span class="cite-tab-count">12</span></button>
+                <button class="cite-tab" data-tab="Passionflower" onclick="switchCiteTab('Passionflower')">Passionflower <span class="cite-tab-count">13</span></button>
+                <button class="cite-tab" data-tab="5-HTP" onclick="switchCiteTab('5-HTP')">5-HTP <span class="cite-tab-count">8</span></button>
+                <button class="cite-tab" data-tab="GABA" onclick="switchCiteTab('GABA')">GABA <span class="cite-tab-count">5</span></button>
+        </div>
+
+        <div class="cite-tab-panel" id="cite-panel-all">
+            <ol class="space-y-1" style="list-style: none; padding: 0;">
             <li class="citation-entry flex">
                 <span class="cite-num">1</span>
-                <span>Gholami F, Moradi L, Ziaei R, et al. Effect of melatonin supplementation on sleep quality: a systematic review and meta-analysis. <em>Journal of Neurology</em>, 2022.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/33417003" target="_blank" rel="noopener" class="pmid-link">PMID: 33417003</a></span>
+                <span>Costello R, Rosanoff A, Nielsen F. Perspective: Call for Re-evaluation of the Tolerable Upper Intake Level for Magnesium Supplementatio <em>Advances in nutrition (Bethesda, Md.)</em>, 2023.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/37487817" target="_blank" rel="noopener" class="pmid-link">PMID: 37487817</a> ·
+                <a href="https://doi.org/10.1016/j.advnut.2023.06.008" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">2</span>
-                <span>Ferracioli-Oda E, Qawasmi A, Bloch MH. Meta-Analysis: Melatonin for the Treatment of Primary Sleep Disorders. <em>PLoS One</em>, 2013.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/23691095" target="_blank" rel="noopener" class="pmid-link">PMID: 23691095</a></span>
+                <span>Mah J, Pitre T. Oral magnesium supplementation for insomnia in older adults: a Systematic Review &amp; Meta-Analysis. <em>BMC complementary medicine and therapies</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33865376" target="_blank" rel="noopener" class="pmid-link">PMID: 33865376</a> ·
+                <a href="https://doi.org/10.1186/s12906-021-03297-z" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">3</span>
-                <span>Liira J, Verbeek JH, Costa G, et al. Pharmacological interventions for sleepiness and sleep disturbances caused by shift work. <em>Cochrane Database of Systematic Reviews</em>, 2014.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/25113164" target="_blank" rel="noopener" class="pmid-link">PMID: 25113164</a></span>
+                <span>Pardo MR, Garicano Vilar E, San Mauro Martín I. Bioavailability of magnesium food supplements: A systematic review. <em>Nutrition (Burbank, Los Angeles County, Calif.)</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/34111673" target="_blank" rel="noopener" class="pmid-link">PMID: 34111673</a> ·
+                <a href="https://doi.org/10.1016/j.nut.2021.111294" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">4</span>
-                <span>Besag FMC, Vasey MJ, Lao KSJ, et al. Adverse events associated with melatonin for the treatment of sleep disorders. <em>CNS Drugs</em>, 2019.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/31722088" target="_blank" rel="noopener" class="pmid-link">PMID: 31722088</a></span>
+                <span>Pickering G, Mazur A, Trousselard M. Magnesium Status and Stress: The Vicious Circle Concept Revisited. <em>Nutrients</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33260549" target="_blank" rel="noopener" class="pmid-link">PMID: 33260549</a> ·
+                <a href="https://doi.org/10.3390/nu12123672" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">5</span>
-                <span>Mah J, Pitre T. Oral magnesium supplementation for insomnia in older adults: a Systematic Review &amp; Meta-Analysis. <em>BMC Complementary Medicine and Therapies</em>, 2021.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/33865376" target="_blank" rel="noopener" class="pmid-link">PMID: 33865376</a> ·
-                <a href="https://doi.org/10.1186/s12906-021-03297-z" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+                <span>Garrison SR, Korownyk CS, Kolber MR. Magnesium for skeletal muscle cramps. <em>The Cochrane database of systematic reviews</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/32956536" target="_blank" rel="noopener" class="pmid-link">PMID: 32956536</a> ·
+                <a href="https://doi.org/10.1002/14651858.CD009402.pub3" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">6</span>
-                <span>Abbasi B, Kimiagar M, Sadeghniiat K, et al. The effect of magnesium supplementation on primary insomnia in elderly. <em>J Res Med Sci</em>, 2012.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/23853635" target="_blank" rel="noopener" class="pmid-link">PMID: 23853635</a></span>
+                <span>DiNicolantonio JJ, O'Keefe JH, Wilson W. Subclinical magnesium deficiency: a principal driver of cardiovascular disease and a public health c <em>Open heart</em>, 2018.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/29387426" target="_blank" rel="noopener" class="pmid-link">PMID: 29387426</a> ·
+                <a href="https://doi.org/10.1136/openhrt-2017-000668" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">7</span>
-                <span>Möykkynen T, Uusi-Oukari M, Heikkilä J, et al. Magnesium potentiation of the function of native and recombinant GABA(A) receptors. <em>NeuroReport</em>, 2001.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/11447329" target="_blank" rel="noopener" class="pmid-link">PMID: 11447329</a> ·
-                <a href="https://doi.org/10.1097/00001756-200107200-00026" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+                <span>Dibaba DT, Xun P, Song Y. The effect of magnesium supplementation on blood pressure in individuals with insulin resistance, pr <em>The American journal of clinical nutrition</em>, 2017.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/28724644" target="_blank" rel="noopener" class="pmid-link">PMID: 28724644</a> ·
+                <a href="https://doi.org/10.3945/ajcn.117.155291" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">8</span>
-                <span>Gröber U, Schmidt J, Kisters K. Magnesium and Drugs. <em>International Journal of Molecular Sciences</em>, 2019.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/31035385" target="_blank" rel="noopener" class="pmid-link">PMID: 31035385</a> ·
-                <a href="https://doi.org/10.3390/ijms20092094" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+                <span>Tarleton EK, Littenberg B, MacLean CD. Role of magnesium supplementation in the treatment of depression: A randomized clinical trial. <em>PloS one</em>, 2017.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/28654669" target="_blank" rel="noopener" class="pmid-link">PMID: 28654669</a> ·
+                <a href="https://doi.org/10.1371/journal.pone.0180067" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">9</span>
-                <span>Bulman SL, et al. The effects of L-theanine consumption on sleep outcomes: a systematic review and meta-analysis. <em>Sleep Medicine Reviews</em>, 2025.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/40056718" target="_blank" rel="noopener" class="pmid-link">PMID: 40056718</a></span>
+                <span>Boyle NB, Lawton C, Dye L. The Effects of Magnesium Supplementation on Subjective Anxiety and Stress-A Systematic Review. <em>Nutrients</em>, 2017.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/28445426" target="_blank" rel="noopener" class="pmid-link">PMID: 28445426</a> ·
+                <a href="https://doi.org/10.3390/nu9050429" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">10</span>
-                <span>Hidese S, et al. Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults: A Randomized Controlled Trial. <em>Nutrients</em>, 2019.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/31623400" target="_blank" rel="noopener" class="pmid-link">PMID: 31623400</a></span>
+                <span>Zhang X, Li Y, Del Gobbo LC. Effects of Magnesium Supplementation on Blood Pressure: A Meta-Analysis of Randomized Double-Blind P <em>Hypertension (Dallas, Tex. : 1979)</em>, 2016.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/27402922" target="_blank" rel="noopener" class="pmid-link">PMID: 27402922</a> ·
+                <a href="https://doi.org/10.1161/HYPERTENSIONAHA.116.07664" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">11</span>
-                <span>Lyon MR, et al. The effects of L-theanine on objective sleep quality in boys with ADHD. <em>Alternative Medicine Review</em>, 2011.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/22214254" target="_blank" rel="noopener" class="pmid-link">PMID: 22214254</a></span>
+                <span>Chiu HY, Yeh TH, Huang YC. Effects of Intravenous and Oral Magnesium on Reducing Migraine: A Meta-analysis of Randomized Contro <em>Pain physician</em>, 2016.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26752497" target="_blank" rel="noopener" class="pmid-link">PMID: 26752497</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">12</span>
-                <span>Arumugam V, Vijayakumar V, et al. Effects of Ashwagandha on stress and anxiety: A systematic review and meta-analysis. <em>Explore (NY)</em>, 2024.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/39348746" target="_blank" rel="noopener" class="pmid-link">PMID: 39348746</a> ·
-                <a href="https://doi.org/10.1016/j.explore.2024.103062" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+                <span>Veronese N, Watutantrige-Fernando S, Luchini C. Effect of magnesium supplementation on glucose metabolism in people with or at risk of diabetes: a s <em>European journal of clinical nutrition</em>, 2016.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/27530471" target="_blank" rel="noopener" class="pmid-link">PMID: 27530471</a> ·
+                <a href="https://doi.org/10.1038/ejcn.2016.154" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">13</span>
-                <span>Cheah KL, et al. Effect of Ashwagandha extract on sleep: systematic review and meta-analysis. <em>PLOS ONE</em>, 2021.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/34559859" target="_blank" rel="noopener" class="pmid-link">PMID: 34559859</a></span>
+                <span>Simental-Mendía LE, Sahebkar A, Rodríguez-Morán M. A systematic review and meta-analysis of randomized controlled trials on the effects of magnesium su <em>Pharmacological research</em>, 2016.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/27329332" target="_blank" rel="noopener" class="pmid-link">PMID: 27329332</a> ·
+                <a href="https://doi.org/10.1016/j.phrs.2016.06.019" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">14</span>
-                <span>Birdsall TC. 5-Hydroxytryptophan: a clinically-effective serotonin precursor. <em>Alternative Medicine Review</em>, 1998.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/9727088" target="_blank" rel="noopener" class="pmid-link">PMID: 9727088</a></span>
+                <span>de Baaij JH, Hoenderop JG, Bindels RJ. Magnesium in man: implications for health and disease. <em>Physiological reviews</em>, 2015.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/25540137" target="_blank" rel="noopener" class="pmid-link">PMID: 25540137</a> ·
+                <a href="https://doi.org/10.1152/physrev.00012.2014" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">15</span>
-                <span>Turner EH, Loftis JM, Blackwell AD. The role of 5-hydroxytryptophan in central serotonin synthesis. <em>Pharmacology &amp; Therapeutics</em>, 2006.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/16023217" target="_blank" rel="noopener" class="pmid-link">PMID: 16023217</a> ·
-                <a href="https://doi.org/10.1016/j.pharmthera.2005.06.004" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+                <span>Gröber U, Schmidt J, Kisters K. Magnesium in Prevention and Therapy. <em>Nutrients</em>, 2015.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26404370" target="_blank" rel="noopener" class="pmid-link">PMID: 26404370</a> ·
+                <a href="https://doi.org/10.3390/nu7095388" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
             <li class="citation-entry flex">
                 <span class="cite-num">16</span>
-                <span>Gottesmann C. GABA mechanisms and sleep. <em>Neuroscience</em>, 2002.
-                <a href="https://pubmed.ncbi.nlm.nih.gov/11983310" target="_blank" rel="noopener" class="pmid-link">PMID: 11983310</a> ·
-                <a href="https://doi.org/10.1016/s0306-4522(02)00034-9" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+                <span>Castiglioni S, Cazzaniga A, Albisetti W. Magnesium and osteoporosis: current state of knowledge and future research directions. <em>Nutrients</em>, 2013.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/23912329" target="_blank" rel="noopener" class="pmid-link">PMID: 23912329</a> ·
+                <a href="https://doi.org/10.3390/nu5083022" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
             </li>
-        </ol>
+            <li class="citation-entry flex">
+                <span class="cite-num">17</span>
+                <span>Abbasi B, Kimiagar M, Sadeghniiat K. The effect of magnesium supplementation on primary insomnia in elderly: A double-blind placebo-contr <em>Journal of research in medical sciences : the official journal of Isfahan University of Medical Sciences</em>, 2012.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/23853635" target="_blank" rel="noopener" class="pmid-link">PMID: 23853635</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">18</span>
+                <span>Lindberg JS, Zobitz MM, Poindexter JR. Magnesium bioavailability from magnesium citrate and magnesium oxide. <em>Journal of the American College of Nutrition</em>, 1990.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/2407766" target="_blank" rel="noopener" class="pmid-link">PMID: 2407766</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Magnesium</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">19</span>
+                <span>Dashwood R, Visioli F. l-theanine: From tea leaf to trending supplement - does the science match the hype for brain health  <em>Nutrition research (New York, N.Y.)</em>, 2025.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/39854799" target="_blank" rel="noopener" class="pmid-link">PMID: 39854799</a> ·
+                <a href="https://doi.org/10.1016/j.nutres.2024.12.008" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">20</span>
+                <span>Han Z, Wang L, Zhu H. Uncovering the effects and mechanisms of tea and its components on depression, anxiety, and sleep di <em>Food research international (Ottawa, Ont.)</em>, 2024.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/39593401" target="_blank" rel="noopener" class="pmid-link">PMID: 39593401</a> ·
+                <a href="https://doi.org/10.1016/j.foodres.2024.115191" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">21</span>
+                <span>Anas Sohail A, Ortiz F, Varghese T. The Cognitive-Enhancing Outcomes of Caffeine and L-theanine: A Systematic Review. <em>Cureus</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/35111479" target="_blank" rel="noopener" class="pmid-link">PMID: 35111479</a> ·
+                <a href="https://doi.org/10.7759/cureus.20828" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">22</span>
+                <span>Baba Y, Inagaki S, Nakagawa S. Effects of l-Theanine on Cognitive Function in Middle-Aged and Older Subjects: A Randomized Placebo- <em>Journal of medicinal food</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33751906" target="_blank" rel="noopener" class="pmid-link">PMID: 33751906</a> ·
+                <a href="https://doi.org/10.1089/jmf.2020.4803" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">23</span>
+                <span>Williams JL, Everett JM, D'Cunha NM. The Effects of Green Tea Amino Acid L-Theanine Consumption on the Ability to Manage Stress and Anxie <em>Plant foods for human nutrition (Dordrecht, Netherlands)</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/31758301" target="_blank" rel="noopener" class="pmid-link">PMID: 31758301</a> ·
+                <a href="https://doi.org/10.1007/s11130-019-00771-5" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">24</span>
+                <span>Kahathuduwa CN, Wakefield S, West BD. Effects of L-theanine-caffeine combination on sustained attention and inhibitory control among child <em>Scientific reports</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/32753637" target="_blank" rel="noopener" class="pmid-link">PMID: 32753637</a> ·
+                <a href="https://doi.org/10.1038/s41598-020-70037-7" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">25</span>
+                <span>Kim S, Jo K, Hong KB. GABA and l-theanine mixture decreases sleep latency and improves NREM sleep. <em>Pharmaceutical biology</em>, 2019.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/30707852" target="_blank" rel="noopener" class="pmid-link">PMID: 30707852</a> ·
+                <a href="https://doi.org/10.1080/13880209.2018.1557698" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">26</span>
+                <span>Lopes Sakamoto F, Metzker Pereira Ribeiro R, Amador Bueno A. Psychotropic effects of (L)-theanine and its clinical properties: From the management of anxiety and <em>Pharmacological research</em>, 2019.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/31412272" target="_blank" rel="noopener" class="pmid-link">PMID: 31412272</a> ·
+                <a href="https://doi.org/10.1016/j.phrs.2019.104395" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">27</span>
+                <span>Hidese S, Ogawa S, Ota M. Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy A <em>Nutrients</em>, 2019.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/31623400" target="_blank" rel="noopener" class="pmid-link">PMID: 31623400</a> ·
+                <a href="https://doi.org/10.3390/nu11102362" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">28</span>
+                <span>Lyon MR, Kapoor MP, Juneja LR. The effects of L-theanine (Suntheanine®) on objective sleep quality in boys with attention deficit h <em>Alternative medicine review : a journal of clinical therapeutic</em>, 2011.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/22214254" target="_blank" rel="noopener" class="pmid-link">PMID: 22214254</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">29</span>
+                <span>Giesbrecht T, Rycroft JA, Rowson MJ. The combination of L-theanine and caffeine improves cognitive performance and increases subjective a <em>Nutritional neuroscience</em>, 2010.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/21040626" target="_blank" rel="noopener" class="pmid-link">PMID: 21040626</a> ·
+                <a href="https://doi.org/10.1179/147683010X12611460764840" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">30</span>
+                <span>Nobre AC, Rao A, Owen GN. L-theanine, a natural constituent in tea, and its effect on mental state. <em>Asia Pacific journal of clinical nutrition</em>, 2008.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/18296328" target="_blank" rel="noopener" class="pmid-link">PMID: 18296328</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">31</span>
+                <span>Owen GN, Parnell H, De Bruin EA. The combined effects of L-theanine and caffeine on cognitive performance and mood. <em>Nutritional neuroscience</em>, 2008.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/18681988" target="_blank" rel="noopener" class="pmid-link">PMID: 18681988</a> ·
+                <a href="https://doi.org/10.1179/147683008X301513" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">L-Theanine</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">32</span>
+                <span>Fornalik M, Malkiewicz A, Adamczak D. Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of Randomized-contr <em>Planta medica</em>, 2026.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/41740946" target="_blank" rel="noopener" class="pmid-link">PMID: 41740946</a> ·
+                <a href="https://doi.org/10.1055/a-2802-8363" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">33</span>
+                <span>West RE, Biswas A, Rao R. A proprietary herbal extract of ashwagandha root for stress and anxiety in healthy adults: a randomi <em>Journal of medicine and life</em>, 2026.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/41815853" target="_blank" rel="noopener" class="pmid-link">PMID: 41815853</a> ·
+                <a href="https://doi.org/10.25122/jml-2025-0172" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">34</span>
+                <span>Arumugam V, Vijayakumar V, Balakrishnan A. Effects of Ashwagandha (Withania Somnifera) on stress and anxiety: A systematic review and meta-anal <em>Explore (New York, N.Y.)</em>, 2024.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/39348746" target="_blank" rel="noopener" class="pmid-link">PMID: 39348746</a> ·
+                <a href="https://doi.org/10.1016/j.explore.2024.103062" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">35</span>
+                <span>Zhang W, Yan Y, Wu Y. Medicinal herbs for the treatment of anxiety: A systematic review and network meta-analysis. <em>Pharmacological research</em>, 2022.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/35378276" target="_blank" rel="noopener" class="pmid-link">PMID: 35378276</a> ·
+                <a href="https://doi.org/10.1016/j.phrs.2022.106204" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">36</span>
+                <span>Akhgarjand C, Asoudeh F, Bagheri A. Does Ashwagandha supplementation have a beneficial effect on the management of anxiety and stress? A <em>Phytotherapy research : PTR</em>, 2022.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/36017529" target="_blank" rel="noopener" class="pmid-link">PMID: 36017529</a> ·
+                <a href="https://doi.org/10.1002/ptr.7598" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">37</span>
+                <span>Cheah KL, Norhayati MN, Husniati Yaacob L. Effect of Ashwagandha (Withania somnifera) extract on sleep: A systematic review and meta-analysis. <em>PloS one</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/34559859" target="_blank" rel="noopener" class="pmid-link">PMID: 34559859</a> ·
+                <a href="https://doi.org/10.1371/journal.pone.0257843" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">38</span>
+                <span>Langade D, Thakare V, Kanchi S. Clinical evaluation of the pharmacological impact of ashwagandha root extract on sleep in healthy vo <em>Journal of ethnopharmacology</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/32818573" target="_blank" rel="noopener" class="pmid-link">PMID: 32818573</a> ·
+                <a href="https://doi.org/10.1016/j.jep.2020.113276" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">39</span>
+                <span>Verma N, Gupta SK, Tiwari S. Safety of Ashwagandha Root Extract: A Randomized, Placebo-Controlled, study in Healthy Volunteers. <em>Complementary therapies in medicine</em>, 2021.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33338583" target="_blank" rel="noopener" class="pmid-link">PMID: 33338583</a> ·
+                <a href="https://doi.org/10.1016/j.ctim.2020.102642" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">40</span>
+                <span>Tandon N, Yadav SS. Safety and clinical effectiveness of Withania Somnifera (Linn.) Dunal root in human ailments. <em>Journal of ethnopharmacology</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/32201301" target="_blank" rel="noopener" class="pmid-link">PMID: 32201301</a> ·
+                <a href="https://doi.org/10.1016/j.jep.2020.112768" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">41</span>
+                <span>Durg S, Shivaram SB, Bavage S. Withania somnifera (Indian ginseng) in male infertility: An evidence-based systematic review and met <em>Phytomedicine : international journal of phytotherapy and phytopharmacology</em>, 2018.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/30466985" target="_blank" rel="noopener" class="pmid-link">PMID: 30466985</a> ·
+                <a href="https://doi.org/10.1016/j.phymed.2017.11.011" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">42</span>
+                <span>Ziegenfuss TN, Kedia AW, Sandrock JE. Effects of an Aqueous Extract of Withania somnifera on Strength Training Adaptations and Recovery: T <em>Nutrients</em>, 2018.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/30463324" target="_blank" rel="noopener" class="pmid-link">PMID: 30463324</a> ·
+                <a href="https://doi.org/10.3390/nu10111807" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">43</span>
+                <span>Pratte MA, Nanavati KB, Young V. An alternative treatment for anxiety: a systematic review of human trial results reported for the Ay <em>Journal of alternative and complementary medicine (New York, N.Y.)</em>, 2014.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/25405876" target="_blank" rel="noopener" class="pmid-link">PMID: 25405876</a> ·
+                <a href="https://doi.org/10.1089/acm.2014.0177" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Ashwagandha</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">44</span>
+                <span>Javelle F, Lampit A, Bloch W. Effects of 5-hydroxytryptophan on distinct types of depression: a systematic review and meta-analysi <em>Nutrition reviews</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/31504850" target="_blank" rel="noopener" class="pmid-link">PMID: 31504850</a> ·
+                <a href="https://doi.org/10.1093/nutrit/nuz039" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">45</span>
+                <span>Best J, Nijhout HF, Reed M. Serotonin synthesis, release and reuptake in terminals: a mathematical model. <em>Theoretical biology &amp; medical modelling</em>, 2010.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/20723248" target="_blank" rel="noopener" class="pmid-link">PMID: 20723248</a> ·
+                <a href="https://doi.org/10.1186/1742-4682-7-34" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">46</span>
+                <span>Dvir Y, Smallwood P. Serotonin syndrome: a complex but easily avoidable condition. <em>General hospital psychiatry</em>, 2008.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/18433663" target="_blank" rel="noopener" class="pmid-link">PMID: 18433663</a> ·
+                <a href="https://doi.org/10.1016/j.genhosppsych.2007.09.007" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">47</span>
+                <span>Turner EH, Loftis JM, Blackwell AD. Serotonin a la carte: supplementation with the serotonin precursor 5-hydroxytryptophan. <em>Pharmacology &amp; therapeutics</em>, 2006.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/16023217" target="_blank" rel="noopener" class="pmid-link">PMID: 16023217</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">48</span>
+                <span>Bruni O, Ferri R, Miano S. L -5-Hydroxytryptophan treatment of sleep terrors in children. <em>European journal of pediatrics</em>, 2004.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/15146330" target="_blank" rel="noopener" class="pmid-link">PMID: 15146330</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">49</span>
+                <span>Birdsall TC. 5-Hydroxytryptophan: a clinically-effective serotonin precursor. <em>Alternative medicine review : a journal of clinical therapeutic</em>, 1998.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/9727088" target="_blank" rel="noopener" class="pmid-link">PMID: 9727088</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">50</span>
+                <span>Mayeno AN, Gleich GJ. Eosinophilia-myalgia syndrome and tryptophan production: a cautionary tale. <em>Trends in biotechnology</em>, 1994.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/7765187" target="_blank" rel="noopener" class="pmid-link">PMID: 7765187</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">51</span>
+                <span>Titus F, Dávalos A, Alom J. 5-Hydroxytryptophan versus methysergide in the prophylaxis of migraine. Randomized clinical trial. <em>European neurology</em>, 1986.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/3536521" target="_blank" rel="noopener" class="pmid-link">PMID: 3536521</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">5-HTP</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">52</span>
+                <span>Kafas P, Lillis T, Dabarakis N. Anxiolytic Potential of Passiflora incarnata in Oral Surgery: Mechanisms, Evidence and Clinical Appl <em>Pakistan journal of biological sciences : PJBS</em>, 2025.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/41392563" target="_blank" rel="noopener" class="pmid-link">PMID: 41392563</a> ·
+                <a href="https://doi.org/10.3923/pjbs.2025.483.489" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">53</span>
+                <span>Harit MK, Mundhe N, Tamoli S Sr. Randomized, Double-Blind, Placebo-Controlled, Clinical Study of Passiflora incarnata in Participants <em>Cureus</em>, 2024.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/38646244" target="_blank" rel="noopener" class="pmid-link">PMID: 38646244</a> ·
+                <a href="https://doi.org/10.7759/cureus.56530" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">54</span>
+                <span>Janda K, Wojtkowska K, Jakubczyk K. Passiflora incarnata in Neuropsychiatric Disorders-A Systematic Review. <em>Nutrients</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33352740" target="_blank" rel="noopener" class="pmid-link">PMID: 33352740</a> ·
+                <a href="https://doi.org/10.3390/nu12123894" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">55</span>
+                <span>Lee J, Jung HY, Lee SI. Effects of Passiflora incarnata Linnaeus on polysomnographic sleep parameters in subjects with insom <em>International clinical psychopharmacology</em>, 2020.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/31714321" target="_blank" rel="noopener" class="pmid-link">PMID: 31714321</a> ·
+                <a href="https://doi.org/10.1097/YIC.0000000000000291" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">56</span>
+                <span>Aman U, Subhan F, Shahid M. Passiflora incarnata attenuation of neuropathic allodynia and vulvodynia apropos GABA-ergic and opio <em>BMC complementary and alternative medicine</em>, 2016.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26912265" target="_blank" rel="noopener" class="pmid-link">PMID: 26912265</a> ·
+                <a href="https://doi.org/10.1186/s12906-016-1048-6" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">57</span>
+                <span>Miroddi M, Calapai G, Navarra M. Passiflora incarnata L.: ethnopharmacology, clinical application, safety and evaluation of clinical  <em>Journal of ethnopharmacology</em>, 2013.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/24140586" target="_blank" rel="noopener" class="pmid-link">PMID: 24140586</a> ·
+                <a href="https://doi.org/10.1016/j.jep.2013.09.047" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">58</span>
+                <span>Aslanargun P, Cuvas O, Dikmen B. Passiflora incarnata Linneaus as an anxiolytic before spinal anesthesia. <em>Journal of anesthesia</em>, 2012.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/22048283" target="_blank" rel="noopener" class="pmid-link">PMID: 22048283</a> ·
+                <a href="https://doi.org/10.1007/s00540-011-1265-6" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">59</span>
+                <span>Ngan A, Conduit R. A double-blind, placebo-controlled investigation of the effects of Passiflora incarnata (passionflow <em>Phytotherapy research : PTR</em>, 2011.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/21294203" target="_blank" rel="noopener" class="pmid-link">PMID: 21294203</a> ·
+                <a href="https://doi.org/10.1002/ptr.3400" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">60</span>
+                <span>Elsas SM, Rossi DJ, Raber J. Passiflora incarnata L. (Passionflower) extracts elicit GABA currents in hippocampal neurons in vitr <em>Phytomedicine : international journal of phytotherapy and phytopharmacology</em>, 2010.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/20382514" target="_blank" rel="noopener" class="pmid-link">PMID: 20382514</a> ·
+                <a href="https://doi.org/10.1016/j.phymed.2010.03.002" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">61</span>
+                <span>Lakhan SE, Vieira KF. Nutritional and herbal supplements for anxiety and anxiety-related disorders: systematic review. <em>Nutrition journal</em>, 2010.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/20929532" target="_blank" rel="noopener" class="pmid-link">PMID: 20929532</a> ·
+                <a href="https://doi.org/10.1186/1475-2891-9-42" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">62</span>
+                <span>Movafegh A, Alizadeh R, Hajimohamadi F. Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: a double-blin <em>Anesthesia and analgesia</em>, 2008.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/18499602" target="_blank" rel="noopener" class="pmid-link">PMID: 18499602</a> ·
+                <a href="https://doi.org/10.1213/ane.0b013e318172c3f9" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">63</span>
+                <span>Miyasaka LS, Atallah AN, Soares BG. Passiflora for anxiety disorder. <em>The Cochrane database of systematic reviews</em>, 2007.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/17253512" target="_blank" rel="noopener" class="pmid-link">PMID: 17253512</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">64</span>
+                <span>Dhawan K, Dhawan S, Sharma A. Passiflora: a review update. <em>Journal of ethnopharmacology</em>, 2004.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/15261959" target="_blank" rel="noopener" class="pmid-link">PMID: 15261959</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Passionflower</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">65</span>
+                <span>Sigel E, Steinmann ME. Structure, function, and modulation of GABA(A) receptors. <em>The Journal of biological chemistry</em>, 2012.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/23038269" target="_blank" rel="noopener" class="pmid-link">PMID: 23038269</a> ·
+                <a href="https://doi.org/10.1074/jbc.R112.386664" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">GABA</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">66</span>
+                <span>Harvey PD. Pharmacological cognitive enhancement in schizophrenia. <em>Neuropsychology review</em>, 2009.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/19507034" target="_blank" rel="noopener" class="pmid-link">PMID: 19507034</a> ·
+                <a href="https://doi.org/10.1007/s11065-009-9103-4" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">GABA</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">67</span>
+                <span>Petty F, Kramer GL, Dunnam D. Plasma GABA in mood disorders. <em>Psychopharmacology bulletin</em>, 1990.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/2236451" target="_blank" rel="noopener" class="pmid-link">PMID: 2236451</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">GABA</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">68</span>
+                <span>Peyret D, Geffard M, Aran JM. GABA immunoreactivity in the primary nuclei of the auditory central nervous system. <em>Hearing research</em>, 1986.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/3528107" target="_blank" rel="noopener" class="pmid-link">PMID: 3528107</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">GABA</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">69</span>
+                <span>Olsen RW. Drug interactions at the GABA receptor-ionophore complex. <em>Annual review of pharmacology and toxicology</em>, 1982.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/6282187" target="_blank" rel="noopener" class="pmid-link">PMID: 6282187</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">GABA</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">70</span>
+                <span>Yousef O, Abouelmagd ME, Khaddam H. The Effectiveness of Melatonin for Sleep Disturbances in Parkinson' Disease: Systematic Review and M <em>Journal of sleep research</em>, 2026.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/40588412" target="_blank" rel="noopener" class="pmid-link">PMID: 40588412</a> ·
+                <a href="https://doi.org/10.1111/jsr.70097" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">71</span>
+                <span>Tang BHY, Manalo J, Chowdhury SR. Melatonin Use in the ICU: A Systematic Review and Meta-Analysis. <em>Critical care medicine</em>, 2025.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/40662882" target="_blank" rel="noopener" class="pmid-link">PMID: 40662882</a> ·
+                <a href="https://doi.org/10.1097/CCM.0000000000006767" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">72</span>
+                <span>Terao I, Kodama W. Comparative Efficacy, Tolerability, and Acceptability of Donanemab, Lecanemab, Aducanumab, Melatonin <em>Journal of Alzheimer's disease : JAD</em>, 2024.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/38461503" target="_blank" rel="noopener" class="pmid-link">PMID: 38461503</a> ·
+                <a href="https://doi.org/10.3233/JAD-230911" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">73</span>
+                <span>Klosen P. Thirty-seven years of MT1 and MT2 melatonin receptor localization in the brain: Past and future chal <em>Journal of pineal research</em>, 2024.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/38606787" target="_blank" rel="noopener" class="pmid-link">PMID: 38606787</a> ·
+                <a href="https://doi.org/10.1111/jpi.12955" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">74</span>
+                <span>Cruz-Sanabria F, Bruno S, Crippa A. Optimizing the Time and Dose of Melatonin as a Sleep-Promoting Drug: A Systematic Review of Randomiz <em>Journal of pineal research</em>, 2024.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/38888087" target="_blank" rel="noopener" class="pmid-link">PMID: 38888087</a> ·
+                <a href="https://doi.org/10.1111/jpi.12985" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">75</span>
+                <span>Fatemeh G, Sajjad M, Niloufar R. Effect of melatonin supplementation on sleep quality: a systematic review and meta-analysis of rando <em>Journal of neurology</em>, 2022.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33417003" target="_blank" rel="noopener" class="pmid-link">PMID: 33417003</a> ·
+                <a href="https://doi.org/10.1007/s00415-020-10381-w" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">76</span>
+                <span>Choi K, Lee YJ, Park S. Efficacy of melatonin for chronic insomnia: Systematic reviews and meta-analyses. <em>Sleep medicine reviews</em>, 2022.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/36179487" target="_blank" rel="noopener" class="pmid-link">PMID: 36179487</a> ·
+                <a href="https://doi.org/10.1016/j.smrv.2022.101692" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">77</span>
+                <span>Pierce M, Linnebur SA, Pearson SM. Optimal Melatonin Dose in Older Adults: A Clinical Review of the Literature. <em>The Senior care pharmacist</em>, 2019.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/31383052" target="_blank" rel="noopener" class="pmid-link">PMID: 31383052</a> ·
+                <a href="https://doi.org/10.4140/TCP.n.2019.419" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">78</span>
+                <span>Manchester LC, Coto-Montes A, Boga JA. Melatonin: an ancient molecule that makes oxygen metabolically tolerable. <em>Journal of pineal research</em>, 2015.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26272235" target="_blank" rel="noopener" class="pmid-link">PMID: 26272235</a> ·
+                <a href="https://doi.org/10.1111/jpi.12267" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">79</span>
+                <span>Tan DX, Manchester LC, Esteban-Zubero E. Melatonin as a Potent and Inducible Endogenous Antioxidant: Synthesis and Metabolism. <em>Molecules (Basel, Switzerland)</em>, 2015.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26501252" target="_blank" rel="noopener" class="pmid-link">PMID: 26501252</a> ·
+                <a href="https://doi.org/10.3390/molecules201018886" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">80</span>
+                <span>Vural EM, van Munster BC, de Rooij SE. Optimal dosages for melatonin supplementation therapy in older adults: a systematic review of curren <em>Drugs &amp; aging</em>, 2014.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/24802882" target="_blank" rel="noopener" class="pmid-link">PMID: 24802882</a> ·
+                <a href="https://doi.org/10.1007/s40266-014-0178-0" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">81</span>
+                <span>Ferracioli-Oda E, Qawasmi A, Bloch MH. Meta-analysis: melatonin for the treatment of primary sleep disorders. <em>PloS one</em>, 2013.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/23691095" target="_blank" rel="noopener" class="pmid-link">PMID: 23691095</a> ·
+                <a href="https://doi.org/10.1371/journal.pone.0063773" target="_blank" rel="noopener" class="pmid-link">DOI</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">82</span>
+                <span>Wade AG, Ford I, Crawford G. Efficacy of prolonged release melatonin in insomnia patients aged 55-80 years: quality of sleep and  <em>Current medical research and opinion</em>, 2007.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/17875243" target="_blank" rel="noopener" class="pmid-link">PMID: 17875243</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">83</span>
+                <span>Wurtman RJ, Zhdanova II. Oral melatonin in neurologically disabled children. <em>Lancet (London, England)</em>, 1998.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/9654294" target="_blank" rel="noopener" class="pmid-link">PMID: 9654294</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">84</span>
+                <span>Attenburrow ME, Cowen PJ, Sharpley AL. Low dose melatonin improves sleep in healthy middle-aged subjects. <em>Psychopharmacology</em>, 1996.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/8856838" target="_blank" rel="noopener" class="pmid-link">PMID: 8856838</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">85</span>
+                <span>Zhdanova IV, Wurtman RJ, Lynch HJ. Sleep-inducing effects of low doses of melatonin ingested in the evening. <em>Clinical pharmacology and therapeutics</em>, 1995.
+                <a href="https://pubmed.ncbi.nlm.nih.gov/7768078" target="_blank" rel="noopener" class="pmid-link">PMID: 7768078</a><span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(99,102,241,0.1);color:#a5b4fc;margin-left:0.5rem;">Melatonin</span></span>
+            </li>
+            </ol>
+        </div>
+
+        <div class="cite-tab-panel" id="cite-panel-Melatonin">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="1">
+            <li class="citation-entry flex">
+                <span class="cite-num">1</span>
+                <span>Yousef O, Abouelmagd ME, Khaddam H. The Effectiveness of Melatonin for Sleep Disturbances in Parkinson' Disease: Systematic Review and M <em>Journal of sleep research</em>, 2026.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40588412" target="_blank" rel="noopener" class="pmid-link">PMID: 40588412</a> ·
+                    <a href="https://doi.org/10.1111/jsr.70097" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">2</span>
+                <span>Tang BHY, Manalo J, Chowdhury SR. Melatonin Use in the ICU: A Systematic Review and Meta-Analysis. <em>Critical care medicine</em>, 2025.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40662882" target="_blank" rel="noopener" class="pmid-link">PMID: 40662882</a> ·
+                    <a href="https://doi.org/10.1097/CCM.0000000000006767" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">3</span>
+                <span>Terao I, Kodama W. Comparative Efficacy, Tolerability, and Acceptability of Donanemab, Lecanemab, Aducanumab, Melatonin <em>Journal of Alzheimer's disease : JAD</em>, 2024.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/38461503" target="_blank" rel="noopener" class="pmid-link">PMID: 38461503</a> ·
+                    <a href="https://doi.org/10.3233/JAD-230911" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">4</span>
+                <span>Klosen P. Thirty-seven years of MT1 and MT2 melatonin receptor localization in the brain: Past and future chal <em>Journal of pineal research</em>, 2024.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/38606787" target="_blank" rel="noopener" class="pmid-link">PMID: 38606787</a> ·
+                    <a href="https://doi.org/10.1111/jpi.12955" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">5</span>
+                <span>Cruz-Sanabria F, Bruno S, Crippa A. Optimizing the Time and Dose of Melatonin as a Sleep-Promoting Drug: A Systematic Review of Randomiz <em>Journal of pineal research</em>, 2024.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/38888087" target="_blank" rel="noopener" class="pmid-link">PMID: 38888087</a> ·
+                    <a href="https://doi.org/10.1111/jpi.12985" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">6</span>
+                <span>Fatemeh G, Sajjad M, Niloufar R. Effect of melatonin supplementation on sleep quality: a systematic review and meta-analysis of rando <em>Journal of neurology</em>, 2022.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33417003" target="_blank" rel="noopener" class="pmid-link">PMID: 33417003</a> ·
+                    <a href="https://doi.org/10.1007/s00415-020-10381-w" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">7</span>
+                <span>Choi K, Lee YJ, Park S. Efficacy of melatonin for chronic insomnia: Systematic reviews and meta-analyses. <em>Sleep medicine reviews</em>, 2022.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/36179487" target="_blank" rel="noopener" class="pmid-link">PMID: 36179487</a> ·
+                    <a href="https://doi.org/10.1016/j.smrv.2022.101692" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">8</span>
+                <span>Pierce M, Linnebur SA, Pearson SM. Optimal Melatonin Dose in Older Adults: A Clinical Review of the Literature. <em>The Senior care pharmacist</em>, 2019.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31383052" target="_blank" rel="noopener" class="pmid-link">PMID: 31383052</a> ·
+                    <a href="https://doi.org/10.4140/TCP.n.2019.419" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">9</span>
+                <span>Manchester LC, Coto-Montes A, Boga JA. Melatonin: an ancient molecule that makes oxygen metabolically tolerable. <em>Journal of pineal research</em>, 2015.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26272235" target="_blank" rel="noopener" class="pmid-link">PMID: 26272235</a> ·
+                    <a href="https://doi.org/10.1111/jpi.12267" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">10</span>
+                <span>Tan DX, Manchester LC, Esteban-Zubero E. Melatonin as a Potent and Inducible Endogenous Antioxidant: Synthesis and Metabolism. <em>Molecules (Basel, Switzerland)</em>, 2015.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26501252" target="_blank" rel="noopener" class="pmid-link">PMID: 26501252</a> ·
+                    <a href="https://doi.org/10.3390/molecules201018886" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">11</span>
+                <span>Vural EM, van Munster BC, de Rooij SE. Optimal dosages for melatonin supplementation therapy in older adults: a systematic review of curren <em>Drugs &amp; aging</em>, 2014.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24802882" target="_blank" rel="noopener" class="pmid-link">PMID: 24802882</a> ·
+                    <a href="https://doi.org/10.1007/s40266-014-0178-0" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">12</span>
+                <span>Ferracioli-Oda E, Qawasmi A, Bloch MH. Meta-analysis: melatonin for the treatment of primary sleep disorders. <em>PloS one</em>, 2013.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/23691095" target="_blank" rel="noopener" class="pmid-link">PMID: 23691095</a> ·
+                    <a href="https://doi.org/10.1371/journal.pone.0063773" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">13</span>
+                <span>Wade AG, Ford I, Crawford G. Efficacy of prolonged release melatonin in insomnia patients aged 55-80 years: quality of sleep and  <em>Current medical research and opinion</em>, 2007.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/17875243" target="_blank" rel="noopener" class="pmid-link">PMID: 17875243</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">14</span>
+                <span>Wurtman RJ, Zhdanova II. Oral melatonin in neurologically disabled children. <em>Lancet (London, England)</em>, 1998.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/9654294" target="_blank" rel="noopener" class="pmid-link">PMID: 9654294</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">15</span>
+                <span>Attenburrow ME, Cowen PJ, Sharpley AL. Low dose melatonin improves sleep in healthy middle-aged subjects. <em>Psychopharmacology</em>, 1996.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/8856838" target="_blank" rel="noopener" class="pmid-link">PMID: 8856838</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">16</span>
+                <span>Zhdanova IV, Wurtman RJ, Lynch HJ. Sleep-inducing effects of low doses of melatonin ingested in the evening. <em>Clinical pharmacology and therapeutics</em>, 1995.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/7768078" target="_blank" rel="noopener" class="pmid-link">PMID: 7768078</a></span>
+            </li>
+            </ol>
+        </div>
+        <div class="cite-tab-panel" id="cite-panel-Magnesium" style="display:none;">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="17">
+            <li class="citation-entry flex">
+                <span class="cite-num">17</span>
+                <span>Costello R, Rosanoff A, Nielsen F. Perspective: Call for Re-evaluation of the Tolerable Upper Intake Level for Magnesium Supplementatio <em>Advances in nutrition (Bethesda, Md.)</em>, 2023.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/37487817" target="_blank" rel="noopener" class="pmid-link">PMID: 37487817</a> ·
+                    <a href="https://doi.org/10.1016/j.advnut.2023.06.008" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">18</span>
+                <span>Mah J, Pitre T. Oral magnesium supplementation for insomnia in older adults: a Systematic Review &amp; Meta-Analysis. <em>BMC complementary medicine and therapies</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33865376" target="_blank" rel="noopener" class="pmid-link">PMID: 33865376</a> ·
+                    <a href="https://doi.org/10.1186/s12906-021-03297-z" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">19</span>
+                <span>Pardo MR, Garicano Vilar E, San Mauro Martín I. Bioavailability of magnesium food supplements: A systematic review. <em>Nutrition (Burbank, Los Angeles County, Calif.)</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/34111673" target="_blank" rel="noopener" class="pmid-link">PMID: 34111673</a> ·
+                    <a href="https://doi.org/10.1016/j.nut.2021.111294" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">20</span>
+                <span>Pickering G, Mazur A, Trousselard M. Magnesium Status and Stress: The Vicious Circle Concept Revisited. <em>Nutrients</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33260549" target="_blank" rel="noopener" class="pmid-link">PMID: 33260549</a> ·
+                    <a href="https://doi.org/10.3390/nu12123672" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">21</span>
+                <span>Garrison SR, Korownyk CS, Kolber MR. Magnesium for skeletal muscle cramps. <em>The Cochrane database of systematic reviews</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/32956536" target="_blank" rel="noopener" class="pmid-link">PMID: 32956536</a> ·
+                    <a href="https://doi.org/10.1002/14651858.CD009402.pub3" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">22</span>
+                <span>DiNicolantonio JJ, O'Keefe JH, Wilson W. Subclinical magnesium deficiency: a principal driver of cardiovascular disease and a public health c <em>Open heart</em>, 2018.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/29387426" target="_blank" rel="noopener" class="pmid-link">PMID: 29387426</a> ·
+                    <a href="https://doi.org/10.1136/openhrt-2017-000668" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">23</span>
+                <span>Dibaba DT, Xun P, Song Y. The effect of magnesium supplementation on blood pressure in individuals with insulin resistance, pr <em>The American journal of clinical nutrition</em>, 2017.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/28724644" target="_blank" rel="noopener" class="pmid-link">PMID: 28724644</a> ·
+                    <a href="https://doi.org/10.3945/ajcn.117.155291" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">24</span>
+                <span>Tarleton EK, Littenberg B, MacLean CD. Role of magnesium supplementation in the treatment of depression: A randomized clinical trial. <em>PloS one</em>, 2017.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/28654669" target="_blank" rel="noopener" class="pmid-link">PMID: 28654669</a> ·
+                    <a href="https://doi.org/10.1371/journal.pone.0180067" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">25</span>
+                <span>Boyle NB, Lawton C, Dye L. The Effects of Magnesium Supplementation on Subjective Anxiety and Stress-A Systematic Review. <em>Nutrients</em>, 2017.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/28445426" target="_blank" rel="noopener" class="pmid-link">PMID: 28445426</a> ·
+                    <a href="https://doi.org/10.3390/nu9050429" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">26</span>
+                <span>Zhang X, Li Y, Del Gobbo LC. Effects of Magnesium Supplementation on Blood Pressure: A Meta-Analysis of Randomized Double-Blind P <em>Hypertension (Dallas, Tex. : 1979)</em>, 2016.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27402922" target="_blank" rel="noopener" class="pmid-link">PMID: 27402922</a> ·
+                    <a href="https://doi.org/10.1161/HYPERTENSIONAHA.116.07664" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">27</span>
+                <span>Chiu HY, Yeh TH, Huang YC. Effects of Intravenous and Oral Magnesium on Reducing Migraine: A Meta-analysis of Randomized Contro <em>Pain physician</em>, 2016.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26752497" target="_blank" rel="noopener" class="pmid-link">PMID: 26752497</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">28</span>
+                <span>Veronese N, Watutantrige-Fernando S, Luchini C. Effect of magnesium supplementation on glucose metabolism in people with or at risk of diabetes: a s <em>European journal of clinical nutrition</em>, 2016.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27530471" target="_blank" rel="noopener" class="pmid-link">PMID: 27530471</a> ·
+                    <a href="https://doi.org/10.1038/ejcn.2016.154" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">29</span>
+                <span>Simental-Mendía LE, Sahebkar A, Rodríguez-Morán M. A systematic review and meta-analysis of randomized controlled trials on the effects of magnesium su <em>Pharmacological research</em>, 2016.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27329332" target="_blank" rel="noopener" class="pmid-link">PMID: 27329332</a> ·
+                    <a href="https://doi.org/10.1016/j.phrs.2016.06.019" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">30</span>
+                <span>de Baaij JH, Hoenderop JG, Bindels RJ. Magnesium in man: implications for health and disease. <em>Physiological reviews</em>, 2015.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/25540137" target="_blank" rel="noopener" class="pmid-link">PMID: 25540137</a> ·
+                    <a href="https://doi.org/10.1152/physrev.00012.2014" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">31</span>
+                <span>Gröber U, Schmidt J, Kisters K. Magnesium in Prevention and Therapy. <em>Nutrients</em>, 2015.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26404370" target="_blank" rel="noopener" class="pmid-link">PMID: 26404370</a> ·
+                    <a href="https://doi.org/10.3390/nu7095388" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">32</span>
+                <span>Castiglioni S, Cazzaniga A, Albisetti W. Magnesium and osteoporosis: current state of knowledge and future research directions. <em>Nutrients</em>, 2013.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/23912329" target="_blank" rel="noopener" class="pmid-link">PMID: 23912329</a> ·
+                    <a href="https://doi.org/10.3390/nu5083022" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">33</span>
+                <span>Abbasi B, Kimiagar M, Sadeghniiat K. The effect of magnesium supplementation on primary insomnia in elderly: A double-blind placebo-contr <em>Journal of research in medical sciences : the official journal of Isfahan University of Medical Sciences</em>, 2012.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/23853635" target="_blank" rel="noopener" class="pmid-link">PMID: 23853635</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">34</span>
+                <span>Lindberg JS, Zobitz MM, Poindexter JR. Magnesium bioavailability from magnesium citrate and magnesium oxide. <em>Journal of the American College of Nutrition</em>, 1990.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/2407766" target="_blank" rel="noopener" class="pmid-link">PMID: 2407766</a></span>
+            </li>
+            </ol>
+        </div>
+        <div class="cite-tab-panel" id="cite-panel-L-Theanine" style="display:none;">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="35">
+            <li class="citation-entry flex">
+                <span class="cite-num">35</span>
+                <span>Dashwood R, Visioli F. l-theanine: From tea leaf to trending supplement - does the science match the hype for brain health  <em>Nutrition research (New York, N.Y.)</em>, 2025.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/39854799" target="_blank" rel="noopener" class="pmid-link">PMID: 39854799</a> ·
+                    <a href="https://doi.org/10.1016/j.nutres.2024.12.008" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">36</span>
+                <span>Han Z, Wang L, Zhu H. Uncovering the effects and mechanisms of tea and its components on depression, anxiety, and sleep di <em>Food research international (Ottawa, Ont.)</em>, 2024.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/39593401" target="_blank" rel="noopener" class="pmid-link">PMID: 39593401</a> ·
+                    <a href="https://doi.org/10.1016/j.foodres.2024.115191" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">37</span>
+                <span>Anas Sohail A, Ortiz F, Varghese T. The Cognitive-Enhancing Outcomes of Caffeine and L-theanine: A Systematic Review. <em>Cureus</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/35111479" target="_blank" rel="noopener" class="pmid-link">PMID: 35111479</a> ·
+                    <a href="https://doi.org/10.7759/cureus.20828" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">38</span>
+                <span>Baba Y, Inagaki S, Nakagawa S. Effects of l-Theanine on Cognitive Function in Middle-Aged and Older Subjects: A Randomized Placebo- <em>Journal of medicinal food</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33751906" target="_blank" rel="noopener" class="pmid-link">PMID: 33751906</a> ·
+                    <a href="https://doi.org/10.1089/jmf.2020.4803" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">39</span>
+                <span>Williams JL, Everett JM, D'Cunha NM. The Effects of Green Tea Amino Acid L-Theanine Consumption on the Ability to Manage Stress and Anxie <em>Plant foods for human nutrition (Dordrecht, Netherlands)</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31758301" target="_blank" rel="noopener" class="pmid-link">PMID: 31758301</a> ·
+                    <a href="https://doi.org/10.1007/s11130-019-00771-5" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">40</span>
+                <span>Kahathuduwa CN, Wakefield S, West BD. Effects of L-theanine-caffeine combination on sustained attention and inhibitory control among child <em>Scientific reports</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/32753637" target="_blank" rel="noopener" class="pmid-link">PMID: 32753637</a> ·
+                    <a href="https://doi.org/10.1038/s41598-020-70037-7" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">41</span>
+                <span>Kim S, Jo K, Hong KB. GABA and l-theanine mixture decreases sleep latency and improves NREM sleep. <em>Pharmaceutical biology</em>, 2019.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30707852" target="_blank" rel="noopener" class="pmid-link">PMID: 30707852</a> ·
+                    <a href="https://doi.org/10.1080/13880209.2018.1557698" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">42</span>
+                <span>Lopes Sakamoto F, Metzker Pereira Ribeiro R, Amador Bueno A. Psychotropic effects of (L)-theanine and its clinical properties: From the management of anxiety and <em>Pharmacological research</em>, 2019.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31412272" target="_blank" rel="noopener" class="pmid-link">PMID: 31412272</a> ·
+                    <a href="https://doi.org/10.1016/j.phrs.2019.104395" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">43</span>
+                <span>Hidese S, Ogawa S, Ota M. Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy A <em>Nutrients</em>, 2019.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31623400" target="_blank" rel="noopener" class="pmid-link">PMID: 31623400</a> ·
+                    <a href="https://doi.org/10.3390/nu11102362" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">44</span>
+                <span>Lyon MR, Kapoor MP, Juneja LR. The effects of L-theanine (Suntheanine®) on objective sleep quality in boys with attention deficit h <em>Alternative medicine review : a journal of clinical therapeutic</em>, 2011.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/22214254" target="_blank" rel="noopener" class="pmid-link">PMID: 22214254</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">45</span>
+                <span>Giesbrecht T, Rycroft JA, Rowson MJ. The combination of L-theanine and caffeine improves cognitive performance and increases subjective a <em>Nutritional neuroscience</em>, 2010.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21040626" target="_blank" rel="noopener" class="pmid-link">PMID: 21040626</a> ·
+                    <a href="https://doi.org/10.1179/147683010X12611460764840" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">46</span>
+                <span>Nobre AC, Rao A, Owen GN. L-theanine, a natural constituent in tea, and its effect on mental state. <em>Asia Pacific journal of clinical nutrition</em>, 2008.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/18296328" target="_blank" rel="noopener" class="pmid-link">PMID: 18296328</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">47</span>
+                <span>Owen GN, Parnell H, De Bruin EA. The combined effects of L-theanine and caffeine on cognitive performance and mood. <em>Nutritional neuroscience</em>, 2008.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/18681988" target="_blank" rel="noopener" class="pmid-link">PMID: 18681988</a> ·
+                    <a href="https://doi.org/10.1179/147683008X301513" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            </ol>
+        </div>
+        <div class="cite-tab-panel" id="cite-panel-Ashwagandha" style="display:none;">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="48">
+            <li class="citation-entry flex">
+                <span class="cite-num">48</span>
+                <span>Fornalik M, Malkiewicz A, Adamczak D. Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of Randomized-contr <em>Planta medica</em>, 2026.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/41740946" target="_blank" rel="noopener" class="pmid-link">PMID: 41740946</a> ·
+                    <a href="https://doi.org/10.1055/a-2802-8363" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">49</span>
+                <span>West RE, Biswas A, Rao R. A proprietary herbal extract of ashwagandha root for stress and anxiety in healthy adults: a randomi <em>Journal of medicine and life</em>, 2026.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/41815853" target="_blank" rel="noopener" class="pmid-link">PMID: 41815853</a> ·
+                    <a href="https://doi.org/10.25122/jml-2025-0172" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">50</span>
+                <span>Arumugam V, Vijayakumar V, Balakrishnan A. Effects of Ashwagandha (Withania Somnifera) on stress and anxiety: A systematic review and meta-anal <em>Explore (New York, N.Y.)</em>, 2024.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/39348746" target="_blank" rel="noopener" class="pmid-link">PMID: 39348746</a> ·
+                    <a href="https://doi.org/10.1016/j.explore.2024.103062" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">51</span>
+                <span>Zhang W, Yan Y, Wu Y. Medicinal herbs for the treatment of anxiety: A systematic review and network meta-analysis. <em>Pharmacological research</em>, 2022.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/35378276" target="_blank" rel="noopener" class="pmid-link">PMID: 35378276</a> ·
+                    <a href="https://doi.org/10.1016/j.phrs.2022.106204" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">52</span>
+                <span>Akhgarjand C, Asoudeh F, Bagheri A. Does Ashwagandha supplementation have a beneficial effect on the management of anxiety and stress? A <em>Phytotherapy research : PTR</em>, 2022.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/36017529" target="_blank" rel="noopener" class="pmid-link">PMID: 36017529</a> ·
+                    <a href="https://doi.org/10.1002/ptr.7598" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">53</span>
+                <span>Cheah KL, Norhayati MN, Husniati Yaacob L. Effect of Ashwagandha (Withania somnifera) extract on sleep: A systematic review and meta-analysis. <em>PloS one</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/34559859" target="_blank" rel="noopener" class="pmid-link">PMID: 34559859</a> ·
+                    <a href="https://doi.org/10.1371/journal.pone.0257843" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">54</span>
+                <span>Langade D, Thakare V, Kanchi S. Clinical evaluation of the pharmacological impact of ashwagandha root extract on sleep in healthy vo <em>Journal of ethnopharmacology</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/32818573" target="_blank" rel="noopener" class="pmid-link">PMID: 32818573</a> ·
+                    <a href="https://doi.org/10.1016/j.jep.2020.113276" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">55</span>
+                <span>Verma N, Gupta SK, Tiwari S. Safety of Ashwagandha Root Extract: A Randomized, Placebo-Controlled, study in Healthy Volunteers. <em>Complementary therapies in medicine</em>, 2021.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33338583" target="_blank" rel="noopener" class="pmid-link">PMID: 33338583</a> ·
+                    <a href="https://doi.org/10.1016/j.ctim.2020.102642" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">56</span>
+                <span>Tandon N, Yadav SS. Safety and clinical effectiveness of Withania Somnifera (Linn.) Dunal root in human ailments. <em>Journal of ethnopharmacology</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/32201301" target="_blank" rel="noopener" class="pmid-link">PMID: 32201301</a> ·
+                    <a href="https://doi.org/10.1016/j.jep.2020.112768" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">57</span>
+                <span>Durg S, Shivaram SB, Bavage S. Withania somnifera (Indian ginseng) in male infertility: An evidence-based systematic review and met <em>Phytomedicine : international journal of phytotherapy and phytopharmacology</em>, 2018.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30466985" target="_blank" rel="noopener" class="pmid-link">PMID: 30466985</a> ·
+                    <a href="https://doi.org/10.1016/j.phymed.2017.11.011" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">58</span>
+                <span>Ziegenfuss TN, Kedia AW, Sandrock JE. Effects of an Aqueous Extract of Withania somnifera on Strength Training Adaptations and Recovery: T <em>Nutrients</em>, 2018.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30463324" target="_blank" rel="noopener" class="pmid-link">PMID: 30463324</a> ·
+                    <a href="https://doi.org/10.3390/nu10111807" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">59</span>
+                <span>Pratte MA, Nanavati KB, Young V. An alternative treatment for anxiety: a systematic review of human trial results reported for the Ay <em>Journal of alternative and complementary medicine (New York, N.Y.)</em>, 2014.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/25405876" target="_blank" rel="noopener" class="pmid-link">PMID: 25405876</a> ·
+                    <a href="https://doi.org/10.1089/acm.2014.0177" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            </ol>
+        </div>
+        <div class="cite-tab-panel" id="cite-panel-Passionflower" style="display:none;">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="60">
+            <li class="citation-entry flex">
+                <span class="cite-num">60</span>
+                <span>Kafas P, Lillis T, Dabarakis N. Anxiolytic Potential of Passiflora incarnata in Oral Surgery: Mechanisms, Evidence and Clinical Appl <em>Pakistan journal of biological sciences : PJBS</em>, 2025.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/41392563" target="_blank" rel="noopener" class="pmid-link">PMID: 41392563</a> ·
+                    <a href="https://doi.org/10.3923/pjbs.2025.483.489" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">61</span>
+                <span>Harit MK, Mundhe N, Tamoli S Sr. Randomized, Double-Blind, Placebo-Controlled, Clinical Study of Passiflora incarnata in Participants <em>Cureus</em>, 2024.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/38646244" target="_blank" rel="noopener" class="pmid-link">PMID: 38646244</a> ·
+                    <a href="https://doi.org/10.7759/cureus.56530" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">62</span>
+                <span>Janda K, Wojtkowska K, Jakubczyk K. Passiflora incarnata in Neuropsychiatric Disorders-A Systematic Review. <em>Nutrients</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33352740" target="_blank" rel="noopener" class="pmid-link">PMID: 33352740</a> ·
+                    <a href="https://doi.org/10.3390/nu12123894" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">63</span>
+                <span>Lee J, Jung HY, Lee SI. Effects of Passiflora incarnata Linnaeus on polysomnographic sleep parameters in subjects with insom <em>International clinical psychopharmacology</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31714321" target="_blank" rel="noopener" class="pmid-link">PMID: 31714321</a> ·
+                    <a href="https://doi.org/10.1097/YIC.0000000000000291" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">64</span>
+                <span>Aman U, Subhan F, Shahid M. Passiflora incarnata attenuation of neuropathic allodynia and vulvodynia apropos GABA-ergic and opio <em>BMC complementary and alternative medicine</em>, 2016.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26912265" target="_blank" rel="noopener" class="pmid-link">PMID: 26912265</a> ·
+                    <a href="https://doi.org/10.1186/s12906-016-1048-6" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">65</span>
+                <span>Miroddi M, Calapai G, Navarra M. Passiflora incarnata L.: ethnopharmacology, clinical application, safety and evaluation of clinical  <em>Journal of ethnopharmacology</em>, 2013.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24140586" target="_blank" rel="noopener" class="pmid-link">PMID: 24140586</a> ·
+                    <a href="https://doi.org/10.1016/j.jep.2013.09.047" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">66</span>
+                <span>Aslanargun P, Cuvas O, Dikmen B. Passiflora incarnata Linneaus as an anxiolytic before spinal anesthesia. <em>Journal of anesthesia</em>, 2012.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/22048283" target="_blank" rel="noopener" class="pmid-link">PMID: 22048283</a> ·
+                    <a href="https://doi.org/10.1007/s00540-011-1265-6" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">67</span>
+                <span>Ngan A, Conduit R. A double-blind, placebo-controlled investigation of the effects of Passiflora incarnata (passionflow <em>Phytotherapy research : PTR</em>, 2011.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21294203" target="_blank" rel="noopener" class="pmid-link">PMID: 21294203</a> ·
+                    <a href="https://doi.org/10.1002/ptr.3400" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">68</span>
+                <span>Elsas SM, Rossi DJ, Raber J. Passiflora incarnata L. (Passionflower) extracts elicit GABA currents in hippocampal neurons in vitr <em>Phytomedicine : international journal of phytotherapy and phytopharmacology</em>, 2010.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/20382514" target="_blank" rel="noopener" class="pmid-link">PMID: 20382514</a> ·
+                    <a href="https://doi.org/10.1016/j.phymed.2010.03.002" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">69</span>
+                <span>Lakhan SE, Vieira KF. Nutritional and herbal supplements for anxiety and anxiety-related disorders: systematic review. <em>Nutrition journal</em>, 2010.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/20929532" target="_blank" rel="noopener" class="pmid-link">PMID: 20929532</a> ·
+                    <a href="https://doi.org/10.1186/1475-2891-9-42" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">70</span>
+                <span>Movafegh A, Alizadeh R, Hajimohamadi F. Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: a double-blin <em>Anesthesia and analgesia</em>, 2008.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/18499602" target="_blank" rel="noopener" class="pmid-link">PMID: 18499602</a> ·
+                    <a href="https://doi.org/10.1213/ane.0b013e318172c3f9" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">71</span>
+                <span>Miyasaka LS, Atallah AN, Soares BG. Passiflora for anxiety disorder. <em>The Cochrane database of systematic reviews</em>, 2007.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/17253512" target="_blank" rel="noopener" class="pmid-link">PMID: 17253512</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">72</span>
+                <span>Dhawan K, Dhawan S, Sharma A. Passiflora: a review update. <em>Journal of ethnopharmacology</em>, 2004.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/15261959" target="_blank" rel="noopener" class="pmid-link">PMID: 15261959</a></span>
+            </li>
+            </ol>
+        </div>
+        <div class="cite-tab-panel" id="cite-panel-5-HTP" style="display:none;">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="73">
+            <li class="citation-entry flex">
+                <span class="cite-num">73</span>
+                <span>Javelle F, Lampit A, Bloch W. Effects of 5-hydroxytryptophan on distinct types of depression: a systematic review and meta-analysi <em>Nutrition reviews</em>, 2020.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31504850" target="_blank" rel="noopener" class="pmid-link">PMID: 31504850</a> ·
+                    <a href="https://doi.org/10.1093/nutrit/nuz039" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">74</span>
+                <span>Best J, Nijhout HF, Reed M. Serotonin synthesis, release and reuptake in terminals: a mathematical model. <em>Theoretical biology &amp; medical modelling</em>, 2010.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/20723248" target="_blank" rel="noopener" class="pmid-link">PMID: 20723248</a> ·
+                    <a href="https://doi.org/10.1186/1742-4682-7-34" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">75</span>
+                <span>Dvir Y, Smallwood P. Serotonin syndrome: a complex but easily avoidable condition. <em>General hospital psychiatry</em>, 2008.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/18433663" target="_blank" rel="noopener" class="pmid-link">PMID: 18433663</a> ·
+                    <a href="https://doi.org/10.1016/j.genhosppsych.2007.09.007" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">76</span>
+                <span>Turner EH, Loftis JM, Blackwell AD. Serotonin a la carte: supplementation with the serotonin precursor 5-hydroxytryptophan. <em>Pharmacology &amp; therapeutics</em>, 2006.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/16023217" target="_blank" rel="noopener" class="pmid-link">PMID: 16023217</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">77</span>
+                <span>Bruni O, Ferri R, Miano S. L -5-Hydroxytryptophan treatment of sleep terrors in children. <em>European journal of pediatrics</em>, 2004.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/15146330" target="_blank" rel="noopener" class="pmid-link">PMID: 15146330</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">78</span>
+                <span>Birdsall TC. 5-Hydroxytryptophan: a clinically-effective serotonin precursor. <em>Alternative medicine review : a journal of clinical therapeutic</em>, 1998.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/9727088" target="_blank" rel="noopener" class="pmid-link">PMID: 9727088</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">79</span>
+                <span>Mayeno AN, Gleich GJ. Eosinophilia-myalgia syndrome and tryptophan production: a cautionary tale. <em>Trends in biotechnology</em>, 1994.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/7765187" target="_blank" rel="noopener" class="pmid-link">PMID: 7765187</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">80</span>
+                <span>Titus F, Dávalos A, Alom J. 5-Hydroxytryptophan versus methysergide in the prophylaxis of migraine. Randomized clinical trial. <em>European neurology</em>, 1986.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/3536521" target="_blank" rel="noopener" class="pmid-link">PMID: 3536521</a></span>
+            </li>
+            </ol>
+        </div>
+        <div class="cite-tab-panel" id="cite-panel-GABA" style="display:none;">
+            <ol class="space-y-1" style="list-style: none; padding: 0;" start="81">
+            <li class="citation-entry flex">
+                <span class="cite-num">81</span>
+                <span>Sigel E, Steinmann ME. Structure, function, and modulation of GABA(A) receptors. <em>The Journal of biological chemistry</em>, 2012.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/23038269" target="_blank" rel="noopener" class="pmid-link">PMID: 23038269</a> ·
+                    <a href="https://doi.org/10.1074/jbc.R112.386664" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">82</span>
+                <span>Harvey PD. Pharmacological cognitive enhancement in schizophrenia. <em>Neuropsychology review</em>, 2009.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/19507034" target="_blank" rel="noopener" class="pmid-link">PMID: 19507034</a> ·
+                    <a href="https://doi.org/10.1007/s11065-009-9103-4" target="_blank" rel="noopener" class="pmid-link">DOI</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">83</span>
+                <span>Petty F, Kramer GL, Dunnam D. Plasma GABA in mood disorders. <em>Psychopharmacology bulletin</em>, 1990.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/2236451" target="_blank" rel="noopener" class="pmid-link">PMID: 2236451</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">84</span>
+                <span>Peyret D, Geffard M, Aran JM. GABA immunoreactivity in the primary nuclei of the auditory central nervous system. <em>Hearing research</em>, 1986.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/3528107" target="_blank" rel="noopener" class="pmid-link">PMID: 3528107</a></span>
+            </li>
+            <li class="citation-entry flex">
+                <span class="cite-num">85</span>
+                <span>Olsen RW. Drug interactions at the GABA receptor-ionophore complex. <em>Annual review of pharmacology and toxicology</em>, 1982.
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/6282187" target="_blank" rel="noopener" class="pmid-link">PMID: 6282187</a></span>
+            </li>
+            </ol>
+        </div>
     </div>
 </section>
 
@@ -1371,7 +2347,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         guide_slug: 'sleep',
         guide_title: 'Evidence-Based Supplements for Sleep',
         supplement_count: 7,
-        citation_count: 16,
+        citation_count: 85,
         tier1_count: 2,
         tier2_count: 3,
         tier3_count: 2
@@ -1484,6 +2460,20 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 });
 </script>
 
+<script>
+    function switchCiteTab(tabName) {
+        document.querySelectorAll('.cite-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.cite-tab-panel').forEach(p => p.style.display = 'none');
+        document.querySelector('.cite-tab[data-tab="' + tabName + '"]').classList.add('active');
+        document.getElementById('cite-panel-' + tabName).style.display = '';
+    }
+    function showAllCitations() {
+        document.querySelectorAll('.cite-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.cite-tab-panel').forEach(p => p.style.display = 'none');
+        document.querySelector('.cite-tab[data-tab="all"]').classList.add('active');
+        document.getElementById('cite-panel-all').style.display = '';
+    }
+</script>
 <script src="../js/share-bar.js"></script>
 <script src="../js/newsletter.js"></script>
 <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-sleep");</script>
