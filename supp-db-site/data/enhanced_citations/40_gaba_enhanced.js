@@ -19,7 +19,7 @@ window.gABAEnhanced = {
   "lastUpdated": "2025-08-25",
   "evidenceProfile": {
     "overallQuality": "Tier 3",
-    "totalCitations": 8,
+    "totalCitations": 6,
     "researchQualityScore": 65,
     "lastEvidenceUpdate": "2025-01-28",
     "evidenceStrength": {
@@ -115,17 +115,7 @@ window.gABAEnhanced = {
         "evidenceQuality": "Moderate",
         "replicationStatus": "Limited studies",
         "evidence": [
-          {
-            "title": "GABA and sleep: molecular, functional and clinical aspects",
-            "authors": [
-              "Gottesmann, C."
-            ],
-            "year": 2002,
-            "journal": "Sleep Medicine Reviews",
-            "pmid": "12531147",
-            "doi": "10.1053/smrv.2001.0230",
-            "findings": "GABA plays a crucial role in sleep regulation and sleep-wake transitions"
-          }
+          
         ]
       },
       {
@@ -159,20 +149,7 @@ window.gABAEnhanced = {
         "safetyAspect": "General Safety",
         "riskLevel": "Low",
         "evidence": [
-          {
-            "title": "Safety assessment of GABA supplementation",
-            "authors": [
-              "Oketch-Rabah, H.A.",
-              "Roe, A.L.",
-              "Rider, C.V.",
-              "Bonkovsky, H.L."
-            ],
-            "year": 2021,
-            "journal": "Nutrients",
-            "pmid": "34444869",
-            "doi": "10.3390/nu13082709",
-            "findings": "GABA supplementation appears safe for most adults when used appropriately"
-          }
+          
         ]
       },
       {

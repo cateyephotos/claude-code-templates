@@ -8,7 +8,7 @@ const melatoninEnhanced = {
   "category": "Sleep Aid",
   "evidenceProfile": {
     "overallQuality": "Tier 1",
-    "totalCitations": 25,
+    "totalCitations": 23,  // 23 citation objects, 17 unique PMIDs (some papers appear in multiple categories)
     "researchQualityScore": 90,
     "lastEvidenceUpdate": "2026-03-05",
     "evidenceStrength": {
@@ -532,29 +532,6 @@ const melatoninEnhanced = {
         "significance": "Confirms low-dose efficacy in the target middle-aged population"
       },
       {
-        "title": "Pharmacokinetics of melatonin in older adults",
-        "authors": ["Gooneratne, N.S.", "Edwards, A.Y.", "Zhou, C.", "et al."],
-        "journal": "Journal of Pineal Research",
-        "year": 2012,
-        "volume": 53,
-        "issue": 2,
-        "pages": "107-114",
-        "doi": "10.1111/j.1600-079X.2012.00975.x",
-        "pmid": "22289049",
-        "studyType": "Pharmacokinetic Study",
-        "sampleSize": "30 older adults (65+)",
-        "keyFindings": [
-          "Compared 0.4mg vs 4.0mg oral melatonin",
-          "0.4mg achieved physiological plasma levels (39-79 pg/mL)",
-          "4.0mg produced supraphysiological levels (>400 pg/mL)",
-          "Both doses improved sleep but with different pharmacokinetic profiles",
-          "Half-life approximately 40-50 minutes for immediate-release"
-        ],
-        "effectSize": "0.4mg: physiological levels; 4.0mg: supraphysiological",
-        "pValue": "<0.001",
-        "significance": "Critical pharmacokinetic data informing age-specific dosing recommendations"
-      },
-      {
         "title": "Prolonged-release melatonin improves sleep quality and morning alertness in insomnia patients aged 55 years and older",
         "authors": ["Wade, A.G.", "Ford, I.", "Crawford, G.", "et al."],
         "journal": "Current Medical Research and Opinion",
@@ -640,28 +617,6 @@ const melatoninEnhanced = {
         "effectSize": "N/A",
         "pValue": "N/A",
         "significance": "Clinical practice review informing geriatric dosing guidelines"
-      },
-      {
-        "title": "Exogenous melatonin: dosing recommendations for sleep-related conditions",
-        "authors": ["Salanitro, M.", "Wrigley, T.", "Ghabra, H.", "et al."],
-        "journal": "Cureus",
-        "year": 2022,
-        "volume": 14,
-        "issue": 7,
-        "pages": "e26923",
-        "doi": "10.7759/cureus.26923",
-        "pmid": "35983404",
-        "studyType": "Narrative Review",
-        "sampleSize": "Review of published evidence",
-        "keyFindings": [
-          "Recommended 0.5-5mg for adults depending on condition",
-          "Lower doses (0.5-1mg) for circadian rhythm adjustment",
-          "Higher doses (3-5mg) acceptable for acute insomnia",
-          "Pediatric doses should start at 0.5mg"
-        ],
-        "effectSize": "N/A",
-        "pValue": "N/A",
-        "significance": "Comprehensive dosing recommendation framework by condition type"
       },
       {
         "title": "Melatonin for the management of sleep problems in patients with chronic insomnia: meta-analysis",

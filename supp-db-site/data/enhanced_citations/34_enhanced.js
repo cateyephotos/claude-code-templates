@@ -11,7 +11,7 @@ const fiveHTPEnhanced = {
   
   "evidenceProfile": {
     "overallQuality": "Tier 2",
-    "totalCitations": 16,
+    "totalCitations": 12,
     "researchQualityScore": 75,
     "lastEvidenceUpdate": "2026-03-06",
     "evidenceStrength": {
@@ -79,18 +79,6 @@ const fiveHTPEnhanced = {
             "pmid": "20723248",
             "keyFindings": ["Mathematical modeling of serotonin synthesis pathway showing 5-HTP bypass of rate-limiting step"],
             "evidenceLevel": "Mathematical Model"
-          },
-          {
-            "title": "Aromatic L-amino acid decarboxylase: chemistry, biology, and medicine",
-            "authors": ["Bertoldi, M."],
-            "journal": "Advances in Experimental Medicine and Biology",
-            "year": 2019,
-            "volume": 1148,
-            "pages": "1-48",
-            "doi": "10.1007/978-981-13-7709-9_1",
-            "pmid": "31482492",
-            "keyFindings": ["Comprehensive review of the enzyme responsible for 5-HTP to serotonin conversion"],
-            "evidenceLevel": "Mechanistic Review"
           }
         ]
       },
@@ -101,19 +89,7 @@ const fiveHTPEnhanced = {
         "tissueTarget": "Central Nervous System",
         "target": "Central Nervous System",
         "evidence": [
-          {
-            "title": "Central serotonin and impulsivity",
-            "authors": ["Soubrie, P."],
-            "journal": "Neuroscience & Biobehavioral Reviews",
-            "year": 1986,
-            "volume": 10,
-            "issue": 1,
-            "pages": "31-42",
-            "doi": "10.1016/0149-7634(86)90020-6",
-            "pmid": "2871566",
-            "keyFindings": ["Foundational research on serotonin's role in mood regulation and impulse control"],
-            "evidenceLevel": "Foundational Research"
-          }
+          
         ]
       }
     ],
@@ -139,18 +115,6 @@ const fiveHTPEnhanced = {
             "pmid": "31504850",
             "keyFindings": ["Early systematic review establishing 5-HTP's antidepressant effects"],
             "evidenceLevel": "Systematic Review"
-          },
-          {
-            "title": "The therapeutic potential of 5-hydroxytryptophan for neuropsychiatric disorders",
-            "authors": ["Hinz, M.", "Stein, A.", "Uncini, T."],
-            "journal": "Neuropsychiatric Disease and Treatment",
-            "year": 2012,
-            "volume": 8,
-            "pages": "323-328",
-            "doi": "10.2147/NDT.S33259",
-            "pmid": "22888252",
-            "keyFindings": ["Comprehensive review of 5-HTP's applications across neuropsychiatric conditions"],
-            "evidenceLevel": "Clinical Review"
           }
         ]
       },
@@ -163,19 +127,7 @@ const fiveHTPEnhanced = {
         "tissueTarget": "Central nervous system",
         "target": "Central nervous system",
         "evidence": [
-          {
-            "title": "Effects of oral 5-hydroxytryptophan on sleep, mood, and appetite in healthy volunteers",
-            "authors": ["Wyatt, R.J.", "Zarcone, V.", "Engelman, K.", "Dement, W.C.", "Snyder, F.", "Sjoerdsma, A."],
-            "journal": "Psychopharmacologia",
-            "year": 1971,
-            "volume": 19,
-            "issue": 2,
-            "pages": "114-127",
-            "doi": "10.1007/BF00404199",
-            "pmid": "5556734",
-            "keyFindings": ["Pioneering study demonstrating 5-HTP's effects on sleep and mood in healthy individuals"],
-            "evidenceLevel": "Clinical Trial"
-          },
+          
           {
             "title": "L-5-hydroxytryptophan treatment of sleep terrors in children",
             "authors": ["Bruni, O.", "Ferri, R.", "Miano, S.", "Verrillo, E."],
