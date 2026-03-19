@@ -17,6 +17,24 @@ const {
     getTierColor,
 } = require('./parse-data');
 
+// ─── Mechanism Glossary Linking ──────────────────────────────────────────────
+// Loads alias map from data/mechanisms.js for linking mechanism pills/text
+// to the glossary page. Graceful fallback if file doesn't exist yet.
+let mechanismAliasMap = {};
+try {
+    const mechDb = require('../data/mechanisms.js');
+    mechanismAliasMap = mechDb.aliasMap || {};
+    console.log(`  Loaded ${Object.keys(mechanismAliasMap).length} mechanism alias mappings`);
+} catch(e) {
+    console.warn('  mechanisms.js not found — mechanism links disabled');
+}
+
+function getMechanismLink(mechString) {
+    const id = mechanismAliasMap[mechString];
+    if (!id) return null;
+    return `../guides/mechanisms.html#${id}`;
+}
+
 // ─── Guide Definitions ──────────────────────────────────────────────────────
 const GUIDES = [
     {
@@ -1918,6 +1936,8 @@ function generateGuideCSS(t) {
             border: 1px solid rgba(${t.accentRgb}, 0.15);
             color: var(--glow);
         }
+        a.mech-pill { text-decoration: none; color: inherit; cursor: pointer; }
+        a.mech-pill:hover { opacity: 0.8; }
 
         .capture-section {
             background:
@@ -2148,8 +2168,14 @@ function generateGuidePage(guide, allSupplements) {
             card += `
                 <div class="flex flex-wrap gap-2 mb-5">`;
             mechanisms.slice(0, 4).forEach(m => {
-                card += `
+                const mechLink = getMechanismLink(m);
+                if (mechLink) {
+                    card += `
+                    <a href="${mechLink}" class="mech-pill" style="text-decoration:none; color:inherit;"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ${esc(m)}</a>`;
+                } else {
+                    card += `
                     <span class="mech-pill"><i class="fas fa-circle" style="font-size:4px; color: var(--accent-light);"></i> ${esc(m)}</span>`;
+                }
             });
             card += `
                 </div>`;
@@ -2384,11 +2410,15 @@ function generateGuidePage(guide, allSupplements) {
     filtered.forEach((s, idx) => {
         const topBenefit = getDomainBenefit(s, guide.slug);
         const topMech = getMechanismsList(s)[0] || '—';
+        const mechSummaryLink = getMechanismLink(topMech);
+        const mechTdContent = mechSummaryLink
+            ? `<a href="${mechSummaryLink}" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">${esc(topMech)}</a>`
+            : esc(topMech);
         html += `
                     <tr>
                         <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none;">${esc(s.name)}</a></strong></td>
                         <td>${tierBadgeHtml(s.evidenceTier)}</td>
-                        <td style="font-size:0.82rem; color: var(--text-muted);">${esc(topMech)}</td>
+                        <td style="font-size:0.82rem; color: var(--text-muted);">${mechTdContent}</td>
                         <td style="font-size:0.82rem;">${esc(topBenefit)}</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">${esc(s.dosageRange || '—')}</td>
                     </tr>`;
