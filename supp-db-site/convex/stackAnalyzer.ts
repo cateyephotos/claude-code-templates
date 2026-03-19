@@ -368,6 +368,7 @@ export const analyzeStack = action({
     const creditResult = await ctx.runMutation(api.analysisCredits.consumeCredit, {
       userId: clerkId,
       goalCount,
+      depth: args.depth,
     });
 
     // ── Build Claude Request ────────────────────────────────

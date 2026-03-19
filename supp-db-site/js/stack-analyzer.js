@@ -759,9 +759,12 @@
       issues.push("No credits remaining this month");
     }
 
-    // Compute credit cost: 1 base + 1 surcharge for second goal
+    // Compute credit cost: depth-aware base + 1 surcharge for second goal
+    const CREDIT_COST_BY_DEPTH = { quick: 1, standard: 2, deep: 3 };
     const goalCount = selectedGoals.length;
-    const totalCreditCost = 1 + (goalCount > 1 ? 1 : 0);
+    const depthCost = CREDIT_COST_BY_DEPTH[selectedDepth] || 2;
+    const dualGoalSurcharge = goalCount > 1 ? 1 : 0;
+    const totalCreditCost = depthCost + dualGoalSurcharge;
 
     // Check if enough credits for the selected configuration
     if (currentCredits && currentCredits.remaining > 0 && currentCredits.remaining < totalCreditCost) {
@@ -777,9 +780,10 @@
         hint.style.display = "block";
       } else if (issues.length === 0 && selectedGoals.length > 0) {
         // Show credit cost when form is valid
-        const costText = totalCreditCost === 1
-          ? "1 credit"
-          : `${totalCreditCost} credits (includes +1 for second goal)`;
+        let costText = `${totalCreditCost} credit${totalCreditCost > 1 ? "s" : ""}`;
+        if (dualGoalSurcharge > 0) {
+          costText += " (includes +1 for second goal)";
+        }
         hint.textContent = `Costs ${costText}`;
         hint.classList.add("sa-analyze-hint--cost");
         hint.style.display = "block";

@@ -4,9 +4,15 @@ import { v } from "convex/values";
 /**
  * Analysis Credits — Manages per-user credit allocation for the Stack Analyzer.
  *
+ * Credit pricing is depth-aware to match API cost structure:
+ *   Quick    = 1 credit  (~$0.002 API cost)
+ *   Standard = 2 credits (~$0.005 API cost)
+ *   Deep     = 3 credits (~$0.008 API cost)
+ *   Dual-goal adds +1 credit surcharge at every depth level.
+ *
  * Credit tiers:
- *   Free:       3 analyses/month  (~$0.018/month cost at $0.006/analysis)
- *   Subscriber: 25 analyses/month (~$0.15/month cost at $0.006/analysis)
+ *   Free:       5 credits/month  (enough for 5 quick or 2 standard + 1 quick)
+ *   Subscriber: 30 credits/month (enough for ~10 standard or 7 deep analyses)
  *
  * Credits reset on the 1st of each month (UTC).
  * When a user upgrades mid-cycle, remaining credits carry over + difference added.
@@ -14,8 +20,15 @@ import { v } from "convex/values";
 
 // ── Credit Limits ──────────────────────────────────────────────
 const CREDIT_LIMITS = {
-  free: 3,
-  subscriber: 25,
+  free: 5,
+  subscriber: 30,
+} as const;
+
+// ── Depth-Aware Credit Costs ──────────────────────────────────
+const CREDIT_COST_BY_DEPTH = {
+  quick: 1,
+  standard: 2,
+  deep: 3,
 } as const;
 
 // ── Helpers ────────────────────────────────────────────────────
@@ -116,8 +129,11 @@ export const hasCreditsAvailable = query({
 
 /**
  * Consume credits for an analysis. Called before the Claude API call.
- * Single-goal analysis: 1 credit
- * Dual-goal analysis: 2 credits (1 base + 1 surcharge)
+ *
+ * Depth-aware pricing (matches spec):
+ *   Quick    = 1 credit  | + 1 for dual-goal = 2 credits
+ *   Standard = 2 credits | + 1 for dual-goal = 3 credits
+ *   Deep     = 3 credits | + 1 for dual-goal = 4 credits
  *
  * Race condition safety: Convex mutations are transactional — each mutation sees
  * a consistent snapshot and writes are serialized. Two concurrent consumeCredit
@@ -131,13 +147,17 @@ export const consumeCredit = mutation({
   args: {
     userId: v.string(),
     goalCount: v.optional(v.number()),
+    depth: v.optional(v.union(v.literal("quick"), v.literal("standard"), v.literal("deep"))),
   },
   handler: async (ctx, args) => {
     const { start, end } = getCurrentPeriod();
     const now = Date.now();
 
-    // Calculate cost: single goal = 1 credit, dual goal = 2 credits
-    const cost = 1 + ((args.goalCount ?? 1) > 1 ? 1 : 0);
+    // Depth-aware cost: base from depth + 1 surcharge for dual-goal
+    const depthKey = args.depth ?? "standard";
+    const baseCost = CREDIT_COST_BY_DEPTH[depthKey] ?? CREDIT_COST_BY_DEPTH.standard;
+    const dualGoalSurcharge = (args.goalCount ?? 1) > 1 ? 1 : 0;
+    const cost = baseCost + dualGoalSurcharge;
 
     const record = await ctx.db
       .query("analysisCredits")
