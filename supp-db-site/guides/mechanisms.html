@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanism Glossary | SupplementDB</title>
+    <meta name="description" content="Plain-language explanations of 296+ biological mechanisms referenced across SupplementDB evidence guides. Understand how supplements work at the molecular level.">
+
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Auth CDN -->
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+
+<style>
+    :root {
+        --bg-base: #0d1117;
+        --bg-card: #161b22;
+        --bg-card-alt: #1c2128;
+        --text-bright: #e6edf3;
+        --text-primary: #c9d1d9;
+        --text-muted: #8b949e;
+        --accent: rgb(99, 102, 241);
+        --accent-light: #a5b4fc;
+        --accent-rgb: 99, 102, 241;
+        --glow: #7dd3fc;
+        --border: #30363d;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        background: var(--bg-base);
+        color: var(--text-primary);
+        line-height: 1.7;
+        min-height: 100vh;
+    }
+
+    h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; }
+
+    /* Nav */
+    .guide-nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(13,17,23,0.92); backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 0.75rem 1.5rem;
+        display: flex; align-items: center; justify-content: space-between;
+    }
+    .guide-nav a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.15s; }
+    .guide-nav a:hover { color: var(--text-bright); }
+
+    /* Hero */
+    .hero-section {
+        text-align: center; padding: 4rem 1rem 3rem;
+        background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(var(--accent-rgb), 0.08) 0%, transparent 60%),
+                    linear-gradient(135deg, #1a1040 0%, var(--bg-base) 100%);
+    }
+    .hero-section h1 { font-size: 2.5rem; color: var(--text-bright); margin-bottom: 0.75rem; }
+    .hero-section p { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto; }
+
+    /* Search */
+    .search-container { max-width: 500px; margin: 2rem auto 0; position: relative; }
+    .search-input {
+        width: 100%; padding: 0.75rem 1rem 0.75rem 2.75rem;
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+        color: var(--text-primary); font-size: 0.95rem; font-family: inherit;
+        outline: none; transition: border-color 0.15s;
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-icon {
+        position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+        color: var(--text-muted); font-size: 0.9rem;
+    }
+    .search-count { text-align: center; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Category nav */
+    .cat-nav {
+        max-width: 56rem; margin: 2rem auto; padding: 0 1rem;
+        display: flex; gap: 0.3rem; flex-wrap: wrap; justify-content: center;
+    }
+    .cite-tab {
+        background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+        color: var(--text-muted); padding: 0.35rem 0.65rem; border-radius: 6px;
+        cursor: pointer; font-size: 0.75rem; font-family: inherit; transition: all 0.15s;
+    }
+    .cite-tab:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+    .cite-tab.active { background: rgba(var(--accent-rgb),0.15); border-color: rgba(var(--accent-rgb),0.3); color: var(--accent-light); }
+    .cite-tab-count { font-size: 0.65rem; background: rgba(255,255,255,0.06); padding: 0.05rem 0.3rem; border-radius: 8px; margin-left: 0.2rem; }
+
+    /* Content */
+    .glossary-content { max-width: 56rem; margin: 0 auto; padding: 0 1rem 3rem; }
+
+    /* Category sections */
+    .mech-category-section { margin-bottom: 3rem; }
+    .tier-divider {
+        display: flex; align-items: center; gap: 1rem;
+        padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+    }
+
+    /* Mechanism entries */
+    .mech-entries-grid { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+    .mech-entry {
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+        padding: 1.25rem 1.5rem; transition: border-color 0.15s;
+    }
+    .mech-entry:target { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.2); }
+    .mech-entry-name { font-size: 1.1rem; color: var(--text-bright); margin-bottom: 0.4rem; }
+    .mech-aliases { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem; font-style: italic; }
+    .mech-summary { font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.7; }
+    .mech-relevance { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .mech-supplements { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+    .mech-supp-link {
+        font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 4px;
+        background: rgba(var(--accent-rgb), 0.08); color: var(--accent-light);
+        text-decoration: none; transition: background 0.15s;
+    }
+    .mech-supp-link:hover { background: rgba(var(--accent-rgb), 0.18); }
+
+    /* Footer */
+    .guide-footer {
+        max-width: 56rem; margin: 0 auto; padding: 2rem 1rem;
+        border-top: 1px solid var(--border); text-align: center;
+        color: var(--text-muted); font-size: 0.8rem;
+    }
+    .guide-footer a { color: var(--accent-light); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .hero-section h1 { font-size: 1.8rem; }
+        .mech-entry { padding: 1rem; }
+        .cat-nav { gap: 0.2rem; }
+        .cite-tab { font-size: 0.7rem; padding: 0.25rem 0.5rem; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="guide-nav">
+    <a href="../index.html" style="font-weight:600; color: var(--accent-light);"><i class="fas fa-pills mr-1"></i> SupplementDB</a>
+    <div style="display:flex; gap:1.5rem; align-items:center;">
+        <a href="../index.html"><i class="fas fa-arrow-left mr-1"></i> Back to Database</a>
+        <a href="../methodology.html">Methodology</a>
+        <div id="auth-buttons"></div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero-section">
+    <div style="display:inline-block; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:rgba(var(--accent-rgb),0.12); color:var(--accent-light); margin-bottom:1rem;">
+        <i class="fas fa-circle" style="font-size:5px; vertical-align:middle; margin-right:4px;"></i> Reference
+    </div>
+    <h1>Mechanism Glossary</h1>
+    <p>Plain-language explanations of 296 biological mechanisms referenced across our evidence guides.</p>
+
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="mech-search" placeholder="Search mechanisms..." oninput="filterMechanisms(this.value)">
+    </div>
+    <div class="search-count" id="search-count"></div>
+</header>
+
+<!-- Category Navigation -->
+<div class="cat-nav">
+    <button class="cite-tab active" data-cat="all" onclick="showAllCats()">All <span class="cite-tab-count">296</span></button>
+    <button class="cite-tab" data-cat="neurotransmitter-systems" onclick="scrollToCat('neurotransmitter-systems')">Neurotransmitter Systems <span class="cite-tab-count">51</span></button>
+            <button class="cite-tab" data-cat="antioxidant-cellular-protection" onclick="scrollToCat('antioxidant-cellular-protection')">Antioxidant &amp; Cellular Protection <span class="cite-tab-count">57</span></button>
+            <button class="cite-tab" data-cat="anti-inflammatory-pathways" onclick="scrollToCat('anti-inflammatory-pathways')">Anti-inflammatory Pathways <span class="cite-tab-count">16</span></button>
+            <button class="cite-tab" data-cat="hormonal-endocrine" onclick="scrollToCat('hormonal-endocrine')">Hormonal &amp; Endocrine <span class="cite-tab-count">18</span></button>
+            <button class="cite-tab" data-cat="metabolic-energy" onclick="scrollToCat('metabolic-energy')">Metabolic &amp; Energy <span class="cite-tab-count">108</span></button>
+            <button class="cite-tab" data-cat="cardiovascular-circulatory" onclick="scrollToCat('cardiovascular-circulatory')">Cardiovascular &amp; Circulatory <span class="cite-tab-count">15</span></button>
+            <button class="cite-tab" data-cat="immune-modulation" onclick="scrollToCat('immune-modulation')">Immune Modulation <span class="cite-tab-count">7</span></button>
+            <button class="cite-tab" data-cat="structural-repair" onclick="scrollToCat('structural-repair')">Structural &amp; Repair <span class="cite-tab-count">20</span></button>
+            <button class="cite-tab" data-cat="gut-brain-axis" onclick="scrollToCat('gut-brain-axis')">Gut-Brain Axis <span class="cite-tab-count">4</span></button>
+</div>
+
+<!-- Glossary Content -->
+<main class="glossary-content">
+    
+        <section class="mech-category-section" id="cat-neurotransmitter-systems">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-brain mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Neurotransmitter Systems
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">51 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="5-ht3-receptor-antagonism">
+                <h3 class="mech-entry-name">5-HT3 receptor antagonism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ginger.html" class="mech-supp-link">Ginger</a></div>
+            </div>
+            <div class="mech-entry" id="acetylcholine-production-increase">
+                <h3 class="mech-entry-name">Acetylcholine production increase</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citicoline.html" class="mech-supp-link">Citicoline</a></div>
+            </div>
+            <div class="mech-entry" id="acetylcholine-synthesis-support">
+                <h3 class="mech-entry-name">Acetylcholine synthesis support</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Acetylcholine synthesis precursor, Acetylcholine synthesis enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/acetyl-l-carnitine.html" class="mech-supp-link">Acetyl-L-Carnitine</a><a href="../supplements-new/alpha-gpc.html" class="mech-supp-link">Alpha-GPC</a><a href="../supplements-new/choline.html" class="mech-supp-link">Choline</a><a href="../supplements-new/dmae.html" class="mech-supp-link">DMAE</a></div>
+            </div>
+            <div class="mech-entry" id="acetylcholinesterase-inhibition">
+                <h3 class="mech-entry-name">Acetylcholinesterase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bacopa-monnieri.html" class="mech-supp-link">Bacopa monnieri</a><a href="../supplements-new/huperzine-a.html" class="mech-supp-link">Huperzine A</a></div>
+            </div>
+            <div class="mech-entry" id="adenosine-receptor-antagonism">
+                <h3 class="mech-entry-name">Adenosine receptor antagonism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/caffeine.html" class="mech-supp-link">Caffeine</a></div>
+            </div>
+            <div class="mech-entry" id="adenosine-receptor-interaction">
+                <h3 class="mech-entry-name">Adenosine receptor interaction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/passionflower.html" class="mech-supp-link">Passionflower</a></div>
+            </div>
+            <div class="mech-entry" id="adenosine-receptor-modulation">
+                <h3 class="mech-entry-name">Adenosine receptor modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/cordyceps.html" class="mech-supp-link">Cordyceps</a></div>
+            </div>
+            <div class="mech-entry" id="alpha-brain-wave-promotion">
+                <h3 class="mech-entry-name">Alpha brain wave promotion</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-theanine.html" class="mech-supp-link">L-Theanine</a></div>
+            </div>
+            <div class="mech-entry" id="ampa-receptor-positive-modulation">
+                <h3 class="mech-entry-name">AMPA receptor positive modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/aniracetam.html" class="mech-supp-link">Aniracetam</a></div>
+            </div>
+            <div class="mech-entry" id="cholinergic-system-modulation">
+                <h3 class="mech-entry-name">Cholinergic system modulation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Cholinergic system enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/aniracetam.html" class="mech-supp-link">Aniracetam</a><a href="../supplements-new/piracetam.html" class="mech-supp-link">Piracetam</a><a href="../supplements-new/sulbutiamine.html" class="mech-supp-link">Sulbutiamine</a></div>
+            </div>
+            <div class="mech-entry" id="converts-to-serotonin-via-aromatic-l-amino-acid-decarboxylas">
+                <h3 class="mech-entry-name">Converts to serotonin via aromatic L-amino acid decarboxylase</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/5-htp.html" class="mech-supp-link">5-HTP</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-and-gaba-modulation">
+                <h3 class="mech-entry-name">Dopamine and GABA modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/alpha-gpc.html" class="mech-supp-link">Alpha-GPC</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-and-norepinephrine-release">
+                <h3 class="mech-entry-name">Dopamine and norepinephrine release</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pea-phenylethylamine.html" class="mech-supp-link">PEA (Phenylethylamine)</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-and-serotonin-modulation">
+                <h3 class="mech-entry-name">Dopamine and serotonin modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-theanine.html" class="mech-supp-link">L-Theanine</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-enhancement">
+                <h3 class="mech-entry-name">Dopamine enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/caffeine.html" class="mech-supp-link">Caffeine</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-receptor-density-improvement">
+                <h3 class="mech-entry-name">Dopamine receptor density improvement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citicoline.html" class="mech-supp-link">Citicoline</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-receptor-modulation">
+                <h3 class="mech-entry-name">Dopamine receptor modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/sulbutiamine.html" class="mech-supp-link">Sulbutiamine</a></div>
+            </div>
+            <div class="mech-entry" id="dopamine-synthesis-precursor-rate-limiting-substrate">
+                <h3 class="mech-entry-name">Dopamine synthesis precursor (rate-limiting substrate)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-tyrosine.html" class="mech-supp-link">L-Tyrosine</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-insulin-receptor-binding">
+                <h3 class="mech-entry-name">Enhanced insulin receptor binding</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chromium.html" class="mech-supp-link">Chromium</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-synaptic-plasticity">
+                <h3 class="mech-entry-name">Enhanced synaptic plasticity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/aniracetam.html" class="mech-supp-link">Aniracetam</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-synaptic-transmission">
+                <h3 class="mech-entry-name">Enhanced synaptic transmission</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bacopa-monnieri.html" class="mech-supp-link">Bacopa monnieri</a></div>
+            </div>
+            <div class="mech-entry" id="flavonoid-receptor-modulation">
+                <h3 class="mech-entry-name">Flavonoid receptor modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/quercetin.html" class="mech-supp-link">Quercetin</a></div>
+            </div>
+            <div class="mech-entry" id="folate-receptor-alpha-fr-mediated-brain-transport">
+                <h3 class="mech-entry-name">Folate receptor alpha (FRα) mediated brain transport</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/folate.html" class="mech-supp-link">Folate</a></div>
+            </div>
+            <div class="mech-entry" id="gaba-enhancement">
+                <h3 class="mech-entry-name">GABA enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/kanna.html" class="mech-supp-link">Kanna</a></div>
+            </div>
+            <div class="mech-entry" id="gaba-receptor-activity">
+                <h3 class="mech-entry-name">GABA receptor activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/holy-basil.html" class="mech-supp-link">Holy Basil</a></div>
+            </div>
+            <div class="mech-entry" id="gaba-receptor-modulation">
+                <h3 class="mech-entry-name">GABA receptor modulation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> GABA receptor enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/centella-asiatica.html" class="mech-supp-link">Centella Asiatica</a><a href="../supplements-new/l-theanine.html" class="mech-supp-link">L-Theanine</a><a href="../supplements-new/magnesium.html" class="mech-supp-link">Magnesium</a><a href="../supplements-new/passionflower.html" class="mech-supp-link">Passionflower</a></div>
+            </div>
+            <div class="mech-entry" id="gaba-signaling-enhancement">
+                <h3 class="mech-entry-name">GABA signaling enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a></div>
+            </div>
+            <div class="mech-entry" id="glutamate-antagonism">
+                <h3 class="mech-entry-name">Glutamate antagonism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-theanine.html" class="mech-supp-link">L-Theanine</a></div>
+            </div>
+            <div class="mech-entry" id="glutathione-precursor-provision-cysteine-glutamate">
+                <h3 class="mech-entry-name">Glutathione precursor provision (cysteine, glutamate)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/whey-protein.html" class="mech-supp-link">Whey Protein</a></div>
+            </div>
+            <div class="mech-entry" id="histamine-receptor-antagonism">
+                <h3 class="mech-entry-name">Histamine receptor antagonism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/stinging-nettle.html" class="mech-supp-link">Stinging Nettle</a></div>
+            </div>
+            <div class="mech-entry" id="insulin-receptor-tyrosine-kinase-activation">
+                <h3 class="mech-entry-name">Insulin receptor tyrosine kinase activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vanadium.html" class="mech-supp-link">Vanadium</a></div>
+            </div>
+            <div class="mech-entry" id="l-dopa-dopamine-precursor">
+                <h3 class="mech-entry-name">L-DOPA dopamine precursor</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/mucuna-pruriens.html" class="mech-supp-link">Mucuna Pruriens</a></div>
+            </div>
+            <div class="mech-entry" id="melatonin-receptor-activation">
+                <h3 class="mech-entry-name">Melatonin receptor activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/melatonin.html" class="mech-supp-link">Melatonin</a></div>
+            </div>
+            <div class="mech-entry" id="monoamine-oxidase-inhibition">
+                <h3 class="mech-entry-name">Monoamine oxidase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/passionflower.html" class="mech-supp-link">Passionflower</a><a href="../supplements-new/rhodiola-rosea.html" class="mech-supp-link">Rhodiola rosea</a></div>
+            </div>
+            <div class="mech-entry" id="monoamine-reuptake-inhibition">
+                <h3 class="mech-entry-name">Monoamine reuptake inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pea-phenylethylamine.html" class="mech-supp-link">PEA (Phenylethylamine)</a></div>
+            </div>
+            <div class="mech-entry" id="neurotransmitter-balance">
+                <h3 class="mech-entry-name">Neurotransmitter balance</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/rhodiola-rosea.html" class="mech-supp-link">Rhodiola rosea</a><a href="../supplements-new/schisandra-berry.html" class="mech-supp-link">Schisandra Berry</a></div>
+            </div>
+            <div class="mech-entry" id="neurotransmitter-function-support">
+                <h3 class="mech-entry-name">Neurotransmitter function support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/phosphatidylserine.html" class="mech-supp-link">Phosphatidylserine</a></div>
+            </div>
+            <div class="mech-entry" id="neurotransmitter-metabolism-dopamine-serotonin-gaba">
+                <h3 class="mech-entry-name">Neurotransmitter metabolism (dopamine, serotonin, GABA)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="neurotransmitter-synthesis">
+                <h3 class="mech-entry-name">Neurotransmitter synthesis</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Neurotransmitter modulation, Neurotransmitter production, Neurotransmitter regulation, Neurotransmitter synthesis (dopamine, serotonin), Neurotransmitter enhancement (dopamine, acetylcholine), Neurotransmitter synthesis (serotonin, dopamine, GABA)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/choline.html" class="mech-supp-link">Choline</a><a href="../supplements-new/ginkgo-biloba.html" class="mech-supp-link">Ginkgo Biloba</a><a href="../supplements-new/inositol.html" class="mech-supp-link">Inositol</a><a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a><a href="../supplements-new/magnesium.html" class="mech-supp-link">Magnesium</a><a href="../supplements-new/omega-3-fatty-acids.html" class="mech-supp-link">Omega-3 Fatty Acids</a><a href="../supplements-new/panax-ginseng.html" class="mech-supp-link">Panax Ginseng</a><a href="../supplements-new/reishi-mushroom.html" class="mech-supp-link">Reishi Mushroom</a><a href="../supplements-new/taurine.html" class="mech-supp-link">Taurine</a><a href="../supplements-new/vitamin-b12.html" class="mech-supp-link">Vitamin B12</a><a href="../supplements-new/vitamin-b6.html" class="mech-supp-link">Vitamin B6</a></div>
+            </div>
+            <div class="mech-entry" id="neurotransmitter-synthesis-support">
+                <h3 class="mech-entry-name">Neurotransmitter synthesis support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/b-complex-vitamins.html" class="mech-supp-link">B-Complex Vitamins</a><a href="../supplements-new/vitamin-c.html" class="mech-supp-link">Vitamin C</a></div>
+            </div>
+            <div class="mech-entry" id="nmda-receptor-antagonism">
+                <h3 class="mech-entry-name">NMDA receptor antagonism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/huperzine-a.html" class="mech-supp-link">Huperzine A</a><a href="../supplements-new/magnesium.html" class="mech-supp-link">Magnesium</a></div>
+            </div>
+            <div class="mech-entry" id="nmda-receptor-modulation">
+                <h3 class="mech-entry-name">NMDA receptor modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="norepinephrine-synthesis-precursor">
+                <h3 class="mech-entry-name">Norepinephrine synthesis precursor</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-tyrosine.html" class="mech-supp-link">L-Tyrosine</a></div>
+            </div>
+            <div class="mech-entry" id="peripheral-nervous-system-calming-via-enteric-gaba-receptors">
+                <h3 class="mech-entry-name">Peripheral nervous system calming via enteric GABA receptors</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gaba.html" class="mech-supp-link">GABA</a></div>
+            </div>
+            <div class="mech-entry" id="primary-inhibitory-neurotransmitter-gaba-a-and-gaba-b-recept">
+                <h3 class="mech-entry-name">Primary inhibitory neurotransmitter (GABA-A and GABA-B receptor agonism)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gaba.html" class="mech-supp-link">GABA</a></div>
+            </div>
+            <div class="mech-entry" id="serotonin-reuptake-inhibition">
+                <h3 class="mech-entry-name">Serotonin reuptake inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/kanna.html" class="mech-supp-link">Kanna</a></div>
+            </div>
+            <div class="mech-entry" id="serotonin-reuptake-modulation">
+                <h3 class="mech-entry-name">Serotonin reuptake modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/passionflower.html" class="mech-supp-link">Passionflower</a></div>
+            </div>
+            <div class="mech-entry" id="serotonin-synthesis-precursor-bypasses-rate-limiting-tryptop">
+                <h3 class="mech-entry-name">Serotonin synthesis precursor — bypasses rate-limiting tryptophan hydroxylase step</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/5-htp.html" class="mech-supp-link">5-HTP</a></div>
+            </div>
+            <div class="mech-entry" id="sleep-wake-cycle-regulation-via-gabaergic-interneurons">
+                <h3 class="mech-entry-name">Sleep-wake cycle regulation via GABAergic interneurons</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Sleep-wake cycle regulation via melatonin precursor pathway</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/5-htp.html" class="mech-supp-link">5-HTP</a><a href="../supplements-new/gaba.html" class="mech-supp-link">GABA</a></div>
+            </div>
+            <div class="mech-entry" id="trace-amine-receptor-activation">
+                <h3 class="mech-entry-name">Trace amine receptor activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pea-phenylethylamine.html" class="mech-supp-link">PEA (Phenylethylamine)</a></div>
+            </div>
+            <div class="mech-entry" id="vitamin-d-receptor-activation">
+                <h3 class="mech-entry-name">Vitamin D receptor activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-antioxidant-cellular-protection">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-shield-halved mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Antioxidant &amp; Cellular Protection
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">57 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="antioxidant-activity">
+                <h3 class="mech-entry-name">Antioxidant activity</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Antioxidant activity via free radical scavenging</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/echinacea.html" class="mech-supp-link">Echinacea</a><a href="../supplements-new/garlic.html" class="mech-supp-link">Garlic</a><a href="../supplements-new/ginger.html" class="mech-supp-link">Ginger</a><a href="../supplements-new/msm.html" class="mech-supp-link">MSM</a><a href="../supplements-new/quercetin.html" class="mech-supp-link">Quercetin</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-and-free-radical-scavenging-activity">
+                <h3 class="mech-entry-name">Antioxidant and free radical scavenging activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/tribulus-terrestris.html" class="mech-supp-link">Tribulus Terrestris</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-anthocyanin-activity">
+                <h3 class="mech-entry-name">Antioxidant anthocyanin activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/elderberry.html" class="mech-supp-link">Elderberry</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-cardiovascular-effects">
+                <h3 class="mech-entry-name">Antioxidant cardiovascular effects</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/red-yeast-rice.html" class="mech-supp-link">Red Yeast Rice</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-cardiovascular-protection">
+                <h3 class="mech-entry-name">Antioxidant cardiovascular protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hawthorn-berry.html" class="mech-supp-link">Hawthorn Berry</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-defense-sod-cofactor">
+                <h3 class="mech-entry-name">Antioxidant defense (SOD cofactor)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-effects">
+                <h3 class="mech-entry-name">Antioxidant effects</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Antioxidant effects (ROS reduction, SOD enhancement)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/dmae.html" class="mech-supp-link">DMAE</a><a href="../supplements-new/melatonin.html" class="mech-supp-link">Melatonin</a><a href="../supplements-new/panax-ginseng.html" class="mech-supp-link">Panax Ginseng</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-enzyme-activation">
+                <h3 class="mech-entry-name">Antioxidant enzyme activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/schisandra-berry.html" class="mech-supp-link">Schisandra Berry</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-enzyme-induction">
+                <h3 class="mech-entry-name">Antioxidant enzyme induction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pterostilbene.html" class="mech-supp-link">Pterostilbene</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-enzyme-systems">
+                <h3 class="mech-entry-name">Antioxidant enzyme systems</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/selenium.html" class="mech-supp-link">Selenium</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-liver-protection">
+                <h3 class="mech-entry-name">Antioxidant liver protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/milk-thistle.html" class="mech-supp-link">Milk Thistle</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-neuroprotection">
+                <h3 class="mech-entry-name">Antioxidant neuroprotection</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Antioxidant neuroprotection — mitochondrial oxidative stress reduction in neurons</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bacopa-monnieri.html" class="mech-supp-link">Bacopa monnieri</a><a href="../supplements-new/centella-asiatica.html" class="mech-supp-link">Centella Asiatica</a><a href="../supplements-new/ginkgo-biloba.html" class="mech-supp-link">Ginkgo Biloba</a><a href="../supplements-new/holy-basil.html" class="mech-supp-link">Holy Basil</a><a href="../supplements-new/mucuna-pruriens.html" class="mech-supp-link">Mucuna Pruriens</a><a href="../supplements-new/vitamin-e.html" class="mech-supp-link">Vitamin E</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-pancreatic-protection">
+                <h3 class="mech-entry-name">Antioxidant pancreatic protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bitter-melon.html" class="mech-supp-link">Bitter Melon</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-properties">
+                <h3 class="mech-entry-name">Antioxidant properties</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/taurine.html" class="mech-supp-link">Taurine</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidant-protection">
+                <h3 class="mech-entry-name">Antioxidant protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chlorella.html" class="mech-supp-link">Chlorella</a><a href="../supplements-new/coq10.html" class="mech-supp-link">CoQ10</a><a href="../supplements-new/lutein.html" class="mech-supp-link">Lutein</a><a href="../supplements-new/zeaxanthin.html" class="mech-supp-link">Zeaxanthin</a></div>
+            </div>
+            <div class="mech-entry" id="antioxidantros-scavenging-indirect-clinical-evidence">
+                <h3 class="mech-entry-name">Antioxidant/ROS scavenging (indirect clinical evidence)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/resveratrol.html" class="mech-supp-link">Resveratrol</a></div>
+            </div>
+            <div class="mech-entry" id="astaxanthin-antioxidant-activity">
+                <h3 class="mech-entry-name">Astaxanthin antioxidant activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/krill-oil.html" class="mech-supp-link">Krill Oil</a></div>
+            </div>
+            <div class="mech-entry" id="atp-and-oxygen-utilization-enhancement">
+                <h3 class="mech-entry-name">ATP and oxygen utilization enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/cordyceps.html" class="mech-supp-link">Cordyceps</a></div>
+            </div>
+            <div class="mech-entry" id="atp-regeneration">
+                <h3 class="mech-entry-name">ATP regeneration</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/creatine.html" class="mech-supp-link">Creatine</a></div>
+            </div>
+            <div class="mech-entry" id="cell-membrane-fluidity">
+                <h3 class="mech-entry-name">Cell membrane fluidity</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Cell membrane fluidity optimization</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/omega-3-fatty-acids.html" class="mech-supp-link">Omega-3 Fatty Acids</a><a href="../supplements-new/phosphatidylserine.html" class="mech-supp-link">Phosphatidylserine</a></div>
+            </div>
+            <div class="mech-entry" id="cell-membrane-phospholipid-support">
+                <h3 class="mech-entry-name">Cell membrane phospholipid support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/alpha-gpc.html" class="mech-supp-link">Alpha-GPC</a></div>
+            </div>
+            <div class="mech-entry" id="cell-membrane-stabilization">
+                <h3 class="mech-entry-name">Cell membrane stabilization</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/coq10.html" class="mech-supp-link">CoQ10</a><a href="../supplements-new/dmae.html" class="mech-supp-link">DMAE</a></div>
+            </div>
+            <div class="mech-entry" id="cellular-energy-buffering">
+                <h3 class="mech-entry-name">Cellular energy buffering</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/creatine.html" class="mech-supp-link">Creatine</a></div>
+            </div>
+            <div class="mech-entry" id="cellular-energy-production-electron-transport-chain">
+                <h3 class="mech-entry-name">Cellular energy production (electron transport chain)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a></div>
+            </div>
+            <div class="mech-entry" id="cholesterol-synthesis-for-cell-membrane-repair">
+                <h3 class="mech-entry-name">Cholesterol synthesis for cell membrane repair</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hmb-hydroxy-methylbutyrate.html" class="mech-supp-link">HMB (β-Hydroxy β-Methylbutyrate)</a></div>
+            </div>
+            <div class="mech-entry" id="crosses-blood-brain-barrier-without-active-transport-competi">
+                <h3 class="mech-entry-name">Crosses blood-brain barrier without active transport competition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/5-htp.html" class="mech-supp-link">5-HTP</a></div>
+            </div>
+            <div class="mech-entry" id="dna-repair-pathway-support">
+                <h3 class="mech-entry-name">DNA repair pathway support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/nad-precursors.html" class="mech-supp-link">NAD+ Precursors</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-neuronal-membrane-fluidity">
+                <h3 class="mech-entry-name">Enhanced neuronal membrane fluidity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/piracetam.html" class="mech-supp-link">Piracetam</a></div>
+            </div>
+            <div class="mech-entry" id="glutathione-peroxidase-cofactor">
+                <h3 class="mech-entry-name">Glutathione peroxidase cofactor</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/selenium.html" class="mech-supp-link">Selenium</a></div>
+            </div>
+            <div class="mech-entry" id="hepatocyte-membrane-stabilization">
+                <h3 class="mech-entry-name">Hepatocyte membrane stabilization</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/milk-thistle.html" class="mech-supp-link">Milk Thistle</a></div>
+            </div>
+            <div class="mech-entry" id="improved-mitochondrial-function">
+                <h3 class="mech-entry-name">Improved mitochondrial function</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/sulbutiamine.html" class="mech-supp-link">Sulbutiamine</a></div>
+            </div>
+            <div class="mech-entry" id="increased-atp-synthesis">
+                <h3 class="mech-entry-name">Increased ATP synthesis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/piracetam.html" class="mech-supp-link">Piracetam</a></div>
+            </div>
+            <div class="mech-entry" id="lipid-peroxidation-inhibition-chain-breaking-antioxidant-in-">
+                <h3 class="mech-entry-name">Lipid peroxidation inhibition (chain-breaking antioxidant in cell membranes and LDL)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-e.html" class="mech-supp-link">Vitamin E</a></div>
+            </div>
+            <div class="mech-entry" id="membrane-phospholipid-synthesis">
+                <h3 class="mech-entry-name">Membrane phospholipid synthesis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citicoline.html" class="mech-supp-link">Citicoline</a></div>
+            </div>
+            <div class="mech-entry" id="membrane-stabilization">
+                <h3 class="mech-entry-name">Membrane stabilization</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/astaxanthin.html" class="mech-supp-link">Astaxanthin</a></div>
+            </div>
+            <div class="mech-entry" id="mitochondrial-biogenesis-and-function">
+                <h3 class="mech-entry-name">Mitochondrial biogenesis and function</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/nad-precursors.html" class="mech-supp-link">NAD+ Precursors</a></div>
+            </div>
+            <div class="mech-entry" id="mitochondrial-biogenesis-via-pgc-1-upregulation">
+                <h3 class="mech-entry-name">Mitochondrial biogenesis via PGC-1α upregulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pqq.html" class="mech-supp-link">PQQ</a></div>
+            </div>
+            <div class="mech-entry" id="mitochondrial-energy-production">
+                <h3 class="mech-entry-name">Mitochondrial energy production</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Mitochondrial energy enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/acetyl-l-carnitine.html" class="mech-supp-link">Acetyl-L-Carnitine</a><a href="../supplements-new/alpha-lipoic-acid.html" class="mech-supp-link">Alpha-Lipoic Acid</a><a href="../supplements-new/coq10.html" class="mech-supp-link">CoQ10</a><a href="../supplements-new/mct-oil.html" class="mech-supp-link">MCT Oil</a></div>
+            </div>
+            <div class="mech-entry" id="mitochondrial-function-improvement">
+                <h3 class="mech-entry-name">Mitochondrial function improvement</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Mitochondrial function optimization</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/cordyceps.html" class="mech-supp-link">Cordyceps</a><a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a></div>
+            </div>
+            <div class="mech-entry" id="mitochondrial-protection">
+                <h3 class="mech-entry-name">Mitochondrial protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/astaxanthin.html" class="mech-supp-link">Astaxanthin</a></div>
+            </div>
+            <div class="mech-entry" id="nad-biosynthesis-via-preiss-handler-pathway-gut-microbiota-c">
+                <h3 class="mech-entry-name">NAD+ biosynthesis via Preiss-Handler pathway (gut microbiota conversion)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/nad-precursors.html" class="mech-supp-link">NAD+ Precursors</a></div>
+            </div>
+            <div class="mech-entry" id="oatp1a2-transporter-inhibition-drug-interaction-mechanism">
+                <h3 class="mech-entry-name">OATP1A2 transporter inhibition (drug interaction mechanism)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/green-tea-extract.html" class="mech-supp-link">Green Tea Extract</a></div>
+            </div>
+            <div class="mech-entry" id="oxidative-stress-reduction">
+                <h3 class="mech-entry-name">Oxidative stress reduction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/acetyl-l-carnitine.html" class="mech-supp-link">Acetyl-L-Carnitine</a></div>
+            </div>
+            <div class="mech-entry" id="parp1cd38-competition-for-nad">
+                <h3 class="mech-entry-name">PARP1/CD38 competition for NAD+</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/nad-precursors.html" class="mech-supp-link">NAD+ Precursors</a></div>
+            </div>
+            <div class="mech-entry" id="phospholipid-membrane-component">
+                <h3 class="mech-entry-name">Phospholipid membrane component</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/inositol.html" class="mech-supp-link">Inositol</a></div>
+            </div>
+            <div class="mech-entry" id="phospholipid-membrane-synthesis">
+                <h3 class="mech-entry-name">Phospholipid membrane synthesis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/choline.html" class="mech-supp-link">Choline</a></div>
+            </div>
+            <div class="mech-entry" id="phycocyanin-antioxidant-activity">
+                <h3 class="mech-entry-name">Phycocyanin antioxidant activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/spirulina.html" class="mech-supp-link">Spirulina</a></div>
+            </div>
+            <div class="mech-entry" id="potent-antioxidant-activity">
+                <h3 class="mech-entry-name">Potent antioxidant activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/astaxanthin.html" class="mech-supp-link">Astaxanthin</a><a href="../supplements-new/moringa.html" class="mech-supp-link">Moringa</a><a href="../supplements-new/pine-bark-extract.html" class="mech-supp-link">Pine Bark Extract</a></div>
+            </div>
+            <div class="mech-entry" id="potent-proanthocyanidin-antioxidants">
+                <h3 class="mech-entry-name">Potent proanthocyanidin antioxidants</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/grape-seed-extract.html" class="mech-supp-link">Grape Seed Extract</a></div>
+            </div>
+            <div class="mech-entry" id="powerful-antioxidant-activity-mda-reduction-tac-increase-gpx">
+                <h3 class="mech-entry-name">Powerful antioxidant activity (MDA reduction, TAC increase, GPx enhancement)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-c.html" class="mech-supp-link">Vitamin C</a></div>
+            </div>
+            <div class="mech-entry" id="prostaglandin-modulation">
+                <h3 class="mech-entry-name">Prostaglandin modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ginger.html" class="mech-supp-link">Ginger</a></div>
+            </div>
+            <div class="mech-entry" id="protein-tyrosine-phosphatase-inhibition">
+                <h3 class="mech-entry-name">Protein tyrosine phosphatase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vanadium.html" class="mech-supp-link">Vanadium</a></div>
+            </div>
+            <div class="mech-entry" id="redox-cofactor-antioxidant-activity">
+                <h3 class="mech-entry-name">Redox cofactor / antioxidant activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pqq.html" class="mech-supp-link">PQQ</a></div>
+            </div>
+            <div class="mech-entry" id="sirtuin-activation">
+                <h3 class="mech-entry-name">Sirtuin activation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Sirtuin activation (SIRT1-7)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/nad-precursors.html" class="mech-supp-link">NAD+ Precursors</a><a href="../supplements-new/pterostilbene.html" class="mech-supp-link">Pterostilbene</a></div>
+            </div>
+            <div class="mech-entry" id="thymoquinone-antioxidant-activity">
+                <h3 class="mech-entry-name">Thymoquinone antioxidant activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/black-seed-oil.html" class="mech-supp-link">Black Seed Oil</a></div>
+            </div>
+            <div class="mech-entry" id="tyrosine-hydroxylase-activation">
+                <h3 class="mech-entry-name">Tyrosine hydroxylase activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/mucuna-pruriens.html" class="mech-supp-link">Mucuna Pruriens</a></div>
+            </div>
+            <div class="mech-entry" id="universal-antioxidant-water-fat-soluble">
+                <h3 class="mech-entry-name">Universal antioxidant (water &amp; fat soluble)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/alpha-lipoic-acid.html" class="mech-supp-link">Alpha-Lipoic Acid</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-anti-inflammatory-pathways">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-fire-flame-curved mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Anti-inflammatory Pathways
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">16 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="5-lipoxygenase-inhibition">
+                <h3 class="mech-entry-name">5-lipoxygenase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/boswellia.html" class="mech-supp-link">Boswellia</a><a href="../supplements-new/stinging-nettle.html" class="mech-supp-link">Stinging Nettle</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-activity">
+                <h3 class="mech-entry-name">Anti-inflammatory activity</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Anti-inflammatory activity (CRP reduction), Anti-inflammatory activity (hs-CRP, IL-6 reduction)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/grape-seed-extract.html" class="mech-supp-link">Grape Seed Extract</a><a href="../supplements-new/magnesium.html" class="mech-supp-link">Magnesium</a><a href="../supplements-new/panax-ginseng.html" class="mech-supp-link">Panax Ginseng</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-compounds">
+                <h3 class="mech-entry-name">Anti-inflammatory compounds</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/moringa.html" class="mech-supp-link">Moringa</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-cytokine-modulation">
+                <h3 class="mech-entry-name">Anti-inflammatory cytokine modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/tribulus-terrestris.html" class="mech-supp-link">Tribulus Terrestris</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-effects">
+                <h3 class="mech-entry-name">Anti-inflammatory effects</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/astaxanthin.html" class="mech-supp-link">Astaxanthin</a><a href="../supplements-new/echinacea.html" class="mech-supp-link">Echinacea</a><a href="../supplements-new/elderberry.html" class="mech-supp-link">Elderberry</a><a href="../supplements-new/milk-thistle.html" class="mech-supp-link">Milk Thistle</a><a href="../supplements-new/pine-bark-extract.html" class="mech-supp-link">Pine Bark Extract</a><a href="../supplements-new/zeaxanthin.html" class="mech-supp-link">Zeaxanthin</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-nf-kb-pathway-regulation">
+                <h3 class="mech-entry-name">Anti-inflammatory NF-kB pathway regulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-nf-b-pathway-inhibition">
+                <h3 class="mech-entry-name">Anti-inflammatory NF-κB pathway inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chondroitin-sulfate.html" class="mech-supp-link">Chondroitin Sulfate</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-pathway-modulation">
+                <h3 class="mech-entry-name">Anti-inflammatory pathway modulation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Anti-inflammatory pathway regulation</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/black-seed-oil.html" class="mech-supp-link">Black Seed Oil</a><a href="../supplements-new/pterostilbene.html" class="mech-supp-link">Pterostilbene</a><a href="../supplements-new/vitamin-c.html" class="mech-supp-link">Vitamin C</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-pathways">
+                <h3 class="mech-entry-name">Anti-inflammatory pathways</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/quercetin.html" class="mech-supp-link">Quercetin</a></div>
+            </div>
+            <div class="mech-entry" id="anti-inflammatory-prostaglandin-modulation">
+                <h3 class="mech-entry-name">Anti-inflammatory prostaglandin modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/cinnamon-extract.html" class="mech-supp-link">Cinnamon Extract</a><a href="../supplements-new/krill-oil.html" class="mech-supp-link">Krill Oil</a></div>
+            </div>
+            <div class="mech-entry" id="cytokine-regulation">
+                <h3 class="mech-entry-name">Cytokine regulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/echinacea.html" class="mech-supp-link">Echinacea</a></div>
+            </div>
+            <div class="mech-entry" id="egcg-multi-target-cellular-signaling-nf-b-mapk-pi3kakt-inhib">
+                <h3 class="mech-entry-name">EGCG multi-target cellular signaling (NF-κB, MAPK, PI3K/Akt inhibition)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/green-tea-extract.html" class="mech-supp-link">Green Tea Extract</a></div>
+            </div>
+            <div class="mech-entry" id="inflammation-reduction">
+                <h3 class="mech-entry-name">Inflammation reduction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/berberine.html" class="mech-supp-link">Berberine</a></div>
+            </div>
+            <div class="mech-entry" id="leukotriene-synthesis-reduction">
+                <h3 class="mech-entry-name">Leukotriene synthesis reduction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/boswellia.html" class="mech-supp-link">Boswellia</a></div>
+            </div>
+            <div class="mech-entry" id="neuroinflammation-reduction">
+                <h3 class="mech-entry-name">Neuroinflammation reduction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/omega-3-fatty-acids.html" class="mech-supp-link">Omega-3 Fatty Acids</a><a href="../supplements-new/turmericcurcumin.html" class="mech-supp-link">Turmeric/Curcumin</a></div>
+            </div>
+            <div class="mech-entry" id="nf-b-pathway-inhibition">
+                <h3 class="mech-entry-name">NF-κB pathway inhibition</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> NF-κB pathway inhibition (anti-inflammatory), NF-κB pathway inhibition reducing pro-inflammatory cytokine production, NF-κB pathway inhibition — anti-inflammatory (in vitro; not confirmed in human RCTs at clinical significance)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/glucosamine.html" class="mech-supp-link">Glucosamine</a><a href="../supplements-new/msm.html" class="mech-supp-link">MSM</a><a href="../supplements-new/resveratrol.html" class="mech-supp-link">Resveratrol</a><a href="../supplements-new/turmericcurcumin.html" class="mech-supp-link">Turmeric/Curcumin</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-hormonal-endocrine">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-vials mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Hormonal &amp; Endocrine
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">18 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="adaptogenic-stress-response">
+                <h3 class="mech-entry-name">Adaptogenic stress response</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/cordyceps.html" class="mech-supp-link">Cordyceps</a><a href="../supplements-new/reishi-mushroom.html" class="mech-supp-link">Reishi Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="adrenaline-stimulation">
+                <h3 class="mech-entry-name">Adrenaline stimulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/caffeine.html" class="mech-supp-link">Caffeine</a></div>
+            </div>
+            <div class="mech-entry" id="cortisol-normalization">
+                <h3 class="mech-entry-name">Cortisol normalization</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/holy-basil.html" class="mech-supp-link">Holy Basil</a></div>
+            </div>
+            <div class="mech-entry" id="cortisol-reduction-smd-118-23-rcts">
+                <h3 class="mech-entry-name">Cortisol reduction (SMD = -1.18, 23 RCTs)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a></div>
+            </div>
+            <div class="mech-entry" id="cortisol-response-modulation">
+                <h3 class="mech-entry-name">Cortisol response modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/phosphatidylserine.html" class="mech-supp-link">Phosphatidylserine</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-insulin-sensitivity">
+                <h3 class="mech-entry-name">Enhanced insulin sensitivity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/cinnamon-extract.html" class="mech-supp-link">Cinnamon Extract</a><a href="../supplements-new/fenugreek.html" class="mech-supp-link">Fenugreek</a></div>
+            </div>
+            <div class="mech-entry" id="growth-hormone-release">
+                <h3 class="mech-entry-name">Growth hormone release</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/alpha-gpc.html" class="mech-supp-link">Alpha-GPC</a></div>
+            </div>
+            <div class="mech-entry" id="growth-hormone-stimulation">
+                <h3 class="mech-entry-name">Growth hormone stimulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/mucuna-pruriens.html" class="mech-supp-link">Mucuna Pruriens</a></div>
+            </div>
+            <div class="mech-entry" id="hpa-axis-modulation">
+                <h3 class="mech-entry-name">HPA axis modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a><a href="../supplements-new/holy-basil.html" class="mech-supp-link">Holy Basil</a><a href="../supplements-new/panax-ginseng.html" class="mech-supp-link">Panax Ginseng</a><a href="../supplements-new/rhodiola-rosea.html" class="mech-supp-link">Rhodiola rosea</a></div>
+            </div>
+            <div class="mech-entry" id="igf-1-pathway-modulation">
+                <h3 class="mech-entry-name">IGF-1 pathway modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/whey-protein.html" class="mech-supp-link">Whey Protein</a></div>
+            </div>
+            <div class="mech-entry" id="insulin-sensitivity-modulation">
+                <h3 class="mech-entry-name">Insulin sensitivity modulation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Insulin sensitivity enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chromium.html" class="mech-supp-link">Chromium</a><a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a></div>
+            </div>
+            <div class="mech-entry" id="steroidal-saponin-protodioscin-activity-potential-lh-and-tes">
+                <h3 class="mech-entry-name">Steroidal saponin (protodioscin) activity — potential LH and testosterone modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/tribulus-terrestris.html" class="mech-supp-link">Tribulus Terrestris</a></div>
+            </div>
+            <div class="mech-entry" id="stress-hormone-modulation">
+                <h3 class="mech-entry-name">Stress hormone modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/schisandra-berry.html" class="mech-supp-link">Schisandra Berry</a></div>
+            </div>
+            <div class="mech-entry" id="stress-response-modulation-through-sympathetic-nervous-syste">
+                <h3 class="mech-entry-name">Stress response modulation through sympathetic nervous system inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gaba.html" class="mech-supp-link">GABA</a></div>
+            </div>
+            <div class="mech-entry" id="testosterone-biosynthesis-in-men-md-5743-ngdl">
+                <h3 class="mech-entry-name">Testosterone biosynthesis in men (MD = 57.43 ng/dl)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a></div>
+            </div>
+            <div class="mech-entry" id="thyroid-hormone-t3t4-synthesis-precursor">
+                <h3 class="mech-entry-name">Thyroid hormone (T3/T4) synthesis precursor</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-tyrosine.html" class="mech-supp-link">L-Tyrosine</a></div>
+            </div>
+            <div class="mech-entry" id="thyroid-hormone-metabolism">
+                <h3 class="mech-entry-name">Thyroid hormone metabolism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/selenium.html" class="mech-supp-link">Selenium</a></div>
+            </div>
+            <div class="mech-entry" id="thyroid-hormone-modulation-t4-md-061-gdl">
+                <h3 class="mech-entry-name">Thyroid hormone modulation (T4 MD = 0.61 µg/dL)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-metabolic-energy">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-bolt mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Metabolic &amp; Energy
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">108 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="adenylyl-cyclase-activation">
+                <h3 class="mech-entry-name">Adenylyl cyclase activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/forskolin.html" class="mech-supp-link">Forskolin</a></div>
+            </div>
+            <div class="mech-entry" id="allicin-and-sulfur-compounds">
+                <h3 class="mech-entry-name">Allicin and sulfur compounds</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/garlic.html" class="mech-supp-link">Garlic</a></div>
+            </div>
+            <div class="mech-entry" id="alpha-amylase-inhibition">
+                <h3 class="mech-entry-name">Alpha-amylase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/fenugreek.html" class="mech-supp-link">Fenugreek</a></div>
+            </div>
+            <div class="mech-entry" id="alpha-glucosidase-inhibition">
+                <h3 class="mech-entry-name">Alpha-glucosidase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bitter-melon.html" class="mech-supp-link">Bitter Melon</a><a href="../supplements-new/cinnamon-extract.html" class="mech-supp-link">Cinnamon Extract</a></div>
+            </div>
+            <div class="mech-entry" id="alternative-brain-fuel-source">
+                <h3 class="mech-entry-name">Alternative brain fuel source</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/mct-oil.html" class="mech-supp-link">MCT Oil</a></div>
+            </div>
+            <div class="mech-entry" id="amino-acid-metabolism">
+                <h3 class="mech-entry-name">Amino acid metabolism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-b6.html" class="mech-supp-link">Vitamin B6</a></div>
+            </div>
+            <div class="mech-entry" id="ammonia-detoxification-via-urea-cycle">
+                <h3 class="mech-entry-name">Ammonia detoxification via urea cycle</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citrulline-malate.html" class="mech-supp-link">Citrulline Malate</a></div>
+            </div>
+            <div class="mech-entry" id="ampk-pathway-activation">
+                <h3 class="mech-entry-name">AMPK pathway activation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> AMPK pathway activation (thermogenesis/fat oxidation)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/berberine.html" class="mech-supp-link">Berberine</a><a href="../supplements-new/green-tea-extract.html" class="mech-supp-link">Green Tea Extract</a></div>
+            </div>
+            <div class="mech-entry" id="amyloid-formation-inhibition">
+                <h3 class="mech-entry-name">Amyloid-β formation inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/turmericcurcumin.html" class="mech-supp-link">Turmeric/Curcumin</a></div>
+            </div>
+            <div class="mech-entry" id="beta-amyloid-neuroprotection">
+                <h3 class="mech-entry-name">Beta-amyloid neuroprotection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/huperzine-a.html" class="mech-supp-link">Huperzine A</a></div>
+            </div>
+            <div class="mech-entry" id="blue-light-filtration">
+                <h3 class="mech-entry-name">Blue light filtration</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lutein.html" class="mech-supp-link">Lutein</a><a href="../supplements-new/zeaxanthin.html" class="mech-supp-link">Zeaxanthin</a></div>
+            </div>
+            <div class="mech-entry" id="brain-energy-metabolism">
+                <h3 class="mech-entry-name">Brain energy metabolism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/creatine.html" class="mech-supp-link">Creatine</a></div>
+            </div>
+            <div class="mech-entry" id="brain-tissue-accumulation">
+                <h3 class="mech-entry-name">Brain tissue accumulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lutein.html" class="mech-supp-link">Lutein</a></div>
+            </div>
+            <div class="mech-entry" id="bypass-glucose-metabolism">
+                <h3 class="mech-entry-name">Bypass glucose metabolism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/mct-oil.html" class="mech-supp-link">MCT Oil</a></div>
+            </div>
+            <div class="mech-entry" id="calcium-homeostasis">
+                <h3 class="mech-entry-name">Calcium homeostasis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a></div>
+            </div>
+            <div class="mech-entry" id="calcium-regulation-in-cells">
+                <h3 class="mech-entry-name">Calcium regulation in cells</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/taurine.html" class="mech-supp-link">Taurine</a></div>
+            </div>
+            <div class="mech-entry" id="calcium-release-in-muscles">
+                <h3 class="mech-entry-name">Calcium release in muscles</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/caffeine.html" class="mech-supp-link">Caffeine</a></div>
+            </div>
+            <div class="mech-entry" id="camp-elevation">
+                <h3 class="mech-entry-name">cAMP elevation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/forskolin.html" class="mech-supp-link">Forskolin</a></div>
+            </div>
+            <div class="mech-entry" id="carnosine-synthesis-in-skeletal-muscle">
+                <h3 class="mech-entry-name">Carnosine synthesis in skeletal muscle</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/beta-alanine.html" class="mech-supp-link">Beta-Alanine</a></div>
+            </div>
+            <div class="mech-entry" id="cerebrovascular-function-enhancement">
+                <h3 class="mech-entry-name">Cerebrovascular function enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/turmericcurcumin.html" class="mech-supp-link">Turmeric/Curcumin</a></div>
+            </div>
+            <div class="mech-entry" id="chlorophyll-detoxification-support">
+                <h3 class="mech-entry-name">Chlorophyll detoxification support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chlorella.html" class="mech-supp-link">Chlorella</a></div>
+            </div>
+            <div class="mech-entry" id="choline-precursor-activity">
+                <h3 class="mech-entry-name">Choline precursor activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/dmae.html" class="mech-supp-link">DMAE</a></div>
+            </div>
+            <div class="mech-entry" id="circadian-rhythm-regulation">
+                <h3 class="mech-entry-name">Circadian rhythm regulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/melatonin.html" class="mech-supp-link">Melatonin</a></div>
+            </div>
+            <div class="mech-entry" id="cognitive-flexibility-improvement">
+                <h3 class="mech-entry-name">Cognitive flexibility improvement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/kanna.html" class="mech-supp-link">Kanna</a></div>
+            </div>
+            <div class="mech-entry" id="complement-cascade-inhibition">
+                <h3 class="mech-entry-name">Complement cascade inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/boswellia.html" class="mech-supp-link">Boswellia</a></div>
+            </div>
+            <div class="mech-entry" id="cox-and-lox-inhibition">
+                <h3 class="mech-entry-name">COX and LOX inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ginger.html" class="mech-supp-link">Ginger</a></div>
+            </div>
+            <div class="mech-entry" id="cox-enzyme-inhibition">
+                <h3 class="mech-entry-name">COX enzyme inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/stinging-nettle.html" class="mech-supp-link">Stinging Nettle</a></div>
+            </div>
+            <div class="mech-entry" id="creatine-synthesis-support-via-methylation">
+                <h3 class="mech-entry-name">Creatine synthesis support via methylation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/betaine.html" class="mech-supp-link">Betaine</a></div>
+            </div>
+            <div class="mech-entry" id="creb-phosphorylation">
+                <h3 class="mech-entry-name">CREB phosphorylation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/forskolin.html" class="mech-supp-link">Forskolin</a></div>
+            </div>
+            <div class="mech-entry" id="delayed-onset-of-neuromuscular-fatigue">
+                <h3 class="mech-entry-name">Delayed onset of neuromuscular fatigue</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/beta-alanine.html" class="mech-supp-link">Beta-Alanine</a></div>
+            </div>
+            <div class="mech-entry" id="dense-nutritional-profile">
+                <h3 class="mech-entry-name">Dense nutritional profile</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/moringa.html" class="mech-supp-link">Moringa</a></div>
+            </div>
+            <div class="mech-entry" id="dna-methylation">
+                <h3 class="mech-entry-name">DNA methylation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-b12.html" class="mech-supp-link">Vitamin B12</a></div>
+            </div>
+            <div class="mech-entry" id="dna-synthesis-and-repair">
+                <h3 class="mech-entry-name">DNA synthesis and repair</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> DNA synthesis and repair via thymidylate synthesis</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/b-complex-vitamins.html" class="mech-supp-link">B-Complex Vitamins</a><a href="../supplements-new/folate.html" class="mech-supp-link">Folate</a></div>
+            </div>
+            <div class="mech-entry" id="dna-synthesis-support">
+                <h3 class="mech-entry-name">DNA synthesis support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a></div>
+            </div>
+            <div class="mech-entry" id="dyrk1a-kinase-inhibition-neuroprotective">
+                <h3 class="mech-entry-name">DYRK1A kinase inhibition (neuroprotective)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/green-tea-extract.html" class="mech-supp-link">Green Tea Extract</a></div>
+            </div>
+            <div class="mech-entry" id="endogenous-amphetamine-like-effects">
+                <h3 class="mech-entry-name">Endogenous amphetamine-like effects</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pea-phenylethylamine.html" class="mech-supp-link">PEA (Phenylethylamine)</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-bioavailability">
+                <h3 class="mech-entry-name">Enhanced bioavailability</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/krill-oil.html" class="mech-supp-link">Krill Oil</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-bioavailability-vs-resveratrol">
+                <h3 class="mech-entry-name">Enhanced bioavailability vs resveratrol</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pterostilbene.html" class="mech-supp-link">Pterostilbene</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-thiamine-bioavailability">
+                <h3 class="mech-entry-name">Enhanced thiamine bioavailability</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/sulbutiamine.html" class="mech-supp-link">Sulbutiamine</a></div>
+            </div>
+            <div class="mech-entry" id="enhanced-type-ii-muscle-fiber-carnosine-content">
+                <h3 class="mech-entry-name">Enhanced Type II muscle fiber carnosine content</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/beta-alanine.html" class="mech-supp-link">Beta-Alanine</a></div>
+            </div>
+            <div class="mech-entry" id="enzyme-cofactor-300-enzymes-and-2000-proteins">
+                <h3 class="mech-entry-name">Enzyme cofactor (300+ enzymes and 2000+ proteins)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="gene-expression-regulation">
+                <h3 class="mech-entry-name">Gene expression regulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-b6.html" class="mech-supp-link">Vitamin B6</a><a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a><a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="glucose-absorption-inhibition">
+                <h3 class="mech-entry-name">Glucose absorption inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gymnema-sylvestre.html" class="mech-supp-link">Gymnema Sylvestre</a></div>
+            </div>
+            <div class="mech-entry" id="glucose-metabolism-enhancement">
+                <h3 class="mech-entry-name">Glucose metabolism enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/alpha-lipoic-acid.html" class="mech-supp-link">Alpha-Lipoic Acid</a><a href="../supplements-new/berberine.html" class="mech-supp-link">Berberine</a></div>
+            </div>
+            <div class="mech-entry" id="glucose-transporter-activation">
+                <h3 class="mech-entry-name">Glucose transporter activation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Glucose transporter enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bitter-melon.html" class="mech-supp-link">Bitter Melon</a><a href="../supplements-new/chromium.html" class="mech-supp-link">Chromium</a><a href="../supplements-new/cinnamon-extract.html" class="mech-supp-link">Cinnamon Extract</a><a href="../supplements-new/vanadium.html" class="mech-supp-link">Vanadium</a></div>
+            </div>
+            <div class="mech-entry" id="gymnemic-acid-sugar-blocking">
+                <h3 class="mech-entry-name">Gymnemic acid sugar blocking</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gymnema-sylvestre.html" class="mech-supp-link">Gymnema Sylvestre</a></div>
+            </div>
+            <div class="mech-entry" id="heavy-metal-binding">
+                <h3 class="mech-entry-name">Heavy metal binding</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chlorella.html" class="mech-supp-link">Chlorella</a></div>
+            </div>
+            <div class="mech-entry" id="heavy-metal-chelation">
+                <h3 class="mech-entry-name">Heavy metal chelation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/alpha-lipoic-acid.html" class="mech-supp-link">Alpha-Lipoic Acid</a></div>
+            </div>
+            <div class="mech-entry" id="hematopoiesis-and-erythropoiesis">
+                <h3 class="mech-entry-name">Hematopoiesis and erythropoiesis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a></div>
+            </div>
+            <div class="mech-entry" id="hepatoprotective-effects">
+                <h3 class="mech-entry-name">Hepatoprotective effects</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a></div>
+            </div>
+            <div class="mech-entry" id="high-protein-and-micronutrient-content">
+                <h3 class="mech-entry-name">High protein and micronutrient content</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/spirulina.html" class="mech-supp-link">Spirulina</a></div>
+            </div>
+            <div class="mech-entry" id="hmg-coa-reductase-inhibition">
+                <h3 class="mech-entry-name">HMG-CoA reductase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/red-yeast-rice.html" class="mech-supp-link">Red Yeast Rice</a></div>
+            </div>
+            <div class="mech-entry" id="homocysteine-metabolism">
+                <h3 class="mech-entry-name">Homocysteine metabolism</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/b-complex-vitamins.html" class="mech-supp-link">B-Complex Vitamins</a><a href="../supplements-new/vitamin-b12.html" class="mech-supp-link">Vitamin B12</a><a href="../supplements-new/vitamin-b6.html" class="mech-supp-link">Vitamin B6</a></div>
+            </div>
+            <div class="mech-entry" id="homocysteine-remethylation-to-methionine-via-methionine-synt">
+                <h3 class="mech-entry-name">Homocysteine remethylation to methionine via methionine synthase</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/folate.html" class="mech-supp-link">Folate</a></div>
+            </div>
+            <div class="mech-entry" id="improved-cerebral-circulation">
+                <h3 class="mech-entry-name">Improved cerebral circulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/centella-asiatica.html" class="mech-supp-link">Centella Asiatica</a></div>
+            </div>
+            <div class="mech-entry" id="improved-glucose-uptake">
+                <h3 class="mech-entry-name">Improved glucose uptake</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chromium.html" class="mech-supp-link">Chromium</a></div>
+            </div>
+            <div class="mech-entry" id="improved-glucose-utilization">
+                <h3 class="mech-entry-name">Improved glucose utilization</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vinpocetine.html" class="mech-supp-link">Vinpocetine</a></div>
+            </div>
+            <div class="mech-entry" id="improved-interhemispheric-transfer">
+                <h3 class="mech-entry-name">Improved interhemispheric transfer</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/piracetam.html" class="mech-supp-link">Piracetam</a></div>
+            </div>
+            <div class="mech-entry" id="insulin-secretion-enhancement">
+                <h3 class="mech-entry-name">Insulin secretion enhancement</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Insulin secretion stimulation</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bitter-melon.html" class="mech-supp-link">Bitter Melon</a><a href="../supplements-new/gymnema-sylvestre.html" class="mech-supp-link">Gymnema Sylvestre</a></div>
+            </div>
+            <div class="mech-entry" id="insulin-signal-transduction">
+                <h3 class="mech-entry-name">Insulin signal transduction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/inositol.html" class="mech-supp-link">Inositol</a></div>
+            </div>
+            <div class="mech-entry" id="insulin-mimetic-activity">
+                <h3 class="mech-entry-name">Insulin-mimetic activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vanadium.html" class="mech-supp-link">Vanadium</a></div>
+            </div>
+            <div class="mech-entry" id="intracellular-ph-buffering-during-high-intensity-exercise">
+                <h3 class="mech-entry-name">Intracellular pH buffering during high-intensity exercise</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/beta-alanine.html" class="mech-supp-link">Beta-Alanine</a></div>
+            </div>
+            <div class="mech-entry" id="iron-absorption-enhancement-ferric-to-ferrous-reduction">
+                <h3 class="mech-entry-name">Iron absorption enhancement (ferric to ferrous reduction)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-c.html" class="mech-supp-link">Vitamin C</a></div>
+            </div>
+            <div class="mech-entry" id="leucine-metabolite-with-anti-catabolic-properties">
+                <h3 class="mech-entry-name">Leucine metabolite with anti-catabolic properties</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hmb-hydroxy-methylbutyrate.html" class="mech-supp-link">HMB (β-Hydroxy β-Methylbutyrate)</a></div>
+            </div>
+            <div class="mech-entry" id="liver-enzyme-induction">
+                <h3 class="mech-entry-name">Liver enzyme induction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/schisandra-berry.html" class="mech-supp-link">Schisandra Berry</a></div>
+            </div>
+            <div class="mech-entry" id="macular-pigment-accumulation">
+                <h3 class="mech-entry-name">Macular pigment accumulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lutein.html" class="mech-supp-link">Lutein</a></div>
+            </div>
+            <div class="mech-entry" id="macular-pigment-density-increase">
+                <h3 class="mech-entry-name">Macular pigment density increase</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zeaxanthin.html" class="mech-supp-link">Zeaxanthin</a></div>
+            </div>
+            <div class="mech-entry" id="malate-contribution-to-aerobic-energy-production">
+                <h3 class="mech-entry-name">Malate contribution to aerobic energy production</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citrulline-malate.html" class="mech-supp-link">Citrulline Malate</a></div>
+            </div>
+            <div class="mech-entry" id="metabolic-pathway-enhancement">
+                <h3 class="mech-entry-name">Metabolic pathway enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/black-seed-oil.html" class="mech-supp-link">Black Seed Oil</a></div>
+            </div>
+            <div class="mech-entry" id="methyl-donor-in-homocysteine-to-methionine-conversion">
+                <h3 class="mech-entry-name">Methyl donor in homocysteine-to-methionine conversion</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/betaine.html" class="mech-supp-link">Betaine</a></div>
+            </div>
+            <div class="mech-entry" id="methylation-pathway-support">
+                <h3 class="mech-entry-name">Methylation pathway support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/choline.html" class="mech-supp-link">Choline</a></div>
+            </div>
+            <div class="mech-entry" id="micronutrient-replenishment">
+                <h3 class="mech-entry-name">Micronutrient replenishment</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/moringa.html" class="mech-supp-link">Moringa</a></div>
+            </div>
+            <div class="mech-entry" id="muscle-relaxation">
+                <h3 class="mech-entry-name">Muscle relaxation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/magnesium.html" class="mech-supp-link">Magnesium</a></div>
+            </div>
+            <div class="mech-entry" id="natural-statin-activity">
+                <h3 class="mech-entry-name">Natural statin activity</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/red-yeast-rice.html" class="mech-supp-link">Red Yeast Rice</a></div>
+            </div>
+            <div class="mech-entry" id="neuroplasticity-enhancement">
+                <h3 class="mech-entry-name">Neuroplasticity enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/phosphatidylserine.html" class="mech-supp-link">Phosphatidylserine</a></div>
+            </div>
+            <div class="mech-entry" id="neuroprotection">
+                <h3 class="mech-entry-name">Neuroprotection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/creatine.html" class="mech-supp-link">Creatine</a></div>
+            </div>
+            <div class="mech-entry" id="neuroprotective-compounds-hericenones-erinacines">
+                <h3 class="mech-entry-name">Neuroprotective compounds (hericenones, erinacines)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lions-mane-mushroom.html" class="mech-supp-link">Lion's Mane Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="neuroprotective-effects">
+                <h3 class="mech-entry-name">Neuroprotective effects</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a></div>
+            </div>
+            <div class="mech-entry" id="neurotrophin-factor-enhancement">
+                <h3 class="mech-entry-name">Neurotrophin factor enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/acetyl-l-carnitine.html" class="mech-supp-link">Acetyl-L-Carnitine</a></div>
+            </div>
+            <div class="mech-entry" id="nf-kappab-pathway-modulation">
+                <h3 class="mech-entry-name">NF-kappaB pathway modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/boswellia.html" class="mech-supp-link">Boswellia</a></div>
+            </div>
+            <div class="mech-entry" id="one-carbon-metabolism-via-mthfrdhfr-enzymatic-pathway">
+                <h3 class="mech-entry-name">One-carbon metabolism via MTHFR/DHFR enzymatic pathway</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/folate.html" class="mech-supp-link">Folate</a></div>
+            </div>
+            <div class="mech-entry" id="osmolyte-function-for-cellular-hydration">
+                <h3 class="mech-entry-name">Osmolyte function for cellular hydration</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/betaine.html" class="mech-supp-link">Betaine</a></div>
+            </div>
+            <div class="mech-entry" id="oxygen-transport-via-hemoglobin">
+                <h3 class="mech-entry-name">Oxygen transport via hemoglobin</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a></div>
+            </div>
+            <div class="mech-entry" id="pancreatic-beta-cell-regeneration">
+                <h3 class="mech-entry-name">Pancreatic beta cell regeneration</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gymnema-sylvestre.html" class="mech-supp-link">Gymnema Sylvestre</a></div>
+            </div>
+            <div class="mech-entry" id="pde4-inhibition">
+                <h3 class="mech-entry-name">PDE4 inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/kanna.html" class="mech-supp-link">Kanna</a></div>
+            </div>
+            <div class="mech-entry" id="phosphatidylcholine-synthesis-enhancement">
+                <h3 class="mech-entry-name">Phosphatidylcholine synthesis enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citicoline.html" class="mech-supp-link">Citicoline</a></div>
+            </div>
+            <div class="mech-entry" id="phosphodiesterase-inhibition">
+                <h3 class="mech-entry-name">Phosphodiesterase inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vinpocetine.html" class="mech-supp-link">Vinpocetine</a></div>
+            </div>
+            <div class="mech-entry" id="phospholipid-bound-omega-3-delivery">
+                <h3 class="mech-entry-name">Phospholipid-bound omega-3 delivery</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/krill-oil.html" class="mech-supp-link">Krill Oil</a></div>
+            </div>
+            <div class="mech-entry" id="protein-kinase-a-activation">
+                <h3 class="mech-entry-name">Protein kinase A activation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/forskolin.html" class="mech-supp-link">Forskolin</a></div>
+            </div>
+            <div class="mech-entry" id="protein-structure-stabilization-zinc-finger-motifs">
+                <h3 class="mech-entry-name">Protein structure stabilization (zinc finger motifs)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="protein-synthesis-signaling-via-cellular-volume">
+                <h3 class="mech-entry-name">Protein synthesis signaling via cellular volume</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/betaine.html" class="mech-supp-link">Betaine</a></div>
+            </div>
+            <div class="mech-entry" id="protein-synthesis-stimulation">
+                <h3 class="mech-entry-name">Protein synthesis stimulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/milk-thistle.html" class="mech-supp-link">Milk Thistle</a></div>
+            </div>
+            <div class="mech-entry" id="rapid-ketone-body-production">
+                <h3 class="mech-entry-name">Rapid ketone body production</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/mct-oil.html" class="mech-supp-link">MCT Oil</a></div>
+            </div>
+            <div class="mech-entry" id="reversal-of-stress-induced-catecholamine-depletion">
+                <h3 class="mech-entry-name">Reversal of stress-induced catecholamine depletion</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-tyrosine.html" class="mech-supp-link">L-Tyrosine</a></div>
+            </div>
+            <div class="mech-entry" id="rich-mineral-content">
+                <h3 class="mech-entry-name">Rich mineral content</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/stinging-nettle.html" class="mech-supp-link">Stinging Nettle</a></div>
+            </div>
+            <div class="mech-entry" id="second-messenger-system-component">
+                <h3 class="mech-entry-name">Second messenger system component</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/inositol.html" class="mech-supp-link">Inositol</a></div>
+            </div>
+            <div class="mech-entry" id="senescent-cell-clearance">
+                <h3 class="mech-entry-name">Senescent cell clearance</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/quercetin.html" class="mech-supp-link">Quercetin</a></div>
+            </div>
+            <div class="mech-entry" id="serotonergic-modulation-md-3175-ngml-increase">
+                <h3 class="mech-entry-name">Serotonergic modulation (MD = 31.75 ng/ml increase)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ashwagandha.html" class="mech-supp-link">Ashwagandha</a></div>
+            </div>
+            <div class="mech-entry" id="serotonergic-pathway-modulation-psychiatric-symptom-reductio">
+                <h3 class="mech-entry-name">Serotonergic pathway modulation (psychiatric symptom reduction)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/l-theanine.html" class="mech-supp-link">L-Theanine</a></div>
+            </div>
+            <div class="mech-entry" id="sirt1-activation-theoretical-null-in-human-rcts">
+                <h3 class="mech-entry-name">SIRT1 activation (theoretical — null in human RCTs)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/resveratrol.html" class="mech-supp-link">Resveratrol</a></div>
+            </div>
+            <div class="mech-entry" id="sleep-wake-cycle-modulation">
+                <h3 class="mech-entry-name">Sleep-wake cycle modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/melatonin.html" class="mech-supp-link">Melatonin</a></div>
+            </div>
+            <div class="mech-entry" id="sodium-channel-modulation">
+                <h3 class="mech-entry-name">Sodium channel modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vinpocetine.html" class="mech-supp-link">Vinpocetine</a></div>
+            </div>
+            <div class="mech-entry" id="steroidogenic-enzyme-modulation">
+                <h3 class="mech-entry-name">Steroidogenic enzyme modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/fenugreek.html" class="mech-supp-link">Fenugreek</a></div>
+            </div>
+            <div class="mech-entry" id="stress-protein-expression">
+                <h3 class="mech-entry-name">Stress protein expression</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/rhodiola-rosea.html" class="mech-supp-link">Rhodiola rosea</a></div>
+            </div>
+            <div class="mech-entry" id="synovial-fluid-enhancement">
+                <h3 class="mech-entry-name">Synovial fluid enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chondroitin-sulfate.html" class="mech-supp-link">Chondroitin Sulfate</a></div>
+            </div>
+            <div class="mech-entry" id="triterpene-liver-protection">
+                <h3 class="mech-entry-name">Triterpene liver protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/reishi-mushroom.html" class="mech-supp-link">Reishi Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="ubiquitin-proteasome-pathway-inhibition-reduced-protein-brea">
+                <h3 class="mech-entry-name">Ubiquitin-proteasome pathway inhibition (reduced protein breakdown)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hmb-hydroxy-methylbutyrate.html" class="mech-supp-link">HMB (β-Hydroxy β-Methylbutyrate)</a></div>
+            </div>
+            <div class="mech-entry" id="vascular-health-improvement">
+                <h3 class="mech-entry-name">Vascular health improvement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/omega-3-fatty-acids.html" class="mech-supp-link">Omega-3 Fatty Acids</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-cardiovascular-circulatory">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-heart-pulse mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Cardiovascular &amp; Circulatory
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">15 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="ace-inhibition">
+                <h3 class="mech-entry-name">ACE inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hawthorn-berry.html" class="mech-supp-link">Hawthorn Berry</a></div>
+            </div>
+            <div class="mech-entry" id="arginine-nitric-oxide-pathway-enhancement">
+                <h3 class="mech-entry-name">Arginine-nitric oxide pathway enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citrulline-malate.html" class="mech-supp-link">Citrulline Malate</a></div>
+            </div>
+            <div class="mech-entry" id="cardiac-muscle-strengthening">
+                <h3 class="mech-entry-name">Cardiac muscle strengthening</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hawthorn-berry.html" class="mech-supp-link">Hawthorn Berry</a></div>
+            </div>
+            <div class="mech-entry" id="cerebral-blood-flow-enhancement">
+                <h3 class="mech-entry-name">Cerebral blood flow enhancement</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Cerebral blood flow enhancement (prefrontal cortex)</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ginkgo-biloba.html" class="mech-supp-link">Ginkgo Biloba</a><a href="../supplements-new/pqq.html" class="mech-supp-link">PQQ</a></div>
+            </div>
+            <div class="mech-entry" id="cerebral-vasodilation">
+                <h3 class="mech-entry-name">Cerebral vasodilation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vinpocetine.html" class="mech-supp-link">Vinpocetine</a></div>
+            </div>
+            <div class="mech-entry" id="cholesterol-synthesis-inhibition">
+                <h3 class="mech-entry-name">Cholesterol synthesis inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/garlic.html" class="mech-supp-link">Garlic</a></div>
+            </div>
+            <div class="mech-entry" id="cholesterol-synthesis-reduction">
+                <h3 class="mech-entry-name">Cholesterol synthesis reduction</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/red-yeast-rice.html" class="mech-supp-link">Red Yeast Rice</a></div>
+            </div>
+            <div class="mech-entry" id="endothelial-function-enhancement">
+                <h3 class="mech-entry-name">Endothelial function enhancement</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Endothelial function improvement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/coq10.html" class="mech-supp-link">CoQ10</a><a href="../supplements-new/grape-seed-extract.html" class="mech-supp-link">Grape Seed Extract</a><a href="../supplements-new/pine-bark-extract.html" class="mech-supp-link">Pine Bark Extract</a></div>
+            </div>
+            <div class="mech-entry" id="enos-activation-and-nitric-oxide-production-endothelial">
+                <h3 class="mech-entry-name">eNOS activation and nitric oxide production (endothelial)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/resveratrol.html" class="mech-supp-link">Resveratrol</a></div>
+            </div>
+            <div class="mech-entry" id="improved-coronary-blood-flow">
+                <h3 class="mech-entry-name">Improved coronary blood flow</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hawthorn-berry.html" class="mech-supp-link">Hawthorn Berry</a></div>
+            </div>
+            <div class="mech-entry" id="nitric-oxide-production">
+                <h3 class="mech-entry-name">Nitric oxide production</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Nitric oxide enhancement</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/garlic.html" class="mech-supp-link">Garlic</a><a href="../supplements-new/pine-bark-extract.html" class="mech-supp-link">Pine Bark Extract</a><a href="../supplements-new/spirulina.html" class="mech-supp-link">Spirulina</a></div>
+            </div>
+            <div class="mech-entry" id="nitric-oxide-production-enhancement">
+                <h3 class="mech-entry-name">Nitric oxide production enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/panax-ginseng.html" class="mech-supp-link">Panax Ginseng</a></div>
+            </div>
+            <div class="mech-entry" id="nitric-oxide-synthase-enos-enhancement-vascular-and-erectile">
+                <h3 class="mech-entry-name">Nitric oxide synthase (eNOS) enhancement — vascular and erectile function</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/tribulus-terrestris.html" class="mech-supp-link">Tribulus Terrestris</a></div>
+            </div>
+            <div class="mech-entry" id="platelet-aggregation-inhibition">
+                <h3 class="mech-entry-name">Platelet aggregation inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/ginkgo-biloba.html" class="mech-supp-link">Ginkgo Biloba</a></div>
+            </div>
+            <div class="mech-entry" id="vasodilation-and-improved-blood-flow">
+                <h3 class="mech-entry-name">Vasodilation and improved blood flow</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/citrulline-malate.html" class="mech-supp-link">Citrulline Malate</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-immune-modulation">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-virus-slash mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Immune Modulation
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">7 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="antiviral-hemagglutinin-inhibition">
+                <h3 class="mech-entry-name">Antiviral hemagglutinin inhibition</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/elderberry.html" class="mech-supp-link">Elderberry</a></div>
+            </div>
+            <div class="mech-entry" id="beta-glucan-immune-modulation">
+                <h3 class="mech-entry-name">Beta-glucan immune modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/reishi-mushroom.html" class="mech-supp-link">Reishi Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="immune-cell-development-and-function-t-cells-nk-cells">
+                <h3 class="mech-entry-name">Immune cell development and function (T-cells, NK cells)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/zinc.html" class="mech-supp-link">Zinc</a></div>
+            </div>
+            <div class="mech-entry" id="immune-function-modulation">
+                <h3 class="mech-entry-name">Immune function modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/selenium.html" class="mech-supp-link">Selenium</a></div>
+            </div>
+            <div class="mech-entry" id="immune-modulation-innate-and-adaptive">
+                <h3 class="mech-entry-name">Immune modulation (innate and adaptive)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-d3.html" class="mech-supp-link">Vitamin D3</a></div>
+            </div>
+            <div class="mech-entry" id="immune-system-modulation">
+                <h3 class="mech-entry-name">Immune system modulation</h3>
+                <p class="mech-aliases"><span style="color:var(--text-muted);font-size:0.78rem;">Also known as:</span> Immune system enhancement, Immune system stimulation</p>
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/black-seed-oil.html" class="mech-supp-link">Black Seed Oil</a><a href="../supplements-new/chlorella.html" class="mech-supp-link">Chlorella</a><a href="../supplements-new/echinacea.html" class="mech-supp-link">Echinacea</a><a href="../supplements-new/elderberry.html" class="mech-supp-link">Elderberry</a><a href="../supplements-new/spirulina.html" class="mech-supp-link">Spirulina</a><a href="../supplements-new/vitamin-c.html" class="mech-supp-link">Vitamin C</a></div>
+            </div>
+            <div class="mech-entry" id="t-cell-and-antibody-response-enhancement-immunomodulation">
+                <h3 class="mech-entry-name">T-cell and antibody response enhancement (immunomodulation)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-e.html" class="mech-supp-link">Vitamin E</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-structural-repair">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-wrench mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Structural &amp; Repair
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">20 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="bdnf-and-neuroplasticity-enhancement">
+                <h3 class="mech-entry-name">BDNF and neuroplasticity enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/bacopa-monnieri.html" class="mech-supp-link">Bacopa monnieri</a></div>
+            </div>
+            <div class="mech-entry" id="biological-sulfur-donor-supporting-collagen-and-connective-t">
+                <h3 class="mech-entry-name">Biological sulfur donor supporting collagen and connective tissue synthesis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/msm.html" class="mech-supp-link">MSM</a></div>
+            </div>
+            <div class="mech-entry" id="cartilage-matrix-gag-and-proteoglycan-synthesis-in-vitro-evi">
+                <h3 class="mech-entry-name">Cartilage matrix GAG and proteoglycan synthesis (in vitro evidence)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/glucosamine.html" class="mech-supp-link">Glucosamine</a></div>
+            </div>
+            <div class="mech-entry" id="cartilage-matrix-mmpadamts-suppression">
+                <h3 class="mech-entry-name">Cartilage matrix MMP/ADAMTS suppression</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chondroitin-sulfate.html" class="mech-supp-link">Chondroitin Sulfate</a></div>
+            </div>
+            <div class="mech-entry" id="collagen-protection">
+                <h3 class="mech-entry-name">Collagen protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/grape-seed-extract.html" class="mech-supp-link">Grape Seed Extract</a></div>
+            </div>
+            <div class="mech-entry" id="collagen-synthesis-cofactor">
+                <h3 class="mech-entry-name">Collagen synthesis cofactor</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/vitamin-c.html" class="mech-supp-link">Vitamin C</a></div>
+            </div>
+            <div class="mech-entry" id="collagen-synthesis-enhancement">
+                <h3 class="mech-entry-name">Collagen synthesis enhancement</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/centella-asiatica.html" class="mech-supp-link">Centella Asiatica</a></div>
+            </div>
+            <div class="mech-entry" id="increased-bdnf-expression">
+                <h3 class="mech-entry-name">Increased BDNF expression</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/aniracetam.html" class="mech-supp-link">Aniracetam</a></div>
+            </div>
+            <div class="mech-entry" id="joint-space-narrowing-reduction-clinical-evidence-modest-but">
+                <h3 class="mech-entry-name">Joint space narrowing reduction (clinical evidence: modest but present for GS)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/glucosamine.html" class="mech-supp-link">Glucosamine</a></div>
+            </div>
+            <div class="mech-entry" id="mtor-pathway-activation-for-protein-synthesis">
+                <h3 class="mech-entry-name">mTOR pathway activation for protein synthesis</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/hmb-hydroxy-methylbutyrate.html" class="mech-supp-link">HMB (β-Hydroxy β-Methylbutyrate)</a></div>
+            </div>
+            <div class="mech-entry" id="mtorp70s6k1-pathway-activation-via-leucine">
+                <h3 class="mech-entry-name">mTOR/p70S6K1 pathway activation via leucine</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/whey-protein.html" class="mech-supp-link">Whey Protein</a></div>
+            </div>
+            <div class="mech-entry" id="muscle-protein-synthesis-stimulation-fast-digesting-leucine-">
+                <h3 class="mech-entry-name">Muscle protein synthesis stimulation (fast-digesting leucine-rich profile)</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/whey-protein.html" class="mech-supp-link">Whey Protein</a></div>
+            </div>
+            <div class="mech-entry" id="myelin-formation-and-maintenance">
+                <h3 class="mech-entry-name">Myelin formation and maintenance</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/iron.html" class="mech-supp-link">Iron</a></div>
+            </div>
+            <div class="mech-entry" id="myelin-regeneration">
+                <h3 class="mech-entry-name">Myelin regeneration</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lions-mane-mushroom.html" class="mech-supp-link">Lion's Mane Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="myelin-sheath-maintenance">
+                <h3 class="mech-entry-name">Myelin sheath maintenance</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/b-complex-vitamins.html" class="mech-supp-link">B-Complex Vitamins</a><a href="../supplements-new/vitamin-b12.html" class="mech-supp-link">Vitamin B12</a></div>
+            </div>
+            <div class="mech-entry" id="nerve-growth-factor-protection">
+                <h3 class="mech-entry-name">Nerve growth factor protection</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/huperzine-a.html" class="mech-supp-link">Huperzine A</a></div>
+            </div>
+            <div class="mech-entry" id="neurogenesis-promotion">
+                <h3 class="mech-entry-name">Neurogenesis promotion</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lions-mane-mushroom.html" class="mech-supp-link">Lion's Mane Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="ngf-nerve-growth-factor-stimulation">
+                <h3 class="mech-entry-name">NGF (Nerve Growth Factor) stimulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/lions-mane-mushroom.html" class="mech-supp-link">Lion's Mane Mushroom</a></div>
+            </div>
+            <div class="mech-entry" id="ngf-upregulation">
+                <h3 class="mech-entry-name">NGF upregulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/pqq.html" class="mech-supp-link">PQQ</a></div>
+            </div>
+            <div class="mech-entry" id="proteoglycan-and-aggrecan-synthesis-support">
+                <h3 class="mech-entry-name">Proteoglycan and aggrecan synthesis support</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/chondroitin-sulfate.html" class="mech-supp-link">Chondroitin Sulfate</a></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mech-category-section" id="cat-gut-brain-axis">
+            <div class="tier-divider mb-6">
+                <h2 class="text-xl" style="color: var(--text-bright); white-space: nowrap;">
+                    <i class="fas fa-bacterium mr-2" style="font-size: 0.9em; color: var(--accent-light);"></i>
+                    Gut-Brain Axis
+                    <span class="text-sm font-normal ml-2" style="color: var(--text-muted);">4 mechanisms</span>
+                </h2>
+            </div>
+            <div class="mech-entries-grid">
+                
+            <div class="mech-entry" id="bile-acid-conjugation">
+                <h3 class="mech-entry-name">Bile acid conjugation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/taurine.html" class="mech-supp-link">Taurine</a></div>
+            </div>
+            <div class="mech-entry" id="delayed-gastric-emptying">
+                <h3 class="mech-entry-name">Delayed gastric emptying</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/fenugreek.html" class="mech-supp-link">Fenugreek</a></div>
+            </div>
+            <div class="mech-entry" id="gut-microbiome-modulation">
+                <h3 class="mech-entry-name">Gut microbiome modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/berberine.html" class="mech-supp-link">Berberine</a></div>
+            </div>
+            <div class="mech-entry" id="gut-brain-axis-modulation">
+                <h3 class="mech-entry-name">Gut-brain axis modulation</h3>
+                
+                <p class="mech-summary" style="color:var(--text-muted);font-style:italic;">Description pending review.</p>
+                
+                <div class="mech-supplements"><span style="color:var(--text-muted);font-size:0.78rem;">Found in:</span> <a href="../supplements-new/gaba.html" class="mech-supp-link">GABA</a></div>
+            </div>
+            </div>
+        </section>
+</main>
+
+<!-- Footer -->
+<footer class="guide-footer">
+    <p>
+        <a href="../index.html"><i class="fas fa-pills mr-1"></i> Return to Supplement Database</a>
+        &nbsp;&middot;&nbsp;
+        <a href="../methodology.html"><i class="fas fa-flask mr-1"></i> Research Methodology</a>
+    </p>
+    <p style="margin-top:0.75rem;">
+        This glossary is for informational purposes only and does not constitute medical advice.
+        Always consult a qualified healthcare professional.
+    </p>
+    <p style="margin-top:0.5rem;">&copy; 2025&ndash;2026 SupplementDB. Evidence-Based Supplement Database.</p>
+</footer>
+
+<!-- Search & Category JS -->
+<script>
+function filterMechanisms(query) {
+    var q = query.toLowerCase().trim();
+    var entries = document.querySelectorAll('.mech-entry');
+    var sections = document.querySelectorAll('.mech-category-section');
+    var shown = 0;
+
+    entries.forEach(function(el) {
+        var text = el.textContent.toLowerCase();
+        var match = !q || text.indexOf(q) !== -1;
+        el.style.display = match ? '' : 'none';
+        if (match) shown++;
+    });
+
+    // Hide category sections with no visible entries
+    sections.forEach(function(sec) {
+        var visible = sec.querySelectorAll('.mech-entry:not([style*="display: none"])');
+        sec.style.display = visible.length > 0 ? '' : 'none';
+    });
+
+    var countEl = document.getElementById('search-count');
+    if (q) {
+        countEl.textContent = shown + ' of 296 mechanisms match';
+    } else {
+        countEl.textContent = '';
+    }
+
+    // Reset category nav active state
+    if (q) {
+        document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+    } else {
+        showAllCats();
+    }
+}
+
+function scrollToCat(catId) {
+    document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+    event.target.classList.add('active');
+
+    // Clear search
+    document.getElementById('mech-search').value = '';
+    filterMechanisms('');
+
+    var section = document.getElementById('cat-' + catId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function showAllCats() {
+    document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelector('.cite-tab[data-cat="all"]').classList.add('active');
+    document.querySelectorAll('.mech-category-section').forEach(function(s) { s.style.display = ''; });
+    document.querySelectorAll('.mech-entry').forEach(function(e) { e.style.display = ''; });
+    document.getElementById('search-count').textContent = '';
+    document.getElementById('mech-search').value = '';
+}
+
+// Highlight entry if arriving via anchor link
+if (window.location.hash) {
+    var target = document.querySelector(window.location.hash);
+    if (target) {
+        setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+    }
+}
+</script>
+
+<!-- Auth -->
+<script src="../js/auth.js"></script>
+<script src="../js/auth-ui.js"></script>
+
+</body>
+</html>
