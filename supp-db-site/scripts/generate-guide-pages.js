@@ -1939,7 +1939,7 @@ function generateGuideCSS(t) {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 22px;
+            min-width: 26px;
             height: 22px;
             border-radius: 4px;
             background: rgba(${t.accentRgb}, 0.1);
@@ -1948,7 +1948,16 @@ function generateGuideCSS(t) {
             font-weight: 700;
             margin-right: 10px;
             flex-shrink: 0;
+            padding: 0 4px;
         }
+
+        /* Citation tabs */
+        .cite-tabs { display:flex; gap:0.25rem; flex-wrap:wrap; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.75rem; }
+        .cite-tab { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:var(--text-muted); padding:0.4rem 0.75rem; border-radius:6px; cursor:pointer; font-size:0.8rem; font-family:inherit; transition:all 0.15s; }
+        .cite-tab:hover { background:rgba(255,255,255,0.08); color:var(--text-primary); }
+        .cite-tab.active { background:rgba(${t.accentRgb},0.15); border-color:rgba(${t.accentRgb},0.3); color:var(--accent-light); }
+        .cite-tab-count { font-size:0.7rem; background:rgba(255,255,255,0.06); padding:0.1rem 0.35rem; border-radius:8px; margin-left:0.25rem; }
+        .cite-tab.active .cite-tab-count { background:rgba(${t.accentRgb},0.2); }
 
         html { scroll-behavior: smooth; }
 
@@ -2804,6 +2813,26 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/share-bar.js"></script>
 <script src="../js/newsletter.js"></script>
 <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-${guide.slug}");</script>
+
+<!-- Citation Tab Switching -->
+<script>
+    function switchCiteTab(tabName) {
+        document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.cite-tab-panel').forEach(function(p) { p.style.display = 'none'; });
+        var tab = document.querySelector('.cite-tab[data-tab="' + tabName + '"]');
+        if (tab) tab.classList.add('active');
+        var panel = document.getElementById('cite-panel-' + tabName);
+        if (panel) panel.style.display = '';
+    }
+    function showAllCitations() {
+        document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.cite-tab-panel').forEach(function(p) { p.style.display = 'none'; });
+        var tab = document.querySelector('.cite-tab[data-tab="all"]');
+        if (tab) tab.classList.add('active');
+        var panel = document.getElementById('cite-panel-all');
+        if (panel) panel.style.display = '';
+    }
+</script>
 
 <!-- Auth & Content Gate -->
 <script src="../js/auth.js"></script>
