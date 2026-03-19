@@ -2095,5 +2095,24 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/auth-ui.js"></script>
 <script src="../js/content-gate.js"></script>
     <script src="../js/guide-cta.js" defer></script>
+
+<script>
+    function switchCiteTab(tabName) {
+        document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.cite-tab-panel').forEach(function(p) { p.style.display = 'none'; });
+        var tab = document.querySelector('.cite-tab[data-tab="' + tabName + '"]');
+        if (tab) tab.classList.add('active');
+        var panel = document.getElementById('cite-panel-' + tabName);
+        if (panel) panel.style.display = '';
+    }
+    function showAllCitations() {
+        document.querySelectorAll('.cite-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.cite-tab-panel').forEach(function(p) { p.style.display = 'none'; });
+        var tab = document.querySelector('.cite-tab[data-tab="all"]');
+        if (tab) tab.classList.add('active');
+        var panel = document.getElementById('cite-panel-all');
+        if (panel) panel.style.display = '';
+    }
+</script>
 </body>
 </html>
