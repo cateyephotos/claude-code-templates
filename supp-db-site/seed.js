@@ -39,7 +39,7 @@ const path = require('path');
 const ROOT         = __dirname;
 const SUPP_JS      = path.join(ROOT, 'data', 'supplements.js');
 const ENH_DIR      = path.join(ROOT, 'data', 'enhanced_citations');
-const TEMPLATE     = path.join(ROOT, 'supplements', 'melatonin.html');
+const TEMPLATE_CSS = path.join(ROOT, 'templates', 'monograph.css');
 const DEFAULT_OUT  = path.join(ROOT, 'supplements-new');
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
@@ -69,11 +69,18 @@ function slugify(name) {
         .replace(/^-|-$/g, '');
 }
 
-// ── CSS Extraction ─────────────────────────────────────────────────────────────
-function extractCSS() {
-    const html = fs.readFileSync(TEMPLATE, 'utf8');
-    const m    = html.match(/<style[^>]*>([\s\S]*?)<\/style>/i);
-    return m ? m[1] : '';
+// ── CSS Loading ─────────────────────────────────────────────────────────────────
+// Design system CSS lives in templates/monograph.css — a dedicated file that
+// seed.js owns. This eliminates the fragile dependency on parsing melatonin.html
+// (which could be overwritten by other generators).
+function loadCSS() {
+    if (!fs.existsSync(TEMPLATE_CSS)) {
+        console.error(`ERROR: Design system CSS not found at ${TEMPLATE_CSS}`);
+        console.error('This file is the single source of truth for monograph styling.');
+        console.error('It should never be deleted. Restore from git: git checkout HEAD -- templates/monograph.css');
+        return '';
+    }
+    return fs.readFileSync(TEMPLATE_CSS, 'utf8');
 }
 
 // ── supplements.js loader ─────────────────────────────────────────────────────
@@ -1117,9 +1124,9 @@ function main() {
     console.log('DRY_RUN:', DRY_RUN, '| OUT:', OUT_DIR);
     console.log('');
 
-    // Extract CSS once
-    const css = extractCSS();
-    if (!css) { console.error('ERROR: Could not extract CSS from', TEMPLATE); process.exit(1); }
+    // Load design system CSS once from templates/monograph.css
+    const css = loadCSS();
+    if (!css) { process.exit(1); }
 
     // Load all supplements
     let supplements;
