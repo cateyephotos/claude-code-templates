@@ -1,6 +1,6 @@
 ---
 name: supplement-research-pipeline
-description: End-to-end orchestration skill for researching, evaluating, publishing, and importing supplement evidence. Searches PubMed, bioRxiv, Consensus, and clinical trial registries. Grades evidence using GRADE framework. Outputs directly into the supplement database schema (supplements.js, enhanced_citations/), generates newsletter digests for lay and scientific audiences, and produces research update reports. Mode 6 (/import-supplement) provides a full import pipeline: appends new entries to supplements.js, creates enhanced citation JS files, updates the EnhancedCitationLoader.js registry, generates static per-supplement HTML pages via seed.js (the canonical forward-path HTML generator), and generates static comparison HTML pages — enabling complete end-to-end import of newly researched supplements into the live site. Mode 7 (/generate-pages) runs seed.js to regenerate HTML pages for any or all supplements directly from structured data. Activates literature-review, scientific-writing, citation-management, scientific-critical-thinking, pubmed-database, chembl-database, clinicaltrials-database, and statistical-analysis skills as needed.
+description: End-to-end orchestration skill for researching, evaluating, publishing, and importing supplement evidence. Searches PubMed, bioRxiv, Consensus, and clinical trial registries. Grades evidence using GRADE framework. Outputs directly into the supplement database schema (supplements.js, enhanced_citations/, mechanisms.js), generates newsletter digests for lay and scientific audiences, and produces research update reports. Mode 6 (/import-supplement) provides a full import pipeline: appends new entries to supplements.js, creates enhanced citation JS files, updates the EnhancedCitationLoader.js registry, integrates new mechanisms into data/mechanisms.js glossary (Sub-task F), generates static per-supplement HTML pages via seed.js, rebuilds mechanism glossary and guide pages with linked mechanism pills, and generates static comparison HTML pages — enabling complete end-to-end import of newly researched supplements into the live site. Mode 7 (/generate-pages) runs seed.js to regenerate HTML pages for any or all supplements directly from structured data, and rebuilds the mechanism glossary and guide pages. Activates literature-review, scientific-writing, citation-management, scientific-critical-thinking, pubmed-database, chembl-database, clinicaltrials-database, and statistical-analysis skills as needed.
 allowed-tools: Read Write Edit Bash
 license: MIT license
 metadata:
@@ -52,6 +52,7 @@ supp-db-site/
 ├── data/
 │   ├── supplements.js              # Main database (93 supplements, next ID: 94)
 │   ├── citations.js                # Master citation registry
+│   ├── mechanisms.js               # Mechanism glossary database (296 canonical entries + aliasMap)
 │   └── enhanced_citations/         # Per-supplement deep citation files
 │       └── {id}_{name}_enhanced.js
 ├── content/                        # NEW: Generated content output
@@ -245,7 +246,7 @@ Generate TWO files:
   "dosageRange": "",
   "optimalDuration": "",
   "studyPopulations": [],
-  "mechanismsOfAction": [],
+  "mechanismsOfAction": [],    // MUST match or extend entries in data/mechanisms.js aliasMap
   "safetyProfile": {
     "rating": "",              // Excellent, Good, Moderate, Caution
     "commonSideEffects": [],
@@ -258,7 +259,16 @@ Generate TWO files:
     "costRange": "",
     "qualityMarkers": []
   },
-  "keyCitations": [],          // Top 3-5 most important papers
+  "keyCitations": [             // Top 3-5 most important papers — MUST be full objects, NOT string IDs
+    {
+      "authors": "First Author et al.",   // REQUIRED — rendered in references section
+      "year": 2023,                       // REQUIRED — rendered as "(year)"
+      "title": "Full paper title",        // REQUIRED — rendered after author/year
+      "journal": "Journal Name",          // REQUIRED — rendered in italics
+      "doi": "10.xxxx/xxxxx",            // REQUIRED — rendered as clickable DOI link
+      "pmid": "12345678"                 // REQUIRED — rendered as clickable PubMed link
+    }
+  ],
   "enhancedCitations": {
     "isEnhanced": true,
     "evidenceProfile": { ... }
@@ -281,6 +291,7 @@ const {camelCaseName}Enhanced = {
   "scientificName": "Binomial name",
   "category": "Category",
   "commonNames": ["Alt name 1", "Alt name 2"],
+  "lastUpdated": "YYYY-MM-DD",            // REQUIRED — seed.js reads this for hero "Last Updated" display
 
   "evidenceProfile": {
     "overallQuality": "Tier N",
@@ -620,7 +631,7 @@ Read the current `supplements.js` to confirm the next available ID (count entrie
 | `commercialAvailability.forms` | Array |
 | `commercialAvailability.costRange` | String |
 | `commercialAvailability.qualityMarkers` | Array |
-| `keyCitations` | Top 3–5 citation IDs |
+| `keyCitations` | Top 3–5 citation objects `{ authors, year, title, journal, doi, pmid }` — NOT string IDs |
 | `enhancedCitations.isEnhanced` | `true` |
 | `enhancedCitations.evidenceProfile` | Evidence profile object |
 
@@ -645,6 +656,7 @@ const {camelCaseName}Enhanced = {
   "scientificName": "...",
   "category": "...",
   "commonNames": [...],
+  "lastUpdated": "YYYY-MM-DD",            // REQUIRED — seed.js reads for hero display
   "evidenceProfile": {
     "overallQuality": "Tier N",
     "totalCitations": N,
@@ -752,6 +764,87 @@ node supp-db-site/scripts/generate-compare-pages.js
 ```
 
 When adding a new comparison, add an entry to the `COMPARISONS` array in `generate-compare-pages.js` and re-run the script — do NOT hand-author HTML.
+
+---
+
+#### Sub-task F — Mechanism Glossary Integration
+
+Every string in the new supplement's `mechanismsOfAction[]` array must be registered in `data/mechanisms.js` so that guide pages and monograph pages can link mechanism pills to the glossary.
+
+**Step 1 — Check for existing mappings**
+
+```bash
+node -e "
+const db = require('./data/mechanisms.js');
+const newMechs = [/* paste mechanismsOfAction array here */];
+newMechs.forEach(m => {
+  const id = db.aliasMap[m];
+  console.log(id ? '✓' : '✗', m, id ? '→ ' + id : '— NOT IN GLOSSARY');
+});
+"
+```
+
+**Step 2 — Add missing mechanisms to `data/mechanisms.js`**
+
+For each mechanism string that is NOT in the glossary:
+
+1. **Check if it's a variant of an existing entry** — if the concept already exists under a different name, add the new string as an alias to the existing entry's `aliases[]` array AND add a mapping in the `aliasMap` object:
+   ```javascript
+   // In the mechanism entry:
+   "aliases": ["Existing alias", "New mechanism string from supplement"]
+
+   // In aliasMap:
+   "New mechanism string from supplement": "existing-canonical-id"
+   ```
+
+2. **If it's a genuinely new mechanism**, create a new entry in the `mechanisms[]` array:
+   ```javascript
+   {
+     "id": "{kebab-case-id}",              // e.g., "ampk-pathway-activation"
+     "canonicalName": "{Mechanism Name}",   // Title case, human-readable
+     "aliases": [],
+     "category": "{One of 9 categories}",   // See categories list below
+     "summary": "{2-3 sentence lay explanation}",
+     "relevance": "{1 sentence: why this matters for supplement users}",
+     "relatedMechanisms": [],
+     "supplements": ["{Supplement Name}"]
+   }
+   ```
+   Also add the aliasMap entry: `"Mechanism string": "kebab-case-id"`
+
+3. **Update the `supplements[]` array** in existing mechanism entries — add the new supplement's name to any mechanism entry whose ID matches one of the new supplement's mechanisms.
+
+**Mechanism categories** (use one of these 9):
+- Neurotransmitter Systems
+- Antioxidant & Cellular Protection
+- Anti-inflammatory Pathways
+- Hormonal & Endocrine
+- Metabolic & Energy
+- Cardiovascular & Circulatory
+- Immune Modulation
+- Structural & Repair
+- Gut-Brain Axis
+
+**Step 3 — Rebuild the glossary HTML page**
+
+```bash
+node supp-db-site/scripts/build-mechanism-glossary.js
+```
+
+This regenerates `guides/mechanisms.html` from `data/mechanisms.js`, including the new entries.
+
+**Step 4 — Regenerate guide pages** (to pick up new mechanism links)
+
+```bash
+node supp-db-site/scripts/generate-guide-pages.js
+```
+
+The guide generator loads `mechanismAliasMap` from `data/mechanisms.js` and wraps matching mechanism pills/text in `<a href="../guides/mechanisms.html#id">` links. New mechanisms will only be linked if they exist in the aliasMap.
+
+**Writing good mechanism descriptions:**
+- `summary`: 2-3 sentences for a lay audience. Start with what the biological target IS, then explain what happens when this mechanism is activated/inhibited, then the downstream effect.
+- `relevance`: One sentence linking the mechanism to supplement user outcomes (e.g., "Supplements targeting this mechanism may improve...").
+- Avoid jargon where possible; when technical terms are unavoidable, include a brief parenthetical definition.
 
 ---
 
@@ -976,6 +1069,12 @@ Before marking Mode 6 complete, verify:
 - [ ] Add new comparison entry to `COMPARISONS` array in `scripts/generate-compare-pages.js`, then run `node scripts/generate-compare-pages.js` to regenerate all 10 compare pages
 - [ ] `compare/{slug-a}-vs-{slug-b}.html` — Mockup B layout present (progress-track, hero-vs-row, split-compare, decision-cards, stack-box), all 10 sections, references populated
 - [ ] Add emoji to `SUPPLEMENT_EMOJIS` in `generate-compare-pages.js` if the new supplement is not already mapped
+- [ ] **Mechanism glossary integration** (Sub-task F):
+  - [ ] All `mechanismsOfAction[]` strings exist in `data/mechanisms.js` aliasMap (run verification script from Sub-task F Step 1)
+  - [ ] New mechanism entries have `summary` and `relevance` descriptions populated
+  - [ ] New supplement name added to `supplements[]` array in each relevant mechanism entry
+  - [ ] `node supp-db-site/scripts/build-mechanism-glossary.js` — glossary HTML rebuilt with new entries
+  - [ ] `node supp-db-site/scripts/generate-guide-pages.js` — guide pages regenerated with new mechanism links
 - [ ] **Regenerate category pages**: `node supp-db-site/scripts/generate-category-pages.js` — updates all 12 category pillar pages (`categories/*.html`) with the new supplement card, table row, and JSON-LD entry
 - [ ] **Update site-wide stats**: `node supp-db-site/scripts/generate-stats.js` — recomputes totalSupplements, totalCitations, per-category counts from live data; writes `data/site-stats.json` and patches all hardcoded counts in `index.html`
 - [ ] Run `node -e "require('./data/supplements.js')"` (or equivalent syntax check) to verify JS validity
@@ -1036,7 +1135,17 @@ const html=fs.readFileSync('supp-db-site/supplements/{slug}.html','utf8');
 "
 ```
 
-**Step 4 — Regenerate category pages + update site-wide stats**
+**Step 4 — Rebuild mechanism glossary + regenerate guide pages**
+```bash
+# Rebuild glossary HTML from data/mechanisms.js (includes any new mechanisms)
+node supp-db-site/scripts/build-mechanism-glossary.js
+
+# Regenerate guide pages (picks up new mechanism links via aliasMap)
+node supp-db-site/scripts/generate-guide-pages.js
+```
+The guide generator loads `mechanismAliasMap` from `data/mechanisms.js` and wraps matching mechanism pill text in `<a>` links to `guides/mechanisms.html#id`. If new mechanisms were added to `data/mechanisms.js` (e.g., via Mode 6 Sub-task F), this step ensures they appear in the glossary and are linked from guide pages.
+
+**Step 5 — Regenerate category pages + update site-wide stats**
 ```bash
 node supp-db-site/scripts/generate-category-pages.js
 node supp-db-site/scripts/generate-stats.js
@@ -1051,7 +1160,7 @@ node supp-db-site/scripts/generate-stats.js
 
 Run with `--dry-run` to preview patches without writing: `node supp-db-site/scripts/generate-stats.js --dry-run`
 
-**Step 5 (optional) — Playwright spot-check**
+**Step 6 (optional) — Playwright spot-check**
 Open the generated page in Docker staging and verify visual rendering. Use Playwright MCP to screenshot and check for visual regressions.
 
 ---
@@ -1193,7 +1302,7 @@ This table is the authoritative mapping from structured data fields to rendered 
 | `commercialAvailability.forms[]` | Quick Facts | `supp.commercialAvailability.forms` | |
 | `commercialAvailability.costRange` | Quick Facts | `supp.commercialAvailability.costRange` | |
 | `commercialAvailability.qualityMarkers[]` | Quick Facts | `supp.commercialAvailability.qualityMarkers` | |
-| `keyCitations[]` | Section 9 — References | `d.references` | Format: `{author} ({year}). ...` |
+| `keyCitations[]` | Section 9 — References | `d.references` | **MUST be objects** `{ authors, year, title, journal, doi, pmid }` — NOT string IDs. Format rendered: `{authors} ({year}). {title}. {journal}. DOI: {doi} \| PubMed` |
 | `enhancedCitations.evidenceProfile.totalCitations` | Hero stats, Section 6 | `citCount` | |
 
 ### enhanced_citations Fields → HTML Evidence Cards
@@ -1206,9 +1315,9 @@ The enhanced citations file populates **Section 8: Evidence** (the citation grou
 | `item.evidence` (or `.evidenceLevel`/`.strength`) | Tag 0 — colour-coded evidence badge | CSS class from `evidenceTagClass()` |
 | `item.studyType` | Tag 1 | Plain `evidence-tag` |
 | `item.year` | Tag 2 | Plain `evidence-tag` |
-| `item.participants` (or `.sampleSize`) | Tag 3 | Plain `evidence-tag` |
+| `item.participants` (or `.sampleSize`) | Tag 3 | Plain `evidence-tag`. **Prefer `sampleSize`** — matches CitationEvidence schema |
 | `item.duration` | Tag 4 (benefits/dosage) | Plain `evidence-tag` |
-| `item.details` (or `.findings`) | Prose paragraph (`evidence-prose`) | |
+| `item.details` (or `.findings`) | Prose paragraph (`evidence-prose`) | **Prefer `findings`** — matches CitationEvidence schema |
 | `item.pmid` | PubMed link (`study-link`) | `https://pubmed.ncbi.nlm.nih.gov/{pmid}/` |
 | `item.doi` | DOI link (fallback if no pmid) | `https://doi.org/{doi}` |
 
@@ -1218,6 +1327,14 @@ The enhanced citations file populates **Section 8: Evidence** (the citation grou
 | "Strong", "Level 1", "Level 2", "Well-established", "Good safety" | `evidence-tag-tier-1` | Green |
 | "Moderate", "Level 3", "Caution" | `evidence-tag-tier-2` | Amber |
 | "Weak", "Limited", "Insufficient", "Level 4", "Level 5", "Preliminary" | `evidence-tag-tier-3` | Red |
+
+**Field name aliases** — seed.js accepts both names but prefer the **bold** canonical form:
+| seed.js reads | Alias also accepted | Use in pipeline |
+|---|---|---|
+| **`findings`** | `details` | Always use `findings` |
+| **`sampleSize`** | `participants` | Always use `sampleSize` |
+| **`evidenceLevel`** | `strength`, `evidence` (from parent) | Always use `evidenceLevel` |
+| **`claim`** | `mechanism`, `healthDomain`, `safetyAspect`, `dosageRange` | Use the section-specific name |
 
 **Citation group order** (determined by array key in enhanced citations file):
 1. `citations.mechanisms[]` → "Mechanisms of Action" group
@@ -1430,6 +1547,10 @@ Mode 6 import artifacts write directly to the live site (outside `content/`):
 
 ```
 supp-db-site/
+├── data/
+│   └── mechanisms.js                   # Mechanism glossary database (Mode 6 Sub-task F)
+├── guides/
+│   └── mechanisms.html                 # Mechanism glossary HTML page (rebuilt by build-mechanism-glossary.js)
 ├── supplements/                        # Per-supplement HTML pages (Mode 6 Sub-task D)
 │   └── {slug}.html
 └── compare/                            # Static comparison HTML pages (Mode 6 Sub-task E)
