@@ -1,0 +1,581 @@
+{
+  "supplementEntry": {
+    "id": 102,
+    "name": "Tongkat Ali",
+    "scientificName": "Eurycoma longifolia",
+    "category": "Adaptogen",
+    "commonNames": ["Tongkat Ali", "Malaysian Ginseng", "Longjack", "Pasak Bumi"],
+    "evidenceTier": 2,
+    "evidenceTierRationale": "Meta-analysis of 5 RCTs shows significant testosterone increase (SMD=1.352, p=0.001); 6+ RCTs with clean safety profiles; moderate individual trial sample sizes (32-105)",
+    "primaryBenefits": {
+      "cognitive": ["Stress-related cognitive improvement", "Mood state improvement", "Fatigue reduction"],
+      "nonCognitive": ["Testosterone enhancement", "Cortisol reduction", "Erectile function improvement", "Male fertility support", "Immune function enhancement", "Muscular force improvement"],
+      "isEnhanced": true
+    },
+    "isEnhanced": true,
+    "dosageRange": "200 mg/day (standardized aqueous root extract, 1-2% eurycomanone)",
+    "optimalDuration": "4-12 weeks for hormonal effects; up to 6 months for erectile/fertility outcomes",
+    "studyPopulations": ["Healthy adults", "Hypogonadal men", "Moderately stressed adults", "Aging males with ADAM", "Males with idiopathic infertility"],
+    "mechanismsOfAction": [
+      "HPA axis modulation (cortisol reduction)",
+      "HPG axis activation (testosterone biosynthesis)",
+      "Aromatase inhibition (reduced testosterone-to-estrogen conversion)",
+      "Phosphodiesterase inhibition (via eurycomanone)",
+      "SHBG reduction (increased free testosterone bioavailability)",
+      "Immunomodulation (T cell proliferation and differentiation)",
+      "Quassinoid-mediated Leydig cell stimulation",
+      "Antioxidant activity (reduced oxidative stress in reproductive tissues)"
+    ],
+    "safetyProfile": {
+      "rating": "Good",
+      "commonSideEffects": ["Mild GI discomfort (rare)", "Insomnia (reported at higher doses)", "Restlessness (infrequent)"],
+      "contraindications": ["Pregnancy and breastfeeding", "Hormone-sensitive cancers", "Children and adolescents (not studied)", "Liver disease (precautionary)"],
+      "drugInteractions": ["May interact with anticoagulants (theoretical)", "May potentiate testosterone replacement therapy", "Potential interaction with antidiabetic medications", "May interact with immunosuppressants"]
+    },
+    "effectSizes": {
+      "totalTestosterone": "Large effect (SMD=1.352, 95% CI 0.565-2.138, p=0.001) from meta-analysis of 5 RCTs (Leisegang 2022)",
+      "cortisolReduction": "-16% vs placebo (Talbott 2013, n=63, 200 mg/day, 4 weeks)",
+      "salivaryTestosterone": "+37% vs placebo (Talbott 2013, n=63, 200 mg/day, 4 weeks)",
+      "erectileFunction": "+2.15 points IIEF-5 (95% CI 1.03-3.27) in low-baseline subgroup (Kotirum 2015 meta-analysis)",
+      "tensionMood": "-11% vs placebo (Talbott 2013, n=63)",
+      "angerMood": "-12% vs placebo (Talbott 2013, n=63)",
+      "confusionMood": "-15% vs placebo (Talbott 2013, n=63)",
+      "spontaneousPregnancyRate": "14.7% in idiopathic infertility population (Tambi 2010, n=75)"
+    },
+    "commercialAvailability": {
+      "forms": ["Capsules", "Tablets", "Powder", "Liquid extract"],
+      "costRange": "$20-50/month",
+      "qualityMarkers": ["Standardized aqueous root extract", "Eurycomanone content 1-2%", "Physta (branded extract)", "Third-party tested"]
+    },
+    "keyCitations": [
+      {
+        "authors": "Leisegang K, Finelli R, Sikka SC, Panner Selvam MK",
+        "year": 2022,
+        "title": "Eurycoma longifolia (Jack) Improves Serum Total Testosterone in Men: A Systematic Review and Meta-Analysis of Clinical Trials",
+        "journal": "Medicina (Kaunas)",
+        "doi": "10.3390/medicina58081047",
+        "pmid": "36013514"
+      },
+      {
+        "authors": "Talbott SM, Talbott JA, George A, Pugh M",
+        "year": 2013,
+        "title": "Effect of Tongkat Ali on stress hormones and psychological mood state in moderately stressed subjects",
+        "journal": "Journal of the International Society of Sports Nutrition",
+        "doi": "10.1186/1550-2783-10-28",
+        "pmid": "23705671"
+      },
+      {
+        "authors": "Leitao AE, de Souza Vieira MC, Pelegrini A, da Silva EL, Guimaraes ACA",
+        "year": 2021,
+        "title": "A 6-month, double-blind, placebo-controlled, randomized trial to evaluate the effect of Eurycoma longifolia (Tongkat Ali) and concurrent training on erectile function and testosterone levels in androgen deficiency of aging males (ADAM)",
+        "journal": "Maturitas",
+        "doi": "10.1016/j.maturitas.2020.12.002",
+        "pmid": "33541567"
+      },
+      {
+        "authors": "Chinnappan SM, George A, Pandey P, Narke G, Choudhary YK",
+        "year": 2021,
+        "title": "Effect of Eurycoma longifolia standardised aqueous root extract-Physta on testosterone levels and quality of life in ageing male subjects: a randomised, double-blind, placebo-controlled multicentre study",
+        "journal": "Food & Nutrition Research",
+        "doi": "10.29219/fnr.v65.5647",
+        "pmid": "34262417"
+      },
+      {
+        "authors": "George A, Suzuki N, Abas AB, Mohri K, Utsuyama M, Hirokawa K, Takara T",
+        "year": 2016,
+        "title": "Immunomodulation in Middle-Aged Humans Via the Ingestion of Physta Standardized Root Water Extract of Eurycoma longifolia Jack--A Randomized, Double-Blind, Placebo-Controlled, Parallel Study",
+        "journal": "Phytotherapy Research",
+        "doi": "10.1002/ptr.5571",
+        "pmid": "26816234"
+      },
+      {
+        "authors": "Kotirum S, Ismail SB, Chaiyakunapruk N",
+        "year": 2015,
+        "title": "Efficacy of Tongkat Ali (Eurycoma longifolia) on erectile function improvement: systematic review and meta-analysis of randomized controlled trials",
+        "journal": "Complementary Therapies in Medicine",
+        "doi": "10.1016/j.ctim.2015.07.009",
+        "pmid": "26365449"
+      },
+      {
+        "authors": "Chan KQ, Stewart C, Chester N, Hamzah SH, Yusof A",
+        "year": 2021,
+        "title": "The effect of Eurycoma Longifolia on the regulation of reproductive hormones in young males",
+        "journal": "Andrologia",
+        "doi": "10.1111/and.14001",
+        "pmid": "33559971"
+      },
+      {
+        "authors": "Tambi MIBM, Imran MK",
+        "year": 2010,
+        "title": "Eurycoma longifolia Jack in managing idiopathic male infertility",
+        "journal": "Asian Journal of Andrology",
+        "doi": "10.1038/aja.2010.7",
+        "pmid": "20348942"
+      },
+      {
+        "authors": "Henkel RR, Wang R, Bassett SH, Chen T, Liu N, Zhu Y, Tambi MI",
+        "year": 2014,
+        "title": "Tongkat Ali as a potential herbal supplement for physically active male and female seniors--a pilot study",
+        "journal": "Phytotherapy Research",
+        "doi": "10.1002/ptr.5017",
+        "pmid": "23754792"
+      },
+      {
+        "authors": "Ulbricht C, Conquer J, Flanagan K, Isaac R, Rusie E, Windsor RC",
+        "year": 2013,
+        "title": "An evidence-based systematic review of tongkat ali (Eurycoma longifolia) by the Natural Standard Research Collaboration",
+        "journal": "Journal of Dietary Supplements",
+        "doi": "10.3109/19390211.2012.761467",
+        "pmid": "23419023"
+      },
+      {
+        "authors": "Thu HE, Mohamed IN, Hussain Z, Jayusman PA, Shuid AN",
+        "year": 2017,
+        "title": "Eurycoma Longifolia as a potential adoptogen of male sexual health: a systematic review on clinical studies",
+        "journal": "Chinese Journal of Natural Medicine",
+        "doi": "10.1016/S1875-5364(17)30010-9",
+        "pmid": "28259255"
+      }
+    ],
+    "enhancedCitations": {
+      "isEnhanced": true,
+      "evidenceProfile": {
+        "overallQuality": "Tier 2",
+        "totalCitations": 11,
+        "researchQualityScore": 70,
+        "lastEvidenceUpdate": "2026-03-21"
+      }
+    },
+    "lastUpdated": "2026-03-21",
+    "healthDomains": ["Hormonal Health", "Stress Management", "Sexual Health", "Male Fertility", "Immune System Support", "Mood Support"]
+  },
+  "enhancedCitations": {
+    "id": 102,
+    "name": "Tongkat Ali",
+    "scientificName": "Eurycoma longifolia",
+    "category": "Adaptogen",
+    "commonNames": ["Tongkat Ali", "Malaysian Ginseng", "Longjack", "Pasak Bumi"],
+    "lastUpdated": "2026-03-21",
+    "evidenceProfile": {
+      "overallQuality": "Tier 2",
+      "totalCitations": 11,
+      "researchQualityScore": 70,
+      "lastEvidenceUpdate": "2026-03-21",
+      "evidenceStrength": {
+        "mechanisms": "Moderate",
+        "clinicalBenefits": "Moderate",
+        "safety": "Good",
+        "dosage": "Evidence-based"
+      },
+      "researchMaturity": "Developing",
+      "publicationSpan": "2010-2022"
+    },
+    "citations": {
+      "mechanisms": [
+        {
+          "mechanism": "HPA axis modulation (cortisol reduction)",
+          "strength": "Moderate",
+          "mechanismType": "Neuroendocrine modulation",
+          "tissueTarget": "Adrenal glands and HPA axis",
+          "target": "Adrenal glands and HPA axis",
+          "evidence": [
+            {
+              "citationId": "talbott_2013_stress",
+              "title": "Effect of Tongkat Ali on stress hormones and psychological mood state in moderately stressed subjects",
+              "authors": ["Talbott SM", "Talbott JA", "George A", "Pugh M"],
+              "year": 2013,
+              "journal": "Journal of the International Society of Sports Nutrition",
+              "doi": "10.1186/1550-2783-10-28",
+              "pmid": "23705671",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "findings": "200 mg/day for 4 weeks significantly reduced salivary cortisol by 16% vs placebo and increased testosterone by 37% in moderately stressed adults (n=63). Significant improvements in tension (-11%), anger (-12%), and confusion (-15%).",
+              "methodology": "Double-blind RCT in 63 moderately stressed adults, 4-week intervention, salivary hormone assays and POMS mood assessment"
+            }
+          ]
+        },
+        {
+          "mechanism": "HPG axis activation (testosterone biosynthesis)",
+          "strength": "Strong",
+          "mechanismType": "Endocrine stimulation",
+          "tissueTarget": "Leydig cells and testes",
+          "target": "Leydig cells and testes",
+          "evidence": [
+            {
+              "citationId": "leisegang_2022_meta",
+              "title": "Eurycoma longifolia (Jack) Improves Serum Total Testosterone in Men: A Systematic Review and Meta-Analysis of Clinical Trials",
+              "authors": ["Leisegang K", "Finelli R", "Sikka SC", "Panner Selvam MK"],
+              "year": 2022,
+              "journal": "Medicina (Kaunas)",
+              "doi": "10.3390/medicina58081047",
+              "pmid": "36013514",
+              "studyType": "Systematic review and meta-analysis",
+              "evidenceLevel": "Level 1",
+              "findings": "Meta-analysis of 5 RCTs demonstrated significant increase in total testosterone (SMD=1.352, 95% CI 0.565-2.138, p=0.001). Benefits observed in both healthy volunteers and hypogonadal men.",
+              "methodology": "Systematic review with meta-analysis of 9 studies (5 RCTs pooled), random-effects model"
+            },
+            {
+              "citationId": "chan_2021_young",
+              "title": "The effect of Eurycoma Longifolia on the regulation of reproductive hormones in young males",
+              "authors": ["Chan KQ", "Stewart C", "Chester N", "Hamzah SH", "Yusof A"],
+              "year": 2021,
+              "journal": "Andrologia",
+              "doi": "10.1111/and.14001",
+              "pmid": "33559971",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "findings": "600 mg/day for 2 weeks significantly increased testosterone and free testosterone in young healthy males (n=32). No changes in LH or FSH, suggesting mechanism via HPA axis rather than HPG axis in young men.",
+              "methodology": "Double-blind RCT in 32 healthy young males (mean age 24.4), 2-week intervention, serum hormone analysis"
+            },
+            {
+              "citationId": "chinnappan_2021_multicentre",
+              "title": "Effect of Eurycoma longifolia standardised aqueous root extract-Physta on testosterone levels and quality of life in ageing male subjects: a randomised, double-blind, placebo-controlled multicentre study",
+              "authors": ["Chinnappan SM", "George A", "Pandey P", "Narke G", "Choudhary YK"],
+              "year": 2021,
+              "journal": "Food & Nutrition Research",
+              "doi": "10.29219/fnr.v65.5647",
+              "pmid": "34262417",
+              "studyType": "Phase II randomised, double-blind, placebo-controlled multicentre trial",
+              "evidenceLevel": "Level 2",
+              "findings": "200 mg significantly increased serum total testosterone within 2 weeks, sustained through 12 weeks. 100 mg significant at week 12. Reduced Ageing Male Symptoms and Fatigue Severity Scale scores. Increased muscle strength.",
+              "methodology": "Multicentre Phase II RCT, 105 males, 3 arms (100 mg, 200 mg, placebo), 12-week intervention"
+            }
+          ]
+        },
+        {
+          "mechanism": "SHBG reduction (increased free testosterone bioavailability)",
+          "strength": "Moderate",
+          "mechanismType": "Hormone binding modulation",
+          "tissueTarget": "Hepatic SHBG production and systemic circulation",
+          "target": "Hepatic SHBG production and systemic circulation",
+          "evidence": [
+            {
+              "citationId": "henkel_2014_seniors",
+              "title": "Tongkat Ali as a potential herbal supplement for physically active male and female seniors--a pilot study",
+              "authors": ["Henkel RR", "Wang R", "Bassett SH", "Chen T", "Liu N", "Zhu Y", "Tambi MI"],
+              "year": 2014,
+              "journal": "Phytotherapy Research",
+              "doi": "10.1002/ptr.5017",
+              "pmid": "23754792",
+              "studyType": "Pilot study",
+              "evidenceLevel": "Level 3",
+              "findings": "400 mg/day for 5 weeks significantly increased total and free testosterone and muscular force in 25 participants (ages 57-72). In women, free testosterone increase was likely mediated through decreased SHBG.",
+              "methodology": "Open-label pilot in 25 physically active seniors (13 male, 12 female), 5-week intervention, hormone and grip strength assessment"
+            }
+          ]
+        },
+        {
+          "mechanism": "Immunomodulation (T cell proliferation and differentiation)",
+          "strength": "Moderate",
+          "mechanismType": "Immune cell activation",
+          "tissueTarget": "Lymphocytes and immune cells",
+          "target": "Lymphocytes and immune cells",
+          "evidence": [
+            {
+              "citationId": "george_2016_immune",
+              "title": "Immunomodulation in Middle-Aged Humans Via the Ingestion of Physta Standardized Root Water Extract of Eurycoma longifolia Jack--A Randomized, Double-Blind, Placebo-Controlled, Parallel Study",
+              "authors": ["George A", "Suzuki N", "Abas AB", "Mohri K", "Utsuyama M", "Hirokawa K", "Takara T"],
+              "year": 2016,
+              "journal": "Phytotherapy Research",
+              "doi": "10.1002/ptr.5571",
+              "pmid": "26816234",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "findings": "200 mg/day for 4 weeks significantly improved SIV and immunological grade (p<0.05). Elevated total, naive, and CD4+ T cell counts in 83 middle-aged subjects. No serious adverse effects.",
+              "methodology": "Double-blind RCT, 83 completers (40 treatment, 43 placebo), 4-week intervention, immune cell profiling"
+            }
+          ]
+        }
+      ],
+      "benefits": [
+        {
+          "healthDomain": "Testosterone Enhancement",
+          "specificClaim": "Significantly increases serum total testosterone in men",
+          "strength": "Strong",
+          "evidenceQuality": "High",
+          "replicationStatus": "Replicated across multiple RCTs and confirmed by meta-analysis",
+          "tissueTarget": "Endocrine system",
+          "target": "Endocrine system",
+          "evidence": [
+            {
+              "citationId": "leisegang_2022_meta",
+              "title": "Eurycoma longifolia (Jack) Improves Serum Total Testosterone in Men: A Systematic Review and Meta-Analysis of Clinical Trials",
+              "authors": ["Leisegang K", "Finelli R", "Sikka SC", "Panner Selvam MK"],
+              "year": 2022,
+              "journal": "Medicina (Kaunas)",
+              "doi": "10.3390/medicina58081047",
+              "pmid": "36013514",
+              "studyType": "Systematic review and meta-analysis",
+              "evidenceLevel": "Level 1",
+              "sampleSize": "9 studies (5 RCTs in meta-analysis)",
+              "findings": "Significant increase in total testosterone (SMD=1.352, 95% CI 0.565-2.138, p=0.001). Benefits in both healthy volunteers and hypogonadal men.",
+              "methodology": "Systematic review with meta-analysis, random-effects model, 5 RCTs pooled"
+            },
+            {
+              "citationId": "chinnappan_2021_multicentre",
+              "title": "Effect of Eurycoma longifolia standardised aqueous root extract-Physta on testosterone levels and quality of life in ageing male subjects: a randomised, double-blind, placebo-controlled multicentre study",
+              "authors": ["Chinnappan SM", "George A", "Pandey P", "Narke G", "Choudhary YK"],
+              "year": 2021,
+              "journal": "Food & Nutrition Research",
+              "doi": "10.29219/fnr.v65.5647",
+              "pmid": "34262417",
+              "studyType": "Phase II RCT",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=105",
+              "duration": "12 weeks",
+              "dosage": "100 mg or 200 mg/day",
+              "findings": "200 mg significantly increased testosterone within 2 weeks, sustained through 12 weeks. Dose-dependent effects confirmed.",
+              "methodology": "Multicentre Phase II RCT, 3-arm design, 12-week intervention"
+            }
+          ],
+          "metaAnalysisSupport": {
+            "citationId": "leisegang_2022_meta",
+            "effectSize": "SMD=1.352 (95% CI 0.565-2.138, p=0.001)",
+            "studiesIncluded": 5,
+            "totalParticipants": "Multiple RCTs pooled"
+          }
+        },
+        {
+          "healthDomain": "Stress & Cortisol Management",
+          "specificClaim": "Reduces cortisol levels and improves mood in stressed adults",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Single well-designed RCT with consistent multi-endpoint results",
+          "tissueTarget": "HPA axis and adrenal glands",
+          "target": "HPA axis and adrenal glands",
+          "evidence": [
+            {
+              "citationId": "talbott_2013_stress",
+              "title": "Effect of Tongkat Ali on stress hormones and psychological mood state in moderately stressed subjects",
+              "authors": ["Talbott SM", "Talbott JA", "George A", "Pugh M"],
+              "year": 2013,
+              "journal": "Journal of the International Society of Sports Nutrition",
+              "doi": "10.1186/1550-2783-10-28",
+              "pmid": "23705671",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=63",
+              "duration": "4 weeks",
+              "dosage": "200 mg/day",
+              "findings": "Cortisol decreased 16%, testosterone increased 37%. Mood improvements: Tension -11%, Anger -12%, Confusion -15%.",
+              "methodology": "Double-blind RCT in moderately stressed adults, POMS mood assessment, salivary hormone assays"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Sexual Health & Erectile Function",
+          "specificClaim": "Improves erectile function in men with androgen deficiency and low baseline function",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Meta-analysis of 2 RCTs with subgroup benefit; supported by 6-month ADAM trial",
+          "tissueTarget": "Erectile tissue and reproductive organs",
+          "target": "Erectile tissue and reproductive organs",
+          "evidence": [
+            {
+              "citationId": "kotirum_2015_erectile",
+              "title": "Efficacy of Tongkat Ali (Eurycoma longifolia) on erectile function improvement: systematic review and meta-analysis of randomized controlled trials",
+              "authors": ["Kotirum S", "Ismail SB", "Chaiyakunapruk N"],
+              "year": 2015,
+              "journal": "Complementary Therapies in Medicine",
+              "doi": "10.1016/j.ctim.2015.07.009",
+              "pmid": "26365449",
+              "studyType": "Systematic review and meta-analysis",
+              "evidenceLevel": "Level 1",
+              "sampleSize": "139 participants across 2 RCTs",
+              "findings": "Subgroup analysis showed significant improvement of 2.15 points on IIEF-5 (95% CI 1.03-3.27) in subjects with lower baseline erectile function.",
+              "methodology": "Systematic review and meta-analysis of 2 RCTs, subgroup analysis by baseline IIEF-5 score"
+            },
+            {
+              "citationId": "leitao_2021_adam",
+              "title": "A 6-month, double-blind, placebo-controlled, randomized trial to evaluate the effect of Eurycoma longifolia (Tongkat Ali) and concurrent training on erectile function and testosterone levels in androgen deficiency of aging males (ADAM)",
+              "authors": ["Leitao AE", "de Souza Vieira MC", "Pelegrini A", "da Silva EL", "Guimaraes ACA"],
+              "year": 2021,
+              "journal": "Maturitas",
+              "doi": "10.1016/j.maturitas.2020.12.002",
+              "pmid": "33541567",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=45",
+              "duration": "6 months",
+              "dosage": "200 mg/day",
+              "findings": "Combination of Eurycoma longifolia + concurrent training produced most significant improvements in erectile function and total testosterone in men with ADAM.",
+              "methodology": "4-arm RCT (supplement + exercise, supplement alone, exercise alone, placebo), 6-month intervention"
+            }
+          ],
+          "metaAnalysisSupport": {
+            "citationId": "kotirum_2015_erectile",
+            "effectSize": "+2.15 IIEF-5 points (95% CI 1.03-3.27) in low-baseline subgroup",
+            "studiesIncluded": 2,
+            "totalParticipants": "139"
+          }
+        },
+        {
+          "healthDomain": "Male Fertility",
+          "specificClaim": "Improves semen parameters and spontaneous pregnancy rates in idiopathic male infertility",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Single large clinical trial; supported by systematic review evidence",
+          "tissueTarget": "Spermatogenic cells and reproductive tract",
+          "target": "Spermatogenic cells and reproductive tract",
+          "evidence": [
+            {
+              "citationId": "tambi_2010_infertility",
+              "title": "Eurycoma longifolia Jack in managing idiopathic male infertility",
+              "authors": ["Tambi MIBM", "Imran MK"],
+              "year": 2010,
+              "journal": "Asian Journal of Andrology",
+              "doi": "10.1038/aja.2010.7",
+              "pmid": "20348942",
+              "studyType": "Clinical trial (open-label)",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "350 enrolled; 75 completed full follow-up",
+              "duration": "Up to 9 months",
+              "dosage": "200 mg/day",
+              "findings": "Significant improvement in all semen parameters (concentration, morphology, volume, motility). 11 spontaneous pregnancies (14.7% rate) among completers.",
+              "methodology": "Open-label clinical trial, serial semen analysis, pregnancy tracking"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Immune Function",
+          "specificClaim": "Enhances immune function via increased T cell counts in middle-aged adults",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Single well-designed RCT",
+          "tissueTarget": "Immune system",
+          "target": "Immune system",
+          "evidence": [
+            {
+              "citationId": "george_2016_immune",
+              "title": "Immunomodulation in Middle-Aged Humans Via the Ingestion of Physta Standardized Root Water Extract of Eurycoma longifolia Jack--A Randomized, Double-Blind, Placebo-Controlled, Parallel Study",
+              "authors": ["George A", "Suzuki N", "Abas AB", "Mohri K", "Utsuyama M", "Hirokawa K", "Takara T"],
+              "year": 2016,
+              "journal": "Phytotherapy Research",
+              "doi": "10.1002/ptr.5571",
+              "pmid": "26816234",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=83 completers",
+              "duration": "4 weeks",
+              "dosage": "200 mg/day",
+              "findings": "Significant improvements in SIV and immunological grade (p<0.05). Elevated total, naive, and CD4+ T cell counts.",
+              "methodology": "Double-blind RCT, 4-week intervention, immune cell profiling with flow cytometry"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Musculoskeletal Strength",
+          "specificClaim": "Increases muscular force in physically active seniors",
+          "strength": "Weak",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Single pilot study; not replicated in RCT",
+          "tissueTarget": "Skeletal muscle",
+          "target": "Skeletal muscle",
+          "evidence": [
+            {
+              "citationId": "henkel_2014_seniors",
+              "title": "Tongkat Ali as a potential herbal supplement for physically active male and female seniors--a pilot study",
+              "authors": ["Henkel RR", "Wang R", "Bassett SH", "Chen T", "Liu N", "Zhu Y", "Tambi MI"],
+              "year": 2014,
+              "journal": "Phytotherapy Research",
+              "doi": "10.1002/ptr.5017",
+              "pmid": "23754792",
+              "studyType": "Pilot study",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=25",
+              "duration": "5 weeks",
+              "dosage": "400 mg/day",
+              "findings": "Significant increases in total and free testosterone and muscular force in both men and women aged 57-72.",
+              "methodology": "Open-label pilot, 5-week intervention, grip strength and hormone assessment"
+            }
+          ],
+          "metaAnalysisSupport": null
+        }
+      ],
+      "safety": [
+        {
+          "safetyAspect": "General tolerability at clinical doses",
+          "claim": "Well-tolerated at 100-600 mg/day across all human clinical trials with no serious adverse events reported",
+          "riskLevel": "Low",
+          "tissueTarget": "Multiple organ systems",
+          "target": "Multiple organ systems",
+          "evidence": [
+            {
+              "citationId": "chinnappan_2021_multicentre",
+              "title": "Effect of Eurycoma longifolia standardised aqueous root extract-Physta on testosterone levels and quality of life in ageing male subjects: a randomised, double-blind, placebo-controlled multicentre study",
+              "authors": ["Chinnappan SM", "George A", "Pandey P", "Narke G", "Choudhary YK"],
+              "year": 2021,
+              "journal": "Food & Nutrition Research",
+              "doi": "10.29219/fnr.v65.5647",
+              "pmid": "34262417",
+              "studyType": "Phase II RCT",
+              "evidenceLevel": "Level 2",
+              "findings": "No serious adverse events at 100 mg or 200 mg/day over 12 weeks. Clean hepatic and renal panels. Well-tolerated by all 105 participants.",
+              "methodology": "Multicentre Phase II RCT with comprehensive safety monitoring including liver and kidney function tests"
+            },
+            {
+              "citationId": "george_2016_immune",
+              "title": "Immunomodulation in Middle-Aged Humans Via the Ingestion of Physta Standardized Root Water Extract of Eurycoma longifolia Jack--A Randomized, Double-Blind, Placebo-Controlled, Parallel Study",
+              "authors": ["George A", "Suzuki N", "Abas AB", "Mohri K", "Utsuyama M", "Hirokawa K", "Takara T"],
+              "year": 2016,
+              "journal": "Phytotherapy Research",
+              "doi": "10.1002/ptr.5571",
+              "pmid": "26816234",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "findings": "No serious adverse effects reported at 200 mg/day for 4 weeks in 83 completers.",
+              "methodology": "Double-blind RCT with adverse event monitoring"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "Evidence-based systematic safety review",
+          "claim": "Comprehensive review of safety, efficacy, pharmacology, and toxicology data supports general safety at standard doses",
+          "riskLevel": "Low",
+          "tissueTarget": "Systemic",
+          "target": "Systemic",
+          "evidence": [
+            {
+              "citationId": "ulbricht_2013_systematic",
+              "title": "An evidence-based systematic review of tongkat ali (Eurycoma longifolia) by the Natural Standard Research Collaboration",
+              "authors": ["Ulbricht C", "Conquer J", "Flanagan K", "Isaac R", "Rusie E", "Windsor RC"],
+              "year": 2013,
+              "journal": "Journal of Dietary Supplements",
+              "doi": "10.3109/19390211.2012.761467",
+              "pmid": "23419023",
+              "studyType": "Systematic review",
+              "evidenceLevel": "Level 1",
+              "findings": "Comprehensive evidence-based review of safety, efficacy, pharmacology, interactions, adverse effects, toxicology, and dosing for Eurycoma longifolia.",
+              "methodology": "Systematic review using Natural Standard methodology, covering clinical trials, case reports, and preclinical data"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "Regulatory genotoxicity concern at high doses",
+          "claim": "EFSA flagged potential clastogenic effects at very high doses (2000 mg/kg in animal models), leading to non-approval as novel food in EU; clinical doses (100-600 mg/day) show clean safety profiles",
+          "riskLevel": "Low at clinical doses; regulatory concern at supraphysiological doses",
+          "tissueTarget": "Genomic integrity",
+          "target": "Genomic integrity",
+          "evidence": [
+            {
+              "citationId": "thu_2017_sexual",
+              "title": "Eurycoma Longifolia as a potential adoptogen of male sexual health: a systematic review on clinical studies",
+              "authors": ["Thu HE", "Mohamed IN", "Hussain Z", "Jayusman PA", "Shuid AN"],
+              "year": 2017,
+              "journal": "Chinese Journal of Natural Medicine",
+              "doi": "10.1016/S1875-5364(17)30010-9",
+              "pmid": "28259255",
+              "studyType": "Systematic review",
+              "evidenceLevel": "Level 1",
+              "findings": "Systematic review of 11 clinical studies (from 150 reviewed) found 7 studies showed remarkable efficacy in treating male sexual disorders with acceptable safety profiles. 4 studies showed insufficient effects.",
+              "methodology": "Systematic review of clinical studies published 2000-2014"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

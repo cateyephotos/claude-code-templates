@@ -1,0 +1,504 @@
+const shilajitEnhanced = {
+  "id": 103,
+  "name": "Shilajit",
+  "scientificName": "Asphaltum punjabianum",
+  "category": "Adaptogen",
+  "commonNames": [
+    "Mumijo",
+    "Momiai",
+    "Mineral Pitch",
+    "PrimaVie"
+  ],
+  "lastUpdated": "2026-03-21",
+  "evidenceProfile": {
+    "overallQuality": "Tier 3",
+    "totalCitations": 10,
+    "researchQualityScore": 52,
+    "lastEvidenceUpdate": "2026-03-21",
+    "evidenceStrength": {
+      "mechanisms": "Moderate",
+      "clinicalBenefits": "Moderate",
+      "safety": "Good",
+      "dosage": "Partially established"
+    },
+    "researchMaturity": "Developing",
+    "publicationSpan": "2010-2025"
+  },
+  "citations": {
+    "mechanisms": [
+      {
+        "mechanism": "Fulvic acid-mediated mitochondrial electron transport enhancement",
+        "strength": "Moderate",
+        "mechanismType": "Mitochondrial function",
+        "tissueTarget": "Skeletal muscle and systemic",
+        "target": "Skeletal muscle and systemic",
+        "evidence": [
+          {
+            "citationId": "das_2016_skeletal",
+            "title": "The Human Skeletal Muscle Transcriptome in Response to Oral Shilajit Supplementation",
+            "authors": [
+              "Das A",
+              "Datta S",
+              "Rhea B"
+            ],
+            "year": 2016,
+            "journal": "Journal of Medicinal Food",
+            "doi": "10.1089/jmf.2016.0010",
+            "pmid": "27414521",
+            "studyType": "Clinical trial",
+            "evidenceLevel": "Level 3",
+            "findings": "8 weeks of 250 mg bid shilajit upregulated 17 ECM-related gene probe sets in skeletal muscle including tenascin XB, decorin, myoferlin, collagen, elastin, fibrillin 1, and fibronectin 1. Well tolerated with no changes in blood glucose, lipid profile, creatine kinase, or serum myoglobin.",
+            "methodology": "Transcriptomic analysis of skeletal muscle biopsies from overweight/class I obese adults"
+          }
+        ]
+      },
+      {
+        "mechanism": "RANKL/OPG ratio modulation for bone metabolism",
+        "strength": "Strong",
+        "mechanismType": "Bone remodeling signaling",
+        "tissueTarget": "Bone (lumbar spine and femoral neck)",
+        "target": "Bone (lumbar spine and femoral neck)",
+        "evidence": [
+          {
+            "citationId": "pingali_2022_bone",
+            "title": "Shilajit extract reduces oxidative stress, inflammation, and bone loss to dose-dependently preserve bone mineral density in postmenopausal women with osteopenia: A randomized, double-blind, placebo-controlled trial",
+            "authors": [
+              "Pingali U",
+              "Nutalapati C"
+            ],
+            "year": 2022,
+            "journal": "Phytomedicine",
+            "doi": "10.1016/j.phymed.2022.154334",
+            "pmid": "35933897",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=60",
+            "duration": "48 weeks",
+            "findings": "Shilajit (250 mg or 500 mg) dose-dependently attenuated bone mineral density loss at lumbar spine and femoral neck vs placebo (p<0.001). Decreased CTX-1, BALP, RANKL; increased OPG. Significantly decreased MDA and hsCRP; increased GSH (all p<0.001).",
+            "methodology": "Double-blind RCT in postmenopausal women aged 45-65 with osteopenia over 48 weeks"
+          }
+        ]
+      },
+      {
+        "mechanism": "Hypothalamic-pituitary-gonadal axis modulation for testosterone support",
+        "strength": "Moderate",
+        "mechanismType": "Endocrine modulation",
+        "tissueTarget": "Testes and hypothalamic-pituitary axis",
+        "target": "Testes and hypothalamic-pituitary axis",
+        "evidence": [
+          {
+            "citationId": "pandit_2016_testosterone",
+            "title": "Clinical evaluation of purified Shilajit on testosterone levels in healthy volunteers",
+            "authors": [
+              "Pandit S",
+              "Biswas S",
+              "Jana U"
+            ],
+            "year": 2016,
+            "journal": "Andrologia",
+            "doi": "10.1111/and.12482",
+            "pmid": "26395129",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "duration": "90 days",
+            "findings": "250 mg bid shilajit significantly (p<0.05) increased total testosterone, free testosterone, and DHEAS compared to placebo in healthy men aged 45-55. Gonadotropic hormones (LH, FSH) were maintained.",
+            "methodology": "Double-blind RCT in healthy male volunteers aged 45-55"
+          }
+        ]
+      },
+      {
+        "mechanism": "Antioxidant activity via MDA reduction and GSH increase",
+        "strength": "Strong",
+        "mechanismType": "Oxidative stress modulation",
+        "tissueTarget": "Systemic (bone, reproductive, vascular)",
+        "target": "Systemic (bone, reproductive, vascular)",
+        "evidence": [
+          {
+            "citationId": "pingali_2022_bone",
+            "title": "Shilajit extract reduces oxidative stress, inflammation, and bone loss to dose-dependently preserve bone mineral density in postmenopausal women with osteopenia: A randomized, double-blind, placebo-controlled trial",
+            "authors": [
+              "Pingali U",
+              "Nutalapati C"
+            ],
+            "year": 2022,
+            "journal": "Phytomedicine",
+            "doi": "10.1016/j.phymed.2022.154334",
+            "pmid": "35933897",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=60",
+            "duration": "48 weeks",
+            "findings": "Significantly decreased MDA and hsCRP; increased GSH (all p<0.001) with both 250 mg and 500 mg shilajit doses over 48 weeks.",
+            "methodology": "Double-blind RCT in postmenopausal women"
+          },
+          {
+            "citationId": "biswas_2010_sperm",
+            "title": "Clinical evaluation of spermatogenic activity of processed Shilajit in oligospermia",
+            "authors": [
+              "Biswas TK",
+              "Pandit S",
+              "Mondal S"
+            ],
+            "year": 2010,
+            "journal": "Andrologia",
+            "doi": "10.1111/j.1439-0272.2009.00956.x",
+            "pmid": "20078516",
+            "studyType": "Clinical trial",
+            "evidenceLevel": "Level 3",
+            "sampleSize": "n=28 completers",
+            "duration": "90 days",
+            "findings": "Semen MDA decreased by 18.7% with 200 mg/d processed shilajit over 90 days, alongside significant increases in sperm count (+61.4%) and testosterone (+23.5%).",
+            "methodology": "Clinical trial in oligospermic men"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "healthDomain": "Connective Tissue",
+        "specificClaim": "Stimulates type 1 collagen synthesis dose-dependently",
+        "strength": "Strong",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single RCT with large effect sizes",
+        "tissueTarget": "Connective tissue and musculoskeletal system",
+        "target": "Connective tissue and musculoskeletal system",
+        "evidence": [
+          {
+            "citationId": "neltner_2024_collagen",
+            "title": "Effects of 8 Weeks of Shilajit Supplementation on Serum Pro-c1alpha1, a Biomarker of Type 1 Collagen Synthesis: A Randomized Control Trial",
+            "authors": [
+              "Neltner TJ"
+            ],
+            "year": 2024,
+            "journal": "Journal of Dietary Supplements",
+            "doi": "10.1080/19390211.2022.2157522",
+            "pmid": "36546868",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=35",
+            "duration": "8 weeks",
+            "findings": "Both 500 mg/d and 1000 mg/d shilajit significantly increased serum pro-c1alpha1 (collagen synthesis biomarker) vs placebo. Low dose d=1.2 (p=0.008); high dose d=1.3 (p=0.007). 75% of high-dose subjects exceeded MCID vs 30% placebo (p=0.03).",
+            "methodology": "Double-blind RCT in recreationally trained men"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Bone Health",
+        "specificClaim": "Dose-dependently preserves bone mineral density in postmenopausal women with osteopenia",
+        "strength": "Strong",
+        "evidenceQuality": "Good",
+        "replicationStatus": "Supported by both bone density trial and fracture healing trial",
+        "tissueTarget": "Bone (lumbar spine and femoral neck)",
+        "target": "Bone (lumbar spine and femoral neck)",
+        "evidence": [
+          {
+            "citationId": "pingali_2022_bone",
+            "title": "Shilajit extract reduces oxidative stress, inflammation, and bone loss to dose-dependently preserve bone mineral density in postmenopausal women with osteopenia: A randomized, double-blind, placebo-controlled trial",
+            "authors": [
+              "Pingali U",
+              "Nutalapati C"
+            ],
+            "year": 2022,
+            "journal": "Phytomedicine",
+            "doi": "10.1016/j.phymed.2022.154334",
+            "pmid": "35933897",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=60",
+            "duration": "48 weeks",
+            "findings": "Dose-dependent attenuation of bone mineral density loss at lumbar spine and femoral neck vs placebo (p<0.001). Decreased CTX-1, BALP, RANKL; increased OPG.",
+            "methodology": "Double-blind RCT in postmenopausal women aged 45-65"
+          },
+          {
+            "citationId": "sadeghi_2020_fracture",
+            "title": "Efficacy of Momiai in Tibia Fracture Repair: A Randomized Double-Blinded Placebo-Controlled Clinical Trial",
+            "authors": [
+              "Sadeghi SMH"
+            ],
+            "year": 2020,
+            "journal": "Journal of Alternative and Complementary Medicine",
+            "doi": "10.1089/acm.2019.0453",
+            "pmid": "32310691",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=160",
+            "duration": "28 days treatment, followed until union",
+            "findings": "Mean bone union time was 129 days (shilajit group) vs 153 days (placebo), approximately 16% faster healing (p<0.049). Dose: 1000 mg/d for 28 days. No significant difference in adverse effects.",
+            "methodology": "Double-blind RCT in patients with tibia fractures"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Testosterone Support",
+        "specificClaim": "Increases total testosterone, free testosterone, and DHEAS in men",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Observed in both healthy men and oligospermic men, supported by systematic review",
+        "tissueTarget": "Testes and hypothalamic-pituitary axis",
+        "target": "Testes and hypothalamic-pituitary axis",
+        "evidence": [
+          {
+            "citationId": "pandit_2016_testosterone",
+            "title": "Clinical evaluation of purified Shilajit on testosterone levels in healthy volunteers",
+            "authors": [
+              "Pandit S",
+              "Biswas S",
+              "Jana U"
+            ],
+            "year": 2016,
+            "journal": "Andrologia",
+            "doi": "10.1111/and.12482",
+            "pmid": "26395129",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "duration": "90 days",
+            "findings": "Significant increase (p<0.05) in total testosterone, free testosterone, and DHEAS vs placebo in healthy men aged 45-55. Gonadotropic hormones (LH, FSH) maintained.",
+            "methodology": "Double-blind RCT in healthy male volunteers"
+          },
+          {
+            "citationId": "biswas_2010_sperm",
+            "title": "Clinical evaluation of spermatogenic activity of processed Shilajit in oligospermia",
+            "authors": [
+              "Biswas TK",
+              "Pandit S",
+              "Mondal S"
+            ],
+            "year": 2010,
+            "journal": "Andrologia",
+            "doi": "10.1111/j.1439-0272.2009.00956.x",
+            "pmid": "20078516",
+            "studyType": "Clinical trial",
+            "evidenceLevel": "Level 3",
+            "sampleSize": "n=28 completers",
+            "duration": "90 days",
+            "findings": "Serum testosterone increased by 23.5% (p<0.001) with 200 mg/d processed shilajit. Total sperm count +61.4%, motility +12.4-17.4%.",
+            "methodology": "Clinical trial in oligospermic men"
+          },
+          {
+            "citationId": "morgado_2024_review",
+            "title": "Do 'testosterone boosters' really increase serum total testosterone? A systematic review",
+            "authors": [
+              "Morgado A"
+            ],
+            "year": 2024,
+            "journal": "International Journal of Impotence Research",
+            "doi": "10.1038/s41443-023-00763-9",
+            "pmid": "37697053",
+            "studyType": "Systematic review",
+            "evidenceLevel": "Level 1",
+            "findings": "Purified shilajit extract (PrimaVie) classified as 'possibly effective' for men with late-onset hypogonadism for increasing total testosterone. Most other testosterone boosters failed to increase testosterone.",
+            "methodology": "Systematic review of 52 studies evaluating 27 testosterone boosters"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Musculoskeletal Health",
+        "specificClaim": "Reduces fatigue-induced muscular strength decline and supports connective tissue adaptation",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single RCT",
+        "tissueTarget": "Skeletal muscle and connective tissue",
+        "target": "Skeletal muscle and connective tissue",
+        "evidence": [
+          {
+            "citationId": "keller_2019_fatigue",
+            "title": "The effects of Shilajit supplementation on fatigue-induced decreases in muscular strength and serum hydroxyproline levels",
+            "authors": [
+              "Keller JL"
+            ],
+            "year": 2019,
+            "journal": "Journal of the International Society of Sports Nutrition",
+            "doi": "10.1186/s12970-019-0270-2",
+            "pmid": "30728074",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=63",
+            "duration": "8 weeks",
+            "findings": "High dose (500 mg/d): In upper 50th percentile strength group, post-fatigue MVIC decline was 8.9% vs 16.0% placebo (p=0.044). Baseline serum hydroxyproline significantly lower in high-dose group (1.5 vs 2.4 mcg/mL, p=0.024).",
+            "methodology": "Double-blind RCT in recreationally active men"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Male Fertility",
+        "specificClaim": "Improves sperm count, motility, and morphology in oligospermic men",
+        "strength": "Moderate",
+        "evidenceQuality": "Low-Moderate",
+        "replicationStatus": "Single non-placebo-controlled trial",
+        "tissueTarget": "Testes and reproductive system",
+        "target": "Testes and reproductive system",
+        "evidence": [
+          {
+            "citationId": "biswas_2010_sperm",
+            "title": "Clinical evaluation of spermatogenic activity of processed Shilajit in oligospermia",
+            "authors": [
+              "Biswas TK",
+              "Pandit S",
+              "Mondal S"
+            ],
+            "year": 2010,
+            "journal": "Andrologia",
+            "doi": "10.1111/j.1439-0272.2009.00956.x",
+            "pmid": "20078516",
+            "studyType": "Clinical trial (non-placebo-controlled)",
+            "evidenceLevel": "Level 3",
+            "sampleSize": "n=28 completers",
+            "duration": "90 days",
+            "findings": "Total sperm count +61.4%, motility +12.4-17.4%, normal sperm count +18.9% with 200 mg/d processed shilajit. Liver and renal profiles unaffected.",
+            "methodology": "Clinical trial in 35 enrolled (28 completed) oligospermic men"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Skin Health",
+        "specificClaim": "Induces microvascular and extracellular matrix gene expression in skin",
+        "strength": "Low-Moderate",
+        "evidenceQuality": "Low-Moderate",
+        "replicationStatus": "Single RCT with transcriptomic endpoints",
+        "tissueTarget": "Skin (dermal vasculature and extracellular matrix)",
+        "target": "Skin (dermal vasculature and extracellular matrix)",
+        "evidence": [
+          {
+            "citationId": "das_2019_skin",
+            "title": "Skin Transcriptome of Middle-Aged Women Supplemented With Natural Herbo-mineral Shilajit Shows Induction of Microvascular and Extracellular Matrix Mechanisms",
+            "authors": [
+              "Das A",
+              "Datta S",
+              "Rhea B"
+            ],
+            "year": 2019,
+            "journal": "Journal of the American College of Nutrition",
+            "doi": "10.1080/07315724.2018.1564088",
+            "pmid": "31161927",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 3",
+            "duration": "14 weeks",
+            "findings": "14 weeks of shilajit (125 or 250 mg bid) induced genes relevant to endothelial cell migration, blood vessel growth, and ECM in skin. Higher dose improved skin microperfusion. No adverse effects.",
+            "methodology": "RCT with skin transcriptomic analysis in middle-aged women"
+          }
+        ],
+        "metaAnalysisSupport": null
+      }
+    ],
+    "safety": [
+      {
+        "safetyAspect": "General tolerability across multiple clinical trials",
+        "claim": "Good safety profile with no significant adverse events across all published human trials",
+        "riskLevel": "Low",
+        "target": "Multiple organ systems",
+        "tissueTarget": "Multiple organ systems",
+        "evidence": [
+          {
+            "citationId": "pingali_2022_bone",
+            "title": "Shilajit extract reduces oxidative stress, inflammation, and bone loss to dose-dependently preserve bone mineral density in postmenopausal women with osteopenia: A randomized, double-blind, placebo-controlled trial",
+            "authors": [
+              "Pingali U",
+              "Nutalapati C"
+            ],
+            "year": 2022,
+            "journal": "Phytomedicine",
+            "doi": "10.1016/j.phymed.2022.154334",
+            "pmid": "35933897",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=60",
+            "duration": "48 weeks",
+            "findings": "No significant adverse events over 48 weeks at either 250 mg or 500 mg doses. Longest duration human safety data available.",
+            "methodology": "Double-blind RCT with 48-week follow-up"
+          },
+          {
+            "citationId": "sadeghi_2020_fracture",
+            "title": "Efficacy of Momiai in Tibia Fracture Repair: A Randomized Double-Blinded Placebo-Controlled Clinical Trial",
+            "authors": [
+              "Sadeghi SMH"
+            ],
+            "year": 2020,
+            "journal": "Journal of Alternative and Complementary Medicine",
+            "doi": "10.1089/acm.2019.0453",
+            "pmid": "32310691",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=160",
+            "duration": "28 days",
+            "findings": "No significant difference in adverse effects between shilajit (1000 mg/d) and placebo groups in the largest shilajit RCT to date.",
+            "methodology": "Double-blind RCT in fracture patients"
+          },
+          {
+            "citationId": "das_2016_skeletal",
+            "title": "The Human Skeletal Muscle Transcriptome in Response to Oral Shilajit Supplementation",
+            "authors": [
+              "Das A",
+              "Datta S",
+              "Rhea B"
+            ],
+            "year": 2016,
+            "journal": "Journal of Medicinal Food",
+            "doi": "10.1089/jmf.2016.0010",
+            "pmid": "27414521",
+            "studyType": "Clinical trial",
+            "evidenceLevel": "Level 3",
+            "duration": "8 weeks",
+            "findings": "Well tolerated with no changes in blood glucose, lipid profile, creatine kinase, or serum myoglobin at 250 mg bid.",
+            "methodology": "Clinical trial with comprehensive metabolic safety monitoring"
+          }
+        ]
+      }
+    ],
+    "dosage": [
+      {
+        "dosageRange": "200-1000 mg/day of standardized purified extract, most commonly 500 mg/day",
+        "claim": "Dosage range established across multiple clinical trials with dose-dependent effects observed",
+        "evidenceBase": "Moderate",
+        "target": "Musculoskeletal, endocrine, and antioxidant systems",
+        "tissueTarget": "Musculoskeletal, endocrine, and antioxidant systems",
+        "evidence": [
+          {
+            "citationId": "neltner_2024_collagen",
+            "title": "Effects of 8 Weeks of Shilajit Supplementation on Serum Pro-c1alpha1, a Biomarker of Type 1 Collagen Synthesis: A Randomized Control Trial",
+            "authors": [
+              "Neltner TJ"
+            ],
+            "year": 2024,
+            "journal": "Journal of Dietary Supplements",
+            "doi": "10.1080/19390211.2022.2157522",
+            "pmid": "36546868",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=35",
+            "findings": "Dose-response observed: 500 mg/d (d=1.2) and 1000 mg/d (d=1.3) both effective for collagen synthesis biomarker. 75% of high-dose subjects exceeded MCID.",
+            "methodology": "Double-blind RCT comparing 500 mg/d, 1000 mg/d, and placebo"
+          },
+          {
+            "citationId": "pingali_2022_bone",
+            "title": "Shilajit extract reduces oxidative stress, inflammation, and bone loss to dose-dependently preserve bone mineral density in postmenopausal women with osteopenia: A randomized, double-blind, placebo-controlled trial",
+            "authors": [
+              "Pingali U",
+              "Nutalapati C"
+            ],
+            "year": 2022,
+            "journal": "Phytomedicine",
+            "doi": "10.1016/j.phymed.2022.154334",
+            "pmid": "35933897",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=60",
+            "findings": "Dose-dependent effects observed: 500 mg outperformed 250 mg for bone mineral density preservation over 48 weeks.",
+            "methodology": "Double-blind RCT comparing 250 mg, 500 mg, and placebo"
+          }
+        ]
+      }
+    ]
+  }
+};
+
+// === REQUIRED EXPORT BLOCK ===
+window.enhancedCitations = window.enhancedCitations || {};
+window.enhancedCitations[103] = shilajitEnhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = shilajitEnhanced;
+}

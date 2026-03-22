@@ -1,0 +1,477 @@
+{
+  "supplementEntry": {
+    "id": 104,
+    "name": "GlyNAC",
+    "scientificName": "Glycine + N-Acetyl-L-Cysteine",
+    "category": "Anti-Aging",
+    "commonNames": ["Glycine-NAC", "GlyNAC Combination", "Glutathione Precursor Duo"],
+    "evidenceTier": 2,
+    "evidenceTierRationale": "One well-designed placebo-controlled RCT (n=24 OA, Kumar/Sekhar 2023) plus one independent RCT by Nestle/Profil (n=114, Lizzo 2022). Supporting pilot and open-label trials. Nearly all clinical work from a single research group (Sekhar lab, Baylor). The independent RCT failed its primary endpoint in full cohort. Limits to Tier 2 pending large multi-center replication.",
+    "primaryBenefits": {
+      "cognitive": ["Cognitive function improvement in aging populations", "Brain glutathione restoration", "Neurotrophic factor support (BDNF upregulation)"],
+      "nonCognitive": ["Glutathione repletion and antioxidant defense restoration", "Mitochondrial function improvement", "Inflammation reduction", "Insulin resistance reduction", "Physical function improvement (gait speed, grip strength, 6-min walk)", "Body composition improvement (reduced waist circumference, body fat)", "Endothelial function improvement", "Genomic damage reduction (genoprotection)", "Blood pressure improvement (systolic)"],
+      "isEnhanced": true
+    },
+    "isEnhanced": true,
+    "dosageRange": "2.4-14 g/day total GlyNAC (1:1 glycine:NAC ratio)",
+    "optimalDuration": "14 days to 24 weeks (benefits decline on withdrawal)",
+    "studyPopulations": ["Healthy older adults (61-80 years)", "HIV patients with premature aging", "Type 2 diabetes patients", "Older adults with cognitive decline"],
+    "mechanismsOfAction": [
+      "Glutathione synthesis restoration via rate-limiting precursors glycine and cysteine",
+      "Mitochondrial fatty-acid oxidation improvement",
+      "Reactive oxygen species neutralization through enhanced GSH availability",
+      "NF-kB-mediated inflammation reduction",
+      "Mitophagy and autophagy improvement",
+      "Nutrient sensing pathway normalization (mTOR, AMPK, Sirtuin)",
+      "Endothelial nitric oxide pathway support",
+      "Genomic stability protection via reduced oxidative DNA damage",
+      "Neurotrophic factor upregulation (BDNF)"
+    ],
+    "safetyProfile": {
+      "rating": "Good",
+      "commonSideEffects": ["Mild GI discomfort at higher doses"],
+      "contraindications": ["Pregnancy/breastfeeding (insufficient data)", "Active bleeding disorders (NAC has mild anticoagulant properties)"],
+      "drugInteractions": ["May interact with nitroglycerin (NAC component)", "Potential interaction with anticoagulants", "NAC may affect acetaminophen metabolism"]
+    },
+    "effectSizes": {
+      "mitochondrialFattyAcidOxidation": "30% improvement (p<0.001, T2D pilot, n=10)",
+      "insulinResistance": "22% decrease (p<0.01, T2D pilot, n=10)",
+      "plasmaFreefattyAcids": "25% reduction (p<0.01, T2D pilot, n=10)",
+      "mouseLifespan": "24% increase vs controls (C57BL/6J mice)",
+      "glutathioneRestoration": "Corrected to levels comparable with young adults (RCT, n=24)",
+      "physicalFunction": "Significant improvements in gait speed, grip strength, and 6-min walk vs placebo (RCT, n=24)"
+    },
+    "commercialAvailability": {
+      "forms": ["Separate glycine + NAC capsules/powder", "Combined GlyNAC capsules", "Bulk powder"],
+      "costRange": "$25-60/month",
+      "qualityMarkers": ["USP-grade glycine", "USP-grade N-acetyl-L-cysteine", "Third-party tested", "1:1 ratio glycine to NAC"]
+    },
+    "keyCitations": [
+      {
+        "authors": "Kumar P et al.",
+        "year": 2023,
+        "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+        "journal": "The Journals of Gerontology: Series A",
+        "doi": "10.1093/gerona/glac135",
+        "pmid": "35975308"
+      },
+      {
+        "authors": "Kumar P et al.",
+        "year": 2021,
+        "title": "Glycine and N-acetylcysteine (GlyNAC) supplementation in older adults improves glutathione deficiency, oxidative stress, mitochondrial dysfunction, inflammation, insulin resistance, endothelial dysfunction, genotoxicity, muscle strength, and cognition: Results of a pilot clinical trial",
+        "journal": "Clinical and Translational Medicine",
+        "doi": "10.1002/ctm2.372",
+        "pmid": "33783984"
+      },
+      {
+        "authors": "Kumar P et al.",
+        "year": 2020,
+        "title": "Supplementing Glycine and N-acetylcysteine (GlyNAC) in Aging HIV Patients Improves Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Endothelial Dysfunction, Insulin Resistance, Genotoxicity, Strength, and Cognition",
+        "journal": "Biomedicines",
+        "doi": "10.3390/biomedicines8100390",
+        "pmid": "33007928"
+      },
+      {
+        "authors": "Sekhar RV",
+        "year": 2022,
+        "title": "GlyNAC Supplementation Improves Impaired Mitochondrial Fuel Oxidation and Lowers Insulin Resistance in Patients with Type 2 Diabetes",
+        "journal": "Antioxidants (Basel)",
+        "doi": "10.3390/antiox11010154",
+        "pmid": "35052658"
+      },
+      {
+        "authors": "Lizzo G et al.",
+        "year": 2022,
+        "title": "A Randomized Controlled Clinical Trial in Healthy Older Adults to Determine Efficacy of Glycine and N-Acetylcysteine Supplementation on Glutathione Redox Status and Oxidative Damage",
+        "journal": "Frontiers in Aging",
+        "doi": "10.3389/fragi.2022.852569",
+        "pmid": "35821844"
+      },
+      {
+        "authors": "Sekhar RV",
+        "year": 2021,
+        "title": "GlyNAC Supplementation Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Aging Hallmarks, Metabolic Defects, Muscle Strength, Cognitive Decline, and Body Composition: Implications for Healthy Aging",
+        "journal": "The Journal of Nutrition",
+        "doi": "10.1093/jn/nxab309",
+        "pmid": "34587244"
+      }
+    ],
+    "enhancedCitations": {
+      "isEnhanced": true,
+      "evidenceProfile": {
+        "overallQuality": "Tier 2",
+        "totalCitations": 12,
+        "researchQualityScore": 62,
+        "lastEvidenceUpdate": "2026-03-21"
+      }
+    },
+    "lastUpdated": "2026-03-21",
+    "healthDomains": ["Anti-Aging", "Antioxidant Support", "Mitochondrial Health", "Metabolic Health", "Cognitive Health", "Physical Performance", "Cardiovascular Health"]
+  },
+  "enhancedCitations": {
+    "id": 104,
+    "name": "GlyNAC",
+    "scientificName": "Glycine + N-Acetyl-L-Cysteine",
+    "category": "Anti-Aging",
+    "commonNames": ["Glycine-NAC", "GlyNAC Combination", "Glutathione Precursor Duo"],
+    "lastUpdated": "2026-03-21",
+    "evidenceProfile": {
+      "overallQuality": "Tier 2",
+      "totalCitations": 12,
+      "researchQualityScore": 62,
+      "lastEvidenceUpdate": "2026-03-21",
+      "evidenceStrength": {
+        "mechanisms": "Strong",
+        "clinicalBenefits": "Moderate",
+        "safety": "Good",
+        "dosage": "Partially established"
+      },
+      "researchMaturity": "Developing",
+      "publicationSpan": "2020-2025"
+    },
+    "citations": {
+      "mechanisms": [
+        {
+          "mechanism": "Glutathione synthesis restoration via glycine and cysteine precursor supply",
+          "strength": "Strong",
+          "mechanismType": "Antioxidant defense restoration",
+          "tissueTarget": "Liver, skeletal muscle, brain, heart",
+          "target": "Liver, skeletal muscle, brain, heart",
+          "evidence": [
+            {
+              "citationId": "kumar_2023_rct",
+              "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+              "authors": ["Kumar P", "Liu C", "Hsu JW", "Chacko S", "Minber C", "Jahoor F", "Sekhar RV"],
+              "year": 2023,
+              "journal": "The Journals of Gerontology: Series A",
+              "doi": "10.1093/gerona/glac135",
+              "pmid": "35975308",
+              "studyType": "Randomized placebo-controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=24 older adults (12 GlyNAC vs 12 placebo) + 12 young adults",
+              "duration": "16 weeks",
+              "findings": "16 weeks of GlyNAC corrected GSH deficiency to levels comparable with young adults, reduced oxidative stress, improved mitochondrial function, and corrected multiple aging hallmarks vs placebo.",
+              "methodology": "Double-blind, randomized, placebo-controlled trial (NCT01870193)"
+            }
+          ]
+        },
+        {
+          "mechanism": "Mitochondrial fatty-acid oxidation improvement",
+          "strength": "Moderate",
+          "mechanismType": "Mitochondrial bioenergetics",
+          "tissueTarget": "Skeletal muscle and liver mitochondria",
+          "target": "Skeletal muscle and liver mitochondria",
+          "evidence": [
+            {
+              "citationId": "sekhar_2022_t2d",
+              "title": "GlyNAC Supplementation Improves Impaired Mitochondrial Fuel Oxidation and Lowers Insulin Resistance in Patients with Type 2 Diabetes",
+              "authors": ["Sekhar RV"],
+              "year": 2022,
+              "journal": "Antioxidants (Basel)",
+              "doi": "10.3390/antiox11010154",
+              "pmid": "35052658",
+              "studyType": "Pilot clinical study",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=10 T2D + 10 non-diabetic controls",
+              "duration": "14 days",
+              "findings": "14 days GlyNAC improved mitochondrial fatty-acid oxidation by 30% (p<0.001), lowered mitochondrial glucose oxidation by 47% (p<0.01), decreased insulin resistance by 22% (p<0.01), lowered plasma FFA by 25% (p<0.01).",
+              "methodology": "Open-label pilot study with non-diabetic controls"
+            }
+          ]
+        },
+        {
+          "mechanism": "NF-kB-mediated inflammation reduction",
+          "strength": "Moderate",
+          "mechanismType": "Anti-inflammatory signaling",
+          "tissueTarget": "Systemic (plasma inflammatory markers)",
+          "target": "Systemic (plasma inflammatory markers)",
+          "evidence": [
+            {
+              "citationId": "kumar_2021_pilot",
+              "title": "Glycine and N-acetylcysteine (GlyNAC) supplementation in older adults improves glutathione deficiency, oxidative stress, mitochondrial dysfunction, inflammation, insulin resistance, endothelial dysfunction, genotoxicity, muscle strength, and cognition: Results of a pilot clinical trial",
+              "authors": ["Kumar P", "Liu C", "Suliburk J", "Hsu JW", "Muthupillai R", "Jahoor F", "Minard CG", "Sekhar RV"],
+              "year": 2021,
+              "journal": "Clinical and Translational Medicine",
+              "doi": "10.1002/ctm2.372",
+              "pmid": "33783984",
+              "studyType": "Open-label clinical trial",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=8 older adults + 8 young adults",
+              "duration": "24 weeks supplementation + 12 weeks withdrawal",
+              "findings": "24 weeks GlyNAC improved inflammation markers, reduced oxidative stress, corrected mitochondrial dysfunction. Benefits declined after 12 weeks of stopping supplementation.",
+              "methodology": "Open-label pilot trial with young adult comparators"
+            }
+          ]
+        },
+        {
+          "mechanism": "Nutrient sensing pathway normalization (mTOR, AMPK, Sirtuin)",
+          "strength": "Moderate",
+          "mechanismType": "Aging hallmark modulation",
+          "tissueTarget": "Multiple organ systems",
+          "target": "Multiple organ systems",
+          "evidence": [
+            {
+              "citationId": "kumar_2022_mice_lifespan",
+              "title": "GlyNAC Supplementation in Mice Increases Length of Life by Correcting Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Abnormalities in Mitophagy and Nutrient Sensing, and Genomic Damage",
+              "authors": ["Kumar P", "Osahon OW", "Sekhar RV"],
+              "year": 2022,
+              "journal": "Nutrients",
+              "doi": "10.3390/nu14051114",
+              "pmid": "35268089",
+              "studyType": "Animal study (C57BL/6J mice)",
+              "evidenceLevel": "Level 5",
+              "findings": "GlyNAC-supplemented mice lived 24% longer than controls. Improved GSH synthesis, oxidative stress, mitochondrial dysfunction, mitophagy, nutrient sensing (mTOR, AMPK, Sirtuin pathways), and genomic damage in heart, liver, and kidney.",
+              "methodology": "Controlled mouse lifespan study with supplementation vs control diet"
+            }
+          ]
+        }
+      ],
+      "benefits": [
+        {
+          "healthDomain": "Anti-Aging",
+          "specificClaim": "Corrects multiple aging hallmarks and improves physical function in older adults",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Replicated across pilot and RCT by same group; independent replication limited",
+          "tissueTarget": "Systemic (multiple organ systems)",
+          "target": "Systemic (multiple organ systems)",
+          "evidence": [
+            {
+              "citationId": "kumar_2023_rct",
+              "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+              "authors": ["Kumar P", "Liu C", "Hsu JW", "Chacko S", "Minber C", "Jahoor F", "Sekhar RV"],
+              "year": 2023,
+              "journal": "The Journals of Gerontology: Series A",
+              "doi": "10.1093/gerona/glac135",
+              "pmid": "35975308",
+              "studyType": "Randomized placebo-controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=24 older adults (12 per arm)",
+              "duration": "16 weeks",
+              "findings": "16 weeks GlyNAC corrected GSH deficiency, oxidative stress, mitochondrial dysfunction, inflammation, endothelial dysfunction, insulin resistance, aging hallmarks. Improved gait speed, muscle strength, 6-minute walk, body composition, and systolic blood pressure vs placebo.",
+              "methodology": "Double-blind, randomized, placebo-controlled trial (NCT01870193)"
+            },
+            {
+              "citationId": "kumar_2021_pilot",
+              "title": "Glycine and N-acetylcysteine (GlyNAC) supplementation in older adults improves glutathione deficiency, oxidative stress, mitochondrial dysfunction, inflammation, insulin resistance, endothelial dysfunction, genotoxicity, muscle strength, and cognition: Results of a pilot clinical trial",
+              "authors": ["Kumar P", "Liu C", "Suliburk J", "Hsu JW", "Muthupillai R", "Jahoor F", "Minard CG", "Sekhar RV"],
+              "year": 2021,
+              "journal": "Clinical and Translational Medicine",
+              "doi": "10.1002/ctm2.372",
+              "pmid": "33783984",
+              "studyType": "Open-label clinical trial",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=8 older adults + 8 young adults",
+              "duration": "24 weeks + 12 weeks withdrawal",
+              "findings": "24 weeks GlyNAC corrected GSH deficiency, oxidative stress, mitochondrial dysfunction; improved inflammation, endothelial dysfunction, insulin resistance, genomic damage, cognition, strength, gait speed, exercise capacity, lowered body fat and waist circumference. Benefits declined after 12 weeks of stopping.",
+              "methodology": "Open-label pilot trial with young adult comparators"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Metabolic Health",
+          "specificClaim": "Improves mitochondrial fuel oxidation and reduces insulin resistance in type 2 diabetes",
+          "strength": "Preliminary",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Single pilot study, not yet replicated",
+          "tissueTarget": "Skeletal muscle and liver",
+          "target": "Skeletal muscle and liver",
+          "evidence": [
+            {
+              "citationId": "sekhar_2022_t2d",
+              "title": "GlyNAC Supplementation Improves Impaired Mitochondrial Fuel Oxidation and Lowers Insulin Resistance in Patients with Type 2 Diabetes",
+              "authors": ["Sekhar RV"],
+              "year": 2022,
+              "journal": "Antioxidants (Basel)",
+              "doi": "10.3390/antiox11010154",
+              "pmid": "35052658",
+              "studyType": "Pilot clinical study",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=10 T2D + 10 controls",
+              "duration": "14 days",
+              "findings": "30% improvement in mitochondrial fatty-acid oxidation (p<0.001), 22% decrease in insulin resistance (p<0.01), 25% reduction in plasma FFA (p<0.01).",
+              "methodology": "Open-label pilot study with non-diabetic controls"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Cognitive Health",
+          "specificClaim": "Improves cognition in older adults and HIV patients with premature aging",
+          "strength": "Preliminary",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Observed in pilot and HIV trials; no dedicated cognitive RCT",
+          "tissueTarget": "Brain (hippocampus, prefrontal cortex)",
+          "target": "Brain (hippocampus, prefrontal cortex)",
+          "evidence": [
+            {
+              "citationId": "kumar_2020_hiv",
+              "title": "Supplementing Glycine and N-acetylcysteine (GlyNAC) in Aging HIV Patients Improves Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Endothelial Dysfunction, Insulin Resistance, Genotoxicity, Strength, and Cognition",
+              "authors": ["Kumar P", "Liu C", "Suliburk J", "Minard CG", "Muthupillai R", "Chacko S", "Hsu JW", "Jahoor F", "Sekhar RV"],
+              "year": 2020,
+              "journal": "Biomedicines",
+              "doi": "10.3390/biomedicines8100390",
+              "pmid": "33007928",
+              "studyType": "Open-label clinical trial",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=8 PWH + 8 matched controls",
+              "duration": "12 weeks supplementation + 8 weeks withdrawal",
+              "findings": "12 weeks GlyNAC improved cognition, physical function, GSH, mitochondrial function, oxidative stress, inflammation, endothelial function, genomic damage, insulin resistance in PWH. Benefits receded 8 weeks after stopping.",
+              "methodology": "Open-label trial with matched non-HIV controls"
+            },
+            {
+              "citationId": "kumar_2023_mice_brain",
+              "title": "GlyNAC Supplementation in Old Mice Improves Brain Glutathione Deficiency, Oxidative Stress, Glucose Uptake, Mitochondrial Dysfunction, Genomic Damage, Inflammation and Neurotrophic Factors to Reverse Age-Associated Cognitive Decline",
+              "authors": ["Kumar P", "Osahon OW", "Sekhar RV"],
+              "year": 2023,
+              "journal": "Antioxidants (Basel)",
+              "doi": "10.3390/antiox12051042",
+              "pmid": "37237908",
+              "studyType": "Animal study (C57BL/6J mice)",
+              "evidenceLevel": "Level 5",
+              "findings": "8 weeks GlyNAC in old mice corrected brain GSH deficiency, oxidative stress, mitochondrial dysfunction, inflammation, genomic damage, improved neurotrophic factors and reversed age-associated cognitive decline.",
+              "methodology": "Controlled mouse study comparing old supplemented, old unsupplemented, and young mice"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Cardiovascular Health",
+          "specificClaim": "Improves endothelial function and blood pressure in older adults",
+          "strength": "Preliminary",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Observed as secondary outcome in RCT and pilot",
+          "tissueTarget": "Vascular endothelium",
+          "target": "Vascular endothelium",
+          "evidence": [
+            {
+              "citationId": "kumar_2023_rct",
+              "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+              "authors": ["Kumar P", "Liu C", "Hsu JW", "Chacko S", "Minber C", "Jahoor F", "Sekhar RV"],
+              "year": 2023,
+              "journal": "The Journals of Gerontology: Series A",
+              "doi": "10.1093/gerona/glac135",
+              "pmid": "35975308",
+              "studyType": "Randomized placebo-controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=24 older adults",
+              "duration": "16 weeks",
+              "findings": "GlyNAC corrected endothelial dysfunction and improved systolic blood pressure vs placebo in older adults.",
+              "methodology": "Double-blind RCT (NCT01870193)"
+            }
+          ],
+          "metaAnalysisSupport": null
+        }
+      ],
+      "safety": [
+        {
+          "safetyAspect": "General tolerability in older adults",
+          "claim": "Safe and well-tolerated across multiple clinical trials up to 24 weeks",
+          "riskLevel": "Low",
+          "target": "Multiple organ systems",
+          "tissueTarget": "Multiple organ systems",
+          "evidence": [
+            {
+              "citationId": "kumar_2023_rct",
+              "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+              "authors": ["Kumar P", "Liu C", "Hsu JW", "Chacko S", "Minber C", "Jahoor F", "Sekhar RV"],
+              "year": 2023,
+              "journal": "The Journals of Gerontology: Series A",
+              "doi": "10.1093/gerona/glac135",
+              "pmid": "35975308",
+              "studyType": "Randomized placebo-controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "findings": "GlyNAC was safe and well-tolerated at full dose (~14g/day) for 16 weeks in older adults. No serious adverse events reported.",
+              "methodology": "Double-blind RCT with safety monitoring (NCT01870193)"
+            },
+            {
+              "citationId": "lizzo_2022_nestle",
+              "title": "A Randomized Controlled Clinical Trial in Healthy Older Adults to Determine Efficacy of Glycine and N-Acetylcysteine Supplementation on Glutathione Redox Status and Oxidative Damage",
+              "authors": ["Lizzo G", "Migliavacca E", "Grber J", "Walser M", "Abid K", "Quadroni M", "Scholz N", "Gut P", "Feige JN"],
+              "year": 2022,
+              "journal": "Frontiers in Aging",
+              "doi": "10.3389/fragi.2022.852569",
+              "pmid": "35821844",
+              "studyType": "Randomized controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=114 healthy older adults",
+              "findings": "GlyNAC at 3 doses (2.4g, 4.8g, 7.2g/day) for 2 weeks was safe and well tolerated in 114 healthy older adults. No serious adverse events.",
+              "methodology": "Independent industry RCT (Nestle/Profil) with dose-response design (NCT05041179)"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "Sex-specific response differences",
+          "claim": "Potential sex-dependent effects observed in preclinical cardiac aging model",
+          "riskLevel": "Moderate",
+          "target": "Heart (cardiomyocytes)",
+          "tissueTarget": "Heart (cardiomyocytes)",
+          "evidence": [
+            {
+              "citationId": "angelini_2025_sex",
+              "title": "Sex Differences in Response to Diet Enriched With Glutathione Precursors in the Aging Heart",
+              "authors": ["Angelini A"],
+              "year": 2025,
+              "journal": "The Journals of Gerontology: Series A",
+              "doi": "10.1093/gerona/glae258",
+              "pmid": "39492659",
+              "studyType": "Animal study (old mice)",
+              "evidenceLevel": "Level 5",
+              "findings": "GlyNAC improved diastolic function and mitochondrial markers in old male mice but not females. GlyNAC-fed females showed a decline in exercise performance. Supports sex-specific responses requiring human confirmation.",
+              "methodology": "Controlled mouse study with 12 weeks GlyNAC diet, examining sex differences"
+            }
+          ]
+        }
+      ],
+      "dosage": [
+        {
+          "dosageRange": "~14g/day total (7g glycine + 7g NAC) based on body weight (~100 mg/kg each)",
+          "claim": "Weight-based dosing used in pivotal Sekhar trials",
+          "evidenceBase": "Moderate",
+          "target": "Systemic (glutathione synthesis in all tissues)",
+          "tissueTarget": "Systemic (glutathione synthesis in all tissues)",
+          "evidence": [
+            {
+              "citationId": "kumar_2023_rct",
+              "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial",
+              "authors": ["Kumar P", "Liu C", "Hsu JW", "Chacko S", "Minber C", "Jahoor F", "Sekhar RV"],
+              "year": 2023,
+              "journal": "The Journals of Gerontology: Series A",
+              "doi": "10.1093/gerona/glac135",
+              "pmid": "35975308",
+              "studyType": "Randomized placebo-controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "findings": "Glycine 1.33 mmol/kg/day + NAC 0.81 mmol/kg/day (approximately 100 mg/kg each, ~7g+7g for 70kg adult) for 16 weeks was effective and well-tolerated.",
+              "methodology": "Double-blind RCT (NCT01870193)"
+            }
+          ]
+        },
+        {
+          "dosageRange": "2.4-7.2g/day total GlyNAC (1:1 ratio)",
+          "claim": "Lower fixed doses tested in independent trial with mixed efficacy results",
+          "evidenceBase": "Low",
+          "target": "Systemic",
+          "tissueTarget": "Systemic",
+          "evidence": [
+            {
+              "citationId": "lizzo_2022_nestle",
+              "title": "A Randomized Controlled Clinical Trial in Healthy Older Adults to Determine Efficacy of Glycine and N-Acetylcysteine Supplementation on Glutathione Redox Status and Oxidative Damage",
+              "authors": ["Lizzo G", "Migliavacca E", "Grber J", "Walser M", "Abid K", "Quadroni M", "Scholz N", "Gut P", "Feige JN"],
+              "year": 2022,
+              "journal": "Frontiers in Aging",
+              "doi": "10.3389/fragi.2022.852569",
+              "pmid": "35821844",
+              "studyType": "Randomized controlled clinical trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=114 + 20 young reference",
+              "duration": "2 weeks",
+              "findings": "Primary endpoint (total GSH increase) not met in full cohort. Post-hoc: subjects with high oxidative stress AND low baseline GSH who received medium/high doses showed significant GSH increase (p=0.016).",
+              "methodology": "Independent industry RCT with dose-response design (NCT05041179)"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

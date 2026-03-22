@@ -1,0 +1,477 @@
+{
+  "supplementEntry": {
+    "id": 94,
+    "name": "Urolithin A",
+    "scientificName": "3,8-Dihydroxy-6H-dibenzo[b,d]pyran-6-one",
+    "category": "Antioxidant",
+    "commonNames": ["UA", "Urolithin", "Mitopure"],
+    "evidenceTier": 2,
+    "evidenceTierRationale": "Multiple RCTs (ATLAS, ENERGIZE trials) in high-impact journals (JAMA Network Open, Cell Reports Medicine, Nature Aging) plus systematic review of 5 human studies",
+    "primaryBenefits": {
+      "cognitive": ["Mitophagy activation", "Neuroprotective potential"],
+      "nonCognitive": ["Muscle strength improvement", "Mitochondrial biogenesis", "Anti-inflammatory effects", "Immune function enhancement"],
+      "isEnhanced": true
+    },
+    "isEnhanced": true,
+    "dosageRange": "500-1000 mg/day",
+    "optimalDuration": "4+ months",
+    "studyPopulations": ["Middle-aged adults", "Older adults (65+)", "Sedentary elderly"],
+    "mechanismsOfAction": [
+      "Mitophagy activation via PINK1/Parkin pathway",
+      "AMPK signaling activation",
+      "Mitochondrial biogenesis enhancement",
+      "NF-kB inflammatory pathway inhibition",
+      "Lysosomal function restoration via cathepsin Z regulation"
+    ],
+    "safetyProfile": {
+      "rating": "Good",
+      "commonSideEffects": ["Mild GI discomfort", "Headache (rare)"],
+      "contraindications": ["Pregnancy (insufficient data)", "Breastfeeding (insufficient data)"],
+      "drugInteractions": ["No significant drug interactions reported in clinical trials"]
+    },
+    "effectSizes": {
+      "muscleStrength": "~12% improvement in hamstring muscle strength vs placebo (ATLAS trial, p<0.05)",
+      "muscleEndurance": "Significant improvement in hand and leg muscle endurance at 2 months (ENERGIZE trial)",
+      "inflammation": "Significant reduction in CRP levels vs placebo",
+      "immuneFunction": "Expanded naive CD8+ T cells, increased NK cells (Nature Aging 2025 RCT)"
+    },
+    "commercialAvailability": {
+      "forms": ["Capsules", "Softgels", "Powder"],
+      "costRange": "$40-80/month",
+      "qualityMarkers": ["Mitopure (branded form)", "Third-party tested", "Standardized dose"]
+    },
+    "keyCitations": [
+      {
+        "authors": "Liu S et al.",
+        "year": 2022,
+        "title": "Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial",
+        "journal": "JAMA Network Open",
+        "doi": "10.1001/jamanetworkopen.2021.44279",
+        "pmid": "35050355"
+      },
+      {
+        "authors": "Singh A et al.",
+        "year": 2022,
+        "title": "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults",
+        "journal": "Cell Reports Medicine",
+        "doi": "10.1016/j.xcrm.2022.100633",
+        "pmid": "35584623"
+      },
+      {
+        "authors": "Andreux PA et al.",
+        "year": 2019,
+        "title": "The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans",
+        "journal": "Nature Metabolism",
+        "doi": "10.1038/s42255-019-0073-4",
+        "pmid": "32694802"
+      },
+      {
+        "authors": "Hodzic Kuerec A et al.",
+        "year": 2024,
+        "title": "Targeting aging with urolithin A in humans: A systematic review",
+        "journal": "Ageing Research Reviews",
+        "doi": "10.1016/j.arr.2024.102406",
+        "pmid": "39002645"
+      },
+      {
+        "authors": "Denk D et al.",
+        "year": 2025,
+        "title": "Effect of the mitophagy inducer urolithin A on age-related immune decline: a randomized, placebo-controlled trial",
+        "journal": "Nature Aging",
+        "doi": "10.1038/s43587-025-00996-x",
+        "pmid": "41174221"
+      }
+    ],
+    "enhancedCitations": {
+      "isEnhanced": true,
+      "evidenceProfile": {
+        "overallQuality": "Tier 2",
+        "totalCitations": 11,
+        "researchQualityScore": 72,
+        "lastEvidenceUpdate": "2026-03-21"
+      }
+    },
+    "lastUpdated": "2026-03-21",
+    "healthDomains": ["Anti-Aging", "Muscle Strength", "Mitochondrial Health", "Immune System Support", "Neuroprotection"]
+  },
+  "enhancedCitations": {
+    "id": 94,
+    "name": "Urolithin A",
+    "scientificName": "3,8-Dihydroxy-6H-dibenzo[b,d]pyran-6-one",
+    "category": "Antioxidant",
+    "commonNames": ["UA", "Urolithin", "Mitopure"],
+    "lastUpdated": "2026-03-21",
+    "evidenceProfile": {
+      "overallQuality": "Tier 2",
+      "totalCitations": 11,
+      "researchQualityScore": 72,
+      "lastEvidenceUpdate": "2026-03-21",
+      "evidenceStrength": {
+        "mechanisms": "Strong",
+        "clinicalBenefits": "Moderate",
+        "safety": "Good",
+        "dosage": "Evidence-based"
+      },
+      "researchMaturity": "Developing",
+      "publicationSpan": "2016-2025"
+    },
+    "citations": {
+      "mechanisms": [
+        {
+          "mechanism": "Mitophagy activation via PINK1/Parkin pathway",
+          "strength": "Strong",
+          "mechanismType": "Cellular quality control",
+          "tissueTarget": "Skeletal muscle mitochondria",
+          "target": "Skeletal muscle mitochondria",
+          "evidence": [
+            {
+              "citationId": "ryu_2016_mitophagy",
+              "title": "Urolithin A induces mitophagy and prolongs lifespan in C. elegans and increases muscle function in rodents",
+              "authors": ["Ryu D", "Mouchiroud L", "Andreux PA"],
+              "year": 2016,
+              "journal": "Nature Medicine",
+              "doi": "10.1038/nm.4132",
+              "pmid": "27400265",
+              "studyType": "Preclinical (in vivo)",
+              "evidenceLevel": "Level 3",
+              "findings": "Identified urolithin A as a first-in-class natural compound that induces mitophagy. Extended lifespan in C. elegans and improved exercise capacity in aged rodents via PINK1/Parkin-dependent mitophagy.",
+              "methodology": "C. elegans lifespan assays, rodent exercise capacity testing, mitophagy fluorescence imaging"
+            },
+            {
+              "citationId": "andreux_2019_safety",
+              "title": "The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans",
+              "authors": ["Andreux PA", "Blanco-Bose W", "Ryu D"],
+              "year": 2019,
+              "journal": "Nature Metabolism",
+              "doi": "10.1038/s42255-019-0073-4",
+              "pmid": "32694802",
+              "studyType": "Phase I clinical trial",
+              "evidenceLevel": "Level 2",
+              "findings": "First-in-human trial demonstrated safety at all doses tested (250-2000 mg). 500 mg and 1000 mg doses modulated plasma acylcarnitines and upregulated mitochondrial gene expression in skeletal muscle.",
+              "methodology": "First-in-human dose-escalation study in healthy sedentary elderly volunteers"
+            }
+          ]
+        },
+        {
+          "mechanism": "Anti-inflammatory NF-kB pathway modulation",
+          "strength": "Moderate",
+          "mechanismType": "Immune modulation",
+          "tissueTarget": "Systemic inflammation markers",
+          "target": "Systemic inflammation markers",
+          "evidence": [
+            {
+              "citationId": "singh_2022_atlas",
+              "title": "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults",
+              "authors": ["Singh A", "D'Amico D", "Andreux PA"],
+              "year": 2022,
+              "journal": "Cell Reports Medicine",
+              "doi": "10.1016/j.xcrm.2022.100633",
+              "pmid": "35584623",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "findings": "4-month RCT (ATLAS trial) in middle-aged adults showed decreased plasma CRP and acylcarnitines, indicating anti-inflammatory and improved mitochondrial fat oxidation.",
+              "methodology": "Double-blind, placebo-controlled RCT, 4-month duration, biomarker analysis"
+            }
+          ]
+        },
+        {
+          "mechanism": "Lysosomal function restoration",
+          "strength": "Moderate",
+          "mechanismType": "Cellular repair",
+          "tissueTarget": "Brain neurons and lysosomes",
+          "target": "Brain neurons and lysosomes",
+          "evidence": [
+            {
+              "citationId": "hou_2024_alzheimer",
+              "title": "Urolithin A improves Alzheimer's disease cognition and restores mitophagy and lysosomal functions",
+              "authors": ["Hou Y", "Chu X", "Park JH"],
+              "year": 2024,
+              "journal": "Alzheimer's & Dementia",
+              "doi": "10.1002/alz.13847",
+              "pmid": "38753870",
+              "studyType": "Preclinical (AD mouse models)",
+              "evidenceLevel": "Level 4",
+              "findings": "In three mouse AD models, long-term UA treatment improved learning, memory, and olfactory function while reducing amyloid-beta and tau pathology. Restored lysosomal function via cathepsin Z regulation.",
+              "methodology": "Three transgenic AD mouse models, behavioral testing, neuropathology assessment"
+            }
+          ]
+        },
+        {
+          "mechanism": "Immune cell metabolic reprogramming",
+          "strength": "Strong",
+          "mechanismType": "Immunometabolism",
+          "tissueTarget": "CD8+ T cells and NK cells",
+          "target": "CD8+ T cells and NK cells",
+          "evidence": [
+            {
+              "citationId": "denk_2025_immune",
+              "title": "Effect of the mitophagy inducer urolithin A on age-related immune decline: a randomized, placebo-controlled trial",
+              "authors": ["Denk D", "Singh A", "Kasler HG"],
+              "year": 2025,
+              "journal": "Nature Aging",
+              "doi": "10.1038/s43587-025-00996-x",
+              "pmid": "41174221",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "findings": "RCT in 50 middle-aged adults showed UA (1000 mg/day, 4 weeks) expanded naive-like CD8+ T cells, increased fatty acid oxidation in CD8+ cells, elevated NK cells and nonclassical monocytes. Single-cell RNA-seq confirmed metabolic reprogramming.",
+              "methodology": "Double-blind, placebo-controlled RCT with single-cell RNA sequencing immune profiling"
+            }
+          ]
+        }
+      ],
+      "benefits": [
+        {
+          "healthDomain": "Muscle Strength & Performance",
+          "specificClaim": "Improves muscle strength and endurance in middle-aged and older adults",
+          "strength": "Strong",
+          "evidenceQuality": "High",
+          "replicationStatus": "Replicated across ATLAS and ENERGIZE trials",
+          "tissueTarget": "Skeletal muscle",
+          "target": "Skeletal muscle",
+          "evidence": [
+            {
+              "citationId": "liu_2022_energize",
+              "title": "Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial",
+              "authors": ["Liu S", "D'Amico D", "Shankland E"],
+              "year": 2022,
+              "journal": "JAMA Network Open",
+              "doi": "10.1001/jamanetworkopen.2021.44279",
+              "pmid": "35050355",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=66",
+              "duration": "4 months",
+              "dosage": "1000 mg/day",
+              "findings": "ENERGIZE trial: UA 1000 mg/day for 4 months significantly improved muscle endurance in hand and leg muscles at 2 months vs placebo in adults mean age 71.7. Reduced inflammatory and cellular stress biomarkers.",
+              "methodology": "Double-blind, randomized, placebo-controlled trial in older adults"
+            },
+            {
+              "citationId": "singh_2022_atlas",
+              "title": "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults",
+              "authors": ["Singh A", "D'Amico D", "Andreux PA"],
+              "year": 2022,
+              "journal": "Cell Reports Medicine",
+              "doi": "10.1016/j.xcrm.2022.100633",
+              "pmid": "35584623",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=88",
+              "duration": "4 months",
+              "dosage": "500 mg and 1000 mg/day",
+              "findings": "ATLAS trial: ~12% improvement in hamstring muscle strength vs placebo. Decreased plasma acylcarnitines and CRP, increased mitophagy-related proteins in skeletal muscle biopsies.",
+              "methodology": "Double-blind, randomized, placebo-controlled trial in middle-aged overweight adults"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Immune Function",
+          "specificClaim": "Reverses age-related immune decline and improves T cell function",
+          "strength": "Moderate",
+          "evidenceQuality": "High",
+          "replicationStatus": "Single well-designed RCT",
+          "tissueTarget": "Immune system",
+          "target": "Immune system",
+          "evidence": [
+            {
+              "citationId": "denk_2025_immune",
+              "title": "Effect of the mitophagy inducer urolithin A on age-related immune decline: a randomized, placebo-controlled trial",
+              "authors": ["Denk D", "Singh A", "Kasler HG"],
+              "year": 2025,
+              "journal": "Nature Aging",
+              "doi": "10.1038/s43587-025-00996-x",
+              "pmid": "41174221",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=50",
+              "duration": "4 weeks",
+              "dosage": "1000 mg/day",
+              "findings": "Expanded naive-like, less exhausted CD8+ T cells, increased CD8+ fatty acid oxidation capacity, elevated NK cells and nonclassical monocytes. Transcriptional shifts in immune/metabolic pathways confirmed by scRNA-seq.",
+              "methodology": "Double-blind, placebo-controlled RCT with single-cell RNA sequencing"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Anti-Aging & Longevity",
+          "specificClaim": "Systematic evidence of anti-aging effects through mitophagy induction in humans",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Supported by systematic review of 5 human studies",
+          "tissueTarget": "Multiple organ systems",
+          "target": "Multiple organ systems",
+          "evidence": [
+            {
+              "citationId": "kuerec_2024_systematic",
+              "title": "Targeting aging with urolithin A in humans: A systematic review",
+              "authors": ["Hodzic Kuerec A", "Lim XK", "Khoo AL"],
+              "year": 2024,
+              "journal": "Ageing Research Reviews",
+              "doi": "10.1016/j.arr.2024.102406",
+              "pmid": "39002645",
+              "studyType": "Systematic review",
+              "evidenceLevel": "Level 1",
+              "sampleSize": "5 studies, n=250",
+              "findings": "Systematic review of 5 human studies found UA (10-1000 mg/day) showed dose-dependent anti-inflammatory effects, upregulated mitochondrial/autophagy genes, and improved muscle strength and endurance.",
+              "methodology": "Systematic review following PRISMA guidelines, 5 eligible studies with 250 participants"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Neuroprotection",
+          "specificClaim": "Potential to improve cognitive function via mitophagy and lysosomal restoration",
+          "strength": "Weak",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Preclinical only — no human cognitive trials published",
+          "tissueTarget": "Brain",
+          "target": "Brain",
+          "evidence": [
+            {
+              "citationId": "hou_2024_alzheimer",
+              "title": "Urolithin A improves Alzheimer's disease cognition and restores mitophagy and lysosomal functions",
+              "authors": ["Hou Y", "Chu X", "Park JH"],
+              "year": 2024,
+              "journal": "Alzheimer's & Dementia",
+              "doi": "10.1002/alz.13847",
+              "pmid": "38753870",
+              "studyType": "Preclinical",
+              "evidenceLevel": "Level 4",
+              "findings": "Three AD mouse models showed improved learning, memory, and olfactory function with long-term UA treatment. Reduced amyloid-beta and tau pathology via restored mitophagy and lysosomal function.",
+              "methodology": "Three transgenic AD mouse models with behavioral and pathological assessment"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Joint Health",
+          "specificClaim": "Reduces cartilage degeneration and alleviates joint pain",
+          "strength": "Weak",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Preclinical only",
+          "tissueTarget": "Joint cartilage and synovium",
+          "target": "Joint cartilage and synovium",
+          "evidence": [
+            {
+              "citationId": "damico_2022_osteoarthritis",
+              "title": "Urolithin A improves mitochondrial health, reduces cartilage degeneration, and alleviates pain in osteoarthritis",
+              "authors": ["D'Amico D", "Olmer M", "Fouassier AM"],
+              "year": 2022,
+              "journal": "Aging Cell",
+              "doi": "10.1111/acel.13662",
+              "pmid": "35778837",
+              "studyType": "Preclinical",
+              "evidenceLevel": "Level 4",
+              "findings": "Improved mitochondrial respiration in chondrocytes from OA donors. In mouse OA models, reduced cartilage degeneration, synovial inflammation, and pain through increased mitophagy.",
+              "methodology": "In vitro chondrocyte assays plus mouse OA model"
+            }
+          ],
+          "metaAnalysisSupport": null
+        }
+      ],
+      "safety": [
+        {
+          "safetyAspect": "General tolerability",
+          "claim": "Well-tolerated at doses up to 2000 mg in clinical trials with no serious adverse events",
+          "riskLevel": "Low",
+          "target": "Multiple organ systems",
+          "tissueTarget": "Multiple organ systems",
+          "evidence": [
+            {
+              "citationId": "andreux_2019_safety",
+              "title": "The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans",
+              "authors": ["Andreux PA", "Blanco-Bose W", "Ryu D"],
+              "year": 2019,
+              "journal": "Nature Metabolism",
+              "doi": "10.1038/s42255-019-0073-4",
+              "pmid": "32694802",
+              "studyType": "Phase I clinical trial",
+              "evidenceLevel": "Level 2",
+              "findings": "First-in-human study demonstrated safety at doses up to 2000 mg. No serious adverse events reported. Mild GI symptoms were the most common side effects.",
+              "methodology": "Dose-escalation safety study in healthy elderly volunteers"
+            },
+            {
+              "citationId": "kuerec_2024_systematic",
+              "title": "Targeting aging with urolithin A in humans: A systematic review",
+              "authors": ["Hodzic Kuerec A", "Lim XK", "Khoo AL"],
+              "year": 2024,
+              "journal": "Ageing Research Reviews",
+              "doi": "10.1016/j.arr.2024.102406",
+              "pmid": "39002645",
+              "studyType": "Systematic review",
+              "evidenceLevel": "Level 1",
+              "findings": "Across 5 human studies (250 participants, 10-1000 mg/day), UA was consistently safe and well-tolerated. No significant adverse events across studies.",
+              "methodology": "Systematic review of safety data across 5 human trials"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "Cardiovascular safety",
+          "claim": "No adverse cardiovascular effects; potential HDL-C improvement",
+          "riskLevel": "Low",
+          "target": "Cardiovascular system",
+          "tissueTarget": "Cardiovascular system",
+          "evidence": [
+            {
+              "citationId": "jamialahmadi_2024_heartfailure",
+              "title": "Evaluation of Urolithin A Efficacy in Heart Failure Patients with Reduced Ejection Fraction: A Randomized, Double-blind, Crossover, Placebo-controlled Clinical Trial",
+              "authors": ["Jamialahmadi T", "Hasanpour M", "Vakilian F"],
+              "year": 2024,
+              "journal": "Reviews of Recent Clinical Trials",
+              "doi": "10.2174/0115748871279354240209101604",
+              "pmid": "38415449",
+              "studyType": "Randomized controlled trial (crossover)",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=10",
+              "findings": "In HFrEF patients, UA 500 mg BID for 4 weeks showed no adverse cardiac effects and significantly increased HDL-C (+6.46 mg/dL, p=0.026). No significant cardiac functional improvements at this dose/duration.",
+              "methodology": "Double-blind, crossover, placebo-controlled trial in heart failure patients"
+            }
+          ]
+        }
+      ],
+      "dosage": [
+        {
+          "dosageRange": "500-1000 mg/day",
+          "claim": "Optimal dose range established across multiple clinical trials",
+          "evidenceBase": "Strong",
+          "target": "Skeletal muscle and systemic",
+          "tissueTarget": "Skeletal muscle and systemic",
+          "evidence": [
+            {
+              "citationId": "liu_2022_energize",
+              "title": "Effect of Urolithin A Supplementation on Muscle Endurance and Mitochondrial Health in Older Adults: A Randomized Clinical Trial",
+              "authors": ["Liu S", "D'Amico D", "Shankland E"],
+              "year": 2022,
+              "journal": "JAMA Network Open",
+              "doi": "10.1001/jamanetworkopen.2021.44279",
+              "pmid": "35050355",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=66",
+              "dosage": "1000 mg/day",
+              "duration": "4 months",
+              "findings": "1000 mg/day for 4 months improved muscle endurance and reduced inflammatory biomarkers in older adults mean age 71.7.",
+              "methodology": "Double-blind, randomized, placebo-controlled trial"
+            },
+            {
+              "citationId": "singh_2022_atlas",
+              "title": "Urolithin A improves muscle strength, exercise performance, and biomarkers of mitochondrial health in a randomized trial in middle-aged adults",
+              "authors": ["Singh A", "D'Amico D", "Andreux PA"],
+              "year": 2022,
+              "journal": "Cell Reports Medicine",
+              "doi": "10.1016/j.xcrm.2022.100633",
+              "pmid": "35584623",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=88",
+              "dosage": "500 mg and 1000 mg/day",
+              "duration": "4 months",
+              "findings": "Both 500 mg and 1000 mg doses improved muscle strength. 1000 mg showed additional endurance benefits. Both doses reduced inflammatory markers.",
+              "methodology": "Double-blind, randomized, placebo-controlled, dose-response trial"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,620 @@
+{
+  "supplementEntry": {
+    "id": 106,
+    "name": "DIM (3,3'-Diindolylmethane)",
+    "scientificName": "3,3'-Diindolylmethane",
+    "category": "Metabolic Support",
+    "commonNames": ["DIM", "Diindolylmethane", "BioResponse DIM", "BR-DIM"],
+    "evidenceTier": 3,
+    "evidenceTierRationale": "Multiple small-to-moderate RCTs (n=12-551) demonstrate estrogen metabolism modulation (2-OHE1:16a-OHE1 ratio shift). Phase I/II cancer prevention trials show biomarker changes but no direct cancer outcome data. One systematic review of 22 human trials confirms safety but notes absence of efficacy evidence for treating established cancers. Cervical dysplasia trials show mixed results.",
+    "primaryBenefits": {
+      "cognitive": [],
+      "nonCognitive": ["Favorable estrogen metabolism (increased 2-OHE1:16a-OHE1 ratio)", "Hormonal balance support", "Anti-proliferative activity in hormone-sensitive tissues", "Cervical dysplasia regression support", "Anti-inflammatory effects via NF-kB and AhR modulation", "Antioxidant defense via Nrf2 pathway activation", "Prostate health support (androgen receptor modulation)"],
+      "isEnhanced": true
+    },
+    "isEnhanced": true,
+    "dosageRange": "100-300mg daily (absorption-enhanced formulation); typical clinical dose 150mg BID",
+    "optimalDuration": "4-12 weeks for estrogen metabolite shifts; 3-12 months in cancer prevention trials",
+    "studyPopulations": ["Premenopausal women", "Postmenopausal women on HRT", "Women with cervical dysplasia (CIN I-III)", "Women taking tamoxifen for breast cancer", "Men with castrate-resistant prostate cancer", "Patients with thyroid proliferative disease", "Healthy adults"],
+    "mechanismsOfAction": [
+      "Modulates estrogen metabolism by shifting 2-hydroxylation:16a-hydroxylation ratio via CYP1A1/CYP1A2 induction",
+      "Aryl hydrocarbon receptor (AhR) agonist/modulator affecting xenobiotic metabolism",
+      "NF-kB signaling inhibition reducing pro-inflammatory cytokine expression (TNF-a, IL-6, IL-1b)",
+      "Nrf2/ARE pathway activation upregulating detoxification enzymes (NQO1, GST, HO-1)",
+      "Androgen receptor downregulation and anti-androgenic activity",
+      "BRCA1 gene expression upregulation in estrogen-responsive tissues",
+      "Inhibition of Akt/mTOR and MAPK proliferative signaling pathways",
+      "Increased sex hormone-binding globulin (SHBG) production"
+    ],
+    "safetyProfile": {
+      "rating": "Good",
+      "commonSideEffects": ["Generally well-tolerated at doses up to 300mg/day", "Mild GI upset (nausea) at higher doses", "Dark-colored urine (harmless)", "Headache at high doses (rare)"],
+      "contraindications": ["Hormone-sensitive cancers (use only under medical supervision)", "Pregnancy and breastfeeding (insufficient safety data)", "Concurrent use with tamoxifen (reduces tamoxifen metabolite levels)", "Estrogen-dependent conditions without physician guidance"],
+      "drugInteractions": ["Reduces plasma tamoxifen, endoxifen, and 4-OH tamoxifen levels (Thomson 2017 RCT)", "May alter estradiol exposure in women on transdermal estradiol patches", "Potential CYP1A2 and CYP3A4 inducer affecting drug metabolism", "May interact with hormonal contraceptives", "Caution with anticoagulants (theoretical interaction)"]
+    },
+    "effectSizes": {
+      "estrogenMetaboliteRatioShift": "2-OHE1:16a-OHE1 ratio increase of +3.2 vs -0.7 placebo (P<0.001, n=98; Thomson 2017)",
+      "shbgIncrease": "Significant SHBG increase vs placebo in tamoxifen-treated women (P<0.05, n=98; Thomson 2017)",
+      "cervicalDysplasiaCINRegression": "Complete CIN regression significantly higher vs placebo at 100mg and 200mg vaginal DIM (P<0.05, n=multisite; Ashrafian 2015)",
+      "tamoxifenMetaboliteReduction": "Appreciable reduction in endoxifen and 4-OH tamoxifen levels with DIM co-administration (P<0.05, n=98; Thomson 2017)",
+      "bodyFatReduction": "Greater body fat percentage reduction vs placebo (non-significant trend, n=60; Godinez-Martinez 2023)",
+      "psaResponse": "1/12 patients achieved 50% PSA decline at 225mg BID (Phase I; Heath 2010)",
+      "thyroidEstrogenModulation": "Favorable 2-OHE1:16a-OHE1 shift in thyroid tissue, serum, and urine (n=7; Rajoria 2011)"
+    },
+    "commercialAvailability": {
+      "forms": ["Capsules (absorption-enhanced)", "Tablets", "Softgels", "Vaginal suppositories (investigational)"],
+      "costRange": "$15-35/month",
+      "qualityMarkers": ["BioResponse DIM (absorption-enhanced formulation)", "Standardized diindolylmethane content", "Third-party tested for purity", "Microencapsulated for bioavailability"]
+    },
+    "keyCitations": [
+      {
+        "authors": "Thomson CA et al.",
+        "year": 2017,
+        "title": "A randomized, placebo-controlled trial of diindolylmethane for breast cancer biomarker modulation in patients taking tamoxifen",
+        "journal": "Breast Cancer Research and Treatment",
+        "doi": "10.1007/s10549-017-4292-7",
+        "pmid": "28560655"
+      },
+      {
+        "authors": "Reed GA et al.",
+        "year": 2008,
+        "title": "Single-dose pharmacokinetics and tolerability of absorption-enhanced 3,3'-diindolylmethane in healthy subjects",
+        "journal": "Cancer Epidemiology, Biomarkers & Prevention",
+        "doi": "10.1158/1055-9965.EPI-08-0520",
+        "pmid": "18843002"
+      },
+      {
+        "authors": "Del Priore G et al.",
+        "year": 2010,
+        "title": "Oral diindolylmethane (DIM): pilot evaluation of a nonsurgical treatment for cervical dysplasia",
+        "journal": "Gynecologic Oncology",
+        "doi": "10.1016/j.ygyno.2009.10.060",
+        "pmid": "19939441"
+      },
+      {
+        "authors": "Castanon A et al.",
+        "year": 2012,
+        "title": "Effect of diindolylmethane supplementation on low-grade cervical cytological abnormalities: double-blind, randomised, controlled trial",
+        "journal": "British Journal of Cancer",
+        "doi": "10.1038/bjc.2011.496",
+        "pmid": "22075942"
+      },
+      {
+        "authors": "Ashrafian L et al.",
+        "year": 2015,
+        "title": "Double-blind randomized placebo-controlled multicenter clinical trial (phase IIa) on diindolylmethane's efficacy and safety in the treatment of CIN: implications for cervical cancer prevention",
+        "journal": "EPMA Journal",
+        "doi": "10.1186/s13167-015-0048-9",
+        "pmid": "26693258"
+      },
+      {
+        "authors": "Heath EI et al.",
+        "year": 2010,
+        "title": "A phase I dose-escalation study of oral BR-DIM (BioResponse 3,3'-Diindolylmethane) in castrate-resistant, non-metastatic prostate cancer",
+        "journal": "American Journal of Translational Research",
+        "doi": "",
+        "pmid": "20733950"
+      },
+      {
+        "authors": "Rajoria S et al.",
+        "year": 2011,
+        "title": "3,3'-Diindolylmethane modulates estrogen metabolism in patients with thyroid proliferative disease: a pilot study",
+        "journal": "Thyroid",
+        "doi": "10.1089/thy.2010.0245",
+        "pmid": "21254914"
+      },
+      {
+        "authors": "Gee JR et al.",
+        "year": 2016,
+        "title": "Phase Ib placebo-controlled, tissue biomarker trial of diindolylmethane (BR-DIMNG) in patients with prostate cancer who are undergoing prostatectomy",
+        "journal": "European Journal of Cancer Prevention",
+        "doi": "10.1097/CEJ.0000000000000189",
+        "pmid": "26313229"
+      },
+      {
+        "authors": "Thomson CA et al.",
+        "year": 2016,
+        "title": "Chemopreventive properties of 3,3'-diindolylmethane in breast cancer: evidence from experimental and human studies",
+        "journal": "Nutrition Reviews",
+        "doi": "10.1093/nutrit/nuw010",
+        "pmid": "27261275"
+      },
+      {
+        "authors": "Banerjee S et al.",
+        "year": 2011,
+        "title": "Attenuation of multi-targeted proliferation-linked signaling by 3,3'-diindolylmethane (DIM): from bench to clinic",
+        "journal": "Mutation Research",
+        "doi": "10.1016/j.mrrev.2011.06.001",
+        "pmid": "21703360"
+      },
+      {
+        "authors": "Godinez-Martinez E et al.",
+        "year": 2023,
+        "title": "Effectiveness of 3,3'-Diindolylmethane supplements on favoring the benign estrogen metabolism pathway and decreasing body fat in premenopausal women",
+        "journal": "Nutrition and Cancer",
+        "doi": "10.1080/01635581.2022.2123535",
+        "pmid": "36111381"
+      },
+      {
+        "authors": "Srikanth Y et al.",
+        "year": 2025,
+        "title": "Unveiling the multifaceted pharmacological actions of indole-3-carbinol and diindolylmethane: a comprehensive review",
+        "journal": "Plants",
+        "doi": "10.3390/plants14050827",
+        "pmid": "40094833"
+      }
+    ],
+    "enhancedCitations": {
+      "isEnhanced": true,
+      "evidenceProfile": {
+        "overallQuality": "Tier 3",
+        "totalCitations": 12,
+        "researchQualityScore": 58,
+        "lastEvidenceUpdate": "2026-03-21"
+      }
+    },
+    "lastUpdated": "2026-03-21",
+    "healthDomains": ["Hormonal Balance", "Women's Health", "Cancer Prevention", "Estrogen Metabolism", "Prostate Health", "Anti-inflammatory", "Detoxification"]
+  },
+  "enhancedCitations": {
+    "id": 106,
+    "name": "DIM (3,3'-Diindolylmethane)",
+    "scientificName": "3,3'-Diindolylmethane",
+    "category": "Metabolic Support",
+    "commonNames": ["DIM", "Diindolylmethane", "BioResponse DIM", "BR-DIM"],
+    "lastUpdated": "2026-03-21",
+    "evidenceProfile": {
+      "overallQuality": "Tier 3",
+      "totalCitations": 12,
+      "researchQualityScore": 58,
+      "lastEvidenceUpdate": "2026-03-21",
+      "evidenceStrength": {
+        "mechanisms": "Strong",
+        "clinicalBenefits": "Moderate",
+        "safety": "Good",
+        "dosage": "Partially established"
+      },
+      "researchMaturity": "Developing",
+      "publicationSpan": "2008-2025"
+    },
+    "citations": {
+      "mechanisms": [
+        {
+          "mechanism": "Modulates estrogen metabolism by shifting 2-hydroxylation:16a-hydroxylation ratio via CYP1A1/CYP1A2 induction",
+          "strength": "Strong",
+          "mechanismType": "Enzyme induction",
+          "tissueTarget": "Liver and estrogen-responsive tissues",
+          "target": "Liver and estrogen-responsive tissues",
+          "evidence": [
+            {
+              "citationId": "thomson_2017_tamoxifen_rct",
+              "title": "A randomized, placebo-controlled trial of diindolylmethane for breast cancer biomarker modulation in patients taking tamoxifen",
+              "authors": ["Thomson CA", "Chow HHS", "Wertheim BC", "Roe DJ", "Stopeck A", "Maskarinec G", "Altbach M", "Chalasani P", "Huang C", "Strom MB", "Galons JP", "Thompson PA"],
+              "year": 2017,
+              "journal": "Breast Cancer Research and Treatment",
+              "doi": "10.1007/s10549-017-4292-7",
+              "pmid": "28560655",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=98 completed (130 enrolled)",
+              "duration": "12 months",
+              "findings": "DIM 150mg BID significantly increased urinary 2-OHE1:16a-OHE1 ratio (+3.2 vs -0.7 placebo, P<0.001). SHBG also increased vs placebo. Demonstrates robust CYP1A1-mediated estrogen metabolism shift in humans.",
+              "methodology": "Double-blind, placebo-controlled RCT in tamoxifen-treated breast cancer patients"
+            },
+            {
+              "citationId": "rajoria_2011_thyroid",
+              "title": "3,3'-Diindolylmethane modulates estrogen metabolism in patients with thyroid proliferative disease: a pilot study",
+              "authors": ["Rajoria S", "Suriano R", "Parmar PS", "Wilson YL", "Megwalu U", "Moscatello A", "Bradlow HL", "Sepkovic DW", "Geliebter J", "Schantz SP", "Tiwari RK"],
+              "year": 2011,
+              "journal": "Thyroid",
+              "doi": "10.1089/thy.2010.0245",
+              "pmid": "21254914",
+              "studyType": "Pilot clinical trial (Phase I)",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=7",
+              "duration": "14 days",
+              "findings": "DIM 300mg/day was detectable in thyroid tissue, serum, and urine. Favorable shift in 2-OHE1:16a-OHE1 ratio consistent with antiestrogenic activity. Demonstrates tissue-level penetration and estrogen metabolism modulation.",
+              "methodology": "Open-label pilot study in female patients with thyroid proliferative disease"
+            }
+          ]
+        },
+        {
+          "mechanism": "Aryl hydrocarbon receptor (AhR) agonist/modulator affecting xenobiotic metabolism",
+          "strength": "Strong",
+          "mechanismType": "Receptor modulation",
+          "tissueTarget": "Multiple tissues including liver and immune cells",
+          "target": "Multiple tissues including liver and immune cells",
+          "evidence": [
+            {
+              "citationId": "banerjee_2011_bench_to_clinic",
+              "title": "Attenuation of multi-targeted proliferation-linked signaling by 3,3'-diindolylmethane (DIM): from bench to clinic",
+              "authors": ["Banerjee S", "Kong D", "Wang Z", "Bao B", "Hillman GG", "Sarkar FH"],
+              "year": 2011,
+              "journal": "Mutation Research",
+              "doi": "10.1016/j.mrrev.2011.06.001",
+              "pmid": "21703360",
+              "studyType": "Comprehensive review",
+              "evidenceLevel": "Level 3",
+              "findings": "DIM acts as an AhR modulator, abrogating TCDD-induced recruitment of AhR to the COX-2 promoter. Represses COX-2 mRNA and protein expression. Naturally occurring AhR modulators like DIM overcome epigenetic activation of inflammatory pathways by environmental AhR agonists.",
+              "methodology": "Systematic review of preclinical and clinical evidence on DIM signaling pathways"
+            },
+            {
+              "citationId": "srikanth_2025_comprehensive_review",
+              "title": "Unveiling the multifaceted pharmacological actions of indole-3-carbinol and diindolylmethane: a comprehensive review",
+              "authors": ["Srikanth Y", "Reddy DH", "Anusha VL", "Dumala N", "Viswanadh MK", "Chakravarthi G", "Nalluri BN", "Yadagiri G", "Ramakrishna K"],
+              "year": 2025,
+              "journal": "Plants",
+              "doi": "10.3390/plants14050827",
+              "pmid": "40094833",
+              "studyType": "Comprehensive review",
+              "evidenceLevel": "Level 3",
+              "findings": "DIM and AhR have strong binding affinity. DIM reduces oxidative stress through Nrf2/ARE/HO-1 pathway activation and mitigates inflammation by blocking TNF-a, ILs, TLR, RANKL, JAK/STAT, and NF-kB translocation. Disrupts AhR/NF-kB P65 interaction.",
+              "methodology": "Comprehensive pharmacological review of I3C and DIM mechanisms"
+            }
+          ]
+        },
+        {
+          "mechanism": "NF-kB signaling inhibition reducing pro-inflammatory cytokine expression",
+          "strength": "Moderate",
+          "mechanismType": "Anti-inflammatory signaling",
+          "tissueTarget": "Immune cells and inflammatory tissues",
+          "target": "Immune cells and inflammatory tissues",
+          "evidence": [
+            {
+              "citationId": "banerjee_2011_bench_to_clinic",
+              "title": "Attenuation of multi-targeted proliferation-linked signaling by 3,3'-diindolylmethane (DIM): from bench to clinic",
+              "authors": ["Banerjee S", "Kong D", "Wang Z", "Bao B", "Hillman GG", "Sarkar FH"],
+              "year": 2011,
+              "journal": "Mutation Research",
+              "doi": "10.1016/j.mrrev.2011.06.001",
+              "pmid": "21703360",
+              "studyType": "Comprehensive review",
+              "evidenceLevel": "Level 3",
+              "findings": "DIM inhibits NF-kB translocation and activation through multiple upstream mechanisms. Blocks TNF-a, interleukins, TLR, and RANKL signaling. Disrupts AhR/NF-kB P65 crosstalk to attenuate inflammatory amplification.",
+              "methodology": "Systematic review of DIM molecular targets in inflammation and cancer"
+            }
+          ]
+        },
+        {
+          "mechanism": "Nrf2/ARE pathway activation upregulating detoxification enzymes",
+          "strength": "Moderate",
+          "mechanismType": "Transcription factor activation",
+          "tissueTarget": "Liver and multiple tissues",
+          "target": "Liver and multiple tissues",
+          "evidence": [
+            {
+              "citationId": "srikanth_2025_comprehensive_review",
+              "title": "Unveiling the multifaceted pharmacological actions of indole-3-carbinol and diindolylmethane: a comprehensive review",
+              "authors": ["Srikanth Y", "Reddy DH", "Anusha VL", "Dumala N", "Viswanadh MK", "Chakravarthi G", "Nalluri BN", "Yadagiri G", "Ramakrishna K"],
+              "year": 2025,
+              "journal": "Plants",
+              "doi": "10.3390/plants14050827",
+              "pmid": "40094833",
+              "studyType": "Comprehensive review",
+              "evidenceLevel": "Level 3",
+              "findings": "DIM stimulates Nrf2-regulated promoters including NQO1 (oxidoreductase), GSTa1 (glutathione S-transferase), and x-CT (cystine/glutamate transporter). Nrf2 release and nuclear translocation activates transcription of detoxification and antioxidant proteins. Upstream BRCA-1 and protein kinases involved.",
+              "methodology": "Comprehensive pharmacological review"
+            }
+          ]
+        },
+        {
+          "mechanism": "Androgen receptor downregulation and anti-androgenic activity",
+          "strength": "Moderate",
+          "mechanismType": "Receptor modulation",
+          "tissueTarget": "Prostate tissue",
+          "target": "Prostate tissue",
+          "evidence": [
+            {
+              "citationId": "heath_2010_prostate_phase1",
+              "title": "A phase I dose-escalation study of oral BR-DIM (BioResponse 3,3'-Diindolylmethane) in castrate-resistant, non-metastatic prostate cancer",
+              "authors": ["Heath EI", "Heilbrun LK", "Li J", "Vaishampayan U", "Harper F", "Pemberton P", "Sarkar FH"],
+              "year": 2010,
+              "journal": "American Journal of Translational Research",
+              "doi": "",
+              "pmid": "20733950",
+              "studyType": "Phase I dose-escalation study",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=12",
+              "findings": "BR-DIM modulates estrogen metabolism and acts as an anti-androgen downregulating the androgen receptor and PSA. One patient achieved 50% PSA decline at 225mg. MTD established at 300mg. Recommended phase II dose: 225mg BID.",
+              "methodology": "Phase I dose-escalation in castrate-resistant non-metastatic prostate cancer patients"
+            },
+            {
+              "citationId": "gee_2016_prostate_biomarker",
+              "title": "Phase Ib placebo-controlled, tissue biomarker trial of diindolylmethane (BR-DIMNG) in patients with prostate cancer who are undergoing prostatectomy",
+              "authors": ["Gee JR", "Saltzstein DR", "Messing E", "Kim K", "Kolesar J", "Huang W", "Havighurst TC", "Harris L", "Wollmer BW", "Jarrard D", "House M", "Parnes H", "Bailey HH"],
+              "year": 2016,
+              "journal": "European Journal of Cancer Prevention",
+              "doi": "10.1097/CEJ.0000000000000189",
+              "pmid": "26313229",
+              "studyType": "Phase Ib placebo-controlled biomarker trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=45",
+              "duration": "21-28 days pre-prostatectomy",
+              "findings": "DIM detected in only 7/28 prostate tissue specimens. Urinary estrone ratio showed meaningful differences between placebo and high-dose groups. Confirmed feasibility of preoperative supplementation window but suggested poor tissue penetration with this formulation.",
+              "methodology": "Randomized, placebo-controlled Phase Ib trial in prostatectomy patients"
+            }
+          ]
+        }
+      ],
+      "benefits": [
+        {
+          "healthDomain": "Hormonal Balance",
+          "specificClaim": "Shifts estrogen metabolism toward favorable 2-hydroxylation pathway",
+          "strength": "Strong",
+          "evidenceQuality": "Moderate-High",
+          "replicationStatus": "Replicated across multiple RCTs and populations",
+          "tissueTarget": "Liver and estrogen-responsive tissues",
+          "target": "Liver and estrogen-responsive tissues",
+          "evidence": [
+            {
+              "citationId": "thomson_2017_tamoxifen_rct",
+              "title": "A randomized, placebo-controlled trial of diindolylmethane for breast cancer biomarker modulation in patients taking tamoxifen",
+              "authors": ["Thomson CA", "Chow HHS", "Wertheim BC", "Roe DJ", "Stopeck A", "Maskarinec G", "Altbach M", "Chalasani P", "Huang C", "Strom MB", "Galons JP", "Thompson PA"],
+              "year": 2017,
+              "journal": "Breast Cancer Research and Treatment",
+              "doi": "10.1007/s10549-017-4292-7",
+              "pmid": "28560655",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=98 completed",
+              "duration": "12 months",
+              "findings": "DIM 150mg BID produced significant 2-OHE1:16a-OHE1 ratio increase (+3.2 vs -0.7 placebo, P<0.001). SHBG significantly increased. No change in breast density by mammography or MRI.",
+              "methodology": "12-month double-blind RCT in tamoxifen-treated breast cancer patients"
+            },
+            {
+              "citationId": "rajoria_2011_thyroid",
+              "title": "3,3'-Diindolylmethane modulates estrogen metabolism in patients with thyroid proliferative disease: a pilot study",
+              "authors": ["Rajoria S", "Suriano R", "Parmar PS", "Wilson YL", "Megwalu U", "Moscatello A", "Bradlow HL", "Sepkovic DW", "Geliebter J", "Schantz SP", "Tiwari RK"],
+              "year": 2011,
+              "journal": "Thyroid",
+              "doi": "10.1089/thy.2010.0245",
+              "pmid": "21254914",
+              "studyType": "Pilot clinical trial",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=7",
+              "duration": "14 days",
+              "findings": "DIM 300mg/day increased 2-OHE1:16a-OHE1 ratio in thyroid tissue, serum, and urine. DIM was sequestered in thyroid tissue confirming tissue-level activity.",
+              "methodology": "Open-label pilot in patients with thyroid proliferative disease"
+            },
+            {
+              "citationId": "godinez_2023_premenopausal",
+              "title": "Effectiveness of 3,3'-Diindolylmethane supplements on favoring the benign estrogen metabolism pathway and decreasing body fat in premenopausal women",
+              "authors": ["Godinez-Martinez E", "Santillan R", "Samano R", "Chico-Barba G", "Tolentino MC", "Hernandez-Pineda J"],
+              "year": 2023,
+              "journal": "Nutrition and Cancer",
+              "doi": "10.1080/01635581.2022.2123535",
+              "pmid": "36111381",
+              "studyType": "Randomized, double-blind controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=60",
+              "duration": "30 days treatment + 30 days follow-up",
+              "findings": "DIM 75mg/day (300mg DIM-BR) did not significantly increase estrogen metabolite ratio at 30 days but showed non-significant positive trend 30 days post-supplementation. Greater body fat reduction in DIM group vs placebo.",
+              "methodology": "Double-blind RCT in premenopausal women with low estrogen metabolite ratios"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Women's Health",
+          "specificClaim": "Supports cervical dysplasia regression in CIN I-III",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Mixed results across multiple trials",
+          "tissueTarget": "Cervical epithelium",
+          "target": "Cervical epithelium",
+          "evidence": [
+            {
+              "citationId": "ashrafian_2015_cin_phase2a",
+              "title": "Double-blind randomized placebo-controlled multicenter clinical trial (phase IIa) on diindolylmethane's efficacy and safety in the treatment of CIN: implications for cervical cancer prevention",
+              "authors": ["Ashrafian L", "Sukhikh G", "Kiselev V", "Paltsev M", "Drukh V", "Kuznetsov I", "Muyzhnek E", "Apolikhina I", "Andrianova E"],
+              "year": 2015,
+              "journal": "EPMA Journal",
+              "doi": "10.1186/s13167-015-0048-9",
+              "pmid": "26693258",
+              "studyType": "Phase IIa multicenter RCT",
+              "evidenceLevel": "Level 2",
+              "findings": "Vaginal DIM suppositories at 100mg and 200mg/day showed significantly higher complete CIN regression rates vs placebo. Favorable safety profile with minimal adverse events.",
+              "methodology": "Double-blind, randomized, placebo-controlled, multicenter Phase IIa trial for CIN I-II"
+            },
+            {
+              "citationId": "del_priore_2010_cervical",
+              "title": "Oral diindolylmethane (DIM): pilot evaluation of a nonsurgical treatment for cervical dysplasia",
+              "authors": ["Del Priore G", "Gudipudi DK", "Montemarano N", "Restivo AM", "Malanowska-Stega J", "Arslan AA"],
+              "year": 2010,
+              "journal": "Gynecologic Oncology",
+              "doi": "10.1016/j.ygyno.2009.10.060",
+              "pmid": "19939441",
+              "studyType": "Double-blind randomized pilot trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=64 (45 DIM, 19 placebo)",
+              "duration": "12 weeks",
+              "findings": "47% of DIM group showed improved dysplasia at first follow-up. 56% had improved colposcopic findings. Well-tolerated with no significant toxicity. However, no statistically significant difference between DIM and placebo groups.",
+              "methodology": "Double-blind randomized pilot in women with CIN 2/3"
+            },
+            {
+              "citationId": "castanon_2012_lowgrade",
+              "title": "Effect of diindolylmethane supplementation on low-grade cervical cytological abnormalities: double-blind, randomised, controlled trial",
+              "authors": ["Castanon A", "Tristram A", "Mesher D", "Powell N", "Beer H", "Ashman S", "Rieck G", "Fielder H", "Fiander A", "Sasieni P"],
+              "year": 2012,
+              "journal": "British Journal of Cancer",
+              "doi": "10.1038/bjc.2011.496",
+              "pmid": "22075942",
+              "studyType": "Double-blind, randomised, controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=551",
+              "duration": "6 months",
+              "findings": "CIN2+ rate: 9% DIM vs 12% placebo (RR 0.7). CIN3+ rate: 4.6% vs 5.1% (RR 0.9). Well-tolerated but unlikely to significantly affect cytology or HPV infection at 150mg/day. Largest DIM cervical trial to date.",
+              "methodology": "Large double-blind RCT in women with low-grade cervical abnormalities"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Cancer Prevention",
+          "specificClaim": "Chemopreventive properties through estrogen metabolism modulation and BRCA1 upregulation",
+          "strength": "Preliminary",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Biomarker evidence only; no cancer outcome trials",
+          "tissueTarget": "Breast, prostate, and cervical tissue",
+          "target": "Breast, prostate, and cervical tissue",
+          "evidence": [
+            {
+              "citationId": "thomson_2016_chemopreventive_review",
+              "title": "Chemopreventive properties of 3,3'-diindolylmethane in breast cancer: evidence from experimental and human studies",
+              "authors": ["Thomson CA", "Ho E", "Strom MB"],
+              "year": 2016,
+              "journal": "Nutrition Reviews",
+              "doi": "10.1093/nutrit/nuw010",
+              "pmid": "27261275",
+              "studyType": "Narrative review",
+              "evidenceLevel": "Level 3",
+              "findings": "Comprehensive evidence review supporting DIM chemopreventive properties through estrogen metabolism modulation. Epidemiological evidence supports cruciferous vegetable consumption and reduced breast cancer risk. However, no clinical trial directly demonstrates DIM efficacy for cancer treatment.",
+              "methodology": "Review of experimental and human studies on DIM in breast cancer prevention"
+            },
+            {
+              "citationId": "thomson_2017_tamoxifen_rct",
+              "title": "A randomized, placebo-controlled trial of diindolylmethane for breast cancer biomarker modulation in patients taking tamoxifen",
+              "authors": ["Thomson CA", "Chow HHS", "Wertheim BC", "Roe DJ", "Stopeck A", "Maskarinec G", "Altbach M", "Chalasani P", "Huang C", "Strom MB", "Galons JP", "Thompson PA"],
+              "year": 2017,
+              "journal": "Breast Cancer Research and Treatment",
+              "doi": "10.1007/s10549-017-4292-7",
+              "pmid": "28560655",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=98 completed",
+              "duration": "12 months",
+              "findings": "Favorable estrogen metabolism shift but no change in breast density (a cancer risk biomarker). Tamoxifen metabolites significantly reduced, raising concern about co-administration. BRCA1 modulation pathway supported.",
+              "methodology": "12-month double-blind RCT in breast cancer patients on tamoxifen"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Prostate Health",
+          "specificClaim": "Anti-androgenic activity and PSA modulation in prostate cancer",
+          "strength": "Preliminary",
+          "evidenceQuality": "Low",
+          "replicationStatus": "Phase I data only; limited tissue penetration observed",
+          "tissueTarget": "Prostate tissue",
+          "target": "Prostate tissue",
+          "evidence": [
+            {
+              "citationId": "heath_2010_prostate_phase1",
+              "title": "A phase I dose-escalation study of oral BR-DIM (BioResponse 3,3'-Diindolylmethane) in castrate-resistant, non-metastatic prostate cancer",
+              "authors": ["Heath EI", "Heilbrun LK", "Li J", "Vaishampayan U", "Harper F", "Pemberton P", "Sarkar FH"],
+              "year": 2010,
+              "journal": "American Journal of Translational Research",
+              "doi": "",
+              "pmid": "20733950",
+              "studyType": "Phase I dose-escalation study",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=12",
+              "findings": "Minimal toxicity at doses up to 300mg. MTD 300mg, RP2D 225mg BID. 1/12 patients had 50% PSA decline; 1/12 had PSA stabilization. Modest clinical signal requiring further investigation.",
+              "methodology": "Phase I dose-escalation in castrate-resistant prostate cancer"
+            },
+            {
+              "citationId": "gee_2016_prostate_biomarker",
+              "title": "Phase Ib placebo-controlled, tissue biomarker trial of diindolylmethane (BR-DIMNG) in patients with prostate cancer who are undergoing prostatectomy",
+              "authors": ["Gee JR", "Saltzstein DR", "Messing E", "Kim K", "Kolesar J", "Huang W", "Havighurst TC", "Harris L", "Wollmer BW", "Jarrard D", "House M", "Parnes H", "Bailey HH"],
+              "year": 2016,
+              "journal": "European Journal of Cancer Prevention",
+              "doi": "10.1097/CEJ.0000000000000189",
+              "pmid": "26313229",
+              "studyType": "Phase Ib placebo-controlled biomarker trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=45",
+              "duration": "21-28 days",
+              "findings": "DIM detected in only 7/28 prostate tissue specimens, suggesting poor tissue penetration. AR staining reduced in 37.5% of DIM-treated specimens. Urinary estrone ratio showed dose-dependent changes.",
+              "methodology": "Randomized placebo-controlled Phase Ib in pre-prostatectomy patients"
+            }
+          ],
+          "metaAnalysisSupport": null
+        }
+      ],
+      "safety": [
+        {
+          "category": "General Tolerability",
+          "finding": "Well-tolerated at doses up to 300mg/day with minimal adverse effects",
+          "tissueTarget": "Systemic",
+          "target": "Systemic",
+          "evidence": [
+            {
+              "citationId": "reed_2008_pharmacokinetics",
+              "title": "Single-dose pharmacokinetics and tolerability of absorption-enhanced 3,3'-diindolylmethane in healthy subjects",
+              "authors": ["Reed GA", "Sunega JM", "Sullivan DK", "Gray JC", "Mayo MS", "Crowell JA", "Hurwitz A"],
+              "year": 2008,
+              "journal": "Cancer Epidemiology, Biomarkers & Prevention",
+              "doi": "10.1158/1055-9965.EPI-08-0520",
+              "pmid": "18843002",
+              "studyType": "Phase I pharmacokinetic study",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=healthy volunteers",
+              "findings": "No DIM-related adverse effects at doses up to 200mg. At 300mg, one subject reported vomiting probably related to study agent. Absorption-enhanced BR-DIM formulation achieved 50% higher plasma levels than crystalline DIM. Tmax approximately 2-3 hours.",
+              "methodology": "Single-dose PK and tolerability study in healthy subjects"
+            },
+            {
+              "citationId": "castanon_2012_lowgrade",
+              "title": "Effect of diindolylmethane supplementation on low-grade cervical cytological abnormalities: double-blind, randomised, controlled trial",
+              "authors": ["Castanon A", "Tristram A", "Mesher D", "Powell N", "Beer H", "Ashman S", "Rieck G", "Fielder H", "Fiander A", "Sasieni P"],
+              "year": 2012,
+              "journal": "British Journal of Cancer",
+              "doi": "10.1038/bjc.2011.496",
+              "pmid": "22075942",
+              "studyType": "Double-blind, randomised, controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=551",
+              "duration": "6 months",
+              "findings": "DIM 150mg/day well-tolerated over 6 months in the largest DIM clinical trial. No significant safety concerns reported in this population of women with low-grade cervical abnormalities.",
+              "methodology": "6-month large-scale double-blind RCT safety assessment"
+            }
+          ]
+        },
+        {
+          "category": "Drug Interactions",
+          "finding": "Significantly reduces tamoxifen and its active metabolites when co-administered",
+          "tissueTarget": "Hepatic metabolism",
+          "target": "Hepatic metabolism",
+          "evidence": [
+            {
+              "citationId": "thomson_2017_tamoxifen_rct",
+              "title": "A randomized, placebo-controlled trial of diindolylmethane for breast cancer biomarker modulation in patients taking tamoxifen",
+              "authors": ["Thomson CA", "Chow HHS", "Wertheim BC", "Roe DJ", "Stopeck A", "Maskarinec G", "Altbach M", "Chalasani P", "Huang C", "Strom MB", "Galons JP", "Thompson PA"],
+              "year": 2017,
+              "journal": "Breast Cancer Research and Treatment",
+              "doi": "10.1007/s10549-017-4292-7",
+              "pmid": "28560655",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=98",
+              "duration": "12 months",
+              "findings": "Tamoxifen, endoxifen, 4-OH tamoxifen, and N-desmethyl-tamoxifen levels were significantly reduced in DIM arm. This is a clinically important safety finding as endoxifen is the primary active metabolite of tamoxifen. Authors concluded further research needed before recommending DIM with tamoxifen.",
+              "methodology": "12-month RCT measuring tamoxifen metabolite pharmacokinetics"
+            }
+          ]
+        },
+        {
+          "category": "Rare Adverse Events",
+          "finding": "Isolated case reports of thrombotic events and visual disturbances at high doses",
+          "tissueTarget": "Vascular and ocular",
+          "target": "Vascular and ocular",
+          "evidence": [
+            {
+              "citationId": "heath_2010_prostate_phase1",
+              "title": "A phase I dose-escalation study of oral BR-DIM (BioResponse 3,3'-Diindolylmethane) in castrate-resistant, non-metastatic prostate cancer",
+              "authors": ["Heath EI", "Heilbrun LK", "Li J", "Vaishampayan U", "Harper F", "Pemberton P", "Sarkar FH"],
+              "year": 2010,
+              "journal": "American Journal of Translational Research",
+              "doi": "",
+              "pmid": "20733950",
+              "studyType": "Phase I dose-escalation study",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=12",
+              "findings": "Two patients experienced grade 3 asymptomatic hyponatremia at higher doses. Overall minimal toxicity observed across dose cohorts up to 300mg. Systematic safety surveillance across 4 dose cohorts.",
+              "methodology": "Phase I safety and tolerability assessment in prostate cancer patients"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

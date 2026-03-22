@@ -1,0 +1,448 @@
+const magnesiumLthreonateEnhanced = {
+  "id": 100,
+  "name": "Magnesium L-Threonate",
+  "scientificName": "Magnesium L-threonate",
+  "category": "Nootropic",
+  "commonNames": [
+    "Magtein",
+    "MgT",
+    "MMFS-01",
+    "Magnesium Threonate"
+  ],
+  "lastUpdated": "2026-03-21",
+  "evidenceProfile": {
+    "overallQuality": "Tier 2",
+    "totalCitations": 14,
+    "researchQualityScore": 72,
+    "lastEvidenceUpdate": "2026-03-21",
+    "evidenceStrength": {
+      "mechanisms": "Strong",
+      "clinicalBenefits": "Moderate-Strong",
+      "safety": "Good",
+      "dosage": "Established"
+    },
+    "researchMaturity": "Established",
+    "publicationSpan": "2010-2025"
+  },
+  "citations": {
+    "mechanisms": [
+      {
+        "mechanism": "Elevation of brain magnesium via BBB-permeable threonate transport",
+        "strength": "Strong",
+        "mechanismType": "Mineral transport and bioavailability",
+        "tissueTarget": "Brain (hippocampus and prefrontal cortex)",
+        "target": "Brain (hippocampus and prefrontal cortex)",
+        "evidence": [
+          {
+            "citationId": "slutsky_2010_neuron",
+            "title": "Enhancement of learning and memory by elevating brain magnesium",
+            "authors": [
+              "Slutsky I",
+              "Abumaria N",
+              "Wu LJ",
+              "Huang C",
+              "Zhang L",
+              "Li B",
+              "Zhao X",
+              "Govindarajan A",
+              "Zhao MG",
+              "Zhuo M",
+              "Tonegawa S",
+              "Liu G"
+            ],
+            "year": 2010,
+            "journal": "Neuron",
+            "doi": "10.1016/j.neuron.2009.12.026",
+            "pmid": "20152124",
+            "studyType": "Preclinical (animal study)",
+            "evidenceLevel": "Level 3",
+            "findings": "MgT elevated brain Mg levels unlike other Mg forms. Enhanced learning, working memory, short- and long-term memory. Increased synaptic density in hippocampus and functional presynaptic release sites.",
+            "methodology": "Rat model comparing MgT to other magnesium compounds for brain bioavailability and cognitive outcomes"
+          }
+        ]
+      },
+      {
+        "mechanism": "Increased hippocampal synaptic density and synaptogenesis",
+        "strength": "Strong",
+        "mechanismType": "Synaptic plasticity",
+        "tissueTarget": "Hippocampus",
+        "target": "Hippocampus",
+        "evidence": [
+          {
+            "citationId": "slutsky_2010_neuron",
+            "title": "Enhancement of learning and memory by elevating brain magnesium",
+            "authors": [
+              "Slutsky I",
+              "Abumaria N",
+              "Wu LJ"
+            ],
+            "year": 2010,
+            "journal": "Neuron",
+            "doi": "10.1016/j.neuron.2009.12.026",
+            "pmid": "20152124",
+            "studyType": "Preclinical (animal study)",
+            "evidenceLevel": "Level 3",
+            "findings": "MgT increased synaptic density in hippocampus, enhanced both short-term and long-term synaptic potentiation, and increased functional presynaptic release sites.",
+            "methodology": "Electrophysiology and synaptic density quantification in rat hippocampal neurons"
+          }
+        ]
+      },
+      {
+        "mechanism": "Enhancement of NMDA receptor signaling and NR2B upregulation",
+        "strength": "Strong",
+        "mechanismType": "Receptor modulation",
+        "tissueTarget": "Prefrontal cortex and hippocampus",
+        "target": "Prefrontal cortex and hippocampus",
+        "evidence": [
+          {
+            "citationId": "slutsky_2010_neuron",
+            "title": "Enhancement of learning and memory by elevating brain magnesium",
+            "authors": [
+              "Slutsky I",
+              "Abumaria N",
+              "Wu LJ"
+            ],
+            "year": 2010,
+            "journal": "Neuron",
+            "doi": "10.1016/j.neuron.2009.12.026",
+            "pmid": "20152124",
+            "studyType": "Preclinical (animal study)",
+            "evidenceLevel": "Level 3",
+            "findings": "Upregulation of NR2B-containing NMDA receptors in prefrontal cortex. Enhanced NMDA receptor signaling underlying synaptic plasticity improvements.",
+            "methodology": "Molecular and electrophysiological analysis of NMDA receptor subunit expression"
+          }
+        ]
+      },
+      {
+        "mechanism": "Autonomic nervous system modulation (HRV improvement)",
+        "strength": "Moderate",
+        "mechanismType": "Neuromodulation",
+        "tissueTarget": "Autonomic nervous system",
+        "target": "Autonomic nervous system",
+        "evidence": [
+          {
+            "citationId": "lopresti_2025_frontiers",
+            "title": "The effects of magnesium L-threonate (Magtein) on cognitive performance and sleep quality in adults: a randomised, double-blind, placebo-controlled trial",
+            "authors": [
+              "Lopresti AL",
+              "Smith SJ"
+            ],
+            "year": 2025,
+            "journal": "Frontiers in Nutrition",
+            "doi": "10.3389/fnut.2025.1729164",
+            "pmid": "41601871",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=100",
+            "duration": "6 weeks",
+            "findings": "Improved HRV and reduced resting heart rate, indicating autonomic nervous system modulation alongside cognitive improvements.",
+            "methodology": "6-week RCT with objective HRV and heart rate monitoring"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "healthDomain": "Cognitive Enhancement",
+        "specificClaim": "Significant improvement in overall cognitive ability in older adults with cognitive impairment",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Replicated across multiple RCTs",
+        "tissueTarget": "Prefrontal cortex and hippocampus",
+        "target": "Prefrontal cortex and hippocampus",
+        "evidence": [
+          {
+            "citationId": "liu_2016_jad",
+            "title": "Efficacy and Safety of MMFS-01, a Synapse Density Enhancer, for Treating Cognitive Impairment in Older Adults: A Randomized, Double-Blind, Placebo-Controlled Trial",
+            "authors": [
+              "Liu G",
+              "Weinger JG",
+              "Lu ZL",
+              "Xue F",
+              "Sadeghpour S"
+            ],
+            "year": 2016,
+            "journal": "Journal of Alzheimer's Disease",
+            "doi": "10.3233/JAD-150538",
+            "pmid": "26519439",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=44",
+            "duration": "12 weeks",
+            "findings": "Overall cognitive ability improved significantly relative to placebo (p=0.003; Cohen's d=0.91). Cognitive fluctuation decreased. Treatment nearly restored impaired executive function.",
+            "methodology": "Double-blind, placebo-controlled RCT in adults aged 50-70 with cognitive impairment"
+          },
+          {
+            "citationId": "lopresti_2025_frontiers",
+            "title": "The effects of magnesium L-threonate (Magtein) on cognitive performance and sleep quality in adults: a randomised, double-blind, placebo-controlled trial",
+            "authors": [
+              "Lopresti AL",
+              "Smith SJ"
+            ],
+            "year": 2025,
+            "journal": "Frontiers in Nutrition",
+            "doi": "10.3389/fnut.2025.1729164",
+            "pmid": "41601871",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=100",
+            "duration": "6 weeks",
+            "findings": "Significant improvements in overall cognitive performance (NIH Total Cognition Composite, p=0.043), reaction time (p=0.031), brain cognitive age reduced by 7.5 years.",
+            "methodology": "6-week double-blind RCT in healthy adults aged 18-45 with 2g/day Magtein"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Memory",
+        "specificClaim": "Improvement in memory quotient scores across all subcategories",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single large RCT",
+        "tissueTarget": "Hippocampus",
+        "target": "Hippocampus",
+        "evidence": [
+          {
+            "citationId": "zhang_2022_nutrients",
+            "title": "A Magtein, Magnesium L-Threonate, -Based Formula Improves Brain Cognitive Functions in Healthy Chinese Adults",
+            "authors": [
+              "Zhang C",
+              "Hu Q",
+              "Li S",
+              "Dai F",
+              "Qian W",
+              "Hewlings S",
+              "Yan T",
+              "Wang Y"
+            ],
+            "year": 2022,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu14245235",
+            "pmid": "36558392",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=109",
+            "duration": "30 days",
+            "findings": "2g/day Magtein-PS for 30 days: significant improvements in all five subcategories of the Clinical Memory Test and overall memory quotient scores. Older participants showed greater improvement.",
+            "methodology": "Double-blind RCT in healthy Chinese adults aged 18-65"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Sleep Quality",
+        "specificClaim": "Improved sleep quality including deep sleep, REM, and daytime functioning",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Two supporting RCTs",
+        "tissueTarget": "Central nervous system",
+        "target": "Central nervous system",
+        "evidence": [
+          {
+            "citationId": "hausenblas_2024_sleep",
+            "title": "Magnesium-L-threonate improves sleep quality and daytime functioning in adults with self-reported sleep problems: A randomized controlled trial",
+            "authors": [
+              "Hausenblas HA",
+              "Lynch T",
+              "Hooper S",
+              "Shrestha A",
+              "Rosendale D",
+              "Gu J"
+            ],
+            "year": 2024,
+            "journal": "Sleep Medicine X",
+            "doi": "10.1016/j.sleepx.2024.100121",
+            "pmid": "39252819",
+            "studyType": "Randomized double-blind placebo-controlled parallel-arm trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=80",
+            "duration": "21 days",
+            "findings": "1g/day MgT for 21 days: MgT group maintained sleep quality while placebo declined. Objective improvements in deep sleep, REM sleep, and light sleep duration. Subjective improvements in energy, mood, mental alertness, and daytime productivity.",
+            "methodology": "Double-blind, parallel-arm RCT in adults aged 35-55 with self-reported sleep problems"
+          },
+          {
+            "citationId": "lopresti_2025_frontiers",
+            "title": "The effects of magnesium L-threonate (Magtein) on cognitive performance and sleep quality in adults: a randomised, double-blind, placebo-controlled trial",
+            "authors": [
+              "Lopresti AL",
+              "Smith SJ"
+            ],
+            "year": 2025,
+            "journal": "Frontiers in Nutrition",
+            "doi": "10.3389/fnut.2025.1729164",
+            "pmid": "41601871",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=100",
+            "duration": "6 weeks",
+            "findings": "Self-reported sleep impairment improved (p=0.043), but objective sleep metrics showed no difference vs. placebo.",
+            "methodology": "6-week double-blind RCT with both subjective and objective sleep measures"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Neuroprotection",
+        "specificClaim": "Improved regional cerebral metabolism and cognitive functioning in dementia patients",
+        "strength": "Preliminary",
+        "evidenceQuality": "Low",
+        "replicationStatus": "Single open-label pilot",
+        "tissueTarget": "Brain",
+        "target": "Brain",
+        "evidence": [
+          {
+            "citationId": "wroolie_2017_dementia",
+            "title": "Open Label Trial of Magnesium L-Threonate in Patients with Dementia",
+            "authors": [
+              "Wroolie TE",
+              "Watson K",
+              "Chen K",
+              "Balzafiore D",
+              "Reiman E",
+              "Rasgon N"
+            ],
+            "year": 2017,
+            "journal": "Innovation in Aging",
+            "doi": "10.1093/geroni/igx004.661",
+            "studyType": "Open-label pilot trial",
+            "evidenceLevel": "Level 4",
+            "sampleSize": "n=15",
+            "duration": "12 weeks",
+            "findings": "Significant improvement in regional cerebral metabolism and global index of cognitive functioning after 12 weeks. Higher RBC magnesium correlated with cognitive and executive function gains.",
+            "methodology": "Open-label pilot in dementia patients with brain imaging"
+          }
+        ],
+        "metaAnalysisSupport": null
+      }
+    ],
+    "safety": [
+      {
+        "safetyAspect": "General tolerability in clinical trials",
+        "claim": "Good safety profile with high tolerability across multiple RCTs",
+        "riskLevel": "Low",
+        "target": "Multiple organ systems",
+        "tissueTarget": "Multiple organ systems",
+        "evidence": [
+          {
+            "citationId": "lopresti_2025_frontiers",
+            "title": "The effects of magnesium L-threonate (Magtein) on cognitive performance and sleep quality in adults: a randomised, double-blind, placebo-controlled trial",
+            "authors": [
+              "Lopresti AL",
+              "Smith SJ"
+            ],
+            "year": 2025,
+            "journal": "Frontiers in Nutrition",
+            "doi": "10.3389/fnut.2025.1729164",
+            "pmid": "41601871",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "findings": "98% of participants reported good or excellent tolerability. Adverse event rate: 10% Magtein vs 8% placebo (not significantly different).",
+            "methodology": "6-week RCT with systematic adverse event monitoring"
+          },
+          {
+            "citationId": "hausenblas_2024_sleep",
+            "title": "Magnesium-L-threonate improves sleep quality and daytime functioning in adults with self-reported sleep problems: A randomized controlled trial",
+            "authors": [
+              "Hausenblas HA",
+              "Lynch T",
+              "Hooper S"
+            ],
+            "year": 2024,
+            "journal": "Sleep Medicine X",
+            "doi": "10.1016/j.sleepx.2024.100121",
+            "pmid": "39252819",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "findings": "Well tolerated, no major side effects reported at 1g/day for 21 days.",
+            "methodology": "Parallel-arm RCT with safety monitoring"
+          }
+        ]
+      },
+      {
+        "safetyAspect": "Negative trial evidence (pain outcomes)",
+        "claim": "Ineffective for post-surgical pain in breast cancer patients but no safety concerns",
+        "riskLevel": "Low",
+        "target": "Peripheral nervous system",
+        "tissueTarget": "Peripheral nervous system",
+        "evidence": [
+          {
+            "citationId": "ni_2023_breast_cancer",
+            "title": "A Randomized, Double-Blind, Placebo-Controlled Trial to Evaluate the Therapeutic Effect of Magnesium-L-Threonate Supplementation for Persistent Pain After Breast Cancer Surgery",
+            "authors": [
+              "Ni Y",
+              "Deng F",
+              "Yu S",
+              "Zhang J",
+              "Zhang X",
+              "Huang D",
+              "Zhou H"
+            ],
+            "year": 2023,
+            "journal": "Breast Cancer (Dove Medical Press)",
+            "doi": "10.2147/BCTT.S413435",
+            "pmid": "37520407",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=109",
+            "duration": "12 weeks",
+            "findings": "MgT did not effectively prevent persistent pain after breast cancer surgery, nor provide sufficient pain relief over placebo. No significant improvements in pain, mood, sleep quality, or cognitive function. No safety concerns raised.",
+            "methodology": "Double-blind RCT in post-surgical breast cancer patients"
+          }
+        ]
+      }
+    ],
+    "dosage": [
+      {
+        "dosageRange": "1,000-2,000 mg/day magnesium L-threonate (yielding ~72-144 mg elemental Mg)",
+        "claim": "Dose range established across multiple RCTs with cognitive and sleep endpoints",
+        "evidenceBase": "Strong",
+        "target": "Central nervous system",
+        "tissueTarget": "Central nervous system",
+        "evidence": [
+          {
+            "citationId": "lopresti_2025_frontiers",
+            "title": "The effects of magnesium L-threonate (Magtein) on cognitive performance and sleep quality in adults: a randomised, double-blind, placebo-controlled trial",
+            "authors": [
+              "Lopresti AL",
+              "Smith SJ"
+            ],
+            "year": 2025,
+            "journal": "Frontiers in Nutrition",
+            "doi": "10.3389/fnut.2025.1729164",
+            "pmid": "41601871",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=100",
+            "findings": "2g/day Magtein for 6 weeks showed significant cognitive improvements and sleep benefits.",
+            "methodology": "6-week dose-finding RCT"
+          },
+          {
+            "citationId": "hausenblas_2024_sleep",
+            "title": "Magnesium-L-threonate improves sleep quality and daytime functioning in adults with self-reported sleep problems: A randomized controlled trial",
+            "authors": [
+              "Hausenblas HA",
+              "Lynch T",
+              "Hooper S"
+            ],
+            "year": 2024,
+            "journal": "Sleep Medicine X",
+            "doi": "10.1016/j.sleepx.2024.100121",
+            "pmid": "39252819",
+            "studyType": "Randomized double-blind placebo-controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=80",
+            "findings": "1g/day MgT for 21 days was effective for sleep quality improvements.",
+            "methodology": "Parallel-arm RCT with objective sleep metrics"
+          }
+        ]
+      }
+    ]
+  }
+};
+
+// === REQUIRED EXPORT BLOCK ===
+window.enhancedCitations = window.enhancedCitations || {};
+window.enhancedCitations[100] = magnesiumLthreonateEnhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = magnesiumLthreonateEnhanced;
+}

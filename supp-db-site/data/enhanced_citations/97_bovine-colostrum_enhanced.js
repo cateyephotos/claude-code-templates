@@ -1,0 +1,501 @@
+const bovineColostrumEnhanced = {
+  "id": 97,
+  "name": "Bovine Colostrum",
+  "scientificName": "Colostrum bovinum",
+  "category": "Performance Enhancers",
+  "commonNames": [
+    "Colostrum",
+    "Cow Colostrum",
+    "First Milk"
+  ],
+  "lastUpdated": "2026-03-21",
+  "evidenceProfile": {
+    "overallQuality": "Tier 2",
+    "totalCitations": 17,
+    "researchQualityScore": 72,
+    "lastEvidenceUpdate": "2026-03-21",
+    "evidenceStrength": {
+      "mechanisms": "Strong",
+      "clinicalBenefits": "Strong",
+      "safety": "Good",
+      "dosage": "Established"
+    },
+    "researchMaturity": "Established",
+    "publicationSpan": "2001-2024"
+  },
+  "citations": {
+    "mechanisms": [
+      {
+        "mechanism": "Immunoglobulin transfer providing passive immunity",
+        "strength": "Strong",
+        "mechanismType": "Immune modulation",
+        "tissueTarget": "Mucosal surfaces and systemic immune system",
+        "target": "Mucosal surfaces and systemic immune system",
+        "evidence": [
+          {
+            "citationId": "glowka_2020_immunological",
+            "title": "Immunological Outcomes of Bovine Colostrum Supplementation in Trained and Physically Active People: A Systematic Review and Meta-Analysis",
+            "authors": [
+              "Glowka N",
+              "Durkalec-Michalski K",
+              "Wozniewicz M"
+            ],
+            "year": 2020,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu12041023",
+            "pmid": "32276466",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "findings": "Reviewed 10 RCTs (239 participants). No or fairly low impact on serum immunoglobulins (IgA, IgG), lymphocytes, neutrophils, and salivary IgA in athletes, suggesting colostrum's immune benefits may act through mucosal rather than systemic pathways.",
+            "methodology": "Systematic review and meta-analysis of 10 RCTs in trained and physically active people"
+          },
+          {
+            "citationId": "jones_2019_invivo",
+            "title": "The effects of bovine colostrum supplementation on in vivo immunity following prolonged exercise: a randomised controlled trial",
+            "authors": [
+              "Jones AW",
+              "March DS",
+              "Thatcher R"
+            ],
+            "year": 2019,
+            "journal": "European Journal of Nutrition",
+            "doi": "10.1007/s00394-017-1597-6",
+            "pmid": "29274034",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "findings": "Colostrum enhanced immune sensitivity at 24h (p<0.001) and 48h (p=0.023) post-exercise; blunted exercise-induced decrease in immune responsiveness in 31 men.",
+            "methodology": "Double-blind RCT measuring in vivo immunity following prolonged exercise"
+          }
+        ]
+      },
+      {
+        "mechanism": "Growth factor delivery supporting gut epithelial repair",
+        "strength": "Strong",
+        "mechanismType": "Tissue repair and regeneration",
+        "tissueTarget": "Gastrointestinal epithelium",
+        "target": "Gastrointestinal epithelium",
+        "evidence": [
+          {
+            "citationId": "marchbank_2011_gutpermeability",
+            "title": "The nutriceutical bovine colostrum truncates the increase in gut permeability caused by heavy exercise in athletes",
+            "authors": [
+              "Marchbank T",
+              "Davison G",
+              "Oakes JR"
+            ],
+            "year": 2011,
+            "journal": "American Journal of Physiology - Gastrointestinal and Liver Physiology",
+            "doi": "10.1152/ajpgi.00281.2010",
+            "pmid": "21148400",
+            "studyType": "Double-blind placebo-controlled crossover RCT",
+            "evidenceLevel": "Level 2",
+            "findings": "Colostrum truncated exercise-induced gut permeability rise by 80% (placebo saw 2.5-fold increase). Truncated temperature-induced apoptosis by 60% in cell lines, indicating growth factor-mediated epithelial protection.",
+            "methodology": "Double-blind, placebo-controlled, crossover RCT in 12 volunteers with cell line mechanistic studies"
+          },
+          {
+            "citationId": "playford_2001_nsaid",
+            "title": "Co-administration of the health food supplement, bovine colostrum, reduces the acute non-steroidal anti-inflammatory drug-induced increase in intestinal permeability",
+            "authors": [
+              "Playford RJ",
+              "MacDonald CE",
+              "Calnan DP"
+            ],
+            "year": 2001,
+            "journal": "Clinical Science (London)",
+            "doi": "",
+            "pmid": "11352778",
+            "studyType": "Randomized controlled crossover trial",
+            "evidenceLevel": "Level 2",
+            "findings": "Colostrum co-administration prevented the 3-fold increase in gut permeability typically induced by indomethacin in 7 healthy volunteers and 15 chronic NSAID patients.",
+            "methodology": "Randomized controlled crossover trial in healthy volunteers and chronic NSAID patients"
+          }
+        ]
+      },
+      {
+        "mechanism": "Tight junction protein support reducing intestinal permeability",
+        "strength": "Strong",
+        "mechanismType": "Barrier function maintenance",
+        "tissueTarget": "Intestinal epithelial tight junctions",
+        "target": "Intestinal epithelial tight junctions",
+        "evidence": [
+          {
+            "citationId": "halasa_2017_zonulin",
+            "title": "Oral Supplementation with Bovine Colostrum Decreases Intestinal Permeability and Stool Concentrations of Zonulin in Athletes",
+            "authors": [
+              "Halasa M",
+              "Maciejewska D",
+              "Baskiewicz-Halasa M"
+            ],
+            "year": 2017,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu9040370",
+            "pmid": "28397754",
+            "studyType": "Double-blind placebo-controlled crossover RCT",
+            "evidenceLevel": "Level 2",
+            "findings": "After 20 days of 500mg colostrum, intestinal permeability returned to normal range. Significant reduction in stool zonulin concentrations vs placebo, indicating improved tight junction integrity.",
+            "methodology": "Double-blind, placebo-controlled, crossover RCT in 16 athletes"
+          },
+          {
+            "citationId": "eslamian_2019_icu",
+            "title": "Effects of early enteral bovine colostrum supplementation on intestinal permeability in critically ill patients: A randomized, double-blind, placebo-controlled study",
+            "authors": [
+              "Eslamian G",
+              "Ardehali SH",
+              "Baghestani AR",
+              "Vahdat Shariatpanahi Z"
+            ],
+            "year": 2019,
+            "journal": "Nutrition",
+            "doi": "10.1016/j.nut.2018.10.013",
+            "pmid": "30551120",
+            "studyType": "Double-blind placebo-controlled RCT",
+            "evidenceLevel": "Level 2",
+            "findings": "Plasma endotoxin decreased significantly by day 10; zonulin levels reduced significantly (p<0.001); diarrhea incidence significantly lower (p=0.02) in 62 ICU patients.",
+            "methodology": "Double-blind, placebo-controlled RCT in 70 ICU patients (62 completed)"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "healthDomain": "Upper Respiratory Health",
+        "specificClaim": "Reduces upper respiratory symptom days and episodes during exercise training",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Replicated across 5 RCTs with meta-analytic confirmation",
+        "tissueTarget": "Upper respiratory tract mucosa",
+        "target": "Upper respiratory tract mucosa",
+        "evidence": [
+          {
+            "citationId": "jones_2016_urti_meta",
+            "title": "Bovine colostrum supplementation and upper respiratory symptoms during exercise training: a systematic review and meta-analysis of randomised controlled trials",
+            "authors": [
+              "Jones AW",
+              "March DS",
+              "Curtis F",
+              "Bridle C"
+            ],
+            "year": 2016,
+            "journal": "BMC Sports Science, Medicine and Rehabilitation",
+            "doi": "10.1186/s13102-016-0047-8",
+            "pmid": "27462401",
+            "studyType": "Systematic review and meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "152 participants across 5 RCTs",
+            "duration": "8-12 weeks",
+            "findings": "Bovine colostrum reduced upper respiratory symptom days by 44% (rate ratio 0.56, 95% CI 0.43-0.72) and episodes by 38% (rate ratio 0.62, 95% CI 0.40-0.99) over 8-12 weeks.",
+            "methodology": "Systematic review and meta-analysis of 5 RCTs"
+          },
+          {
+            "citationId": "jones_2014_uri_males",
+            "title": "Effects of bovine colostrum supplementation on upper respiratory illness in active males",
+            "authors": [
+              "Jones AW",
+              "Cameron SJS",
+              "Thatcher R"
+            ],
+            "year": 2014,
+            "journal": "Brain, Behavior, and Immunity",
+            "doi": "10.1016/j.bbi.2013.10.032",
+            "pmid": "24200515",
+            "studyType": "Double-blind RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "53 males",
+            "duration": "12 weeks",
+            "findings": "Significantly lower proportion of URI days and episodes with colostrum vs placebo over 12 weeks. Mechanism: colostrum limits increased salivary bacterial load.",
+            "methodology": "Double-blind RCT with 25 colostrum vs 28 placebo"
+          },
+          {
+            "citationId": "baskiewicz_2023_students",
+            "title": "Moderate Dose Bovine Colostrum Supplementation in Prevention of Upper Respiratory Tract Infections in Medical University Students: A Randomized, Triple Blind, Placebo-Controlled Trial",
+            "authors": [
+              "Baskiewicz-Halasa M",
+              "Stachowska E",
+              "Grochans E"
+            ],
+            "year": 2023,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu15081925",
+            "pmid": "37111143",
+            "studyType": "Triple-blind placebo-controlled RCT",
+            "evidenceLevel": "Level 2",
+            "duration": "107 days",
+            "findings": "Significant protection from URTIs with 0.5-1.0 g/day, reduced frequency and severity of symptoms in medical/health science students.",
+            "methodology": "Randomized, triple-blind, placebo-controlled trial"
+          },
+          {
+            "citationId": "halasa_2023_children",
+            "title": "Six Weeks of Supplementation with Bovine Colostrum Effectively Reduces URTIs Symptoms Frequency and Gravity for Up to 20 Weeks in Pre-School Children",
+            "authors": [
+              "Halasa M",
+              "Skonieczna-Zydecka K",
+              "Machalinski B",
+              "Buhner L",
+              "Baskiewicz-Halasa M"
+            ],
+            "year": 2023,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu15163626",
+            "pmid": "37630816",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "57 children (35 colostrum, 22 placebo)",
+            "duration": "6 weeks supplementation, 20 weeks follow-up",
+            "findings": "31% reduction in URTI symptom frequency (significant to 20 weeks), 37% reduction in symptom gravity, 50% reduction in severe episodes. No significant side effects.",
+            "methodology": "RCT in pre-school children"
+          }
+        ],
+        "metaAnalysisSupport": "Jones 2016 meta-analysis of 5 RCTs (PMID 27462401)"
+      },
+      {
+        "healthDomain": "Gut Health",
+        "specificClaim": "Reduces intestinal permeability in athletes and patients",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Replicated across 10 RCTs with meta-analytic confirmation",
+        "tissueTarget": "Intestinal epithelium",
+        "target": "Intestinal epithelium",
+        "evidence": [
+          {
+            "citationId": "hajihashemi_2024_gutperm_meta",
+            "title": "Bovine Colostrum in Increased Intestinal Permeability in Healthy Athletes and Patients: A Meta-Analysis of Randomized Clinical Trials",
+            "authors": [
+              "Hajihashemi P",
+              "Haghighatdoost F",
+              "Kassaian N"
+            ],
+            "year": 2024,
+            "journal": "Digestive Diseases and Sciences",
+            "doi": "10.1007/s10620-023-08219-2",
+            "pmid": "38361147",
+            "studyType": "Meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "10 RCTs",
+            "findings": "Significant reduction in 5-h urinary lactulose/rhamnose ratio and lactulose/mannitol ratio, indicating reduced intestinal permeability across athletes and patients.",
+            "methodology": "Meta-analysis of 10 randomized clinical trials"
+          },
+          {
+            "citationId": "marchbank_2011_gutpermeability",
+            "title": "The nutriceutical bovine colostrum truncates the increase in gut permeability caused by heavy exercise in athletes",
+            "authors": [
+              "Marchbank T",
+              "Davison G",
+              "Oakes JR"
+            ],
+            "year": 2011,
+            "journal": "American Journal of Physiology - Gastrointestinal and Liver Physiology",
+            "doi": "10.1152/ajpgi.00281.2010",
+            "pmid": "21148400",
+            "studyType": "Double-blind placebo-controlled crossover RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "12 volunteers",
+            "findings": "Colostrum truncated exercise-induced gut permeability rise by 80% compared to placebo (which saw 2.5-fold increase).",
+            "methodology": "Double-blind, placebo-controlled, crossover RCT"
+          }
+        ],
+        "metaAnalysisSupport": "Hajihashemi 2024 meta-analysis of 10 RCTs (PMID 38361147)"
+      },
+      {
+        "healthDomain": "GI Disease Support",
+        "specificClaim": "Reduces childhood infectious diarrhea frequency and occurrence",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Meta-analytic confirmation across 5 RCTs",
+        "tissueTarget": "Gastrointestinal tract",
+        "target": "Gastrointestinal tract",
+        "evidence": [
+          {
+            "citationId": "li_2019_diarrhea_meta",
+            "title": "Bovine colostrum and product intervention associated with relief of childhood infectious diarrhea",
+            "authors": [
+              "Li J",
+              "Xu YW",
+              "Jiang JJ",
+              "Song QK"
+            ],
+            "year": 2019,
+            "journal": "Scientific Reports",
+            "doi": "10.1038/s41598-019-39644-x",
+            "pmid": "30816291",
+            "studyType": "Meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "5 RCTs from 166 articles reviewed",
+            "findings": "Stool frequency reduced by 1.42 times/day; diarrhea occurrence reduced by 71% (OR 0.29).",
+            "methodology": "Meta-analysis of 5 RCTs on childhood infectious diarrhea"
+          },
+          {
+            "citationId": "barakat_2020_acute_diarrhea",
+            "title": "Bovine Colostrum in the Treatment of Acute Diarrhea in Children: A Double-Blinded Randomized Controlled Trial",
+            "authors": [
+              "Barakat SH",
+              "Meheissen MA",
+              "Omar OM",
+              "Elbana DA"
+            ],
+            "year": 2020,
+            "journal": "Journal of Tropical Pediatrics",
+            "doi": "10.1093/tropej/fmz029",
+            "pmid": "31168590",
+            "studyType": "Double-blind RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "160 children (80 colostrum, 80 placebo)",
+            "findings": "At 48h, significantly lower frequency of vomiting, diarrhea, and Vesikari scoring vs placebo.",
+            "methodology": "Double-blind, randomized controlled trial in children with acute diarrhea"
+          }
+        ],
+        "metaAnalysisSupport": "Li 2019 meta-analysis of 5 RCTs (PMID 30816291)"
+      },
+      {
+        "healthDomain": "Athletic Performance",
+        "specificClaim": "Improves lean body mass and sprint performance in active individuals",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Multiple individual RCTs, no meta-analysis",
+        "tissueTarget": "Skeletal muscle",
+        "target": "Skeletal muscle",
+        "evidence": [
+          {
+            "citationId": "antonio_2001_bodycomp",
+            "title": "The effects of bovine colostrum supplementation on body composition and exercise performance in active men and women",
+            "authors": [
+              "Antonio J",
+              "Sanders MS",
+              "Van Gammeren D"
+            ],
+            "year": 2001,
+            "journal": "Nutrition",
+            "doi": "10.1016/s0899-9007(00)00552-9",
+            "pmid": "11312068",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "Active men and women",
+            "duration": "8 weeks",
+            "findings": "Significant increase in bone-free lean body mass (mean +1.49 kg, p<0.05) with 20g/day colostrum vs whey protein. No improvement in treadmill time or 1RM strength.",
+            "methodology": "RCT comparing 20g/day colostrum vs whey protein over 8 weeks"
+          },
+          {
+            "citationId": "hofman_2002_fieldhockey",
+            "title": "The effect of bovine colostrum supplementation on exercise performance in elite field hockey players",
+            "authors": [
+              "Hofman Z",
+              "Smeets R",
+              "Verlaan G",
+              "van der Lugt R",
+              "Verstappen PA"
+            ],
+            "year": 2002,
+            "journal": "International Journal of Sport Nutrition and Exercise Metabolism",
+            "doi": "10.1123/ijsnem.12.4.461",
+            "pmid": "12500989",
+            "studyType": "Double-blind randomized placebo-controlled RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "35 elite field hockey players (17F, 18M)",
+            "findings": "Sprint performance improved significantly (p=0.023) with colostrum vs whey. No differences in body composition or endurance.",
+            "methodology": "Double-blind, randomized, placebo-controlled RCT in elite athletes"
+          }
+        ],
+        "metaAnalysisSupport": null
+      }
+    ],
+    "safety": [
+      {
+        "safetyAspect": "General tolerability and clinical safety profile",
+        "claim": "Good safety profile across multiple populations including children, adults, athletes, and ICU patients",
+        "riskLevel": "Low",
+        "target": "Multiple organ systems",
+        "tissueTarget": "Multiple organ systems",
+        "evidence": [
+          {
+            "citationId": "rathe_2014_clinical",
+            "title": "Clinical applications of bovine colostrum therapy: a systematic review",
+            "authors": [
+              "Rathe M",
+              "Muller K",
+              "Sangild PT",
+              "Husby S"
+            ],
+            "year": 2014,
+            "journal": "Nutrition Reviews",
+            "doi": "10.1111/nure.12089",
+            "pmid": "24571383",
+            "studyType": "Systematic review",
+            "evidenceLevel": "Level 1",
+            "findings": "Systematic review of 51 eligible studies concluded colostrum is nontoxic and safe for human ingestion. Colostrum may provide gastrointestinal and immunological benefits across diverse populations.",
+            "methodology": "Systematic review of 51 studies evaluating clinical applications"
+          },
+          {
+            "citationId": "guberti_2021_sickhealthy",
+            "title": "Bovine Colostrum Applications in Sick and Healthy People: A Systematic Review",
+            "authors": [
+              "Guberti M",
+              "Botti S",
+              "Capuzzo MT"
+            ],
+            "year": 2021,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu13072194",
+            "pmid": "34202206",
+            "studyType": "Systematic review",
+            "evidenceLevel": "Level 1",
+            "findings": "Reviewed 28 papers finding colostrum effective for preventing upper respiratory illness in sportsmen, modulating immune response, and reducing intestinal permeability with good safety across sick and healthy populations.",
+            "methodology": "Systematic review of 28 papers across sick and healthy populations"
+          },
+          {
+            "citationId": "halasa_2023_children",
+            "title": "Six Weeks of Supplementation with Bovine Colostrum Effectively Reduces URTIs Symptoms Frequency and Gravity for Up to 20 Weeks in Pre-School Children",
+            "authors": [
+              "Halasa M",
+              "Skonieczna-Zydecka K",
+              "Machalinski B",
+              "Buhner L",
+              "Baskiewicz-Halasa M"
+            ],
+            "year": 2023,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu15163626",
+            "pmid": "37630816",
+            "studyType": "Randomized controlled trial",
+            "evidenceLevel": "Level 2",
+            "findings": "No significant side effects reported in pre-school children over 6 weeks of supplementation with 20-week follow-up.",
+            "methodology": "RCT in 57 pre-school children"
+          }
+        ]
+      }
+    ],
+    "dosage": [
+      {
+        "dosageRange": "0.5-20 g/day depending on indication",
+        "claim": "Dose range established across multiple clinical trials with lower doses effective for URTI prevention and higher doses for body composition",
+        "evidenceBase": "Strong",
+        "target": "Immune system and gastrointestinal tract",
+        "tissueTarget": "Immune system and gastrointestinal tract",
+        "evidence": [
+          {
+            "citationId": "baskiewicz_2023_students",
+            "title": "Moderate Dose Bovine Colostrum Supplementation in Prevention of Upper Respiratory Tract Infections in Medical University Students: A Randomized, Triple Blind, Placebo-Controlled Trial",
+            "authors": [
+              "Baskiewicz-Halasa M",
+              "Stachowska E",
+              "Grochans E"
+            ],
+            "year": 2023,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu15081925",
+            "pmid": "37111143",
+            "studyType": "Triple-blind placebo-controlled RCT",
+            "evidenceLevel": "Level 2",
+            "findings": "Significant URTI protection with moderate doses of 0.5-1.0 g/day over 107 days, demonstrating efficacy at lower doses than traditionally used.",
+            "methodology": "Randomized, triple-blind, placebo-controlled trial in medical university students"
+          }
+        ]
+      }
+    ]
+  }
+};
+
+// === REQUIRED EXPORT BLOCK ===
+window.enhancedCitations = window.enhancedCitations || {};
+window.enhancedCitations[97] = bovineColostrumEnhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = bovineColostrumEnhanced;
+}

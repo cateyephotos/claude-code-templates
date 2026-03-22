@@ -1,0 +1,471 @@
+const palmitoylethanolamideEnhanced = {
+  "id": 107,
+  "name": "Palmitoylethanolamide",
+  "scientificName": "Palmitoylethanolamide (PEA)",
+  "category": "Anti-inflammatory",
+  "commonNames": [
+    "PEA",
+    "Palmidrol",
+    "Impulsin",
+    "Normast",
+    "Levagen+"
+  ],
+  "lastUpdated": "2026-03-21",
+  "evidenceProfile": {
+    "overallQuality": "Tier 2",
+    "totalCitations": 16,
+    "researchQualityScore": 72,
+    "lastEvidenceUpdate": "2026-03-21",
+    "evidenceStrength": {
+      "mechanisms": "Strong",
+      "clinicalBenefits": "Strong",
+      "safety": "Strong",
+      "dosage": "Well established"
+    },
+    "researchMaturity": "Established",
+    "publicationSpan": "2015-2025"
+  },
+  "citations": {
+    "mechanisms": [
+      {
+        "mechanism": "PPAR-alpha receptor activation and NF-kB signaling inhibition",
+        "strength": "Strong",
+        "mechanismType": "Nuclear receptor signaling",
+        "tissueTarget": "Neurons, glia, and immune cells",
+        "target": "Neurons, glia, and immune cells",
+        "evidence": [
+          {
+            "citationId": "gabrielsson_2016_review",
+            "title": "Palmitoylethanolamide for the treatment of pain: pharmacokinetics, safety and efficacy",
+            "authors": [
+              "Gabrielsson L",
+              "Mattsson S",
+              "Fowler CJ"
+            ],
+            "year": 2016,
+            "journal": "British Journal of Clinical Pharmacology",
+            "doi": "10.1111/bcp.12957",
+            "pmid": "27220803",
+            "studyType": "Comprehensive review",
+            "evidenceLevel": "Level 3",
+            "findings": "PEA activates PPAR-alpha leading to downstream inhibition of NF-kB and pro-inflammatory gene transcription. Recommended dose 1200 mg/day. Poor aqueous solubility (logP >5) necessitates micronization or ultramicronization for improved bioavailability.",
+            "methodology": "Systematic review of pharmacokinetic and pharmacodynamic data"
+          }
+        ]
+      },
+      {
+        "mechanism": "Mast cell stabilization and degranulation inhibition",
+        "strength": "Strong",
+        "mechanismType": "Immune cell modulation",
+        "tissueTarget": "Mast cells and peripheral nerves",
+        "target": "Mast cells and peripheral nerves",
+        "evidence": [
+          {
+            "citationId": "skaper_2013_mastcell",
+            "title": "Mast cells, glia and neuroinflammation: partners in crime?",
+            "authors": [
+              "Skaper SD",
+              "Facci L",
+              "Giusti P"
+            ],
+            "year": 2013,
+            "journal": "Immunology",
+            "doi": "10.1111/imm.12055",
+            "pmid": "23108549",
+            "studyType": "Review",
+            "evidenceLevel": "Level 4",
+            "findings": "PEA down-modulates mast cell activation and degranulation through an ALIA (Autacoid Local Injury Antagonism) mechanism. This reduces release of histamine, TNF-alpha, and other pro-inflammatory mediators from mast cells, dampening neuroinflammation.",
+            "methodology": "Mechanistic review of mast cell-glia-neuron interactions"
+          }
+        ]
+      },
+      {
+        "mechanism": "Endocannabinoid system modulation via entourage effect",
+        "strength": "Moderate",
+        "mechanismType": "Lipid signaling modulation",
+        "tissueTarget": "Central and peripheral nervous system",
+        "target": "Central and peripheral nervous system",
+        "evidence": [
+          {
+            "citationId": "hesselink_2015_nerve",
+            "title": "Palmitoylethanolamide, a neutraceutical, in nerve compression syndromes: efficacy and safety in sciatic pain and carpal tunnel syndrome",
+            "authors": [
+              "Keppel Hesselink JM",
+              "Kopsky DJ"
+            ],
+            "year": 2015,
+            "journal": "Journal of Pain Research",
+            "doi": "10.2147/JPR.S93106",
+            "pmid": "26604814",
+            "studyType": "Review of clinical trials",
+            "evidenceLevel": "Level 3",
+            "sampleSize": "n=1366 across 8 trials",
+            "findings": "PEA indirectly enhances endocannabinoid signaling by inhibiting FAAH-mediated breakdown of anandamide, producing an entourage effect. Effective and safe across 8 clinical trials in nerve compression syndromes including sciatica and carpal tunnel.",
+            "methodology": "Review of 8 clinical trials evaluating PEA in nerve compression pain"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "healthDomain": "Pain Management",
+        "specificClaim": "Significant reduction in chronic pain across neuropathic, musculoskeletal, and nociceptive subtypes",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Replicated across 47 RCTs and 6 meta-analyses",
+        "tissueTarget": "Peripheral and central nervous system",
+        "target": "Peripheral and central nervous system",
+        "evidence": [
+          {
+            "citationId": "langillievich_2023_metaanalysis",
+            "title": "Palmitoylethanolamide in the Treatment of Chronic Pain: A Systematic Review and Meta-Analysis of Double-Blind Randomized Controlled Trials",
+            "authors": [
+              "Lang-Illievich K",
+              "Klivinyi C",
+              "Lasser C",
+              "Brenna CTA",
+              "Szilagyi IS",
+              "Bornemann-Cimenti H"
+            ],
+            "year": 2023,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu15061350",
+            "pmid": "36986081",
+            "studyType": "Systematic review and meta-analysis of DB-RCTs",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "11 studies, n=774",
+            "findings": "PEA is effective and well-tolerated for chronic pain. Pooled SMD 1.68 (95% CI 1.05-2.31, p=0.00001). High heterogeneity (I2=99%) reflects diverse pain conditions and dosing protocols.",
+            "methodology": "Systematic review and meta-analysis restricted to double-blind RCTs"
+          },
+          {
+            "citationId": "paladini_2016_pooled",
+            "title": "Palmitoylethanolamide, a Special Food for Medical Purposes, in the Treatment of Chronic Pain: A Pooled Data Meta-analysis",
+            "authors": [
+              "Paladini A"
+            ],
+            "year": 2016,
+            "journal": "Pain Physician",
+            "doi": "10.36076/ppj/2016.19.11",
+            "pmid": "26815246",
+            "studyType": "Pooled data meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=933",
+            "findings": "Kaplan-Meier estimator showed pain score <=3 in 81% of PEA-treated patients vs 40.9% controls by day 60. Effects independent of patient age, gender, or type of chronic pain. No serious adverse events.",
+            "methodology": "Pooled meta-analysis of chronic and neuropathic pain studies"
+          }
+        ],
+        "metaAnalysisSupport": "Six meta-analyses (2016-2025) consistently support PEA efficacy for pain"
+      },
+      {
+        "healthDomain": "Neuropathic Pain",
+        "specificClaim": "Reduces diabetic peripheral neuropathic pain symptoms",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Confirmed in quadruple-blind RCT",
+        "tissueTarget": "Peripheral nerves",
+        "target": "Peripheral nerves",
+        "evidence": [
+          {
+            "citationId": "pickering_2022_diabetic",
+            "title": "A randomized controlled trial assessing the safety and efficacy of palmitoylethanolamide for treating diabetic-related peripheral neuropathic pain",
+            "authors": [
+              "Pickering E"
+            ],
+            "year": 2022,
+            "journal": "Inflammopharmacology",
+            "doi": "10.1007/s10787-022-01033-8",
+            "pmid": "36057884",
+            "studyType": "Quadruple-blind RCT",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=70",
+            "duration": "8 weeks",
+            "findings": "600 mg/day PEA produced significant reduction in BPI-DPN total pain (p<=0.001) and pain interference scores vs placebo. NPSI total and sub-scores also significantly improved. 94% completion rate.",
+            "methodology": "Quadruple-blind, randomized, placebo-controlled trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Joint Health",
+        "specificClaim": "Reduces knee osteoarthritis symptoms at both 300 mg and 600 mg doses",
+        "strength": "Strong",
+        "evidenceQuality": "High",
+        "replicationStatus": "Single well-powered RCT with dose-response",
+        "tissueTarget": "Knee joint synovium",
+        "target": "Knee joint synovium",
+        "evidence": [
+          {
+            "citationId": "steels_2019_osteoarthritis",
+            "title": "A double-blind randomized placebo controlled study assessing safety, tolerability and efficacy of palmitoylethanolamide for symptoms of knee osteoarthritis",
+            "authors": [
+              "Steels E",
+              "Venkatesh R",
+              "Steels E",
+              "Vitetta G",
+              "Vitetta L"
+            ],
+            "year": 2019,
+            "journal": "Inflammopharmacology",
+            "doi": "10.1007/s10787-019-00582-9",
+            "pmid": "30927159",
+            "studyType": "Double-blind RCT",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=111",
+            "duration": "8 weeks",
+            "findings": "Significant WOMAC total score reduction for both 300 mg (p=0.0372) and 600 mg (p=0.0012) PEA groups vs placebo over 8 weeks. Dose-response relationship observed.",
+            "methodology": "Three-arm double-blind, randomized, placebo-controlled trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Cognitive Support",
+        "specificClaim": "Improves cognitive function and increases BDNF levels in healthy adults",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single RCT in young healthy adults",
+        "tissueTarget": "Brain",
+        "target": "Brain",
+        "evidence": [
+          {
+            "citationId": "briskey_2024_cognition",
+            "title": "Formulated Palmitoylethanolamide Supplementation Improves Parameters of Cognitive Function and BDNF Levels in Young, Healthy Adults: A Randomised Cross-Over Trial",
+            "authors": [
+              "Briskey D"
+            ],
+            "year": 2024,
+            "journal": "Nutrients",
+            "doi": "10.3390/nu16040489",
+            "pmid": "38398813",
+            "studyType": "Double-blind RCT crossover",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=39",
+            "duration": "6 weeks",
+            "findings": "Significant increase in serum BDNF (p=0.0057, d=0.62). Fewer memory errors (p=0.0287). 700 mg/day Levagen+ formulation in young healthy adults.",
+            "methodology": "Double-blind, randomized, placebo-controlled crossover trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Mood Support",
+        "specificClaim": "Adjunctive antidepressant effect with rapid onset when combined with citalopram",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single RCT",
+        "tissueTarget": "Central nervous system",
+        "target": "Central nervous system",
+        "evidence": [
+          {
+            "citationId": "ghazizadeh_2018_depression",
+            "title": "Palmitoylethanolamide as adjunctive therapy in major depressive disorder: A double-blind, randomized and placebo-controlled trial",
+            "authors": [
+              "Ghazizadeh-Hashemi M"
+            ],
+            "year": 2018,
+            "journal": "Journal of Affective Disorders",
+            "doi": "10.1016/j.jad.2018.02.057",
+            "pmid": "29486338",
+            "studyType": "Double-blind RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=58",
+            "duration": "6 weeks",
+            "findings": "PEA 600 mg BID + citalopram produced significantly greater HAM-D reduction at week 2 (8.30 +/- 2.41 vs 5.81 +/- 3.57, p=0.004) and week 4 vs placebo + citalopram. Rapid-onset antidepressant augmentation effect.",
+            "methodology": "Double-blind, randomized, placebo-controlled trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Sleep Quality",
+        "specificClaim": "Reduces sleep onset latency and improves waking cognition",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single RCT",
+        "tissueTarget": "Central nervous system",
+        "target": "Central nervous system",
+        "evidence": [
+          {
+            "citationId": "rao_2021_sleep",
+            "title": "Palmitoylethanolamide for sleep disturbance: A double-blind, randomised, placebo-controlled interventional study",
+            "authors": [
+              "Rao A",
+              "Ebelt P",
+              "Mallard A",
+              "Briskey D"
+            ],
+            "year": 2021,
+            "journal": "Sleep Science and Practice",
+            "doi": "10.1186/s41606-021-00065-3",
+            "pmid": "34522787",
+            "studyType": "Double-blind RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=103",
+            "duration": "8 weeks",
+            "findings": "350 mg/day Levagen+ reduced sleep onset latency and improved cognition on waking at week 8. No significant difference in actigraphy-measured sleep quality or quantity.",
+            "methodology": "Double-blind, randomized, placebo-controlled interventional trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Women's Health",
+        "specificClaim": "Reduces acute menstrual pain with single-dose administration",
+        "strength": "Moderate",
+        "evidenceQuality": "High",
+        "replicationStatus": "Single crossover RCT",
+        "tissueTarget": "Uterine and pelvic tissues",
+        "target": "Uterine and pelvic tissues",
+        "evidence": [
+          {
+            "citationId": "2025_menstrual_rct",
+            "title": "Palmitoylethanolamide (Levagen+) for acute menstrual pain: a randomized, crossover, double-blind, placebo-controlled trial",
+            "authors": [
+              "(author list)"
+            ],
+            "year": 2025,
+            "journal": "Women & Health",
+            "doi": "10.1080/03630242.2025.2458243",
+            "pmid": "39910730",
+            "studyType": "Double-blind crossover RCT",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=80",
+            "findings": "Single 300 mg PEA dose at pain onset produced significant pain reduction at 1 (p=0.045), 1.5 (p=0.009), 2 (p=0.015), and 2.5 (p=0.039) hours post-dose vs placebo. Approximately 25% pain reduction by 2.5 hours. No difference in adverse events between groups.",
+            "methodology": "Randomized, crossover, double-blind, placebo-controlled trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      },
+      {
+        "healthDomain": "Neuropsychiatric Support",
+        "specificClaim": "Improves negative symptoms in schizophrenia as adjunct to risperidone",
+        "strength": "Moderate",
+        "evidenceQuality": "Moderate",
+        "replicationStatus": "Single RCT",
+        "tissueTarget": "Prefrontal cortex and mesolimbic pathways",
+        "target": "Prefrontal cortex and mesolimbic pathways",
+        "evidence": [
+          {
+            "citationId": "khoramizadeh_2022_schizophrenia",
+            "title": "Adjuvant palmitoylethanolamide therapy with risperidone improves negative symptoms in patients with schizophrenia",
+            "authors": [
+              "Khoramizadeh M"
+            ],
+            "year": 2022,
+            "journal": "Psychiatry Research",
+            "doi": "10.1016/j.psychres.2022.114737",
+            "pmid": "35917650",
+            "studyType": "Double-blind RCT",
+            "evidenceLevel": "Level 2",
+            "sampleSize": "n=60 (50 completers)",
+            "duration": "8 weeks",
+            "findings": "PEA 600 mg BID + risperidone significantly improved negative symptoms vs placebo + risperidone over 8 weeks.",
+            "methodology": "Double-blind, randomized, placebo-controlled trial"
+          }
+        ],
+        "metaAnalysisSupport": null
+      }
+    ],
+    "safety": [
+      {
+        "safetyAspect": "General tolerability across all clinical trials",
+        "claim": "Excellent safety profile with no serious adverse events across 1366+ patients in controlled trials",
+        "riskLevel": "Low",
+        "target": "Multiple organ systems",
+        "tissueTarget": "Multiple organ systems",
+        "evidence": [
+          {
+            "citationId": "2025_systematic_review",
+            "title": "Palmitoylethanolamide supplementation for human health: A state-of-the-art systematic review of Randomized Controlled Trials in patient populations",
+            "authors": [
+              "(comprehensive author list)"
+            ],
+            "year": 2025,
+            "journal": "Brain Behavior and Immunity - Health",
+            "doi": "10.1016/j.bbih.2024.100927",
+            "pmid": "39839988",
+            "studyType": "Systematic review of 47 RCTs",
+            "evidenceLevel": "Level 1",
+            "findings": "Across 47 RCTs covering neuropsychiatric (n=15), neurological (n=17), somatic (n=13), and visceral (n=11) conditions, PEA demonstrated consistent safety. Versatile as monotherapy or add-on therapy. No serious adverse events attributed to PEA.",
+            "methodology": "Systematic review of all available RCTs in patient populations"
+          },
+          {
+            "citationId": "artukoglu_2017_metaanalysis",
+            "title": "Efficacy of Palmitoylethanolamide for Pain: A Meta-Analysis",
+            "authors": [
+              "Artukoglu BB",
+              "Beyer C",
+              "Zuloff-Shani A",
+              "Brber E",
+              "Bloch MH"
+            ],
+            "year": 2017,
+            "journal": "Pain Physician",
+            "doi": "10.36076/ppj.2017.4.E353",
+            "pmid": "28727699",
+            "studyType": "Meta-analysis",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=786 PEA, n=512 controls",
+            "findings": "PEA well tolerated across 10 studies. May be useful for pain management. Heterogeneous study quality noted but safety consistently confirmed.",
+            "methodology": "Meta-analysis of RCTs evaluating PEA for pain"
+          }
+        ]
+      }
+    ],
+    "dosage": [
+      {
+        "dosageRange": "300-1200 mg/day; micronized or ultramicronized forms recommended for bioavailability",
+        "claim": "Dose range established across multiple clinical trials with dose-response evidence",
+        "evidenceBase": "Strong",
+        "target": "Peripheral and central nervous system",
+        "tissueTarget": "Peripheral and central nervous system",
+        "evidence": [
+          {
+            "citationId": "steels_2019_osteoarthritis",
+            "title": "A double-blind randomized placebo controlled study assessing safety, tolerability and efficacy of palmitoylethanolamide for symptoms of knee osteoarthritis",
+            "authors": [
+              "Steels E",
+              "Venkatesh R",
+              "Steels E",
+              "Vitetta G",
+              "Vitetta L"
+            ],
+            "year": 2019,
+            "journal": "Inflammopharmacology",
+            "doi": "10.1007/s10787-019-00582-9",
+            "pmid": "30927159",
+            "studyType": "Double-blind RCT (3-arm dose-finding)",
+            "evidenceLevel": "Level 1",
+            "sampleSize": "n=111",
+            "findings": "Both 300 mg and 600 mg daily doses were effective vs placebo, with 600 mg showing stronger effect (p=0.0012 vs p=0.0372). Supports dose-response relationship.",
+            "methodology": "Three-arm (300 mg, 600 mg, placebo) double-blind RCT"
+          },
+          {
+            "citationId": "gabrielsson_2016_review",
+            "title": "Palmitoylethanolamide for the treatment of pain: pharmacokinetics, safety and efficacy",
+            "authors": [
+              "Gabrielsson L",
+              "Mattsson S",
+              "Fowler CJ"
+            ],
+            "year": 2016,
+            "journal": "British Journal of Clinical Pharmacology",
+            "doi": "10.1111/bcp.12957",
+            "pmid": "27220803",
+            "studyType": "Comprehensive review",
+            "evidenceLevel": "Level 3",
+            "findings": "Recommended dose 1200 mg/day based on available evidence. PEA has poor aqueous solubility (logP >5); micronization and ultramicronization significantly improve bioavailability and clinical outcomes.",
+            "methodology": "Systematic review of pharmacokinetic and efficacy data"
+          }
+        ]
+      }
+    ]
+  }
+};
+
+// === REQUIRED EXPORT BLOCK ===
+window.enhancedCitations = window.enhancedCitations || {};
+window.enhancedCitations[107] = palmitoylethanolamideEnhanced;
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = palmitoylethanolamideEnhanced;
+}

@@ -1,0 +1,624 @@
+{
+  "supplementEntry": {
+    "id": 112,
+    "name": "Methylene Blue",
+    "scientificName": "Methylthioninium chloride",
+    "category": "Nootropic",
+    "commonNames": ["MB", "Methylthioninium", "LMTM", "Hydromethylthionine"],
+    "evidenceTier": 2,
+    "evidenceTierRationale": "Multiple RCTs in healthy humans (Rodriguez 2016 n=26), surgical patients (Deng 2021 n=248, Zhang 2025 n=217), psychiatric populations (Alda 2016 n=37, Telch 2014 n=42), and Alzheimer's Phase 2-3 trials (Wischik 2015 n=321, Gauthier 2018 n=800). Phase 3 AD trials did not meet primary endpoints as randomized; benefits seen in post-hoc monotherapy subgroups only. Healthy cognitive enhancement limited to one small RCT.",
+    "primaryBenefits": {
+      "cognitive": ["Memory enhancement", "Sustained attention improvement", "Postoperative cognitive protection", "Fear extinction enhancement"],
+      "nonCognitive": ["Neuroprotection", "Antidepressant (bipolar adjunct)", "Anxiolytic", "Anti-delirium (perioperative)", "Tau aggregation inhibition"],
+      "isEnhanced": true
+    },
+    "isEnhanced": true,
+    "dosageRange": "0.5-4 mg/kg/day oral (15-280 mg depending on indication)",
+    "optimalDuration": "Single dose for acute cognitive effects; 6-18 months for neurodegenerative indications",
+    "studyPopulations": ["Healthy adults 22-62 years", "Elderly surgical patients (65+)", "Adults with claustrophobic fear", "Chronic PTSD patients", "Bipolar disorder patients", "Mild to moderate Alzheimer's disease patients"],
+    "mechanismsOfAction": [
+      "Mitochondrial electron carrier (alternative electron shuttle from NADH to cytochrome c)",
+      "Cytochrome c oxidase (Complex IV) activity enhancement",
+      "Tau aggregation inhibition (fibril formation)",
+      "Amyloid-beta aggregation reduction",
+      "Nitric oxide synthase and guanylate cyclase inhibition (cGMP pathway)",
+      "Monoamine oxidase inhibition (MAO-A)",
+      "Neuroinflammation reduction",
+      "Cholinergic signaling enhancement",
+      "Oxidative stress reduction (autoxidizing redox cycler)",
+      "Glutamatergic and serotonergic modulation"
+    ],
+    "safetyProfile": {
+      "rating": "Good",
+      "commonSideEffects": ["Blue-green discoloration of urine", "Temporary blue staining of skin/mucous membranes", "Mild nausea", "Dizziness", "Postoperative fever (at 2 mg/kg IV)", "Dysuria"],
+      "contraindications": ["G6PD deficiency (risk of hemolytic anemia)", "Concurrent use with serotonergic drugs (serotonin syndrome risk)", "Pregnancy", "Renal impairment (dose adjust)", "Doses >5 mg/kg (paradoxical oxidant effects)"],
+      "drugInteractions": ["SSRIs/SNRIs (serotonin syndrome - FDA black box warning)", "MAO inhibitors", "Serotonergic agents", "Cholinesterase inhibitors (may reduce efficacy of LMTM per Phase 3 data)"]
+    },
+    "effectSizes": {
+      "memoryRetrieval": "7% increase in correct responses (P=0.01) (Rodriguez 2016 RCT, n=26)",
+      "fmriAttentionResponse": "Significant increase in bilateral insular cortex (Z=2.9-3.4, P=.01-.008) (Rodriguez 2016)",
+      "postoperativeDeliriumPrevention": "OR=0.24 (95%CI: 0.11-0.53) for POD reduction (Deng 2021, n=248)",
+      "earlyPocdPrevention": "OR=0.30 (95%CI: 0.16-0.57) at postoperative day 7 (Deng 2021)",
+      "fearExtinctionRetention": "Significant enhancement post-successful exposure (d=0.58 for QoL in PTSD, Zoellner 2017)",
+      "bipolarDepression": "Significant improvement on MADRS (P=0.02) and HAM-D (P=0.05) (Alda 2016, n=37)",
+      "adCognitionPhase2": "ADAS-cog treatment effect -5.42 units (corrected p=0.047) at 138mg/day in moderate AD (Wischik 2015, n=321)",
+      "adBrainAtrophyMonotherapy": "Atrophy rate declined to normal elderly levels after 9 months of monotherapy (Gauthier 2018)"
+    },
+    "commercialAvailability": {
+      "forms": ["USP-grade oral tablets/capsules", "Injectable solution (clinical/hospital use)", "Compounded capsules"],
+      "costRange": "$10-30/month",
+      "qualityMarkers": ["USP-grade methylene blue (pharmaceutical quality)", "Certificate of analysis for purity", "Avoid industrial/chemical-grade products"]
+    },
+    "keyCitations": [
+      {
+        "authors": "Rodriguez P et al.",
+        "year": 2016,
+        "title": "Multimodal Randomized Functional MR Imaging of the Effects of Methylene Blue in the Human Brain",
+        "journal": "Radiology",
+        "doi": "10.1148/radiol.2016152893",
+        "pmid": "27351678"
+      },
+      {
+        "authors": "Deng Y et al.",
+        "year": 2021,
+        "title": "Methylene blue reduces incidence of early postoperative cognitive disorders in elderly patients undergoing major non-cardiac surgery: An open-label randomized controlled clinical trial",
+        "journal": "Journal of Clinical Anesthesia",
+        "doi": "10.1016/j.jclinane.2020.110108",
+        "pmid": "33091706"
+      },
+      {
+        "authors": "Telch MJ et al.",
+        "year": 2014,
+        "title": "Effects of post-session administration of methylene blue on fear extinction and contextual memory in adults with claustrophobia",
+        "journal": "American Journal of Psychiatry",
+        "doi": "10.1176/appi.ajp.2014.13101407",
+        "pmid": "25018057"
+      },
+      {
+        "authors": "Wischik CM et al.",
+        "year": 2015,
+        "title": "Tau aggregation inhibitor therapy: an exploratory phase 2 study in mild or moderate Alzheimer's disease",
+        "journal": "Journal of Alzheimer's Disease",
+        "doi": "10.3233/JAD-142874",
+        "pmid": "25550228"
+      },
+      {
+        "authors": "Gauthier S et al.",
+        "year": 2018,
+        "title": "Potential of Low Dose Leuco-Methylthioninium Bis(Hydromethanesulphonate) (LMTM) Monotherapy for Treatment of Mild Alzheimer's Disease",
+        "journal": "Journal of Alzheimer's Disease",
+        "doi": "10.3233/JAD-170560",
+        "pmid": "29154277"
+      },
+      {
+        "authors": "Tucker D et al.",
+        "year": 2018,
+        "title": "From Mitochondrial Function to Neuroprotection-an Emerging Role for Methylene Blue",
+        "journal": "Molecular Neurobiology",
+        "doi": "10.1007/s12035-017-0712-2",
+        "pmid": "28840449"
+      }
+    ],
+    "enhancedCitations": {
+      "isEnhanced": true,
+      "evidenceProfile": {
+        "overallQuality": "Tier 2",
+        "totalCitations": 15,
+        "researchQualityScore": 70,
+        "lastEvidenceUpdate": "2026-03-21"
+      }
+    },
+    "lastUpdated": "2026-03-21",
+    "healthDomains": ["Cognitive Enhancement", "Neuroprotection", "Alzheimer's Disease", "Perioperative Neuroprotection", "Mental Health"]
+  },
+  "enhancedCitations": {
+    "id": 112,
+    "name": "Methylene Blue",
+    "scientificName": "Methylthioninium chloride",
+    "category": "Nootropic",
+    "commonNames": ["MB", "Methylthioninium", "LMTM", "Hydromethylthionine"],
+    "lastUpdated": "2026-03-21",
+    "evidenceProfile": {
+      "overallQuality": "Tier 2",
+      "totalCitations": 15,
+      "researchQualityScore": 70,
+      "lastEvidenceUpdate": "2026-03-21",
+      "evidenceStrength": {
+        "mechanisms": "Strong",
+        "clinicalBenefits": "Moderate",
+        "safety": "Well-established",
+        "dosage": "Evidence-based (indication-dependent)"
+      },
+      "researchMaturity": "Mature",
+      "publicationSpan": "2009-2025"
+    },
+    "citations": {
+      "mechanisms": [
+        {
+          "mechanism": "Mitochondrial electron carrier (alternative electron shuttle from NADH to cytochrome c)",
+          "strength": "Strong",
+          "mechanismType": "Bioenergetic enhancement",
+          "tissueTarget": "Brain mitochondria",
+          "target": "Brain mitochondria",
+          "evidence": [
+            {
+              "citationId": "tucker_2018_mitochondrial",
+              "title": "From Mitochondrial Function to Neuroprotection-an Emerging Role for Methylene Blue",
+              "authors": ["Tucker D", "Lu Y", "Zhang Q"],
+              "year": 2018,
+              "journal": "Molecular Neurobiology",
+              "doi": "10.1007/s12035-017-0712-2",
+              "pmid": "28840449",
+              "studyType": "Review",
+              "evidenceLevel": "Level 3",
+              "findings": "MB reroutes electrons in mitochondrial ETC from NADH to cytochrome c, increasing Complex IV activity. Promotes mitochondrial activity while reducing oxidative stress. Mitigates neuroinflammation. Efficacy shown in models of stroke, ischemia, AD, PD, and TBI.",
+              "methodology": "Comprehensive review of preclinical and mechanistic literature"
+            },
+            {
+              "citationId": "gonzalezlima_2014_respiration",
+              "title": "Mitochondrial respiration as a target for neuroprotection and cognitive enhancement",
+              "authors": ["Gonzalez-Lima F", "Barber T"],
+              "year": 2014,
+              "journal": "Biochemical Pharmacology",
+              "doi": "10.1016/j.bcp.2013.11.010",
+              "pmid": "24316434",
+              "studyType": "Review",
+              "evidenceLevel": "Level 3",
+              "findings": "Low-dose USP MB increases mitochondrial respiration, resulting in memory enhancement and neuroprotection. Proposes MB as neurotherapeutic strategy to improve brain energy metabolism.",
+              "methodology": "Mechanistic and translational review"
+            }
+          ]
+        },
+        {
+          "mechanism": "Tau aggregation inhibition (fibril formation)",
+          "strength": "Moderate",
+          "mechanismType": "Protein aggregation inhibition",
+          "tissueTarget": "Brain neurons (tau-bearing)",
+          "target": "Brain neurons (tau-bearing)",
+          "evidence": [
+            {
+              "citationId": "wischik_2015_tau",
+              "title": "Tau aggregation inhibitor therapy: an exploratory phase 2 study in mild or moderate Alzheimer's disease",
+              "authors": ["Wischik CM", "Staff RT", "Wischik DJ"],
+              "year": 2015,
+              "journal": "Journal of Alzheimer's Disease",
+              "doi": "10.3233/JAD-142874",
+              "pmid": "25550228",
+              "studyType": "Phase 2 RCT",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=321",
+              "findings": "At 138 mg/day dose, significant treatment benefit in moderate AD on ADAS-cog (treatment effect: -5.42 units, corrected p=0.047) and in mild AD on rCBF (treatment effect: 1.97%, corrected p<0.001). Benefit maintained over 50 weeks.",
+              "methodology": "Double-blind, randomized, placebo-controlled, dose-finding Phase 2 trial in mild/moderate AD"
+            },
+            {
+              "citationId": "baddeley_2019_oligomers",
+              "title": "Methylene Blue Inhibits Formation of Tau Fibrils but not of Granular Tau Oligomers: A Plausible Key to Understanding Failure of a Clinical Trial for Alzheimer's Disease",
+              "authors": ["Baddeley TC", "McCaffrey J", "Stoter JM"],
+              "year": 2019,
+              "journal": "Journal of Alzheimer's Disease",
+              "doi": "10.3233/JAD-181001",
+              "pmid": "30909223",
+              "studyType": "In vitro mechanistic study",
+              "evidenceLevel": "Level 4",
+              "findings": "MB reduces tau fibrils but increases granular tau oligomers. Since granular tau oligomers (not fibrils) drive neuronal death, this provides a mechanistic explanation for mixed Phase III results.",
+              "methodology": "In vitro tau aggregation assays with structural analysis"
+            }
+          ]
+        },
+        {
+          "mechanism": "Nitric oxide synthase and guanylate cyclase inhibition (cGMP pathway)",
+          "strength": "Moderate",
+          "mechanismType": "Signaling pathway modulation",
+          "tissueTarget": "Vascular endothelium and neurons",
+          "target": "Vascular endothelium and neurons",
+          "evidence": [
+            {
+              "citationId": "oz_2009_ad_review",
+              "title": "Methylene blue and Alzheimer's disease",
+              "authors": ["Oz M", "Lorke DE", "Hasan M", "Bhatt GA"],
+              "year": 2009,
+              "journal": "Biochemical Pharmacology",
+              "doi": "10.1016/j.bcp.2009.04.034",
+              "pmid": "19433072",
+              "studyType": "Review",
+              "evidenceLevel": "Level 3",
+              "findings": "MB attenuates formation of amyloid plaques and neurofibrillary tangles, partially repairs mitochondrial function impairments. Influences cholinergic, serotonergic, and glutamatergic neurotransmitter systems relevant to AD pathogenesis.",
+              "methodology": "Comprehensive review of MB pharmacology in AD context"
+            }
+          ]
+        },
+        {
+          "mechanism": "Monoamine oxidase inhibition (MAO-A)",
+          "strength": "Moderate",
+          "mechanismType": "Enzymatic inhibition",
+          "tissueTarget": "Brain monoaminergic neurons",
+          "target": "Brain monoaminergic neurons",
+          "evidence": [
+            {
+              "citationId": "alda_2016_bipolar",
+              "title": "Methylene blue treatment for residual symptoms of bipolar disorder: randomised crossover study",
+              "authors": ["Alda M", "McKinnon M", "Blagdon R"],
+              "year": 2016,
+              "journal": "British Journal of Psychiatry",
+              "doi": "10.1192/bjp.bp.115.173930",
+              "pmid": "27284082",
+              "studyType": "Double-blind randomized crossover trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=37",
+              "findings": "Active dose (195 mg) significantly improved depression on MADRS (P=0.02) and HAM-D (P=0.05) and anxiety on HAM-A (P=0.02). Well tolerated. Effects consistent with MAO-A inhibition and monoaminergic modulation.",
+              "methodology": "Double-blind randomized crossover trial in bipolar patients on lamotrigine"
+            }
+          ]
+        }
+      ],
+      "benefits": [
+        {
+          "healthDomain": "Cognitive Enhancement",
+          "specificClaim": "Improves memory retrieval and sustained attention in healthy adults",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Single well-designed RCT with fMRI biomarker confirmation",
+          "tissueTarget": "Prefrontal and insular cortex",
+          "target": "Prefrontal and insular cortex",
+          "evidence": [
+            {
+              "citationId": "rodriguez_2016_fmri",
+              "title": "Multimodal Randomized Functional MR Imaging of the Effects of Methylene Blue in the Human Brain",
+              "authors": ["Rodriguez P", "Singh AP", "Malloy KE"],
+              "year": 2016,
+              "journal": "Radiology",
+              "doi": "10.1148/radiol.2016152893",
+              "pmid": "27351678",
+              "studyType": "Randomized, double-blinded, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=26",
+              "dosage": "~280 mg single oral dose",
+              "findings": "Low-dose MB increased fMRI response in bilateral insular cortex during sustained attention (Z=2.9-3.4, P=.01-.008) and prefrontal/parietal/occipital cortex during short-term memory tasks (Z=2.9-4.2, P=.03-.0003). MB associated with 7% increase in correct responses during memory retrieval (P=.01).",
+              "methodology": "Randomized, double-blinded, placebo-controlled fMRI trial in healthy adults"
+            },
+            {
+              "citationId": "rodriguez_2016_connectivity",
+              "title": "Methylene blue modulates functional connectivity in the human brain",
+              "authors": ["Rodriguez P", "Zhao J", "Milman B"],
+              "year": 2016,
+              "journal": "Brain Imaging and Behavior",
+              "doi": "10.1007/s11682-016-9541-6",
+              "pmid": "26961091",
+              "studyType": "Randomized, double-blinded, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=26",
+              "findings": "MB reduced cerebral blood flow in task-related network during visuomotor task and produced stronger resting-state functional connectivity in regions linking perception and memory functions.",
+              "methodology": "Randomized, double-blinded, placebo-controlled fMRI connectivity analysis"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Perioperative Neuroprotection",
+          "specificClaim": "Reduces postoperative delirium and early cognitive dysfunction in elderly surgical patients",
+          "strength": "Strong",
+          "evidenceQuality": "High",
+          "replicationStatus": "Replicated across two RCTs in different surgical populations",
+          "tissueTarget": "Brain (perioperative)",
+          "target": "Brain (perioperative)",
+          "evidence": [
+            {
+              "citationId": "deng_2021_pocd",
+              "title": "Methylene blue reduces incidence of early postoperative cognitive disorders in elderly patients undergoing major non-cardiac surgery: An open-label randomized controlled clinical trial",
+              "authors": ["Deng Y", "Zhang Y", "Chen C"],
+              "year": 2021,
+              "journal": "Journal of Clinical Anesthesia",
+              "doi": "10.1016/j.jclinane.2020.110108",
+              "pmid": "33091706",
+              "studyType": "Prospective, randomized, open-label RCT",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=248",
+              "dosage": "2 mg/kg IV",
+              "findings": "MB group showed significantly lower POD incidence (7.3% vs 24.2%, OR=0.24, 95%CI: 0.11-0.53, p<0.001) and lower early POCD at day 7 (16.1% vs 40.2%, OR=0.30, 95%CI: 0.16-0.57, p<0.001).",
+              "methodology": "Prospective, randomized, open-label RCT in elderly patients undergoing major non-cardiac surgery"
+            },
+            {
+              "citationId": "zhang_2025_joint",
+              "title": "Effect of intraoperative methylene blue on postoperative delirium in elderly patients undergoing joint replacement: a randomized controlled trial",
+              "authors": ["Zhang W", "Li X", "Wang Y"],
+              "year": 2025,
+              "journal": "International Journal of Surgery",
+              "doi": "10.1097/JS9.0000000000002981",
+              "pmid": "40696945",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=217",
+              "dosage": "2 mg/kg IV intraoperative",
+              "findings": "POD incidence: MB group 8.3% vs control 20.4% (HR=0.39, 95%CI: 0.173-0.858, P=0.024). More postoperative fever in MB group (16.5% vs 7.4%).",
+              "methodology": "Randomized controlled trial in elderly patients undergoing joint replacement surgery"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Fear Extinction & PTSD",
+          "specificClaim": "Enhances fear extinction retention and memory consolidation when given post-exposure",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Replicated across two RCTs (claustrophobia and PTSD)",
+          "tissueTarget": "Amygdala and prefrontal cortex",
+          "target": "Amygdala and prefrontal cortex",
+          "evidence": [
+            {
+              "citationId": "telch_2014_fear",
+              "title": "Effects of post-session administration of methylene blue on fear extinction and contextual memory in adults with claustrophobia",
+              "authors": ["Telch MJ", "Bruchey AK", "Rosenfield D"],
+              "year": 2014,
+              "journal": "American Journal of Psychiatry",
+              "doi": "10.1176/appi.ajp.2014.13101407",
+              "pmid": "25018057",
+              "studyType": "Randomized, double-blind, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=42",
+              "dosage": "260 mg single dose post-session",
+              "findings": "MB post-training enhanced memory retention of fear extinction when administered after successful exposure, and enhanced contextual memory independently. Deleterious when given after unsuccessful exposure.",
+              "methodology": "Randomized, double-blind, placebo-controlled trial in adults with claustrophobia"
+            },
+            {
+              "citationId": "zoellner_2017_ptsd",
+              "title": "Enhancing Extinction Learning in Posttraumatic Stress Disorder With Brief Daily Imaginal Exposure and Methylene Blue: A Randomized Controlled Trial",
+              "authors": ["Zoellner LA", "Telch MJ", "Foa EB"],
+              "year": 2017,
+              "journal": "Journal of Clinical Psychiatry",
+              "doi": "10.4088/JCP.16m10936",
+              "pmid": "28686823",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=42",
+              "dosage": "260 mg single dose post-exposure",
+              "findings": "MB post-exposure enhanced treatment response (NNT=7.5) and quality of life (d=0.58). MB effects facilitated by better working memory.",
+              "methodology": "Randomized controlled trial in chronic PTSD patients"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Alzheimer's Disease",
+          "specificClaim": "Potential disease-modifying effects via tau aggregation inhibition and mitochondrial enhancement in AD",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Phase 2 positive; Phase 3 primary endpoints not met (monotherapy subgroup post-hoc positive)",
+          "tissueTarget": "Brain (cortical and hippocampal neurons)",
+          "target": "Brain (cortical and hippocampal neurons)",
+          "evidence": [
+            {
+              "citationId": "wischik_2015_tau",
+              "title": "Tau aggregation inhibitor therapy: an exploratory phase 2 study in mild or moderate Alzheimer's disease",
+              "authors": ["Wischik CM", "Staff RT", "Wischik DJ"],
+              "year": 2015,
+              "journal": "Journal of Alzheimer's Disease",
+              "doi": "10.3233/JAD-142874",
+              "pmid": "25550228",
+              "studyType": "Phase 2 double-blind RCT",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=321",
+              "duration": "50 weeks",
+              "dosage": "138 mg/day, 69 mg/day, 228 mg/day",
+              "findings": "At 138 mg/day dose, significant treatment benefit in moderate AD on ADAS-cog (treatment effect: -5.42 units, corrected p=0.047) and in mild AD on rCBF (treatment effect: 1.97%, corrected p<0.001). Benefit maintained over 50 weeks.",
+              "methodology": "Double-blind, randomized, placebo-controlled, dose-finding Phase 2 trial"
+            },
+            {
+              "citationId": "gauthier_2018_phase3",
+              "title": "Potential of Low Dose Leuco-Methylthioninium Bis(Hydromethanesulphonate) (LMTM) Monotherapy for Treatment of Mild Alzheimer's Disease",
+              "authors": ["Gauthier S", "Feldman HH", "Schneider LS"],
+              "year": 2018,
+              "journal": "Journal of Alzheimer's Disease",
+              "doi": "10.3233/JAD-170560",
+              "pmid": "29154277",
+              "studyType": "Phase III trial (cohort analysis)",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=800 (monotherapy subgroup n=79 at 100mg BID, n=76 at 4mg BID)",
+              "duration": "9-15 months",
+              "dosage": "100 mg BID or 4 mg BID",
+              "findings": "Monotherapy showed significant benefits on ADAS-cog, ADCS-ADL, MRI atrophy, and glucose uptake (p<0.025). Brain atrophy rate in monotherapy patients declined to that of normal elderly controls after 9 months. LMTM 4 mg BID may be as effective as higher doses.",
+              "methodology": "Phase III trial post-hoc monotherapy cohort analysis"
+            },
+            {
+              "citationId": "wilcock_2018_concentration",
+              "title": "Concentration-Dependent Activity of Hydromethylthionine on Cognitive Decline and Brain Atrophy in Mild to Moderate Alzheimer's Disease",
+              "authors": ["Wilcock GK", "Gauthier S", "Frisoni GB"],
+              "year": 2018,
+              "journal": "Journal of Alzheimer's Disease",
+              "doi": "10.3233/JAD-190772",
+              "pmid": "31658058",
+              "studyType": "Phase III exposure-response analysis",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=1162 (from two Phase III trials)",
+              "findings": "Steep concentration-response at low plasma levels. Significant differences in cognitive decline and brain atrophy with above-threshold levels. Effect sizes halved as add-on therapy. Predicted optimal dose: 16 mg/day monotherapy.",
+              "methodology": "Pharmacokinetic/exposure-response analysis from two Phase III trials"
+            }
+          ],
+          "metaAnalysisSupport": null
+        },
+        {
+          "healthDomain": "Bipolar Depression",
+          "specificClaim": "Improves residual depressive and anxiety symptoms in bipolar disorder",
+          "strength": "Moderate",
+          "evidenceQuality": "Moderate",
+          "replicationStatus": "Single well-designed crossover RCT",
+          "tissueTarget": "Brain monoaminergic circuits",
+          "target": "Brain monoaminergic circuits",
+          "evidence": [
+            {
+              "citationId": "alda_2016_bipolar",
+              "title": "Methylene blue treatment for residual symptoms of bipolar disorder: randomised crossover study",
+              "authors": ["Alda M", "McKinnon M", "Blagdon R"],
+              "year": 2016,
+              "journal": "British Journal of Psychiatry",
+              "doi": "10.1192/bjp.bp.115.173930",
+              "pmid": "27284082",
+              "studyType": "Double-blind randomized crossover trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=37",
+              "dosage": "195 mg/day",
+              "findings": "Active dose (195 mg) significantly improved depression on MADRS (P=0.02) and HAM-D (P=0.05) and anxiety on HAM-A (P=0.02). Effects on cognitive symptoms were not significant. Well tolerated.",
+              "methodology": "Double-blind randomized crossover trial in bipolar patients stabilized on lamotrigine"
+            }
+          ],
+          "metaAnalysisSupport": null
+        }
+      ],
+      "safety": [
+        {
+          "safetyAspect": "General tolerability at low doses",
+          "claim": "Well-tolerated at therapeutic doses with >100 years of clinical use as FDA-grandfathered drug",
+          "riskLevel": "Low",
+          "target": "Multiple organ systems",
+          "tissueTarget": "Multiple organ systems",
+          "evidence": [
+            {
+              "citationId": "tucker_2018_mitochondrial",
+              "title": "From Mitochondrial Function to Neuroprotection-an Emerging Role for Methylene Blue",
+              "authors": ["Tucker D", "Lu Y", "Zhang Q"],
+              "year": 2018,
+              "journal": "Molecular Neurobiology",
+              "doi": "10.1007/s12035-017-0712-2",
+              "pmid": "28840449",
+              "studyType": "Review",
+              "evidenceLevel": "Level 3",
+              "findings": "At low doses (0.5-4 mg/kg), MB enhances mitochondrial function and is well tolerated. At doses >5 mg/kg, paradoxical pro-oxidant effects occur. Non-linear dose-response is a critical safety consideration.",
+              "methodology": "Review of safety and dose-response literature"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "Serotonin syndrome risk",
+          "claim": "FDA black box warning for serotonin syndrome when combined with serotonergic medications",
+          "riskLevel": "High",
+          "target": "Central serotonergic system",
+          "tissueTarget": "Central serotonergic system",
+          "evidence": [
+            {
+              "citationId": "oz_2009_ad_review",
+              "title": "Methylene blue and Alzheimer's disease",
+              "authors": ["Oz M", "Lorke DE", "Hasan M", "Bhatt GA"],
+              "year": 2009,
+              "journal": "Biochemical Pharmacology",
+              "doi": "10.1016/j.bcp.2009.04.034",
+              "pmid": "19433072",
+              "studyType": "Review",
+              "evidenceLevel": "Level 3",
+              "findings": "MB inhibits MAO-A and modulates serotonergic neurotransmission. This mechanism underlies the FDA-recognized risk of serotonin syndrome when combined with SSRIs, SNRIs, or other serotonergic agents.",
+              "methodology": "Pharmacological review of MB mechanisms including MAO inhibition"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "G6PD deficiency contraindication",
+          "claim": "Risk of severe hemolytic anemia in G6PD-deficient individuals",
+          "riskLevel": "High",
+          "target": "Red blood cells",
+          "tissueTarget": "Red blood cells",
+          "evidence": [
+            {
+              "citationId": "gonzalezlima_2014_respiration",
+              "title": "Mitochondrial respiration as a target for neuroprotection and cognitive enhancement",
+              "authors": ["Gonzalez-Lima F", "Barber T"],
+              "year": 2014,
+              "journal": "Biochemical Pharmacology",
+              "doi": "10.1016/j.bcp.2013.11.010",
+              "pmid": "24316434",
+              "studyType": "Review",
+              "evidenceLevel": "Level 3",
+              "findings": "G6PD deficiency is an absolute contraindication due to risk of hemolytic anemia. G6PD screening recommended before MB use in populations with higher prevalence.",
+              "methodology": "Translational review of safety considerations"
+            }
+          ]
+        },
+        {
+          "safetyAspect": "Perioperative safety (IV administration)",
+          "claim": "Increased postoperative fever incidence at 2 mg/kg IV but no serious adverse events",
+          "riskLevel": "Moderate",
+          "target": "Thermoregulatory system",
+          "tissueTarget": "Thermoregulatory system",
+          "evidence": [
+            {
+              "citationId": "zhang_2025_joint",
+              "title": "Effect of intraoperative methylene blue on postoperative delirium in elderly patients undergoing joint replacement: a randomized controlled trial",
+              "authors": ["Zhang W", "Li X", "Wang Y"],
+              "year": 2025,
+              "journal": "International Journal of Surgery",
+              "doi": "10.1097/JS9.0000000000002981",
+              "pmid": "40696945",
+              "studyType": "Randomized controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=217",
+              "findings": "Postoperative fever incidence higher in MB group (16.5% vs 7.4%) but no serious adverse events. Overall safety profile acceptable for perioperative use.",
+              "methodology": "Randomized controlled trial with systematic adverse event monitoring"
+            }
+          ]
+        }
+      ],
+      "dosage": [
+        {
+          "dosageRange": "0.5-4 mg/kg single oral dose for cognitive enhancement",
+          "claim": "Single oral dose effective for acute memory and attention enhancement in healthy adults",
+          "evidenceBase": "Moderate",
+          "target": "Brain cortical networks",
+          "tissueTarget": "Brain cortical networks",
+          "evidence": [
+            {
+              "citationId": "rodriguez_2016_fmri",
+              "title": "Multimodal Randomized Functional MR Imaging of the Effects of Methylene Blue in the Human Brain",
+              "authors": ["Rodriguez P", "Singh AP", "Malloy KE"],
+              "year": 2016,
+              "journal": "Radiology",
+              "doi": "10.1148/radiol.2016152893",
+              "pmid": "27351678",
+              "studyType": "Randomized, double-blinded, placebo-controlled trial",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=26",
+              "dosage": "~280 mg single oral dose (~4 mg/kg)",
+              "findings": "Single dose produced measurable fMRI changes and 7% improvement in memory retrieval accuracy within hours of administration.",
+              "methodology": "Randomized, double-blinded, placebo-controlled fMRI trial"
+            }
+          ]
+        },
+        {
+          "dosageRange": "8-16 mg/day oral for Alzheimer's disease (LMTM formulation)",
+          "claim": "Low-dose LMTM monotherapy showed optimal exposure-response in AD",
+          "evidenceBase": "Moderate",
+          "target": "Brain (cortical and hippocampal)",
+          "tissueTarget": "Brain (cortical and hippocampal)",
+          "evidence": [
+            {
+              "citationId": "wilcock_2018_concentration",
+              "title": "Concentration-Dependent Activity of Hydromethylthionine on Cognitive Decline and Brain Atrophy in Mild to Moderate Alzheimer's Disease",
+              "authors": ["Wilcock GK", "Gauthier S", "Frisoni GB"],
+              "year": 2018,
+              "journal": "Journal of Alzheimer's Disease",
+              "doi": "10.3233/JAD-190772",
+              "pmid": "31658058",
+              "studyType": "Phase III exposure-response analysis",
+              "evidenceLevel": "Level 2",
+              "sampleSize": "n=1162",
+              "dosage": "8 mg/day and 16 mg/day LMTM",
+              "findings": "Steep concentration-response at low plasma levels with plateau at higher doses. Predicted optimal monotherapy dose: 16 mg/day. Effect sizes reduced by half as add-on to cholinesterase inhibitors.",
+              "methodology": "Pharmacokinetic/exposure-response analysis pooling two Phase III trials"
+            },
+            {
+              "citationId": "feldman_2022_lucidity",
+              "title": "Oral Tau Aggregation Inhibitor for Alzheimer's Disease: Design, Progress and Basis for Selection of the 16 mg/day Dose in a Phase 3, Randomized, Placebo-Controlled Trial of Hydromethylthionine Mesylate",
+              "authors": ["Feldman HH", "Gauthier S", "Bhatt DL"],
+              "year": 2022,
+              "journal": "Journal of Prevention of Alzheimer's Disease",
+              "doi": "10.14283/jpad.2022.63",
+              "pmid": "36281683",
+              "studyType": "Phase 3 trial design paper",
+              "evidenceLevel": "Level 3",
+              "sampleSize": "n=545 (target enrollment)",
+              "dosage": "16 mg/day",
+              "findings": "Confirmatory Phase 3 trial (LUCIDITY) designed using 16 mg/day dose based on prior exposure-response data. 12-month double-blind placebo-controlled phase followed by 12-month open-label extension.",
+              "methodology": "Phase 3 trial design and dosage rationale paper"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

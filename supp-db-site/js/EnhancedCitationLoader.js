@@ -118,7 +118,27 @@ class EnhancedCitationLoader {
             { id: 90, file: '90_beta_alanine_enhanced.js', globalVar: 'betaAlanineEnhanced' },
             { id: 91, file: '91_citrulline_malate_enhanced.js', globalVar: 'citrullineMalateEnhanced' },
             { id: 92, file: '92_hmb_enhanced.js', globalVar: 'hmbEnhanced' },
-            { id: 93, file: '93_betaine_enhanced.js', globalVar: 'betaineEnhanced' }
+            { id: 93, file: '93_betaine_enhanced.js', globalVar: 'betaineEnhanced' },
+            { id: 94, file: '94_urolithin-a_enhanced.js', globalVar: 'urolithinAEnhanced' },
+            { id: 95, file: '95_spermidine_enhanced.js', globalVar: 'spermidineEnhanced' },
+            { id: 96, file: '96_collagen-peptides_enhanced.js', globalVar: 'collagenPeptidesEnhanced' },
+            { id: 97, file: '97_bovine-colostrum_enhanced.js', globalVar: 'bovineColostrumEnhanced' },
+            { id: 98, file: '98_nattokinase_enhanced.js', globalVar: 'nattokinaseEnhanced' },
+            { id: 99, file: '99_fisetin_enhanced.js', globalVar: 'fisetinEnhanced' },
+            { id: 100, file: '100_magnesium-l-threonate_enhanced.js', globalVar: 'magnesiumLthreonateEnhanced' },
+            { id: 101, file: '101_apigenin_enhanced.js', globalVar: 'apigeninEnhanced' },
+            { id: 102, file: '102_tongkat-ali_enhanced.js', globalVar: 'tongkatAliEnhanced' },
+            { id: 103, file: '103_shilajit_enhanced.js', globalVar: 'shilajitEnhanced' },
+            { id: 104, file: '104_glynac_enhanced.js', globalVar: 'glynacEnhanced' },
+            { id: 107, file: '107_palmitoylethanolamide_enhanced.js', globalVar: 'palmitoylethanolamideEnhanced' },
+            { id: 108, file: '108_nmn-nicotinamide-mononucleotide_enhanced.js', globalVar: 'nmnNicotinamideMononucleotideEnhanced' },
+            { id: 109, file: '109_maca-root_enhanced.js', globalVar: 'macaRootEnhanced' },
+            { id: 110, file: '110_pentadecanoic-acid-c15-0_enhanced.js', globalVar: 'pentadecanoicAcidC150Enhanced' },
+            { id: 111, file: '111_akkermansia-muciniphila_enhanced.js', globalVar: 'akkermansiaMuciniphilaEnhanced' },
+            { id: 112, file: '112_methylene-blue_enhanced.js', globalVar: 'methyleneBlueEnhanced' },
+            { id: 113, file: '113_cistanche_enhanced.js', globalVar: 'cistancheEnhanced' },
+            { id: 105, file: '105_glutathione_enhanced.js', globalVar: 'glutathioneEnhanced' },
+            { id: 106, file: '106_dim-3-3-diindolylmethane_enhanced.js', globalVar: 'dim33diindolylmethaneEnhanced' }
         ];
 
         const results = {
