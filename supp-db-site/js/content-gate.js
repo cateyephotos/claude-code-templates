@@ -108,8 +108,9 @@
         contentLoaded = true;
 
         // Trigger reveal animations on newly injected content
+        // CSS uses .reveal.visible (not .revealed)
         container.querySelectorAll(".reveal").forEach(el => {
-          el.classList.add("revealed");
+          el.classList.add("visible");
         });
 
         // Re-initialize any interactive elements
@@ -144,13 +145,13 @@
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1 });
 
-      container.querySelectorAll(".reveal:not(.revealed)").forEach(el => observer.observe(el));
+      container.querySelectorAll(".reveal:not(.visible)").forEach(el => observer.observe(el));
     }
   }
 

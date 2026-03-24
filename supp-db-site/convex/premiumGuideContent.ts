@@ -18,8 +18,12 @@ export const getContent = query({
       return null;
     }
 
-    // Role-based access: subscribers and admins get all premium content
-    const role = (identity as any).publicMetadata?.role as string | undefined;
+    // Role-based access: look up role from users table (not JWT claims)
+    const user = await ctx.db
+      .query("users")
+      .withIndex("by_clerkId", (q) => q.eq("clerkId", identity.subject))
+      .first();
+    const role = user?.role as string | undefined;
     const hasRoleAccess = role === "subscriber" || role === "admin";
 
     if (!hasRoleAccess) {
