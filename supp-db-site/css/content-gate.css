@@ -270,6 +270,110 @@
   }
 }
 
+/* ── Secondary CTA (one-off purchase) ─────────────────────────── */
+.content-gate-secondary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: #888;
+  margin: 1rem 0 0;
+}
+
+.content-gate-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--text-primary, #ccc);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 280px;
+  margin-top: 0.75rem;
+}
+
+.content-gate-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Light theme secondary button */
+[data-theme="light"] .content-gate-btn-secondary,
+:root:not([data-theme="dark"]) .content-gate-btn-secondary {
+  color: #444;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .content-gate-btn-secondary:hover,
+:root:not([data-theme="dark"]) .content-gate-btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* ── Premium Content Container ────────────────────────────────── */
+#premium-content {
+  min-height: 200px;
+}
+
+#premium-content .content-gate-overlay {
+  margin-top: 0;
+  animation: gate-fade-in 0.4s ease-out;
+}
+
+/* ── Loading Skeleton ─────────────────────────────────────────── */
+.skeleton-card {
+  height: 120px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Light theme skeleton */
+[data-theme="light"] .skeleton-card,
+:root:not([data-theme="dark"]) .skeleton-card {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.08) 50%,
+    rgba(0, 0, 0, 0.04) 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ── Dark theme secondary CTA ─────────────────────────────────── */
+[data-theme="dark"] .content-gate-secondary {
+  color: rgba(230, 237, 243, 0.5);
+}
+
+[data-theme="dark"] .content-gate-btn-secondary {
+  color: #e6edf3;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .content-gate-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 /* ── Print: show full content ───────────────────────────────── */
 @media print {
   .content-gated {
