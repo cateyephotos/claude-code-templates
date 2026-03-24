@@ -1,4 +1,4 @@
-import { query, internalMutation } from "./_generated/server";
+import { query, mutation, internalMutation } from "./_generated/server";
 import { v } from "convex/values";
 
 const FREE_GUIDES = ["sleep", "safety-interactions"];
@@ -60,6 +60,44 @@ export const getContent = query({
 });
 
 export const upsertContent = internalMutation({
+  args: {
+    guideSlug: v.string(),
+    htmlContent: v.string(),
+    version: v.string(),
+    generatedAt: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const existing = await ctx.db
+      .query("premiumGuideContent")
+      .withIndex("by_guideSlug", (q) => q.eq("guideSlug", args.guideSlug))
+      .unique();
+
+    const now = Date.now();
+
+    if (existing) {
+      await ctx.db.patch(existing._id, {
+        htmlContent: args.htmlContent,
+        version: args.version,
+        generatedAt: args.generatedAt,
+        updatedAt: now,
+      });
+    } else {
+      await ctx.db.insert("premiumGuideContent", {
+        guideSlug: args.guideSlug,
+        htmlContent: args.htmlContent,
+        version: args.version,
+        generatedAt: args.generatedAt,
+        updatedAt: now,
+      });
+    }
+  },
+});
+
+/**
+ * Public mutation for seeding premium content from the upload script.
+ * Called via `npx convex run` which authenticates via the Convex CLI deploy key.
+ */
+export const adminUpsertContent = mutation({
   args: {
     guideSlug: v.string(),
     htmlContent: v.string(),
