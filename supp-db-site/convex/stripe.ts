@@ -196,6 +196,7 @@ function getGuideName(slug: string): string {
 export const createGuideCheckoutSession = action({
   args: {
     guideSlug: v.string(),
+    accessType: v.optional(v.union(v.literal("web"), v.literal("pdf"))),
   },
   handler: async (ctx, args): Promise<{ url: string }> => {
     // Require authentication
@@ -212,13 +213,27 @@ export const createGuideCheckoutSession = action({
       throw new Error("User not found. Please try signing in again.");
     }
 
+    const requestedType = args.accessType ?? "pdf";
+
+    // Duplicate purchase prevention for web access
+    if (requestedType === "web") {
+      const alreadyHasAccess = await ctx.runQuery(api.guidePurchases.hasWebAccess, { guideSlug: args.guideSlug });
+      if (alreadyHasAccess) {
+        throw new Error("You already have web access to this guide.");
+      }
+    }
+
     const stripe = getStripe();
     const siteUrl = getSiteUrl();
 
-    const priceId = process.env.STRIPE_GUIDE_PRICE_ID;
+    const priceId = requestedType === "web"
+      ? process.env.STRIPE_GUIDE_WEB_PRICE_ID
+      : process.env.STRIPE_GUIDE_PRICE_ID;
+
     if (!priceId) {
+      const envVar = requestedType === "web" ? "STRIPE_GUIDE_WEB_PRICE_ID" : "STRIPE_GUIDE_PRICE_ID";
       throw new Error(
-        "STRIPE_GUIDE_PRICE_ID environment variable is not set. " +
+        `${envVar} environment variable is not set. ` +
           "Create a one-time Price in the Stripe dashboard and add it to Convex env vars."
       );
     }
@@ -248,7 +263,9 @@ export const createGuideCheckoutSession = action({
           quantity: 1,
         },
       ],
-      success_url: `${siteUrl}/guide-success.html?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: requestedType === "web"
+        ? `${siteUrl}/guides/${args.guideSlug}.html?purchased=true`
+        : `${siteUrl}/guide-success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/guides/${args.guideSlug}.html?cancelled=true`,
       client_reference_id: clerkId,
       metadata: {
@@ -256,6 +273,7 @@ export const createGuideCheckoutSession = action({
         userId: clerkId,
         guideSlug: args.guideSlug,
         guideName,
+        accessType: requestedType,
       },
       // Enable promotion codes for guide purchases too
       allow_promotion_codes: true,
