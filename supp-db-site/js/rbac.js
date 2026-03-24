@@ -120,6 +120,20 @@
     },
 
     /**
+     * Check if the current user can access a specific guide's premium content.
+     * Returns true synchronously for role-based access (subscriber/admin),
+     * or for free guides. One-off purchase check requires async Convex query
+     * and is handled separately in content-gate.js.
+     * @param {string} slug - Guide slug
+     * @returns {boolean} true if immediate access (role-based or free guide)
+     */
+    canAccessSpecificGuide(slug) {
+      const FREE_GUIDES = ["sleep"];
+      if (FREE_GUIDES.includes(slug)) return true;
+      return this.hasRole("subscriber");
+    },
+
+    /**
      * Get display label for the current role.
      * @returns {string}
      */
