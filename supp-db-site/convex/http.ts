@@ -210,10 +210,11 @@ http.route({
             break;
           }
 
-          // ── Guide PDF purchase (one-time payment) ─────────────────
+          // ── Guide purchase (one-time payment) ─────────────────
           if (data.metadata?.type === "guide_purchase") {
             const guideSlug = data.metadata?.guideSlug;
             const guideName = data.metadata?.guideName || guideSlug;
+            const accessType = (data.metadata?.accessType === "web" ? "web" : "pdf") as "web" | "pdf";
 
             if (!guideSlug) {
               console.error("checkout.session.completed: guide_purchase missing guideSlug in metadata");
@@ -232,24 +233,27 @@ http.route({
                 stripeCustomerId: data.customer ?? undefined,
                 amountTotal: data.amount_total ?? 0,
                 currency: data.currency ?? "usd",
+                accessType,
               }
             );
 
-            // 2. Schedule PDF generation (runs immediately in background)
-            await ctx.scheduler.runAfter(
-              0,
-              internal.pdfGenerator.generateAndStorePdf,
-              {
-                purchaseId,
-                guideSlug,
-                guideName,
-                userId: clerkId,
-                sessionId: data.id,
-              }
-            );
+            // 2. Only generate PDF for PDF purchases (web purchases skip this)
+            if (accessType !== "web") {
+              await ctx.scheduler.runAfter(
+                0,
+                internal.pdfGenerator.generateAndStorePdf,
+                {
+                  purchaseId,
+                  guideSlug,
+                  guideName,
+                  userId: clerkId,
+                  sessionId: data.id,
+                }
+              );
+            }
 
             console.log(
-              `✅ checkout.session.completed (guide): ${clerkId} → ${guideSlug} (purchase: ${purchaseId})`
+              `✅ checkout.session.completed (guide/${accessType}): ${clerkId} → ${guideSlug} (purchase: ${purchaseId})`
             );
             break;
           }
