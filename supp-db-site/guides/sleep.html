@@ -2396,7 +2396,26 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-sleep");</script>
 
 
-    <!-- Auth & Backend Scripts -->
+    
+<!-- Soft Sign-Up Nudge -->
+<section class="max-w-3xl mx-auto px-4 sm:px-6 py-10 reveal" style="margin-top: 2rem;">
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 2rem; text-align: center;">
+        <p style="color: var(--text-bright); font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">
+            Get updates when new sleep research is added
+        </p>
+        <button onclick="window.SupplementDBAuth && window.SupplementDBAuth.openSignUp()"
+                style="margin-top: 1rem; padding: 0.75rem 2rem; background: var(--glow); color: #000; border: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: opacity 0.2s;"
+                onmouseover="this.style.opacity='0.85'"
+                onmouseout="this.style.opacity='1'">
+            Create Free Account
+        </button>
+        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.75rem;">
+            No spam. No cost.
+        </p>
+    </div>
+</section>
+
+<!-- Auth & Backend Scripts -->
     <script src="../js/auth.js"></script>
     <script src="../js/convex-client.js"></script>
     <script src="../js/rbac.js"></script>
