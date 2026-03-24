@@ -1,261 +1,414 @@
 /**
- * content-gate.js — SEO-Preserving Soft Content Gate
+ * content-gate.js — Split-Content Paywall Gate
  *
- * Applies a soft gate on guide pages for free/anonymous users.
- * Content stays in the DOM for SEO crawlers, but is visually hidden
- * behind a gradient overlay with a CTA to sign up.
+ * For paid guides: premium content is absent from HTML. It's stored in Convex
+ * and fetched only after server-side access verification. The page has a
+ * <div id="premium-content" data-guide="{slug}"> placeholder.
  *
- * Gating strategy:
- *   - Free/anonymous: content cut at [data-gate-cutoff] marker (or fallback %)
- *   - Subscriber/admin: full content, no gate
- *   - Content stays in DOM (CSS-only hiding) — SEO preserved
- *
- * Gate placement:
- *   - If a [data-gate-cutoff] element exists inside the content, the gate
- *     is placed at that element's offsetTop (shows ~3-4 summary rows).
- *   - Otherwise falls back to VISIBLE_PERCENT of total height.
+ * For free guides (sleep): full content is in the HTML. No gating applied.
+ * For excluded pages (mechanisms, sleep-sales): no gating applied.
  *
  * Dependencies:
  *   - auth.js (window.SupplementDBAuth)
  *   - rbac.js (window.SupplementDBRBAC)
- *   - convex-client.js (window.SupplementDB) — for gate event tracking
- *
- * Affected pages: guides/{slug}.html (20 evidence guide pages), evidence/{domain}/{supplement}.html, tools/{slug}.html
+ *   - convex-client.js (window.SupplementDB) — for Convex queries/mutations
  */
 (function () {
   "use strict";
 
-  // Only run on guide pages
-  const path = window.location.pathname.toLowerCase();
-  if ((!path.includes("/guides/") && !path.includes("/evidence/") && !path.includes("/tools/")) || path.includes("/admin/")) return;
+  // ── Constants ──────────────────────────────────────────────────
+  const FREE_GUIDES = ["sleep"];
+  const EXCLUDED_PAGES = ["mechanisms", "sleep-sales"];
+  const PREMIUM_CONTAINER_ID = "premium-content";
 
-  // ── Configuration ──────────────────────────────────────────────
-  const VISIBLE_PERCENT = 15; // Fallback percentage if no cutoff marker found
-  const GATE_ID = "content-gate-overlay";
-  const GATED_CONTENT_SELECTOR = ".content-body, .guide-content, article, main, main .prose";
-  const CUTOFF_MARKER_SELECTOR = "[data-gate-cutoff]";
+  // ── Early exit for non-guide pages ─────────────────────────────
+  const pagePath = window.location.pathname.toLowerCase();
+  if (!pagePath.includes("/guides/") || pagePath.includes("/admin/")) return;
+
+  // ── Get guide slug ─────────────────────────────────────────────
+  const filename = pagePath.split("/").pop() || "";
+  const guideSlug = filename.replace(".html", "");
+
+  // ── Skip free guides and excluded pages ────────────────────────
+  if (FREE_GUIDES.includes(guideSlug) || EXCLUDED_PAGES.includes(guideSlug)) return;
 
   // ── State ──────────────────────────────────────────────────────
-  let gateApplied = false;
+  let contentLoaded = false;
   let gateImpressionRecorded = false;
 
-  // ── Main logic ─────────────────────────────────────────────────
+  // ── Init ───────────────────────────────────────────────────────
   function initContentGate() {
-    // Wait for auth to load
+    const container = document.getElementById(PREMIUM_CONTAINER_ID);
+    if (!container) return; // Not a split-content page
+
+    // Show loading state immediately
+    showLoadingState(container);
+
     const auth = window.SupplementDBAuth;
     if (!auth?.isLoaded) {
-      document.addEventListener("auth:loaded", checkAndApplyGate, { once: true });
-      // Apply gate immediately (assume free) to prevent content flash
-      applyGate();
+      document.addEventListener("auth:loaded", () => checkAccessAndLoad(container), { once: true });
       return;
     }
-    checkAndApplyGate();
+    checkAccessAndLoad(container);
   }
 
-  async function checkAndApplyGate() {
-    const rbac = window.SupplementDBRBAC;
+  // ── Access Check ───────────────────────────────────────────────
+  async function checkAccessAndLoad(container) {
+    if (contentLoaded) return;
 
-    // Primary check: RBAC (reads role from Clerk publicMetadata)
-    if (rbac?.canAccessGuide()) {
-      removeGate();
+    const rbac = window.SupplementDBRBAC;
+    const auth = window.SupplementDBAuth;
+
+    // 1. RBAC check (subscriber/admin via Clerk publicMetadata)
+    if (rbac?.canAccessSpecificGuide?.(guideSlug) || rbac?.canAccessGuide?.()) {
+      await loadPremiumContent(container);
       return;
     }
 
-    // Convex fallback for race condition:
-    // Stripe webhook may have updated Convex DB subscription status
-    // but Clerk JWT hasn't refreshed yet, so RBAC still reads "free".
-    // Query Convex directly to check subscription status.
-    const auth = window.SupplementDBAuth;
+    // 2. Convex subscription fallback (race condition: Stripe updated DB but JWT not refreshed)
     if (auth?.isSignedIn && window.SupplementDB?.query) {
       try {
-        const hasAccess = await window.SupplementDB.query(
-          "subscriptions:hasActiveSubscription"
-        );
-        if (hasAccess) {
-          removeGate();
+        const hasSub = await window.SupplementDB.query("subscriptions:hasActiveSubscription");
+        if (hasSub) {
+          await loadPremiumContent(container);
           return;
         }
       } catch {
-        // Convex query failed — fall through to apply gate
+        // Fall through
+      }
+
+      // 3. Convex one-off purchase check
+      try {
+        const hasAccess = await window.SupplementDB.query("guidePurchases:hasWebAccess", { guideSlug });
+        if (hasAccess) {
+          await loadPremiumContent(container);
+          return;
+        }
+      } catch {
+        // Fall through
       }
     }
 
-    applyGate();
+    // 4. No access — show gate overlay
+    showGateOverlay(container);
   }
 
-  function applyGate() {
-    if (gateApplied) {
-      // Gate CSS is already applied — just refresh the overlay content to reflect
-      // the current auth state. This handles the case where the overlay was created
-      // before auth loaded (showing anonymous CTA) and now needs to show the correct
-      // signed-in CTA (e.g., "Upgrade to Pro" instead of "Start Free Account").
-      const existingOverlay = document.getElementById(GATE_ID);
-      if (existingOverlay) {
-        existingOverlay.replaceWith(createGateOverlay());
+  // ── Premium Content Loading ────────────────────────────────────
+  async function loadPremiumContent(container) {
+    if (contentLoaded) return;
+
+    showLoadingState(container);
+
+    try {
+      const result = await window.SupplementDB.query("premiumGuideContent:getContent", { guideSlug });
+
+      if (result?.htmlContent) {
+        // Content comes from our own trusted Convex backend (admin-uploaded only)
+        container.innerHTML = result.htmlContent; // eslint-disable-line no-unsanitized/property
+        contentLoaded = true;
+
+        // Trigger reveal animations on newly injected content
+        container.querySelectorAll(".reveal").forEach(el => {
+          el.classList.add("revealed");
+        });
+
+        // Re-initialize any interactive elements
+        initInjectedContent(container);
+
+        recordEvent("premium_content_loaded");
+      } else {
+        showEmptyState(container);
       }
-      return;
+    } catch (err) {
+      console.error("Failed to load premium content:", err);
+      showErrorState(container);
+      recordEvent("premium_content_error");
     }
-
-    const contentEl = findContentElement();
-    if (!contentEl) return;
-
-    // Calculate height for visible portion.
-    // Priority: use [data-gate-cutoff] marker position if present,
-    // otherwise fall back to percentage of total height.
-    let visibleHeight;
-    const cutoffEl = contentEl.querySelector(CUTOFF_MARKER_SELECTOR);
-    if (cutoffEl) {
-      // offsetTop is relative to the content element's top
-      visibleHeight = cutoffEl.offsetTop;
-    } else {
-      const fullHeight = contentEl.scrollHeight;
-      visibleHeight = Math.max(300, (fullHeight * VISIBLE_PERCENT) / 100);
-    }
-
-    // Minimum height so the gate doesn't look broken
-    visibleHeight = Math.max(250, visibleHeight);
-
-    // Apply CSS gate
-    contentEl.classList.add("content-gated");
-    contentEl.style.maxHeight = visibleHeight + "px";
-
-    // Insert gate overlay
-    const overlay = createGateOverlay();
-    contentEl.parentNode.insertBefore(overlay, contentEl.nextSibling);
-
-    gateApplied = true;
-
-    // Record impression
-    recordGateEvent("impression");
   }
 
-  function removeGate() {
-    const contentEl = findContentElement();
-    if (contentEl) {
-      contentEl.classList.remove("content-gated");
-      contentEl.style.maxHeight = "";
+  // ── Initialize interactive elements in injected content ────────
+  function initInjectedContent(container) {
+    // Re-initialize citation tabs if present
+    const citeTabs = container.querySelectorAll(".cite-tab");
+    if (citeTabs.length > 0 && typeof window.switchCiteTab === "function") {
+      citeTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const tabName = tab.getAttribute("data-tab");
+          if (tabName) window.switchCiteTab(tabName);
+        });
+      });
     }
 
-    const overlay = document.getElementById(GATE_ID);
-    if (overlay) {
-      overlay.remove();
-    }
+    // Trigger IntersectionObserver for reveal animations
+    if (typeof IntersectionObserver !== "undefined") {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-    gateApplied = false;
+      container.querySelectorAll(".reveal:not(.revealed)").forEach(el => observer.observe(el));
+    }
   }
 
-  function findContentElement() {
-    const selectors = GATED_CONTENT_SELECTOR.split(",").map((s) => s.trim());
-    for (const sel of selectors) {
-      const el = document.querySelector(sel);
-      if (el) return el;
-    }
-    return null;
-  }
-
-  // ── Gate Overlay HTML ──────────────────────────────────────────
-  function createGateOverlay() {
-    const guideSlug = getGuideSlug();
+  // ── Gate Overlay ───────────────────────────────────────────────
+  function showGateOverlay(container) {
     const isSignedIn = window.SupplementDBAuth?.isSignedIn;
+
+    // Build overlay using safe DOM methods
     const overlay = document.createElement("div");
-    overlay.id = GATE_ID;
     overlay.className = "content-gate-overlay";
 
+    const gradient = document.createElement("div");
+    gradient.className = "content-gate-gradient";
+    overlay.appendChild(gradient);
+
+    const cta = document.createElement("div");
+    cta.className = "content-gate-cta";
+
+    const ctaInner = document.createElement("div");
+    ctaInner.className = "content-gate-cta-inner";
+
+    // Icon
+    const iconWrap = document.createElement("div");
+    iconWrap.className = "content-gate-icon";
+    const icon = document.createElement("i");
+    icon.className = "fas fa-lock";
+    iconWrap.appendChild(icon);
+    ctaInner.appendChild(iconWrap);
+
+    // Title
+    const title = document.createElement("h3");
+    title.className = "content-gate-title";
+    title.textContent = "Unlock Full Evidence Guide";
+    ctaInner.appendChild(title);
+
+    // Description
+    const desc = document.createElement("p");
+    desc.className = "content-gate-description";
+    desc.textContent = "Get complete evidence analysis with dosage protocols, mechanism breakdowns, interaction warnings, and clinical citations.";
+    ctaInner.appendChild(desc);
+
     if (isSignedIn) {
-      // Signed-in free user — show upgrade CTA
-      overlay.innerHTML = `
-        <div class="content-gate-gradient"></div>
-        <div class="content-gate-cta">
-          <div class="content-gate-cta-inner">
-            <div class="content-gate-icon">
-              <i class="fas fa-crown"></i>
-            </div>
-            <h3 class="content-gate-title">Upgrade to Pro</h3>
-            <p class="content-gate-description">
-              Get full access to all 8 evidence guides with dosage protocols,
-              mechanism analysis, interaction warnings, and clinical citations.
-            </p>
-            <a href="/pricing.html" id="gate-cta-upgrade" class="content-gate-btn-primary" style="text-decoration:none; display:inline-block; text-align:center;">
-              View Plans &amp; Pricing
-            </a>
-            <p class="content-gate-trust">
-              <i class="fas fa-shield-halved"></i>
-              Cancel anytime &middot; Instant access
-            </p>
-          </div>
-        </div>
-      `;
-
-      overlay.querySelector("#gate-cta-upgrade")?.addEventListener("click", () => {
-        recordGateEvent("upgrade_click");
+      // Subscribe link (primary)
+      const subLink = document.createElement("a");
+      subLink.href = "/pricing.html";
+      subLink.id = "gate-cta-subscribe";
+      subLink.className = "content-gate-btn-primary";
+      subLink.style.textDecoration = "none";
+      subLink.style.display = "inline-block";
+      subLink.style.textAlign = "center";
+      subLink.textContent = "Subscribe \u2014 All Guides $9.99/mo";
+      subLink.addEventListener("click", () => {
+        recordEvent("gate_cta_clicked", { cta_type: "subscribe" });
       });
+      ctaInner.appendChild(subLink);
+
+      // One-off purchase (secondary)
+      const secondaryP = document.createElement("p");
+      secondaryP.className = "content-gate-secondary";
+      secondaryP.textContent = "Just want this guide? ";
+      const buyBtn = document.createElement("button");
+      buyBtn.id = "gate-cta-buy";
+      buyBtn.className = "content-gate-link";
+      buyBtn.textContent = "Buy for $4.99";
+      buyBtn.addEventListener("click", async () => {
+        recordEvent("gate_cta_clicked", { cta_type: "buy_one_off" });
+        try {
+          const result = await window.SupplementDB.action("stripe:createGuideCheckoutSession", {
+            guideSlug,
+            accessType: "web",
+          });
+          if (result?.url) {
+            window.location.href = result.url;
+          }
+        } catch (err) {
+          console.error("Failed to create checkout session:", err);
+          alert("Something went wrong. Please try again.");
+        }
+      });
+      secondaryP.appendChild(buyBtn);
+      ctaInner.appendChild(secondaryP);
+
+      // Trust line
+      const trust = document.createElement("p");
+      trust.className = "content-gate-trust";
+      const shieldIcon = document.createElement("i");
+      shieldIcon.className = "fas fa-shield-halved";
+      trust.appendChild(shieldIcon);
+      trust.appendChild(document.createTextNode(" Cancel anytime \u00B7 Instant access"));
+      ctaInner.appendChild(trust);
     } else {
-      // Anonymous user — show sign-up CTA
-      overlay.innerHTML = `
-        <div class="content-gate-gradient"></div>
-        <div class="content-gate-cta">
-          <div class="content-gate-cta-inner">
-            <div class="content-gate-icon">
-              <i class="fas fa-lock"></i>
-            </div>
-            <h3 class="content-gate-title">Unlock Full Evidence Guide</h3>
-            <p class="content-gate-description">
-              Get complete access to dosage protocols, mechanism analysis,
-              interaction warnings, and all clinical citations.
-            </p>
-            <button id="gate-cta-signup" class="content-gate-btn-primary">
-              Start Free Account
-            </button>
-            <p class="content-gate-signin">
-              Already have an account?
-              <button id="gate-cta-signin" class="content-gate-link">Sign in</button>
-            </p>
-            <p class="content-gate-trust">
-              <i class="fas fa-shield-halved"></i>
-              Trusted by researchers and practitioners
-            </p>
-          </div>
-        </div>
-      `;
-
-      overlay.querySelector("#gate-cta-signup")?.addEventListener("click", () => {
-        recordGateEvent("cta_click");
-        if (window.SupplementDBAuth?.openSignUp) {
-          recordGateEvent("sign_up_started");
-          window.SupplementDBAuth.openSignUp();
-        }
+      // Anonymous: subscribe button
+      const subBtn = document.createElement("button");
+      subBtn.id = "gate-cta-subscribe-anon";
+      subBtn.className = "content-gate-btn-primary";
+      subBtn.textContent = "Subscribe \u2014 All Guides $9.99/mo";
+      subBtn.addEventListener("click", () => {
+        recordEvent("gate_cta_clicked", { cta_type: "subscribe" });
+        window.SupplementDBAuth?.openSignUp?.();
       });
+      ctaInner.appendChild(subBtn);
 
-      overlay.querySelector("#gate-cta-signin")?.addEventListener("click", () => {
-        recordGateEvent("cta_click");
-        if (window.SupplementDBAuth?.openSignIn) {
-          window.SupplementDBAuth.openSignIn();
-        }
+      // Anonymous: buy button
+      const buyBtn = document.createElement("button");
+      buyBtn.id = "gate-cta-buy-anon";
+      buyBtn.className = "content-gate-btn-secondary";
+      buyBtn.textContent = "Buy Just This Guide \u2014 $4.99";
+      buyBtn.addEventListener("click", () => {
+        recordEvent("gate_cta_clicked", { cta_type: "buy_one_off" });
+        window.SupplementDBAuth?.openSignUp?.();
       });
+      ctaInner.appendChild(buyBtn);
+
+      // Sign-in line
+      const signinP = document.createElement("p");
+      signinP.className = "content-gate-signin";
+      signinP.textContent = "Already have an account? ";
+      const signinBtn = document.createElement("button");
+      signinBtn.id = "gate-cta-signin";
+      signinBtn.className = "content-gate-link";
+      signinBtn.textContent = "Sign in";
+      signinBtn.addEventListener("click", () => {
+        window.SupplementDBAuth?.openSignIn?.();
+      });
+      signinP.appendChild(signinBtn);
+      ctaInner.appendChild(signinP);
+
+      // Trust line
+      const trust = document.createElement("p");
+      trust.className = "content-gate-trust";
+      const shieldIcon = document.createElement("i");
+      shieldIcon.className = "fas fa-shield-halved";
+      trust.appendChild(shieldIcon);
+      trust.appendChild(document.createTextNode(" Trusted by researchers and practitioners"));
+      ctaInner.appendChild(trust);
     }
 
-    return overlay;
+    cta.appendChild(ctaInner);
+    overlay.appendChild(cta);
+
+    // Clear container and append overlay
+    container.textContent = "";
+    container.appendChild(overlay);
+
+    recordEvent("gate_overlay_shown");
   }
 
-  // ── Helpers ────────────────────────────────────────────────────
-  function getGuideSlug() {
-    const path = window.location.pathname;
-    const filename = path.split("/").pop() || "";
-    return filename.replace(".html", "");
+  // ── State Displays ─────────────────────────────────────────────
+  function showLoadingState(container) {
+    container.textContent = "";
+    const wrapper = document.createElement("div");
+    wrapper.style.cssText = "max-width: 64rem; margin: 2rem auto; padding: 0 1rem;";
+
+    for (let i = 0; i < 3; i++) {
+      const skeleton = document.createElement("div");
+      skeleton.className = "skeleton-card";
+      wrapper.appendChild(skeleton);
+    }
+
+    const loadingText = document.createElement("p");
+    loadingText.style.cssText = "text-align: center; color: var(--text-muted, #888); font-size: 0.875rem; margin-top: 1rem;";
+    loadingText.textContent = "Loading evidence analysis...";
+    wrapper.appendChild(loadingText);
+
+    container.appendChild(wrapper);
   }
 
-  function recordGateEvent(eventType) {
+  function showErrorState(container) {
+    container.textContent = "";
+    const wrapper = document.createElement("div");
+    wrapper.style.cssText = "max-width: 48rem; margin: 3rem auto; padding: 2rem; text-align: center;";
+
+    const iconDiv = document.createElement("div");
+    iconDiv.style.cssText = "font-size: 2rem; margin-bottom: 1rem;";
+    iconDiv.textContent = "\u26A0\uFE0F";
+    wrapper.appendChild(iconDiv);
+
+    const heading = document.createElement("h3");
+    heading.style.cssText = "color: var(--text-bright, #fff); margin-bottom: 0.5rem;";
+    heading.textContent = "Unable to load premium content.";
+    wrapper.appendChild(heading);
+
+    const msg = document.createElement("p");
+    msg.style.cssText = "color: var(--text-muted, #888); margin-bottom: 1.5rem;";
+    msg.textContent = "This may be a temporary issue.";
+    wrapper.appendChild(msg);
+
+    const retryBtn = document.createElement("button");
+    retryBtn.id = "gate-retry-btn";
+    retryBtn.className = "content-gate-btn-primary";
+    retryBtn.style.maxWidth = "200px";
+    retryBtn.textContent = "Retry";
+    retryBtn.addEventListener("click", () => {
+      contentLoaded = false;
+      loadPremiumContent(container);
+    });
+    wrapper.appendChild(retryBtn);
+
+    const supportP = document.createElement("p");
+    supportP.style.cssText = "color: var(--text-muted, #888); font-size: 0.8rem; margin-top: 1rem;";
+    supportP.textContent = "If the problem persists, contact ";
+    const supportLink = document.createElement("a");
+    supportLink.href = "mailto:support@supplementdb.co";
+    supportLink.style.color = "var(--glow, #6366f1)";
+    supportLink.textContent = "support@supplementdb.co";
+    supportP.appendChild(supportLink);
+    wrapper.appendChild(supportP);
+
+    container.appendChild(wrapper);
+  }
+
+  function showEmptyState(container) {
+    container.textContent = "";
+    const wrapper = document.createElement("div");
+    wrapper.style.cssText = "max-width: 48rem; margin: 3rem auto; padding: 2rem; text-align: center;";
+
+    const iconDiv = document.createElement("div");
+    iconDiv.style.cssText = "font-size: 2rem; margin-bottom: 1rem;";
+    iconDiv.textContent = "\u2139\uFE0F";
+    wrapper.appendChild(iconDiv);
+
+    const heading = document.createElement("h3");
+    heading.style.cssText = "color: var(--text-bright, #fff); margin-bottom: 0.5rem;";
+    heading.textContent = "Content temporarily unavailable.";
+    wrapper.appendChild(heading);
+
+    const msg = document.createElement("p");
+    msg.style.cssText = "color: var(--text-muted, #888);";
+    msg.textContent = "Our team has been notified.";
+    wrapper.appendChild(msg);
+
+    const supportP = document.createElement("p");
+    supportP.style.cssText = "color: var(--text-muted, #888); font-size: 0.8rem; margin-top: 1rem;";
+    supportP.textContent = "Contact ";
+    const supportLink = document.createElement("a");
+    supportLink.href = "mailto:support@supplementdb.co";
+    supportLink.style.color = "var(--glow, #6366f1)";
+    supportLink.textContent = "support@supplementdb.co";
+    supportP.appendChild(supportLink);
+    supportP.appendChild(document.createTextNode(" for assistance"));
+    wrapper.appendChild(supportP);
+
+    container.appendChild(wrapper);
+  }
+
+  // ── Analytics ──────────────────────────────────────────────────
+  function recordEvent(eventType, extraProps) {
     // Deduplicate impressions
-    if (eventType === "impression" && gateImpressionRecorded) return;
-    if (eventType === "impression") gateImpressionRecorded = true;
+    if (eventType === "gate_overlay_shown" && gateImpressionRecorded) return;
+    if (eventType === "gate_overlay_shown") gateImpressionRecorded = true;
 
     // Track via Convex
     try {
       if (window.SupplementDB?.mutation) {
         window.SupplementDB.mutation("analytics:recordGateEvent", {
-          sessionId: window.SupplementDB.getSessionId(),
+          sessionId: window.SupplementDB.getSessionId?.() || "unknown",
           userId: window.SupplementDBAuth?.user?.id || undefined,
-          guideSlug: getGuideSlug(),
+          guideSlug,
           eventType,
           scrollPercent: getScrollPercent(),
         }).catch(() => {});
@@ -264,12 +417,13 @@
       // Analytics should never break the page
     }
 
-    // Also track via PostHog if available
+    // PostHog
     try {
       if (typeof posthog !== "undefined") {
         posthog.capture("guide_gate_" + eventType, {
-          guide: getGuideSlug(),
+          guide: guideSlug,
           scrollPercent: getScrollPercent(),
+          ...extraProps,
         });
       }
     } catch {
@@ -279,27 +433,41 @@
 
   function getScrollPercent() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     if (scrollHeight <= 0) return 0;
     return Math.round((scrollTop / scrollHeight) * 100);
   }
 
-  // ── Listen for auth changes ────────────────────────────────────
+  // ── Auth Event Listeners ───────────────────────────────────────
   document.addEventListener("auth:signed-in", () => {
-    // Re-check access after sign-in
-    setTimeout(checkAndApplyGate, 500);
+    const container = document.getElementById(PREMIUM_CONTAINER_ID);
+    if (container && !contentLoaded) {
+      setTimeout(() => checkAccessAndLoad(container), 500);
+    }
   });
 
   document.addEventListener("auth:signed-out", () => {
-    applyGate();
+    contentLoaded = false;
+    const container = document.getElementById(PREMIUM_CONTAINER_ID);
+    if (container) {
+      showGateOverlay(container);
+    }
   });
 
-  // Listen for role changes (e.g., after successful Stripe checkout)
   document.addEventListener("auth:role-changed", () => {
-    setTimeout(checkAndApplyGate, 300);
+    const container = document.getElementById(PREMIUM_CONTAINER_ID);
+    if (container && !contentLoaded) {
+      setTimeout(() => checkAccessAndLoad(container), 300);
+    }
   });
+
+  // ── Handle ?purchased=true URL param ───────────────────────────
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("purchased") === "true") {
+    // Clean URL
+    const cleanUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState({}, "", cleanUrl);
+  }
 
   // ── Initialize ─────────────────────────────────────────────────
   if (document.readyState === "loading") {
