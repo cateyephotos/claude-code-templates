@@ -14,12 +14,13 @@ metadata:
 
 ## Overview
 
-This skill performs a comprehensive health check of the entire supplement data pipeline, tracing data from raw structured sources through to HTML generation readiness. It operates in four passes:
+This skill performs a comprehensive health check of the entire supplement data pipeline, tracing data from raw structured sources through to HTML generation readiness. It operates in five passes:
 
-1. **Layer 1 Audit** — `supplements.js` field completeness for all 93 supplements
+1. **Layer 1 Audit** — `supplements.js` field completeness for all 113 supplements
 2. **Layer 2 Audit** — `enhanced_citations/` file existence and schema correctness
 3. **Pass 2.5 — Citation Integrity** — PMID/DOI live verification against PubMed and CrossRef (anti-hallucination gate)
 4. **Layer 3 Check** — `seed.js` dry-run to confirm HTML generation readiness
+5. **Layer 4 Check** — Premium content chunks existence, schema validity, and size compliance
 
 The output is a prioritised action list grouped by supplement, with specific fix instructions for each gap.
 
@@ -33,10 +34,10 @@ The output is a prioritised action list grouped by supplement, with specific fix
 
 ## Trigger Commands
 
-- `/validate-pipeline` — Full validation of all 93 supplements
+- `/validate-pipeline` — Full validation of all 113 supplements
 - `/validate-pipeline --id {id}` — Validate one supplement by ID
 - `/validate-pipeline --slug {slug}` — Validate one supplement by slug
-- `/validate-pipeline --layer {1|2|2.5|3}` — Run only one pass
+- `/validate-pipeline --layer {1|2|2.5|3|4}` — Run only one pass
 
 ---
 
@@ -54,7 +55,7 @@ The dry-run catches critical blockers (✗) and non-blocking gaps (⚠).
 
 **Step 1B — Detailed field audit**
 
-For each supplement in `supplementDatabase.supplements[]`, check:
+For each supplement in `supplementDatabase.supplements[]` (113 total, IDs 1–113), check:
 
 | Field | Required | Severity if missing | HTML Section affected |
 |---|---|---|---|
@@ -310,6 +311,76 @@ Open in browser or use Playwright MCP to screenshot. Check:
 
 ---
 
+### Pass 4 — Layer 4: Premium Content Chunks
+
+**Goal:** Confirm that all 19 paid-guide premium content chunks exist in `data/premium-chunks/`, are structurally valid, pass size limits, and contain the expected section IDs before `upload-premium-content.js` is run.
+
+**Step 4A — Directory and file count check**
+```bash
+node supp-db-site/scripts/validate-premium-chunks.js
+```
+Or manually:
+```bash
+node -e "const fs=require('fs'); const d='supp-db-site/data/premium-chunks'; const files=fs.existsSync(d)?fs.readdirSync(d).filter(f=>f.endsWith('.json')):[];console.log('Premium chunks found:',files.length,'(expected: 19)');"
+```
+
+Expected: exactly **19** JSON files. The following guides are **excluded** from splitting and must NOT have chunk files:
+- `sleep-sales` — marketing landing page, no premium content
+- `mechanisms` — mechanism glossary, always fully public
+- `sleep` — full content remains in HTML with nudge banner; no split required
+
+**Step 4B — Schema and content validity**
+
+For each chunk file `data/premium-chunks/{slug}.json`, verify:
+
+| Field | Required | Severity | Notes |
+|---|---|---|---|
+| `slug` | Yes | ✗ CRITICAL | Must be non-empty string matching filename |
+| `htmlContent` | Yes | ✗ CRITICAL | Must be non-empty string |
+| `sections[]` | Yes | ⚠ WARNING | Array of section ID strings |
+| `generatedAt` | Recommended | ⚠ WARNING | ISO 8601 timestamp |
+| `sizeBytes` | Optional | ℹ INFO | Computed from htmlContent.length |
+
+**Step 4C — Required section IDs check**
+
+Each premium `htmlContent` must contain both of these section IDs:
+
+| Section ID | Severity if missing | Notes |
+|---|---|---|
+| `id="mechanisms"` | ✗ CRITICAL | Mechanisms section must be present |
+| `id="top-supplements"` | ✗ CRITICAL | Top supplements tier cards must be present |
+
+Detection:
+```bash
+node supp-db-site/scripts/validate-premium-chunks.js --check-sections
+```
+
+**Step 4D — Convex document size limits**
+
+Convex has a **1MB hard limit** per document. Check each chunk:
+
+| Size | Severity | Action |
+|---|---|---|
+| < 900KB | ✓ OK | No action required |
+| 900KB–1MB | ⚠ WARN | Review — consider splitting or compressing HTML |
+| > 1MB | ✗ ERROR | Must split before upload — Convex will reject |
+
+```bash
+node supp-db-site/scripts/validate-premium-chunks.js --check-sizes
+```
+
+**Step 4E — Interpret results**
+
+| Status | Meaning |
+|---|---|
+| ✓ 19 files, all valid | Ready for `upload-premium-content.js` |
+| ✗ Count < 19 | Missing chunks — re-run the guide split step |
+| ✗ Count > 19 | Extra files — check for sleep/mechanisms/sleep-sales misgeneration |
+| ✗ CRITICAL section missing | Premium HTML is malformed — re-generate the chunk |
+| ✗ Size > 1MB | Chunk too large — must split or strip redundant HTML before upload |
+
+---
+
 ## Output Format
 
 ### Summary Report
@@ -317,7 +388,7 @@ Open in browser or use Playwright MCP to screenshot. Check:
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║          SUPPLEMENT PIPELINE VALIDATION REPORT                   ║
-║  Date: {YYYY-MM-DD}  |  Supplements: 93  |  Seed.js: v1.x       ║
+║  Date: {YYYY-MM-DD}  |  Supplements: 113  |  Seed.js: v1.x      ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 OVERALL HEALTH SCORE: {score}/100
@@ -345,6 +416,13 @@ LAYER 3 (HTML generation):
   ✓ Ready:               {n} supplements
   ⚠ Ready with warnings: {n} supplements
   ✗ Blocked:             {n} supplements
+
+LAYER 4 (premium content chunks):
+  ✓ All 19 chunks valid:     {n}
+  ⚠ Size warnings (>900KB):  {n}
+  ✗ Missing chunks:          {n}  ← run upload-premium-content.js to regenerate
+  ✗ Invalid schema/sections: {n}  ← re-generate affected chunks
+  ✗ Over 1MB (Convex limit): {n}  ← BLOCKS upload until split/compressed
 ```
 
 ### Per-Supplement Action Table
@@ -592,4 +670,5 @@ This validator is designed to be run **before and after** supplement-research-pi
 | **After Mode 1/2 citations written** | **Citation integrity gate (MANDATORY)** | `node supp-db-site/scripts/verify-citations.js --id {id}` |
 | Before Mode 7 (generate pages) | Confirm 0 errors | `node seed.js --dry-run` |
 | After Mode 7 (pages generated) | Verify HTML completeness | See Pass 3 Step 3B |
+| **After Mode 7 Step 4.5 (premium upload)** | **Confirm 19 chunks valid, no oversized files** | `node supp-db-site/scripts/validate-premium-chunks.js` |
 | Periodic health check | Catch data drift | `/validate-pipeline` monthly |

@@ -35,6 +35,45 @@ You are a quality control reviewer for the Evidence-Based Supplement Database pi
 - Empty `commonSideEffects`, `contraindications`, `drugInteractions`
 - Mechanisms not in glossary aliasMap
 
+## Premium Content Chunk Verification
+
+After guide page generation (Mode 7 Step 4 completes), verify the premium content chunks before running `upload-premium-content.js`.
+
+### What to Check
+
+**File count (run after every guide regeneration):**
+- Exactly **19** JSON files must exist in `supp-db-site/data/premium-chunks/`
+- `sleep-sales.html` — marketing page, fully public, no chunk generated
+- `mechanisms.html` — mechanism glossary, fully public, no chunk generated
+- `sleep.html` — full content in HTML with nudge banner, no split, no chunk generated
+
+**Per-chunk content sections** (verify each file contains these section IDs):
+- `id="mechanisms"` — mechanisms section (CRITICAL — blocks upload if missing)
+- `id="top-supplements"` — tier cards section (CRITICAL — blocks upload if missing)
+
+**Additional expected sections** (warnings if missing, don't block):
+- Tier cards with supplement names and dosage callouts
+- Mechanism pill descriptions
+- Dosage guidance with protocol ranges
+- Safety profile and contraindications
+- Evidence citations with PMIDs or DOIs
+
+**Special cases — these files must NOT have premium chunks and must remain unchanged:**
+- `mechanisms.html` — always fully public, structure unchanged by pipeline
+- `sleep-sales.html` — marketing landing page, always fully public
+- `sleep.html` — full content visible with contextual nudge banner; verify no `data-premium-gate` or split markers were accidentally inserted
+
+**Size limits (Convex document constraint):**
+- < 900KB = pass
+- 900KB–1MB = warn, flag for review
+- > 1MB = block upload, must split or compress before proceeding
+
+### Quick Verification Script
+```bash
+node supp-db-site/scripts/validate-premium-chunks.js
+```
+Pass all checks before approving the data for Convex upload.
+
 ## Fixing Issues
 
 When you find issues:

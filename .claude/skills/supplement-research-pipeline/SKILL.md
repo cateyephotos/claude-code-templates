@@ -50,11 +50,13 @@ Use this skill when:
 ```
 supp-db-site/
 ├── data/
-│   ├── supplements.js              # Main database (93 supplements, next ID: 94)
+│   ├── supplements.js              # Main database (113 supplements, next ID: 114)
 │   ├── citations.js                # Master citation registry
 │   ├── mechanisms.js               # Mechanism glossary database (296 canonical entries + aliasMap)
-│   └── enhanced_citations/         # Per-supplement deep citation files
-│       └── {id}_{name}_enhanced.js
+│   ├── enhanced_citations/         # Per-supplement deep citation files
+│   │   └── {id}_{name}_enhanced.js
+│   └── premium-chunks/             # Per-guide premium HTML content for paid access (19 files)
+│       └── {guide-slug}.json       # { slug, htmlContent, sections[], generatedAt }
 ├── content/                        # NEW: Generated content output
 │   ├── newsletters/                # Newsletter digests (markdown + HTML)
 │   ├── research-updates/           # Evidence update reports
@@ -604,7 +606,7 @@ Take fully-researched supplement data (from Mode 1 output or a completed researc
 
 #### Sub-task A — Append to `data/supplements.js`
 
-Read the current `supplements.js` to confirm the next available ID (count entries; current count is 93, so next ID = 94 unless already incremented). Append the new supplement object to the `supplements` array. Ensure the entry includes **all fields** required by the homepage card renderer:
+Read the current `supplements.js` to confirm the next available ID (count entries; current count is 113, so next ID = 114 unless already incremented). Append the new supplement object to the `supplements` array. Ensure the entry includes **all fields** required by the homepage card renderer:
 
 | Field | Source |
 |-------|--------|
@@ -773,6 +775,7 @@ Every string in the new supplement's `mechanismsOfAction[]` array must be regist
 
 **Step 1 — Check for existing mappings**
 
+For a single supplement, paste its mechanisms inline:
 ```bash
 node -e "
 const db = require('./data/mechanisms.js');
@@ -783,6 +786,12 @@ newMechs.forEach(m => {
 });
 "
 ```
+
+For batch imports (multiple supplements at once), use the validation script:
+```bash
+node supp-db-site/scripts/validate-mechanism-aliases.js
+```
+This checks ALL supplement `mechanismsOfAction` strings against the aliasMap and reports every unlinked string grouped by supplement. Must show `0 missing` before proceeding to Step 3.
 
 **Step 2 — Add missing mechanisms to `data/mechanisms.js`**
 
@@ -1076,7 +1085,7 @@ Before marking Mode 6 complete, verify:
   - [ ] `node supp-db-site/scripts/build-mechanism-glossary.js` — glossary HTML rebuilt with new entries
   - [ ] `node supp-db-site/scripts/generate-guide-pages.js` — guide pages regenerated with new mechanism links
 - [ ] **Regenerate category pages**: `node supp-db-site/scripts/generate-category-pages.js` — updates all 12 category pillar pages (`categories/*.html`) with the new supplement card, table row, and JSON-LD entry
-- [ ] **Update site-wide stats**: `node supp-db-site/scripts/generate-stats.js` — recomputes totalSupplements, totalCitations, per-category counts from live data; writes `data/site-stats.json` and patches all hardcoded counts in `index.html`
+- [ ] **Update site-wide stats**: `node supp-db-site/scripts/update-site-stats.js` — recomputes totalSupplements, totalCombinedCitations (keyCitations + enhanced evidence items), totalCategories, totalHealthDomains, totalGuides, yearsOfEvidence from live data; patches all meta descriptions, OG tags, Twitter cards, JSON-LD structured data, and remaining hardcoded counts across index.html, about.html, faq.html, methodology.html, pricing.html, all guides/, and categories/ pages. Run with `--dry-run` first to preview changes.
 - [ ] Run `node -e "require('./data/supplements.js')"` (or equivalent syntax check) to verify JS validity
 - [ ] Check browser console for errors on the supplement page, comparison page(s), and the relevant category page
 
@@ -1135,6 +1144,18 @@ const html=fs.readFileSync('supp-db-site/supplements/{slug}.html','utf8');
 "
 ```
 
+**Step 3.5 — Audit guide coverage for new supplement impact**
+```bash
+# Run coverage audit — compares current DB against previous snapshot
+node supp-db-site/scripts/audit-guide-coverage.js
+```
+The audit script runs each guide's `filterFn` against all supplements, diffs against the saved snapshot (`.guide-coverage-snapshot.json`), and produces a manifest (`data/guide-update-manifest.json`) with per-guide impact classification:
+- **High impact** (Tier 1 additions or 3+ new supplements): **STOP and review** `generate-guide-pages.js` GUIDES array before proceeding. Check whether `coreSuppNames`, mechanisms, safety notes, or prose need updating for the new supplements.
+- **Medium impact** (Tier 2 additions): Review recommended but non-blocking. Proceed to regeneration.
+- **No impact**: Auto-proceed silently.
+
+If high-impact guides are flagged, update the relevant GUIDES entries in `scripts/generate-guide-pages.js` (coreSuppNames, mechanism sections, safety notes) BEFORE running Step 4.
+
 **Step 4 — Rebuild mechanism glossary + regenerate guide pages**
 ```bash
 # Rebuild glossary HTML from data/mechanisms.js (includes any new mechanisms)
@@ -1145,20 +1166,64 @@ node supp-db-site/scripts/generate-guide-pages.js
 ```
 The guide generator loads `mechanismAliasMap` from `data/mechanisms.js` and wraps matching mechanism pill text in `<a>` links to `guides/mechanisms.html#id`. If new mechanisms were added to `data/mechanisms.js` (e.g., via Mode 6 Sub-task F), this step ensures they appear in the glossary and are linked from guide pages.
 
+**Step 4.5 — Upload premium content chunks to Convex**
+```bash
+# Splits each paid guide into a structured JSON chunk and uploads to Convex
+node supp-db-site/scripts/upload-premium-content.js
+```
+This step reads the 19 paid guide HTML pages from `guides/`, extracts the premium content regions (all sections after the free teaser), writes JSON chunk files to `data/premium-chunks/`, and upserts them into the Convex `premiumContent` table.
+
+**Required environment variables:**
+```
+CONVEX_URL        # e.g. https://happy-animal-123.convex.cloud
+CONVEX_DEPLOY_KEY # Convex deploy key (from Convex dashboard → Settings → Deploy Keys)
+```
+Both must be present in `.env` or exported in the shell before running. The script will exit with code `1` and a clear error if either is missing.
+
+**Premium chunk schema** (written to `data/premium-chunks/{guide-slug}.json`):
+```json
+{
+  "slug": "cognitive-performance",
+  "title": "Cognitive Performance Guide — Premium",
+  "htmlContent": "<section id=\"mechanisms\">...</section>...",
+  "sections": ["mechanisms", "top-supplements", "dosage", "safety", "citations"],
+  "sizeBytes": 142000,
+  "generatedAt": "2026-03-23T00:00:00.000Z"
+}
+```
+
+**Guides NOT split (fully public — skip this step for these):**
+- `sleep-sales.html` — marketing landing page, no premium content
+- `mechanisms.html` — mechanism glossary, always fully public
+
+**Sleep guide (`sleep.html`) special handling:**
+- Full content remains in the HTML page plus a nudge banner
+- No split markers or gated sections — the page is public with a contextual upgrade prompt
+- Do NOT generate a premium chunk for sleep
+
+**Verification after upload:**
+```bash
+# Confirm all 19 chunks were written locally
+node -e "const fs=require('fs'); const files=fs.readdirSync('supp-db-site/data/premium-chunks').filter(f=>f.endsWith('.json')); console.log('Chunk files:', files.length, '(expected 19)');"
+
+# Confirm no chunk exceeds Convex 900KB warning threshold
+node supp-db-site/scripts/upload-premium-content.js --check-sizes
+```
+
 **Step 5 — Regenerate category pages + update site-wide stats**
 ```bash
 node supp-db-site/scripts/generate-category-pages.js
-node supp-db-site/scripts/generate-stats.js
+node supp-db-site/scripts/update-site-stats.js
 ```
 `generate-category-pages.js` rebuilds all 12 category pillar pages (`categories/*.html`) — supplement cards, data tables, tier distributions, JSON-LD, hero stats — from live data via `parse-data.js`.
 
-`generate-stats.js` is the **single source of truth** for site-wide counts. It:
-- Reads `data/supplements.js`
-- Computes `totalSupplements`, `totalCitations` (sum of `keyCitations.length`), `avgEvidenceTier`, per-category and per-health-domain counts
-- Writes `data/site-stats.json` (machine-readable reference for future tooling)
-- Patches all hardcoded citation/supplement counts in `index.html` (meta descriptions, hero stats, footer text)
+`update-site-stats.js` is the **single source of truth** for site-wide counts. It:
+- Reads `data/supplements.js` and all `data/enhanced_citations/*_enhanced.js` files
+- Computes `totalSupplements`, `totalCombinedCitations` (keyCitations + enhanced evidence items), `totalCategories`, `totalHealthDomains`, `totalGuides`, `yearsOfEvidence`, and display-rounded values
+- Patches all meta descriptions, OG tags, Twitter cards, JSON-LD structured data across: `index.html`, `about.html`, `faq.html`, `methodology.html`, `pricing.html`, all `guides/*.html`, and `categories/*.html`
+- Companion client-side module `js/SiteStats.js` dynamically computes counts at runtime for any `data-stat="<key>"` HTML elements (hero stats, badges, footer text) — no hardcoded numbers in visible page content
 
-Run with `--dry-run` to preview patches without writing: `node supp-db-site/scripts/generate-stats.js --dry-run`
+Run with `--dry-run` to preview patches without writing: `node supp-db-site/scripts/update-site-stats.js --dry-run`
 
 **Step 6 (optional) — Playwright spot-check**
 Open the generated page in Docker staging and verify visual rendering. Use Playwright MCP to screenshot and check for visual regressions.
@@ -1193,7 +1258,7 @@ The database uses **normalized categories** via `parse-data.js` `normalizeCatego
 Health domains are stored in `supplementDatabase.healthDomains[]` in `data/supplements.js`. They drive:
 1. The **homepage filter dropdown** (`#healthDomainFilter`) — dynamically populated by `app.js` ✓ auto-updates
 2. The **guide pillar pages** in `guides/` — human-authored comprehensive pages, NOT auto-generated
-3. The **guide card subtitles** in `index.html` — may have hardcoded supplement counts (use `generate-stats.js` to update)
+3. The **guide card subtitles** in `index.html` — use `data-stat` attributes for dynamic rendering via `js/SiteStats.js`; run `scripts/update-site-stats.js` to update meta tags and structured data
 
 Current 20 health domains with supplement counts:
 
@@ -1224,24 +1289,39 @@ Current 20 health domains with supplement counts:
 
 ### Single Source of Truth: Site-Wide Stats
 
-**`data/site-stats.json`** is the machine-readable single source of truth, generated by `generate-stats.js`. It contains:
-```json
-{
-  "generated": "YYYY-MM-DD",
-  "totalSupplements": 93,
-  "totalCitations": 182,
-  "avgEvidenceTier": 2.05,
-  "tierDist": { "1": 15, "2": 58, "3": 20 },
-  "perCategory": { "Herbal Extracts": { "supplements": 23, "citations": 28 }, ... },
-  "perDomain": { "Memory Enhancement": 40, ... }
-}
+The site uses a **dual-layer stats system** to keep all counts accurate:
+
+**Layer 1 — Client-side dynamic rendering (`js/SiteStats.js`):**
+- Loads after `data/supplements.js` and computes all stats at runtime
+- Binds to any HTML element with `data-stat="<key>"` attribute
+- Supports formatting: `data-stat-format="plus|comma|raw"`, `data-stat-suffix`, `data-stat-round`
+- Re-computes when enhanced citations finish loading (listens for `enhancedCitationsLoaded` event)
+- Public API: `SiteStats.getStats()`, `SiteStats.refreshStats()`
+- **No hardcoded numbers in visible page content** — all counts are dynamic
+
+**Layer 2 — Build-time meta tag updater (`scripts/update-site-stats.js`):**
+- Updates SEO-critical content that crawlers can't get from JavaScript
+- Patches: meta descriptions, OG tags, Twitter cards, JSON-LD structured data
+- Scans: `index.html`, `about.html`, `faq.html`, `methodology.html`, `pricing.html`, all `guides/*.html`, all `categories/*.html`
+- Run with `--dry-run` to preview changes
+
+**Available stat keys:**
+| Key | Description | Current |
+|---|---|---|
+| `totalSupplements` | Count of supplements array | 113 |
+| `totalCategories` | Count of categories array | 13 |
+| `totalHealthDomains` | Count of healthDomains array | 20 |
+| `totalCombinedCitations` | keyCitations + enhanced evidence items | 1,707 |
+| `totalKeyCitations` | Sum of keyCitations arrays | 310 |
+| `totalEvidenceItems` | Deep count from enhanced citations | 1,397 |
+| `totalGuides` | Guide pages detected from links | 20 |
+| `yearsOfEvidence` | Earliest→latest citation year span | 51 |
+| `tier1Count`–`tier4Count` | Per-tier supplement counts | varies |
+
+**After any import run, always execute:**
+```bash
+node supp-db-site/scripts/update-site-stats.js
 ```
-
-Any front-end component, static HTML, or documentation that needs a count MUST:
-1. Read from `data/site-stats.json` if loading dynamically, OR
-2. Be regenerated via `generate-stats.js` (which patches hardcoded values in `index.html`)
-
-After any import run, always execute: `node supp-db-site/scripts/generate-stats.js`
 
 ---
 
