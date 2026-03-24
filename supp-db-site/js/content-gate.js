@@ -17,7 +17,7 @@
   "use strict";
 
   // ── Constants ──────────────────────────────────────────────────
-  const FREE_GUIDES = ["sleep"];
+  const FREE_GUIDES = ["sleep", "safety-interactions"];
   const EXCLUDED_PAGES = ["mechanisms", "sleep-sales"];
   const PREMIUM_CONTAINER_ID = "premium-content";
 

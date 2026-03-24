@@ -100,14 +100,12 @@ http.route({
             .filter(Boolean)
             .join(" ") || email.split("@")[0] || "User";
 
-          const role = data.public_metadata?.role || "free";
           const avatarUrl = data.image_url || data.profile_image_url;
 
           await ctx.runMutation(api.users.upsertUser, {
             clerkId: data.id,
             email,
             name,
-            role,
             avatarUrl,
           });
 

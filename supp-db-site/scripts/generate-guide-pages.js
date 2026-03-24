@@ -21,6 +21,9 @@ const {
 // --- Content Split Configuration ---
 const PREMIUM_CHUNKS_DIR = path.join(__dirname, '..', 'data', 'premium-chunks');
 
+// Guides that remain fully public (not split into teaser + premium)
+const FREE_GUIDES = ['safety-interactions'];
+
 // ─── Enhanced Citations Loading ─────────────────────────────────────────────
 const ENH_DIR = path.join(__dirname, '..', 'data', 'enhanced_citations');
 
@@ -3090,6 +3093,15 @@ function main() {
     GUIDES.forEach(guide => {
         const html = generateGuidePage(guide, db.supplements);
         const filtered = db.supplements.filter(guide.filterFn);
+
+        // Free guides: write full HTML, no split
+        if (FREE_GUIDES.includes(guide.slug)) {
+            const outPath = path.join(outDir, `${guide.slug}.html`);
+            fs.writeFileSync(outPath, html, 'utf8');
+            const kb = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(1);
+            console.log(`✓ [FREE] ${guide.slug}.html (${filtered.length} supplements, ${kb}KB)`);
+            return;
+        }
 
         const startMarker = '<!-- PREMIUM_CONTENT_START -->';
         const endMarker = '<!-- PREMIUM_CONTENT_END -->';

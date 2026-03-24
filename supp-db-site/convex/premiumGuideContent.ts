@@ -1,7 +1,7 @@
 import { query, internalMutation } from "./_generated/server";
 import { v } from "convex/values";
 
-const FREE_GUIDES = ["sleep"];
+const FREE_GUIDES = ["sleep", "safety-interactions"];
 
 export const getContent = query({
   args: {

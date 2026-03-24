@@ -128,7 +128,7 @@
      * @returns {boolean} true if immediate access (role-based or free guide)
      */
     canAccessSpecificGuide(slug) {
-      const FREE_GUIDES = ["sleep"];
+      const FREE_GUIDES = ["sleep", "safety-interactions"];
       if (FREE_GUIDES.includes(slug)) return true;
       return this.hasRole("subscriber");
     },

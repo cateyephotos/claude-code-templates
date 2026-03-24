@@ -94,7 +94,11 @@ export const recordGateEvent = mutation({
       v.literal("impression"),
       v.literal("cta_click"),
       v.literal("sign_up_started"),
-      v.literal("sign_up_completed")
+      v.literal("sign_up_completed"),
+      v.literal("premium_content_loaded"),
+      v.literal("premium_content_error"),
+      v.literal("gate_overlay_shown"),
+      v.literal("gate_cta_clicked")
     ),
     scrollPercent: v.optional(v.number()),
   },

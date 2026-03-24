@@ -15,7 +15,7 @@ import { Id } from "./_generated/dataModel";
  */
 
 /** Guides that are always free — no purchase required. */
-const FREE_GUIDES = ["sleep"];
+const FREE_GUIDES = ["sleep", "safety-interactions"];
 
 // ─── Public queries (authenticated) ──────────────────────────────────────────
 
