@@ -105,7 +105,11 @@ export default defineSchema({
       v.literal("impression"),
       v.literal("cta_click"),
       v.literal("sign_up_started"),
-      v.literal("sign_up_completed")
+      v.literal("sign_up_completed"),
+      v.literal("premium_content_loaded"),
+      v.literal("premium_content_error"),
+      v.literal("gate_overlay_shown"),
+      v.literal("gate_cta_clicked")
     ),
     scrollPercent: v.optional(v.number()),
     timestamp: v.number(),
@@ -172,6 +176,7 @@ export default defineSchema({
     pdfStorageId: v.optional(v.string()),  // Convex storage ID for the generated PDF
     emailSentAt: v.optional(v.number()),   // When download email was sent
     errorMessage: v.optional(v.string()),  // If status is "failed"
+    accessType: v.optional(v.union(v.literal("web"), v.literal("pdf"))),  // "web" = site access, "pdf" = PDF only. Legacy records have undefined (treated as "pdf")
     createdAt: v.number(),
     updatedAt: v.number(),
   })
@@ -318,4 +323,14 @@ export default defineSchema({
     updatedBy: v.string(),
   })
     .index("by_key", ["key"]),
+
+  // Premium guide content — stored server-side, fetched after auth
+  premiumGuideContent: defineTable({
+    guideSlug: v.string(),
+    htmlContent: v.string(),
+    version: v.string(),
+    generatedAt: v.string(),
+    updatedAt: v.number(),
+  })
+    .index("by_guideSlug", ["guideSlug"]),
 });
