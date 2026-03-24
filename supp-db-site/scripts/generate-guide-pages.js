@@ -2590,6 +2590,32 @@ function generateGuidePage(guide, allSupplements) {
     </div>
 </section>`;
 
+    // Reveal observer for teaser sections (must be before split marker so it
+    // stays in the teaser HTML). Observes ALL .reveal elements on the page,
+    // including any later injected by content-gate.js into #premium-content.
+    html += `
+<script>
+(function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.01, rootMargin: '200px 0px 200px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+    // Fallback: reveal all after 2s
+    setTimeout(function() {
+        reveals.forEach(function(el) {
+            if (!el.classList.contains('visible')) el.classList.add('visible');
+        });
+    }, 2000);
+})();
+</script>`;
+
     // -- Split Point: Premium content starts here --
     html += `\n<!-- PREMIUM_CONTENT_START -->`;
 
