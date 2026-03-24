@@ -7,6 +7,7 @@
  * Usage:  node scripts/generate-guide-pages.js
  */
 
+const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 const {
@@ -16,6 +17,127 @@ const {
     getTierLabel,
     getTierColor,
 } = require('./parse-data');
+
+// --- Content Split Configuration ---
+const PREMIUM_CHUNKS_DIR = path.join(__dirname, '..', 'data', 'premium-chunks');
+
+// ─── Enhanced Citations Loading ─────────────────────────────────────────────
+const ENH_DIR = path.join(__dirname, '..', 'data', 'enhanced_citations');
+
+/** Find the enhanced citations file for a given supplement ID */
+function findEnhancedFile(id) {
+    try {
+        const files = fs.readdirSync(ENH_DIR);
+        const named   = files.find(f => f.match(new RegExp(`^${id}_[a-z].*_enhanced\\.js$`, 'i')));
+        const generic = files.find(f => f === `${id}_enhanced.js`);
+        return named || generic || null;
+    } catch (e) {
+        return null;
+    }
+}
+
+/** Load enhanced citations object from file, returning null on failure. */
+function loadEnhanced(filename) {
+    if (!filename) return null;
+    try {
+        let src = fs.readFileSync(path.join(ENH_DIR, filename), 'utf8');
+        const constMatch = src.match(/(?:^|\n)(?:const|var|let)\s+(\w+Enhanced)\s*=/);
+        if (constMatch) {
+            src += `\n;try{window.__enh=${constMatch[1]};}catch(e){}`;
+        }
+        const ctx = { window: { enhancedCitations: {} } };
+        vm.runInNewContext(src, ctx);
+        if (ctx.window.__enh) return ctx.window.__enh;
+        const winKeys = Object.keys(ctx.window).filter(k => k !== 'enhancedCitations' && k !== '__enh');
+        if (winKeys.length) return ctx.window[winKeys[0]];
+        const ec = ctx.window.enhancedCitations;
+        if (ec && typeof ec === 'object') {
+            const ecKeys = Object.keys(ec);
+            if (ecKeys.length) return ec[ecKeys[0]];
+        }
+        return null;
+    } catch (e) {
+        return null;
+    }
+}
+
+/** Map evidence strength string to CSS class modifier */
+function enhEvidenceTagClass(text) {
+    const t = String(text || '').trim().toLowerCase();
+    if (t.includes('strong') || t.includes('level 1') || t.includes('level 2') ||
+        t.includes('well-established') || t.includes('good safety'))    return 'evidence-tag-tier-1';
+    if (t.includes('moderate') || t.includes('level 3') || t.includes('caution')) return 'evidence-tag-tier-2';
+    if (t.includes('weak') || t.includes('limited') || t.includes('insufficient') ||
+        t.includes('level 4') || t.includes('level 5') || t.includes('preliminary')) return 'evidence-tag-tier-3';
+    return '';
+}
+
+/** Build a single evidence card from an enhanced citations item, with supplement context */
+function buildGuideCard(item, supplementName) {
+    const h = s => (s != null ? String(s) : '').trim();
+    const tags = [];
+    const evStr = h(item.evidence || item.evidenceLevel || item.strength || '');
+    if (evStr) tags.push({ text: evStr, cls: enhEvidenceTagClass(evStr) });
+    const st = h(item.studyType || '');
+    if (st) tags.push({ text: st, cls: '' });
+    if (item.year) tags.push({ text: String(item.year), cls: '' });
+    const pts = h(item.participants || item.sampleSize || '');
+    if (pts) tags.push({ text: pts, cls: '' });
+    const pid = h(item.pmid || '');
+    const doi = h(item.doi  || '');
+    const linkHref = pid ? `https://pubmed.ncbi.nlm.nih.gov/${pid}/`
+                         : (doi ? `https://doi.org/${doi}` : '');
+    const linkLabel = pid ? `PubMed: ${pid}` : (doi ? `DOI: ${doi}` : 'View Source');
+    return {
+        findingTitle: h(item.claim || item.mechanism || item.healthDomain ||
+                        item.safetyAspect || item.dosageRange || ''),
+        tags,
+        prose: h(item.details || item.findings || ''),
+        linkHref,
+        linkLabel,
+        supplementName,
+    };
+}
+
+/** Aggregate enhanced citations across supplements into 4 groups */
+function aggregateEnhancedGroups(supplements) {
+    const GROUP_MAP = [
+        { key: 'mechanisms', title: 'Mechanisms of Action', icon: 'fa-microscope' },
+        { key: 'benefits',   title: 'Clinical Benefits',    icon: 'fa-heart-pulse' },
+        { key: 'safety',     title: 'Safety & Tolerability', icon: 'fa-shield-halved' },
+        { key: 'dosage',     title: 'Dosage Research',       icon: 'fa-pills' },
+    ];
+    const groups = GROUP_MAP.map(g => ({ ...g, cards: [] }));
+
+    for (const s of supplements) {
+        const file = findEnhancedFile(s.id);
+        const enh = loadEnhanced(file);
+        if (!enh || !enh.citations) continue;
+        for (let gi = 0; gi < GROUP_MAP.length; gi++) {
+            const items = enh.citations[GROUP_MAP[gi].key];
+            if (!items || !items.length) continue;
+            for (const item of items) {
+                const nestedArr = Array.isArray(item.evidence) ? item.evidence
+                                : Array.isArray(item.studies)  ? item.studies
+                                : null;
+                if (nestedArr) {
+                    for (const ev of nestedArr) {
+                        groups[gi].cards.push(buildGuideCard({
+                            ...ev,
+                            claim: item.mechanism || item.healthDomain || item.safetyAspect || item.dosageRange || item.claim || '',
+                            evidence: item.strength || item.evidenceQuality || ev.evidenceLevel || '',
+                            details: ev.findings || ev.details || '',
+                            participants: ev.sampleSize || ev.participants || '',
+                        }, s.name));
+                    }
+                } else {
+                    groups[gi].cards.push(buildGuideCard(item, s.name));
+                }
+            }
+        }
+    }
+    return groups;
+}
 
 // ─── Mechanism Glossary Linking ──────────────────────────────────────────────
 // Loads alias map from data/mechanisms.js for linking mechanism pills/text
@@ -1979,6 +2101,11 @@ function generateGuideCSS(t) {
         .cite-tab-count { font-size:0.7rem; background:rgba(255,255,255,0.06); padding:0.1rem 0.35rem; border-radius:8px; margin-left:0.25rem; }
         .cite-tab.active .cite-tab-count { background:rgba(${t.accentRgb},0.2); }
 
+        /* Citation entry styling */
+        .cite-tab-panel ol { margin: 0; }
+        .citation-entry { padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .citation-entry:last-child { border-bottom: none; }
+
         html { scroll-behavior: smooth; }
 
         @media (max-width: 768px) {
@@ -2460,6 +2587,9 @@ function generateGuidePage(guide, allSupplements) {
     </div>
 </section>`;
 
+    // -- Split Point: Premium content starts here --
+    html += `\n<!-- PREMIUM_CONTENT_START -->`;
+
     // ── Tier-Grouped Evidence Cards ──────────────────────────────────────
     html += `
 <div id="top-supplements">`;
@@ -2618,28 +2748,85 @@ function generateGuidePage(guide, allSupplements) {
 </section>`;
     }
 
-    // ── Citations ────────────────────────────────────────────────────────
+    // ── Citations (Tabbed by Supplement) ────────────────────────────────
+    // Build per-supplement citation groups for tabbed display
+    const citationGroups = filtered
+        .map(s => ({
+            name: s.name,
+            citations: (s.keyCitations || [])
+        }))
+        .filter(g => g.citations.length > 0);
+
     html += `
 <section id="citations" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
     <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Citation Index</h2>
-    <p class="mb-6" style="color: var(--text-primary);">All data in this guide is derived from the SupplementDB citation library of ${totalCitations}+ peer-reviewed research papers.</p>
-    <div class="evidence-card p-6">
-        <div class="space-y-1">`;
+
+    <div class="evidence-card p-6 sm:p-8">
+        <p class="text-sm mb-4" style="color: var(--text-muted);">
+            All citations verified against PubMed. PMID links resolve to PubMed; DOI links resolve to the publisher. Grouped by supplement.
+        </p>
+
+        <div class="cite-tabs">
+            <button class="cite-tab active" data-tab="all" onclick="showAllCitations()">All <span class="cite-tab-count">${totalCitations}</span></button>`;
+
+    citationGroups.forEach(g => {
+        html += `
+                <button class="cite-tab" data-tab="${esc(g.name)}" onclick="switchCiteTab('${esc(g.name)}')">${esc(g.name)} <span class="cite-tab-count">${g.citations.length}</span></button>`;
+    });
+
+    html += `
+        </div>
+
+        <div class="cite-tab-panel" id="cite-panel-all">
+            <ol class="space-y-1" style="list-style:none;padding:0;">`;
+
+    // "All" panel — every citation with supplement badge
     let citNum = 1;
-    filtered.forEach(s => {
-        (s.keyCitations || []).forEach(c => {
-            const doi = c.doi ? ` <a class="pmid-link" href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener">${esc(c.doi)}</a>` : '';
-            const pmid = c.pmid ? ` <a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/${esc(String(c.pmid))}" target="_blank" rel="noopener">PMID: ${esc(String(c.pmid))}</a>` : '';
+    citationGroups.forEach(g => {
+        g.citations.forEach(c => {
+            const pmid = c.pmid ? `
+                <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(String(c.pmid))}" target="_blank" rel="noopener" class="pmid-link">PMID: ${esc(String(c.pmid))}</a>` : '';
+            const doi = c.doi ? `${pmid ? ' · ' : ''}
+                <a href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener" class="pmid-link">DOI</a>` : '';
             html += `
-            <div class="citation-entry flex items-start">
+            <li class="citation-entry flex">
                 <span class="cite-num">${citNum}</span>
-                <span>${esc(c.authors || '')} (${esc(String(c.year || ''))}). ${esc(c.title || '')}. <em>${esc(c.journal || '')}</em>.${doi}${pmid}</span>
-            </div>`;
+                <span>${esc(c.authors || '')}. ${esc(c.title || '')}. <em>${esc(c.journal || '')}</em>, ${esc(String(c.year || ''))}.
+                ${pmid}${doi}<span class="text-xs px-1.5 py-0.5 rounded" style="background:rgba(${theme.accentRgb},0.1);color:var(--accent-light);margin-left:0.5rem;">${esc(g.name)}</span></span>
+            </li>`;
             citNum++;
         });
     });
+
     html += `
-        </div>
+            </ol>
+        </div>`;
+
+    // Per-supplement panels
+    citationGroups.forEach(g => {
+        html += `
+        <div class="cite-tab-panel" id="cite-panel-${esc(g.name)}" style="display:none;">
+            <ol class="space-y-1" style="list-style:none;padding:0;">`;
+        let suppCitNum = 1;
+        g.citations.forEach(c => {
+            const pmid = c.pmid ? `
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(String(c.pmid))}" target="_blank" rel="noopener" class="pmid-link">PMID: ${esc(String(c.pmid))}</a>` : '';
+            const doi = c.doi ? `${pmid ? ' · ' : ''}
+                    <a href="https://doi.org/${esc(c.doi)}" target="_blank" rel="noopener" class="pmid-link">DOI</a>` : '';
+            html += `
+            <li class="citation-entry flex">
+                    <span class="cite-num">${suppCitNum}</span>
+                    <span>${esc(c.authors || '')}. ${esc(c.title || '')}. <em>${esc(c.journal || '')}</em>, ${esc(String(c.year || ''))}.
+                    ${pmid}${doi}</span>
+                </li>`;
+            suppCitNum++;
+        });
+        html += `
+            </ol>
+        </div>`;
+    });
+
+    html += `
     </div>
 </section>`;
 
@@ -2723,8 +2910,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.01, rootMargin: '200px 0px 200px 0px' });
     reveals.forEach(function(el) { observer.observe(el); });
+
+    // Fallback: reveal all sections after 2s to prevent content-gate or
+    // large-page IntersectionObserver failures leaving sections invisible
+    setTimeout(function() {
+        reveals.forEach(function(el) {
+            if (!el.classList.contains('visible')) {
+                el.classList.add('visible');
+            }
+        });
+    }, 2000);
 });
 
 // Smooth scroll for anchor links with nav offset
@@ -2864,6 +3061,7 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
     }
 </script>
 
+<!-- PREMIUM_CONTENT_END -->
 <!-- Auth & Content Gate -->
 <script src="../js/auth.js"></script>
 <script src="../js/convex-client.js"></script>
@@ -2883,17 +3081,64 @@ function main() {
 
     const outDir = path.join(__dirname, '..', 'guides');
     if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+    if (!fs.existsSync(PREMIUM_CHUNKS_DIR)) fs.mkdirSync(PREMIUM_CHUNKS_DIR, { recursive: true });
+
+    const version = new Date().toISOString().slice(0, 10);
+    const generatedAt = new Date().toISOString();
+    let splitCount = 0;
 
     GUIDES.forEach(guide => {
         const html = generateGuidePage(guide, db.supplements);
-        const outPath = path.join(outDir, `${guide.slug}.html`);
-        fs.writeFileSync(outPath, html, 'utf8');
         const filtered = db.supplements.filter(guide.filterFn);
-        const kb = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(1);
-        console.log(`✓ Generated ${guide.slug}.html (${filtered.length} supplements, ${kb}KB)`);
+
+        const startMarker = '<!-- PREMIUM_CONTENT_START -->';
+        const endMarker = '<!-- PREMIUM_CONTENT_END -->';
+        const startIdx = html.indexOf(startMarker);
+        const endIdx = html.indexOf(endMarker);
+
+        if (startIdx === -1 || endIdx === -1) {
+            // Fallback: write full HTML if markers not found
+            console.warn(`⚠ ${guide.slug}: split markers not found, writing full HTML`);
+            const outPath = path.join(outDir, `${guide.slug}.html`);
+            fs.writeFileSync(outPath, html, 'utf8');
+            return;
+        }
+
+        // Extract premium content (between markers)
+        const premiumHtml = html.slice(startIdx + startMarker.length, endIdx);
+
+        // Build teaser HTML: before marker + placeholder + after marker
+        const beforeMarker = html.slice(0, startIdx);
+        const afterMarker = html.slice(endIdx + endMarker.length);
+        const placeholder = `\n<div id="premium-content" data-guide="${guide.slug}"></div>\n`;
+        const teaserHtml = beforeMarker + placeholder + afterMarker;
+
+        // Write teaser HTML
+        const teaserPath = path.join(outDir, `${guide.slug}.html`);
+        fs.writeFileSync(teaserPath, teaserHtml, 'utf8');
+
+        // Write premium JSON chunk
+        const premiumJson = {
+            slug: guide.slug,
+            htmlContent: premiumHtml,
+            generatedAt,
+            version,
+        };
+        const chunkPath = path.join(PREMIUM_CHUNKS_DIR, `${guide.slug}.json`);
+        fs.writeFileSync(chunkPath, JSON.stringify(premiumJson, null, 2), 'utf8');
+
+        const teaserKb = (Buffer.byteLength(teaserHtml, 'utf8') / 1024).toFixed(1);
+        const premiumKb = (Buffer.byteLength(premiumHtml, 'utf8') / 1024).toFixed(1);
+        console.log(`✓ [SPLIT] ${guide.slug}.html — teaser: ${teaserKb}KB, premium: ${premiumKb}KB (${filtered.length} supplements)`);
+        splitCount++;
     });
 
-    console.log(`\nDone — ${GUIDES.length} guide pages generated.`);
+    console.log(`\nDone — ${GUIDES.length} guide pages generated (${splitCount} split into teaser + premium).`);
 }
 
-main();
+// Export for audit tooling — only run main() when executed directly
+if (require.main === module) {
+    main();
+} else {
+    module.exports = { GUIDES, DOMAIN_KEYWORDS, DOMAIN_THEMES };
+}
