@@ -374,6 +374,48 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* ── Monograph Gate: Section Pills ─────────────────────────── */
+.gate-section-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.gate-pill {
+  background: var(--accent-bg, #f0f7f2);
+  color: var(--accent, #2d5a3d);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gate-section-count {
+  color: var(--text-muted, #6b7280);
+  font-size: 0.875rem;
+  margin: 0.5rem 0 0;
+}
+
+.gate-subtitle {
+  color: var(--text-muted, #6b7280);
+  font-size: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* ── Dark Theme: Monograph Gate Pills ──────────────────────── */
+[data-theme="dark"] .gate-pill {
+  background: rgba(45, 90, 61, 0.2);
+  color: #7dcea0;
+}
+
+[data-theme="dark"] .gate-section-count,
+[data-theme="dark"] .gate-subtitle {
+  color: var(--text-muted, #9ca3af);
+}
+
 /* ── Print: show full content ───────────────────────────────── */
 @media print {
   .content-gated {
