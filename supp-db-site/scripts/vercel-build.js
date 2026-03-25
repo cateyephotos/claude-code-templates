@@ -99,3 +99,14 @@ function main() {
 }
 
 main();
+
+// Anti-scraping build pipeline
+console.log("\n🛡️  Anti-Scraping Pipeline");
+try {
+  require("./obfuscate-data.js");
+  require("./inject-honeypots.js");
+  console.log("   Anti-scraping pipeline complete.\n");
+} catch (err) {
+  console.error("   Anti-scraping pipeline error:", err.message);
+  // Non-fatal — site still works with unobfuscated data
+}
