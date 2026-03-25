@@ -14,11 +14,8 @@ Disallow: /js/
 Disallow: /scripts/
 Disallow: /admin/
 
-# Block AI training crawlers
+# Block AI training crawlers (pure training, no search benefit)
 User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
 Disallow: /
 
 User-agent: ClaudeBot
@@ -39,12 +36,6 @@ Disallow: /
 User-agent: Diffbot
 Disallow: /
 
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: YouBot
-Disallow: /
-
 User-agent: Amazonbot
 Disallow: /
 
@@ -59,6 +50,35 @@ Disallow: /
 
 User-agent: Applebot-Extended
 Disallow: /
+
+# AI search/retrieval agents — allowed (they cite and link back)
+# PerplexityBot, ChatGPT-User, YouBot can access pages but not data
+User-agent: PerplexityBot
+Allow: /supplements/
+Allow: /guides/
+Allow: /categories/
+Disallow: /data/
+Disallow: /js/
+Disallow: /scripts/
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /supplements/
+Allow: /guides/
+Allow: /categories/
+Disallow: /data/
+Disallow: /js/
+Disallow: /scripts/
+Disallow: /admin/
+
+User-agent: YouBot
+Allow: /supplements/
+Allow: /guides/
+Allow: /categories/
+Disallow: /data/
+Disallow: /js/
+Disallow: /scripts/
+Disallow: /admin/
 
 # Sitemap
 Sitemap: https://supplementdb.co/sitemap.xml

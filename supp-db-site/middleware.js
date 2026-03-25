@@ -1,6 +1,6 @@
-const AI_CRAWLER_PATTERNS = [
+// Pure training crawlers — serve stub content
+const AI_TRAINING_PATTERNS = [
   'GPTBot',
-  'ChatGPT-User',
   'ClaudeBot',
   'Claude-Web',
   'CCBot',
@@ -9,8 +9,6 @@ const AI_CRAWLER_PATTERNS = [
   'Bytespider',
   'Diffbot',
   'Applebot-Extended',
-  'PerplexityBot',
-  'YouBot',
   'Amazonbot',
   'FacebookBot',
   'meta-externalagent',
@@ -19,10 +17,13 @@ const AI_CRAWLER_PATTERNS = [
   'DataForSeoBot',
 ];
 
-const AI_CRAWLER_REGEX = new RegExp(
-  AI_CRAWLER_PATTERNS.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'),
+const AI_TRAINING_REGEX = new RegExp(
+  AI_TRAINING_PATTERNS.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'),
   'i'
 );
+
+// AI search/retrieval agents — allow through so they can cite us
+const AI_SEARCH_REGEX = /PerplexityBot|ChatGPT-User|YouBot/i;
 
 const HEADLESS_REGEX = /HeadlessChrome|PhantomJS|Selenium|puppeteer|playwright|webdriver/i;
 
@@ -37,7 +38,12 @@ export const config = {
 export default function middleware(request) {
   const ua = request.headers.get('user-agent') || '';
 
-  if (AI_CRAWLER_REGEX.test(ua)) {
+  // Allow AI search agents through (they cite and link back to us)
+  if (AI_SEARCH_REGEX.test(ua)) {
+    return undefined;
+  }
+
+  if (AI_TRAINING_REGEX.test(ua)) {
     return new Response(
       '<html><body><h1>SupplementDB</h1><p>Visit supplementdb.co for evidence-based supplement information.</p></body></html>',
       {
