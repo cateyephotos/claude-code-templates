@@ -608,3 +608,97 @@ export const getActivitySummary = query({
     };
   },
 });
+
+/**
+ * Monograph performance aggregation — admin only.
+ */
+export const getContentPerformance = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const views = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const supplementViews = views.filter((v) => v.pageType === "supplement");
+
+    const gates = await ctx.db
+      .query("gateEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const bySupp: Record<
+      string,
+      {
+        name: string;
+        views: number;
+        totalDuration: number;
+        withDuration: number;
+        gateImpressions: number;
+        gateClicks: number;
+        signUps: number;
+      }
+    > = {};
+
+    for (const view of supplementViews) {
+      const slug = view.pagePath.split("/").pop()?.replace(".html", "") || view.pagePath;
+      if (!bySupp[slug]) {
+        bySupp[slug] = {
+          name: view.pageTitle || slug,
+          views: 0,
+          totalDuration: 0,
+          withDuration: 0,
+          gateImpressions: 0,
+          gateClicks: 0,
+          signUps: 0,
+        };
+      }
+      bySupp[slug].views++;
+      if (view.duration && view.duration > 0) {
+        bySupp[slug].totalDuration += view.duration;
+        bySupp[slug].withDuration++;
+      }
+    }
+
+    for (const gate of gates) {
+      const slug = gate.guideSlug;
+      if (!bySupp[slug]) continue;
+      if (gate.eventType === "impression" || gate.eventType === "gate_overlay_shown") {
+        bySupp[slug].gateImpressions++;
+      }
+      if (gate.eventType === "cta_click" || gate.eventType === "gate_cta_clicked") {
+        bySupp[slug].gateClicks++;
+      }
+      if (gate.eventType === "sign_up_completed") {
+        bySupp[slug].signUps++;
+      }
+    }
+
+    return Object.entries(bySupp)
+      .map(([slug, data]) => ({
+        slug,
+        name: data.name,
+        views: data.views,
+        avgDuration:
+          data.withDuration > 0
+            ? Math.round(data.totalDuration / data.withDuration)
+            : 0,
+        gateImpressions: data.gateImpressions,
+        gateCtr:
+          data.gateImpressions > 0
+            ? Math.round((data.gateClicks / data.gateImpressions) * 1000) / 10
+            : 0,
+        signUps: data.signUps,
+      }))
+      .sort((a, b) => b.views - a.views);
+  },
+});
