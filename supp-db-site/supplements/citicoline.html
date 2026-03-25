@@ -36,9 +36,7 @@
 
 
     <style>
-
-
-        /* =========================================================
+/* =========================================================
            DESIGN TOKENS — matching comparison guide system
         ========================================================= */
         :root {
@@ -1115,6 +1113,17 @@
         /* tier badge colour variants */
         .hero-badge-tier-2 { background: #ca8a04 !important; }
         .hero-badge-tier-3 { background: #dc2626 !important; }
+
+        /* evidence-prose: prose-format citation details */
+        .evidence-prose {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+        /* tier badge colour variants */
+        .hero-badge-tier-2 { background: #ca8a04 !important; }
+        .hero-badge-tier-3 { background: #dc2626 !important; }
     </style>
 </head>
 <body>
@@ -1187,6 +1196,7 @@
             <div class="hero-stat"><i class="fas fa-circle"></i> 14+ Citations</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Tier 1: Strong Evidence</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Excellent</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> Updated 2026-03-23</div>
         </div>
     </div>
 </header>
@@ -1489,22 +1499,22 @@
                 <i class="fas fa-microscope"></i> Mechanisms of Action
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title"></p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span></div>
+                <p class="evidence-card-title">Citicoline enhances frontal lobe bioenergetics by increasing phosphocreatine, ATP, and membrane phospholipid precursors in the anterior cingulate cortex</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">Randomized Controlled Trial</span> <span class="evidence-tag">2008</span> <span class="evidence-tag">16 healthy middle-aged participants</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
+                    <p class="evidence-prose">Silveri et al. demonstrated that citicoline (500-2000mg, 6 weeks) increased phosphocreatine (+7%), ATP (+14%), and phosphocreatine-to-inorganic-phosphate ratio (+32%) in frontal lobe anterior cingulate cortex. Effects were regionally specific and more pronounced at lower doses. Membrane phospholipid changes were observed, suggesting enhanced neural membrane synthesis.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18816480/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 18816480
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title"></p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span></div>
+                <p class="evidence-card-title">CDP-choline serves as an intermediate in phosphatidylcholine synthesis and provides both choline for acetylcholine production and cytidine for nucleotide metabolism</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">Comprehensive Review</span> <span class="evidence-tag">2006</span> <span class="evidence-tag">Review of preclinical and clinical studies</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
+                    <p class="evidence-prose">Secades and Lorenzo reviewed the pharmacology of citicoline, documenting its role as an essential intermediate in phosphatidylcholine biosynthesis via the Kennedy pathway. Citicoline increases dopamine receptor density, enhances acetylcholine synthesis, and provides neuroprotection through stabilization of cell membranes and reduction of free fatty acid release during ischemia.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17171187/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 17171187
                     </a>
                 </div>
             </div>
@@ -1515,62 +1525,72 @@
                 <i class="fas fa-microscope"></i> Clinical Benefits
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Citicoline and Memory Function in Healthy Older Adults: A Randomized, Double-Blind,...</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2021</span></div>
+                <p class="evidence-card-title">500mg/day citicoline for 12 weeks significantly improved episodic memory in healthy older adults with age-associated memory impairment</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">Randomized Controlled Trial</span> <span class="evidence-tag">2021</span> <span class="evidence-tag">100 participants</span> <span class="evidence-tag">12 weeks</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Nakazaki et al. demonstrated that 500mg/day citicoline (Cognizin) for 12 weeks significantly improved episodic memory composite scores in healthy older adults ages 50-85 with age-associated memory impairment compared to placebo.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/33978188/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 33978188
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">Effect of citicoline on functional and cognitive status among patients with traumatic brain injury:...</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2012</span></div>
+                <p class="evidence-card-title">Citicoline did not significantly improve functional or cognitive status in moderate-to-severe traumatic brain injury in the largest TBI citicoline trial</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized Controlled Trial (multicenter)</span> <span class="evidence-tag">2012</span> <span class="evidence-tag">1213 patients with traumatic brain injury</span> <span class="evidence-tag">90 days treatment + 90 days follow-up</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Zafonte et al. conducted the COBRIT trial, the largest RCT of citicoline for TBI. Citicoline 2000mg/day for 90 days did not significantly improve functional or cognitive status compared to placebo in patients with complicated mild, moderate, or severe TBI.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/23168823/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 23168823
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">Oral citicoline in acute ischemic stroke: an individual patient data pooling analysis of clinical...</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2002</span></div>
+                <p class="evidence-card-title">Individual patient data pooling of 4 trials showed citicoline improved global recovery probability at 3 months after acute ischemic stroke</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Individual Patient Data Pooling Analysis</span> <span class="evidence-tag">2002</span> <span class="evidence-tag">1372 patients with acute ischemic stroke</span> <span class="evidence-tag">6 weeks treatment, 3 months follow-up</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Dávalos et al. pooled individual patient data from 4 clinical trials and found citicoline-treated patients had significantly higher probability of global recovery at 3 months after acute ischemic stroke. However, this was later contradicted by the definitive ICTUS trial (2012).</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12468781/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 12468781
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">The Effect of Citicoline Supplementation on Motor Speed and Attention in Adolescent Males</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2019</span></div>
+                <p class="evidence-card-title">Citicoline (250-500mg, 28 days) significantly improved attention and psychomotor speed in healthy adolescent males</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized Controlled Trial</span> <span class="evidence-tag">2015</span> <span class="evidence-tag">75 healthy adolescent males (51 citicoline, 24 placebo)</span> <span class="evidence-tag">28 days</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">McGlade et al. showed citicoline (250-500mg, 28 days) significantly improved attention (p=0.02) and psychomotor speed (p=0.03) versus placebo in healthy adolescent males. Higher weight-adjusted dosing predicted enhanced accuracy, better signal detection, and reduced impulsivity.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/26179181/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 26179181
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">Effectiveness and safety of citicoline in mild vascular cognitive impairment: the IDEALE study</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2013</span></div>
+                <p class="evidence-card-title">Citicoline 1000mg/day improved cognitive function (MMSE) in elderly patients with mild vascular cognitive impairment over 9 months</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Open-label Clinical Trial</span> <span class="evidence-tag">2013</span> <span class="evidence-tag">349 elderly patients with mild vascular cognitive impairment</span> <span class="evidence-tag">9 months</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Cotroneo et al. showed in the IDEALE study that citicoline 1000mg/day maintained or improved MMSE scores in elderly patients with mild vascular cognitive impairment over 9 months, while the untreated group showed cognitive decline. The treatment was well tolerated.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/23403474/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 23403474
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">Is Citicoline Effective in Preventing and Slowing Down Dementia?-A Systematic Review and a...</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2023</span></div>
+                <p class="evidence-card-title">Meta-analysis of 7 studies found positive citicoline effects on cognition in MCI, Alzheimer's, and post-stroke dementia, though study quality was generally poor</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Systematic Review and Meta-analysis</span> <span class="evidence-tag">2023</span> <span class="evidence-tag">7 studies (2010-2022) in patients with MCI, AD, or post-stroke dementia</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Bonvicini et al. meta-analyzed 7 studies and found standardized mean differences ranging from 0.56 to 1.57 favoring citicoline for cognitive outcomes in MCI, Alzheimer's, and post-stroke dementia. However, general study quality was poor with significant risk of bias favoring the intervention.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/36678257/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 36678257
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Definitive ICTUS trial (n=2298) showed citicoline was not efficacious for moderate-to-severe acute ischemic stroke</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">Randomized Controlled Trial (multicenter)</span> <span class="evidence-tag">2012</span> <span class="evidence-tag">2298 patients with moderate-to-severe acute ischemic stroke</span> <span class="evidence-tag">6 weeks treatment</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Davalos et al. conducted the definitive ICTUS trial, the largest RCT of citicoline for acute stroke. Citicoline 2000mg/day was not efficacious in moderate-to-severe acute ischemic stroke — global recovery was similar between treatment and placebo groups. This landmark negative result effectively ended citicoline development for acute stroke.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/22691567/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 22691567
                     </a>
                 </div>
             </div>
@@ -1581,20 +1601,20 @@
                 <i class="fas fa-microscope"></i> Safety &amp; Tolerability
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Citicoline: pharmacological and clinical review, 2006 update</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2006</span></div>
+                <p class="evidence-card-title">Comprehensive pharmacological review confirms excellent safety profile with minimal adverse effects across thousands of patients in clinical trials</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Good Safety Profile</span> <span class="evidence-tag">Comprehensive Review</span> <span class="evidence-tag">2006</span> <span class="evidence-tag">Review of multiple clinical trials with thousands of patients</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Secades and Lorenzo conducted a comprehensive pharmacological and clinical review documenting citicoline's excellent safety profile. Adverse effects are rare and mild, including transient GI disturbances and headache. No significant drug interactions have been identified. Citicoline has been used safely in doses up to 2000mg/day for extended periods across multiple clinical trials.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17171187/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 17171187
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">Role of Citicoline in Patients With Mild Cognitive Impairment</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2023</span></div>
+                <p class="evidence-card-title">Citicoline shows favorable safety in MCI patients with good tolerability over extended treatment periods</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Good Safety Profile</span> <span class="evidence-tag">Clinical Review</span> <span class="evidence-tag">2023</span> <span class="evidence-tag">Review of clinical trials in MCI patients</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Bermejo et al. reviewed the role of citicoline in MCI patients and confirmed its favorable safety profile. Citicoline is well tolerated in elderly populations with cognitive impairment, with minimal adverse effects and no significant drug interactions observed in clinical studies.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/36818199/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 36818199
                     </a>
@@ -1607,20 +1627,20 @@
                 <i class="fas fa-microscope"></i> Dosage Research
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Citicoline (Cognizin) in the treatment of cognitive impairment</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2006</span></div>
+                <p class="evidence-card-title">250-2000mg/day across clinical trials; 500mg/day appears optimal for cognitive enhancement in healthy adults; up to 2000mg/day used in stroke trials</p>
+                <div class="evidence-tags"><span class="evidence-tag">Evidence-based</span> <span class="evidence-tag">Cochrane Review</span> <span class="evidence-tag">2006</span> <span class="evidence-tag">Multiple RCTs in cognitive impairment</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Fioravanti and Buckley conducted a Cochrane review analyzing citicoline doses across multiple cognitive impairment trials. Doses of 600-1000mg/day were most commonly studied for cognitive outcomes. The review found positive effects on memory, attention, and behavior in elderly subjects with cognitive deficits. Lower doses (250-500mg) showed benefits in healthy younger populations.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18046877/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 18046877
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">The role of citicoline in neuroprotection and neurorepair in ischemic stroke</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2013</span></div>
+                <p class="evidence-card-title">500-2000mg/day for neuroprotection; higher doses (2000mg/day) used in acute stroke and TBI trials with good tolerability</p>
+                <div class="evidence-tags"><span class="evidence-tag">Evidence-based</span> <span class="evidence-tag">Review</span> <span class="evidence-tag">2013</span> <span class="evidence-tag">Review of multiple clinical trials</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose"></p>
+                    <p class="evidence-prose">Alvarez-Sabín and Román reviewed citicoline's neuroprotective and neuroreparative roles in ischemic stroke. Doses of 500-2000mg/day have been used across clinical trials. The 2000mg/day dose used in the ICTUS trial was well tolerated for 6 weeks. For long-term neuroprotection, 1000mg/day was effective in maintaining cognitive function.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/24961534/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 24961534
                     </a>
@@ -1641,7 +1661,23 @@
             <ol class="ref-list">
             <li class="ref-item">
                 <div class="ref-num">1</div>
-                <div class="ref-text">Silveri MM, et al. (2008). Citicoline enhances frontal lobe bioenergetics as measured by phosphorus magnetic resonance spectroscopy. <em>NMR Biomed</em>. DOI: <a href="https://doi.org/10.1002/nbm.1281">10.1002/nbm.1281</a></div>
+                <div class="ref-text">Silveri MM, et al. (2008). Citicoline enhances frontal lobe bioenergetics as measured by phosphorus magnetic resonance spectroscopy. <em>NMR in Biomedicine</em>. DOI: <a href="https://doi.org/10.1002/nbm.1281">10.1002/nbm.1281</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/18816480/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">2</div>
+                <div class="ref-text">Nakazaki E, et al. (2021). Citicoline and Memory Function in Healthy Older Adults: A Randomized, Double-Blind, Placebo-Controlled Clinical Trial. <em>Journal of Nutrition</em>. DOI: <a href="https://doi.org/10.1093/jn/nxab119">10.1093/jn/nxab119</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/33978188/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">3</div>
+                <div class="ref-text">Davalos A, et al. (2012). Citicoline in the treatment of acute ischaemic stroke: an international, randomised, multicentre, placebo-controlled study (ICTUS trial). <em>Lancet</em>. DOI: <a href="https://doi.org/10.1016/S0140-6736(12)60813-7">10.1016/S0140-6736(12)60813-7</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/22691567/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">4</div>
+                <div class="ref-text">McGlade E, et al. (2015). The Effect of Citicoline Supplementation on Motor Speed and Attention in Adolescent Males. <em>Journal of Attention Disorders</em>. DOI: <a href="https://doi.org/10.1177/1087054715593633">10.1177/1087054715593633</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26179181/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">5</div>
+                <div class="ref-text">Bonvicini M, et al. (2023). Is Citicoline Effective in Preventing and Slowing Down Dementia? A Systematic Review and a Meta-Analysis. <em>Nutrients</em>. DOI: <a href="https://doi.org/10.3390/nu15020386">10.3390/nu15020386</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/36678257/">PubMed</a></div>
             </li>
             </ol>
         </section>

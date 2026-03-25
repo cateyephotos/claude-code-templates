@@ -7,7 +7,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 
 const GENERATORS = [
-  { name: 'supplement-pages', script: 'scripts/generate-supplement-pages.js' },
+  { name: 'supplement-pages', script: 'seed.js' },
   { name: 'guide-pages', script: 'scripts/generate-guide-pages.js' },
   { name: 'compare-pages', script: 'scripts/generate-compare-pages.js' },
   { name: 'evidence-pages', script: 'scripts/generate-evidence-pages.js' },

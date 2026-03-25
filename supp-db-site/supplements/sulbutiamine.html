@@ -36,9 +36,7 @@
 
 
     <style>
-
-
-        /* =========================================================
+/* =========================================================
            DESIGN TOKENS — matching comparison guide system
         ========================================================= */
         :root {
@@ -1115,6 +1113,17 @@
         /* tier badge colour variants */
         .hero-badge-tier-2 { background: #ca8a04 !important; }
         .hero-badge-tier-3 { background: #dc2626 !important; }
+
+        /* evidence-prose: prose-format citation details */
+        .evidence-prose {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+        /* tier badge colour variants */
+        .hero-badge-tier-2 { background: #ca8a04 !important; }
+        .hero-badge-tier-3 { background: #dc2626 !important; }
     </style>
 </head>
 <body>
@@ -1184,9 +1193,10 @@
         <p class="hero-also-known">Also known as: Arcalion, Synthetic Thiamine</p>
         <p class="hero-tagline">Clinical studies showing cognitive and energy benefits</p>
         <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 7+ Citations</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> 8+ Citations</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Tier 2: Moderate Evidence</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Good</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> Updated 2026-03-22</div>
         </div>
     </div>
 </header>
@@ -1194,7 +1204,7 @@
 <!-- Share + Trust bar -->
 <div class="meta-bar">
     <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 7+ Citations</span>
+        <span class="trust-chip"><i class="fas fa-check-circle"></i> 8+ Citations</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 2: Moderate Evidence</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Good</span>
         <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
@@ -1488,15 +1498,103 @@
             <p class="section-intro">Detailed citation analysis organized by research domain.</p>
         <div class="citation-group">
             <h3 class="citation-group-header">
+                <i class="fas fa-microscope"></i> Mechanisms of Action
+            </h3>
+                        <div class="evidence-card">
+                <p class="evidence-card-title">Enhanced brain thiamine delivery through lipophilic transport</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">Narrative review</span> <span class="evidence-tag">2020</span> <span class="evidence-tag">N/A (review)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Comprehensive review of sulbutiamine's history, pharmacology, and clinical applications. Confirms evidence for anti-fatigue, nootropic, and antioxidant effects. Notes sulbutiamine increases thiamine levels in less accessible tissues including the brain due to its lipophilicity. Highlights that only a limited number of studies have been conducted and methodological concerns remain. Calls for new randomized controlled trials.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32399290/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 32399290
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="citation-group">
+            <h3 class="citation-group-header">
+                <i class="fas fa-microscope"></i> Clinical Benefits
+            </h3>
+                        <div class="evidence-card">
+                <p class="evidence-card-title">Psychobehavioral Inhibition in Depression</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized controlled trial (double-blind, placebo-controlled)</span> <span class="evidence-tag">2000</span> <span class="evidence-tag">n=not specified (multicentric inpatient trial)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Patients treated with sulbutiamine 600 mg/day were significantly less incapacitated than placebo in all facets (affective, cognitive, emotional, behavioral) of psycho-behavioral inhibition. Sulbutiamine showed no direct antidepressive effect but hastened the resorption of psycho-behavioral inhibition in patients with major depressive disorder treated with clomipramine, thereby facilitating social, professional, and family rehabilitation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10858919/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 10858919
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Fatigue Reduction</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Open-label clinical trial</span> <span class="evidence-tag">2017</span> <span class="evidence-tag">n=26</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Sulbutiamine 400 mg/day for two months resulted in significant reduction in total Fatigue Impact Scale scores and across all three subscales (physical, cognitive, psychosocial functioning). Effects were particularly pronounced in patients using disease-modifying treatments. No serious adverse events were reported.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/28755683/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 28755683
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Fatigue Reduction</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized controlled trial (double-blind, placebo-controlled)</span> <span class="evidence-tag">1999</span> <span class="evidence-tag">n=326</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Overall no significant difference between sulbutiamine groups and placebo for chronic postinfectious fatigue at 28 days. However, women in the 600 mg/day group showed a significant reduction in fatigue at day 7 (p &lt; 0.01), though this effect was not sustained at day 28. The study represents the largest RCT on sulbutiamine to date and found the compound was well-tolerated.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10573727/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 10573727
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Cognitive Support in Alzheimer's</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-3">Weak</span> <span class="evidence-tag">Clinical trial (crossover design)</span> <span class="evidence-tag">2007</span> <span class="evidence-tag">n=not specified</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Episodic memory declined in the donepezil-plus-placebo group but improved when sulbutiamine was combined with donepezil. Attention improved in both groups. Activities of daily living only improved with the combined sulbutiamine-donepezil treatment. Sulbutiamine may serve as an adjuvant to acetylcholinesterase inhibitors in early-stage and moderate Alzheimer's disease.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/17675917/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 17675917
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="citation-group">
+            <h3 class="citation-group-header">
                 <i class="fas fa-microscope"></i> Safety &amp; Tolerability
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Well-tolerated with minimal side effects</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">safety_review</span> <span class="evidence-tag">2020</span> <span class="evidence-tag">Multiple studies reviewed</span> <span class="evidence-tag">Various</span></div>
+                <p class="evidence-card-title">General tolerability</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-3">Level 5</span> <span class="evidence-tag">Narrative review</span> <span class="evidence-tag">2020</span> <span class="evidence-tag">N/A (review)</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose">Generally well-tolerated; rare side effects include mild GI upset, headache</p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
+                    <p class="evidence-prose">Comprehensive review of sulbutiamine's history, pharmacology, and clinical applications. Confirms evidence for anti-fatigue, nootropic, and antioxidant effects. Notes sulbutiamine increases thiamine levels in less accessible tissues including the brain due to its lipophilicity. Highlights that only a limited number of studies have been conducted and methodological concerns remain. Calls for new randomized controlled trials.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/32399290/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 32399290
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">General tolerability</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Level 2</span> <span class="evidence-tag">Randomized controlled trial (double-blind, placebo-controlled)</span> <span class="evidence-tag">2000</span> <span class="evidence-tag">n=not specified (multicentric inpatient trial)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Patients treated with sulbutiamine 600 mg/day were significantly less incapacitated than placebo in all facets (affective, cognitive, emotional, behavioral) of psycho-behavioral inhibition. Sulbutiamine showed no direct antidepressive effect but hastened the resorption of psycho-behavioral inhibition in patients with major depressive disorder treated with clomipramine, thereby facilitating social, professional, and family rehabilitation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10858919/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 10858919
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="citation-group">
+            <h3 class="citation-group-header">
+                <i class="fas fa-microscope"></i> Dosage Research
+            </h3>
+                        <div class="evidence-card">
+                <p class="evidence-card-title">400-600 mg/day in divided doses</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Level 2</span> <span class="evidence-tag">Randomized controlled trial (double-blind, placebo-controlled)</span> <span class="evidence-tag">2000</span> <span class="evidence-tag">n=not specified (multicentric inpatient trial)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Patients treated with sulbutiamine 600 mg/day were significantly less incapacitated than placebo in all facets (affective, cognitive, emotional, behavioral) of psycho-behavioral inhibition. Sulbutiamine showed no direct antidepressive effect but hastened the resorption of psycho-behavioral inhibition in patients with major depressive disorder treated with clomipramine, thereby facilitating social, professional, and family rehabilitation.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/10858919/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 10858919
                     </a>
                 </div>
             </div>
@@ -1515,7 +1613,23 @@
             <ol class="ref-list">
             <li class="ref-item">
                 <div class="ref-num">1</div>
-                <div class="ref-text">Bizot JC, et al. (2005). Effects of sulbutiamine on psycho-behavioral inhibition in major depressive episodes. <em>Fundam Clin Pharmacol</em>. DOI: <a href="https://doi.org/10.1111/j.1472-8206.2005.00350.x">10.1111/j.1472-8206.2005.00350.x</a></div>
+                <div class="ref-text">Bernardo Starling-Soares, Pedro Carrera-Bastos et al. (2020). Role of the Synthetic B1 Vitamin Sulbutiamine on Health. <em>Journal of Nutrition and Metabolism</em>. DOI: <a href="https://doi.org/10.1155/2020/9349063">10.1155/2020/9349063</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/32399290/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">2</div>
+                <div class="ref-text">H Loo, M F Poirier et al. (2000). Effects of sulbutiamine (Arcalion 200) on psycho-behavioral inhibition in major depressive episodes. <em>L'Encephale</em>. | <a href="https://pubmed.ncbi.nlm.nih.gov/10858919/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">3</div>
+                <div class="ref-text">Serhan Sevim, Hakan Kaleagasi et al. (2017). Sulbutiamine shows promising results in reducing fatigue in patients with multiple sclerosis. <em>Multiple Sclerosis and Related Disorders</em>. DOI: <a href="https://doi.org/10.1016/j.msard.2017.05.010">10.1016/j.msard.2017.05.010</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/28755683/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">4</div>
+                <div class="ref-text">K P Tiev, J Cabane et al. (1999). Treatment of chronic postinfectious fatigue: randomized double-blind study of two doses of sulbutiamine (400-600 mg/day) versus placebo. <em>Revue de Medecine Interne</em>. DOI: <a href="https://doi.org/10.1016/s0248-8663(00)80096-x">10.1016/s0248-8663(00)80096-x</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/10573727/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">5</div>
+                <div class="ref-text">H Ollat, B Laurent et al. (2007). Effects of the association of sulbutiamine with an acetylcholinesterase inhibitor in early stage and moderate Alzheimer disease. <em>L'Encephale</em>. DOI: <a href="https://doi.org/10.1016/s0013-7006(07)91552-3">10.1016/s0013-7006(07)91552-3</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/17675917/">PubMed</a></div>
             </li>
             </ol>
         </section>

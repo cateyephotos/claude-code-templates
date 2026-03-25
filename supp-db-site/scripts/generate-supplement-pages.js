@@ -1,10 +1,22 @@
 #!/usr/bin/env node
 /**
- * generate-supplement-pages.js
- * Auto-generates individual supplement monograph pages from supplements.js data
- * and enhanced citations. Produces 93 deep-dive reference pages.
- * Phase 4 of the SupplementDB content plan.
+ * DEPRECATED — DO NOT USE
+ *
+ * This generator has been replaced by seed.js (project root).
+ * seed.js uses the canonical monograph design system (templates/monograph.css)
+ * and produces pages with inline styles, auth.css, and the settled melatonin layout.
+ *
+ * Usage:  node seed.js --out supplements/
+ *
+ * This file is kept only for reference. Running it will exit with an error.
  */
+console.error('\n  ERROR: generate-supplement-pages.js is DEPRECATED.\n');
+console.error('  Use the canonical generator instead:');
+console.error('    node seed.js --out supplements/\n');
+console.error('  See seed.js in project root for CLI options (--slug, --id, --dry-run).\n');
+process.exit(1);
+
+// --- Original code below (inactive) ---
 
 const fs = require('fs');
 const path = require('path');

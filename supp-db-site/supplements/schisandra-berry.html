@@ -36,9 +36,7 @@
 
 
     <style>
-
-
-        /* =========================================================
+/* =========================================================
            DESIGN TOKENS — matching comparison guide system
         ========================================================= */
         :root {
@@ -1115,6 +1113,17 @@
         /* tier badge colour variants */
         .hero-badge-tier-2 { background: #ca8a04 !important; }
         .hero-badge-tier-3 { background: #dc2626 !important; }
+
+        /* evidence-prose: prose-format citation details */
+        .evidence-prose {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+        /* tier badge colour variants */
+        .hero-badge-tier-2 { background: #ca8a04 !important; }
+        .hero-badge-tier-3 { background: #dc2626 !important; }
     </style>
 </head>
 <body>
@@ -1184,7 +1193,7 @@
         <p class="hero-also-known">Also known as: Five-Flavor Berry, Wu Wei Zi, Magnolia Vine</p>
         <p class="hero-tagline">Well-documented liver protection and cognitive benefits</p>
         <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 12+ Citations</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> 16+ Citations</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Tier 2: Moderate Evidence</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Good</div>
         </div>
@@ -1194,7 +1203,7 @@
 <!-- Share + Trust bar -->
 <div class="meta-bar">
     <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 12+ Citations</span>
+        <span class="trust-chip"><i class="fas fa-check-circle"></i> 16+ Citations</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 2: Moderate Evidence</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Good</span>
         <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
@@ -1574,6 +1583,26 @@
                     </a>
                 </div>
             </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Cardiovascular Protection</p>
+                <div class="evidence-tags"><span class="evidence-tag">Emerging</span> <span class="evidence-tag">RCT (double-blind, placebo-controlled, Phase IIa)</span> <span class="evidence-tag">2010</span> <span class="evidence-tag">n=40</span> <span class="evidence-tag">Single dose (acute study)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose"></p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/20374974/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 20374974
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Cardiovascular Protection</p>
+                <div class="evidence-tags"><span class="evidence-tag">Emerging</span> <span class="evidence-tag">RCT (double-blind, placebo-controlled)</span> <span class="evidence-tag">2015</span> <span class="evidence-tag">n=28</span> <span class="evidence-tag">12 weeks</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose"></p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/26048342/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 26048342
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="citation-group">
@@ -1661,7 +1690,23 @@
             <ol class="ref-list">
             <li class="ref-item">
                 <div class="ref-num">1</div>
-                <div class="ref-text">Panossian A, Wikman G (2008). Schisandra chinensis for hepatoprotection: an evidence-based review. <em>Int J Clin Pharmacol Ther</em>. DOI: <a href="https://doi.org/10.5414/CPP46327">10.5414/CPP46327</a></div>
+                <div class="ref-text">Park JY, Kim KH (2016). A randomized, double-blind, placebo-controlled trial of Schisandra chinensis for menopausal symptoms. <em>Climacteric</em>. DOI: <a href="https://doi.org/10.1080/13697137.2016.1238453">10.1080/13697137.2016.1238453</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/27763802/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">2</div>
+                <div class="ref-text">Park J et al. (2020). Effect of Schisandra Chinensis Extract Supplementation on Quadriceps Muscle Strength and Fatigue in Adult Women. <em>Int J Environ Res Public Health</em>. DOI: <a href="https://doi.org/10.3390/ijerph17072475">10.3390/ijerph17072475</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/32260466/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">3</div>
+                <div class="ref-text">Cho YH et al. (2021). Effect of Schisandra chinensis Baillon extracts and regular low-intensity exercise on muscle strength and mass in older adults. <em>American Journal of Clinical Nutrition</em>. DOI: <a href="https://doi.org/10.1093/ajcn/nqaa447">10.1093/ajcn/nqaa447</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/33710261/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">4</div>
+                <div class="ref-text">Aslanyan G et al. (2010). Double-blind, placebo-controlled, randomised study of single dose effects of ADAPT-232 on cognitive functions. <em>Phytomedicine</em>. DOI: <a href="https://doi.org/10.1016/j.phymed.2010.02.005">10.1016/j.phymed.2010.02.005</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/20374974/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">5</div>
+                <div class="ref-text">Song MY et al. (2015). Schisandra chinensis fruit modulates the gut microbiota composition in association with metabolic markers in obese women. <em>Nutrition Research</em>. DOI: <a href="https://doi.org/10.1016/j.nutres.2015.05.001">10.1016/j.nutres.2015.05.001</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26048342/">PubMed</a></div>
             </li>
             </ol>
         </section>

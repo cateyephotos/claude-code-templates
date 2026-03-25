@@ -36,9 +36,7 @@
 
 
     <style>
-
-
-        /* =========================================================
+/* =========================================================
            DESIGN TOKENS — matching comparison guide system
         ========================================================= */
         :root {
@@ -1115,6 +1113,17 @@
         /* tier badge colour variants */
         .hero-badge-tier-2 { background: #ca8a04 !important; }
         .hero-badge-tier-3 { background: #dc2626 !important; }
+
+        /* evidence-prose: prose-format citation details */
+        .evidence-prose {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+        /* tier badge colour variants */
+        .hero-badge-tier-2 { background: #ca8a04 !important; }
+        .hero-badge-tier-3 { background: #dc2626 !important; }
     </style>
 </head>
 <body>
@@ -1184,7 +1193,7 @@
         <p class="hero-also-known">Also known as: Coleus, Indian Coleus, Makandi</p>
         <p class="hero-tagline">Limited human studies but strong mechanistic evidence</p>
         <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 7+ Citations</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> 14+ Citations</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Tier 3: Preliminary Evidence</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Good</div>
         </div>
@@ -1194,7 +1203,7 @@
 <!-- Share + Trust bar -->
 <div class="meta-bar">
     <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 7+ Citations</span>
+        <span class="trust-chip"><i class="fas fa-check-circle"></i> 14+ Citations</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 3: Preliminary Evidence</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Good</span>
         <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
@@ -1563,6 +1572,26 @@
                     </a>
                 </div>
             </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Hormonal Support</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Open-label clinical trial</span> <span class="evidence-tag">2015</span> <span class="evidence-tag">n=90</span> <span class="evidence-tag">4 weeks</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose"></p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/26155078/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 26155078
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Hormonal Support</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized, single-blind clinical trial</span> <span class="evidence-tag">2006</span> <span class="evidence-tag">n=40</span> <span class="evidence-tag">6 months</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose"></p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/16749416/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 16749416
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="citation-group">
@@ -1640,7 +1669,23 @@
             <ol class="ref-list">
             <li class="ref-item">
                 <div class="ref-num">1</div>
-                <div class="ref-text">Alasbahi RH, Melzig MF (2010). Forskolin: a labdane diterpenoid with antihypertensive, positive inotropic, platelet aggregation inhibitory, and adenylyl cyclase activating properties. <em>Planta Med</em>. DOI: <a href="https://doi.org/10.1055/s-0030-1250039">10.1055/s-0030-1250039</a></div>
+                <div class="ref-text">Godard MP et al. (2005). Body composition and hormonal adaptations associated with forskolin consumption in overweight and obese men. <em>Obesity Research</em>. DOI: <a href="https://doi.org/10.1038/oby.2005.162">10.1038/oby.2005.162</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/16129715/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">2</div>
+                <div class="ref-text">Loftus HL et al. (2015). Coleus forskohlii Extract Supplementation in Conjunction with a Hypocaloric Diet Reduces the Risk Factors of Metabolic Syndrome. <em>Nutrients</em>. DOI: <a href="https://doi.org/10.3390/nu7115483">10.3390/nu7115483</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26593941/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">3</div>
+                <div class="ref-text">Henderson S et al. (2005). Effects of coleus forskohlii supplementation on body composition and hematological profiles in mildly overweight women. <em>J Int Soc Sports Nutr</em>. DOI: <a href="https://doi.org/10.1186/1550-2783-2-2-54">10.1186/1550-2783-2-2-54</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/18500958/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">4</div>
+                <div class="ref-text">Majeed M et al. (2015). Efficacy and safety of 1% forskolin eye drops in open angle glaucoma - An open label study. <em>Saudi Journal of Ophthalmology</em>. DOI: <a href="https://doi.org/10.1016/j.sjopt.2015.02.003">10.1016/j.sjopt.2015.02.003</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/26155078/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">5</div>
+                <div class="ref-text">Gonzalez-Sanchez R et al. (2006). Forskolin versus sodium cromoglycate for prevention of asthma attacks: a single-blinded clinical trial. <em>J Int Med Res</em>. DOI: <a href="https://doi.org/10.1177/147323000603400210">10.1177/147323000603400210</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/16749416/">PubMed</a></div>
             </li>
             </ol>
         </section>

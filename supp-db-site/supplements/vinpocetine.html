@@ -36,9 +36,7 @@
 
 
     <style>
-
-
-        /* =========================================================
+/* =========================================================
            DESIGN TOKENS — matching comparison guide system
         ========================================================= */
         :root {
@@ -1115,6 +1113,17 @@
         /* tier badge colour variants */
         .hero-badge-tier-2 { background: #ca8a04 !important; }
         .hero-badge-tier-3 { background: #dc2626 !important; }
+
+        /* evidence-prose: prose-format citation details */
+        .evidence-prose {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+        /* tier badge colour variants */
+        .hero-badge-tier-2 { background: #ca8a04 !important; }
+        .hero-badge-tier-3 { background: #dc2626 !important; }
     </style>
 </head>
 <body>
@@ -1184,10 +1193,10 @@
         <p class="hero-also-known">Also known as: Periwinkle Extract, Cavinton</p>
         <p class="hero-tagline">Moderate evidence for cerebral circulation; limited evidence for cognitive enhancement in healthy individuals</p>
         <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 4+ Citations</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> 12+ Citations</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Tier 3: Preliminary Evidence</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Good</div>
-            <div class="hero-stat"><i class="fas fa-circle"></i> Updated 2025-08-25</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> Updated 2026-03-22</div>
         </div>
     </div>
 </header>
@@ -1195,7 +1204,7 @@
 <!-- Share + Trust bar -->
 <div class="meta-bar">
     <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 4+ Citations</span>
+        <span class="trust-chip"><i class="fas fa-check-circle"></i> 12+ Citations</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 3: Preliminary Evidence</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Good</span>
         <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
@@ -1496,12 +1505,32 @@
                 <i class="fas fa-microscope"></i> Mechanisms of Action
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Provides neuroprotective effects against ischemia and oxidative stress</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2000</span></div>
+                <p class="evidence-card-title">PDE1 inhibition and cerebral vasodilation</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Strong</span> <span class="evidence-tag">Randomized controlled trial (double-blind, placebo-controlled)</span> <span class="evidence-tag">2002</span> <span class="evidence-tag">n=43 ischemic stroke patients</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose">Vinpocetine protects neurons from ischemic damage and reduces oxidative stress</p>
-                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38147382/" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> PubMed: 38147382
+                    <p class="evidence-prose">Vinpocetine increased cerebral perfusion and parenchymal oxygen extraction compared to placebo. The vinpocetine group showed increased hemoglobin concentrations and significantly larger increases in Doppler spectral intensity. Near-infrared spectroscopy was found to be a sensitive method for monitoring regional cerebral blood flow changes.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12044859/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 12044859
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Anti-inflammatory via NF-κB pathway inhibition</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized controlled trial (multi-center)</span> <span class="evidence-tag">2018</span> <span class="evidence-tag">n=60 acute ischemic stroke patients</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Vinpocetine suppressed NF-kB activation through increased IkBa transcription and prevented phosphorylation/degradation of IkBa. This led to reduced lesion enlargement and improved neurological recovery at acute phase and 3-month follow-up. Vinpocetine functions as an effective inflammation modulator improving stroke outcomes.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/28691141/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 28691141
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Anti-inflammatory via NF-κB pathway inhibition</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Narrative review</span> <span class="evidence-tag">2018</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Comprehensive review covering vinpocetine's mechanisms: PDE1 inhibition, NF-kappaB-dependent anti-inflammatory activity via IKK targeting, cerebral vasodilation, and neuroprotection. Highlights emerging evidence for cardiovascular and anti-inflammatory applications beyond traditional cognitive use.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/29183836/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 29183836
                     </a>
                 </div>
             </div>
@@ -1512,12 +1541,52 @@
                 <i class="fas fa-microscope"></i> Clinical Benefits
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Cognitive Enhancement</p>
-                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">2008</span></div>
+                <p class="evidence-card-title">Stroke Recovery</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Systematic review and meta-analysis</span> <span class="evidence-tag">2022</span> <span class="evidence-tag">n=837 (601 vinpocetine, 236 placebo) across 4 RCTs</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose">Vinpocetine showed potential benefits for cognitive function in some studies</p>
+                    <p class="evidence-prose">Death or significant disability was lower in the vinpocetine group at both 1 and 3 months compared to placebo. Degree of disability at 1 and 3 months was also lower in the vinpocetine group. However, there is not enough evidence to suggest vinpocetine reduces case fatality. MMSE score improvement was greater in the vinpocetine group.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35488169/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 35488169
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Stroke Recovery</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized controlled trial (open-label, multicenter)</span> <span class="evidence-tag">2016</span> <span class="evidence-tag">n=610 (469 vinpocetine + standard therapy, 141 standard therapy alone)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Vinpocetine group demonstrated significantly improved cognitive function, neurological status, and quality of life at 90 days. Cerebral blood flow was significantly increased in the vinpocetine group versus control measured by transcranial Doppler. Vinpocetine was concluded to be an effective and safe component of treatment for acute cerebral infarction.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/27283947/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 27283947
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Stroke Recovery</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Cochrane systematic review</span> <span class="evidence-tag">2008</span> <span class="evidence-tag">2 controlled studies (70 participants)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Cochrane review found insufficient evidence to evaluate vinpocetine's effect on survival or dependency in acute ischemic stroke. No significant difference in death or dependency at 1 and 3 months, though no adverse effects were reported.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/18253980/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 18253980
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Cognitive Function in Dementia</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-3">Weak</span> <span class="evidence-tag">Cochrane systematic review</span> <span class="evidence-tag">2003</span> <span class="evidence-tag">n=583 across 3 RCTs</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Benefit was associated with vinpocetine 30 mg/day and 60 mg/day compared with placebo on cognitive measures. However, the number of patients treated for 6+ months was small and only one study extended to one year. Adverse effects were rarely reported. The reviewers concluded the evidence for beneficial effect on dementia patients is inconclusive and does not support routine clinical use.</p>
                     <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12535455/" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> PubMed: 12535455
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Cerebral Blood Flow</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-2">Moderate</span> <span class="evidence-tag">Randomized controlled trial (double-blind, placebo-controlled)</span> <span class="evidence-tag">2002</span> <span class="evidence-tag">n=43 ischemic stroke patients</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Vinpocetine increased cerebral perfusion and parenchymal oxygen extraction compared to placebo. The vinpocetine group showed increased hemoglobin concentrations and significantly larger increases in Doppler spectral intensity. Near-infrared spectroscopy was found to be a sensitive method for monitoring regional cerebral blood flow changes.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12044859/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 12044859
                     </a>
                 </div>
             </div>
@@ -1528,22 +1597,38 @@
                 <i class="fas fa-microscope"></i> Safety &amp; Tolerability
             </h3>
                         <div class="evidence-card">
-                <p class="evidence-card-title">Common side effects</p>
-                <div class="evidence-tags"><span class="evidence-tag">2023</span></div>
+                <p class="evidence-card-title">General tolerability</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Level 1</span> <span class="evidence-tag">Systematic review and meta-analysis</span> <span class="evidence-tag">2022</span> <span class="evidence-tag">n=837 (601 vinpocetine, 236 placebo) across 4 RCTs</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose">Most common side effects include mild stomach upset, headache, or dizziness</p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
+                    <p class="evidence-prose">Death or significant disability was lower in the vinpocetine group at both 1 and 3 months compared to placebo. Degree of disability at 1 and 3 months was also lower in the vinpocetine group. However, there is not enough evidence to suggest vinpocetine reduces case fatality. MMSE score improvement was greater in the vinpocetine group.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/35488169/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 35488169
                     </a>
                 </div>
             </div>
             <div class="evidence-card">
-                <p class="evidence-card-title">Drug Interactions</p>
-                <div class="evidence-tags"><span class="evidence-tag">2023</span></div>
+                <p class="evidence-card-title">General tolerability</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Level 1</span> <span class="evidence-tag">Cochrane systematic review</span> <span class="evidence-tag">2003</span> <span class="evidence-tag">n=583 across 3 RCTs</span></div>
                 <div class="study-item">
-                    <p class="evidence-prose">Potential for enhanced anticoagulant effects; monitor bleeding risk with warfarin or other blood thinners</p>
-                    <a class="study-link" href="" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> View Source
+                    <p class="evidence-prose">Benefit was associated with vinpocetine 30 mg/day and 60 mg/day compared with placebo on cognitive measures. However, the number of patients treated for 6+ months was small and only one study extended to one year. Adverse effects were rarely reported. The reviewers concluded the evidence for beneficial effect on dementia patients is inconclusive and does not support routine clinical use.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/12535455/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 12535455
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="citation-group">
+            <h3 class="citation-group-header">
+                <i class="fas fa-microscope"></i> Dosage Research
+            </h3>
+                        <div class="evidence-card">
+                <p class="evidence-card-title">15-60 mg/day (typical: 30 mg/day in divided doses)</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-1">Level 2</span> <span class="evidence-tag">Randomized controlled trial (open-label, multicenter)</span> <span class="evidence-tag">2016</span> <span class="evidence-tag">n=610 (469 vinpocetine + standard therapy, 141 standard therapy alone)</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose">Vinpocetine group demonstrated significantly improved cognitive function, neurological status, and quality of life at 90 days. Cerebral blood flow was significantly increased in the vinpocetine group versus control measured by transcranial Doppler. Vinpocetine was concluded to be an effective and safe component of treatment for acute cerebral infarction.</p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/27283947/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 27283947
                     </a>
                 </div>
             </div>
@@ -1562,7 +1647,23 @@
             <ol class="ref-list">
             <li class="ref-item">
                 <div class="ref-num">1</div>
-                <div class="ref-text">Szatmári &amp; Whitehouse (2003). Vinpocetine for cognitive impairment and dementia. DOI: <a href="https://doi.org/10.1002/14651858.CD003119">10.1002/14651858.CD003119</a></div>
+                <div class="ref-text">Prateek Kumar Panda, Aparna Ramachandran et al. (2022). Safety and Efficacy of Vinpocetine as a Neuroprotective Agent in Acute Ischemic Stroke: A Systematic Review and Meta-Analysis. <em>Neurocritical Care</em>. DOI: <a href="https://doi.org/10.1007/s12028-022-01499-y">10.1007/s12028-022-01499-y</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/35488169/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">2</div>
+                <div class="ref-text">S Z Szatmari, P J Whitehouse (2003). Vinpocetine for cognitive impairment and dementia. <em>Cochrane Database of Systematic Reviews</em>. DOI: <a href="https://doi.org/10.1002/14651858.CD003119">10.1002/14651858.CD003119</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/12535455/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">3</div>
+                <div class="ref-text">Weiwei Zhang, Yining Huang et al. (2016). Efficacy and Safety of Vinpocetine as Part of Treatment for Acute Cerebral Infarction: A Randomized, Open-Label, Controlled, Multicenter CAVIN (Chinese Assessment for Vinpocetine in Neurology) Trial. <em>Clinical Drug Investigation</em>. DOI: <a href="https://doi.org/10.1007/s40261-016-0415-x">10.1007/s40261-016-0415-x</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/27283947/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">4</div>
+                <div class="ref-text">Peter Bonoeczk, Gyula Panczel et al. (2002). Vinpocetine increases cerebral blood flow and oxygenation in stroke patients: a near infrared spectroscopy and transcranial Doppler study. <em>European Journal of Ultrasound</em>. DOI: <a href="https://doi.org/10.1016/s0929-8266(02)00006-x">10.1016/s0929-8266(02)00006-x</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/12044859/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">5</div>
+                <div class="ref-text">Fang Zhang, Chen Yan et al. (2018). Vinpocetine Inhibits NF-κB-Dependent Inflammation in Acute Ischemic Stroke Patients. <em>Translational Stroke Research</em>. DOI: <a href="https://doi.org/10.1007/s12975-017-0549-z">10.1007/s12975-017-0549-z</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/28691141/">PubMed</a></div>
             </li>
             </ol>
         </section>

@@ -36,9 +36,7 @@
 
 
     <style>
-
-
-        /* =========================================================
+/* =========================================================
            DESIGN TOKENS — matching comparison guide system
         ========================================================= */
         :root {
@@ -1115,6 +1113,17 @@
         /* tier badge colour variants */
         .hero-badge-tier-2 { background: #ca8a04 !important; }
         .hero-badge-tier-3 { background: #dc2626 !important; }
+
+        /* evidence-prose: prose-format citation details */
+        .evidence-prose {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+        /* tier badge colour variants */
+        .hero-badge-tier-2 { background: #ca8a04 !important; }
+        .hero-badge-tier-3 { background: #dc2626 !important; }
     </style>
 </head>
 <body>
@@ -1184,7 +1193,7 @@
         <p class="hero-also-known">Also known as: Bitter Gourd, Balsam Pear, Karela</p>
         <p class="hero-tagline">Multiple studies showing glucose-lowering effects</p>
         <div class="hero-stats">
-            <div class="hero-stat"><i class="fas fa-circle"></i> 13+ Citations</div>
+            <div class="hero-stat"><i class="fas fa-circle"></i> 19+ Citations</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Tier 2: Moderate Evidence</div>
             <div class="hero-stat"><i class="fas fa-circle"></i> Safety: Good</div>
         </div>
@@ -1194,7 +1203,7 @@
 <!-- Share + Trust bar -->
 <div class="meta-bar">
     <div class="trust-chips">
-        <span class="trust-chip"><i class="fas fa-check-circle"></i> 13+ Citations</span>
+        <span class="trust-chip"><i class="fas fa-check-circle"></i> 19+ Citations</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Tier 2: Moderate Evidence</span>
         <span class="trust-chip"><i class="fas fa-check-circle"></i> Safety: Good</span>
         <span class="trust-chip"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>
@@ -1593,6 +1602,26 @@
                     </a>
                 </div>
             </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Musculoskeletal Health</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-3">Weak</span> <span class="evidence-tag">Systematic Review and Meta-Analysis</span> <span class="evidence-tag">2024</span> <span class="evidence-tag">423 across 8 RCTs</span> <span class="evidence-tag">Various</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose"></p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38784554/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 38784554
+                    </a>
+                </div>
+            </div>
+            <div class="evidence-card">
+                <p class="evidence-card-title">Musculoskeletal Health</p>
+                <div class="evidence-tags"><span class="evidence-tag evidence-tag-tier-3">Weak</span> <span class="evidence-tag">Systematic Review and Meta-Analysis</span> <span class="evidence-tag">2024</span> <span class="evidence-tag">414 across 9 RCTs</span> <span class="evidence-tag">4-16 weeks</span></div>
+                <div class="study-item">
+                    <p class="evidence-prose"></p>
+                    <a class="study-link" href="https://pubmed.ncbi.nlm.nih.gov/38274207/" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> PubMed: 38274207
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="citation-group">
@@ -1690,7 +1719,23 @@
             <ol class="ref-list">
             <li class="ref-item">
                 <div class="ref-num">1</div>
-                <div class="ref-text">Peter EL, et al. (2019). Bitter melon (Momordica charantia) in patients with type 2 diabetes mellitus. <em>Food Funct</em>. DOI: <a href="https://doi.org/10.1039/c8fo02206g">10.1039/c8fo02206g</a></div>
+                <div class="ref-text">Peter EL et al. (2019). Momordica charantia L. lowers elevated glycaemia in type 2 diabetes mellitus patients: Systematic review and meta-analysis. <em>Journal of Ethnopharmacology</em>. DOI: <a href="https://doi.org/10.1016/j.jep.2018.10.033">10.1016/j.jep.2018.10.033</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/30385422/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">2</div>
+                <div class="ref-text">Zhang X et al. (2024). Effects of Momordica charantia L. supplementation on glycemic control and lipid profile in type 2 diabetes mellitus patients. <em>Heliyon</em>. DOI: <a href="https://doi.org/10.1016/j.heliyon.2024.e31126">10.1016/j.heliyon.2024.e31126</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/38784554/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">3</div>
+                <div class="ref-text">Laczko-Zold E et al. (2024). The metabolic effect of Momordica charantia cannot be determined based on the available clinical evidence. <em>Frontiers in Nutrition</em>. DOI: <a href="https://doi.org/10.3389/fnut.2023.1200801">10.3389/fnut.2023.1200801</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/38274207/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">4</div>
+                <div class="ref-text">Amini MR et al. (2024). The Effects of Bitter Melon on Lipid Profile: A Systematic Review and Meta-Analysis of Randomized Controlled Trials. <em>Phytotherapy Research</em>. DOI: <a href="https://doi.org/10.1002/ptr.8357">10.1002/ptr.8357</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/39444254/">PubMed</a></div>
+            </li>
+            <li class="ref-item">
+                <div class="ref-num">5</div>
+                <div class="ref-text">Kim SK et al. (2020). Hypoglycemic efficacy and safety of Momordica charantia in patients with type 2 diabetes mellitus. <em>Complementary Therapies in Medicine</em>. DOI: <a href="https://doi.org/10.1016/j.ctim.2020.102524">10.1016/j.ctim.2020.102524</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/32951763/">PubMed</a></div>
             </li>
             </ol>
         </section>
