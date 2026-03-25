@@ -4,6 +4,9 @@ const path = require('path');
 const express = require('express');
 const open = require('open');
 const os = require('os');
+const inquirer = require('inquirer');
+const boxen = require('boxen');
+const { spawn } = require('child_process');
 const packageJson = require('../package.json');
 const StateCalculator = require('./analytics/core/StateCalculator');
 const ProcessDetector = require('./analytics/core/ProcessDetector');
@@ -11,14 +14,18 @@ const ConversationAnalyzer = require('./analytics/core/ConversationAnalyzer');
 const FileWatcher = require('./analytics/core/FileWatcher');
 const SessionAnalyzer = require('./analytics/core/SessionAnalyzer');
 const AgentAnalyzer = require('./analytics/core/AgentAnalyzer');
+const YearInReview2025 = require('./analytics/core/YearInReview2025');
 const DataCache = require('./analytics/data/DataCache');
 const WebSocketServer = require('./analytics/notifications/WebSocketServer');
 const NotificationManager = require('./analytics/notifications/NotificationManager');
 const PerformanceMonitor = require('./analytics/utils/PerformanceMonitor');
 const ConsoleBridge = require('./console-bridge');
+const ClaudeAPIProxy = require('./claude-api-proxy');
 
 class ClaudeAnalytics {
-  constructor() {
+  constructor(options = {}) {
+    this.options = options;
+    this.verbose = options.verbose || false;
     this.app = express();
     this.port = 3333;
     this.stateCalculator = new StateCalculator();
@@ -26,6 +33,7 @@ class ClaudeAnalytics {
     this.fileWatcher = new FileWatcher();
     this.sessionAnalyzer = new SessionAnalyzer();
     this.agentAnalyzer = new AgentAnalyzer();
+    this.yearInReview2025 = new YearInReview2025();
     this.dataCache = new DataCache();
     this.performanceMonitor = new PerformanceMonitor({
       enabled: true,
@@ -36,6 +44,9 @@ class ClaudeAnalytics {
     this.notificationManager = null;
     this.httpServer = null;
     this.consoleBridge = null;
+    this.cloudflareProcess = null;
+    this.publicUrl = null;
+    this.claudeApiProxy = null;
     this.data = {
       conversations: [],
       summary: {},
@@ -47,6 +58,29 @@ class ClaudeAnalytics {
         lastActivity: null,
       },
     };
+  }
+
+  /**
+   * Log messages only if verbose mode is enabled
+   * @param {string} level - Log level ('info', 'warn', 'error')
+   * @param {string} message - Message to log
+   * @param {...any} args - Additional arguments
+   */
+  log(level, message, ...args) {
+    if (!this.verbose) return;
+    
+    switch (level) {
+      case 'error':
+        console.error(message, ...args);
+        break;
+      case 'warn':
+        console.warn(message, ...args);
+        break;
+      case 'info':
+      default:
+        console.log(message, ...args);
+        break;
+    }
   }
 
   async initialize() {
@@ -1159,6 +1193,90 @@ class ClaudeAnalytics {
       }
     });
 
+    // Clear cache endpoint
+    this.app.post('/api/clear-cache', async (req, res) => {
+      try {
+        console.log('🔥 Clear cache request received');
+        
+        // Clear DataCache
+        if (this.dataCache && typeof this.dataCache.clear === 'function') {
+          this.dataCache.clear();
+          console.log('🔥 Server DataCache cleared');
+        } else {
+          console.log('⚠️ DataCache not available or no clear method');
+        }
+        
+        // Also clear ConversationAnalyzer cache if available
+        if (this.conversationAnalyzer && typeof this.conversationAnalyzer.clearCache === 'function') {
+          this.conversationAnalyzer.clearCache();
+          console.log('🔥 ConversationAnalyzer cache cleared');
+        }
+        
+        res.json({ 
+          success: true, 
+          message: 'Cache cleared successfully',
+          timestamp: new Date().toISOString()
+        });
+      } catch (error) {
+        console.error('❌ Error clearing cache:', error);
+        res.status(500).json({ 
+          error: 'Failed to clear cache', 
+          details: error.message 
+        });
+      }
+    });
+
+    // Activity heatmap data endpoint - needs full conversation history
+    this.app.get('/api/activity', async (req, res) => {
+      try {
+        console.log(`🔥 /api/activity called - loading all conversations...`);
+        const allConversations = await this.conversationAnalyzer.loadConversations(this.stateCalculator);
+        console.log(`🔥 Loaded ${allConversations.length} conversations from server`);
+
+        // Generate activity data using complete dataset
+        const activityData = this.generateActivityDataFromConversations(allConversations);
+        res.json({
+          conversations: allConversations, // Also include conversations for the heatmap component
+          ...activityData,
+          timestamp: new Date().toISOString()
+        });
+      } catch (error) {
+        console.error('Error generating activity data:', error);
+        res.status(500).json({ error: 'Failed to generate activity data' });
+      }
+    });
+
+    // Year in Review 2025 API endpoint
+    this.app.get('/api/2025', async (req, res) => {
+      try {
+        console.log('📅 Generating 2025 Year in Review...');
+
+        // Load all conversations for analysis
+        const allConversations = await this.conversationAnalyzer.loadConversations(this.stateCalculator);
+
+        // Generate year in review statistics
+        const yearInReview = await this.yearInReview2025.generateYearInReview(allConversations, this.claudeDir);
+
+        console.log(`✅ 2025 Year in Review generated with ${yearInReview.totalConversations} conversations`);
+
+        res.json({
+          ...yearInReview,
+          timestamp: new Date().toISOString()
+        });
+      } catch (error) {
+        console.error('Error generating 2025 year in review:', error);
+        res.status(500).json({
+          error: 'Failed to generate year in review',
+          message: error.message
+        });
+      }
+    });
+
+    // Year in Review 2025 page route
+    this.app.get('/2025', (req, res) => {
+      res.sendFile(path.join(__dirname, 'analytics-web', '2025.html'));
+    });
+
     // Main dashboard route
     this.app.get('/', (req, res) => {
       res.sendFile(path.join(__dirname, 'analytics-web', 'index.html'));
@@ -1181,22 +1299,210 @@ class ClaudeAnalytics {
   }
 
   async openBrowser(openTo = null) {
-    const baseUrl = `http://localhost:${this.port}`;
+    const baseUrl = this.publicUrl || `http://localhost:${this.port}`;
     let fullUrl = baseUrl;
-    
-    // Add fragment/hash for specific page
+
+    // Add fragment/hash or path for specific page
     if (openTo === 'agents') {
       fullUrl = `${baseUrl}/#agents`;
       console.log(chalk.blue('🌐 Opening browser to Claude Code Chats...'));
+    } else if (openTo === '2025') {
+      fullUrl = `${baseUrl}/2025`;
+      console.log(chalk.blue('🎉 Opening browser to 2025 Year in Review...'));
     } else {
       console.log(chalk.blue('🌐 Opening browser to Claude Code Analytics...'));
     }
-    
+
     try {
       await open(fullUrl);
     } catch (error) {
       console.log(chalk.yellow('Could not open browser automatically. Please visit:'));
       console.log(chalk.cyan(fullUrl));
+    }
+  }
+
+  /**
+   * Prompt user if they want to use Cloudflare Tunnel
+   */
+  async promptCloudflareSetup() {
+    console.log('');
+    console.log(chalk.yellow('🌐 Analytics Dashboard Access Options'));
+    console.log('');
+    console.log(chalk.cyan('🔒 About Cloudflare Tunnel:'));
+    console.log(chalk.gray('• Creates a secure connection between your localhost and the web'));
+    console.log(chalk.gray('• Only you will have access to the generated URL (not public)'));
+    console.log(chalk.gray('• The connection is end-to-end encrypted'));
+    console.log(chalk.gray('• Automatically closes when you end the session'));
+    console.log(chalk.gray('• No firewall or port configuration required'));
+    console.log('');
+    console.log(chalk.green('✅ It is completely secure - only you can access the dashboard'));
+    console.log('');
+    
+    const { useCloudflare } = await inquirer.prompt([{
+      type: 'confirm',
+      name: 'useCloudflare',
+      message: 'Enable Cloudflare Tunnel for secure remote access?',
+      default: true
+    }]);
+
+    return useCloudflare;
+  }
+
+  /**
+   * Start Cloudflare Tunnel
+   */
+  async startCloudflareTunnel() {
+    try {
+      console.log(chalk.blue('🔧 Starting Cloudflare Tunnel...'));
+      
+      // Check if cloudflared is installed
+      const checkProcess = spawn('cloudflared', ['version'], { stdio: 'pipe' });
+      
+      return new Promise((resolve, reject) => {
+        checkProcess.on('error', (error) => {
+          console.log(chalk.red('❌ Cloudflared is not installed.'));
+          console.log('');
+          console.log(chalk.yellow('📥 To install Cloudflare Tunnel:'));
+          console.log(chalk.gray('• macOS: brew install cloudflared'));
+          console.log(chalk.gray('• Windows: winget install --id Cloudflare.cloudflared'));
+          console.log(chalk.gray('• Linux: apt-get install cloudflared'));
+          console.log('');
+          console.log(chalk.blue('💡 More info: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/'));
+          resolve(false);
+        });
+
+        checkProcess.on('close', (code) => {
+          if (code === 0) {
+            this.createCloudflareTunnel();
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        });
+      });
+    } catch (error) {
+      console.log(chalk.red(`❌ Error checking Cloudflare Tunnel: ${error.message}`));
+      return false;
+    }
+  }
+
+  /**
+   * Create the actual Cloudflare Tunnel
+   */
+  async createCloudflareTunnel() {
+    try {
+      console.log(chalk.blue('🚀 Creating secure tunnel...'));
+      
+      // Start cloudflared tunnel normally, but filter the output to capture URL
+      this.cloudflareProcess = spawn('cloudflared', [
+        'tunnel',
+        '--url', `http://localhost:${this.port}`
+      ], { 
+        stdio: ['pipe', 'pipe', 'pipe']
+      });
+
+      let tunnelEstablished = false;
+
+      return new Promise((resolve) => {
+        // Monitor stderr for the tunnel URL (cloudflared outputs most info to stderr)
+        this.cloudflareProcess.stderr.on('data', (data) => {
+          const output = data.toString();
+          
+          // Use the cleaner regex to extract URL from the logs
+          const urlMatch = output.match(/https:\/\/[a-zA-Z0-9.-]+\.trycloudflare\.com/);
+          
+          if (urlMatch && !tunnelEstablished) {
+            tunnelEstablished = true;
+            this.publicUrl = urlMatch[0];
+            
+            // Create a prominent, boxed display for the tunnel URL
+            const tunnelMessage = chalk.green.bold('🌍 CLOUDFLARE TUNNEL ACTIVE') + '\n\n' +
+              chalk.cyan.bold('Public URL: ') + chalk.white.underline(this.publicUrl) + '\n\n' +
+              chalk.yellow('🔗 Share this URL to access your dashboard remotely') + '\n' +
+              chalk.gray('🔒 This tunnel is private and secure - only accessible by you');
+            
+            console.log('\n');
+            console.log(boxen(tunnelMessage, {
+              padding: 1,
+              margin: 1,
+              borderStyle: 'double',
+              borderColor: 'cyan',
+              backgroundColor: '#1a1a1a'
+            }));
+            console.log('\n');
+            resolve(true);
+          }
+        });
+
+        // Also check stdout just in case
+        this.cloudflareProcess.stdout.on('data', (data) => {
+          const output = data.toString();
+          const urlMatch = output.match(/https:\/\/[a-zA-Z0-9.-]+\.trycloudflare\.com/);
+          
+          if (urlMatch && !tunnelEstablished) {
+            tunnelEstablished = true;
+            this.publicUrl = urlMatch[0];
+            
+            // Create a prominent, boxed display for the tunnel URL
+            const tunnelMessage = chalk.green.bold('🌍 CLOUDFLARE TUNNEL ACTIVE') + '\n\n' +
+              chalk.cyan.bold('Public URL: ') + chalk.white.underline(this.publicUrl) + '\n\n' +
+              chalk.yellow('🔗 Share this URL to access your dashboard remotely') + '\n' +
+              chalk.gray('🔒 This tunnel is private and secure - only accessible by you');
+            
+            console.log('\n');
+            console.log(boxen(tunnelMessage, {
+              padding: 1,
+              margin: 1,
+              borderStyle: 'double',
+              borderColor: 'cyan',
+              backgroundColor: '#1a1a1a'
+            }));
+            console.log('\n');
+            resolve(true);
+          }
+        });
+
+        this.cloudflareProcess.on('close', (code) => {
+          if (code !== 0) {
+            console.log(chalk.red(`❌ Cloudflare Tunnel terminated with code: ${code}`));
+          }
+          this.publicUrl = null;
+          this.cloudflareProcess = null;
+          if (!tunnelEstablished) {
+            resolve(false);
+          }
+        });
+
+        this.cloudflareProcess.on('error', (error) => {
+          console.log(chalk.red(`❌ Error with Cloudflare Tunnel: ${error.message}`));
+          this.publicUrl = null;
+          this.cloudflareProcess = null;
+          resolve(false);
+        });
+
+        // Timeout after 15 seconds if tunnel doesn't establish
+        setTimeout(() => {
+          if (!tunnelEstablished) {
+            console.log(chalk.red('❌ Timeout waiting for Cloudflare Tunnel to establish'));
+            resolve(false);
+          }
+        }, 15000);
+      });
+    } catch (error) {
+      console.log(chalk.red(`❌ Error creating Cloudflare Tunnel: ${error.message}`));
+      return false;
+    }
+  }
+
+  /**
+   * Stop Cloudflare Tunnel
+   */
+  stopCloudflareTunnel() {
+    if (this.cloudflareProcess) {
+      console.log(chalk.yellow('🛑 Closing Cloudflare Tunnel...'));
+      this.cloudflareProcess.kill('SIGTERM');
+      this.cloudflareProcess = null;
+      this.publicUrl = null;
     }
   }
 
@@ -1218,6 +1524,12 @@ class ClaudeAnalytics {
       
       // Connect notification manager to file watcher for typing detection
       this.fileWatcher.setNotificationManager(this.notificationManager);
+      
+      // Initialize Claude API Proxy for bidirectional communication
+      console.log(chalk.blue('🌉 Initializing Claude API Proxy...'));
+      this.claudeApiProxy = new ClaudeAPIProxy();
+      await this.claudeApiProxy.start();
+      console.log(chalk.green('✅ Claude API Proxy initialized on port 3335'));
       
       // Setup notification subscriptions
       this.setupNotificationSubscriptions();
@@ -1810,10 +2122,163 @@ class ClaudeAnalytics {
     }
   }
 
+  /**
+   * Generate activity data for the heatmap using complete conversation set
+   * @param {Array} conversations - Complete conversation array (not limited)
+   * @returns {Object} Activity data including daily contributions and stats
+   */
+  generateActivityDataFromConversations(conversations) {
+    const dailyActivity = new Map();
+    const oneYearAgo = new Date();
+    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+    oneYearAgo.setHours(0, 0, 0, 0);
+
+    const today = new Date();
+    const todayEnd = new Date();
+    todayEnd.setHours(23, 59, 59, 999);
+
+    console.log(`🔥 Generating activity data for ${conversations.length} conversations (FULL DATASET)...`);
+
+    // Process conversations for daily activity
+    conversations.forEach(conversation => {
+      if (!conversation.lastModified) return;
+      
+      const date = new Date(conversation.lastModified);
+      if (date < oneYearAgo || date > todayEnd) return;
+
+      const dateKey = date.toISOString().split('T')[0]; // YYYY-MM-DD
+      
+      const current = dailyActivity.get(dateKey) || {
+        conversations: 0,
+        tokens: 0,
+        messages: 0,
+        tools: 0,
+        date: dateKey
+      };
+      
+      current.conversations += 1;
+      current.tokens += conversation.tokens || 0;
+      current.messages += conversation.messageCount || 0;
+      current.tools += (conversation.toolUsage?.totalToolCalls || 0);
+      
+      dailyActivity.set(dateKey, current);
+    });
+
+    // Convert to array and sort by date
+    const activityArray = Array.from(dailyActivity.values())
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    // Calculate stats
+    const totalContributions = activityArray.reduce((sum, day) => sum + day.conversations, 0);
+    const totalTools = activityArray.reduce((sum, day) => sum + day.tools, 0);
+    const { longestStreak, currentStreak } = this.calculateStreaks(activityArray);
+
+    console.log(`🔥 Activity data generated: ${activityArray.length} active days, ${totalContributions} total contributions, ${totalTools} tool calls`);
+
+    return {
+      dailyActivity: activityArray,
+      totalContributions,
+      totalTools,
+      longestStreak,
+      currentStreak,
+      activeDays: activityArray.length,
+      startDate: oneYearAgo.toISOString().split('T')[0],
+      endDate: today.toISOString().split('T')[0]
+    };
+  }
+
+  /**
+   * Generate activity data for the heatmap (legacy method for backward compatibility)
+   * @returns {Object} Activity data including daily contributions and stats
+   */
+  generateActivityData() {
+    if (!this.data || !this.data.conversations) {
+      return {
+        dailyActivity: [],
+        totalContributions: 0,
+        longestStreak: 0,
+        currentStreak: 0
+      };
+    }
+
+    return this.generateActivityDataFromConversations(this.data.conversations);
+  }
+
+  /**
+   * Calculate contribution streaks
+   * @param {Array} activityArray - Sorted array of daily activity
+   * @returns {Object} Longest and current streak counts
+   */
+  calculateStreaks(activityArray) {
+    if (activityArray.length === 0) {
+      return { longestStreak: 0, currentStreak: 0 };
+    }
+
+    let longestStreak = 0;
+    let currentStreak = 0;
+    let tempStreak = 0;
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Create a map of active dates for quick lookup
+    const activeDates = new Set(activityArray.map(day => day.date));
+
+    // Check streak going backwards from today
+    let checkDate = new Date(today);
+    let foundToday = false;
+
+    // First check if today or yesterday has activity
+    for (let i = 0; i < 2; i++) {
+      const dateKey = checkDate.toISOString().split('T')[0];
+      if (activeDates.has(dateKey)) {
+        foundToday = true;
+        break;
+      }
+      checkDate.setDate(checkDate.getDate() - 1);
+    }
+
+    if (foundToday) {
+      // Calculate current streak
+      checkDate = new Date(today);
+      while (true) {
+        const dateKey = checkDate.toISOString().split('T')[0];
+        if (activeDates.has(dateKey)) {
+          currentStreak++;
+          checkDate.setDate(checkDate.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+    }
+
+    // Calculate longest streak by checking all consecutive days
+    const oneYearAgo = new Date(today);
+    oneYearAgo.setFullYear(today.getFullYear() - 1);
+
+    checkDate = new Date(oneYearAgo);
+    while (checkDate <= today) {
+      const dateKey = checkDate.toISOString().split('T')[0];
+      
+      if (activeDates.has(dateKey)) {
+        tempStreak++;
+        longestStreak = Math.max(longestStreak, tempStreak);
+      } else {
+        tempStreak = 0;
+      }
+      
+      checkDate.setDate(checkDate.getDate() + 1);
+    }
+
+    return { longestStreak, currentStreak };
+  }
 
   stop() {
     // Stop file watchers
     this.fileWatcher.stop();
+
+    // Stop Cloudflare Tunnel
+    this.stopCloudflareTunnel();
 
     // Stop server
     // Close WebSocket server
@@ -1829,6 +2294,11 @@ class ClaudeAnalytics {
     // Shutdown console bridge
     if (this.consoleBridge) {
       this.consoleBridge.shutdown();
+    }
+    
+    // Stop Claude API Proxy
+    if (this.claudeApiProxy) {
+      this.claudeApiProxy.stop();
     }
     
     if (this.httpServer) {
@@ -1857,24 +2327,51 @@ async function runAnalytics(options = {}) {
     console.log(chalk.blue('📊 Starting Claude Code Analytics Dashboard...'));
   }
 
-  const analytics = new ClaudeAnalytics();
+  const analytics = new ClaudeAnalytics(options);
 
   try {
+    // Handle Cloudflare Tunnel prompt BEFORE initializing anything
+    let useCloudflare = false;
+    
+    if (options.tunnel) {
+      useCloudflare = await analytics.promptCloudflareSetup();
+    }
+
     await analytics.initialize();
 
     // Create web dashboard files
     // Web dashboard files are now static in analytics-web directory
 
     await analytics.startServer();
+    
+    // Start Cloudflare Tunnel BEFORE other services if requested and confirmed
+    if (useCloudflare) {
+      const cloudflareStarted = await analytics.startCloudflareTunnel();
+      if (!cloudflareStarted) {
+        console.log(chalk.yellow('⚠️  Continuing with localhost only...'));
+      }
+      // Wait a bit longer for tunnel to stabilize
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+
     await analytics.openBrowser(openTo);
 
+    const accessUrl = analytics.publicUrl || `http://localhost:${analytics.port}`;
+    
     if (openTo === 'agents') {
       console.log(chalk.green('✅ Claude Code Chats dashboard is running!'));
-      console.log(chalk.cyan(`📱 Access at: http://localhost:${analytics.port}/#agents`));
+      console.log(chalk.cyan(`📱 Access at: ${accessUrl}/#agents`));
     } else {
       console.log(chalk.green('✅ Analytics dashboard is running!'));
-      console.log(chalk.cyan(`📱 Access at: http://localhost:${analytics.port}`));
+      console.log(chalk.cyan(`📱 Access at: ${accessUrl}`));
     }
+    
+    if (analytics.publicUrl) {
+      console.log(chalk.gray('🔒 Secure access via Cloudflare Tunnel'));
+    } else {
+      console.log(chalk.gray('🏠 Local access only'));
+    }
+    
     console.log(chalk.gray('Press Ctrl+C to stop the server'));
 
     // Handle graceful shutdown

@@ -47,7 +47,10 @@ function createComponentModalHTML(component) {
     }
     const installCommand = `npx claude-code-templates@latest --${component.type}=${componentPath} --yes`;
     
-    const description = getComponentDescription(component, 120); // Short description - 2 lines max
+    // Generate global agent command for agents only
+    const globalAgentCommand = component.type === 'agent' ? `npx claude-code-templates@latest --create-agent ${componentPath}` : null;
+    
+    const description = getComponentDescription(component); // Full description
 
     // Construct GitHub URL
     let githubUrl = 'https://github.com/davila7/claude-code-templates/';
@@ -59,13 +62,13 @@ function createComponentModalHTML(component) {
 
     return `
         <div class="modal-overlay" onclick="closeComponentModal()">
-            <div class="modal-content component-modal" onclick="event.stopPropagation()">
+            <div class="modal-content" onclick="event.stopPropagation()">
                 <div class="modal-header">
                     <div class="component-modal-title">
                         <span class="component-icon">${config.icon}</span>
-                        <h3>${formatComponentName(component.name)}</h3>
+                        <h3 style="color: var(--text-primary);">${formatComponentName(component.name)}</h3>
+                        <div class="component-type-badge" style="background-color: ${config.color};">${config.badge}</div>
                     </div>
-                    <div class="component-type-badge" style="background-color: ${config.color};">${config.badge}</div>
                     <button class="modal-close" onclick="closeComponentModal()">×</button>
                 </div>
                 <div class="modal-body">
@@ -73,11 +76,84 @@ function createComponentModalHTML(component) {
                         <div class="component-description">${component.type === 'mcp' ? (component.description || description) : description}</div>
                         
                         <div class="installation-section">
-                            <h4>📦 Installation</h4>
-                            <div class="command-line">
-                                <code>${installCommand}</code>
-                                <button class="copy-btn" data-command="${installCommand.replace(/"/g, '&quot;')}" onclick="copyToClipboard(this.dataset.command)">Copy</button>
+                            <!-- Basic Installation -->
+                            <div class="basic-installation-section">
+                                <h4>📦 Basic Installation</h4>
+                                <p class="installation-description">Install this ${component.type} locally in your project. Works with your existing Claude Code setup.</p>
+                                <div class="command-line">
+                                    <code>${installCommand}</code>
+                                    <button class="copy-btn" data-command="${installCommand.replace(/"/g, '&quot;')}" onclick="copyToClipboard(this.dataset.command)">Copy</button>
+                                </div>
                             </div>
+                            
+                            ${globalAgentCommand ? `
+                            <!-- Global Agent (Claude Code SDK) -->
+                            <div class="global-agent-section">
+                                <h4>🌍 Global Agent (Claude Code SDK)</h4>
+                                <p class="global-agent-description">Create a global AI agent accessible from anywhere with zero configuration. Perfect for automation and CI/CD workflows.</p>
+                                
+                                <div class="command-line">
+                                    <code>${globalAgentCommand}</code>
+                                    <button class="copy-btn" data-command="${globalAgentCommand.replace(/"/g, '&quot;')}" onclick="copyToClipboard(this.dataset.command)">Copy</button>
+                                </div>
+                                
+                                <div class="global-agent-usage">
+                                    <div class="usage-example">
+                                        <div class="usage-title">After installation, use from anywhere:</div>
+                                        <div class="command-line usage-command">
+                                            <code>${componentPath.split('/').pop()} "your prompt here"</code>
+                                            <button class="copy-btn" data-command="${componentPath.split('/').pop()} &quot;your prompt here&quot;" onclick="copyToClipboard(this.dataset.command)">Copy</button>
+                                        </div>
+                                    </div>
+                                    <div class="global-features">
+                                        <div class="feature">✅ Works in scripts, CI/CD, npm tasks</div>
+                                        <div class="feature">✅ Auto-detects project context</div>
+                                        <div class="feature">✅ Powered by Claude Code SDK</div>
+                                    </div>
+                                </div>
+                            </div>` : ''}
+                            
+                            ${component.type === 'agent' ? `
+                            <!-- Run in E2B Sandbox (Cloud Execution) -->
+                            <div class="e2b-sandbox-section">
+                                <h4>☁️ Run in E2B Sandbox (Cloud Execution) <span class="new-badge">NEW</span></h4>
+                                <p class="e2b-description">Execute Claude Code with this ${component.type} in an isolated cloud environment using E2B. Perfect for testing complex projects without affecting your local system.</p>
+                                
+                                <div class="e2b-api-setup">
+                                    <h5>🔑 Setup API Keys</h5>
+                                    <div class="env-setup-simple">
+                                        <div class="env-comment">Add to your .env file:</div>
+                                        <div class="env-example">
+                                            <code>E2B_API_KEY=your_e2b_key_here</code>
+                                            <code>ANTHROPIC_API_KEY=your_anthropic_key_here</code>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="command-line">
+                                        <code>npx claude-code-templates@latest --sandbox e2b --agent=${componentPath} --prompt "your development task"</code>
+                                        <button class="copy-btn" data-command="npx claude-code-templates@latest --sandbox e2b --agent=${componentPath} --prompt &quot;your development task&quot;" onclick="copyToClipboard(this.dataset.command)">Copy</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="e2b-features">
+                                    <div class="feature">🔒 Isolated cloud environment</div>
+                                    <div class="feature">⚡ Extended timeouts for complex operations</div>
+                                    <div class="feature">📁 Files downloaded to project root</div>
+                                    <div class="feature">🔍 Real-time execution monitoring</div>
+                                </div>
+                                
+                                <div class="e2b-requirements">
+                                    <div class="requirements-title">Get API Keys:</div>
+                                    <div class="api-key-links">
+                                        <a href="https://e2b.dev/dashboard" target="_blank" class="api-key-link">
+                                            <span>🔑</span> E2B API Key
+                                        </a>
+                                        <a href="https://console.anthropic.com" target="_blank" class="api-key-link">
+                                            <span>🔑</span> Anthropic API Key
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>` : ''}
                         </div>
 
                         <div class="component-content">
@@ -92,6 +168,15 @@ function createComponentModalHTML(component) {
                     </div>
                 </div>
                 <div class="modal-actions">
+                    <button class="add-to-cart-btn" 
+                            data-type="${component.type}s" 
+                            data-path="${componentPath}"
+                            onclick="handleAddToCart('${component.name.replace(/'/g, "\\'")}', '${componentPath.replace(/'/g, "\\'")}', '${component.type}s', '${component.category ? component.category.replace(/'/g, "\\'") : 'Other'}', this); closeComponentModal();">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19,7H18V6A2,2 0 0,0 16,4H8A2,2 0 0,0 6,6V7H5A1,1 0 0,0 4,8A1,1 0 0,0 5,9H6V19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V9H19A1,1 0 0,0 20,8A1,1 0 0,0 19,7M8,6H16V7H8V6M16,19H8V9H16V19Z"/>
+                        </svg>
+                        Add to Stack
+                    </button>
                     <a href="${githubUrl}" target="_blank" class="github-folder-link">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -225,25 +310,36 @@ function formatComponentName(name) {
 
 // Global function for component details (called from onclick)
 function showComponentDetails(type, name, path, category) {
-    let component;
+    // Instead of showing modal, redirect to component page
+    const componentURL = createComponentURL(type, name, path);
+    window.location.href = componentURL;
+}
+
+// Function to create component URL
+function createComponentURL(type, name, path) {
+    // Detect if we're in local development
+    const isLocal = window.location.hostname === 'localhost' || 
+                   window.location.hostname === '127.0.0.1' ||
+                   window.location.hostname.includes('5500');
     
-    if (type === 'template') {
-        if (window.indexManager && window.indexManager.templatesData) {
-            Object.values(window.indexManager.templatesData).forEach(templates => {
-                const found = templates.find(t => t.id === name);
-                if (found) component = found;
-            });
+    if (!isLocal && type && name) {
+        // Use SEO-friendly URL structure for production: /component/type/name
+        let cleanName = name;
+        if (cleanName.endsWith('.md')) {
+            cleanName = cleanName.slice(0, -3);
         }
-    } else {
-        if (window.indexManager && window.indexManager.componentsData) {
-            const components = window.indexManager.componentsData[type + 's'] || [];
-            component = components.find(c => c.name === name || c.path === path);
+        if (cleanName.endsWith('.json')) {
+            cleanName = cleanName.slice(0, -5);
         }
+        
+        return `component/${encodeURIComponent(type)}/${encodeURIComponent(cleanName)}`;
     }
     
-    if (component) {
-        showComponentModal(component);
-    } else {
-        console.warn('Component not found:', type, name, 'path:', path, 'category:', category);
-    }
+    // Use query parameters for local development or fallback
+    const params = new URLSearchParams();
+    params.set('type', type);
+    if (name) params.set('name', name);
+    if (path) params.set('path', path);
+    
+    return `component.html?${params.toString()}`;
 }

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository.
 
 ## Universal Development Guidelines
 
@@ -55,7 +55,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Document configuration options and their purposes
 - Provide example configuration files
 
-## Development Workflow
+```javascript
+// ❌ WRONG
+const API_KEY = "AIzaSy...";
 
 ### Before Starting Work
 1. Pull latest changes from main branch

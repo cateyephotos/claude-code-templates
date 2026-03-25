@@ -287,11 +287,25 @@ class AgentAnalyzer {
       const content = await fs.readFile(filePath, 'utf8');
       const lines = content.trim().split('\n').filter(line => line.trim());
       
-      return lines.map(line => {
+      return lines.map((line, index) => {
         try {
-          return JSON.parse(line);
+          // Skip empty or whitespace-only lines
+          if (!line.trim()) {
+            return null;
+          }
+          
+          // Basic validation - must start with { and end with }
+          const trimmed = line.trim();
+          if (!trimmed.startsWith('{') || !trimmed.endsWith('}')) {
+            return null;
+          }
+          
+          return JSON.parse(trimmed);
         } catch (error) {
-          console.warn(`Error parsing JSONL line in ${filePath}:`, error.message);
+          // Only log significant parsing errors to avoid spam from occasional corrupted lines
+          if (index < 10 || index % 100 === 0) {
+            console.warn(`Skipping corrupted JSONL line ${index + 1} in ${path.basename(filePath)}`);
+          }
           return null;
         }
       }).filter(Boolean);

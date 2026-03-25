@@ -1,8 +1,22 @@
 // Shared Utility Functions
 
-function copyToClipboard(text) {
+/**
+ * Escape HTML special characters to prevent XSS when injecting into innerHTML.
+ * Use this for any user-controlled or external data before inserting into HTML.
+ */
+function escapeHTML(str) {
+    if (typeof str !== 'string') return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function copyToClipboard(text, message = 'Command copied to clipboard!') {
     navigator.clipboard.writeText(text).then(() => {
-        showNotification('Command copied to clipboard!', 'success');
+        showNotification(message, 'success');
     }).catch(err => {
         console.error('Failed to copy: ', err);
         showNotification('Failed to copy command', 'error');
@@ -10,6 +24,14 @@ function copyToClipboard(text) {
 }
 
 function showNotification(message, type = 'info') {
+    // Remove any existing notifications first
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notif => {
+        if (notif.parentNode) {
+            notif.parentNode.removeChild(notif);
+        }
+    });
+
     const notification = document.createElement('div');
     notification.textContent = message;
     notification.className = `notification notification-${type}`;

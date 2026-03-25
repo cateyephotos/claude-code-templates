@@ -1,6 +1,6 @@
 {
   "name": "claude-code-templates",
-  "version": "1.14.15",
+  "version": "1.28.13",
   "description": "CLI tool to setup Claude Code configurations with framework-specific commands, automation hooks and MCP Servers for your projects",
   "main": "src/index.js",
   "bin": {
@@ -32,7 +32,11 @@
     "dev:unlink": "npm unlink -g claude-code-templates",
     "pretest:commands": "npm run dev:link",
     "analytics:start": "node src/analytics.js",
-    "analytics:test": "npm run test:analytics"
+    "analytics:test": "npm run test:analytics",
+    "security-audit": "node src/security-audit.js",
+    "security-audit:ci": "node src/security-audit.js --ci",
+    "security-audit:verbose": "node src/security-audit.js --verbose",
+    "security-audit:json": "node src/security-audit.js --json --output=security-report.json"
   },
   "keywords": [
     "claude",
@@ -67,8 +71,11 @@
     "express": "^4.18.2",
     "fs-extra": "^11.1.1",
     "inquirer": "^8.2.6",
+    "js-yaml": "^4.1.0",
     "open": "^8.4.2",
     "ora": "^5.4.1",
+    "qrcode": "^1.5.3",
+    "uuid": "^11.1.0",
     "ws": "^8.18.3"
   },
   "engines": {
@@ -85,10 +92,13 @@
   "files": [
     "bin/",
     "src/",
+    "components/sandbox/e2b/",
+    "components/sandbox/cloudflare/",
+    "components/sandbox/docker/",
     "README.md"
   ],
   "devDependencies": {
     "jest": "^30.0.4",
-    "jest-watch-typeahead": "^2.2.2"
+    "jest-watch-typeahead": "^3.0.1"
   }
 }
