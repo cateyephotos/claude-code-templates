@@ -297,3 +297,84 @@ export const getGateStats = query({
     return stats;
   },
 });
+
+/**
+ * Get search queries that returned zero results — admin only.
+ */
+export const getZeroResultSearches = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const limit = args.limit ?? 20;
+
+    const events = await ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const zeroResults = events.filter((e) => e.resultCount === 0);
+
+    const grouped: Record<string, { count: number; lastSearched: number }> = {};
+    for (const event of zeroResults) {
+      const q = event.query.toLowerCase().trim();
+      if (!grouped[q]) {
+        grouped[q] = { count: 0, lastSearched: 0 };
+      }
+      grouped[q].count++;
+      if (event.timestamp > grouped[q].lastSearched) {
+        grouped[q].lastSearched = event.timestamp;
+      }
+    }
+
+    return Object.entries(grouped)
+      .sort(([, a], [, b]) => b.count - a.count)
+      .slice(0, limit)
+      .map(([query, data]) => ({
+        query,
+        count: data.count,
+        lastSearched: data.lastSearched,
+      }));
+  },
+});
+
+/**
+ * Get search volume trend over time — admin only.
+ */
+export const getSearchTrend = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+    granularity: v.union(v.literal("hour"), v.literal("day")),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const events = await ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const buckets: Record<string, number> = {};
+    for (const event of events) {
+      const d = new Date(event.timestamp);
+      const key =
+        args.granularity === "hour"
+          ? d.toISOString().slice(0, 13)
+          : d.toISOString().slice(0, 10);
+      buckets[key] = (buckets[key] || 0) + 1;
+    }
+
+    return Object.entries(buckets)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([period, count]) => ({ period, count }));
+  },
+});
+
