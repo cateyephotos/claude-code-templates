@@ -7,6 +7,7 @@
  *   2. Auth buttons container in navigation
  *   3. Auth/Convex/RBAC JS scripts before </body>
  *   4. Content gate scripts on guide pages
+ *   5. Monograph gate scripts on supplement pages
  *
  * Usage: node scripts/inject-auth.js [--dry-run] [--verbose]
  *
@@ -69,6 +70,7 @@ const GUIDE_BODY_INJECT = `
     <script src="{{JS_PREFIX}}js/content-gate.js"></script>
 `;
 
+// Separate from GUIDE_HEAD_INJECT intentionally — may diverge in Phase 2 (paid gate)
 const SUPPLEMENT_HEAD_INJECT = `
     <link rel="stylesheet" href="{{CSS_PREFIX}}css/content-gate.css">
 `;
