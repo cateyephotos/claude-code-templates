@@ -912,6 +912,8 @@ ${buildMechanisms(d.mechanisms)}
             </div>
         </section>
 
+        <!-- MONOGRAPH_GATE_POINT -->
+
         <!-- 4 · Benefits -->
         <section class="section" id="benefits">
             <div class="section-header">
