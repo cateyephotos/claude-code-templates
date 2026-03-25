@@ -24,6 +24,11 @@ export const recordPageView = mutation({
     pageTitle: v.optional(v.string()),
     supplementId: v.optional(v.string()),
     referrer: v.optional(v.string()),
+    utmSource: v.optional(v.string()),
+    utmMedium: v.optional(v.string()),
+    utmCampaign: v.optional(v.string()),
+    utmContent: v.optional(v.string()),
+    utmTerm: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     return await ctx.db.insert("pageViews", {
