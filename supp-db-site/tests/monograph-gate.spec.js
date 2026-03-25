@@ -13,7 +13,7 @@
  *  8. Dark theme: gate renders correctly
  *  9. Analytics: PostHog events fire correctly
  */
-const { test, expect } = require("@playwright/test");
+const { test, expect } = require("playwright/test");
 const { injectAuthMock, safeGoto } = require("./helpers/auth-helpers");
 
 const TEST_PAGE = "/supplements/creatine.html";
