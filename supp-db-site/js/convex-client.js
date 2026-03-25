@@ -125,6 +125,7 @@
     async recordPageView(overrides = {}) {
       try {
         const pageType = detectPageType();
+        const urlParams = new URLSearchParams(window.location.search);
         const pageViewId = await this.mutation(
           "analytics:recordPageView",
           {
@@ -137,6 +138,11 @@
             pageTitle: document.title,
             supplementId: detectSupplementId(),
             referrer: document.referrer || undefined,
+            utmSource: urlParams.get("utm_source") || undefined,
+            utmMedium: urlParams.get("utm_medium") || undefined,
+            utmCampaign: urlParams.get("utm_campaign") || undefined,
+            utmContent: urlParams.get("utm_content") || undefined,
+            utmTerm: urlParams.get("utm_term") || undefined,
             ...overrides,
           }
         );

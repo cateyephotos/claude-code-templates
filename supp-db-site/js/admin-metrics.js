@@ -9,6 +9,7 @@
 
   // ── Date Range Helpers ──────────────────────────────────────
   const RANGES = {
+    "1d": 1 * 24 * 60 * 60 * 1000,
     "7d": 7 * 24 * 60 * 60 * 1000,
     "30d": 30 * 24 * 60 * 60 * 1000,
     "90d": 90 * 24 * 60 * 60 * 1000,
@@ -411,6 +412,211 @@
     return days + "d ago";
   }
 
+  // ── Zero-Result Searches ─────────────────────────────────────
+  async function fetchZeroResultSearches(range, limit) {
+    const lim = limit || 20;
+    const cacheKey = `zeroResults_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("analytics:getZeroResultSearches", {
+      startTime, endTime, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Search Trend ─────────────────────────────────────────────
+  async function fetchSearchTrend(range, granularity) {
+    const gran = granularity || "day";
+    const cacheKey = `searchTrend_${range || currentRange}_${gran}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("analytics:getSearchTrend", {
+      startTime, endTime, granularity: gran,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Search Conversion (action, not query) ────────────────────
+  async function fetchSearchConversion(range) {
+    const cacheKey = `searchConversion_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("analytics:getSearchConversion", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Activity Feed ────────────────────────────────────────────
+  async function fetchActivityFeed(range, eventTypes, limit) {
+    // No caching — activity should be fresh
+    const { startTime, endTime } = getDateRange(range);
+    return convexQuery("analytics:getActivityFeed", {
+      startTime, endTime, eventTypes: eventTypes || undefined, limit: limit || 100,
+    });
+  }
+
+  // ── Activity Summary ─────────────────────────────────────────
+  async function fetchActivitySummary(range) {
+    const cacheKey = `activitySummary_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("analytics:getActivitySummary", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── UTM Breakdown ────────────────────────────────────────────
+  async function fetchUTMBreakdown(range) {
+    const cacheKey = `utmBreakdown_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("metrics:getUTMBreakdown", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── New vs Returning ─────────────────────────────────────────
+  async function fetchNewVsReturning(range) {
+    const cacheKey = `newVsReturning_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("metrics:getNewVsReturning", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Bounce Rate ──────────────────────────────────────────────
+  async function fetchBounceRate(range) {
+    const cacheKey = `bounceRate_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("metrics:getBounceRate", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Content Performance ──────────────────────────────────────
+  async function fetchContentPerformance(range) {
+    const cacheKey = `contentPerf_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("analytics:getContentPerformance", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Drop-off Analysis ────────────────────────────────────────
+  async function fetchDropoffAnalysis(range) {
+    const cacheKey = `dropoff_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("journeys:getDropoffAnalysis", {
+      startTime, endTime,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── Top Exit Pages ───────────────────────────────────────────
+  async function fetchTopExitPages(range, limit) {
+    const lim = limit || 15;
+    const cacheKey = `exitPages_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const data = await convexQuery("journeys:getTopExitPages", {
+      startTime, endTime, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GSC Keywords (action) ────────────────────────────────────
+  async function fetchGSCKeywords(range) {
+    const cacheKey = `gscKeywords_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("gsc:fetchSearchKeywords", {
+      dateFrom, dateTo, limit: 20,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── PostHog Path Analysis (action) ───────────────────────────
+  async function fetchPathAnalysis(range, startPoint) {
+    const sp = startPoint || "/";
+    const cacheKey = `pathAnalysis_${range || currentRange}_${sp}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchPathAnalysis", {
+      dateFrom, dateTo, startPoint: sp,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── PostHog Scroll Depth (action) ────────────────────────────
+  async function fetchScrollDepthByPage(range) {
+    const cacheKey = `scrollDepth_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchScrollDepthByPage", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
   // ── Public API ──────────────────────────────────────────────
   window.AdminMetrics = {
     // Range management
@@ -440,6 +646,22 @@
     fetchRecentActivity,
     fetchUserCountByRole,
     fetchAllDashboardData,
+
+    // New analytics fetchers
+    fetchZeroResultSearches,
+    fetchSearchTrend,
+    fetchSearchConversion,
+    fetchActivityFeed,
+    fetchActivitySummary,
+    fetchUTMBreakdown,
+    fetchNewVsReturning,
+    fetchBounceRate,
+    fetchContentPerformance,
+    fetchDropoffAnalysis,
+    fetchTopExitPages,
+    fetchGSCKeywords,
+    fetchPathAnalysis,
+    fetchScrollDepthByPage,
 
     // Formatters
     formatNumber,

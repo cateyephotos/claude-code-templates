@@ -1,4 +1,4 @@
-import { mutation, query } from "./_generated/server";
+import { mutation, query, action } from "./_generated/server";
 import { v } from "convex/values";
 import { requireAdmin } from "./auth";
 
@@ -24,6 +24,11 @@ export const recordPageView = mutation({
     pageTitle: v.optional(v.string()),
     supplementId: v.optional(v.string()),
     referrer: v.optional(v.string()),
+    utmSource: v.optional(v.string()),
+    utmMedium: v.optional(v.string()),
+    utmCampaign: v.optional(v.string()),
+    utmContent: v.optional(v.string()),
+    utmTerm: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     return await ctx.db.insert("pageViews", {
@@ -290,5 +295,410 @@ export const getGateStats = query({
     }
 
     return stats;
+  },
+});
+
+/**
+ * Get search queries that returned zero results — admin only.
+ */
+export const getZeroResultSearches = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const limit = args.limit ?? 20;
+
+    const events = await ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const zeroResults = events.filter((e) => e.resultCount === 0);
+
+    const grouped: Record<string, { count: number; lastSearched: number }> = {};
+    for (const event of zeroResults) {
+      const q = event.query.toLowerCase().trim();
+      if (!grouped[q]) {
+        grouped[q] = { count: 0, lastSearched: 0 };
+      }
+      grouped[q].count++;
+      if (event.timestamp > grouped[q].lastSearched) {
+        grouped[q].lastSearched = event.timestamp;
+      }
+    }
+
+    return Object.entries(grouped)
+      .sort(([, a], [, b]) => b.count - a.count)
+      .slice(0, limit)
+      .map(([query, data]) => ({
+        query,
+        count: data.count,
+        lastSearched: data.lastSearched,
+      }));
+  },
+});
+
+/**
+ * Get search volume trend over time — admin only.
+ */
+export const getSearchTrend = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+    granularity: v.union(v.literal("hour"), v.literal("day")),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const events = await ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const buckets: Record<string, number> = {};
+    for (const event of events) {
+      const d = new Date(event.timestamp);
+      const key =
+        args.granularity === "hour"
+          ? d.toISOString().slice(0, 13)
+          : d.toISOString().slice(0, 10);
+      buckets[key] = (buckets[key] || 0) + 1;
+    }
+
+    return Object.entries(buckets)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([period, count]) => ({ period, count }));
+  },
+});
+
+/**
+ * Get search-to-pageview conversion rates — admin only.
+ * Uses action (not query) to perform in-memory join across tables.
+ */
+export const getSearchConversion = action({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    const searches = await ctx.runQuery(
+      "analytics:_getSearchEventsInRange" as any,
+      { startTime: args.startTime, endTime: args.endTime }
+    );
+    const pageViews = await ctx.runQuery(
+      "analytics:_getPageViewsInRange" as any,
+      { startTime: args.startTime, endTime: args.endTime }
+    );
+
+    const pvBySession: Record<string, number[]> = {};
+    for (const pv of pageViews) {
+      if (!pvBySession[pv.sessionId]) pvBySession[pv.sessionId] = [];
+      pvBySession[pv.sessionId].push(pv.timestamp);
+    }
+
+    const queryStats: Record<string, { searches: number; conversions: number }> = {};
+    for (const search of searches) {
+      const q = search.query.toLowerCase().trim();
+      if (!queryStats[q]) queryStats[q] = { searches: 0, conversions: 0 };
+      queryStats[q].searches++;
+
+      const sessionPvs = pvBySession[search.sessionId] || [];
+      const hasConversion = sessionPvs.some(
+        (pvTs: number) => pvTs > search.timestamp && pvTs <= search.timestamp + 60000
+      );
+      if (hasConversion) queryStats[q].conversions++;
+    }
+
+    return Object.entries(queryStats)
+      .map(([query, stats]) => ({
+        query,
+        searchCount: stats.searches,
+        clickThroughCount: stats.conversions,
+        conversionRate:
+          stats.searches > 0
+            ? Math.round((stats.conversions / stats.searches) * 1000) / 10
+            : 0,
+      }))
+      .sort((a, b) => b.searchCount - a.searchCount)
+      .slice(0, 30);
+  },
+});
+
+/**
+ * Internal helper: get search events in range.
+ */
+export const _getSearchEventsInRange = query({
+  args: { startTime: v.number(), endTime: v.number() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    return ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+  },
+});
+
+/**
+ * Internal helper: get page views in range.
+ */
+export const _getPageViewsInRange = query({
+  args: { startTime: v.number(), endTime: v.number() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    return ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+  },
+});
+
+/**
+ * Unified activity feed merging pageViews, searchEvents, and gateEvents — admin only.
+ */
+export const getActivityFeed = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+    eventTypes: v.optional(v.array(v.string())),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const limit = args.limit ?? 100;
+    const types = args.eventTypes || ["pageview", "search", "gate"];
+
+    const events: Array<{
+      type: string;
+      timestamp: number;
+      sessionId: string;
+      userId?: string;
+      pagePath?: string;
+      pageType?: string;
+      pageTitle?: string;
+      query?: string;
+      resultCount?: number;
+      eventType?: string;
+      guideSlug?: string;
+    }> = [];
+
+    if (types.includes("pageview")) {
+      const pvs = await ctx.db
+        .query("pageViews")
+        .withIndex("by_timestamp", (q) =>
+          q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+        )
+        .order("desc")
+        .take(limit);
+      for (const pv of pvs) {
+        events.push({
+          type: "pageview",
+          timestamp: pv.timestamp,
+          sessionId: pv.sessionId,
+          userId: pv.userId,
+          pagePath: pv.pagePath,
+          pageType: pv.pageType,
+          pageTitle: pv.pageTitle,
+        });
+      }
+    }
+
+    if (types.includes("search")) {
+      const searches = await ctx.db
+        .query("searchEvents")
+        .withIndex("by_timestamp", (q) =>
+          q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+        )
+        .order("desc")
+        .take(limit);
+      for (const s of searches) {
+        events.push({
+          type: "search",
+          timestamp: s.timestamp,
+          sessionId: s.sessionId,
+          userId: s.userId,
+          query: s.query,
+          resultCount: s.resultCount,
+        });
+      }
+    }
+
+    if (types.includes("gate")) {
+      const gates = await ctx.db
+        .query("gateEvents")
+        .withIndex("by_timestamp", (q) =>
+          q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+        )
+        .order("desc")
+        .take(limit);
+      for (const g of gates) {
+        events.push({
+          type: "gate",
+          timestamp: g.timestamp,
+          sessionId: g.sessionId,
+          userId: g.userId,
+          eventType: g.eventType,
+          guideSlug: g.guideSlug,
+        });
+      }
+    }
+
+    events.sort((a, b) => b.timestamp - a.timestamp);
+    return events.slice(0, limit);
+  },
+});
+
+/**
+ * Summary stats for activity log header — admin only.
+ */
+export const getActivitySummary = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const pvs = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const searches = await ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const gates = await ctx.db
+      .query("gateEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const uniqueSessions = new Set([
+      ...pvs.map((p) => p.sessionId),
+      ...searches.map((s) => s.sessionId),
+      ...gates.map((g) => g.sessionId),
+    ]);
+
+    const gateImpressions = gates.filter(
+      (g) => g.eventType === "impression" || g.eventType === "gate_overlay_shown"
+    ).length;
+
+    return {
+      totalEvents: pvs.length + searches.length + gates.length,
+      uniqueSessions: uniqueSessions.size,
+      totalSearches: searches.length,
+      gateImpressions,
+    };
+  },
+});
+
+/**
+ * Monograph performance aggregation — admin only.
+ */
+export const getContentPerformance = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const views = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const supplementViews = views.filter((v) => v.pageType === "supplement");
+
+    const gates = await ctx.db
+      .query("gateEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const bySupp: Record<
+      string,
+      {
+        name: string;
+        views: number;
+        totalDuration: number;
+        withDuration: number;
+        gateImpressions: number;
+        gateClicks: number;
+        signUps: number;
+      }
+    > = {};
+
+    for (const view of supplementViews) {
+      const slug = view.pagePath.split("/").pop()?.replace(".html", "") || view.pagePath;
+      if (!bySupp[slug]) {
+        bySupp[slug] = {
+          name: view.pageTitle || slug,
+          views: 0,
+          totalDuration: 0,
+          withDuration: 0,
+          gateImpressions: 0,
+          gateClicks: 0,
+          signUps: 0,
+        };
+      }
+      bySupp[slug].views++;
+      if (view.duration && view.duration > 0) {
+        bySupp[slug].totalDuration += view.duration;
+        bySupp[slug].withDuration++;
+      }
+    }
+
+    for (const gate of gates) {
+      const slug = gate.guideSlug;
+      if (!bySupp[slug]) continue;
+      if (gate.eventType === "impression" || gate.eventType === "gate_overlay_shown") {
+        bySupp[slug].gateImpressions++;
+      }
+      if (gate.eventType === "cta_click" || gate.eventType === "gate_cta_clicked") {
+        bySupp[slug].gateClicks++;
+      }
+      if (gate.eventType === "sign_up_completed") {
+        bySupp[slug].signUps++;
+      }
+    }
+
+    return Object.entries(bySupp)
+      .map(([slug, data]) => ({
+        slug,
+        name: data.name,
+        views: data.views,
+        avgDuration:
+          data.withDuration > 0
+            ? Math.round(data.totalDuration / data.withDuration)
+            : 0,
+        gateImpressions: data.gateImpressions,
+        gateCtr:
+          data.gateImpressions > 0
+            ? Math.round((data.gateClicks / data.gateImpressions) * 1000) / 10
+            : 0,
+        signUps: data.signUps,
+      }))
+      .sort((a, b) => b.views - a.views);
   },
 });

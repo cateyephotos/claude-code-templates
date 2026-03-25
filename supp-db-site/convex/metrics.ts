@@ -426,3 +426,172 @@ export const getActivityHeatmap = query({
     };
   },
 });
+
+/**
+ * Get page views grouped by UTM source + campaign — admin only.
+ */
+export const getUTMBreakdown = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const views = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const utmViews = views.filter((v) => v.utmSource);
+
+    const groups: Record<
+      string,
+      { source: string; medium: string; campaign: string; visits: number; userIds: Set<string> }
+    > = {};
+
+    for (const view of utmViews) {
+      const key = `${view.utmSource || ""}|${view.utmCampaign || "(none)"}`;
+      if (!groups[key]) {
+        groups[key] = {
+          source: view.utmSource || "",
+          medium: view.utmMedium || "",
+          campaign: view.utmCampaign || "(none)",
+          visits: 0,
+          userIds: new Set(),
+        };
+      }
+      groups[key].visits++;
+      if (view.userId) groups[key].userIds.add(view.userId);
+    }
+
+    return Object.values(groups)
+      .map((g) => ({
+        source: g.source,
+        medium: g.medium,
+        campaign: g.campaign,
+        visits: g.visits,
+        conversions: g.userIds.size,
+      }))
+      .sort((a, b) => b.visits - a.visits)
+      .slice(0, 20);
+  },
+});
+
+/**
+ * New vs returning visitor breakdown — admin only.
+ */
+export const getNewVsReturning = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const views = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const sessions: Record<string, { hasUser: boolean; day: string }> = {};
+    for (const view of views) {
+      const day = new Date(view.timestamp).toISOString().slice(0, 10);
+      if (!sessions[view.sessionId]) {
+        sessions[view.sessionId] = { hasUser: !!view.userId, day };
+      }
+      if (view.userId) sessions[view.sessionId].hasUser = true;
+    }
+
+    let newSessions = 0;
+    let returningSessions = 0;
+    const dailyBreakdown: Record<string, { newCount: number; returningCount: number }> = {};
+
+    for (const session of Object.values(sessions)) {
+      if (session.hasUser) {
+        returningSessions++;
+      } else {
+        newSessions++;
+      }
+      if (!dailyBreakdown[session.day]) {
+        dailyBreakdown[session.day] = { newCount: 0, returningCount: 0 };
+      }
+      if (session.hasUser) {
+        dailyBreakdown[session.day].returningCount++;
+      } else {
+        dailyBreakdown[session.day].newCount++;
+      }
+    }
+
+    const total = newSessions + returningSessions;
+    return {
+      newSessions,
+      returningSessions,
+      ratio: total > 0 ? Math.round((returningSessions / total) * 1000) / 10 : 0,
+      dailyBreakdown: Object.entries(dailyBreakdown)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([date, data]) => ({ date, ...data })),
+    };
+  },
+});
+
+/**
+ * Bounce rate — sessions with only 1 page view — admin only.
+ */
+export const getBounceRate = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const views = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const sessions: Record<string, { pageCount: number; landingPage: string }> = {};
+    for (const view of views) {
+      if (!sessions[view.sessionId]) {
+        sessions[view.sessionId] = { pageCount: 0, landingPage: view.pagePath };
+      }
+      sessions[view.sessionId].pageCount++;
+    }
+
+    const totalSessions = Object.keys(sessions).length;
+    const bouncedSessions = Object.values(sessions).filter((s) => s.pageCount === 1);
+    const overallBounceRate =
+      totalSessions > 0
+        ? Math.round((bouncedSessions.length / totalSessions) * 1000) / 10
+        : 0;
+
+    const byLandingPage: Record<string, { sessions: number; bounced: number }> = {};
+    for (const session of Object.values(sessions)) {
+      const lp = session.landingPage;
+      if (!byLandingPage[lp]) byLandingPage[lp] = { sessions: 0, bounced: 0 };
+      byLandingPage[lp].sessions++;
+      if (session.pageCount === 1) byLandingPage[lp].bounced++;
+    }
+
+    return {
+      overallBounceRate,
+      totalSessions,
+      bouncedSessions: bouncedSessions.length,
+      byLandingPage: Object.entries(byLandingPage)
+        .map(([path, data]) => ({
+          path,
+          sessions: data.sessions,
+          bounceRate: Math.round((data.bounced / data.sessions) * 1000) / 10,
+        }))
+        .sort((a, b) => b.sessions - a.sessions)
+        .slice(0, 15),
+    };
+  },
+});

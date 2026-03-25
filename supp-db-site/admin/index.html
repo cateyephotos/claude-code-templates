@@ -43,6 +43,7 @@
     <!-- Admin Dashboard Styles -->
     <link rel="stylesheet" href="/admin/admin.css">
     <link rel="stylesheet" href="/admin/email.css">
+    <link rel="stylesheet" href="/admin/admin-analytics.css">
 
     <style>
         /* Admin page overrides */
@@ -97,13 +98,29 @@
                     <i class="fas fa-users"></i>
                     <span>Engagement</span>
                 </button>
-                <button class="admin-nav-item" data-section="content">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Content Quality</span>
-                </button>
                 <button class="admin-nav-item" data-section="business">
                     <i class="fas fa-dollar-sign"></i>
                     <span>Business &amp; Revenue</span>
+                </button>
+            </div>
+
+            <div class="admin-nav-section">
+                <div class="admin-nav-label">Intelligence</div>
+                <button class="admin-nav-item" data-section="search">
+                    <i class="fas fa-search-dollar"></i>
+                    <span>Search Intelligence</span>
+                </button>
+                <button class="admin-nav-item" data-section="traffic">
+                    <i class="fas fa-globe"></i>
+                    <span>Traffic &amp; Acquisition</span>
+                </button>
+                <button class="admin-nav-item" data-section="content">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Content Performance</span>
+                </button>
+                <button class="admin-nav-item" data-section="journeys">
+                    <i class="fas fa-route"></i>
+                    <span>User Journeys</span>
                 </button>
             </div>
 
@@ -273,73 +290,85 @@
             </section>
 
             <!-- ═══════════════════════════════════════════════════ -->
-            <!-- SECTION: Content Quality                           -->
+            <!-- SECTION: Content Performance                       -->
             <!-- ═══════════════════════════════════════════════════ -->
             <section id="section-content" class="admin-section">
-                <h2 class="admin-section-title">Content Quality</h2>
+                <h2 class="admin-section-title">Content Performance</h2>
 
-                <!-- Gate Stats Cards -->
-                <div class="admin-cards">
-                    <div class="admin-card">
-                        <div class="admin-card-label">Gate Impressions</div>
-                        <div class="admin-card-value admin-skeleton" id="card-gate-impressions">&mdash;</div>
-                        <div class="admin-card-icon"><i class="fas fa-lock"></i></div>
-                    </div>
-                    <div class="admin-card">
-                        <div class="admin-card-label">CTA Clicks</div>
-                        <div class="admin-card-value admin-skeleton" id="card-gate-clicks">&mdash;</div>
-                        <div class="admin-card-icon"><i class="fas fa-mouse-pointer"></i></div>
-                    </div>
-                    <div class="admin-card">
-                        <div class="admin-card-label">Gate Sign-ups</div>
-                        <div class="admin-card-value admin-skeleton" id="card-gate-signups">&mdash;</div>
-                        <div class="admin-card-icon"><i class="fas fa-user-plus"></i></div>
-                    </div>
-                    <div class="admin-card">
-                        <div class="admin-card-label">Gate Conversion</div>
-                        <div class="admin-card-value admin-skeleton" id="card-gate-rate">&mdash;</div>
-                        <div class="admin-card-icon"><i class="fas fa-percentage"></i></div>
+                <!-- Monograph Table -->
+                <div class="admin-chart-card">
+                    <h3 class="admin-chart-title">Monograph Performance</h3>
+                    <div class="overflow-x-auto">
+                        <table class="admin-table" id="content-performance-table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" data-sort="name">Supplement <i class="fas fa-sort"></i></th>
+                                    <th class="sortable" data-sort="views">Views <i class="fas fa-sort"></i></th>
+                                    <th class="sortable" data-sort="avgDuration">Avg Time <i class="fas fa-sort"></i></th>
+                                    <th class="sortable" data-sort="avgScrollDepth">Scroll % <i class="fas fa-sort"></i></th>
+                                    <th class="sortable" data-sort="gateImpressions">Gate Imp. <i class="fas fa-sort"></i></th>
+                                    <th class="sortable" data-sort="gateCtr">Gate CTR <i class="fas fa-sort"></i></th>
+                                    <th class="sortable" data-sort="signUps">Sign-ups <i class="fas fa-sort"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-content-performance"></tbody>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Charts: Top Supplements + Top Searches Table -->
-                <div class="admin-chart-grid">
-                    <div class="admin-chart-card admin-chart-card-wide">
-                        <h3 class="admin-chart-title">Top 20 Supplements by Views</h3>
-                        <div class="admin-chart-container" style="height: 500px;">
-                            <canvas id="chart-top-supplements"></canvas>
-                        </div>
+                <!-- Gate Conversion Chart -->
+                <div class="admin-chart-card mt-4">
+                    <h3 class="admin-chart-title">Gate Conversion by Monograph (Top 15)</h3>
+                    <div style="height: 350px;"><canvas id="chart-gate-conversion"></canvas></div>
+                </div>
+
+                <!-- Content Gaps -->
+                <div class="admin-chart-card mt-4">
+                    <h3 class="admin-chart-title">Content Gaps <span class="text-xs font-normal text-gray-400 ml-1">(searches with no matching content)</span></h3>
+                    <div id="content-gaps-list">
+                        <div class="admin-empty-state"><i class="fas fa-search-minus"></i><h3>Loading&hellip;</h3></div>
                     </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: User Journeys                             -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-journeys" class="admin-section">
+                <h2 class="admin-section-title">User Journeys</h2>
+
+                <!-- Session Flow -->
+                <div class="admin-chart-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="admin-chart-title">Session Flow</h3>
+                        <select id="flow-start-point" class="admin-select">
+                            <option value="/">From Homepage</option>
+                            <option value="/supplements/">From Any Supplement</option>
+                            <option value="/guides/">From Any Guide</option>
+                        </select>
+                    </div>
+                    <div id="session-flow-diagram" class="session-flow-container">
+                        <div class="admin-empty-state"><i class="fas fa-project-diagram"></i><h3>Loading flow&hellip;</h3></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                    <!-- Drop-off Analysis -->
                     <div class="admin-chart-card">
-                        <h3 class="admin-chart-title">Top Searches</h3>
-                        <div class="overflow-x-auto">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>Query</th>
-                                        <th class="text-right">Count</th>
-                                        <th class="text-right">Avg Results</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table-top-searches">
-                                    <tr>
-                                        <td colspan="3" class="text-center text-gray-400 py-8">
-                                            <div class="admin-skeleton" style="height: 160px;"></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <h3 class="admin-chart-title">Drop-off Analysis</h3>
+                        <table class="admin-table">
+                            <thead><tr><th>Page Type</th><th>Entry Sessions</th><th>Continued %</th><th>Exited %</th><th>Avg Pages After</th></tr></thead>
+                            <tbody id="table-dropoff"></tbody>
+                        </table>
                     </div>
-                </div>
 
-                <!-- Guide Engagement Chart -->
-                <div class="admin-chart-grid">
-                    <div class="admin-chart-card" style="grid-column: 1 / -1;">
-                        <h3 class="admin-chart-title">Guide Engagement <span class="text-xs font-normal text-gray-400 ml-1">(views vs avg duration)</span></h3>
-                        <div class="admin-chart-container" style="height: 350px;">
-                            <canvas id="chart-guide-engagement"></canvas>
-                        </div>
+                    <!-- Top Exit Pages -->
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">Top Exit Pages</h3>
+                        <table class="admin-table">
+                            <thead><tr><th>Page</th><th>Exit Count</th></tr></thead>
+                            <tbody id="table-exit-pages"></tbody>
+                        </table>
                     </div>
                 </div>
             </section>
@@ -469,29 +498,177 @@
             </section>
 
             <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Search Intelligence                       -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-search" class="admin-section">
+                <h2 class="admin-section-title">Search Intelligence</h2>
+
+                <!-- External Keywords (GSC) -->
+                <div class="admin-chart-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="admin-chart-title">External Keywords (Google)</h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs text-gray-400"><i class="fas fa-clock mr-1"></i>Data delayed ~48h</span>
+                            <div class="admin-pill-group" id="gsc-range-pills">
+                                <button class="admin-pill active" data-range="7d">7D</button>
+                                <button class="admin-pill" data-range="30d">30D</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="gsc-keywords-table" class="overflow-x-auto">
+                        <div class="admin-empty-state"><i class="fas fa-satellite-dish"></i><h3>Loading keywords&hellip;</h3></div>
+                    </div>
+                </div>
+
+                <!-- Internal Search Tabs -->
+                <div class="admin-chart-card mt-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="admin-chart-title">Internal Search</h3>
+                        <div class="admin-pill-group" id="search-tab-pills">
+                            <button class="admin-pill active" data-tab="top-queries">Top Queries</button>
+                            <button class="admin-pill" data-tab="zero-results">Zero Results</button>
+                            <button class="admin-pill" data-tab="conversion">Conversion</button>
+                        </div>
+                    </div>
+
+                    <!-- Search Trend Chart -->
+                    <div class="mb-4" style="height: 200px;">
+                        <canvas id="chart-search-trend"></canvas>
+                    </div>
+
+                    <!-- Tab Panels -->
+                    <div id="search-tab-top-queries" class="search-tab-panel">
+                        <table class="admin-table">
+                            <thead><tr><th>Query</th><th>Count</th><th>Avg Results</th><th>CTR %</th></tr></thead>
+                            <tbody id="table-internal-searches"></tbody>
+                        </table>
+                    </div>
+                    <div id="search-tab-zero-results" class="search-tab-panel" style="display:none;">
+                        <table class="admin-table">
+                            <thead><tr><th>Query</th><th>Count</th><th>Last Searched</th></tr></thead>
+                            <tbody id="table-zero-results"></tbody>
+                        </table>
+                    </div>
+                    <div id="search-tab-conversion" class="search-tab-panel" style="display:none;">
+                        <table class="admin-table">
+                            <thead><tr><th>Query</th><th>Searches</th><th>Clicks</th><th>Conversion %</th></tr></thead>
+                            <tbody id="table-search-conversion"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Traffic & Acquisition                     -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-traffic" class="admin-section">
+                <h2 class="admin-section-title">Traffic &amp; Acquisition</h2>
+
+                <!-- Referrer Sources -->
+                <div class="admin-chart-card">
+                    <h3 class="admin-chart-title">Referrer Sources</h3>
+                    <div style="height: 300px;"><canvas id="chart-referrer-sources"></canvas></div>
+                    <table class="admin-table mt-3">
+                        <thead><tr><th>Source</th><th>Visits</th><th>% of Total</th></tr></thead>
+                        <tbody id="table-referrer-sources"></tbody>
+                    </table>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                    <!-- UTM Campaigns -->
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">UTM Campaigns</h3>
+                        <div id="utm-campaigns-container">
+                            <table class="admin-table">
+                                <thead><tr><th>Campaign</th><th>Source</th><th>Medium</th><th>Visits</th><th>Conversions</th></tr></thead>
+                                <tbody id="table-utm-campaigns"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- New vs Returning -->
+                    <div class="admin-chart-card">
+                        <h3 class="admin-chart-title">New vs Returning Visitors</h3>
+                        <div style="height: 250px;"><canvas id="chart-new-vs-returning"></canvas></div>
+                        <div id="bounce-rate-summary" class="mt-3 text-center">
+                            <span class="text-sm text-gray-500">Bounce Rate: </span>
+                            <span class="text-lg font-bold" id="bounce-rate-value">&mdash;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bounce Rate by Landing Page -->
+                <div class="admin-chart-card mt-4">
+                    <h3 class="admin-chart-title">Bounce Rate by Landing Page</h3>
+                    <table class="admin-table">
+                        <thead><tr><th>Landing Page</th><th>Sessions</th><th>Bounce Rate</th></tr></thead>
+                        <tbody id="table-bounce-rate"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
             <!-- SECTION: Activity Log                              -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Activity Log (Enhanced)                   -->
             <!-- ═══════════════════════════════════════════════════ -->
             <section id="section-activity" class="admin-section">
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="admin-section-title" style="margin-bottom: 0;">Activity Log</h2>
-                    <button id="exportActivityBtn" class="admin-refresh-btn" title="Export to CSV">
-                        <i class="fas fa-download"></i>
-                        <span class="hidden sm:inline ml-1">Export CSV</span>
-                    </button>
+                    <div class="flex items-center space-x-3">
+                        <div class="admin-pill-group" id="activity-range-pills">
+                            <button class="admin-pill active" data-range="1d">1D</button>
+                            <button class="admin-pill" data-range="7d">7D</button>
+                        </div>
+                        <button id="exportActivityBtn" class="admin-refresh-btn" title="Export to CSV">
+                            <i class="fas fa-download"></i>
+                            <span class="hidden sm:inline ml-1">Export CSV</span>
+                        </button>
+                    </div>
                 </div>
 
+                <!-- Summary Stats Bar -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                    <div class="admin-mini-card">
+                        <div class="admin-mini-label">Total Events</div>
+                        <div class="admin-mini-value" id="activity-total-events">&mdash;</div>
+                    </div>
+                    <div class="admin-mini-card">
+                        <div class="admin-mini-label">Unique Sessions</div>
+                        <div class="admin-mini-value" id="activity-unique-sessions">&mdash;</div>
+                    </div>
+                    <div class="admin-mini-card">
+                        <div class="admin-mini-label">Searches</div>
+                        <div class="admin-mini-value" id="activity-searches">&mdash;</div>
+                    </div>
+                    <div class="admin-mini-card">
+                        <div class="admin-mini-label">Gate Impressions</div>
+                        <div class="admin-mini-value" id="activity-gate-impressions">&mdash;</div>
+                    </div>
+                </div>
+
+                <!-- Event Type Filters -->
+                <div class="flex flex-wrap gap-2 mb-4" id="activity-type-filters">
+                    <button class="admin-filter-chip active" data-type="all">All</button>
+                    <button class="admin-filter-chip" data-type="pageview"><i class="fas fa-eye text-blue-500 mr-1"></i>Page Views</button>
+                    <button class="admin-filter-chip" data-type="search"><i class="fas fa-search text-green-500 mr-1"></i>Searches</button>
+                    <button class="admin-filter-chip" data-type="gate"><i class="fas fa-lock text-orange-500 mr-1"></i>Gate Events</button>
+                </div>
+
+                <!-- Activity Feed -->
                 <div class="admin-chart-card">
                     <div class="admin-activity-header">
                         <div class="flex items-center space-x-2">
                             <span class="admin-live-dot"></span>
-                            <span class="text-sm font-medium text-gray-600">Real-time page views &amp; events</span>
+                            <span class="text-sm font-medium text-gray-600">Events feed</span>
                         </div>
                     </div>
                     <div id="activity-list" class="admin-activity-list">
                         <div class="admin-empty-state">
                             <i class="fas fa-stream"></i>
                             <h3>Loading Activity&hellip;</h3>
-                            <p>Page views and events will appear here in real-time.</p>
+                            <p>Page views and events will appear here.</p>
                         </div>
                     </div>
                 </div>
@@ -759,5 +936,6 @@
     <script src="../js/admin-dashboard.js"></script>
     <script src="../js/admin-config.js"></script>
     <script src="/admin/email.js"></script>
+    <script src="/js/admin-analytics-panels.js"></script>
 </body>
 </html>

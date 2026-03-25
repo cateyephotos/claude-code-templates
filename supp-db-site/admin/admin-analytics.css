@@ -1,0 +1,510 @@
+/* admin-analytics.css — styles for admin dashboard analytics panels */
+
+/* =========================================================
+   PILL TOGGLE GROUP
+   ========================================================= */
+
+.admin-pill-group {
+  display: inline-flex;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid var(--admin-card-border);
+  background: #f3f4f6;
+}
+
+.admin-pill {
+  padding: 6px 16px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--admin-text-secondary);
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.admin-pill:hover:not(.active) {
+  background: #e5e7eb;
+  color: var(--admin-text-primary);
+}
+
+.admin-pill.active {
+  background: var(--admin-accent);
+  color: #ffffff;
+  border-radius: 9999px;
+}
+
+/* =========================================================
+   FILTER CHIPS (multi-select event type filters)
+   ========================================================= */
+
+.admin-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 9999px;
+  border: 1px solid var(--admin-card-border);
+  background: #ffffff;
+  color: var(--admin-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+
+.admin-filter-chip:hover:not(.active) {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: var(--admin-text-primary);
+}
+
+.admin-filter-chip.active {
+  background: var(--admin-accent-light);
+  border-color: var(--admin-accent);
+  color: var(--admin-accent);
+}
+
+/* =========================================================
+   MINI STAT CARDS
+   ========================================================= */
+
+.admin-mini-card {
+  background: var(--admin-card-bg);
+  border: 1px solid var(--admin-card-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: var(--admin-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-mini-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--admin-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-mini-value {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--admin-text-primary);
+  line-height: 1.2;
+}
+
+/* 4-column grid for mini cards */
+.admin-mini-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .admin-mini-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .admin-mini-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SEARCH TAB PANELS
+   ========================================================= */
+
+.search-tab-panel {
+  display: none;
+}
+
+.search-tab-panel.active {
+  display: block;
+}
+
+/* =========================================================
+   SESSION FLOW DIAGRAM
+   ========================================================= */
+
+.session-flow-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  padding: 16px 0;
+}
+
+.flow-node {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--admin-card-bg);
+  border: 1.5px solid var(--admin-card-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 110px;
+  box-shadow: var(--admin-card-shadow);
+  text-align: center;
+  position: relative;
+}
+
+.flow-node-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--admin-text-primary);
+  line-height: 1.3;
+}
+
+.flow-node-count {
+  font-size: 0.6875rem;
+  color: var(--admin-text-muted);
+  margin-top: 2px;
+}
+
+.flow-edge {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  position: relative;
+}
+
+.flow-edge::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--admin-card-border);
+}
+
+.flow-edge::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--admin-card-border);
+}
+
+.flow-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--admin-text-muted);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SORTABLE TABLE HEADERS
+   ========================================================= */
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sortable:hover {
+  color: var(--admin-accent);
+  background: var(--admin-accent-light);
+}
+
+.sortable::after {
+  content: ' ↕';
+  font-size: 0.75em;
+  opacity: 0.4;
+  transition: opacity 0.15s ease;
+}
+
+.sortable:hover::after {
+  opacity: 0.8;
+}
+
+.sortable.sort-asc::after {
+  content: ' ↑';
+  opacity: 1;
+  color: var(--admin-accent);
+}
+
+.sortable.sort-desc::after {
+  content: ' ↓';
+  opacity: 1;
+  color: var(--admin-accent);
+}
+
+/* =========================================================
+   SEO OPPORTUNITY TABLE ROW HIGHLIGHT
+   ========================================================= */
+
+.seo-opportunity {
+  border-left: 4px solid var(--admin-warning);
+  background: rgba(245, 158, 11, 0.04);
+}
+
+.seo-opportunity td:first-child {
+  padding-left: 10px;
+}
+
+/* =========================================================
+   CONTENT GAP LIST ITEMS
+   ========================================================= */
+
+.content-gap-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.content-gap-item:last-child {
+  margin-bottom: 0;
+}
+
+.content-gap-query {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--admin-text-primary);
+  font-weight: 500;
+}
+
+.content-gap-query::before {
+  content: '⚠';
+  font-size: 0.875rem;
+  color: var(--admin-warning);
+  flex-shrink: 0;
+}
+
+.content-gap-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--admin-text-muted);
+  background: rgba(245, 158, 11, 0.15);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   ACTIVITY EVENT CARDS
+   ========================================================= */
+
+.activity-event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--admin-card-bg);
+  border: 1px solid var(--admin-card-border);
+  border-radius: 8px;
+  border-left-width: 4px;
+  box-shadow: var(--admin-card-shadow);
+  margin-bottom: 8px;
+  transition: box-shadow 0.15s ease;
+}
+
+.activity-event-card:last-child {
+  margin-bottom: 0;
+}
+
+.activity-event-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Event type border colors */
+.activity-event-card[data-event="pageview"],
+.activity-event-card.event-pageview {
+  border-left-color: #3b82f6;
+}
+
+.activity-event-card[data-event="search"],
+.activity-event-card.event-search {
+  border-left-color: #22c55e;
+}
+
+.activity-event-card[data-event="gate"],
+.activity-event-card.event-gate {
+  border-left-color: #f97316;
+}
+
+.activity-event-card[data-event="auth"],
+.activity-event-card.event-auth {
+  border-left-color: #8b5cf6;
+}
+
+.activity-event-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9375rem;
+}
+
+.activity-event-card.event-pageview .activity-event-icon {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.activity-event-card.event-search .activity-event-icon {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.activity-event-card.event-gate .activity-event-icon {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.activity-event-card.event-auth .activity-event-icon {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.activity-event-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-event-description {
+  font-size: 0.875rem;
+  color: var(--admin-text-primary);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.activity-event-timestamp {
+  font-size: 0.6875rem;
+  color: var(--admin-text-muted);
+}
+
+.activity-event-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--admin-text-secondary);
+  background: #f3f4f6;
+  padding: 1px 7px;
+  border-radius: 9999px;
+}
+
+/* =========================================================
+   ADMIN SELECT DROPDOWN
+   ========================================================= */
+
+.admin-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--admin-card-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  border: 1px solid var(--admin-card-border);
+  border-radius: 8px;
+  padding: 7px 32px 7px 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--admin-text-primary);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  min-width: 120px;
+}
+
+.admin-select:hover {
+  border-color: #d1d5db;
+}
+
+.admin-select:focus {
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px var(--admin-accent-light);
+}
+
+/* =========================================================
+   LIVE INDICATOR DOT
+   ========================================================= */
+
+.admin-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--admin-success);
+  position: relative;
+}
+
+.admin-live-dot::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.3);
+  animation: admin-live-pulse 1.8s ease-out infinite;
+}
+
+@keyframes admin-live-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Live badge wrapper (optional flex row) */
+.admin-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--admin-success);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

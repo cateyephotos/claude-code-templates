@@ -591,6 +591,139 @@ export const fetchReferrerSources = action({
   },
 });
 
+// ── Scroll Depth by Page ─────────────────────────────────────────
+/**
+ * Fetch average scroll depth per page path from PostHog.
+ */
+export const fetchScrollDepthByPage = action({
+  args: {
+    dateFrom: v.string(),
+    dateTo: v.string(),
+  },
+  handler: async (_ctx, args) => {
+    const cacheKey = `scrollDepth_${args.dateFrom}_${args.dateTo}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { host, apiKey, projectId } = getConfig();
+
+    try {
+      const data = await posthogRequest(
+        host,
+        `/api/projects/${projectId}/insights/trend/`,
+        apiKey,
+        {
+          method: "POST",
+          body: {
+            events: [
+              {
+                id: "scroll_depth_reached",
+                type: "events",
+                math: "avg",
+                math_property: "depth",
+              },
+            ],
+            breakdown: "page_path",
+            breakdown_type: "event",
+            date_from: args.dateFrom,
+            date_to: args.dateTo,
+          },
+        }
+      );
+
+      const pages = (data?.result || [])
+        .map((item: any) => ({
+          path: item.breakdown_value || item.label || "Unknown",
+          avgScrollDepth:
+            item.aggregated_value ??
+            (item.data?.length
+              ? Math.round(
+                  item.data.reduce((s: number, v: number) => s + v, 0) /
+                    item.data.filter((v: number) => v > 0).length
+                )
+              : 0),
+        }))
+        .filter((p: any) => p.path.includes("/supplements/"))
+        .sort((a: any, b: any) => b.avgScrollDepth - a.avgScrollDepth);
+
+      setCache(cacheKey, pages);
+      return pages;
+    } catch (err) {
+      console.error("PostHog: Failed to fetch scroll depth:", err);
+      return [];
+    }
+  },
+});
+
+// ── Path Analysis ────────────────────────────────────────────────
+/**
+ * Fetch user path/flow analysis from PostHog.
+ */
+export const fetchPathAnalysis = action({
+  args: {
+    dateFrom: v.string(),
+    dateTo: v.string(),
+    startPoint: v.optional(v.string()),
+  },
+  handler: async (_ctx, args) => {
+    const start = args.startPoint || "/";
+    const cacheKey = `paths_${start}_${args.dateFrom}_${args.dateTo}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { host, apiKey, projectId } = getConfig();
+
+    try {
+      const data = await posthogRequest(
+        host,
+        `/api/projects/${projectId}/query/`,
+        apiKey,
+        {
+          method: "POST",
+          body: {
+            query: {
+              kind: "PathsQuery",
+              dateRange: {
+                date_from: args.dateFrom,
+                date_to: args.dateTo,
+              },
+              pathsFilter: {
+                includeEventTypes: ["$pageview"],
+                startPoint: start,
+                stepLimit: 5,
+                pathGroupings: [
+                  "/supplements/*",
+                  "/guides/*",
+                  "/categories/*",
+                  "/compare/*",
+                ],
+              },
+            },
+          },
+        }
+      );
+
+      const result = {
+        paths: data?.results || data?.result || [],
+        startPoint: start,
+        dateFrom: args.dateFrom,
+        dateTo: args.dateTo,
+      };
+
+      setCache(cacheKey, result);
+      return result;
+    } catch (err) {
+      console.error("PostHog: Failed to fetch path analysis:", err);
+      return {
+        paths: [],
+        startPoint: start,
+        dateFrom: args.dateFrom,
+        dateTo: args.dateTo,
+      };
+    }
+  },
+});
+
 // ── Clear Server Cache ──────────────────────────────────────────
 /**
  * Manually clear the PostHog cache. Admin-only.

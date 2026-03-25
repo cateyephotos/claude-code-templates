@@ -38,12 +38,19 @@ export default defineSchema({
     duration: v.optional(v.number()),
     referrer: v.optional(v.string()),
     userAgent: v.optional(v.string()),
+    // UTM campaign tracking
+    utmSource: v.optional(v.string()),
+    utmMedium: v.optional(v.string()),
+    utmCampaign: v.optional(v.string()),
+    utmContent: v.optional(v.string()),
+    utmTerm: v.optional(v.string()),
   })
     .index("by_userId", ["userId"])
     .index("by_timestamp", ["timestamp"])
     .index("by_supplementId", ["supplementId"])
     .index("by_pageType", ["pageType"])
-    .index("by_sessionId", ["sessionId"]),
+    .index("by_sessionId", ["sessionId"])
+    .index("by_utmSource", ["utmSource"]),
 
   // Search event tracking
   searchEvents: defineTable({

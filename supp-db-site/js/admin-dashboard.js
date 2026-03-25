@@ -134,13 +134,24 @@
           await loadEngagement();
           break;
         case "content":
-          await loadContentQuality();
+          if (window.AdminAnalyticsPanels) await AdminAnalyticsPanels.init("content");
+          else await loadContentQuality();
           break;
         case "business":
           await loadBusiness();
           break;
         case "activity":
           await loadActivityLog();
+          if (window.AdminAnalyticsPanels) await AdminAnalyticsPanels.init("activity");
+          break;
+        case "search":
+          if (window.AdminAnalyticsPanels) await AdminAnalyticsPanels.init("search");
+          break;
+        case "traffic":
+          if (window.AdminAnalyticsPanels) await AdminAnalyticsPanels.init("traffic");
+          break;
+        case "journeys":
+          if (window.AdminAnalyticsPanels) await AdminAnalyticsPanels.init("journeys");
           break;
       }
       loadedSections.add(sectionId);
