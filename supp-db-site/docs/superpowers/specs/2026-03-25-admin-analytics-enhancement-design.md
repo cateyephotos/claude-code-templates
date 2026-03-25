@@ -32,7 +32,8 @@ Client analytics-enhanced.js ──► PostHog capture() + Convex mutations
 
 | File | Changes |
 |------|---------|
-| `convex/analytics.ts` | Add `getActivityFeed`, `getZeroResultSearches`, `getSearchConversion`, `getSearchTrend`, `getContentPerformance` queries |
+| `convex/analytics.ts` | Add `getActivityFeed`, `getActivitySummary`, `getZeroResultSearches`, `getSearchTrend`, `getContentPerformance` queries; update `recordPageView` to accept UTM args |
+| `convex/analytics.ts` (actions) | Add `getSearchConversion` as a Convex action (not query) for in-memory join |
 | `convex/metrics.ts` | Add `getUTMBreakdown`, `getNewVsReturning`, `getBounceRate` queries |
 | `convex/posthog.ts` | Add `fetchPathAnalysis`, `fetchScrollDepthByPage` actions |
 | `convex/schema.ts` | Add UTM fields to `pageViews` table |
@@ -49,7 +50,8 @@ Client analytics-enhanced.js ──► PostHog capture() + Convex mutations
 **New integration: `convex/gsc.ts`**
 
 - Convex action `fetchSearchKeywords` calls GSC API `searchanalytics/query`
-- Auth: Google service account JSON stored in Doppler (`GSC_SERVICE_ACCOUNT_JSON`) and synced to Convex env var
+- Auth: Google service account JSON stored as single-line string in Doppler (`GSC_SERVICE_ACCOUNT_JSON`) and synced to Convex env var
+- Action generates JWT from service account, exchanges for OAuth2 access token (manual JWT signing — no googleapis npm dependency)
 - Site URL stored in `GSC_SITE_URL` env var
 - Server-side cache: 30 minutes (GSC data is delayed ~48h anyway)
 
@@ -69,7 +71,7 @@ POST https://www.googleapis.com/webmasters/v3/sites/{siteUrl}/searchAnalytics/qu
 
 **Dashboard panel:**
 - Table: Keyword, Clicks, Impressions, CTR, Avg Position, Trend (sparkline)
-- Date range: 1D, 7D, 30D pill selectors
+- Date range: 7D, 30D pill selectors (no 1D — GSC data is delayed ~48h, so 1D would show empty)
 - Highlight rows where impressions > 100 but CTR < 2% (SEO opportunities)
 - Note in UI: "Data delayed ~48 hours by Google"
 
@@ -82,9 +84,12 @@ POST https://www.googleapis.com/webmasters/v3/sites/{siteUrl}/searchAnalytics/qu
 - Group by `query` (lowercased, trimmed)
 - Return: query, count, sorted by count desc
 
-`getSearchConversion(startTime, endTime)`
-- For each search event, look for `pageViews` in same `sessionId` within 60s after search timestamp
-- Return: query, searchCount, clickThroughCount, conversionRate
+`getSearchConversion(startTime, endTime)` — **Convex action** (not query, to avoid N+1 index lookups)
+- Collect all `searchEvents` in range, then collect all `pageViews` in range
+- In-memory join: for each search event, find pageViews in same `sessionId` within 60s after search timestamp
+- Group by query: searchCount, clickThroughCount, conversionRate
+- Cache result for 5 minutes (same as admin-metrics cache TTL)
+- Return: [{query, searchCount, clickThroughCount, conversionRate}]
 
 `getSearchTrend(startTime, endTime, granularity)`
 - Count search events per day/hour bucket
@@ -232,16 +237,21 @@ pageViews: {
 
 **New action `fetchPathAnalysis(dateFrom, dateTo, startPoint)` in `posthog.ts`:**
 ```
-POST /api/projects/{projectId}/insights/path/
+POST /api/projects/{projectId}/query/
 {
-  "date_from": dateFrom,
-  "date_to": dateTo,
-  "include_event_types": ["$pageview"],
-  "start_point": startPoint,  // e.g., "/"
-  "step_limit": 5,
-  "path_groupings": ["/supplements/*", "/guides/*", "/categories/*"]
+  "query": {
+    "kind": "PathsQuery",
+    "dateRange": { "date_from": dateFrom, "date_to": dateTo },
+    "pathsFilter": {
+      "includeEventTypes": ["$pageview"],
+      "startPoint": startPoint,
+      "stepLimit": 5,
+      "pathGroupings": ["/supplements/*", "/guides/*", "/categories/*"]
+    }
+  }
 }
 ```
+Note: Uses the HogQL query endpoint (plural "paths"), not the legacy insights endpoint.
 
 **Visualization:**
 - Simplified flow diagram using CSS boxes + connecting lines (no d3 dependency)
@@ -281,21 +291,23 @@ POST /api/projects/{projectId}/insights/path/
 Current sidebar:
 ```
 Dashboard: Overview
-Metrics: Engagement, Content, Business
-Operations: Activity Log
-System: Configuration, Email
+Metrics: Engagement, Content Quality, Business & Revenue
+Monitoring: Activity Log
+System: Configuration
+Marketing: Email Sequences
 ```
 
 New sidebar:
 ```
 Dashboard: Overview
-Metrics: Engagement, Business
+Metrics: Engagement, Business & Revenue
 Search: Search Intelligence        ← NEW
 Traffic: Traffic & Acquisition     ← NEW
 Content: Content Performance       ← NEW (replaces old Content Quality)
 Journeys: User Journeys            ← NEW
-Operations: Activity Log           ← ENHANCED
-System: Configuration, Email
+Monitoring: Activity Log           ← ENHANCED
+System: Configuration
+Marketing: Email Sequences
 ```
 
 ---
@@ -311,7 +323,7 @@ System: Configuration, Email
 
 ## Dependencies
 
-- No new npm packages (CSS-based flow diagram instead of d3-sankey)
+- No new npm packages (CSS-based flow diagram instead of d3-sankey, manual JWT signing for GSC instead of googleapis)
 - Google Search Console API (free, requires service account setup)
 - PostHog Path Analysis API (available on current plan)
 - Chart.js (already loaded in admin)
