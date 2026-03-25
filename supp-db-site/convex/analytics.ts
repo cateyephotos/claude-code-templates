@@ -462,3 +462,149 @@ export const _getPageViewsInRange = query({
       .collect();
   },
 });
+
+/**
+ * Unified activity feed merging pageViews, searchEvents, and gateEvents — admin only.
+ */
+export const getActivityFeed = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+    eventTypes: v.optional(v.array(v.string())),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const limit = args.limit ?? 100;
+    const types = args.eventTypes || ["pageview", "search", "gate"];
+
+    const events: Array<{
+      type: string;
+      timestamp: number;
+      sessionId: string;
+      userId?: string;
+      pagePath?: string;
+      pageType?: string;
+      pageTitle?: string;
+      query?: string;
+      resultCount?: number;
+      eventType?: string;
+      guideSlug?: string;
+    }> = [];
+
+    if (types.includes("pageview")) {
+      const pvs = await ctx.db
+        .query("pageViews")
+        .withIndex("by_timestamp", (q) =>
+          q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+        )
+        .order("desc")
+        .take(limit);
+      for (const pv of pvs) {
+        events.push({
+          type: "pageview",
+          timestamp: pv.timestamp,
+          sessionId: pv.sessionId,
+          userId: pv.userId,
+          pagePath: pv.pagePath,
+          pageType: pv.pageType,
+          pageTitle: pv.pageTitle,
+        });
+      }
+    }
+
+    if (types.includes("search")) {
+      const searches = await ctx.db
+        .query("searchEvents")
+        .withIndex("by_timestamp", (q) =>
+          q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+        )
+        .order("desc")
+        .take(limit);
+      for (const s of searches) {
+        events.push({
+          type: "search",
+          timestamp: s.timestamp,
+          sessionId: s.sessionId,
+          userId: s.userId,
+          query: s.query,
+          resultCount: s.resultCount,
+        });
+      }
+    }
+
+    if (types.includes("gate")) {
+      const gates = await ctx.db
+        .query("gateEvents")
+        .withIndex("by_timestamp", (q) =>
+          q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+        )
+        .order("desc")
+        .take(limit);
+      for (const g of gates) {
+        events.push({
+          type: "gate",
+          timestamp: g.timestamp,
+          sessionId: g.sessionId,
+          userId: g.userId,
+          eventType: g.eventType,
+          guideSlug: g.guideSlug,
+        });
+      }
+    }
+
+    events.sort((a, b) => b.timestamp - a.timestamp);
+    return events.slice(0, limit);
+  },
+});
+
+/**
+ * Summary stats for activity log header — admin only.
+ */
+export const getActivitySummary = query({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+
+    const pvs = await ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const searches = await ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const gates = await ctx.db
+      .query("gateEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+
+    const uniqueSessions = new Set([
+      ...pvs.map((p) => p.sessionId),
+      ...searches.map((s) => s.sessionId),
+      ...gates.map((g) => g.sessionId),
+    ]);
+
+    const gateImpressions = gates.filter(
+      (g) => g.eventType === "impression" || g.eventType === "gate_overlay_shown"
+    ).length;
+
+    return {
+      totalEvents: pvs.length + searches.length + gates.length,
+      uniqueSessions: uniqueSessions.size,
+      totalSearches: searches.length,
+      gateImpressions,
+    };
+  },
+});
