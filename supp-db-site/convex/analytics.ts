@@ -1,4 +1,4 @@
-import { mutation, query } from "./_generated/server";
+import { mutation, query, action } from "./_generated/server";
 import { v } from "convex/values";
 import { requireAdmin } from "./auth";
 
@@ -378,3 +378,87 @@ export const getSearchTrend = query({
   },
 });
 
+/**
+ * Get search-to-pageview conversion rates — admin only.
+ * Uses action (not query) to perform in-memory join across tables.
+ */
+export const getSearchConversion = action({
+  args: {
+    startTime: v.number(),
+    endTime: v.number(),
+  },
+  handler: async (ctx, args) => {
+    const searches = await ctx.runQuery(
+      "analytics:_getSearchEventsInRange" as any,
+      { startTime: args.startTime, endTime: args.endTime }
+    );
+    const pageViews = await ctx.runQuery(
+      "analytics:_getPageViewsInRange" as any,
+      { startTime: args.startTime, endTime: args.endTime }
+    );
+
+    const pvBySession: Record<string, number[]> = {};
+    for (const pv of pageViews) {
+      if (!pvBySession[pv.sessionId]) pvBySession[pv.sessionId] = [];
+      pvBySession[pv.sessionId].push(pv.timestamp);
+    }
+
+    const queryStats: Record<string, { searches: number; conversions: number }> = {};
+    for (const search of searches) {
+      const q = search.query.toLowerCase().trim();
+      if (!queryStats[q]) queryStats[q] = { searches: 0, conversions: 0 };
+      queryStats[q].searches++;
+
+      const sessionPvs = pvBySession[search.sessionId] || [];
+      const hasConversion = sessionPvs.some(
+        (pvTs: number) => pvTs > search.timestamp && pvTs <= search.timestamp + 60000
+      );
+      if (hasConversion) queryStats[q].conversions++;
+    }
+
+    return Object.entries(queryStats)
+      .map(([query, stats]) => ({
+        query,
+        searchCount: stats.searches,
+        clickThroughCount: stats.conversions,
+        conversionRate:
+          stats.searches > 0
+            ? Math.round((stats.conversions / stats.searches) * 1000) / 10
+            : 0,
+      }))
+      .sort((a, b) => b.searchCount - a.searchCount)
+      .slice(0, 30);
+  },
+});
+
+/**
+ * Internal helper: get search events in range.
+ */
+export const _getSearchEventsInRange = query({
+  args: { startTime: v.number(), endTime: v.number() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    return ctx.db
+      .query("searchEvents")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+  },
+});
+
+/**
+ * Internal helper: get page views in range.
+ */
+export const _getPageViewsInRange = query({
+  args: { startTime: v.number(), endTime: v.number() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    return ctx.db
+      .query("pageViews")
+      .withIndex("by_timestamp", (q) =>
+        q.gte("timestamp", args.startTime).lte("timestamp", args.endTime)
+      )
+      .collect();
+  },
+});
