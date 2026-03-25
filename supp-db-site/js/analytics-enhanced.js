@@ -53,6 +53,7 @@
    */
   function enrichProperties(props) {
     const auth = window.SupplementDBAuth;
+    const urlParams = new URLSearchParams(window.location.search);
     return {
       ...props,
       page_path: window.location.pathname,
@@ -67,6 +68,12 @@
       viewport_width: window.innerWidth,
       viewport_height: window.innerHeight,
       timestamp: Date.now(),
+      // UTM campaign tracking
+      utm_source: urlParams.get("utm_source") || undefined,
+      utm_medium: urlParams.get("utm_medium") || undefined,
+      utm_campaign: urlParams.get("utm_campaign") || undefined,
+      utm_content: urlParams.get("utm_content") || undefined,
+      utm_term: urlParams.get("utm_term") || undefined,
     };
   }
 
