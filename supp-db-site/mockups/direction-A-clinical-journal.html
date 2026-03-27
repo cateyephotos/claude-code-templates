@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction A — Clinical Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --ink-light: #4a4a5a;
+    --ink-muted: #8888a0;
+    --surface: #f8f7f4;
+    --surface-warm: #f2f0eb;
+    --card: #ffffff;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0eb;
+    --tier1: #1a6b3c;
+    --tier1-bg: #e6f4ec;
+    --tier2: #b8860b;
+    --tier2-bg: #fef8e8;
+    --tier3: #8b4513;
+    --tier3-bg: #fdf2eb;
+    --rule: #e0ddd6;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--card);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-brand {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .nav-brand .mark {
+    width: 24px; height: 24px;
+    background: var(--accent);
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
+  .btn-ghost {
+    background: none; border: 1px solid var(--rule);
+    padding: 0.4rem 1rem; border-radius: 6px;
+    font-size: 0.82rem; font-weight: 500;
+    color: var(--ink-light); cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--ink-muted); color: var(--ink); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 800px 400px at 30% 20%, rgba(45,90,61,0.3), transparent),
+      radial-gradient(ellipse 600px 300px at 70% 80%, rgba(45,90,61,0.15), transparent);
+  }
+  .hero-content { position: relative; max-width: 680px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat-num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+  }
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+  }
+
+  /* ─── SEARCH ─── */
+  .search-section {
+    max-width: 1200px;
+    margin: -2rem auto 0;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  .search-bar {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--ink);
+    background: transparent;
+  }
+  .search-bar input::placeholder { color: var(--ink-muted); }
+  .search-icon { color: var(--ink-muted); font-size: 1.1rem; }
+  .filter-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+  .pill {
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid var(--rule);
+    background: var(--card);
+    color: var(--ink-light);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .pill:hover, .pill.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+  /* ─── CARD GRID ─── */
+  .grid-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+  }
+  .grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+  }
+  .grid-header h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .results-count { font-size: 0.85rem; color: var(--ink-muted); }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* ─── CARD — the key redesign ─── */
+  .supp-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    max-height: 340px;
+    overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+    cursor: pointer;
+    position: relative;
+  }
+  .supp-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .card-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .card-latin {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin-top: 0.15rem;
+  }
+
+  .tier-chip {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .tier-1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-3 { background: var(--tier3-bg); color: var(--tier3); }
+
+  .card-category {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .card-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+    flex: 1;
+    align-content: flex-start;
+    /* Clamp to prevent overflow */
+    max-height: 4.2rem;
+    overflow: hidden;
+  }
+  .benefit-tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background: var(--surface-warm);
+    color: var(--ink-light);
+    font-weight: 500;
+  }
+  .benefit-tag.cognitive { background: #eef3ff; color: #3b5998; }
+  .benefit-tag.health { background: #eefaf2; color: #2d6a4f; }
+
+  .card-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+    margin-top: auto;
+  }
+  .card-meta strong { color: var(--ink-light); font-weight: 600; }
+
+  .card-evidence-bar {
+    height: 3px;
+    background: var(--surface-warm);
+    border-radius: 2px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+  }
+  .card-evidence-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+  .fill-tier1 { background: var(--tier1); width: 92%; }
+  .fill-tier2 { background: var(--tier2); width: 65%; }
+  .fill-tier3 { background: var(--tier3); width: 38%; }
+
+  /* ─── DIRECTION LABEL ─── */
+  .direction-label {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    z-index: 200;
+    letter-spacing: 0.02em;
+  }
+  nav { top: 32px; }
+
+  @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
+</style>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+<div class="direction-label">DIRECTION A — Clinical Journal: Restrained, editorial, science-forward</div>
+
+<nav>
+  <div class="nav-brand">
+    <span class="mark">S</span>
+    SupplementDB
+  </div>
+  <div class="nav-links">
+    <a href="#">Database</a>
+    <a href="#">Compare</a>
+    <a href="#">Evidence Guides</a>
+    <a href="#">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-ghost">☆ Favorites</button>
+    <button class="btn-ghost">↓ Export</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Evidence-Based Research Database</div>
+    <h1>Supplements graded<br>by the science behind them</h1>
+    <p>89 cognitive and health supplements systematically evaluated against 471+ peer-reviewed papers, meta-analyses, and randomized controlled trials.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">89</div>
+        <div class="hero-stat-label">Supplements</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">471+</div>
+        <div class="hero-stat-label">Papers Cited</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">20 yr</div>
+        <div class="hero-stat-label">Evidence Span</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Health Domains</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="search-section">
+  <div class="search-bar">
+    <span class="search-icon">⌕</span>
+    <input type="text" placeholder="Search supplements, mechanisms, or benefits…">
+  </div>
+  <div class="filter-pills">
+    <span class="pill active">All</span>
+    <span class="pill">Tier 1 — Strongest</span>
+    <span class="pill">Tier 2 — Strong</span>
+    <span class="pill">Tier 3 — Moderate</span>
+    <span class="pill">Nootropic</span>
+    <span class="pill">Adaptogen</span>
+    <span class="pill">Amino Acid</span>
+    <span class="pill">Vitamin</span>
+    <span class="pill">Mineral</span>
+  </div>
+</div>
+
+<section class="grid-section">
+  <div class="grid-header">
+    <h2>All Supplements</h2>
+    <span class="results-count">89 results · sorted by evidence strength</span>
+  </div>
+
+  <div class="card-grid">
+    <!-- Card 1: Omega-3 (Tier 1, short) -->
+    <div class="supp-card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">Omega-3 Fatty Acids</div>
+          <div class="card-latin">EPA/DHA</div>
+        </div>
+        <span class="tier-chip tier-1">Tier 1</span>
+      </div>
+      <div class="card-category">Essential Fatty Acid</div>
+      <div class="card-benefits">
+        <span class="benefit-tag cognitive">Memory support</span>
+        <span class="benefit-tag cognitive">Cognitive aging protection</span>
+        <span class="benefit-tag health">Cardiovascular health</span>
+        <span class="benefit-tag health">Triglyceride reduction</span>
+      </div>
+      <div class="card-meta">
+        <div><strong>Dosage</strong> 1000-2000mg daily</div>
+        <div><strong>Safety</strong> Excellent</div>
+      </div>
+      <div class="card-evidence-bar"><div class="card-evidence-fill fill-tier1"></div></div>
+    </div>
+
+    <!-- Card 2: Ashwagandha (Tier 1, LONG rationale — now clamped) -->
+    <div class="supp-card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">Ashwagandha</div>
+          <div class="card-latin">Withania somnifera</div>
+        </div>
+        <span class="tier-chip tier-1">Tier 1</span>
+      </div>
+      <div class="card-category">Adaptogen</div>
+      <div class="card-benefits">
+        <span class="benefit-tag cognitive">Stress-related cognition</span>
+        <span class="benefit-tag cognitive">Attention under stress</span>
+        <span class="benefit-tag health">Stress reduction</span>
+        <span class="benefit-tag health">Anxiety management</span>
+        <span class="benefit-tag health">Sleep quality</span>
+        <span class="benefit-tag health">Testosterone (men)</span>
+      </div>
+      <div class="card-meta">
+        <div><strong>Dosage</strong> 300-600mg daily</div>
+        <div><strong>Safety</strong> Good</div>
+      </div>
+      <div class="card-evidence-bar"><div class="card-evidence-fill fill-tier1"></div></div>
+    </div>
+
+    <!-- Card 3: Creatine (Tier 1) -->
+    <div class="supp-card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">Creatine</div>
+          <div class="card-latin">N-methylguanidino acetic acid</div>
+        </div>
+        <span class="tier-chip tier-1">Tier 1</span>
+      </div>
+      <div class="card-category">Performance Enhancer</div>
+      <div class="card-benefits">
+        <span class="benefit-tag cognitive">Memory enhancement</span>
+        <span class="benefit-tag cognitive">Processing speed</span>
+        <span class="benefit-tag health">Muscle strength</span>
+        <span class="benefit-tag health">Power output</span>
+      </div>
+      <div class="card-meta">
+        <div><strong>Dosage</strong> 3-5g daily</div>
+        <div><strong>Safety</strong> Excellent</div>
+      </div>
+      <div class="card-evidence-bar"><div class="card-evidence-fill fill-tier1"></div></div>
+    </div>
+
+    <!-- Card 4: Inositol (Tier 2, LONG text — clamped in this design) -->
+    <div class="supp-card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">Inositol</div>
+          <div class="card-latin">Myo-inositol</div>
+        </div>
+        <span class="tier-chip tier-2">Tier 2</span>
+      </div>
+      <div class="card-category">B-Vitamin Related</div>
+      <div class="card-benefits">
+        <span class="benefit-tag cognitive">Anxiety reduction</span>
+        <span class="benefit-tag cognitive">Mood stabilization</span>
+        <span class="benefit-tag health">PCOS management</span>
+        <span class="benefit-tag health">Fertility support</span>
+      </div>
+      <div class="card-meta">
+        <div><strong>Dosage</strong> 2-18g daily</div>
+        <div><strong>Safety</strong> Well-tolerated</div>
+      </div>
+      <div class="card-evidence-bar"><div class="card-evidence-fill fill-tier2"></div></div>
+    </div>
+
+    <!-- Card 5: GABA (Tier 3) -->
+    <div class="supp-card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">GABA</div>
+          <div class="card-latin">Gamma-aminobutyric acid</div>
+        </div>
+        <span class="tier-chip tier-3">Tier 3</span>
+      </div>
+      <div class="card-category">Amino Acid</div>
+      <div class="card-benefits">
+        <span class="benefit-tag cognitive">Relaxation</span>
+        <span class="benefit-tag cognitive">Stress reduction</span>
+        <span class="benefit-tag health">Muscle relaxation</span>
+        <span class="benefit-tag health">Blood pressure support</span>
+      </div>
+      <div class="card-meta">
+        <div><strong>Dosage</strong> 100-750mg daily</div>
+        <div><strong>Safety</strong> GRAS-designated</div>
+      </div>
+      <div class="card-evidence-bar"><div class="card-evidence-fill fill-tier3"></div></div>
+    </div>
+
+    <!-- Card 6: Bacopa (Tier 2) -->
+    <div class="supp-card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">Bacopa monnieri</div>
+          <div class="card-latin">Bacopa monnieri</div>
+        </div>
+        <span class="tier-chip tier-2">Tier 2</span>
+      </div>
+      <div class="card-category">Nootropic</div>
+      <div class="card-benefits">
+        <span class="benefit-tag cognitive">Memory enhancement</span>
+        <span class="benefit-tag cognitive">Attention improvement</span>
+        <span class="benefit-tag health">Anxiety reduction</span>
+        <span class="benefit-tag health">Stress management</span>
+      </div>
+      <div class="card-meta">
+        <div><strong>Dosage</strong> 300mg daily</div>
+        <div><strong>Safety</strong> Good</div>
+      </div>
+      <div class="card-evidence-bar"><div class="card-evidence-fill fill-tier2"></div></div>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center; padding: 3rem 2rem; color: var(--ink-muted); font-size: 0.85rem; border-top: 1px solid var(--rule); margin-top: 2rem;">
+  <strong>Design Philosophy:</strong> Clinical journal aesthetic. Serif headings evoke academic authority. Cards are height-clamped (max 340px) so no card dominates.<br>
+  Evidence rationale text removed from cards entirely — it lives in the detail modal only. "Phase 2A Enhanced" badges removed. Color palette: deep forest green + warm paper tones.
+</div>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>

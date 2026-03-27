@@ -1,0 +1,814 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction C — Warm Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700;9..144,800&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --bg-warm: #f5f0e8;
+    --bg-blush: #fef5f0;
+    --card: #ffffff;
+    --ink: #2c1810;
+    --ink-mid: #5a4a3f;
+    --ink-soft: #9a8a7e;
+    --ink-faint: #c4b8ae;
+    --accent: #c75c2e;
+    --accent-light: #fef0e8;
+    --accent-warm: #e8724a;
+    --tier1: #2e7d5a;
+    --tier1-bg: #edf7f2;
+    --tier1-glow: rgba(46,125,90,0.08);
+    --tier2: #c68a1a;
+    --tier2-bg: #fdf6e8;
+    --tier2-glow: rgba(198,138,26,0.08);
+    --tier3: #a0522d;
+    --tier3-bg: #fdf0e8;
+    --tier3-glow: rgba(160,82,45,0.08);
+    --border: #ebe4da;
+    --border-warm: #ddd4c8;
+    --radius: 16px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 2px 12px rgba(44,24,16,0.04);
+    --shadow-lift: 0 8px 32px rgba(44,24,16,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── TEXTURE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    background: rgba(250,248,245,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 32px;
+    z-index: 100;
+  }
+  .nav-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .nav-brand .leaf {
+    width: 28px; height: 28px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+    border-radius: 50% 8px 50% 8px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(199,92,46,0.2);
+  }
+  .nav-links { display: flex; gap: 2.25rem; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active {
+    color: var(--accent);
+  }
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+  .nav-actions { display: flex; gap: 0.5rem; }
+  .btn-warm {
+    background: var(--accent-light);
+    color: var(--accent);
+    border: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .btn-warm:hover { background: #fde8da; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    padding: 5rem 2.5rem 4rem;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg-blush) 0%, var(--bg) 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(199,92,46,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(46,125,90,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-soft);
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--tier1);
+    border-radius: 50%;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+    position: relative;
+  }
+  h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0; right: 0;
+    height: 8px;
+    background: rgba(199,92,46,0.12);
+    border-radius: 4px;
+    z-index: -1;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.35rem;
+  }
+
+  /* ─── SEARCH ─── */
+  .search-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    transform: translateY(-1.5rem);
+    position: relative;
+    z-index: 10;
+  }
+  .search-bar {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    height: 52px;
+    box-shadow: var(--shadow-soft);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-bar:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(199,92,46,0.08);
+  }
+  .search-icon {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin-right: 0.75rem;
+  }
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.92rem;
+    color: var(--ink);
+    font-family: inherit;
+    background: transparent;
+  }
+  .search-bar input::placeholder { color: var(--ink-faint); }
+
+  .filter-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filter-chip {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--ink-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .filter-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .filter-chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    box-shadow: 0 2px 8px rgba(199,92,46,0.2);
+  }
+
+  /* ─── GRID ─── */
+  .grid-section {
+    max-width: 1280px;
+    margin: 2rem auto 0;
+    padding: 0 2.5rem 4rem;
+  }
+  .grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+  }
+  .grid-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .results-label {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* ─── CARD ─── */
+  .supp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    max-height: 320px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+  }
+  .supp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--border-warm);
+  }
+
+  /* Tier left accent bar */
+  .supp-card::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 3px;
+    height: calc(100% - 24px);
+    border-radius: 0 3px 3px 0;
+  }
+  .supp-card.t1::before { background: var(--tier1); }
+  .supp-card.t2::before { background: var(--tier2); }
+  .supp-card.t3::before { background: var(--tier3); }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  .card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .card-latin {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--ink-faint);
+    margin-top: 0.1rem;
+  }
+
+  .tier-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .tier-badge .tier-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+  }
+  .t1 .tier-badge { background: var(--tier1-bg); color: var(--tier1); }
+  .t1 .tier-dot { background: var(--tier1); }
+  .t2 .tier-badge { background: var(--tier2-bg); color: var(--tier2); }
+  .t2 .tier-dot { background: var(--tier2); }
+  .t3 .tier-badge { background: var(--tier3-bg); color: var(--tier3); }
+  .t3 .tier-dot { background: var(--tier3); }
+
+  .card-category {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Benefits: compact horizontal scrollable pills */
+  .card-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.85rem;
+    max-height: 3.6rem;
+    overflow: hidden;
+    flex: 1;
+    align-content: flex-start;
+  }
+  .benefit-pill {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  .benefit-pill.cognitive {
+    background: #f0f1ff;
+    color: #5b5fc7;
+  }
+  .benefit-pill.health {
+    background: #eefbf3;
+    color: #2a7d5a;
+  }
+
+  /* Bottom bar: dosage + safety */
+  .card-footer {
+    margin-top: auto;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-meta-pair {
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .card-meta-pair strong {
+    color: var(--ink-mid);
+    font-weight: 700;
+  }
+
+  /* Evidence strength indicator — horizontal capsule */
+  .evidence-capsule {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .evidence-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+  }
+  .evidence-pips {
+    display: flex;
+    gap: 3px;
+  }
+  .evidence-pip {
+    width: 14px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+  .evidence-pip.filled.tier1 { background: var(--tier1); }
+  .evidence-pip.filled.tier2 { background: var(--tier2); }
+  .evidence-pip.filled.tier3 { background: var(--tier3); }
+
+  /* ─── DIRECTION LABEL ─── */
+  .direction-label {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-warm) 100%);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    z-index: 200;
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .supp-card {
+    animation: fadeUp 0.5s ease both;
+  }
+  .supp-card:nth-child(1) { animation-delay: 0.05s; }
+  .supp-card:nth-child(2) { animation-delay: 0.1s; }
+  .supp-card:nth-child(3) { animation-delay: 0.15s; }
+  .supp-card:nth-child(4) { animation-delay: 0.2s; }
+  .supp-card:nth-child(5) { animation-delay: 0.25s; }
+  .supp-card:nth-child(6) { animation-delay: 0.3s; }
+
+  @media (max-width: 960px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+<div class="direction-label">DIRECTION C — Warm Wellness: Approachable, organic, health-forward with editorial flair</div>
+
+<nav>
+  <div class="nav-brand">
+    <span class="leaf">S</span>
+    SupplementDB
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Database</a>
+    <a href="#">Compare</a>
+    <a href="#">Evidence Guides</a>
+    <a href="#">About</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-warm">☆ Favorites</button>
+    <button class="btn-warm">↓ Export</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span>Evidence-Based Research Database</div>
+    <h1>Your supplements,<br>graded by <em>real science</em></h1>
+    <p class="hero-sub">89 cognitive and health supplements systematically evaluated against 471+ peer-reviewed papers, meta-analyses, and randomized controlled trials.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">89</div>
+        <div class="hero-stat-label">Supplements</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">471+</div>
+        <div class="hero-stat-label">Papers Cited</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">20 yr</div>
+        <div class="hero-stat-label">Evidence Span</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Health Domains</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="search-section">
+  <div class="search-bar">
+    <span class="search-icon">⌕</span>
+    <input type="text" placeholder="Search supplements, mechanisms, or benefits…">
+  </div>
+  <div class="filter-row">
+    <span class="filter-chip active">All</span>
+    <span class="filter-chip">Tier 1 — Strongest</span>
+    <span class="filter-chip">Tier 2 — Strong</span>
+    <span class="filter-chip">Tier 3 — Moderate</span>
+    <span class="filter-chip">Nootropic</span>
+    <span class="filter-chip">Adaptogen</span>
+    <span class="filter-chip">Amino Acid</span>
+    <span class="filter-chip">Vitamin</span>
+    <span class="filter-chip">Mineral</span>
+  </div>
+</div>
+
+<section class="grid-section">
+  <div class="grid-header">
+    <h2>All Supplements</h2>
+    <span class="results-label">89 results · sorted by evidence strength</span>
+  </div>
+
+  <div class="card-grid">
+    <!-- Card 1: Omega-3 (Tier 1, short) -->
+    <div class="supp-card t1">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Omega-3 Fatty Acids</div>
+          <div class="card-latin">EPA / DHA</div>
+        </div>
+        <span class="tier-badge"><span class="tier-dot"></span> Tier 1</span>
+      </div>
+      <div class="card-category">Essential Fatty Acid</div>
+      <div class="card-benefits">
+        <span class="benefit-pill cognitive">Memory support</span>
+        <span class="benefit-pill cognitive">Cognitive aging protection</span>
+        <span class="benefit-pill health">Cardiovascular health</span>
+        <span class="benefit-pill health">Triglyceride reduction</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-meta-pair"><strong>Dosage</strong> 1000–2000 mg/day</div>
+        <div class="evidence-capsule">
+          <span class="evidence-label">Evidence</span>
+          <div class="evidence-pips">
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Ashwagandha (Tier 1, MANY benefits — clamped) -->
+    <div class="supp-card t1">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Ashwagandha</div>
+          <div class="card-latin">Withania somnifera</div>
+        </div>
+        <span class="tier-badge"><span class="tier-dot"></span> Tier 1</span>
+      </div>
+      <div class="card-category">Adaptogen</div>
+      <div class="card-benefits">
+        <span class="benefit-pill cognitive">Stress-related cognition</span>
+        <span class="benefit-pill cognitive">Attention under stress</span>
+        <span class="benefit-pill health">Stress reduction</span>
+        <span class="benefit-pill health">Anxiety management</span>
+        <span class="benefit-pill health">Sleep quality</span>
+        <span class="benefit-pill health">Testosterone (men)</span>
+        <span class="benefit-pill health">Muscle recovery</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-meta-pair"><strong>Dosage</strong> 300–600 mg/day</div>
+        <div class="evidence-capsule">
+          <span class="evidence-label">Evidence</span>
+          <div class="evidence-pips">
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Creatine (Tier 1) -->
+    <div class="supp-card t1">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Creatine</div>
+          <div class="card-latin">N-methylguanidino acetic acid</div>
+        </div>
+        <span class="tier-badge"><span class="tier-dot"></span> Tier 1</span>
+      </div>
+      <div class="card-category">Performance Enhancer</div>
+      <div class="card-benefits">
+        <span class="benefit-pill cognitive">Memory enhancement</span>
+        <span class="benefit-pill cognitive">Processing speed</span>
+        <span class="benefit-pill health">Muscle strength</span>
+        <span class="benefit-pill health">Power output</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-meta-pair"><strong>Dosage</strong> 3–5 g/day</div>
+        <div class="evidence-capsule">
+          <span class="evidence-label">Evidence</span>
+          <div class="evidence-pips">
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+            <div class="evidence-pip filled tier1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Inositol (Tier 2, LONG — clamped) -->
+    <div class="supp-card t2">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Inositol</div>
+          <div class="card-latin">Myo-inositol</div>
+        </div>
+        <span class="tier-badge"><span class="tier-dot"></span> Tier 2</span>
+      </div>
+      <div class="card-category">B-Vitamin Related</div>
+      <div class="card-benefits">
+        <span class="benefit-pill cognitive">Anxiety reduction</span>
+        <span class="benefit-pill cognitive">Mood stabilization</span>
+        <span class="benefit-pill health">PCOS management</span>
+        <span class="benefit-pill health">Fertility support</span>
+        <span class="benefit-pill health">Insulin sensitization</span>
+        <span class="benefit-pill health">OCD symptom reduction</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-meta-pair"><strong>Dosage</strong> 2–18 g/day</div>
+        <div class="evidence-capsule">
+          <span class="evidence-label">Evidence</span>
+          <div class="evidence-pips">
+            <div class="evidence-pip filled tier2"></div>
+            <div class="evidence-pip filled tier2"></div>
+            <div class="evidence-pip filled tier2"></div>
+            <div class="evidence-pip"></div>
+            <div class="evidence-pip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: GABA (Tier 3) -->
+    <div class="supp-card t3">
+      <div class="card-header">
+        <div>
+          <div class="card-title">GABA</div>
+          <div class="card-latin">Gamma-aminobutyric acid</div>
+        </div>
+        <span class="tier-badge"><span class="tier-dot"></span> Tier 3</span>
+      </div>
+      <div class="card-category">Amino Acid</div>
+      <div class="card-benefits">
+        <span class="benefit-pill cognitive">Relaxation</span>
+        <span class="benefit-pill cognitive">Stress reduction</span>
+        <span class="benefit-pill health">Muscle relaxation</span>
+        <span class="benefit-pill health">Blood pressure support</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-meta-pair"><strong>Dosage</strong> 100–750 mg/day</div>
+        <div class="evidence-capsule">
+          <span class="evidence-label">Evidence</span>
+          <div class="evidence-pips">
+            <div class="evidence-pip filled tier3"></div>
+            <div class="evidence-pip filled tier3"></div>
+            <div class="evidence-pip"></div>
+            <div class="evidence-pip"></div>
+            <div class="evidence-pip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Bacopa (Tier 2) -->
+    <div class="supp-card t2">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Bacopa monnieri</div>
+          <div class="card-latin">Bacopa monnieri</div>
+        </div>
+        <span class="tier-badge"><span class="tier-dot"></span> Tier 2</span>
+      </div>
+      <div class="card-category">Nootropic</div>
+      <div class="card-benefits">
+        <span class="benefit-pill cognitive">Memory enhancement</span>
+        <span class="benefit-pill cognitive">Attention improvement</span>
+        <span class="benefit-pill health">Anxiety reduction</span>
+        <span class="benefit-pill health">Stress management</span>
+      </div>
+      <div class="card-footer">
+        <div class="card-meta-pair"><strong>Dosage</strong> 300 mg/day</div>
+        <div class="evidence-capsule">
+          <span class="evidence-label">Evidence</span>
+          <div class="evidence-pips">
+            <div class="evidence-pip filled tier2"></div>
+            <div class="evidence-pip filled tier2"></div>
+            <div class="evidence-pip filled tier2"></div>
+            <div class="evidence-pip"></div>
+            <div class="evidence-pip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center; padding: 3rem 2.5rem; color: var(--ink-soft); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+  <strong style="color: var(--ink-mid);">Design Philosophy:</strong> Warm wellness aesthetic. Fraunces serif headings for organic authority, terracotta accent for warmth. Cards are height-clamped (280–320px) with overflow hidden.<br>
+  Benefits clamped to ~3.6rem. Evidence rationale removed from cards. "Phase 2A Enhanced" badges removed. Left-edge tier accent bars for quick visual scanning.<br>
+  Evidence shown as horizontal pip indicators. Subtle noise texture overlay for organic feel. Staggered fade-up animation on card load.
+</div>
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body></html>

@@ -1,0 +1,1618 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack Analyzer UX — 3 Approaches Compared</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --navy-deep: #0b1120;
+    --navy-mid: #111827;
+    --card-bg: #151d2e;
+    --card-bg-hover: #1a2438;
+    --border: rgba(99, 102, 241, 0.12);
+    --border-active: rgba(99, 102, 241, 0.4);
+    --text-bright: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --indigo-light: #818cf8;
+    --indigo-glow: rgba(99, 102, 241, 0.15);
+    --purple-soft: #a78bfa;
+    --green-accent: #34d399;
+    --amber-accent: #fbbf24;
+    --rose-accent: #fb7185;
+    --cyan-accent: #22d3ee;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--navy-deep);
+    color: var(--text-bright);
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Page Header ─────────────────────────────────────── */
+  .page-header {
+    text-align: center;
+    padding: 3rem 1.5rem 2rem;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99, 102, 241, 0.14) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
+      var(--navy-deep);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .page-header h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2rem;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .page-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ── Tab Navigation ──────────────────────────────────── */
+  .tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 0 1.5rem;
+    background: var(--navy-mid);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+
+  .tab-btn:hover { color: var(--text-muted); }
+
+  .tab-btn.active {
+    color: var(--indigo-light);
+    border-bottom-color: var(--indigo-light);
+  }
+
+  .tab-btn .tab-label { display: inline; }
+  .tab-btn .tab-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .badge-current { background: rgba(148, 163, 184, 0.15); color: var(--text-dim); }
+  .badge-recommended { background: rgba(52, 211, 153, 0.15); color: var(--green-accent); }
+  .badge-hybrid { background: rgba(168, 139, 250, 0.15); color: var(--purple-soft); }
+
+  /* ── Tab Content ─────────────────────────────────────── */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── Approach Section ────────────────────────────────── */
+  .approach-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .approach-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .approach-letter {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .letter-a { background: rgba(148, 163, 184, 0.12); color: var(--text-muted); border: 1px solid rgba(148, 163, 184, 0.2); }
+  .letter-b { background: rgba(52, 211, 153, 0.1); color: var(--green-accent); border: 1px solid rgba(52, 211, 153, 0.25); }
+  .letter-c { background: rgba(168, 139, 250, 0.1); color: var(--purple-soft); border: 1px solid rgba(168, 139, 250, 0.25); }
+
+  .approach-meta h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--text-bright);
+    margin-bottom: 0.35rem;
+  }
+
+  .approach-meta p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* ── Pros / Cons ─────────────────────────────────────── */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 640px) { .pros-cons { grid-template-columns: 1fr; } }
+
+  .pros-card, .cons-card {
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .pros-card { background: rgba(52, 211, 153, 0.04); }
+  .cons-card { background: rgba(251, 113, 133, 0.04); }
+
+  .pros-card h4, .cons-card h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .pros-card h4 { color: var(--green-accent); }
+  .cons-card h4 { color: var(--rose-accent); }
+
+  .pros-card li, .cons-card li {
+    font-size: 0.825rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+    list-style: none;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .pros-card li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: var(--green-accent);
+    font-weight: 700;
+  }
+
+  .cons-card li::before {
+    content: '\2212';
+    position: absolute;
+    left: 0;
+    color: var(--rose-accent);
+    font-weight: 700;
+  }
+
+  /* ── Interactive Mockup ──────────────────────────────── */
+  .mockup-frame {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .mockup-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.2);
+  }
+
+  .mockup-dot:nth-child(1) { background: #ff5f57; }
+  .mockup-dot:nth-child(2) { background: #febc2e; }
+  .mockup-dot:nth-child(3) { background: #28c840; }
+
+  .mockup-titlebar span {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+
+  .mockup-body {
+    padding: 1.5rem;
+  }
+
+  /* ── Shared Mockup Elements ──────────────────────────── */
+  .mock-step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .mock-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: all 0.2s;
+  }
+
+  .mock-step.active {
+    color: var(--indigo-light);
+    background: var(--indigo-glow);
+  }
+
+  .mock-step.completed {
+    color: var(--green-accent);
+  }
+
+  .mock-step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1.5px solid var(--text-dim);
+  }
+
+  .mock-step.active .mock-step-num {
+    border-color: var(--indigo-light);
+    background: rgba(99, 102, 241, 0.15);
+  }
+
+  .mock-step.completed .mock-step-num {
+    border-color: var(--green-accent);
+    background: rgba(52, 211, 153, 0.12);
+  }
+
+  .mock-step-connector {
+    width: 32px;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.15);
+    margin: 0 0.25rem;
+  }
+
+  .mock-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .mock-select {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-bright);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+
+  .mock-select:focus {
+    outline: none;
+    border-color: var(--indigo-light);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  .mock-select option {
+    background: var(--navy-mid);
+    color: var(--text-bright);
+  }
+
+  .mock-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1.25rem 0;
+  }
+
+  /* ── Supplement Chips ────────────────────────────────── */
+  .mock-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    min-height: 34px;
+  }
+
+  .mock-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid;
+  }
+
+  .mock-chip.selected {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.35);
+    color: var(--indigo-light);
+  }
+
+  .mock-chip.unselected {
+    background: rgba(0, 0, 0, 0.15);
+    border-color: var(--border);
+    color: var(--text-muted);
+  }
+
+  .mock-chip.unselected:hover {
+    border-color: rgba(99, 102, 241, 0.25);
+    background: rgba(99, 102, 241, 0.06);
+  }
+
+  .mock-chip .chip-x {
+    font-size: 0.65rem;
+    opacity: 0.6;
+  }
+
+  /* ── Supplement Dropdown List ─────────────────────────── */
+  .mock-dropdown {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 0.5rem;
+  }
+
+  .mock-dropdown::-webkit-scrollbar { width: 6px; }
+  .mock-dropdown::-webkit-scrollbar-track { background: transparent; }
+  .mock-dropdown::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.15); border-radius: 3px; }
+
+  .mock-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    position: sticky;
+    top: 0;
+    background: rgba(11, 17, 32, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.06);
+  }
+
+  .mock-group-header .group-count {
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: rgba(148, 163, 184, 0.08);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  /* ── Domain-Grouped Supplement Item ──────────────────── */
+  .mock-supp-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.04);
+  }
+
+  .mock-supp-item:hover {
+    background: rgba(99, 102, 241, 0.06);
+  }
+
+  .mock-supp-item.selected-item {
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  .mock-supp-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1.5px solid var(--text-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    color: transparent;
+    transition: all 0.15s;
+  }
+
+  .mock-supp-item.selected-item .mock-supp-check {
+    border-color: var(--indigo-light);
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--indigo-light);
+  }
+
+  .mock-supp-name {
+    flex: 1;
+    font-size: 0.825rem;
+    color: var(--text-bright);
+    font-weight: 400;
+  }
+
+  .mock-supp-tier {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .tier-1 { background: rgba(52, 211, 153, 0.12); color: var(--green-accent); }
+  .tier-2 { background: rgba(251, 191, 36, 0.12); color: var(--amber-accent); }
+  .tier-3 { background: rgba(148, 163, 184, 0.1); color: var(--text-dim); }
+
+  /* ── Relevance Indicator (Approach B & C) ─────────────── */
+  .mock-relevance {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .relevance-bar {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(148, 163, 184, 0.1);
+    overflow: hidden;
+  }
+
+  .relevance-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  .relevance-bar-fill.high { background: var(--green-accent); }
+  .relevance-bar-fill.medium { background: var(--amber-accent); }
+  .relevance-bar-fill.low { background: var(--text-dim); }
+
+  .relevance-score {
+    font-size: 0.65rem;
+    font-weight: 600;
+    min-width: 24px;
+    text-align: right;
+  }
+
+  .relevance-score.high { color: var(--green-accent); }
+  .relevance-score.medium { color: var(--amber-accent); }
+  .relevance-score.low { color: var(--text-dim); }
+
+  /* ── Domain Group Highlight (B & C) ──────────────────── */
+  .domain-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem 0.45rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+  }
+
+  .domain-group-header.primary-domain {
+    background: rgba(52, 211, 153, 0.06);
+    border-bottom: 1px solid rgba(52, 211, 153, 0.1);
+  }
+
+  .domain-group-header.secondary-domain {
+    background: rgba(251, 191, 36, 0.04);
+    border-bottom: 1px solid rgba(251, 191, 36, 0.08);
+  }
+
+  .domain-group-header.other-domain {
+    background: rgba(11, 17, 32, 0.95);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.06);
+  }
+
+  .domain-icon {
+    font-size: 0.75rem;
+  }
+
+  .domain-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .domain-group-header.primary-domain .domain-label { color: var(--green-accent); }
+  .domain-group-header.secondary-domain .domain-label { color: var(--amber-accent); }
+  .domain-group-header.other-domain .domain-label { color: var(--text-dim); }
+
+  .domain-tag {
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .domain-tag.primary { background: rgba(52, 211, 153, 0.1); color: var(--green-accent); }
+  .domain-tag.secondary { background: rgba(251, 191, 36, 0.08); color: var(--amber-accent); }
+
+  /* ── Goal Card (Approach B) ──────────────────────────── */
+  .goal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 640px) { .goal-grid { grid-template-columns: 1fr; } }
+
+  .goal-card {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .goal-card:hover {
+    border-color: rgba(99, 102, 241, 0.25);
+    background: rgba(99, 102, 241, 0.05);
+    color: var(--text-bright);
+  }
+
+  .goal-card.goal-selected {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--indigo-light);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.08);
+  }
+
+  .goal-card-icon {
+    font-size: 1rem;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .goal-card-name {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .goal-card-count {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    background: rgba(148, 163, 184, 0.08);
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+
+  .goal-card.goal-selected .goal-card-count {
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--indigo-light);
+  }
+
+  /* ── Flow Arrow ──────────────────────────────────────── */
+  .flow-arrow {
+    text-align: center;
+    padding: 0.75rem 0;
+    color: var(--text-dim);
+    font-size: 1rem;
+  }
+
+  /* ── Approach C: Toggle ──────────────────────────────── */
+  .optional-goal-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(168, 139, 250, 0.06);
+    border: 1px solid rgba(168, 139, 250, 0.15);
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+    transition: all 0.2s;
+  }
+
+  .optional-goal-toggle:hover {
+    background: rgba(168, 139, 250, 0.1);
+    border-color: rgba(168, 139, 250, 0.25);
+  }
+
+  .toggle-switch {
+    width: 32px;
+    height: 18px;
+    border-radius: 9px;
+    background: rgba(148, 163, 184, 0.2);
+    position: relative;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+
+  .toggle-switch.on { background: var(--indigo-light); }
+
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+  }
+
+  .toggle-switch.on::after { transform: translateX(14px); }
+
+  .toggle-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .toggle-hint {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  /* ── Summary Section ─────────────────────────────────── */
+  .comparison-summary {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.825rem;
+  }
+
+  .summary-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-table td {
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.04);
+    vertical-align: top;
+  }
+
+  .summary-table td:first-child {
+    color: var(--text-bright);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .summary-table .winner {
+    color: var(--green-accent);
+    font-weight: 500;
+  }
+
+  .recommendation-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(168, 139, 250, 0.2);
+    background: rgba(168, 139, 250, 0.04);
+  }
+
+  .recommendation-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--purple-soft);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .recommendation-box p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── Animations ──────────────────────────────────────── */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tab-content.active .approach-section {
+    animation: slideIn 0.3s ease;
+  }
+
+  /* ── Responsive ──────────────────────────────────────── */
+  @media (max-width: 480px) {
+    .tab-btn { padding: 0.75rem 0.75rem; font-size: 0.8rem; }
+    .tab-btn .tab-badge { display: none; }
+    .mockup-body { padding: 1rem; }
+    .goal-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+    <!-- Clerk Auth CDN -->
+    <meta name="clerk-publishable-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+    <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- Page Header                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="page-header">
+  <h1>Stack Analyzer UX Comparison</h1>
+  <p>Three approaches to the supplement selection flow. Click each tab to explore the interactive mockup, then review the comparison summary.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- Tab Navigation                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="approach-a">
+    <span class="tab-label">A: Current Flow</span>
+    <span class="tab-badge badge-current">Current</span>
+  </button>
+  <button class="tab-btn" data-tab="approach-b">
+    <span class="tab-label">B: Goal-First</span>
+    <span class="tab-badge badge-recommended">Recommended</span>
+  </button>
+  <button class="tab-btn" data-tab="approach-c">
+    <span class="tab-label">C: Hybrid Adaptive</span>
+    <span class="tab-badge badge-hybrid">Hybrid</span>
+  </button>
+  <button class="tab-btn" data-tab="summary">
+    <span class="tab-label">Comparison</span>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- APPROACH A: Current (Supplements First)                         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-content active" id="approach-a">
+  <div class="approach-section">
+    <div class="approach-header">
+      <div class="approach-letter letter-a">A</div>
+      <div class="approach-meta">
+        <h2>Current: Supplements First</h2>
+        <p>Users select supplements from a category-sorted dropdown, then pick a health goal, then analysis depth. The current production flow.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros-card">
+        <h4><i class="fas fa-check"></i> Strengths</h4>
+        <ul>
+          <li>Works well for users who already know their stack</li>
+          <li>No cognitive reframing needed — direct supplement lookup</li>
+          <li>Simple, linear flow that's easy to understand</li>
+        </ul>
+      </div>
+      <div class="cons-card">
+        <h4><i class="fas fa-times"></i> Weaknesses</h4>
+        <ul>
+          <li>93 supplements in a flat alphabetical list is overwhelming</li>
+          <li>No guidance for exploratory users ("I want better sleep")</li>
+          <li>Category grouping doesn't reflect goal relevance</li>
+          <li>Health goal selection feels disconnected from supplement choices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mockup-frame">
+      <div class="mockup-titlebar">
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <span>Stack Analyzer — Approach A</span>
+      </div>
+      <div class="mockup-body">
+        <!-- Step Indicator -->
+        <div class="mock-step-indicator">
+          <div class="mock-step active">
+            <div class="mock-step-num">1</div>
+            <span>Supplements</span>
+          </div>
+          <div class="mock-step-connector"></div>
+          <div class="mock-step">
+            <div class="mock-step-num">2</div>
+            <span>Health Goal</span>
+          </div>
+          <div class="mock-step-connector"></div>
+          <div class="mock-step">
+            <div class="mock-step-num">3</div>
+            <span>Depth</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Supplement Selection -->
+        <div class="mock-label">Step 1 — Select Your Supplements (2-15)</div>
+
+        <!-- Selected chips -->
+        <div class="mock-chips">
+          <div class="mock-chip selected">Magnesium <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">L-Theanine <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">Ashwagandha <span class="chip-x">×</span></div>
+        </div>
+
+        <!-- Category-grouped dropdown -->
+        <div class="mock-dropdown" style="margin-top: 0.75rem;">
+          <div class="mock-group-header">
+            <span>Adaptogen</span>
+            <span class="group-count">4</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Ashwagandha</span>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Holy Basil</span>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Rhodiola rosea</span>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Schisandra Berry</span>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+
+          <div class="mock-group-header">
+            <span>Amino Acid</span>
+            <span class="group-count">7</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">5-HTP</span>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">GABA</span>
+            <span class="mock-supp-tier tier-3">Tier 3</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">L-Theanine</span>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">L-Tyrosine</span>
+            <span class="mock-supp-tier tier-3">Tier 3</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Taurine</span>
+            <span class="mock-supp-tier tier-3">Tier 3</span>
+          </div>
+
+          <div class="mock-group-header">
+            <span>Anti-inflammatory</span>
+            <span class="group-count">2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Boswellia</span>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Turmeric/Curcumin</span>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+
+          <div style="padding: 0.5rem 1rem; text-align: center; font-size: 0.7rem; color: var(--text-dim);">
+            ... 17 more categories · 82 more supplements
+          </div>
+        </div>
+
+        <div class="mock-divider"></div>
+
+        <!-- Step 2 placeholder -->
+        <div class="mock-label" style="opacity: 0.5;">Step 2 — Health Goal</div>
+        <select class="mock-select" style="opacity: 0.5;" disabled="">
+          <option>Select health goal...</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- APPROACH B: Goal-First with Smart Grouping                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-content" id="approach-b">
+  <div class="approach-section">
+    <div class="approach-header">
+      <div class="approach-letter letter-b">B</div>
+      <div class="approach-meta">
+        <h2>Goal-First with Smart Grouping</h2>
+        <p>Users first select their health goal, then supplements are dynamically grouped by domain relevance using <code>problems.js</code> relevanceScore data. High-relevance supplements surface to the top.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros-card">
+        <h4><i class="fas fa-check"></i> Strengths</h4>
+        <ul>
+          <li>Guides exploratory users toward relevant supplements</li>
+          <li>Relevance scores provide evidence-based ranking</li>
+          <li>Domain grouping reduces cognitive load (from 93 flat to chunked)</li>
+          <li>Health goal context improves AI analysis quality</li>
+        </ul>
+      </div>
+      <div class="cons-card">
+        <h4><i class="fas fa-times"></i> Weaknesses</h4>
+        <ul>
+          <li>Forces goal selection even for users who just want to check a stack</li>
+          <li>May bias users toward "popular" supplements over their actual stack</li>
+          <li>Extra step before supplement selection</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mockup-frame">
+      <div class="mockup-titlebar">
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <span>Stack Analyzer — Approach B (Goal-First)</span>
+      </div>
+      <div class="mockup-body" id="approach-b-body">
+        <!-- Step Indicator -->
+        <div class="mock-step-indicator">
+          <div class="mock-step completed" id="b-step-1">
+            <div class="mock-step-num"><i class="fas fa-check" style="font-size:0.55rem"></i></div>
+            <span>Health Goal</span>
+          </div>
+          <div class="mock-step-connector"></div>
+          <div class="mock-step active" id="b-step-2">
+            <div class="mock-step-num">2</div>
+            <span>Supplements</span>
+          </div>
+          <div class="mock-step-connector"></div>
+          <div class="mock-step" id="b-step-3">
+            <div class="mock-step-num">3</div>
+            <span>Depth</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Health Goal Selection (completed) -->
+        <div class="mock-label">Step 1 — What's your health goal?</div>
+        <div class="goal-grid" id="b-goal-grid">
+          <div class="goal-card" data-goal="sleep">
+            <span class="goal-card-icon">💤</span>
+            <span class="goal-card-name">Sleep Quality</span>
+            <span class="goal-card-count">18 supps</span>
+          </div>
+          <div class="goal-card" data-goal="anxiety">
+            <span class="goal-card-icon">🧘</span>
+            <span class="goal-card-name">Anxiety &amp; Stress</span>
+            <span class="goal-card-count">22 supps</span>
+          </div>
+          <div class="goal-card goal-selected" data-goal="cognitive">
+            <span class="goal-card-icon">🧠</span>
+            <span class="goal-card-name">Cognitive Performance</span>
+            <span class="goal-card-count">28 supps</span>
+          </div>
+          <div class="goal-card" data-goal="longevity">
+            <span class="goal-card-icon">🌱</span>
+            <span class="goal-card-name">Longevity</span>
+            <span class="goal-card-count">15 supps</span>
+          </div>
+          <div class="goal-card" data-goal="metabolic">
+            <span class="goal-card-icon">⚗️</span>
+            <span class="goal-card-name">Metabolic Health</span>
+            <span class="goal-card-count">12 supps</span>
+          </div>
+          <div class="goal-card" data-goal="exercise">
+            <span class="goal-card-icon">🏋️</span>
+            <span class="goal-card-name">Exercise Performance</span>
+            <span class="goal-card-count">16 supps</span>
+          </div>
+          <div class="goal-card" data-goal="inflammation">
+            <span class="goal-card-icon">🔥</span>
+            <span class="goal-card-name">Inflammation &amp; Joints</span>
+            <span class="goal-card-count">14 supps</span>
+          </div>
+          <div class="goal-card" data-goal="mood">
+            <span class="goal-card-icon">☀️</span>
+            <span class="goal-card-name">Mood &amp; Depression</span>
+            <span class="goal-card-count">19 supps</span>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+
+        <!-- Step 2: Domain-Grouped Supplements -->
+        <div class="mock-label">Step 2 — Select Supplements <span style="color: var(--indigo-light); font-weight: 400; text-transform: none; letter-spacing: 0;">for Cognitive Performance</span></div>
+
+        <div class="mock-chips">
+          <div class="mock-chip selected">Bacopa monnieri <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">Lion's Mane <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">Omega-3 <span class="chip-x">×</span></div>
+        </div>
+
+        <div class="mock-dropdown" style="margin-top: 0.75rem;">
+          <!-- Primary Domain: High Relevance -->
+          <div class="domain-group-header primary-domain">
+            <span class="domain-icon">🎯</span>
+            <span class="domain-label">High Relevance</span>
+            <span class="domain-tag primary">Score 80+</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Bacopa monnieri</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:98%"></div></div>
+              <span class="relevance-score high">98</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Lion's Mane Mushroom</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:95%"></div></div>
+              <span class="relevance-score high">95</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Omega-3 Fatty Acids</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:92%"></div></div>
+              <span class="relevance-score high">92</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Citicoline</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:90%"></div></div>
+              <span class="relevance-score high">90</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Alpha-GPC</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:88%"></div></div>
+              <span class="relevance-score high">88</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Phosphatidylserine</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:85%"></div></div>
+              <span class="relevance-score high">85</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+
+          <!-- Secondary Domain: Moderate Relevance -->
+          <div class="domain-group-header secondary-domain">
+            <span class="domain-icon">🔍</span>
+            <span class="domain-label">Moderate Relevance</span>
+            <span class="domain-tag secondary">Score 50-79</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Caffeine</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:75%"></div></div>
+              <span class="relevance-score medium">75</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Creatine</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:72%"></div></div>
+              <span class="relevance-score medium">72</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Ginkgo Biloba</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:68%"></div></div>
+              <span class="relevance-score medium">68</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Panax Ginseng</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:65%"></div></div>
+              <span class="relevance-score medium">65</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+
+          <!-- Other Supplements -->
+          <div class="domain-group-header other-domain">
+            <span class="domain-icon" style="color:var(--text-dim)">📋</span>
+            <span class="domain-label">Other Supplements</span>
+            <span class="group-count">65 more</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Vitamin D3</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill low" style="width:35%"></div></div>
+              <span class="relevance-score low">35</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Glucosamine</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill low" style="width:12%"></div></div>
+              <span class="relevance-score low">12</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div style="padding: 0.5rem 1rem; text-align: center; font-size: 0.7rem; color: var(--text-dim);">
+            + 63 more supplements available
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- APPROACH C: Hybrid / Adaptive                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-content" id="approach-c">
+  <div class="approach-section">
+    <div class="approach-header">
+      <div class="approach-letter letter-c">C</div>
+      <div class="approach-meta">
+        <h2>Hybrid Adaptive Flow</h2>
+        <p>Both paths are available. An optional health goal toggle reorders and groups supplements by relevance when activated. Without it, the list shows the familiar category grouping. Serves both user types seamlessly.</p>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros-card">
+        <h4><i class="fas fa-check"></i> Strengths</h4>
+        <ul>
+          <li>Serves both experienced and exploratory users</li>
+          <li>No forced steps — goal is optional but impactful</li>
+          <li>Smooth transition: toggling goal re-sorts in real time</li>
+          <li>Retains familiarity while adding smart grouping as an enhancement</li>
+        </ul>
+      </div>
+      <div class="cons-card">
+        <h4><i class="fas fa-times"></i> Weaknesses</h4>
+        <ul>
+          <li>Slightly more complex UI (toggle + conditional layout)</li>
+          <li>Users may not discover the goal toggle without guidance</li>
+          <li>Two modes need to be maintained</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mockup-frame">
+      <div class="mockup-titlebar">
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <div class="mockup-dot"></div>
+        <span>Stack Analyzer — Approach C (Hybrid)</span>
+      </div>
+      <div class="mockup-body" id="approach-c-body">
+        <!-- Step Indicator -->
+        <div class="mock-step-indicator">
+          <div class="mock-step active">
+            <div class="mock-step-num">1</div>
+            <span>Supplements</span>
+          </div>
+          <div class="mock-step-connector"></div>
+          <div class="mock-step">
+            <div class="mock-step-num">2</div>
+            <span>Depth</span>
+          </div>
+          <div class="mock-step-connector"></div>
+          <div class="mock-step">
+            <div class="mock-step-num">3</div>
+            <span>Analyze</span>
+          </div>
+        </div>
+
+        <!-- Optional Goal Toggle -->
+        <div class="optional-goal-toggle" id="c-goal-toggle">
+          <div class="toggle-switch on" id="c-toggle-switch"></div>
+          <div>
+            <div class="toggle-label"><i class="fas fa-lightbulb" style="color: var(--amber-accent); margin-right: 4px;"></i> Smart Sort by Health Goal</div>
+            <div class="toggle-hint">Activates relevance-based grouping</div>
+          </div>
+        </div>
+
+        <!-- Inline Goal Selector (visible when toggle is on) -->
+        <div id="c-goal-selector" style="margin-bottom: 1rem;">
+          <select class="mock-select" id="c-goal-select">
+            <option value="">Choose a health goal to sort by...</option>
+            <option value="sleep">💤 Sleep Quality &amp; Insomnia</option>
+            <option value="anxiety">🧘 Anxiety &amp; Stress Management</option>
+            <option value="cognitive" selected="">🧠 Cognitive Performance &amp; Memory</option>
+            <option value="longevity">🌱 Longevity &amp; Anti-Aging</option>
+            <option value="metabolic">⚗️ Metabolic Health &amp; Blood Sugar</option>
+            <option value="exercise">🏋️ Exercise Performance &amp; Recovery</option>
+            <option value="inflammation">🔥 Inflammation &amp; Joint Health</option>
+            <option value="mood">☀️ Mood &amp; Depression Support</option>
+            <option value="memory">🧓 Memory &amp; Cognitive Aging</option>
+            <option value="muscle">💪 Muscle Strength &amp; Lean Mass</option>
+            <option value="recovery">🧊 Exercise Recovery &amp; Soreness</option>
+            <option value="gut">🫠 Gut-Brain Axis</option>
+            <option value="stress">🎯 Stress Resilience &amp; Cortisol</option>
+          </select>
+        </div>
+
+        <div class="mock-label">Select Your Supplements <span style="color: var(--purple-soft); font-weight: 400; text-transform: none; letter-spacing: 0;">— sorted by Cognitive Performance relevance</span></div>
+
+        <div class="mock-chips">
+          <div class="mock-chip selected">Bacopa monnieri <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">Citicoline <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">Magnesium <span class="chip-x">×</span></div>
+          <div class="mock-chip selected">Ashwagandha <span class="chip-x">×</span></div>
+        </div>
+
+        <!-- Smart-sorted supplement list -->
+        <div class="mock-dropdown" style="margin-top: 0.75rem;">
+          <!-- High Relevance group -->
+          <div class="domain-group-header primary-domain">
+            <span class="domain-icon">🎯</span>
+            <span class="domain-label">Highly Relevant to Cognitive Performance</span>
+            <span class="domain-tag primary">8 supplements</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Bacopa monnieri</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:98%"></div></div>
+              <span class="relevance-score high">98</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Lion's Mane Mushroom</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:95%"></div></div>
+              <span class="relevance-score high">95</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Omega-3 Fatty Acids</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:92%"></div></div>
+              <span class="relevance-score high">92</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Citicoline</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:90%"></div></div>
+              <span class="relevance-score high">90</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Alpha-GPC</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill high" style="width:88%"></div></div>
+              <span class="relevance-score high">88</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+
+          <!-- Moderate Relevance group -->
+          <div class="domain-group-header secondary-domain">
+            <span class="domain-icon">🔍</span>
+            <span class="domain-label">Moderately Relevant</span>
+            <span class="domain-tag secondary">12 supplements</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Ashwagandha</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:72%"></div></div>
+              <span class="relevance-score medium">72</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item selected-item">
+            <div class="mock-supp-check"><i class="fas fa-check"></i></div>
+            <span class="mock-supp-name">Magnesium</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:65%"></div></div>
+              <span class="relevance-score medium">65</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Caffeine</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:75%"></div></div>
+              <span class="relevance-score medium">75</span>
+            </div>
+            <span class="mock-supp-tier tier-1">Tier 1</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Rhodiola rosea</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill medium" style="width:60%"></div></div>
+              <span class="relevance-score medium">60</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+
+          <!-- All Others -->
+          <div class="domain-group-header other-domain">
+            <span class="domain-icon" style="color:var(--text-dim)">📋</span>
+            <span class="domain-label">All Other Supplements</span>
+            <span class="group-count">73 more · sorted by category</span>
+          </div>
+          <div class="mock-supp-item">
+            <div class="mock-supp-check"></div>
+            <span class="mock-supp-name">Glucosamine</span>
+            <div class="mock-relevance">
+              <div class="relevance-bar"><div class="relevance-bar-fill low" style="width:10%"></div></div>
+              <span class="relevance-score low">10</span>
+            </div>
+            <span class="mock-supp-tier tier-2">Tier 2</span>
+          </div>
+          <div style="padding: 0.5rem 1rem; text-align: center; font-size: 0.7rem; color: var(--text-dim);">
+            + 72 more · all supplements remain selectable
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- COMPARISON SUMMARY                                              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="tab-content" id="summary">
+  <div class="comparison-summary">
+    <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 1.5rem;">Side-by-Side Comparison</h2>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>A: Current</th>
+          <th>B: Goal-First</th>
+          <th>C: Hybrid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>First interaction</td>
+          <td>93 supplements (category-sorted)</td>
+          <td>13 health goal cards</td>
+          <td class="winner">Supplements with optional goal toggle</td>
+        </tr>
+        <tr>
+          <td>Supplement ordering</td>
+          <td>Alphabetical within category</td>
+          <td class="winner">Relevance-scored by goal</td>
+          <td class="winner">Relevance-scored when goal active; category when off</td>
+        </tr>
+        <tr>
+          <td>Exploratory users</td>
+          <td>No guidance</td>
+          <td class="winner">Strong guidance via relevance</td>
+          <td class="winner">Guidance available on demand</td>
+        </tr>
+        <tr>
+          <td>Experienced users</td>
+          <td class="winner">Direct supplement access</td>
+          <td>Forced goal step first</td>
+          <td class="winner">Direct access (toggle off by default possible)</td>
+        </tr>
+        <tr>
+          <td>Uses problems.js data</td>
+          <td>No</td>
+          <td class="winner">Yes — relevanceScore + mechanismMatch</td>
+          <td class="winner">Yes — same data, conditionally</td>
+        </tr>
+        <tr>
+          <td>Step count</td>
+          <td>3 steps</td>
+          <td>3 steps (reordered)</td>
+          <td class="winner">2 steps + optional context</td>
+        </tr>
+        <tr>
+          <td>Implementation complexity</td>
+          <td class="winner">Existing (no work)</td>
+          <td>Moderate — reorder flow + dynamic grouping</td>
+          <td>Higher — toggle state + dual rendering modes</td>
+        </tr>
+        <tr>
+          <td>Cognitive load</td>
+          <td>High (93 flat items)</td>
+          <td class="winner">Low (chunked by relevance)</td>
+          <td class="winner">Low when goal active; moderate when off</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="recommendation-box">
+      <h3><i class="fas fa-sparkles"></i> Recommendation: Approach C (Hybrid Adaptive)</h3>
+      <p>
+        Approach C preserves the direct-access path that experienced users expect while layering in the smart relevance grouping from Approach B as an opt-in enhancement. The <strong>"Smart Sort by Health Goal"</strong> toggle is prominent enough for exploratory users to discover, yet unobtrusive enough that power users aren't slowed down. It also reduces the step count from 3 to 2 (supplements + depth), folding the goal into an optional context-setter rather than a mandatory gate.
+      </p>
+      <p style="margin-top: 0.75rem;">
+        The <code>problems.js</code> relevanceScore data (0-100 per supplement per domain) is already available and makes the grouping data-driven rather than arbitrary. Implementation adds a toggle state and conditional sort/render logic to the existing supplement dropdown — a moderate lift with high UX payoff for both user types.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- Tab Switching Script                                             -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Approach B: Goal card clicking
+  document.querySelectorAll('#b-goal-grid .goal-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('#b-goal-grid .goal-card').forEach(c => c.classList.remove('goal-selected'));
+      card.classList.add('goal-selected');
+    });
+  });
+
+  // Approach C: Toggle behavior
+  const cToggle = document.getElementById('c-goal-toggle');
+  const cSwitch = document.getElementById('c-toggle-switch');
+  const cSelector = document.getElementById('c-goal-selector');
+  if (cToggle) {
+    cToggle.addEventListener('click', () => {
+      cSwitch.classList.toggle('on');
+      cSelector.style.display = cSwitch.classList.contains('on') ? 'block' : 'none';
+    });
+  }
+
+  // Supplement item click toggles
+  document.querySelectorAll('.mock-supp-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('selected-item');
+      const check = item.querySelector('.mock-supp-check');
+      if (item.classList.contains('selected-item')) {
+        check.innerHTML = '<i class="fas fa-check"></i>';
+      } else {
+        check.innerHTML = '';
+      }
+    });
+  });
+</script>
+
+
+
+
+    <!-- Auth & Backend Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/convex-client.js"></script>
+    <script src="../js/rbac.js"></script>
+    <script src="../js/auth-ui.js"></script>
+    <script src="../js/analytics-enhanced.js"></script>
+</body></html>
