@@ -217,9 +217,10 @@
 
       dispatch("auth:loaded");
 
-      // If signed in, fire initial event
+      // If signed in, fire initial event with initial flag so listeners
+      // can distinguish "already signed in on page load" from "user just signed in via modal"
       if (state.isSignedIn) {
-        dispatch("auth:signed-in", { user: state.user, role: state.role });
+        dispatch("auth:signed-in", { user: state.user, role: state.role, initial: true });
       }
     } catch (err) {
       console.error("[Auth] Clerk initialization failed:", err);

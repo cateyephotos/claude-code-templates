@@ -250,11 +250,21 @@
   }
 
   // ── Auth Event Listeners ────────────────────────────────────────
-  document.addEventListener("auth:signed-in", function () {
+  // Only reload on real sign-in transitions (user used the modal),
+  // NOT on initial page load where user is already signed in.
+  // The initial event has { initial: true } in detail — skip it to prevent refresh loops.
+  let reloadScheduled = false;
+
+  document.addEventListener("auth:signed-in", function (e) {
+    if (e.detail?.initial) return; // Already signed in on load — no reload needed
+    if (reloadScheduled) return;
+    reloadScheduled = true;
     window.location.reload();
   });
 
   document.addEventListener("auth:signed-out", function () {
+    if (reloadScheduled) return;
+    reloadScheduled = true;
     window.location.reload();
   });
 
