@@ -533,7 +533,7 @@ function supplementToMonograph(supp, enhanced) {
         // ── sections ──────────────────────────────────────────────────────────
         quickFacts,
         overviewPara,
-        keyFindings : h(supp.evidenceTierRationale),
+        keyFindings : '',  // rationale already included in overviewPara
         studyPops   : supp.studyPopulations?.length
             ? `Key study populations: ${supp.studyPopulations.join('; ')}`
             : '',
