@@ -49,7 +49,7 @@ function findHtmlFiles(dir) {
       const fullPath = path.join(currentDir, entry.name);
       if (entry.isDirectory()) {
         if (!SKIP_DIRS.has(entry.name)) walk(fullPath);
-      } else if (entry.isFile() && entry.name.endsWith(".html")) {
+      } else if (entry.isFile() && entry.name.endsWith(".html") && !entry.name.startsWith("google")) {
         files.push(fullPath);
       }
     }
