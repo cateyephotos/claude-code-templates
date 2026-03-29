@@ -1151,6 +1151,20 @@ ${buildRelatedCardsHTML(d.relatedCards)}
             </div>
         </section>
 
+        <!-- CTA: Free Sleep Guide -->
+        <div class="guide-cta-banner" id="guide-cta">
+            <div class="guide-cta-inner">
+                <div class="guide-cta-icon"><i class="fas fa-moon"></i></div>
+                <div class="guide-cta-content">
+                    <h3 class="guide-cta-title">Free Evidence-Based Sleep Guide</h3>
+                    <p class="guide-cta-desc">7 supplements ranked by research strength, with dosage protocols and interaction warnings. 96 verified citations.</p>
+                </div>
+                <a href="../guides/sleep" class="guide-cta-btn">
+                    <i class="fas fa-book-open"></i> Read Free Guide
+                </a>
+            </div>
+        </div>
+
         <!-- Disclaimer -->
         <div class="disclaimer-box">
             <div class="disclaimer-title"><i class="fas fa-info-circle"></i> Medical Disclaimer</div>

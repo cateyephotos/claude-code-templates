@@ -1012,6 +1012,63 @@
         }
 
         /* =========================================================
+           GUIDE CTA BANNER
+        ========================================================= */
+        .guide-cta-banner {
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+            border-radius: var(--radius);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .guide-cta-inner {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .guide-cta-icon {
+            font-size: 2rem;
+            color: #fbbf24;
+            flex-shrink: 0;
+        }
+        .guide-cta-content { flex: 1; min-width: 200px; }
+        .guide-cta-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 0.25rem;
+        }
+        .guide-cta-desc {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+            line-height: 1.4;
+        }
+        .guide-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: var(--accent-dark);
+            font-weight: 700;
+            font-size: 0.875rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            flex-shrink: 0;
+        }
+        .guide-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 600px) {
+            .guide-cta-inner { flex-direction: column; text-align: center; }
+            .guide-cta-btn { width: 100%; justify-content: center; }
+        }
+
+        /* =========================================================
            DISCLAIMER
         ========================================================= */
         .disclaimer-box {
@@ -1754,6 +1811,20 @@
                 </a>
             </div>
         </section>
+
+        <!-- CTA: Free Sleep Guide -->
+        <div class="guide-cta-banner" id="guide-cta">
+            <div class="guide-cta-inner">
+                <div class="guide-cta-icon"><i class="fas fa-moon"></i></div>
+                <div class="guide-cta-content">
+                    <h3 class="guide-cta-title">Free Evidence-Based Sleep Guide</h3>
+                    <p class="guide-cta-desc">7 supplements ranked by research strength, with dosage protocols and interaction warnings. 96 verified citations.</p>
+                </div>
+                <a href="../guides/sleep" class="guide-cta-btn">
+                    <i class="fas fa-book-open"></i> Read Free Guide
+                </a>
+            </div>
+        </div>
 
         <!-- Disclaimer -->
         <div class="disclaimer-box">
