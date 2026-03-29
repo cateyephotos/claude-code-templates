@@ -409,6 +409,132 @@ function qfIcon(label) {
     return 'fas fa-info-circle';
 }
 
+// ── SEO: JSON-LD structured data builders ─────────────────────────────────────
+
+function buildJsonLd(supp, slug, tierText, safetyRat, citCount) {
+    const schemas = [];
+    const url = `${BASE_URL}/supplements/${slug}.html`;
+    const lastUpd = supp.lastUpdated || supp.dateAdded || '';
+    const isoDate = lastUpd ? lastUpd.slice(0, 10) : new Date().toISOString().slice(0, 10);
+
+    // 1. MedicalWebPage schema
+    schemas.push(JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'MedicalWebPage',
+        name: `${supp.name} — Evidence-Based Guide`,
+        description: buildMetaDesc(supp, tierText, safetyRat),
+        url: url,
+        dateModified: isoDate,
+        datePublished: (supp.dateAdded || isoDate).slice(0, 10),
+        publisher: {
+            '@type': 'Organization',
+            name: 'SupplementDB',
+            url: BASE_URL
+        },
+        about: {
+            '@type': 'DietarySupplement',
+            name: supp.name,
+            alternateName: supp.commonNames || [],
+            activeIngredient: supp.scientificName || supp.name
+        },
+        mainContentOfPage: {
+            '@type': 'WebPageElement',
+            cssSelector: '#overview'
+        },
+        lastReviewed: isoDate,
+        reviewedBy: {
+            '@type': 'Organization',
+            name: 'SupplementDB Research Team'
+        }
+    }));
+
+    // 2. FAQPage schema — auto-generated from supplement data
+    const faqs = [];
+
+    if (supp.dosageRange) {
+        faqs.push({
+            '@type': 'Question',
+            name: `What is the recommended dosage for ${supp.name}?`,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: `The clinical dosage range for ${supp.name} is ${supp.dosageRange}.${supp.optimalDuration ? ` Optimal duration: ${supp.optimalDuration}.` : ''}`
+            }
+        });
+    }
+
+    if (supp.safetyProfile?.rating) {
+        const sideEffects = supp.safetyProfile.commonSideEffects || [];
+        faqs.push({
+            '@type': 'Question',
+            name: `Is ${supp.name} safe to take?`,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: `${supp.name} has a safety rating of "${supp.safetyProfile.rating}."${sideEffects.length ? ` Common side effects include: ${sideEffects.join(', ')}.` : ''}`
+            }
+        });
+    }
+
+    const allBenefits = [
+        ...(supp.primaryBenefits?.cognitive || []),
+        ...(supp.primaryBenefits?.nonCognitive || [])
+    ];
+    if (allBenefits.length > 0) {
+        faqs.push({
+            '@type': 'Question',
+            name: `What are the benefits of ${supp.name}?`,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: `Evidence-based benefits of ${supp.name} include: ${allBenefits.join(', ')}. Evidence tier: ${tierText}.`
+            }
+        });
+    }
+
+    if (supp.safetyProfile?.drugInteractions?.length > 0) {
+        faqs.push({
+            '@type': 'Question',
+            name: `Does ${supp.name} interact with medications?`,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: `Known drug interactions for ${supp.name}: ${supp.safetyProfile.drugInteractions.join(', ')}. Consult your healthcare provider before combining with medications.`
+            }
+        });
+    }
+
+    if (faqs.length > 0) {
+        schemas.push(JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs
+        }));
+    }
+
+    // 3. BreadcrumbList schema
+    schemas.push(JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+            { '@type': 'ListItem', position: 2, name: 'Supplements', item: `${BASE_URL}/supplements/` },
+            { '@type': 'ListItem', position: 3, name: supp.name, item: url }
+        ]
+    }));
+
+    return schemas;
+}
+
+function buildMetaDesc(supp, tierText, safetyRat) {
+    const parts = [`${supp.name}: ${tierText}`];
+    if (supp.dosageRange) parts.push(`Dosage: ${supp.dosageRange}`);
+    parts.push(`Safety: ${safetyRat}`);
+    const benefits = [
+        ...(supp.primaryBenefits?.cognitive || []),
+        ...(supp.primaryBenefits?.nonCognitive || [])
+    ].slice(0, 3);
+    if (benefits.length) parts.push(benefits.join(', '));
+    parts.push('Evidence-based research from peer-reviewed studies');
+    return parts.join('. ') + '.';
+}
+
 // ── Canonical SupplementMonograph schema builder ───────────────────────────────
 /**
  * Maps supplements.js + enhanced_citations → the full SupplementMonograph data
@@ -502,17 +628,18 @@ function supplementToMonograph(supp, enhanced) {
     return {
         // ── meta ──────────────────────────────────────────────────────────────
         title      : `${h(supp.name)} — Evidence-Based Guide | SupplementDB`,
-        metaDesc   : `Evidence-based research on ${h(supp.name)}. ${h(supp.evidenceTierRationale || supp.category || '')}.`,
+        metaDesc   : buildMetaDesc(supp, tierText, safetyRat),
         canonical  : `${BASE_URL}/supplements/${slug}.html`,
         ogTitle    : `${h(supp.name)} — Evidence-Based Guide`,
         ogDesc     : h(supp.evidenceTierRationale || `${supp.category} supplement with ${tierText}`),
         ogUrl      : `${BASE_URL}/supplements/${slug}.html`,
         twTitle    : `${h(supp.name)} — Evidence-Based Guide`,
-        twDesc     : h(supp.evidenceTierRationale || ''),
+        twDesc     : buildMetaDesc(supp, tierText, safetyRat),
         clerkKey   : CLERK_KEY,
         convexUrl  : CONVEX_URL,
         posthog    : '',      // populated by env if present
-        jsonLd     : [],      // future: schema.org MedicalWebPage
+        jsonLd     : buildJsonLd(supp, slug, tierText, safetyRat, citCount),
+        lastUpdated: (supp.lastUpdated || supp.dateAdded || '').slice(0, 10),
 
         // ── hero ──────────────────────────────────────────────────────────────
         tierText,
@@ -723,6 +850,7 @@ function renderPage(d, css) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(d.twTitle)}">
     <meta name="twitter:description" content="${esc(d.twDesc)}">
+${d.lastUpdated ? `    <meta property="article:modified_time" content="${esc(d.lastUpdated)}">` : ''}
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
