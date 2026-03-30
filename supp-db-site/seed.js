@@ -627,6 +627,7 @@ function supplementToMonograph(supp, enhanced) {
 
     return {
         // ── meta ──────────────────────────────────────────────────────────────
+        slug,
         title      : `${h(supp.name)} — Evidence-Based Guide | SupplementDB`,
         metaDesc   : buildMetaDesc(supp, tierText, safetyRat),
         canonical  : `${BASE_URL}/supplements/${slug}.html`,
@@ -1165,6 +1166,21 @@ ${buildRelatedCardsHTML(d.relatedCards)}
             </div>
         </div>
 
+        <!-- Newsletter Signup -->
+        <div class="monograph-newsletter" id="monograph-newsletter-section">
+            <div class="monograph-newsletter-inner">
+                <div class="monograph-newsletter-text">
+                    <h3 class="monograph-newsletter-title"><i class="fas fa-flask"></i> Get Research Updates</h3>
+                    <p class="monograph-newsletter-desc">New supplement reviews, updated evidence tiers, and dosage protocol changes — delivered to your inbox.</p>
+                </div>
+                <form id="monograph-newsletter-form" class="monograph-newsletter-form">
+                    <input type="email" id="monograph-newsletter-email" placeholder="your@email.com" required class="monograph-newsletter-input">
+                    <button type="submit" class="monograph-newsletter-btn">Subscribe</button>
+                </form>
+                <p id="monograph-newsletter-message" class="monograph-newsletter-msg" style="display:none;"></p>
+            </div>
+        </div>
+
         <!-- Disclaimer -->
         <div class="disclaimer-box">
             <div class="disclaimer-title"><i class="fas fa-info-circle"></i> Medical Disclaimer</div>
@@ -1191,6 +1207,14 @@ ${buildRelatedCardsHTML(d.relatedCards)}
 <script src="../js/auth.js" defer></script>
 <script src="../js/rbac.js" defer></script>
 <script src="../js/convex-client.js" defer></script>
+<script src="../js/newsletter.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    if(window.SupplementDBNewsletter){
+        SupplementDBNewsletter.init("monograph-newsletter-form","monograph-newsletter-email","monograph-newsletter-message","monograph-${d.slug}");
+    }
+});
+</script>
 <script>
 // Sticky progress nav: highlight active step on scroll
 (function(){

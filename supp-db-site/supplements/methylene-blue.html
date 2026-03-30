@@ -1069,6 +1069,91 @@
         }
 
         /* =========================================================
+           MONOGRAPH NEWSLETTER
+        ========================================================= */
+        .monograph-newsletter {
+            margin-top: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .monograph-newsletter-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .monograph-newsletter-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .monograph-newsletter-title i {
+            color: var(--accent);
+        }
+        .monograph-newsletter-desc {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin: 0.25rem 0 0 0;
+            line-height: 1.5;
+        }
+        .monograph-newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 480px;
+        }
+        .monograph-newsletter-input {
+            flex: 1;
+            padding: 0.625rem 0.875rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.06);
+            color: var(--text-bright);
+            font-size: 0.8125rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .monograph-newsletter-input:focus {
+            border-color: var(--accent);
+        }
+        .monograph-newsletter-input::placeholder {
+            color: var(--text-muted);
+        }
+        .monograph-newsletter-btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: 8px;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .monograph-newsletter-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+        .monograph-newsletter-msg {
+            font-size: 0.8125rem;
+            margin: 0.25rem 0 0;
+        }
+        @media (max-width: 600px) {
+            .monograph-newsletter-form {
+                flex-direction: column;
+            }
+            .monograph-newsletter-btn {
+                width: 100%;
+            }
+        }
+
+        /* =========================================================
            DISCLAIMER
         ========================================================= */
         .disclaimer-box {
@@ -1951,6 +2036,21 @@
             </div>
         </div>
 
+        <!-- Newsletter Signup -->
+        <div class="monograph-newsletter" id="monograph-newsletter-section">
+            <div class="monograph-newsletter-inner">
+                <div class="monograph-newsletter-text">
+                    <h3 class="monograph-newsletter-title"><i class="fas fa-flask"></i> Get Research Updates</h3>
+                    <p class="monograph-newsletter-desc">New supplement reviews, updated evidence tiers, and dosage protocol changes — delivered to your inbox.</p>
+                </div>
+                <form id="monograph-newsletter-form" class="monograph-newsletter-form">
+                    <input type="email" id="monograph-newsletter-email" placeholder="your@email.com" required class="monograph-newsletter-input">
+                    <button type="submit" class="monograph-newsletter-btn">Subscribe</button>
+                </form>
+                <p id="monograph-newsletter-message" class="monograph-newsletter-msg" style="display:none;"></p>
+            </div>
+        </div>
+
         <!-- Disclaimer -->
         <div class="disclaimer-box">
             <div class="disclaimer-title"><i class="fas fa-info-circle"></i> Medical Disclaimer</div>
@@ -1977,6 +2077,14 @@
 <script src="../js/auth.js" defer></script>
 <script src="../js/rbac.js" defer></script>
 <script src="../js/convex-client.js" defer></script>
+<script src="../js/newsletter.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    if(window.SupplementDBNewsletter){
+        SupplementDBNewsletter.init("monograph-newsletter-form","monograph-newsletter-email","monograph-newsletter-message","monograph-methylene-blue");
+    }
+});
+</script>
 <script>
 // Sticky progress nav: highlight active step on scroll
 (function(){
