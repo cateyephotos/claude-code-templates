@@ -197,6 +197,26 @@
       }
 
       state.clerk = clerk;
+
+      // ── Handle OAuth redirect callback ──────────────────────────
+      // After Google/Apple OAuth, Clerk redirects back with query params
+      // (__clerk_status, __clerk_created_session, etc.). We must call
+      // handleRedirectCallback() to complete the sign-in flow.
+      // Without this, static HTML sites get stuck in a sign-in loop.
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("__clerk_status") || params.has("__clerk_created_session")) {
+        try {
+          await clerk.handleRedirectCallback({
+            redirectUrl: window.location.origin + window.location.pathname,
+          });
+          // Clean up Clerk query params from the URL
+          const cleanUrl = window.location.origin + window.location.pathname + window.location.hash;
+          window.history.replaceState({}, document.title, cleanUrl);
+        } catch (callbackErr) {
+          console.error("[Auth] OAuth redirect callback failed:", callbackErr);
+        }
+      }
+
       state.isLoaded = true;
       state.isLoading = false;
 
