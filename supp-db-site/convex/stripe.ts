@@ -103,6 +103,7 @@ export const createCheckoutSession = action({
         plan: args.plan,
       },
       subscription_data: {
+        statement_descriptor: 'SUPPLEMENTDB',
         metadata: {
           userId: clerkId,
           plan: args.plan,
@@ -277,6 +278,9 @@ export const createGuideCheckoutSession = action({
       },
       // Enable promotion codes for guide purchases too
       allow_promotion_codes: true,
+      payment_intent_data: {
+        statement_descriptor_suffix: 'SUPPLEMENTDB',
+      },
     };
 
     if (customerId) {
