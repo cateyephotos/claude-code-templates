@@ -2508,8 +2508,6 @@ function generateGuidePage(guide, allSupplements) {
 <div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
     <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
     <span class="trust-bar-divider"></span>
-    <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-    <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
     <span class="trust-bar-divider"></span>
     <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>

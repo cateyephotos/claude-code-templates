@@ -504,8 +504,6 @@ function generateSupplementPage(s) {
         <div class="trust-bar">
             <span class="trust-bar-item"><i class="fas fa-check-circle"></i> ${totalCitations}+ Verified Citations</span>
             <span class="trust-bar-divider"></span>
-            <span class="trust-bar-item"><i class="fas fa-shield-alt"></i> FDA-Compliant Language</span>
-            <span class="trust-bar-divider"></span>
             <span class="trust-bar-item"><i class="fas fa-ban"></i> No Industry Funding</span>
             <span class="trust-bar-divider"></span>
             <span class="trust-bar-item"><i class="fas fa-flask"></i> <a href="../methodology.html">Our Methodology</a></span>

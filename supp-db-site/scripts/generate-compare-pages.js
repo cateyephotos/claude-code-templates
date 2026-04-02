@@ -738,7 +738,6 @@ function generateComparePage(comp) {
         <div class="hero-meta-row">
             <div class="hero-chip"><i class="fas fa-book-open"></i> ${totalCitations}+ Verified Citations</div>
             <div class="hero-chip"><i class="fas fa-calendar"></i> Updated ${TODAY}</div>
-            <div class="hero-chip"><i class="fas fa-shield-alt"></i> FDA-Compliant</div>
             <div class="hero-chip"><i class="fas fa-ban"></i> No Industry Funding</div>
         </div>
     </div>

@@ -107,14 +107,7 @@
         .verification-matrix .check { color: #059669; font-weight: 700; }
         .verification-matrix .partial { color: #d97706; }
 
-        .fda-compliance-box {
-            background: #fef3c7; border: 1px solid #f59e0b; border-left: 4px solid #f59e0b;
-            border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0;
-        }
-        .fda-compliance-box h4 { margin: 0 0 0.5rem; color: #92400e; font-family: var(--font-serif); }
-        .fda-compliance-box p { color: #92400e; font-size: 0.9rem; margin: 0; line-height: 1.6; }
-
-        @media (max-width: 640px) {
+@media (max-width: 640px) {
             .method-pipeline { flex-direction: column; }
             .method-step::after { content: '↓'; right: auto; bottom: -1rem; top: auto; left: 50%; transform: translateX(-50%); }
             .trust-badge-row { flex-direction: column; }
@@ -163,7 +156,7 @@
                     "name": "Does SupplementDB make health claims?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "No. SupplementDB reports published research findings using FDA-compliant structure/function language. We do not claim any supplement can diagnose, treat, cure, or prevent any disease. Our automated FDA compliance audit verifies this across all content."
+                        "text": "No. SupplementDB reports published research findings using careful, evidence-based language. We do not claim any supplement can diagnose, treat, cure, or prevent any disease. All content is reviewed for accuracy and appropriate framing."
                     }
                 }
             ]
@@ -202,13 +195,6 @@
                     </div>
                 </div>
                 <div class="trust-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="badge-text">
-                        <strong>FDA-Compliant Language</strong>
-                        <span>Automated audit verified</span>
-                    </div>
-                </div>
-                <div class="trust-badge">
                     <i class="fas fa-ban"></i>
                     <div class="badge-text">
                         <strong>No Industry Funding</strong>
@@ -227,7 +213,7 @@
             <!-- Section 1: Research Pipeline -->
             <section class="legal-section" id="research-pipeline">
                 <h2>1. Evidence Evaluation Pipeline</h2>
-                <p>Every supplement in the SupplementDB database passes through a structured five-stage evaluation pipeline before publication. This process ensures that all data points are accurate, traceable, and presented using appropriate scientific language.</p>
+                <p>Every supplement in the SupplementDB database passes through a structured four-stage evaluation pipeline before publication. This process ensures that all data points are accurate, traceable, and grounded in peer-reviewed research.</p>
 
                 <div class="method-pipeline">
                     <div class="method-step">
@@ -249,11 +235,6 @@
                         <div class="step-num">4</div>
                         <h4>Evidence Rating</h4>
                         <p>4-tier classification based on research quality, quantity, and consistency</p>
-                    </div>
-                    <div class="method-step">
-                        <div class="step-num">5</div>
-                        <h4>Compliance Audit</h4>
-                        <p>Automated FDA claim language scan across all consumer-facing content</p>
                     </div>
                 </div>
             </section>
@@ -375,86 +356,42 @@
                 <p class="legal-plain"><em>In plain language: We use the same evidence hierarchy that medical research uses — the strongest evidence comes from pooling many clinical trials together, not from any single study.</em></p>
             </section>
 
-            <!-- Section 5: FDA Compliance -->
-            <section class="legal-section" id="fda-compliance">
-                <h2>5. FDA Compliance &amp; Language Standards</h2>
-
-                <div class="fda-compliance-box">
-                    <h4><i class="fas fa-exclamation-triangle mr-2"></i>FDA Disclosure</h4>
-                    <p>These statements have not been evaluated by the Food and Drug Administration. The products and supplements discussed on this website are not intended to diagnose, treat, cure, or prevent any disease.</p>
-                </div>
-
-                <p>All consumer-facing content on SupplementDB adheres to FDA structure/function claim guidelines. We employ an automated compliance audit system that scans every data field and generated page for prohibited disease claim language.</p>
-
-                <h3>Permitted Language (Structure/Function Claims)</h3>
-                <ul>
-                    <li>"Supports immune system function" — describes a body system function</li>
-                    <li>"Promotes healthy sleep onset" — describes a normal body process</li>
-                    <li>"Supports cardiovascular health" — general wellness claim</li>
-                    <li>"Supports healthy cholesterol levels already in the normal range" — qualifies the biomarker claim</li>
-                </ul>
-
-                <h3>Prohibited Language (Disease Claims)</h3>
-                <ul>
-                    <li>"Cures arthritis" — direct disease claim, requires drug approval</li>
-                    <li>"Prevents cancer" — disease prevention claim, requires FDA authorization</li>
-                    <li>"Lowers blood pressure" — implicit disease claim without qualifying language</li>
-                    <li>"Clinically proven to..." — implies drug-level evidence</li>
-                </ul>
-
-                <h3>Automated Compliance Audit</h3>
-                <p>SupplementDB runs an automated FDA claim language audit (<code>audit-fda-claims.js</code>) that scans:</p>
-                <ul>
-                    <li><strong>93 supplement data entries</strong> — all consumer-facing benefit descriptions, mechanisms, and rationale fields</li>
-                    <li><strong>23+ generated HTML pages</strong> — all guides, categories, comparisons, and informational pages</li>
-                    <li><strong>3 page generator templates</strong> — ensuring template strings don't introduce non-compliant language</li>
-                </ul>
-                <p>The audit flags violations at four severity levels (Critical, High, Medium, Low) and must pass with zero Critical or High findings before any content update is published. Context-aware exemptions prevent false positives from research citation titles, disclaimer text, and safety warnings.</p>
-            </section>
-
-            <!-- Section 6: Data Extraction Standards -->
+            <!-- Section 5: Data Extraction Standards -->
             <section class="legal-section" id="data-extraction">
-                <h2>6. Data Extraction Standards</h2>
-                <p>For each of the 93 supplements in the database, we extract and standardize the following information from published research:</p>
+                <h2>5. How We Summarize the Research</h2>
+                <p>For each of the 93 supplements in the database, our team reviews the published literature and distills it into a consistent, reader-friendly format. Here's what we look for and how we present it:</p>
 
                 <table class="verification-matrix">
                     <thead>
                         <tr>
-                            <th>Data Field</th>
-                            <th>Source</th>
-                            <th>Standardization</th>
+                            <th>What We Cover</th>
+                            <th>How We Approach It</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Primary Benefits</strong></td>
-                            <td>Published RCTs and meta-analyses</td>
-                            <td>FDA-compliant structure/function language</td>
+                            <td>We summarize the key findings from published clinical trials and meta-analyses, using clear language that reflects what the research actually shows</td>
                         </tr>
                         <tr>
                             <td><strong>Dosage Range</strong></td>
-                            <td>Clinical study protocols</td>
-                            <td>Ranges as used in research; standardization noted</td>
+                            <td>Dosage ranges are drawn directly from clinical study protocols, noting the forms and standardizations used in the research</td>
                         </tr>
                         <tr>
                             <td><strong>Mechanisms of Action</strong></td>
-                            <td>Mechanistic studies + review papers</td>
-                            <td>Biological pathway descriptions</td>
+                            <td>We describe the known biological pathways based on mechanistic studies and review papers, explaining how a supplement interacts with the body</td>
                         </tr>
                         <tr>
                             <td><strong>Safety Profile</strong></td>
-                            <td>Published adverse event data, interaction databases</td>
-                            <td>Side effects, contraindications, drug interactions</td>
+                            <td>Side effects, contraindications, and drug interactions are compiled from published adverse event data and interaction databases</td>
                         </tr>
                         <tr>
                             <td><strong>Effect Sizes</strong></td>
-                            <td>Individual RCTs and meta-analyses</td>
-                            <td>Cohen's d, SMD, OR, RR with study details and n-counts</td>
+                            <td>Where reported, we document standardized measures (Cohen's d, SMD, odds ratios) along with study details and participant counts so you can gauge practical significance</td>
                         </tr>
                         <tr>
                             <td><strong>Study Populations</strong></td>
-                            <td>Published inclusion/exclusion criteria</td>
-                            <td>Descriptive labels (e.g., "healthy adults," "elderly")</td>
+                            <td>We note who was studied — healthy adults, older adults, athletes, specific clinical populations — so you can assess how relevant the findings are to your situation</td>
                         </tr>
                     </tbody>
                 </table>
@@ -462,7 +399,7 @@
 
             <!-- Section 7: Limitations & Transparency -->
             <section class="legal-section" id="limitations">
-                <h2>7. Limitations &amp; Transparency</h2>
+                <h2>6. Limitations &amp; Transparency</h2>
                 <p>Rigorous methodology does not eliminate all limitations. We believe transparent acknowledgment of these limitations is essential to maintaining trust:</p>
                 <ul>
                     <li><strong>Publication bias</strong> — Published research over-represents positive findings. We note this limitation and include effect sizes where available so readers can assess practical significance</li>
@@ -475,7 +412,7 @@
 
             <!-- Section 8: Editorial Independence -->
             <section class="legal-section" id="editorial-independence">
-                <h2>8. Editorial Independence</h2>
+                <h2>7. Editorial Independence</h2>
                 <ul>
                     <li><strong>No supplement sales</strong> — SupplementDB does not sell supplements, accept supplement advertising, or receive manufacturer funding</li>
                     <li><strong>No affiliate revenue from supplement brands</strong> — Our data is not influenced by commercial relationships</li>
