@@ -1,0 +1,26 @@
+# Convex backend (deployed separately to convex.dev)
+convex/
+
+# Test files
+tests/
+playwright.config.js
+playwright-report/
+
+# Healing engine (not needed for build or serve)
+healing-engine/
+
+# Sprint journal
+sprint-journal/
+
+# Dev/config files
+.env
+.env.local
+.env.example
+docker-entrypoint.sh
+tsconfig.json
+package-lock.json
+
+# Documentation
+docs/
+*.md
+# Vercel auto-deploy trigger

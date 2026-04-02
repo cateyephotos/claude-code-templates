@@ -18,7 +18,7 @@ const INPUT = path.join(__dirname, '..', 'data', 'citations-to-verify.json');
 const OUTPUT = path.join(__dirname, '..', 'data', 'verified-citations.json');
 
 const TOOL = 'supplementdb';
-const EMAIL = 'admin@supplementdb.co';
+const EMAIL = 'admin@supplementdb.info';
 const RATE_LIMIT_MS = 350; // NCBI rate limit: ~3 requests/sec without API key
 
 // ── Helpers ────────────────────────────────────────────────────────
@@ -158,7 +158,7 @@ async function resolveDoi(doi) {
   const url = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
   try {
     const resp = await fetch(url, {
-      headers: { 'User-Agent': 'SupplementDB/1.0 (admin@supplementdb.co)' }
+      headers: { 'User-Agent': 'SupplementDB/1.0 (admin@supplementdb.info)' }
     });
     if (!resp.ok) return null;
     const data = await resp.json();

@@ -72,7 +72,7 @@ function fetchJson(url, headers = {}) {
     return new Promise((resolve, reject) => {
         const opts = {
             headers: {
-                'User-Agent': 'SupplementDB-CitationVerifier/1.0 (https://supplementdb.com; mailto:admin@supplementdb.com)',
+                'User-Agent': 'SupplementDB-CitationVerifier/1.0 (https://supplementdb.info; mailto:admin@supplementdb.info)',
                 ...headers,
             }
         };

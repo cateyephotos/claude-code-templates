@@ -1,0 +1,767 @@
+{
+  "startDate": "2026-03-04",
+  "lastUpdated": "2026-03-05",
+  "totalSupplements": 89,
+  "status": "phase2_in_progress",
+  "phases": {
+    "phase0_audit": {"status": "complete", "startDate": "2026-03-04", "endDate": "2026-03-04"},
+    "phase1_critical": {"status": "complete", "startDate": "2026-03-04", "endDate": "2026-03-04"},
+    "phase2_core": {"status": "in_progress", "startDate": "2026-03-05", "endDate": null},
+    "phase3_emerging": {"status": "pending", "startDate": null, "endDate": null},
+    "phase4_migration": {"status": "pending", "startDate": null, "endDate": null},
+    "phase5_content": {"status": "pending", "startDate": null, "endDate": null}
+  },
+  "completed": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 36, 37, 38],
+  "inProgress": [],
+  "remaining": [17,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89],
+  "sessions": [
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 5 — Evidence Audit",
+      "supplementsProcessed": "all_89",
+      "action": "Phase 0 global audit completed",
+      "findings": {
+        "criticalIssues": 84,
+        "warnings": 180,
+        "info": 89,
+        "totalIssues": 353,
+        "healthScore": 0
+      },
+      "keyFindings": [
+        "84/89 supplements missing lastEvidenceUpdate date",
+        "72/89 supplements missing researchQualityScore",
+        "0/89 supplements have provenance trail documents",
+        "88/89 have incomplete inline enhanced citation arrays",
+        "11 supplements missing canonical named enhanced files",
+        "60/172 enhanced citation files use unknown/legacy schema format",
+        "154/172 enhanced citation files missing citationId fields"
+      ],
+      "outputFiles": [
+        "content/audits/2026-03-04_full_audit_report.json",
+        "content/audits/2026-03-04_audit_summary.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [2],
+      "action": "Phase 1 Batch 1 — Turmeric/Curcumin Mode 2 update",
+      "findings": {
+        "papersSearched": 24,
+        "papersIncluded": 6,
+        "newCitations": 6,
+        "previousCitations": 20,
+        "totalCitations": 26,
+        "qualityScoreChange": "89 → 92",
+        "tierChange": "None (confirmed Tier 1)"
+      },
+      "keyFindings": [
+        "6 new papers added (3 meta-analyses, 1 umbrella review, 1 network meta, 1 systematic review)",
+        "Cognitive function SMD=0.82 (Wang 2025), working memory SMD=1.01 (Yu 2025)",
+        "Curcumin ranked #1 for cognitive improvement via network meta-analysis (SUCRA 89.3%)",
+        "New benefit domains added: rheumatoid arthritis, metabolic health (lipid profile)",
+        "Umbrella review (25 meta-analyses) confirms broad anti-inflammatory benefits",
+        "Data integrity fix: archived 2_omega_3_fish_oil_enhanced.js (wrong ID=2, should be ID=4)"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_turmeric_curcumin_update.md",
+        "content/provenance/turmeric_curcumin/search_log.md",
+        "content/provenance/turmeric_curcumin/screening_decisions.md",
+        "content/provenance/turmeric_curcumin/evidence_evaluation.md",
+        "content/provenance/turmeric_curcumin/tier_assignment.md",
+        "content/provenance/turmeric_curcumin/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [4],
+      "action": "Phase 1 Batch 1 — Omega-3 Fatty Acids Mode 2 update",
+      "findings": {
+        "papersSearched": 60,
+        "papersIncluded": 6,
+        "newCitations": 6,
+        "previousCitations": 21,
+        "totalCitations": 27,
+        "qualityScoreChange": "92 → 94",
+        "tierChange": "None (confirmed Tier 1)"
+      },
+      "keyFindings": [
+        "6 new papers added (4 meta-analyses, 1 observational MA, 1 network MA)",
+        "Metabolic syndrome: high-dose >2000mg most effective for TG (Basirat 2025, 21 RCTs)",
+        "Preeclampsia prevention: RR 0.63 total, RR 0.45 severe (Rajati 2025, 16 studies, n=16237)",
+        "MASLD liver health: significant ALT/AST reduction (Zhou 2025, 7 RCTs)",
+        "Important negative finding: No PAD benefit (Dao 2025)",
+        "New domains: metabolic syndrome, liver health (MASLD), exercise synergy, preeclampsia prevention"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_omega_3_fatty_acids_update.md",
+        "content/provenance/omega_3_fatty_acids/search_log.md",
+        "content/provenance/omega_3_fatty_acids/screening_decisions.md",
+        "content/provenance/omega_3_fatty_acids/evidence_evaluation.md",
+        "content/provenance/omega_3_fatty_acids/tier_assignment.md",
+        "content/provenance/omega_3_fatty_acids/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [5],
+      "action": "Phase 1 Batch 1 — Creatine Mode 2 update (+ schema migration)",
+      "findings": {
+        "papersSearched": 60,
+        "papersIncluded": 6,
+        "newCitations": 6,
+        "previousCitations": 18,
+        "totalCitations": 24,
+        "qualityScoreChange": "86 → 93",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "6 new papers added (4 meta-analyses, 1 systematic review, 1 dose-response meta-analysis)",
+        "TIER UPGRADED from 2 → 1 — extensive meta-analytic support across all domains",
+        "Strength/power: 69-study meta-analysis confirms significant gains (Kazeminasab 2025)",
+        "Body composition: Dose-response from 61 trials, FFM +1.39 kg (Ashtary-Larky 2025)",
+        "Kidney safety: Definitive meta-analysis — no harm, GFR unchanged (Naeini 2025, 12 studies)",
+        "Cognitive aging: 83.3% positive in 6 studies, n=1542 (Marshall 2026)",
+        "Depression: SMD=-0.34, below MID, GRADE very low (Eckert 2025) — WEAK evidence",
+        "Schema migration: legacy enhancedCitations[array] → canonical citations{mechanisms,benefits,safety,dosage}"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_creatine_update.md",
+        "content/provenance/creatine/search_log.md",
+        "content/provenance/creatine/screening_decisions.md",
+        "content/provenance/creatine/evidence_evaluation.md",
+        "content/provenance/creatine/tier_assignment.md",
+        "content/provenance/creatine/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [6],
+      "action": "Phase 1 Batch 2 — Magnesium Mode 2 update",
+      "findings": {
+        "papersSearched": 98,
+        "papersIncluded": 5,
+        "newCitations": 5,
+        "previousCitations": 16,
+        "totalCitations": 21,
+        "qualityScoreChange": "78 → 90",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "5 new papers added (4 meta-analyses, 1 systematic review & meta-analysis)",
+        "TIER UPGRADED from 2 → 1 — multiple large meta-analyses across cardiovascular and metabolic domains",
+        "Blood pressure: 38-RCT meta-analysis, SBP -2.81 mmHg overall, -7.68 mmHg in hypertensives on medication (Argeros 2025)",
+        "T2DM glycemic control: 23-RCT meta-analysis, FBG WMD=-0.58 (Maqrashi 2025)",
+        "Prediabetes: HOMA-IR MD=-1.10, OGTT glucose MD=-0.99 mmol/L (Basit 2026)",
+        "Anti-inflammatory mechanism confirmed: significant CRP reduction (Cepeda 2025, 28 studies)",
+        "Metabolic syndrome CRP: SMD=-0.327, better in women, 12-16 weeks optimal (Wang 2025)",
+        "Data integrity fix: archived 6_magnesium_enhanced.js stub (empty arrays, would overwrite real data)"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_magnesium_update.md",
+        "content/provenance/magnesium/search_log.md",
+        "content/provenance/magnesium/screening_decisions.md",
+        "content/provenance/magnesium/evidence_evaluation.md",
+        "content/provenance/magnesium/tier_assignment.md",
+        "content/provenance/magnesium/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [7],
+      "action": "Phase 1 Batch 2 — Vitamin D3 Mode 2 update",
+      "findings": {
+        "papersSearched": 137,
+        "papersIncluded": 5,
+        "newCitations": 5,
+        "previousCitations": 23,
+        "totalCitations": 28,
+        "qualityScoreChange": "89 → 93",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "5 new papers added (5 meta-analyses including 1 IPD meta-analysis and 1 network meta-analysis)",
+        "TIER UPGRADED from 2 → 1 — 20+ meta-analyses across 8+ health domains",
+        "Immune function REFINED: Universal ARI protection no longer significant (OR 0.93, CI includes 1.00), but deficiency-specific benefit confirmed (OR 0.58 at <25 nmol/L; Jolliffe 2025, 46 RCTs, n=64,573)",
+        "SLE autoimmune: Significant SLEDAI improvement and inflammatory marker reduction (El Kababi 2025, 21 studies, n=3,177)",
+        "NEW domain — Liver Health: Significant hepatic function improvement across NAFLD, hepatitis, cirrhosis (Martinekova 2025, 46 RCTs, n=4,084)",
+        "NEW domain — Glycemic Control: Significant FBG/HbA1c/HOMA-IR improvement in T2DM (Bruna-Mejias 2025, 20 RCTs)",
+        "Dose-response for T2DM: 2000-4000 IU/day optimal (Zhang 2025, 40 RCTs network MA)",
+        "Structural fix: supplements.js tier corrected 2→1, evidenceProfile moved inside enhancedCitations, generic keyCitations replaced with real papers"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_vitamin_d3_update.md",
+        "content/provenance/vitamin_d3/search_log.md",
+        "content/provenance/vitamin_d3/screening_decisions.md",
+        "content/provenance/vitamin_d3/evidence_evaluation.md",
+        "content/provenance/vitamin_d3/tier_assignment.md",
+        "content/provenance/vitamin_d3/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [36],
+      "action": "Phase 1 Batch 2 — Vitamin C Mode 2 update",
+      "findings": {
+        "papersSearched": 21,
+        "papersIncluded": 5,
+        "newCitations": 5,
+        "previousCitations": 18,
+        "totalCitations": 23,
+        "qualityScoreChange": "91 → 94",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "5 new papers added (3 meta-analyses, 1 dose-response meta-analysis, 1 umbrella review)",
+        "TIER UPGRADED from 2 → 1 — multiple meta-analyses across 5+ health domains with umbrella review confirmation",
+        "Cancer prevention: Colorectal RR=0.55, breast RR=0.72, prostate RR=0.88 (Arshadi 2024, 69 studies) — NEW DOMAIN",
+        "Glycemic control: Umbrella review confirms consistent FBG/HbA1c improvement across 14 meta-analyses (Chai 2025) — NEW DOMAIN",
+        "Cardiovascular in T2DM: Significant SBP reduction (Aragón-Vela 2026, 52 RCTs, n=1,425)",
+        "Antioxidant mechanism quantified: Significant MDA, TAC, GPx improvements (Moabedi 2025, 17 RCTs, n=965)",
+        "COVID-19: Mortality OR=0.64, severity OR=0.59 (Qin 2024, 22 studies, n=3,429)",
+        "Data integrity fix: archived 36_vitamin_c_enhanced.js (legacy schema, runtime conflict with primary 36_enhanced.js)"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_vitamin_c_update.md",
+        "content/provenance/vitamin_c/search_log.md",
+        "content/provenance/vitamin_c/screening_decisions.md",
+        "content/provenance/vitamin_c/evidence_evaluation.md",
+        "content/provenance/vitamin_c/tier_assignment.md",
+        "content/provenance/vitamin_c/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [37],
+      "action": "Phase 1 Batch 2 — Zinc Mode 2 update",
+      "findings": {
+        "papersSearched": 20,
+        "papersIncluded": 5,
+        "newCitations": 5,
+        "previousCitations": 16,
+        "totalCitations": 21,
+        "qualityScoreChange": "88 → 93",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "5 new papers added (5 meta-analyses including 1 umbrella review and 2 independently replicated PMS MAs)",
+        "TIER UPGRADED from 2 → 1 — 6+ meta-analyses across 6+ distinct health domains",
+        "NEW domain — PMS/Women's Health: Physical symptoms g=-0.512, total PMS g=-0.384, independently replicated (Kim 2025 + Haider 2025)",
+        "NEW domain — Maternal & Fetal Health: Fetal growth retardation RR=0.23, improved Apgar scores (Diao 2025, 77 RCTs — largest zinc pregnancy MA)",
+        "NEW domain — Neonatal Health: Significant bilirubin reduction and phototherapy duration decrease (Ghadirzadeh 2025, 20 RCTs, n=2,127)",
+        "Dermatological domain strengthened: Zinc deficiency associated with alopecia areata SMD=-0.69 (Wu 2025, 34 studies, n=4,931)",
+        "Data integrity fix: archived 37_zinc_enhanced.js (duplicate file with same const name and export ID as 37_enhanced.js)",
+        "Structural fix: duplicate isEnhanced keys removed from primaryBenefits in supplements.js"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_zinc_update.md",
+        "content/provenance/zinc/search_log.md",
+        "content/provenance/zinc/screening_decisions.md",
+        "content/provenance/zinc/evidence_evaluation.md",
+        "content/provenance/zinc/tier_assignment.md",
+        "content/provenance/zinc/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [38],
+      "action": "Phase 1 Batch 2 — Iron Mode 2 update (PHASE 1 COMPLETE)",
+      "findings": {
+        "papersSearched": 22,
+        "papersIncluded": 5,
+        "newCitations": 5,
+        "previousCitations": 17,
+        "totalCitations": 22,
+        "qualityScoreChange": "89 → 94",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "5 new papers added (1 umbrella review, 2 meta-analyses, 1 network meta-analysis, 1 systematic review)",
+        "TIER UPGRADED from 2 → 1 — umbrella review (highest evidence level) + 6+ meta-analyses across distinct domains",
+        "NEW domain — Non-anemic cognitive/psychiatric: anxiety d=0.34, fatigue d=0.34, well-being d=0.42, intelligence d=0.46, short-term memory d=0.53 (Fiani 2025, 12 RCTs, n=1,408)",
+        "Cognitive domain strengthened: Umbrella review of 17 SRs confirms targeted benefits in anemic children (Caballero-Apaza 2026)",
+        "Exercise domain strengthened: 2-20% endurance improvement, 6-15% VO2max improvement in female athletes (Pengelly 2024, 23 studies)",
+        "Pregnancy safety confirmed: NO leukemia risk (OR=1.01) from pregnancy iron supplementation (Dabir 2025, 9 studies, n=4,281)",
+        "Perioperative domain: FCM reduces transfusion risk OR=0.72, +0.76 g/dL Hb (Xue 2025, 34 RCTs, n=4,688)",
+        "Data integrity fix: archived 38_iron_enhanced.js (duplicate file — pattern now confirmed across all 8 Phase 1 supplements)",
+        "Structural fix: duplicate isEnhanced keys removed, lastUpdated→lastEvidenceUpdate fixed"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-04_iron_update.md",
+        "content/provenance/iron/search_log.md",
+        "content/provenance/iron/screening_decisions.md",
+        "content/provenance/iron/evidence_evaluation.md",
+        "content/provenance/iron/tier_assignment.md",
+        "content/provenance/iron/synthesis_notes.md"
+      ]
+    }
+    ,{
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [3],
+      "action": "Phase 2 Batch 1 — Ashwagandha Mode 2 update",
+      "findings": {
+        "papersSearched": 29,
+        "papersIncluded": 3,
+        "newCitations": 3,
+        "previousCitations": 18,
+        "totalCitations": 21,
+        "qualityScoreChange": "89 → 92",
+        "tierChange": "UPGRADED: Tier 2 → Tier 1"
+      },
+      "keyFindings": [
+        "3 new papers added (3 meta-analyses: dose-response MA, hormonal MA, psychiatric MA)",
+        "TIER UPGRADED from 2 → 1 — 3 meta-analyses (22-RCT, 23-trial, 14-study) across 6+ domains",
+        "Dose-response established: Stress SMD=-5.88, Anxiety SMD=-6.87, Depression SMD=-5.68 (Alsanie 2026, 22 RCTs)",
+        "Hormonal modulation: Cortisol SMD=-1.18, Testosterone men MD=57.43 ng/dl, Serotonin MD=31.75 ng/ml (Fornalik 2026, 23 trials, n=1706)",
+        "Clinical populations: Anxiety SMD=-1.13, Depression SMD=-1.28, Sleep SMD=-1.35 in diagnosed mental disorders (Marchi 2025, 14 studies)",
+        "New mechanisms confirmed: serotonergic modulation, sex-specific testosterone biosynthesis, thyroid hormone modulation (T4 only)",
+        "Data integrity fix: archived 3_ashwagandha_enhanced.js (duplicate file with runtime conflict)",
+        "Structural fix: duplicate isEnhanced key at wrong indentation, generic keyCitations replaced with real DOIs/PMIDs"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_ashwagandha_update.md",
+        "content/provenance/ashwagandha/search_log.md",
+        "content/provenance/ashwagandha/screening_decisions.md",
+        "content/provenance/ashwagandha/evidence_evaluation.md",
+        "content/provenance/ashwagandha/tier_assignment.md",
+        "content/provenance/ashwagandha/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [9],
+      "action": "Phase 2 Batch 1 — L-Theanine Mode 2 update",
+      "findings": {
+        "papersSearched": 15,
+        "papersIncluded": 4,
+        "newCitations": 4,
+        "previousCitations": 18,
+        "totalCitations": 22,
+        "qualityScoreChange": "84 → 87",
+        "tierChange": "NO CHANGE: Tier 2 maintained"
+      },
+      "keyFindings": [
+        "4 new papers added (2 meta-analyses, 1 systematic review & meta-analysis, 1 systematic review)",
+        "Tier maintained at 2 — pure L-theanine effect sizes remain small-to-moderate, cognitive MA mixed results",
+        "Sleep domain substantially strengthened: sleep quality SMD=0.43, daytime dysfunction SMD=0.33, sleep onset latency SMD=0.15 (Bulman 2025, 19 articles, N=897)",
+        "Largest comprehensive MA to date: 50 RCTs confirm theanine+caffeine superiority — choice RT SMD=-0.48 vs SMD=-0.35 alone (Payne 2025)",
+        "Domain-specific cognitive effects: visual RT MD=-15.20ms significant, simple RT and Stroop non-significant (Mátyus 2025, 5 RCTs)",
+        "NEW psychiatric domain: adjunctive therapy for schizophrenia, ADHD, anxiety disorders at 200-400mg/day (Moshfeghinia 2024, 11 RCTs, 6 countries)",
+        "Data integrity fix: archived 9_l_theanine_enhanced.js (duplicate file with runtime conflict, had Tier 1/quality 89 vs primary file Tier 2/quality 84)",
+        "Structural fixes: duplicate isEnhanced key repositioned, generic keyCitations replaced with real DOIs/PMIDs, 6 quantitative effectSizes added",
+        "Replaced suspicious benefit_4 citation (Baba 2024, PMID 38442785 — likely fabricated) with verified Bulman 2025 (PMID 40056718)"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_l_theanine_update.md",
+        "content/provenance/l_theanine/search_log.md",
+        "content/provenance/l_theanine/screening_decisions.md",
+        "content/provenance/l_theanine/evidence_evaluation.md",
+        "content/provenance/l_theanine/tier_assignment.md",
+        "content/provenance/l_theanine/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [10],
+      "action": "Phase 2 Batch 1 — Rhodiola rosea Mode 2 update",
+      "findings": {
+        "papersSearched": 10,
+        "papersIncluded": 3,
+        "newCitations": 3,
+        "previousCitations": 17,
+        "totalCitations": 20,
+        "qualityScoreChange": "87 → 89",
+        "tierChange": "NO CHANGE: Tier 2 maintained"
+      },
+      "keyFindings": [
+        "3 new papers added (1 meta-analysis, 1 network meta-analysis, 1 RCT)",
+        "Tier maintained at 2 — no dedicated stress/anxiety MA exists (R. rosea's primary use case)",
+        "Physical Performance domain upgraded Moderate → Strong: Wang 2025 MA of 26 RCTs (N=668), VO2 ES=0.32, TTE ES=0.38, SOD ES=1.16, CK ES=-0.84",
+        "Dose-response confirmed: >600mg/day shows significantly greater VO2 improvement (Wang 2025 subgroup analysis)",
+        "Depression domain strengthened: Urata 2025 NMA (8 RCTs, N=1049) confirms R. rosea significant vs placebo for mild depression",
+        "Salidroside mechanism clarified: Schwarz 2024 RCT (n=50) — pure biosynthetic salidroside enhanced O2 utilization (p<0.01), reduced muscle damage",
+        "Data integrity fix: archived 10_rhodiola_rosea_enhanced.js (duplicate with conflicting Tier 1/quality 86 vs primary file Tier 2/quality 87, runtime collision)",
+        "Structural fixes: duplicate isEnhanced keys repositioned, generic keyCitations replaced with real DOIs/PMIDs, 6 quantitative effectSizes added, lastUpdated→lastEvidenceUpdate"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_rhodiola_rosea_update.md",
+        "content/provenance/rhodiola_rosea/search_log.md",
+        "content/provenance/rhodiola_rosea/screening_decisions.md",
+        "content/provenance/rhodiola_rosea/evidence_evaluation.md",
+        "content/provenance/rhodiola_rosea/tier_assignment.md",
+        "content/provenance/rhodiola_rosea/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [1],
+      "action": "Phase 2 Batch 1 — Bacopa monnieri Mode 2 update",
+      "findings": {
+        "papersSearched": 7,
+        "papersIncluded": 3,
+        "newCitations": 3,
+        "previousCitations": 15,
+        "totalCitations": 18,
+        "qualityScoreChange": "82 → 85",
+        "tierChange": "NO CHANGE: Tier 2 maintained"
+      },
+      "keyFindings": [
+        "3 new papers added (2 network meta-analyses, 1 RCT)",
+        "Tier maintained at 2 — dose-response uncertainty and absence of dedicated stress/anxiety MA prevent Tier 1",
+        "LANDMARK dose-response finding: Tiemtad 2026 NMA (29 RCTs, n=2107) — high-dose Brahmi ≥600mg/day significantly superior for working memory (SMD=2.03, SUCRA 100%)",
+        "Traditional 300mg dose may be subtherapeutic for cognitive benefits: Lopresti 2025 RCT (n=101) showed NEGATIVE primary cognitive outcomes at 300mg (verbal learning p=0.391, working memory p=0.610)",
+        "However, 300mg adequate for stress: Lopresti 2025 showed POSITIVE stress reactivity (p=0.03) and anti-fatigue effects",
+        "Bacopa ranked #1 for executive function (SUCRA 91.3%) and language (93%) among 10 plant substances in elderly (Feng 2026 NMA, 25 studies, n=1861)",
+        "Data integrity fix: archived 1_bacopa_monnieri_enhanced.js (duplicate file with runtime window.enhancedCitations[1] collision)",
+        "Structural fix: duplicate isEnhanced key inside primaryBenefits removed, keyCitation DOI corrected (S0893-133X(02)00280-1 → S0893-133X(01)00419-5)"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_bacopa_monnieri_update.md",
+        "content/provenance/bacopa_monnieri/search_log.md",
+        "content/provenance/bacopa_monnieri/screening_decisions.md",
+        "content/provenance/bacopa_monnieri/evidence_evaluation.md",
+        "content/provenance/bacopa_monnieri/tier_assignment.md",
+        "content/provenance/bacopa_monnieri/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [18],
+      "action": "Phase 2 Batch 1 — CoQ10 Mode 2 update",
+      "findings": {
+        "papersSearched": 13,
+        "papersIncluded": 3,
+        "newCitations": 3,
+        "previousCitations": 14,
+        "totalCitations": 17,
+        "qualityScoreChange": "84 → 88",
+        "tierChange": "UPGRADED: Tier 3 → Tier 2"
+      },
+      "keyFindings": [
+        "3 new papers added (1 GRADE-assessed dose-response MA, 1 dose-response MA with meta-regression, 1 umbrella review)",
+        "TIER UPGRADED from 3 → 2 — multiple high-quality MAs across 5+ health domains with cross-domain dose-response validation",
+        "Exercise domain expanded: Talebi 2024 GRADE-assessed MA (28 RCTs, n=830) — dose-dependent EIMD reduction: CK WMD=-50.64, LDH WMD=-52.10, per 100mg/day: CK -23.07, LDH -27.21",
+        "NEW domain — Endothelial Function: Daei 2024 MA (12 studies, n=489) — FMD WMD=1.45%, dose-dependent meta-regression p=0.006",
+        "NEW domain — Metabolic Health: Patiño-Cardona 2024 umbrella review (highest evidence level) — FBG MD -5.2 to -11.21 mg/dL, HbA1c -0.12 to -1.83%",
+        "Cross-domain dose-response validation: independently confirmed in exercise (Talebi) and endothelial (Daei) domains",
+        "Data integrity fix: archived 18_coq10_enhanced.js (duplicate with fabricated PMIDs 28123456/29234567, conflicting Tier 1/quality 91, legacy claim/details schema)",
+        "Structural fixes (6): duplicate target keys in mechanisms/dosage, wrong tissueTarget 'Central nervous system' corrected across all benefits, publicationSpan 2013→1994, duplicate isEnhanced inside primaryBenefits, tier three-way mismatch resolved"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_coq10_update.md",
+        "content/provenance/coq10/search_log.md",
+        "content/provenance/coq10/screening_decisions.md",
+        "content/provenance/coq10/evidence_evaluation.md",
+        "content/provenance/coq10/tier_assignment.md",
+        "content/provenance/coq10/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [8],
+      "action": "Phase 2 Batch 1 — Melatonin Mode 2 update",
+      "findings": {
+        "papersSearched": 18,
+        "papersIncluded": 3,
+        "newCitations": 3,
+        "previousCitations": 22,
+        "totalCitations": 25,
+        "qualityScoreChange": "93→90 (reconciled: base 88 + 2 from new domain evidence)",
+        "tierChange": "NO CHANGE: Tier 1 maintained"
+      },
+      "keyFindings": [
+        "3 new papers added (1 GRADE-assessed MA, 1 network meta-analysis, 1 meta-analysis)",
+        "Tier 1 maintained — evidence spans 8+ health domains with multiple Cochrane reviews",
+        "Quality score RECONCILED: enhanced file had 93 (inflated), supplements.js had 88; reconciled to 90 (base 88 + 2 from new domains)",
+        "NEW domain — ICU/Critical Care: Tang 2025 MA (32 RCTs, n=3895) — largest melatonin MA ever, delirium RR=0.72, GRADE-assessed",
+        "NEW domain — Neurodegeneration/AD: Terao & Kodama 2024 NMA (10 RCTs, n=4599) — melatonin superior to anti-amyloid antibodies for cognition in MCI/mild AD",
+        "NEW domain — Parkinson's Disease Sleep: Yousef 2025 MA (8 studies, n=409) — PSQI MD=-1.75, TST SMD=0.84",
+        "No duplicate enhanced file — only 8_melatonin_enhanced.js exists (no 8_enhanced.js canonical file)",
+        "Structural fixes (5): isEnhanced inside primaryBenefits moved to top level, keyCitation DOI was journal name 'South African Family Practice', lastUpdated→lastEvidenceUpdate, quality mismatch 88 vs 93 reconciled, evidenceProfile placement corrected"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_melatonin_update.md",
+        "content/provenance/melatonin/search_log.md",
+        "content/provenance/melatonin/screening_decisions.md",
+        "content/provenance/melatonin/evidence_evaluation.md",
+        "content/provenance/melatonin/tier_assignment.md",
+        "content/provenance/melatonin/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [11],
+      "action": "Phase 2 Batch 1 — Lion's Mane Mushroom Mode 2 update",
+      "findings": {
+        "papersSearched": 9,
+        "papersIncluded": 1,
+        "newCitations": 1,
+        "previousCitations": 15,
+        "totalCitations": 16,
+        "qualityScoreChange": "92→88 (reconciled: base 87 from supplements.js + 1 from new PRISMA SR)",
+        "tierChange": "DOWNGRADE: Tier 1→Tier 2 (no meta-analysis, small RCTs n≤41)"
+      },
+      "keyFindings": [
+        "1 new paper added: Menon 2025 PRISMA SR (PROSPERO CRD42024571250, 5 RCTs + 3 PCTs + 15 lab studies)",
+        "Tier DOWNGRADED 1→2: Previous Tier 1 designation unsupported — no meta-analysis exists, all RCTs n≤41, no Cochrane review",
+        "Tier UPGRADED from supplements.js 3→2: 4+ RCTs with consistent positive findings + 1 PRISMA SR justifies Tier 2",
+        "Quality score RECONCILED: enhanced file 92 (inflated) → 88 (base 87 + 1 from Menon 2025 SR)",
+        "Menon 2025 PRISMA SR: combined MMSE weighted mean +1.17, ROBIS quality assessment, multi-domain coverage (cognition, mood, gut, neuroprotection)",
+        "DUPLICATE FILE ARCHIVED: 11_lions_mane_enhanced.js had 11 FABRICATED PMIDs (sequential: 28456789-38456789) and caused runtime collision at window.enhancedCitations[11]",
+        "Structural fixes (7): duplicate isEnhanced keys (2x), tier inflation corrected, quality reconciled, citation count corrected 14→16, generic effectSizes replaced, field name lastUpdated→lastEvidenceUpdate, duplicate file archived"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_lions_mane_update.md",
+        "content/provenance/lions_mane/search_log.md",
+        "content/provenance/lions_mane/screening_decisions.md",
+        "content/provenance/lions_mane/evidence_evaluation.md",
+        "content/provenance/lions_mane/tier_assignment.md",
+        "content/provenance/lions_mane/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [12],
+      "action": "Phase 2 Batch 1 — Phosphatidylserine Mode 2 update",
+      "findings": {
+        "papersSearched": 11,
+        "papersIncluded": 1,
+        "newCitations": 1,
+        "previousCitations": 12,
+        "totalCitations": 13,
+        "qualityScoreChange": "85→86",
+        "tierChange": "UPGRADED: Tier 3→Tier 2"
+      },
+      "keyFindings": [
+        "1 new paper added: Zhou 2024 SR + Network Meta-analysis (PMID 38547138, PROSPERO CRD42023382824, 48 RCTs, n=3650, 12 antioxidant drugs)",
+        "TIER UPGRADED 3→2: Multiple RCTs (Duan n=190, Doma n=138, Kato-Kataoka n=78, Hirayama n=36) with consistent positive cognitive findings; supplements.js already had Tier 2, enhanced file Tier 3 was inconsistent",
+        "ADHD domain strengthened: Zhou 2024 NMA ranks PS #1 for ADHD-RS Parent attention (SUCRA 0.39) and total score (SUCRA 0.34); PS+omega-3 most effective for CTRS hyperactivity (SUCRA 0.26)",
+        "CRITICAL DATA INTEGRITY: 12_enhanced.js contained Lion's Mane data (variable lionsManeLHericiumErinaceusEnhanced, name 'Lion's Mane') incorrectly at PS ID 12 slot — third Lion's Mane file found in codebase",
+        "Wrong dosage citation flagged: ps_dosage_1 references Wang BS 2009 huperzine A meta-analysis, not a phosphatidylserine study — annotated with _INTEGRITY_FLAG",
+        "Structural fixes (7): duplicate isEnhanced keys (3x→1x), misassigned enhanced file archived, wrong dosage citation flagged, tier reconciled (enhanced Tier 3 + supplements.js Tier 2 → both Tier 2), generic keyCitations replaced with Zhou 2024 + Duan 2025, generic effectSizes replaced with 4 quantitative entries, missing evidenceProfile block added",
+        "Quality score reconciled: base 85 + 1 from Zhou 2024 NMA = 86; no PS-specific meta-analysis with pooled estimates limits quality ceiling"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_phosphatidylserine_update.md",
+        "content/provenance/phosphatidylserine/search_log.md",
+        "content/provenance/phosphatidylserine/screening_decisions.md",
+        "content/provenance/phosphatidylserine/evidence_evaluation.md",
+        "content/provenance/phosphatidylserine/tier_assignment.md",
+        "content/provenance/phosphatidylserine/synthesis_notes.md"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "Mode 2 — Evidence Update",
+      "supplementsProcessed": [13],
+      "action": "Phase 2 Batch 1 — Acetyl-L-Carnitine Mode 2 update",
+      "findings": {
+        "papersSearched": 20,
+        "papersIncluded": 2,
+        "newCitations": 2,
+        "previousCitations": 14,
+        "totalCitations": 16,
+        "qualityScoreChange": "78→79 (reconciled: enhanced file already had 79, supplements.js had 78; no further increment from L-carnitine-general NMAs)",
+        "tierChange": "No change — Tier 2 maintained"
+      },
+      "keyFindings": [
+        "2 new papers added: Barbonetti 2024 ED NMA (PMID 39279185, 15 RCTs) + Niu 2025 sperm quality NMA (PMID 40813743, 16 RCTs)",
+        "TIER MAINTAINED at 2: Cochrane review exists (Hudson 2003 but dated >20 years), multiple RCTs across domains, new NMA evidence expands to ED and fertility but as combination therapy",
+        "NEW DOMAIN — Erectile Dysfunction: Barbonetti 2024 NMA ranks PLC+ALC+Sildenafil highest (SUCRA 97%) for IIEF-EF improvement",
+        "NEW DOMAIN — Male Fertility: Niu 2025 NMA shows L-carnitine best for progressive motility (SMD 4.19, 95% CI 0.51-7.87)",
+        "FABRICATED CITATIONS FLAGGED: 2 safety citations in enhanced file have fake authors 'Research team', year 2023, 'Clinical review' journal, no PMID/DOI — annotated with _INTEGRITY_FLAG",
+        "L-carnitine vs ALCAR distinction: 15 of 18 excluded papers studied L-carnitine broadly, not ALCAR specifically — important pharmacokinetic distinction (ALCAR crosses BBB, L-carnitine does not)",
+        "Structural fixes (8): 3x isEnhanced keys consolidated, 2 fake safety citations flagged, citation count reconciled, quality score reconciled, generic effectSizes replaced with 4 quantitative entries, keyCitation expanded from 1 to 3 entries, field name corrected, new domains added"
+      ],
+      "outputFiles": [
+        "content/research-updates/2026-03-05_acetyl_l_carnitine_update.md",
+        "content/provenance/acetyl_l_carnitine/search_log.md",
+        "content/provenance/acetyl_l_carnitine/screening_decisions.md",
+        "content/provenance/acetyl_l_carnitine/evidence_evaluation.md",
+        "content/provenance/acetyl_l_carnitine/tier_assignment.md",
+        "content/provenance/acetyl_l_carnitine/synthesis_notes.md"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "date": "2026-03-04",
+      "type": "data_integrity",
+      "description": "2_omega_3_fish_oil_enhanced.js used supplementId:2 and window.enhancedCitations[2] but Omega-3 is ID 4. Would overwrite Turmeric data at runtime.",
+      "resolution": "Archived to data/enhanced_citations/_archive/. Correct Omega-3 data exists in 4_enhanced.js"
+    },
+    {
+      "date": "2026-03-04",
+      "type": "schema_migration",
+      "description": "5_creatine_enhanced.js used legacy flat array schema (enhancedCitations: []) instead of canonical categorized format. Also had tier discrepancy: file claimed Tier 1/quality 95, supplements.js had Tier 2/quality 86.",
+      "resolution": "Complete file rewrite to canonical schema. Tier evaluated as Tier 1 based on new meta-analysis evidence. Quality score recalculated as 93."
+    },
+    {
+      "date": "2026-03-04",
+      "type": "data_integrity",
+      "description": "6_magnesium_enhanced.js was a stub file with empty citations arrays (mechanisms:[], benefits:[], safety:[]) but claimed Tier 1/quality 90. Used direct window.enhancedCitations[6] assignment that would overwrite real data from 6_enhanced.js at runtime.",
+      "resolution": "Archived to data/enhanced_citations/_archive/6_magnesium_enhanced.js.bak. Primary file 6_enhanced.js retained and updated."
+    },
+    {
+      "date": "2026-03-04",
+      "type": "tier_mismatch",
+      "description": "Vitamin D3 (ID 7) supplements.js had evidenceTier:2 but 7_enhanced.js correctly had Tier 1. Also had structural anomaly: evidenceProfile was outside enhancedCitations block instead of inside it. Generic keyCitations with 'Various' DOI placeholder.",
+      "resolution": "supplements.js updated: tier 2→1, evidenceProfile moved inside enhancedCitations, keyCitations replaced with 3 real papers (Jolliffe 2025, El Kababi 2025, Martinekova 2025)"
+    },
+    {
+      "date": "2026-03-04",
+      "type": "data_integrity",
+      "description": "36_vitamin_c_enhanced.js used legacy schema (claim/studies[] instead of mechanism/evidence[]) and exported to window.enhancedCitations[36], conflicting with primary 36_enhanced.js. Also had no citationId fields and outdated evidenceProfile (claimed 20 citations but primary file had 18).",
+      "resolution": "Archived to data/enhanced_citations/_archive/36_vitamin_c_enhanced.js.bak. Primary file 36_enhanced.js retained and updated with 5 new citations. Fixed overallQuality Tier 2→Tier 1 in enhanced file."
+    },
+    {
+      "date": "2026-03-04",
+      "type": "data_integrity",
+      "description": "37_zinc_enhanced.js was a duplicate of 37_enhanced.js — same const name (zincEnhanced), same export ID (window.enhancedCitations[37]). Would cause runtime variable redefinition conflict. Also had slightly different structure (338 lines vs 308 lines) creating ambiguity about which file is authoritative. A third file 37_zinc_mens_health_enhanced.js exists but has NO export and NO const — effectively orphaned.",
+      "resolution": "Archived 37_zinc_enhanced.js to data/enhanced_citations/_archive/37_zinc_enhanced.js.bak. Primary 37_enhanced.js retained and updated with 5 new citations. 37_zinc_mens_health_enhanced.js left in place (no runtime conflict, can be addressed in Phase 4 schema migration)."
+    },
+    {
+      "date": "2026-03-04",
+      "supplementId": 38,
+      "type": "data_integrity",
+      "description": "38_iron_enhanced.js was a duplicate of 38_enhanced.js — same const name (ironEnhanced), same export ID (window.enhancedCitations[38]). Both files 407/409 lines with identical structure. Would cause runtime variable redefinition conflict.",
+      "resolution": "Archived 38_iron_enhanced.js to data/enhanced_citations/_archive/38_iron_enhanced.js.bak. Primary 38_enhanced.js retained and updated with 5 new citations (benefits + safety). Pattern confirmed: every Phase 1 supplement had this duplicate file issue."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 1,
+      "type": "data_integrity",
+      "description": "1_bacopa_monnieri_enhanced.js was a simplified duplicate of 1_enhanced.js — exported to window.enhancedCitations[1], causing runtime collision. Contained only evidenceProfile header (no citation arrays), version 2.0, outdated lastUpdated 2025-08-25.",
+      "resolution": "Archived to data/enhanced_citations/_archive/1_bacopa_monnieri_enhanced.js.bak. Primary 1_enhanced.js retained and updated with 3 new citations. Also fixed: supplements.js had duplicate isEnhanced key inside primaryBenefits block, keyCitation DOI was wrong (02)00280-1 instead of (01)00419-5."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 18,
+      "type": "data_integrity",
+      "description": "18_coq10_enhanced.js was a duplicate of 18_enhanced.js with major issues: conflicting Tier 1 (vs Tier 3 in primary file), quality 91 (vs 84), fabricated PMIDs (28123456, 29234567 — non-existent), legacy claim/details schema. Three-way tier mismatch: supplements.js=Tier 2, 18_enhanced.js=Tier 3, duplicate=Tier 1. Primary file also had 6 structural issues: duplicate target keys, wrong tissueTarget 'Central nervous system' for cardiovascular supplement, wrong publicationSpan.",
+      "resolution": "Archived 18_coq10_enhanced.js to data/enhanced_citations/_archive/18_coq10_enhanced.js.bak. Primary 18_enhanced.js updated with evidence-based Tier 2 upgrade (from Tier 3), all structural issues fixed. supplements.js aligned at Tier 2."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 8,
+      "type": "data_integrity",
+      "description": "Melatonin (ID 8) had 5 structural issues: (1) isEnhanced:true incorrectly nested inside primaryBenefits object, (2) keyCitation DOI field contained journal name 'South African Family Practice' instead of actual DOI, (3) quality score mismatch — enhanced file had 93, supplements.js had 88, (4) lastUpdated field name inconsistent with schema (should be lastEvidenceUpdate), (5) evidenceProfile placement outside enhancedCitations block. No duplicate enhanced file existed (only 8_melatonin_enhanced.js, no 8_enhanced.js).",
+      "resolution": "All 5 issues fixed: isEnhanced moved to top level, keyCitations replaced with Tang 2025 + Cruz-Sanabria 2024 with real DOIs, quality reconciled to 90 (base 88 + 2 new domains), field name corrected to lastEvidenceUpdate, evidenceProfile properly structured. No archival needed."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 11,
+      "type": "data_integrity",
+      "description": "Lion's Mane (ID 11) had 7 structural issues: (1) duplicate isEnhanced:true keys (2x) inside primaryBenefits in supplements.js, (2) Tier 1 designation in enhanced files unsupported by evidence (no meta-analysis, all RCTs n≤41), (3) quality score mismatch — enhanced 92 vs supplements.js 87, (4) citation count mismatch — enhanced claimed 14, actually 15, (5) generic effectSizes 'Small (preliminary human data)' instead of quantitative values, (6) lastUpdated wrong field name, (7) DUPLICATE FILE 11_lions_mane_enhanced.js with 11 FABRICATED sequential PMIDs (28456789-38456789), legacy schema, runtime collision at window.enhancedCitations[11].",
+      "resolution": "All 7 issues fixed: duplicate isEnhanced moved to single top-level key, tier corrected to Tier 2 (both enhanced file and supplements.js), quality reconciled to 88, citation count corrected to 16, effectSizes replaced with 4 quantitative entries, field name corrected to lastEvidenceUpdate, duplicate file archived to _archive/11_lions_mane_enhanced.js.ARCHIVED."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 12,
+      "type": "data_integrity",
+      "description": "Phosphatidylserine (ID 12) had 7 structural issues: (1) 3x duplicate isEnhanced:true keys — 2 inside primaryBenefits + 1 inside enhancedCitations block, (2) 12_enhanced.js contained Lion's Mane data (variable lionsManeLHericiumErinaceusEnhanced, name 'Lion's Mane', Tier 1, quality 85) incorrectly at PS ID 12 slot — THIRD Lion's Mane file found in codebase after 11_enhanced.js canonical and 11_lions_mane_enhanced.js, (3) wrong dosage citation ps_dosage_1 references Wang BS 2009 huperzine A meta-analysis instead of PS study, (4) tier mismatch — enhanced file Tier 3 vs supplements.js Tier 2, (5) generic keyCitations with 'Multiple studies'/'Various' DOI, (6) generic effectSizes 'Small to moderate (d=0.3-0.5)', (7) no evidenceProfile block in supplements.js.",
+      "resolution": "All 7 issues fixed: isEnhanced consolidated to single top-level key, 12_enhanced.js archived to _archive/12_enhanced.js.ARCHIVED, wrong dosage citation annotated with _INTEGRITY_FLAG (kept for schema continuity), tier reconciled to Tier 2 (both files), keyCitations replaced with Zhou 2024 + Duan 2025 (real DOIs/PMIDs), effectSizes replaced with 4 quantitative entries, evidenceProfile block added with quality 86/citations 13/Tier 2."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 13,
+      "type": "data_integrity",
+      "description": "Acetyl-L-Carnitine (ID 13) had 8 structural issues: (1) 3x duplicate isEnhanced:true keys — 2 inside primaryBenefits + 1 inside enhancedCitations block in supplements.js, (2) 2 FABRICATED safety citations in enhanced file — authors 'Research team', year 2023, journal 'Clinical review', empty PMID/DOI (safety claims valid but citations fake), (3) citation count mismatch — enhanced file claims 16 but contains only 11 actual studies; supplements.js claims 14, (4) quality score mismatch — enhanced 79 vs supplements.js 78, (5) generic effectSizes 'Small to moderate (particularly in decline)' and 'Moderate (adjunct therapy)', (6) single old keyCitation (Hudson 2003 only), (7) lastUpdated field name instead of lastEvidenceUpdate, (8) no duplicate enhanced file but archived backup exists.",
+      "resolution": "8 issues addressed: isEnhanced consolidated to single top-level key, 2 fake safety citations annotated with _INTEGRITY_FLAG (claims retained but citations marked as fabricated), citation count reconciled to 16, quality reconciled to 79, effectSizes replaced with 4 quantitative entries (cognition, depression, ED, fertility), keyCitations expanded from 1 to 3 entries (Barbonetti 2024, Niu 2025, Hudson 2003), field name corrected to lastEvidenceUpdate, new domains (ED, male fertility) added to benefits and studyPopulations."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 14,
+      "type": "mode2_evidence_update",
+      "description": "Ginkgo Biloba (ID 14) Mode 2 Evidence Update — Phase 2, Batch 1. Searched 23 papers (PubMed 20, Consensus 3), included 4, excluded 19. Added: Wieland 2026 Cochrane (82 RCTs, n=10613, GRADE), Tiemtad 2026 NMA (29 RCTs, Bacopa vs Ginkgo), Masserini 2025 VCI MA (173 trials, n=22347), Pfuhlmann 2025 overview (16 SRs, AMSTAR 2). Quality 74→80, Tier reconciled at 2 (enhanced had 3, supplements.js had 2), citations 15→19.",
+      "keyFindings": "Cochrane 2026: small-moderate dementia benefits (low certainty), probably no MCI effect (moderate certainty). VCI: GB ranked #1 (d=0.83). Working memory: Bacopa outperforms GB (SUCRA 100%). Safety confirmed (AEs = placebo across 82 RCTs).",
+      "filesModified": ["data/enhanced_citations/14_enhanced.js", "data/supplements.js", "content/research-updates/2026-03-05_ginkgo_biloba_update.md"]
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 14,
+      "type": "data_integrity",
+      "description": "Ginkgo Biloba (ID 14) had 7 structural issues: (1) 3x duplicate isEnhanced:true keys in supplements.js (2 inside primaryBenefits + 1 inside enhancedCitations), (2) Duplicate safety DOI (Cybulsky 2004 appears in safety[0].evidence and safety[1]), (3) All safety citations are cell culture only — no clinical safety data, (4) Tier mismatch (enhanced Tier 3 vs supplements.js Tier 2), (5) Generic effectSizes 'Small (d=0.2-0.4)' and 'Moderate improvement', (6) Single old keyCitation (Birks & Grimley Evans 2009 only), (7) Missing evidenceProfile fields.",
+      "resolution": "7 issues addressed: isEnhanced consolidated to single top-level key, duplicate safety DOI flagged with _INTEGRITY_FLAG, Cochrane clinical safety noted, tier reconciled to 2, effectSizes replaced with 5 quantitative entries (dementia, MCI, VCI cognition, VCI function, working memory comparative), keyCitations expanded to 3 entries (Wieland 2026, Masserini 2025, Tiemtad 2026), evidenceProfile expanded with full schema."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 15,
+      "type": "mode2_evidence_update",
+      "description": "Panax Ginseng (ID 15) Mode 2 Evidence Update — Phase 2, Batch 1. Searched 21 papers (PubMed 18, Consensus 3), included 3, excluded 18. Added: Zeng 2024 cognitive MA (15 RCTs, n=671, PROSPERO), Kim 2025 MMSE/ADAS-Cog MA (8 RCTs), Jafari 2025 CVD dose-response MA (70 RCTs, n=4506). Quality 81→83, Tier maintained at 2, citations 19→22.",
+      "keyFindings": "Zeng 2024: memory SMD=0.19 significant, high-dose SMD=0.33; attention/executive/overall cognition NULL. Kim 2025: ADAS-Cog MD=-1.10 (I²=0%). Jafari 2025: anti-inflammatory/antioxidant significant (hs-CRP, ROS, SOD); lipids/BP/glycemia NULL. Mixed cognitive domain results prevent Tier 1.",
+      "filesModified": ["data/enhanced_citations/15_panax_ginseng_enhanced.js", "data/supplements.js", "content/research-updates/2026-03-05_panax_ginseng_update.md"]
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 15,
+      "type": "data_integrity",
+      "description": "Panax Ginseng (ID 15) had 7 structural issues: (1) 3x duplicate isEnhanced:true keys in supplements.js, (2) 3 fabricated safety citations (authors='Research team', year=2023, journal='Clinical review', no PMID/DOI), (3) Species mismatch: Vuksan 2000 (benefit[4]) studies P. quinquefolius not P. ginseng, (4) Ellis 2002 (benefit[3]) missing PMID and DOI, (5) Generic effectSizes, (6) Single old keyCitation (Geng 2010 only), (7) Missing evidenceProfile fields.",
+      "resolution": "7 issues addressed: isEnhanced consolidated to single top-level key, 3 fabricated safety citations flagged with _INTEGRITY_FLAG, species mismatch flagged with _INTEGRITY_FLAG and cross-reference to Jafari 2025 glycemic null finding, Ellis 2002 flagged, effectSizes replaced with 7 quantitative entries, keyCitations expanded to 3 entries (Zeng 2024, Kim 2025, Jafari 2025), evidenceProfile added with full schema."
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 16,
+      "type": "mode2_evidence_update",
+      "description": "Alpha-GPC (ID 16) Mode 2 Evidence Update — Phase 2, Batch 1. Searched 10 papers (PubMed 7, Consensus 3), included 2, excluded 8. Added: Sagaro & Amenta 2025 comparative SR+MA (3 RCTs, n=358, PROSPERO), Jeon 2024 multicenter RCT (n=100, 12 weeks, MCI). Quality 78→81, Tier upgraded 3→2, citations 12→14.",
+      "keyFindings": "Jeon 2024: ADAS-cog -2.34 vs placebo (multicenter, double-blind, placebo-controlled RCT in MCI). Sagaro 2025: α-GPC superior to citicoline on SCAG (WMD=-3.92, PROSPERO registered). First MA + first well-designed multicenter RCT justify Tier 3→2 upgrade.",
+      "filesModified": ["data/enhanced_citations/16_enhanced.js", "data/supplements.js", "content/research-updates/2026-03-05_alpha_gpc_update.md"]
+    },
+    {
+      "date": "2026-03-05",
+      "supplementId": 16,
+      "type": "data_integrity",
+      "description": "Alpha-GPC (ID 16) had 6 structural issues: (1) 5x duplicate target key pairs in enhanced file (mechanisms[0-2], benefits[2], dosage[0]), (2) 3x duplicate isEnhanced:true keys in supplements.js (2 in primaryBenefits, 1 in enhancedCitations), (3) Generic effectSizes ('Small to moderate', 'Moderate in athletes'), (4) Single old keyCitation (Parnetti 2007 only), (5) Missing evidenceProfile fields in supplements.js, (6) Missing study populations (MCI, dementia).",
+      "resolution": "6 issues addressed: 5 duplicate target/tissueTarget key pairs removed in enhanced file, isEnhanced consolidated to single top-level key, effectSizes replaced with 7 quantitative entries (ADAS-cog MCI, SCAG comparative, motivation d=0.72, Stroop/executive, isometric strength, jump performance, growth hormone), keyCitations expanded to 3 entries (Jeon 2024, Sagaro 2025, Tamura 2021), evidenceProfile added with full schema, studyPopulations expanded."
+    }
+  ],
+  "statistics": {
+    "supplementsCompleted": 20,
+    "supplementsRemaining": 69,
+    "provenanceDocsGenerated": 100,
+    "enhancedCitationsUpdated": 20,
+    "newPapersAdded": 75,
+    "tierChanges": 11,
+    "schemaMigrations": 1
+  },
+  "auditResults": {
+    "lastAuditDate": "2026-03-04",
+    "issueTypeDistribution": {
+      "stale_evidence": 89,
+      "missing_provenance": 89,
+      "incomplete_enhanced": 88,
+      "missing_quality_score": 72,
+      "missing_canonical_file": 11,
+      "tier_mismatch": 4
+    },
+    "databaseStatistics": {
+      "tierDistribution": {"1": 10, "2": 58, "3": 21, "4": 0},
+      "withLastEvidenceUpdate": 5,
+      "withQualityScore": 17,
+      "withEffectSizes": 89,
+      "withSafetyProfile": 89,
+      "withDosageRange": 89,
+      "enhancedFileFormats": {
+        "full_canonical": 15,
+        "standard": 97,
+        "unknown_legacy": 59,
+        "compact": 1
+      }
+    }
+  }
+}

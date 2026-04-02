@@ -2257,11 +2257,11 @@ function generateGuidePage(guide, allSupplements) {
         "publisher": {
             "@type": "Organization",
             "name": "SupplementDB",
-            "url": "https://supplementdb.co"
+            "url": "https://supplementdb.info"
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://supplementdb.co/guides/${guide.slug}.html`
+            "@id": `https://supplementdb.info/guides/${guide.slug}.html`
         }
     };
 
@@ -2382,19 +2382,19 @@ function generateGuidePage(guide, allSupplements) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${esc(guide.metaTitle)}</title>
     <meta name="description" content="${esc(guide.metaDescription)}">
-    <link rel="canonical" href="https://supplementdb.co/guides/${guide.slug}.html">
+    <link rel="canonical" href="https://supplementdb.info/guides/${guide.slug}.html">
     <meta property="og:title" content="${esc(guide.metaTitle)}">
     <meta property="og:description" content="${esc(guide.metaDescription)}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://supplementdb.co/guides/${guide.slug}.html">
-    <meta property="og:image" content="https://supplementdb.co/assets/og-guide-${guide.slug}.svg">
+    <meta property="og:url" content="https://supplementdb.info/guides/${guide.slug}.html">
+    <meta property="og:image" content="https://supplementdb.info/assets/og-guide-${guide.slug}.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(guide.metaTitle)}">
     <meta name="twitter:description" content="${esc(guide.metaDescription)}">
-    <meta name="twitter:image" content="https://supplementdb.co/assets/og-guide-${guide.slug}.svg">
+    <meta name="twitter:image" content="https://supplementdb.info/assets/og-guide-${guide.slug}.svg">
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">

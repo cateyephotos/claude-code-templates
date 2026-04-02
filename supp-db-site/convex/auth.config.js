@@ -5,12 +5,17 @@
  * Without this file, ctx.auth.getUserIdentity() always returns null,
  * causing every authenticated query/mutation to fail silently.
  *
- * Clerk integration:
- *   - CLERK_JWT_ISSUER_DOMAIN env var: Set this in Convex Dashboard →
- *     Settings → Environment Variables to your Clerk instance URL.
- *   - Format: https://<your-clerk-instance>.clerk.accounts.dev
- *     (dev) or https://<your-clerk-instance>.clerk.accounts.com (prod)
- *   - Falls back to the observed dev instance URL if not set.
+ * IMPORTANT: Convex does NOT support process.env in this file.
+ * The domain must be hardcoded. This file defaults to DEV so local
+ * development works out of the box. For production deploys, use:
+ *
+ *   npm run deploy:convex:prod
+ *
+ * That script swaps in the production domain, deploys, then reverts.
+ *
+ * Domains:
+ *   Dev:  https://usable-tarpon-30.clerk.accounts.dev
+ *   Prod: https://clerk.supplementdb.info
  *
  * Also required (one-time Clerk Dashboard setup):
  *   1. JWT Templates → New template → name it exactly "convex"
@@ -18,17 +23,14 @@
  *   2. Webhooks → Add Endpoint → https://<your-convex-url>/clerk-webhook
  *      Events: user.created, user.updated, user.deleted
  */
+
+// __CLERK_DOMAIN__ is replaced by deploy:convex:prod script
+const CLERK_DOMAIN = "https://usable-tarpon-30.clerk.accounts.dev";
+
 export default {
   providers: [
     {
-      // Clerk instance domain — used to verify JWT signatures.
-      // This is a public URL (visible in browser network requests), not a secret.
-      // To change: update this value to your Clerk instance URL and redeploy.
-      // Dev:  https://<slug>.clerk.accounts.dev
-      // Prod: https://<slug>.clerk.accounts.com
-      domain: "https://usable-tarpon-30.clerk.accounts.dev",
-      // Must match the JWT template audience ("aud" claim) in Clerk.
-      // The built-in Convex JWT template uses "convex" as the audience.
+      domain: CLERK_DOMAIN,
       applicationID: "convex",
     },
   ],

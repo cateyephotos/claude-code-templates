@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_ROOT = path.join(__dirname);
-const BASE_URL = 'https://supplementdb.co';
+const BASE_URL = 'https://supplementdb.info';
 
 let supplementsFixed = 0;
 let guidesFixed = 0;

@@ -15,6 +15,7 @@
     "test:bro46": "npm run test:pdf && npm run test:guide-success",
     "convex:dev": "npx convex dev",
     "convex:deploy": "npx convex deploy",
+    "deploy:convex:prod": "node scripts/convex-deploy-prod.js",
     "inject-auth": "node scripts/inject-auth.js",
     "generate:supplements": "node seed.js --out supplements/",
     "generate:guides": "node scripts/generate-guide-pages.js",

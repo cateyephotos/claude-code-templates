@@ -6,14 +6,14 @@
 (function () {
   'use strict';
 
-  var PRODUCTION_BASE = 'https://supplementdb.co';
+  var PRODUCTION_BASE = 'https://supplementdb.info';
 
   function getPageURL() {
     // Use canonical URL if available, else current location
     var canonical = document.querySelector('link[rel="canonical"]');
     if (canonical && canonical.href) return canonical.href;
     // In production use the real domain; in dev use current location
-    if (window.location.hostname === 'supplementdb.co') return window.location.href;
+    if (window.location.hostname === 'supplementdb.info') return window.location.href;
     return window.location.href;
   }
 

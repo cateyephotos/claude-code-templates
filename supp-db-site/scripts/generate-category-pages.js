@@ -190,7 +190,7 @@ function generateCategoryPage(categoryName, supplements) {
         "@type": "ItemList",
         "name": `${categoryName} Supplements — Evidence-Based Database`,
         "description": desc.short,
-        "url": `https://supplementdb.co/categories/${slug}.html`,
+        "url": `https://supplementdb.info/categories/${slug}.html`,
         "numberOfItems": count,
         "itemListElement": sorted.map((s, i) => ({
             "@type": "ListItem",
@@ -200,7 +200,7 @@ function generateCategoryPage(categoryName, supplements) {
                 ...(s.primaryBenefits?.cognitive || []).slice(0, 2),
                 ...(s.primaryBenefits?.nonCognitive || []).slice(0, 2)
             ].slice(0, 3).join(', ') || s.name,
-            "url": `https://supplementdb.co/categories/${slug}.html#${slugify(s.name)}`
+            "url": `https://supplementdb.info/categories/${slug}.html#${slugify(s.name)}`
         }))
     };
 
@@ -214,19 +214,19 @@ function generateCategoryPage(categoryName, supplements) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${escHtml(title)}</title>
     <meta name="description" content="${escHtml(metaDesc)}">
-    <link rel="canonical" href="https://supplementdb.co/categories/${slug}.html">
+    <link rel="canonical" href="https://supplementdb.info/categories/${slug}.html">
     <meta property="og:title" content="${escHtml(title)}">
     <meta property="og:description" content="${escHtml(metaDesc)}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://supplementdb.co/categories/${slug}.html">
-    <meta property="og:image" content="https://supplementdb.co/assets/og-cat-${slug}.svg">
+    <meta property="og:url" content="https://supplementdb.info/categories/${slug}.html">
+    <meta property="og:image" content="https://supplementdb.info/assets/og-cat-${slug}.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escHtml(title)}">
     <meta name="twitter:description" content="${escHtml(metaDesc)}">
-    <meta name="twitter:image" content="https://supplementdb.co/assets/og-cat-${slug}.svg">
+    <meta name="twitter:image" content="https://supplementdb.info/assets/og-cat-${slug}.svg">
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">

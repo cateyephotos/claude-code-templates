@@ -1,0 +1,2978 @@
+{
+  "auditDate": "2026-03-04",
+  "auditMode": "Mode 5 — Full Database Evidence Audit",
+  "databaseVersion": "2.0",
+  "databaseLastUpdated": "2025-08-17",
+  "supplementsAudited": 89,
+  "issues": [
+    {
+      "supplementId": 1,
+      "supplementName": "Bacopa monnieri",
+      "issueType": "stale_evidence",
+      "severity": "warning",
+      "description": "Last evidence update was 2025-08-17 (>6 months ago)",
+      "suggestedAction": "Schedule Mode 2 evidence update"
+    },
+    {
+      "supplementId": 1,
+      "supplementName": "Bacopa monnieri",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 2,
+      "supplementName": "Turmeric/Curcumin",
+      "issueType": "stale_evidence",
+      "severity": "warning",
+      "description": "Last evidence update was 2025-08-18 (>6 months ago)",
+      "suggestedAction": "Schedule Mode 2 evidence update"
+    },
+    {
+      "supplementId": 2,
+      "supplementName": "Turmeric/Curcumin",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 2,
+      "supplementName": "Turmeric/Curcumin",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 3,
+      "supplementName": "Ashwagandha",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 3,
+      "supplementName": "Ashwagandha",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 3,
+      "supplementName": "Ashwagandha",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 3,
+      "supplementName": "Ashwagandha",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 4,
+      "supplementName": "Omega-3 Fatty Acids",
+      "issueType": "stale_evidence",
+      "severity": "warning",
+      "description": "Last evidence update was 2025-08-18 (>6 months ago)",
+      "suggestedAction": "Schedule Mode 2 evidence update"
+    },
+    {
+      "supplementId": 4,
+      "supplementName": "Omega-3 Fatty Acids",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 4_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 4,
+      "supplementName": "Omega-3 Fatty Acids",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 4,
+      "supplementName": "Omega-3 Fatty Acids",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 5,
+      "supplementName": "Creatine",
+      "issueType": "stale_evidence",
+      "severity": "warning",
+      "description": "Last evidence update was 2025-08-18 (>6 months ago)",
+      "suggestedAction": "Schedule Mode 2 evidence update"
+    },
+    {
+      "supplementId": 5,
+      "supplementName": "Creatine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 5,
+      "supplementName": "Creatine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 6,
+      "supplementName": "Magnesium",
+      "issueType": "stale_evidence",
+      "severity": "warning",
+      "description": "Last evidence update was 2025-08-18 (>6 months ago)",
+      "suggestedAction": "Schedule Mode 2 evidence update"
+    },
+    {
+      "supplementId": 6,
+      "supplementName": "Magnesium",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 6,
+      "supplementName": "Magnesium",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 7,
+      "supplementName": "Vitamin D3",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 7,
+      "supplementName": "Vitamin D3",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 7,
+      "supplementName": "Vitamin D3",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 7,
+      "supplementName": "Vitamin D3",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 8,
+      "supplementName": "Melatonin",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 8,
+      "supplementName": "Melatonin",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 8,
+      "supplementName": "Melatonin",
+      "issueType": "tier_mismatch",
+      "severity": "warning",
+      "description": "Tier 1 (Gold Standard) but only unknown total citations — may be insufficient",
+      "suggestedAction": "Verify tier assignment with evidence decision tree; consider downgrade if criteria not met"
+    },
+    {
+      "supplementId": 8,
+      "supplementName": "Melatonin",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 8,
+      "supplementName": "Melatonin",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 9,
+      "supplementName": "L-Theanine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 9,
+      "supplementName": "L-Theanine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 9,
+      "supplementName": "L-Theanine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 9,
+      "supplementName": "L-Theanine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 10,
+      "supplementName": "Rhodiola rosea",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 10,
+      "supplementName": "Rhodiola rosea",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 10,
+      "supplementName": "Rhodiola rosea",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 10,
+      "supplementName": "Rhodiola rosea",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 11,
+      "supplementName": "Lion's Mane Mushroom",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 11,
+      "supplementName": "Lion's Mane Mushroom",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 11,
+      "supplementName": "Lion's Mane Mushroom",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 11,
+      "supplementName": "Lion's Mane Mushroom",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 12,
+      "supplementName": "Phosphatidylserine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 12,
+      "supplementName": "Phosphatidylserine",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 12_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 12,
+      "supplementName": "Phosphatidylserine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 12,
+      "supplementName": "Phosphatidylserine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 12,
+      "supplementName": "Phosphatidylserine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 13,
+      "supplementName": "Acetyl-L-Carnitine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 13,
+      "supplementName": "Acetyl-L-Carnitine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 13,
+      "supplementName": "Acetyl-L-Carnitine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 13,
+      "supplementName": "Acetyl-L-Carnitine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 14,
+      "supplementName": "Ginkgo Biloba",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 14,
+      "supplementName": "Ginkgo Biloba",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 14_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 14,
+      "supplementName": "Ginkgo Biloba",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 14,
+      "supplementName": "Ginkgo Biloba",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 14,
+      "supplementName": "Ginkgo Biloba",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 15,
+      "supplementName": "Panax Ginseng",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 15,
+      "supplementName": "Panax Ginseng",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 15,
+      "supplementName": "Panax Ginseng",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 15,
+      "supplementName": "Panax Ginseng",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 16,
+      "supplementName": "Alpha-GPC",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 16,
+      "supplementName": "Alpha-GPC",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 16_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 16,
+      "supplementName": "Alpha-GPC",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 16,
+      "supplementName": "Alpha-GPC",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 16,
+      "supplementName": "Alpha-GPC",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 17,
+      "supplementName": "Berberine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 17,
+      "supplementName": "Berberine",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 17_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 17,
+      "supplementName": "Berberine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 17,
+      "supplementName": "Berberine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 17,
+      "supplementName": "Berberine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 18,
+      "supplementName": "CoQ10",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 18,
+      "supplementName": "CoQ10",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 18,
+      "supplementName": "CoQ10",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 18,
+      "supplementName": "CoQ10",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 19_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "issueType": "tier_mismatch",
+      "severity": "warning",
+      "description": "Tier 1 (Gold Standard) but only unknown total citations — may be insufficient",
+      "suggestedAction": "Verify tier assignment with evidence decision tree; consider downgrade if criteria not met"
+    },
+    {
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 19,
+      "supplementName": "B-Complex Vitamins",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 20,
+      "supplementName": "Quercetin",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 20,
+      "supplementName": "Quercetin",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 20_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 20,
+      "supplementName": "Quercetin",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 20,
+      "supplementName": "Quercetin",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 20,
+      "supplementName": "Quercetin",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 21,
+      "supplementName": "Vitamin B12",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 21,
+      "supplementName": "Vitamin B12",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 21,
+      "supplementName": "Vitamin B12",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 22,
+      "supplementName": "Vitamin B6",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 22,
+      "supplementName": "Vitamin B6",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 22,
+      "supplementName": "Vitamin B6",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 23,
+      "supplementName": "Folate",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 23,
+      "supplementName": "Folate",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 23,
+      "supplementName": "Folate",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 23,
+      "supplementName": "Folate",
+      "issueType": "tier_mismatch",
+      "severity": "warning",
+      "description": "Tier 1 (Gold Standard) but only unknown total citations — may be insufficient",
+      "suggestedAction": "Verify tier assignment with evidence decision tree; consider downgrade if criteria not met"
+    },
+    {
+      "supplementId": 23,
+      "supplementName": "Folate",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 24,
+      "supplementName": "Green Tea Extract",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 24,
+      "supplementName": "Green Tea Extract",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 24_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 24,
+      "supplementName": "Green Tea Extract",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 24,
+      "supplementName": "Green Tea Extract",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 24,
+      "supplementName": "Green Tea Extract",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 25,
+      "supplementName": "NAD+ Precursors",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 25,
+      "supplementName": "NAD+ Precursors",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 25,
+      "supplementName": "NAD+ Precursors",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 25,
+      "supplementName": "NAD+ Precursors",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 26,
+      "supplementName": "PQQ",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 26,
+      "supplementName": "PQQ",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 26,
+      "supplementName": "PQQ",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 27,
+      "supplementName": "Resveratrol",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 27,
+      "supplementName": "Resveratrol",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 27,
+      "supplementName": "Resveratrol",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 27,
+      "supplementName": "Resveratrol",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 28,
+      "supplementName": "Glucosamine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 28,
+      "supplementName": "Glucosamine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 28,
+      "supplementName": "Glucosamine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 28,
+      "supplementName": "Glucosamine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 29,
+      "supplementName": "MSM",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 29,
+      "supplementName": "MSM",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 29_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 29,
+      "supplementName": "MSM",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 29,
+      "supplementName": "MSM",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 29,
+      "supplementName": "MSM",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 30,
+      "supplementName": "Vitamin E",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 30,
+      "supplementName": "Vitamin E",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 30,
+      "supplementName": "Vitamin E",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 30,
+      "supplementName": "Vitamin E",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 31,
+      "supplementName": "Whey Protein",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 31,
+      "supplementName": "Whey Protein",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 31,
+      "supplementName": "Whey Protein",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 31,
+      "supplementName": "Whey Protein",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 32,
+      "supplementName": "Chondroitin Sulfate",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 32,
+      "supplementName": "Chondroitin Sulfate",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 32,
+      "supplementName": "Chondroitin Sulfate",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 32,
+      "supplementName": "Chondroitin Sulfate",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 33,
+      "supplementName": "L-Tyrosine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 33,
+      "supplementName": "L-Tyrosine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 33,
+      "supplementName": "L-Tyrosine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 33,
+      "supplementName": "L-Tyrosine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 34,
+      "supplementName": "5-HTP",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 34,
+      "supplementName": "5-HTP",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 34_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 34,
+      "supplementName": "5-HTP",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 34,
+      "supplementName": "5-HTP",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 35,
+      "supplementName": "Tribulus Terrestris",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 35,
+      "supplementName": "Tribulus Terrestris",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 35,
+      "supplementName": "Tribulus Terrestris",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 35,
+      "supplementName": "Tribulus Terrestris",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 36,
+      "supplementName": "Vitamin C",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 36,
+      "supplementName": "Vitamin C",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 36,
+      "supplementName": "Vitamin C",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 36,
+      "supplementName": "Vitamin C",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 37,
+      "supplementName": "Zinc",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 37,
+      "supplementName": "Zinc",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 37,
+      "supplementName": "Zinc",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 38,
+      "supplementName": "Iron",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 38,
+      "supplementName": "Iron",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 38,
+      "supplementName": "Iron",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 39,
+      "supplementName": "Taurine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 39,
+      "supplementName": "Taurine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 39,
+      "supplementName": "Taurine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 39,
+      "supplementName": "Taurine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 40,
+      "supplementName": "GABA",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 40,
+      "supplementName": "GABA",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 40,
+      "supplementName": "GABA",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 41,
+      "supplementName": "Inositol",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 41,
+      "supplementName": "Inositol",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 41,
+      "supplementName": "Inositol",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 42,
+      "supplementName": "Selenium",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 42,
+      "supplementName": "Selenium",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 42,
+      "supplementName": "Selenium",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 42,
+      "supplementName": "Selenium",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 43,
+      "supplementName": "Choline",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 43,
+      "supplementName": "Choline",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 43,
+      "supplementName": "Choline",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 44,
+      "supplementName": "Alpha-Lipoic Acid",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 44,
+      "supplementName": "Alpha-Lipoic Acid",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 44,
+      "supplementName": "Alpha-Lipoic Acid",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 45,
+      "supplementName": "Lutein",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 45,
+      "supplementName": "Lutein",
+      "issueType": "missing_canonical_file",
+      "severity": "warning",
+      "description": "Only generic 45_enhanced.js exists — no canonical named file",
+      "suggestedAction": "Create canonical file following {id}_{slug}_enhanced.js naming convention"
+    },
+    {
+      "supplementId": 45,
+      "supplementName": "Lutein",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 45,
+      "supplementName": "Lutein",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 46,
+      "supplementName": "Astaxanthin",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 46,
+      "supplementName": "Astaxanthin",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 46,
+      "supplementName": "Astaxanthin",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 46,
+      "supplementName": "Astaxanthin",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 47,
+      "supplementName": "Ginger",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 47,
+      "supplementName": "Ginger",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 47,
+      "supplementName": "Ginger",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 47,
+      "supplementName": "Ginger",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 48,
+      "supplementName": "Garlic",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 48,
+      "supplementName": "Garlic",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 48,
+      "supplementName": "Garlic",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 48,
+      "supplementName": "Garlic",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 49,
+      "supplementName": "Echinacea",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 49,
+      "supplementName": "Echinacea",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 49,
+      "supplementName": "Echinacea",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 49,
+      "supplementName": "Echinacea",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 50,
+      "supplementName": "Caffeine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 50,
+      "supplementName": "Caffeine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 50,
+      "supplementName": "Caffeine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 50,
+      "supplementName": "Caffeine",
+      "issueType": "tier_mismatch",
+      "severity": "warning",
+      "description": "Tier 1 (Gold Standard) but only unknown total citations — may be insufficient",
+      "suggestedAction": "Verify tier assignment with evidence decision tree; consider downgrade if criteria not met"
+    },
+    {
+      "supplementId": 50,
+      "supplementName": "Caffeine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 51,
+      "supplementName": "Reishi Mushroom",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 51,
+      "supplementName": "Reishi Mushroom",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 51,
+      "supplementName": "Reishi Mushroom",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 51,
+      "supplementName": "Reishi Mushroom",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 52,
+      "supplementName": "Cordyceps",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 52,
+      "supplementName": "Cordyceps",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 52,
+      "supplementName": "Cordyceps",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 52,
+      "supplementName": "Cordyceps",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 53,
+      "supplementName": "Spirulina",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 53,
+      "supplementName": "Spirulina",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 53,
+      "supplementName": "Spirulina",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 53,
+      "supplementName": "Spirulina",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 54,
+      "supplementName": "Chlorella",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 54,
+      "supplementName": "Chlorella",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 54,
+      "supplementName": "Chlorella",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 54,
+      "supplementName": "Chlorella",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 55,
+      "supplementName": "Huperzine A",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 55,
+      "supplementName": "Huperzine A",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 55,
+      "supplementName": "Huperzine A",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 55,
+      "supplementName": "Huperzine A",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 56,
+      "supplementName": "Vinpocetine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 56,
+      "supplementName": "Vinpocetine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 56,
+      "supplementName": "Vinpocetine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 56,
+      "supplementName": "Vinpocetine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 57,
+      "supplementName": "PEA (Phenylethylamine)",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 57,
+      "supplementName": "PEA (Phenylethylamine)",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 57,
+      "supplementName": "PEA (Phenylethylamine)",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 57,
+      "supplementName": "PEA (Phenylethylamine)",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 58,
+      "supplementName": "MCT Oil",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 58,
+      "supplementName": "MCT Oil",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 58,
+      "supplementName": "MCT Oil",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 58,
+      "supplementName": "MCT Oil",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 59,
+      "supplementName": "Hawthorn Berry",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 59,
+      "supplementName": "Hawthorn Berry",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 59,
+      "supplementName": "Hawthorn Berry",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 59,
+      "supplementName": "Hawthorn Berry",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 60,
+      "supplementName": "Red Yeast Rice",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 60,
+      "supplementName": "Red Yeast Rice",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 60,
+      "supplementName": "Red Yeast Rice",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 60,
+      "supplementName": "Red Yeast Rice",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 61,
+      "supplementName": "Chromium",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 61,
+      "supplementName": "Chromium",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 61,
+      "supplementName": "Chromium",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 61,
+      "supplementName": "Chromium",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 62,
+      "supplementName": "Vanadium",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 62,
+      "supplementName": "Vanadium",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 62,
+      "supplementName": "Vanadium",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 62,
+      "supplementName": "Vanadium",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 63,
+      "supplementName": "Bitter Melon",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 63,
+      "supplementName": "Bitter Melon",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 63,
+      "supplementName": "Bitter Melon",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 63,
+      "supplementName": "Bitter Melon",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 64,
+      "supplementName": "Gymnema Sylvestre",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 64,
+      "supplementName": "Gymnema Sylvestre",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 64,
+      "supplementName": "Gymnema Sylvestre",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 64,
+      "supplementName": "Gymnema Sylvestre",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 65,
+      "supplementName": "Fenugreek",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 65,
+      "supplementName": "Fenugreek",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 65,
+      "supplementName": "Fenugreek",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 65,
+      "supplementName": "Fenugreek",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 66,
+      "supplementName": "Cinnamon Extract",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 66,
+      "supplementName": "Cinnamon Extract",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 66,
+      "supplementName": "Cinnamon Extract",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 66,
+      "supplementName": "Cinnamon Extract",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 67,
+      "supplementName": "Holy Basil",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 67,
+      "supplementName": "Holy Basil",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 67,
+      "supplementName": "Holy Basil",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 67,
+      "supplementName": "Holy Basil",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 68,
+      "supplementName": "Schisandra Berry",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 68,
+      "supplementName": "Schisandra Berry",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 68,
+      "supplementName": "Schisandra Berry",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 68,
+      "supplementName": "Schisandra Berry",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 69,
+      "supplementName": "Mucuna Pruriens",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 69,
+      "supplementName": "Mucuna Pruriens",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 69,
+      "supplementName": "Mucuna Pruriens",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 69,
+      "supplementName": "Mucuna Pruriens",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 70,
+      "supplementName": "Forskolin",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 70,
+      "supplementName": "Forskolin",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 70,
+      "supplementName": "Forskolin",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 70,
+      "supplementName": "Forskolin",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 71,
+      "supplementName": "Boswellia",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 71,
+      "supplementName": "Boswellia",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 71,
+      "supplementName": "Boswellia",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 71,
+      "supplementName": "Boswellia",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 72,
+      "supplementName": "Milk Thistle",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 72,
+      "supplementName": "Milk Thistle",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 72,
+      "supplementName": "Milk Thistle",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 72,
+      "supplementName": "Milk Thistle",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 73,
+      "supplementName": "Stinging Nettle",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 73,
+      "supplementName": "Stinging Nettle",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 73,
+      "supplementName": "Stinging Nettle",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 73,
+      "supplementName": "Stinging Nettle",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 74,
+      "supplementName": "Elderberry",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 74,
+      "supplementName": "Elderberry",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 74,
+      "supplementName": "Elderberry",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 74,
+      "supplementName": "Elderberry",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 75,
+      "supplementName": "Citicoline",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 75,
+      "supplementName": "Citicoline",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 75,
+      "supplementName": "Citicoline",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    },
+    {
+      "supplementId": 76,
+      "supplementName": "Sulbutiamine",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 76,
+      "supplementName": "Sulbutiamine",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 76,
+      "supplementName": "Sulbutiamine",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 76,
+      "supplementName": "Sulbutiamine",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 77,
+      "supplementName": "DMAE",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 77,
+      "supplementName": "DMAE",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 77,
+      "supplementName": "DMAE",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 77,
+      "supplementName": "DMAE",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 78,
+      "supplementName": "Centella Asiatica",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 78,
+      "supplementName": "Centella Asiatica",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 78,
+      "supplementName": "Centella Asiatica",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 78,
+      "supplementName": "Centella Asiatica",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 79,
+      "supplementName": "Passionflower",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 79,
+      "supplementName": "Passionflower",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 79,
+      "supplementName": "Passionflower",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 79,
+      "supplementName": "Passionflower",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 80,
+      "supplementName": "Aniracetam",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 80,
+      "supplementName": "Aniracetam",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 80,
+      "supplementName": "Aniracetam",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 80,
+      "supplementName": "Aniracetam",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 81,
+      "supplementName": "Piracetam",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 81,
+      "supplementName": "Piracetam",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 81,
+      "supplementName": "Piracetam",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 81,
+      "supplementName": "Piracetam",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 82,
+      "supplementName": "Kanna",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 82,
+      "supplementName": "Kanna",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 82,
+      "supplementName": "Kanna",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 82,
+      "supplementName": "Kanna",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 83,
+      "supplementName": "Black Seed Oil",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 83,
+      "supplementName": "Black Seed Oil",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 83,
+      "supplementName": "Black Seed Oil",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 83,
+      "supplementName": "Black Seed Oil",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 84,
+      "supplementName": "Moringa",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 84,
+      "supplementName": "Moringa",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 84,
+      "supplementName": "Moringa",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 84,
+      "supplementName": "Moringa",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 85,
+      "supplementName": "Pine Bark Extract",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 85,
+      "supplementName": "Pine Bark Extract",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 85,
+      "supplementName": "Pine Bark Extract",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 85,
+      "supplementName": "Pine Bark Extract",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 86,
+      "supplementName": "Grape Seed Extract",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 86,
+      "supplementName": "Grape Seed Extract",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 86,
+      "supplementName": "Grape Seed Extract",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 86,
+      "supplementName": "Grape Seed Extract",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 87,
+      "supplementName": "Krill Oil",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 87,
+      "supplementName": "Krill Oil",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 87,
+      "supplementName": "Krill Oil",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 87,
+      "supplementName": "Krill Oil",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 88,
+      "supplementName": "Zeaxanthin",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 88,
+      "supplementName": "Zeaxanthin",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations.isEnhanced is false or missing in supplements.js",
+      "suggestedAction": "Update supplements.js entry with enhanced citation profile"
+    },
+    {
+      "supplementId": 88,
+      "supplementName": "Zeaxanthin",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 88,
+      "supplementName": "Zeaxanthin",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 89,
+      "supplementName": "Pterostilbene",
+      "issueType": "stale_evidence",
+      "severity": "critical",
+      "description": "No lastEvidenceUpdate date recorded — evidence freshness unknown",
+      "suggestedAction": "Run Mode 2 evidence update to establish baseline date"
+    },
+    {
+      "supplementId": 89,
+      "supplementName": "Pterostilbene",
+      "issueType": "missing_quality_score",
+      "severity": "warning",
+      "description": "No researchQualityScore in evidenceProfile — evidence quality unscored",
+      "suggestedAction": "Calculate and populate researchQualityScore during next Mode 2 run"
+    },
+    {
+      "supplementId": 89,
+      "supplementName": "Pterostilbene",
+      "issueType": "missing_provenance",
+      "severity": "info",
+      "description": "No provenance trail documents exist for this supplement",
+      "suggestedAction": "Generate provenance trail during next pipeline run"
+    },
+    {
+      "supplementId": 89,
+      "supplementName": "Pterostilbene",
+      "issueType": "incomplete_enhanced",
+      "severity": "warning",
+      "description": "enhancedCitations marked as enhanced but has no inline mechanisms/benefits/safety arrays",
+      "suggestedAction": "The enhanced data lives in the external file — verify the external file has proper data"
+    }
+  ],
+  "summary": {
+    "critical": 84,
+    "warnings": 180,
+    "info": 89,
+    "totalIssues": 353,
+    "overallHealthScore": 0,
+    "issueTypeDistribution": {
+      "stale_evidence": 89,
+      "missing_provenance": 89,
+      "incomplete_enhanced": 88,
+      "missing_quality_score": 72,
+      "missing_canonical_file": 11,
+      "tier_mismatch": 4
+    },
+    "topIssueSupplements": [
+      {
+        "id": 19,
+        "name": "B-Complex Vitamins",
+        "issueCount": 6
+      },
+      {
+        "id": 8,
+        "name": "Melatonin",
+        "issueCount": 5
+      },
+      {
+        "id": 12,
+        "name": "Phosphatidylserine",
+        "issueCount": 5
+      },
+      {
+        "id": 14,
+        "name": "Ginkgo Biloba",
+        "issueCount": 5
+      },
+      {
+        "id": 16,
+        "name": "Alpha-GPC",
+        "issueCount": 5
+      },
+      {
+        "id": 17,
+        "name": "Berberine",
+        "issueCount": 5
+      },
+      {
+        "id": 20,
+        "name": "Quercetin",
+        "issueCount": 5
+      },
+      {
+        "id": 23,
+        "name": "Folate",
+        "issueCount": 5
+      },
+      {
+        "id": 24,
+        "name": "Green Tea Extract",
+        "issueCount": 5
+      },
+      {
+        "id": 29,
+        "name": "MSM",
+        "issueCount": 5
+      },
+      {
+        "id": 50,
+        "name": "Caffeine",
+        "issueCount": 5
+      },
+      {
+        "id": 3,
+        "name": "Ashwagandha",
+        "issueCount": 4
+      },
+      {
+        "id": 4,
+        "name": "Omega-3 Fatty Acids",
+        "issueCount": 4
+      },
+      {
+        "id": 7,
+        "name": "Vitamin D3",
+        "issueCount": 4
+      },
+      {
+        "id": 9,
+        "name": "L-Theanine",
+        "issueCount": 4
+      },
+      {
+        "id": 10,
+        "name": "Rhodiola rosea",
+        "issueCount": 4
+      },
+      {
+        "id": 11,
+        "name": "Lion's Mane Mushroom",
+        "issueCount": 4
+      },
+      {
+        "id": 13,
+        "name": "Acetyl-L-Carnitine",
+        "issueCount": 4
+      },
+      {
+        "id": 15,
+        "name": "Panax Ginseng",
+        "issueCount": 4
+      },
+      {
+        "id": 18,
+        "name": "CoQ10",
+        "issueCount": 4
+      }
+    ]
+  },
+  "databaseStatistics": {
+    "totalSupplements": 89,
+    "tierDistribution": {
+      "1": 8,
+      "2": 60,
+      "3": 21,
+      "4": 0
+    },
+    "supplementsWithLastEvidenceUpdate": 5,
+    "supplementsWithoutLastEvidenceUpdate": 84,
+    "supplementsWithQualityScore": 17,
+    "supplementsWithoutQualityScore": 72,
+    "supplementsWithEffectSizes": 89,
+    "supplementsWithSafetyProfile": 89,
+    "supplementsWithDosageRange": 89,
+    "enhancedCitationFiles": {
+      "total": 172,
+      "namedFiles": 116,
+      "genericFiles": 48,
+      "supplementsWithNamedFiles": 83,
+      "supplementsWithOnlyGenericFiles": 11,
+      "supplementsWithNoFiles": 0
+    },
+    "provenanceTrails": {
+      "supplementsWithProvenance": 0,
+      "supplementsWithoutProvenance": 89
+    }
+  }
+}

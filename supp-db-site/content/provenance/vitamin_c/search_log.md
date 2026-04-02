@@ -1,0 +1,131 @@
+# Search Log: Vitamin C (Ascorbic Acid) - ID 36
+## Mode 2 Evidence Update
+
+**Pipeline Run Date:** 2026-03-04
+**Previous Update:** 2025-08-21
+**Supplement:** Vitamin C (Ascorbic acid)
+**Database ID:** 36
+
+---
+
+## Search Strategy Overview
+
+| Parameter | Value |
+|-----------|-------|
+| Search window | 2025-08-21 to 2026-03-04 |
+| Databases searched | PubMed, Consensus API |
+| Total results retrieved | 23 (20 PubMed + 3 Consensus) |
+| Duplicates removed | 2 (Consensus duplicates of PubMed results) |
+| Unique papers screened | 21 |
+| Papers included | 5 |
+| Papers excluded | 16 |
+
+---
+
+## PubMed Search
+
+### Query 1: Primary Clinical Evidence Search
+**Date executed:** 2026-03-04
+**Database:** PubMed (via NCBI E-utilities API)
+
+**Query string:**
+```
+("vitamin C"[Title/Abstract] OR "ascorbic acid"[Title/Abstract] OR "L-ascorbic acid"[Title/Abstract])
+AND (
+  "meta-analysis"[Publication Type] OR "systematic review"[Publication Type]
+  OR "meta-analysis"[Title/Abstract] OR "systematic review"[Title/Abstract]
+  OR "randomized controlled trial"[Publication Type] OR "RCT"[Title/Abstract]
+  OR "umbrella review"[Title/Abstract]
+)
+AND ("2024/08/01"[Date - Publication] : "2026/03/04"[Date - Publication])
+```
+
+**Filters applied:**
+- Publication date: 2024-08-01 to 2026-03-04
+- Article types: Meta-Analysis, Systematic Review, Randomized Controlled Trial
+- Language: English
+- Species: Humans
+
+**Results returned:** 20
+**Date of search:** 2026-03-04
+
+**Result PMIDs:**
+| # | PMID | First Author | Year | Title (abbreviated) |
+|---|------|-------------|------|---------------------|
+| 1 | 39657872 | Arshadi | 2024 | Cancer prevention meta-analysis |
+| 2 | 41521729 | Aragon-Vela | 2026 | Glycemic and CV in T2D |
+| 3 | 39828265 | Chai | 2025 | Umbrella review glycemic |
+| 4 | 40740780 | Moabedi | 2025 | Antioxidant mechanism C+E |
+| 5 | 39527016 | Qin | 2024 | COVID-19 outcomes |
+| 6 | 39861409 | Calder | 2025 | Bioavailability of supplement forms |
+| 7 | 39915258 | Allahyari | 2025 | General sports supplement review |
+| 8 | 41174501 | Zhou | 2025 | COVID MA (no benefit) |
+| 9 | 40605146 | Murphy | 2025 | Pregnancy/offspring respiratory |
+| 10 | 39306086 | Tang | 2024 | Bariatric surgery micronutrient |
+| 11 | 40532258 | de Oliveira | 2024 | Hemodialysis LDL reduction |
+| 12 | 38265393 | Saghafi | 2025 | HAT therapy combination |
+| 13 | 40584396 | Pereira | 2025 | Preterm birth prevention |
+| 14 | 39861372 | Bosch | 2025 | Nutrigenomics genetic variations |
+| 15 | 40632831 | Bronnert | 2025 | Preterm infant supplementation |
+| 16 | 41158097 | Abdulla | 2025 | Periodontal health in T2D |
+| 17 | 39828255 | Helmyati | 2025 | Iron deficiency anemia LMIC |
+| 18 | 40914496 | Alhusban | 2025 | Antioxidants in CAD |
+| 19 | 41258642 | Ahmed | 2025 | Dental implant osseointegration |
+| 20 | 41683896 | Tsokkou | 2026 | Endometriosis vitamins |
+
+---
+
+## Consensus API Search
+
+### Query 1: Vitamin C Clinical Outcomes
+**Date executed:** 2026-03-04
+**Database:** Consensus API (Semantic Scholar indexed)
+
+**Query string:**
+```
+"What are the clinical benefits and outcomes of vitamin C supplementation based on recent meta-analyses and systematic reviews?"
+```
+
+**Filters applied:**
+- Year range: 2024-2026
+- Study types: Meta-analysis, Systematic review, RCT
+- Human subjects: Yes
+
+**Results returned:** 3
+
+| # | Source | First Author | Year | Title (abbreviated) | Duplicate? |
+|---|--------|-------------|------|---------------------|------------|
+| 1 | Consensus | Arshadi | 2024 | Cancer prevention MA | Yes (PMID 39657872) |
+| 2 | Consensus | Chai | 2025 | Umbrella review glycemic | Yes (PMID 39828265) |
+| 3 | Consensus | Liu | 2025 | Perioperative arthroplasty | No (unique) |
+
+**Duplicates identified and removed:** 2
+- Arshadi 2024 (already captured via PubMed PMID 39657872)
+- Chai 2025 (already captured via PubMed PMID 39828265)
+
+**Unique papers from Consensus:** 1
+- Liu 2025 - Perioperative arthroplasty (surgical niche, ultimately excluded)
+
+---
+
+## Deduplication Summary
+
+| Source | Raw Results | Duplicates | Unique Additions |
+|--------|-------------|------------|------------------|
+| PubMed | 20 | 0 | 20 |
+| Consensus API | 3 | 2 | 1 |
+| **Total** | **23** | **2** | **21** |
+
+---
+
+## Search Completeness Assessment
+
+- **Coverage:** Two complementary databases searched (biomedical literature + semantic academic search)
+- **Recency:** Search window covers full period since last update (2025-08-21 to 2026-03-04, approximately 6.5 months)
+- **Sensitivity:** Broad query terms used (vitamin C, ascorbic acid, L-ascorbic acid) with study design filters
+- **Specificity:** Filtered to human clinical studies (MAs, SRs, RCTs) to match evidence hierarchy requirements
+- **Limitations:** Did not search Cochrane Library, EMBASE, or Web of Science separately. Grey literature not searched. Conference abstracts excluded.
+
+---
+
+*Generated by Mode 2 Evidence Pipeline | Run ID: vitc-36-20260304*

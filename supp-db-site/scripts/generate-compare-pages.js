@@ -13,7 +13,7 @@ const db = loadSupplementData();
 if (!db) { console.error('Failed to load supplement data'); process.exit(1); }
 
 const TODAY = new Date().toISOString().split('T')[0];
-const SITE_URL = 'https://supplementdb.co';
+const SITE_URL = 'https://supplementdb.info';
 const POSTHOG_KEY = 'phc_esUgVXZLrnPplrCmbAQ8RlYbHuXS38hewwGHnLqtMF7';
 const OUTPUT_DIR = path.join(__dirname, '..', 'compare');
 

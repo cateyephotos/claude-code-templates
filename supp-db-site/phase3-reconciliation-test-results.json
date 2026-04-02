@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-31T18:46:14.595Z",
+  "testType": "Phase 3 Reconciliation Verification",
+  "fixes": {
+    "lTheanine": {
+      "id": 9,
+      "status": "error",
+      "details": {
+        "error": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n"
+      }
+    },
+    "phosphatidylserine": {
+      "id": 12,
+      "status": "error",
+      "details": {
+        "error": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n"
+      }
+    },
+    "quercetin": {
+      "id": 20,
+      "status": "error",
+      "details": {
+        "error": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n"
+      }
+    },
+    "nadPrecursors": {
+      "id": 25,
+      "status": "error",
+      "details": {
+        "error": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n"
+      }
+    },
+    "hawthornBerry": {
+      "id": 59,
+      "status": "error",
+      "details": {
+        "error": "page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n"
+      }
+    }
+  },
+  "summary": {
+    "totalTested": 5,
+    "working": 0,
+    "broken": 5,
+    "errors": [
+      "L-Theanine: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n",
+      "Phosphatidylserine: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n",
+      "Quercetin: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n",
+      "NAD+ Precursors: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n",
+      "Hawthorn Berry: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.supplement-card') to be visible\u001b[22m\n"
+    ]
+  }
+}

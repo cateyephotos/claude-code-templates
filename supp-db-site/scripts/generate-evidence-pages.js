@@ -39,7 +39,7 @@ const WAVE_1_DOMAINS = [
 ];
 
 const SUPPS_PER_DOMAIN = 5;
-const BASE_URL = "https://supplementdb.co";
+const BASE_URL = "https://supplementdb.info";
 const TODAY = new Date().toISOString().split("T")[0];
 
 // Map domain slugs to guide page slugs (for cross-linking evidence → guide)

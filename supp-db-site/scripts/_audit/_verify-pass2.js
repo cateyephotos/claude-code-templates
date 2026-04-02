@@ -12,7 +12,7 @@ const path = require('path');
 
 const VERIFIED_PATH = path.join(__dirname, '..', 'data', 'verified-citations.json');
 const TOOL = 'supplementdb';
-const EMAIL = 'admin@supplementdb.co';
+const EMAIL = 'admin@supplementdb.info';
 const RATE_LIMIT_MS = 400;
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -103,7 +103,7 @@ async function fetchMetadata(pmids) {
 async function resolveDoi(doi) {
   try {
     const resp = await fetch(`https://api.crossref.org/works/${encodeURIComponent(doi)}`, {
-      headers: { 'User-Agent': 'SupplementDB/1.0 (admin@supplementdb.co)' }
+      headers: { 'User-Agent': 'SupplementDB/1.0 (admin@supplementdb.info)' }
     });
     if (!resp.ok) return null;
     const data = await resp.json();

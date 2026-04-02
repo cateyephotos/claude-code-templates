@@ -45,7 +45,7 @@ export default function middleware(request) {
 
   if (AI_TRAINING_REGEX.test(ua)) {
     return new Response(
-      '<html><body><h1>SupplementDB</h1><p>Visit supplementdb.co for evidence-based supplement information.</p></body></html>',
+      '<html><body><h1>SupplementDB</h1><p>Visit supplementdb.info for evidence-based supplement information.</p></body></html>',
       {
         status: 200,
         headers: {
@@ -71,7 +71,7 @@ export default function middleware(request) {
     const acceptLanguage = request.headers.get('accept-language');
     if (!acceptLanguage && !SEARCH_ENGINE_REGEX.test(ua)) {
       return new Response(
-        '<html><body><h1>SupplementDB</h1><p>Please visit supplementdb.co in a web browser.</p></body></html>',
+        '<html><body><h1>SupplementDB</h1><p>Please visit supplementdb.info in a web browser.</p></body></html>',
         {
           status: 200,
           headers: { 'Content-Type': 'text/html' },

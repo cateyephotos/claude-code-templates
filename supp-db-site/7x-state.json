@@ -1,0 +1,1078 @@
+{
+  "phase": "complete",
+  "completed_at": "2026-03-17",
+  "deploy_outputs": {
+    "lever_01": { "status": "complete", "file": "7x-outputs/Lever-01-Offers.md" },
+    "lever_02": { "status": "complete", "file": "7x-outputs/Lever-02-Traffic.md" },
+    "lever_03": { "status": "complete", "file": "7x-outputs/Lever-03-Leads.md" },
+    "lever_04": { "status": "complete", "file": "7x-outputs/Lever-04-Buyers.md" },
+    "lever_05": { "status": "complete", "file": "7x-outputs/Lever-05-Repeat-Buyers.md" },
+    "lever_06": { "status": "deferred", "file": "7x-outputs/Lever-06-Connections.md" },
+    "lever_07": { "status": "deferred", "file": "7x-outputs/Lever-07-Referrals.md" },
+    "lever_08": { "status": "complete", "file": "7x-outputs/Lever-08-Personality.md" },
+    "lever_09": { "status": "complete", "file": "7x-outputs/Lever-09-Engagement.md" },
+    "lever_10": { "status": "complete", "file": "7x-outputs/Lever-10-Conversions.md" },
+    "lever_11": { "status": "complete", "file": "7x-outputs/Lever-11-Attention.md" },
+    "lever_12": { "status": "deferred", "file": "7x-outputs/Lever-12-Testimonials.md" },
+    "lever_13": { "status": "complete", "file": "7x-outputs/Lever-13-Authority.md" },
+    "lever_14": { "status": "complete", "file": "7x-outputs/Lever-14-Pricing.md" },
+    "lever_15": { "status": "complete", "file": "7x-outputs/Lever-15-Revenue.md" },
+    "summary": { "status": "complete", "file": "7x-outputs/summary.md" }
+  },
+  "gap_interview_answers": {
+    "theme_1_positioning": {
+      "growth_priority": "Hybrid — free SEO funnel into conversion",
+      "positioning_choice": "Mass Appeal (low barrier, high volume)",
+      "bonuses": "Future product concept: a companion app using the Stack Analyzer engine that lets users document/create trial stack scenarios and track how they feel over time, exercise performance, etc. (Not a signup bonus — a future offer in the ladder)"
+    },
+    "theme_2_personality": {
+      "humor_style": "dry",
+      "pop_culture": {
+        "movies": ["The Matrix"],
+        "shows_podcasts": ["Arrival (2016 film)", "Huberman Lab podcast"],
+        "books_characters": []
+      },
+      "self_deprecation": "Learned the hard way about importance of sleep — how it affects immunity and susceptibility to colds after too many all-nighters",
+      "slice_of_life": "None right now",
+      "youness": {
+        "obsessions": ["Photography", "Studying color grading in cinema and images"],
+        "quirks": ["Drinks everything at home out of one cup — childhood habit"],
+        "unpopular_opinion": "You really don't need to visit a dentist every 6 months or even annually if you have good daily dental hygiene habits"
+      },
+      "dont_sound_like": "As a leading expert... / As a passionate... / any superfluous adjectives"
+    },
+    "theme_3_operations": {
+      "hours_per_week": 1,
+      "effort_level": "Low effort / slow build",
+      "platforms": ["Email"],
+      "posting_frequency": "1x week"
+    },
+    "theme_4_relationships": {
+      "connection_inventory": "No contacts",
+      "client_base": "No paying users currently",
+      "appearances": "Appeared nowhere",
+      "competence_stories": "None relevant",
+      "imperfections": [
+        "Keeps an untidy workspace but knows where everything is",
+        "Has difficulty doing things outside immediate interests that must be done"
+      ]
+    },
+    "theme_5_revenue": {
+      "current_revenue": "Revenue streams built (Stripe, Clerk, Convex credits) but nothing public-facing yet — pre-revenue",
+      "priority_offer": "PDF guide sales"
+    }
+  },
+  "business_dna": {
+    "identity": {
+      "name": "SupplementDB (Evidence-Based Supplement Database)",
+      "mission": "Bridge the gap between published scientific research and accessible supplement information to help users make informed health decisions",
+      "value_proposition": "The only supplement reference platform that organizes 93 supplements around solved health problems with transparent 4-tier evidence classification, backed by 471+ peer-reviewed papers — with zero supplement sales, zero affiliate commissions, and zero industry funding",
+      "industry": "Health & Wellness / Digital Health / Evidence-Based Nutrition",
+      "business_model": "Freemium SaaS with tiered subscriptions (Free → Pro Monthly $9.99 → Pro Annual $79.99), supplemented by PDF guide bundles ($29-99) and B2B API licensing ($39-299/month)",
+      "one_sentence": "SupplementDB is the evidence-first supplement research platform that healthcare professionals and health-conscious consumers trust because it rates every supplement claim against peer-reviewed clinical trials — and sells zero supplements."
+    },
+    "audience": {
+      "primary_segment": "Healthcare professionals (40%), fitness/performance enthusiasts (30%), health-conscious consumers (30%)",
+      "demographics": "Ages 25-65, college-educated, tech-savvy, health-conscious individuals who distrust supplement marketing and want evidence-backed guidance",
+      "pain_points": [
+        "Supplement industry marketing drowns out actual research evidence",
+        "Impossible to distinguish strong evidence from weak claims without reading papers",
+        "No centralized, trustworthy supplement comparison resource exists",
+        "Healthcare providers lack reliable reference material for patient supplement counseling",
+        "Personalized supplement recommendations require expensive consultations",
+        "Supplement stacking without evidence risks harmful interactions",
+        "Information overload — too many supplements, too many conflicting claims"
+      ],
+      "desires": [
+        "Know which supplements actually work for their specific health goal",
+        "See the strength of evidence behind every claim (not just 'clinically proven')",
+        "Compare supplements side-by-side on evidence, dosage, safety, and cost",
+        "Get AI-powered personalized stack recommendations for their health goals",
+        "Access professional-grade research without reading academic papers",
+        "Trust the source — no hidden agendas, no affiliate links, no industry funding",
+        "Save time by having evidence pre-evaluated and tiered"
+      ],
+      "buyer_thinking_by_stage": {
+        "red": "I don't need a supplement database — I just Google what I need or ask my doctor",
+        "orange": "Interesting that there's an evidence-rated database... but I can probably find this info free on Examine.com or WebMD",
+        "yellow": "I keep getting conflicting advice on supplements. I should use something more systematic and science-backed",
+        "light_green": "SupplementDB vs Examine.com vs ConsumerLab — which gives me the most trustworthy, actionable evidence?",
+        "dark_green": "I trust the evidence rating system. Will the Pro tier save me enough time and give me enough depth to justify $9.99/month?"
+      }
+    },
+    "offers": {
+      "products": [
+        { "name": "Free Database Access", "price": "$0", "format": "Web app", "outcome": "Browse 93 supplement profiles with evidence tier indicators", "stage": "red/orange" },
+        { "name": "AI Stack Analyzer (Free Tier)", "price": "$0 (3/month)", "format": "AI tool", "outcome": "Personalized supplement stack for 1 health goal", "stage": "orange/yellow" },
+        { "name": "Pro Monthly", "price": "$9.99/month", "format": "Full platform access", "outcome": "8 evidence guides, dosage protocols, mechanisms, interactions, 25 AI analyses/month", "stage": "light_green" },
+        { "name": "Pro Annual", "price": "$79.99/year", "format": "Full platform access (annual)", "outcome": "Same as Pro Monthly at 33% savings", "stage": "dark_green" },
+        { "name": "PDF Guide Bundles", "price": "$29-99", "format": "Downloadable PDFs", "outcome": "Offline evidence guides per health domain", "stage": "yellow/light_green" },
+        { "name": "B2B API Access", "price": "$39-299/month", "format": "REST API", "outcome": "Integrate evidence data into clinics/apps/platforms", "stage": "dark_green" }
+      ],
+      "pricing_model": "Freemium + subscription + one-time + B2B API",
+      "competitor_refs": [
+        "Examine.com — encyclopedia, subscription",
+        "ConsumerLab — testing/reviews, membership",
+        "WebMD — free, ad-supported, less rigorous",
+        "Labdoor — quality grading",
+        "Natural Medicines Database — pro reference, $300+/year"
+      ]
+    },
+    "proof": {
+      "metrics": [
+        "93 supplements across 13 categories",
+        "471+ peer-reviewed papers",
+        "20-year evidence window (2005-2025)",
+        "20 health domain guides",
+        "25 problem-centered evidence pages",
+        "10 comparison tools",
+        "4-tier evidence classification"
+      ],
+      "testimonials": [],
+      "case_studies": [],
+      "authority_signals": [
+        "Zero supplement sales, zero affiliates, zero industry funding",
+        "4-tier evidence classification",
+        "Every claim traceable to DOI/PMID",
+        "Sources: PubMed, PMC, Cochrane, ClinicalTrials.gov",
+        "100% DOI verification",
+        "Medical disclaimer",
+        "Conflict of interest disclosure"
+      ]
+    },
+    "voice": {
+      "tone_samples": [
+        "Bridge the gap between published scientific research and accessible supplement information",
+        "Evidence-first approach: Claims backed by research strength rating",
+        "We do not sell supplements, receive no industry funding, and maintain independence"
+      ],
+      "brand_personality": "Authoritative clinical researcher — trustworthy, transparent, evidence-obsessed, anti-hype",
+      "humor_style": "Minimal — clinical/serious but not cold. Occasional dry wit about supplement industry hype",
+      "forbidden_words": ["miracle", "cure", "guaranteed", "amazing results", "breakthrough", "buy now", "limited time offer", "act fast"]
+    },
+    "operations": {
+      "tech_stack": ["HTML5/CSS3/Vanilla JS", "Convex Cloud", "Clerk auth", "Stripe payments", "Anthropic Claude AI", "PostHog analytics", "Resend email", "Docker/Nginx", "Playwright tests"],
+      "team_size": "Solo founder / small team",
+      "stage": "Early revenue — product built, monetization infra in place, pre-traction",
+      "hours_per_week_available": "SUBJECTIVE"
+    }
+  },
+  "homework": {
+    "lever_01_offers": {
+      "status": "auto_filled",
+      "offer_1_red": {
+        "source": "inferred",
+        "who": "Health-conscious adults (25-65) who take supplements casually based on marketing claims, blog posts, or friend recommendations. Emotionally: comfortable with current routine, don't think they need a database ('I just take what my friend recommended').",
+        "offer_option": "Diagnostic Quiz (score + meaning)",
+        "modality": "DIY",
+        "what_it_covers": "Evidence Confidence Scorecard — rate how evidence-backed your current supplement stack actually is",
+        "outcome": "A personalized score (1-100) revealing how many of your supplements have strong clinical evidence vs marketing hype",
+        "next_step_orange": "Invite to free 'Why Most Supplements Fail the Evidence Test' training"
+      },
+      "offer_2_orange_a": {
+        "source": "inferred",
+        "who": "Curious supplement users who scored low on the Evidence Scorecard and are starting to question whether their stack is actually backed by science. Emotionally: intrigued but unsure if switching approach is worth the effort.",
+        "offer_option": "'New Lens' Training (explain the real reason + new approach)",
+        "modality": "DIY",
+        "what_it_covers": "Why Most Supplements Fail the Evidence Test — how the 4-tier classification system separates real science from marketing",
+        "key_belief": "Not all 'clinically proven' supplements are equal — evidence strength varies from Tier 1 (strong RCTs) to Tier 4 (emerging/preclinical)",
+        "next_step_yellow": "Point to the free AI Stack Analyzer (3 analyses/month)"
+      },
+      "offer_3_orange_b": {
+        "source": "inferred",
+        "who": "More skeptical supplement users who've been burned by supplement marketing before. Or healthcare providers curious about a better reference tool. Emotionally: wary of another supplement site, need proof it's different.",
+        "offer_option": "Starter Kit / Starter Pack (templates + quick-start guide)",
+        "modality": "DIY",
+        "what_it_covers": "The Evidence-First Supplement Starter Kit — a comparison of top 10 most popular supplements rated by actual clinical trial evidence",
+        "key_emotion": "Relief + validation ('Finally, someone is being honest about what works')",
+        "next_step_yellow": "Point to the free AI Stack Analyzer or a low-ticket PDF guide"
+      },
+      "offer_4_yellow_a": {
+        "source": "extracted",
+        "who": "People who now understand evidence tiers and want to optimize their stack for a specific health goal. Emotionally: motivated but don't want a massive overhaul — want a quick, targeted win.",
+        "offer_option": "Tool + Guidance (they input info → tool outputs plan)",
+        "modality": "DIY",
+        "what_it_covers": "AI Stack Analyzer — select your health goal, input your current supplements, get a personalized evidence-rated analysis",
+        "proof_of_progress": "A complete AI-generated stack analysis with evidence scores, mechanism coverage, and specific recommendations",
+        "next_step_light_green": "Upgrade to Pro for full evidence guides, dosage protocols, and 25 analyses/month"
+      },
+      "offer_5_yellow_b": {
+        "source": "extracted",
+        "who": "Same stage but prefers offline reference material. Emotionally: wants a tangible document they can reference and share with their doctor or trainer.",
+        "offer_option": "Implementation Bundle (templates + checklists + examples)",
+        "modality": "DIY / Async",
+        "what_it_covers": "PDF Evidence Guide for one health domain (e.g., Sleep, Cognitive Performance, Anxiety)",
+        "what_it_removes": "Confusion about which supplements actually work for their specific health goal, with dosage protocols and safety warnings included",
+        "next_step_light_green": "Upgrade to Pro for access to all 8 guides + the AI Stack Analyzer"
+      },
+      "offer_6_light_green": {
+        "source": "extracted",
+        "who": "Convinced users comparing SupplementDB Pro vs Examine.com vs ConsumerLab. Emotionally: 'Which platform gives me the most trustworthy, actionable evidence for the best price?'",
+        "offer_option": "System Program (structured method)",
+        "modality": "Async supported",
+        "what_it_covers": "SupplementDB Pro — the complete evidence system: 93 supplements, 8 deep-dive guides, dosage protocols, mechanism analysis, interaction warnings, 25 AI stack analyses/month",
+        "why_easier": "Unlike Examine (no AI personalization) or ConsumerLab (focuses on product testing, not clinical evidence tiers), SupplementDB combines research depth with AI-powered personalization at $9.99/mo vs $300+/yr for Natural Medicines Database",
+        "next_step_dark_green": "Annual commitment at 33% savings or B2B API access"
+      },
+      "offer_7_dark_green": {
+        "source": "inferred",
+        "who": "Healthcare professionals, wellness coaches, or serious biohackers who want the deepest level of access and integration. Emotionally: 'I trust this system — I want to use it professionally or build it into my practice.'",
+        "offer_option": "Signature Program / Flagship Service",
+        "modality": "Hybrid",
+        "what_it_covers": "Pro Annual ($79.99/yr) for individuals OR B2B API Access ($39-299/mo) for practices/platforms — full integration of evidence-based supplement data into professional workflows",
+        "proof_before_buying": ["Case studies / before-afters (evidence guide usage outcomes)", "Demo / sample output (free AI Stack Analyzer trial)", "Guarantee / risk reversal (7-day refund policy)"],
+        "next_step_post_purchase": "Onboarding email with quick-start guide to Evidence Guides + first AI analysis prompt"
+      },
+      "final_check": {
+        "all_7_lead_forward": true,
+        "each_has_one_job": true,
+        "modality_locked": true,
+        "one_line_covers": true
+      }
+    },
+    "lever_02_traffic": {
+      "status": "auto_filled",
+      "section_1_starting_stream": {
+        "source": "inferred",
+        "easiest_stream": "Intent",
+        "why": "SupplementDB has 4,012+ static HTML pages covering 93 supplements, 25 problem-centered evidence pages, and 20 health guides — massive SEO surface area. The product naturally answers questions people actively search for ('best supplements for sleep,' 'ashwagandha evidence,' etc.)."
+      },
+      "section_2_borrowed": {
+        "source": "inferred",
+        "five_places": [
+          "Health/wellness podcasts (Huberman Lab, Found My Fitness, etc.)",
+          "Healthcare professional newsletters (medical continuing education)",
+          "Fitness/biohacking YouTube channels (Thomas DeLauer, etc.)",
+          "Nutrition/dietitian professional communities",
+          "Health-tech startup newsletters and communities"
+        ],
+        "audience_overlap": "Their audiences actively seek evidence-based supplement information — SupplementDB provides the tool their audience needs",
+        "what_helps_them": "Provide expert evidence breakdowns their audience trusts — e.g., 'The Real Evidence Tier for Popular Sleep Supplements' as guest content"
+      },
+      "section_3_ambient": {
+        "source": "inferred",
+        "natural_platform": "LinkedIn (healthcare professionals) + Twitter/X (health-tech/biohacking community)",
+        "repeatable_format": "Text posts — evidence breakdowns, supplement myth-busting, data visualizations of research findings",
+        "three_topics": [
+          "Supplement evidence debunking (what the research actually says vs marketing)",
+          "Health domain deep-dives (sleep, cognition, longevity supplement evidence)",
+          "AI + health tech intersection (how AI can personalize supplement recommendations)"
+        ]
+      },
+      "section_4_intent": {
+        "source": "extracted",
+        "five_questions": [
+          "What is the best supplement for sleep?",
+          "Does ashwagandha actually work for anxiety?",
+          "Which supplements have the strongest clinical evidence?",
+          "Is creatine safe for long-term use?",
+          "What supplements should I take for brain health?"
+        ],
+        "where_asked": "Google, Reddit (r/supplements, r/nootropics, r/biohackers), YouTube, TikTok",
+        "which_answerable": "All 5 — this is SupplementDB's core competency"
+      },
+      "section_5_constraints": {
+        "source": "SUBJECTIVE",
+        "hours_per_week": "NEEDS_INPUT",
+        "effort_level": "NEEDS_INPUT"
+      },
+      "section_6_output": {
+        "source": "inferred",
+        "intent_output": "Answers / explainers / searchable content (already 4,012+ pages serving this)"
+      },
+      "section_7_success": {
+        "source": "inferred",
+        "success_definition": "This eyeball stream is working if, after 30 days, I see organic search traffic increasing to supplement monograph and evidence guide pages, and free-to-Pro conversion rate improves."
+      }
+    },
+    "lever_03_leads": {
+      "status": "auto_filled",
+      "part_1_context": {
+        "source": "extracted",
+        "business_one_sentence": "SupplementDB helps people make evidence-based supplement decisions by rating 93 supplements against 471+ peer-reviewed clinical trials",
+        "primary_audience": "Healthcare professionals, fitness enthusiasts, and health-conscious consumers aged 25-65 who want science-backed supplement guidance",
+        "main_outcome": "Convert free database users into Pro subscribers ($9.99/month) through evidence guides and AI Stack Analyzer"
+      },
+      "part_2_lead_magnets": {
+        "red": {
+          "source": "inferred",
+          "working_title": "How Evidence-Backed Is Your Supplement Stack? (Free Scorecard)",
+          "who": "Casual supplement users who haven't questioned whether their supplements have real evidence",
+          "what_notice": "Notice how many of their current supplements fall into Tier 3-4 (preliminary/emerging) rather than Tier 1-2 (strong/moderate)",
+          "format": "Quiz / Self-Assessment Scorecard (DIY)"
+        },
+        "orange_yellow": {
+          "source": "inferred",
+          "working_title": "The Evidence-First Supplement Guide: Top 20 Supplements Ranked by Clinical Trial Strength",
+          "who": "People who scored low on the scorecard and are now curious about which supplements actually have strong evidence",
+          "what_explains": "Explains the 4-tier evidence system and reveals which popular supplements are Tier 1 vs Tier 4",
+          "format": "PDF guide (downloadable)"
+        },
+        "green": {
+          "source": "extracted",
+          "working_title": "Free AI Stack Analysis: Get Your Personalized Evidence-Based Supplement Report",
+          "who": "Problem-aware users comparing platforms, ready to see what SupplementDB's AI can do for their specific health goal",
+          "what_decides": "Helps them see the value of AI-powered personalized recommendations and evidence-depth behind each suggestion",
+          "format": "Product demo — free AI Stack Analyzer trial (3 analyses/month)"
+        }
+      },
+      "part_3_authority_bio": {
+        "source": "extracted",
+        "relevant_experience": "Built a 93-supplement database backed by 471+ peer-reviewed papers with 4-tier evidence classification",
+        "why_care": "Frustrated by supplement marketing drowning out real science — built the tool that didn't exist",
+        "credibility": "471+ papers reviewed, PubMed/Cochrane/ClinicalTrials.gov sourced, zero industry funding, 100% DOI verified",
+        "dont_sound_like": "SUBJECTIVE — NEEDS_INPUT"
+      },
+      "part_4_optin_page": {
+        "source": "inferred",
+        "main_promise": "Find out how many of your supplements are backed by strong clinical evidence — in 2 minutes",
+        "feel_after_optin": "Curious and slightly exposed ('I didn't realize my stack was mostly Tier 3-4')",
+        "objection": "'I already know my supplements work for me' — counter: 'Do you know the difference between marketing claims and RCT evidence?'"
+      },
+      "part_5_thank_you": {
+        "source": "inferred",
+        "thank_you_action": "Show their Evidence Scorecard results + immediately offer the free AI Stack Analyzer to optimize their stack",
+        "next_step": "Run their first AI Stack Analysis with the free tier",
+        "next_stage": "Orange → Yellow (from curious to problem-aware and ready to act)"
+      },
+      "part_6_real_estate": {
+        "source": "inferred",
+        "bio_links": "SupplementDB.com homepage, About page",
+        "pinned_posts": "Supplement evidence myth-busting thread (LinkedIn/X)",
+        "existing_pages": "All 93 supplement monograph pages, 25 evidence pages, 20 health guides — each with CTA",
+        "email_signature": "SupplementDB link + one-line value prop",
+        "other": "Reddit replies (r/supplements, r/nootropics), Quora answers"
+      }
+    },
+    "lever_04_buyers": {
+      "status": "auto_filled",
+      "section_0_basics": {
+        "source": "extracted",
+        "business_one_line": "Evidence-based supplement database with AI-powered stack analysis",
+        "audience_one_line": "Healthcare pros, fitness enthusiasts, and health-conscious consumers who want science over marketing",
+        "core_offer": "Pro Monthly Subscription — $9.99/month"
+      },
+      "section_1_yes_engine": {
+        "source": "inferred",
+        "micro_offer_name": "Evidence Guide: Sleep Optimization (or most popular health domain)",
+        "delivery_time": "Instant (PDF download)",
+        "price_target": "$7-$19",
+        "fast_win": "Know exactly which sleep supplements have Tier 1 evidence and the clinically-proven dosages — in one read",
+        "before_moment": "Confused by conflicting advice on melatonin, magnesium, ashwagandha — buying based on Amazon reviews",
+        "after_moment": "Confident in a evidence-rated sleep supplement protocol with exact dosages from clinical trials",
+        "benefits": [
+          "Know which 5 sleep supplements have the strongest clinical evidence (Tier 1-2)",
+          "Get exact dosage ranges backed by RCTs — not guesswork",
+          "Understand mechanism of action so you know WHY each supplement works",
+          "See safety profiles and drug interactions before you buy",
+          "Save hours of research — 471+ papers already reviewed for you"
+        ],
+        "proof_signals": ["471+ peer-reviewed papers analyzed", "4-tier evidence classification system used by healthcare professionals"],
+        "credibility_facts": ["Database sourced from PubMed, Cochrane Library, ClinicalTrials.gov", "Zero industry funding — completely independent research"],
+        "trust_signal": "We will never sell you supplements or take affiliate commissions — our only business is evidence"
+      },
+      "section_2_thank_you_bridge": {
+        "source": "inferred",
+        "lead_magnet_name": "Evidence Confidence Scorecard",
+        "topic": "Rating how evidence-backed your current supplement stack is",
+        "feel_after": "exposed / motivated",
+        "logical_next_step": "Now that you see the gaps in your stack's evidence, get the full Sleep Optimization Evidence Guide to build a Tier 1 protocol ($7-$19)"
+      },
+      "section_3_welcome_email": {
+        "source": "inferred",
+        "emotional_tone": "authoritative / calm",
+        "besides_buying": "Explore the free database, run their first AI Stack Analysis",
+        "non_negotiables": "No emojis, no hype language, must include evidence stats (471+ papers, 4 tiers), must include PS with database link"
+      },
+      "section_4_activation_promo": {
+        "source": "inferred",
+        "duration": "48h",
+        "mechanic": "bonus expires — 48-hour access to one premium Evidence Guide free with Pro signup",
+        "offer_promoted": "Pro Monthly ($9.99/month) with bonus Evidence Guide",
+        "urgency_level": "light",
+        "constraints": "No fake scarcity, no countdown timers, no discount language — urgency must be logic-led"
+      },
+      "section_5_subscriber_appreciation": {
+        "source": "inferred",
+        "frequency": "quarterly",
+        "who_qualifies": "80%+ opens or clicked 2+ times",
+        "appreciation_type": "early access — preview new evidence guides or new supplement additions before public launch",
+        "price": "free",
+        "feel": "chosen / seen",
+        "promote_inside": "Pro subscription"
+      },
+      "section_6_occasion_promo": {
+        "source": "inferred",
+        "occasion": "New Year (health resolution season) + back-to-business (September)",
+        "emotion": "momentum / reset",
+        "offer_promoted": "Pro Annual ($79.99/year)",
+        "mechanic": "special bundle — Annual Pro + exclusive PDF guide bundle",
+        "duration": "1 week"
+      },
+      "section_7_referral": {
+        "source": "inferred",
+        "who_can_refer": "subscribers + buyers",
+        "referrer_reward": "free upgrade — extra month of Pro free",
+        "friend_reward": "free trial — 7-day Pro access",
+        "tracking": "unique link",
+        "style": "community",
+        "must_avoid": "No hype, no aggressive FOMO language",
+        "fomo_ok": "Strictly logic-led"
+      }
+    },
+    "lever_05_repeat_buyers": {
+      "status": "auto_filled",
+      "section_1_buyer_path": {
+        "source": "extracted",
+        "entry_paid_offer": "PDF Evidence Guide ($7-$19) or Pro Monthly ($9.99/month)",
+        "upsell_1": "Pro Annual ($79.99/year — 33% savings over monthly)",
+        "upsell_2": "B2B API Access ($39-299/month) or PDF Guide Bundle ($29-99)"
+      },
+      "section_2_upsell_mapping": {
+        "source": "inferred",
+        "offers": [
+          {
+            "name": "Single PDF Evidence Guide",
+            "price": "$7-19",
+            "result": "Complete evidence-based protocol for one health domain",
+            "next_upsell": "Pro Monthly (all 8 guides + AI)",
+            "upsell_placement": "thank-you page + welcome email"
+          },
+          {
+            "name": "Pro Monthly",
+            "price": "$9.99/month",
+            "result": "Full platform access — guides, AI, mechanisms, interactions",
+            "next_upsell": "Pro Annual (33% savings)",
+            "upsell_placement": "in-app banner + email after 2 months"
+          },
+          {
+            "name": "Pro Annual",
+            "price": "$79.99/year",
+            "result": "Same as Pro Monthly with commitment discount",
+            "next_upsell": "B2B API or PDF Guide Bundle",
+            "upsell_placement": "welcome email + in-app"
+          }
+        ]
+      },
+      "section_3_in_content_amplifiers": {
+        "source": "inferred",
+        "has_upsell_moments": true,
+        "moments": [
+          "After free AI Stack Analysis result: 'Want deeper evidence for each recommendation? Upgrade to Pro for full mechanism analysis + dosage protocols'",
+          "Inside evidence guide: 'Want to analyze how this stack interacts with your other supplements? Use the AI Stack Analyzer (Pro feature)'"
+        ]
+      },
+      "section_4_membership": {
+        "source": "extracted",
+        "has_membership": true,
+        "what_progresses": "Pro subscription — ongoing access to updated evidence guides, new supplement additions, monthly AI analysis credits that refresh",
+        "logical_upsell": "B2B API for professional use or PDF Bundle for offline reference"
+      },
+      "section_5_micro_launch": {
+        "source": "inferred",
+        "frequency": "Monthly",
+        "live_trigger": "New evidence guide launch or major supplement database update (email announcement)",
+        "upsell_at_trigger": "Pro Monthly for new subscribers, PDF guide bundle for existing Pro users"
+      },
+      "section_6_buyer_appreciation": {
+        "source": "inferred",
+        "buyer_feel": "advanced / seen",
+        "upsell_offer": "Early access to new evidence guides + beta features",
+        "exclusive_framing": "early access"
+      }
+    },
+    "lever_06_connections": {
+      "status": "auto_filled",
+      "section_1_positioning": {
+        "source": "extracted",
+        "business_one_sentence": "SupplementDB — the evidence-first supplement database backed by 471+ peer-reviewed papers with AI-powered stack analysis",
+        "client_type": "Healthcare professionals, wellness coaches, and health-tech platforms who need reliable supplement evidence data",
+        "problem_solved": "Provides trustworthy, peer-reviewed supplement evidence organized by health outcome — replacing scattered Google searches and unreliable marketing claims"
+      },
+      "section_2_inventory": {
+        "source": "SUBJECTIVE",
+        "total_contacts": "NEEDS_INPUT",
+        "active_allies": "NEEDS_INPUT",
+        "warm_contacts": "NEEDS_INPUT",
+        "dormant_connections": "NEEDS_INPUT",
+        "high_potential": "NEEDS_INPUT"
+      },
+      "section_3_reactivation": {
+        "source": "SUBJECTIVE",
+        "starting_category": "NEEDS_INPUT",
+        "five_people": "NEEDS_INPUT",
+        "primary_access": "NEEDS_INPUT"
+      },
+      "section_4_catchup_context": {
+        "source": "SUBJECTIVE",
+        "how_know": "NEEDS_INPUT",
+        "shared_context": "NEEDS_INPUT",
+        "natural_catchup": "NEEDS_INPUT"
+      },
+      "section_5_opportunity_framing": {
+        "source": "inferred",
+        "working_with": "Lately, I've been working with healthcare professionals and health-conscious consumers who are frustrated by supplement marketing drowning out real evidence.",
+        "intro_type": "potential clients + partners (health-tech platforms, wellness coaches, nutrition professionals)",
+        "offer_in_return": "reciprocal introductions + visibility/promotion (feature in evidence guides or platform)"
+      },
+      "section_6_rhythm": {
+        "source": "SUBJECTIVE",
+        "frequency": "NEEDS_INPUT"
+      },
+      "section_7_touchpoints": {
+        "source": "inferred",
+        "aligned_touchpoints": "sharing resources (new evidence findings, supplement research updates) + industry updates (new clinical trials, FDA actions)"
+      }
+    },
+    "lever_07_referrals": {
+      "status": "auto_filled",
+      "section_1_client_inventory": {
+        "source": "SUBJECTIVE",
+        "total_clients": "NEEDS_INPUT (early stage — may be low)",
+        "rainmakers": "NEEDS_INPUT",
+        "champions": "NEEDS_INPUT",
+        "rising_stars": "NEEDS_INPUT",
+        "work_type": "Supplement evidence database access, AI stack analysis, evidence guides"
+      },
+      "section_2_ideal_referral": {
+        "source": "inferred",
+        "ideal_client": "Healthcare professional or health coach who recommends supplements to patients/clients and needs evidence-backed reference material",
+        "main_problem": "Spending hours researching supplement evidence from scattered sources — needs a centralized, trustworthy database",
+        "budget_range": "$10-80/year (Pro) or $39-299/month (API)",
+        "easy_sentence": "'They built a database that rates every supplement against clinical trials — no affiliate links, just evidence.'"
+      },
+      "section_3_timing": {
+        "source": "inferred",
+        "win_moments": "After running their first AI Stack Analysis and seeing the depth of evidence, after using an evidence guide for a patient/client recommendation, after comparing supplements and making a confident decision",
+        "starting_tier": "Rising Stars (since early stage, most users are new)"
+      },
+      "section_4_rewards": {
+        "source": "inferred",
+        "aligned_rewards": ["free upgrade (extra month of Pro)", "early access (beta features)", "reciprocal introductions"],
+        "not_offered": "cash/% — not aligned with 'no commercial interests' brand positioning"
+      },
+      "section_5_communication": {
+        "source": "inferred",
+        "tone": "professional",
+        "channel": "email"
+      },
+      "section_6_sprint": {
+        "source": "inferred",
+        "preference": "Both (ongoing system + periodic 7-day sprints)"
+      },
+      "section_7_tracking": {
+        "source": "inferred",
+        "tracking_method": "CRM (Convex database already has user tracking)",
+        "thank_you_emails": true,
+        "handwritten_notes": false,
+        "update_referrers": true
+      }
+    },
+    "lever_08_personality": {
+      "status": "auto_filled",
+      "section_1_humor": {
+        "source": "SUBJECTIVE",
+        "humor_style": "NEEDS_INPUT",
+        "three_funny_things": "NEEDS_INPUT"
+      },
+      "section_2_pop_culture": {
+        "source": "SUBJECTIVE",
+        "two_movies": "NEEDS_INPUT",
+        "two_shows": "NEEDS_INPUT",
+        "two_books_characters": "NEEDS_INPUT",
+        "dislike_humorously": "NEEDS_INPUT"
+      },
+      "section_3_self_deprecation": {
+        "source": "SUBJECTIVE",
+        "three_moments": "NEEDS_INPUT",
+        "self_describe_phrases": "NEEDS_INPUT"
+      },
+      "section_4_slice_of_life": {
+        "source": "SUBJECTIVE",
+        "three_moments": "NEEDS_INPUT",
+        "dominant_emotion": "NEEDS_INPUT"
+      },
+      "section_5_youness": {
+        "source": "SUBJECTIVE",
+        "two_obsessions": "NEEDS_INPUT",
+        "two_quirks": "NEEDS_INPUT",
+        "unpopular_opinion": "NEEDS_INPUT"
+      },
+      "section_6_micro_stories": {
+        "source": "SUBJECTIVE",
+        "story_sources": "NEEDS_INPUT",
+        "three_story_types": "NEEDS_INPUT"
+      },
+      "section_7_dossier": {
+        "source": "inferred",
+        "storage": "Notion or Google Doc",
+        "entry_types": ["jokes", "memes", "stories", "client moments", "observations"]
+      }
+    },
+    "lever_09_engagement": {
+      "status": "auto_filled",
+      "section_1_touchpoints": {
+        "source": "inferred",
+        "strongest_need": ["emails", "social posts"],
+        "disengage_pattern": "Users browse free database but don't explore evidence guides or AI Stack Analyzer — they get surface info and leave"
+      },
+      "section_2_entry_hooks": {
+        "source": "inferred",
+        "three_questions": [
+          "How many of your supplements are backed by randomized controlled trials?",
+          "Have you ever wondered why your supplement 'doesn't seem to work'?",
+          "If you could only keep 3 supplements in your stack, would you know which 3 have the strongest evidence?"
+        ],
+        "safest_public": "If you could only keep 3 supplements, which 3 have the strongest evidence?"
+      },
+      "section_3_relatability": {
+        "source": "inferred",
+        "three_struggles": [
+          "Overwhelmed by conflicting supplement advice from influencers, doctors, and friends",
+          "Wasting money on supplements that have weak or no clinical evidence",
+          "Not knowing if their supplements interact with medications or each other"
+        ],
+        "strongest_me_too": "Overwhelmed by conflicting supplement advice"
+      },
+      "section_4_completion": {
+        "source": "inferred",
+        "reasonable_ask": "Run the free AI Stack Analysis for your health goal and screenshot your score",
+        "immediate_gain": "A personalized evidence-rated supplement report they can act on today"
+      },
+      "section_5_declarations": {
+        "source": "inferred",
+        "secret_goal": "To stop guessing and start supplementing with confidence — knowing every pill in their stack has real evidence behind it",
+        "two_yes_questions": [
+          "Would you feel more confident if every supplement you took was backed by clinical trials?",
+          "Does it make sense to check the evidence before spending money on a supplement?"
+        ]
+      },
+      "section_6_pacing": {
+        "source": "inferred",
+        "dropout_point": "Middle — after browsing the free database but before exploring premium features",
+        "permission_point": "After showing the free database: 'Want to see what the AI recommends for your specific health goal?'"
+      },
+      "section_7_attention_loops": {
+        "source": "inferred",
+        "spot_the_thing": "Spot which popular supplement in your stack is actually Tier 4 (emerging/preclinical only)",
+        "reward_for_attention": "insight + feeling smart ('I now know something most supplement users don't')"
+      }
+    },
+    "lever_10_conversions": {
+      "status": "auto_filled",
+      "offer_file": {
+        "source": "extracted",
+        "offer_name": "SupplementDB Pro",
+        "who_for": "Health-conscious adults and healthcare professionals who want evidence-backed supplement guidance — decision makers who value science over marketing",
+        "price": "$9.99/month or $79.99/year",
+        "format": "SaaS subscription — web platform with AI tools",
+        "core_promise": "Stop guessing about supplements. Every recommendation backed by peer-reviewed clinical trials.",
+        "before_state": "Confused by conflicting supplement advice, wasting money on marketing-hyped products with weak evidence",
+        "after_state": "Confident in every supplement they take — knowing the evidence tier, exact dosage, mechanism, and safety profile",
+        "time_to_first_win": "Under 5 minutes — run first AI Stack Analysis immediately after signup",
+        "whats_included": [
+          "93 supplement monographs with evidence tier ratings",
+          "8 comprehensive evidence guides (sleep, cognition, anxiety, etc.)",
+          "Dosage protocols backed by RCTs",
+          "Mechanism of action documentation",
+          "Drug-supplement interaction warnings",
+          "25 AI Stack Analyses per month",
+          "All 471+ clinical citations with DOI/PMID links",
+          "10 side-by-side supplement comparison tools"
+        ],
+        "whats_not_included": "We don't sell supplements, provide medical advice, or make treatment recommendations",
+        "benefit_ladder": {
+          "physical": [
+            "Save 5+ hours/month of supplement research",
+            "Avoid wasting money on Tier 3-4 supplements with weak evidence",
+            "Get exact clinically-tested dosages instead of guessing"
+          ],
+          "emotional": [
+            "Feel confident every supplement in your stack has real evidence",
+            "Peace of mind knowing interaction risks are flagged",
+            "Relief from information overload — evidence pre-evaluated for you"
+          ],
+          "social": [
+            "Become the go-to evidence source in your health circle",
+            "Healthcare providers: give patients trustworthy supplement guidance",
+            "Make evidence-based recommendations with confidence"
+          ]
+        },
+        "proof_credibility": {
+          "testimonials": "NEEDS_INPUT (early stage — not yet collected)",
+          "metrics": "93 supplements, 471+ papers, 20-year evidence window, PubMed/Cochrane sourced",
+          "authority": "4-tier evidence classification, 100% DOI verification, zero industry funding, explicit conflict of interest disclosure"
+        },
+        "objections": [
+          "I can find this info free on Google/WebMD → Counter: Can you find evidence TIER ratings? Most sites don't distinguish Tier 1 from Tier 4",
+          "Examine.com already does this → Counter: Examine doesn't have AI-powered personalized stack analysis or evidence tier classification",
+          "I'll just ask my doctor → Counter: Most doctors have limited supplement training — this gives them a better reference tool too",
+          "$9.99/month is too much for supplement info → Counter: One wrong supplement purchase wastes more than $9.99. This saves money by preventing Tier 3-4 purchases",
+          "I don't take enough supplements to need this → Counter: Even 2-3 supplements benefit from evidence checking, dosage verification, and interaction screening",
+          "How do I know the evidence is trustworthy? → Counter: Every citation links to PubMed/DOI — verify any claim yourself in 30 seconds",
+          "I don't have time to use another tool → Counter: AI Stack Analysis takes under 5 minutes and replaces hours of research",
+          "Is this just another supplement marketing site? → Counter: Zero supplement sales, zero affiliates, zero industry funding — explicitly disclosed",
+          "What if I already have a health condition? → Counter: We provide evidence data for informed decisions — medical disclaimer clear that this is educational, not medical advice",
+          "Can I cancel anytime? → Counter: Yes, cancel anytime, 7-day refund policy"
+        ],
+        "bonuses_urgency": {
+          "bonuses": "NEEDS_INPUT",
+          "deadlines": "No artificial deadlines — evergreen",
+          "discount_logic": "Annual = 33% savings vs monthly (commitment discount)"
+        },
+        "guarantee": {
+          "what": "7-day refund policy",
+          "terms": "Cancel within 7 days for full refund, no questions asked"
+        },
+        "post_purchase": {
+          "immediately": "Access to all Pro features — evidence guides, AI Stack Analyzer credits, full citations",
+          "onboarding": "Welcome email with quick-start guide: (1) Run your first AI Stack Analysis, (2) Read the evidence guide for your primary health goal, (3) Check interactions for your current stack",
+          "retention": "Monthly AI credit refresh, new supplement additions, evidence guide updates",
+          "referral_ask": "After 30 days: 'Know someone who'd benefit from evidence-based supplement guidance? Share your referral link for a free month.'"
+        },
+        "cta": {
+          "primary": "Start Your Free Trial / Upgrade to Pro",
+          "most_popular": "Pro Monthly ($9.99/month) labeled 'Most Popular'",
+          "tier_names": ["Free", "Pro Monthly", "Pro Annual"]
+        }
+      }
+    },
+    "lever_11_attention": {
+      "status": "auto_filled",
+      "section_a_youness": {
+        "source": "SUBJECTIVE",
+        "ten_facts": "NEEDS_INPUT",
+        "five_embarrassing": "NEEDS_INPUT",
+        "five_spicy_beliefs": "NEEDS_INPUT (some inferred below)",
+        "inferred_spicy_beliefs": [
+          "Most 'clinically proven' supplements aren't — the bar for that claim is shockingly low",
+          "The supplement industry profits from your confusion, not your health",
+          "If a supplement company won't link to the actual study, they're hiding something",
+          "You shouldn't need a PhD to know if your supplement works",
+          "Evidence tiers should be legally required on supplement labels"
+        ]
+      },
+      "section_b_audience_gravity": {
+        "source": "extracted",
+        "who_you_help": "People who want to know which supplements actually work — backed by clinical trials, not marketing",
+        "ten_questions": [
+          "What's the best supplement for sleep?",
+          "Does ashwagandha really help anxiety?",
+          "Is creatine safe long-term?",
+          "What supplements should I take for brain health?",
+          "Can supplements replace medication?",
+          "Which supplements interact with my medications?",
+          "How much vitamin D should I actually take?",
+          "Are nootropics legitimate or snake oil?",
+          "What's the difference between magnesium types?",
+          "Should I trust supplement company claims?"
+        ],
+        "ten_silent_thoughts": [
+          "I'm probably wasting money on half my supplements",
+          "I don't actually know if any of this works",
+          "My doctor doesn't take supplements seriously",
+          "I'm embarrassed to admit I don't understand the research",
+          "I keep buying what influencers recommend and hoping for the best",
+          "What if my supplements are interacting badly?",
+          "I feel like I need a science degree to figure this out",
+          "Am I just experiencing placebo effect?",
+          "I can't tell the difference between marketing and real evidence",
+          "I wish someone would just tell me what actually works"
+        ],
+        "five_substitutes": [
+          "DIY Google research (free but unreliable and time-consuming)",
+          "Asking friends/influencers (free but anecdotal)",
+          "Examine.com (competitor — comprehensive but no AI personalization)",
+          "Asking their doctor (limited supplement training)",
+          "Doing nothing ('I'll figure it out later')"
+        ]
+      },
+      "section_c_authority_proof": {
+        "source": "extracted",
+        "five_results": [
+          "93 supplements comprehensively reviewed against clinical trial evidence",
+          "471+ peer-reviewed papers analyzed and classified",
+          "20 health domain evidence guides created",
+          "4-tier evidence classification system developed",
+          "AI Stack Analyzer providing personalized recommendations for 13 health goals"
+        ],
+        "five_proof_assets": [
+          "Database stats: 93 supplements, 471+ papers, 20-year window",
+          "Evidence tier system visual (Tier 1-4 color-coded ratings)",
+          "AI Stack Analysis sample output",
+          "DOI/PMID-linked citations (verifiable by anyone)",
+          "Conflict of interest disclosure (zero funding, zero affiliates)"
+        ],
+        "three_frameworks": [
+          "4-Tier Evidence Classification System (Strong → Emerging)",
+          "Problem-Centered Evidence Architecture (supplements organized by health outcome)",
+          "AI Stack Analysis Engine (Claude-powered personalized recommendations)"
+        ]
+      },
+      "section_d_polarity": {
+        "source": "inferred",
+        "dont_believe": "I don't believe in 'clinically proven' labels without evidence tiers, because the supplement industry uses that phrase to describe everything from Tier 1 meta-analyses to Tier 4 mouse studies.",
+        "cant_keep_doing": "If you want to actually know what works, you can't keep trusting Amazon reviews and influencer recommendations.",
+        "stuck_advice": "The advice that keeps people stuck: 'Just take what your friend takes' or 'if it has good reviews it probably works.'",
+        "what_instead": "What I do instead: rate every claim against the actual clinical trial evidence — if a supplement doesn't have at least moderate RCT support, you should know that before buying."
+      },
+      "section_e_rhythm": {
+        "source": "SUBJECTIVE",
+        "platforms": "NEEDS_INPUT",
+        "posting_frequency": "NEEDS_INPUT",
+        "voice_rules": "NEEDS_INPUT (inferred: avoid hype/marketing language, amplify evidence-based authority, maintain clinical but accessible tone)"
+      },
+      "section_f_metrics": {
+        "source": "inferred",
+        "three_to_track": [
+          "Email: clicks + replies",
+          "Social: saves + shares (evidence content is save-worthy)",
+          "Sales: link clicks to Pro offer + conversion rate"
+        ]
+      }
+    },
+    "lever_12_testimonials": {
+      "status": "auto_filled",
+      "section_1_source_list": {
+        "source": "SUBJECTIVE",
+        "clients_list": "NEEDS_INPUT (early stage — may need to actively solicit first testimonials)",
+        "note": "With early-stage product, consider: beta testers, early Pro subscribers, healthcare professionals who've used the database, anyone who's given positive feedback via email/DM"
+      },
+      "section_2_types": {
+        "source": "inferred",
+        "types": ["Written", "Screenshot (DMs/emails)", "Case study (healthcare provider usage)", "Public comment"],
+        "not_applicable": "Video (may be premature at this stage)"
+      },
+      "section_3_timing": {
+        "source": "inferred",
+        "when_to_ask": "After a user runs their first AI Stack Analysis and expresses satisfaction, after a healthcare provider uses an evidence guide for a patient recommendation, after positive feedback in any channel",
+        "anchor_to": "The specific 'aha moment' — e.g., discovering their supplement had weak evidence, or finding the perfect stack for their health goal"
+      },
+      "section_4_incentive": {
+        "source": "inferred",
+        "strategy": "Emotional incentive + Ease incentive",
+        "specific_offer": "Recognition as an 'Evidence Pioneer' early user + we draft the testimonial, they just approve"
+      },
+      "section_5_ask_style": {
+        "source": "inferred",
+        "style": "Script (no incentive) — keep it professional and evidence-aligned",
+        "why": "Brand is trust-based; incentivized testimonials could undermine credibility"
+      },
+      "section_6_template_prep": {
+        "source": "extracted",
+        "offer_name": "SupplementDB Pro",
+        "who_for": "Healthcare professionals and health-conscious consumers",
+        "core_transformation": "From supplement confusion to evidence-backed confidence",
+        "common_objections": ["I can find this free", "Too expensive for supplement info", "Is this trustworthy?"],
+        "secret_sauce": "4-tier evidence classification + AI-powered personalization + zero commercial interests"
+      },
+      "section_7_storage": {
+        "source": "inferred",
+        "where": "Dedicated section in Convex database or Notion",
+        "labeling": "Tag by: objection overcome, buyer type (healthcare pro/fitness/consumer), evidence tier referenced",
+        "rotation": "Quarterly review and rotate across sales page, emails, and social"
+      }
+    },
+    "lever_13_authority": {
+      "status": "auto_filled",
+      "section_1_results": {
+        "source": "extracted",
+        "measurable_outcomes": [
+          "93 supplements comprehensively reviewed and classified",
+          "471+ peer-reviewed papers analyzed across 20-year window",
+          "4-tier evidence classification system developed and applied to every supplement",
+          "20 health domain evidence guides published",
+          "25 problem-centered evidence pages created",
+          "AI Stack Analyzer providing personalized recommendations across 13 health goals",
+          "100% DOI verification across all citations"
+        ],
+        "repeat_patterns": "Systematic evidence review process applied identically across all 93 supplements — repeatable methodology"
+      },
+      "section_2_association": {
+        "source": "extracted",
+        "connected_to": {
+          "data_sources": "PubMed (8M+ abstracts), PMC, Cochrane Library (gold standard systematic reviews), ClinicalTrials.gov",
+          "tech_partners": "Anthropic (Claude AI), Stripe, Clerk, Convex",
+          "standards": "DOI/PMID citation standards, evidence-based medicine methodology"
+        },
+        "where_shown_up": "SUBJECTIVE — NEEDS_INPUT (podcasts, conferences, guest posts, etc.)"
+      },
+      "section_3_sophistication": {
+        "source": "extracted",
+        "current_bio": "NEEDS_INPUT (personal bio)",
+        "offer_description": "SupplementDB Pro — full access to 93 evidence-rated supplements, 8 health domain guides, AI-powered stack analysis, dosage protocols, and interaction warnings. $9.99/month.",
+        "main_cta": "Upgrade to Pro — Start Your Evidence-Based Supplement Journey"
+      },
+      "section_5_contrast": {
+        "source": "inferred",
+        "before_choosing": "Scrolling through supplement blogs, trusting Amazon ratings, buying based on influencer recommendations, confused by conflicting claims",
+        "after_choosing": "Every supplement rated by evidence tier, personalized AI stack recommendations, knowing exact dosages from RCTs, confidence in every purchase",
+        "behaviors_change": "Stop impulse-buying supplements based on marketing → Start evidence-first decision making with tiered confidence levels"
+      },
+      "section_6_human_proof": {
+        "source": "SUBJECTIVE",
+        "three_competence_stories": "NEEDS_INPUT",
+        "two_imperfections": "NEEDS_INPUT",
+        "learning_moments": "NEEDS_INPUT"
+      },
+      "section_7_believability": {
+        "source": "extracted",
+        "workability": "Free AI Stack Analyzer (3 analyses/month) — try before you buy. Free database browsing. Sample evidence tier ratings visible on every supplement page.",
+        "people_like_me": "NEEDS_INPUT (no testimonials yet — priority to collect)",
+        "objection_proofing": [
+          "'Will this work if I only take 2-3 supplements?' → Yes, even 2 supplements benefit from evidence checking and interaction screening",
+          "'What if I'm not scientific?' → Evidence tiers are designed to be understood by anyone — Tier 1 = strong, Tier 4 = early stage. That's it.",
+          "'What if I've been scammed by supplement sites before?' → Zero supplements sold, zero affiliates, zero industry funding. Verify any claim via the DOI links."
+        ],
+        "gratification_in_advance": "Run your first AI Stack Analysis in under 5 minutes — see your personalized evidence report immediately"
+      }
+    },
+    "lever_14_pricing": {
+      "status": "auto_filled",
+      "section_1_offer_snapshot": {
+        "source": "extracted",
+        "offer_type": "SaaS subscription (monthly/annual) + one-time PDF bundles",
+        "core_outcome": "Evidence-based supplement confidence — know what works, what doesn't, and exactly how much to take",
+        "deliverables": [
+          "93 supplement monographs with evidence tier ratings",
+          "8 evidence guides with dosage protocols",
+          "25 AI Stack Analyses per month",
+          "Mechanism analysis + interaction warnings",
+          "All 471+ clinical citations with DOI/PMID links"
+        ]
+      },
+      "section_2_buyer_moment": {
+        "source": "extracted",
+        "who": "Health-conscious adults and healthcare professionals at the moment they realize their supplement decisions aren't evidence-based",
+        "problem_now": "Wasting money on supplements with weak evidence, confused by conflicting information, worried about interactions",
+        "scared_of": "Paying for another health tool they won't use, or finding out the info is no different from free sources"
+      },
+      "section_3_market_refs": {
+        "source": "extracted",
+        "competitors": [
+          "Examine.com — $29/month (Examine+) or $149/year",
+          "ConsumerLab — $59/year membership",
+          "Natural Medicines Database — $300+/year (professional reference)"
+        ],
+        "substitutes": [
+          "DIY Google research — free but costs 5+ hours/month and unreliable",
+          "Asking a nutritionist — $100-300/consultation",
+          "Doing nothing — free but risks wasting money on ineffective supplements ($50-200/month)"
+        ]
+      },
+      "section_4_positioning": {
+        "source": "inferred",
+        "choice": "Premium Authority",
+        "feel_statement": "I want buyers to feel: safe, scientifically confident, and smarter than 95% of supplement users"
+      },
+      "section_5_anchors": {
+        "source": "inferred",
+        "cost_of_alternatives": "Natural Medicines Database charges $300+/year for professional supplement data",
+        "premium_benchmark": "A single nutritionist consultation costs $100-300 — Pro subscription costs $9.99/month",
+        "time_saved": "Replace 5+ hours/month of supplement research with instant AI-powered evidence reports",
+        "cost_of_mistakes": "The average supplement user wastes $50-200/month on products with Tier 3-4 evidence — Pro pays for itself by preventing one wrong purchase"
+      },
+      "section_6_justification": {
+        "source": "extracted",
+        "mechanism_name": "4-Tier Evidence Classification System",
+        "why_works": "Rates every supplement claim against the actual clinical trial evidence — from Tier 1 (multiple RCTs + meta-analyses) to Tier 4 (preclinical/animal studies only). No opinions, just evidence grades.",
+        "proof": "471+ papers reviewed, PubMed/Cochrane sourced, 100% DOI verified — check any claim yourself",
+        "risk_reversal": "7-day refund policy — cancel within 7 days for full refund"
+      },
+      "section_7_presentation": {
+        "source": "extracted",
+        "sales_method": "Sales page (pricing.html) + in-app upgrade prompts",
+        "tiers": true,
+        "tier_count": 3,
+        "payment_plan": false,
+        "urgency_style": "calm confidence — let the evidence speak"
+      }
+    },
+    "lever_15_revenue": {
+      "status": "auto_filled",
+      "step_1_flow_mapping": {
+        "source": "extracted",
+        "entry_points": [
+          { "name": "Free Database Access", "price": "$0", "format": "Web app", "how_found": "SEO (4,012+ pages), social, referral" },
+          { "name": "Free AI Stack Analysis", "price": "$0 (3/month)", "format": "AI tool", "how_found": "In-app discovery, social proof" },
+          { "name": "PDF Evidence Guide", "price": "$7-19", "format": "One-time PDF", "how_found": "Thank-you page, email, social" },
+          { "name": "Pro Monthly", "price": "$9.99/month", "format": "Subscription", "how_found": "In-app upgrade, email funnel" }
+        ],
+        "exit_points": {
+          "where_stop": "After consuming free database content or after 1-3 months of Pro (if they got what they needed)",
+          "what_next": "Leave or stay subscribed but inactive"
+        },
+        "pauses_gaps": [
+          "After free AI Stack Analysis → no prompt to go deeper (gap before Pro upsell)",
+          "After reading one evidence guide → no cross-sell to related guides or AI analysis",
+          "After Pro signup → no onboarding sequence guiding to full feature discovery",
+          "Pro users who've used all features → no advanced offering (B2B API only for enterprises)"
+        ]
+      },
+      "step_2_momentum": {
+        "source": "inferred",
+        "moments": [
+          {
+            "gap": "After first AI Stack Analysis",
+            "feeling": "Clarity + Excitement",
+            "want_next": "Deeper evidence for each recommendation — dosage, mechanisms, interactions"
+          },
+          {
+            "gap": "After reading one evidence guide",
+            "feeling": "Confidence + Progress",
+            "want_next": "Apply evidence to their specific stack — want personalized AI analysis"
+          },
+          {
+            "gap": "After 2 months of Pro",
+            "feeling": "Confidence + Limitation",
+            "want_next": "More advanced features — custom protocols, practitioner tools, API access"
+          }
+        ]
+      },
+      "step_3_escalation": {
+        "source": "inferred",
+        "paths": [
+          { "moment": "After AI Stack Analysis", "type": "Upsell", "what": "Pro Monthly for full evidence depth" },
+          { "moment": "After evidence guide", "type": "Cross-sell", "what": "Related evidence guide or AI analysis for that domain" },
+          { "moment": "After 2 months Pro", "type": "Upsell", "what": "Pro Annual (commit + save 33%)" },
+          { "moment": "Power users / professionals", "type": "Upsell", "what": "B2B API Access" }
+        ]
+      },
+      "step_4_direction_source": {
+        "source": "inferred",
+        "directions": [
+          { "escalation": "Free → Pro", "direction": "Vertical (deeper mastery)", "source": "Own offer" },
+          { "escalation": "Pro Monthly → Annual", "direction": "Vertical (commitment)", "source": "Own offer" },
+          { "escalation": "Pro → API", "direction": "Vertical (professional use)", "source": "Own offer" },
+          { "escalation": "Guide → Related guide", "direction": "Horizontal (adjacent health domain)", "source": "Own offer" }
+        ]
+      },
+      "step_5_value_type": {
+        "source": "inferred",
+        "value_drivers": [
+          { "escalation": "Free → Pro", "primary_value": "Depth", "looks_like": "Full mechanism analysis, dosage protocols, all citations" },
+          { "escalation": "Pro → Annual", "primary_value": "Ease", "looks_like": "No monthly decision, locked-in access, 33% savings" },
+          { "escalation": "Pro → API", "primary_value": "Access", "looks_like": "Programmatic access to entire evidence database for professional integration" },
+          { "escalation": "Guide → Guide", "primary_value": "Certainty", "looks_like": "Evidence-backed protocols for additional health domains" }
+        ]
+      },
+      "step_6_pricing_framing": {
+        "source": "inferred",
+        "comparisons": [
+          "Free → Pro: Compared to one nutritionist consultation ($100-300), Pro is $9.99/month for unlimited evidence access",
+          "Monthly → Annual: Save $40/year by committing annually",
+          "Pro → API: Compared to building your own evidence database (months of research), API delivers it instantly"
+        ]
+      },
+      "step_7_installation": {
+        "source": "inferred",
+        "placements": [
+          { "escalation": "Free → Pro", "placement": "In-app prompt after AI analysis + post-signup email", "optimize": "Conversion rate" },
+          { "escalation": "Monthly → Annual", "placement": "In-app banner after 2 months + email", "optimize": "Take-rate" },
+          { "escalation": "Guide → Guide", "placement": "In-offer prompt (related guides section at bottom of each guide)", "optimize": "Average order value" },
+          { "escalation": "Pro → API", "placement": "Email to power users + dedicated landing page", "optimize": "Lifetime value" }
+        ]
+      }
+    }
+  }
+}

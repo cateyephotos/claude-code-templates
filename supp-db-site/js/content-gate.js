@@ -354,9 +354,9 @@
     supportP.style.cssText = "color: var(--text-muted, #888); font-size: 0.8rem; margin-top: 1rem;";
     supportP.textContent = "If the problem persists, contact ";
     const supportLink = document.createElement("a");
-    supportLink.href = "mailto:support@supplementdb.co";
+    supportLink.href = "mailto:support@supplementdb.info";
     supportLink.style.color = "var(--glow, #6366f1)";
-    supportLink.textContent = "support@supplementdb.co";
+    supportLink.textContent = "support@supplementdb.info";
     supportP.appendChild(supportLink);
     wrapper.appendChild(supportP);
 
@@ -387,9 +387,9 @@
     supportP.style.cssText = "color: var(--text-muted, #888); font-size: 0.8rem; margin-top: 1rem;";
     supportP.textContent = "Contact ";
     const supportLink = document.createElement("a");
-    supportLink.href = "mailto:support@supplementdb.co";
+    supportLink.href = "mailto:support@supplementdb.info";
     supportLink.style.color = "var(--glow, #6366f1)";
-    supportLink.textContent = "support@supplementdb.co";
+    supportLink.textContent = "support@supplementdb.info";
     supportP.appendChild(supportLink);
     supportP.appendChild(document.createTextNode(" for assistance"));
     wrapper.appendChild(supportP);

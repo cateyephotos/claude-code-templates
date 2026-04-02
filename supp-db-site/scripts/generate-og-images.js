@@ -107,7 +107,7 @@ function ogTemplate({ title, subtitle, badge, stat1, stat2, stat3 }) {
   <text x="210" y="${badge ? '465' : '460'}" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="${MUTED}" font-weight="400">${escSvg(subtitle.length > 60 ? 'Evidence-Based Research | Peer-Reviewed Citations | Open Access' : subtitle)}</text>
 
   <!-- URL -->
-  <text x="210" y="540" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="${ACCENT}" font-weight="500">supplementdb.co</text>
+  <text x="210" y="540" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="${ACCENT}" font-weight="500">supplementdb.info</text>
 </svg>`;
 }
 

@@ -1,0 +1,338 @@
+{
+  "generatedAt": "2026-03-22T02:49:34.172Z",
+  "totalSupplements": 113,
+  "previousTotal": 113,
+  "newSupplements": [],
+  "guides": {
+    "anxiety-stress": {
+      "title": "Anxiety & Stress Relief",
+      "previousCount": 24,
+      "currentCount": 24,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "cognitive-performance": {
+      "title": "Cognitive Performance",
+      "previousCount": 43,
+      "currentCount": 43,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "cardiovascular": {
+      "title": "Cardiovascular Health",
+      "previousCount": 22,
+      "currentCount": 22,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "immune-function": {
+      "title": "Immune Function",
+      "previousCount": 24,
+      "currentCount": 24,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "joint-health": {
+      "title": "Joint Health",
+      "previousCount": 14,
+      "currentCount": 14,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "metabolic-health": {
+      "title": "Metabolic Health",
+      "previousCount": 22,
+      "currentCount": 22,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "energy-vitality": {
+      "title": "Energy & Vitality",
+      "previousCount": 16,
+      "currentCount": 16,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "mood-support": {
+      "title": "Mood Support & Depression",
+      "previousCount": 18,
+      "currentCount": 18,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "memory-aging": {
+      "title": "Memory & Cognitive Aging",
+      "previousCount": 21,
+      "currentCount": 21,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "longevity": {
+      "title": "Longevity & Healthy Aging",
+      "previousCount": 20,
+      "currentCount": 20,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "brain-fog": {
+      "title": "Brain Fog & Mental Clarity",
+      "previousCount": 18,
+      "currentCount": 18,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "stress-resilience": {
+      "title": "Stress Resilience & Cortisol",
+      "previousCount": 23,
+      "currentCount": 23,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "safety-interactions": {
+      "title": "Safety & Interactions",
+      "previousCount": 113,
+      "currentCount": 113,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "muscle-strength": {
+      "title": "Muscle Strength & Lean Mass",
+      "previousCount": 13,
+      "currentCount": 13,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "recovery": {
+      "title": "Recovery & Soreness",
+      "previousCount": 29,
+      "currentCount": 29,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "womens-health": {
+      "title": "Women's Health & Aging",
+      "previousCount": 14,
+      "currentCount": 14,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "mens-health": {
+      "title": "Men's Health & Aging",
+      "previousCount": 15,
+      "currentCount": 15,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "gut-brain": {
+      "title": "Gut-Brain Axis",
+      "previousCount": 17,
+      "currentCount": 17,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    },
+    "nootropic-stacks": {
+      "title": "Nootropic Stacks",
+      "previousCount": 34,
+      "currentCount": 34,
+      "newSupplements": [],
+      "removedIds": [],
+      "tier1Additions": 0,
+      "tier2Additions": 0,
+      "tier3Additions": 0,
+      "impactLevel": "none",
+      "recommendations": {
+        "updateCoreSuppNames": false,
+        "reviewMechanisms": false,
+        "reviewSafetyNotes": false,
+        "reviewProse": false
+      }
+    }
+  },
+  "summary": {
+    "guidesAffected": 0,
+    "guidesWithHighImpact": 0,
+    "guidesWithMediumImpact": 0,
+    "guidesUnchanged": 19,
+    "orphanSupplements": 0
+  }
+}
