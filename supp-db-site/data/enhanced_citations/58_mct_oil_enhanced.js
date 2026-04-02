@@ -33,7 +33,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "augustin_2018_mechanisms",
-                        title:  "",
+                        title:  "Mechanisms of action for the medium-chain triglyceride ketogenic diet in neurological and metabolic disorders.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -53,7 +53,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "schonfeld_2016_mechanisms",
-                        title:  "",
+                        title:  "Short- and medium-chain fatty acids in energy metabolism: the cellular perspective.",
                         authors:  [],
                         year:  2016,
                         journal:  "",
@@ -73,7 +73,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "wang_2018_mechanisms",
-                        title:  "",
+                        title:  "Medium Chain Triglycerides enhances exercise endurance through the increased mitochondrial biogenesis and metabolism.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -93,7 +93,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2018_mechanisms",
-                        title:  "",
+                        title:  "How Can a Ketogenic Diet Improve Motor Function?",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -115,7 +115,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "reger_2004_benefits",
-                        title:  "",
+                        title:  "Effects of beta-hydroxybutyrate on cognition in memory-impaired adults.",
                         authors:  [],
                         year:  2004,
                         journal:  "",
@@ -136,7 +136,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "ota_2019_benefits",
-                        title:  "",
+                        title:  "Effects of a medium-chain triglyceride-based ketogenic formula on cognitive function in patients with mild-to-moderate Alzheimer's disease.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -157,7 +157,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "yomogida_2021_benefits",
-                        title:  "",
+                        title:  "An fMRI Investigation into the Effects of Ketogenic Medium-Chain Triglycerides on Cognitive Function in Elderly Adults: A Pilot Study.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -178,7 +178,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "meer_2024_benefits",
-                        title:  "",
+                        title:  "Medium-Chain Triglycerides (MCTs) for the Symptomatic Treatment of Dementia-Related Diseases: A Systematic Review.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -199,7 +199,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "mumme_2015_benefits",
-                        title:  "",
+                        title:  "Effects of medium-chain triglycerides on weight loss and body composition: a meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2015,
                         journal:  "",
@@ -220,7 +220,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "bueno_2015_benefits",
-                        title:  "",
+                        title:  "Dietary medium-chain triacylglycerols versus long-chain triacylglycerols for body composition in adults: systematic review and meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2015,
                         journal:  "",
@@ -241,7 +241,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2003_benefits",
-                        title:  "",
+                        title:  "Greater rise in fat oxidation with medium-chain triglyceride consumption relative to long-chain triglyceride is associated with lower initial body weight and greater loss of subcutaneous adipose tissue.",
                         authors:  [],
                         year:  2003,
                         journal:  "",
@@ -264,7 +264,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "meer_2024_safety",
-                        title:  "",
+                        title:  "Medium-Chain Triglycerides (MCTs) for the Symptomatic Treatment of Dementia-Related Diseases: A Systematic Review.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -284,7 +284,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2014_safety",
-                        title:  "",
+                        title:  "Impact of medium and long chain triglycerides consumption on appetite and food intake in overweight men.",
                         authors:  [],
                         year:  2014,
                         journal:  "",
@@ -304,7 +304,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "borges_2019_safety",
-                        title:  "",
+                        title:  "Randomized trial of add-on triheptanoin vs medium chain triglycerides in adults with refractory epilepsy.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -326,7 +326,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "ota_2019_dosage",
-                        title:  "",
+                        title:  "Effects of a medium-chain triglyceride-based ketogenic formula on cognitive function in patients with mild-to-moderate Alzheimer's disease.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -346,7 +346,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "mumme_2015_dosage",
-                        title:  "",
+                        title:  "Effects of medium-chain triglycerides on weight loss and body composition: a meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2015,
                         journal:  "",
@@ -366,7 +366,7 @@ window.mctOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "kasai_2002_dosage",
-                        title:  "",
+                        title:  "Comparison of diet-induced thermogenesis of foods containing medium- versus long-chain triacylglycerols.",
                         authors:  [],
                         year:  2002,
                         journal:  "",

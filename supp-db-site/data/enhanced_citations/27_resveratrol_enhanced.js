@@ -33,7 +33,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2021_mechanisms",
-                        title:  "",
+                        title:  "Resveratrol (RV): A pharmacological review and call for further research.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -53,7 +53,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "narrative_2019_mechanisms",
-                        title:  "",
+                        title:  "The Effects of Resveratrol in Patients with Cardiovascular Disease and Heart Failure: A Narrative Review.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -73,7 +73,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2025_mechanisms",
-                        title:  "",
+                        title:  "A Systematic Review on the Molecular Mechanisms of Resveratrol in Protecting Against Osteoporosis.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -95,7 +95,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2018_benefits",
-                        title:  "",
+                        title:  "Effect of resveratrol on blood pressure: A systematic review and meta-analysis of randomized, controlled, clinical trials.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -116,7 +116,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2014_benefits",
-                        title:  "",
+                        title:  "Effect of resveratrol on blood pressure: a meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2014,
                         journal:  "",
@@ -137,7 +137,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2014_benefits",
-                        title:  "",
+                        title:  "Effect of resveratrol on glucose control and insulin sensitivity: a meta-analysis of 11 randomized controlled trials.",
                         authors:  [],
                         year:  2014,
                         journal:  "",
@@ -158,7 +158,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_benefits",
-                        title:  "",
+                        title:  "Efficacy of Resveratrol Supplementation on Glucose and Lipid Metabolism: A Meta-Analysis and Systematic Review.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -179,7 +179,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "umbrella_2024_benefits",
-                        title:  "",
+                        title:  "Efficacy of resveratrol supplementation on lipid profile parameters: An umbrella of meta-analysis.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -200,7 +200,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_benefits",
-                        title:  "",
+                        title:  "The Effect of Resveratrol on Blood Lipid Profile: A Dose-Response Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -221,7 +221,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2022_benefits",
-                        title:  "",
+                        title:  "Effects of Resveratrol Supplementation on the Cognitive Function of Patients with Alzheimer's Disease: A Systematic Review of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -242,7 +242,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2020_benefits",
-                        title:  "",
+                        title:  "Resveratrol: A \"miracle\" drug in neuropsychiatry or a cognitive enhancer for mice only? A systematic review and meta-analysis.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -265,7 +265,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2013_safety",
-                        title:  "",
+                        title:  "Review of recent data on the metabolism, biological effects, and toxicity of resveratrol in humans.",
                         authors:  [],
                         year:  2013,
                         journal:  "",
@@ -285,7 +285,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2021_safety",
-                        title:  "",
+                        title:  "Resveratrol (RV): A pharmacological review and call for further research.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -305,7 +305,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "human_2014_safety",
-                        title:  "",
+                        title:  "Pharmacokinetics and safety of resveratrol derivatives in humans after oral administration of melinjo (Gnetum gnemon L.) seed extract powder.",
                         authors:  [],
                         year:  2014,
                         journal:  "",
@@ -328,7 +328,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "blood_2018_dosage",
-                        title:  "",
+                        title:  "Effect of resveratrol on blood pressure: A systematic review and meta-analysis of randomized, controlled, clinical trials.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -348,7 +348,7 @@ window.resveratrolEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_dosage",
-                        title:  "",
+                        title:  "The Effect of Resveratrol on Blood Lipid Profile: A Dose-Response Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2022,
                         journal:  "",

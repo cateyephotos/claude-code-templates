@@ -33,7 +33,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2023_mechanisms",
-                        title:  "",
+                        title:  "Neurotrophic and Neuroprotective Effects of Hericium erinaceus.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -53,7 +53,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2015_mechanisms",
-                        title:  "",
+                        title:  "Chemistry, Nutrition, and Health-Promoting Properties of Hericium erinaceus (Lion's Mane) Mushroom Fruiting Bodies and Mycelia and Their Bioactive Compounds.",
                         authors:  [],
                         year:  2015,
                         journal:  "",
@@ -73,7 +73,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2018_mechanisms",
-                        title:  "",
+                        title:  "Neurohealth Properties of Hericium erinaceus Mycelia Enriched with Erinacines.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -93,7 +93,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "original_2021_mechanisms",
-                        title:  "",
+                        title:  "Chemical studies on bioactive compounds related to higher fungi.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -115,7 +115,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "landmark_2009_benefits",
-                        title:  "",
+                        title:  "Improving effects of the mushroom Yamabushitake (Hericium erinaceus) on mild cognitive impairment: a double-blind placebo-controlled clinical trial.",
                         authors:  [],
                         year:  2009,
                         journal:  "",
@@ -136,7 +136,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "randomized_2019_benefits",
-                        title:  "",
+                        title:  "Improvement of cognitive functions by oral intake of Hericium erinaceus.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -157,7 +157,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_benefits",
-                        title:  "",
+                        title:  "The Acute and Chronic Effects of Lion's Mane Mushroom Supplementation on Cognitive Function, Stress and Mood in Young Adults: A Double-Blind, Parallel Groups, Pilot Study.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -178,7 +178,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2025_benefits",
-                        title:  "",
+                        title:  "Benefits, side effects, and uses of Hericium erinaceus as a supplement: a systematic review.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -199,7 +199,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2019_benefits",
-                        title:  "",
+                        title:  "Therapeutic Potential of Hericium erinaceus for Depressive Disorder.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -220,7 +220,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_benefits",
-                        title:  "",
+                        title:  "Acute Effects of Naturally Occurring Guayusa Tea and Nordic Lion's Mane Extracts on Cognitive Performance.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -243,7 +243,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2025_safety",
-                        title:  "",
+                        title:  "Benefits, side effects, and uses of Hericium erinaceus as a supplement: a systematic review.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -263,7 +263,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "landmark_2009_safety",
-                        title:  "",
+                        title:  "Improving effects of the mushroom Yamabushitake (Hericium erinaceus) on mild cognitive impairment: a double-blind placebo-controlled clinical trial.",
                         authors:  [],
                         year:  2009,
                         journal:  "",
@@ -284,7 +284,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "narrative_2025_safety",
-                        title:  "",
+                        title:  "Lion's Mane Mushroom (Hericium erinaceus): A Neuroprotective Fungus with Antioxidant, Anti-Inflammatory, and Antimicrobial Potential-A Narrative Review.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -306,7 +306,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "landmark_2009_dosage",
-                        title:  "",
+                        title:  "Improving effects of the mushroom Yamabushitake (Hericium erinaceus) on mild cognitive impairment: a double-blind placebo-controlled clinical trial.",
                         authors:  [],
                         year:  2009,
                         journal:  "",
@@ -326,7 +326,7 @@ window.lionsManeEnhanced = {
                 evidence:  [
                     {
                         citationId:  "recent_2023_dosage",
-                        title:  "",
+                        title:  "The Acute and Chronic Effects of Lion's Mane Mushroom Supplementation on Cognitive Function, Stress and Mood in Young Adults: A Double-Blind, Parallel Groups, Pilot Study.",
                         authors:  [],
                         year:  2023,
                         journal:  "",

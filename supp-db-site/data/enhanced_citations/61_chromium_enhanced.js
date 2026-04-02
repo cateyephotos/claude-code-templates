@@ -33,7 +33,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "vincent_2000_mechanisms",
-            "title": "",
+            "title": "The biochemistry of chromium.",
             "authors": [],
             "year": 2000,
             "journal": "",
@@ -53,7 +53,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "chen_2006_mechanisms",
-            "title": "",
+            "title": "Chromium activates glucose transporter 4 trafficking and enhances insulin-stimulated glucose transport in 3T3-L1 adipocytes via a cholesterol-dependent mechanism.",
             "authors": [],
             "year": 2006,
             "journal": "",
@@ -154,7 +154,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "anderson_1997_benefits",
-            "title": "",
+            "title": "Elevated intakes of supplemental chromium improve glucose and insulin variables in individuals with type 2 diabetes.",
             "authors": [],
             "year": 1997,
             "journal": "",
@@ -175,7 +175,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "asbaghi_2020_benefits",
-            "title": "",
+            "title": "Effects of chromium supplementation on glycemic control in patients with type 2 diabetes: a systematic review and meta-analysis of randomized controlled trials.",
             "authors": [],
             "year": 2020,
             "journal": "",
@@ -196,7 +196,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "suksomboon_2014_benefits",
-            "title": "",
+            "title": "Systematic review and meta-analysis of the efficacy and safety of chromium supplementation in diabetes.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -217,7 +217,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "anderson_2000_benefits",
-            "title": "",
+            "title": "Chromium in the prevention and control of diabetes.",
             "authors": [],
             "year": 2000,
             "journal": "",
@@ -238,7 +238,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "pittler_2003_benefits",
-            "title": "",
+            "title": "Chromium picolinate for reducing body weight: meta-analysis of randomized trials.",
             "authors": [],
             "year": 2003,
             "journal": "",
@@ -259,7 +259,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "tsang_2019_benefits",
-            "title": "",
+            "title": "A meta-analysis of the effect of chromium supplementation on anthropometric indices of subjects with overweight or obesity.",
             "authors": [],
             "year": 2019,
             "journal": "",
@@ -280,7 +280,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "tarrahi_2020_benefits",
-            "title": "",
+            "title": "The effects of chromium supplementation on lipidprofile in humans: A systematic review and meta-analysis ofrandomized controlled trials.",
             "authors": [],
             "year": 2020,
             "journal": "",
@@ -301,7 +301,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "kleefstra_2007_benefits",
-            "title": "",
+            "title": "Chromium treatment has no effect in patients with type 2 diabetes in a Western population: a randomized, double-blind, placebo-controlled trial.",
             "authors": [],
             "year": 2007,
             "journal": "",
@@ -324,7 +324,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "balk_2007_safety",
-            "title": "",
+            "title": "Effect of chromium supplementation on glucose metabolism and lipids: a systematic review of randomized controlled trials.",
             "authors": [],
             "year": 2007,
             "journal": "",
@@ -344,7 +344,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "berner_2004_safety",
-            "title": "",
+            "title": "Determining the safety of chromium tripicolinate for addition to foods as a nutrient supplement.",
             "authors": [],
             "year": 2004,
             "journal": "",
@@ -364,7 +364,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "lamson_2002_safety",
-            "title": "",
+            "title": "The safety and efficacy of high-dose chromium.",
             "authors": [],
             "year": 2002,
             "journal": "",
@@ -384,7 +384,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "tian_2013_safety",
-            "title": "",
+            "title": "Chromium picolinate supplementation for overweight or obese adults.",
             "authors": [],
             "year": 2013,
             "journal": "",
@@ -404,7 +404,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "vincent_2010_safety",
-            "title": "",
+            "title": "Chromium: celebrating 50 years as an essential element?",
             "authors": [],
             "year": 2010,
             "journal": "",
@@ -426,7 +426,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "anderson_1997_dosage",
-            "title": "",
+            "title": "Elevated intakes of supplemental chromium improve glucose and insulin variables in individuals with type 2 diabetes.",
             "authors": [],
             "year": 1997,
             "journal": "",
@@ -446,7 +446,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "georgaki_2024_dosage",
-            "title": "",
+            "title": "Chromium supplementation and type 2 diabetes mellitus: an extensive systematic review.",
             "authors": [],
             "year": 2024,
             "journal": "",
@@ -466,7 +466,7 @@ window.chromiumEnhanced = {
         "evidence": [
           {
             "citationId": "havel_2004_dosage",
-            "title": "",
+            "title": "A scientific review: the role of chromium in insulin resistance.",
             "authors": [],
             "year": 2004,
             "journal": "",

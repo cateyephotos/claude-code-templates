@@ -33,7 +33,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "aguiar_2013_mechanisms",
-            "title": "",
+            "title": "Neuropharmacological review of the nootropic herb Bacopa monnieri.",
             "authors": [],
             "year": 2013,
             "journal": "",
@@ -53,7 +53,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "sekhar_2019_mechanisms",
-            "title": "",
+            "title": "Insights Into the Molecular Aspects of Neuroprotective Bacoside A and Bacopaside I.",
             "authors": [],
             "year": 2019,
             "journal": "",
@@ -103,7 +103,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "fatima_2022_mechanisms",
-            "title": "",
+            "title": "Investigating neuroprotective roles of Bacopa monnieri extracts: Mechanistic insights and therapeutic implications.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -123,7 +123,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "nemetchek_2017_mechanisms",
-            "title": "",
+            "title": "The Ayurvedic plant Bacopa monnieri inhibits inflammatory pathways in the brain.",
             "authors": [],
             "year": 2017,
             "journal": "",
@@ -145,7 +145,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "kongkeaw_2014_benefits",
-            "title": "",
+            "title": "Meta-analysis of randomized controlled trials on cognitive effects of Bacopa monnieri extract.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -166,7 +166,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "pase_2012_benefits",
-            "title": "",
+            "title": "The cognitive-enhancing effects of Bacopa monnieri: a systematic review of randomized, controlled human clinical trials.",
             "authors": [],
             "year": 2012,
             "journal": "",
@@ -187,7 +187,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "roodenrys_2002_benefits",
-            "title": "",
+            "title": "Chronic effects of Brahmi (Bacopa monnieri) on human memory.",
             "authors": [],
             "year": 2002,
             "journal": "",
@@ -208,7 +208,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "calabrese_2008_benefits",
-            "title": "",
+            "title": "Effects of a standardized Bacopa monnieri extract on cognitive performance, anxiety, and depression in the elderly: a randomized, double-blind, placebo-controlled trial.",
             "authors": [],
             "year": 2008,
             "journal": "",
@@ -229,7 +229,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "morgan_2010_benefits",
-            "title": "",
+            "title": "Does Bacopa monnieri improve memory performance in older persons? Results of a randomized, placebo-controlled, double-blind trial.",
             "authors": [],
             "year": 2010,
             "journal": "",
@@ -314,7 +314,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "dave_2014_benefits",
-            "title": "",
+            "title": "An open-label study to elucidate the effects of standardized Bacopa monnieri extract in the management of symptoms of attention-deficit hyperactivity disorder in children.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -337,7 +337,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "joshua_2007_safety",
-            "title": "",
+            "title": "Safety evaluation of a standardized phytochemical composition extracted from Bacopa monnieri in Sprague--Dawley rats.",
             "authors": [],
             "year": 2007,
             "journal": "",
@@ -357,7 +357,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "stough_2013_safety",
-            "title": "",
+            "title": "Examining the cognitive effects of a special extract of Bacopa monniera (CDRI08: Keenmnd): a review of ten years of research at Swinburne University.",
             "authors": [],
             "year": 2013,
             "journal": "",
@@ -403,7 +403,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "tiemtad_2026_dosage",
-            "title": "",
+            "title": "Comparative effects of Bacopa monnieri and Ginkgo biloba on cognitive functions: A systematic review and network meta-analysis.",
             "authors": [],
             "year": 2026,
             "journal": "",
@@ -423,7 +423,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "the_2012_dosage",
-            "title": "",
+            "title": "A randomized controlled trial investigating the effect of Pycnogenol and Bacopa CDRI08 herbal medicines on cognitive, cardiovascular, and biochemical functioning in cognitively healthy elderly people: the Australian Research Council Longevity Intervention (ARCLI) study protocol (ANZCTR12611000487910).",
             "authors": [],
             "year": 2012,
             "journal": "",
@@ -443,7 +443,7 @@ window.bacopaMonnieriEnhanced = {
         "evidence": [
           {
             "citationId": "benson_2013_dosage",
-            "title": "",
+            "title": "An acute, double-blind, placebo-controlled cross-over study of 320 mg and 640 mg doses of Bacopa monnieri (CDRI 08) on multitasking stress reactivity and mood.",
             "authors": [],
             "year": 2013,
             "journal": "",

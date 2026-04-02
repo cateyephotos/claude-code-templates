@@ -57,7 +57,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "grober_2015_mechanisms",
-            "title": "",
+            "title": "Magnesium in Prevention and Therapy.",
             "authors": [],
             "year": 2015,
             "journal": "",
@@ -106,7 +106,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "castiglioni_2013_mechanisms",
-            "title": "",
+            "title": "Magnesium and osteoporosis: current state of knowledge and future research directions.",
             "authors": [],
             "year": 2013,
             "journal": "",
@@ -128,7 +128,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "zhang_2016_benefits",
-            "title": "",
+            "title": "Effects of Magnesium Supplementation on Blood Pressure: A Meta-Analysis of Randomized Double-Blind Placebo-Controlled Trials.",
             "authors": [],
             "year": 2016,
             "journal": "",
@@ -177,7 +177,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "mah_2021_benefits",
-            "title": "",
+            "title": "Oral magnesium supplementation for insomnia in older adults: a Systematic Review & Meta-Analysis.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -198,7 +198,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "abbasi_2012_benefits",
-            "title": "",
+            "title": "The effect of magnesium supplementation on primary insomnia in elderly: A double-blind placebo-controlled clinical trial.",
             "authors": [],
             "year": 2012,
             "journal": "",
@@ -277,7 +277,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2016_benefits",
-            "title": "",
+            "title": "A systematic review and meta-analysis of randomized controlled trials on the effects of magnesium supplementation on insulin sensitivity and glucose control.",
             "authors": [],
             "year": 2016,
             "journal": "",
@@ -298,7 +298,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "tarleton_2017_benefits",
-            "title": "",
+            "title": "Role of magnesium supplementation in the treatment of depression: A randomized clinical trial.",
             "authors": [],
             "year": 2017,
             "journal": "",
@@ -346,7 +346,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "garrison_2020_safety",
-            "title": "",
+            "title": "Magnesium for skeletal muscle cramps.",
             "authors": [],
             "year": 2020,
             "journal": "",
@@ -366,7 +366,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "costello_2023_safety",
-            "title": "",
+            "title": "Perspective: Call for Re-evaluation of the Tolerable Upper Intake Level for Magnesium Supplementation in Adults.",
             "authors": [],
             "year": 2023,
             "journal": "",
@@ -412,7 +412,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "lindberg_1990_dosage",
-            "title": "",
+            "title": "Magnesium bioavailability from magnesium citrate and magnesium oxide.",
             "authors": [],
             "year": 1990,
             "journal": "",
@@ -432,7 +432,7 @@ window.magnesiumEnhanced = {
         "evidence": [
           {
             "citationId": "pardo_2021_dosage",
-            "title": "",
+            "title": "Bioavailability of magnesium food supplements: A systematic review.",
             "authors": [],
             "year": 2021,
             "journal": "",

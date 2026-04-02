@@ -33,7 +33,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "comprehensive_2026_mechanisms",
-            "title": "",
+            "title": "Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of Randomized-controlled Trials.",
             "authors": [],
             "year": 2026,
             "journal": "",
@@ -53,7 +53,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "network_2022_mechanisms",
-            "title": "",
+            "title": "Medicinal herbs for the treatment of anxiety: A systematic review and network meta-analysis.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -73,7 +73,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2018_mechanisms",
-            "title": "",
+            "title": "Withania somnifera (Indian ginseng) in male infertility: An evidence-based systematic review and meta-analysis.",
             "authors": [],
             "year": 2018,
             "journal": "",
@@ -122,7 +122,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2024_benefits",
-            "title": "",
+            "title": "Effects of Ashwagandha (Withania Somnifera) on stress and anxiety: A systematic review and meta-analysis.",
             "authors": [],
             "year": 2024,
             "journal": "",
@@ -143,7 +143,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "all_2014_benefits",
-            "title": "",
+            "title": "An alternative treatment for anxiety: a systematic review of human trial results reported for the Ayurvedic herb ashwagandha (Withania somnifera).",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -164,7 +164,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2021_benefits",
-            "title": "",
+            "title": "Effect of Ashwagandha (Withania somnifera) extract on sleep: A systematic review and meta-analysis.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -211,7 +211,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2018_benefits",
-            "title": "",
+            "title": "Effects of an Aqueous Extract of Withania somnifera on Strength Training Adaptations and Recovery: The STAR Trial.",
             "authors": [],
             "year": 2018,
             "journal": "",
@@ -232,7 +232,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2026_benefits",
-            "title": "",
+            "title": "Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of Randomized-controlled Trials.",
             "authors": [],
             "year": 2026,
             "journal": "",
@@ -255,7 +255,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "prospective_2020_safety",
-            "title": "",
+            "title": "Safety of Ashwagandha Root Extract: A Randomized, Placebo-Controlled, study in Healthy Volunteers.",
             "authors": [],
             "year": 2020,
             "journal": "",
@@ -276,7 +276,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "review_2020_safety",
-            "title": "",
+            "title": "Safety and clinical effectiveness of Withania Somnifera (Linn.) Dunal root in human ailments.",
             "authors": [],
             "year": 2020,
             "journal": "",
@@ -296,7 +296,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "based_2020_safety",
-            "title": "",
+            "title": "Safety and clinical effectiveness of Withania Somnifera (Linn.) Dunal root in human ailments.",
             "authors": [],
             "year": 2020,
             "journal": "",
@@ -318,7 +318,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2022_dosage",
-            "title": "",
+            "title": "Does Ashwagandha supplementation have a beneficial effect on the management of anxiety and stress? A systematic review and meta-analysis of randomized controlled trials.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -338,7 +338,7 @@ window.ashwagandhaEnhanced = {
         "evidence": [
           {
             "citationId": "subgroup_2021_dosage",
-            "title": "",
+            "title": "Effect of Ashwagandha (Withania somnifera) extract on sleep: A systematic review and meta-analysis.",
             "authors": [],
             "year": 2021,
             "journal": "",

@@ -33,7 +33,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2017_mechanisms",
-                        title:  "",
+                        title:  "Omega-3 fatty acids and inflammatory processes: from molecules to man.",
                         authors:  [],
                         year:  2017,
                         journal:  "",
@@ -53,7 +53,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2010_mechanisms",
-                        title:  "",
+                        title:  "Omega-3 fatty acids and inflammatory processes.",
                         authors:  [],
                         year:  2010,
                         journal:  "",
@@ -73,7 +73,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "fish_2002_mechanisms",
-                        title:  "",
+                        title:  "Omega-3 fatty acids in inflammation and autoimmune diseases.",
                         authors:  [],
                         year:  2002,
                         journal:  "",
@@ -93,7 +93,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2024_mechanisms",
-                        title:  "",
+                        title:  "Do patients benefit from omega-3 fatty acids?",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -115,7 +115,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "marine_2019_benefits",
-                        title:  "",
+                        title:  "Marine Omega-3 Supplementation and Cardiovascular Disease: An Updated Meta-Analysis of 13 Randomized Controlled Trials Involving 127 477 Participants.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -136,7 +136,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2020_benefits",
-                        title:  "",
+                        title:  "Effect of Omega-3 Dosage on Cardiovascular Outcomes: An Updated Meta-Analysis and Meta-Regression of Interventional Trials.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -157,7 +157,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_benefits",
-                        title:  "",
+                        title:  "Effect of Omega-3 Polyunsaturated Fatty Acids on Cardiovascular Outcomes in Patients with Diabetes: A Meta-analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -178,7 +178,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2020_benefits",
-                        title:  "",
+                        title:  "Omega-3 fatty acids for the primary and secondary prevention of cardiovascular disease.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -199,7 +199,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "combined_2023_benefits",
-                        title:  "",
+                        title:  "Association Between Omega-3 Fatty Acid Intake and Dyslipidemia: A Continuous Dose-Response Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -220,7 +220,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_benefits",
-                        title:  "",
+                        title:  "The Relationship of Omega-3 Fatty Acids with Dementia and Cognitive Decline: Evidence from Prospective Cohort Studies of Supplementation, Dietary Intake, and Blood Markers.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -241,7 +241,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "executive_2024_benefits",
-                        title:  "",
+                        title:  "The influence of n-3 polyunsaturated fatty acids on cognitive function in individuals without dementia: a systematic review and dose-response meta-analysis.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -262,7 +262,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "overall_2016_benefits",
-                        title:  "",
+                        title:  "Meta-analysis and meta-regression of omega-3 polyunsaturated fatty acid supplementation for major depressive disorder.",
                         authors:  [],
                         year:  2016,
                         journal:  "",
@@ -283,7 +283,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "preterm_2018_benefits",
-                        title:  "",
+                        title:  "Omega-3 fatty acid addition during pregnancy.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -304,7 +304,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2021_benefits",
-                        title:  "",
+                        title:  "Omega-3 and polyunsaturated fat for prevention of depression and anxiety symptoms: systematic review and meta-analysis of randomised trials.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -327,7 +327,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "higher_2023_safety",
-                        title:  "",
+                        title:  "Safety of Supplementation of Omega-3 Polyunsaturated Fatty Acids: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -347,7 +347,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "reduced_2022_safety",
-                        title:  "",
+                        title:  "Efficacy and Safety of Omega-3 Fatty Acids in the Prevention of Cardiovascular Disease: A Systematic Review and Meta-analysis.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -367,7 +367,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "high_2011_safety",
-                        title:  "",
+                        title:  "Dose-response effects of omega-3 fatty acids on triglycerides, inflammation, and endothelial function in healthy persons with moderate hypertriglyceridemia.",
                         authors:  [],
                         year:  2011,
                         journal:  "",
@@ -390,7 +390,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2020_dosage",
-                        title:  "",
+                        title:  "Effect of Omega-3 Dosage on Cardiovascular Outcomes: An Updated Meta-Analysis and Meta-Regression of Interventional Trials.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -410,7 +410,7 @@ window.omega3FishOilEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_dosage",
-                        title:  "",
+                        title:  "Association Between Omega-3 Fatty Acid Intake and Dyslipidemia: A Continuous Dose-Response Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2023,
                         journal:  "",

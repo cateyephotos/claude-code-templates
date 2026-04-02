@@ -33,7 +33,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2020_mechanisms",
-                        title:  "",
+                        title:  "Disorders of Human Coenzyme Q10 Metabolism: An Overview.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -53,7 +53,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2014_mechanisms",
-                        title:  "",
+                        title:  "Clinical applications of coenzyme Q10.",
                         authors:  [],
                         year:  2014,
                         journal:  "",
@@ -73,7 +73,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2021_mechanisms",
-                        title:  "",
+                        title:  "Effects of statins on mitochondrial pathways.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -95,7 +95,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2024_benefits",
-                        title:  "",
+                        title:  "Efficacy and safety of coenzyme Q10 in heart failure: a meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -116,7 +116,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "cochrane_2021_benefits",
-                        title:  "",
+                        title:  "Coenzyme Q10 for heart failure.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -137,7 +137,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2017_benefits",
-                        title:  "",
+                        title:  "Efficacy of coenzyme Q10 in patients with cardiac failure: a meta-analysis of clinical trials.",
                         authors:  [],
                         year:  2017,
                         journal:  "",
@@ -158,7 +158,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2018_benefits",
-                        title:  "",
+                        title:  "Effects of Coenzyme Q10 on Statin-Induced Myopathy: An Updated Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -179,7 +179,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "updated_2025_benefits",
-                        title:  "",
+                        title:  "Effects of coenzyme Q10 supplementation on myopathy in statin-treated patients: a systematic review and meta-analysis.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -200,7 +200,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_benefits",
-                        title:  "",
+                        title:  "Dose-Response Effect of Coenzyme Q10 Supplementation on Blood Pressure among Patients with Cardiometabolic Disorders: A Grading of Recommendations Assessment, Development, and Evaluation (GRADE)-Assessed Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -221,7 +221,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "most_2025_benefits",
-                        title:  "",
+                        title:  "Effects of coenzyme Q10 administration on blood pressure and heart rate in adults: A systematic review and meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -242,7 +242,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2021_benefits",
-                        title:  "",
+                        title:  "Coenzyme Q10 supplementation for prophylaxis in adult patients with migraine-a meta-analysis.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -265,7 +265,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2025_safety",
-                        title:  "",
+                        title:  "Nutraceuticals and Headache 2024: Riboflavin, Coenzyme Q10, Feverfew, Magnesium, Melatonin, and Butterbur.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -285,7 +285,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2016_safety",
-                        title:  "",
+                        title:  "The efficacy and safety of coenzyme Q10 in Parkinson's disease: a meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2016,
                         journal:  "",
@@ -306,7 +306,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "large_2024_safety",
-                        title:  "",
+                        title:  "Efficacy and safety of coenzyme Q10 in heart failure: a meta-analysis of randomized controlled trials.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -329,7 +329,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_dosage",
-                        title:  "",
+                        title:  "Dose-Response Effect of Coenzyme Q10 Supplementation on Blood Pressure among Patients with Cardiometabolic Disorders: A Grading of Recommendations Assessment, Development, and Evaluation (GRADE)-Assessed Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -349,7 +349,7 @@ window.coq10Enhanced = {
                 evidence:  [
                     {
                         citationId:  "clinical_2014_dosage",
-                        title:  "",
+                        title:  "Clinical applications of coenzyme Q10.",
                         authors:  [],
                         year:  2014,
                         journal:  "",

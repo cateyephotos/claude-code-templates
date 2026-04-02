@@ -33,7 +33,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "aggarwal_2008_mechanisms",
-            "title": "",
+            "title": "Potential therapeutic effects of curcumin, the anti-inflammatory agent, against neurodegenerative, cardiovascular, pulmonary, metabolic, autoimmune and neoplastic diseases.",
             "authors": [],
             "year": 2008,
             "journal": "",
@@ -81,7 +81,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "koeberle_2009_mechanisms",
-            "title": "",
+            "title": "Curcumin blocks prostaglandin E2 biosynthesis through direct inhibition of the microsomal prostaglandin E2 synthase-1.",
             "authors": [],
             "year": 2009,
             "journal": "",
@@ -101,7 +101,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2014_mechanisms",
-            "title": "",
+            "title": "Impact of Supplementation with Curcuminoids on Systemic Inflammation in Patients with Knee Osteoarthritis: Findings from a Randomized Double-Blind Placebo-Controlled Trial.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -123,7 +123,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2016_benefits",
-            "title": "",
+            "title": "Efficacy of Turmeric Extracts and Curcumin for Alleviating the Symptoms of Joint Arthritis: A Systematic Review and Meta-Analysis of Randomized Clinical Trials.",
             "authors": [],
             "year": 2016,
             "journal": "",
@@ -144,7 +144,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "kuptniratsaikul_2014_benefits",
-            "title": "",
+            "title": "Efficacy and safety of Curcuma domestica extracts compared with ibuprofen in patients with knee osteoarthritis: a multicenter study.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -165,7 +165,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "panahi_2014_benefits",
-            "title": "",
+            "title": "Curcuminoid treatment for knee osteoarthritis: a randomized double-blind placebo-controlled trial.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -186,7 +186,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "sahebkar_2013_benefits",
-            "title": "",
+            "title": "Are curcuminoids effective C-reactive protein-lowering agents in clinical practice? Evidence from a meta-analysis.",
             "authors": [],
             "year": 2013,
             "journal": "",
@@ -207,7 +207,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "panahi_2015_benefits",
-            "title": "",
+            "title": "Antioxidant and anti-inflammatory effects of curcuminoid-piperine combination in subjects with metabolic syndrome: A randomized controlled trial and an updated meta-analysis.",
             "authors": [],
             "year": 2015,
             "journal": "",
@@ -257,7 +257,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "ng_2017_benefits",
-            "title": "",
+            "title": "Clinical Use of Curcumin in Depression: A Meta-Analysis.",
             "authors": [],
             "year": 2017,
             "journal": "",
@@ -278,7 +278,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "lopresti_2014_benefits",
-            "title": "",
+            "title": "Curcumin for the treatment of major depression: a randomised, double-blind, placebo controlled study.",
             "authors": [],
             "year": 2014,
             "journal": "",
@@ -299,7 +299,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "small_2018_benefits",
-            "title": "",
+            "title": "Memory and Brain Amyloid and Tau Effects of a Bioavailable Form of Curcumin in Non-Demented Adults: A Double-Blind, Placebo-Controlled 18-Month Trial.",
             "authors": [],
             "year": 2018,
             "journal": "",
@@ -345,7 +345,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "ng_2006_benefits",
-            "title": "",
+            "title": "Curry consumption and cognitive function in the elderly.",
             "authors": [],
             "year": 2006,
             "journal": "",
@@ -368,7 +368,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2003_safety",
-            "title": "",
+            "title": "Safety and anti-inflammatory activity of curcumin: a component of tumeric (Curcuma longa).",
             "authors": [],
             "year": 2003,
             "journal": "",
@@ -388,7 +388,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "lao_2006_safety",
-            "title": "",
+            "title": "Dose escalation of a curcuminoid formulation.",
             "authors": [],
             "year": 2006,
             "journal": "",
@@ -408,7 +408,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "heidari_2021_safety",
-            "title": "",
+            "title": "Curcumin supplementation in pediatric patients: A systematic review of current clinical evidence.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -430,7 +430,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "shoba_1998_dosage",
-            "title": "",
+            "title": "Influence of piperine on the pharmacokinetics of curcumin in animals and human volunteers.",
             "authors": [],
             "year": 1998,
             "journal": "",
@@ -450,7 +450,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "anand_2007_dosage",
-            "title": "",
+            "title": "Bioavailability of curcumin: problems and promises.",
             "authors": [],
             "year": 2007,
             "journal": "",
@@ -470,7 +470,7 @@ window.curcuminEnhanced = {
         "evidence": [
           {
             "citationId": "hewlings_2017_dosage",
-            "title": "",
+            "title": "Curcumin: A Review of Its Effects on Human Health.",
             "authors": [],
             "year": 2017,
             "journal": "",

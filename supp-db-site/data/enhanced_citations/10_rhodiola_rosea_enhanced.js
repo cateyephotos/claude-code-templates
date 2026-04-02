@@ -33,7 +33,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "comprehensive_2009_mechanisms",
-            "title": "",
+            "title": "Evidence-based efficacy of adaptogens in fatigue, and molecular mechanisms related to their stress-protective activity.",
             "authors": [],
             "year": 2009,
             "journal": "",
@@ -81,7 +81,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2016_mechanisms",
-            "title": "",
+            "title": "Salidroside, a Bioactive Compound of Rhodiola Rosea, Ameliorates Memory and Emotional Behavior in Adult Mice.",
             "authors": [],
             "year": 2016,
             "journal": "",
@@ -101,7 +101,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "comprehensive_2021_mechanisms",
-            "title": "",
+            "title": "The Therapeutic Effects and Mechanisms of Salidroside on Cardiovascular and Metabolic Diseases: An Updated Review.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -123,7 +123,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "comprehensive_2022_benefits",
-            "title": "",
+            "title": "The Effectiveness of Rhodiola rosea L. Preparations in Alleviating Various Aspects of Life-Stress Symptoms and Stress-Induced Conditions-Encouraging Clinical Evidence.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -144,7 +144,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2017_benefits",
-            "title": "",
+            "title": "Rhodiola rosea in Subjects with Prolonged or Chronic Fatigue Symptoms: Results of an Open-Label Clinical Trial.",
             "authors": [],
             "year": 2017,
             "journal": "",
@@ -165,7 +165,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "drug_2007_benefits",
-            "title": "",
+            "title": "Efficacy and tolerability of a Rhodiola rosea extract in adults with physical and cognitive deficiencies.",
             "authors": [],
             "year": 2007,
             "journal": "",
@@ -186,7 +186,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2022_benefits",
-            "title": "",
+            "title": "Efficacy of Adaptogens in Patients with Long COVID-19: A Randomized, Quadruple-Blind, Placebo-Controlled Trial.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -207,7 +207,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2015_benefits",
-            "title": "",
+            "title": "The Effects of Rhodiola rosea L. Extract on Anxiety, Stress, Cognition and Other Mood Symptoms.",
             "authors": [],
             "year": 2015,
             "journal": "",
@@ -228,7 +228,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "phase_2015_benefits",
-            "title": "",
+            "title": "Rhodiola rosea versus sertraline for major depressive disorder: A randomized placebo-controlled trial.",
             "authors": [],
             "year": 2015,
             "journal": "",
@@ -249,7 +249,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "review_2016_benefits",
-            "title": "",
+            "title": "Rhodiola rosea L. as a putative botanical antidepressant.",
             "authors": [],
             "year": 2016,
             "journal": "",
@@ -272,7 +272,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2022_safety",
-            "title": "",
+            "title": "Clinician guidelines for the treatment of psychiatric disorders with nutraceuticals and phytoceuticals: The World Federation of Societies of Biological Psychiatry (WFSBP) and Canadian Network for Mood and Anxiety Treatments (CANMAT) Taskforce.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -292,7 +292,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "unknown_2015_safety",
-            "title": "",
+            "title": "Rhodiola rosea versus sertraline for major depressive disorder: A randomized placebo-controlled trial.",
             "authors": [],
             "year": 2015,
             "journal": "",
@@ -313,7 +313,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "review_2021_safety",
-            "title": "",
+            "title": "Plant Adaptogens-History and Future Perspectives.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -335,7 +335,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "clinical_2017_dosage",
-            "title": "",
+            "title": "Rhodiola rosea in Subjects with Prolonged or Chronic Fatigue Symptoms: Results of an Open-Label Clinical Trial.",
             "authors": [],
             "year": 2017,
             "journal": "",
@@ -355,7 +355,7 @@ window.rhodiolaRoseaEnhanced = {
         "evidence": [
           {
             "citationId": "most_2010_dosage",
-            "title": "",
+            "title": "Rosenroot (Rhodiola rosea): traditional use, chemical composition, pharmacology and clinical efficacy.",
             "authors": [],
             "year": 2010,
             "journal": "",

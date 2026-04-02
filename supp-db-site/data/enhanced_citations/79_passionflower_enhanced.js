@@ -33,7 +33,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "electrophysiology_2010_mechanisms",
-                        title:  "",
+                        title:  "Passiflora incarnata L. (Passionflower) extracts elicit GABA currents in hippocampal neurons in vitro, and show anxiogenic and anticonvulsant effects in vivo, varying with extraction method.",
                         authors:  [],
                         year:  2010,
                         journal:  "",
@@ -53,7 +53,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "pharmacological_2016_mechanisms",
-                        title:  "",
+                        title:  "Passiflora incarnata attenuation of neuropathic allodynia and vulvodynia apropos GABA-ergic and opioidergic antinociceptive and behavioural mechanisms.",
                         authors:  [],
                         year:  2016,
                         journal:  "",
@@ -73,7 +73,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2004_mechanisms",
-                        title:  "",
+                        title:  "Passiflora: a review update.",
                         authors:  [],
                         year:  2004,
                         journal:  "",
@@ -93,7 +93,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "review_2025_mechanisms",
-                        title:  "",
+                        title:  "Anxiolytic Potential of Passiflora incarnata in Oral Surgery: Mechanisms, Evidence and Clinical Application.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -115,7 +115,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2020_benefits",
-                        title:  "",
+                        title:  "Passiflora incarnata in Neuropsychiatric Disorders-A Systematic Review.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -136,7 +136,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "landmark_2008_benefits",
-                        title:  "",
+                        title:  "Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: a double-blind, placebo-controlled study.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -157,7 +157,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "prospective_2012_benefits",
-                        title:  "",
+                        title:  "Passiflora incarnata Linneaus as an anxiolytic before spinal anesthesia.",
                         authors:  [],
                         year:  2012,
                         journal:  "",
@@ -178,7 +178,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "cochrane_2007_benefits",
-                        title:  "",
+                        title:  "Passiflora for anxiety disorder.",
                         authors:  [],
                         year:  2007,
                         journal:  "",
@@ -199,7 +199,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2020_benefits",
-                        title:  "",
+                        title:  "Effects of Passiflora incarnata Linnaeus on polysomnographic sleep parameters in subjects with insomnia disorder: a double-blind randomized placebo-controlled study.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -220,7 +220,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2011_benefits",
-                        title:  "",
+                        title:  "A double-blind, placebo-controlled investigation of the effects of Passiflora incarnata (passionflower) herbal tea on subjective sleep quality.",
                         authors:  [],
                         year:  2011,
                         journal:  "",
@@ -241,7 +241,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2024_benefits",
-                        title:  "",
+                        title:  "Randomized, Double-Blind, Placebo-Controlled, Clinical Study of Passiflora incarnata in Participants With Stress and Sleep Problems.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -264,7 +264,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "comprehensive_2013_safety",
-                        title:  "",
+                        title:  "Passiflora incarnata L.: ethnopharmacology, clinical application, safety and evaluation of clinical trials.",
                         authors:  [],
                         year:  2013,
                         journal:  "",
@@ -284,7 +284,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2010_safety",
-                        title:  "",
+                        title:  "Nutritional and herbal supplements for anxiety and anxiety-related disorders: systematic review.",
                         authors:  [],
                         year:  2010,
                         journal:  "",
@@ -304,7 +304,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "systematic_2020_safety",
-                        title:  "",
+                        title:  "Passiflora incarnata in Neuropsychiatric Disorders-A Systematic Review.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -326,7 +326,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "preoperative_2008_dosage",
-                        title:  "",
+                        title:  "Preoperative oral Passiflora incarnata reduces anxiety in ambulatory surgery patients: a double-blind, placebo-controlled study.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -346,7 +346,7 @@ window.passionflowerEnhanced = {
                 evidence:  [
                     {
                         citationId:  "clinical_2020_dosage",
-                        title:  "",
+                        title:  "Passiflora incarnata in Neuropsychiatric Disorders-A Systematic Review.",
                         authors:  [],
                         year:  2020,
                         journal:  "",

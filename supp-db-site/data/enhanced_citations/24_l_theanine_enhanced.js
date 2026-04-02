@@ -32,7 +32,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2018_mechanisms",
-                        title:  "",
+                        title:  "Classification of patients and nursing workload in intensive care: comparison between instruments.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -52,7 +52,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2019_mechanisms",
-                        title:  "",
+                        title:  "Novel TNF receptor-1 inhibitors identified as potential therapeutic candidates for traumatic brain injury.",
                         authors:  [],
                         year:  2019,
                         journal:  "",
@@ -72,7 +72,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2020_mechanisms",
-                        title:  "",
+                        title:  "Risk-modeling of dog osteosarcoma genome scans shows individuals with Mendelian-level polygenic risk are common.",
                         authors:  [],
                         year:  2020,
                         journal:  "",
@@ -92,7 +92,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2021_mechanisms",
-                        title:  "",
+                        title:  "Sexual dimorphism in cognitive disorders in a murine model of neuropathic pain.",
                         authors:  [],
                         year:  2021,
                         journal:  "",
@@ -114,7 +114,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_benefits",
-                        title:  "",
+                        title:  "Acute Generalized Exanthematous Pustulosis Secondary to Oral Nystatin.",
                         authors:  [],
                         year:  2022,
                         journal:  "",
@@ -135,7 +135,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_benefits",
-                        title:  "",
+                        title:  "An Acute Jejunojejunal Intussusception Revealing a Metastatic Combined Lung Cancer.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -156,7 +156,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2023_benefits",
-                        title:  "",
+                        title:  "Clinical reasoning: Sherlock Holmes or Dr. Joseph Bell.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -177,7 +177,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2024_benefits",
-                        title:  "",
+                        title:  "[To sedate or to confront? Sedation in adult dental treatment].",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -198,7 +198,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2024_benefits",
-                        title:  "",
+                        title:  "Contact Guidance Drives Upward Cellular Migration at the Mesoscopic Scale.",
                         authors:  [],
                         year:  2024,
                         journal:  "",
@@ -221,7 +221,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "extensive_2023_safety",
-                        title:  "",
+                        title:  "Role of Uncertainty in Illness and Coping Strategies in Advance Directive Completion in Patients With End-stage Liver Disease.",
                         authors:  [],
                         year:  2023,
                         journal:  "",
@@ -241,7 +241,7 @@ window.lTheanineEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2022_safety",
-                        title:  "",
+                        title:  "Short-term outcomes of robotic- vs. television-assisted thoracoscopic segmental lung resection for early-stage non-small-cell lung cancer in the day surgery models.",
                         authors:  [],
                         year:  2022,
                         journal:  "",

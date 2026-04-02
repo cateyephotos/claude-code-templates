@@ -33,7 +33,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "xiong_2019_mechanisms",
-            "title": "",
+            "title": "An overview of the bioactivity of monacolin K / lovastatin.",
             "authors": [],
             "year": 2019,
             "journal": "",
@@ -53,7 +53,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "zhao_2004_mechanisms",
-            "title": "",
+            "title": "Xuezhikang, an extract of cholestin, protects endothelial function through antiinflammatory and lipid-lowering mechanisms in patients with coronary heart disease.",
             "authors": [],
             "year": 2004,
             "journal": "",
@@ -73,7 +73,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "cicero_2021_mechanisms",
-            "title": "",
+            "title": "Red Yeast Rice for Hypercholesterolemia: JACC Focus Seminar.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -93,7 +93,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "yuan_2022_mechanisms",
-            "title": "",
+            "title": "Red Yeast Rice Preparations Reduce Mortality, Major Cardiovascular Adverse Events, and Risk Factors for Metabolic Syndrome: A Systematic Review and Meta-analysis.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -143,7 +143,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "lu_2008_benefits",
-            "title": "",
+            "title": "Effect of Xuezhikang, an extract from red yeast Chinese rice, on coronary events in a Chinese population with previous myocardial infarction.",
             "authors": [],
             "year": 2008,
             "journal": "",
@@ -164,7 +164,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "becker_2009_benefits",
-            "title": "",
+            "title": "Red yeast rice for dyslipidemia in statin-intolerant patients: a randomized trial.",
             "authors": [],
             "year": 2009,
             "journal": "",
@@ -185,7 +185,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "gerards_2015_benefits",
-            "title": "",
+            "title": "Traditional Chinese lipid-lowering agent red yeast rice results in significant LDL reduction but safety is uncertain - a systematic review and meta-analysis.",
             "authors": [],
             "year": 2015,
             "journal": "",
@@ -206,7 +206,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "yuan_2022_benefits",
-            "title": "",
+            "title": "Red Yeast Rice Preparations Reduce Mortality, Major Cardiovascular Adverse Events, and Risk Factors for Metabolic Syndrome: A Systematic Review and Meta-analysis.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -227,7 +227,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "cicero_2016_benefits",
-            "title": "",
+            "title": "Middle-Term Dietary Supplementation with Red Yeast Rice Plus Coenzyme Q10 Improves Lipid Pattern, Endothelial Reactivity and Arterial Stiffness in Moderately Hypercholesterolemic Subjects.",
             "authors": [],
             "year": 2016,
             "journal": "",
@@ -248,7 +248,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "zhao_2007_benefits",
-            "title": "",
+            "title": "Xuezhikang, an extract of cholestin, reduces cardiovascular events in type 2 diabetes patients with coronary heart disease: subgroup analysis of patients with type 2 diabetes from China coronary secondary prevention study (CCSPS).",
             "authors": [],
             "year": 2007,
             "journal": "",
@@ -269,7 +269,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "rahmani_2022_benefits",
-            "title": "",
+            "title": "Impact of red yeast rice supplementation on lipid profile: a systematic review and meta-analysis of randomized-controlled trials.",
             "authors": [],
             "year": 2022,
             "journal": "",
@@ -367,7 +367,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "righetti_2021_safety",
-            "title": "",
+            "title": "Risk Assessment of RYR Food Supplements: Perception vs. Reality.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -389,7 +389,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "cicero_2023_dosage",
-            "title": "",
+            "title": "Red Yeast Rice for the Improvement of Lipid Profiles in Mild-to-Moderate Hypercholesterolemia: A Narrative Review.",
             "authors": [],
             "year": 2023,
             "journal": "",
@@ -409,7 +409,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "minamizuka_2021_dosage",
-            "title": "",
+            "title": "Low dose red yeast rice with monacolin K lowers LDL cholesterol and blood pressure in Japanese with mild dyslipidemia: A multicenter, randomized trial.",
             "authors": [],
             "year": 2021,
             "journal": "",
@@ -429,7 +429,7 @@ window.redYeastRiceEnhanced = {
         "evidence": [
           {
             "citationId": "lu_2008_dosage",
-            "title": "",
+            "title": "Effect of Xuezhikang, an extract from red yeast Chinese rice, on coronary events in a Chinese population with previous myocardial infarction.",
             "authors": [],
             "year": 2008,
             "journal": "",

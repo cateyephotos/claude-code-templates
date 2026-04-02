@@ -33,7 +33,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "holubarsch_2018_mechanisms",
-                        title:  "",
+                        title:  "Benefit-Risk Assessment of Crataegus Extract WS 1442: An Evidence-Based Review.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -53,7 +53,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "holubarsch_2000_mechanisms",
-                        title:  "",
+                        title:  "Survival and prognosis: investigation of Crataegus extract WS 1442 in congestive heart failure (SPICE)--rationale, study design and study protocol.",
                         authors:  [],
                         year:  2000,
                         journal:  "",
@@ -73,7 +73,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "dalli_2011_mechanisms",
-                        title:  "",
+                        title:  "Crataegus laevigata decreases neutrophil elastase and has hypolipidemic effect: a randomized, double-blind, placebo-controlled trial.",
                         authors:  [],
                         year:  2011,
                         journal:  "",
@@ -93,7 +93,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "wang_2013_mechanisms",
-                        title:  "",
+                        title:  "Effect of crataegus usage in cardiovascular disease prevention: an evidence-based approach.",
                         authors:  [],
                         year:  2013,
                         journal:  "",
@@ -113,7 +113,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "unknown_2012_mechanisms",
-                        title:  "",
+                        title:  "Crataegus special extract WS(®)1442 prevents aging-related endothelial dysfunction.",
                         authors:  [],
                         year:  2012,
                         journal:  "",
@@ -133,7 +133,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "xia_2017_mechanisms",
-                        title:  "",
+                        title:  "Restoration of perivascular adipose tissue function in diet-induced obese mice without changing bodyweight.",
                         authors:  [],
                         year:  2017,
                         journal:  "",
@@ -155,7 +155,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "pittler_2008_benefits",
-                        title:  "",
+                        title:  "Hawthorn extract for treating chronic heart failure.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -176,7 +176,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "pittler_2003_benefits",
-                        title:  "",
+                        title:  "Hawthorn extract for treating chronic heart failure: meta-analysis of randomized trials.",
                         authors:  [],
                         year:  2003,
                         journal:  "",
@@ -197,7 +197,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "degenring_2003_benefits",
-                        title:  "",
+                        title:  "A randomised double blind placebo controlled clinical trial of a standardised extract of fresh Crataegus berries (Crataegisan) in the treatment of patients with congestive heart failure NYHA II.",
                         authors:  [],
                         year:  2003,
                         journal:  "",
@@ -218,7 +218,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "zapfe_2001_benefits",
-                        title:  "",
+                        title:  "Clinical efficacy of crataegus extract WS 1442 in congestive heart failure NYHA class II.",
                         authors:  [],
                         year:  2001,
                         journal:  "",
@@ -239,7 +239,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "holubarsch_2008_benefits",
-                        title:  "",
+                        title:  "The efficacy and safety of Crataegus extract WS 1442 in patients with heart failure: the SPICE trial.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -260,7 +260,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "zick_2009_benefits",
-                        title:  "",
+                        title:  "Hawthorn Extract Randomized Blinded Chronic Heart Failure (HERB CHF) trial.",
                         authors:  [],
                         year:  2009,
                         journal:  "",
@@ -281,7 +281,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "walker_2006_benefits",
-                        title:  "",
+                        title:  "Hypotensive effects of hawthorn for patients with diabetes taking prescription drugs: a randomised controlled trial.",
                         authors:  [],
                         year:  2006,
                         journal:  "",
@@ -302,7 +302,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "szikora_2025_benefits",
-                        title:  "",
+                        title:  "Hawthorn (Crataegus spp.) Clinically Significantly Reduces Blood Pressure in Hypertension: A Meta-Analysis of Randomized Placebo-Controlled Clinical Trials.",
                         authors:  [],
                         year:  2025,
                         journal:  "",
@@ -323,7 +323,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "asher_2012_benefits",
-                        title:  "",
+                        title:  "Effect of hawthorn standardized extract on flow mediated dilation in prehypertensive and mildly hypertensive adults: a randomized, controlled cross-over trial.",
                         authors:  [],
                         year:  2012,
                         journal:  "",
@@ -346,7 +346,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "daniele_2006_safety",
-                        title:  "",
+                        title:  "Adverse-event profile of Crataegus spp.: a systematic review.",
                         authors:  [],
                         year:  2006,
                         journal:  "",
@@ -366,7 +366,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "holubarsch_2018_safety",
-                        title:  "",
+                        title:  "Benefit-Risk Assessment of Crataegus Extract WS 1442: An Evidence-Based Review.",
                         authors:  [],
                         year:  2018,
                         journal:  "",
@@ -386,7 +386,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "zick_2008_safety",
-                        title:  "",
+                        title:  "The effect of Crataegus oxycantha Special Extract WS 1442 on clinical progression in patients with mild to moderate symptoms of heart failure.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -408,7 +408,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "pittler_2008_dosage",
-                        title:  "",
+                        title:  "Hawthorn extract for treating chronic heart failure.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -428,7 +428,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "the_2008_dosage",
-                        title:  "",
+                        title:  "The efficacy and safety of Crataegus extract WS 1442 in patients with heart failure: the SPICE trial.",
                         authors:  [],
                         year:  2008,
                         journal:  "",
@@ -448,7 +448,7 @@ window.hawthornBerryEnhanced = {
                 evidence:  [
                     {
                         citationId:  "chang_2005_dosage",
-                        title:  "",
+                        title:  "Hawthorn: potential roles in cardiovascular disease.",
                         authors:  [],
                         year:  2005,
                         journal:  "",
