@@ -68,3 +68,4 @@ analysis/
 
 # OpenSpec (local workflow artifacts)
 openspec/
+.gstack/

@@ -1,0 +1,3708 @@
+{
+  "projectName": "SupplementDB",
+  "generatedAt": "2026-04-02T18:41:40.065Z",
+  "lastSha": "776d45b346bcd0e5dbcb844aa4fe97e54c89ceac",
+  "projectNarrative": "SupplementDB evolved through 208 commits across 14 major workstreams from 2025-08-31 to 2026-04-02. The primary areas of development were: Supp Db Site > Convex (feat), Supp Db Site > Data (fix), Supp Db Site (feat), Supp Db Site > Supplements (feat), Supp Db Site > Docs (docs).\n\nThe project progressed through distinct phases, with each theme representing a coherent body of work that advanced the overall product. Feature development was the dominant activity, supplemented by bug fixes, documentation improvements, and infrastructure work.",
+  "sessionNotes": [],
+  "themes": [
+    {
+      "id": "theme-1",
+      "dirSignature": "supp-db-site/convex",
+      "heuristicName": "Supp Db Site > Convex (feat)",
+      "narrativeName": "Supp Db Site > Convex (feat)",
+      "motivation": "Building new functionality in the supp-db-site/convex area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (31 commits)",
+        "Spanned 37 files across 2026-03-14 to 2026-03-31"
+      ],
+      "outcome": "Completed 42 commits affecting 37 files.",
+      "commitCount": 42,
+      "fileCount": 37,
+      "commitTypes": {
+        "fix": 9,
+        "feat": 31,
+        "perf": 2
+      },
+      "commits": [
+        {
+          "hash": "2adb58b8008e8aa1e3997d6b967259cd89aeb2fd",
+          "date": "2026-03-14T12:49:24-04:00",
+          "subject": "feat(admin): add API key management UI — set ANTHROPIC_API_KEY from browser without Convex dashboard",
+          "author": "cateyephotos",
+          "filesChanged": 7,
+          "additions": 729,
+          "deletions": 15,
+          "commitType": "feat"
+        },
+        {
+          "hash": "0d0416e72a9f18c618e8f1a45e8000497a4a85c2",
+          "date": "2026-03-14T16:34:24-04:00",
+          "subject": "feat(admin): dynamic model selection + fix Anthropic model names",
+          "author": "cateyephotos",
+          "filesChanged": 9,
+          "additions": 409,
+          "deletions": 16,
+          "commitType": "feat"
+        },
+        {
+          "hash": "fbc4913255477b86eeb1a626be0c0d47e2906c18",
+          "date": "2026-03-16T10:10:01-04:00",
+          "subject": "feat(schema): make healthGoal optional, add healthGoals array for dual-goal support",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 2,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "2d6f18aad9215ac643011560a825f070ce0e71bf",
+          "date": "2026-03-16T10:12:06-04:00",
+          "subject": "feat(credits): add goalCount arg for dual-goal +1 credit surcharge",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 16,
+          "deletions": 9,
+          "commitType": "feat"
+        },
+        {
+          "hash": "5b8be8ec75e2afa63b1403c582055293e905bd64",
+          "date": "2026-03-16T10:16:20-04:00",
+          "subject": "feat(analyzer): support multi-goal analysis with unified goals[] schema and conditional prompts",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 105,
+          "deletions": 56,
+          "commitType": "feat"
+        },
+        {
+          "hash": "74e57d54e32e3ee2e615c8781029fe24a18659ac",
+          "date": "2026-03-16T10:35:20-04:00",
+          "subject": "feat(export): copy and email stack analysis results",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 320,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "3d36f7b77fc8cdb306452e6236658aebf99d1623",
+          "date": "2026-03-17T20:06:08-04:00",
+          "subject": "feat: add email sequence system tables + siteConfig to schema",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 94,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "c9f596b54ecb8caf18e2c0fe388112f079c09daa",
+          "date": "2026-03-17T20:06:13-04:00",
+          "subject": "feat: add siteConfig CRUD for dynamic email variables",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 64,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "3aa507a950b4b9ab4cb761e9222a6096b0489dba",
+          "date": "2026-03-17T20:11:53-04:00",
+          "subject": "feat(email): add sequence/step CRUD, analytics, and test email actions (Tasks 3-4)",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 545,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "df0adab8f8f3ad1bdb9c60f9afbdf47b59bb4110",
+          "date": "2026-03-17T20:14:07-04:00",
+          "subject": "feat(email): add emailSubscribers.ts with enrollment, unenroll, and admin CRUD (Tasks 5-6)",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 268,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "8107dfd594e8bc76a41acdfd54f8ae9f07c11d1e",
+          "date": "2026-03-17T20:17:04-04:00",
+          "subject": "feat(email): implement cron queue processor and sequence subscriber runner",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 323,
+          "deletions": 3,
+          "commitType": "feat"
+        },
+        {
+          "hash": "6e760c36fd56c901f6820f786aebb06a65e411cb",
+          "date": "2026-03-17T20:18:59-04:00",
+          "subject": "feat(email): add cron scheduler, Resend webhook handler, and processWebhookEvent mutation",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 169,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "d81f1e9a0313924b15d5eac910fda1f9e922c2a9",
+          "date": "2026-03-17T20:21:03-04:00",
+          "subject": "feat(email): add unsubscribe propagation and sequence enrollment hooks",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 63,
+          "deletions": 2,
+          "commitType": "feat"
+        },
+        {
+          "hash": "dc5d0d94cfbe947fd4e17d687277f955287627de",
+          "date": "2026-03-17T20:34:19-04:00",
+          "subject": "feat: add 3-email welcome sequence seed script",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 148,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "1047db1b190a57f87661ed7ca96970db29f624b0",
+          "date": "2026-03-17T20:38:24-04:00",
+          "subject": "fix: address code review issues in email sequence system",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 16,
+          "deletions": 6,
+          "commitType": "fix"
+        },
+        {
+          "hash": "79d7569761be79cda717d669c1ca3b1d59c55e32",
+          "date": "2026-03-17T22:40:50-04:00",
+          "subject": "fix: add Svix HMAC signature verification to Clerk webhook",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 49,
+          "deletions": 6,
+          "commitType": "fix"
+        },
+        {
+          "hash": "00640b1f3aef40dee484f32efd728d4ef70d10d5",
+          "date": "2026-03-17T22:41:45-04:00",
+          "subject": "fix: DST-aware timezone offsets using Intl.DateTimeFormat",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 115,
+          "deletions": 25,
+          "commitType": "fix"
+        },
+        {
+          "hash": "629cd13012e39fb9d07af6ad9a479cb515cce6c6",
+          "date": "2026-03-17T22:43:19-04:00",
+          "subject": "perf: add sequence_timestamp index for bounded analytics queries",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 18,
+          "deletions": 14,
+          "commitType": "perf"
+        },
+        {
+          "hash": "b309a344fb36f1a9ae7aa8b9727bf6c8d5da9382",
+          "date": "2026-03-17T22:44:08-04:00",
+          "subject": "perf: denormalize lastEvent on emailSubscribers to eliminate N+1",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 17,
+          "deletions": 19,
+          "commitType": "perf"
+        },
+        {
+          "hash": "4dfcb59d7da3a079c21d3b6ace7f4c852cfd6914",
+          "date": "2026-03-18T01:01:58-04:00",
+          "subject": "fix: align Convex deployment URLs and fix admin panel client issues",
+          "author": "cateyephotos",
+          "filesChanged": 5,
+          "additions": 12,
+          "deletions": 12,
+          "commitType": "fix"
+        },
+        {
+          "hash": "4b98db5d59a48bedd5c988370a6319c31cc3ad4a",
+          "date": "2026-03-18T10:27:26-04:00",
+          "subject": "fix: resolve Vercel deployment issues — admin CSS paths, Convex TS errors, schema sync",
+          "author": "cateyephotos",
+          "filesChanged": 4,
+          "additions": 7,
+          "deletions": 6,
+          "commitType": "fix"
+        },
+        {
+          "hash": "4189ce95bb42c54097e1553d7289426a483a2a16",
+          "date": "2026-03-18T17:28:17-04:00",
+          "subject": "fix: harden Stack Analyzer with structured output, input guards, and config audit",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 177,
+          "deletions": 46,
+          "commitType": "fix"
+        },
+        {
+          "hash": "ec4dfde0922e12950f9c6d318f916c2d05864593",
+          "date": "2026-03-19T01:36:05-04:00",
+          "subject": "feat: replace Dosage Calculator with Stack Analyzer CTA, add depth-aware credit pricing",
+          "author": "cateyephotos",
+          "filesChanged": 5,
+          "additions": 111,
+          "deletions": 237,
+          "commitType": "feat"
+        },
+        {
+          "hash": "8ed4b98084403dfee07f96641b9f51fe3adaf3fa",
+          "date": "2026-03-23T20:09:45-04:00",
+          "subject": "feat(schema): add premiumGuideContent table and accessType field to guidePurchases",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 16,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "b6bdd100cfb1bad2f403c6ecc342194aef1b00ef",
+          "date": "2026-03-23T20:11:40-04:00",
+          "subject": "feat(convex): create premiumGuideContent module with auth-gated content query",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 94,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "cd480a914034d8d9c481e3e09defd7dc74057ed1",
+          "date": "2026-03-23T20:11:51-04:00",
+          "subject": "feat(convex): create guidePurchases module with web access queries and purchase mutations",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 239,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "016d97558b7af6ebf0e254dbf077efe518d63f47",
+          "date": "2026-03-23T20:15:35-04:00",
+          "subject": "feat(stripe): support web access checkout with duplicate purchase prevention",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 21,
+          "deletions": 3,
+          "commitType": "feat"
+        },
+        {
+          "hash": "ba47ea9129774fb4c341da06d4f1db4780d06951",
+          "date": "2026-03-23T20:16:14-04:00",
+          "subject": "feat(webhook): handle web access guide purchases, skip PDF generation for web type",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 18,
+          "deletions": 14,
+          "commitType": "feat"
+        },
+        {
+          "hash": "b92ea0da070f8ddb9b3aea6f24c7378fca7cdc47",
+          "date": "2026-03-23T21:36:15-04:00",
+          "subject": "fix(convex): align recordGateEvent mutation with new gate event types and remove invalid role arg",
+          "author": "cateyephotos",
+          "filesChanged": 8,
+          "additions": 7291,
+          "deletions": 438,
+          "commitType": "fix"
+        },
+        {
+          "hash": "f3533ca9f7388dc25d0bdc991ddb5c7b29fd8334",
+          "date": "2026-03-23T22:52:30-04:00",
+          "subject": "feat(convex): add public adminUpsertContent mutation and ESM upload script",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 99,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "19e2176b02f222e68dbf0e0503a5e1364069d23a",
+          "date": "2026-03-23T23:26:51-04:00",
+          "subject": "fix: premium content invisible — wrong reveal class + JWT role lookup",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 10,
+          "deletions": 5,
+          "commitType": "fix"
+        },
+        {
+          "hash": "c4b05cc0715cda2128fc99e90357713328a9064d",
+          "date": "2026-03-25T06:04:31-04:00",
+          "subject": "feat(SUPP-31): add UTM fields to pageViews schema and recordPageView mutation",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 13,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "0671689f2c505eff5f53d008cb5a194930b724bc",
+          "date": "2026-03-25T06:07:14-04:00",
+          "subject": "feat(SUPP-29): add getZeroResultSearches and getSearchTrend queries",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 81,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "e32765f12b8ded8ec38f27b3b1349076d5922208",
+          "date": "2026-03-25T06:07:39-04:00",
+          "subject": "feat(SUPP-29): add getSearchConversion action with in-memory session join",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 85,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "c98ac8422167a014f8a85a8a0772f3a55ae33a8f",
+          "date": "2026-03-25T06:09:51-04:00",
+          "subject": "feat(SUPP-30): add getActivityFeed and getActivitySummary queries",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 146,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "77d81d524ebb7a7272ce63caa380e7e458651cf2",
+          "date": "2026-03-25T06:09:56-04:00",
+          "subject": "feat(SUPP-31): add UTM breakdown, new-vs-returning, and bounce rate queries",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 169,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "b28ec5e5746b037daaae1ca92ffd53502fe5be8e",
+          "date": "2026-03-25T06:12:11-04:00",
+          "subject": "feat(SUPP-32): add getContentPerformance query",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 94,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "92deabca75c974a285b14ebd75c399b4c8ed1ec0",
+          "date": "2026-03-25T06:12:29-04:00",
+          "subject": "feat(SUPP-32): add fetchScrollDepthByPage PostHog action",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 64,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "93af94f7cb8e0b77a12a56cfda00233e3450c595",
+          "date": "2026-03-25T06:12:52-04:00",
+          "subject": "feat(SUPP-33): add journeys.ts with drop-off analysis and exit page queries",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 134,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "7d0dd3336754944bba3274768d2b51832c982fc6",
+          "date": "2026-03-25T06:13:09-04:00",
+          "subject": "feat(SUPP-33): add fetchPathAnalysis PostHog action",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 69,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "ab47139bca4cd8bbf2338479895ad884955d3165",
+          "date": "2026-03-25T06:13:36-04:00",
+          "subject": "feat(SUPP-29): add Google Search Console integration with JWT auth",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 163,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "3d8b537a6b96aa0a105741fa497e71e17ec0e41e",
+          "date": "2026-03-31T00:31:14-04:00",
+          "subject": "fix: add SUPPLEMENTDB statement descriptor to all Stripe checkout sessions",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 4,
+          "deletions": 0,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/convex/stripe.ts",
+        "supp-db-site/convex/gsc.ts",
+        "supp-db-site/convex/posthog.ts",
+        "supp-db-site/convex/journeys.ts",
+        "supp-db-site/convex/analytics.ts",
+        "supp-db-site/convex/metrics.ts",
+        "supp-db-site/convex/schema.ts",
+        "supp-db-site/convex/premiumGuideContent.ts",
+        "supp-db-site/js/content-gate.js",
+        "supp-db-site/scripts/upload-chunks-runner.mjs",
+        "supp-db-site/convex/guidePurchases.ts",
+        "supp-db-site/convex/http.ts",
+        "supp-db-site/guides/safety-interactions.html",
+        "supp-db-site/js/rbac.js",
+        "supp-db-site/scripts/generate-guide-pages.js",
+        "supp-db-site/convex/analysisCredits.ts",
+        "supp-db-site/convex/stackAnalyzer.ts",
+        "supp-db-site/index.html",
+        "supp-db-site/js/app.js",
+        "supp-db-site/js/stack-analyzer.js",
+        "supp-db-site/convex/adminConfig.ts",
+        "supp-db-site/admin/index.html",
+        "supp-db-site/convex/adminSettings.ts",
+        "supp-db-site/admin/email.js",
+        "supp-db-site/convex/emailSequences.ts",
+        "supp-db-site/js/convex-client.js",
+        "supp-db-site/convex/emailCron.ts",
+        "supp-db-site/convex/emailSubscribers.ts",
+        "supp-db-site/convex/emailCronAction.ts",
+        "supp-db-site/convex/resend.ts",
+        "supp-db-site/convex/seedWelcomeSequence.ts",
+        "supp-db-site/convex/newsletter.ts",
+        "supp-db-site/convex/crons.ts",
+        "supp-db-site/convex/siteConfig.ts",
+        "supp-db-site/admin/admin.css",
+        "supp-db-site/convex/tsconfig.json",
+        "supp-db-site/js/admin-config.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-13-bro-46-stripe-pdf-e2e-qa.md",
+          "title": "BRO-46: Stripe Checkout → PDF Delivery End-to-End QA Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer: Multi-Goal UX Redesign + Export Features",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-17-email-sequence-admin-panel.md",
+          "title": "Email Sequence Admin Panel Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-17-email-sequence-admin-panel-design.md",
+          "title": "Email Sequence Admin Panel — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-25-admin-analytics-enhancement-design.md",
+          "title": "Admin Dashboard Analytics Enhancement — Design Spec",
+          "type": "spec"
+        }
+      ]
+    },
+    {
+      "id": "theme-2",
+      "dirSignature": "supp-db-site/data",
+      "heuristicName": "Supp Db Site > Data (fix)",
+      "narrativeName": "Supp Db Site > Data (fix)",
+      "motivation": "Fixing issues and bugs in the supp-db-site/data area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: fix work (18 commits)",
+        "Spanned 532 files across 2025-08-31 to 2026-04-02"
+      ],
+      "outcome": "Completed 28 commits affecting 532 files.",
+      "commitCount": 28,
+      "fileCount": 532,
+      "commitTypes": {
+        "fix": 18,
+        "feat": 9,
+        "other": 1
+      },
+      "commits": [
+        {
+          "hash": "9a3bc95d649c44f1598d0b99c0b694434535b379",
+          "date": "2025-08-31T15:06:18-04:00",
+          "subject": "feat: Phase 3 Complete - Reconcile All Missing Enhanced Citations",
+          "author": "cateyephotos",
+          "filesChanged": 4,
+          "additions": 777,
+          "deletions": 2,
+          "commitType": "feat"
+        },
+        {
+          "hash": "1dc632865dd11e949303519134c38f3d6dc4c687",
+          "date": "2026-03-07T12:09:08-05:00",
+          "subject": "feat: Phase 3B reconciliation - enhanced citations, supplements.js updates, Docker config",
+          "author": "cateyephotos",
+          "filesChanged": 58,
+          "additions": 12656,
+          "deletions": 7781,
+          "commitType": "feat"
+        },
+        {
+          "hash": "97e6f838eb52b5064fc927e0d3369d8e5d097e6f",
+          "date": "2026-03-07T14:15:29-05:00",
+          "subject": "feat: Phase 3B-2 Group A complete — 11 enhanced citations rebuilt with PubMed-verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 11,
+          "additions": 3347,
+          "deletions": 1885,
+          "commitType": "feat"
+        },
+        {
+          "hash": "e55a4dc97ac2f8613c15887bc6efedd3da37e626",
+          "date": "2026-03-07T17:47:06-05:00",
+          "subject": "feat: Phase 3B-2 Group B complete — 10 enhanced citations rebuilt with PubMed-verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 10,
+          "additions": 4256,
+          "deletions": 1274,
+          "commitType": "feat"
+        },
+        {
+          "hash": "c19a35927f39f766b34af0bd99ac793f957f274d",
+          "date": "2026-03-07T19:00:29-05:00",
+          "subject": "feat: Phase 3B-3 Group C complete — 8 enhanced citations rebuilt with PubMed-verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 8,
+          "additions": 1249,
+          "deletions": 893,
+          "commitType": "feat"
+        },
+        {
+          "hash": "960adaa34c9c25f577c844bee62183619524b950",
+          "date": "2026-03-07T19:17:17-05:00",
+          "subject": "feat: Phase 3B-3 Group D complete — 7 enhanced citations rebuilt with PubMed-verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 7,
+          "additions": 1586,
+          "deletions": 1341,
+          "commitType": "feat"
+        },
+        {
+          "hash": "043057e82060702ace4213ea3df65c6765c94684",
+          "date": "2026-03-07T19:19:25-05:00",
+          "subject": "fix: update Curcumin enhanced citations to 21 verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 105,
+          "deletions": 83,
+          "commitType": "fix"
+        },
+        {
+          "hash": "8db84b85b3e96ee38296e719fb0e281ff67061e8",
+          "date": "2026-03-07T19:20:02-05:00",
+          "subject": "fix: update Red Yeast Rice enhanced citations to 19 verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 137,
+          "deletions": 110,
+          "commitType": "fix"
+        },
+        {
+          "hash": "77c9e5f9ed639fc8122a79853bfcf69937081e11",
+          "date": "2026-03-07T19:21:49-05:00",
+          "subject": "fix: update Hawthorn Berry enhanced citations to 21 verified papers",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 79,
+          "deletions": 53,
+          "commitType": "fix"
+        },
+        {
+          "hash": "49ae56fa571bc8cc4040891a1f415ba6b07d6c32",
+          "date": "2026-03-07T21:05:42-05:00",
+          "subject": "fix: CitationRenderer v2.0 compatibility, ID misassignment corrections, and cache-busting",
+          "author": "cateyephotos",
+          "filesChanged": 10,
+          "additions": 122,
+          "deletions": 2330,
+          "commitType": "fix"
+        },
+        {
+          "hash": "38e6550638164231e51fdf085426d5accf75abf9",
+          "date": "2026-03-07T22:15:02-05:00",
+          "subject": "fix: Phase 3B-3 enhanced citations cleanup — remove 84 duplicate/orphan files, fix all loader entries",
+          "author": "cateyephotos",
+          "filesChanged": 92,
+          "additions": 216,
+          "deletions": 24128,
+          "commitType": "fix"
+        },
+        {
+          "hash": "a639900fe90d337f75f14f6cd24684f7b89bf9ad",
+          "date": "2026-03-08T16:14:24-04:00",
+          "subject": "fix: comprehensive PMID/DOI citation audit — 99/102 perfect matches across 7 supplements",
+          "author": "cateyephotos",
+          "filesChanged": 11,
+          "additions": 4756,
+          "deletions": 181,
+          "commitType": "fix"
+        },
+        {
+          "hash": "1a42f71e07cc3c4bcedffcd8feea4de4b8233725",
+          "date": "2026-03-08T18:02:46-04:00",
+          "subject": "fix: comprehensive PMID/DOI audit across all 93 supplement citation files",
+          "author": "cateyephotos",
+          "filesChanged": 108,
+          "additions": 120769,
+          "deletions": 2719,
+          "commitType": "fix"
+        },
+        {
+          "hash": "b99c5a23c809bdfc5e80938bb91aeb2f522aeec1",
+          "date": "2026-03-08T19:31:41-04:00",
+          "subject": "fix: reconcile orphan supplement IDs 90-93 into main database",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 252,
+          "deletions": 2,
+          "commitType": "fix"
+        },
+        {
+          "hash": "ff935a89f693889a73090e1c5278561111e45dd9",
+          "date": "2026-03-08T19:52:00-04:00",
+          "subject": "fix: add 7 supplements to category arrays for full reconciliation",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 5,
+          "deletions": 5,
+          "commitType": "fix"
+        },
+        {
+          "hash": "f27c97c319eeefab046bbc0e29672a66f7f88ccd",
+          "date": "2026-03-14T05:11:03-04:00",
+          "subject": "fix(pipeline): migrate 5 non-canonical enhanced citation files to canonical schema",
+          "author": "cateyephotos",
+          "filesChanged": 14,
+          "additions": 3732,
+          "deletions": 2279,
+          "commitType": "fix"
+        },
+        {
+          "hash": "079f7eb38621fcf0ffa87ee9b408c6b173ecc490",
+          "date": "2026-03-15T01:23:56-04:00",
+          "subject": "feat(citations): normalize all 93 enhanced citation files to canonical Pattern C schema",
+          "author": "cateyephotos",
+          "filesChanged": 106,
+          "additions": 28687,
+          "deletions": 8893,
+          "commitType": "feat"
+        },
+        {
+          "hash": "fbfcdd35a9bcdeb3ca734ef28d3b500cfc04961b",
+          "date": "2026-03-15T10:49:38-04:00",
+          "subject": "fix(data): clear misassigned DOIs, normalize N/A placeholders, fix duplicate titles",
+          "author": "cateyephotos",
+          "filesChanged": 18,
+          "additions": 277,
+          "deletions": 32,
+          "commitType": "fix"
+        },
+        {
+          "hash": "46c9924125265d82a1751d1cd5c427da61ba49f7",
+          "date": "2026-03-15T11:02:45-04:00",
+          "subject": "fix(data): verified DOI resolution + clear wrong PMIDs",
+          "author": "cateyephotos",
+          "filesChanged": 15,
+          "additions": 748,
+          "deletions": 21,
+          "commitType": "fix"
+        },
+        {
+          "hash": "aee955b8fecaffc534b6877d6cc163e5f71f365d",
+          "date": "2026-03-15T11:56:23-04:00",
+          "subject": "data(healing): Phase 1 quality flags - reliability scores for all 93 supplements",
+          "author": "cateyephotos",
+          "filesChanged": 93,
+          "additions": 17862,
+          "deletions": 0,
+          "commitType": "other"
+        },
+        {
+          "hash": "98c198a74e3fa62ca3255c5c63e0e52860d96cc7",
+          "date": "2026-03-15T11:59:08-04:00",
+          "subject": "fix(healing): include pmid_not_found/no_pmid in re-research filter + remediate Bacopa",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 452,
+          "deletions": 416,
+          "commitType": "fix"
+        },
+        {
+          "hash": "ee5b3eeb2d77d5edfeacfb081db1cea00ec7d6d8",
+          "date": "2026-03-15T12:15:31-04:00",
+          "subject": "fix(data): batch remediation - re-researched citations for 53 supplements",
+          "author": "cateyephotos",
+          "filesChanged": 139,
+          "additions": 18354,
+          "deletions": 8817,
+          "commitType": "fix"
+        },
+        {
+          "hash": "811cf93c6472be1eb30357e9d7add20348651fb7",
+          "date": "2026-03-19T02:36:52-04:00",
+          "subject": "fix: reconcile sleep guide to 90 PubMed-verified citations",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 621,
+          "deletions": 704,
+          "commitType": "fix"
+        },
+        {
+          "hash": "a78ac89a8296367f0899483b47660c09e2572148",
+          "date": "2026-03-19T02:43:27-04:00",
+          "subject": "fix: remove 8 misattributed PMIDs from enhanced_citations source files",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 7,
+          "deletions": 123,
+          "commitType": "fix"
+        },
+        {
+          "hash": "960b453857a00579276686b9f2f835a1dc08137f",
+          "date": "2026-03-19T03:22:25-04:00",
+          "subject": "fix: remove 221 hallucinated PMIDs from enhanced_citations and regenerate guides",
+          "author": "cateyephotos",
+          "filesChanged": 67,
+          "additions": 3669,
+          "deletions": 7907,
+          "commitType": "fix"
+        },
+        {
+          "hash": "569f3fcf84e4dcdd6fe42817d840d5c3cb7d9e92",
+          "date": "2026-03-19T04:12:15-04:00",
+          "subject": "feat: canvas 330 mechanisms into 296 canonical entries with alias map",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 4262,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "9bd6d877a916de5ff7d57b162fbc305e88e43133",
+          "date": "2026-03-21T20:28:36-04:00",
+          "subject": "feat(data): add 20 trending supplements (IDs 94-113) with full pipeline QC",
+          "author": "cateyephotos",
+          "filesChanged": 63,
+          "additions": 59428,
+          "deletions": 23,
+          "commitType": "feat"
+        },
+        {
+          "hash": "2e21d92e4012cd2ee494e5990711efbedbbb364d",
+          "date": "2026-04-02T01:55:04-04:00",
+          "subject": "fix: resolve 252 empty citation titles from PubMed across 16 enhanced citation files",
+          "author": "cateyephotos",
+          "filesChanged": 33,
+          "additions": 928,
+          "deletions": 504,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/data/enhanced_citations/10_rhodiola_rosea_enhanced.js",
+        "supp-db-site/data/enhanced_citations/11_lions_mane_enhanced.js",
+        "supp-db-site/data/enhanced_citations/18_coq10_enhanced.js",
+        "supp-db-site/data/enhanced_citations/1_bacopa_monnieri_enhanced.js",
+        "supp-db-site/data/enhanced_citations/24_l_theanine_enhanced.js",
+        "supp-db-site/data/enhanced_citations/27_resveratrol_enhanced.js",
+        "supp-db-site/data/enhanced_citations/2_curcumin_enhanced.js",
+        "supp-db-site/data/enhanced_citations/3_ashwagandha_enhanced.js",
+        "supp-db-site/data/enhanced_citations/4_omega_3_fish_oil_enhanced.js",
+        "supp-db-site/data/enhanced_citations/58_mct_oil_enhanced.js",
+        "supp-db-site/data/enhanced_citations/59_hawthorn_berry_enhanced.js",
+        "supp-db-site/data/enhanced_citations/60_red_yeast_rice_enhanced.js",
+        "supp-db-site/data/enhanced_citations/61_chromium_enhanced.js",
+        "supp-db-site/data/enhanced_citations/6_magnesium_enhanced.js",
+        "supp-db-site/data/enhanced_citations/79_passionflower_enhanced.js",
+        "supp-db-site/data/enhanced_citations/9_l_theanine_enhanced.js",
+        "supp-db-site/scripts/resolve-citation-titles.js",
+        "supp-db-site/supplements/ashwagandha.html",
+        "supp-db-site/supplements/bacopa-monnieri.html",
+        "supp-db-site/supplements/chromium.html",
+        "supp-db-site/supplements/coq10.html",
+        "supp-db-site/supplements/green-tea-extract.html",
+        "supp-db-site/supplements/hawthorn-berry.html",
+        "supp-db-site/supplements/l-theanine.html",
+        "supp-db-site/supplements/lion-s-mane-mushroom.html",
+        "supp-db-site/supplements/magnesium.html",
+        "supp-db-site/supplements/mct-oil.html",
+        "supp-db-site/supplements/omega-3-fatty-acids.html",
+        "supp-db-site/supplements/passionflower.html",
+        "supp-db-site/supplements/red-yeast-rice.html",
+        "supp-db-site/supplements/resveratrol.html",
+        "supp-db-site/supplements/rhodiola-rosea.html",
+        "supp-db-site/supplements/turmeric-curcumin.html",
+        "supp-db-site/data/enhanced_citations/100_magnesium-l-threonate_enhanced.js",
+        "supp-db-site/data/enhanced_citations/101_apigenin_enhanced.js",
+        "supp-db-site/data/enhanced_citations/102_tongkat-ali_enhanced.js",
+        "supp-db-site/data/enhanced_citations/103_shilajit_enhanced.js",
+        "supp-db-site/data/enhanced_citations/104_glynac_enhanced.js",
+        "supp-db-site/data/enhanced_citations/105_glutathione_enhanced.js",
+        "supp-db-site/data/enhanced_citations/106_dim-3-3-diindolylmethane_enhanced.js",
+        "supp-db-site/data/enhanced_citations/107_palmitoylethanolamide_enhanced.js",
+        "supp-db-site/data/enhanced_citations/108_nmn-nicotinamide-mononucleotide_enhanced.js",
+        "supp-db-site/data/enhanced_citations/109_maca-root_enhanced.js",
+        "supp-db-site/data/enhanced_citations/110_pentadecanoic-acid-c15-0_enhanced.js",
+        "supp-db-site/data/enhanced_citations/111_akkermansia-muciniphila_enhanced.js",
+        "supp-db-site/data/enhanced_citations/112_methylene-blue_enhanced.js",
+        "supp-db-site/data/enhanced_citations/113_cistanche_enhanced.js",
+        "supp-db-site/data/enhanced_citations/94_urolithin-a_enhanced.js",
+        "supp-db-site/data/enhanced_citations/95_spermidine_enhanced.js",
+        "supp-db-site/data/enhanced_citations/96_collagen-peptides_enhanced.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-15-citation-schema-remediation.md",
+          "title": "Enhanced Citation Schema Remediation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\Citation_Validation_Tools.md",
+          "title": "Citation Validation Tools & Automated Testing",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\DEVELOPER_GUIDE.md",
+          "title": "🛠️ Developer Guide - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\CITATION_TRACKING.md",
+          "title": "Citation Tracking and Source Documentation",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\CLAUDE.md",
+          "title": "Evidence-Based Supplement Database - Implementation Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_TEST_REPORT.md",
+          "title": "Comprehensive Test Report: Evidence Bars & Enhanced Citation Modal",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_VERIFICATION_REPORT.md",
+          "title": "Comprehensive Verification Report: Evidence Bar & Enhanced Citation Fixes",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\enhanced-citations-validation-report.md",
+          "title": "Enhanced Citations Integration Validation Report",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\ENHANCED_CITATIONS_FINAL_VALIDATION_REPORT.md",
+          "title": "Enhanced Citations Integration Final Validation Report",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\IMPLEMENTATION_SUMMARY.md",
+          "title": "Enhanced Citation System Modernization - Implementation Summary",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\PHASE-2A-EXPANSION-CONTEXT.md",
+          "title": "Phase 2A Expansion - Complete Context Management Summary",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATIONS_EXPANSION_PLAN.md",
+          "title": "Enhanced Citations Expansion Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATIONS_PROGRESS_LOG.md",
+          "title": "Enhanced Citations Progress Log",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_EXPANSION_SESSION_20250825.md",
+          "title": "📋 Enhanced Citation Expansion Session - August 25, 2025",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_FORMAT_GUIDE.md",
+          "title": "Enhanced Citation Format Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Enhanced_Citation_Integration_Guide.md",
+          "title": "Enhanced Citation System Integration Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\GAP_ANALYSIS_SLEEP_GUIDE.md",
+          "title": "Gap Analysis: Sleep Evidence Guide & Main Site Integration",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Implementation_Roadmap_Phase2.md",
+          "title": "Enhanced Citation System - Implementation Roadmap Phase 2",
+          "type": "roadmap"
+        },
+        {
+          "path": "supp-db-site\\docs\\MODERNIZATION_GUIDE.md",
+          "title": "Enhanced Citation System Modernization Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PHASE_2_ENHANCED_CITATION_EXPANSION.md",
+          "title": "Phase 2: Enhanced Citation Expansion - Strategic Categories",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PHASE_2_FILE_CATEGORIZATION.md",
+          "title": "📊 Phase 2: Complete File Categorization",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\CHANGELOG.md",
+          "title": "Evidence-Based Supplement Database - Changelog",
+          "type": "changelog"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_CITATION_SCHEMA.md",
+          "title": "Phase 2 Enhanced Citation Schema Design",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_PILOT_SUPPLEMENTS.md",
+          "title": "Phase 2 Enhanced Citation System - Pilot Supplements",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PROJECT_STATUS.md",
+          "title": "Project Status Report - Evidence-Based Supplement Database",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\PROJECT_SUMMARY.md",
+          "title": "📋 Project Summary - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Quick_Reference_Card.md",
+          "title": "Enhanced Citation System - Quick Reference Card",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\README.md",
+          "title": "Enhanced Citation System Documentation",
+          "type": "readme"
+        },
+        {
+          "path": "supp-db-site\\docs\\SMART_CITATION_RENDERER_DOCUMENTATION.md",
+          "title": "Smart Citation Renderer Documentation",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-15-citation-remediation.md",
+          "title": "Citation Data Remediation Implementation Plan",
+          "type": "plan"
+        }
+      ]
+    },
+    {
+      "id": "theme-3",
+      "dirSignature": "supp-db-site",
+      "heuristicName": "Supp Db Site (feat)",
+      "narrativeName": "Supp Db Site (feat)",
+      "motivation": "Building new functionality in the supp-db-site area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (15 commits)",
+        "Spanned 54 files across 2025-08-31 to 2026-03-30"
+      ],
+      "outcome": "Completed 28 commits affecting 54 files.",
+      "commitCount": 28,
+      "fileCount": 54,
+      "commitTypes": {
+        "fix": 6,
+        "feat": 15,
+        "refactor": 1,
+        "chore": 3,
+        "docs": 3
+      },
+      "commits": [
+        {
+          "hash": "776d45b346bcd0e5dbcb844aa4fe97e54c89ceac",
+          "date": "2025-08-31T00:17:59-04:00",
+          "subject": "feat: Add comprehensive supplement database validation and reconciliation plan",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 1111,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "5d0f96a54216b2741c880dab5c70091b3aa780cd",
+          "date": "2026-03-10T13:16:16-04:00",
+          "subject": "docs: add PRD v2.0 reflecting current SaaS-ready product state",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1146,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "80a8a61134fb39946925dbc2656064c57f627481",
+          "date": "2026-03-10T14:22:20-04:00",
+          "subject": "docs: add engineering roadmap from consultant review analysis",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 361,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "251e0a540baa1612bdc60f0d2d5b0e98fbf16334",
+          "date": "2026-03-10T15:59:00-04:00",
+          "subject": "feat: Stripe Checkout integration with pricing page, success flow, and dual-path role sync",
+          "author": "cateyephotos",
+          "filesChanged": 13,
+          "additions": 3498,
+          "deletions": 111,
+          "commitType": "feat"
+        },
+        {
+          "hash": "9918766bf74ea7b329ece8ba2071fb23225be6a4",
+          "date": "2026-03-10T19:49:01-04:00",
+          "subject": "feat: Phase 7 — Email service + newsletter backend with double opt-in and Resend integration",
+          "author": "cateyephotos",
+          "filesChanged": 26,
+          "additions": 2969,
+          "deletions": 701,
+          "commitType": "feat"
+        },
+        {
+          "hash": "2701ff9dec1408d4ae2c8da0d60aac3094323289",
+          "date": "2026-03-11T11:50:10-04:00",
+          "subject": "docs: replace PRD v2 with lean v3 reflecting current platform scope",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 690,
+          "deletions": 1146,
+          "commitType": "docs"
+        },
+        {
+          "hash": "ebb18d64937caf3e75ed546f625e15365d5ebd76",
+          "date": "2026-03-13T13:37:23-04:00",
+          "subject": "fix(docker): resolve Clerk auth toast by fixing env substitution in :ro volume mounts",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 94,
+          "deletions": 51,
+          "commitType": "fix"
+        },
+        {
+          "hash": "a23f1d8c56ce268c13c32918a74a343f897b9907",
+          "date": "2026-03-13T23:47:31-04:00",
+          "subject": "fix(auth): resolve Clerk sign-in modal by pinning to clerk-js@4 CDN",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 25,
+          "deletions": 7,
+          "commitType": "fix"
+        },
+        {
+          "hash": "25fc5e04d9dd886cdcc6f4ec5e80f5e25b8447d7",
+          "date": "2026-03-14T04:28:37-04:00",
+          "subject": "feat(pipeline): add seed.js forward-path generator and skill updates",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1165,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "91034d86d2fec1aa9b30d017d4744832dbc9a1c2",
+          "date": "2026-03-14T17:30:25-04:00",
+          "subject": "fix(docker): replace inotifywait hot-reload with polling watcher for Windows compat",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 34,
+          "deletions": 12,
+          "commitType": "fix"
+        },
+        {
+          "hash": "311f8058e613a1fb3414acd96b4153941950fe85",
+          "date": "2026-03-17T20:34:25-04:00",
+          "subject": "feat: add siteConfig seedDefaults and env example",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 32,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "c2e2d7a65afd70075c0010c264a635bb0d6cc7b3",
+          "date": "2026-03-18T01:52:28-04:00",
+          "subject": "chore: trigger Vercel deployment after settings fix",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1,
+          "deletions": 0,
+          "commitType": "chore"
+        },
+        {
+          "hash": "415c7c4c7dc7a0c61dab12256f678748c08e0d00",
+          "date": "2026-03-18T01:58:26-04:00",
+          "subject": "chore: re-trigger Vercel build after fixing ignored build step",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1,
+          "deletions": 0,
+          "commitType": "chore"
+        },
+        {
+          "hash": "c9c8417420c4ccb84d583893ff2208222ed2d33c",
+          "date": "2026-03-18T02:06:46-04:00",
+          "subject": "chore: trigger Vercel build (verified commit)",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1,
+          "deletions": 2,
+          "commitType": "chore"
+        },
+        {
+          "hash": "901738316e869abdbf4a1d1ff9e7f68722d5dafb",
+          "date": "2026-03-21T13:28:20-04:00",
+          "subject": "refactor: extract monograph CSS to templates/monograph.css, decouple seed.js from melatonin.html",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 1093,
+          "deletions": 9,
+          "commitType": "refactor"
+        },
+        {
+          "hash": "70e91d36572d44cd7339a354cbe23c0dd65c84de",
+          "date": "2026-03-21T20:37:20-04:00",
+          "subject": "fix: update homepage counts — 113 supplements, 1,300+ citations",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 13,
+          "deletions": 13,
+          "commitType": "fix"
+        },
+        {
+          "hash": "32c1810ec7f61f06eb52be824342fefb0f0883d6",
+          "date": "2026-03-23T20:21:17-04:00",
+          "subject": "feat(pipeline): add premium content upload script and gitignore chunks directory",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 152,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "f5c04b0fbfcb270235b3990dbe7fa9a814e8ce7b",
+          "date": "2026-03-25T02:32:28-04:00",
+          "subject": "feat(anti-scraping): add build-time data obfuscation script",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 578,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "8ebc3db1110f999392c89f5b34a7056c6e2a6ac7",
+          "date": "2026-03-25T02:33:24-04:00",
+          "subject": "feat: block AI training crawlers in robots.txt",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 49,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "ea0df65bbb3fcfe9817753787cbe5ed2752e9cdb",
+          "date": "2026-03-25T02:33:25-04:00",
+          "subject": "feat: add X-Robots-Tag noai header to all responses",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 92,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "6e485981014bf10d1fd429de6429b59e8531b169",
+          "date": "2026-03-25T02:34:38-04:00",
+          "subject": "feat: add Vercel Edge Middleware for bot detection",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 78,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "69ef3c2633624a912ba4adc154d2e0debe7def4b",
+          "date": "2026-03-25T02:35:42-04:00",
+          "subject": "feat: wire obfuscated data into index.html",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 20,
+          "deletions": 19,
+          "commitType": "feat"
+        },
+        {
+          "hash": "972272789a41b860ae4efbed7c6962602b8562c1",
+          "date": "2026-03-25T03:13:43-04:00",
+          "subject": "feat: allow AI search agents (Perplexity, ChatGPT, You) while blocking training crawlers",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 43,
+          "deletions": 17,
+          "commitType": "feat"
+        },
+        {
+          "hash": "d66dc55b9bd5a6ee92d5cf35999fb89d510252a7",
+          "date": "2026-03-29T18:55:26-04:00",
+          "subject": "feat(seo): add Google Search Console verification file",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "1c042d5f30f18bb03a58840ad4451845abc674e4",
+          "date": "2026-03-29T19:02:49-04:00",
+          "subject": "feat(seo): add Google Search Console verification meta tag to homepage",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 3,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "f83b612ae1c67f26b53041cb84ca78c793075e10",
+          "date": "2026-03-29T23:29:50-04:00",
+          "subject": "fix(seo): update GSC verification for carlosthomasphotos@gmail.com account",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 2,
+          "deletions": 1,
+          "commitType": "fix"
+        },
+        {
+          "hash": "352fabecbb8af8df6696814cb9ac28cc5b23c878",
+          "date": "2026-03-30T00:50:36-04:00",
+          "subject": "feat(analytics): add Google Analytics 4 (G-TFTNJBCRWH) to homepage",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 9,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "83453a21088fe59584fe304bfb04688346c1c58e",
+          "date": "2026-03-30T01:15:44-04:00",
+          "subject": "fix(seo): update sitemap.xml domain from supplementdb.co to supplementdb.info",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 164,
+          "deletions": 164,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/sitemap.xml",
+        "supp-db-site/index.html",
+        "supp-db-site/google7dcdd7f7379498ec.html",
+        "supp-db-site/google369935ac8b5128da.html",
+        "supp-db-site/middleware.js",
+        "supp-db-site/robots.txt",
+        "supp-db-site/vercel.json",
+        "supp-db-site/.gitignore",
+        "supp-db-site/scripts/obfuscate-data.js",
+        "supp-db-site/scripts/upload-premium-content.js",
+        "supp-db-site/seed.js",
+        "supp-db-site/templates/monograph.css",
+        "supp-db-site/.vercel-trigger",
+        "supp-db-site/.env.example",
+        "supp-db-site/convex/siteConfig.ts",
+        "supp-db-site/docker-entrypoint.sh",
+        "supp-db-site/js/auth.js",
+        "supp-db-site/PRD_SUPPLEMENTDB_V2.md",
+        "supp-db-site/PRD_SUPPLEMENTDB_V3.md",
+        "supp-db-site/ENGINEERING_ROADMAP_POST_CONSULTANT.md",
+        "supp-db-site/admin/index.html",
+        "supp-db-site/confirm.html",
+        "supp-db-site/convex/newsletter.ts",
+        "supp-db-site/convex/resend.ts",
+        "supp-db-site/convex/schema.ts",
+        "supp-db-site/docs/project-management/ROADMAP.md",
+        "supp-db-site/guides/anxiety-stress.html",
+        "supp-db-site/guides/cardiovascular.html",
+        "supp-db-site/guides/cognitive-performance.html",
+        "supp-db-site/guides/energy-vitality.html",
+        "supp-db-site/guides/immune-function.html",
+        "supp-db-site/guides/joint-health.html",
+        "supp-db-site/guides/metabolic-health.html",
+        "supp-db-site/guides/sleep.html",
+        "supp-db-site/js/admin-dashboard.js",
+        "supp-db-site/js/admin-metrics.js",
+        "supp-db-site/js/newsletter.js",
+        "supp-db-site/package-lock.json",
+        "supp-db-site/package.json",
+        "supp-db-site/tests/helpers/auth-helpers.js",
+        "supp-db-site/tests/newsletter.spec.js",
+        "supp-db-site/unsubscribe.html",
+        "supp-db-site/convex/http.ts",
+        "supp-db-site/convex/stripe.ts",
+        "supp-db-site/convex/subscriptions.ts",
+        "supp-db-site/convex/users.ts",
+        "supp-db-site/css/pricing.css",
+        "supp-db-site/js/content-gate.js",
+        "supp-db-site/js/pricing.js",
+        "supp-db-site/pricing.html"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-13-bro-46-stripe-pdf-e2e-qa.md",
+          "title": "BRO-46: Stripe Checkout → PDF Delivery End-to-End QA Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-anti-scraping-data-moat.md",
+          "title": "Anti-Scraping Data Moat Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-monograph-preview-wall.md",
+          "title": "Monograph Preview Wall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-25-monograph-preview-wall-design.md",
+          "title": "Monograph Preview Wall — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\DEVELOPER_GUIDE.md",
+          "title": "🛠️ Developer Guide - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\CLAUDE.md",
+          "title": "Evidence-Based Supplement Database - Implementation Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\CHANGELOG.md",
+          "title": "Evidence-Based Supplement Database - Changelog",
+          "type": "changelog"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\DEVELOPMENT_METRICS.md",
+          "title": "Development Metrics & Analytics",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PROJECT_STATUS.md",
+          "title": "Project Status Report - Evidence-Based Supplement Database",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\ROADMAP.md",
+          "title": "SupplementDB — Development Roadmap",
+          "type": "roadmap"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\SPRINT_JOURNAL.md",
+          "title": "SupplementDB — Sprint Journal",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PROJECT_SUMMARY.md",
+          "title": "📋 Project Summary - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-25-admin-analytics-enhancement.md",
+          "title": "Admin Analytics Enhancement Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-25-admin-analytics-enhancement-design.md",
+          "title": "Admin Dashboard Analytics Enhancement — Design Spec",
+          "type": "spec"
+        }
+      ]
+    },
+    {
+      "id": "theme-4",
+      "dirSignature": "supp-db-site/supplements",
+      "heuristicName": "Supp Db Site > Supplements (feat)",
+      "narrativeName": "Supp Db Site > Supplements (feat)",
+      "motivation": "Building new functionality in the supp-db-site/supplements area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (12 commits)",
+        "Spanned 343 files across 2026-03-09 to 2026-04-02"
+      ],
+      "outcome": "Completed 21 commits affecting 343 files.",
+      "commitCount": 21,
+      "fileCount": 343,
+      "commitTypes": {
+        "fix": 8,
+        "feat": 12,
+        "chore": 1
+      },
+      "commits": [
+        {
+          "hash": "b7c27618e1949170cb09bcfdf92a68eb7f30d862",
+          "date": "2026-03-09T22:49:22-04:00",
+          "subject": "feat: P3 content expansion + P4 supplement monograph pages (103 new pages)",
+          "author": "cateyephotos",
+          "filesChanged": 127,
+          "additions": 57706,
+          "deletions": 462,
+          "commitType": "feat"
+        },
+        {
+          "hash": "4dbda7839ed01cb847c90366c8f75ae5f7b24b82",
+          "date": "2026-03-10T00:13:54-04:00",
+          "subject": "feat: clinical journal design system for supplement monograph pages + homepage card fix",
+          "author": "cateyephotos",
+          "filesChanged": 96,
+          "additions": 19975,
+          "deletions": 19137,
+          "commitType": "feat"
+        },
+        {
+          "hash": "600c0168c32de1833d3857ddd93f71351baaafb2",
+          "date": "2026-03-10T03:00:58-04:00",
+          "subject": "feat: Clerk auth + Convex backend + RBAC + admin SaaS metrics dashboard",
+          "author": "cateyephotos",
+          "filesChanged": 167,
+          "additions": 12472,
+          "deletions": 2052,
+          "commitType": "feat"
+        },
+        {
+          "hash": "46c4a4fe49d39503c4255b2b4d40a8866425c163",
+          "date": "2026-03-11T21:07:33-04:00",
+          "subject": "fix: prevent Clerk CDN auto-boot error and add auth unavailable toast",
+          "author": "cateyephotos",
+          "filesChanged": 179,
+          "additions": 501,
+          "deletions": 429,
+          "commitType": "fix"
+        },
+        {
+          "hash": "b4b9c00594e5e1e648babdde687678ff1f1d95b2",
+          "date": "2026-03-13T02:51:36-04:00",
+          "subject": "feat(seo): add Schema.org BreadcrumbList + Article JSON-LD to all pages (BRO-45)",
+          "author": "cateyephotos",
+          "filesChanged": 114,
+          "additions": 459,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "f54398ff02de8330ec69e6cf2d063b1f7e240726",
+          "date": "2026-03-14T03:56:03-04:00",
+          "subject": "feat(supplements): redesign all 93 monograph pages to unified melatonin design system",
+          "author": "cateyephotos",
+          "filesChanged": 186,
+          "additions": 322102,
+          "deletions": 39849,
+          "commitType": "feat"
+        },
+        {
+          "hash": "ca19f427b1680904821cdb9a0535e0714fe6d84a",
+          "date": "2026-03-14T04:51:23-04:00",
+          "subject": "fix(pipeline): close static-HTML gaps, fix slug divergence, regenerate all pages",
+          "author": "cateyephotos",
+          "filesChanged": 100,
+          "additions": 12439,
+          "deletions": 18372,
+          "commitType": "fix"
+        },
+        {
+          "hash": "17ec81a8b687b4a0d583c4f1cc3eafc4a6c68fd5",
+          "date": "2026-03-14T11:56:44-04:00",
+          "subject": "feat(nav): surface Stack Analyzer across all site entry points",
+          "author": "cateyephotos",
+          "filesChanged": 95,
+          "additions": 100,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "493bac19660464e9ce95e5ce13e54c50b6815809",
+          "date": "2026-03-14T13:16:27-04:00",
+          "subject": "fix(infra): Convex auth config, admin bootstrap endpoint, prod URL migration, Docker perf",
+          "author": "cateyephotos",
+          "filesChanged": 135,
+          "additions": 7213,
+          "deletions": 149,
+          "commitType": "fix"
+        },
+        {
+          "hash": "b9919a7b39b1ed4a27b4e991bfbb81b70e849349",
+          "date": "2026-03-15T12:18:29-04:00",
+          "subject": "chore: regenerate all pages with remediated citation data",
+          "author": "cateyephotos",
+          "filesChanged": 147,
+          "additions": 39734,
+          "deletions": 152823,
+          "commitType": "chore"
+        },
+        {
+          "hash": "b29b737e59eba428a307e9f17ab6857a44550c95",
+          "date": "2026-03-18T01:27:23-04:00",
+          "subject": "feat: add $9.97 sleep guide sales page and site-wide CTA component",
+          "author": "cateyephotos",
+          "filesChanged": 141,
+          "additions": 1986,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "928600d90f66d27505fdff005a0976c226c12db4",
+          "date": "2026-03-21T13:26:46-04:00",
+          "subject": "fix: restore melatonin design system template and regenerate all 93 monograph pages",
+          "author": "cateyephotos",
+          "filesChanged": 93,
+          "additions": 154304,
+          "deletions": 39614,
+          "commitType": "fix"
+        },
+        {
+          "hash": "950b4e6a09081e76b6ddd8efe733d73169e12530",
+          "date": "2026-03-25T03:22:59-04:00",
+          "subject": "fix: regenerate all 113 monograph pages with canonical seed.js design system",
+          "author": "cateyephotos",
+          "filesChanged": 99,
+          "additions": 2690,
+          "deletions": 577,
+          "commitType": "fix"
+        },
+        {
+          "hash": "6d3e6d658661d21b7ed3023e0536203a76faaf14",
+          "date": "2026-03-25T04:32:37-04:00",
+          "subject": "feat(seed): insert MONOGRAPH_GATE_POINT marker after section 3",
+          "author": "cateyephotos",
+          "filesChanged": 114,
+          "additions": 228,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "d364f90a852631c6be059ddf15217d242a6ceb5e",
+          "date": "2026-03-25T04:47:06-04:00",
+          "subject": "feat(supplements): regenerate all 113 pages with gate marker + inject gate CSS/JS",
+          "author": "cateyephotos",
+          "filesChanged": 113,
+          "additions": 1370,
+          "deletions": 1144,
+          "commitType": "feat"
+        },
+        {
+          "hash": "1626abcc5614e13eb2860c3e7e577b30ef6314fb",
+          "date": "2026-03-29T16:02:35-04:00",
+          "subject": "fix: QA issues — stale stats, duplicate nav, monograph text duplication",
+          "author": "cateyephotos",
+          "filesChanged": 116,
+          "additions": 1618,
+          "deletions": 3098,
+          "commitType": "fix"
+        },
+        {
+          "hash": "2592aec4ed517838b7fadcbaaf421344c72cdc13",
+          "date": "2026-03-29T18:50:24-04:00",
+          "subject": "feat(seo): add MedicalWebPage, FAQPage, and BreadcrumbList JSON-LD to all monographs",
+          "author": "cateyephotos",
+          "filesChanged": 114,
+          "additions": 809,
+          "deletions": 342,
+          "commitType": "feat"
+        },
+        {
+          "hash": "d406e3a7711ceb5c89e1930e823cafb72a2e1d02",
+          "date": "2026-03-29T19:43:06-04:00",
+          "subject": "feat: add sleep guide CTA banner to monographs + fix pricing stats",
+          "author": "cateyephotos",
+          "filesChanged": 116,
+          "additions": 8096,
+          "deletions": 2,
+          "commitType": "feat"
+        },
+        {
+          "hash": "a80005de0200685ae28ae648c3eab69a7d94ed0e",
+          "date": "2026-03-30T04:14:19-04:00",
+          "subject": "feat(conversion): add newsletter email capture to all 113 monograph pages",
+          "author": "cateyephotos",
+          "filesChanged": 115,
+          "additions": 12406,
+          "deletions": 93,
+          "commitType": "feat"
+        },
+        {
+          "hash": "f7f442257d3b8a8853dd87c218745557b4b1c86a",
+          "date": "2026-04-02T01:42:21-04:00",
+          "subject": "fix: show actual paper titles instead of mechanism names on monograph citations",
+          "author": "cateyephotos",
+          "filesChanged": 114,
+          "additions": 1292,
+          "deletions": 1290,
+          "commitType": "fix"
+        },
+        {
+          "hash": "668378e9b0516800594a15acb20cb748867e2b18",
+          "date": "2026-04-02T02:19:20-04:00",
+          "subject": "fix: populate References section from enhanced citations, not just keyCitations",
+          "author": "cateyephotos",
+          "filesChanged": 110,
+          "additions": 3916,
+          "deletions": 25,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/seed.js",
+        "supp-db-site/supplements/5-htp.html",
+        "supp-db-site/supplements/acetyl-l-carnitine.html",
+        "supp-db-site/supplements/akkermansia-muciniphila.html",
+        "supp-db-site/supplements/alpha-gpc.html",
+        "supp-db-site/supplements/alpha-lipoic-acid.html",
+        "supp-db-site/supplements/aniracetam.html",
+        "supp-db-site/supplements/apigenin.html",
+        "supp-db-site/supplements/ashwagandha.html",
+        "supp-db-site/supplements/astaxanthin.html",
+        "supp-db-site/supplements/b-complex-vitamins.html",
+        "supp-db-site/supplements/bacopa-monnieri.html",
+        "supp-db-site/supplements/berberine.html",
+        "supp-db-site/supplements/beta-alanine.html",
+        "supp-db-site/supplements/betaine.html",
+        "supp-db-site/supplements/bitter-melon.html",
+        "supp-db-site/supplements/black-seed-oil.html",
+        "supp-db-site/supplements/boswellia.html",
+        "supp-db-site/supplements/bovine-colostrum.html",
+        "supp-db-site/supplements/caffeine.html",
+        "supp-db-site/supplements/centella-asiatica.html",
+        "supp-db-site/supplements/chlorella.html",
+        "supp-db-site/supplements/choline.html",
+        "supp-db-site/supplements/chondroitin-sulfate.html",
+        "supp-db-site/supplements/chromium.html",
+        "supp-db-site/supplements/cinnamon-extract.html",
+        "supp-db-site/supplements/cistanche.html",
+        "supp-db-site/supplements/citicoline.html",
+        "supp-db-site/supplements/citrulline-malate.html",
+        "supp-db-site/supplements/collagen-peptides.html",
+        "supp-db-site/supplements/coq10.html",
+        "supp-db-site/supplements/cordyceps.html",
+        "supp-db-site/supplements/creatine.html",
+        "supp-db-site/supplements/dmae.html",
+        "supp-db-site/supplements/echinacea.html",
+        "supp-db-site/supplements/elderberry.html",
+        "supp-db-site/supplements/fenugreek.html",
+        "supp-db-site/supplements/fisetin.html",
+        "supp-db-site/supplements/folate.html",
+        "supp-db-site/supplements/forskolin.html",
+        "supp-db-site/supplements/gaba.html",
+        "supp-db-site/supplements/garlic.html",
+        "supp-db-site/supplements/ginger.html",
+        "supp-db-site/supplements/ginkgo-biloba.html",
+        "supp-db-site/supplements/glucosamine.html",
+        "supp-db-site/supplements/glynac.html",
+        "supp-db-site/supplements/grape-seed-extract.html",
+        "supp-db-site/supplements/green-tea-extract.html",
+        "supp-db-site/supplements/gymnema-sylvestre.html",
+        "supp-db-site/supplements/hawthorn-berry.html"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer: Multi-Goal UX Redesign + Export Features",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-25-monograph-preview-wall-design.md",
+          "title": "Monograph Preview Wall — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\enhanced-citations-validation-report.md",
+          "title": "Enhanced Citations Integration Validation Report",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\ENHANCED_CITATIONS_FINAL_VALIDATION_REPORT.md",
+          "title": "Enhanced Citations Integration Final Validation Report",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATIONS_EXPANSION_PLAN.md",
+          "title": "Enhanced Citations Expansion Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATIONS_PROGRESS_LOG.md",
+          "title": "Enhanced Citations Progress Log",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\GAP_ANALYSIS_SLEEP_GUIDE.md",
+          "title": "Gap Analysis: Sleep Evidence Guide & Main Site Integration",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\GUIDE-REDESIGN-PLAN.md",
+          "title": "Guide Page Redesign Plan: Clinical Journal Dark Theme Migration",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_PILOT_SUPPLEMENTS.md",
+          "title": "Phase 2 Enhanced Citation System - Pilot Supplements",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Quick_Reference_Card.md",
+          "title": "Enhanced Citation System - Quick Reference Card",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\SLEEP_PDF_INVENTORY_AND_OUTLINE.md",
+          "title": "Sleep Evidence Report — 25-Page PDF",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-15-citation-remediation.md",
+          "title": "Citation Data Remediation Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-25-admin-analytics-enhancement-design.md",
+          "title": "Admin Dashboard Analytics Enhancement — Design Spec",
+          "type": "spec"
+        }
+      ]
+    },
+    {
+      "id": "theme-5",
+      "dirSignature": "supp-db-site/docs",
+      "heuristicName": "Supp Db Site > Docs (docs)",
+      "narrativeName": "Supp Db Site > Docs (docs)",
+      "motivation": "Improving documentation in the supp-db-site/docs area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: docs work (9 commits)",
+        "Spanned 2281 files across 2025-08-31 to 2026-04-02"
+      ],
+      "outcome": "Completed 18 commits affecting 2281 files.",
+      "commitCount": 18,
+      "fileCount": 2281,
+      "commitTypes": {
+        "docs": 9,
+        "fix": 4,
+        "feat": 5
+      },
+      "commits": [
+        {
+          "hash": "ea38edc1887b2e77eeae466df070cf94338768d7",
+          "date": "2025-08-31T14:06:57-04:00",
+          "subject": "fix: Phase 1 & 2 Complete - Resolve all duplicate ID conflicts and update Enhanced Citation Loader",
+          "author": "cateyephotos",
+          "filesChanged": 913,
+          "additions": 319861,
+          "deletions": 0,
+          "commitType": "fix"
+        },
+        {
+          "hash": "8c2d8a2aa70984d684b4758a60b1f4b684cc729d",
+          "date": "2026-03-08T19:47:27-04:00",
+          "subject": "feat: add supplement database reconciliation skill and engine",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 899,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "62c7ad787dd9cab010c489e363800000838adcb7",
+          "date": "2026-03-09T16:19:21-04:00",
+          "subject": "docs: add Sprint Journal for daily work tracking and sprint reflections",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 404,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "e49e33ebb37e18faf5a288f7f9770acefe66ce31",
+          "date": "2026-03-09T18:04:29-04:00",
+          "subject": "feat: Phase 3 — Brand & Strategic Positioning",
+          "author": "cateyephotos",
+          "filesChanged": 54,
+          "additions": 3025,
+          "deletions": 73,
+          "commitType": "feat"
+        },
+        {
+          "hash": "78a69cff31808cf2406aabf9d5285dc2fbd4dd29",
+          "date": "2026-03-11T04:07:38-04:00",
+          "subject": "fix: comprehensive citation audit — correct 94 PMIDs, verify 180/182 citations",
+          "author": "cateyephotos",
+          "filesChanged": 63,
+          "additions": 63785,
+          "deletions": 18130,
+          "commitType": "fix"
+        },
+        {
+          "hash": "7774db3f30202f79e81bfd4565e0bbbf106df529",
+          "date": "2026-03-11T21:44:21-04:00",
+          "subject": "feat: Phase 9 — Evidence pages dark journal theme (25 pages, 5 domains)",
+          "author": "cateyephotos",
+          "filesChanged": 46,
+          "additions": 19588,
+          "deletions": 8558,
+          "commitType": "feat"
+        },
+        {
+          "hash": "0919870f154b690a4fc1d983544af46c22f65141",
+          "date": "2026-03-14T02:35:37-04:00",
+          "subject": "feat(compare): Mockup B revolutionary layout for all 10 comparison pages",
+          "author": "cateyephotos",
+          "filesChanged": 13,
+          "additions": 9686,
+          "deletions": 4900,
+          "commitType": "feat"
+        },
+        {
+          "hash": "4e92d1139b94044906a62d2b06e300bec5e73a10",
+          "date": "2026-03-15T12:54:58-04:00",
+          "subject": "feat: add sprint journal - browsable HTML development timeline",
+          "author": "cateyephotos",
+          "filesChanged": 154,
+          "additions": 19906,
+          "deletions": 18625,
+          "commitType": "feat"
+        },
+        {
+          "hash": "914da4f11b051f2ff33f6a148c0dc3c53bef760b",
+          "date": "2026-03-17T16:01:33-04:00",
+          "subject": "docs: add email sequence admin panel design spec + brainstorm artifacts",
+          "author": "cateyephotos",
+          "filesChanged": 16,
+          "additions": 697,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "a07232486e7e27af36a61177e6c5014fa75940c8",
+          "date": "2026-03-17T16:05:08-04:00",
+          "subject": "docs: fix 4 additional spec issues found in second review pass",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 12,
+          "deletions": 6,
+          "commitType": "docs"
+        },
+        {
+          "hash": "1ff1d59e47c3f5b18dcf41a9056a80bdced004ac",
+          "date": "2026-03-17T19:47:38-04:00",
+          "subject": "docs: add email sequence admin panel implementation plan",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 3738,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "0d0226d6e2f31be4f16f6ad283679c1f33839822",
+          "date": "2026-03-25T05:52:28-04:00",
+          "subject": "docs: add admin analytics enhancement design spec",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 330,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "d9b8cff3a097a8839dd07a89aa0a94aa3f4179f4",
+          "date": "2026-03-25T05:56:31-04:00",
+          "subject": "docs: fix spec review issues in analytics enhancement design",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 32,
+          "deletions": 20,
+          "commitType": "docs"
+        },
+        {
+          "hash": "143f84bf59a287f759f79683fd9adf99d6c0df44",
+          "date": "2026-03-25T06:02:24-04:00",
+          "subject": "docs: add admin analytics enhancement implementation plan",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 2304,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "d26b57b0e6280424f8c556ca278a669bbe1f6701",
+          "date": "2026-03-27T04:28:34-04:00",
+          "subject": "fix: restore __CONVEX_URL__ placeholder in all HTML files",
+          "author": "cateyephotos",
+          "filesChanged": 231,
+          "additions": 42769,
+          "deletions": 205,
+          "commitType": "fix"
+        },
+        {
+          "hash": "5e088f63096046a75f972dac479dc60f31505cff",
+          "date": "2026-04-01T21:19:44-04:00",
+          "subject": "fix: replace all supplementdb.co references with supplementdb.info",
+          "author": "cateyephotos",
+          "filesChanged": 1074,
+          "additions": 198716,
+          "deletions": 497,
+          "commitType": "fix"
+        },
+        {
+          "hash": "8d9405e3f2dd90e8500e7fa1b9af528e22b58c20",
+          "date": "2026-04-02T04:56:02-04:00",
+          "subject": "docs: add project-chronicle skill design spec",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 228,
+          "deletions": 0,
+          "commitType": "docs"
+        },
+        {
+          "hash": "d8e603de2b26bc151f1e8b8a1760cd8fee29e5d0",
+          "date": "2026-04-02T05:02:26-04:00",
+          "subject": "docs: add project-chronicle implementation plan",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 137,
+          "deletions": 0,
+          "commitType": "docs"
+        }
+      ],
+      "files": [
+        "supp-db-site/docs/superpowers/plans/2026-04-02-project-chronicle.md",
+        "supp-db-site/docs/superpowers/specs/2026-04-02-project-chronicle-design.md",
+        "supp-db-site/docs/superpowers/plans/2026-03-25-admin-analytics-enhancement.md",
+        "supp-db-site/docs/superpowers/specs/2026-03-25-admin-analytics-enhancement-design.md",
+        "supp-db-site/docs/superpowers/plans/2026-03-17-email-sequence-admin-panel.md",
+        "supp-db-site/docs/superpowers/specs/2026-03-17-email-sequence-admin-panel-design.md",
+        "supp-db-site/docs/project-management/SPRINT_JOURNAL.md",
+        "supp-db-site/.vercelignore",
+        "supp-db-site/7x-outputs/Lever-01-Offers.md",
+        "supp-db-site/7x-outputs/Lever-02-Traffic.md",
+        "supp-db-site/7x-outputs/Lever-03-Leads.md",
+        "supp-db-site/7x-outputs/Lever-04-Buyers.md",
+        "supp-db-site/7x-outputs/Lever-05-Repeat-Buyers.md",
+        "supp-db-site/7x-outputs/Lever-06-Connections.md",
+        "supp-db-site/7x-outputs/Lever-07-Referrals.md",
+        "supp-db-site/7x-outputs/Lever-08-Personality.md",
+        "supp-db-site/7x-outputs/Lever-09-Engagement.md",
+        "supp-db-site/7x-outputs/Lever-10-Conversions.md",
+        "supp-db-site/7x-outputs/Lever-11-Attention.md",
+        "supp-db-site/7x-outputs/Lever-12-Testimonials.md",
+        "supp-db-site/7x-outputs/Lever-13-Authority.md",
+        "supp-db-site/7x-outputs/Lever-14-Pricing.md",
+        "supp-db-site/7x-outputs/Lever-15-Revenue.md",
+        "supp-db-site/7x-outputs/summary.md",
+        "supp-db-site/7x-state.json",
+        "supp-db-site/Claude Skills Ultimate Bundle/AI & Technology/ai-content-policy/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/AI & Technology/ai-ethics-policy/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/AI & Technology/ai-use-case-finder/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/AI & Technology/automation-workflow/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/ad-copy/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/ad-creative-brief/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/ad-performance-report/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/ad-spend-calculator/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/affiliate-program/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/affiliate-recruitment/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/affiliate-terms/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/bundle-creator/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/cross-sell-strategy/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/discount-strategy/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/facebook-ad-campaign/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/google-ads-campaign/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/high-ticket-sales-page/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/linkedin-ad-campaign/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/lookalike-audience-plan/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/media-buy-plan/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/podcast-ad-script/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/retargeting-strategy/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/sales-page/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/tiktok-ad-script/SKILL.md",
+        "supp-db-site/Claude Skills Ultimate Bundle/Ads & Paid Media/tripwire-offer/SKILL.md"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-13-bro-46-stripe-pdf-e2e-qa.md",
+          "title": "BRO-46: Stripe Checkout → PDF Delivery End-to-End QA Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-15-citation-schema-remediation.md",
+          "title": "Enhanced Citation Schema Remediation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-19-mechanism-glossary.md",
+          "title": "Mechanism Glossary Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-23-split-content-paywall.md",
+          "title": "Split-Content Paywall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-anti-scraping-data-moat.md",
+          "title": "Anti-Scraping Data Moat Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-monograph-preview-wall.md",
+          "title": "Monograph Preview Wall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-19-mechanism-glossary-design.md",
+          "title": "Mechanism Glossary — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-25-monograph-preview-wall-design.md",
+          "title": "Monograph Preview Wall — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\DEVELOPER_GUIDE.md",
+          "title": "🛠️ Developer Guide - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\CLAUDE.md",
+          "title": "Evidence-Based Supplement Database - Implementation Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_TEST_REPORT.md",
+          "title": "Comprehensive Test Report: Evidence Bars & Enhanced Citation Modal",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_VERIFICATION_REPORT.md",
+          "title": "Comprehensive Verification Report: Evidence Bar & Enhanced Citation Fixes",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\IMPLEMENTATION_SUMMARY.md",
+          "title": "Enhanced Citation System Modernization - Implementation Summary",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\PHASE-2A-EXPANSION-CONTEXT.md",
+          "title": "Phase 2A Expansion - Complete Context Management Summary",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_EXPANSION_SESSION_20250825.md",
+          "title": "📋 Enhanced Citation Expansion Session - August 25, 2025",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_FORMAT_GUIDE.md",
+          "title": "Enhanced Citation Format Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Enhanced_Citation_Integration_Guide.md",
+          "title": "Enhanced Citation System Integration Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\GUIDE-REDESIGN-PLAN.md",
+          "title": "Guide Page Redesign Plan: Clinical Journal Dark Theme Migration",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\Implementation_Roadmap_Phase2.md",
+          "title": "Enhanced Citation System - Implementation Roadmap Phase 2",
+          "type": "roadmap"
+        },
+        {
+          "path": "supp-db-site\\docs\\MODERNIZATION_GUIDE.md",
+          "title": "Enhanced Citation System Modernization Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PHASE_2_ENHANCED_CITATION_EXPANSION.md",
+          "title": "Phase 2: Enhanced Citation Expansion - Strategic Categories",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PHASE_2_FILE_CATEGORIZATION.md",
+          "title": "📊 Phase 2: Complete File Categorization",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\CHANGELOG.md",
+          "title": "Evidence-Based Supplement Database - Changelog",
+          "type": "changelog"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_CITATION_SCHEMA.md",
+          "title": "Phase 2 Enhanced Citation Schema Design",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_PILOT_SUPPLEMENTS.md",
+          "title": "Phase 2 Enhanced Citation System - Pilot Supplements",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PROJECT_STATUS.md",
+          "title": "Project Status Report - Evidence-Based Supplement Database",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\ROADMAP.md",
+          "title": "SupplementDB — Development Roadmap",
+          "type": "roadmap"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\SPRINT_JOURNAL.md",
+          "title": "SupplementDB — Sprint Journal",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PROJECT_SUMMARY.md",
+          "title": "📋 Project Summary - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Quick_Reference_Card.md",
+          "title": "Enhanced Citation System - Quick Reference Card",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\README.md",
+          "title": "Enhanced Citation System Documentation",
+          "type": "readme"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-15-citation-remediation.md",
+          "title": "Citation Data Remediation Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-15-self-healing-engine.md",
+          "title": "Self-Healing Engine Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-17-email-sequence-admin-panel.md",
+          "title": "Email Sequence Admin Panel Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-25-admin-analytics-enhancement.md",
+          "title": "Admin Analytics Enhancement Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-04-02-project-chronicle.md",
+          "title": "Project Chronicle Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-17-email-sequence-admin-panel-design.md",
+          "title": "Email Sequence Admin Panel — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-25-admin-analytics-enhancement-design.md",
+          "title": "Admin Dashboard Analytics Enhancement — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-04-02-project-chronicle-design.md",
+          "title": "Project Chronicle — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\TECHNICAL_DEBT_CLEANUP_PLAN.md",
+          "title": "🧹 Technical Debt Cleanup & Project Organization Plan",
+          "type": "plan"
+        }
+      ]
+    },
+    {
+      "id": "theme-6",
+      "dirSignature": "supp-db-site/js",
+      "heuristicName": "Supp Db Site > Js (feat)",
+      "narrativeName": "Supp Db Site > Js (feat)",
+      "motivation": "Building new functionality in the supp-db-site/js area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (12 commits)",
+        "Spanned 16 files across 2026-03-08 to 2026-03-31"
+      ],
+      "outcome": "Completed 15 commits affecting 16 files.",
+      "commitCount": 15,
+      "fileCount": 16,
+      "commitTypes": {
+        "fix": 3,
+        "feat": 12
+      },
+      "commits": [
+        {
+          "hash": "175da5a475d5588af1eaf39a3cee5c95619cb3dc",
+          "date": "2026-03-08T13:19:54-04:00",
+          "subject": "feat: migrate UI to Clinical Journal design with evidence pip indicators",
+          "author": "cateyephotos",
+          "filesChanged": 5,
+          "additions": 273,
+          "deletions": 209,
+          "commitType": "feat"
+        },
+        {
+          "hash": "20a4fcf3d86e70a722ce7851bcf365d8bb7070aa",
+          "date": "2026-03-16T10:21:13-04:00",
+          "subject": "feat(ui): add smart sort toggle, relevance data loader, and multi-goal state",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 105,
+          "deletions": 10,
+          "commitType": "feat"
+        },
+        {
+          "hash": "5707321dc4414751a07b3269fcd0df604e9ac6df",
+          "date": "2026-03-16T10:24:14-04:00",
+          "subject": "feat(ui): multi-goal selection with progressive disclosure and goal promotion",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 122,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "2dd422e23a8756f6d6c8b9fdf1540bc93d81aa4a",
+          "date": "2026-03-16T10:26:08-04:00",
+          "subject": "feat(ui): relevance-sorted supplement dropdown with problems.js data",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 74,
+          "deletions": 18,
+          "commitType": "feat"
+        },
+        {
+          "hash": "208a40f0218139067c277c9782b834dfe57c4011",
+          "date": "2026-03-16T10:27:28-04:00",
+          "subject": "feat(ui): update runAnalysis PostHog tracking and history rendering for multi-goal",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 16,
+          "deletions": 5,
+          "commitType": "feat"
+        },
+        {
+          "hash": "a3476caa5b3834d803f7bb7333dc4b80f689e850",
+          "date": "2026-03-16T10:30:49-04:00",
+          "subject": "feat(ui): tabbed dual-goal results with score donuts, compatibility card, and tab navigation",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 207,
+          "deletions": 22,
+          "commitType": "feat"
+        },
+        {
+          "hash": "abfb4b226e62326a47990a5aa0b305658947b221",
+          "date": "2026-03-18T12:36:15-04:00",
+          "subject": "fix: trim whitespace from env vars to prevent Convex WebSocket failures",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 104,
+          "deletions": 2,
+          "commitType": "fix"
+        },
+        {
+          "hash": "33f3fccc100cab36e53426843d6549887991e8cc",
+          "date": "2026-03-23T20:23:07-04:00",
+          "subject": "feat(rbac): add canAccessSpecificGuide method for guide-level access checks",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 14,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "a49d89a5e47205ec10c0798bfa292281c4550a8c",
+          "date": "2026-03-23T20:24:47-04:00",
+          "subject": "feat(gate): rewrite content gate for split-content paywall with dual-CTA overlay",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 362,
+          "deletions": 194,
+          "commitType": "feat"
+        },
+        {
+          "hash": "b6d1c3beb9ba464644e03b6e1dc35514f0b79200",
+          "date": "2026-03-25T04:35:52-04:00",
+          "subject": "feat: add monograph-gate.js for supplement preview wall",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 267,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "9df2d3e19ee918faa93e4766a795faa5e86080cc",
+          "date": "2026-03-25T06:04:37-04:00",
+          "subject": "feat(SUPP-31): capture UTM params in analytics and pass to Convex",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 13,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "473d7ec517bbe386e53e5db902dcae227d1249bd",
+          "date": "2026-03-25T06:17:38-04:00",
+          "subject": "feat: add all new analytics fetcher functions to admin-metrics.js",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 222,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "fe61f35d71f64660daee8ed188b04980d52c16cd",
+          "date": "2026-03-25T06:47:26-04:00",
+          "subject": "feat: add admin-analytics-panels.js rendering module and wire up section navigation",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 934,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "ffe4f7d127ac866a75ae6ea228ec6eb02754866d",
+          "date": "2026-03-27T03:41:23-04:00",
+          "subject": "fix: prevent infinite refresh loop on monograph pages for signed-in users",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 14,
+          "deletions": 3,
+          "commitType": "fix"
+        },
+        {
+          "hash": "21afe9fbb7a024139d3d555a35fffc71f2c00701",
+          "date": "2026-03-31T15:40:36-04:00",
+          "subject": "fix: add OAuth redirect callback handler for static site login",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 20,
+          "deletions": 0,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/js/auth.js",
+        "supp-db-site/js/monograph-gate.js",
+        "supp-db-site/js/admin-analytics-panels.js",
+        "supp-db-site/js/admin-dashboard.js",
+        "supp-db-site/js/admin-metrics.js",
+        "supp-db-site/js/analytics-enhanced.js",
+        "supp-db-site/js/convex-client.js",
+        "supp-db-site/js/content-gate.js",
+        "supp-db-site/js/rbac.js",
+        "supp-db-site/scripts/vercel-build.js",
+        "supp-db-site/js/stack-analyzer.js",
+        "supp-db-site/index.html",
+        "supp-db-site/js/CitationRenderer.js",
+        "supp-db-site/js/PerformanceOptimizer.js",
+        "supp-db-site/js/TemplateSystem.js",
+        "supp-db-site/js/app.modernized.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\guides\\growth-kit-pr.md",
+          "title": "Growth Kit - Content Marketing Automation Commands",
+          "type": "doc"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-23-split-content-paywall.md",
+          "title": "Split-Content Paywall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-monograph-preview-wall.md",
+          "title": "Monograph Preview Wall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer: Multi-Goal UX Redesign + Export Features",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-23-split-content-paywall-design.md",
+          "title": "Split-Content Paywall Design",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-25-monograph-preview-wall-design.md",
+          "title": "Monograph Preview Wall — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\GUIDE-REDESIGN-PLAN.md",
+          "title": "Guide Page Redesign Plan: Clinical Journal Dark Theme Migration",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\DEVELOPMENT_METRICS.md",
+          "title": "Development Metrics & Analytics",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-25-admin-analytics-enhancement.md",
+          "title": "Admin Analytics Enhancement Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-25-admin-analytics-enhancement-design.md",
+          "title": "Admin Dashboard Analytics Enhancement — Design Spec",
+          "type": "spec"
+        }
+      ]
+    },
+    {
+      "id": "theme-7",
+      "dirSignature": "supp-db-site/guides",
+      "heuristicName": "Supp Db Site > Guides (feat)",
+      "narrativeName": "Supp Db Site > Guides (feat)",
+      "motivation": "Building new functionality in the supp-db-site/guides area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (6 commits)",
+        "Spanned 70 files across 2026-03-10 to 2026-04-01"
+      ],
+      "outcome": "Completed 11 commits affecting 70 files.",
+      "commitCount": 11,
+      "fileCount": 70,
+      "commitTypes": {
+        "fix": 5,
+        "feat": 6
+      },
+      "commits": [
+        {
+          "hash": "8990a1b96f668fe1859aeb3a2f95a2c373fa125b",
+          "date": "2026-03-10T21:03:41-04:00",
+          "subject": "feat: Phase 8 — Guide library expansion from 8 to 20 evidence guides",
+          "author": "cateyephotos",
+          "filesChanged": 27,
+          "additions": 15049,
+          "deletions": 418,
+          "commitType": "feat"
+        },
+        {
+          "hash": "f949570a0be215e81eb950cf479ea2e01e4d4b4f",
+          "date": "2026-03-11T16:36:48-04:00",
+          "subject": "feat: Stack Analyzer MVP — AI-powered supplement stack evaluation tool",
+          "author": "cateyephotos",
+          "filesChanged": 29,
+          "additions": 4110,
+          "deletions": 21,
+          "commitType": "feat"
+        },
+        {
+          "hash": "b3fd3a0762314f8311cbaeb30bcbdf75004585be",
+          "date": "2026-03-19T02:26:39-04:00",
+          "subject": "fix: reconcile sleep guide citations — 16 → 85 PubMed-verified references",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1040,
+          "deletions": 50,
+          "commitType": "fix"
+        },
+        {
+          "hash": "86c219c271659a9cf9bc964c30ef77a2c591a4fe",
+          "date": "2026-03-19T03:04:40-04:00",
+          "subject": "feat: reconcile all 20 evidence guide citations with PubMed-verified data",
+          "author": "cateyephotos",
+          "filesChanged": 20,
+          "additions": 5189,
+          "deletions": 4027,
+          "commitType": "feat"
+        },
+        {
+          "hash": "565aa74e4acb75a9c1c59766844c8a6285ea8ce7",
+          "date": "2026-03-19T03:11:44-04:00",
+          "subject": "fix: add clerk-key and convex-url meta tags to all evidence guides",
+          "author": "cateyephotos",
+          "filesChanged": 19,
+          "additions": 38,
+          "deletions": 0,
+          "commitType": "fix"
+        },
+        {
+          "hash": "c6037f485d953bfc799b6e28defae1824972178e",
+          "date": "2026-03-19T03:37:02-04:00",
+          "subject": "fix: inject citation tab-switching JS into all 19 evidence guides",
+          "author": "cateyephotos",
+          "filesChanged": 19,
+          "additions": 361,
+          "deletions": 0,
+          "commitType": "fix"
+        },
+        {
+          "hash": "d340d7935a80c0edb1e092dec364fb4feea79871",
+          "date": "2026-03-19T04:15:27-04:00",
+          "subject": "feat: build mechanism glossary page with search and category navigation",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 2867,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "5f51d94a330de922d55b2fdd6de542b6e87e17fe",
+          "date": "2026-03-19T09:02:57-04:00",
+          "subject": "feat: mechanism glossary with 296 descriptions and linked guide pills",
+          "author": "cateyephotos",
+          "filesChanged": 22,
+          "additions": 4448,
+          "deletions": 3838,
+          "commitType": "feat"
+        },
+        {
+          "hash": "c82676cd2866dc7a29bb5a426a245f9aac8e3df2",
+          "date": "2026-03-23T20:20:45-04:00",
+          "subject": "feat(sleep): inject soft sign-up nudge banner into free sleep guide",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 101,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "35409caf904f16cf4fe3dabd7ca556acb07e62d2",
+          "date": "2026-03-23T23:42:08-04:00",
+          "subject": "fix: move reveal observer script before split marker so teaser sections render",
+          "author": "cateyephotos",
+          "filesChanged": 21,
+          "additions": 619,
+          "deletions": 28095,
+          "commitType": "fix"
+        },
+        {
+          "hash": "6ee5b5452f67941810c1fcb85ecb6e001909abea",
+          "date": "2026-04-01T20:20:46-04:00",
+          "subject": "fix: remove FDA compliance badges and revise methodology page",
+          "author": "cateyephotos",
+          "filesChanged": 49,
+          "additions": 16,
+          "deletions": 163,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/categories/adaptogens.html",
+        "supp-db-site/categories/amino-acids.html",
+        "supp-db-site/categories/anti-inflammatory.html",
+        "supp-db-site/categories/antioxidants.html",
+        "supp-db-site/categories/essential-nutrients.html",
+        "supp-db-site/categories/herbal-extracts.html",
+        "supp-db-site/categories/joint-support.html",
+        "supp-db-site/categories/metabolic-support.html",
+        "supp-db-site/categories/nootropics.html",
+        "supp-db-site/categories/performance-enhancers.html",
+        "supp-db-site/categories/polyphenols.html",
+        "supp-db-site/categories/sleep-support.html",
+        "supp-db-site/compare/ashwagandha-vs-rhodiola.html",
+        "supp-db-site/compare/bacopa-vs-ginkgo.html",
+        "supp-db-site/compare/coq10-vs-pqq.html",
+        "supp-db-site/compare/creatine-vs-beta-alanine.html",
+        "supp-db-site/compare/l-theanine-vs-5-htp.html",
+        "supp-db-site/compare/lions-mane-vs-bacopa.html",
+        "supp-db-site/compare/magnesium-vs-melatonin.html",
+        "supp-db-site/compare/mockup-a-refined.html",
+        "supp-db-site/compare/mockup-b-revolutionary.html",
+        "supp-db-site/compare/omega-3-vs-coq10.html",
+        "supp-db-site/compare/turmeric-vs-boswellia.html",
+        "supp-db-site/compare/vitamin-d-vs-magnesium.html",
+        "supp-db-site/guides/anxiety-stress.html",
+        "supp-db-site/guides/brain-fog.html",
+        "supp-db-site/guides/cardiovascular.html",
+        "supp-db-site/guides/cognitive-performance.html",
+        "supp-db-site/guides/energy-vitality.html",
+        "supp-db-site/guides/gut-brain.html",
+        "supp-db-site/guides/immune-function.html",
+        "supp-db-site/guides/joint-health.html",
+        "supp-db-site/guides/longevity.html",
+        "supp-db-site/guides/memory-aging.html",
+        "supp-db-site/guides/mens-health.html",
+        "supp-db-site/guides/metabolic-health.html",
+        "supp-db-site/guides/mood-support.html",
+        "supp-db-site/guides/muscle-strength.html",
+        "supp-db-site/guides/nootropic-stacks.html",
+        "supp-db-site/guides/recovery.html",
+        "supp-db-site/guides/safety-interactions.html",
+        "supp-db-site/guides/sleep.html",
+        "supp-db-site/guides/stress-resilience.html",
+        "supp-db-site/guides/womens-health.html",
+        "supp-db-site/methodology.html",
+        "supp-db-site/scripts/generate-category-pages.js",
+        "supp-db-site/scripts/generate-compare-pages.js",
+        "supp-db-site/scripts/generate-guide-pages.js",
+        "supp-db-site/scripts/generate-supplement-pages.js",
+        "supp-db-site/guides/sleep-sales.html"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-19-mechanism-glossary.md",
+          "title": "Mechanism Glossary Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer: Multi-Goal UX Redesign + Export Features",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-19-mechanism-glossary-design.md",
+          "title": "Mechanism Glossary — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-21-guide-reassessment-system-design.md",
+          "title": "Evidence Guide Reassessment System",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\DEVELOPER_GUIDE.md",
+          "title": "🛠️ Developer Guide - Evidence-Based Supplement Database",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\CLAUDE.md",
+          "title": "Evidence-Based Supplement Database - Implementation Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_TEST_REPORT.md",
+          "title": "Comprehensive Test Report: Evidence Bars & Enhanced Citation Modal",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_VERIFICATION_REPORT.md",
+          "title": "Comprehensive Verification Report: Evidence Bar & Enhanced Citation Fixes",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\parallel-agent-orchestration-plan.md",
+          "title": "Parallel Agent Orchestration Plan - Phase 2A Expansion",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\PHASE-2A-EXPANSION-CONTEXT.md",
+          "title": "Phase 2A Expansion - Complete Context Management Summary",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\EVIDENCE_PROFILE_GUIDE.md",
+          "title": "Evidence Profile Evaluation Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\GAP_ANALYSIS_SLEEP_GUIDE.md",
+          "title": "Gap Analysis: Sleep Evidence Guide & Main Site Integration",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PHASE_2_ENHANCED_CITATION_EXPANSION.md",
+          "title": "Phase 2: Enhanced Citation Expansion - Strategic Categories",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\SLEEP_PDF_INVENTORY_AND_OUTLINE.md",
+          "title": "Sleep Evidence Report — 25-Page PDF",
+          "type": "report"
+        }
+      ]
+    },
+    {
+      "id": "theme-8",
+      "dirSignature": "supp-db-site/scripts",
+      "heuristicName": "Supp Db Site > Scripts (feat)",
+      "narrativeName": "Supp Db Site > Scripts (feat)",
+      "motivation": "Building new functionality in the supp-db-site/scripts area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (7 commits)",
+        "Spanned 6 files across 2026-03-14 to 2026-03-29"
+      ],
+      "outcome": "Completed 11 commits affecting 6 files.",
+      "commitCount": 11,
+      "fileCount": 6,
+      "commitTypes": {
+        "fix": 4,
+        "feat": 7
+      },
+      "commits": [
+        {
+          "hash": "1e0db3d24a9370ec89aa84ef9f23f99969e5647d",
+          "date": "2026-03-14T05:29:42-04:00",
+          "subject": "feat(pipeline): add citation integrity verifier + anti-hallucination skill guardrails",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 476,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "22cf3053f59be37839290e7c88a62ae818d4328d",
+          "date": "2026-03-19T03:25:43-04:00",
+          "subject": "fix: add clerk-key and convex-url meta tags to guide generation template",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 3,
+          "deletions": 1,
+          "commitType": "fix"
+        },
+        {
+          "hash": "f9ffc244344740d0640ac7b3a3ff2ba0c1ac9bcc",
+          "date": "2026-03-19T03:38:31-04:00",
+          "subject": "fix: add citation tab JS, CSS, and clerk-key meta to guide generator",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 30,
+          "deletions": 1,
+          "commitType": "fix"
+        },
+        {
+          "hash": "9cd15b3bbe1e7dd05ac32ec9a76ecdb4a8db62d7",
+          "date": "2026-03-19T04:18:10-04:00",
+          "subject": "feat: link mechanism pills and summary text to glossary in guide generator",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 32,
+          "deletions": 2,
+          "commitType": "feat"
+        },
+        {
+          "hash": "5c7c89d12eeb0a661fabbef2259ef9164639f363",
+          "date": "2026-03-21T14:18:07-04:00",
+          "subject": "feat: add QC validation gate and pipeline reviewer agent",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 434,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "8a5be2aba887da76ca647e1c2719ce5e4ee0af35",
+          "date": "2026-03-23T20:18:49-04:00",
+          "subject": "feat(generator): split guide pages into teaser HTML + premium JSON chunks",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 264,
+          "deletions": 19,
+          "commitType": "feat"
+        },
+        {
+          "hash": "fa4e4c99d1a611ef3add0667130fef4f1f44b453",
+          "date": "2026-03-25T02:34:48-04:00",
+          "subject": "feat: add build-time honeypot injection for monograph pages",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 129,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "1152c927b24a5c88a627908319f54a0ded79e07f",
+          "date": "2026-03-25T02:35:44-04:00",
+          "subject": "feat: wire anti-scraping pipeline into Vercel build",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 11,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "46d267975eea14fc1b6573e44b63fe7f6190cbae",
+          "date": "2026-03-25T04:39:55-04:00",
+          "subject": "feat(inject-auth): add supplement page support for monograph gate",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 67,
+          "deletions": 24,
+          "commitType": "feat"
+        },
+        {
+          "hash": "bb16b6b56d913a3b77e1548d91e5ee439ac89f54",
+          "date": "2026-03-25T04:46:19-04:00",
+          "subject": "fix(inject-auth): add header comment and clarify separate supplement constant",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 2,
+          "deletions": 0,
+          "commitType": "fix"
+        },
+        {
+          "hash": "bed418f09c3de9f2e8253bbfbc44e8396cb87292",
+          "date": "2026-03-29T19:08:43-04:00",
+          "subject": "fix: skip Google verification files in Vercel build script",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1,
+          "deletions": 1,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/scripts/vercel-build.js",
+        "supp-db-site/scripts/inject-auth.js",
+        "supp-db-site/scripts/inject-honeypots.js",
+        "supp-db-site/scripts/generate-guide-pages.js",
+        "supp-db-site/scripts/qc-validate-supplement.js",
+        "supp-db-site/scripts/verify-citations.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-19-mechanism-glossary.md",
+          "title": "Mechanism Glossary Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-anti-scraping-data-moat.md",
+          "title": "Anti-Scraping Data Moat Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-19-mechanism-glossary-design.md",
+          "title": "Mechanism Glossary — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_FORMAT_GUIDE.md",
+          "title": "Enhanced Citation Format Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Enhanced_Citation_Integration_Guide.md",
+          "title": "Enhanced Citation System Integration Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\MODERNIZATION_GUIDE.md",
+          "title": "Enhanced Citation System Modernization Guide",
+          "type": "doc"
+        }
+      ]
+    },
+    {
+      "id": "theme-9",
+      "dirSignature": "supp-db-site/healing-engine",
+      "heuristicName": "Supp Db Site > Healing Engine (feat)",
+      "narrativeName": "Supp Db Site > Healing Engine (feat)",
+      "motivation": "Building new functionality in the supp-db-site/healing-engine area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (8 commits)",
+        "Spanned 40 files across 2026-03-15 to 2026-03-15"
+      ],
+      "outcome": "Completed 9 commits affecting 40 files.",
+      "commitCount": 9,
+      "fileCount": 40,
+      "commitTypes": {
+        "feat": 8,
+        "fix": 1
+      },
+      "commits": [
+        {
+          "hash": "76ca727f1d4b94aa55b4fc61a39aa96012f6e1f2",
+          "date": "2026-03-15T10:07:43-04:00",
+          "subject": "feat(healing): add Claude-orchestrated self-healing engine",
+          "author": "cateyephotos",
+          "filesChanged": 31,
+          "additions": 4902,
+          "deletions": 4,
+          "commitType": "feat"
+        },
+        {
+          "hash": "dcfbc6806625b9d190e69f3e57fafe24b8b70660",
+          "date": "2026-03-15T10:39:01-04:00",
+          "subject": "fix(healing): align site-checker slug logic with canonical slugify",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 3,
+          "deletions": 3,
+          "commitType": "fix"
+        },
+        {
+          "hash": "1f0702f8bdaa4553ac550d5819a9c4894403b508",
+          "date": "2026-03-15T11:36:53-04:00",
+          "subject": "feat(healing): add PubMed esearch API for claim-based citation lookup",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 45,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "22e2f08aaaf408d290168098ac98282eee0a54b0",
+          "date": "2026-03-15T11:40:39-04:00",
+          "subject": "feat(healing): add writeEnhancedFile for round-trip enhanced citation editing",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 64,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "775ffdb696fd77cf2340cefdc8f6d357c97eda84",
+          "date": "2026-03-15T11:44:08-04:00",
+          "subject": "feat(healing): Phase 1 - flag evidence quality with PubMed cross-validation",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 217,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "389dddf7ab34579cb711922db243139a9e151031",
+          "date": "2026-03-15T11:48:02-04:00",
+          "subject": "feat(healing): Phase 2 - PubMed-driven re-research engine for claim-based citation lookup",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 200,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "c0d726a10909d5fa3406b2902b2c1e401e33f675",
+          "date": "2026-03-15T11:50:22-04:00",
+          "subject": "feat(healing): Phase 3 - replacement verifier with relevance threshold and archival",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 211,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "4d431cc5570fd6f1dd043bea520912a8ef92d903",
+          "date": "2026-03-15T11:52:34-04:00",
+          "subject": "feat(healing): Phase 4 - page regeneration orchestrator with visual diff",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 120,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "a27fbf0e7925ca5eea03ed245904d25b6040176c",
+          "date": "2026-03-15T11:54:36-04:00",
+          "subject": "feat(healing): end-to-end remediation orchestrator with 4-phase pipeline",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 106,
+          "deletions": 1,
+          "commitType": "feat"
+        }
+      ],
+      "files": [
+        "supp-db-site/healing-engine/scripts/remediate-supplement.js",
+        "supp-db-site/package.json",
+        "supp-db-site/healing-engine/scripts/regenerate-and-diff.js",
+        "supp-db-site/tests/healing-engine/regenerate-diff.spec.js",
+        "supp-db-site/healing-engine/scripts/verify-replacements.js",
+        "supp-db-site/tests/healing-engine/verify-replacements.spec.js",
+        "supp-db-site/healing-engine/scripts/re-research-supplement.js",
+        "supp-db-site/tests/healing-engine/re-research.spec.js",
+        "supp-db-site/healing-engine/scripts/flag-evidence-quality.js",
+        "supp-db-site/tests/healing-engine/flag-evidence.spec.js",
+        "supp-db-site/healing-engine/utils/schema.js",
+        "supp-db-site/tests/healing-engine/utils.spec.js",
+        "supp-db-site/healing-engine/config.js",
+        "supp-db-site/healing-engine/fixers/batch-api-client.js",
+        "supp-db-site/healing-engine/healers/site-checker.js",
+        "supp-db-site/docs/superpowers/plans/2026-03-15-self-healing-engine.md",
+        "supp-db-site/healing-engine/fixers/auto-fixer.js",
+        "supp-db-site/healing-engine/fixers/page-regenerator.js",
+        "supp-db-site/healing-engine/healers/browser-checker.js",
+        "supp-db-site/healing-engine/healers/citation-healer.js",
+        "supp-db-site/healing-engine/healers/content-quality.js",
+        "supp-db-site/healing-engine/healers/data-validator.js",
+        "supp-db-site/healing-engine/healers/link-validator.js",
+        "supp-db-site/healing-engine/reporters/report-generator.js",
+        "supp-db-site/healing-engine/run-healing.js",
+        "supp-db-site/healing-engine/utils/doi-utils.js",
+        "supp-db-site/healing-engine/utils/logger.js",
+        "supp-db-site/healing-engine/utils/pmid-utils.js",
+        "supp-db-site/tests/healing-engine/auto-fixer.spec.js",
+        "supp-db-site/tests/healing-engine/batch-api-client.spec.js",
+        "supp-db-site/tests/healing-engine/browser-checker.spec.js",
+        "supp-db-site/tests/healing-engine/citation-healer.spec.js",
+        "supp-db-site/tests/healing-engine/config.spec.js",
+        "supp-db-site/tests/healing-engine/content-quality.spec.js",
+        "supp-db-site/tests/healing-engine/data-validator.spec.js",
+        "supp-db-site/tests/healing-engine/integration.spec.js",
+        "supp-db-site/tests/healing-engine/link-validator.spec.js",
+        "supp-db-site/tests/healing-engine/page-regenerator.spec.js",
+        "supp-db-site/tests/healing-engine/report-generator.spec.js",
+        "supp-db-site/tests/healing-engine/site-checker.spec.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-15-citation-schema-remediation.md",
+          "title": "Enhanced Citation Schema Remediation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_TEST_REPORT.md",
+          "title": "Comprehensive Test Report: Evidence Bars & Enhanced Citation Modal",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_VERIFICATION_REPORT.md",
+          "title": "Comprehensive Verification Report: Evidence Bar & Enhanced Citation Fixes",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\IMPLEMENTATION_SUMMARY.md",
+          "title": "Enhanced Citation System Modernization - Implementation Summary",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_EXPANSION_SESSION_20250825.md",
+          "title": "📋 Enhanced Citation Expansion Session - August 25, 2025",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\ENHANCED_CITATION_FORMAT_GUIDE.md",
+          "title": "Enhanced Citation Format Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Enhanced_Citation_Integration_Guide.md",
+          "title": "Enhanced Citation System Integration Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Implementation_Roadmap_Phase2.md",
+          "title": "Enhanced Citation System - Implementation Roadmap Phase 2",
+          "type": "roadmap"
+        },
+        {
+          "path": "supp-db-site\\docs\\MODERNIZATION_GUIDE.md",
+          "title": "Enhanced Citation System Modernization Guide",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\PHASE_2_ENHANCED_CITATION_EXPANSION.md",
+          "title": "Phase 2: Enhanced Citation Expansion - Strategic Categories",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_CITATION_SCHEMA.md",
+          "title": "Phase 2 Enhanced Citation Schema Design",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\PHASE_2_PILOT_SUPPLEMENTS.md",
+          "title": "Phase 2 Enhanced Citation System - Pilot Supplements",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\Quick_Reference_Card.md",
+          "title": "Enhanced Citation System - Quick Reference Card",
+          "type": "doc"
+        },
+        {
+          "path": "supp-db-site\\docs\\README.md",
+          "title": "Enhanced Citation System Documentation",
+          "type": "readme"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-15-self-healing-engine.md",
+          "title": "Self-Healing Engine Implementation Plan",
+          "type": "plan"
+        }
+      ]
+    },
+    {
+      "id": "theme-10",
+      "dirSignature": "supp-db-site/admin",
+      "heuristicName": "Supp Db Site > Admin (feat)",
+      "narrativeName": "Supp Db Site > Admin (feat)",
+      "motivation": "Building new functionality in the supp-db-site/admin area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (7 commits)",
+        "Spanned 7 files across 2026-03-14 to 2026-03-25"
+      ],
+      "outcome": "Completed 7 commits affecting 7 files.",
+      "commitCount": 7,
+      "fileCount": 7,
+      "commitTypes": {
+        "feat": 7
+      },
+      "commits": [
+        {
+          "hash": "0fbef648a9e83813d1068298dba725825abab210",
+          "date": "2026-03-14T12:06:29-04:00",
+          "subject": "feat(admin): add Configuration & Services panel with env var health + Stack Analyzer usage",
+          "author": "cateyephotos",
+          "filesChanged": 4,
+          "additions": 1255,
+          "deletions": 1,
+          "commitType": "feat"
+        },
+        {
+          "hash": "97bcbdc3715aef60459a51839773bc6e00d6f2a1",
+          "date": "2026-03-14T12:32:41-04:00",
+          "subject": "feat(admin): replace dollar cost metrics with WAT (Weighted API Token) profitability metric",
+          "author": "cateyephotos",
+          "filesChanged": 4,
+          "additions": 79,
+          "deletions": 15,
+          "commitType": "feat"
+        },
+        {
+          "hash": "8bd4fa8afd6508a9965a6d314a2e18f567283ada",
+          "date": "2026-03-14T16:48:33-04:00",
+          "subject": "feat(admin): config resolution paths + health check false-positive fix",
+          "author": "cateyephotos",
+          "filesChanged": 4,
+          "additions": 233,
+          "deletions": 16,
+          "commitType": "feat"
+        },
+        {
+          "hash": "69b126221923dc76d94df51ca0ae3c8e092d45ac",
+          "date": "2026-03-17T20:27:18-04:00",
+          "subject": "feat(admin): add Email Sequences admin panel (Tasks 13-15)",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 985,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "7d333a53bbde16cbf6619bbdadd7ce68ca87d8f9",
+          "date": "2026-03-17T20:31:46-04:00",
+          "subject": "feat: add analytics view and manual enrollment modal to email admin",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 223,
+          "deletions": 5,
+          "commitType": "feat"
+        },
+        {
+          "hash": "9f63b4a13f573c85db6f9569e71eb4f8da5b1110",
+          "date": "2026-03-25T06:22:19-04:00",
+          "subject": "feat: add Search Intelligence, Traffic, Content Performance, Journeys sections and upgrade Activity Log",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 243,
+          "deletions": 65,
+          "commitType": "feat"
+        },
+        {
+          "hash": "ad8440b7f540376c015db86915978e01987b7813",
+          "date": "2026-03-25T06:24:31-04:00",
+          "subject": "feat: add admin-analytics.css styles for new dashboard panels",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 510,
+          "deletions": 0,
+          "commitType": "feat"
+        }
+      ],
+      "files": [
+        "supp-db-site/admin/admin-analytics.css",
+        "supp-db-site/admin/index.html",
+        "supp-db-site/admin/email.js",
+        "supp-db-site/admin/email.css",
+        "supp-db-site/admin/admin.css",
+        "supp-db-site/convex/adminConfig.ts",
+        "supp-db-site/js/admin-config.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer: Multi-Goal UX Redesign + Export Features",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-17-email-sequence-admin-panel.md",
+          "title": "Email Sequence Admin Panel Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-25-admin-analytics-enhancement.md",
+          "title": "Admin Analytics Enhancement Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-17-email-sequence-admin-panel-design.md",
+          "title": "Email Sequence Admin Panel — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\specs\\2026-03-25-admin-analytics-enhancement-design.md",
+          "title": "Admin Dashboard Analytics Enhancement — Design Spec",
+          "type": "spec"
+        }
+      ]
+    },
+    {
+      "id": "theme-11",
+      "dirSignature": "supp-db-site/tests",
+      "heuristicName": "Supp Db Site > Tests (test)",
+      "narrativeName": "Supp Db Site > Tests (test)",
+      "motivation": "Adding test coverage in the supp-db-site/tests area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: test work (5 commits)",
+        "Spanned 8 files across 2026-03-13 to 2026-03-25"
+      ],
+      "outcome": "Completed 7 commits affecting 8 files.",
+      "commitCount": 7,
+      "fileCount": 8,
+      "commitTypes": {
+        "fix": 2,
+        "test": 5
+      },
+      "commits": [
+        {
+          "hash": "525da45f9faa728154a511dc91c0e5c689d1efed",
+          "date": "2026-03-13T10:36:11-04:00",
+          "subject": "test(bro-46): add direct API tests for pdf-generator service",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 220,
+          "deletions": 0,
+          "commitType": "test"
+        },
+        {
+          "hash": "b2089369da7887beac7f362aa1ae4fd7eca88e81",
+          "date": "2026-03-13T10:45:39-04:00",
+          "subject": "test(bro-46): add guide-success UI state tests",
+          "author": "cateyephotos",
+          "filesChanged": 3,
+          "additions": 280,
+          "deletions": 0,
+          "commitType": "test"
+        },
+        {
+          "hash": "8c551a21cb88af9cc4d191f54ef392e51412f31b",
+          "date": "2026-03-13T10:53:40-04:00",
+          "subject": "test(bro-46): add stripe webhook idempotency test",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 371,
+          "deletions": 0,
+          "commitType": "test"
+        },
+        {
+          "hash": "2cf773267c94ae0a5836209b7a045e79002dbf64",
+          "date": "2026-03-13T11:03:01-04:00",
+          "subject": "test(bro-46): add mobile checkout flow tests @mobile",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 186,
+          "deletions": 0,
+          "commitType": "test"
+        },
+        {
+          "hash": "acebcb9346fb998c2990367b0cf2b04c2523adae",
+          "date": "2026-03-15T12:20:02-04:00",
+          "subject": "fix(test): update rhodiola test for post-remediation data",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 5,
+          "deletions": 2,
+          "commitType": "fix"
+        },
+        {
+          "hash": "b8820331491f31f68dfc325a4be769ebe8c556a5",
+          "date": "2026-03-25T04:48:43-04:00",
+          "subject": "test: add Playwright E2E tests for monograph preview wall",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 206,
+          "deletions": 0,
+          "commitType": "test"
+        },
+        {
+          "hash": "9e0da678ff4fe2766955ad1ff45627679a512c04",
+          "date": "2026-03-25T04:50:38-04:00",
+          "subject": "fix(tests): use playwright/test import to match project convention",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 1,
+          "deletions": 1,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/tests/monograph-gate.spec.js",
+        "supp-db-site/tests/healing-engine/flag-evidence.spec.js",
+        "supp-db-site/tests/stripe-checkout.spec.js",
+        "supp-db-site/tests/stripe-webhook-idempotency.js",
+        "supp-db-site/package.json",
+        "supp-db-site/tests/guide-success.spec.js",
+        "supp-db-site/tests/helpers/auth-helpers.js",
+        "supp-db-site/tests/pdf-generator-api.spec.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-monograph-preview-wall.md",
+          "title": "Monograph Preview Wall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-25-monograph-preview-wall-design.md",
+          "title": "Monograph Preview Wall — Design Spec",
+          "type": "spec"
+        },
+        {
+          "path": "supp-db-site\\docs\\development\\COMPREHENSIVE_TEST_REPORT.md",
+          "title": "Comprehensive Test Report: Evidence Bars & Enhanced Citation Modal",
+          "type": "report"
+        },
+        {
+          "path": "supp-db-site\\docs\\superpowers\\plans\\2026-03-15-citation-remediation.md",
+          "title": "Citation Data Remediation Implementation Plan",
+          "type": "plan"
+        }
+      ]
+    },
+    {
+      "id": "theme-12",
+      "dirSignature": "supp-db-site/css",
+      "heuristicName": "Supp Db Site > Css (feat)",
+      "narrativeName": "Supp Db Site > Css (feat)",
+      "motivation": "Building new functionality in the supp-db-site/css area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (3 commits)",
+        "Spanned 3 files across 2026-03-15 to 2026-03-25"
+      ],
+      "outcome": "Completed 5 commits affecting 3 files.",
+      "commitCount": 5,
+      "fileCount": 3,
+      "commitTypes": {
+        "feat": 3,
+        "fix": 2
+      },
+      "commits": [
+        {
+          "hash": "627c4a299056f9cdc1a93dcae376fa0f609b0b4b",
+          "date": "2026-03-15T13:41:33-04:00",
+          "subject": "fix(stack-analyzer): resolve CSS/JS class name mismatches breaking UI",
+          "author": "cateyephotos",
+          "filesChanged": 2,
+          "additions": 197,
+          "deletions": 27,
+          "commitType": "fix"
+        },
+        {
+          "hash": "35eb66af03ab4aa3b384580ab6047b25c62fef2a",
+          "date": "2026-03-16T10:37:30-04:00",
+          "subject": "feat(css): styles for smart sort, relevance groups, tabs, export, toast, email modal",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 510,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "1266f256e4299c875f389c85142634466b119c9d",
+          "date": "2026-03-16T10:49:07-04:00",
+          "subject": "fix(css): add missing CSS rules for JS-generated class names",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 629,
+          "deletions": 15,
+          "commitType": "fix"
+        },
+        {
+          "hash": "507b4c19800ef7c995da81404455b5edb47a2a55",
+          "date": "2026-03-23T20:23:28-04:00",
+          "subject": "feat(css): add dual-CTA, loading skeleton, and error state styles for split-content gate",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 104,
+          "deletions": 0,
+          "commitType": "feat"
+        },
+        {
+          "hash": "d50f67dc2bce6b4a1971aff1b7214cdd74e6c52a",
+          "date": "2026-03-25T04:33:51-04:00",
+          "subject": "feat(css): add gate pill and subtitle styles for monograph preview wall",
+          "author": "cateyephotos",
+          "filesChanged": 1,
+          "additions": 42,
+          "deletions": 0,
+          "commitType": "feat"
+        }
+      ],
+      "files": [
+        "supp-db-site/css/content-gate.css",
+        "supp-db-site/css/stack-analyzer.css",
+        "supp-db-site/js/stack-analyzer.js"
+      ],
+      "docs": [
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer Multi-Goal UX Redesign — Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-23-split-content-paywall.md",
+          "title": "Split-Content Paywall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\plans\\2026-03-25-monograph-preview-wall.md",
+          "title": "Monograph Preview Wall Implementation Plan",
+          "type": "plan"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-16-stack-analyzer-multi-goal-redesign.md",
+          "title": "Stack Analyzer: Multi-Goal UX Redesign + Export Features",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-23-split-content-paywall-design.md",
+          "title": "Split-Content Paywall Design",
+          "type": "spec"
+        },
+        {
+          "path": "docs\\superpowers\\specs\\2026-03-25-monograph-preview-wall-design.md",
+          "title": "Monograph Preview Wall — Design Spec",
+          "type": "spec"
+        }
+      ]
+    },
+    {
+      "id": "theme-13",
+      "dirSignature": "supp-db-site/legal",
+      "heuristicName": "Supp Db Site > Legal (feat)",
+      "narrativeName": "Supp Db Site > Legal (feat)",
+      "motivation": "Building new functionality in the supp-db-site/legal area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (2 commits)",
+        "Spanned 17 files across 2026-03-08 to 2026-04-02"
+      ],
+      "outcome": "Completed 3 commits affecting 17 files.",
+      "commitCount": 3,
+      "fileCount": 17,
+      "commitTypes": {
+        "fix": 1,
+        "feat": 2
+      },
+      "commits": [
+        {
+          "hash": "d1cb288010efae602f1a77dd76842bb2ec2e2b5c",
+          "date": "2026-03-08T22:35:03-04:00",
+          "subject": "feat: add complete legal compliance suite — 6 pages + shared stylesheet",
+          "author": "cateyephotos",
+          "filesChanged": 8,
+          "additions": 1793,
+          "deletions": 4,
+          "commitType": "feat"
+        },
+        {
+          "hash": "afe8e75f667c734feabc8d9e63f486d7e365674c",
+          "date": "2026-03-09T11:52:20-04:00",
+          "subject": "feat: Phase 1 — Foundation & Discoverability (SEO, E-E-A-T, structured data)",
+          "author": "cateyephotos",
+          "filesChanged": 14,
+          "additions": 2515,
+          "deletions": 9,
+          "commitType": "feat"
+        },
+        {
+          "hash": "90604e17544bf4f8e0994755e03d44d59c82867a",
+          "date": "2026-04-02T03:53:01-04:00",
+          "subject": "fix: update all email addresses from supplementdb.com to supplementdb.info",
+          "author": "cateyephotos",
+          "filesChanged": 10,
+          "additions": 15,
+          "deletions": 15,
+          "commitType": "fix"
+        }
+      ],
+      "files": [
+        "supp-db-site/debug-page-content.html",
+        "supp-db-site/faq.html",
+        "supp-db-site/guide-success.html",
+        "supp-db-site/index.html",
+        "supp-db-site/legal/accessibility.html",
+        "supp-db-site/legal/cookies.html",
+        "supp-db-site/legal/copyright.html",
+        "supp-db-site/legal/disclaimer.html",
+        "supp-db-site/legal/privacy.html",
+        "supp-db-site/legal/terms.html",
+        "supp-db-site/about.html",
+        "supp-db-site/assets/og-default.svg",
+        "supp-db-site/content/style-guide.md",
+        "supp-db-site/guides/sleep.html",
+        "supp-db-site/robots.txt",
+        "supp-db-site/sitemap.xml",
+        "supp-db-site/legal/legal-shared.css"
+      ],
+      "docs": [
+        {
+          "path": "supp-db-site\\docs\\project-management\\ROADMAP.md",
+          "title": "SupplementDB — Development Roadmap",
+          "type": "roadmap"
+        },
+        {
+          "path": "supp-db-site\\docs\\project-management\\SPRINT_JOURNAL.md",
+          "title": "SupplementDB — Sprint Journal",
+          "type": "doc"
+        }
+      ]
+    },
+    {
+      "id": "theme-14",
+      "dirSignature": "supp-db-site/categories",
+      "heuristicName": "Supp Db Site > Categories (feat)",
+      "narrativeName": "Supp Db Site > Categories (feat)",
+      "motivation": "Building new functionality in the supp-db-site/categories area of the codebase.",
+      "keyDecisions": [
+        "Primary focus: feat work (3 commits)",
+        "Spanned 39 files across 2026-03-09 to 2026-03-14"
+      ],
+      "outcome": "Completed 3 commits affecting 39 files.",
+      "commitCount": 3,
+      "fileCount": 39,
+      "commitTypes": {
+        "feat": 3
+      },
+      "commits": [
+        {
+          "hash": "19f48e7f78f70a4fa5937af1d54503b4e7eb0bcd",
+          "date": "2026-03-09T15:26:09-04:00",
+          "subject": "feat: Phase 2 — Content Authority & Growth (category pages, guides, comparisons)",
+          "author": "cateyephotos",
+          "filesChanged": 23,
+          "additions": 12767,
+          "deletions": 37,
+          "commitType": "feat"
+        },
+        {
+          "hash": "3cc992ca8668f845443c250b11b3184003401209",
+          "date": "2026-03-09T19:06:34-04:00",
+          "subject": "feat: FDA compliance audit + Research Methodology page with trust infrastructure (P1+P2)",
+          "author": "cateyephotos",
+          "filesChanged": 26,
+          "additions": 2427,
+          "deletions": 69,
+          "commitType": "feat"
+        },
+        {
+          "hash": "6f47b69004a661ac9d79d7af6d47ee77f7585103",
+          "date": "2026-03-14T04:58:17-04:00",
+          "subject": "feat(pipeline): complete category/stats coverage + single source of truth",
+          "author": "cateyephotos",
+          "filesChanged": 16,
+          "additions": 2517,
+          "deletions": 77,
+          "commitType": "feat"
+        }
+      ],
+      "files": [
+        "supp-db-site/categories/adaptogens.html",
+        "supp-db-site/categories/amino-acids.html",
+        "supp-db-site/categories/anti-inflammatory.html",
+        "supp-db-site/categories/antioxidants.html",
+        "supp-db-site/categories/essential-nutrients.html",
+        "supp-db-site/categories/herbal-extracts.html",
+        "supp-db-site/categories/joint-support.html",
+        "supp-db-site/categories/metabolic-support.html",
+        "supp-db-site/categories/nootropics.html",
+        "supp-db-site/categories/performance-enhancers.html",
+        "supp-db-site/categories/polyphenols.html",
+        "supp-db-site/categories/sleep-support.html",
+        "supp-db-site/data/site-stats.json",
+        "supp-db-site/index.html",
+        "supp-db-site/scripts/generate-category-pages.js",
+        "supp-db-site/scripts/generate-stats.js",
+        "supp-db-site/about.html",
+        "supp-db-site/compare/ashwagandha-vs-rhodiola.html",
+        "supp-db-site/compare/bacopa-vs-ginkgo.html",
+        "supp-db-site/compare/magnesium-vs-melatonin.html",
+        "supp-db-site/compare/omega-3-vs-coq10.html",
+        "supp-db-site/css/content-shared.css",
+        "supp-db-site/data/supplements.js",
+        "supp-db-site/docs/project-management/SPRINT_JOURNAL.md",
+        "supp-db-site/faq.html",
+        "supp-db-site/guides/anxiety-stress.html",
+        "supp-db-site/guides/cardiovascular.html",
+        "supp-db-site/guides/cognitive-performance.html",
+        "supp-db-site/guides/sleep.html",
+        "supp-db-site/methodology.html",
+        "supp-db-site/scripts/audit-fda-claims.js",
+        "supp-db-site/scripts/fda-audit-findings.json",
+        "supp-db-site/scripts/generate-compare-pages.js",
+        "supp-db-site/scripts/generate-guide-pages.js",
+        "supp-db-site/content/content-strategy.md",
+        "supp-db-site/content/keyword-targets.md",
+        "supp-db-site/data/enhanced_citations/39_taurine_enhanced.js",
+        "supp-db-site/scripts/parse-data.js",
+        "supp-db-site/sitemap.xml"
+      ],
+      "docs": [
+        {
+          "path": "docs\\guides\\growth-kit-pr.md",
+          "title": "Growth Kit - Content Marketing Automation Commands",
+          "type": "doc"
+        }
+      ]
+    }
+  ]
+}

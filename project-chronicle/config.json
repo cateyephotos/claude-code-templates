@@ -1,0 +1,16 @@
+{
+  "projectName": "SupplementDB",
+  "pathFilter": "supp-db-site",
+  "docPaths": [
+    "docs/",
+    "supp-db-site/docs/"
+  ],
+  "excludePatterns": [
+    "node_modules",
+    "archive",
+    ".pre-"
+  ],
+  "theme": "dark",
+  "maxThemes": 15,
+  "minCommitsPerTheme": 3
+}
