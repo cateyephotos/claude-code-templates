@@ -547,6 +547,11 @@ node supp-db-site/scripts/check-html-completeness.js
 node supp-db-site/scripts/migrate-enhanced-citations.js --dry-run
 node supp-db-site/scripts/migrate-enhanced-citations.js
 
+# Resolve empty citation titles from PubMed (MANDATORY after adding citations)
+node supp-db-site/scripts/resolve-citation-titles.js --dry-run    # preview
+node supp-db-site/scripts/resolve-citation-titles.js              # apply
+node supp-db-site/scripts/resolve-citation-titles.js --file 33_l_tyrosine_enhanced.js  # single file
+
 # List all supplements with errors (blocks HTML generation)
 node supp-db-site/seed.js --dry-run 2>&1 | grep "✗"
 
@@ -618,7 +623,29 @@ node supp-db-site/scripts/verify-citations.js --id {id}
 
 **Status:** Tribulus Terrestris (ID 35) confirmed hallucinated PMIDs — pending correction via Mode 2 evidence update with verified sources.
 
-### 4. Seed.js Slug Divergence
+### 4. Empty or Mechanism-Name Titles in Evidence Cards (FIXED 2026-04-02)
+
+**Symptom:** Evidence cards on monograph pages show the mechanism/domain name (e.g., "Catecholamine Synthesis & Stress-Induced Depletion Reversal") repeated as every citation's title, instead of showing the actual paper title.
+
+**Root cause (template bug — fixed):** `seed.js` `buildEvidenceGroups()` was flattening nested `evidence[]` arrays and using the parent mechanism name as the card title, ignoring each study's `title` field.
+
+**Fix:** `seed.js` now prioritizes `ev.title` (actual paper title). Falls back to mechanism name only when title is empty.
+
+**Data fix:** 252 studies had empty `title` fields — resolved from PubMed via `scripts/resolve-citation-titles.js`.
+
+**Detection:**
+```bash
+node supp-db-site/scripts/resolve-citation-titles.js --dry-run
+```
+If output shows studies needing titles, run without `--dry-run` to fill them from PubMed E-utilities.
+
+**Prevention:** After Mode 1/2 research, always run:
+```bash
+node supp-db-site/scripts/resolve-citation-titles.js
+node supp-db-site/seed.js --out supp-db-site/supplements/
+```
+
+### 5. Seed.js Slug Divergence
 
 **Symptom:** `seed.js` generates a file at a different path than the one app.js links to, causing 404s on supplement pages.
 

@@ -357,16 +357,52 @@ function buildRelatedCards(supp) {
     return cards;
 }
 
-/** Build references HTML from keyCitations (supplements.js) */
-function buildReferencesFromCitations(supp) {
-    return (supp.keyCitations || []).map(c => {
-        let html = `${esc(h(c.authors))} (${esc(h(String(c.year || '')))}).`;
+/** Build references HTML from keyCitations (supplements.js) + enhanced citations */
+function buildReferencesFromCitations(supp, enhanced) {
+    const seen = new Set();
+    const refs = [];
+
+    function addRef(c) {
+        // Deduplicate by PMID, DOI, or title
+        const key = c.pmid || c.doi || c.title || '';
+        if (!key || seen.has(key)) return;
+        seen.add(key);
+        // Also add alternate key to prevent DOI+PMID dupes
+        if (c.pmid) seen.add(c.pmid);
+        if (c.doi)  seen.add(c.doi);
+
+        const authors = h(Array.isArray(c.authors) ? c.authors.join(', ') : (c.authors || ''));
+        let html = `${esc(authors)} (${esc(h(String(c.year || '')))}).`;
         if (c.title) html += ` ${esc(h(c.title))}.`;
         if (c.journal) html += ` <em>${esc(h(c.journal))}</em>.`;
         if (c.doi)  html += ` DOI: <a href="https://doi.org/${esc(h(c.doi))}">${esc(h(c.doi))}</a>`;
         if (c.pmid) html += ` | <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(h(c.pmid))}/">PubMed</a>`;
-        return html;
-    });
+        refs.push({ html, year: parseInt(c.year) || 0, authors });
+    }
+
+    // 1. keyCitations from supplements.js (rendered first as primary references)
+    (supp.keyCitations || []).forEach(addRef);
+
+    // 2. All citations from enhanced_citations evidence arrays
+    if (enhanced?.citations) {
+        for (const section of ['mechanisms', 'benefits', 'safety', 'dosage']) {
+            const items = enhanced.citations[section];
+            if (!Array.isArray(items)) continue;
+            for (const item of items) {
+                const nested = Array.isArray(item.evidence) ? item.evidence
+                             : Array.isArray(item.studies) ? item.studies
+                             : null;
+                if (nested) {
+                    nested.forEach(addRef);
+                } else if (item.pmid || item.doi) {
+                    addRef(item);
+                }
+            }
+        }
+    }
+
+    // Sort: keyCitations stay first (already added), then enhanced by year desc
+    return refs.map(r => r.html);
 }
 
 // ── Tier helpers ──────────────────────────────────────────────────────────────
@@ -616,8 +652,8 @@ function supplementToMonograph(supp, enhanced) {
     // Evidence groups from enhanced citations
     const evidenceGroups = buildEvidenceGroups(enhanced?.citations);
 
-    // References
-    const references = buildReferencesFromCitations(supp);
+    // References (keyCitations + all enhanced citation studies, deduplicated)
+    const references = buildReferencesFromCitations(supp, enhanced);
 
     // Related cards
     const relatedCards = buildRelatedCards(supp);

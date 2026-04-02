@@ -312,7 +312,7 @@ const {camelCaseName}Enhanced = {
 
   "citations": {
     "mechanisms": [{
-      "mechanism": "Mechanism name",        // Rendered as card title
+      "mechanism": "Mechanism name",        // Rendered as card title ONLY if nested evidence[].title is empty
       "strength": "Strong",                 // Color-coded badge
       "mechanismType": "Enzymatic inhibition", // Secondary badge
       "tissueTarget": "Brain cholinergic neurons",
@@ -749,7 +749,7 @@ The page is written to `supplements/{slug}.html` and includes all 10 required se
 11. References — numbered list from `keyCitations[]`
 12. Related — category browse + guide links
 
-Set canonical URL controlled by `BASE_URL` env var (default: `https://supplementdb.com`).
+Set canonical URL controlled by `BASE_URL` env var (default: `https://supplementdb.info`).
 
 **Fallback (no seed.js):** If seed.js is unavailable, read an existing supplement page (e.g., `supplements/bacopa-monnieri.html`) to obtain the full HTML shell and manually substitute supplement-specific content — but this method is error-prone and NOT recommended.
 
@@ -1120,6 +1120,19 @@ Review output:
 - `⚠` lines = warnings (empty optional fields, missing enhanced citations) — acceptable for generation
 - Target: 0 errors before writing
 
+**Step 1.5 — Resolve empty citation titles from PubMed (MANDATORY after adding citations)**
+```bash
+# Preview what would change (safe — no writes)
+node supp-db-site/scripts/resolve-citation-titles.js --dry-run
+
+# Resolve all empty titles from PubMed E-utilities
+node supp-db-site/scripts/resolve-citation-titles.js
+
+# Resolve for a single file
+node supp-db-site/scripts/resolve-citation-titles.js --file {id}_{name}_enhanced.js
+```
+This script scans all enhanced citation files for studies with empty or placeholder titles (e.g., just "Zinc" or "Iron"), batches PMIDs, resolves them against PubMed E-utilities, and writes the real paper titles back into the data files. **Must run after any Mode 1/2 research** to ensure every study displays its actual paper title on the monograph page. The script is idempotent — running it twice produces no additional changes.
+
 **Step 2 — Generate pages**
 ```bash
 # One supplement to staging
@@ -1391,7 +1404,7 @@ The enhanced citations file populates **Section 8: Evidence** (the citation grou
 
 | enhanced_citations field | Evidence card element | CSS class / notes |
 |---|---|---|
-| `item.claim` (or `.mechanism`/`.healthDomain`/`.safetyAspect`/`.dosageRange`) | Card title (`evidence-card-title`) | First non-null of these keys |
+| `item.title` (or `.claim`/`.mechanism`/`.healthDomain`/`.safetyAspect`/`.dosageRange`) | Card title (`evidence-card-title`) | **`title` takes priority** — shows actual paper title. Falls back to mechanism/domain name only if title is empty. Fixed 2026-04-02. |
 | `item.evidence` (or `.evidenceLevel`/`.strength`) | Tag 0 — colour-coded evidence badge | CSS class from `evidenceTagClass()` |
 | `item.studyType` | Tag 1 | Plain `evidence-tag` |
 | `item.year` | Tag 2 | Plain `evidence-tag` |
@@ -1415,6 +1428,7 @@ The enhanced citations file populates **Section 8: Evidence** (the citation grou
 | **`sampleSize`** | `participants` | Always use `sampleSize` |
 | **`evidenceLevel`** | `strength`, `evidence` (from parent) | Always use `evidenceLevel` |
 | **`claim`** | `mechanism`, `healthDomain`, `safetyAspect`, `dosageRange` | Use the section-specific name |
+| **`title`** | (none) | **REQUIRED for every study in evidence[] arrays** — the actual paper title from PubMed. If empty, run `node scripts/resolve-citation-titles.js` to batch-fill from PMIDs. |
 
 **Citation group order** (determined by array key in enhanced citations file):
 1. `citations.mechanisms[]` → "Mechanisms of Action" group
