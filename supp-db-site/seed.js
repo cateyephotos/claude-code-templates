@@ -193,7 +193,7 @@ function buildCard(item) {
                          : (doi ? `DOI: ${doi}` : 'View Source');
 
     return {
-        findingTitle: h(item.claim || item.mechanism || item.healthDomain ||
+        findingTitle: h(item.title || item.claim || item.mechanism || item.healthDomain ||
                         item.safetyAspect || item.dosageRange || ''),
         tags,
         detailsProse: h(item.details || item.findings || ''),
@@ -227,7 +227,9 @@ function buildEvidenceGroups(citations) {
                     for (const ev of nestedArr) {
                         flatCards.push(buildCard({
                             ...ev,
-                            claim: item.mechanism || item.healthDomain || item.safetyAspect || item.dosageRange || item.claim || '',
+                            // Use the individual study title if available; fall back to mechanism/domain name
+                            title: ev.title || item.mechanism || item.healthDomain || item.safetyAspect || item.dosageRange || item.claim || '',
+                            claim: ev.title || item.mechanism || item.healthDomain || item.safetyAspect || item.dosageRange || item.claim || '',
                             evidence: item.strength || item.evidenceQuality || ev.evidenceLevel || '',
                             details: ev.findings || ev.details || '',
                             participants: ev.sampleSize || ev.participants || '',
