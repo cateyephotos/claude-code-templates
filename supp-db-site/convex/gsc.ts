@@ -161,3 +161,207 @@ export const fetchSearchKeywords = action({
     }
   },
 });
+
+// ── Shared helper for dimension-based queries ───────────────────
+// All four new actions below share the same auth, cache, and error
+// handling pattern. Only the `dimensions` array and field names differ.
+
+async function gscQuery(
+  dateFrom: string,
+  dateTo: string,
+  dimensions: string[],
+  rowLimit: number
+): Promise<any[]> {
+  const saJson = process.env.GSC_SERVICE_ACCOUNT_JSON;
+  const siteUrl = process.env.GSC_SITE_URL;
+  if (!saJson || !siteUrl) {
+    throw new Error("GSC not configured");
+  }
+
+  const serviceAccount = JSON.parse(saJson);
+  const accessToken = await getAccessToken(serviceAccount);
+  const encodedSiteUrl = encodeURIComponent(siteUrl);
+
+  const response = await fetch(
+    `https://www.googleapis.com/webmasters/v3/sites/${encodedSiteUrl}/searchAnalytics/query`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        startDate: dateFrom,
+        endDate: dateTo,
+        dimensions,
+        rowLimit,
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(`GSC API ${response.status}: ${errText}`);
+  }
+
+  const data = await response.json();
+  return data.rows || [];
+}
+
+/**
+ * Fetch top landing pages from GSC.
+ */
+export const fetchTopPages = action({
+  args: {
+    dateFrom: v.string(),
+    dateTo: v.string(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (_ctx, args) => {
+    const limit = args.limit ?? 20;
+    const cacheKey = `gsc_pages_${args.dateFrom}_${args.dateTo}_${limit}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const rows = await gscQuery(args.dateFrom, args.dateTo, ["page"], limit);
+      const pages = rows.map((row: any) => ({
+        page: row.keys[0],
+        clicks: row.clicks,
+        impressions: row.impressions,
+        ctr: Math.round(row.ctr * 1000) / 10,
+        position: Math.round(row.position * 10) / 10,
+      }));
+      const result = { pages, configured: true };
+      setCache(cacheKey, result);
+      return result;
+    } catch (err) {
+      const msg = String(err);
+      if (msg.includes("not configured")) {
+        return { pages: [], configured: false };
+      }
+      console.error("GSC: Failed to fetch top pages:", err);
+      return { pages: [], configured: true, error: msg };
+    }
+  },
+});
+
+/**
+ * Fetch organic traffic by country from GSC.
+ */
+export const fetchCountries = action({
+  args: {
+    dateFrom: v.string(),
+    dateTo: v.string(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (_ctx, args) => {
+    const limit = args.limit ?? 15;
+    const cacheKey = `gsc_countries_${args.dateFrom}_${args.dateTo}_${limit}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const rows = await gscQuery(args.dateFrom, args.dateTo, ["country"], limit);
+      const countries = rows.map((row: any) => ({
+        country: row.keys[0],
+        clicks: row.clicks,
+        impressions: row.impressions,
+        ctr: Math.round(row.ctr * 1000) / 10,
+        position: Math.round(row.position * 10) / 10,
+      }));
+      const result = { countries, configured: true };
+      setCache(cacheKey, result);
+      return result;
+    } catch (err) {
+      const msg = String(err);
+      if (msg.includes("not configured")) {
+        return { countries: [], configured: false };
+      }
+      console.error("GSC: Failed to fetch countries:", err);
+      return { countries: [], configured: true, error: msg };
+    }
+  },
+});
+
+/**
+ * Fetch organic traffic by device (MOBILE / DESKTOP / TABLET) from GSC.
+ */
+export const fetchDevices = action({
+  args: {
+    dateFrom: v.string(),
+    dateTo: v.string(),
+  },
+  handler: async (_ctx, args) => {
+    const cacheKey = `gsc_devices_${args.dateFrom}_${args.dateTo}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const rows = await gscQuery(args.dateFrom, args.dateTo, ["device"], 5);
+      const devices = rows.map((row: any) => ({
+        device: row.keys[0],
+        clicks: row.clicks,
+        impressions: row.impressions,
+        ctr: Math.round(row.ctr * 1000) / 10,
+        position: Math.round(row.position * 10) / 10,
+      }));
+      const result = { devices, configured: true };
+      setCache(cacheKey, result);
+      return result;
+    } catch (err) {
+      const msg = String(err);
+      if (msg.includes("not configured")) {
+        return { devices: [], configured: false };
+      }
+      console.error("GSC: Failed to fetch devices:", err);
+      return { devices: [], configured: true, error: msg };
+    }
+  },
+});
+
+/**
+ * Fetch query-by-page matrix from GSC — the goldmine for SEO.
+ * Shows which queries rank for which pages, revealing
+ * cannibalization and consolidation opportunities.
+ */
+export const fetchQueryByPage = action({
+  args: {
+    dateFrom: v.string(),
+    dateTo: v.string(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (_ctx, args) => {
+    const limit = args.limit ?? 50;
+    const cacheKey = `gsc_querypage_${args.dateFrom}_${args.dateTo}_${limit}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const rows = await gscQuery(
+        args.dateFrom,
+        args.dateTo,
+        ["query", "page"],
+        limit
+      );
+      const pairs = rows.map((row: any) => ({
+        query: row.keys[0],
+        page: row.keys[1],
+        clicks: row.clicks,
+        impressions: row.impressions,
+        ctr: Math.round(row.ctr * 1000) / 10,
+        position: Math.round(row.position * 10) / 10,
+      }));
+      const result = { pairs, configured: true };
+      setCache(cacheKey, result);
+      return result;
+    } catch (err) {
+      const msg = String(err);
+      if (msg.includes("not configured")) {
+        return { pairs: [], configured: false };
+      }
+      console.error("GSC: Failed to fetch query-by-page:", err);
+      return { pairs: [], configured: true, error: msg };
+    }
+  },
+});

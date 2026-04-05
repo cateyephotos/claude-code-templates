@@ -708,6 +708,77 @@
     return data;
   }
 
+  // ── GSC Top Pages (action) ────────────────────────────────────
+  async function fetchGSCTopPages(range, limit) {
+    const lim = limit || 20;
+    const cacheKey = `gscTopPages_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("gsc:fetchTopPages", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GSC Countries (action) ──────────────────────────────────
+  async function fetchGSCCountries(range, limit) {
+    const lim = limit || 15;
+    const cacheKey = `gscCountries_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("gsc:fetchCountries", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GSC Devices (action) ────────────────────────────────────
+  async function fetchGSCDevices(range) {
+    const cacheKey = `gscDevices_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("gsc:fetchDevices", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GSC Query by Page (action) ──────────────────────────────
+  async function fetchGSCQueryByPage(range, limit) {
+    const lim = limit || 50;
+    const cacheKey = `gscQueryByPage_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("gsc:fetchQueryByPage", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
   // ── GA4 Sessions by Medium (action) ──────────────────────────
   async function fetchGA4SessionsByMedium(range, limit) {
     const lim = limit || 20;
@@ -864,6 +935,10 @@
     fetchPostHogDeviceTypes,
     fetchPostHogBrowsers,
     fetchPostHogUniqueUsers,
+    fetchGSCTopPages,
+    fetchGSCCountries,
+    fetchGSCDevices,
+    fetchGSCQueryByPage,
     fetchGA4SessionsByMedium,
     fetchGA4LandingPages,
     fetchGA4NewVsReturning,
