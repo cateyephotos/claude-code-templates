@@ -343,7 +343,8 @@
       M.fetchNewVsReturning(range),
       M.fetchBounceRate(range),
       M.fetchPostHogReferrers ? M.fetchPostHogReferrers(range, 10) : Promise.resolve(null),
-      M.fetchGA4SessionsByMedium ? M.fetchGA4SessionsByMedium(range, 15) : Promise.resolve(null)
+      M.fetchGA4SessionsByMedium ? M.fetchGA4SessionsByMedium(range, 15) : Promise.resolve(null),
+      M.fetchGSCTopPages ? M.fetchGSCTopPages(range, 50) : Promise.resolve(null)
     ]);
 
     try {
@@ -413,6 +414,26 @@
       }
     } catch (e) {
       console.warn("GA4 render failed:", e);
+    }
+
+    // Client-side privacy-stripped referrer reattribution (SUPP-123).
+    //
+    // The self-hosted traffic data (res[0]) counts privacy-stripped
+    // Google organic clicks as "Direct" because document.referrer is
+    // empty. GSC top pages data (res[6]) tells us exactly how many
+    // Google clicks each page received. We can reattribute
+    // min(GSC clicks, Direct count) from the Direct bucket to a new
+    // "Google Organic (reattributed)" bucket.
+    //
+    // This runs entirely client-side — no new Convex function needed.
+    // The raw pageViews table stays untouched; reattribution is a
+    // presentation-layer enrichment.
+    try {
+      var selfHostedData = res[0].status === "fulfilled" ? res[0].value : null;
+      var gscPagesData = res[6].status === "fulfilled" ? res[6].value : null;
+      renderReattributionSummary(selfHostedData, gscPagesData);
+    } catch (e) {
+      console.warn("Reattribution enrichment failed:", e);
     }
   }
 
@@ -878,6 +899,91 @@
 
     row.appendChild(cell);
     tbody.appendChild(row);
+  }
+
+  // ---- Privacy-stripped organic reattribution (SUPP-123) ─────────────────
+  //
+  // The "Direct" count in the self-hosted traffic chart is inflated by
+  // privacy-stripped Google organic visits (browsers that strip the Referer
+  // header). GSC reports exactly how many clicks Google sent to each page.
+  // We reattribute min(GSC clicks, Direct pageviews) from Direct to a
+  // "Google Organic (reattributed)" bucket and render a summary annotation
+  // above the self-hosted traffic table.
+  //
+  // This is conservative by design — we never attribute MORE visits to
+  // Google than GSC actually reported, so the number is a lower bound on
+  // organic and an upper bound on Direct.
+
+  function renderReattributionSummary(selfHostedData, gscPagesData) {
+    // Early exit: both datasets required
+    var normalized = normalizeTrafficData(selfHostedData);
+    if (!normalized.byCategory) return;
+
+    var gscPages = null;
+    if (gscPagesData && gscPagesData.pages && gscPagesData.pages.length) {
+      gscPages = gscPagesData.pages;
+    }
+
+    // If GSC data isn't available (not configured yet), show the
+    // self-hosted data as-is without a reattribution annotation.
+    if (!gscPages || !gscPages.length) return;
+
+    // Sum total GSC clicks across all pages — this is the number of
+    // CONFIRMED Google organic visits that Google logged on their side.
+    var totalGSCClicks = gscPages.reduce(function (sum, p) {
+      return sum + (p.clicks || 0);
+    }, 0);
+
+    if (totalGSCClicks === 0) return;
+
+    // The maximum we can reattribute is min(totalGSCClicks, Direct count)
+    var directCount = normalized.byCategory.direct || 0;
+    var organicCount = normalized.byCategory.organic || 0;
+
+    // Don't reattribute more than the Direct bucket holds
+    var reattributed = Math.min(totalGSCClicks, directCount);
+
+    if (reattributed <= 0) return;
+
+    var adjustedDirect = directCount - reattributed;
+    var adjustedOrganic = organicCount + reattributed;
+
+    // Render a summary annotation inside the traffic category summary
+    // container (created by renderTrafficCategorySummary). If it doesn't
+    // exist yet (e.g., the summary hasn't rendered), create a standalone
+    // annotation.
+    var summaryEl = document.getElementById("traffic-category-summary");
+    if (!summaryEl) return;
+
+    var reattribId = "traffic-reattribution-note";
+    var existing = document.getElementById(reattribId);
+    if (existing) existing.parentNode.removeChild(existing);
+
+    var note = document.createElement("div");
+    note.id = reattribId;
+    note.style.cssText =
+      "margin-top:8px;padding:10px 14px;background:#dceee4;border:1px solid #b8dcc8;" +
+      "border-left:3px solid #1a6b3c;border-radius:4px;font-size:12px;line-height:1.5;";
+
+    var icon = document.createElement("i");
+    icon.className = "fas fa-chart-line";
+    icon.style.cssText = "margin-right:8px;color:#1a6b3c;";
+    note.appendChild(icon);
+
+    var strong = document.createElement("strong");
+    strong.textContent = "Reattribution estimate: ";
+    note.appendChild(strong);
+
+    var M = window.AdminMetrics;
+    note.appendChild(document.createTextNode(
+      M.formatNumber(reattributed) + " of " + M.formatNumber(directCount) +
+      " Direct visits are likely Google Organic (based on " +
+      M.formatNumber(totalGSCClicks) + " GSC-confirmed clicks). " +
+      "Adjusted: Direct " + M.formatNumber(adjustedDirect) +
+      " | Organic " + M.formatNumber(adjustedOrganic) + "."
+    ));
+
+    summaryEl.parentNode.insertBefore(note, summaryEl.nextSibling);
   }
 
   function renderUTMTable(data) {
