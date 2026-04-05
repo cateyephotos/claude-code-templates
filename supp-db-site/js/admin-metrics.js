@@ -708,6 +708,112 @@
     return data;
   }
 
+  // ── GA4 Sessions by Medium (action) ──────────────────────────
+  async function fetchGA4SessionsByMedium(range, limit) {
+    const lim = limit || 20;
+    const cacheKey = `ga4SessionsMedium_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("ga4:fetchSessionsByMedium", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GA4 Landing Page Performance (action) ───────────────────
+  async function fetchGA4LandingPages(range, limit) {
+    const lim = limit || 20;
+    const cacheKey = `ga4Landing_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("ga4:fetchLandingPagePerformance", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GA4 New vs Returning (action) ───────────────────────────
+  async function fetchGA4NewVsReturning(range) {
+    const cacheKey = `ga4NewRet_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("ga4:fetchNewVsReturning", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GA4 Device Breakdown (action) ───────────────────────────
+  async function fetchGA4DeviceBreakdown(range) {
+    const cacheKey = `ga4Devices_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("ga4:fetchDeviceBreakdown", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GA4 Country Breakdown (action) ──────────────────────────
+  async function fetchGA4Countries(range, limit) {
+    const lim = limit || 15;
+    const cacheKey = `ga4Countries_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("ga4:fetchCountryBreakdown", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── GA4 Campaign Performance (action) ───────────────────────
+  async function fetchGA4Campaigns(range, limit) {
+    const lim = limit || 20;
+    const cacheKey = `ga4Campaigns_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("ga4:fetchCampaignPerformance", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
   // ── Public API ──────────────────────────────────────────────
   window.AdminMetrics = {
     // Range management
@@ -758,6 +864,12 @@
     fetchPostHogDeviceTypes,
     fetchPostHogBrowsers,
     fetchPostHogUniqueUsers,
+    fetchGA4SessionsByMedium,
+    fetchGA4LandingPages,
+    fetchGA4NewVsReturning,
+    fetchGA4DeviceBreakdown,
+    fetchGA4Countries,
+    fetchGA4Campaigns,
 
     // Formatters
     formatNumber,

@@ -342,7 +342,8 @@
       M.fetchUTMBreakdown(range),
       M.fetchNewVsReturning(range),
       M.fetchBounceRate(range),
-      M.fetchPostHogReferrers ? M.fetchPostHogReferrers(range, 10) : Promise.resolve(null)
+      M.fetchPostHogReferrers ? M.fetchPostHogReferrers(range, 10) : Promise.resolve(null),
+      M.fetchGA4SessionsByMedium ? M.fetchGA4SessionsByMedium(range, 15) : Promise.resolve(null)
     ]);
 
     try {
@@ -390,6 +391,28 @@
       }
     } catch (e) {
       console.warn("PostHog render failed:", e);
+    }
+
+    // GA4 sessions by source/medium — primary traffic classification.
+    try {
+      if (res[5].status === "fulfilled") {
+        renderGA4SourcesChart(res[5].value);
+        renderGA4SourcesTable(res[5].value);
+      } else {
+        var ga4Reason = res[5].reason;
+        var ga4Msg = String(ga4Reason && ga4Reason.message ? ga4Reason.message : ga4Reason);
+        if (ga4Msg.indexOf("not configured") !== -1 || ga4Msg.indexOf("GA4_PROPERTY_ID") !== -1) {
+          renderGA4ConfigBanner("table-ga4-sources",
+            "GA4_PROPERTY_ID or GSC_SERVICE_ACCOUNT_JSON is not set in Convex. " +
+            "Grant the service account Viewer access on the GA4 property, then " +
+            "set GA4_PROPERTY_ID to the numeric property ID in Convex env.");
+        } else {
+          console.warn("GA4 sessions failed:", ga4Reason);
+          renderGA4ConfigBanner("table-ga4-sources", "Failed to load GA4 data: " + ga4Msg);
+        }
+      }
+    } catch (e) {
+      console.warn("GA4 render failed:", e);
     }
   }
 
@@ -724,6 +747,131 @@
 
     var strong = document.createElement("strong");
     strong.textContent = "PostHog not configured. ";
+    cell.appendChild(strong);
+
+    cell.appendChild(document.createTextNode(message));
+
+    row.appendChild(cell);
+    tbody.appendChild(row);
+  }
+
+  // ---- GA4 Sessions by Source/Medium ─────────────────────────────────────
+
+  // Medium colors — matches GA4's canonical medium categories.
+  var MEDIUM_COLORS = {
+    "organic":  "#1a6b3c",   // forest green
+    "cpc":      "#dc2626",   // red
+    "referral": "#5b6bc4",   // indigo
+    "(none)":   "#9ca3af",   // gray (direct)
+    "email":    "#7c3aed",   // purple
+    "social":   "#b8860b",   // amber
+  };
+
+  function getMediumColor(medium) {
+    return MEDIUM_COLORS[medium] || "#6b7280";
+  }
+
+  function renderGA4SourcesChart(data) {
+    if (!data || !data.rows || !data.rows.length) return;
+    var rows = data.rows;
+
+    createChart("chart-ga4-sources", {
+      type: "bar",
+      data: {
+        labels: rows.map(function (r) { return r.source + " / " + r.medium; }),
+        datasets: [{
+          label: "Sessions",
+          data: rows.map(function (r) { return r.sessions || 0; }),
+          backgroundColor: rows.map(function (r) { return getMediumColor(r.medium); }),
+          borderColor: rows.map(function (r) { return getMediumColor(r.medium); }),
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: "y",
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { beginAtZero: true, grid: { display: false } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderGA4SourcesTable(data) {
+    var tbody = document.getElementById("table-ga4-sources");
+    if (!tbody) return;
+
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
+    if (!data || !data.rows || !data.rows.length) {
+      renderGA4ConfigBanner("table-ga4-sources",
+        "No GA4 session data. Ensure GA4_PROPERTY_ID and the service " +
+        "account are configured in Convex (see SUPP-121).");
+      return;
+    }
+
+    var M = window.AdminMetrics;
+    data.rows.forEach(function (r) {
+      var row = document.createElement("tr");
+
+      var srcCell = document.createElement("td");
+      srcCell.className = "font-medium";
+      srcCell.textContent = r.source || "(direct)";
+      row.appendChild(srcCell);
+
+      var medCell = document.createElement("td");
+      var medBadge = document.createElement("span");
+      medBadge.style.cssText =
+        "display:inline-block;padding:2px 8px;border-radius:10px;" +
+        "font-size:10px;font-weight:600;text-transform:uppercase;" +
+        "letter-spacing:0.04em;color:#fff;background:" + getMediumColor(r.medium) + ";";
+      medBadge.textContent = r.medium || "(none)";
+      medCell.appendChild(medBadge);
+      row.appendChild(medCell);
+
+      var sessCell = document.createElement("td");
+      sessCell.style.textAlign = "right";
+      sessCell.textContent = M.formatNumber(r.sessions || 0);
+      row.appendChild(sessCell);
+
+      var usersCell = document.createElement("td");
+      usersCell.style.textAlign = "right";
+      usersCell.textContent = M.formatNumber(r.users || 0);
+      row.appendChild(usersCell);
+
+      var bounceCell = document.createElement("td");
+      bounceCell.style.textAlign = "right";
+      bounceCell.textContent = (typeof r.bounceRate === "number" ? r.bounceRate.toFixed(1) + "%" : "-");
+      row.appendChild(bounceCell);
+
+      tbody.appendChild(row);
+    });
+  }
+
+  function renderGA4ConfigBanner(tbodyId, message) {
+    var tbody = document.getElementById(tbodyId);
+    if (!tbody) return;
+
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    cell.colSpan = 5;
+    cell.style.cssText =
+      "padding:18px 16px;background:#fef3c7;border-left:3px solid #f59e0b;" +
+      "color:#92400e;font-size:12.5px;line-height:1.5;";
+
+    var icon = document.createElement("i");
+    icon.className = "fas fa-exclamation-triangle";
+    icon.style.marginRight = "8px";
+    cell.appendChild(icon);
+
+    var strong = document.createElement("strong");
+    strong.textContent = "GA4 not configured. ";
     cell.appendChild(strong);
 
     cell.appendChild(document.createTextNode(message));
