@@ -363,18 +363,88 @@
     catch (e) { showError("table-bounce-rate", "Failed to load bounce rate"); }
   }
 
+  // Normalize the two server response shapes into a single structure.
+  //
+  // Legacy shape (pre-P0 data hygiene):  [{ source, count }, ...]
+  // New shape    (post-P0 data hygiene): { sources: [...], byCategory: {...}, totals: {...} }
+  //
+  // Returns { sources, byCategory, totals } for all callers.
+  function normalizeTrafficData(data) {
+    if (!data) return { sources: [], byCategory: null, totals: null };
+    if (Array.isArray(data)) {
+      var total = data.reduce(function (acc, s) {
+        return acc + (s.count || s.views || 0);
+      }, 0);
+      return {
+        sources: data.map(function (s) {
+          return {
+            source: s.source || s.referrer || "Direct",
+            count: s.count || s.views || 0,
+            category: s.category || "referral",
+          };
+        }),
+        byCategory: null,
+        totals: { clean: total, all: total, suppressed: 0 },
+      };
+    }
+    return {
+      sources: Array.isArray(data.sources) ? data.sources : [],
+      byCategory: data.byCategory || null,
+      totals: data.totals || null,
+    };
+  }
+
+  // Category badge colors match the existing admin palette.
+  var CATEGORY_BADGE_STYLES = {
+    organic:  { bg: "#dceee4", fg: "#1e4d30", label: "Organic"  },
+    social:   { bg: "#fef3c7", fg: "#92400e", label: "Social"   },
+    referral: { bg: "#e0e7ff", fg: "#3730a3", label: "Referral" },
+    direct:   { bg: "#f3f4f6", fg: "#4b5563", label: "Direct"   },
+    internal: { bg: "#fee2e2", fg: "#991b1b", label: "Internal" },
+    auth:     { bg: "#fef3c7", fg: "#92400e", label: "Auth"     },
+  };
+
+  // Build a category badge as a detached DOM node. All values are
+  // drawn from the static CATEGORY_BADGE_STYLES table — no user input
+  // flows into innerHTML.
+  function createCategoryBadge(category) {
+    var style = CATEGORY_BADGE_STYLES[category] || CATEGORY_BADGE_STYLES.referral;
+    var span = document.createElement("span");
+    span.style.cssText =
+      "display:inline-block;padding:2px 8px;border-radius:10px;" +
+      "font-size:10px;font-weight:600;text-transform:uppercase;" +
+      "letter-spacing:0.04em;background:" + style.bg + ";color:" + style.fg + ";";
+    span.textContent = style.label;
+    return span;
+  }
+
   function renderReferrerSourcesChart(data) {
-    var sources = Array.isArray(data) ? data : [];
+    var normalized = normalizeTrafficData(data);
+    var sources = normalized.sources;
     if (!sources.length) return;
+
+    var categoryColors = {
+      organic:  COLORS.accent,
+      social:   "#b8860b",
+      referral: "#5b6bc4",
+      direct:   "#9ca3af",
+      internal: "#dc2626",
+      auth:     "#b8860b",
+    };
+
     createChart("chart-referrer-sources", {
       type: "bar",
       data: {
-        labels: sources.map(function (s) { return s.source || s.referrer || "Direct"; }),
+        labels: sources.map(function (s) { return s.source || "Direct"; }),
         datasets: [{
           label: "Page Views",
-          data: sources.map(function (s) { return s.count || s.views || 0; }),
-          backgroundColor: COLORS.accentLight,
-          borderColor: COLORS.accent,
+          data: sources.map(function (s) { return s.count || 0; }),
+          backgroundColor: sources.map(function (s) {
+            return categoryColors[s.category] || categoryColors.referral;
+          }),
+          borderColor: sources.map(function (s) {
+            return categoryColors[s.category] || categoryColors.referral;
+          }),
           borderWidth: 1,
           borderRadius: 4
         }]
@@ -383,7 +453,20 @@
         responsive: true,
         maintainAspectRatio: false,
         indexAxis: "y",
-        plugins: { legend: { display: false } },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                var s = sources[ctx.dataIndex];
+                var pct = normalized.totals && normalized.totals.clean > 0
+                  ? " (" + ((s.count / normalized.totals.clean) * 100).toFixed(1) + "%)"
+                  : "";
+                return s.count + " visits" + pct;
+              }
+            }
+          }
+        },
         scales: {
           x: { beginAtZero: true, grid: { display: false } },
           y: { grid: { display: false } }
@@ -395,22 +478,136 @@
   function renderReferrerSourcesTable(data) {
     var tbody = document.getElementById("table-referrer-sources");
     if (!tbody) return;
-    var sources = Array.isArray(data) ? data : [];
+
+    var normalized = normalizeTrafficData(data);
+    var sources = normalized.sources;
+
+    // Clear any existing rows
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
     if (!sources.length) {
-      tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;color:#9ca3af;padding:1rem;">No traffic source data</td></tr>';
+      var emptyRow = document.createElement("tr");
+      var emptyCell = document.createElement("td");
+      emptyCell.colSpan = 4;
+      emptyCell.style.cssText = "text-align:center;color:#9ca3af;padding:1rem;";
+      emptyCell.textContent = "No traffic source data";
+      emptyRow.appendChild(emptyCell);
+      tbody.appendChild(emptyRow);
       return;
     }
+
     var M = window.AdminMetrics;
-    var total = sources.reduce(function (s, r) { return s + (r.count || r.views || 0); }, 0);
-    tbody.innerHTML = sources.map(function (s) {
-      var views = s.count || s.views || 0;
-      var share = total > 0 ? ((views / total) * 100).toFixed(1) : "0";
-      return "<tr>"
-        + '<td class="font-medium">' + escapeHtml(s.source || s.referrer || "Direct") + "</td>"
-        + '<td style="text-align:right">' + M.formatNumber(views) + "</td>"
-        + '<td style="text-align:right">' + escapeHtml(share) + "%</td>"
-        + "</tr>";
-    }).join("");
+    var cleanTotal = normalized.totals && normalized.totals.clean
+      ? normalized.totals.clean
+      : sources.reduce(function (s, r) { return s + (r.count || 0); }, 0);
+
+    sources.forEach(function (s) {
+      var views = s.count || 0;
+      var share = cleanTotal > 0 ? ((views / cleanTotal) * 100).toFixed(1) : "0";
+
+      var row = document.createElement("tr");
+
+      var sourceCell = document.createElement("td");
+      sourceCell.className = "font-medium";
+      sourceCell.textContent = s.source || "Direct";
+      row.appendChild(sourceCell);
+
+      var categoryCell = document.createElement("td");
+      categoryCell.appendChild(createCategoryBadge(s.category || "referral"));
+      row.appendChild(categoryCell);
+
+      var countCell = document.createElement("td");
+      countCell.style.textAlign = "right";
+      countCell.textContent = M.formatNumber(views);
+      row.appendChild(countCell);
+
+      var shareCell = document.createElement("td");
+      shareCell.style.textAlign = "right";
+      shareCell.textContent = share + "%";
+      row.appendChild(shareCell);
+
+      tbody.appendChild(row);
+    });
+
+    renderTrafficCategorySummary(normalized);
+  }
+
+  // Render a small summary strip above the referrer table showing
+  // category totals (Direct / Organic / Social / Referral) and the
+  // count of suppressed internal + auth visits. Built with DOM
+  // methods — zero innerHTML, zero user input.
+  function renderTrafficCategorySummary(normalized) {
+    if (!normalized.byCategory || !normalized.totals) return;
+
+    var table = document.getElementById("table-referrer-sources");
+    if (!table) return;
+
+    var card = table.closest(".admin-chart-card");
+    if (!card) return;
+
+    var summaryId = "traffic-category-summary";
+    var summary = document.getElementById(summaryId);
+    if (!summary) {
+      summary = document.createElement("div");
+      summary.id = summaryId;
+      summary.style.cssText =
+        "display:flex;flex-wrap:wrap;gap:16px;margin:12px 0;" +
+        "padding:10px 14px;background:#f8f7f4;border:1px solid #e5e7eb;" +
+        "border-radius:6px;font-size:12px;align-items:center;";
+      var title = card.querySelector(".admin-chart-title");
+      if (title && title.nextSibling) {
+        card.insertBefore(summary, title.nextSibling);
+      } else {
+        card.insertBefore(summary, card.firstChild);
+      }
+    }
+
+    // Clear previous content
+    while (summary.firstChild) summary.removeChild(summary.firstChild);
+
+    var M = window.AdminMetrics;
+    var bc = normalized.byCategory;
+    var t = normalized.totals;
+
+    function pct(n) {
+      return t.all > 0 ? ((n / t.all) * 100).toFixed(1) + "%" : "0%";
+    }
+
+    function appendCategoryStat(labelColor, labelText, count) {
+      var wrap = document.createElement("div");
+
+      var labelSpan = document.createElement("span");
+      labelSpan.style.color = labelColor;
+      labelSpan.textContent = labelText + " ";
+
+      var strong = document.createElement("strong");
+      strong.textContent = M.formatNumber(count);
+
+      var pctSpan = document.createElement("span");
+      pctSpan.style.color = "#9ca3af";
+      pctSpan.style.marginLeft = "4px";
+      pctSpan.textContent = pct(count);
+
+      wrap.appendChild(labelSpan);
+      wrap.appendChild(strong);
+      wrap.appendChild(document.createTextNode(" "));
+      wrap.appendChild(pctSpan);
+      summary.appendChild(wrap);
+    }
+
+    appendCategoryStat("#6b7280", "Direct",   bc.direct   || 0);
+    appendCategoryStat("#1e4d30", "Organic",  bc.organic  || 0);
+    appendCategoryStat("#92400e", "Social",   bc.social   || 0);
+    appendCategoryStat("#3730a3", "Referral", bc.referral || 0);
+
+    if (t.suppressed > 0) {
+      var suppressedNote = document.createElement("div");
+      suppressedNote.style.cssText =
+        "margin-left:auto;color:#9ca3af;font-style:italic;";
+      suppressedNote.textContent =
+        M.formatNumber(t.suppressed) + " internal/auth visits filtered";
+      summary.appendChild(suppressedNote);
+    }
   }
 
   function renderUTMTable(data) {

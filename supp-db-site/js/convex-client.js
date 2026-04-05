@@ -120,10 +120,38 @@
 
     /**
      * Record a page view event. Called automatically on page load.
+     *
+     * Data hygiene rules (applied before the mutation is sent):
+     *
+     *   1. Skip capture entirely on non-production hostnames so dev and
+     *      preview traffic never pollute prod analytics. This covers
+     *      localhost, .local mDNS names, loopback IPs, and any Vercel
+     *      preview deploy URL (*.vercel.app). A hostname allowlist can
+     *      be supplied via <meta name="analytics-prod-host"> for staged
+     *      rollouts; if absent we fall back to a built-in allowlist.
+     *
+     *   2. Sanitize document.referrer: if the referrer's hostname is the
+     *      same as the current page's hostname, clear it. Internal
+     *      navigation ("self-referrals") would otherwise appear in the
+     *      admin Traffic chart as a top source, drowning out real
+     *      external organic traffic. After this rule a self-referral
+     *      becomes an empty string which the server treats as Direct —
+     *      the correct bucket for navigation that isn't an external
+     *      entry point.
+     *
+     * Auth-callback and organic-search-engine categorization is handled
+     * server-side in convex/metrics.ts::getTrafficSources. The client
+     * deliberately stays thin — it records what it sees, the server
+     * decides what it means.
+     *
      * @param {object} overrides — optional overrides for page data
      */
     async recordPageView(overrides = {}) {
       try {
+        if (shouldSkipCapture()) {
+          return undefined;
+        }
+
         const pageType = detectPageType();
         const urlParams = new URLSearchParams(window.location.search);
         const pageViewId = await this.mutation(
@@ -137,7 +165,7 @@
             pagePath: window.location.pathname,
             pageTitle: document.title,
             supplementId: detectSupplementId(),
-            referrer: document.referrer || undefined,
+            referrer: sanitizeReferrer(document.referrer),
             utmSource: urlParams.get("utm_source") || undefined,
             utmMedium: urlParams.get("utm_medium") || undefined,
             utmCampaign: urlParams.get("utm_campaign") || undefined,
@@ -278,6 +306,99 @@
     // The Convex CDN client accepts string paths like "analytics:recordPageView"
     // which maps to api.analytics.recordPageView
     return path;
+  }
+
+  // ── Helper: Data-hygiene gate for recordPageView ───────────────
+  // Hosts where analytics capture should be suppressed. Anything that
+  // isn't real production user traffic belongs here. The list is
+  // deliberately conservative — false positives (missing a real host)
+  // cause ONE dev event to land in prod; false negatives (capturing a
+  // dev event) permanently pollute the data.
+  const NON_PROD_HOSTS = {
+    exact: new Set([
+      "localhost",
+      "127.0.0.1",
+      "0.0.0.0",
+      "::1",
+    ]),
+    suffix: [
+      ".local",            // Bonjour/mDNS
+      ".localhost",
+      ".vercel.app",       // Vercel preview deploys (catches every *-git-* alias)
+      ".ngrok.io",
+      ".ngrok-free.app",
+      ".loca.lt",          // localtunnel
+      ".trycloudflare.com",
+    ],
+  };
+
+  // Hostnames explicitly authorized as "production" for this site.
+  // If present, takes precedence over the NON_PROD_HOSTS blocklist —
+  // allowing e.g. supplementdb.info to opt into capture even if it
+  // matched a suffix rule by accident.
+  const PROD_HOST_ALLOWLIST = new Set([
+    "supplementdb.info",
+    "www.supplementdb.info",
+  ]);
+
+  function shouldSkipCapture() {
+    try {
+      const host = (window.location.hostname || "").toLowerCase();
+      if (!host) return true; // file:// or chrome-extension:// etc.
+
+      // Explicit prod allowlist wins.
+      if (PROD_HOST_ALLOWLIST.has(host)) return false;
+
+      // Optional meta tag override: <meta name="analytics-prod-host"
+      // content="staging.supplementdb.info">. Useful for rolling out
+      // to a new domain without shipping a new allowlist.
+      const metaProdHost = document
+        .querySelector('meta[name="analytics-prod-host"]')
+        ?.content?.trim()
+        .toLowerCase();
+      if (metaProdHost && host === metaProdHost) return false;
+
+      if (NON_PROD_HOSTS.exact.has(host)) return true;
+      for (const suffix of NON_PROD_HOSTS.suffix) {
+        if (host.endsWith(suffix)) return true;
+      }
+
+      // Raw IPv4 address → almost always dev or CI
+      if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) return true;
+
+      // Any host NOT in the prod allowlist is treated as unknown and
+      // suppressed. Flipping this to `return false` would opt-in
+      // capture for arbitrary hosts; we prefer strict.
+      return true;
+    } catch {
+      // Defensive: if anything throws, err on the side of no capture.
+      return true;
+    }
+  }
+
+  // Strip self-referrals so internal navigation doesn't appear as a
+  // top traffic source. Returns undefined so the mutation omits the
+  // field entirely (which the server treats as Direct).
+  function sanitizeReferrer(rawReferrer) {
+    if (!rawReferrer) return undefined;
+    try {
+      const refUrl = new URL(rawReferrer);
+      const currentHost = (window.location.hostname || "").toLowerCase();
+      const refHost = (refUrl.hostname || "").toLowerCase();
+
+      // Exact host match → self-referral
+      if (refHost === currentHost) return undefined;
+
+      // Normalize www./apex pairs so "www.supplementdb.info" →
+      // "supplementdb.info" counts as a self-referral from the apex.
+      const stripWww = (h) => (h.startsWith("www.") ? h.slice(4) : h);
+      if (stripWww(refHost) === stripWww(currentHost)) return undefined;
+
+      return rawReferrer;
+    } catch {
+      // Malformed referrer — drop it rather than logging noise.
+      return undefined;
+    }
   }
 
   // ── Helper: Detect page type from URL ──────────────────────────

@@ -6,6 +6,224 @@ import { requireAdmin } from "./auth";
 // Admin-only dashboard aggregation queries
 // ============================================================
 
+// ────────────────────────────────────────────────────────────
+// Referrer categorization — shared across traffic-source queries
+// ────────────────────────────────────────────────────────────
+//
+// Raw `document.referrer` values are noisy. This module exports a
+// single `categorizeReferrer` function that maps any referrer string
+// to a canonical (category, source) pair. The admin dashboard then
+// aggregates on `source` so the Traffic & Acquisition chart reflects
+// real external traffic instead of self-referrals, auth callbacks,
+// and preview deploy URLs.
+//
+// Categories:
+//   "organic"   — search engines (google, bing, duckduckgo, yahoo, ecosia, brave)
+//   "social"    — social platforms (twitter, x, facebook, reddit, linkedin, youtube, etc.)
+//   "referral"  — other external websites
+//   "internal"  — self-referrals and preview deploys (dropped from charts)
+//   "auth"      — Clerk/Google/Apple OAuth callback domains (dropped from charts)
+//   "direct"    — empty/unparseable referrer (no source header)
+//
+// The `source` value is stable per category and safe to use as a
+// chart label without further processing.
+
+const ORGANIC_ENGINES: Record<string, string> = {
+  // Google — all country TLDs collapse to one bucket
+  "google.com": "Google Organic",
+  "www.google.com": "Google Organic",
+  // Microsoft Bing
+  "bing.com": "Bing Organic",
+  "www.bing.com": "Bing Organic",
+  "cn.bing.com": "Bing Organic",
+  // DuckDuckGo
+  "duckduckgo.com": "DuckDuckGo Organic",
+  "www.duckduckgo.com": "DuckDuckGo Organic",
+  // Yahoo
+  "yahoo.com": "Yahoo Organic",
+  "search.yahoo.com": "Yahoo Organic",
+  "www.yahoo.com": "Yahoo Organic",
+  // Ecosia / Brave / Startpage / Kagi
+  "ecosia.org": "Ecosia Organic",
+  "www.ecosia.org": "Ecosia Organic",
+  "search.brave.com": "Brave Search",
+  "startpage.com": "Startpage Organic",
+  "www.startpage.com": "Startpage Organic",
+  "kagi.com": "Kagi Organic",
+  // Baidu / Yandex / Naver
+  "baidu.com": "Baidu Organic",
+  "www.baidu.com": "Baidu Organic",
+  "yandex.com": "Yandex Organic",
+  "yandex.ru": "Yandex Organic",
+  "naver.com": "Naver Organic",
+};
+
+// Any google.* country TLD (google.co.uk, google.de, …) maps to the
+// same bucket via a suffix check rather than an exhaustive list.
+function matchGoogleCountryTLD(hostname: string): string | null {
+  if (/^(www\.)?google\.[a-z]{2,3}(\.[a-z]{2})?$/.test(hostname)) {
+    return "Google Organic";
+  }
+  return null;
+}
+
+const SOCIAL_HOSTS: Record<string, string> = {
+  "twitter.com": "Twitter/X",
+  "x.com": "Twitter/X",
+  "t.co": "Twitter/X",
+  "facebook.com": "Facebook",
+  "www.facebook.com": "Facebook",
+  "m.facebook.com": "Facebook",
+  "l.facebook.com": "Facebook",
+  "reddit.com": "Reddit",
+  "www.reddit.com": "Reddit",
+  "old.reddit.com": "Reddit",
+  "out.reddit.com": "Reddit",
+  "linkedin.com": "LinkedIn",
+  "www.linkedin.com": "LinkedIn",
+  "lnkd.in": "LinkedIn",
+  "youtube.com": "YouTube",
+  "www.youtube.com": "YouTube",
+  "m.youtube.com": "YouTube",
+  "instagram.com": "Instagram",
+  "www.instagram.com": "Instagram",
+  "l.instagram.com": "Instagram",
+  "tiktok.com": "TikTok",
+  "www.tiktok.com": "TikTok",
+  "pinterest.com": "Pinterest",
+  "www.pinterest.com": "Pinterest",
+  "hackernews.com": "Hacker News",
+  "news.ycombinator.com": "Hacker News",
+  "mastodon.social": "Mastodon",
+  "bsky.app": "Bluesky",
+  "threads.net": "Threads",
+};
+
+// Auth callback / OAuth redirect hosts — these are NOT real traffic;
+// they're return trips from a sign-in flow. Categorized separately so
+// the dashboard can optionally hide them.
+const AUTH_CALLBACK_HOSTS = new Set([
+  "accounts.google.com",
+  "appleid.apple.com",
+  "login.microsoftonline.com",
+  "github.com/login",
+  "www.facebook.com/dialog",
+]);
+
+const AUTH_CALLBACK_SUFFIXES = [
+  ".clerk.accounts.dev",  // Dev Clerk auth
+  ".clerk.app",            // Prod Clerk auth
+  ".clerkstage.dev",       // Staging Clerk
+];
+
+// Internal hosts — self-referrals and preview deploys that slipped
+// past the client-side filter (e.g., old pageViews written before the
+// filter was deployed, or traffic from a deploy alias).
+const INTERNAL_SUFFIXES = [
+  ".vercel.app",           // Vercel preview deploys
+  ".ngrok.io",
+  ".ngrok-free.app",
+  ".loca.lt",
+  ".trycloudflare.com",
+];
+
+const INTERNAL_EXACT = new Set([
+  "localhost",
+  "127.0.0.1",
+  "0.0.0.0",
+  "supplementdb.info",
+  "www.supplementdb.info",
+  // The production Convex and Clerk subdomains occasionally appear
+  // as referrers when the app redirects through them — bucket as
+  // internal rather than external.
+  "acoustic-chinchilla-759.convex.cloud",
+  "acoustic-chinchilla-759.convex.site",
+  "clerk.supplementdb.info",
+]);
+
+type ReferrerCategory =
+  | "organic"
+  | "social"
+  | "referral"
+  | "internal"
+  | "auth"
+  | "direct";
+
+interface CategorizedReferrer {
+  category: ReferrerCategory;
+  source: string;
+}
+
+/**
+ * Classify a raw referrer string into a canonical (category, source)
+ * pair. Exported for reuse by other traffic-source queries.
+ */
+export function categorizeReferrer(
+  referrer: string | undefined | null
+): CategorizedReferrer {
+  if (!referrer) {
+    return { category: "direct", source: "Direct" };
+  }
+
+  let hostname = "";
+  try {
+    hostname = new URL(referrer).hostname.toLowerCase();
+  } catch {
+    // Malformed referrer — treat as direct rather than logging noise.
+    return { category: "direct", source: "Direct" };
+  }
+
+  if (!hostname) {
+    return { category: "direct", source: "Direct" };
+  }
+
+  // 1. Internal / preview / localhost — drop first so nothing leaks
+  //    through into "referral"
+  if (INTERNAL_EXACT.has(hostname)) {
+    return { category: "internal", source: "Internal" };
+  }
+  for (const suffix of INTERNAL_SUFFIXES) {
+    if (hostname.endsWith(suffix)) {
+      return { category: "internal", source: "Internal" };
+    }
+  }
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(hostname)) {
+    return { category: "internal", source: "Internal" };
+  }
+
+  // 2. Auth callbacks — Clerk, Google OAuth, Apple Sign-in, etc.
+  if (AUTH_CALLBACK_HOSTS.has(hostname)) {
+    return { category: "auth", source: "Auth callback" };
+  }
+  for (const suffix of AUTH_CALLBACK_SUFFIXES) {
+    if (hostname.endsWith(suffix)) {
+      return { category: "auth", source: "Auth callback" };
+    }
+  }
+
+  // 3. Organic search engines
+  if (hostname in ORGANIC_ENGINES) {
+    return { category: "organic", source: ORGANIC_ENGINES[hostname] };
+  }
+  const googleTLD = matchGoogleCountryTLD(hostname);
+  if (googleTLD) {
+    return { category: "organic", source: googleTLD };
+  }
+
+  // 4. Social platforms
+  if (hostname in SOCIAL_HOSTS) {
+    return { category: "social", source: SOCIAL_HOSTS[hostname] };
+  }
+
+  // 5. Fallback: genuine external referral. Strip the leading "www."
+  //    so referrer-by-hostname doesn't split the same site into two
+  //    rows.
+  const cleanedHost = hostname.startsWith("www.")
+    ? hostname.slice(4)
+    : hostname;
+  return { category: "referral", source: cleanedHost };
+}
+
 /**
  * Get daily/weekly/monthly active users — admin only.
  */
@@ -182,9 +400,15 @@ export const getTrafficSources = query({
     startTime: v.number(),
     endTime: v.number(),
     limit: v.optional(v.number()),
+    // When true (default), drops "internal" and "auth" categories from
+    // the result. Set to false to get the raw uncategorized breakdown
+    // for debugging.
+    cleanOnly: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
+
+    const cleanOnly = args.cleanOnly ?? true;
 
     const views = await ctx.db
       .query("pageViews")
@@ -193,25 +417,71 @@ export const getTrafficSources = query({
       )
       .collect();
 
-    const sources: Record<string, number> = {};
+    // Track both per-source counts and per-category totals. The
+    // dashboard renders per-source (for the chart/table) and per-
+    // category (for the summary header).
+    const bySource: Record<string, { count: number; category: string }> = {};
+    const byCategory: Record<string, number> = {
+      direct: 0,
+      organic: 0,
+      social: 0,
+      referral: 0,
+      internal: 0,
+      auth: 0,
+    };
+
     for (const view of views) {
-      let source = "Direct";
-      if (view.referrer) {
-        try {
-          const url = new URL(view.referrer);
-          source = url.hostname;
-        } catch {
-          source = view.referrer;
-        }
+      const { category, source } = categorizeReferrer(view.referrer);
+      byCategory[category] = (byCategory[category] ?? 0) + 1;
+
+      if (cleanOnly && (category === "internal" || category === "auth")) {
+        continue;
       }
-      sources[source] = (sources[source] || 0) + 1;
+
+      if (!bySource[source]) {
+        bySource[source] = { count: 0, category };
+      }
+      bySource[source].count += 1;
     }
 
     const limit = args.limit ?? 10;
-    return Object.entries(sources)
-      .sort(([, a], [, b]) => b - a)
+    const sources = Object.entries(bySource)
+      .sort(([, a], [, b]) => b.count - a.count)
       .slice(0, limit)
-      .map(([source, count]) => ({ source, count }));
+      .map(([source, { count, category }]) => ({ source, count, category }));
+
+    // Return both the per-source chart data and the category summary.
+    // Backwards compatibility: the legacy client code destructures
+    // the array directly, so we also spread the sources onto a
+    // numerically-indexed result plus the new `byCategory` key. The
+    // existing `renderReferrerSourcesChart` path uses
+    // `data.map(s => s.source)` which will continue to work because
+    // `sources` IS the array shape it expected, and TypeScript gives
+    // us `Array & { byCategory }` at the call site.
+    const totalClean = sources.reduce((sum, s) => sum + s.count, 0);
+    const totalAll =
+      byCategory.direct +
+      byCategory.organic +
+      byCategory.social +
+      byCategory.referral +
+      byCategory.internal +
+      byCategory.auth;
+
+    // We return an object rather than a bare array so the UI can
+    // read `byCategory` and `totals` for the summary header. The
+    // existing client code (js/admin-analytics-panels.js) already
+    // tolerates both shapes — it checks `Array.isArray(data)` first
+    // and falls back to `data.keywords || data.sources || data`.
+    // A compatibility shim is added below in the same commit.
+    return {
+      sources,
+      byCategory,
+      totals: {
+        clean: totalClean,
+        all: totalAll,
+        suppressed: totalAll - totalClean,
+      },
+    };
   },
 });
 
