@@ -341,7 +341,8 @@
       M.fetchTrafficSources(range),
       M.fetchUTMBreakdown(range),
       M.fetchNewVsReturning(range),
-      M.fetchBounceRate(range)
+      M.fetchBounceRate(range),
+      M.fetchPostHogReferrers ? M.fetchPostHogReferrers(range, 10) : Promise.resolve(null)
     ]);
 
     try {
@@ -361,6 +362,35 @@
 
     try { renderBounceRate(res[3].status === "fulfilled" ? res[3].value : null); }
     catch (e) { showError("table-bounce-rate", "Failed to load bounce rate"); }
+
+    // PostHog referrer sources — best effort secondary data source.
+    // Three possible states:
+    //   1. fulfilled with non-empty array → render the table
+    //   2. fulfilled with empty array → PostHog reachable but no data
+    //      (or inner catch swallowed an API error). Show config banner.
+    //   3. rejected → env var missing or network failure. Show banner
+    //      with a config-specific hint based on the error message.
+    try {
+      if (res[4].status === "fulfilled") {
+        renderPostHogReferrersTable(res[4].value);
+      } else {
+        var reason = res[4].reason;
+        var msg = String(reason && reason.message ? reason.message : reason);
+        if (msg.indexOf("not configured") !== -1 ||
+            msg.indexOf("POSTHOG_API_KEY") !== -1) {
+          renderPostHogConfigBanner("table-posthog-referrers",
+            "POSTHOG_API_KEY or POSTHOG_PROJECT_ID is not set in the Convex " +
+            "environment. See the PostHog section of .env.example and " +
+            "SUPP-119 for the phc_ vs phx_ key distinction.");
+        } else {
+          console.warn("PostHog referrers failed:", reason);
+          renderPostHogConfigBanner("table-posthog-referrers",
+            "Failed to load PostHog referrer data: " + msg);
+        }
+      }
+    } catch (e) {
+      console.warn("PostHog render failed:", e);
+    }
   }
 
   // Normalize the two server response shapes into a single structure.
@@ -608,6 +638,98 @@
         M.formatNumber(t.suppressed) + " internal/auth visits filtered";
       summary.appendChild(suppressedNote);
     }
+  }
+
+  // ---- PostHog Referrer Sources (secondary data source) ------------------
+  //
+  // Renders a table of referrer sources fetched from the PostHog REST API
+  // via convex/posthog.ts::fetchReferrerSources. PostHog canonicalizes
+  // referrer hostnames via its $referring_domain event property, so the
+  // data is already deduplicated without our categorizeReferrer logic.
+  // This panel is displayed alongside the self-hosted table for
+  // comparison — the two should agree on the top sources modulo
+  // timing and PostHog's built-in bot filtering.
+
+  function renderPostHogReferrersTable(data) {
+    var tbody = document.getElementById("table-posthog-referrers");
+    if (!tbody) return;
+
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
+    // PostHog action returns an array of {source, count} or an empty
+    // array if unconfigured/errored. We can't distinguish "no data
+    // yet" from "misconfigured" without additional signal, so we show
+    // a helpful banner when the result is empty AND the data shape
+    // suggests the action ran successfully.
+    var sources = Array.isArray(data) ? data : [];
+
+    if (!sources.length) {
+      renderPostHogConfigBanner("table-posthog-referrers",
+        "No PostHog data available. Ensure POSTHOG_API_KEY is set to a " +
+        "personal API key (phx_...) in the Convex environment and " +
+        "POSTHOG_PROJECT_ID is set. See SUPP-119 and the PostHog " +
+        "section of .env.example for details.");
+      return;
+    }
+
+    var M = window.AdminMetrics;
+    var total = sources.reduce(function (acc, s) { return acc + (s.count || 0); }, 0);
+
+    sources.forEach(function (s) {
+      var views = s.count || 0;
+      var share = total > 0 ? ((views / total) * 100).toFixed(1) : "0";
+      var label = s.source || "Direct";
+
+      var row = document.createElement("tr");
+
+      var sourceCell = document.createElement("td");
+      sourceCell.className = "font-medium";
+      sourceCell.textContent = label;
+      row.appendChild(sourceCell);
+
+      var countCell = document.createElement("td");
+      countCell.style.textAlign = "right";
+      countCell.textContent = M.formatNumber(views);
+      row.appendChild(countCell);
+
+      var shareCell = document.createElement("td");
+      shareCell.style.textAlign = "right";
+      shareCell.textContent = share + "%";
+      row.appendChild(shareCell);
+
+      tbody.appendChild(row);
+    });
+  }
+
+  // Render an inline configuration banner inside the given table's
+  // containing card. Used when PostHog data is empty and we suspect
+  // the env isn't wired correctly.
+  function renderPostHogConfigBanner(tbodyId, message) {
+    var tbody = document.getElementById(tbodyId);
+    if (!tbody) return;
+
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    cell.colSpan = 3;
+    cell.style.cssText =
+      "padding:18px 16px;background:#fef3c7;border-left:3px solid #f59e0b;" +
+      "color:#92400e;font-size:12.5px;line-height:1.5;";
+
+    var icon = document.createElement("i");
+    icon.className = "fas fa-exclamation-triangle";
+    icon.style.marginRight = "8px";
+    cell.appendChild(icon);
+
+    var strong = document.createElement("strong");
+    strong.textContent = "PostHog not configured. ";
+    cell.appendChild(strong);
+
+    cell.appendChild(document.createTextNode(message));
+
+    row.appendChild(cell);
+    tbody.appendChild(row);
   }
 
   function renderUTMTable(data) {

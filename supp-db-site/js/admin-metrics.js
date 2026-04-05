@@ -617,6 +617,97 @@
     return data;
   }
 
+  // ── PostHog Referrer Sources (action) ────────────────────────
+  // Canonicalized referrer breakdown sourced from PostHog's
+  // $referring_domain event property. Provides a cleaner secondary
+  // data source for the Traffic & Acquisition panel alongside the
+  // self-hosted metrics:getTrafficSources query.
+  async function fetchPostHogReferrers(range, limit) {
+    const lim = limit || 10;
+    const cacheKey = `phReferrers_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchReferrerSources", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── PostHog Top Pages (action) ───────────────────────────────
+  async function fetchPostHogTopPages(range, limit) {
+    const lim = limit || 20;
+    const cacheKey = `phTopPages_${range || currentRange}_${lim}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchTopPages", {
+      dateFrom, dateTo, limit: lim,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── PostHog Device Types (action) ────────────────────────────
+  async function fetchPostHogDeviceTypes(range) {
+    const cacheKey = `phDeviceTypes_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchDeviceTypes", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── PostHog Browser Distribution (action) ────────────────────
+  async function fetchPostHogBrowsers(range) {
+    const cacheKey = `phBrowsers_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchBrowserDistribution", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
+  // ── PostHog Unique Users (action) ────────────────────────────
+  async function fetchPostHogUniqueUsers(range) {
+    const cacheKey = `phUniqueUsers_${range || currentRange}`;
+    const cached = getCached(cacheKey);
+    if (cached) return cached;
+
+    const { startTime, endTime } = getDateRange(range);
+    const dateFrom = new Date(startTime).toISOString().slice(0, 10);
+    const dateTo = new Date(endTime).toISOString().slice(0, 10);
+    if (!window.SupplementDB) throw new Error("Convex client not initialized");
+    const data = await window.SupplementDB.action("posthog:fetchUniqueUsers", {
+      dateFrom, dateTo,
+    });
+    setCache(cacheKey, data);
+    return data;
+  }
+
   // ── Public API ──────────────────────────────────────────────
   window.AdminMetrics = {
     // Range management
@@ -662,6 +753,11 @@
     fetchGSCKeywords,
     fetchPathAnalysis,
     fetchScrollDepthByPage,
+    fetchPostHogReferrers,
+    fetchPostHogTopPages,
+    fetchPostHogDeviceTypes,
+    fetchPostHogBrowsers,
+    fetchPostHogUniqueUsers,
 
     // Formatters
     formatNumber,

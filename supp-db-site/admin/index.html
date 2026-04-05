@@ -566,12 +566,26 @@
 
                 <!-- Referrer Sources -->
                 <div class="admin-chart-card">
-                    <h3 class="admin-chart-title">Referrer Sources</h3>
+                    <h3 class="admin-chart-title">Referrer Sources (Self-Hosted)</h3>
                     <div style="height: 300px;"><canvas id="chart-referrer-sources"></canvas></div>
                     <table class="admin-table mt-3">
                         <thead><tr><th>Source</th><th>Category</th><th style="text-align:right">Visits</th><th style="text-align:right">% of Total</th></tr></thead>
                         <tbody id="table-referrer-sources"></tbody>
                     </table>
+                </div>
+
+                <!-- Referrer Sources — PostHog (secondary data source) -->
+                <div class="admin-chart-card mt-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="admin-chart-title">Referrer Sources (PostHog)</h3>
+                        <span class="text-xs text-gray-400"><i class="fas fa-database mr-1"></i>Server-canonicalized via $referring_domain</span>
+                    </div>
+                    <div id="posthog-referrers-container">
+                        <table class="admin-table">
+                            <thead><tr><th>Source</th><th style="text-align:right">Visits</th><th style="text-align:right">% of Total</th></tr></thead>
+                            <tbody id="table-posthog-referrers"></tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
