@@ -137,6 +137,7 @@ class EnhancedCitationLoader {
             { id: 111, file: '111_akkermansia-muciniphila_enhanced.js', globalVar: 'akkermansiaMuciniphilaEnhanced' },
             { id: 112, file: '112_methylene-blue_enhanced.js', globalVar: 'methyleneBlueEnhanced' },
             { id: 113, file: '113_cistanche_enhanced.js', globalVar: 'cistancheEnhanced' },
+            { id: 114, file: '114_inulin_enhanced.js', globalVar: 'inulinEnhanced' },
             { id: 105, file: '105_glutathione_enhanced.js', globalVar: 'glutathioneEnhanced' },
             { id: 106, file: '106_dim-3-3-diindolylmethane_enhanced.js', globalVar: 'dim33diindolylmethaneEnhanced' }
         ];

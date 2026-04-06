@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evidence-Based Supplement Database | Cognitive &amp; Mental Health</title>
-    <meta name="description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 1,800+ peer-reviewed research papers and systematic reviews.">
+    <meta name="description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 1,700+ peer-reviewed research papers and systematic reviews.">
     <meta name="keywords" content="supplements, cognitive health, mental health, evidence-based, nootropics, research">
     
     <!-- Google Search Console verification -->
@@ -22,7 +22,7 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Evidence-Based Supplement Database | SupplementDB">
-    <meta property="og:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 1,800+ peer-reviewed research papers and systematic reviews.">
+    <meta property="og:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 1,700+ peer-reviewed research papers and systematic reviews.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://supplementdb.info/">
     <meta property="og:image" content="https://supplementdb.info/assets/og-default.svg">
@@ -33,7 +33,7 @@
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Evidence-Based Supplement Database | SupplementDB">
-    <meta name="twitter:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 1,800+ peer-reviewed research papers and systematic reviews.">
+    <meta name="twitter:description" content="Comprehensive database of evidence-based supplements for cognitive enhancement and mental health, backed by 1,700+ peer-reviewed research papers and systematic reviews.">
     <meta name="twitter:image" content="https://supplementdb.info/assets/og-default.svg">
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -46,7 +46,7 @@
                 "@id": "https://supplementdb.info/#website",
                 "name": "SupplementDB",
                 "url": "https://supplementdb.info/",
-                "description": "Comprehensive evidence-based supplement database for cognitive enhancement and mental health, backed by 1,800+ peer-reviewed research papers and systematic reviews.",
+                "description": "Comprehensive evidence-based supplement database for cognitive enhancement and mental health, backed by 1,700+ peer-reviewed research papers and systematic reviews.",
                 "potentialAction": {
                     "@type": "SearchAction",
                     "target": {
@@ -331,6 +331,225 @@
         .evidence-level-badge {
             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
         }
+
+        /* ─── Filter Info Tips — editorial margin notes ─── */
+        .filter-label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .filter-label > label {
+            margin-bottom: 0;
+        }
+
+        .info-tip {
+            position: relative;
+            display: inline-flex;
+            line-height: 0;
+        }
+
+        .info-tip-btn {
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 11px;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.15s ease, color 0.15s ease,
+                        box-shadow 0.15s ease, transform 0.2s ease;
+        }
+        .info-tip-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .info-tip-btn:focus-visible {
+            outline: none;
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 0 0 3px var(--accent-100);
+        }
+        .info-tip-btn[aria-expanded="true"] {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .info-tip-panel {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: -10px;
+            z-index: 40;
+            width: 320px;
+            max-width: calc(100vw - 2rem);
+            background: var(--surface-alt);
+            border: 1px solid var(--rule);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            padding: 16px 18px 16px 18px;
+            box-shadow:
+                0 18px 36px -18px rgba(26, 26, 26, 0.28),
+                0 6px 12px -6px rgba(26, 26, 26, 0.10);
+            opacity: 0;
+            transform: translateY(-4px);
+            pointer-events: none;
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            text-align: left;
+        }
+        .info-tip-panel[data-open="true"] {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .info-tip-panel::before {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: 18px;
+            width: 12px;
+            height: 12px;
+            background: var(--surface-alt);
+            border-top: 1px solid var(--rule);
+            border-left: 1px solid var(--rule);
+            transform: rotate(45deg);
+        }
+
+        .info-tip-eyebrow {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 10px;
+            font-style: italic;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--ink-muted);
+            margin-bottom: 4px;
+        }
+        .info-tip-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: -0.005em;
+        }
+        .info-tip-lede {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            font-size: 12.5px;
+            color: var(--ink-muted);
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+
+        .info-tip-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+        .info-tip-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: 'DM Sans', system-ui, sans-serif;
+            font-size: 12.5px;
+            line-height: 1.45;
+            color: var(--ink);
+        }
+        .info-tip-list strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .info-tip-dot {
+            flex-shrink: 0;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            margin-top: 5px;
+            box-shadow: 0 0 0 2px var(--surface-alt),
+                        0 0 0 3px rgba(0, 0, 0, 0.04);
+        }
+        .info-tip-dot.tier-1 { background: var(--tier1); }
+        .info-tip-dot.tier-2 { background: var(--tier2); }
+        .info-tip-dot.tier-3 { background: var(--tier3); }
+        .info-tip-dot.tier-4 { background: var(--tier4); }
+        .info-tip-dot.rating-excellent { background: #1a6b3c; }
+        .info-tip-dot.rating-good      { background: #5ea87a; }
+        .info-tip-dot.rating-fair      { background: #b8860b; }
+        .info-tip-dot.rating-poor      { background: #b84545; }
+        .info-tip-dot.domain {
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .info-tip-footnote {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--rule);
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-style: italic;
+            font-size: 11.5px;
+            color: var(--ink-muted);
+            line-height: 1.5;
+        }
+
+        /* Mobile: pin panel to viewport edges so it never clips.
+           The caret stays aligned to the trigger via CSS custom prop
+           set in JS (falls back to 24px from the viewport's left edge). */
+        @media (max-width: 640px) {
+            .info-tip-panel {
+                position: fixed;
+                top: auto;
+                left: 1rem;
+                right: 1rem;
+                width: auto;
+                max-width: none;
+                max-height: calc(100vh - 32px);
+                overflow-y: auto;
+                transform: translateY(-4px);
+                -webkit-overflow-scrolling: touch;
+            }
+            .info-tip-panel[data-open="true"] {
+                transform: translateY(0);
+            }
+            .info-tip-panel::before {
+                left: var(--tip-caret-left, 24px);
+                right: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .info-tip-btn,
+            .info-tip-panel {
+                transition: opacity 0.01s linear;
+                transform: none !important;
+            }
+        }
+
+        .info-tip-sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body class="bg-surface font-sans">
@@ -432,7 +651,32 @@
             <div class="mb-8 bg-gray-50 p-6 rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Evidence Tier</label>
+                        <div class="filter-label">
+                            <label for="evidenceTierFilter" class="block text-sm font-medium text-gray-700">Evidence Tier</label>
+                            <span class="info-tip">
+                                <button type="button"
+                                        class="info-tip-btn"
+                                        aria-label="What is Evidence Tier?"
+                                        aria-expanded="false"
+                                        aria-controls="tip-evidence-tier"
+                                        data-info-tip-trigger="tip-evidence-tier">i</button>
+                                <div id="tip-evidence-tier"
+                                     class="info-tip-panel"
+                                     role="tooltip"
+                                     aria-hidden="true">
+                                    <div class="info-tip-eyebrow">About this filter</div>
+                                    <div class="info-tip-title">Evidence Tier</div>
+                                    <div class="info-tip-lede">A four-level grading of the research strength behind each supplement, based on study quantity, quality, sample size, and replication.</div>
+                                    <ul class="info-tip-list">
+                                        <li><span class="info-tip-dot tier-1" aria-hidden="true"></span><span><strong>Tier 1 — Strongest.</strong> Multiple meta-analyses and large randomized trials with consistent results.</span></li>
+                                        <li><span class="info-tip-dot tier-2" aria-hidden="true"></span><span><strong>Tier 2 — Strong.</strong> Several meta-analyses or multiple independent randomized controlled trials.</span></li>
+                                        <li><span class="info-tip-dot tier-3" aria-hidden="true"></span><span><strong>Tier 3 — Moderate.</strong> Smaller RCTs or strong mechanistic and observational data.</span></li>
+                                        <li><span class="info-tip-dot tier-4" aria-hidden="true"></span><span><strong>Tier 4 — Preliminary.</strong> Early human trials, animal studies, or mechanistic signals only.</span></li>
+                                    </ul>
+                                    <div class="info-tip-footnote">A higher tier means more confidence in the evidence — not necessarily a stronger effect.</div>
+                                </div>
+                            </span>
+                        </div>
                         <select id="evidenceTierFilter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
                             <option value="">All Tiers</option>
                             <option value="1">Tier 1 - Strongest</option>
@@ -448,13 +692,64 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Health Domain</label>
+                        <div class="filter-label">
+                            <label for="healthDomainFilter" class="block text-sm font-medium text-gray-700">Health Domain</label>
+                            <span class="info-tip">
+                                <button type="button"
+                                        class="info-tip-btn"
+                                        aria-label="What is a Health Domain?"
+                                        aria-expanded="false"
+                                        aria-controls="tip-health-domain"
+                                        data-info-tip-trigger="tip-health-domain">i</button>
+                                <div id="tip-health-domain"
+                                     class="info-tip-panel"
+                                     role="tooltip"
+                                     aria-hidden="true">
+                                    <div class="info-tip-eyebrow">About this filter</div>
+                                    <div class="info-tip-title">Health Domain</div>
+                                    <div class="info-tip-lede">The specific area of wellness a supplement has been <em>studied</em> for. Each supplement is tagged only with the domains where clinical evidence actually exists.</div>
+                                    <ul class="info-tip-list">
+                                        <li><span class="info-tip-dot domain" aria-hidden="true"></span><span><strong>Cognitive performance</strong> — memory, focus, processing speed, executive function.</span></li>
+                                        <li><span class="info-tip-dot domain" aria-hidden="true"></span><span><strong>Sleep &amp; recovery</strong> — sleep onset, sleep quality, next-day alertness.</span></li>
+                                        <li><span class="info-tip-dot domain" aria-hidden="true"></span><span><strong>Stress &amp; mood</strong> — cortisol, anxiety, perceived stress, depressive symptoms.</span></li>
+                                        <li><span class="info-tip-dot domain" aria-hidden="true"></span><span><strong>Cardiovascular &amp; metabolic</strong> — blood pressure, lipids, blood sugar, body composition.</span></li>
+                                        <li><span class="info-tip-dot domain" aria-hidden="true"></span><span><strong>Immune, joint &amp; longevity</strong> — inflammation, joint comfort, healthy aging markers.</span></li>
+                                    </ul>
+                                    <div class="info-tip-footnote">Filtering by domain surfaces only supplements with peer-reviewed evidence for that outcome.</div>
+                                </div>
+                            </span>
+                        </div>
                         <select id="healthDomainFilter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
                             <option value="">All Domains</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Safety Rating</label>
+                        <div class="filter-label">
+                            <label for="safetyFilter" class="block text-sm font-medium text-gray-700">Safety Rating</label>
+                            <span class="info-tip">
+                                <button type="button"
+                                        class="info-tip-btn"
+                                        aria-label="What is Safety Rating?"
+                                        aria-expanded="false"
+                                        aria-controls="tip-safety-rating"
+                                        data-info-tip-trigger="tip-safety-rating">i</button>
+                                <div id="tip-safety-rating"
+                                     class="info-tip-panel"
+                                     role="tooltip"
+                                     aria-hidden="true">
+                                    <div class="info-tip-eyebrow">About this filter</div>
+                                    <div class="info-tip-title">Safety Rating</div>
+                                    <div class="info-tip-lede">A qualitative assessment of tolerability drawn from adverse-event data, contraindications, and known drug interactions reported in the literature.</div>
+                                    <ul class="info-tip-list">
+                                        <li><span class="info-tip-dot rating-excellent" aria-hidden="true"></span><span><strong>Excellent.</strong> Widely tolerated at studied doses; minimal side effects; no serious interactions reported.</span></li>
+                                        <li><span class="info-tip-dot rating-good" aria-hidden="true"></span><span><strong>Good.</strong> Generally well-tolerated; mild, transient side effects possible at higher doses.</span></li>
+                                        <li><span class="info-tip-dot rating-fair" aria-hidden="true"></span><span><strong>Fair.</strong> Notable side effects or drug interactions; use with medical guidance.</span></li>
+                                        <li><span class="info-tip-dot rating-poor" aria-hidden="true"></span><span><strong>Poor.</strong> Significant safety concerns; supervision and monitoring recommended.</span></li>
+                                    </ul>
+                                    <div class="info-tip-footnote">Ratings apply to evidence-based doses only. Always consult a healthcare provider before starting any supplement.</div>
+                                </div>
+                            </span>
+                        </div>
                         <select id="safetyFilter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 ring-accent">
                             <option value="">All Ratings</option>
                             <option value="Excellent">Excellent</option>
@@ -1760,4 +2055,133 @@
     <script src="js/rbac.js"></script>
     <script src="js/auth-ui.js"></script>
     <script src="js/guide-cta.js" defer></script>
+
+    <!-- Filter Info Tips — editorial margin notes toggle logic -->
+    <script>
+    (function () {
+        'use strict';
+
+        const triggers = document.querySelectorAll('[data-info-tip-trigger]');
+        if (!triggers.length) return;
+
+        const panels = new Map();
+        triggers.forEach((btn) => {
+            const id = btn.getAttribute('data-info-tip-trigger');
+            const panel = document.getElementById(id);
+            if (panel) panels.set(btn, panel);
+        });
+
+        // On mobile we pin the panel to the viewport edges so a long
+        // panel with a narrow trigger doesn't overflow. We still want
+        // the caret visually anchored to the trigger button, so we
+        // calculate its offset from the panel's left edge and expose
+        // it as a CSS custom property consumed by .info-tip-panel::before.
+        // We also clamp the vertical position so the panel never
+        // overflows the viewport top or bottom.
+        function positionMobile(btn, panel) {
+            if (window.matchMedia('(min-width: 641px)').matches) {
+                panel.style.top = '';
+                panel.style.removeProperty('--tip-caret-left');
+                return;
+            }
+            const btnRect = btn.getBoundingClientRect();
+            const panelLeftPx = 16; // matches left: 1rem
+            const caretOffset = btnRect.left + (btnRect.width / 2) - panelLeftPx - 6;
+            const maxCaret = window.innerWidth - (panelLeftPx * 2) - 18;
+            const clamped = Math.max(12, Math.min(caretOffset, maxCaret));
+            panel.style.setProperty('--tip-caret-left', clamped + 'px');
+
+            // Preferred position: 12px below the trigger (position: fixed,
+            // so values are viewport-relative).
+            const preferredTop = btnRect.bottom + 12;
+            // Measure height off-screen before committing final top.
+            const prevVisibility = panel.style.visibility;
+            const prevOpen = panel.getAttribute('data-open');
+            panel.style.visibility = 'hidden';
+            panel.setAttribute('data-open', 'true');
+            panel.style.top = preferredTop + 'px';
+            const panelHeight = panel.getBoundingClientRect().height;
+            panel.setAttribute('data-open', prevOpen || 'false');
+            panel.style.visibility = prevVisibility;
+
+            const maxBottom = window.innerHeight - 16;
+            const minTop = 16;
+            let finalTop = preferredTop;
+            if (preferredTop + panelHeight > maxBottom) {
+                finalTop = Math.max(minTop, maxBottom - panelHeight);
+            }
+            panel.style.top = finalTop + 'px';
+        }
+
+        function setState(btn, open) {
+            const panel = panels.get(btn);
+            if (!panel) return;
+            if (open) positionMobile(btn, panel);
+            panel.setAttribute('data-open', open ? 'true' : 'false');
+            panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function closeAll(exceptBtn) {
+            panels.forEach((_panel, btn) => {
+                if (btn !== exceptBtn) setState(btn, false);
+            });
+        }
+
+        triggers.forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                if (isOpen) {
+                    setState(btn, false);
+                } else {
+                    closeAll(btn);
+                    setState(btn, true);
+                    // Analytics hook — fire only if PostHog is available.
+                    if (typeof window.posthog !== 'undefined' &&
+                        typeof window.posthog.capture === 'function') {
+                        window.posthog.capture('filter_info_tip_opened', {
+                            tip_id: btn.getAttribute('data-info-tip-trigger')
+                        });
+                    }
+                }
+            });
+        });
+
+        // Click outside any tip → close all.
+        document.addEventListener('click', (event) => {
+            if (event.target.closest('[data-info-tip-trigger]')) return;
+            if (event.target.closest('.info-tip-panel')) return;
+            closeAll(null);
+        });
+
+        // Escape closes all and returns focus to the last-opened trigger.
+        document.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape') return;
+            let lastOpen = null;
+            panels.forEach((panel, btn) => {
+                if (panel.getAttribute('data-open') === 'true') lastOpen = btn;
+            });
+            if (lastOpen) {
+                closeAll(null);
+                lastOpen.focus();
+            }
+        });
+
+        // On mobile the panel is viewport-pinned (position: fixed) so we
+        // close it when the user scrolls to avoid the caret drifting away
+        // from its trigger. Desktop panels are absolutely positioned and
+        // scroll naturally with the page.
+        let scrollCloseTimer = null;
+        window.addEventListener('scroll', () => {
+            if (!window.matchMedia('(max-width: 640px)').matches) return;
+            // Debounce to ignore tiny initial scrolls from layout shifts
+            if (scrollCloseTimer) return;
+            scrollCloseTimer = window.setTimeout(() => {
+                scrollCloseTimer = null;
+                closeAll(null);
+            }, 80);
+        }, { passive: true });
+    })();
+    </script>
 </body></html>
