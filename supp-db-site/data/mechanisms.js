@@ -3713,13 +3713,63 @@ const mechanismDatabase = {
     {
       "id": "gut-brain-axis-modulation",
       "canonicalName": "Gut-brain axis modulation",
-      "aliases": [],
+      "aliases": ["Gut-brain axis modulation via SCFA-producing microbiota shifts"],
       "category": "Gut-Brain Axis",
       "summary": "Gut-brain axis modulation is a biological process that influences health through its effects on cellular function and metabolic pathways. Understanding this mechanism helps explain how certain compounds produce their beneficial effects in the body.",
       "relevance": "Supplements targeting this mechanism may support the related physiological processes for improved health outcomes.",
-      "relatedMechanisms": [],
+      "relatedMechanisms": ["short-chain-fatty-acid-production", "gut-microbiome-modulation"],
       "supplements": [
-        "GABA"
+        "GABA",
+        "Inulin"
+      ]
+    },
+    {
+      "id": "short-chain-fatty-acid-production",
+      "canonicalName": "Short-chain fatty acid (SCFA) production",
+      "aliases": [
+        "Short-chain fatty acid (SCFA) production via colonic fermentation",
+        "SCFA production",
+        "Colonic fermentation to SCFAs"
+      ],
+      "category": "Gut Microbiome",
+      "summary": "Colonic bacteria ferment dietary fiber (particularly inulin-type fructans) into short-chain fatty acids — primarily acetate, propionate, and butyrate. These SCFAs serve as energy substrates for colonocytes, activate G-protein-coupled receptors (GPR41, GPR43) to modulate appetite hormones and insulin signaling, and regulate immune function and inflammation.",
+      "relevance": "Supplements that promote SCFA production (such as inulin, psyllium, and other prebiotic fibers) may improve gut barrier integrity, reduce inflammation, modulate blood sugar, and support appetite control via GLP-1 and PYY secretion.",
+      "relatedMechanisms": ["gut-microbiome-modulation", "glp-1-ppy-secretion-stimulation", "gut-brain-axis-modulation"],
+      "supplements": [
+        "Inulin"
+      ]
+    },
+    {
+      "id": "bifidogenic-prebiotic-activity",
+      "canonicalName": "Bifidogenic prebiotic activity",
+      "aliases": [
+        "Bifidogenic prebiotic activity (selective Bifidobacterium enrichment)",
+        "Bifidobacterium enrichment",
+        "Selective prebiotic fermentation"
+      ],
+      "category": "Gut Microbiome",
+      "summary": "Bifidogenic prebiotic activity refers to the selective stimulation of Bifidobacterium species in the gut microbiome. Inulin-type fructans are preferentially fermented by Bifidobacterium, leading to dose-dependent enrichment of these beneficial bacteria. Bifidobacterium produce acetate and lactate, acidify the colon (reducing pathogen colonization), and modulate immune function via dendritic cell and regulatory T-cell interactions.",
+      "relevance": "Prebiotics with bifidogenic activity (inulin, FOS, GOS) improve gut barrier function, enhance immune defense, reduce intestinal pH, and may improve bowel regularity and stool frequency.",
+      "relatedMechanisms": ["gut-microbiome-modulation", "short-chain-fatty-acid-production"],
+      "supplements": [
+        "Inulin"
+      ]
+    },
+    {
+      "id": "glp-1-ppy-secretion-stimulation",
+      "canonicalName": "GLP-1 and PYY secretion stimulation",
+      "aliases": [
+        "GLP-1 and PYY secretion stimulation via propionate signaling",
+        "Incretin hormone stimulation",
+        "GLP-1 secretion",
+        "Propionate-mediated GLP-1 release"
+      ],
+      "category": "Metabolic Signaling",
+      "summary": "Propionate produced by colonic fermentation of prebiotic fibers stimulates L-cells in the distal colon to secrete glucagon-like peptide-1 (GLP-1) and peptide YY (PYY). GLP-1 reduces appetite, improves insulin secretion, and slows gastric emptying; PYY reduces food intake by acting on the hypothalamus. This gut-hormone axis connects dietary fiber fermentation to systemic appetite and glucose regulation.",
+      "relevance": "Inulin and other fermentable fibers that generate propionate may reduce appetite, improve postprandial glycemia, and support weight management through incretin hormone stimulation — providing a mechanistic basis for prebiotic-mediated metabolic benefits.",
+      "relatedMechanisms": ["short-chain-fatty-acid-production", "enhanced-insulin-sensitivity"],
+      "supplements": [
+        "Inulin"
       ]
     }
   ],
@@ -3882,7 +3932,16 @@ const mechanismDatabase = {
     "Growth hormone release": "growth-hormone-release",
     "Growth hormone stimulation": "growth-hormone-stimulation",
     "Gut microbiome modulation": "gut-microbiome-modulation",
+    "Gut microbiome diversity enhancement": "gut-microbiome-modulation",
     "Gut-brain axis modulation": "gut-brain-axis-modulation",
+    "Gut-brain axis modulation via SCFA-producing microbiota shifts": "gut-brain-axis-modulation",
+    "Short-chain fatty acid (SCFA) production via colonic fermentation": "short-chain-fatty-acid-production",
+    "Short-chain fatty acid (SCFA) production": "short-chain-fatty-acid-production",
+    "SCFA production": "short-chain-fatty-acid-production",
+    "Bifidogenic prebiotic activity (selective Bifidobacterium enrichment)": "bifidogenic-prebiotic-activity",
+    "Bifidogenic prebiotic activity": "bifidogenic-prebiotic-activity",
+    "GLP-1 and PYY secretion stimulation via propionate signaling": "glp-1-ppy-secretion-stimulation",
+    "GLP-1 and PYY secretion stimulation": "glp-1-ppy-secretion-stimulation",
     "Gymnemic acid sugar blocking": "gymnemic-acid-sugar-blocking",
     "HMG-CoA reductase inhibition": "hmg-coa-reductase-inhibition",
     "HPA axis modulation": "hpa-axis-modulation",
@@ -3916,6 +3975,8 @@ const mechanismDatabase = {
     "Insulin secretion stimulation": "insulin-secretion-enhancement",
     "Insulin sensitivity modulation": "insulin-sensitivity-modulation",
     "Insulin sensitivity enhancement": "insulin-sensitivity-modulation",
+    "HOMA-IR insulin resistance reduction": "insulin-sensitivity-modulation",
+    "Insulin resistance reduction (HOMA-IR)": "insulin-sensitivity-modulation",
     "Insulin signal transduction": "insulin-signal-transduction",
     "Insulin-mimetic activity": "insulin-mimetic-activity",
     "Intracellular pH buffering during high-intensity exercise": "intracellular-ph-buffering-during-high-intensity-exercise",

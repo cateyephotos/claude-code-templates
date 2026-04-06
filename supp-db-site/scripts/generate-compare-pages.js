@@ -306,6 +306,61 @@ const COMPARISONS = [
         relatedCategories: [
             { title: 'Antioxidants', url: '../categories/antioxidants.html' }
         ]
+    },
+    {
+        slug: 'inulin-vs-berberine',
+        suppA: 'Inulin',
+        suppB: 'Berberine',
+        title: 'Inulin vs Berberine: Evidence-Based Comparison for Blood Sugar & Metabolic Health',
+        metaTitle: 'Inulin vs Berberine (2026) | Blood Sugar & Gut Health Comparison',
+        metaDescription: 'Evidence-based comparison of Inulin vs Berberine for blood sugar control, weight management, and metabolic health. Compare mechanisms, clinical evidence, dosages, and side effects.',
+        domain: 'Metabolic & Blood Sugar Control',
+        sharedDomains: ['blood sugar control', 'weight management', 'gut microbiome', 'insulin sensitivity', 'lipid profile'],
+        verdict: 'Both Inulin (Tier 2) and Berberine (Tier 2) improve blood sugar control via the gut, but through distinct mechanisms. Berberine delivers more potent acute glycemic effects (AMPK activation, comparable to metformin in some studies), while Inulin operates through prebiotic fermentation — slower but exceptionally safe and suited for long-term use. For diabetic patients prioritizing glucose reduction, Berberine offers stronger single-compound effects. For gut-centric metabolic support with superior tolerability, Inulin is the preferred choice.',
+        whoShouldChoose: [
+            { scenario: 'Type 2 diabetes management', recommendation: 'Berberine', reason: 'Stronger acute glycemic effects: HbA1c -0.90% vs Inulin\'s -0.58% in T2DM meta-analyses. AMPK activation mimics pharmacological glucose lowering.' },
+            { scenario: 'Gut microbiome support', recommendation: 'Inulin', reason: 'Selectively feeds Bifidobacterium and Lactobacillus; proven bifidogenic prebiotic with robust dose-response data.' },
+            { scenario: 'Weight management', recommendation: 'Inulin', reason: '32-RCT meta-analysis: -0.97 kg body weight. Inulin uniquely reduces appetite via GLP-1/PYY stimulation with no GI mucosal concerns.' },
+            { scenario: 'Lipid lowering (LDL)', recommendation: 'Berberine', reason: 'Berberine reduces LDL by ~0.65 mmol/L; Inulin reduces LDL by ~0.14 mmol/L. Berberine is substantially more potent for lipid management.' },
+            { scenario: 'Long-term daily use', recommendation: 'Inulin', reason: 'Excellent safety profile; a dietary fiber with GRAS status. Berberine carries more drug interaction risk (CYP3A4 inhibition) and is not recommended for extended unsupervised use.' },
+            { scenario: 'Healthy adults (prevention)', recommendation: 'Inulin', reason: 'Widely applicable as a food ingredient or supplement at 5-10g/day. Berberine is more appropriate for therapeutic metabolic concerns under clinical guidance.' }
+        ],
+        canStack: 'Yes, with caution — Inulin and Berberine can be combined as their mechanisms are additive and complementary. Inulin\'s fermentation-derived SCFAs activate GPR41/43 receptors, while Berberine activates AMPK, providing dual-pathway glucose modulation. Inulin\'s prebiotic effect may also improve Berberine\'s bioavailability by modulating intestinal microbiota involved in Berberine absorption. However, monitor blood glucose carefully if combining with diabetes medications. Start Berberine at a lower dose (500mg/day) when adding to Inulin (10g/day) and adjust based on glycemic response. Both compounds enhance GLP-1 secretion — synergistic effects are expected.',
+        relatedGuides: [
+            { title: 'Blood Sugar Control Guide', url: '../guides/blood-sugar.html' },
+            { title: 'Digestive Health Guide', url: '../guides/digestive-health.html' }
+        ],
+        relatedCategories: [
+            { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' }
+        ]
+    },
+    {
+        slug: 'inulin-vs-akkermansia',
+        suppA: 'Inulin',
+        suppB: 'Akkermansia muciniphila',
+        title: 'Inulin vs Akkermansia muciniphila: Evidence-Based Comparison for Gut & Metabolic Health',
+        metaTitle: 'Inulin vs Akkermansia (2026) | Prebiotic vs Postbiotic Gut Health',
+        metaDescription: 'Evidence-based comparison of Inulin (prebiotic) vs Akkermansia muciniphila (postbiotic) for gut barrier function, metabolic health, and longevity. Compare mechanisms, evidence tiers, and synergies.',
+        domain: 'Gut Health & Metabolic Support',
+        sharedDomains: ['gut microbiome', 'gut barrier integrity', 'metabolic health', 'insulin sensitivity', 'inflammation'],
+        verdict: 'Inulin (Tier 2) and Akkermansia muciniphila (Tier 3) represent two distinct but synergistic approaches to gut health. Inulin is a well-established prebiotic with 55+ RCTs demonstrating consistent metabolic and microbiome benefits. Akkermansia is a promising next-generation postbiotic with early but compelling human data on gut barrier function and metabolic health. Inulin is the evidence-backed foundation; Akkermansia is the emerging frontier. Critically, Inulin naturally enriches Akkermansia abundance — making them synergistic partners rather than alternatives.',
+        whoShouldChoose: [
+            { scenario: 'Proven clinical outcomes', recommendation: 'Inulin', reason: 'Tier 2 vs Tier 3: Inulin has 55+ RCTs, 5 meta-analyses, and consistent effects across body weight, blood sugar, and lipids. Akkermansia has promising but limited human data.' },
+            { scenario: 'Gut barrier / leaky gut', recommendation: 'Akkermansia (emerging)', reason: 'Akkermansia directly colonizes the mucus layer and produces Amuc_1100 protein that activates TLR2, tightening gut junctions. Inulin\'s barrier effects are indirect (via SCFA production).' },
+            { scenario: 'Blood sugar & weight', recommendation: 'Inulin', reason: 'Robust meta-analytic evidence for fasting glucose (-0.60 mmol/L in T2DM) and weight (-0.97 kg). Akkermansia\'s glycemic effects are preliminary.' },
+            { scenario: 'Microbiome enrichment', recommendation: 'Both (synergistic)', reason: 'Inulin selectively feeds Bifidobacterium and also raises Akkermansia abundance. For targeted Akkermansia enrichment, pasteurized Akkermansia supplementation is required; for broad bifidogenic benefit, Inulin suffices.' },
+            { scenario: 'Healthy aging / longevity', recommendation: 'Akkermansia (emerging)', reason: 'Akkermansia abundance inversely correlates with age-related metabolic decline. PMID 39286985 links inulin supplementation to frailty reduction partly through microbiome shifts.' },
+            { scenario: 'Budget-conscious choice', recommendation: 'Inulin', reason: 'Widely available as chicory root fiber at $0.10-0.30/day. Pasteurized Akkermansia supplements are expensive ($1.50-3.00/day) with emerging evidence only.' }
+        ],
+        canStack: 'Yes — Inulin and Akkermansia muciniphila are highly synergistic. Inulin fermentation produces acetate and propionate, which serve as energy substrates for Akkermansia and promote its colonization in the colon. Several studies show Inulin supplementation increases Akkermansia abundance by 2-3 fold in healthy adults. Taking Inulin (10g/day) alongside pasteurized Akkermansia (10^10 CFU/day) provides both the prebiotic substrate and direct bacterial supplementation, potentially producing additive effects on gut barrier integrity and metabolic health. No known adverse interactions. This prebiotic + postbiotic combination is considered a rational microbiome strategy.',
+        relatedGuides: [
+            { title: 'Digestive Health Guide', url: '../guides/digestive-health.html' },
+            { title: 'Blood Sugar Control Guide', url: '../guides/blood-sugar.html' }
+        ],
+        relatedCategories: [
+            { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' },
+            { title: 'Probiotics', url: '../categories/probiotics.html' }
+        ]
     }
 ];
 
@@ -344,7 +399,9 @@ const SUPPLEMENT_EMOJIS = {
     'Alpha-Lipoic Acid': '⚡',
     'GABA': '🧘',
     'Valerian Root': '🌸',
-    'Passionflower': '🌺'
+    'Passionflower': '🌺',
+    'Inulin': '🌾',
+    'Akkermansia muciniphila': '🦠'
 };
 
 const CATEGORY_EMOJIS = {

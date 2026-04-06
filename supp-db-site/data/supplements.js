@@ -3,9 +3,9 @@ const supplementDatabase = {
   "metadata": {
     "version": "3.0",
     "lastUpdated": "2026-03-21",
-    "totalSupplements": 113,
-    "completedSupplements": 113,
-    "targetSupplements": 113,
+    "totalSupplements": 114,
+    "completedSupplements": 114,
+    "targetSupplements": 114,
     "evidenceBasedOn": "700+ research papers from systematic PubMed searches",
     "expansionStatus": "Phase 2 COMPLETE - All 113 supplements with full pipeline QC validation. 20 trending supplements added 2026-03-21"
   },
@@ -9122,6 +9122,157 @@ const supplementDatabase = {
                 "Anti-inflammatory",
                 "Detoxification"
           ]
+    },
+    {
+          "id": 114,
+          "name": "Inulin",
+          "scientificName": "Cichorium intybus (chicory root fructan)",
+          "category": "Herbal Extract",
+          "commonNames": [
+                "Chicory Inulin",
+                "Inulin-Type Fructans (ITF)",
+                "Oligofructose",
+                "Fructo-Oligosaccharides (FOS)",
+                "Prebiotic Fiber",
+                "Oligofructan"
+          ],
+          "evidenceTier": 2,
+          "evidenceTierRationale": "Five or more large meta-analyses (55+ RCTs, 2500+ participants) demonstrate consistent effects on gut microbiota composition, weight management, glycemic control in prediabetes/T2DM, and lipid profiles. GRADE certainty is low-to-moderate for most clinical outcomes due to heterogeneity, but the prebiotic/bifidogenic effect has very strong mechanistic and clinical backing. Qualifies as Tier 2: Strong Evidence with established prebiotic efficacy.",
+          "primaryBenefits": {
+                "cognitive": [
+                      "Gut-brain axis modulation and reward-related food decision-making",
+                      "Appetite regulation via SCFA-mediated satiety hormone release"
+                ],
+                "nonCognitive": [
+                      "Prebiotic gut microbiome support and Bifidobacterium enrichment",
+                      "Blood glucose and insulin resistance reduction in T2DM",
+                      "Body weight and fat mass reduction",
+                      "LDL cholesterol and triglyceride lowering"
+                ],
+                "isEnhanced": true
+          },
+          "isEnhanced": true,
+          "dosageRange": "5–20 g/day (10 g/day optimal for most outcomes; up to 30 g/day in brain/gut studies)",
+          "optimalDuration": "6–12 weeks (benefits on glycemic control require ≥6 weeks; weight management ≥8 weeks)",
+          "studyPopulations": [
+                "Adults with prediabetes and type 2 diabetes",
+                "Overweight and obese adults",
+                "Healthy adults with mild constipation",
+                "Children with obesity",
+                "Older adults with frailty or sarcopenia",
+                "Adults with knee osteoarthritis"
+          ],
+          "mechanismsOfAction": [
+                "Short-chain fatty acid (SCFA) production via colonic fermentation",
+                "Bifidogenic prebiotic activity (selective Bifidobacterium enrichment)",
+                "GLP-1 and PYY secretion stimulation via propionate signaling",
+                "Gut microbiome diversity enhancement",
+                "HOMA-IR insulin resistance reduction",
+                "Gut-brain axis modulation via SCFA-producing microbiota shifts"
+          ],
+          "safetyProfile": {
+                "rating": "Good",
+                "commonSideEffects": [
+                      "Bloating and flatulence (dose-dependent, especially >15 g/day)",
+                      "Mild abdominal cramping during initial supplementation",
+                      "Loose stools or diarrhea at high doses (>20 g/day)"
+                ],
+                "contraindications": [
+                      "Fructan intolerance or fructose malabsorption",
+                      "Irritable bowel syndrome with known FODMAP sensitivity (may worsen symptoms)",
+                      "Severe inflammatory bowel disease (use with caution)"
+                ],
+                "drugInteractions": [
+                      "No clinically significant drug interactions identified in RCTs",
+                      "May enhance absorption of calcium and iron when co-administered",
+                      "Potential additive effect with antidiabetic medications (monitor blood glucose)"
+                ]
+          },
+          "effectSizes": {
+                "bodyWeight": "-0.97 kg (95% CI: -1.34, -0.59; 32 RCTs; AJCN 2024 meta-analysis)",
+                "bmi": "-0.39 kg/m² (95% CI: -0.57, -0.20; meta-analysis)",
+                "waistCircumference": "-1.03 cm (95% CI: -1.69, -0.37; meta-analysis)",
+                "ldlCholesterol": "-0.14 mmol/L (95% CI: -0.24, -0.05; 38 RCTs; AJCN 2024 meta-analysis)",
+                "triglycerides": "-0.06 mmol/L (95% CI: -0.12, -0.01; 40 RCTs; meta-analysis)",
+                "fastingBloodGlucose": "-0.60 mmol/L in T2DM (95% CI: -0.71, -0.48; 33-trial meta-analysis)",
+                "hba1c": "-0.58% in T2DM (95% CI: -0.83, -0.32; meta-analysis)",
+                "insulinResistance": "Significant HOMA-IR reduction vs. cellulose control (Gut 2019 crossover RCT)"
+          },
+          "commercialAvailability": {
+                "forms": [
+                      "Powder (most common; easily added to food/beverages)",
+                      "Capsules",
+                      "Granules",
+                      "Fortified foods (yogurt, bread, cereal bars)"
+                ],
+                "costRange": "$10–25/month",
+                "qualityMarkers": [
+                      "Derived from chicory root (Cichorium intybus)",
+                      "Degree of polymerization specified (DP 10–60 for long-chain inulin)",
+                      "Non-GMO certified",
+                      "Third-party tested for heavy metals",
+                      "ORAFTI or Beneo-brand chicory inulin for clinical-grade purity"
+                ]
+          },
+          "keyCitations": [
+                {
+                      "authors": "Reimer RA et al.",
+                      "year": 2024,
+                      "title": "The effects of chicory inulin-type fructans supplementation on weight management outcomes: systematic review, meta-analysis, and meta-regression of randomized controlled trials.",
+                      "journal": "The American Journal of Clinical Nutrition",
+                      "doi": "10.1016/j.ajcnut.2024.09.019",
+                      "pmid": "39313030"
+                },
+                {
+                      "authors": "Talukdar JR et al.",
+                      "year": 2024,
+                      "title": "The effects of inulin-type fructans on cardiovascular disease risk factors: systematic review and meta-analysis of randomized controlled trials.",
+                      "journal": "The American Journal of Clinical Nutrition",
+                      "doi": "10.1016/j.ajcnut.2023.10.030",
+                      "pmid": "38309832"
+                },
+                {
+                      "authors": "Wang L et al.",
+                      "year": 2019,
+                      "title": "Inulin-type fructans supplementation improves glycemic control for the prediabetes and type 2 diabetes populations: results from a GRADE-assessed systematic review and dose-response meta-analysis of 33 randomized controlled trials.",
+                      "journal": "Journal of Translational Medicine",
+                      "doi": "10.1186/s12967-019-02159-0",
+                      "pmid": "31805963"
+                },
+                {
+                      "authors": "Vandeputte D et al.",
+                      "year": 2017,
+                      "title": "Prebiotic inulin-type fructans induce specific changes in the human gut microbiota.",
+                      "journal": "Gut",
+                      "doi": "10.1136/gutjnl-2016-313271",
+                      "pmid": "28213610"
+                },
+                {
+                      "authors": "Chambers ES et al.",
+                      "year": 2019,
+                      "title": "Dietary supplementation with inulin-propionate ester or inulin improves insulin sensitivity in adults with overweight and obesity with distinct effects on the gut microbiota, plasma metabolome and systemic inflammatory responses: a randomised cross-over trial.",
+                      "journal": "Gut",
+                      "doi": "10.1136/gutjnl-2019-318424",
+                      "pmid": "30971437"
+                }
+          ],
+          "enhancedCitations": {
+                "isEnhanced": true,
+                "evidenceProfile": {
+                      "overallQuality": "Tier 2",
+                      "totalCitations": 13,
+                      "researchQualityScore": 78,
+                      "lastEvidenceUpdate": "2026-04-04"
+                }
+          },
+          "lastUpdated": "2026-04-04",
+          "healthDomains": [
+                "Digestive Health",
+                "Blood Sugar Control",
+                "Cardiovascular Health",
+                "Metabolic Support",
+                "Appetite Control"
+          ]
     }
   ],
 
@@ -9159,7 +9310,7 @@ const supplementDatabase = {
     {
       "name": "Herbal Extracts",
       "description": "Plant-based supplements with cognitive benefits",
-      "supplements": ["Ginkgo Biloba", "Lion's Mane Mushroom"]
+      "supplements": ["Ginkgo Biloba", "Lion's Mane Mushroom", "Inulin"]
     },
     {
       "name": "Metabolic Support",
@@ -9260,15 +9411,15 @@ const supplementDatabase = {
     },
     {
       "name": "Digestive Health",
-      "supplements": ["Ginger", "Fenugreek", "Akkermansia muciniphila", "Bovine Colostrum"]
+      "supplements": ["Ginger", "Fenugreek", "Akkermansia muciniphila", "Bovine Colostrum", "Inulin"]
     },
     {
       "name": "Blood Sugar Control",
-      "supplements": ["Alpha-Lipoic Acid", "Chromium", "Vanadium", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract"]
+      "supplements": ["Alpha-Lipoic Acid", "Chromium", "Vanadium", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract", "Inulin"]
     },
     {
       "name": "Appetite Control",
-      "supplements": ["Gymnema Sylvestre"]
+      "supplements": ["Gymnema Sylvestre", "Inulin"]
     },
     {
       "name": "Antioxidant Support",
