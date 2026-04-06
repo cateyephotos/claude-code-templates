@@ -15,7 +15,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { execFileSync } = require("child_process");
+const { spawnSync } = require("child_process");
 
 const AUTH_CONFIG = path.join(__dirname, "..", "convex", "auth.config.js");
 const DEV_DOMAIN = "https://usable-tarpon-30.clerk.accounts.dev";
@@ -43,13 +43,14 @@ function main() {
   let deployFailed = false;
   try {
     console.log(`[convex-deploy-prod] Deploying to production...`);
-    // Use process.platform-aware command: Windows needs npx.cmd
-    const npxCmd = process.platform === "win32" ? "npx.cmd" : "npx";
-    execFileSync(
-      npxCmd,
+    const result = spawnSync(
+      "npx",
       ["convex", "deploy", "--url", PROD_URL, "--typecheck=disable", "-y"],
-      { stdio: "inherit", cwd: path.join(__dirname, "..") }
+      { stdio: "inherit", cwd: path.join(__dirname, ".."), shell: true }
     );
+    if (result.status !== 0) {
+      throw new Error(`npx convex deploy exited with code ${result.status}`);
+    }
     console.log("[convex-deploy-prod] Deploy succeeded.");
   } catch (err) {
     console.error("[convex-deploy-prod] Deploy FAILED:", err.message);
