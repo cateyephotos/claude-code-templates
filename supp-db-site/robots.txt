@@ -1,5 +1,5 @@
 # SupplementDB — robots.txt
-# https://supplementdb.co/
+# https://supplementdb.info/
 
 # Default: allow legitimate crawlers
 User-agent: *
@@ -81,4 +81,4 @@ Disallow: /scripts/
 Disallow: /admin/
 
 # Sitemap
-Sitemap: https://supplementdb.co/sitemap.xml
+Sitemap: https://supplementdb.info/sitemap.xml

@@ -1,6 +1,13 @@
 # Convex backend (deployed separately to convex.dev)
 convex/
 
+# supplements-new/ is the staging output of seed.js — supplements/ is the live directory
+# Deploying both causes duplicate content (228 near-identical pages)
+supplements-new/
+
+# Test/mockup files — not production content
+mockups/
+
 # Test files
 tests/
 playwright.config.js

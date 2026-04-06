@@ -53,7 +53,7 @@ const OUT_DIR    = outArg ? path.resolve(ROOT, outArg) : DEFAULT_OUT;
 // ── ENV ───────────────────────────────────────────────────────────────────────
 const CLERK_KEY  = process.env.CLERK_KEY  || '__CLERK_PUBLISHABLE_KEY__';
 const CONVEX_URL = process.env.CONVEX_URL || 'https://robust-frog-754.convex.cloud';
-const BASE_URL   = process.env.BASE_URL   || 'https://supplementdb.com';
+const BASE_URL   = process.env.BASE_URL   || 'https://supplementdb.info';
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
 const h   = s => (s != null ? String(s) : '').trim();
@@ -67,6 +67,33 @@ function slugify(name) {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '');
+}
+
+// ── Comparison Cross-Links ───────────────────────────────────────────────────────
+// Maps comparison slugs to supplement names for monograph "Related Content" cards.
+const COMPARISONS_LIST = [
+    { slug: 'ashwagandha-vs-rhodiola', names: ['Ashwagandha', 'Rhodiola rosea'], title: 'Ashwagandha vs Rhodiola' },
+    { slug: 'magnesium-vs-melatonin', names: ['Magnesium', 'Melatonin'], title: 'Magnesium vs Melatonin' },
+    { slug: 'omega-3-vs-coq10', names: ['Omega-3 Fatty Acids', 'CoQ10'], title: 'Omega-3 vs CoQ10' },
+    { slug: 'bacopa-vs-ginkgo', names: ['Bacopa monnieri', 'Ginkgo Biloba'], title: 'Bacopa vs Ginkgo Biloba' },
+    { slug: 'lions-mane-vs-bacopa', names: ["Lion's Mane Mushroom", 'Bacopa monnieri'], title: "Lion's Mane vs Bacopa" },
+    { slug: 'creatine-vs-beta-alanine', names: ['Creatine', 'Beta-Alanine'], title: 'Creatine vs Beta-Alanine' },
+    { slug: 'vitamin-d-vs-magnesium', names: ['Vitamin D3', 'Magnesium'], title: 'Vitamin D vs Magnesium' },
+    { slug: 'turmeric-vs-boswellia', names: ['Turmeric/Curcumin', 'Boswellia'], title: 'Turmeric vs Boswellia' },
+    { slug: 'l-theanine-vs-5-htp', names: ['L-Theanine', '5-HTP'], title: 'L-Theanine vs 5-HTP' },
+    { slug: 'coq10-vs-pqq', names: ['CoQ10', 'PQQ'], title: 'CoQ10 vs PQQ' },
+    { slug: 'glucosamine-vs-chondroitin', names: ['Glucosamine', 'Chondroitin Sulfate'], title: 'Glucosamine vs Chondroitin' },
+    { slug: 'lutein-vs-zeaxanthin', names: ['Lutein', 'Zeaxanthin'], title: 'Lutein vs Zeaxanthin' },
+    { slug: 'quercetin-vs-grape-seed-extract', names: ['Quercetin', 'Grape Seed Extract'], title: 'Quercetin vs Grape Seed Extract' },
+    { slug: 'elderberry-vs-black-seed-oil', names: ['Elderberry', 'Black Seed Oil'], title: 'Elderberry vs Black Seed Oil' },
+    { slug: 'inulin-vs-berberine', names: ['Inulin', 'Berberine'], title: 'Inulin vs Berberine' },
+    { slug: 'inulin-vs-akkermansia', names: ['Inulin', 'Akkermansia muciniphila'], title: 'Inulin vs Akkermansia' },
+];
+
+function getRelatedComparisons(suppName) {
+    return COMPARISONS_LIST
+        .filter(c => c.names.includes(suppName))
+        .map(c => ({ title: c.title, url: `../compare/${c.slug}.html` }));
 }
 
 // ── CSS Loading ─────────────────────────────────────────────────────────────────
@@ -345,13 +372,15 @@ function buildRelatedCards(supp) {
         });
     }
 
-    // 4. Comparison page placeholder (derived from name)
-    const slug = slugify(supp.name);
-    cards.push({
-        href     : `../compare/${slug}-vs-placebo.html`,
-        iconClass: 'fas fa-balance-scale',
-        title    : `${supp.name} vs Placebo`,
-        desc     : 'Head-to-head comparison',
+    // 4. Real comparison pages (matched from COMPARISONS_LIST)
+    const comparisons = getRelatedComparisons(supp.name);
+    comparisons.forEach(c => {
+        cards.push({
+            href     : c.url,
+            iconClass: 'fas fa-balance-scale',
+            title    : c.title,
+            desc     : 'Head-to-head comparison',
+        });
     });
 
     return cards;
