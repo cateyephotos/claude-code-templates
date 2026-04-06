@@ -240,7 +240,13 @@ const COMPARISONS_LIST = [
     { slug: 'vitamin-d-vs-magnesium', names: ['Vitamin D3', 'Magnesium'], title: 'Vitamin D vs Magnesium' },
     { slug: 'turmeric-vs-boswellia', names: ['Turmeric/Curcumin', 'Boswellia'], title: 'Turmeric vs Boswellia' },
     { slug: 'l-theanine-vs-5-htp', names: ['L-Theanine', '5-HTP'], title: 'L-Theanine vs 5-HTP' },
-    { slug: 'coq10-vs-pqq', names: ['CoQ10', 'PQQ'], title: 'CoQ10 vs PQQ' }
+    { slug: 'coq10-vs-pqq', names: ['CoQ10', 'PQQ'], title: 'CoQ10 vs PQQ' },
+    { slug: 'glucosamine-vs-chondroitin', names: ['Glucosamine', 'Chondroitin Sulfate'], title: 'Glucosamine vs Chondroitin' },
+    { slug: 'lutein-vs-zeaxanthin', names: ['Lutein', 'Zeaxanthin'], title: 'Lutein vs Zeaxanthin' },
+    { slug: 'quercetin-vs-grape-seed-extract', names: ['Quercetin', 'Grape Seed Extract'], title: 'Quercetin vs Grape Seed Extract' },
+    { slug: 'elderberry-vs-black-seed-oil', names: ['Elderberry', 'Black Seed Oil'], title: 'Elderberry vs Black Seed Oil' },
+    { slug: 'inulin-vs-berberine', names: ['Inulin', 'Berberine'], title: 'Inulin vs Berberine' },
+    { slug: 'inulin-vs-akkermansia', names: ['Inulin', 'Akkermansia muciniphila'], title: 'Inulin vs Akkermansia' }
 ];
 
 function getRelatedGuides(suppName) {
