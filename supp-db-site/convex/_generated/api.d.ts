@@ -19,6 +19,7 @@ import type * as emailCronAction from "../emailCronAction.js";
 import type * as emailSequences from "../emailSequences.js";
 import type * as emailSubscribers from "../emailSubscribers.js";
 import type * as favorites from "../favorites.js";
+import type * as ga4 from "../ga4.js";
 import type * as gsc from "../gsc.js";
 import type * as guidePurchases from "../guidePurchases.js";
 import type * as http from "../http.js";
@@ -54,6 +55,7 @@ declare const fullApi: ApiFromModules<{
   emailSequences: typeof emailSequences;
   emailSubscribers: typeof emailSubscribers;
   favorites: typeof favorites;
+  ga4: typeof ga4;
   gsc: typeof gsc;
   guidePurchases: typeof guidePurchases;
   http: typeof http;

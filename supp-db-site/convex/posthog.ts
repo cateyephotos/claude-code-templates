@@ -4,14 +4,18 @@ import { v } from "convex/values";
 /**
  * posthog.ts — Server-side PostHog API Integration
  *
- * Convex actions that call the PostHog API with a read-only key
- * stored in Convex environment variables. Results are cached
- * server-side for 15 minutes to reduce API load.
+ * Convex actions that call the PostHog Query API (HogQL) with a
+ * personal API key stored in Convex environment variables.
+ * Results are cached server-side for 15 minutes to reduce API load.
  *
- * Required env vars (set in Convex dashboard):
- *   POSTHOG_API_KEY      — Read-only project API key (phx_...)
+ * Uses the /api/projects/{id}/query/ endpoint (v2) — the legacy
+ * /insights/trend/ and /insights/funnel/ endpoints were deprecated
+ * by PostHog in 2025.
+ *
+ * Required env vars (set in Convex dashboard with --prod flag):
+ *   POSTHOG_API_KEY      — Personal API key (phx_...)
  *   POSTHOG_PROJECT_ID   — PostHog project numeric ID
- *   POSTHOG_HOST         — PostHog host (defaults to https://us.i.posthog.com)
+ *   POSTHOG_HOST         — PostHog host (defaults to https://us.posthog.com)
  */
 
 // ── In-memory server cache ──────────────────────────────────────
@@ -68,7 +72,7 @@ async function posthogRequest(
 function getConfig(): { host: string; apiKey: string; projectId: string } {
   const apiKey = process.env.POSTHOG_API_KEY;
   const projectId = process.env.POSTHOG_PROJECT_ID;
-  const host = process.env.POSTHOG_HOST || "https://us.i.posthog.com";
+  const host = process.env.POSTHOG_HOST || "https://us.posthog.com";
 
   if (!apiKey || !projectId) {
     throw new Error(
@@ -79,6 +83,44 @@ function getConfig(): { host: string; apiKey: string; projectId: string } {
   return { host, apiKey, projectId };
 }
 
+/**
+ * Run a HogQL query via the PostHog Query API.
+ * Returns { columns: string[], results: any[][] }
+ */
+async function hogqlQuery(
+  host: string,
+  projectId: string,
+  apiKey: string,
+  select: string[],
+  from: string,
+  where: string,
+  groupBy?: string[],
+  orderBy?: string[],
+  limit?: number
+): Promise<{ columns: string[]; results: any[][] }> {
+  const parts = [`SELECT ${select.join(", ")}`, `FROM ${from}`, `WHERE ${where}`];
+  if (groupBy && groupBy.length > 0) parts.push(`GROUP BY ${groupBy.join(", ")}`);
+  if (orderBy && orderBy.length > 0) parts.push(`ORDER BY ${orderBy.join(", ")}`);
+  if (limit) parts.push(`LIMIT ${limit}`);
+
+  const data = await posthogRequest(
+    host,
+    `/api/projects/${projectId}/query/`,
+    apiKey,
+    {
+      method: "POST",
+      body: {
+        query: {
+          kind: "HogQLQuery",
+          query: parts.join(" "),
+        },
+      },
+    }
+  );
+
+  return { columns: data.columns || [], results: data.results || [] };
+}
+
 // ── Event Counts ────────────────────────────────────────────────
 /**
  * Fetch event counts from PostHog for specific events over a date range.
@@ -86,7 +128,7 @@ function getConfig(): { host: string; apiKey: string; projectId: string } {
 export const fetchEventCounts = action({
   args: {
     events: v.array(v.string()),
-    dateFrom: v.string(), // YYYY-MM-DD
+    dateFrom: v.string(),
     dateTo: v.string(),
   },
   handler: async (_ctx, args) => {
@@ -98,32 +140,15 @@ export const fetchEventCounts = action({
 
     const results: Record<string, number> = {};
 
-    // Batch queries per event
     for (const eventName of args.events) {
       try {
-        const data = await posthogRequest(
-          host,
-          `/api/projects/${projectId}/insights/trend/`,
-          apiKey,
-          {
-            method: "POST",
-            body: {
-              events: [{ id: eventName, type: "events", math: "total" }],
-              date_from: args.dateFrom,
-              date_to: args.dateTo,
-            },
-          }
+        const data = await hogqlQuery(
+          host, projectId, apiKey,
+          ["count()"],
+          "events",
+          `event = '${eventName}' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`
         );
-
-        // Sum up the trend data points
-        const total =
-          data?.result?.[0]?.aggregated_value ??
-          data?.result?.[0]?.data?.reduce(
-            (sum: number, val: number) => sum + val,
-            0
-          ) ??
-          0;
-        results[eventName] = total;
+        results[eventName] = data.results?.[0]?.[0] ?? 0;
       } catch (err) {
         console.warn(`PostHog: Failed to fetch count for ${eventName}:`, err);
         results[eventName] = 0;
@@ -143,7 +168,7 @@ export const fetchUniqueUsers = action({
   args: {
     dateFrom: v.string(),
     dateTo: v.string(),
-    event: v.optional(v.string()), // defaults to $pageview
+    event: v.optional(v.string()),
   },
   handler: async (_ctx, args) => {
     const eventName = args.event || "$pageview";
@@ -154,30 +179,14 @@ export const fetchUniqueUsers = action({
     const { host, apiKey, projectId } = getConfig();
 
     try {
-      const data = await posthogRequest(
-        host,
-        `/api/projects/${projectId}/insights/trend/`,
-        apiKey,
-        {
-          method: "POST",
-          body: {
-            events: [
-              { id: eventName, type: "events", math: "dau" },
-            ],
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-          },
-        }
+      const data = await hogqlQuery(
+        host, projectId, apiKey,
+        ["count(DISTINCT person_id)"],
+        "events",
+        `event = '${eventName}' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`
       );
 
-      const uniqueCount =
-        data?.result?.[0]?.aggregated_value ??
-        data?.result?.[0]?.data?.reduce(
-          (sum: number, val: number) => sum + val,
-          0
-        ) ??
-        0;
-
+      const uniqueCount = data.results?.[0]?.[0] ?? 0;
       const result = { count: uniqueCount, event: eventName };
       setCache(cacheKey, result);
       return result;
@@ -207,41 +216,20 @@ export const fetchTopPages = action({
     const { host, apiKey, projectId } = getConfig();
 
     try {
-      const data = await posthogRequest(
-        host,
-        `/api/projects/${projectId}/insights/trend/`,
-        apiKey,
-        {
-          method: "POST",
-          body: {
-            events: [
-              {
-                id: "$pageview",
-                type: "events",
-                math: "total",
-              },
-            ],
-            breakdown: "$current_url",
-            breakdown_type: "event",
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-          },
-        }
+      const data = await hogqlQuery(
+        host, projectId, apiKey,
+        ["properties.$current_url", "count()"],
+        "events",
+        `event = '$pageview' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`,
+        ["properties.$current_url"],
+        ["count() DESC"],
+        limit
       );
 
-      const pages = (data?.result || [])
-        .map((item: any) => ({
-          url: item.breakdown_value || item.label || "Unknown",
-          count:
-            item.aggregated_value ??
-            item.data?.reduce(
-              (sum: number, val: number) => sum + val,
-              0
-            ) ??
-            0,
-        }))
-        .sort((a: any, b: any) => b.count - a.count)
-        .slice(0, limit);
+      const pages = (data.results || []).map((row: any[]) => ({
+        url: row[0] || "Unknown",
+        count: row[1] || 0,
+      }));
 
       setCache(cacheKey, pages);
       return pages;
@@ -260,7 +248,7 @@ export const fetchRetention = action({
   args: {
     dateFrom: v.string(),
     dateTo: v.string(),
-    retentionType: v.optional(v.string()), // "retention_first_time" or "retention_recurring"
+    retentionType: v.optional(v.string()),
   },
   handler: async (_ctx, args) => {
     const retType = args.retentionType || "retention_first_time";
@@ -273,30 +261,31 @@ export const fetchRetention = action({
     try {
       const data = await posthogRequest(
         host,
-        `/api/projects/${projectId}/insights/retention/`,
+        `/api/projects/${projectId}/query/`,
         apiKey,
         {
           method: "POST",
           body: {
-            target_entity: {
-              id: "$pageview",
-              type: "events",
+            query: {
+              kind: "RetentionQuery",
+              dateRange: {
+                date_from: args.dateFrom,
+                date_to: args.dateTo,
+              },
+              retentionFilter: {
+                retentionType: retType,
+                totalIntervals: 7,
+                period: "Day",
+                targetEntity: { id: "$pageview", type: "events" },
+                returningEntity: { id: "$pageview", type: "events" },
+              },
             },
-            returning_entity: {
-              id: "$pageview",
-              type: "events",
-            },
-            retention_type: retType,
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-            period: "Day",
-            total_intervals: 7,
           },
         }
       );
 
       const result = {
-        cohorts: data?.result || [],
+        cohorts: data?.results || data?.result || [],
         retention_type: retType,
         date_from: args.dateFrom,
         date_to: args.dateTo,
@@ -314,7 +303,6 @@ export const fetchRetention = action({
 // ── Funnel ──────────────────────────────────────────────────────
 /**
  * Fetch funnel conversion data from PostHog.
- * Steps: landing → sign_up → subscribe
  */
 export const fetchFunnel = action({
   args: {
@@ -346,25 +334,34 @@ export const fetchFunnel = action({
     try {
       const data = await posthogRequest(
         host,
-        `/api/projects/${projectId}/insights/funnel/`,
+        `/api/projects/${projectId}/query/`,
         apiKey,
         {
           method: "POST",
           body: {
-            events: steps.map((step) => ({
-              id: step.eventName,
-              type: "events",
-              name: step.label || step.eventName,
-            })),
-            funnel_viz_type: "steps",
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-            funnel_window_days: 14,
+            query: {
+              kind: "FunnelsQuery",
+              dateRange: {
+                date_from: args.dateFrom,
+                date_to: args.dateTo,
+              },
+              series: steps.map((step) => ({
+                event: step.eventName,
+                kind: "EventsNode",
+                name: step.label || step.eventName,
+              })),
+              funnelsFilter: {
+                funnelVizType: "steps",
+                funnelWindowIntervalUnit: "day",
+                funnelWindowInterval: 14,
+              },
+            },
           },
         }
       );
 
-      const funnelSteps = (data?.result || []).map(
+      const rawSteps = data?.results || data?.result || [];
+      const funnelSteps = rawSteps.map(
         (step: any, idx: number) => ({
           label: steps[idx]?.label || step.name || `Step ${idx + 1}`,
           event: steps[idx]?.eventName || step.action_id,
@@ -372,12 +369,12 @@ export const fetchFunnel = action({
           conversionRate:
             idx === 0
               ? 100
-              : step.count && data.result[0]?.count
+              : step.count && rawSteps[0]?.count
                 ? Math.round(
-                    (step.count / data.result[0].count) * 100 * 10
+                    (step.count / rawSteps[0].count) * 100 * 10
                   ) / 10
                 : 0,
-          dropoff: step.order > 0 ? (data.result[idx - 1]?.count || 0) - (step.count || 0) : 0,
+          dropoff: idx > 0 ? (rawSteps[idx - 1]?.count || 0) - (step.count || 0) : 0,
         })
       );
 
@@ -428,38 +425,22 @@ export const fetchBrowserDistribution = action({
     const { host, apiKey, projectId } = getConfig();
 
     try {
-      const data = await posthogRequest(
-        host,
-        `/api/projects/${projectId}/insights/trend/`,
-        apiKey,
-        {
-          method: "POST",
-          body: {
-            events: [
-              {
-                id: "$pageview",
-                type: "events",
-                math: "dau",
-              },
-            ],
-            breakdown: "$browser",
-            breakdown_type: "event",
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-          },
-        }
+      const data = await hogqlQuery(
+        host, projectId, apiKey,
+        ["properties.$browser", "count(DISTINCT person_id)"],
+        "events",
+        `event = '$pageview' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`,
+        ["properties.$browser"],
+        ["count(DISTINCT person_id) DESC"],
+        10
       );
 
-      const browsers = (data?.result || [])
-        .map((item: any) => ({
-          browser: item.breakdown_value || item.label || "Unknown",
-          users:
-            item.aggregated_value ??
-            Math.max(...(item.data || [0])),
+      const browsers = (data.results || [])
+        .map((row: any[]) => ({
+          browser: row[0] || "Unknown",
+          users: row[1] || 0,
         }))
-        .filter((b: any) => b.browser && b.browser !== "Unknown")
-        .sort((a: any, b: any) => b.users - a.users)
-        .slice(0, 10);
+        .filter((b: any) => b.browser && b.browser !== "Unknown");
 
       setCache(cacheKey, browsers);
       return browsers;
@@ -487,36 +468,19 @@ export const fetchDeviceTypes = action({
     const { host, apiKey, projectId } = getConfig();
 
     try {
-      const data = await posthogRequest(
-        host,
-        `/api/projects/${projectId}/insights/trend/`,
-        apiKey,
-        {
-          method: "POST",
-          body: {
-            events: [
-              {
-                id: "$pageview",
-                type: "events",
-                math: "dau",
-              },
-            ],
-            breakdown: "$device_type",
-            breakdown_type: "event",
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-          },
-        }
+      const data = await hogqlQuery(
+        host, projectId, apiKey,
+        ["properties.$device_type", "count(DISTINCT person_id)"],
+        "events",
+        `event = '$pageview' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`,
+        ["properties.$device_type"],
+        ["count(DISTINCT person_id) DESC"]
       );
 
-      const devices = (data?.result || [])
-        .map((item: any) => ({
-          type: item.breakdown_value || item.label || "Unknown",
-          users:
-            item.aggregated_value ??
-            Math.max(...(item.data || [0])),
-        }))
-        .sort((a: any, b: any) => b.users - a.users);
+      const devices = (data.results || []).map((row: any[]) => ({
+        type: row[0] || "Unknown",
+        users: row[1] || 0,
+      }));
 
       setCache(cacheKey, devices);
       return devices;
@@ -546,41 +510,20 @@ export const fetchReferrerSources = action({
     const { host, apiKey, projectId } = getConfig();
 
     try {
-      const data = await posthogRequest(
-        host,
-        `/api/projects/${projectId}/insights/trend/`,
-        apiKey,
-        {
-          method: "POST",
-          body: {
-            events: [
-              {
-                id: "$pageview",
-                type: "events",
-                math: "total",
-              },
-            ],
-            breakdown: "$referring_domain",
-            breakdown_type: "event",
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-          },
-        }
+      const data = await hogqlQuery(
+        host, projectId, apiKey,
+        ["properties.$referring_domain", "count()"],
+        "events",
+        `event = '$pageview' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`,
+        ["properties.$referring_domain"],
+        ["count() DESC"],
+        limit
       );
 
-      const referrers = (data?.result || [])
-        .map((item: any) => ({
-          source: item.breakdown_value || item.label || "Direct",
-          count:
-            item.aggregated_value ??
-            item.data?.reduce(
-              (sum: number, val: number) => sum + val,
-              0
-            ) ??
-            0,
-        }))
-        .sort((a: any, b: any) => b.count - a.count)
-        .slice(0, limit);
+      const referrers = (data.results || []).map((row: any[]) => ({
+        source: row[0] || "$direct",
+        count: row[1] || 0,
+      }));
 
       setCache(cacheKey, referrers);
       return referrers;
@@ -608,43 +551,21 @@ export const fetchScrollDepthByPage = action({
     const { host, apiKey, projectId } = getConfig();
 
     try {
-      const data = await posthogRequest(
-        host,
-        `/api/projects/${projectId}/insights/trend/`,
-        apiKey,
-        {
-          method: "POST",
-          body: {
-            events: [
-              {
-                id: "scroll_depth_reached",
-                type: "events",
-                math: "avg",
-                math_property: "depth",
-              },
-            ],
-            breakdown: "page_path",
-            breakdown_type: "event",
-            date_from: args.dateFrom,
-            date_to: args.dateTo,
-          },
-        }
+      const data = await hogqlQuery(
+        host, projectId, apiKey,
+        ["properties.page_path", "avg(toFloat64OrNull(properties.depth))"],
+        "events",
+        `event = 'scroll_depth_reached' AND timestamp >= '${args.dateFrom}' AND timestamp <= '${args.dateTo}'`,
+        ["properties.page_path"],
+        ["avg(toFloat64OrNull(properties.depth)) DESC"]
       );
 
-      const pages = (data?.result || [])
-        .map((item: any) => ({
-          path: item.breakdown_value || item.label || "Unknown",
-          avgScrollDepth:
-            item.aggregated_value ??
-            (item.data?.length
-              ? Math.round(
-                  item.data.reduce((s: number, v: number) => s + v, 0) /
-                    item.data.filter((v: number) => v > 0).length
-                )
-              : 0),
+      const pages = (data.results || [])
+        .map((row: any[]) => ({
+          path: row[0] || "Unknown",
+          avgScrollDepth: Math.round(row[1] || 0),
         }))
-        .filter((p: any) => p.path.includes("/supplements/"))
-        .sort((a: any, b: any) => b.avgScrollDepth - a.avgScrollDepth);
+        .filter((p: any) => p.path.includes("/supplements/"));
 
       setCache(cacheKey, pages);
       return pages;
