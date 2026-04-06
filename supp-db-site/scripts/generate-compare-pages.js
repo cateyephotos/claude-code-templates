@@ -361,6 +361,105 @@ const COMPARISONS = [
             { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' },
             { title: 'Probiotics', url: '../categories/probiotics.html' }
         ]
+    },
+    {
+        slug: 'glucosamine-vs-chondroitin',
+        suppA: 'Glucosamine',
+        suppB: 'Chondroitin Sulfate',
+        title: 'Glucosamine vs Chondroitin Sulfate: Evidence-Based Comparison',
+        metaTitle: 'Glucosamine vs Chondroitin (2026) | Which Is Better for Joints?',
+        metaDescription: 'Evidence-based comparison of Glucosamine vs Chondroitin Sulfate for joint health and osteoarthritis. Compare mechanisms, clinical evidence, dosages, and which supplement is right for your joints.',
+        domain: 'Joint Support',
+        sharedDomains: ['joint health', 'osteoarthritis', 'cartilage support', 'anti-inflammatory'],
+        verdict: 'Both Glucosamine Sulfate and Chondroitin Sulfate are Tier 2 (Moderate Evidence) for osteoarthritis, but they approach cartilage support through distinct mechanisms. Glucosamine provides raw building blocks for cartilage GAG synthesis and shows consistent evidence for slowing joint space narrowing (SMD -0.42). Chondroitin works primarily by inhibiting cartilage-degrading enzymes (MMPs and ADAMTS) and enhancing synovial fluid. Independent meta-analyses show both have modest pain relief below clinical significance thresholds, but structural benefits are more robust. Pharmaceutical-grade formulations are critical for both — supplement-grade products show weaker effects.',
+        whoShouldChoose: [
+            { scenario: 'Early osteoarthritis prevention', recommendation: 'Glucosamine Sulfate', reason: 'Stronger evidence for slowing joint space narrowing; sulfate form specifically (not HCl) showed significance in long-term RCTs.' },
+            { scenario: 'Active cartilage degradation', recommendation: 'Chondroitin Sulfate', reason: 'Directly inhibits matrix metalloproteinases (MMPs) and ADAMTS enzymes that break down cartilage.' },
+            { scenario: 'Pain relief priority', recommendation: 'Either (modest)', reason: 'Both show sub-clinical pain improvements (VAS WMD -5 to -7mm vs 15mm MCID). Neither replaces NSAIDs for acute pain.' },
+            { scenario: 'Synovial fluid support', recommendation: 'Chondroitin Sulfate', reason: 'Enhances synovial fluid viscosity and proteoglycan content, supporting joint lubrication.' },
+            { scenario: 'Comprehensive joint support', recommendation: 'Both combined', reason: 'The GAIT trial and subsequent analyses suggest the combination may outperform either alone for moderate-to-severe knee OA.' },
+            { scenario: 'Budget-conscious choice', recommendation: 'Glucosamine Sulfate', reason: 'Generally less expensive; widely available as a standalone supplement with consistent dosing guidelines.' }
+        ],
+        canStack: 'Yes — Glucosamine and Chondroitin are frequently combined and this is one of the most studied supplement combinations in joint health. The GAIT trial (Clegg 2006, N=1583) found the combination showed benefit in the moderate-to-severe OA subgroup. Their mechanisms are complementary: Glucosamine provides building blocks for GAG synthesis while Chondroitin inhibits degrading enzymes. Standard combination: Glucosamine Sulfate 1500mg + Chondroitin Sulfate 800-1200mg daily, preferably pharmaceutical-grade. Both are well-tolerated with mild GI side effects. Caution with shellfish allergy (glucosamine source) and anticoagulants (chondroitin may enhance effects).',
+        relatedGuides: [],
+        relatedCategories: [
+            { title: 'Joint Support', url: '../categories/joint-support.html' }
+        ]
+    },
+    {
+        slug: 'lutein-vs-zeaxanthin',
+        suppA: 'Lutein',
+        suppB: 'Zeaxanthin',
+        title: 'Lutein vs Zeaxanthin for Eye & Brain Health: Evidence-Based Comparison',
+        metaTitle: 'Lutein vs Zeaxanthin (2026) | Which Carotenoid Is Better?',
+        metaDescription: 'Evidence-based comparison of Lutein vs Zeaxanthin for macular health, eye protection, and cognitive function. Compare mechanisms, dosages, and which carotenoid is right for you.',
+        domain: 'Eye & Brain Health',
+        sharedDomains: ['macular health', 'eye protection', 'blue light filtration', 'cognitive function'],
+        verdict: 'Lutein and Zeaxanthin are both Tier 2 (Moderate Evidence) carotenoids that accumulate in the macula and brain. They are stereoisomers with nearly identical structures but distinct distributions: Lutein dominates the peripheral macula and brain tissue, while Zeaxanthin concentrates in the central fovea where visual acuity is highest. Both filter blue light and provide antioxidant protection. Clinical evidence from the AREDS2 trial (N=4203) established Lutein + Zeaxanthin as the standard replacement for beta-carotene in age-related macular degeneration prevention. Most evidence supports using them together rather than choosing one over the other.',
+        whoShouldChoose: [
+            { scenario: 'Central vision protection', recommendation: 'Zeaxanthin', reason: 'Concentrates in the fovea centralis where sharp vision originates; provides targeted protection against blue light damage at the macula center.' },
+            { scenario: 'Overall macular support', recommendation: 'Lutein', reason: 'Distributes across the broader macula and peripheral retina; more extensively studied with larger effect sizes for macular pigment optical density (MPOD).' },
+            { scenario: 'Cognitive function', recommendation: 'Lutein', reason: 'Greater accumulation in brain tissue; linked to cognitive processing speed and memory in observational studies.' },
+            { scenario: 'Age-related macular degeneration risk', recommendation: 'Both combined', reason: 'AREDS2 trial demonstrated the combination (10mg Lutein + 2mg Zeaxanthin) reduces AMD progression risk; neither alone matches this evidence.' },
+            { scenario: 'Screen-heavy work (blue light exposure)', recommendation: 'Both combined', reason: 'Together they filter blue light across the full macular area — Lutein at the periphery, Zeaxanthin at the center.' },
+            { scenario: 'Skin health bonus', recommendation: 'Either', reason: 'Both provide UV photoprotection for skin; minimal difference in this application.' }
+        ],
+        canStack: 'Yes — Lutein and Zeaxanthin are almost always used together and this is the clinically validated approach. The AREDS2 formula uses 10mg Lutein + 2mg Zeaxanthin (5:1 ratio). They share the same absorption pathway and are synergistic in macular pigment formation, with each covering different regions of the macula. Most commercial formulas combine them. Take with a fat-containing meal for optimal absorption (both are fat-soluble carotenoids). No known adverse interactions. The combination is considered the standard of care for macular health supplementation.',
+        relatedGuides: [],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'quercetin-vs-grape-seed-extract',
+        suppA: 'Quercetin',
+        suppB: 'Grape Seed Extract',
+        title: 'Quercetin vs Grape Seed Extract: Evidence-Based Comparison',
+        metaTitle: 'Quercetin vs Grape Seed Extract (2026) | Which Antioxidant Is Better?',
+        metaDescription: 'Evidence-based comparison of Quercetin vs Grape Seed Extract for cardiovascular health, antioxidant protection, and anti-aging. Compare mechanisms, senolytic effects, and which supplement to choose.',
+        domain: 'Cardiovascular & Antioxidant Support',
+        sharedDomains: ['antioxidant protection', 'cardiovascular health', 'anti-inflammatory', 'neuroprotection'],
+        verdict: 'Both Quercetin and Grape Seed Extract (GSE) are Tier 2 (Moderate Evidence) polyphenolic antioxidants with cardiovascular and anti-inflammatory benefits, but they have distinctly different clinical profiles. Quercetin is a flavonol with emerging senolytic properties (clearing senescent cells when combined with dasatinib) and broad anti-inflammatory effects. GSE contains proanthocyanidins — among the most potent natural antioxidants — with strong evidence for endothelial function and blood pressure support. Quercetin is the more versatile compound for anti-aging and immune support; GSE excels for vascular health and skin protection.',
+        whoShouldChoose: [
+            { scenario: 'Blood pressure support', recommendation: 'Grape Seed Extract', reason: 'More robust evidence for endothelial function enhancement and modest blood pressure reduction via nitric oxide pathway support.' },
+            { scenario: 'Anti-aging / senolytic effects', recommendation: 'Quercetin', reason: 'Unique senolytic activity — clears senescent cells (with dasatinib in research protocols). GSE has no demonstrated senolytic properties.' },
+            { scenario: 'Pure antioxidant capacity', recommendation: 'Grape Seed Extract', reason: 'Proanthocyanidins have higher oxygen radical absorbance capacity (ORAC) than most flavonoids including quercetin.' },
+            { scenario: 'Immune support', recommendation: 'Quercetin', reason: 'Broader immune-modulating evidence including antiviral activity and mast cell stabilization (useful for allergies).' },
+            { scenario: 'Skin health', recommendation: 'Grape Seed Extract', reason: 'Collagen cross-linking protection and UV photoprotection; proanthocyanidins specifically support dermal matrix integrity.' },
+            { scenario: 'Comprehensive cardiovascular support', recommendation: 'Both combined', reason: 'Complementary mechanisms — Quercetin for inflammation and cellular senescence, GSE for endothelial function and vascular tone.' }
+        ],
+        canStack: 'Yes — Quercetin and Grape Seed Extract can be safely combined and target complementary pathways. Quercetin acts on inflammatory signaling and senescent cell clearance while GSE strengthens endothelial function and provides direct antioxidant protection. Standard doses: Quercetin 500-1000mg daily + GSE 100-400mg daily. Both are well-tolerated. Note: Quercetin may inhibit certain CYP enzymes affecting drug metabolism — check interactions if on medications. GSE may enhance anticoagulant effects. Take both with meals for improved absorption.',
+        relatedGuides: [
+            { title: 'Cardiovascular Health Guide', url: '../guides/cardiovascular.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' },
+            { title: 'Polyphenols', url: '../categories/polyphenols.html' }
+        ]
+    },
+    {
+        slug: 'elderberry-vs-black-seed-oil',
+        suppA: 'Elderberry',
+        suppB: 'Black Seed Oil',
+        title: 'Elderberry vs Black Seed Oil for Immune Support: Evidence-Based Comparison',
+        metaTitle: 'Elderberry vs Black Seed Oil (2026) | Which Is Better for Immunity?',
+        metaDescription: 'Evidence-based comparison of Elderberry vs Black Seed Oil for immune support, anti-inflammatory effects, and respiratory health. Compare mechanisms, dosages, and which supplement suits your needs.',
+        domain: 'Immune & Respiratory Support',
+        sharedDomains: ['immune support', 'anti-inflammatory', 'respiratory health', 'antioxidant'],
+        verdict: 'Elderberry and Black Seed Oil (Nigella sativa) are both Tier 2 (Moderate Evidence) herbal supplements with immune-supporting properties, but they serve different clinical roles. Elderberry has stronger evidence for acute viral infections — its anthocyanins inhibit viral hemagglutinin, and meta-analyses show it reduces cold duration by 2-4 days. Black Seed Oil (via thymoquinone) has broader therapeutic reach including metabolic support, anti-inflammatory activity, and immune modulation, but weaker acute antiviral evidence. Choose Elderberry for seasonal immune defense; choose Black Seed Oil for year-round anti-inflammatory and metabolic support with immune benefits.',
+        whoShouldChoose: [
+            { scenario: 'Cold & flu season defense', recommendation: 'Elderberry', reason: 'Stronger evidence for reducing cold/flu duration (2-4 day reduction); specific antiviral mechanism via hemagglutinin inhibition.' },
+            { scenario: 'Chronic inflammation', recommendation: 'Black Seed Oil', reason: 'Thymoquinone provides sustained anti-inflammatory effects across multiple pathways; better suited for ongoing inflammatory conditions.' },
+            { scenario: 'Metabolic health + immunity', recommendation: 'Black Seed Oil', reason: 'Unique dual benefit — supports both immune function and metabolic parameters (blood sugar, lipids) simultaneously.' },
+            { scenario: 'Respiratory tract support', recommendation: 'Both viable', reason: 'Elderberry supports upper respiratory tract specifically; Black Seed Oil has broader respiratory anti-inflammatory evidence.' },
+            { scenario: 'Children (immune support)', recommendation: 'Elderberry', reason: 'More pediatric safety data; widely used in children\'s formulas. Black Seed Oil has less pediatric research.' },
+            { scenario: 'Allergy-related immunity', recommendation: 'Black Seed Oil', reason: 'Thymoquinone has antihistamine-like properties and mast cell stabilization; addresses allergic inflammation specifically.' }
+        ],
+        canStack: 'Yes — Elderberry and Black Seed Oil can be safely combined for comprehensive immune support. Their mechanisms are complementary: Elderberry provides direct antiviral activity via hemagglutinin inhibition plus anthocyanin antioxidants, while Black Seed Oil (thymoquinone) modulates broader immune and inflammatory pathways. A practical protocol: Elderberry (300-600mg standardized extract) for seasonal immune defense + Black Seed Oil (500-1000mg) for ongoing anti-inflammatory and immune modulation. Both are well-tolerated with excellent safety profiles. Caution: Black Seed Oil may affect blood sugar — monitor if diabetic. Both may enhance anticoagulant effects.',
+        relatedGuides: [],
+        relatedCategories: [
+            { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' }
+        ]
     }
 ];
 
@@ -401,7 +500,15 @@ const SUPPLEMENT_EMOJIS = {
     'Valerian Root': '🌸',
     'Passionflower': '🌺',
     'Inulin': '🌾',
-    'Akkermansia muciniphila': '🦠'
+    'Akkermansia muciniphila': '🦠',
+    'Glucosamine': '🦴',
+    'Chondroitin Sulfate': '🦴',
+    'Lutein': '👁️',
+    'Zeaxanthin': '👁️',
+    'Quercetin': '🍎',
+    'Grape Seed Extract': '🍇',
+    'Elderberry': '🫐',
+    'Black Seed Oil': '🌑'
 };
 
 const CATEGORY_EMOJIS = {
@@ -735,6 +842,11 @@ function generateComparePage(comp) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Auth: Clerk + Convex env injection (substituted by docker-entrypoint.sh / vercel-build.js) -->
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
     <style>${COMPARE_CSS}</style>
     <script type="application/ld+json">${JSON.stringify({
         "@context": "https://schema.org",
@@ -1142,6 +1254,12 @@ function generateComparePage(comp) {
     });
 })();
 </script>
+
+<!-- Auth & Convex client -->
+<script src="../js/auth.js"></script>
+<script src="../js/convex-client.js"></script>
+<script src="../js/rbac.js"></script>
+<script src="../js/auth-ui.js"></script>
 </body>
 </html>`;
 
