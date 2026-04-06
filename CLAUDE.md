@@ -200,6 +200,57 @@ Enabled APIs:
 10. **GSC property owner** — Property is on `carlostomasphotos@gmail.com`, not `carlosthomas.01@gmail.com`
 11. **TypeScript typecheck** — Disable for deploy (`--typecheck=disable`) due to known TS2802 in gsc.ts/ga4.ts
 
+## Page Generation SOP (SEO-Critical)
+
+**Every page generator** (`seed.js`, `generate-compare-pages.js`, `generate-guide-pages.js`) MUST follow this post-generation checklist. Skipping these steps has caused P0 SEO incidents (wrong canonical domain, duplicate content, missing sitemap entries).
+
+### Mandatory Post-Generation Steps
+
+```bash
+cd supp-db-site
+
+# 1. Regenerate pages
+node seed.js --out supplements/              # monographs
+node scripts/generate-compare-pages.js       # comparisons
+node scripts/generate-guide-pages.js         # guides
+
+# 2. Anti-scraping honeypots (ALWAYS run after generation)
+node scripts/inject-honeypots.js
+
+# 3. Regenerate sitemap (ALWAYS run after adding/removing pages)
+npm run generate:sitemap
+```
+
+### SEO Rules for Generated Pages
+
+| Rule | Requirement | Violation Example |
+|------|------------|-------------------|
+| **Canonical domain** | `https://supplementdb.info` always | `supplementdb.com` or `.co` in canonical/og:url/schema |
+| **BASE_URL in seed.js** | Must be `https://supplementdb.info` | Hardcoded `.com` default breaks 114 pages |
+| **Title tag** | ≤ 60 chars, supplement name first | 70+ char titles get truncated in SERPs |
+| **Meta description** | ≤ 160 chars, include CTA | 290-char descriptions get 50% truncated |
+| **H1 tag** | Exactly one per page, matches topic | Compare pages had generic h1 instead of supplement names |
+| **No placeholder links** | All `href` values must resolve to real pages | `*-vs-placebo.html` links were 404s |
+| **Sitemap coverage** | Every public page must be in `sitemap.xml` | 35+ pages were missing from sitemap |
+
+### Link Propagation Checklist (New Pages)
+
+When adding **new supplement pages**:
+- [ ] `seed.js` COMPARISONS_LIST — add any comparisons involving this supplement
+- [ ] Run `npm run generate:sitemap`
+
+When adding **new comparison pages**:
+- [ ] `index.html` — add card in Comparisons grid section
+- [ ] `index.html` — add `<li>` in footer Comparisons list
+- [ ] `scripts/generate-supplement-pages.js` COMPARISONS_LIST — add entry for monograph cross-linking
+- [ ] `seed.js` COMPARISONS_LIST — add entry for monograph cross-linking
+- [ ] `scripts/find-compare-candidates.js` EXISTING_SLUGS + EXISTING_PAIRS — exclude from future scoring
+- [ ] Run `npm run generate:sitemap`
+
+When adding **new guide pages**:
+- [ ] `index.html` — add to Evidence Guides section if appropriate
+- [ ] Run `npm run generate:sitemap`
+
 ## SupplementDB Skills Reference
 
 Use these skills (via `/skill-name`) when working on SupplementDB tasks. Skills are in `.claude/skills/`.

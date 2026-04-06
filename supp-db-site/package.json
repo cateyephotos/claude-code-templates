@@ -20,6 +20,7 @@
     "generate:supplements": "node seed.js --out supplements/",
     "generate:guides": "node scripts/generate-guide-pages.js",
     "generate:compare": "node scripts/generate-compare-pages.js",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
     "audit:fda": "node scripts/audit-fda-claims.js",
     "heal": "node healing-engine/run-healing.js",
     "heal:dry-run": "node healing-engine/run-healing.js --dry-run --skip-browser --skip-links",
