@@ -199,3 +199,65 @@ Enabled APIs:
 9. **GA4 property ID** — Use the numeric ID (530443869), not the G- measurement ID
 10. **GSC property owner** — Property is on `carlostomasphotos@gmail.com`, not `carlosthomas.01@gmail.com`
 11. **TypeScript typecheck** — Disable for deploy (`--typecheck=disable`) due to known TS2802 in gsc.ts/ga4.ts
+
+## SupplementDB Skills Reference
+
+Use these skills (via `/skill-name`) when working on SupplementDB tasks. Skills are in `.claude/skills/`.
+
+### Core Pipeline Skills
+
+| Skill | Trigger | What it does |
+|-------|---------|--------------|
+| `/supplement-research-pipeline` | Adding new supplements, researching evidence, importing data | End-to-end research → evaluate → publish. Searches PubMed/bioRxiv, grades evidence (GRADE), outputs to supplements.js + enhanced_citations/. Mode 6 (`/import-supplement`) handles full import including page generation. |
+| `/supplement-pipeline-validator` | After adding/updating supplements, before page generation | Validates supplements.js fields, enhanced_citations schema, citation integrity (PMID/DOI verification), and HTML generation readiness. |
+| `/find-compare-candidates` | Expanding the comparison library | Scores all 6,400+ supplement pairs to find best head-to-head candidates. Outputs ranked list + COMPARISONS config stubs. |
+| `/guide-pdf-orchestrator` | Creating supplement guide PDFs | End-to-end PDF production from data audit through content authoring to PDF generation. |
+| `/self-healing` | Broken pages, malformed citations, rendering errors | Validates scraped JSON data, fixes malformed DOIs/PMIDs, repairs rendering issues on the supplement site. |
+
+### Deployment Skills
+
+| Skill | Trigger | What it does |
+|-------|---------|--------------|
+| `/vercel-deploy-suppdb` | Deploying to production | Full Vercel deploy with Clerk auth, Convex backend, env var injection. Handles the complete deploy pipeline. |
+| `/vercel-cleanup` | Managing Vercel deployments | List, clean up old builds, deploy new production versions. |
+| `/doppler-secrets` | Managing secrets and env vars | Doppler CLI for secrets, API keys, .env files across environments. |
+
+### Research & Evidence Skills
+
+| Skill | Trigger | What it does |
+|-------|---------|--------------|
+| `/literature-review` | Systematic literature reviews | Searches PubMed, arXiv, bioRxiv, Semantic Scholar for comprehensive reviews. |
+| `/pubmed-database` | PubMed queries | Direct PubMed REST API access with advanced Boolean/MeSH queries. |
+| `/citation-management` | Citation validation, metadata extraction | Search Google Scholar/PubMed, validate citations, generate formatted references. |
+| `/research-lookup` | Quick research lookups | Current research info via Parallel Chat API or Perplexity. |
+| `/scientific-writing` | Writing evidence summaries | Scientific manuscripts and evidence summaries in publication style. |
+| `/scientific-critical-thinking` | Evaluating evidence quality | Assess experimental design, identify biases, apply evidence grading frameworks. |
+| `/statistical-analysis` | Analyzing study data | Test selection, assumption checking, power analysis, results reporting. |
+
+### Database & Biomedical Skills
+
+| Skill | Trigger | What it does |
+|-------|---------|--------------|
+| `/clinicaltrials-database` | Looking up clinical trials | Query ClinicalTrials.gov by condition, drug, phase, status. |
+| `/fda-database` | FDA regulatory data | Query openFDA for drugs, adverse events, recalls, regulatory submissions. |
+| `/chembl-database` | Drug-target data | Query ChEMBL for bioactive molecules, bioactivity data (IC50, Ki). |
+| `/opentargets-database` | Target-disease associations | Drug target discovery, tractability/safety data, genetics evidence. |
+| `/drugbank-database` | Drug information | Drug properties, interactions, targets, pathways, chemical structures. |
+
+### QA & Review Skills
+
+| Skill | Trigger | What it does |
+|-------|---------|--------------|
+| `/qa` | Testing the live site and fixing bugs | Systematically QA test the web app, then fix bugs in source code. |
+| `/qa-only` | Testing without fixing | Report-only QA with health score, screenshots, repro steps. |
+| `/design-review` | Visual QA | Finds spacing issues, hierarchy problems, contrast issues, AI slop patterns. |
+| `/review` | Pre-landing PR review | Analyzes diff for SQL safety, trust boundary violations, structural issues. |
+
+### When to Use Which Skill
+
+- **Adding a new supplement**: `/supplement-research-pipeline` (Mode 6) → `/supplement-pipeline-validator` → verify pages
+- **Expanding comparisons**: `/find-compare-candidates` → select candidates → run `generate-compare-pages.js`
+- **Deploying changes**: `npm run deploy:convex:prod` (Convex) → `/vercel-deploy-suppdb` (frontend)
+- **Validating data quality**: `/supplement-pipeline-validator` → `/self-healing` for fixes
+- **Researching evidence**: `/literature-review` or `/pubmed-database` → `/scientific-critical-thinking` → `/scientific-writing`
+- **QA before deploy**: `/qa` or `/qa-only` → `/design-review` for visual polish
