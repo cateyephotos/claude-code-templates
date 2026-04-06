@@ -43,9 +43,11 @@ function main() {
   let deployFailed = false;
   try {
     console.log(`[convex-deploy-prod] Deploying to production...`);
+    // Use process.platform-aware command: Windows needs npx.cmd
+    const npxCmd = process.platform === "win32" ? "npx.cmd" : "npx";
     execFileSync(
-      "npx",
-      ["convex", "deploy", "--url", PROD_URL, "--typecheck=disable"],
+      npxCmd,
+      ["convex", "deploy", "--url", PROD_URL, "--typecheck=disable", "-y"],
       { stdio: "inherit", cwd: path.join(__dirname, "..") }
     );
     console.log("[convex-deploy-prod] Deploy succeeded.");

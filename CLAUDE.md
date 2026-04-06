@@ -46,12 +46,14 @@ npx convex env list           # Shows dev deployment vars
 ```bash
 cd supp-db-site
 
-# Deploy Convex backend (always goes to prod)
-npx convex deploy --typecheck=disable -y
+# Deploy Convex backend — MUST use this script, never npx convex deploy directly
+npm run deploy:convex:prod
 
 # Deploy Vercel frontend
 vercel --prod
 ```
+
+**NEVER run `npx convex deploy` directly.** The `auth.config.js` file defaults to the dev Clerk domain (`usable-tarpon-30.clerk.accounts.dev`). Production requires `clerk.supplementdb.info`. The `deploy:convex:prod` script handles the domain swap automatically — it swaps to the prod domain, deploys, then reverts for local dev. Deploying without this script silently breaks all authenticated Convex queries (admin dashboard, user-specific data) because the JWT issuer won't match the configured auth provider.
 
 TypeScript typecheck is disabled because `gsc.ts` and `ga4.ts` have a known TS2802 error (Uint8Array iteration without downlevelIteration) that doesn't affect Convex runtime.
 
@@ -186,13 +188,14 @@ Enabled APIs:
 
 ## Common Gotchas
 
-1. **Convex env vars on wrong deployment** — Always use `--prod` for production env vars
-2. **PostHog phc_ vs phx_ keys** — Server-side actions need `phx_` personal API keys
-3. **PostHog host** — API queries go to `us.posthog.com`, event ingestion goes to `us.i.posthog.com`
-4. **PostHog legacy endpoints** — `/insights/trend/` is deprecated, use `/query/` with HogQL
-5. **DOM security hook** — Pre-commit hook blocks unsafe HTML injection; use safe DOM methods
-6. **Vercel env vars** — Never use echo to pipe; always trim in build scripts
-7. **Vercel cleanUrls** — Breaks relative paths in subdirectories
-8. **GA4 property ID** — Use the numeric ID (530443869), not the G- measurement ID
-9. **GSC property owner** — Property is on `carlostomasphotos@gmail.com`, not `carlosthomas.01@gmail.com`
-10. **TypeScript typecheck** — Disable for deploy (`--typecheck=disable`) due to known TS2802 in gsc.ts/ga4.ts
+1. **Convex deploy MUST use `npm run deploy:convex:prod`** — Never `npx convex deploy` directly. The auth.config.js has the dev Clerk domain by default; the deploy script swaps it to prod, deploys, then reverts. Skipping this silently breaks all authenticated queries (admin dashboard shows skeleton loading, "Authentication required" in Convex logs). Symptom is invisible — no browser console errors, Clerk shows signed in, but Convex rejects the JWT because the issuer domain doesn't match.
+2. **Convex env vars on wrong deployment** — Always use `--prod` for production env vars
+3. **PostHog phc_ vs phx_ keys** — Server-side actions need `phx_` personal API keys
+4. **PostHog host** — API queries go to `us.posthog.com`, event ingestion goes to `us.i.posthog.com`
+5. **PostHog legacy endpoints** — `/insights/trend/` is deprecated, use `/query/` with HogQL
+6. **DOM security hook** — Pre-commit hook blocks unsafe HTML injection; use safe DOM methods
+7. **Vercel env vars** — Never use echo to pipe; always trim in build scripts
+8. **Vercel cleanUrls** — Breaks relative paths in subdirectories
+9. **GA4 property ID** — Use the numeric ID (530443869), not the G- measurement ID
+10. **GSC property owner** — Property is on `carlostomasphotos@gmail.com`, not `carlosthomas.01@gmail.com`
+11. **TypeScript typecheck** — Disable for deploy (`--typecheck=disable`) due to known TS2802 in gsc.ts/ga4.ts
