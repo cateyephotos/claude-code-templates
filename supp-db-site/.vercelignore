@@ -7,6 +7,9 @@ supplements-new/
 
 # Test/mockup files — not production content
 mockups/
+compare/mockup-*.html
+test-*.html
+debug-*.html
 
 # Test files
 tests/

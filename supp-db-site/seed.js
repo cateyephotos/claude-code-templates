@@ -589,17 +589,24 @@ function buildJsonLd(supp, slug, tierText, safetyRat, citCount) {
     return schemas;
 }
 
-function buildMetaDesc(supp, tierText, safetyRat) {
-    const parts = [`${supp.name}: ${tierText}`];
-    if (supp.dosageRange) parts.push(`Dosage: ${supp.dosageRange}`);
-    parts.push(`Safety: ${safetyRat}`);
+function buildMetaDesc(supp, tierText, safetyRat, citCount) {
     const benefits = [
         ...(supp.primaryBenefits?.cognitive || []),
         ...(supp.primaryBenefits?.nonCognitive || [])
-    ].slice(0, 3);
-    if (benefits.length) parts.push(benefits.join(', '));
-    parts.push('Evidence-based research from peer-reviewed studies');
-    return parts.join('. ') + '.';
+    ].slice(0, 2).map(b => b.toLowerCase());
+    const benefitStr = benefits.length ? benefits.join(' & ') : 'health support';
+    const citations = citCount ? `${citCount}+` : '';
+    const studies = citations ? ` from ${citations} studies` : '';
+    // Target: ≤155 chars. Format: "{Name} — {tier} evidence for {benefits}. Dosage, safety & mechanisms{studies}. Read the full analysis."
+    // tierText is e.g. "Tier 1: Strong Evidence" — extract just the quality word
+    const tierWord = tierText.replace(/^Tier \d+:\s*/, '').replace(/\s*evidence$/i, '').toLowerCase();
+    const desc = `${supp.name} — ${tierWord} evidence for ${benefitStr}. Dosage, safety & mechanisms${studies}. Read the full analysis.`;
+    if (desc.length <= 155) return desc;
+    // Shorter fallback: drop "Dosage, safety & mechanisms"
+    const short = `${supp.name} — ${tierWord} evidence for ${benefitStr}${studies}. Read the full analysis.`;
+    if (short.length <= 155) return short;
+    const shorter = `${supp.name} — ${tierWord} evidence for ${benefitStr}${studies}. Read the analysis.`;
+    return shorter.length <= 155 ? shorter : shorter.slice(0, 152) + '...';
 }
 
 // ── Canonical SupplementMonograph schema builder ───────────────────────────────
@@ -696,13 +703,13 @@ function supplementToMonograph(supp, enhanced) {
         // ── meta ──────────────────────────────────────────────────────────────
         slug,
         title      : `${h(supp.name)} — Evidence-Based Guide | SupplementDB`,
-        metaDesc   : buildMetaDesc(supp, tierText, safetyRat),
+        metaDesc   : buildMetaDesc(supp, tierText, safetyRat, citCount),
         canonical  : `${BASE_URL}/supplements/${slug}.html`,
         ogTitle    : `${h(supp.name)} — Evidence-Based Guide`,
         ogDesc     : h(supp.evidenceTierRationale || `${supp.category} supplement with ${tierText}`),
         ogUrl      : `${BASE_URL}/supplements/${slug}.html`,
         twTitle    : `${h(supp.name)} — Evidence-Based Guide`,
-        twDesc     : buildMetaDesc(supp, tierText, safetyRat),
+        twDesc     : buildMetaDesc(supp, tierText, safetyRat, citCount),
         clerkKey   : CLERK_KEY,
         convexUrl  : CONVEX_URL,
         posthog    : '',      // populated by env if present
@@ -915,9 +922,13 @@ function renderPage(d, css) {
     <meta property="og:type" content="article">
     <meta property="og:url" content="${esc(d.ogUrl)}">
     <meta property="og:site_name" content="SupplementDB">
+    <meta property="og:image" content="${BASE_URL}/assets/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(d.twTitle)}">
     <meta name="twitter:description" content="${esc(d.twDesc)}">
+    <meta name="twitter:image" content="${BASE_URL}/assets/og-default.svg">
 ${d.lastUpdated ? `    <meta property="article:modified_time" content="${esc(d.lastUpdated)}">` : ''}
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">

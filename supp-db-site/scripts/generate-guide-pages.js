@@ -3064,8 +3064,8 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 });
 </script>
 
-<script src="../js/share-bar.js"></script>
-<script src="../js/newsletter.js"></script>
+<script src="../js/share-bar.js" defer></script>
+<script src="../js/newsletter.js" defer></script>
 <script>SupplementDBNewsletter.init("guide-newsletter-form", "guide-newsletter-email", "guide-newsletter-message", "guide-${guide.slug}");</script>
 
 <!-- Citation Tab Switching -->
@@ -3090,11 +3090,11 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 
 <!-- PREMIUM_CONTENT_END -->
 <!-- Auth & Content Gate -->
-<script src="../js/auth.js"></script>
-<script src="../js/convex-client.js"></script>
-<script src="../js/rbac.js"></script>
-<script src="../js/auth-ui.js"></script>
-<script src="../js/content-gate.js"></script>
+<script src="../js/auth.js" defer></script>
+<script src="../js/convex-client.js" defer></script>
+<script src="../js/rbac.js" defer></script>
+<script src="../js/auth-ui.js" defer></script>
+<script src="../js/content-gate.js" defer></script>
 </body>
 </html>`;
 

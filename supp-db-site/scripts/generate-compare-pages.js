@@ -902,7 +902,7 @@ function generateComparePage(comp) {
                 ${dB.scientificName ? `<div class="hero-supp-sci">${esc(dB.scientificName)}</div>` : ''}
             </div>
         </div>
-        <h1 class="hero-title">Evidence-Based Comparison for<br>${esc(comp.domain)}</h1>
+        <h1 class="hero-title">${esc(comp.suppA)} vs ${esc(comp.suppB)}:<br>Evidence-Based Comparison</h1>
         <p class="hero-sub">Analyzing clinical evidence, mechanisms, dosages, and safety profiles to help you make an informed decision.</p>
         <div class="hero-meta-row">
             <div class="hero-chip"><i class="fas fa-book-open"></i> ${totalCitations}+ Verified Citations</div>
