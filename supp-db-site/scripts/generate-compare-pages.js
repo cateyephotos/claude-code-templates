@@ -858,6 +858,15 @@ function generateComparePage(comp) {
         "publisher": { "@type": "Organization", "name": "SupplementDB", "url": SITE_URL },
         "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/compare/${comp.slug}.html` }
     })}</script>
+    <script type="application/ld+json">${JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+            { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": `${SITE_URL}/compare/` },
+            { "@type": "ListItem", "position": 3, "name": `${comp.suppA} vs ${comp.suppB}`, "item": `${SITE_URL}/compare/${comp.slug}.html` }
+        ]
+    })}</script>
 </head>
 <body>
 

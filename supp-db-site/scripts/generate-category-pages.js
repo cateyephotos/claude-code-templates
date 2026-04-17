@@ -204,6 +204,17 @@ function generateCategoryPage(categoryName, supplements) {
         }))
     };
 
+    // JSON-LD BreadcrumbList (Home > Categories > {categoryName})
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://supplementdb.info" },
+            { "@type": "ListItem", "position": 2, "name": "Categories", "item": "https://supplementdb.info/categories/" },
+            { "@type": "ListItem", "position": 3, "name": categoryName, "item": `https://supplementdb.info/categories/${slug}.html` }
+        ]
+    };
+
     const title = `${categoryName} — Evidence-Based Supplement Database | SupplementDB`;
     const metaDesc = `Explore ${count} evidence-based ${categoryName.toLowerCase()} supplements with clinical research data, dosage guidelines, and safety profiles. Backed by ${totalCitations}+ peer-reviewed citations.`;
 
@@ -255,6 +266,9 @@ function generateCategoryPage(categoryName, supplements) {
 
     <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 4)}
+    </script>
+    <script type="application/ld+json">
+${JSON.stringify(breadcrumbLd, null, 4)}
     </script>
 </head>
 <body class="legal-page">

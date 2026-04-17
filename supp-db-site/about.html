@@ -46,6 +46,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="legal/legal-shared.css">
+
+    <!-- Structured data: AboutPage + Organization + BreadcrumbList -->
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About SupplementDB",
+        "description": "Learn about SupplementDB's mission, methodology, and evidence rating system. An open-access, evidence-based supplement database backed by 1,700+ peer-reviewed research papers.",
+        "url": "https://supplementdb.info/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "SupplementDB",
+            "url": "https://supplementdb.info",
+            "logo": "https://supplementdb.info/assets/favicon.svg",
+            "description": "An evidence-based supplement database providing open-access research summaries, dosage guidelines, mechanisms, and safety profiles for 113+ supplements backed by 1,700+ peer-reviewed papers.",
+            "sameAs": [
+                "https://supplementdb.info"
+            ],
+            "foundingDate": "2024",
+            "knowsAbout": [
+                "Evidence-based medicine",
+                "Dietary supplements",
+                "Nutraceuticals",
+                "Clinical research",
+                "GRADE evidence framework"
+            ]
+        }
+    }</script>
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://supplementdb.info" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://supplementdb.info/about.html" }
+        ]
+    }</script>
 </head>
 <body class="legal-page">
     <!-- Navigation -->
