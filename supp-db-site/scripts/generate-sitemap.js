@@ -67,6 +67,7 @@ counts.supplements = scanDir("supplements", "supplements", "weekly", "0.8");
 counts.categories = scanDir("categories", "categories", "weekly", "0.7");
 counts.guides = scanDir("guides", "guides", "weekly", "0.8");
 counts.compare = scanDir("compare", "compare", "weekly", "0.8");
+counts.interactions = scanDir("interactions", "interactions", "weekly", "0.7");
 counts.evidence = scanDir("evidence", "evidence", "monthly", "0.6");
 
 // ── Build XML ────────────────────────────────────────────────────

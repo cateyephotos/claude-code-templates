@@ -1,0 +1,3905 @@
+{
+  "generatedAt": "2026-04-17T03:07:57.948Z",
+  "supplements": [
+    {
+      "name": "5-HTP",
+      "slug": "5-htp",
+      "category": "Amino Acid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "SSRIs"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "SNRIs"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Tramadol"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "St. John's Wort"
+        }
+      ]
+    },
+    {
+      "name": "Acetyl-L-Carnitine",
+      "slug": "acetyl-l-carnitine",
+      "category": "Amino Acid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "thyroid-medications",
+          "severity": "caution",
+          "rawText": "Thyroid medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        }
+      ]
+    },
+    {
+      "name": "Akkermansia muciniphila",
+      "slug": "akkermansia-muciniphila",
+      "category": "Metabolic Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Potential interaction with metformin (additive gut effects — monitor)"
+        },
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Antibiotics may reduce efficacy"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No significant clinical drug interactions reported"
+        }
+      ]
+    },
+    {
+      "name": "Alpha-GPC",
+      "slug": "alpha-gpc",
+      "category": "Choline Compound",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "cholinesterase-inhibitors",
+          "severity": "caution",
+          "rawText": "Cholinesterase inhibitors"
+        }
+      ]
+    },
+    {
+      "name": "Alpha-Lipoic Acid",
+      "slug": "alpha-lipoic-acid",
+      "category": "Antioxidants",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Thyroid hormones"
+        }
+      ]
+    },
+    {
+      "name": "Aniracetam",
+      "slug": "aniracetam",
+      "category": "Nootropics",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "stimulant-medications",
+          "severity": "caution",
+          "rawText": "Stimulant medications"
+        }
+      ]
+    },
+    {
+      "name": "Apigenin",
+      "slug": "apigenin",
+      "category": "Polyphenol",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "May potentiate sedative medications (benzodiazepines, barbiturates) due to GABA-A activity"
+        },
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "May potentiate sedative medications (benzodiazepines, barbiturates) due to GABA-A activity"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Theoretical interaction with anticoagulants/antiplatelets (not clinically significant at dietary doses)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with CYP-metabolized drugs"
+        }
+      ]
+    },
+    {
+      "name": "Ashwagandha",
+      "slug": "ashwagandha",
+      "category": "Adaptogen",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "Sedatives"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        },
+        {
+          "categorySlug": "thyroid-medications",
+          "severity": "caution",
+          "rawText": "Thyroid medications"
+        }
+      ]
+    },
+    {
+      "name": "Astaxanthin",
+      "slug": "astaxanthin",
+      "category": "Antioxidants",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "B-Complex Vitamins",
+      "slug": "b-complex-vitamins",
+      "category": "Essential Nutrients",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Phenytoin (folate)"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Metformin (B12)"
+        }
+      ]
+    },
+    {
+      "name": "Bacopa monnieri",
+      "slug": "bacopa-monnieri",
+      "category": "Nootropic",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "cholinesterase-inhibitors",
+          "severity": "caution",
+          "rawText": "May enhance effects of cholinesterase inhibitors"
+        }
+      ]
+    },
+    {
+      "name": "Berberine",
+      "slug": "berberine",
+      "category": "Plant Alkaloid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Antibiotics"
+        }
+      ]
+    },
+    {
+      "name": "Beta-Alanine",
+      "slug": "beta-alanine",
+      "category": "Performance Enhancers",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with taurine metabolism"
+        },
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "No major drug interactions reported"
+        }
+      ]
+    },
+    {
+      "name": "Betaine",
+      "slug": "betaine",
+      "category": "Performance Enhancers",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with cholesterol medications"
+        },
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "No major drug interactions reported"
+        }
+      ]
+    },
+    {
+      "name": "Bitter Melon",
+      "slug": "bitter-melon",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "May enhance hypoglycemic effects"
+        }
+      ]
+    },
+    {
+      "name": "Black Seed Oil",
+      "slug": "black-seed-oil",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        }
+      ]
+    },
+    {
+      "name": "Boswellia",
+      "slug": "boswellia",
+      "category": "Anti-inflammatory",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Anti-inflammatory medications"
+        }
+      ]
+    },
+    {
+      "name": "Bovine Colostrum",
+      "slug": "bovine-colostrum",
+      "category": "Performance Enhancers",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "No major drug interactions reported"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "May theoretically interact with immunosuppressive medications due to immune-modulating properties"
+        }
+      ]
+    },
+    {
+      "name": "Caffeine",
+      "slug": "caffeine",
+      "category": "Performance Enhancers",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "stimulant-medications",
+          "severity": "caution",
+          "rawText": "Stimulant medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Some antibiotics"
+        }
+      ]
+    },
+    {
+      "name": "Centella Asiatica",
+      "slug": "centella-asiatica",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Cholesterol medications"
+        }
+      ]
+    },
+    {
+      "name": "Chlorella",
+      "slug": "chlorella",
+      "category": "Antioxidants",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressive drugs"
+        }
+      ]
+    },
+    {
+      "name": "Choline",
+      "slug": "choline",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "Chondroitin Sulfate",
+      "slug": "chondroitin-sulfate",
+      "category": "Joint Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Warfarin/blood thinners (INR monitoring recommended)"
+        }
+      ]
+    },
+    {
+      "name": "Chromium",
+      "slug": "chromium",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Antacids may reduce absorption"
+        }
+      ]
+    },
+    {
+      "name": "Cinnamon Extract",
+      "slug": "cinnamon-extract",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Liver medications"
+        }
+      ]
+    },
+    {
+      "name": "Cistanche",
+      "slug": "cistanche",
+      "category": "Herbal Extract",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "cholinesterase-inhibitors",
+          "severity": "caution",
+          "rawText": "Theoretical interaction with cholinesterase inhibitors (shared pathway)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No clinically significant drug interactions reported in trials"
+        }
+      ]
+    },
+    {
+      "name": "Citicoline",
+      "slug": "citicoline",
+      "category": "Nootropics",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Levodopa (may enhance effects)"
+        }
+      ]
+    },
+    {
+      "name": "Citrulline Malate",
+      "slug": "citrulline-malate",
+      "category": "Performance Enhancers",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "PDE5 inhibitors (additive vasodilation)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Nitrates"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Blood pressure medications"
+        }
+      ]
+    },
+    {
+      "name": "Collagen Peptides",
+      "slug": "collagen-peptides",
+      "category": "Joint Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No clinically significant drug interactions identified in clinical trials"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Theoretical: high-protein intake may reduce absorption of levodopa"
+        },
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Calcium-containing collagen formulations may interact with bisphosphonates or tetracycline antibiotics"
+        }
+      ]
+    },
+    {
+      "name": "CoQ10",
+      "slug": "coq10",
+      "category": "Antioxidant",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Chemotherapy drugs"
+        }
+      ]
+    },
+    {
+      "name": "Cordyceps",
+      "slug": "cordyceps",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "Creatine",
+      "slug": "creatine",
+      "category": "Performance Enhancer",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "Minimal known interactions"
+        }
+      ]
+    },
+    {
+      "name": "DIM (3,3'-Diindolylmethane)",
+      "slug": "dim-3-3-diindolylmethane",
+      "category": "Metabolic Support",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Reduces plasma tamoxifen, endoxifen, and 4-OH tamoxifen levels (Thomson 2017 RCT)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May alter estradiol exposure in women on transdermal estradiol patches"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Potential CYP1A2 and CYP3A4 inducer affecting drug metabolism"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with hormonal contraceptives"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Caution with anticoagulants (theoretical interaction)"
+        }
+      ]
+    },
+    {
+      "name": "DMAE",
+      "slug": "dmae",
+      "category": "Nootropics",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Anticholinergic medications"
+        },
+        {
+          "categorySlug": "cholinesterase-inhibitors",
+          "severity": "caution",
+          "rawText": "Cholinesterase inhibitors"
+        }
+      ]
+    },
+    {
+      "name": "Echinacea",
+      "slug": "echinacea",
+      "category": "Herbal Supplement",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressive drugs"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Caffeine"
+        }
+      ]
+    },
+    {
+      "name": "Elderberry",
+      "slug": "elderberry",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Fenugreek",
+      "slug": "fenugreek",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "thyroid-medications",
+          "severity": "caution",
+          "rawText": "Thyroid medications"
+        }
+      ]
+    },
+    {
+      "name": "Fisetin",
+      "slug": "fisetin",
+      "category": "Polyphenol",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Potential interaction with thrombolytics (enhanced rt-PA effects)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Theoretical interactions with CYP450-metabolized drugs"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Possible additive effects with other senolytics (dasatinib + quercetin)"
+        }
+      ]
+    },
+    {
+      "name": "Folate",
+      "slug": "folate",
+      "category": "Essential Nutrients",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "avoid",
+          "rawText": "Methotrexate (antagonist)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Phenytoin"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Sulfasalazine"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Trimethoprim"
+        }
+      ]
+    },
+    {
+      "name": "Forskolin",
+      "slug": "forskolin",
+      "category": "Herbal Supplement",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Blood pressure medications"
+        }
+      ]
+    },
+    {
+      "name": "GABA",
+      "slug": "gaba",
+      "category": "Amino Acid",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "Sedative medications (additive GABAergic effects)"
+        },
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "Benzodiazepines (potential enhancement)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Anticonvulsants (potential interaction — consult physician)"
+        }
+      ]
+    },
+    {
+      "name": "Garlic",
+      "slug": "garlic",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "HIV medications"
+        }
+      ]
+    },
+    {
+      "name": "Ginger",
+      "slug": "ginger",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Ginkgo Biloba",
+      "slug": "ginkgo-biloba",
+      "category": "Herbal Extract",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Seizure medications"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes drugs"
+        }
+      ]
+    },
+    {
+      "name": "Glucosamine",
+      "slug": "glucosamine",
+      "category": "Joint Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Warfarin (monitor INR)"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications (monitor blood glucose)"
+        }
+      ]
+    },
+    {
+      "name": "Glutathione",
+      "slug": "glutathione",
+      "category": "Antioxidant",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May reduce efficacy of chemotherapy agents that rely on oxidative mechanisms"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Potential interaction with nitroglycerin (enhanced hypotensive effect)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May affect acetaminophen metabolism via glutathione conjugation"
+        }
+      ]
+    },
+    {
+      "name": "GlyNAC",
+      "slug": "glynac",
+      "category": "Amino Acid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with nitroglycerin (NAC component)"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Potential interaction with anticoagulants"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "NAC may affect acetaminophen metabolism"
+        }
+      ]
+    },
+    {
+      "name": "Grape Seed Extract",
+      "slug": "grape-seed-extract",
+      "category": "Antioxidants",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Iron absorption inhibition"
+        }
+      ]
+    },
+    {
+      "name": "Green Tea Extract",
+      "slug": "green-tea-extract",
+      "category": "Polyphenol",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Beta-blockers (nadolol — OATP1A2 inhibition reduces bioavailability 85%)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Iron supplements"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Statins (OATP substrate)"
+        }
+      ]
+    },
+    {
+      "name": "Gymnema Sylvestre",
+      "slug": "gymnema-sylvestre",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "May enhance insulin effects"
+        }
+      ]
+    },
+    {
+      "name": "Hawthorn Berry",
+      "slug": "hawthorn-berry",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May enhance cardiac medications"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Blood pressure medications"
+        }
+      ]
+    },
+    {
+      "name": "HMB (β-Hydroxy β-Methylbutyrate)",
+      "slug": "hmb-hydroxy-methylbutyrate",
+      "category": "Performance Enhancers",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Statins (shared cholesterol pathways)"
+        },
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "No major drug interactions reported"
+        }
+      ]
+    },
+    {
+      "name": "Holy Basil",
+      "slug": "holy-basil",
+      "category": "Adaptogens",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        }
+      ]
+    },
+    {
+      "name": "Huperzine A",
+      "slug": "huperzine-a",
+      "category": "Nootropics",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "cholinesterase-inhibitors",
+          "severity": "caution",
+          "rawText": "Cholinesterase inhibitors"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Anticholinergic drugs"
+        }
+      ]
+    },
+    {
+      "name": "Inositol",
+      "slug": "inositol",
+      "category": "B-Vitamin Related",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "Inulin",
+      "slug": "inulin",
+      "category": "Herbal Extract",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No clinically significant drug interactions identified in RCTs"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May enhance absorption of calcium and iron when co-administered"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Potential additive effect with antidiabetic medications (monitor blood glucose)"
+        }
+      ]
+    },
+    {
+      "name": "Iron",
+      "slug": "iron",
+      "category": "Essential Nutrients",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Antibiotics"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Proton pump inhibitors"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Calcium supplements"
+        }
+      ]
+    },
+    {
+      "name": "Kanna",
+      "slug": "kanna",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "SSRIs"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Cardiac glycosides"
+        }
+      ]
+    },
+    {
+      "name": "Krill Oil",
+      "slug": "krill-oil",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Antiplatelet medications"
+        }
+      ]
+    },
+    {
+      "name": "L-Theanine",
+      "slug": "l-theanine",
+      "category": "Amino Acid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "May enhance sedative effects"
+        }
+      ]
+    },
+    {
+      "name": "L-Tyrosine",
+      "slug": "l-tyrosine",
+      "category": "Amino Acid",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "avoid",
+          "rawText": "MAO inhibitors (contraindicated)"
+        },
+        {
+          "categorySlug": "thyroid-medications",
+          "severity": "caution",
+          "rawText": "Thyroid medications (monitor)"
+        }
+      ]
+    },
+    {
+      "name": "Lion's Mane Mushroom",
+      "slug": "lion-s-mane-mushroom",
+      "category": "Nootropic",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None known"
+        }
+      ]
+    },
+    {
+      "name": "Lutein",
+      "slug": "lutein",
+      "category": "Antioxidants",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "Maca Root",
+      "slug": "maca-root",
+      "category": "Herbal Extract",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "May enhance effects of antidepressants (augmentation observed in SSRI sexual dysfunction trials)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Theoretical interaction with hormone-sensitive medications"
+        }
+      ]
+    },
+    {
+      "name": "Magnesium",
+      "slug": "magnesium",
+      "category": "Essential Mineral",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Antibiotics"
+        },
+        {
+          "categorySlug": "diuretics",
+          "severity": "caution",
+          "rawText": "Diuretics"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Bisphosphonates"
+        }
+      ]
+    },
+    {
+      "name": "Magnesium L-Threonate",
+      "slug": "magnesium-l-threonate",
+      "category": "Nootropic",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "May reduce absorption of tetracycline and quinolone antibiotics"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with bisphosphonates"
+        },
+        {
+          "categorySlug": "diuretics",
+          "severity": "caution",
+          "rawText": "Standard magnesium interaction profile with diuretics"
+        }
+      ]
+    },
+    {
+      "name": "MCT Oil",
+      "slug": "mct-oil",
+      "category": "Performance Enhancers",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "Melatonin",
+      "slug": "melatonin",
+      "category": "Sleep Aid",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "Sedatives"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Methylene Blue",
+      "slug": "methylene-blue",
+      "category": "Nootropic",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "SSRIs/SNRIs (serotonin syndrome - FDA black box warning)"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "Serotonergic agents"
+        },
+        {
+          "categorySlug": "cholinesterase-inhibitors",
+          "severity": "caution",
+          "rawText": "Cholinesterase inhibitors (may reduce efficacy of LMTM per Phase 3 data)"
+        }
+      ]
+    },
+    {
+      "name": "Milk Thistle",
+      "slug": "milk-thistle",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "CYP2C9 substrates"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Warfarin"
+        }
+      ]
+    },
+    {
+      "name": "Moringa",
+      "slug": "moringa",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May affect medication absorption"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Blood thinning medications"
+        }
+      ]
+    },
+    {
+      "name": "MSM",
+      "slug": "msm",
+      "category": "Joint Support",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Potential CYP450 inhibition — warfarin and narrow-TI drug caution advised"
+        }
+      ]
+    },
+    {
+      "name": "Mucuna Pruriens",
+      "slug": "mucuna-pruriens",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Antipsychotics"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Antihypertensives"
+        }
+      ]
+    },
+    {
+      "name": "NAD+ Precursors",
+      "slug": "nad-precursors",
+      "category": "Metabolic Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "None established; potential interaction with PARP inhibitors (theoretical)"
+        }
+      ]
+    },
+    {
+      "name": "Nattokinase",
+      "slug": "nattokinase",
+      "category": "Metabolic Support",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants (warfarin, heparin) - additive bleeding risk"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Antiplatelet agents (aspirin, clopidogrel) - increased bleeding risk"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Thrombolytics - additive fibrinolytic effect"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Antihypertensives - potential additive BP lowering"
+        }
+      ]
+    },
+    {
+      "name": "NMN (Nicotinamide Mononucleotide)",
+      "slug": "nmn-nicotinamide-mononucleotide",
+      "category": "Metabolic Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May interact with medications affecting NAD+ metabolism"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Potential interaction with diabetes medications (insulin sensitizing effect)"
+        }
+      ]
+    },
+    {
+      "name": "Omega-3 Fatty Acids",
+      "slug": "omega-3-fatty-acids",
+      "category": "Essential Fatty Acid",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Blood pressure medications"
+        }
+      ]
+    },
+    {
+      "name": "Palmitoylethanolamide",
+      "slug": "palmitoylethanolamide",
+      "category": "Anti-inflammatory",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No reported drug-drug interactions in clinical trials"
+        }
+      ]
+    },
+    {
+      "name": "Panax Ginseng",
+      "slug": "panax-ginseng",
+      "category": "Adaptogen",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "stimulant-medications",
+          "severity": "caution",
+          "rawText": "Stimulants"
+        }
+      ]
+    },
+    {
+      "name": "Passionflower",
+      "slug": "passionflower",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "sedatives",
+          "severity": "caution",
+          "rawText": "Sedatives"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        }
+      ]
+    },
+    {
+      "name": "PEA (Phenylethylamine)",
+      "slug": "pea-phenylethylamine",
+      "category": "Amino Acid",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        },
+        {
+          "categorySlug": "stimulant-medications",
+          "severity": "caution",
+          "rawText": "Stimulant medications"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "Antidepressants"
+        }
+      ]
+    },
+    {
+      "name": "Pentadecanoic Acid (C15:0)",
+      "slug": "pentadecanoic-acid-c15-0",
+      "category": "Metabolic Support",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No known interactions documented yet (limited data)"
+        }
+      ]
+    },
+    {
+      "name": "Phosphatidylserine",
+      "slug": "phosphatidylserine",
+      "category": "Phospholipid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners (theoretical)"
+        }
+      ]
+    },
+    {
+      "name": "Pine Bark Extract",
+      "slug": "pine-bark-extract",
+      "category": "Antioxidants",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Piracetam",
+      "slug": "piracetam",
+      "category": "Nootropics",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "thyroid-medications",
+          "severity": "caution",
+          "rawText": "Thyroid medications"
+        }
+      ]
+    },
+    {
+      "name": "PQQ",
+      "slug": "pqq",
+      "category": "Antioxidant",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "None established"
+        }
+      ]
+    },
+    {
+      "name": "Pterostilbene",
+      "slug": "pterostilbene",
+      "category": "Antioxidants",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Quercetin",
+      "slug": "quercetin",
+      "category": "Flavonoid",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Antibiotics"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        }
+      ]
+    },
+    {
+      "name": "Red Yeast Rice",
+      "slug": "red-yeast-rice",
+      "category": "Metabolic Support",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Statins"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Cyclosporine"
+        }
+      ]
+    },
+    {
+      "name": "Reishi Mushroom",
+      "slug": "reishi-mushroom",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressive drugs"
+        }
+      ]
+    },
+    {
+      "name": "Resveratrol",
+      "slug": "resveratrol",
+      "category": "Polyphenol",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners (anticoagulants)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "NSAIDs"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "CYP2C9 substrates"
+        }
+      ]
+    },
+    {
+      "name": "Rhodiola rosea",
+      "slug": "rhodiola-rosea",
+      "category": "Adaptogen",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "MAO inhibitors"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Schisandra Berry",
+      "slug": "schisandra-berry",
+      "category": "Adaptogens",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "CYP3A4 substrates"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressants"
+        }
+      ]
+    },
+    {
+      "name": "Selenium",
+      "slug": "selenium",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant at normal doses"
+        }
+      ]
+    },
+    {
+      "name": "Shilajit",
+      "slug": "shilajit",
+      "category": "Adaptogen",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "May potentiate effects of antihypertensive medications"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Theoretical interaction with anticoagulants due to platelet aggregation effects"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Caution with hormone-sensitive conditions due to testosterone-increasing effects"
+        }
+      ]
+    },
+    {
+      "name": "Spermidine",
+      "slug": "spermidine",
+      "category": "Antioxidant",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Theoretical interaction with mTOR inhibitors (shared pathway)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No clinical drug interactions reported"
+        }
+      ]
+    },
+    {
+      "name": "Spirulina",
+      "slug": "spirulina",
+      "category": "Antioxidants",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "Immunosuppressive drugs"
+        }
+      ]
+    },
+    {
+      "name": "Stinging Nettle",
+      "slug": "stinging-nettle",
+      "category": "Herbal Supplement",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "diuretics",
+          "severity": "caution",
+          "rawText": "Diuretics"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Blood pressure medications"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Sulbutiamine",
+      "slug": "sulbutiamine",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "stimulant-medications",
+          "severity": "caution",
+          "rawText": "Stimulant medications"
+        },
+        {
+          "categorySlug": "mao-inhibitors",
+          "severity": "caution",
+          "rawText": "Antidepressants"
+        }
+      ]
+    },
+    {
+      "name": "Taurine",
+      "slug": "taurine",
+      "category": "Amino Acid",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": null,
+          "severity": "safe",
+          "rawText": "None significant"
+        }
+      ]
+    },
+    {
+      "name": "Tongkat Ali",
+      "slug": "tongkat-ali",
+      "category": "Adaptogen",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "May interact with anticoagulants (theoretical)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May potentiate testosterone replacement therapy"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Potential interaction with antidiabetic medications"
+        },
+        {
+          "categorySlug": "immunosuppressants",
+          "severity": "caution",
+          "rawText": "May interact with immunosuppressants"
+        }
+      ]
+    },
+    {
+      "name": "Tribulus Terrestris",
+      "slug": "tribulus-terrestris",
+      "category": "Herbal Supplement",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications (blood glucose lowering)"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Blood pressure medications"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Hormone therapies"
+        }
+      ]
+    },
+    {
+      "name": "Turmeric/Curcumin",
+      "slug": "turmeric-curcumin",
+      "category": "Anti-inflammatory",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        }
+      ]
+    },
+    {
+      "name": "Urolithin A",
+      "slug": "urolithin-a",
+      "category": "Antioxidant",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "No significant drug interactions reported in clinical trials"
+        }
+      ]
+    },
+    {
+      "name": "Vanadium",
+      "slug": "vanadium",
+      "category": "Essential Nutrients",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Diabetes medications"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "May affect lithium levels"
+        }
+      ]
+    },
+    {
+      "name": "Vinpocetine",
+      "slug": "vinpocetine",
+      "category": "Nootropics",
+      "evidenceTier": 3,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Blood thinners"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Anti-seizure medications"
+        }
+      ]
+    },
+    {
+      "name": "Vitamin B12",
+      "slug": "vitamin-b12",
+      "category": "Essential Nutrients",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "diabetes-medications",
+          "severity": "caution",
+          "rawText": "Metformin"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "PPIs"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "H2 blockers"
+        }
+      ]
+    },
+    {
+      "name": "Vitamin B6",
+      "slug": "vitamin-b6",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Levodopa"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Phenytoin"
+        }
+      ]
+    },
+    {
+      "name": "Vitamin C",
+      "slug": "vitamin-c",
+      "category": "Essential Nutrients",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Iron supplements (enhances absorption)"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Some chemotherapy drugs"
+        }
+      ]
+    },
+    {
+      "name": "Vitamin D3",
+      "slug": "vitamin-d3",
+      "category": "Vitamin",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "diuretics",
+          "severity": "caution",
+          "rawText": "Thiazide diuretics"
+        },
+        {
+          "categorySlug": "blood-pressure-medications",
+          "severity": "caution",
+          "rawText": "Calcium channel blockers"
+        }
+      ]
+    },
+    {
+      "name": "Vitamin E",
+      "slug": "vitamin-e",
+      "category": "Essential Nutrients",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Anticoagulants (warfarin — potentiates effect)"
+        },
+        {
+          "categorySlug": "blood-thinners",
+          "severity": "caution",
+          "rawText": "Antiplatelet agents"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Chemotherapy (may reduce efficacy)"
+        }
+      ]
+    },
+    {
+      "name": "Whey Protein",
+      "slug": "whey-protein",
+      "category": "Protein",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Levodopa (leucine competition)"
+        },
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Tetracycline antibiotics (calcium in dairy base)"
+        }
+      ]
+    },
+    {
+      "name": "Zeaxanthin",
+      "slug": "zeaxanthin",
+      "category": "Antioxidants",
+      "evidenceTier": 2,
+      "interactions": [
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Fat-soluble vitamin absorption"
+        }
+      ]
+    },
+    {
+      "name": "Zinc",
+      "slug": "zinc",
+      "category": "Essential Nutrients",
+      "evidenceTier": 1,
+      "interactions": [
+        {
+          "categorySlug": "antibiotics",
+          "severity": "caution",
+          "rawText": "Antibiotics (tetracyclines, quinolones)"
+        },
+        {
+          "categorySlug": "diuretics",
+          "severity": "caution",
+          "rawText": "Diuretics"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Copper supplements"
+        },
+        {
+          "categorySlug": "other",
+          "severity": "caution",
+          "rawText": "Iron (competitive absorption)"
+        }
+      ]
+    }
+  ],
+  "perCategory": {
+    "blood-thinners": [
+      {
+        "supplement": "Acetyl-L-Carnitine",
+        "slug": "acetyl-l-carnitine",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Aniracetam",
+        "slug": "aniracetam",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Apigenin",
+        "slug": "apigenin",
+        "severity": "caution",
+        "rawText": "Theoretical interaction with anticoagulants/antiplatelets (not clinically significant at dietary doses)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Berberine",
+        "slug": "berberine",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Black Seed Oil",
+        "slug": "black-seed-oil",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Caffeine",
+        "slug": "caffeine",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Chlorella",
+        "slug": "chlorella",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Chondroitin Sulfate",
+        "slug": "chondroitin-sulfate",
+        "severity": "caution",
+        "rawText": "Warfarin/blood thinners (INR monitoring recommended)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Cinnamon Extract",
+        "slug": "cinnamon-extract",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "CoQ10",
+        "slug": "coq10",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "DIM (3,3'-Diindolylmethane)",
+        "slug": "dim-3-3-diindolylmethane",
+        "severity": "caution",
+        "rawText": "Caution with anticoagulants (theoretical interaction)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Fenugreek",
+        "slug": "fenugreek",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Forskolin",
+        "slug": "forskolin",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Garlic",
+        "slug": "garlic",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Ginger",
+        "slug": "ginger",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Ginkgo Biloba",
+        "slug": "ginkgo-biloba",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Glucosamine",
+        "slug": "glucosamine",
+        "severity": "caution",
+        "rawText": "Warfarin (monitor INR)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "GlyNAC",
+        "slug": "glynac",
+        "severity": "caution",
+        "rawText": "Potential interaction with anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Grape Seed Extract",
+        "slug": "grape-seed-extract",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Holy Basil",
+        "slug": "holy-basil",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Krill Oil",
+        "slug": "krill-oil",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Krill Oil",
+        "slug": "krill-oil",
+        "severity": "caution",
+        "rawText": "Antiplatelet medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Melatonin",
+        "slug": "melatonin",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Milk Thistle",
+        "slug": "milk-thistle",
+        "severity": "caution",
+        "rawText": "Warfarin",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "MSM",
+        "slug": "msm",
+        "severity": "caution",
+        "rawText": "Potential CYP450 inhibition — warfarin and narrow-TI drug caution advised",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Nattokinase",
+        "slug": "nattokinase",
+        "severity": "caution",
+        "rawText": "Anticoagulants (warfarin, heparin) - additive bleeding risk",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Nattokinase",
+        "slug": "nattokinase",
+        "severity": "caution",
+        "rawText": "Antiplatelet agents (aspirin, clopidogrel) - increased bleeding risk",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Omega-3 Fatty Acids",
+        "slug": "omega-3-fatty-acids",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Panax Ginseng",
+        "slug": "panax-ginseng",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Passionflower",
+        "slug": "passionflower",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Phosphatidylserine",
+        "slug": "phosphatidylserine",
+        "severity": "caution",
+        "rawText": "Blood thinners (theoretical)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Piracetam",
+        "slug": "piracetam",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Pterostilbene",
+        "slug": "pterostilbene",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Quercetin",
+        "slug": "quercetin",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Red Yeast Rice",
+        "slug": "red-yeast-rice",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Reishi Mushroom",
+        "slug": "reishi-mushroom",
+        "severity": "caution",
+        "rawText": "Anticoagulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Resveratrol",
+        "slug": "resveratrol",
+        "severity": "caution",
+        "rawText": "Blood thinners (anticoagulants)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Shilajit",
+        "slug": "shilajit",
+        "severity": "caution",
+        "rawText": "Theoretical interaction with anticoagulants due to platelet aggregation effects",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Tongkat Ali",
+        "slug": "tongkat-ali",
+        "severity": "caution",
+        "rawText": "May interact with anticoagulants (theoretical)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Turmeric/Curcumin",
+        "slug": "turmeric-curcumin",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Vinpocetine",
+        "slug": "vinpocetine",
+        "severity": "caution",
+        "rawText": "Blood thinners",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Vitamin E",
+        "slug": "vitamin-e",
+        "severity": "caution",
+        "rawText": "Anticoagulants (warfarin — potentiates effect)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Vitamin E",
+        "slug": "vitamin-e",
+        "severity": "caution",
+        "rawText": "Antiplatelet agents",
+        "evidenceTier": 2
+      }
+    ],
+    "diabetes-medications": [
+      {
+        "supplement": "Akkermansia muciniphila",
+        "slug": "akkermansia-muciniphila",
+        "severity": "caution",
+        "rawText": "Potential interaction with metformin (additive gut effects — monitor)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Alpha-Lipoic Acid",
+        "slug": "alpha-lipoic-acid",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "B-Complex Vitamins",
+        "slug": "b-complex-vitamins",
+        "severity": "caution",
+        "rawText": "Metformin (B12)",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Berberine",
+        "slug": "berberine",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Bitter Melon",
+        "slug": "bitter-melon",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Bitter Melon",
+        "slug": "bitter-melon",
+        "severity": "caution",
+        "rawText": "May enhance hypoglycemic effects",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Black Seed Oil",
+        "slug": "black-seed-oil",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Centella Asiatica",
+        "slug": "centella-asiatica",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Chromium",
+        "slug": "chromium",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Cinnamon Extract",
+        "slug": "cinnamon-extract",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Elderberry",
+        "slug": "elderberry",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Fenugreek",
+        "slug": "fenugreek",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Ginger",
+        "slug": "ginger",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Ginkgo Biloba",
+        "slug": "ginkgo-biloba",
+        "severity": "caution",
+        "rawText": "Diabetes drugs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Glucosamine",
+        "slug": "glucosamine",
+        "severity": "caution",
+        "rawText": "Diabetes medications (monitor blood glucose)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Gymnema Sylvestre",
+        "slug": "gymnema-sylvestre",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Gymnema Sylvestre",
+        "slug": "gymnema-sylvestre",
+        "severity": "caution",
+        "rawText": "May enhance insulin effects",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Holy Basil",
+        "slug": "holy-basil",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Inulin",
+        "slug": "inulin",
+        "severity": "caution",
+        "rawText": "Potential additive effect with antidiabetic medications (monitor blood glucose)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Melatonin",
+        "slug": "melatonin",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "NMN (Nicotinamide Mononucleotide)",
+        "slug": "nmn-nicotinamide-mononucleotide",
+        "severity": "caution",
+        "rawText": "Potential interaction with diabetes medications (insulin sensitizing effect)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Panax Ginseng",
+        "slug": "panax-ginseng",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Pine Bark Extract",
+        "slug": "pine-bark-extract",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Pterostilbene",
+        "slug": "pterostilbene",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Rhodiola rosea",
+        "slug": "rhodiola-rosea",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Stinging Nettle",
+        "slug": "stinging-nettle",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Tongkat Ali",
+        "slug": "tongkat-ali",
+        "severity": "caution",
+        "rawText": "Potential interaction with antidiabetic medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Tribulus Terrestris",
+        "slug": "tribulus-terrestris",
+        "severity": "caution",
+        "rawText": "Diabetes medications (blood glucose lowering)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Turmeric/Curcumin",
+        "slug": "turmeric-curcumin",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Vanadium",
+        "slug": "vanadium",
+        "severity": "caution",
+        "rawText": "Diabetes medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Vitamin B12",
+        "slug": "vitamin-b12",
+        "severity": "caution",
+        "rawText": "Metformin",
+        "evidenceTier": 1
+      }
+    ],
+    "immunosuppressants": [
+      {
+        "supplement": "Ashwagandha",
+        "slug": "ashwagandha",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Black Seed Oil",
+        "slug": "black-seed-oil",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Boswellia",
+        "slug": "boswellia",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Bovine Colostrum",
+        "slug": "bovine-colostrum",
+        "severity": "caution",
+        "rawText": "May theoretically interact with immunosuppressive medications due to immune-modulating properties",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Chlorella",
+        "slug": "chlorella",
+        "severity": "caution",
+        "rawText": "Immunosuppressive drugs",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Echinacea",
+        "slug": "echinacea",
+        "severity": "caution",
+        "rawText": "Immunosuppressive drugs",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Elderberry",
+        "slug": "elderberry",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Holy Basil",
+        "slug": "holy-basil",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Pine Bark Extract",
+        "slug": "pine-bark-extract",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Red Yeast Rice",
+        "slug": "red-yeast-rice",
+        "severity": "caution",
+        "rawText": "Cyclosporine",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Reishi Mushroom",
+        "slug": "reishi-mushroom",
+        "severity": "caution",
+        "rawText": "Immunosuppressive drugs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Schisandra Berry",
+        "slug": "schisandra-berry",
+        "severity": "caution",
+        "rawText": "Immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Spirulina",
+        "slug": "spirulina",
+        "severity": "caution",
+        "rawText": "Immunosuppressive drugs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Tongkat Ali",
+        "slug": "tongkat-ali",
+        "severity": "caution",
+        "rawText": "May interact with immunosuppressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Folate",
+        "slug": "folate",
+        "severity": "avoid",
+        "rawText": "Methotrexate (antagonist)",
+        "evidenceTier": 1
+      }
+    ],
+    "mao-inhibitors": [
+      {
+        "supplement": "5-HTP",
+        "slug": "5-htp",
+        "severity": "caution",
+        "rawText": "SSRIs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "5-HTP",
+        "slug": "5-htp",
+        "severity": "caution",
+        "rawText": "SNRIs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "5-HTP",
+        "slug": "5-htp",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Kanna",
+        "slug": "kanna",
+        "severity": "caution",
+        "rawText": "SSRIs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Kanna",
+        "slug": "kanna",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Maca Root",
+        "slug": "maca-root",
+        "severity": "caution",
+        "rawText": "May enhance effects of antidepressants (augmentation observed in SSRI sexual dysfunction trials)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Methylene Blue",
+        "slug": "methylene-blue",
+        "severity": "caution",
+        "rawText": "SSRIs/SNRIs (serotonin syndrome - FDA black box warning)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Methylene Blue",
+        "slug": "methylene-blue",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Methylene Blue",
+        "slug": "methylene-blue",
+        "severity": "caution",
+        "rawText": "Serotonergic agents",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Mucuna Pruriens",
+        "slug": "mucuna-pruriens",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Passionflower",
+        "slug": "passionflower",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "PEA (Phenylethylamine)",
+        "slug": "pea-phenylethylamine",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "PEA (Phenylethylamine)",
+        "slug": "pea-phenylethylamine",
+        "severity": "caution",
+        "rawText": "Antidepressants",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Rhodiola rosea",
+        "slug": "rhodiola-rosea",
+        "severity": "caution",
+        "rawText": "MAO inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Sulbutiamine",
+        "slug": "sulbutiamine",
+        "severity": "caution",
+        "rawText": "Antidepressants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "L-Tyrosine",
+        "slug": "l-tyrosine",
+        "severity": "avoid",
+        "rawText": "MAO inhibitors (contraindicated)",
+        "evidenceTier": 3
+      }
+    ],
+    "blood-pressure-medications": [
+      {
+        "supplement": "Apigenin",
+        "slug": "apigenin",
+        "severity": "caution",
+        "rawText": "May potentiate sedative medications (benzodiazepines, barbiturates) due to GABA-A activity",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Citrulline Malate",
+        "slug": "citrulline-malate",
+        "severity": "caution",
+        "rawText": "Blood pressure medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Forskolin",
+        "slug": "forskolin",
+        "severity": "caution",
+        "rawText": "Blood pressure medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Hawthorn Berry",
+        "slug": "hawthorn-berry",
+        "severity": "caution",
+        "rawText": "Blood pressure medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Mucuna Pruriens",
+        "slug": "mucuna-pruriens",
+        "severity": "caution",
+        "rawText": "Antihypertensives",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Nattokinase",
+        "slug": "nattokinase",
+        "severity": "caution",
+        "rawText": "Antihypertensives - potential additive BP lowering",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Omega-3 Fatty Acids",
+        "slug": "omega-3-fatty-acids",
+        "severity": "caution",
+        "rawText": "Blood pressure medications",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Shilajit",
+        "slug": "shilajit",
+        "severity": "caution",
+        "rawText": "May potentiate effects of antihypertensive medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Stinging Nettle",
+        "slug": "stinging-nettle",
+        "severity": "caution",
+        "rawText": "Blood pressure medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Tribulus Terrestris",
+        "slug": "tribulus-terrestris",
+        "severity": "caution",
+        "rawText": "Blood pressure medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Vitamin D3",
+        "slug": "vitamin-d3",
+        "severity": "caution",
+        "rawText": "Calcium channel blockers",
+        "evidenceTier": 1
+      }
+    ],
+    "thyroid-medications": [
+      {
+        "supplement": "Acetyl-L-Carnitine",
+        "slug": "acetyl-l-carnitine",
+        "severity": "caution",
+        "rawText": "Thyroid medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Ashwagandha",
+        "slug": "ashwagandha",
+        "severity": "caution",
+        "rawText": "Thyroid medications",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Fenugreek",
+        "slug": "fenugreek",
+        "severity": "caution",
+        "rawText": "Thyroid medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "L-Tyrosine",
+        "slug": "l-tyrosine",
+        "severity": "caution",
+        "rawText": "Thyroid medications (monitor)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Piracetam",
+        "slug": "piracetam",
+        "severity": "caution",
+        "rawText": "Thyroid medications",
+        "evidenceTier": 2
+      }
+    ],
+    "sedatives": [
+      {
+        "supplement": "Apigenin",
+        "slug": "apigenin",
+        "severity": "caution",
+        "rawText": "May potentiate sedative medications (benzodiazepines, barbiturates) due to GABA-A activity",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Ashwagandha",
+        "slug": "ashwagandha",
+        "severity": "caution",
+        "rawText": "Sedatives",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "GABA",
+        "slug": "gaba",
+        "severity": "caution",
+        "rawText": "Sedative medications (additive GABAergic effects)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "GABA",
+        "slug": "gaba",
+        "severity": "caution",
+        "rawText": "Benzodiazepines (potential enhancement)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "L-Theanine",
+        "slug": "l-theanine",
+        "severity": "caution",
+        "rawText": "May enhance sedative effects",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Melatonin",
+        "slug": "melatonin",
+        "severity": "caution",
+        "rawText": "Sedatives",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Passionflower",
+        "slug": "passionflower",
+        "severity": "caution",
+        "rawText": "Sedatives",
+        "evidenceTier": 2
+      }
+    ],
+    "stimulant-medications": [
+      {
+        "supplement": "Aniracetam",
+        "slug": "aniracetam",
+        "severity": "caution",
+        "rawText": "Stimulant medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Caffeine",
+        "slug": "caffeine",
+        "severity": "caution",
+        "rawText": "Stimulant medications",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Panax Ginseng",
+        "slug": "panax-ginseng",
+        "severity": "caution",
+        "rawText": "Stimulants",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "PEA (Phenylethylamine)",
+        "slug": "pea-phenylethylamine",
+        "severity": "caution",
+        "rawText": "Stimulant medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Sulbutiamine",
+        "slug": "sulbutiamine",
+        "severity": "caution",
+        "rawText": "Stimulant medications",
+        "evidenceTier": 2
+      }
+    ],
+    "cholinesterase-inhibitors": [
+      {
+        "supplement": "Alpha-GPC",
+        "slug": "alpha-gpc",
+        "severity": "caution",
+        "rawText": "Cholinesterase inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Bacopa monnieri",
+        "slug": "bacopa-monnieri",
+        "severity": "caution",
+        "rawText": "May enhance effects of cholinesterase inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Cistanche",
+        "slug": "cistanche",
+        "severity": "caution",
+        "rawText": "Theoretical interaction with cholinesterase inhibitors (shared pathway)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "DMAE",
+        "slug": "dmae",
+        "severity": "caution",
+        "rawText": "Cholinesterase inhibitors",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Huperzine A",
+        "slug": "huperzine-a",
+        "severity": "caution",
+        "rawText": "Cholinesterase inhibitors",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Methylene Blue",
+        "slug": "methylene-blue",
+        "severity": "caution",
+        "rawText": "Cholinesterase inhibitors (may reduce efficacy of LMTM per Phase 3 data)",
+        "evidenceTier": 2
+      }
+    ],
+    "diuretics": [
+      {
+        "supplement": "Magnesium",
+        "slug": "magnesium",
+        "severity": "caution",
+        "rawText": "Diuretics",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Magnesium L-Threonate",
+        "slug": "magnesium-l-threonate",
+        "severity": "caution",
+        "rawText": "Standard magnesium interaction profile with diuretics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Stinging Nettle",
+        "slug": "stinging-nettle",
+        "severity": "caution",
+        "rawText": "Diuretics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Vitamin D3",
+        "slug": "vitamin-d3",
+        "severity": "caution",
+        "rawText": "Thiazide diuretics",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Zinc",
+        "slug": "zinc",
+        "severity": "caution",
+        "rawText": "Diuretics",
+        "evidenceTier": 1
+      }
+    ],
+    "antibiotics": [
+      {
+        "supplement": "Akkermansia muciniphila",
+        "slug": "akkermansia-muciniphila",
+        "severity": "caution",
+        "rawText": "Antibiotics may reduce efficacy",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Berberine",
+        "slug": "berberine",
+        "severity": "caution",
+        "rawText": "Antibiotics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Caffeine",
+        "slug": "caffeine",
+        "severity": "caution",
+        "rawText": "Some antibiotics",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Collagen Peptides",
+        "slug": "collagen-peptides",
+        "severity": "caution",
+        "rawText": "Calcium-containing collagen formulations may interact with bisphosphonates or tetracycline antibiotics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Iron",
+        "slug": "iron",
+        "severity": "caution",
+        "rawText": "Antibiotics",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Magnesium",
+        "slug": "magnesium",
+        "severity": "caution",
+        "rawText": "Antibiotics",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Magnesium L-Threonate",
+        "slug": "magnesium-l-threonate",
+        "severity": "caution",
+        "rawText": "May reduce absorption of tetracycline and quinolone antibiotics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Quercetin",
+        "slug": "quercetin",
+        "severity": "caution",
+        "rawText": "Antibiotics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Whey Protein",
+        "slug": "whey-protein",
+        "severity": "caution",
+        "rawText": "Tetracycline antibiotics (calcium in dairy base)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Zinc",
+        "slug": "zinc",
+        "severity": "caution",
+        "rawText": "Antibiotics (tetracyclines, quinolones)",
+        "evidenceTier": 1
+      }
+    ],
+    "other": [
+      {
+        "supplement": "5-HTP",
+        "slug": "5-htp",
+        "severity": "caution",
+        "rawText": "Tramadol",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "5-HTP",
+        "slug": "5-htp",
+        "severity": "caution",
+        "rawText": "St. John's Wort",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Akkermansia muciniphila",
+        "slug": "akkermansia-muciniphila",
+        "severity": "caution",
+        "rawText": "No significant clinical drug interactions reported",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Alpha-Lipoic Acid",
+        "slug": "alpha-lipoic-acid",
+        "severity": "caution",
+        "rawText": "Thyroid hormones",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Apigenin",
+        "slug": "apigenin",
+        "severity": "caution",
+        "rawText": "May interact with CYP-metabolized drugs",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "B-Complex Vitamins",
+        "slug": "b-complex-vitamins",
+        "severity": "caution",
+        "rawText": "Phenytoin (folate)",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Beta-Alanine",
+        "slug": "beta-alanine",
+        "severity": "caution",
+        "rawText": "May interact with taurine metabolism",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Betaine",
+        "slug": "betaine",
+        "severity": "caution",
+        "rawText": "May interact with cholesterol medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Boswellia",
+        "slug": "boswellia",
+        "severity": "caution",
+        "rawText": "Anti-inflammatory medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Centella Asiatica",
+        "slug": "centella-asiatica",
+        "severity": "caution",
+        "rawText": "Cholesterol medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Chromium",
+        "slug": "chromium",
+        "severity": "caution",
+        "rawText": "Antacids may reduce absorption",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Cinnamon Extract",
+        "slug": "cinnamon-extract",
+        "severity": "caution",
+        "rawText": "Liver medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Cistanche",
+        "slug": "cistanche",
+        "severity": "caution",
+        "rawText": "No clinically significant drug interactions reported in trials",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Citicoline",
+        "slug": "citicoline",
+        "severity": "caution",
+        "rawText": "Levodopa (may enhance effects)",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Citrulline Malate",
+        "slug": "citrulline-malate",
+        "severity": "caution",
+        "rawText": "PDE5 inhibitors (additive vasodilation)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Citrulline Malate",
+        "slug": "citrulline-malate",
+        "severity": "caution",
+        "rawText": "Nitrates",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Collagen Peptides",
+        "slug": "collagen-peptides",
+        "severity": "caution",
+        "rawText": "No clinically significant drug interactions identified in clinical trials",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Collagen Peptides",
+        "slug": "collagen-peptides",
+        "severity": "caution",
+        "rawText": "Theoretical: high-protein intake may reduce absorption of levodopa",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "CoQ10",
+        "slug": "coq10",
+        "severity": "caution",
+        "rawText": "Chemotherapy drugs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "DIM (3,3'-Diindolylmethane)",
+        "slug": "dim-3-3-diindolylmethane",
+        "severity": "caution",
+        "rawText": "Reduces plasma tamoxifen, endoxifen, and 4-OH tamoxifen levels (Thomson 2017 RCT)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "DIM (3,3'-Diindolylmethane)",
+        "slug": "dim-3-3-diindolylmethane",
+        "severity": "caution",
+        "rawText": "May alter estradiol exposure in women on transdermal estradiol patches",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "DIM (3,3'-Diindolylmethane)",
+        "slug": "dim-3-3-diindolylmethane",
+        "severity": "caution",
+        "rawText": "Potential CYP1A2 and CYP3A4 inducer affecting drug metabolism",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "DIM (3,3'-Diindolylmethane)",
+        "slug": "dim-3-3-diindolylmethane",
+        "severity": "caution",
+        "rawText": "May interact with hormonal contraceptives",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "DMAE",
+        "slug": "dmae",
+        "severity": "caution",
+        "rawText": "Anticholinergic medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Echinacea",
+        "slug": "echinacea",
+        "severity": "caution",
+        "rawText": "Caffeine",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Fisetin",
+        "slug": "fisetin",
+        "severity": "caution",
+        "rawText": "Potential interaction with thrombolytics (enhanced rt-PA effects)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Fisetin",
+        "slug": "fisetin",
+        "severity": "caution",
+        "rawText": "Theoretical interactions with CYP450-metabolized drugs",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Fisetin",
+        "slug": "fisetin",
+        "severity": "caution",
+        "rawText": "Possible additive effects with other senolytics (dasatinib + quercetin)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Folate",
+        "slug": "folate",
+        "severity": "caution",
+        "rawText": "Phenytoin",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Folate",
+        "slug": "folate",
+        "severity": "caution",
+        "rawText": "Sulfasalazine",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Folate",
+        "slug": "folate",
+        "severity": "caution",
+        "rawText": "Trimethoprim",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "GABA",
+        "slug": "gaba",
+        "severity": "caution",
+        "rawText": "Anticonvulsants (potential interaction — consult physician)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Garlic",
+        "slug": "garlic",
+        "severity": "caution",
+        "rawText": "HIV medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Ginkgo Biloba",
+        "slug": "ginkgo-biloba",
+        "severity": "caution",
+        "rawText": "Seizure medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Glutathione",
+        "slug": "glutathione",
+        "severity": "caution",
+        "rawText": "May reduce efficacy of chemotherapy agents that rely on oxidative mechanisms",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Glutathione",
+        "slug": "glutathione",
+        "severity": "caution",
+        "rawText": "Potential interaction with nitroglycerin (enhanced hypotensive effect)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Glutathione",
+        "slug": "glutathione",
+        "severity": "caution",
+        "rawText": "May affect acetaminophen metabolism via glutathione conjugation",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "GlyNAC",
+        "slug": "glynac",
+        "severity": "caution",
+        "rawText": "May interact with nitroglycerin (NAC component)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "GlyNAC",
+        "slug": "glynac",
+        "severity": "caution",
+        "rawText": "NAC may affect acetaminophen metabolism",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Grape Seed Extract",
+        "slug": "grape-seed-extract",
+        "severity": "caution",
+        "rawText": "Iron absorption inhibition",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Green Tea Extract",
+        "slug": "green-tea-extract",
+        "severity": "caution",
+        "rawText": "Beta-blockers (nadolol — OATP1A2 inhibition reduces bioavailability 85%)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Green Tea Extract",
+        "slug": "green-tea-extract",
+        "severity": "caution",
+        "rawText": "Iron supplements",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Green Tea Extract",
+        "slug": "green-tea-extract",
+        "severity": "caution",
+        "rawText": "Statins (OATP substrate)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Hawthorn Berry",
+        "slug": "hawthorn-berry",
+        "severity": "caution",
+        "rawText": "May enhance cardiac medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "HMB (β-Hydroxy β-Methylbutyrate)",
+        "slug": "hmb-hydroxy-methylbutyrate",
+        "severity": "caution",
+        "rawText": "Statins (shared cholesterol pathways)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Huperzine A",
+        "slug": "huperzine-a",
+        "severity": "caution",
+        "rawText": "Anticholinergic drugs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Inulin",
+        "slug": "inulin",
+        "severity": "caution",
+        "rawText": "No clinically significant drug interactions identified in RCTs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Inulin",
+        "slug": "inulin",
+        "severity": "caution",
+        "rawText": "May enhance absorption of calcium and iron when co-administered",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Iron",
+        "slug": "iron",
+        "severity": "caution",
+        "rawText": "Proton pump inhibitors",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Iron",
+        "slug": "iron",
+        "severity": "caution",
+        "rawText": "Calcium supplements",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Kanna",
+        "slug": "kanna",
+        "severity": "caution",
+        "rawText": "Cardiac glycosides",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Maca Root",
+        "slug": "maca-root",
+        "severity": "caution",
+        "rawText": "Theoretical interaction with hormone-sensitive medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Magnesium",
+        "slug": "magnesium",
+        "severity": "caution",
+        "rawText": "Bisphosphonates",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Magnesium L-Threonate",
+        "slug": "magnesium-l-threonate",
+        "severity": "caution",
+        "rawText": "May interact with bisphosphonates",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Milk Thistle",
+        "slug": "milk-thistle",
+        "severity": "caution",
+        "rawText": "CYP2C9 substrates",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Moringa",
+        "slug": "moringa",
+        "severity": "caution",
+        "rawText": "May affect medication absorption",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Moringa",
+        "slug": "moringa",
+        "severity": "caution",
+        "rawText": "Blood thinning medications",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Mucuna Pruriens",
+        "slug": "mucuna-pruriens",
+        "severity": "caution",
+        "rawText": "Antipsychotics",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "NAD+ Precursors",
+        "slug": "nad-precursors",
+        "severity": "caution",
+        "rawText": "None established; potential interaction with PARP inhibitors (theoretical)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Nattokinase",
+        "slug": "nattokinase",
+        "severity": "caution",
+        "rawText": "Thrombolytics - additive fibrinolytic effect",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "NMN (Nicotinamide Mononucleotide)",
+        "slug": "nmn-nicotinamide-mononucleotide",
+        "severity": "caution",
+        "rawText": "May interact with medications affecting NAD+ metabolism",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Palmitoylethanolamide",
+        "slug": "palmitoylethanolamide",
+        "severity": "caution",
+        "rawText": "No reported drug-drug interactions in clinical trials",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Pentadecanoic Acid (C15:0)",
+        "slug": "pentadecanoic-acid-c15-0",
+        "severity": "caution",
+        "rawText": "No known interactions documented yet (limited data)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "PQQ",
+        "slug": "pqq",
+        "severity": "caution",
+        "rawText": "None established",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Red Yeast Rice",
+        "slug": "red-yeast-rice",
+        "severity": "caution",
+        "rawText": "Statins",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Resveratrol",
+        "slug": "resveratrol",
+        "severity": "caution",
+        "rawText": "NSAIDs",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Resveratrol",
+        "slug": "resveratrol",
+        "severity": "caution",
+        "rawText": "CYP2C9 substrates",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Schisandra Berry",
+        "slug": "schisandra-berry",
+        "severity": "caution",
+        "rawText": "CYP3A4 substrates",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Shilajit",
+        "slug": "shilajit",
+        "severity": "caution",
+        "rawText": "Caution with hormone-sensitive conditions due to testosterone-increasing effects",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Spermidine",
+        "slug": "spermidine",
+        "severity": "caution",
+        "rawText": "Theoretical interaction with mTOR inhibitors (shared pathway)",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Spermidine",
+        "slug": "spermidine",
+        "severity": "caution",
+        "rawText": "No clinical drug interactions reported",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Tongkat Ali",
+        "slug": "tongkat-ali",
+        "severity": "caution",
+        "rawText": "May potentiate testosterone replacement therapy",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Tribulus Terrestris",
+        "slug": "tribulus-terrestris",
+        "severity": "caution",
+        "rawText": "Hormone therapies",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Urolithin A",
+        "slug": "urolithin-a",
+        "severity": "caution",
+        "rawText": "No significant drug interactions reported in clinical trials",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Vanadium",
+        "slug": "vanadium",
+        "severity": "caution",
+        "rawText": "May affect lithium levels",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Vinpocetine",
+        "slug": "vinpocetine",
+        "severity": "caution",
+        "rawText": "Anti-seizure medications",
+        "evidenceTier": 3
+      },
+      {
+        "supplement": "Vitamin B12",
+        "slug": "vitamin-b12",
+        "severity": "caution",
+        "rawText": "PPIs",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Vitamin B12",
+        "slug": "vitamin-b12",
+        "severity": "caution",
+        "rawText": "H2 blockers",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Vitamin B6",
+        "slug": "vitamin-b6",
+        "severity": "caution",
+        "rawText": "Levodopa",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Vitamin B6",
+        "slug": "vitamin-b6",
+        "severity": "caution",
+        "rawText": "Phenytoin",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Vitamin C",
+        "slug": "vitamin-c",
+        "severity": "caution",
+        "rawText": "Iron supplements (enhances absorption)",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Vitamin C",
+        "slug": "vitamin-c",
+        "severity": "caution",
+        "rawText": "Some chemotherapy drugs",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Vitamin E",
+        "slug": "vitamin-e",
+        "severity": "caution",
+        "rawText": "Chemotherapy (may reduce efficacy)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Whey Protein",
+        "slug": "whey-protein",
+        "severity": "caution",
+        "rawText": "Levodopa (leucine competition)",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Zeaxanthin",
+        "slug": "zeaxanthin",
+        "severity": "caution",
+        "rawText": "Fat-soluble vitamin absorption",
+        "evidenceTier": 2
+      },
+      {
+        "supplement": "Zinc",
+        "slug": "zinc",
+        "severity": "caution",
+        "rawText": "Copper supplements",
+        "evidenceTier": 1
+      },
+      {
+        "supplement": "Zinc",
+        "slug": "zinc",
+        "severity": "caution",
+        "rawText": "Iron (competitive absorption)",
+        "evidenceTier": 1
+      }
+    ]
+  }
+}

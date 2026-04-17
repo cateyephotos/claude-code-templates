@@ -1,0 +1,60 @@
+/* interactions.css — Supplement Interaction Checker styles */
+body.interactions-page { background: #0a0e17; color: #e5e7eb; font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+.interactions-hero { padding: 3rem 1rem 2rem; text-align: center; }
+.interactions-hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 0.75rem; }
+.interactions-hero .lede { color: #9ca3af; max-width: 42rem; margin: 0 auto; font-size: 1.05rem; line-height: 1.6; }
+.interactions-shell { max-width: 72rem; margin: 0 auto; padding: 0 1rem 4rem; }
+.interactions-search-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 2rem; }
+.interactions-search-card h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+.interactions-search-input { width: 100%; background: #111827; border: 1px solid #374151; border-radius: 10px; padding: 0.75rem 1rem; color: #fff; font-size: 1rem; }
+.interactions-search-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.2); }
+.interactions-results { margin-top: 1rem; max-height: 26rem; overflow-y: auto; border-radius: 10px; background: rgba(0,0,0,0.25); }
+.interactions-result-row { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.interactions-result-row:last-child { border-bottom: none; }
+.interactions-result-row:hover, .interactions-result-row.active { background: rgba(59,130,246,0.08); }
+.interactions-result-row .supp-name { color: #fff; font-weight: 500; }
+.interactions-result-row .supp-meta { color: #6b7280; font-size: 0.85rem; }
+.interactions-panel { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.interactions-panel h3 { font-family: 'Source Serif 4', serif; font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+.interaction-item { padding: 1rem; background: #111827; border-radius: 10px; border-left: 4px solid #6b7280; margin-bottom: 0.75rem; }
+.interaction-item.sev-avoid { border-left-color: #dc2626; }
+.interaction-item.sev-caution { border-left-color: #f59e0b; }
+.interaction-item.sev-monitor { border-left-color: #3b82f6; }
+.interaction-item.sev-safe { border-left-color: #10b981; }
+.interaction-item .badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-right: 0.5rem; }
+.badge.sev-avoid { background: rgba(220,38,38,0.15); color: #fca5a5; }
+.badge.sev-caution { background: rgba(245,158,11,0.15); color: #fbbf24; }
+.badge.sev-monitor { background: rgba(59,130,246,0.15); color: #93c5fd; }
+.badge.sev-safe { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+.interaction-item .category { font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
+.interaction-item .raw-text { color: #d1d5db; font-size: 0.95rem; }
+.interaction-item .advice-text { margin-top: 0.45rem; color: #9ca3af; font-size: 0.88rem; }
+.interaction-item .drill-link { display: inline-block; margin-top: 0.45rem; color: #60a5fa; font-size: 0.85rem; text-decoration: none; }
+.interaction-item .drill-link:hover { text-decoration: underline; }
+.categories-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.category-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; transition: all 0.15s; }
+.category-card:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-1px); }
+.category-card h3 { font-family: 'Source Serif 4', serif; font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+.category-card .count { color: #9ca3af; font-size: 0.85rem; margin-bottom: 0.75rem; }
+.category-card .summary { color: #d1d5db; font-size: 0.92rem; line-height: 1.5; margin-bottom: 0.75rem; }
+.category-card a.view-link { color: #60a5fa; font-size: 0.9rem; text-decoration: none; font-weight: 500; }
+.category-card a.view-link:hover { text-decoration: underline; }
+.supplements-interaction-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.supplements-interaction-table th, .supplements-interaction-table td { text-align: left; padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.supplements-interaction-table th { color: #9ca3af; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.supplements-interaction-table td { color: #e5e7eb; font-size: 0.95rem; }
+.supplements-interaction-table a { color: #60a5fa; text-decoration: none; }
+.supplements-interaction-table a:hover { text-decoration: underline; }
+.hub-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+.hub-stat { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.85rem 1rem; text-align: center; }
+.hub-stat .num { font-family: 'Source Serif 4', serif; font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1; }
+.hub-stat .label { color: #9ca3af; font-size: 0.78rem; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.interactions-breadcrumb { color: #9ca3af; font-size: 0.85rem; margin: 1rem 0 0.5rem; }
+.interactions-breadcrumb a { color: #60a5fa; text-decoration: none; }
+.interactions-breadcrumb a:hover { text-decoration: underline; }
+.category-intro { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 2rem; }
+.category-intro .severity-key { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.interactions-footer { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 3rem; }
+.empty-state { text-align: center; padding: 2rem 1rem; color: #6b7280; }
+.back-to-hub { display: inline-block; margin-top: 1rem; color: #60a5fa; text-decoration: none; font-size: 0.9rem; }
+.back-to-hub:hover { text-decoration: underline; }
