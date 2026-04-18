@@ -135,6 +135,10 @@ function buildNormalizedIndex(supplements) {
 
 const SHARED_HEAD = (title, desc, canonical, ogImg = '/assets/og-default.svg') => `    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Anchor all relative paths to /interactions/ so they resolve correctly
+         under Vercel cleanUrls + trailingSlash:false (which strips the
+         trailing slash and would otherwise break hub-page relative hrefs). -->
+    <base href="/interactions/">
     <title>${escHtml(title)}</title>
     <meta name="description" content="${escHtml(desc)}">
     <link rel="canonical" href="${canonical}">
