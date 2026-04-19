@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Base href anchors relative paths under /stacks/ so cleanUrls doesn't
          break sibling hrefs when /stacks/{slug} rewrites to this file. -->
-    <base href="/stacks/">
+    <base href="/">
     <title>Saved Stack — SupplementDB</title>
     <meta name="description" content="Explore a shared supplement stack from SupplementDB — the evidence-based database of cognitive and mental health compounds.">
     <meta name="robots" content="noindex, follow">
@@ -21,10 +21,10 @@
     <meta property="og:site_name" content="SupplementDB">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
     <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
     <meta name="convex-url" content="__CONVEX_URL__">
@@ -34,9 +34,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../legal/legal-shared.css">
-    <link rel="stylesheet" href="../css/content-shared.css">
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="/legal/legal-shared.css">
+    <link rel="stylesheet" href="/css/content-shared.css">
+    <link rel="stylesheet" href="/css/auth.css">
 
     <style>
         body.stack-page { background: #0a0e17; color: #e5e7eb; font-family: 'DM Sans', sans-serif; min-height: 100vh; }
@@ -75,12 +75,12 @@
 
 <nav class="legal-nav">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+        <a href="/index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
             <i class="fas fa-pills text-xl"></i>
             <span class="font-bold text-lg">SupplementDB</span>
         </a>
         <div class="flex items-center space-x-4">
-            <a href="../tools/stack-analyzer.html" class="text-gray-300 hover:text-white text-sm">
+            <a href="/tools/stack-analyzer.html" class="text-gray-300 hover:text-white text-sm">
                 <i class="fas fa-layer-group mr-1"></i> Build your own stack
             </a>
             <div id="auth-buttons"></div>
@@ -91,7 +91,7 @@
 <header class="stack-hero">
     <div class="max-w-4xl mx-auto px-4">
         <div class="crumbs">
-            <a href="../index.html">Home</a> &rsaquo; <a href="../tools/stack-analyzer.html">Stack Analyzer</a> &rsaquo; Saved Stack
+            <a href="/index.html">Home</a> &rsaquo; <a href="/tools/stack-analyzer.html">Stack Analyzer</a> &rsaquo; Saved Stack
         </div>
         <h1 id="stack-name">Loading stack…</h1>
         <div class="meta" id="stack-meta"></div>
@@ -108,7 +108,7 @@
     <div id="stack-404" class="notice" style="display:none;">
         <div class="headline">Stack not found</div>
         <p>This stack may have been deleted or marked private by its owner.</p>
-        <p><a href="../tools/stack-analyzer.html">Build your own stack →</a></p>
+        <p><a href="/tools/stack-analyzer.html">Build your own stack →</a></p>
     </div>
 
     <section id="stack-content" style="display:none;">
@@ -127,7 +127,7 @@
             <div class="share-row">
                 <input type="text" id="stack-share-link" class="share-link-input" readonly>
                 <button type="button" class="share-btn" id="stack-copy-btn"><i class="fas fa-copy"></i> Copy link</button>
-                <a href="../tools/stack-analyzer.html" class="share-btn secondary">
+                <a href="/tools/stack-analyzer.html" class="share-btn secondary">
                     <i class="fas fa-layer-group"></i> Build your own
                 </a>
             </div>
@@ -137,14 +137,14 @@
 
 <footer style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2rem;">
     <div class="max-w-6xl mx-auto px-4 py-6 text-center text-xs text-gray-500">
-        SupplementDB · Evidence-based supplement research · <a href="../about.html" style="color:#60a5fa;">About</a>
+        SupplementDB · Evidence-based supplement research · <a href="/about.html" style="color:#60a5fa;">About</a>
     </div>
 </footer>
 
-<script src="../js/auth.js" defer></script>
-<script src="../js/convex-client.js" defer></script>
-<script src="../js/auth-ui.js" defer></script>
-<script src="stack-view.js" defer></script>
+<script src="/js/auth.js" defer></script>
+<script src="/js/convex-client.js" defer></script>
+<script src="/js/auth-ui.js" defer></script>
+<script src="stacks-view.js" defer></script>
 
 </body>
 </html>

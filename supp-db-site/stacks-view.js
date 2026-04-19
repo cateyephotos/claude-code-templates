@@ -39,7 +39,7 @@
     if (window.__SUPP_INDEX__) return Promise.resolve(window.__SUPP_INDEX__);
     return new Promise(function (resolve) {
       const s = document.createElement("script");
-      s.src = "../data/supplements.js";
+      s.src = "/data/supplements.js";
       s.onload = function () {
         const idx = new Map();
         const list = (window.supplementDatabase && window.supplementDatabase.supplements) || [];
@@ -137,9 +137,9 @@
       const card = document.createElement("a");
       card.className = "supp-card";
       if (supp && supp.name) {
-        card.href = "../supplements/" + slugify(supp.name) + ".html";
+        card.href = "/supplements/" + slugify(supp.name) + ".html";
       } else {
-        card.href = "../index.html#database";
+        card.href = "/index.html#database";
       }
       card.target = "_self";
       const name = mkEl("div", "name", supp ? supp.name : "Supplement #" + rawId);

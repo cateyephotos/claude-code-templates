@@ -82,7 +82,8 @@
     { "source": "/categories/:slug", "destination": "/categories/:slug.html" },
     { "source": "/compare/:slug", "destination": "/compare/:slug.html" },
     { "source": "/evidence/:domain/:slug", "destination": "/evidence/:domain/:slug.html" },
-    { "source": "/stacks/:slug", "destination": "/stacks/index.html" }
+    { "source": "/stacks", "destination": "/stacks-view" },
+    { "source": "/stacks/:slug+", "destination": "/stacks-view" }
   ],
   "redirects": [
     { "source": "/health", "destination": "/api/health", "statusCode": 307 }
