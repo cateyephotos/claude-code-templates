@@ -2,6 +2,10 @@
 # https://supplementdb.info/
 
 # Default: allow legitimate crawlers
+# NOTE: /js/ and /scripts/ are intentionally NOT disallowed — Google
+# requires JS/CSS access to render and rank pages correctly. Anti-scrape
+# protection lives in middleware.js (UA filtering, referrer checks),
+# which is the only layer hostile bots actually respect.
 User-agent: *
 Allow: /
 Disallow: /content/provenance/
@@ -10,8 +14,6 @@ Disallow: /content/audience-summaries/
 Disallow: /content/newsletters/
 Disallow: /content/research-updates/
 Disallow: /data/
-Disallow: /js/
-Disallow: /scripts/
 Disallow: /admin/
 
 # Block AI training crawlers (pure training, no search benefit)
@@ -58,8 +60,6 @@ Allow: /supplements/
 Allow: /guides/
 Allow: /categories/
 Disallow: /data/
-Disallow: /js/
-Disallow: /scripts/
 Disallow: /admin/
 
 User-agent: ChatGPT-User
@@ -67,8 +67,6 @@ Allow: /supplements/
 Allow: /guides/
 Allow: /categories/
 Disallow: /data/
-Disallow: /js/
-Disallow: /scripts/
 Disallow: /admin/
 
 User-agent: YouBot
@@ -76,8 +74,6 @@ Allow: /supplements/
 Allow: /guides/
 Allow: /categories/
 Disallow: /data/
-Disallow: /js/
-Disallow: /scripts/
 Disallow: /admin/
 
 # Sitemap
