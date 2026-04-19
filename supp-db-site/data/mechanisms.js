@@ -3771,6 +3771,87 @@ const mechanismDatabase = {
       "supplements": [
         "Inulin"
       ]
+    },
+    {
+      "id": "tca-cycle-intermediate-replenishment",
+      "canonicalName": "TCA cycle intermediate replenishment",
+      "aliases": [
+        "TCA cycle anaplerosis",
+        "Krebs cycle intermediate supplementation",
+        "Citric acid cycle support"
+      ],
+      "category": "Metabolic & Energy",
+      "summary": "Alpha-ketoglutarate (\u03b1-KG) is a core intermediate of the tricarboxylic acid (TCA / Krebs) cycle, the central mitochondrial pathway that converts carbohydrate, fat, and protein metabolites into ATP via oxidative phosphorylation. Endogenous \u03b1-KG levels decline with age. Supplementation with calcium \u03b1-ketoglutarate provides substrate that can be used anaplerotically (to refill the cycle) and as a cofactor for numerous \u03b1-KG-dependent enzymes.",
+      "relevance": "Supplements that replenish TCA-cycle intermediates may support cellular energy production, mitochondrial function, and the broader metabolic-signaling roles these intermediates play beyond ATP generation.",
+      "relatedMechanisms": ["mtor-pathway-inhibition-via-alpha-kg", "alpha-kg-dependent-histone-dna-demethylation", "mitophagy-and-mitochondrial-ros-regulation"],
+      "supplements": [
+        "Calcium Alpha-Ketoglutarate"
+      ]
+    },
+    {
+      "id": "alpha-kg-dependent-histone-dna-demethylation",
+      "canonicalName": "\u03b1-KG-dependent histone and DNA demethylation",
+      "aliases": [
+        "\u03b1-KG-dependent dioxygenase cofactor activity (TET enzymes, histone demethylases)",
+        "Histone demethylation regulation",
+        "TET enzyme cofactor activity",
+        "Jumonji-domain histone demethylase cofactor"
+      ],
+      "category": "Antioxidant & Cellular Protection",
+      "summary": "Alpha-ketoglutarate serves as an essential cofactor for a family of Fe(II)/\u03b1-KG-dependent dioxygenases that catalyse demethylation of histones (Jumonji-domain KDM enzymes including KDM4 and KDM6 families) and of DNA (TET1/2/3 enzymes that convert 5-methylcytosine to 5-hydroxymethylcytosine). Age-related declines in \u03b1-KG availability are thought to contribute to accumulated aberrant methylation marks at key loci, and \u03b1-KG supplementation can restore demethylase activity in aged cells.",
+      "relevance": "Supplements that raise intracellular \u03b1-KG availability may support healthy epigenetic regulation with age \u2014 potentially reversing methylation drift implicated in aging and age-related tissue dysfunction (demonstrated preclinically for bone-marrow stem cells).",
+      "relatedMechanisms": ["tca-cycle-intermediate-replenishment", "mtor-pathway-inhibition-via-alpha-kg", "sirtuin-activation"],
+      "supplements": [
+        "Calcium Alpha-Ketoglutarate"
+      ]
+    },
+    {
+      "id": "mtor-pathway-inhibition-via-alpha-kg",
+      "canonicalName": "mTOR pathway inhibition via ATP synthase binding",
+      "aliases": [
+        "ATP synthase inhibition and TOR pathway downregulation",
+        "\u03b1-KG-mediated mTOR inhibition",
+        "ATP5B binding and TOR downregulation"
+      ],
+      "category": "Metabolic & Energy",
+      "summary": "Alpha-ketoglutarate directly binds the beta subunit of mitochondrial ATP synthase (ATP5B), reducing ATP production and in turn downregulating the TOR (target of rapamycin) signaling pathway. TOR inhibition is one of the most evolutionarily conserved mechanisms linked to lifespan extension across yeast, worms, flies, and mammals \u2014 the same pathway targeted by caloric restriction and rapamycin.",
+      "relevance": "Supplements that modestly inhibit TOR through a natural metabolic route (rather than pharmacologically) may capture some of the longevity benefits of caloric restriction while avoiding the adverse effects of sustained TOR pharmacological blockade.",
+      "relatedMechanisms": ["tca-cycle-intermediate-replenishment", "mitophagy-and-mitochondrial-ros-regulation", "ampk-pathway-activation"],
+      "supplements": [
+        "Calcium Alpha-Ketoglutarate"
+      ]
+    },
+    {
+      "id": "mitophagy-and-mitochondrial-ros-regulation",
+      "canonicalName": "Mitophagy and mitochondrial ROS regulation",
+      "aliases": [
+        "Mitochondrial mitophagy and ROS regulation",
+        "PINK1/Parkin mitophagy activation",
+        "Mitochondrial quality control"
+      ],
+      "category": "Antioxidant & Cellular Protection",
+      "summary": "Mitophagy is the selective autophagy of damaged mitochondria via the PINK1/Parkin pathway. When mitochondrial membrane potential drops, PINK1 accumulates on the outer membrane and recruits Parkin, which ubiquitinates outer-membrane proteins and flags the organelle for lysosomal degradation. Failed mitophagy contributes to accumulation of dysfunctional mitochondria and elevated reactive oxygen species (ROS) in aged tissues. Alpha-ketoglutarate has been shown to promote mitophagy and reduce mitochondrial ROS in preclinical models of osteoarthritis.",
+      "relevance": "Supplements that activate mitophagy may slow the accumulation of damaged mitochondria and reduce oxidative stress in aged tissues \u2014 mechanisms increasingly recognised as central to healthspan.",
+      "relatedMechanisms": ["mtor-pathway-inhibition-via-alpha-kg", "tca-cycle-intermediate-replenishment", "redox-cofactor-antioxidant-activity"],
+      "supplements": [
+        "Calcium Alpha-Ketoglutarate"
+      ]
+    },
+    {
+      "id": "nitrogen-and-ammonia-balance-modulation",
+      "canonicalName": "Nitrogen and ammonia balance modulation",
+      "aliases": [
+        "Nitrogen and ammonia balance modulation",
+        "Ammonia detoxification via glutamate synthesis",
+        "Amino-acid transamination support"
+      ],
+      "category": "Metabolic & Energy",
+      "summary": "Alpha-ketoglutarate is the carbon skeleton used by glutamate dehydrogenase and by aminotransferases to incorporate free ammonia into glutamate, which can then be safely exported or used for nitrogen-balance reactions. This role is the pharmacological basis for ornithine alpha-ketoglutarate (OKG) in clinical nutrition for hyperammonemia and trauma recovery. Ca-AKG retains the same nitrogen-handling biochemistry.",
+      "relevance": "Supplements that participate in nitrogen balance can support protein metabolism and may have modest benefits on muscle-protein synthesis and tissue repair, though the longevity-relevant implications are distinct from the TOR and epigenetic mechanisms.",
+      "relatedMechanisms": ["tca-cycle-intermediate-replenishment", "mtor-pathway-activation-for-protein-synthesis"],
+      "supplements": [
+        "Calcium Alpha-Ketoglutarate"
+      ]
     }
   ],
   "aliasMap": {
@@ -4114,7 +4195,13 @@ const mechanismDatabase = {
     "cAMP elevation": "camp-elevation",
     "eNOS activation and nitric oxide production (endothelial)": "enos-activation-and-nitric-oxide-production-endothelial",
     "mTOR pathway activation for protein synthesis": "mtor-pathway-activation-for-protein-synthesis",
-    "mTOR/p70S6K1 pathway activation via leucine": "mtorp70s6k1-pathway-activation-via-leucine"
+    "mTOR/p70S6K1 pathway activation via leucine": "mtorp70s6k1-pathway-activation-via-leucine",
+    "TCA cycle intermediate replenishment": "tca-cycle-intermediate-replenishment",
+    "\u03b1-KG-dependent dioxygenase cofactor activity (TET enzymes, histone demethylases)": "alpha-kg-dependent-histone-dna-demethylation",
+    "ATP synthase inhibition and TOR pathway downregulation": "mtor-pathway-inhibition-via-alpha-kg",
+    "Histone demethylation regulation": "alpha-kg-dependent-histone-dna-demethylation",
+    "Mitochondrial mitophagy and ROS regulation": "mitophagy-and-mitochondrial-ros-regulation",
+    "Nitrogen and ammonia balance modulation": "nitrogen-and-ammonia-balance-modulation"
   }
 };
 

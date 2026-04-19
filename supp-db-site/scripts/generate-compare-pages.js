@@ -460,6 +460,117 @@ const COMPARISONS = [
         relatedCategories: [
             { title: 'Herbal Extracts', url: '../categories/herbal-extracts.html' }
         ]
+    },
+    {
+        slug: 'calcium-alpha-ketoglutarate-vs-nmn',
+        suppA: 'Calcium Alpha-Ketoglutarate',
+        suppB: 'NMN (Nicotinamide Mononucleotide)',
+        title: 'Ca-AKG vs NMN: Evidence-Based Comparison for Longevity',
+        metaTitle: 'Ca-AKG vs NMN (2026) | Which Longevity Supplement Is Better?',
+        metaDescription: 'Evidence-based comparison of Calcium Alpha-Ketoglutarate vs NMN for biological age, mitochondrial energy, and healthy aging. Compare mechanisms, human data, and tier ratings.',
+        domain: 'Longevity & Healthy Aging',
+        sharedDomains: ['biological age reduction', 'mitochondrial function', 'cellular energy metabolism', 'age-related decline support'],
+        verdict: 'NMN (Tier 2) has a substantially larger human evidence base than Ca-AKG (Tier 3), with multiple placebo-controlled RCTs showing elevated NAD+ levels, improved aerobic capacity, and muscle function in aging adults. Ca-AKG\u2019s longevity case rests on landmark mouse lifespan data (Asadi Shahmirzadi 2020, Cell Metab) and a single n=42 retrospective DNA-methylation analysis (Demidenko 2021). NMN targets the NAD+ decline of aging; Ca-AKG targets TCA-cycle metabolism, epigenetic regulation (TET / Jumonji demethylases), and ATP synthase / TOR. They address complementary aging hallmarks, and the ABLE RCT (Lim 2025) is expected to begin filling the Ca-AKG evidence gap.',
+        whoShouldChoose: [
+            { scenario: 'Most robust human RCT evidence', recommendation: 'NMN', reason: 'Multiple placebo-controlled RCTs (n > 1,500 cumulative) on NAD+ elevation, aerobic capacity, and muscle function.' },
+            { scenario: 'Biological-age reduction goal', recommendation: 'Ca-AKG (preliminary)', reason: 'Only supplement with a published human DNA-methylation clock reduction signal (Demidenko 2021), though retrospective and uncontrolled.' },
+            { scenario: 'Mitochondrial energy & aerobic performance', recommendation: 'NMN', reason: 'Direct NAD+ precursor with demonstrated aerobic-capacity and walking-distance improvements in older adults.' },
+            { scenario: 'Epigenetic / histone methylation support', recommendation: 'Ca-AKG', reason: 'Cofactor for TET and Jumonji-family demethylases; mechanism-replicated in aged-mouse bone marrow MSCs.' },
+            { scenario: 'Maximum mechanistic breadth in one compound', recommendation: 'Ca-AKG', reason: 'Hits TOR, ATP synthase, epigenetic regulation, and mitophagy from a single metabolic intermediate.' },
+            { scenario: 'Budget-conscious user', recommendation: 'NMN', reason: 'Generic NMN is now widely available at $20\u201335/month vs $40\u201370/month for branded Rejuvant-style Ca-AKG.' }
+        ],
+        canStack: 'Yes \u2014 Ca-AKG and NMN target non-overlapping aging mechanisms and can be stacked. NMN raises NAD+ availability (driving sirtuin and PARP activity); Ca-AKG provides TCA-cycle substrate and drives TOR inhibition and epigenetic demethylation. There are no reported adverse interactions. Typical stacking: NMN 500\u20131000 mg/day in the morning; Ca-AKG 1000 mg/day with food. Because both interventions are under active clinical investigation, combined long-term safety data are not yet available \u2014 monitor for any GI discomfort and prioritise independently-verified brands.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Metabolic Support', url: '../categories/metabolic-support.html' },
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'calcium-alpha-ketoglutarate-vs-urolithin-a',
+        suppA: 'Calcium Alpha-Ketoglutarate',
+        suppB: 'Urolithin A',
+        title: 'Ca-AKG vs Urolithin A: Evidence-Based Longevity Comparison',
+        metaTitle: 'Ca-AKG vs Urolithin A (2026) | Mitochondrial Longevity Compared',
+        metaDescription: 'Compare Calcium Alpha-Ketoglutarate and Urolithin A for mitochondrial quality control, mitophagy, and healthy aging. Evidence tiers, mechanisms, and dosing side-by-side.',
+        domain: 'Mitochondrial Longevity',
+        sharedDomains: ['mitophagy', 'mitochondrial quality control', 'muscle & joint aging', 'healthy aging'],
+        verdict: 'Urolithin A (Tier 2) is ahead on human RCT evidence, with two placebo-controlled trials in older adults showing improved mitochondrial gene expression and muscle endurance. Ca-AKG (Tier 3) has stronger rodent lifespan data and a broader mechanistic footprint (TOR, epigenetic regulation, mitophagy) but only preliminary human data. Both activate mitophagy, though through different upstream routes: Urolithin A directly signals via PINK1/Parkin-independent and -dependent mitophagy; Ca-AKG engages mitophagy downstream of TCA-cycle and ROS effects.',
+        whoShouldChoose: [
+            { scenario: 'Muscle endurance in older adults', recommendation: 'Urolithin A', reason: 'Direct human RCT evidence (Singh et al. 2022, JAMA Network Open) for improved muscle endurance in middle-aged adults.' },
+            { scenario: 'Biological-age reduction framing', recommendation: 'Ca-AKG', reason: 'Demidenko 2021 retrospective DNA-methylation reduction signal is specific to Ca-AKG (Rejuvant).' },
+            { scenario: 'Strongest mitophagy evidence', recommendation: 'Urolithin A', reason: 'Mitophagy induction is the primary proposed mechanism and is most directly demonstrated in human muscle biopsies.' },
+            { scenario: 'Mechanistic breadth (TOR + epigenetics + mitophagy)', recommendation: 'Ca-AKG', reason: 'Single metabolite engages multiple aging hallmarks via TCA-cycle replenishment.' },
+            { scenario: 'Budget', recommendation: 'Ca-AKG', reason: 'Generic Ca-AKG is cheaper than branded Mitopure (Urolithin A), which remains premium-priced.' },
+            { scenario: 'Bone health support', recommendation: 'Ca-AKG', reason: 'Preclinical bone mineral density restoration via histone demethylation (Wang 2020, Nat Commun).' }
+        ],
+        canStack: 'Yes \u2014 Ca-AKG and Urolithin A both support mitochondrial health through complementary mechanisms and are reasonable to stack. Urolithin A directly activates mitophagy and has demonstrated muscle-function benefits; Ca-AKG provides TCA-cycle substrate, TOR downregulation, and epigenetic cofactor activity. Typical stacking: Urolithin A 500\u20131000 mg/day and Ca-AKG 1000 mg/day, both with food. No adverse interactions reported. Evidence for combined use remains observational \u2014 individual RCT data supports each compound separately.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Muscle & Strength Guide', url: '../guides/muscle-strength.html' }
+        ],
+        relatedCategories: [
+            { title: 'Metabolic Support', url: '../categories/metabolic-support.html' },
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'calcium-alpha-ketoglutarate-vs-spermidine',
+        suppA: 'Calcium Alpha-Ketoglutarate',
+        suppB: 'Spermidine',
+        title: 'Ca-AKG vs Spermidine: Epigenetic & Autophagy Comparison',
+        metaTitle: 'Ca-AKG vs Spermidine (2026) | Autophagy & Longevity Compared',
+        metaDescription: 'Compare Calcium Alpha-Ketoglutarate and Spermidine for autophagy, epigenetic regulation, and healthy aging. Mechanisms, evidence tiers, and human data side-by-side.',
+        domain: 'Longevity & Cellular Renewal',
+        sharedDomains: ['autophagy', 'epigenetic regulation', 'biological age', 'healthy aging'],
+        verdict: 'Both Ca-AKG (Tier 3) and Spermidine (Tier 3) sit at the Emerging end of the evidence spectrum for longevity. Spermidine has a slightly larger observational base (dietary intake studies) and multiple small human trials on cognition and cardiovascular markers; Ca-AKG has the single Demidenko 2021 DNA-methylation signal and stronger rodent lifespan data. Both act through cellular-renewal mechanisms: Spermidine directly induces autophagy via EIF5A hypusination and related pathways; Ca-AKG supports mitophagy, epigenetic demethylation, and TOR downregulation.',
+        whoShouldChoose: [
+            { scenario: 'Autophagy induction', recommendation: 'Spermidine', reason: 'Most robust preclinical and observational evidence for direct autophagy induction as a longevity mechanism.' },
+            { scenario: 'Biological-age clock reduction', recommendation: 'Ca-AKG (preliminary)', reason: 'Only Ca-AKG has a published human DNA-methylation clock reduction data point.' },
+            { scenario: 'Cognitive aging support', recommendation: 'Spermidine', reason: 'Small human trials (e.g., SmartAge) have tested spermidine for cognition in older adults.' },
+            { scenario: 'TOR / caloric-restriction mimicry', recommendation: 'Ca-AKG', reason: 'Direct ATP synthase binding and TOR pathway downregulation (Chin 2014, Nature).' },
+            { scenario: 'Bone health', recommendation: 'Ca-AKG', reason: 'Preclinical bone mass restoration via histone demethylation.' },
+            { scenario: 'Dietary-intake parallel', recommendation: 'Spermidine', reason: 'Natural dietary sources (wheat germ, legumes) allow partial dietary supplementation; Ca-AKG is not meaningfully obtained from food.' }
+        ],
+        canStack: 'Yes \u2014 Ca-AKG and Spermidine target complementary cellular-renewal mechanisms and can be stacked. Spermidine\u2019s autophagy induction and Ca-AKG\u2019s mitophagy / epigenetic / TOR effects are biologically distinct. No reported adverse interactions. Typical combinations: Spermidine 1\u20135 mg/day (often from wheat-germ extract) and Ca-AKG 1000 mg/day. As with all emerging-evidence longevity supplements, combined long-term data is lacking; stack for mechanistic breadth with modest expectations for near-term measurable effects.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Metabolic Support', url: '../categories/metabolic-support.html' }
+        ]
+    },
+    {
+        slug: 'calcium-alpha-ketoglutarate-vs-coq10',
+        suppA: 'Calcium Alpha-Ketoglutarate',
+        suppB: 'CoQ10',
+        title: 'Ca-AKG vs CoQ10: Mitochondrial & Longevity Comparison',
+        metaTitle: 'Ca-AKG vs CoQ10 (2026) | Mitochondrial Supplement Comparison',
+        metaDescription: 'Compare Calcium Alpha-Ketoglutarate and CoQ10 for mitochondrial function, cardiovascular health, and longevity. Evidence tiers, mechanisms, and human data.',
+        domain: 'Mitochondrial Health & Longevity',
+        sharedDomains: ['mitochondrial function', 'cellular energy', 'oxidative stress', 'healthy aging'],
+        verdict: 'CoQ10 (Tier 2) is an extensively studied mitochondrial electron-transport carrier with decades of clinical evidence in cardiovascular disease, statin-induced myopathy, and heart failure. Ca-AKG (Tier 3) is an emerging TCA-cycle intermediate with rodent lifespan data and a single human DNA-methylation study. These compounds support mitochondria differently: CoQ10 is an electron carrier in the respiratory chain; Ca-AKG provides TCA-cycle substrate, engages TOR and ATP synthase, and acts as an epigenetic cofactor. CoQ10 is the clinically validated mitochondrial supplement; Ca-AKG is the longevity-research candidate.',
+        whoShouldChoose: [
+            { scenario: 'Heart failure or statin-related muscle symptoms', recommendation: 'CoQ10', reason: 'Strongest clinical evidence base; decades of trials supporting cardiovascular indications.' },
+            { scenario: 'Biological-age / epigenetic goals', recommendation: 'Ca-AKG', reason: 'Only Ca-AKG has published (preliminary) human biological-age data and epigenetic-cofactor mechanism.' },
+            { scenario: 'Proven clinical safety profile', recommendation: 'CoQ10', reason: 'Excellent long-term safety record in large RCTs across cardiovascular indications.' },
+            { scenario: 'Caloric-restriction / TOR mimicry', recommendation: 'Ca-AKG', reason: 'Direct ATP synthase / TOR engagement is a Ca-AKG-specific mechanism.' },
+            { scenario: 'Migraine prophylaxis', recommendation: 'CoQ10', reason: 'Multiple RCTs support CoQ10 for migraine frequency reduction \u2014 no equivalent Ca-AKG data.' },
+            { scenario: 'Budget', recommendation: 'CoQ10', reason: 'Ubiquinol and ubiquinone formulations are widely available at competitive prices.' }
+        ],
+        canStack: 'Yes \u2014 Ca-AKG and CoQ10 complement each other well: CoQ10 supports the function of existing mitochondria (electron transport), while Ca-AKG supports TCA-cycle substrate supply, mitophagy of damaged mitochondria, and downstream epigenetic regulation. Typical stacking: CoQ10 100\u2013300 mg/day (ubiquinol form for better absorption) and Ca-AKG 1000 mg/day, both with food. No reported adverse interactions. This combination is reasonable for users prioritising mitochondrial health and longevity.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Cardiovascular Health Guide', url: '../guides/cardiovascular.html' }
+        ],
+        relatedCategories: [
+            { title: 'Metabolic Support', url: '../categories/metabolic-support.html' },
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
     }
 ];
 
@@ -500,6 +611,10 @@ const SUPPLEMENT_EMOJIS = {
     'Valerian Root': '🌸',
     'Passionflower': '🌺',
     'Inulin': '🌾',
+    'Calcium Alpha-Ketoglutarate': '⚗️',
+    'NMN (Nicotinamide Mononucleotide)': '🔋',
+    'Urolithin A': '🪷',
+    'Spermidine': '🌾',
     'Akkermansia muciniphila': '🦠',
     'Glucosamine': '🦴',
     'Chondroitin Sulfate': '🦴',
