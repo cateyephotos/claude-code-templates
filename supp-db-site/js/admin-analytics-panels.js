@@ -1476,6 +1476,155 @@
 
   // ---- Public API ---------------------------------------------------------
 
+  // ---- Evidence Pipeline -------------------------------------------------
+
+  /**
+   * Loads the committed-to-repo `/data/evidence-updates-latest.json` snapshot
+   * produced by `scripts/pubmed-evidence-monitor.js` (and, once automated, by
+   * the weekly GitHub Actions workflow). Safely renders summary KPIs + a
+   * per-supplement candidate table. No cloud auth required — the JSON ships
+   * with the deploy.
+   */
+  async function initEvidencePipeline() {
+    var kpiDate = document.getElementById("evidence-kpi-date");
+    var kpiScanned = document.getElementById("evidence-kpi-scanned");
+    var kpiWithNew = document.getElementById("evidence-kpi-with-new");
+    var kpiCandidates = document.getElementById("evidence-kpi-candidates");
+    var kpiRunMeta = document.getElementById("evidence-kpi-run-meta");
+    var kpiWithNewMeta = document.getElementById("evidence-kpi-with-new-meta");
+    var tableWrap = document.getElementById("evidence-updates-table-wrap");
+    if (!tableWrap) return;
+
+    var data;
+    try {
+      // Bust browser cache so admins see fresh runs without a hard reload.
+      var res = await fetch("/data/evidence-updates-latest.json?t=" + Date.now(), {
+        headers: { "Cache-Control": "no-cache" }
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      data = await res.json();
+    } catch (err) {
+      console.warn("[evidence] failed to load snapshot:", err);
+      showError(
+        "evidence-updates-table-wrap",
+        "Evidence snapshot not available. Run `npm run evidence:check` and redeploy, or trigger the weekly workflow."
+      );
+      return;
+    }
+
+    var meta = data && data.meta ? data.meta : {};
+    var entries = Array.isArray(data && data.entries) ? data.entries : [];
+    var withNew = entries.filter(function (e) { return e.newPapers && e.newPapers.length > 0; });
+    var totalCandidates = withNew.reduce(function (s, e) { return s + e.newPapers.length; }, 0);
+
+    if (kpiDate) kpiDate.textContent = meta.date || "—";
+    if (kpiRunMeta) kpiRunMeta.textContent = meta.apiKey ? "API key present (10/sec)" : "No API key (3/sec)";
+    if (kpiScanned) kpiScanned.textContent = meta.scanned != null ? String(meta.scanned) : String(entries.length);
+    if (kpiWithNew) kpiWithNew.textContent = String(withNew.length);
+    if (kpiWithNewMeta) kpiWithNewMeta.textContent = meta.skipped != null ? meta.skipped + " skipped (already current)" : "awaiting curator";
+    if (kpiCandidates) kpiCandidates.textContent = String(totalCandidates);
+
+    renderEvidenceTable(withNew);
+  }
+
+  function renderEvidenceTable(entries) {
+    var wrap = document.getElementById("evidence-updates-table-wrap");
+    if (!wrap) return;
+    while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
+
+    if (!entries || entries.length === 0) {
+      var empty = document.createElement("div");
+      empty.className = "admin-empty-state";
+      var i = document.createElement("i");
+      i.className = "fas fa-check-circle";
+      empty.appendChild(i);
+      var h = document.createElement("h3");
+      h.textContent = "No new candidate papers";
+      empty.appendChild(h);
+      var p = document.createElement("p");
+      p.textContent = "The most recent scan found no new meta-analyses, systematic reviews, or RCTs for any supplement.";
+      empty.appendChild(p);
+      wrap.appendChild(empty);
+      return;
+    }
+
+    var sorted = entries.slice().sort(function (a, b) {
+      return (b.newPapers ? b.newPapers.length : 0) - (a.newPapers ? a.newPapers.length : 0);
+    });
+
+    var table = document.createElement("table");
+    table.className = "admin-table w-full";
+    var thead = document.createElement("thead");
+    var trh = document.createElement("tr");
+    ["Supplement", "Known PMIDs", "Scan cutoff", "New candidates", "Top candidate"].forEach(function (label) {
+      var th = document.createElement("th");
+      th.textContent = label;
+      trh.appendChild(th);
+    });
+    thead.appendChild(trh);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    sorted.forEach(function (entry) {
+      var tr = document.createElement("tr");
+
+      // Supplement
+      var td1 = document.createElement("td");
+      var a = document.createElement("a");
+      a.href = "/supplements/" + entry.slug + ".html";
+      a.textContent = entry.name;
+      a.target = "_blank";
+      a.rel = "noopener";
+      td1.appendChild(a);
+      tr.appendChild(td1);
+
+      // Known PMIDs
+      var td2 = document.createElement("td");
+      td2.style.textAlign = "right";
+      td2.textContent = entry.knownPmidCount != null ? String(entry.knownPmidCount) : "—";
+      tr.appendChild(td2);
+
+      // Scan cutoff
+      var td3 = document.createElement("td");
+      td3.style.textAlign = "right";
+      td3.textContent = entry.sinceYear != null ? "≥ " + entry.sinceYear : "—";
+      tr.appendChild(td3);
+
+      // New candidates
+      var td4 = document.createElement("td");
+      td4.style.textAlign = "right";
+      var badge = document.createElement("span");
+      badge.className = "admin-pill";
+      badge.style.background = "rgba(59,130,246,0.15)";
+      badge.style.color = "#93c5fd";
+      badge.textContent = String((entry.newPapers || []).length);
+      td4.appendChild(badge);
+      tr.appendChild(td4);
+
+      // Top candidate
+      var td5 = document.createElement("td");
+      var top = (entry.newPapers || [])[0];
+      if (top) {
+        var link = document.createElement("a");
+        link.href = top.url || ("https://pubmed.ncbi.nlm.nih.gov/" + top.pmid + "/");
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = (top.year ? top.year + " — " : "") + (top.title || ("PMID " + top.pmid));
+        link.title = top.journal || "";
+        td5.appendChild(link);
+      } else {
+        td5.textContent = "—";
+      }
+      tr.appendChild(td5);
+
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+  }
+
+  // ------------------------------------------------------------------------
+
   async function init(sectionId) {
     try {
       switch (sectionId) {
@@ -1484,6 +1633,7 @@
         case "content":  await initContentPerformance(); break;
         case "journeys": await initUserJourneys(); break;
         case "activity": await initActivityLog(); break;
+        case "evidence": await initEvidencePipeline(); break;
         default: console.warn("AdminAnalyticsPanels: unknown section", sectionId);
       }
     } catch (err) {

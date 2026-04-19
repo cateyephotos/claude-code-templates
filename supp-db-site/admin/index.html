@@ -130,6 +130,10 @@
                     <i class="fas fa-stream"></i>
                     <span>Activity Log</span>
                 </button>
+                <button class="admin-nav-item" data-section="evidence">
+                    <i class="fas fa-microscope"></i>
+                    <span>Evidence Pipeline</span>
+                </button>
             </div>
 
             <div class="admin-nav-section">
@@ -696,6 +700,55 @@
                             <i class="fas fa-stream"></i>
                             <h3>Loading Activity&hellip;</h3>
                             <p>Page views and events will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════ -->
+            <!-- SECTION: Evidence Pipeline                         -->
+            <!-- ═══════════════════════════════════════════════════ -->
+            <section id="section-evidence" class="admin-section">
+                <div class="admin-section-title-row">
+                    <h2 class="admin-section-title">Evidence Pipeline</h2>
+                    <span class="text-xs text-gray-400"><i class="fas fa-clock mr-1"></i>Last run fetched from <code>/data/evidence-updates-latest.json</code></span>
+                </div>
+
+                <!-- Summary cards row -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                    <div class="admin-kpi-card">
+                        <div class="admin-kpi-label">Last run</div>
+                        <div class="admin-kpi-value" id="evidence-kpi-date">—</div>
+                        <div class="admin-kpi-trend" id="evidence-kpi-run-meta"></div>
+                    </div>
+                    <div class="admin-kpi-card">
+                        <div class="admin-kpi-label">Scanned</div>
+                        <div class="admin-kpi-value" id="evidence-kpi-scanned">—</div>
+                        <div class="admin-kpi-trend">supplements</div>
+                    </div>
+                    <div class="admin-kpi-card">
+                        <div class="admin-kpi-label">With new papers</div>
+                        <div class="admin-kpi-value" id="evidence-kpi-with-new">—</div>
+                        <div class="admin-kpi-trend" id="evidence-kpi-with-new-meta">awaiting curator</div>
+                    </div>
+                    <div class="admin-kpi-card">
+                        <div class="admin-kpi-label">Total candidates</div>
+                        <div class="admin-kpi-value" id="evidence-kpi-candidates">—</div>
+                        <div class="admin-kpi-trend">meta-analyses + SRs + RCTs</div>
+                    </div>
+                </div>
+
+                <!-- Per-supplement candidate table -->
+                <div class="admin-chart-card mt-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="admin-chart-title">Candidate papers by supplement</h3>
+                        <span class="text-xs text-gray-400">Sorted by # of candidates descending</span>
+                    </div>
+                    <div id="evidence-updates-table-wrap" class="overflow-x-auto">
+                        <div class="admin-empty-state">
+                            <i class="fas fa-microscope"></i>
+                            <h3>Loading evidence updates&hellip;</h3>
+                            <p>If this panel stays empty, run <code>npm run evidence:check</code> and redeploy, or trigger the weekly workflow.</p>
                         </div>
                     </div>
                 </div>

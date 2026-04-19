@@ -176,6 +176,27 @@
             background: linear-gradient(135deg, #1a3c2a 0%, #2d5a3d 60%, #3a7d5c 100%);
         }
 
+        /* ─── Social-proof "N saved" badge (SUPP-253) ─── */
+        /* Counts below 10 are suppressed server-side for privacy.          */
+        .supp-saved-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(239, 68, 68, 0.08);
+            color: #b91c1c;
+            font-size: 0.72rem;
+            font-weight: 600;
+            line-height: 1;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .supp-saved-badge i {
+            font-size: 0.72rem;
+        }
+
         /* ─── Card Hover ─── */
         .card-hover {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -2091,6 +2112,7 @@
     <script src="js/rbac.js"></script>
     <script src="js/auth-ui.js"></script>
     <script src="js/favorites-sync.js" defer></script>
+    <script src="js/social-counts.js" defer></script>
     <script src="js/guide-cta.js" defer></script>
 
     <!-- Filter Info Tips — editorial margin notes toggle logic -->

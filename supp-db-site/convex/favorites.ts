@@ -182,3 +182,53 @@ export const getFavoriteCount = query({
     return favorites.length;
   },
 });
+
+/**
+ * Public social-proof query — number of users who have favorited a given
+ * supplement. Unauthenticated — counts are aggregate and not tied to any
+ * user. Privacy rule: counts < 10 are returned as 0 so that small numbers
+ * cannot be cross-referenced to identify specific users by subtraction.
+ */
+export const getSupplementSaveCount = query({
+  args: {
+    supplementId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const rows = await ctx.db
+      .query("favorites")
+      .withIndex("by_supplement", (q) =>
+        q.eq("supplementId", args.supplementId)
+      )
+      .collect();
+    const count = rows.length;
+    return count >= 10 ? count : 0;
+  },
+});
+
+/**
+ * Batched public social-proof query — returns a map of supplementId → count
+ * for the supplied IDs. Honors the same ≥ 10 privacy threshold as the
+ * single-lookup variant. Intended for the supplement grid page where many
+ * cards need counts in one round-trip.
+ */
+export const getSaveCountsForSupplements = query({
+  args: {
+    supplementIds: v.array(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const out: Record<string, number> = {};
+    // Deduplicate and cap to protect against pathologically large batches.
+    const unique = Array.from(new Set(args.supplementIds)).slice(0, 200);
+    await Promise.all(
+      unique.map(async (id) => {
+        const rows = await ctx.db
+          .query("favorites")
+          .withIndex("by_supplement", (q) => q.eq("supplementId", id))
+          .collect();
+        const count = rows.length;
+        out[id] = count >= 10 ? count : 0;
+      })
+    );
+    return out;
+  },
+});

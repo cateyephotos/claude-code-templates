@@ -1,0 +1,173 @@
+name: Evidence Monitor (PubMed)
+
+# Weekly scan of PubMed for new meta-analyses, systematic reviews, and RCTs
+# published after each supplement's latest known citation. Produces a
+# Markdown report + JSON snapshot and opens a PR for curator review.
+#
+# Manual run:       workflow_dispatch (Actions tab → Run workflow)
+# Scheduled run:    Mondays 13:00 UTC (~9:00 ET)
+#
+# Required secrets:
+#   PUBMED_API_KEY  — NCBI personal API key (raises rate limit 3→10 req/sec)
+#                     Request one at https://www.ncbi.nlm.nih.gov/account/settings/
+#
+# Follow-up automation (SUPP-255) triggers an email digest off the same
+# artifacts; this workflow's job output surfaces the "has-updates" flag.
+
+on:
+  schedule:
+    # 13:00 UTC every Monday
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+    inputs:
+      since_year:
+        description: 'Override cutoff year (leave blank for per-supplement auto)'
+        required: false
+        default: ''
+      only:
+        description: 'Comma-separated supplement slugs (leave blank for all 114)'
+        required: false
+        default: ''
+      force:
+        description: 'Scan supplements whose latest citation is already current-year'
+        required: false
+        default: 'false'
+        type: boolean
+
+concurrency:
+  group: evidence-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scan:
+    name: Scan PubMed and produce report
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      has-updates: ${{ steps.summary.outputs.has-updates }}
+      report-date: ${{ steps.summary.outputs.report-date }}
+      total-candidates: ${{ steps.summary.outputs.total-candidates }}
+      supplements-with-new: ${{ steps.summary.outputs.supplements-with-new }}
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: supp-db-site
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: Run evidence monitor
+        working-directory: supp-db-site
+        env:
+          PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
+        run: |
+          args=""
+          if [ -n "${{ github.event.inputs.since_year }}" ]; then
+            args="$args --since-year=${{ github.event.inputs.since_year }}"
+          fi
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            args="$args --only=${{ github.event.inputs.only }}"
+          fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            args="$args --force"
+          fi
+          echo "Running: npm run evidence:check -- $args"
+          npm run evidence:check -- $args
+
+      - name: Summarize run
+        id: summary
+        working-directory: supp-db-site
+        run: |
+          REPORT_DATE=$(date -u +%Y-%m-%d)
+          JSON=data/evidence-updates-latest.json
+          if [ ! -f "$JSON" ]; then
+            echo "No JSON produced — failing the workflow"
+            exit 1
+          fi
+          WITH_NEW=$(node -e "const d=require('./$JSON');console.log(d.entries.filter(e=>e.newPapers&&e.newPapers.length>0).length)")
+          TOTAL=$(node -e "const d=require('./$JSON');console.log(d.entries.reduce((s,e)=>s+(e.newPapers?e.newPapers.length:0),0))")
+          if [ "$WITH_NEW" = "0" ]; then
+            HAS_UPDATES=false
+          else
+            HAS_UPDATES=true
+          fi
+          echo "report-date=$REPORT_DATE" >> "$GITHUB_OUTPUT"
+          echo "has-updates=$HAS_UPDATES" >> "$GITHUB_OUTPUT"
+          echo "supplements-with-new=$WITH_NEW" >> "$GITHUB_OUTPUT"
+          echo "total-candidates=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "Summary: $WITH_NEW supplements with $TOTAL candidate papers (report $REPORT_DATE)"
+
+      - name: Upload report artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-report-${{ steps.summary.outputs.report-date }}
+          path: |
+            supp-db-site/docs/evidence-updates/*.md
+            supp-db-site/data/evidence-updates-latest.json
+          retention-days: 90
+
+      - name: Open pull request
+        if: steps.summary.outputs.has-updates == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: evidence-update/${{ steps.summary.outputs.report-date }}
+          base: main
+          title: "Evidence update — ${{ steps.summary.outputs.report-date }}"
+          commit-message: |
+            chore(evidence): weekly monitor run ${{ steps.summary.outputs.report-date }}
+
+            ${{ steps.summary.outputs.supplements-with-new }} supplement(s) with new candidate papers,
+            ${{ steps.summary.outputs.total-candidates }} total candidates identified.
+
+            Generated by .github/workflows/evidence-monitor.yml
+          body: |
+            ## Weekly evidence update — ${{ steps.summary.outputs.report-date }}
+
+            - **Supplements with new candidate papers:** ${{ steps.summary.outputs.supplements-with-new }}
+            - **Total candidate papers:** ${{ steps.summary.outputs.total-candidates }}
+            - **Full report:** `supp-db-site/docs/evidence-updates/${{ steps.summary.outputs.report-date }}.md`
+            - **JSON snapshot:** `supp-db-site/data/evidence-updates-latest.json`
+
+            ### Curator review checklist
+            - [ ] Verify each candidate paper is topically relevant (PubMed keyword matching surfaces false positives for common terms)
+            - [ ] Confirm study type classification (meta-analysis / systematic review / RCT)
+            - [ ] Promote accepted candidates into `supp-db-site/data/enhanced_citations/{id}_{slug}_enhanced.js`
+            - [ ] Bump `evidenceProfile.lastEvidenceUpdate` + `totalCitations`
+
+            ### Notes
+            - A candidate is any PMID not already referenced in the supplement's enhanced_citations file.
+            - Per-supplement cutoff defaults to `evidenceProfile.lastEvidenceUpdate` or the max known citation year.
+            - Candidates are **not vetted** — this PR is a reviewer starting point, not an auto-accept.
+
+            🤖 Generated by `.github/workflows/evidence-monitor.yml` ([source](https://github.com/${{ github.repository }}/blob/main/.github/workflows/evidence-monitor.yml))
+          labels: |
+            evidence-curator-review
+            automated
+          add-paths: |
+            supp-db-site/docs/evidence-updates/*.md
+            supp-db-site/data/evidence-updates-latest.json
+          delete-branch: true
+
+      - name: No new candidates — skip PR
+        if: steps.summary.outputs.has-updates == 'false'
+        run: |
+          echo "✅ No new candidate papers found across any supplement. Nothing to review this week."
