@@ -13,7 +13,6 @@ import type * as adminSettings from "../adminSettings.js";
 import type * as analysisCredits from "../analysisCredits.js";
 import type * as analytics from "../analytics.js";
 import type * as auth from "../auth.js";
-import type * as authDebug from "../authDebug.js";
 import type * as crons from "../crons.js";
 import type * as emailCron from "../emailCron.js";
 import type * as emailCronAction from "../emailCronAction.js";
@@ -51,7 +50,6 @@ declare const fullApi: ApiFromModules<{
   analysisCredits: typeof analysisCredits;
   analytics: typeof analytics;
   auth: typeof auth;
-  authDebug: typeof authDebug;
   crons: typeof crons;
   emailCron: typeof emailCron;
   emailCronAction: typeof emailCronAction;

@@ -49,25 +49,33 @@ const DEV_DOMAIN = "https://usable-tarpon-30.clerk.accounts.dev";
 const PROD_DOMAIN = "https://clerk.supplementdb.info";
 const PROD_URL = "https://acoustic-chinchilla-759.convex.cloud";
 
+// Matches the active CLERK_DOMAIN assignment, ignoring occurrences inside
+// comments or JSDoc — so dev-domain references in the header comments don't
+// trip the swap logic.
+const ASSIGN_RE = /const\s+CLERK_DOMAIN\s*=\s*["']([^"']+)["']/;
+
 function main() {
   console.log("[convex-deploy-prod] Reading auth.config.js...");
   const original = fs.readFileSync(AUTH_CONFIG, "utf8");
-
-  const hasProd = original.includes(PROD_DOMAIN);
-  const hasDev = original.includes(DEV_DOMAIN);
+  const match = original.match(ASSIGN_RE);
+  if (!match) {
+    console.error(
+      `[convex-deploy-prod] ERROR: could not locate active "const CLERK_DOMAIN = '...'" assignment in auth.config.js. Aborting.`
+    );
+    process.exit(1);
+  }
+  const activeDomain = match[1];
 
   let needsSwap = false;
-  if (hasProd && !hasDev) {
+  if (activeDomain === PROD_DOMAIN) {
     console.log(`[convex-deploy-prod] auth.config.js already set to production — no swap needed`);
-  } else if (hasDev) {
+  } else if (activeDomain === DEV_DOMAIN) {
     console.log(`[convex-deploy-prod] auth.config.js currently on dev domain — swapping to production for this deploy`);
-    fs.writeFileSync(AUTH_CONFIG, original.replace(DEV_DOMAIN, PROD_DOMAIN), "utf8");
+    fs.writeFileSync(AUTH_CONFIG, original.replace(ASSIGN_RE, `const CLERK_DOMAIN = "${PROD_DOMAIN}"`), "utf8");
     needsSwap = true;
   } else {
     console.error(
-      `[convex-deploy-prod] ERROR: auth.config.js has neither the dev nor the prod Clerk domain.\n` +
-      `  Expected one of:\n    ${DEV_DOMAIN}\n    ${PROD_DOMAIN}\n` +
-      `  Aborting to avoid deploying an unknown issuer to production.`
+      `[convex-deploy-prod] ERROR: active CLERK_DOMAIN is "${activeDomain}" — expected one of:\n    ${PROD_DOMAIN}\n    ${DEV_DOMAIN}\n  Aborting to avoid deploying an unknown issuer to production.`
     );
     process.exit(1);
   }
