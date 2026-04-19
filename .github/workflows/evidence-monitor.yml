@@ -171,3 +171,47 @@ jobs:
         if: steps.summary.outputs.has-updates == 'false'
         run: |
           echo "✅ No new candidate papers found across any supplement. Nothing to review this week."
+
+      # SUPP-255 — Trigger subscriber-facing digest email.
+      # The Convex side (evidenceDigest.sendDigestToSubscribers) reads the
+      # EVIDENCE_DIGEST_ENABLED adminSettings flag and short-circuits when
+      # it's not "true", so this step is safe to run unconditionally once
+      # the secrets exist.
+      #
+      # Required GitHub Actions secrets for this step:
+      #   CONVEX_SITE_URL                   — e.g. https://acoustic-chinchilla-759.convex.site
+      #   EVIDENCE_DIGEST_WEBHOOK_SECRET    — shared secret echoed on Convex env
+      #
+      # If either secret is missing, the step is a no-op with a visible
+      # log message — the scan itself (and the PR above) already ran.
+      - name: Trigger subscriber digest send
+        if: steps.summary.outputs.has-updates == 'true'
+        working-directory: supp-db-site
+        env:
+          CONVEX_SITE_URL: ${{ secrets.CONVEX_SITE_URL }}
+          EVIDENCE_DIGEST_WEBHOOK_SECRET: ${{ secrets.EVIDENCE_DIGEST_WEBHOOK_SECRET }}
+          REPORT_DATE: ${{ steps.summary.outputs.report-date }}
+        run: |
+          if [ -z "$CONVEX_SITE_URL" ] || [ -z "$EVIDENCE_DIGEST_WEBHOOK_SECRET" ]; then
+            echo "ℹ Skipping digest send — CONVEX_SITE_URL or EVIDENCE_DIGEST_WEBHOOK_SECRET not configured in repo secrets."
+            exit 0
+          fi
+          node -e "
+            const fs = require('fs');
+            const payload = JSON.parse(fs.readFileSync('data/evidence-updates-latest.json','utf8'));
+            const body = JSON.stringify({ reportDate: process.env.REPORT_DATE, payload });
+            const url = process.env.CONVEX_SITE_URL.replace(/\\/+\$/, '') + '/evidence-digest-webhook';
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + process.env.EVIDENCE_DIGEST_WEBHOOK_SECRET
+              },
+              body
+            }).then(async r => {
+              const text = await r.text();
+              console.log('Webhook status:', r.status);
+              console.log('Response:', text);
+              if (!r.ok) process.exit(1);
+            }).catch(err => { console.error('Webhook call failed:', err); process.exit(1); });
+          "

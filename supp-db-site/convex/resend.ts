@@ -406,3 +406,205 @@ export const sendWelcomeEmail = internalAction({
     }
   },
 });
+
+// ── Weekly Evidence Digest ────────────────────────────────────
+//
+// Subscriber-facing newsletter built from the PubMed evidence monitor
+// output (BRO-50 / SUPP-254). Sent via the scheduler in a rate-controlled
+// loop by `evidenceDigest.sendDigestToSubscribers`.
+//
+// Each email highlights a curated set of supplements (top 3-5 by delta size),
+// lists the single most relevant new paper for each, and links back to the
+// supplement monograph on the site. Footer carries the newsletter unsubscribe
+// token.
+
+function escHtml(s: string): string {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function studyTypeLabel(t: string): string {
+  if (t === "meta-analysis") return "Meta-analysis";
+  if (t === "systematic-review") return "Systematic review";
+  if (t === "rct") return "RCT";
+  return "Study";
+}
+
+type DigestEntry = {
+  name: string;
+  slug: string;
+  newPapers: Array<{
+    pmid: string;
+    title: string;
+    year: number | null;
+    journal: string;
+    studyType: string;
+    url: string;
+  }>;
+};
+
+export const sendEvidenceDigestEmail = internalAction({
+  args: {
+    email: v.string(),
+    unsubscribeToken: v.string(),
+    reportDate: v.string(),
+    totalCandidates: v.number(),
+    supplementsWithNew: v.number(),
+    topEntries: v.array(
+      v.object({
+        name: v.string(),
+        slug: v.string(),
+        newPapers: v.array(
+          v.object({
+            pmid: v.string(),
+            title: v.string(),
+            year: v.union(v.number(), v.null()),
+            journal: v.string(),
+            studyType: v.string(),
+            url: v.string(),
+          })
+        ),
+      })
+    ),
+  },
+  handler: async (_ctx, args) => {
+    const resend = getResend();
+    const siteUrl = getSiteUrl();
+    const unsubscribeUrl = `${siteUrl}/unsubscribe.html?token=${args.unsubscribeToken}`;
+    const reportUrl = `${siteUrl}/admin/#evidence`; // admin-facing full report; subscribers can still land on homepage if gated
+
+    // Subject: "This week in supplements: 40 new studies across 8 supplements"
+    const topNames = args.topEntries.slice(0, 3).map((e) => e.name).join(", ");
+    const subject =
+      args.supplementsWithNew === 0
+        ? `This week in supplements: quiet research week`
+        : `This week in supplements: ${args.totalCandidates} new studies on ${topNames}`;
+    const preheader = `${args.supplementsWithNew} supplements have new peer-reviewed evidence since last week — distilled for you.`;
+
+    const highlightsHtml = (args.topEntries as DigestEntry[])
+      .slice(0, 5)
+      .map((entry) => {
+        const suppUrl = `${siteUrl}/supplements/${encodeURIComponent(entry.slug)}.html`;
+        const top = entry.newPapers[0];
+        const newCount = entry.newPapers.length;
+        const topRow = top
+          ? `
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid rgba(99,102,241,0.08);">
+                  <div style="color:#f0f6fc;font-size:15px;font-weight:600;margin-bottom:4px;">
+                    <a href="${suppUrl}" style="color:#f0f6fc;text-decoration:none;">${escHtml(entry.name)}</a>
+                    <span style="color:#6366f1;font-size:12px;font-weight:500;margin-left:8px;">+${newCount} new</span>
+                  </div>
+                  <div style="color:#8b949e;font-size:13px;line-height:1.5;margin-bottom:6px;">
+                    <span style="display:inline-block;background:rgba(99,102,241,0.15);color:#a5b4fc;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.02em;margin-right:6px;">
+                      ${escHtml(studyTypeLabel(top.studyType))}${top.year ? " &middot; " + top.year : ""}
+                    </span>
+                    <a href="${escHtml(top.url)}" style="color:#c9d1d9;text-decoration:none;">${escHtml(top.title)}</a>
+                  </div>
+                  <div style="color:#6b7280;font-size:12px;font-style:italic;">
+                    ${escHtml(top.journal)}
+                  </div>
+                </td>
+              </tr>`
+          : "";
+        return topRow;
+      })
+      .join("");
+
+    try {
+      const { data, error } = await resend.emails.send({
+        from: getFromAddress(),
+        to: [args.email],
+        subject,
+        html: `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escHtml(subject)}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#0d1117;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <!-- Preheader (hidden but shown in inbox preview) -->
+  <div style="display:none;max-height:0;overflow:hidden;">${escHtml(preheader)}</div>
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#0d1117;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#161b22;border-radius:12px;border:1px solid rgba(99,102,241,0.15);overflow:hidden;">
+          <!-- Header -->
+          <tr>
+            <td style="padding:28px 32px 20px;text-align:center;border-bottom:1px solid rgba(99,102,241,0.1);">
+              <span style="font-size:24px;margin-right:8px;">&#128138;</span>
+              <span style="color:#f0f6fc;font-size:20px;font-weight:700;letter-spacing:-0.3px;">SupplementDB</span>
+              <div style="color:#6b7280;font-size:12px;margin-top:8px;">Weekly Evidence Digest &middot; ${escHtml(args.reportDate)}</div>
+            </td>
+          </tr>
+          <!-- Intro -->
+          <tr>
+            <td style="padding:28px 32px 12px;">
+              <h1 style="color:#f0f6fc;font-size:22px;font-weight:600;margin:0 0 12px;line-height:1.3;">
+                This week in supplement research
+              </h1>
+              <p style="color:#8b949e;font-size:15px;line-height:1.6;margin:0 0 4px;">
+                ${args.supplementsWithNew === 0
+                  ? "A quiet research week &mdash; no new meta-analyses, systematic reviews, or RCTs landed since our last scan."
+                  : `<strong style="color:#c9d1d9;">${args.totalCandidates} new peer-reviewed studies</strong> landed this week across ${args.supplementsWithNew} supplements we track. Here's the short list &mdash; the full weekly report lives on the site.`
+                }
+              </p>
+            </td>
+          </tr>
+          ${args.topEntries.length > 0 ? `
+          <!-- Highlights -->
+          <tr>
+            <td style="padding:12px 32px 20px;">
+              <table width="100%" cellpadding="0" cellspacing="0">${highlightsHtml}</table>
+            </td>
+          </tr>
+          <!-- CTA -->
+          <tr>
+            <td align="center" style="padding:8px 32px 28px;">
+              <a href="${siteUrl}" style="display:inline-block;background:linear-gradient(135deg,#4f46e5,#6366f1);color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:12px 28px;border-radius:8px;">
+                Explore the database
+              </a>
+            </td>
+          </tr>` : ""}
+          <!-- Methodology note -->
+          <tr>
+            <td style="padding:16px 32px 20px;border-top:1px solid rgba(99,102,241,0.08);">
+              <p style="color:#6b7280;font-size:12px;line-height:1.5;margin:0;">
+                Studies in this digest are identified by automated weekly PubMed scans for meta-analyses, systematic reviews, and RCTs published since the most recent citation in each supplement's monograph. Listings are candidates for editorial review &mdash; a study appearing here doesn't mean it's been accepted into the database yet.
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding:20px 32px;border-top:1px solid rgba(99,102,241,0.1);text-align:center;">
+              <p style="color:#484f58;font-size:12px;margin:0 0 8px;">
+                SupplementDB &middot; Evidence-based supplement research
+              </p>
+              <p style="color:#484f58;font-size:11px;margin:0;">
+                <a href="${unsubscribeUrl}" style="color:#484f58;text-decoration:underline;">Unsubscribe</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`,
+      });
+
+      if (error) {
+        console.error(`Failed to send evidence digest to ${args.email}:`, error);
+      } else {
+        console.log(`Evidence digest sent to ${args.email} (id: ${data?.id})`);
+      }
+    } catch (error) {
+      console.error(`Error sending evidence digest to ${args.email}:`, error);
+    }
+  },
+});

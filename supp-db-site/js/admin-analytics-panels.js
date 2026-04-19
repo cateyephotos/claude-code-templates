@@ -1495,6 +1495,9 @@
     var tableWrap = document.getElementById("evidence-updates-table-wrap");
     if (!tableWrap) return;
 
+    // Digest enable/disable toggle (SUPP-255).
+    wireDigestToggle();
+
     var data;
     try {
       // Bust browser cache so admins see fresh runs without a hard reload.
@@ -1525,6 +1528,69 @@
     if (kpiCandidates) kpiCandidates.textContent = String(totalCandidates);
 
     renderEvidenceTable(withNew);
+  }
+
+  /**
+   * Wires the "Weekly subscriber digest" checkbox to the Convex evidenceDigest
+   * admin-settings mutation. Reads initial state from getDigestEnabled,
+   * flips the adminSettings row on change. Fails closed (forces checkbox
+   * off, shows warning) when Convex is unreachable or the caller isn't admin.
+   */
+  async function wireDigestToggle() {
+    var label = document.getElementById("evidence-digest-enabled-label");
+    var toggle = document.getElementById("evidence-digest-enabled-toggle");
+    if (!toggle || !label) return;
+    if (!window.SupplementDB || typeof window.SupplementDB.query !== "function") {
+      label.textContent = "Convex client unavailable";
+      toggle.disabled = true;
+      return;
+    }
+
+    function setLabel(text, cls) {
+      label.textContent = text;
+      label.classList.remove("text-green-400", "text-gray-300", "text-red-400");
+      if (cls) label.classList.add(cls);
+    }
+
+    // Initial fetch.
+    try {
+      var enabled = await window.SupplementDB.query(
+        "evidenceDigest:getDigestEnabled",
+        {}
+      );
+      toggle.checked = !!enabled;
+      setLabel(enabled ? "Enabled — Monday cron will send" : "Disabled", enabled ? "text-green-400" : "text-gray-300");
+    } catch (err) {
+      console.warn("[evidence-digest] getDigestEnabled failed:", err);
+      toggle.disabled = true;
+      setLabel("Sign in as admin to toggle", "text-red-400");
+      return;
+    }
+
+    toggle.addEventListener("change", async function () {
+      var desired = toggle.checked;
+      toggle.disabled = true;
+      setLabel("Saving…", null);
+      try {
+        var result = await window.SupplementDB.mutation(
+          "evidenceDigest:setDigestEnabled",
+          { enabled: desired }
+        );
+        var now = !!(result && result.enabled);
+        toggle.checked = now;
+        setLabel(
+          now ? "Enabled — Monday cron will send" : "Disabled",
+          now ? "text-green-400" : "text-gray-300"
+        );
+      } catch (err) {
+        console.warn("[evidence-digest] setDigestEnabled failed:", err);
+        // Revert the checkbox on failure.
+        toggle.checked = !desired;
+        setLabel("Save failed — see console", "text-red-400");
+      } finally {
+        toggle.disabled = false;
+      }
+    });
   }
 
   function renderEvidenceTable(entries) {

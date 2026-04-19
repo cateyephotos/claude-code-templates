@@ -627,4 +627,84 @@ http.route({
   }),
 });
 
+/**
+ * Evidence digest webhook.
+ *
+ * Receives the weekly PubMed evidence monitor output (produced by
+ * `scripts/pubmed-evidence-monitor.js`, shipped to `data/evidence-updates-latest.json`)
+ * and triggers a fan-out send to every confirmed newsletter subscriber.
+ *
+ * Intended caller: the `.github/workflows/evidence-monitor.yml` cron, which
+ * POSTs the JSON snapshot after its main scan step.
+ *
+ * Security:
+ *   - Requires `EVIDENCE_DIGEST_WEBHOOK_SECRET` env var in Convex.
+ *   - Caller must send `Authorization: Bearer <secret>`.
+ *   - Requests without a valid secret are rejected with 401 before any
+ *     database access or scheduler work.
+ *
+ * Gate:
+ *   - Even with a valid secret, the orchestrator checks the
+ *     `EVIDENCE_DIGEST_ENABLED` adminSetting row. If not explicitly set to
+ *     "true", the endpoint accepts the POST and responds with
+ *     `{ scheduled: 0, reason: "…" }` so CI logs show the skip clearly.
+ *
+ * Request body (application/json):
+ *   {
+ *     "reportDate": "YYYY-MM-DD",
+ *     "payload": { meta, entries }   // shape of evidence-updates-latest.json
+ *   }
+ */
+http.route({
+  path: "/evidence-digest-webhook",
+  method: "POST",
+  handler: httpAction(async (ctx, request) => {
+    const expectedSecret = process.env.EVIDENCE_DIGEST_WEBHOOK_SECRET;
+    if (!expectedSecret) {
+      console.error("EVIDENCE_DIGEST_WEBHOOK_SECRET not configured");
+      return new Response("Webhook not configured", { status: 500 });
+    }
+
+    const authHeader = request.headers.get("authorization") || "";
+    const prefix = "Bearer ";
+    const presented = authHeader.startsWith(prefix) ? authHeader.slice(prefix.length) : "";
+
+    // Length-aware equality (not fully constant-time in JS, but avoids
+    // length-based leaks and short-circuit comparison on the common path).
+    if (presented.length !== expectedSecret.length || presented !== expectedSecret) {
+      return new Response("Unauthorized", { status: 401 });
+    }
+
+    let body: any;
+    try {
+      body = await request.json();
+    } catch (e) {
+      return new Response("Invalid JSON", { status: 400 });
+    }
+    if (!body || typeof body !== "object" || !body.payload || !body.reportDate) {
+      return new Response(
+        JSON.stringify({ error: "Expected { reportDate, payload }" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    try {
+      const result = await ctx.runAction(
+        internal.evidenceDigest.sendDigestToSubscribers,
+        { payload: body.payload, reportDate: body.reportDate }
+      );
+      return new Response(JSON.stringify(result), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (err: any) {
+      console.error("[evidence-digest-webhook] send failed:", err);
+      return new Response(
+        JSON.stringify({ error: String(err && err.message ? err.message : err) }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+  }),
+});
+
 export default http;
