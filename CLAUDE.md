@@ -222,6 +222,12 @@ node scripts/inject-honeypots.js
 
 # 3. Regenerate sitemap (ALWAYS run after adding/removing pages)
 npm run generate:sitemap
+
+# 4. Notify Google Search Console (ALWAYS run after sitemap regen — without this,
+#    Google won't discover new/changed URLs until its next natural crawl cycle,
+#    which can take days or weeks). Uses the GSC service account in Convex prod env.
+npm run submit:sitemap:prod
+# Combined one-shot: npm run sitemap:regen-and-submit
 ```
 
 ### SEO Rules for Generated Pages
@@ -241,7 +247,7 @@ npm run generate:sitemap
 
 When adding **new supplement pages**:
 - [ ] `seed.js` COMPARISONS_LIST — add any comparisons involving this supplement
-- [ ] Run `npm run generate:sitemap`
+- [ ] Run `npm run generate:sitemap && npm run submit:sitemap:prod` (or `npm run sitemap:regen-and-submit`)
 
 When adding **new comparison pages**:
 - [ ] `index.html` — add card in Comparisons grid section
@@ -249,11 +255,11 @@ When adding **new comparison pages**:
 - [ ] `scripts/generate-supplement-pages.js` COMPARISONS_LIST — add entry for monograph cross-linking
 - [ ] `seed.js` COMPARISONS_LIST — add entry for monograph cross-linking
 - [ ] `scripts/find-compare-candidates.js` EXISTING_SLUGS + EXISTING_PAIRS — exclude from future scoring
-- [ ] Run `npm run generate:sitemap`
+- [ ] Run `npm run generate:sitemap && npm run submit:sitemap:prod` (or `npm run sitemap:regen-and-submit`)
 
 When adding **new guide pages**:
 - [ ] `index.html` — add to Evidence Guides section if appropriate
-- [ ] Run `npm run generate:sitemap`
+- [ ] Run `npm run generate:sitemap && npm run submit:sitemap:prod` (or `npm run sitemap:regen-and-submit`)
 
 ## SupplementDB Skills Reference
 

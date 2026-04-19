@@ -21,6 +21,8 @@
     "generate:guides": "node scripts/generate-guide-pages.js",
     "generate:compare": "node scripts/generate-compare-pages.js",
     "generate:sitemap": "node scripts/generate-sitemap.js",
+    "submit:sitemap:prod": "npx convex run --prod gsc:submitSitemap",
+    "sitemap:regen-and-submit": "npm run generate:sitemap && npm run submit:sitemap:prod",
     "evidence:check": "node scripts/pubmed-evidence-monitor.js",
     "audit:fda": "node scripts/audit-fda-claims.js",
     "heal": "node healing-engine/run-healing.js",

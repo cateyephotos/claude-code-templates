@@ -6090,7 +6090,7 @@ const supplementDatabase = {
           },
           "lastUpdated": "2026-03-21",
           "healthDomains": [
-                "Anti-Aging",
+                "Longevity",
                 "Muscle Strength",
                 "Mitochondrial Health",
                 "Immune System Support",
@@ -6216,7 +6216,7 @@ const supplementDatabase = {
                 "Memory Enhancement",
                 "Neuroprotection",
                 "Cardiovascular Health",
-                "Anti-Aging",
+                "Longevity",
                 "Antioxidant Support"
           ]
     },
@@ -6842,7 +6842,7 @@ const supplementDatabase = {
           },
           "lastUpdated": "2026-03-21",
           "healthDomains": [
-                "Anti-Aging",
+                "Longevity",
                 "Anti-Inflammatory",
                 "Neuroprotection",
                 "Antioxidant Support",
@@ -7137,7 +7137,7 @@ const supplementDatabase = {
                 "Sleep Support",
                 "Mood Support",
                 "Neuroprotection",
-                "Anti-Aging",
+                "Longevity",
                 "Anti-inflammatory"
           ]
     },
@@ -7507,7 +7507,7 @@ const supplementDatabase = {
                 "Bone Health",
                 "Connective Tissue",
                 "Male Fertility",
-                "Anti-Aging",
+                "Longevity",
                 "Antioxidant Support",
                 "Musculoskeletal Health"
           ]
@@ -7661,7 +7661,7 @@ const supplementDatabase = {
           },
           "lastUpdated": "2026-03-21",
           "healthDomains": [
-                "Anti-Aging",
+                "Longevity",
                 "Antioxidant Support",
                 "Mitochondrial Health",
                 "Metabolic Health",
@@ -8282,7 +8282,7 @@ const supplementDatabase = {
                 "Metabolic Health",
                 "Cardiovascular Health",
                 "Liver Health",
-                "Anti-Aging",
+                "Longevity",
                 "Anti-Inflammatory"
           ]
     },
@@ -8721,7 +8721,7 @@ const supplementDatabase = {
                 "Neuroprotection",
                 "Anti-Fatigue",
                 "Musculoskeletal Health",
-                "Anti-Aging"
+                "Longevity"
           ]
     },
     {
@@ -8907,7 +8907,7 @@ const supplementDatabase = {
                 "Detoxification",
                 "Skin Health",
                 "Metabolic Health",
-                "Anti-Aging",
+                "Longevity",
                 "Cardiovascular Health"
           ]
     },
@@ -9382,7 +9382,7 @@ const supplementDatabase = {
       "supplements": ["Berberine", "CoQ10", "Panax Ginseng", "Green Tea Extract", "NAD+ Precursors", "Red Yeast Rice", "Chromium", "Vanadium", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract"]
     },
     {
-      "name": "Anti-Aging",
+      "name": "Longevity",
       "supplements": ["NAD+ Precursors", "PQQ", "Quercetin", "CoQ10", "Urolithin A", "Spermidine", "NMN (Nicotinamide Mononucleotide)", "Fisetin", "GlyNAC"]
     },
     {

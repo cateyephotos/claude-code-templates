@@ -26,15 +26,18 @@ function setCache(key: string, data: any): void {
   cache.set(key, { data, ts: Date.now() });
 }
 
-async function getAccessToken(serviceAccount: {
-  client_email: string;
-  private_key: string;
-}): Promise<string> {
+async function getAccessToken(
+  serviceAccount: {
+    client_email: string;
+    private_key: string;
+  },
+  scope: string = "https://www.googleapis.com/auth/webmasters.readonly"
+): Promise<string> {
   const now = Math.floor(Date.now() / 1000);
   const header = { alg: "RS256", typ: "JWT" };
   const payload = {
     iss: serviceAccount.client_email,
-    scope: "https://www.googleapis.com/auth/webmasters.readonly",
+    scope,
     aud: "https://oauth2.googleapis.com/token",
     iat: now,
     exp: now + 3600,
@@ -363,5 +366,80 @@ export const fetchQueryByPage = action({
       console.error("GSC: Failed to fetch query-by-page:", err);
       return { pairs: [], configured: true, error: msg };
     }
+  },
+});
+
+/**
+ * Submit (or resubmit) the sitemap to Google Search Console.
+ *
+ * Uses the read-write "webmasters" scope (not readonly). The service account
+ * must be added as a Full user in GSC Settings → Users.
+ *
+ * Call via CLI:
+ *   npx convex run gsc:submitSitemap --prod
+ *   npx convex run gsc:submitSitemap --prod '{"feedpath":"sitemap.xml"}'
+ */
+export const submitSitemap = action({
+  args: {
+    feedpath: v.optional(v.string()),
+  },
+  handler: async (_ctx, args) => {
+    const feedpath = args.feedpath ?? "sitemap.xml";
+    const saJson = process.env.GSC_SERVICE_ACCOUNT_JSON;
+    const siteUrl = process.env.GSC_SITE_URL;
+
+    if (!saJson || !siteUrl) {
+      throw new Error(
+        "GSC not configured: GSC_SERVICE_ACCOUNT_JSON or GSC_SITE_URL missing on this deployment"
+      );
+    }
+
+    const serviceAccount = JSON.parse(saJson);
+    const accessToken = await getAccessToken(
+      serviceAccount,
+      "https://www.googleapis.com/auth/webmasters"
+    );
+
+    const encodedSiteUrl = encodeURIComponent(siteUrl);
+    const siteRoot = siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`;
+    const absoluteFeed = feedpath.startsWith("http")
+      ? feedpath
+      : `${siteRoot}${feedpath.replace(/^\//, "")}`;
+    const encodedFeed = encodeURIComponent(absoluteFeed);
+
+    // PUT sites/{siteUrl}/sitemaps/{feedpath} — idempotent; GSC treats
+    // a second PUT as a resubmission/recrawl request.
+    const url = `https://www.googleapis.com/webmasters/v3/sites/${encodedSiteUrl}/sitemaps/${encodedFeed}`;
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    if (!response.ok && response.status !== 204) {
+      const errBody = await response.text();
+      throw new Error(
+        `GSC sitemap submission failed (${response.status}): ${errBody}`
+      );
+    }
+
+    // Fetch the sitemap record to return its reported status.
+    const statusResponse = await fetch(url, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    const statusBody = statusResponse.ok ? await statusResponse.json() : null;
+
+    return {
+      submitted: true,
+      siteUrl,
+      sitemap: absoluteFeed,
+      submittedAt: new Date().toISOString(),
+      lastDownloaded: statusBody?.lastDownloaded ?? null,
+      lastSubmitted: statusBody?.lastSubmitted ?? null,
+      isPending: statusBody?.isPending ?? null,
+      errors: statusBody?.errors ?? 0,
+      warnings: statusBody?.warnings ?? 0,
+    };
   },
 });
