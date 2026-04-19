@@ -1,0 +1,606 @@
+{
+  "meta": {
+    "date": "2026-04-19",
+    "scanned": 8,
+    "skipped": 0,
+    "generatedAt": "2026-04-19T00:47:32.834Z",
+    "apiKey": false
+  },
+  "entries": [
+    {
+      "name": "Bacopa monnieri",
+      "slug": "bacopa-monnieri",
+      "knownPmidCount": 18,
+      "sinceYear": 2025,
+      "pubmedHitCount": 7,
+      "newPapers": [
+        {
+          "pmid": "41575193",
+          "title": "The efficacy of nutritional phytochemical compounds in improving cognition.",
+          "year": 2026,
+          "journal": "The international journal of neuropsychopharmacology",
+          "pubTypes": [
+            "Journal Article",
+            "Review",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41575193/"
+        },
+        {
+          "pmid": "41640686",
+          "title": "The effect of plant active substances on cognitive function in healthy older adults: a systematic review and network meta-analysis of randomized controlled trials.",
+          "year": 2025,
+          "journal": "Frontiers in pharmacology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41640686/"
+        },
+        {
+          "pmid": "39498770",
+          "title": "Effectiveness of Bacopa Monnieri (Brahmi) in the management of schizophrenia: a systematic review.",
+          "year": 2025,
+          "journal": "Nutritional neuroscience",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39498770/"
+        },
+        {
+          "pmid": "40362791",
+          "title": "Efficiency of Different Supplements in Alleviating Symptoms of ADHD with or Without the Use of Stimulants: A Systematic Review.",
+          "year": 2025,
+          "journal": "Nutrients",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40362791/"
+        },
+        {
+          "pmid": "40077768",
+          "title": "Exploring Antioxidant Properties of Standardized Extracts from Medicinal Plants Approved by the Thai FDA for Dietary Supplementation.",
+          "year": 2025,
+          "journal": "Nutrients",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40077768/"
+        }
+      ]
+    },
+    {
+      "name": "Turmeric/Curcumin",
+      "slug": "turmeric-curcumin",
+      "knownPmidCount": 21,
+      "sinceYear": 2025,
+      "pubmedHitCount": 30,
+      "newPapers": [
+        {
+          "pmid": "41761990",
+          "title": "Effects of Curcumin/Turmeric Supplementation on Kidney Function in Individuals With Diabetes: A Systematic Review and Meta-Analysis of Randomised Controlled Trials.",
+          "year": 2026,
+          "journal": "Endocrinology, diabetes & metabolism",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41761990/"
+        },
+        {
+          "pmid": "41082950",
+          "title": "Evaluating the efficacy and safety of Curcuma longa, Boswellia serrata, and their mixed formulation in treating knee osteoarthritis: A systematic review and network meta-analysis.",
+          "year": 2026,
+          "journal": "Complementary therapies in medicine",
+          "pubTypes": [
+            "Journal Article",
+            "Network Meta-Analysis",
+            "Systematic Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41082950/"
+        },
+        {
+          "pmid": "40902809",
+          "title": "Effectiveness and mechanisms of curcumin for colorectal cancer in preclinical models:A systematic review and meta-analysis.",
+          "year": 2026,
+          "journal": "Journal of ethnopharmacology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40902809/"
+        },
+        {
+          "pmid": "41388744",
+          "title": "Antihypertensive Effects of Curcumin/Turmeric Supplementation in Prediabetes and Diabetes: A Systematic Review and Meta-Analysis of Randomised Controlled Trials.",
+          "year": 2026,
+          "journal": "Endocrinology, diabetes & metabolism",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41388744/"
+        },
+        {
+          "pmid": "41372521",
+          "title": "Effects of curcumin and Curcuma longa extract on inflammatory biomarkers in patients with rheumatoid arthritis (RA) and systemic lupus erythematosus (SLE): a systematic review and meta-analysis of randomized controlled trials.",
+          "year": 2025,
+          "journal": "Inflammation research : official journal of the European Histamine Research Society ... [et al.]",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41372521/"
+        }
+      ]
+    },
+    {
+      "name": "Ashwagandha",
+      "slug": "ashwagandha",
+      "knownPmidCount": 12,
+      "sinceYear": 2025,
+      "pubmedHitCount": 22,
+      "newPapers": [
+        {
+          "pmid": "41644067",
+          "title": "Effects of ashwagandha (Withania somnifera) on mental health in adults: A systematic review and dose-response meta-analysis of randomized controlled trials.",
+          "year": 2026,
+          "journal": "Complementary therapies in medicine",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41644067/"
+        },
+        {
+          "pmid": "40746175",
+          "title": "Dual impact of Ashwagandha: Significant cortisol reduction but no effects on perceived stress - A systematic review and meta-analysis.",
+          "year": 2025,
+          "journal": "Nutrition and health",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40746175/"
+        },
+        {
+          "pmid": "39026098",
+          "title": "Nutraceuticals and phytoceuticals in the treatment of schizophrenia: a systematic review and network meta-analysis \"Nutra NMA SCZ\".",
+          "year": 2025,
+          "journal": "Molecular psychiatry",
+          "pubTypes": [
+            "Systematic Review",
+            "Journal Article",
+            "Network Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39026098/"
+        },
+        {
+          "pmid": "41906501",
+          "title": "Clinical evidence for the adaptogenic effects of Withania somnifera and Rhodiola rosea - A systematic review with molecular interpretation of psychometric outcomes.",
+          "year": 2026,
+          "journal": "Annals of agricultural and environmental medicine : AAEM",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41906501/"
+        },
+        {
+          "pmid": "41843701",
+          "title": "Improving Cognition in Bipolar Disorder: A Systematic Review of Current Pharmacological and Nutraceutical Approaches.",
+          "year": 2026,
+          "journal": "Neuropsychobiology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41843701/"
+        }
+      ]
+    },
+    {
+      "name": "Creatine",
+      "slug": "creatine",
+      "knownPmidCount": 15,
+      "sinceYear": 2025,
+      "pubmedHitCount": 30,
+      "newPapers": [
+        {
+          "pmid": "41891174",
+          "title": "Effects of Omega-3 Supplementation on Inflammation and Recovery in Sports: A Meta-Analysis.",
+          "year": 2026,
+          "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41891174/"
+        },
+        {
+          "pmid": "41901084",
+          "title": "Comparative Effects of Dietary Protein, Creatine, and Omega-3 Supplementation on Muscle Strength, Endurance, and Recovery in Trained Athletes: A Systematic Review and Network Meta-Analysis.",
+          "year": 2026,
+          "journal": "Nutrients",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41901084/"
+        },
+        {
+          "pmid": "41798953",
+          "title": "Impact of creatine supplementation on inflammation: evidence from a systematic review and meta-analysis of randomized double-blind placebo trials.",
+          "year": 2026,
+          "journal": "Frontiers in immunology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41798953/"
+        },
+        {
+          "pmid": "41714851",
+          "title": "The Impact of Lipoprotein Apheresis on Changes in Biochemical Enzymes: A Systematic Review and Meta-Analysis.",
+          "year": 2026,
+          "journal": "Journal of clinical apheresis",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41714851/"
+        },
+        {
+          "pmid": "41657017",
+          "title": "Effects of coenzyme Q10 analogs on oxidative stress, muscle, and metabolism after exercise: A meta-analysis and systematic review.",
+          "year": 2026,
+          "journal": "The Journal of international medical research",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis",
+            "Systematic Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41657017/"
+        }
+      ]
+    },
+    {
+      "name": "Magnesium",
+      "slug": "magnesium",
+      "knownPmidCount": 18,
+      "sinceYear": 2025,
+      "pubmedHitCount": 30,
+      "newPapers": [
+        {
+          "pmid": "41922931",
+          "title": "The association between serum trace elements and iron deficiency anemia in children and adolescents: a systematic review and meta-analysis.",
+          "year": 2026,
+          "journal": "Hematology (Amsterdam, Netherlands)",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41922931/"
+        },
+        {
+          "pmid": "41978212",
+          "title": "Association Between Levels of Magnesium and Diabetic Retinopathy in Diabetic Patients with Type 2 Diabetes Mellitus: An Updated Systematic Review and Meta-Analysis.",
+          "year": 2026,
+          "journal": "Nutrients",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41978212/"
+        },
+        {
+          "pmid": "41591379",
+          "title": "Statistical decomposition of passive and active phenotypic plasticity in traits under homeostatic regulation.",
+          "year": 2026,
+          "journal": "Evolution; international journal of organic evolution",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41591379/"
+        },
+        {
+          "pmid": "41773552",
+          "title": "Magnesium sulphate for treating acute bronchiolitis in children under two years of age.",
+          "year": 2026,
+          "journal": "The Cochrane database of systematic reviews",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41773552/"
+        },
+        {
+          "pmid": "41042416",
+          "title": "Comparative Cleansing Efficacy, Safety, and Tolerability of Bowel Preparation Agents in Pediatric Patients: A Network and Proportional Meta-Analyses of Randomized Controlled Trials.",
+          "year": 2026,
+          "journal": "Digestive diseases and sciences",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis",
+            "Comparative Study",
+            "Systematic Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41042416/"
+        }
+      ]
+    },
+    {
+      "name": "Melatonin",
+      "slug": "melatonin",
+      "knownPmidCount": 17,
+      "sinceYear": 2025,
+      "pubmedHitCount": 30,
+      "newPapers": [
+        {
+          "pmid": "41861703",
+          "title": "Do sleep interventions improve sleep in MS? A systematic review and meta-analysis of activity monitor assessed outcomes.",
+          "year": 2026,
+          "journal": "Multiple sclerosis and related disorders",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41861703/"
+        },
+        {
+          "pmid": "41925053",
+          "title": "Melatonin treatment for neonatal encephalopathy.",
+          "year": 2026,
+          "journal": "The Cochrane database of systematic reviews",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41925053/"
+        },
+        {
+          "pmid": "41993993",
+          "title": "Clinical and endocrine effects of pharmacological therapy in endometriosis: a systematic review and meta-analysis.",
+          "year": 2026,
+          "journal": "Frontiers in endocrinology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41993993/"
+        },
+        {
+          "pmid": "41604838",
+          "title": "Is salivary melatonin an indicator of periodontal disease severity? A systematic review and meta-analysis.",
+          "year": 2026,
+          "journal": "Archives of oral biology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41604838/"
+        },
+        {
+          "pmid": "40902687",
+          "title": "Limited Efficacy of Pharmacological Interventions for Improving Postoperative Sleep Quality in Primary Total Joint Arthroplasty Patients: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+          "year": 2026,
+          "journal": "The Journal of arthroplasty",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40902687/"
+        }
+      ]
+    },
+    {
+      "name": "Ginkgo Biloba",
+      "slug": "ginkgo-biloba",
+      "knownPmidCount": 16,
+      "sinceYear": 2025,
+      "pubmedHitCount": 29,
+      "newPapers": [
+        {
+          "pmid": "40019748",
+          "title": "Neuroprotective effect and possible mechanisms of the extract of ginkgo biloba for spinal cord injury in experimental animal: a meta-analysis and systematic review.",
+          "year": 2025,
+          "journal": "Nutritional neuroscience",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40019748/"
+        },
+        {
+          "pmid": "40441764",
+          "title": "Pharmacotherapy options for the management of subjective tinnitus: a systematic review and network meta-analysis.",
+          "year": 2025,
+          "journal": "BMJ open",
+          "pubTypes": [
+            "Journal Article",
+            "Network Meta-Analysis",
+            "Systematic Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40441764/"
+        },
+        {
+          "pmid": "40083108",
+          "title": "Systematic Review and Network Meta-Analysis of the Effects of Plant Extracts on Cognitive Function and Quality of Life in Stroke Patients.",
+          "year": 2025,
+          "journal": "Phytotherapy research : PTR",
+          "pubTypes": [
+            "Journal Article",
+            "Network Meta-Analysis",
+            "Systematic Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40083108/"
+        },
+        {
+          "pmid": "39895346",
+          "title": "Ginkgo biloba extract EGb 761 is safe and effective in the treatment of mild dementia - a meta-analysis of patient subgroups in randomised controlled trials.",
+          "year": 2025,
+          "journal": "The world journal of biological psychiatry : the official journal of the World Federation of Societies of Biological Psychiatry",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis",
+            "Research Support, Non-U.S. Gov't"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39895346/"
+        },
+        {
+          "pmid": "41878732",
+          "title": "Systematic review and meta-analysis of antioxidant treatment in patients with acute mountain sickness induced by high altitude exposure.",
+          "year": 2026,
+          "journal": "Frontiers in physiology",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review"
+          ],
+          "studyType": "systematic-review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41878732/"
+        }
+      ]
+    },
+    {
+      "name": "Quercetin",
+      "slug": "quercetin",
+      "knownPmidCount": 10,
+      "sinceYear": 2025,
+      "pubmedHitCount": 30,
+      "newPapers": [
+        {
+          "pmid": "41287200",
+          "title": "The effect of nutraceutical interventions on reproductive health outcomes in women with polycystic ovary syndrome: A systematic review and meta-analysis.",
+          "year": 2026,
+          "journal": "Diabetes, obesity & metabolism",
+          "pubTypes": [
+            "Systematic Review",
+            "Journal Article",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41287200/"
+        },
+        {
+          "pmid": "41514376",
+          "title": "The effect of Quercetin supplementation on hyperuricemia-related biochemical and renal outcomes in animal models: a systematic review and meta-analysis.",
+          "year": 2026,
+          "journal": "Journal of health, population, and nutrition",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis",
+            "Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41514376/"
+        },
+        {
+          "pmid": "41516399",
+          "title": "Evidence Synthesis and Mechanism Analysis of Quercetin Treatment for Atherosclerosis: A Preclinical Systematic Review and Meta-Analysis.",
+          "year": 2026,
+          "journal": "International journal of molecular sciences",
+          "pubTypes": [
+            "Journal Article",
+            "Systematic Review",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41516399/"
+        },
+        {
+          "pmid": "41396378",
+          "title": "Effect of Quercetin on inflammatory markers in diabetes mellitus: a systematic review and meta-analysis of animal studies.",
+          "year": 2026,
+          "journal": "Inflammopharmacology",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis",
+            "Systematic Review"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41396378/"
+        },
+        {
+          "pmid": "41355500",
+          "title": "NRF2 Pathway Activation as a Molecular Toxicology Mechanism in Oxidative Stress and Lipid Metabolic Disorders.",
+          "year": 2025,
+          "journal": "Journal of biochemical and molecular toxicology",
+          "pubTypes": [
+            "Journal Article",
+            "Meta-Analysis"
+          ],
+          "studyType": "meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41355500/"
+        }
+      ]
+    }
+  ]
+}
