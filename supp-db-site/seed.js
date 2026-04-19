@@ -499,7 +499,13 @@ function buildJsonLd(supp, slug, tierText, safetyRat, citCount) {
             url: BASE_URL
         },
         about: {
-            '@type': 'DietarySupplement',
+            // Use 'Substance' rather than 'DietarySupplement' — DietarySupplement
+            // is treated by Google as a Product subtype, which triggers Product
+            // rich-results validation. Without offers/reviews/aggregateRating
+            // (we don't sell anything), this raised "1 critical issue" on every
+            // supplement page in GSC. Substance is a MedicalEntity and bypasses
+            // Product validation while staying semantically accurate.
+            '@type': 'Substance',
             name: supp.name,
             alternateName: supp.commonNames || [],
             activeIngredient: supp.scientificName || supp.name

@@ -442,7 +442,10 @@ function generateSupplementPage(s) {
             "@id": `${SITE_URL}/supplements/${suppSlug}.html`
         },
         "about": {
-            "@type": "DietarySupplement",
+            // Use 'Substance' over 'DietarySupplement' to avoid Google's
+            // Product-snippet validator flagging missing offers/reviews/rating.
+            // See seed.js for full rationale.
+            "@type": "Substance",
             "name": s.name,
             "alternateName": commonNames.length > 0 ? commonNames[0] : undefined,
             "activeIngredient": s.scientificName || s.name
