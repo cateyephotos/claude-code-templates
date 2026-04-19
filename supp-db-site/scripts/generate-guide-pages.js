@@ -2531,7 +2531,33 @@ function generateGuidePage(guide, allSupplements) {
 <main>
 `;
 
-    // ── Evidence Summary Table ────────────────────────────────────────────
+    // ── Introduction (rendered FIRST so readers get narrative context before
+    //                  diving into the supplement table) ─────────────────────
+    html += `
+<section id="introduction" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
+    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Introduction</h2>
+    ${guide.introduction.split('\n\n').map(p => `<p class="mb-4" style="color: var(--text-primary);">${p.trim()}</p>`).join('\n    ')}
+
+    <!-- Featured Snippet -->
+    <div class="evidence-card p-5 mt-6" style="border-left: 3px solid var(--accent-light);">
+        <p class="text-sm" style="color: var(--text-primary);"><strong style="color: var(--text-bright);">${esc(guide.shortTitle)} supplements</strong> ${guide.snippetDefinition}</p>
+    </div>
+
+    <!-- Top supplement ranking -->
+    <div class="mt-8">
+        <h3 class="text-lg mb-4" style="color: var(--text-bright);">${esc(guide.snippetListTitle)}</h3>
+        <ol class="space-y-2 pl-5" style="list-style-type: decimal; color: var(--text-primary);">`;
+    core.forEach(s => {
+        const topBenefit = getDomainBenefit(s, guide.slug);
+        html += `
+            <li class="text-sm"><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">${esc(s.name)}</a> ${tierBadgeHtml(s.evidenceTier)} &mdash; ${esc(topBenefit)} (${esc(s.dosageRange || 'Dosage varies')})</li>`;
+    });
+    html += `
+        </ol>
+    </div>
+</section>`;
+
+    // ── Evidence Summary Table (rendered SECOND, after the introduction) ───
     html += `
 <section id="summary" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
     <div class="evidence-card p-6">
@@ -2564,8 +2590,15 @@ function generateGuidePage(guide, allSupplements) {
                         <td style="font-size:0.82rem;">${esc(topBenefit)}</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">${esc(s.dosageRange || '—')}</td>
                     </tr>`;
-        // Insert invisible gate cutoff marker after the Nth row
+        // After the Nth visible row, insert (a) a "+N more" hint row that
+        // teases the locked content, then (b) the invisible gate cutoff marker
+        // that content-gate.js uses to know where the premium content begins.
         if (idx === GATE_CUTOFF_AFTER_ROW - 1) {
+            const remaining = filtered.length - GATE_CUTOFF_AFTER_ROW;
+            if (remaining > 0) {
+                html += `
+                    <tr class="gate-hint-row" data-hide-when-unlocked><td colspan="5" style="padding: 14px 16px; text-align: center; background: rgba(${theme.accentRgb}, 0.06); border-top: 1px dashed rgba(${theme.accentRgb}, 0.4); border-bottom: 1px dashed rgba(${theme.accentRgb}, 0.4); font-size: 0.88rem; color: var(--text-muted);"><i class="fas fa-lock" style="margin-right: 8px; color: var(--accent-light);"></i><strong style="color: var(--text-primary);">+${remaining} more supplement${remaining === 1 ? '' : 's'}</strong> with mechanisms, dosing and full evidence &mdash; unlocked with access</td></tr>`;
+            }
             html += `
                     <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>`;
         }
@@ -2574,31 +2607,6 @@ function generateGuidePage(guide, allSupplements) {
                 </tbody>
             </table>
         </div>
-    </div>
-</section>`;
-
-    // ── Introduction ──────────────────────────────────────────────────────
-    html += `
-<section id="introduction" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
-    <h2 class="text-2xl sm:text-3xl mb-6" style="color: var(--text-bright);">Introduction</h2>
-    ${guide.introduction.split('\n\n').map(p => `<p class="mb-4" style="color: var(--text-primary);">${p.trim()}</p>`).join('\n    ')}
-
-    <!-- Featured Snippet -->
-    <div class="evidence-card p-5 mt-6" style="border-left: 3px solid var(--accent-light);">
-        <p class="text-sm" style="color: var(--text-primary);"><strong style="color: var(--text-bright);">${esc(guide.shortTitle)} supplements</strong> ${guide.snippetDefinition}</p>
-    </div>
-
-    <!-- Top supplement ranking -->
-    <div class="mt-8">
-        <h3 class="text-lg mb-4" style="color: var(--text-bright);">${esc(guide.snippetListTitle)}</h3>
-        <ol class="space-y-2 pl-5" style="list-style-type: decimal; color: var(--text-primary);">`;
-    core.forEach(s => {
-        const topBenefit = getDomainBenefit(s, guide.slug);
-        html += `
-            <li class="text-sm"><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none; font-weight: 700;">${esc(s.name)}</a> ${tierBadgeHtml(s.evidenceTier)} &mdash; ${esc(topBenefit)} (${esc(s.dosageRange || 'Dosage varies')})</li>`;
-    });
-    html += `
-        </ol>
     </div>
 </section>`;
 

@@ -113,6 +113,13 @@
           el.classList.add("visible");
         });
 
+        // Hide any teaser hints that should disappear once premium loads
+        // (e.g., the "+N more supplements unlocked with access" row in the
+        // Quick Evidence Summary table).
+        document.querySelectorAll("[data-hide-when-unlocked]").forEach(el => {
+          el.style.display = "none";
+        });
+
         // Re-initialize any interactive elements
         initInjectedContent(container);
 
