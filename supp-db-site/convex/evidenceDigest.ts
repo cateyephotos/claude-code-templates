@@ -49,30 +49,19 @@ const PAPERS_PER_HIGHLIGHT = 3;
 
 // ─── Shared validators ────────────────────────────────────────────────────
 
-const paperValidator = v.object({
-  pmid: v.string(),
-  title: v.string(),
-  year: v.union(v.number(), v.null()),
-  journal: v.string(),
-  studyType: v.string(),
-  url: v.string(),
-  pubTypes: v.optional(v.array(v.string())),
-});
-
-const entryValidator = v.object({
-  name: v.string(),
-  slug: v.string(),
-  knownPmidCount: v.optional(v.number()),
-  sinceYear: v.optional(v.number()),
-  newPapers: v.array(paperValidator),
-});
-
-// The shape `evidence-updates-latest.json` ships with. Trailing fields are
-// tolerated via `v.any()` so the monitor script can grow without breaking
-// this pipeline.
+// NOTE: Convex validators reject any undeclared field on v.object — strict
+// by design. The PubMed monitor script is the source of truth for this
+// shape and may grow new optional fields (pubmedHitCount, skipped, error,
+// category, evidenceTier, etc.) over time. Tolerating those unknown fields
+// at the validator layer is a hard requirement: otherwise every harmless
+// schema addition on the script side would 400 the webhook until the
+// backend redeploys.
+//
+// Trade-off: we use v.any() for entries and reach in with hand-rolled
+// guards in the orchestrator rather than modeling every field twice.
 const digestPayloadValidator = v.object({
   meta: v.any(),
-  entries: v.array(entryValidator),
+  entries: v.array(v.any()),
 });
 
 // ─── Admin toggle ─────────────────────────────────────────────────────────
