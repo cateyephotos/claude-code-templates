@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Base href anchors all relative paths to /dashboard/ so they keep
+         resolving correctly under Vercel cleanUrls+trailingSlash:false,
+         which rewrites /dashboard/ → /dashboard and would otherwise break
+         sibling hrefs from this hub page. -->
+    <base href="/dashboard/">
+    <title>My Dashboard — Saved Supplements | SupplementDB</title>
+    <meta name="description" content="Your saved supplements and evidence guides, synced across devices. Sign in to keep your favorites in the cloud.">
+    <link rel="canonical" href="https://supplementdb.info/dashboard/">
+    <!-- Dashboard is auth-gated — exclude from search indexes. -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="My Dashboard — SupplementDB">
+    <meta property="og:description" content="Your saved supplements and evidence guides, synced across devices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supplementdb.info/dashboard/">
+    <meta property="og:image" content="https://supplementdb.info/assets/og-default.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="SupplementDB">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../legal/legal-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <style>
+        body.dashboard-page { background: #0a0e17; color: #e5e7eb; font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+        .dash-hero { padding: 3rem 1rem 2rem; text-align: center; }
+        .dash-hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .dash-hero .lede { color: #9ca3af; max-width: 42rem; margin: 0 auto; font-size: 1rem; }
+        .dash-shell { max-width: 64rem; margin: 0 auto; padding: 0 1rem 4rem; }
+        .dash-panel { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .dash-panel h2 { font-family: 'Source Serif 4', serif; font-size: 1.3rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+        .dash-panel .sub { color: #9ca3af; font-size: 0.9rem; margin-bottom: 1rem; }
+        .sync-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.7rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; margin-left: 0.6rem; vertical-align: middle; }
+        .sync-pill.cloud { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+        .sync-pill.local { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        .fav-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+        .fav-card { background: #111827; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; transition: all 0.15s; }
+        .fav-card:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-1px); }
+        .fav-card .name { font-family: 'Source Serif 4', serif; font-weight: 600; color: #fff; font-size: 1.05rem; }
+        .fav-card .cat { color: #9ca3af; font-size: 0.8rem; }
+        .fav-card .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem; }
+        .fav-card a.open { color: #60a5fa; font-size: 0.88rem; text-decoration: none; }
+        .fav-card a.open:hover { text-decoration: underline; }
+        .fav-card button.remove { background: transparent; border: 1px solid rgba(220,38,38,0.4); color: #fca5a5; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; cursor: pointer; }
+        .fav-card button.remove:hover { background: rgba(220,38,38,0.12); }
+        .empty-state { text-align: center; padding: 2rem 1rem; color: #6b7280; }
+        .empty-state i { font-size: 2rem; color: #374151; margin-bottom: 0.75rem; display: block; }
+        .signin-cta { text-align: center; padding: 2rem 1rem; }
+        .signin-cta .btn { display: inline-block; background: #3b82f6; color: #fff; padding: 0.65rem 1.4rem; border-radius: 8px; font-weight: 500; text-decoration: none; margin-top: 0.75rem; }
+        .signin-cta .btn:hover { background: #2563eb; }
+        .skeleton { background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.08), rgba(255,255,255,0.04)); background-size: 200% 100%; animation: skel 1.2s infinite linear; height: 96px; border-radius: 12px; }
+        @keyframes skel { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body class="dashboard-page">
+
+<nav class="legal-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+            <i class="fas fa-pills text-xl"></i>
+            <span class="font-bold text-lg">SupplementDB</span>
+        </a>
+        <div class="flex items-center space-x-4">
+            <a href="../index.html" class="text-gray-300 hover:text-white text-sm">
+                <i class="fas fa-arrow-left mr-1"></i> Back to Database
+            </a>
+            <div id="auth-buttons"></div>
+        </div>
+    </div>
+</nav>
+
+<header class="dash-hero">
+    <div class="max-w-4xl mx-auto px-4">
+        <h1>My Dashboard</h1>
+        <p class="lede">Your saved supplements and evidence guides. Sign in to keep them synced across devices.</p>
+    </div>
+</header>
+
+<main class="dash-shell">
+
+    <section class="dash-panel" aria-labelledby="favorites-heading">
+        <h2 id="favorites-heading">
+            Saved Supplements
+            <span id="sync-badge" class="sync-pill local">
+                <i class="fas fa-laptop"></i> This device
+            </span>
+        </h2>
+        <p class="sub" id="favorites-subtitle">Loading your saved supplements…</p>
+
+        <div id="favorites-skeleton">
+            <div class="fav-grid">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </div>
+
+        <div id="favorites-content" style="display:none;"></div>
+
+        <div id="favorites-empty" class="empty-state" style="display:none;">
+            <i class="far fa-heart"></i>
+            <h3 class="text-white font-semibold mb-1">No saved supplements yet</h3>
+            <p class="mb-3">Tap the heart icon on any supplement to save it here.</p>
+            <a href="../index.html#database" class="text-blue-400 hover:underline">Browse the database &rarr;</a>
+        </div>
+
+        <div id="favorites-signin" class="signin-cta" style="display:none;">
+            <p class="text-gray-400">Sign in to sync favorites across your devices.</p>
+            <button id="dashboard-signin-btn" class="btn">Sign in</button>
+        </div>
+    </section>
+
+    <section class="dash-panel">
+        <h2>Saved Stacks <span class="text-xs font-normal text-gray-500">— coming soon</span></h2>
+        <p class="sub">Name a Stack Analyzer result and share it with a unique URL. Rolling out in a future release.</p>
+    </section>
+
+    <section class="dash-panel">
+        <h2>Bookmarked Guides <span class="text-xs font-normal text-gray-500">— coming soon</span></h2>
+        <p class="sub">Quick access to your purchased and saved evidence guides, with owned-PDF status. Rolling out in a future release.</p>
+    </section>
+
+</main>
+
+<footer class="interactions-footer" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 3rem;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-400">
+        <p class="text-gray-500">SupplementDB — evidence-based supplement research. Favorites stored locally and, when signed in, synced via Convex.</p>
+    </div>
+</footer>
+
+<script src="../js/auth.js" defer></script>
+<script src="../js/convex-client.js" defer></script>
+<script src="../js/auth-ui.js" defer></script>
+<script src="../js/favorites-sync.js" defer></script>
+<script src="dashboard.js" defer></script>
+
+</body>
+</html>
