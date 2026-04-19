@@ -27,14 +27,6 @@ const AI_SEARCH_REGEX = /PerplexityBot|ChatGPT-User|YouBot/i;
 
 const HEADLESS_REGEX = /HeadlessChrome|PhantomJS|Selenium|puppeteer|playwright|webdriver/i;
 
-const STATIC_EXT_REGEX = /\.(js|css|png|jpg|svg|ico|woff2|json)$/i;
-
-// Search engines + link unfurlers + feed readers that legitimately fetch
-// pages without an Accept-Language header. Without this whitelist, the
-// language-gate below 200-stubs them and breaks rich previews on
-// Twitter/X, Slack, LinkedIn, Discord, Facebook — killing social CTR.
-const SEARCH_ENGINE_REGEX = /Googlebot|bingbot|Slurp|DuckDuckBot|Applebot|YandexBot|Baiduspider|MJ12bot|AhrefsBot|SemrushBot|facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|Discordbot|TelegramBot|WhatsApp|SkypeUriPreview|Pinterest|redditbot|EmbedlyBot|Mastodon|feedfetcher-google/i;
-
 // Same-origin enforcement for high-value data endpoints.
 // /data/ contains the raw supplement dataset (the scrape target). Direct
 // hits with no referrer or a foreign referrer are not the legitimate
@@ -101,22 +93,17 @@ export default function middleware(request) {
     );
   }
 
-  if (!STATIC_EXT_REGEX.test(pathname)) {
-    const acceptLanguage = request.headers.get('accept-language');
-    if (!acceptLanguage && !SEARCH_ENGINE_REGEX.test(ua)) {
-      return new Response(
-        '<html><body><h1>Service Unavailable</h1></body></html>',
-        {
-          status: 503,
-          headers: {
-            'Content-Type': 'text/html',
-            'Retry-After': '3600',
-            'X-Robots-Tag': 'noindex',
-          },
-        }
-      );
-    }
-  }
+  // NOTE: A previous Accept-Language gate lived here. It returned a 503
+  // to anything without an Accept-Language header that wasn't on a small
+  // bot allow-list. In practice it 5xx'd Google's URL Inspection tool
+  // (UA: "Google-InspectionTool/1.0", which does NOT contain "Googlebot")
+  // and caused every "Request indexing" attempt to be rejected with
+  // "Server error (5xx)". The signal value of the check was low — any
+  // bot that wants to bypass it sends `Accept-Language: en-US` — while
+  // the cost was directly blocking Google from validating our pages.
+  // Removed 2026-04-19. Real anti-bot enforcement remains via the AI
+  // training UA filter, the headless filter, and the same-origin gate
+  // on /data/.
 
   return undefined;
 }
