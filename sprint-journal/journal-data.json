@@ -1,7 +1,897 @@
 {
-  "generatedAt": "2026-04-02T08:16:16.848Z",
+  "generatedAt": "2026-04-19T05:53:30.563Z",
   "projectName": "claude-code-templates",
   "entries": [
+    {
+      "date": "2026-04-19",
+      "dayOfWeek": "Sunday",
+      "timespan": "01:19 - 01:37",
+      "commitCount": 7,
+      "totalFiles": 874,
+      "totalInsertions": 152344,
+      "totalDeletions": 3347,
+      "scopes": [
+        "stacks"
+      ],
+      "categories": {
+        "feature": [
+          {
+            "hash": "6d6cd1d",
+            "subject": "feat: SUPP-251 Saved Stacks + SUPP-252 Bookmarked Guides",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 32,
+              "insertions": 1936,
+              "deletions": 224,
+              "files": [
+                "supp-db-site/convex/bookmarks.ts",
+                "supp-db-site/convex/schema.ts",
+                "supp-db-site/convex/stacks.ts",
+                "supp-db-site/css/stack-analyzer.css",
+                "supp-db-site/dashboard/dashboard.js",
+                "supp-db-site/dashboard/index.html",
+                "supp-db-site/guides/anxiety-stress.html",
+                "supp-db-site/guides/brain-fog.html",
+                "supp-db-site/guides/cardiovascular.html",
+                "supp-db-site/guides/cognitive-performance.html",
+                "supp-db-site/guides/energy-vitality.html",
+                "supp-db-site/guides/gut-brain.html",
+                "supp-db-site/guides/immune-function.html",
+                "supp-db-site/guides/joint-health.html",
+                "supp-db-site/guides/longevity.html",
+                "supp-db-site/guides/memory-aging.html",
+                "supp-db-site/guides/mens-health.html",
+                "supp-db-site/guides/metabolic-health.html",
+                "supp-db-site/guides/mood-support.html",
+                "supp-db-site/guides/muscle-strength.html"
+              ]
+            }
+          }
+        ],
+        "chore": [
+          {
+            "hash": "971483d",
+            "subject": "chore: Update components and trending data",
+            "author": "github-actions[bot]",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 1527,
+              "deletions": 1549,
+              "files": [
+                "docs/components.json"
+              ]
+            }
+          }
+        ],
+        "fix": [
+          {
+            "hash": "cebfed9",
+            "subject": "fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 26,
+              "deletions": 23,
+              "files": [
+                "CLAUDE.md",
+                ".../{stacks/index.html => stacks-view.html}",
+                ".../{stacks/stack-view.js => stacks-view.js}",
+                "supp-db-site/vercel.json"
+              ]
+            }
+          }
+        ],
+        "other": [
+          {
+            "hash": "500884f",
+            "subject": "WIP on main: cebfed98 fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 134,
+              "deletions": 2,
+              "files": [
+                ".claude/settings.local.json",
+                ".../skills/supplement-pipeline-validator/SKILL.md",
+                ".../skills/supplement-research-pipeline/SKILL.md",
+                "supp-db-site/convex/_generated/api.d.ts"
+              ]
+            }
+          },
+          {
+            "hash": "f03d95e",
+            "subject": "index on main: cebfed98 fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 0,
+              "insertions": 0,
+              "deletions": 0,
+              "files": []
+            }
+          },
+          {
+            "hash": "8991a7c",
+            "subject": "untracked files on main: cebfed98 fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 832,
+              "insertions": 147194,
+              "deletions": 0,
+              "files": [
+                ".../agents/agent-expert.md",
+                ".../agents/command-expert.md",
+                ".../agents/docusaurus-expert.md",
+                ".../agents/mcp-expert.md",
+                ".../commands/init.md",
+                ".../commands/lint.md",
+                ".../commands/test.md",
+                ".claude/agents/academic-research-synthesizer.md",
+                ".claude/agents/academic-researcher.md",
+                ".claude/agents/api-documenter.md",
+                ".claude/agents/api-security-audit.md",
+                ".claude/agents/backend-architect.md",
+                ".claude/agents/business-analyst.md",
+                ".claude/agents/code-reviewer.md",
+                ".claude/agents/comprehensive-researcher.md",
+                ".claude/agents/connection-agent.md",
+                ".claude/agents/content-marketer.md",
+                ".claude/agents/context-manager.md",
+                ".claude/agents/data-analyst.md",
+                ".claude/agents/database-admin.md"
+              ]
+            }
+          },
+          {
+            "hash": "79d29c1",
+            "subject": "Merge branch 'main' of https://github.com/cateyephotos/claude-code-templates",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 1527,
+              "deletions": 1549,
+              "files": [
+                "docs/components.json"
+              ]
+            }
+          }
+        ]
+      },
+      "note": "Shipped the remaining BRO-54 follow-ups — Saved Stacks (SUPP-251) and Bookmarked Guides (SUPP-252) — plus a P0 hotfix to auth.config.js default that was silently breaking admin auth on every deploy.\n\nSaved Stacks: new userStacks Convex table, collision-resistant slug generator, public /stacks/{slug} view via Vercel rewrite, Save button injected into Stack Analyzer export bar, dashboard panel with Open/Delete actions. Bookmarked Guides: new userBookmarks table, bookmarks-sync.js module mirroring the favorites pattern, bookmark button in the share-bar of 19 regenerated guides, dashboard panel that joins purchase-status from guidePurchases (owned/pending/checkout/failed/not_purchased).\n\nMajor debugging wins: caught that auth.config.js default-DEV + swap-deploy-revert script was intermittently shipping DEV domain to prod (silent admin-query failure), flipped the committed default to PROD and made the deploy script idempotent. Caught a second Vercel cleanUrls gotcha where rewrite destinations ending in .html silently 404 — fix is drop the .html. Fixed a pre-existing window-vs-document event-listener bug in favorites-sync.js and dashboard.js that prevented auth:signed-in from ever firing. All three gotchas now documented in CLAUDE.md."
+    },
+    {
+      "date": "2026-04-18",
+      "dayOfWeek": "Saturday",
+      "timespan": "15:14 - 22:07",
+      "commitCount": 9,
+      "totalFiles": 44,
+      "totalInsertions": 3711,
+      "totalDeletions": 303,
+      "scopes": [
+        "interactions",
+        "favorites",
+        "evidence",
+        "evidence-digest",
+        "auth",
+        "deploy"
+      ],
+      "categories": {
+        "fix": [
+          {
+            "hash": "0124f6c",
+            "subject": "fix(interactions): add <base href> so hub relative paths survive cleanUrls",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 13,
+              "insertions": 97,
+              "deletions": 45,
+              "files": [
+                "supp-db-site/interactions/antibiotics.html",
+                "supp-db-site/interactions/blood-pressure-medications.html",
+                "supp-db-site/interactions/blood-thinners.html",
+                "supp-db-site/interactions/cholinesterase-inhibitors.html",
+                "supp-db-site/interactions/diabetes-medications.html",
+                "supp-db-site/interactions/diuretics.html",
+                "supp-db-site/interactions/immunosuppressants.html",
+                "supp-db-site/interactions/index.html",
+                "supp-db-site/interactions/mao-inhibitors.html",
+                "supp-db-site/interactions/sedatives.html",
+                "supp-db-site/interactions/stimulant-medications.html",
+                "supp-db-site/interactions/thyroid-medications.html",
+                "supp-db-site/scripts/generate-interaction-pages.js"
+              ]
+            }
+          },
+          {
+            "hash": "2fc3704",
+            "subject": "fix(evidence-digest): relax webhook payload validator to tolerate unknown fields",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 11,
+              "deletions": 22,
+              "files": [
+                "supp-db-site/convex/evidenceDigest.ts"
+              ]
+            }
+          },
+          {
+            "hash": "e1e1e0b",
+            "subject": "fix(auth): default auth.config.js to PROD Clerk domain (recover from swap-script race)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 81,
+              "deletions": 34,
+              "files": [
+                "CLAUDE.md",
+                "supp-db-site/convex/_generated/api.d.ts",
+                "supp-db-site/convex/auth.config.js",
+                "supp-db-site/scripts/convex-deploy-prod.js"
+              ]
+            }
+          },
+          {
+            "hash": "b111a39",
+            "subject": "fix(deploy): regex-match active CLERK_DOMAIN assignment, not string occurrences",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 17,
+              "deletions": 11,
+              "files": [
+                "supp-db-site/convex/_generated/api.d.ts",
+                "supp-db-site/scripts/convex-deploy-prod.js"
+              ]
+            }
+          }
+        ],
+        "docs": [
+          {
+            "hash": "75205c6",
+            "subject": "docs: document <base href> requirement for hub pages in CLAUDE.md",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 2,
+              "deletions": 1,
+              "files": [
+                "CLAUDE.md"
+              ]
+            }
+          }
+        ],
+        "feature": [
+          {
+            "hash": "0e7eed2",
+            "subject": "feat(favorites): cloud-sync favorites + /dashboard/ page (BRO-54 v1)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 6,
+              "insertions": 824,
+              "deletions": 190,
+              "files": [
+                "supp-db-site/dashboard/dashboard.js",
+                "supp-db-site/dashboard/index.html",
+                "supp-db-site/data/interactions-index.json",
+                "supp-db-site/index.html",
+                "supp-db-site/js/favorites-sync.js",
+                "supp-db-site/sitemap.xml"
+              ]
+            }
+          },
+          {
+            "hash": "bfbb014",
+            "subject": "feat(evidence): PubMed evidence freshness monitor (BRO-50 v1)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 5,
+              "insertions": 1234,
+              "deletions": 0,
+              "files": [
+                "supp-db-site/data/evidence-updates-latest.json",
+                "supp-db-site/docs/evidence-updates/2026-04-19.md",
+                "supp-db-site/docs/evidence-updates/README.md",
+                "supp-db-site/package.json",
+                "supp-db-site/scripts/pubmed-evidence-monitor.js"
+              ]
+            }
+          },
+          {
+            "hash": "8fed3fb",
+            "subject": "feat: evidence monitor cron + admin panel + social-proof counts",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 6,
+              "insertions": 699,
+              "deletions": 0,
+              "files": [
+                ".github/workflows/evidence-monitor.yml",
+                "supp-db-site/admin/index.html",
+                "supp-db-site/convex/favorites.ts",
+                "supp-db-site/index.html",
+                "supp-db-site/js/admin-analytics-panels.js",
+                "supp-db-site/js/social-counts.js"
+              ]
+            }
+          },
+          {
+            "hash": "c9a57d9",
+            "subject": "feat(evidence-digest): subscriber-facing weekly newsletter (SUPP-255)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 6,
+              "insertions": 746,
+              "deletions": 0,
+              "files": [
+                ".github/workflows/evidence-monitor.yml",
+                "supp-db-site/admin/index.html",
+                "supp-db-site/convex/evidenceDigest.ts",
+                "supp-db-site/convex/http.ts",
+                "supp-db-site/convex/resend.ts",
+                "supp-db-site/js/admin-analytics-panels.js"
+              ]
+            }
+          }
+        ]
+      },
+      "note": null
+    },
+    {
+      "date": "2026-04-16",
+      "dayOfWeek": "Thursday",
+      "timespan": "22:57 - 23:10",
+      "commitCount": 2,
+      "totalFiles": 128,
+      "totalInsertions": 7993,
+      "totalDeletions": 284,
+      "scopes": [
+        "seo",
+        "interactions"
+      ],
+      "categories": {
+        "feature": [
+          {
+            "hash": "81f2ffa",
+            "subject": "feat(seo): add BreadcrumbList schema to compare, category, and about pages",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 107,
+              "insertions": 891,
+              "deletions": 280,
+              "files": [
+                "supp-db-site/about.html",
+                "supp-db-site/categories/adaptogens.html",
+                "supp-db-site/categories/amino-acids.html",
+                "supp-db-site/categories/anti-inflammatory.html",
+                "supp-db-site/categories/antioxidants.html",
+                "supp-db-site/categories/essential-nutrients.html",
+                "supp-db-site/categories/herbal-extracts.html",
+                "supp-db-site/categories/joint-support.html",
+                "supp-db-site/categories/metabolic-support.html",
+                "supp-db-site/categories/nootropics.html",
+                "supp-db-site/categories/performance-enhancers.html",
+                "supp-db-site/categories/polyphenols.html",
+                "supp-db-site/categories/sleep-support.html",
+                "supp-db-site/compare/ashwagandha-vs-rhodiola.html",
+                "supp-db-site/compare/bacopa-vs-ginkgo.html",
+                "supp-db-site/compare/coq10-vs-pqq.html",
+                "supp-db-site/compare/creatine-vs-beta-alanine.html",
+                ".../compare/elderberry-vs-black-seed-oil.html",
+                ".../compare/glucosamine-vs-chondroitin.html",
+                "supp-db-site/compare/inulin-vs-akkermansia.html"
+              ]
+            }
+          },
+          {
+            "hash": "ed3ac63",
+            "subject": "feat(interactions): supplement-drug interaction checker tool",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 21,
+              "insertions": 7102,
+              "deletions": 4,
+              "files": [
+                "supp-db-site/data/interaction-categories.js",
+                "supp-db-site/data/interactions-index.json",
+                "supp-db-site/index.html",
+                "supp-db-site/interactions/antibiotics.html",
+                ".../interactions/blood-pressure-medications.html",
+                "supp-db-site/interactions/blood-thinners.html",
+                ".../interactions/cholinesterase-inhibitors.html",
+                ".../interactions/diabetes-medications.html",
+                "supp-db-site/interactions/diuretics.html",
+                "supp-db-site/interactions/immunosuppressants.html",
+                "supp-db-site/interactions/index.html",
+                "supp-db-site/interactions/interactions-client.js",
+                "supp-db-site/interactions/interactions.css",
+                "supp-db-site/interactions/mao-inhibitors.html",
+                "supp-db-site/interactions/sedatives.html",
+                ".../interactions/stimulant-medications.html",
+                "supp-db-site/interactions/thyroid-medications.html",
+                "supp-db-site/scripts/generate-interaction-pages.js",
+                "supp-db-site/scripts/generate-sitemap.js",
+                "supp-db-site/scripts/inject-honeypots.js"
+              ]
+            }
+          }
+        ]
+      },
+      "note": null
+    },
+    {
+      "date": "2026-04-07",
+      "dayOfWeek": "Tuesday",
+      "timespan": "13:37 - 13:37",
+      "commitCount": 1,
+      "totalFiles": 140,
+      "totalInsertions": 2664,
+      "totalDeletions": 954,
+      "scopes": [
+        "seo"
+      ],
+      "categories": {
+        "feature": [
+          {
+            "hash": "4299caa",
+            "subject": "feat(seo): P1/P2 batch — meta descriptions, defer scripts, h1 tags, OG images, index pages, 404",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 140,
+              "insertions": 2664,
+              "deletions": 954,
+              "files": [
+                "supp-db-site/.vercelignore",
+                "supp-db-site/404.html",
+                "supp-db-site/categories/index.html",
+                "supp-db-site/compare/ashwagandha-vs-rhodiola.html",
+                "supp-db-site/compare/bacopa-vs-ginkgo.html",
+                "supp-db-site/compare/coq10-vs-pqq.html",
+                "supp-db-site/compare/creatine-vs-beta-alanine.html",
+                ".../compare/elderberry-vs-black-seed-oil.html",
+                ".../compare/glucosamine-vs-chondroitin.html",
+                "supp-db-site/compare/index.html",
+                "supp-db-site/compare/inulin-vs-akkermansia.html",
+                "supp-db-site/compare/inulin-vs-berberine.html",
+                "supp-db-site/compare/l-theanine-vs-5-htp.html",
+                "supp-db-site/compare/lions-mane-vs-bacopa.html",
+                "supp-db-site/compare/lutein-vs-zeaxanthin.html",
+                "supp-db-site/compare/magnesium-vs-melatonin.html",
+                "supp-db-site/compare/omega-3-vs-coq10.html",
+                ".../compare/quercetin-vs-grape-seed-extract.html",
+                "supp-db-site/compare/turmeric-vs-boswellia.html",
+                "supp-db-site/compare/vitamin-d-vs-magnesium.html"
+              ]
+            }
+          }
+        ]
+      },
+      "note": null
+    },
+    {
+      "date": "2026-04-06",
+      "dayOfWeek": "Monday",
+      "timespan": "00:01 - 19:42",
+      "commitCount": 15,
+      "totalFiles": 357,
+      "totalInsertions": 20834,
+      "totalDeletions": 5817,
+      "scopes": [
+        "posthog",
+        "homepage",
+        "content",
+        "anti-scraping",
+        "infra",
+        "compare",
+        "seo"
+      ],
+      "categories": {
+        "fix": [
+          {
+            "hash": "177cb7a",
+            "subject": "fix(posthog): migrate from deprecated /insights/ to /query/ HogQL endpoint",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 164,
+              "deletions": 241,
+              "files": [
+                "supp-db-site/convex/_generated/api.d.ts",
+                "supp-db-site/convex/posthog.ts"
+              ]
+            }
+          },
+          {
+            "hash": "c93c566",
+            "subject": "fix(infra): add Convex deploy guardrails and fix Windows deploy script",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 19,
+              "deletions": 14,
+              "files": [
+                "CLAUDE.md",
+                "supp-db-site/scripts/convex-deploy-prod.js"
+              ]
+            }
+          },
+          {
+            "hash": "c84f446",
+            "subject": "fix(infra): use spawnSync with shell for Windows compatibility in deploy script",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 7,
+              "deletions": 6,
+              "files": [
+                "supp-db-site/scripts/convex-deploy-prod.js"
+              ]
+            }
+          },
+          {
+            "hash": "c58713a",
+            "subject": "fix(seo): P0/P1 fixes — canonical domain, duplicate content, robots.txt, sitemap, broken links",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 118,
+              "insertions": 1578,
+              "deletions": 1574,
+              "files": [
+                "supp-db-site/.vercelignore",
+                "supp-db-site/robots.txt",
+                "supp-db-site/seed.js",
+                "supp-db-site/sitemap.xml",
+                "supp-db-site/supplements/5-htp.html",
+                "supp-db-site/supplements/acetyl-l-carnitine.html",
+                ".../supplements/akkermansia-muciniphila.html",
+                "supp-db-site/supplements/alpha-gpc.html",
+                "supp-db-site/supplements/alpha-lipoic-acid.html",
+                "supp-db-site/supplements/aniracetam.html",
+                "supp-db-site/supplements/apigenin.html",
+                "supp-db-site/supplements/ashwagandha.html",
+                "supp-db-site/supplements/astaxanthin.html",
+                "supp-db-site/supplements/b-complex-vitamins.html",
+                "supp-db-site/supplements/bacopa-monnieri.html",
+                "supp-db-site/supplements/berberine.html",
+                "supp-db-site/supplements/beta-alanine.html",
+                "supp-db-site/supplements/betaine.html",
+                "supp-db-site/supplements/bitter-melon.html",
+                "supp-db-site/supplements/black-seed-oil.html"
+              ]
+            }
+          }
+        ],
+        "docs": [
+          {
+            "hash": "b2743e6",
+            "subject": "docs: rewrite CLAUDE.md with project-specific guidance",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 194,
+              "deletions": 107,
+              "files": [
+                "CLAUDE.md"
+              ]
+            }
+          },
+          {
+            "hash": "9115486",
+            "subject": "docs: add SupplementDB skills reference to CLAUDE.md",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 62,
+              "deletions": 0,
+              "files": [
+                "CLAUDE.md"
+              ]
+            }
+          },
+          {
+            "hash": "052259b",
+            "subject": "docs(seo): embed SEO guardrails across page generation pipeline",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 3,
+              "insertions": 144,
+              "deletions": 0,
+              "files": [
+                "CLAUDE.md",
+                "supp-db-site/package.json",
+                "supp-db-site/scripts/generate-sitemap.js"
+              ]
+            }
+          }
+        ],
+        "feature": [
+          {
+            "hash": "e9da38e",
+            "subject": "feat(homepage): add editorial info-tip popovers for filter labels",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 432,
+              "deletions": 7,
+              "files": [
+                "supp-db-site/index.html",
+                "supp-db-site/js/EnhancedCitationLoader.js"
+              ]
+            }
+          },
+          {
+            "hash": "55ee76b",
+            "subject": "feat(content): add inulin supplement with monograph, comparisons, and provenance",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 8,
+              "insertions": 6305,
+              "deletions": 0,
+              "files": [
+                "supp-db-site/compare/inulin-vs-akkermansia.html",
+                "supp-db-site/compare/inulin-vs-berberine.html",
+                ".../content/provenance/inulin/search_log.md",
+                ".../content/provenance/inulin/synthesis_notes.md",
+                ".../content/provenance/inulin/tier_assignment.md",
+                ".../data/enhanced_citations/114_inulin_enhanced.js",
+                "supp-db-site/supplements-new/inulin.html",
+                "supp-db-site/supplements/inulin.html"
+              ]
+            }
+          },
+          {
+            "hash": "97377cf",
+            "subject": "feat(anti-scraping): extend honeypot injection to compare/category dirs + inulin data",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 499,
+              "deletions": 65,
+              "files": [
+                "supp-db-site/data/mechanisms.js",
+                "supp-db-site/data/supplements.js",
+                "supp-db-site/scripts/generate-compare-pages.js",
+                "supp-db-site/scripts/inject-honeypots.js"
+              ]
+            }
+          },
+          {
+            "hash": "49192bc",
+            "subject": "feat(compare): add algorithmic comparison candidate scoring system",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 801,
+              "deletions": 0,
+              "files": [
+                "supp-db-site/data/compare-candidates.json",
+                "supp-db-site/scripts/find-compare-candidates.js"
+              ]
+            }
+          },
+          {
+            "hash": "333fecb",
+            "subject": "feat(compare): add 4 new comparison pages with Clerk/Convex auth support",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 19,
+              "insertions": 3263,
+              "deletions": 25,
+              "files": [
+                "supp-db-site/compare/ashwagandha-vs-rhodiola.html",
+                "supp-db-site/compare/bacopa-vs-ginkgo.html",
+                "supp-db-site/compare/coq10-vs-pqq.html",
+                "supp-db-site/compare/creatine-vs-beta-alanine.html",
+                ".../compare/elderberry-vs-black-seed-oil.html",
+                ".../compare/glucosamine-vs-chondroitin.html",
+                "supp-db-site/compare/inulin-vs-akkermansia.html",
+                "supp-db-site/compare/inulin-vs-berberine.html",
+                "supp-db-site/compare/l-theanine-vs-5-htp.html",
+                "supp-db-site/compare/lions-mane-vs-bacopa.html",
+                "supp-db-site/compare/lutein-vs-zeaxanthin.html",
+                "supp-db-site/compare/magnesium-vs-melatonin.html",
+                "supp-db-site/compare/mockup-a-refined.html",
+                "supp-db-site/compare/mockup-b-revolutionary.html",
+                "supp-db-site/compare/omega-3-vs-coq10.html",
+                ".../compare/quercetin-vs-grape-seed-extract.html",
+                "supp-db-site/compare/turmeric-vs-boswellia.html",
+                "supp-db-site/compare/vitamin-d-vs-magnesium.html",
+                "supp-db-site/scripts/generate-compare-pages.js"
+              ]
+            }
+          },
+          {
+            "hash": "017e0b5",
+            "subject": "feat(compare): propagate 4 new comparison links to homepage and supplement pages",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 39,
+              "deletions": 1,
+              "files": [
+                "supp-db-site/index.html",
+                "supp-db-site/scripts/generate-supplement-pages.js"
+              ]
+            }
+          }
+        ],
+        "chore": [
+          {
+            "hash": "4624b33",
+            "subject": "chore: re-inject honeypots across all HTML pages",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 158,
+              "insertions": 7225,
+              "deletions": 3777,
+              "files": [
+                "supp-db-site/about.html",
+                "supp-db-site/categories/adaptogens.html",
+                "supp-db-site/categories/amino-acids.html",
+                "supp-db-site/categories/anti-inflammatory.html",
+                "supp-db-site/categories/antioxidants.html",
+                "supp-db-site/categories/herbal-extracts.html",
+                "supp-db-site/categories/joint-support.html",
+                "supp-db-site/categories/metabolic-support.html",
+                "supp-db-site/categories/nootropics.html",
+                "supp-db-site/categories/performance-enhancers.html",
+                "supp-db-site/categories/polyphenols.html",
+                "supp-db-site/compare/ashwagandha-vs-rhodiola.html",
+                "supp-db-site/compare/bacopa-vs-ginkgo.html",
+                "supp-db-site/compare/coq10-vs-pqq.html",
+                "supp-db-site/compare/creatine-vs-beta-alanine.html",
+                "supp-db-site/compare/l-theanine-vs-5-htp.html",
+                "supp-db-site/compare/lions-mane-vs-bacopa.html",
+                "supp-db-site/compare/magnesium-vs-melatonin.html",
+                "supp-db-site/compare/omega-3-vs-coq10.html",
+                "supp-db-site/compare/turmeric-vs-boswellia.html"
+              ]
+            }
+          },
+          {
+            "hash": "d755175",
+            "subject": "chore: re-inject honeypots across categories and guides",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 34,
+              "insertions": 102,
+              "deletions": 0,
+              "files": [
+                "supp-db-site/categories/adaptogens.html",
+                "supp-db-site/categories/amino-acids.html",
+                "supp-db-site/categories/anti-inflammatory.html",
+                "supp-db-site/categories/antioxidants.html",
+                "supp-db-site/categories/essential-nutrients.html",
+                "supp-db-site/categories/herbal-extracts.html",
+                "supp-db-site/categories/joint-support.html",
+                "supp-db-site/categories/metabolic-support.html",
+                "supp-db-site/categories/nootropics.html",
+                "supp-db-site/categories/performance-enhancers.html",
+                "supp-db-site/categories/polyphenols.html",
+                "supp-db-site/categories/sleep-support.html",
+                "supp-db-site/guides/anxiety-stress.html",
+                "supp-db-site/guides/brain-fog.html",
+                "supp-db-site/guides/cardiovascular.html",
+                "supp-db-site/guides/cognitive-performance.html",
+                "supp-db-site/guides/energy-vitality.html",
+                "supp-db-site/guides/gut-brain.html",
+                "supp-db-site/guides/immune-function.html",
+                "supp-db-site/guides/joint-health.html"
+              ]
+            }
+          }
+        ]
+      },
+      "note": null
+    },
+    {
+      "date": "2026-04-05",
+      "dayOfWeek": "Sunday",
+      "timespan": "18:54 - 19:53",
+      "commitCount": 6,
+      "totalFiles": 17,
+      "totalInsertions": 2190,
+      "totalDeletions": 42,
+      "scopes": [
+        "analytics",
+        "admin"
+      ],
+      "categories": {
+        "feature": [
+          {
+            "hash": "81b7efe",
+            "subject": "feat(analytics): filter noise from admin Traffic & Acquisition chart",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 621,
+              "deletions": 33,
+              "files": [
+                "supp-db-site/admin/index.html",
+                "supp-db-site/convex/metrics.ts",
+                "supp-db-site/js/admin-analytics-panels.js",
+                "supp-db-site/js/convex-client.js"
+              ]
+            }
+          },
+          {
+            "hash": "b66ba86",
+            "subject": "feat(admin): wire PostHog referrer sources + 5 analytics wrappers (SUPP-119)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 253,
+              "deletions": 4,
+              "files": [
+                "supp-db-site/.env.example",
+                "supp-db-site/admin/index.html",
+                "supp-db-site/js/admin-analytics-panels.js",
+                "supp-db-site/js/admin-metrics.js"
+              ]
+            }
+          },
+          {
+            "hash": "ed12d70",
+            "subject": "feat(admin): add GA4 Data API integration with 6 report actions (SUPP-121)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 4,
+              "insertions": 805,
+              "deletions": 2,
+              "files": [
+                "supp-db-site/admin/index.html",
+                "supp-db-site/convex/ga4.ts",
+                "supp-db-site/js/admin-analytics-panels.js",
+                "supp-db-site/js/admin-metrics.js"
+              ]
+            }
+          },
+          {
+            "hash": "b484a68",
+            "subject": "feat(admin): expand GSC panel with 4 new dimension actions (SUPP-122)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 279,
+              "deletions": 0,
+              "files": [
+                "supp-db-site/convex/gsc.ts",
+                "supp-db-site/js/admin-metrics.js"
+              ]
+            }
+          },
+          {
+            "hash": "1d6410f",
+            "subject": "feat(admin): client-side organic reattribution from GSC click data (SUPP-123)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 107,
+              "deletions": 1,
+              "files": [
+                "supp-db-site/js/admin-analytics-panels.js"
+              ]
+            }
+          }
+        ],
+        "docs": [
+          {
+            "hash": "ff37851",
+            "subject": "docs: ADR for Convex env management + .env.example labels (SUPP-120)",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 2,
+              "insertions": 125,
+              "deletions": 2,
+              "files": [
+                "supp-db-site/.env.example",
+                "supp-db-site/docs/adr/001-convex-env-management.md"
+              ]
+            }
+          }
+        ]
+      },
+      "note": null
+    },
     {
       "date": "2026-04-02",
       "dayOfWeek": "Thursday",
@@ -1146,6 +2036,36 @@
         ]
       },
       "note": "Implemented granular admin analytics enhancement across 5 feature areas: Search Intelligence (GSC + internal search with zero-result tracking and conversion), Traffic & Acquisition (UTM campaigns, referrer sources, new vs returning, bounce rates), Content Performance (monograph table with sortable headers, gate conversion chart, content gaps), User Journeys (PostHog path analysis, drop-off analysis, exit pages), and Activity Log upgrade (1D/7D pills, event type filters, summary stats). 15 files changed, 5,586 lines added across Convex backend (schema, 11 queries/actions, 2 new files), client-side fetchers (14 new functions), admin HTML (5 new sections + sidebar), CSS (510 lines), and JS rendering module (922 lines). Deployed Convex functions to production and merged to main."
+    },
+    {
+      "date": "2026-03-24",
+      "dayOfWeek": "Tuesday",
+      "timespan": "01:48 - 01:48",
+      "commitCount": 1,
+      "totalFiles": 1,
+      "totalInsertions": 336,
+      "totalDeletions": 0,
+      "scopes": [
+        "pdf-generator"
+      ],
+      "categories": {
+        "feature": [
+          {
+            "hash": "7f31f9a",
+            "subject": "feat(pdf-generator): inject premium content for split guides during PDF rendering",
+            "author": "cateyephotos",
+            "stats": {
+              "filesChanged": 1,
+              "insertions": 336,
+              "deletions": 0,
+              "files": [
+                "pdf-generator/server.js"
+              ]
+            }
+          }
+        ]
+      },
+      "note": null
     },
     {
       "date": "2026-03-23",

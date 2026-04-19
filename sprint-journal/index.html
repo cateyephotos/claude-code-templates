@@ -345,23 +345,23 @@
     <p class="subtitle">Sprint Journal &mdash; Development Timeline</p>
     <div class="stats-bar">
       <div class="stat-card">
-        <span class="stat-value commits-val">1393</span>
+        <span class="stat-value commits-val">1434</span>
         <span class="stat-label">Commits</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value features-val">451</span>
+        <span class="stat-value features-val">471</span>
         <span class="stat-label">Features</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value fixes-val">274</span>
+        <span class="stat-value fixes-val">283</span>
         <span class="stat-label">Fixes</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value lines-val">8,674,736</span>
+        <span class="stat-value lines-val">8,875,555</span>
         <span class="stat-label">Lines Changed</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value" style="color:#c9d1d9">237</span>
+        <span class="stat-value" style="color:#c9d1d9">244</span>
         <span class="stat-label">Sessions</span>
       </div>
     </div>
@@ -378,6 +378,652 @@
 
   <section class="timeline">
     
+      <article class="sprint-entry" id="entry-2026-04-19">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Sunday</span>
+            <span class="entry-date">Apr 19, 2026</span>
+            <span class="entry-time">01:19 - 01:37</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">7 commits</span>
+              <span class="stat-badge files">874 files</span>
+              <span class="stat-badge additions">+152,344</span>
+              <span class="stat-badge deletions">-3,347</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">stacks</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          <div class="session-note"><strong>Session Note:</strong> Shipped the remaining BRO-54 follow-ups — Saved Stacks (SUPP-251) and Bookmarked Guides (SUPP-252) — plus a P0 hotfix to auth.config.js default that was silently breaking admin auth on every deploy.
+
+Saved Stacks: new userStacks Convex table, collision-resistant slug generator, public /stacks/{slug} view via Vercel rewrite, Save button injected into Stack Analyzer export bar, dashboard panel with Open/Delete actions. Bookmarked Guides: new userBookmarks table, bookmarks-sync.js module mirroring the favorites pattern, bookmark button in the share-bar of 19 regenerated guides, dashboard panel that joins purchase-status from guidePurchases (owned/pending/checkout/failed/not_purchased).
+
+Major debugging wins: caught that auth.config.js default-DEV + swap-deploy-revert script was intermittently shipping DEV domain to prod (silent admin-query failure), flipped the committed default to PROD and made the deploy script idempotent. Caught a second Vercel cleanUrls gotcha where rewrite destinations ending in .html silently 404 — fix is drop the .html. Fixed a pre-existing window-vs-document event-listener bug in favorites-sync.js and dashboard.js that prevented auth:signed-in from ever firing. All three gotchas now documented in CLAUDE.md.</div>
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">6d6cd1d</code>
+            <span class="commit-msg">feat: SUPP-251 Saved Stacks + SUPP-252 Bookmarked Guides</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1936</span>
+              <span class="stat-del">-224</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">cebfed9</code>
+            <span class="commit-msg">fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination</span>
+            <span class="commit-stats">
+              <span class="stat-add">+26</span>
+              <span class="stat-del">-23</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🧹</span>
+              Chores
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">971483d</code>
+            <span class="commit-msg">chore: Update components and trending data</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1527</span>
+              <span class="stat-del">-1549</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔹</span>
+              Other
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">500884f</code>
+            <span class="commit-msg">WIP on main: cebfed98 fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination</span>
+            <span class="commit-stats">
+              <span class="stat-add">+134</span>
+              <span class="stat-del">-2</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">f03d95e</code>
+            <span class="commit-msg">index on main: cebfed98 fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination</span>
+            
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">8991a7c</code>
+            <span class="commit-msg">untracked files on main: cebfed98 fix(stacks): move stacks/ → top-level stacks-view.{html,js} + drop .html from rewrite destination</span>
+            <span class="commit-stats">
+              <span class="stat-add">+147194</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">79d29c1</code>
+            <span class="commit-msg">Merge branch &#39;main&#39; of https://github.com/cateyephotos/claude-code-templates</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1527</span>
+              <span class="stat-del">-1549</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-04-18">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Saturday</span>
+            <span class="entry-date">Apr 18, 2026</span>
+            <span class="entry-time">15:14 - 22:07</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">9 commits</span>
+              <span class="stat-badge files">44 files</span>
+              <span class="stat-badge additions">+3,711</span>
+              <span class="stat-badge deletions">-303</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">interactions</span><span class="scope-tag">favorites</span><span class="scope-tag">evidence</span><span class="scope-tag">evidence-digest</span><span class="scope-tag">auth</span><span class="scope-tag">deploy</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">0e7eed2</code>
+            <span class="commit-msg">feat(favorites): cloud-sync favorites + /dashboard/ page (BRO-54 v1)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+824</span>
+              <span class="stat-del">-190</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">bfbb014</code>
+            <span class="commit-msg">feat(evidence): PubMed evidence freshness monitor (BRO-50 v1)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1234</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">8fed3fb</code>
+            <span class="commit-msg">feat: evidence monitor cron + admin panel + social-proof counts</span>
+            <span class="commit-stats">
+              <span class="stat-add">+699</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">c9a57d9</code>
+            <span class="commit-msg">feat(evidence-digest): subscriber-facing weekly newsletter (SUPP-255)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+746</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">0124f6c</code>
+            <span class="commit-msg">fix(interactions): add &lt;base href&gt; so hub relative paths survive cleanUrls</span>
+            <span class="commit-stats">
+              <span class="stat-add">+97</span>
+              <span class="stat-del">-45</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">2fc3704</code>
+            <span class="commit-msg">fix(evidence-digest): relax webhook payload validator to tolerate unknown fields</span>
+            <span class="commit-stats">
+              <span class="stat-add">+11</span>
+              <span class="stat-del">-22</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">e1e1e0b</code>
+            <span class="commit-msg">fix(auth): default auth.config.js to PROD Clerk domain (recover from swap-script race)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+81</span>
+              <span class="stat-del">-34</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">b111a39</code>
+            <span class="commit-msg">fix(deploy): regex-match active CLERK_DOMAIN assignment, not string occurrences</span>
+            <span class="commit-stats">
+              <span class="stat-add">+17</span>
+              <span class="stat-del">-11</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📝</span>
+              Documentation
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">75205c6</code>
+            <span class="commit-msg">docs: document &lt;base href&gt; requirement for hub pages in CLAUDE.md</span>
+            <span class="commit-stats">
+              <span class="stat-add">+2</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-04-16">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Thursday</span>
+            <span class="entry-date">Apr 16, 2026</span>
+            <span class="entry-time">22:57 - 23:10</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">2 commits</span>
+              <span class="stat-badge files">128 files</span>
+              <span class="stat-badge additions">+7,993</span>
+              <span class="stat-badge deletions">-284</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">seo</span><span class="scope-tag">interactions</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">2</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">81f2ffa</code>
+            <span class="commit-msg">feat(seo): add BreadcrumbList schema to compare, category, and about pages</span>
+            <span class="commit-stats">
+              <span class="stat-add">+891</span>
+              <span class="stat-del">-280</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">ed3ac63</code>
+            <span class="commit-msg">feat(interactions): supplement-drug interaction checker tool</span>
+            <span class="commit-stats">
+              <span class="stat-add">+7102</span>
+              <span class="stat-del">-4</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-04-07">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Tuesday</span>
+            <span class="entry-date">Apr 7, 2026</span>
+            <span class="entry-time">13:37 - 13:37</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">1 commits</span>
+              <span class="stat-badge files">140 files</span>
+              <span class="stat-badge additions">+2,664</span>
+              <span class="stat-badge deletions">-954</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">seo</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">4299caa</code>
+            <span class="commit-msg">feat(seo): P1/P2 batch — meta descriptions, defer scripts, h1 tags, OG images, index pages, 404</span>
+            <span class="commit-stats">
+              <span class="stat-add">+2664</span>
+              <span class="stat-del">-954</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-04-06">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Monday</span>
+            <span class="entry-date">Apr 6, 2026</span>
+            <span class="entry-time">00:01 - 19:42</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">15 commits</span>
+              <span class="stat-badge files">357 files</span>
+              <span class="stat-badge additions">+20,834</span>
+              <span class="stat-badge deletions">-5,817</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">posthog</span><span class="scope-tag">homepage</span><span class="scope-tag">content</span><span class="scope-tag">anti-scraping</span><span class="scope-tag">infra</span><span class="scope-tag">compare</span><span class="scope-tag">seo</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">6</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">e9da38e</code>
+            <span class="commit-msg">feat(homepage): add editorial info-tip popovers for filter labels</span>
+            <span class="commit-stats">
+              <span class="stat-add">+432</span>
+              <span class="stat-del">-7</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">55ee76b</code>
+            <span class="commit-msg">feat(content): add inulin supplement with monograph, comparisons, and provenance</span>
+            <span class="commit-stats">
+              <span class="stat-add">+6305</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">97377cf</code>
+            <span class="commit-msg">feat(anti-scraping): extend honeypot injection to compare/category dirs + inulin data</span>
+            <span class="commit-stats">
+              <span class="stat-add">+499</span>
+              <span class="stat-del">-65</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">49192bc</code>
+            <span class="commit-msg">feat(compare): add algorithmic comparison candidate scoring system</span>
+            <span class="commit-stats">
+              <span class="stat-add">+801</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">333fecb</code>
+            <span class="commit-msg">feat(compare): add 4 new comparison pages with Clerk/Convex auth support</span>
+            <span class="commit-stats">
+              <span class="stat-add">+3263</span>
+              <span class="stat-del">-25</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">017e0b5</code>
+            <span class="commit-msg">feat(compare): propagate 4 new comparison links to homepage and supplement pages</span>
+            <span class="commit-stats">
+              <span class="stat-add">+39</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🔧</span>
+              Fixes
+              <span class="cat-count">4</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">177cb7a</code>
+            <span class="commit-msg">fix(posthog): migrate from deprecated /insights/ to /query/ HogQL endpoint</span>
+            <span class="commit-stats">
+              <span class="stat-add">+164</span>
+              <span class="stat-del">-241</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">c93c566</code>
+            <span class="commit-msg">fix(infra): add Convex deploy guardrails and fix Windows deploy script</span>
+            <span class="commit-stats">
+              <span class="stat-add">+19</span>
+              <span class="stat-del">-14</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">c84f446</code>
+            <span class="commit-msg">fix(infra): use spawnSync with shell for Windows compatibility in deploy script</span>
+            <span class="commit-stats">
+              <span class="stat-add">+7</span>
+              <span class="stat-del">-6</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">c58713a</code>
+            <span class="commit-msg">fix(seo): P0/P1 fixes — canonical domain, duplicate content, robots.txt, sitemap, broken links</span>
+            <span class="commit-stats">
+              <span class="stat-add">+1578</span>
+              <span class="stat-del">-1574</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📝</span>
+              Documentation
+              <span class="cat-count">3</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">b2743e6</code>
+            <span class="commit-msg">docs: rewrite CLAUDE.md with project-specific guidance</span>
+            <span class="commit-stats">
+              <span class="stat-add">+194</span>
+              <span class="stat-del">-107</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">9115486</code>
+            <span class="commit-msg">docs: add SupplementDB skills reference to CLAUDE.md</span>
+            <span class="commit-stats">
+              <span class="stat-add">+62</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">052259b</code>
+            <span class="commit-msg">docs(seo): embed SEO guardrails across page generation pipeline</span>
+            <span class="commit-stats">
+              <span class="stat-add">+144</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">🧹</span>
+              Chores
+              <span class="cat-count">2</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">4624b33</code>
+            <span class="commit-msg">chore: re-inject honeypots across all HTML pages</span>
+            <span class="commit-stats">
+              <span class="stat-add">+7225</span>
+              <span class="stat-del">-3777</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">d755175</code>
+            <span class="commit-msg">chore: re-inject honeypots across categories and guides</span>
+            <span class="commit-stats">
+              <span class="stat-add">+102</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-04-05">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Sunday</span>
+            <span class="entry-date">Apr 5, 2026</span>
+            <span class="entry-time">18:54 - 19:53</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">6 commits</span>
+              <span class="stat-badge files">17 files</span>
+              <span class="stat-badge additions">+2,190</span>
+              <span class="stat-badge deletions">-42</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">analytics</span><span class="scope-tag">admin</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">5</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">81b7efe</code>
+            <span class="commit-msg">feat(analytics): filter noise from admin Traffic &amp; Acquisition chart</span>
+            <span class="commit-stats">
+              <span class="stat-add">+621</span>
+              <span class="stat-del">-33</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">b66ba86</code>
+            <span class="commit-msg">feat(admin): wire PostHog referrer sources + 5 analytics wrappers (SUPP-119)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+253</span>
+              <span class="stat-del">-4</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">ed12d70</code>
+            <span class="commit-msg">feat(admin): add GA4 Data API integration with 6 report actions (SUPP-121)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+805</span>
+              <span class="stat-del">-2</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">b484a68</code>
+            <span class="commit-msg">feat(admin): expand GSC panel with 4 new dimension actions (SUPP-122)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+279</span>
+              <span class="stat-del">-0</span>
+            </span>
+          </div>
+        
+          <div class="commit-item">
+            <code class="commit-hash">1d6410f</code>
+            <span class="commit-msg">feat(admin): client-side organic reattribution from GSC click data (SUPP-123)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+107</span>
+              <span class="stat-del">-1</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">📝</span>
+              Documentation
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">ff37851</code>
+            <span class="commit-msg">docs: ADR for Convex env management + .env.example labels (SUPP-120)</span>
+            <span class="commit-stats">
+              <span class="stat-add">+125</span>
+              <span class="stat-del">-2</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
       <article class="sprint-entry" id="entry-2026-04-02">
         <div class="entry-header" onclick="toggleEntry(this)">
           <div class="entry-date-block">
@@ -1165,6 +1811,49 @@
             <span class="commit-stats">
               <span class="stat-add">+9689</span>
               <span class="stat-del">-6667</span>
+            </span>
+          </div>
+        </div>
+          </div>
+        
+        </div>
+      </article>
+    
+
+      <article class="sprint-entry" id="entry-2026-03-24">
+        <div class="entry-header" onclick="toggleEntry(this)">
+          <div class="entry-date-block">
+            <span class="entry-day">Tuesday</span>
+            <span class="entry-date">Mar 24, 2026</span>
+            <span class="entry-time">01:48 - 01:48</span>
+          </div>
+          <div class="entry-summary">
+            <div class="entry-stats-row">
+              <span class="stat-badge commits">1 commits</span>
+              <span class="stat-badge files">1 files</span>
+              <span class="stat-badge additions">+336</span>
+              <span class="stat-badge deletions">-0</span>
+            </div>
+            <div class="scope-tags"><span class="scope-tag">pdf-generator</span></div>
+          </div>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="entry-body">
+          
+          
+          <div class="category-section">
+            <h4 class="category-header">
+              <span class="cat-icon">✨</span>
+              Features
+              <span class="cat-count">1</span>
+            </h4>
+            <div class="commit-list">
+          <div class="commit-item">
+            <code class="commit-hash">7f31f9a</code>
+            <span class="commit-msg">feat(pdf-generator): inject premium content for split guides during PDF rendering</span>
+            <span class="commit-stats">
+              <span class="stat-add">+336</span>
+              <span class="stat-del">-0</span>
             </span>
           </div>
         </div>
@@ -23639,8 +24328,8 @@
   </section>
 
   <footer class="journal-footer">
-    Generated 2026-04-02 08:16:16 &bull;
-    Covering Jul 6, 2025 to Apr 2, 2026
+    Generated 2026-04-19 05:53:30 &bull;
+    Covering Jul 6, 2025 to Apr 19, 2026
   </footer>
 </div>
 
