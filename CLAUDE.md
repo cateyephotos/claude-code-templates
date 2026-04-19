@@ -195,7 +195,7 @@ Enabled APIs:
 5. **PostHog legacy endpoints** — `/insights/trend/` is deprecated, use `/query/` with HogQL
 6. **DOM security hook** — Pre-commit hook blocks unsafe HTML injection; use safe DOM methods
 7. **Vercel env vars** — Never use echo to pipe; always trim in build scripts
-8. **Vercel cleanUrls** — Breaks relative paths in subdirectories
+8. **Vercel cleanUrls** — `cleanUrls: true` + `trailingSlash: false` strips the trailing slash from `/{dir}/` URLs (e.g. `/interactions/` → `/interactions`). The browser then resolves relative `href=`/`src=` values against the site root, not the directory — breaking stylesheet, script, and link references. **Fix pattern for any `/{dir}/` hub page: add `<base href="/{dir}/">` to the `<head>`** so all relative paths anchor to the intended directory regardless of what the address bar shows. Caught this on `/interactions/` (2026-04-18, commit `0124f6c3`) — all hub CSS, JS, and 11 category-card links were 404 until the base tag landed. Per-supplement monograph pages under `/supplements/{slug}` aren't affected because their `../` prefix resolves correctly.
 9. **GA4 property ID** — Use the numeric ID (530443869), not the G- measurement ID
 10. **GSC property owner** — Property is on `carlostomasphotos@gmail.com`, not `carlosthomas.01@gmail.com`
 11. **TypeScript typecheck** — Disable for deploy (`--typecheck=disable`) due to known TS2802 in gsc.ts/ga4.ts
@@ -232,6 +232,7 @@ npm run generate:sitemap
 | **H1 tag** | Exactly one per page, matches topic | Compare pages had generic h1 instead of supplement names |
 | **No placeholder links** | All `href` values must resolve to real pages | `*-vs-placebo.html` links were 404s |
 | **Sitemap coverage** | Every public page must be in `sitemap.xml` | 35+ pages were missing from sitemap |
+| **`<base href>` on hub pages** | Any `/{dir}/` hub page must include `<base href="/{dir}/">` in `<head>` | Vercel strips trailing slash → relative paths 404 in production |
 
 ### Link Propagation Checklist (New Pages)
 
