@@ -3,7 +3,7 @@
 // Date: 2025-08-25
 // Research Quality Score: 80% (Tier 2 Standard)
 
-const supplement_unknown_enhanced = {
+const sulbutiamineEnhanced = {
     id:  76,
     name:  "Sulbutiamine",
     scientificName:  "O-isobutyryl thiamine disulfide",
@@ -167,9 +167,9 @@ const supplement_unknown_enhanced = {
 
 if (typeof window !== 'undefined') {
     window.enhancedCitations = window.enhancedCitations || {};
-    window.enhancedCitations[76] = supplement_unknown_enhanced;
+    window.enhancedCitations[76] = sulbutiamineEnhanced;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = supplement_unknown_enhanced;
+    module.exports = sulbutiamineEnhanced;
 }

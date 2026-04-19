@@ -3,7 +3,7 @@
 // Date: 2025-08-25
 // Research Quality Score: 84% (Tier 2 Standard)
 
-const supplement_unknown_enhanced = {
+const holyBasilEnhanced = {
     id:  67,
     name:  "Holy Basil",
     scientificName:  "Ocimum sanctum / Ocimum tenuiflorum",
@@ -268,9 +268,9 @@ const supplement_unknown_enhanced = {
 
 if (typeof window !== 'undefined') {
     window.enhancedCitations = window.enhancedCitations || {};
-    window.enhancedCitations[67] = supplement_unknown_enhanced;
+    window.enhancedCitations[67] = holyBasilEnhanced;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = supplement_unknown_enhanced;
+    module.exports = holyBasilEnhanced;
 }

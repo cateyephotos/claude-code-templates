@@ -3,7 +3,7 @@
 // Date: 2025-08-25
 // Research Quality Score: 85% (Tier 2 High-Priority Standard)
 
-const supplement_unknown_enhanced = {
+const piracetamEnhanced = {
     id:  81,
     name:  "Piracetam",
     scientificName:  "2-oxo-1-pyrrolidineacetamide",
@@ -202,9 +202,9 @@ const supplement_unknown_enhanced = {
 
 if (typeof window !== 'undefined') {
     window.enhancedCitations = window.enhancedCitations || {};
-    window.enhancedCitations[81] = supplement_unknown_enhanced;
+    window.enhancedCitations[81] = piracetamEnhanced;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = supplement_unknown_enhanced;
+    module.exports = piracetamEnhanced;
 }

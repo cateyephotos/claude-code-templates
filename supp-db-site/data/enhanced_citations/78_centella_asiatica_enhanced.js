@@ -3,7 +3,7 @@
 // Date: 2025-08-25
 // Research Quality Score: 82% (Tier 2 Standard)
 
-const supplement_unknown_enhanced = {
+const centellaAsiaticaEnhanced = {
     id:  78,
     name:  "Centella Asiatica",
     scientificName:  "Centella asiatica",
@@ -224,9 +224,9 @@ const supplement_unknown_enhanced = {
 
 if (typeof window !== 'undefined') {
     window.enhancedCitations = window.enhancedCitations || {};
-    window.enhancedCitations[78] = supplement_unknown_enhanced;
+    window.enhancedCitations[78] = centellaAsiaticaEnhanced;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = supplement_unknown_enhanced;
+    module.exports = centellaAsiaticaEnhanced;
 }

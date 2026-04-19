@@ -3,7 +3,7 @@
 // Date: 2025-08-25
 // Research Quality Score: 78% (Tier 3 High-Priority Standard)
 
-const supplement_unknown_enhanced = {
+const aniracetamEnhanced = {
     id:  80,
     name:  "Aniracetam",
     scientificName:  "N-anisoyl-2-pyrrolidinone",
@@ -184,9 +184,9 @@ const supplement_unknown_enhanced = {
 
 if (typeof window !== 'undefined') {
     window.enhancedCitations = window.enhancedCitations || {};
-    window.enhancedCitations[80] = supplement_unknown_enhanced;
+    window.enhancedCitations[80] = aniracetamEnhanced;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = supplement_unknown_enhanced;
+    module.exports = aniracetamEnhanced;
 }

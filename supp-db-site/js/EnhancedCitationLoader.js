@@ -196,6 +196,22 @@ class EnhancedCitationLoader {
         // Debug: Show what's in window.enhancedCitations
         console.log(`🔍 window.enhancedCitations now contains IDs: ${Object.keys(window.enhancedCitations).join(', ')}`);
 
+        // Notify any listeners (e.g., SiteStats.js) that all enhanced citation
+        // files have finished loading so they can recompute totals against the
+        // complete dataset rather than a partial early snapshot.
+        try {
+            document.dispatchEvent(new CustomEvent('enhancedCitationsLoaded', {
+                detail: {
+                    loaded: results.loaded,
+                    failed: results.failed,
+                    totalFiles: results.totalFiles,
+                    registeredIds: Object.keys(window.enhancedCitations)
+                }
+            }));
+        } catch (eventErr) {
+            console.warn('Could not dispatch enhancedCitationsLoaded event:', eventErr);
+        }
+
         return results;
     }
 

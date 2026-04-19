@@ -366,10 +366,36 @@
     }
 
     // Also re-bind after enhanced citations finish loading
-    // (EnhancedCitationLoader fires a custom event)
+    // (EnhancedCitationLoader dispatches enhancedCitationsLoaded after all files load)
     document.addEventListener('enhancedCitationsLoaded', function () {
         refreshStats();
     });
+
+    // Safety-net: enhanced citations load asynchronously (118 sequential script
+    // tags) and can take several seconds. If the event listener above does not
+    // fire (e.g., loader invoked from a different script that fails partway,
+    // or a stale cached HTML version), poll briefly so the hero number does not
+    // remain stuck on a partial-load snapshot. Stops once the count stabilises
+    // for two consecutive checks or after 12 seconds.
+    (function safetyNetRefresh() {
+        var lastCount = -1;
+        var stableTicks = 0;
+        var maxTicks = 12; // 12 * 1s = 12 s max
+        function tick() {
+            if (--maxTicks < 0) return;
+            var n = window.enhancedCitations ? Object.keys(window.enhancedCitations).length : 0;
+            if (n !== lastCount) {
+                lastCount = n;
+                stableTicks = 0;
+                refreshStats();
+            } else {
+                stableTicks++;
+                if (stableTicks >= 2) return; // stable, stop polling
+            }
+            setTimeout(tick, 1000);
+        }
+        setTimeout(tick, 1500);
+    })();
 
     // ── Public API ───────────────────────────────────────────────────────────
 

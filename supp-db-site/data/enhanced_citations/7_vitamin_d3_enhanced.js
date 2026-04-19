@@ -5,8 +5,8 @@
 
 window.enhancedCitations = window.enhancedCitations || {};
 
-// Use specialist focus key to avoid conflict with main enhanced citations
-window.enhancedCitations["7_womens_health"] = {
+// Register under the canonical numeric ID 7 for the loader, plus a specialist alias
+window.enhancedCitations[7] = window.enhancedCitations["7_womens_health"] = {
   supplementId: 7,
   supplementName: "Vitamin D3",
   specialistFocus: "Women's Health & Hormone Specialist",

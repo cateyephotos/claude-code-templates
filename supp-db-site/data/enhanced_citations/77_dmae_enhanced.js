@@ -3,7 +3,7 @@
 // Date: 2025-08-25
 // Research Quality Score: 72% (Tier 3 Standard)
 
-const supplement_unknown_enhanced = {
+const dmaeEnhanced = {
     id:  77,
     name:  "DMAE",
     scientificName:  "Dimethylaminoethanol",
@@ -184,9 +184,9 @@ const supplement_unknown_enhanced = {
 
 if (typeof window !== 'undefined') {
     window.enhancedCitations = window.enhancedCitations || {};
-    window.enhancedCitations[77] = supplement_unknown_enhanced;
+    window.enhancedCitations[77] = dmaeEnhanced;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = supplement_unknown_enhanced;
+    module.exports = dmaeEnhanced;
 }
