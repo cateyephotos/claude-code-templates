@@ -188,7 +188,7 @@ Enabled APIs:
 
 ## Common Gotchas
 
-1. **Convex deploy MUST use `npm run deploy:convex:prod`** — Never `npx convex deploy` directly. The auth.config.js has the dev Clerk domain by default; the deploy script swaps it to prod, deploys, then reverts. Skipping this silently breaks all authenticated queries (admin dashboard shows skeleton loading, "Authentication required" in Convex logs). Symptom is invisible — no browser console errors, Clerk shows signed in, but Convex rejects the JWT because the issuer domain doesn't match.
+1. **Convex auth.config.js is committed with the PRODUCTION Clerk domain** (`clerk.supplementdb.info`) so that any deploy path — `npm run deploy:convex:prod`, plain `npx convex deploy`, CI, etc. — lands correctly. Before 2026-04-18 the committed default was the dev domain and a swap-deploy-revert script handled prod; that flow race-shipped the dev domain to prod at least once, silently breaking every authenticated query (skeleton loading in admin, "Authentication required" in Convex logs — invisible from the client, Clerk still reports signed in). **Rule:** never land a commit that reverts `convex/auth.config.js` to the dev Clerk domain. For local dev against the Clerk dev instance, swap `CLERK_DOMAIN` in your working copy but do not commit. Prefer `npm run deploy:convex:prod` for the explicit prod-URL safeguard; it will no-op the swap when the file is already on the prod domain.
 2. **Convex env vars on wrong deployment** — Always use `--prod` for production env vars
 3. **PostHog phc_ vs phx_ keys** — Server-side actions need `phx_` personal API keys
 4. **PostHog host** — API queries go to `us.posthog.com`, event ingestion goes to `us.i.posthog.com`
@@ -199,6 +199,7 @@ Enabled APIs:
 9. **GA4 property ID** — Use the numeric ID (530443869), not the G- measurement ID
 10. **GSC property owner** — Property is on `carlostomasphotos@gmail.com`, not `carlosthomas.01@gmail.com`
 11. **TypeScript typecheck** — Disable for deploy (`--typecheck=disable`) due to known TS2802 in gsc.ts/ga4.ts
+12. **Live-site debugging requires real Chrome, not headless** — `supp-db-site/middleware.js` actively blocks headless browsers (Playwright, Puppeteer, Selenium) with 403 via UA regex AND blocks requests without `Accept-Language` with a stub page. The `/browse` gstack skill runs Playwright-based headless Chromium and therefore **cannot inspect production pages** — it will either get 403 ("Access Restricted") or the bot stub. When diagnosing live-site issues on `supplementdb.info`, use the **Claude-in-Chrome MCP tools** (`mcp__claude-in-chrome__navigate`, `read_page`, `read_console_messages`, `read_network_requests`, etc.) which drive a real Chrome browser with real cookies. The `/browse` skill is still the correct tool for local / staging work that doesn't sit behind this middleware. Caught 2026-04-18 while debugging admin-dashboard skeleton loading.
 
 ## Page Generation SOP (SEO-Critical)
 
