@@ -8,13 +8,13 @@
     </url>
     <url>
         <loc>https://supplementdb.info/about.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/faq.html</loc>
-        <lastmod>2026-04-04</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -289,6 +289,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://supplementdb.info/supplements/ergothioneine.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://supplementdb.info/supplements/fenugreek.html</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
@@ -344,6 +350,12 @@
     </url>
     <url>
         <loc>https://supplementdb.info/supplements/glutathione.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/supplements/glycine.html</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -667,6 +679,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://supplementdb.info/supplements/sulforaphane.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://supplementdb.info/supplements/taurine.html</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
@@ -758,37 +776,37 @@
     </url>
     <url>
         <loc>https://supplementdb.info/categories/adaptogens.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/amino-acids.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/anti-inflammatory.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/antioxidants.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/essential-nutrients.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/herbal-extracts.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -800,37 +818,37 @@
     </url>
     <url>
         <loc>https://supplementdb.info/categories/joint-support.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/metabolic-support.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/nootropics.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/performance-enhancers.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/polyphenols.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://supplementdb.info/categories/sleep-support.html</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1021,7 +1039,43 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://supplementdb.info/compare/ergothioneine-vs-calcium-alpha-ketoglutarate.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/ergothioneine-vs-glutathione.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/ergothioneine-vs-urolithin-a.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://supplementdb.info/compare/glucosamine-vs-chondroitin.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/glycine-vs-collagen-peptides.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/glycine-vs-glynac.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/glycine-vs-l-theanine.html</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -1076,6 +1130,24 @@
     </url>
     <url>
         <loc>https://supplementdb.info/compare/quercetin-vs-grape-seed-extract.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/sulforaphane-vs-glutathione.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/sulforaphane-vs-quercetin.html</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://supplementdb.info/compare/sulforaphane-vs-turmeric-curcumin.html</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

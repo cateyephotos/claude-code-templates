@@ -3,9 +3,9 @@ const supplementDatabase = {
   "metadata": {
     "version": "3.0",
     "lastUpdated": "2026-03-21",
-    "totalSupplements": 115,
-    "completedSupplements": 115,
-    "targetSupplements": 115,
+    "totalSupplements": 118,
+    "completedSupplements": 118,
+    "targetSupplements": 118,
     "evidenceBasedOn": "700+ research papers from systematic PubMed searches",
     "expansionStatus": "Phase 2 COMPLETE - All 113 supplements with full pipeline QC validation. 20 trending supplements added 2026-03-21"
   },
@@ -9415,6 +9415,441 @@ const supplementDatabase = {
                 "Metabolic Support",
                 "Neuroprotection"
           ]
+    },
+        {
+          "id": 116,
+          "name": "Ergothioneine",
+          "scientificName": "2-mercaptohistidine trimethylbetaine (L-Ergothioneine)",
+          "category": "Antioxidants",
+          "commonNames": [
+                "EGT",
+                "ERGO",
+                "ET",
+                "L-Ergothioneine",
+                "Thiolhistidine betaine",
+                "MitoPrime (branded)"
+          ],
+          "evidenceTier": 3,
+          "evidenceTierRationale": "Strong mechanistic foundation including a 2025 Cell Metabolism study identifying MPST as the direct molecular target (Sprenger 2025) and authoritative mapping of the OCTN1/SLC22A4 transporter (Gr\u00fcndemann 2022). Human evidence anchored by a 21-year prospective cohort (Smith 2020, Heart, n=3236) showing inverse association with cardiovascular and all-cause mortality, plus a completed 12-month placebo-controlled pilot RCT in mild cognitive impairment (Yau 2024, n=19) demonstrating safety and learning improvement. Preclinical mammalian lifespan extension reported in male mice (Katsube 2024, GeroScience). Bruce Ames (PNAS 2018) formally proposed ergothioneine as a 'longevity vitamin'. No completed large-scale RCTs and only one small RCT to date \u2014 places this at Tier 3 (Emerging Evidence) per the pipeline decision tree.",
+          "primaryBenefits": {
+                "cognitive": [
+                      "Delay of cognitive decline in mild cognitive impairment (pilot RCT signal, n=19, 12 months)",
+                      "Stabilization of plasma neurofilament light chain (biomarker of neuronal damage)",
+                      "Inverse correlation with frailty and dementia in observational cohorts"
+                ],
+                "nonCognitive": [
+                      "Inverse association with cardiovascular and all-cause mortality (Malm\u00f6 cohort, 21.4yr)",
+                      "Mitochondrial function and exercise performance via direct MPST activation (preclinical)",
+                      "Tissue antioxidant accumulation via OCTN1/SLC22A4 transporter",
+                      "Protection against doxorubicin-induced cardiotoxicity (preclinical)",
+                      "Mammalian lifespan extension in male mice (preclinical)"
+                ],
+                "isEnhanced": true
+          },
+          "isEnhanced": true,
+          "dosageRange": "5\u201330 mg/day oral L-ergothioneine (25 mg three times per week used in the Yau 2024 cognitive pilot; 5 or 30 mg/day continuous in the ErgMS metabolic-syndrome protocol)",
+          "optimalDuration": "12 weeks to 12 months in published human trials; tissue half-life is on the order of weeks-to-months given OCTN1-mediated retention",
+          "studyPopulations": [
+                "Adults aged 60+ with mild cognitive impairment (Yau 2024 pilot RCT, n=19, 12 months)",
+                "Adults with metabolic syndrome (Tian 2021 ErgMS pilot protocol, 5 or 30 mg/day for 12 weeks)",
+                "Population-based adults free of CVD and diabetes at baseline (Smith 2020 Malm\u00f6 cohort, n=3236, 21.4yr follow-up)",
+                "Frail elderly and dementia patients (Kondoh 2022 metabolomic observational)",
+                "Preclinical: aged male C57BL/6 mice (Katsube 2024 GeroScience lifespan study)",
+                "Preclinical: doxorubicin cardiotoxicity mouse model (Cheah 2023 Antioxidants)"
+          ],
+          "mechanismsOfAction": [
+                "OCTN1/SLC22A4-mediated tissue accumulation",
+                "Hydroxyl radical scavenging (histidine betaine)",
+                "Singlet oxygen quenching",
+                "Direct activation of mitochondrial 3-mercaptopyruvate sulfurtransferase (MPST)",
+                "Metal chelation (Fe2+, Cu2+)",
+                "Nrf2 pathway modulation",
+                "Reduced glutathione regeneration cycle support"
+          ],
+          "safetyProfile": {
+                "rating": "Excellent",
+                "commonSideEffects": [
+                      "No clinically significant adverse events reported in the pilot RCT (n=19, 12 months)",
+                      "Mild gastrointestinal discomfort (uncommon and transient)"
+                ],
+                "contraindications": [
+                      "Pregnancy and lactation (insufficient interventional data)",
+                      "Children and adolescents (no studied population)"
+                ],
+                "drugInteractions": [
+                      "No clinically established drug interactions (theoretical interactions with OCTN1 substrate drugs such as gabapentin or verapamil have not produced human signals)"
+                ]
+          },
+          "effectSizes": {
+                "cardiovascularMortalityReduction": "HR=0.79 cardiovascular mortality (p=0.002) per 1 SD increase in plasma ergothioneine over 21.4yr (Smith 2020, n=3236)",
+                "allCauseMortalityReduction": "HR=0.86 overall mortality (p=4e-5) per 1 SD increase in plasma ergothioneine (Smith 2020)",
+                "coronaryDiseaseRiskReduction": "HR=0.85 (p=0.01) per 1 SD increase in plasma ergothioneine (Smith 2020)",
+                "cognitiveLearningImprovement": "Improved Rey Auditory Verbal Learning Test performance with stabilized plasma neurofilament light chain in MCI subjects (Yau 2024 pilot RCT, n=19, 12 months)",
+                "lifespanExtensionPreclinical": "Significant lifespan extension in male C57BL/6 mice receiving 4-5 mg/kg/day from 7 weeks of age to end of life (Katsube 2024 GeroScience)"
+          },
+          "commercialAvailability": {
+                "forms": [
+                      "L-Ergothioneine capsules (5\u201330 mg)",
+                      "MitoPrime\u00ae branded synthetic L-ergothioneine ingredient",
+                      "Whole-food source: oyster, king oyster, shiitake and lion's mane mushrooms (highest dietary concentration)"
+                ],
+                "costRange": "$25\u2013$60/month for 5\u201310 mg/day; $40\u2013$90/month for 25\u201330 mg/day formulations",
+                "qualityMarkers": [
+                      "L-isomer (not D-) explicitly stated on label",
+                      "Stabilized formulation (synthesis via Mironova/Tetrahedron-style biosynthesis or fermentation; MitoPrime is a common GRAS-affirmed source)",
+                      "Third-party purity testing (\u226599%)",
+                      "GRAS notification number disclosed"
+                ]
+          },
+          "keyCitations": [
+                {
+                      "authors": "Smith E et al.",
+                      "year": 2020,
+                      "title": "Ergothioneine is associated with reduced mortality and decreased risk of cardiovascular disease.",
+                      "journal": "Heart",
+                      "doi": "10.1136/heartjnl-2019-315485",
+                      "pmid": "31672783"
+                },
+                {
+                      "authors": "Yau YF et al.",
+                      "year": 2024,
+                      "title": "Investigating the efficacy of ergothioneine to delay cognitive decline in mild cognitively impaired subjects: A pilot study.",
+                      "journal": "Journal of Alzheimer's Disease",
+                      "doi": "10.1177/13872877241291253",
+                      "pmid": "39544014"
+                },
+                {
+                      "authors": "Sprenger HG et al.",
+                      "year": 2025,
+                      "title": "Ergothioneine controls mitochondrial function and exercise performance via direct activation of MPST.",
+                      "journal": "Cell Metabolism",
+                      "doi": "10.1016/j.cmet.2025.01.024",
+                      "pmid": "39965563"
+                },
+                {
+                      "authors": "Ames BN",
+                      "year": 2018,
+                      "title": "Prolonging healthy aging: Longevity vitamins and proteins.",
+                      "journal": "Proceedings of the National Academy of Sciences USA",
+                      "doi": "10.1073/pnas.1809045115",
+                      "pmid": "30322941"
+                },
+                {
+                      "authors": "Borodina I et al.",
+                      "year": 2020,
+                      "title": "The biology of ergothioneine, an antioxidant nutraceutical.",
+                      "journal": "Nutrition Research Reviews",
+                      "doi": "10.1017/S0954422419000301",
+                      "pmid": "32051057"
+                }
+          ],
+          "enhancedCitations": {
+                "isEnhanced": true,
+                "evidenceProfile": {
+                      "overallQuality": "Tier 3",
+                      "totalCitations": 12,
+                      "researchQualityScore": 55,
+                      "lastEvidenceUpdate": "2026-04-19"
+                }
+          },
+          "lastUpdated": "2026-04-19",
+          "healthDomains": [
+                "Longevity",
+                "Antioxidant Support",
+                "Cardiovascular Health",
+                "Neuroprotection"
+          ]
+    },
+        {
+          "id": 117,
+          "name": "Sulforaphane",
+          "scientificName": "1-isothiocyanato-4-(methylsulfinyl)butane (SFN)",
+          "category": "Antioxidants",
+          "commonNames": [
+                "SFN",
+                "4-methylsulfinylbutyl isothiocyanate",
+                "Glucoraphanin-derived isothiocyanate",
+                "Prostaphane (branded)",
+                "Avmacol (branded)",
+                "TrueBroc (branded glucoraphanin)"
+          ],
+          "evidenceTier": 2,
+          "evidenceTierRationale": "Multiple completed placebo-controlled RCTs across diverse indications: Singh 2014 PNAS pivotal ASD trial (n=44, large 34% ABC behavioural improvement); Egner 2014 Cancer Prev Res Qidong detoxification RCT (n=291, 12 weeks, +61% benzene mercapturic acid excretion); Yuan 2025 Cancer Prev Res Phase II lung-cancer chemoprevention (n=37, 12 months, significant Ki-67 reduction); Tian 2024 NAFLD insulin-resistance RCT (n=36, 12 weeks); plus a systematic review of preclinical renoprotection (Monteiro 2023, 25 studies pooled, large effect sizes). Mechanism is exceptionally well-characterised as a canonical Nrf2/Keap1 pathway activator (Clifford 2021 SR). Safety thoroughly established including a dedicated 12-week thyroid-safety RCT (Chartoumpekis 2019) addressing the theoretical goitrogenic concern. ASD findings are mixed in younger children (Magner 2023). Qualifies as Tier 2 (Strong Evidence) per the pipeline decision tree (3+ RCTs OR 1+ with n>100 + supporting systematic reviews).",
+          "primaryBenefits": {
+                "cognitive": [
+                      "Behavioural improvement in autism spectrum disorder (Singh 2014 RCT, 34% ABC improvement)",
+                      "Glutathione redox and mitochondrial respiration biomarker improvement in ASD (Zimmerman 2021)",
+                      "Neuroprotection via Nrf2 activation in oxidative-stress-related conditions"
+                ],
+                "nonCognitive": [
+                      "Phase II detoxification of airborne pollutants (benzene, acrolein) via GST induction",
+                      "Bronchial Ki-67 reduction in former smokers at high lung-cancer risk (Yuan 2025 Phase II)",
+                      "Insulin sensitization and GLP-1 elevation in NAFLD patients (Tian 2024 RCT)",
+                      "Preclinical renoprotection (creatinine clearance, proteinuria, fibrosis)",
+                      "Thyroid-safe long-term Nrf2 pathway activation"
+                ],
+                "isEnhanced": true
+          },
+          "isEnhanced": true,
+          "dosageRange": "15\u2013100 mg/day oral sulforaphane (or equivalent glucoraphanin-myrosinase product). Documented RCT doses span 40 \u03bcmol/day (Egner Qidong) to 95 \u03bcmol/day (Yuan Phase II lung) to 50\u2013150 \u03bcmol/day (Singh ASD).",
+          "optimalDuration": "12 weeks for metabolic and detoxification endpoints; 18\u201336 weeks for behavioural endpoints (ASD); 12 months for histopathological endpoints (lung-cancer chemoprevention).",
+          "studyPopulations": [
+                "Young men aged 13\u201327 with moderate-to-severe ASD (Singh 2014, n=44)",
+                "Children aged 3\u201312 with ASD (Zimmerman 2021, n=57; Magner 2023, n=40)",
+                "Adults in heavily polluted region (Egner 2014 Qidong, n=291)",
+                "Former smokers at high lung-cancer risk (Yuan 2025, n=43)",
+                "NAFLD patients with abnormal glucose (Tian 2024, n=36)",
+                "Healthy adults (Shapiro 2006 Phase I; Chartoumpekis 2019 thyroid safety, n=45 women)"
+          ],
+          "mechanismsOfAction": [
+                "Nrf2/Keap1 pathway activation",
+                "Phase II detoxification enzyme induction (GST, NQO1, HO-1)",
+                "Isothiocyanate metabolism and glucoraphanin-myrosinase activation",
+                "Glutathione conjugation and redox-status restoration",
+                "Mitochondrial respiration support (in ASD biomarker context)",
+                "Anti-inflammatory cytokine modulation",
+                "SCFAs-GPR41/43-GLP1 gut-microbiota signalling axis"
+          ],
+          "safetyProfile": {
+                "rating": "Excellent",
+                "commonSideEffects": [
+                      "GI discomfort, mild nausea (uncommon)",
+                      "Insomnia, irritability and intolerance of taste/smell (rare; reported in ASD pediatric trials)",
+                      "Mild diarrhea (uncommon, transient)"
+                ],
+                "contraindications": [
+                      "Pregnancy and lactation (insufficient interventional data)",
+                      "Children under 3 years (no studied population)"
+                ],
+                "drugInteractions": [
+                      "Theoretical interactions with CYP-metabolized drugs via Nrf2-mediated Phase II induction (no clinical signals at supplemental doses to date)"
+                ]
+          },
+          "effectSizes": {
+                "asdBehavioralImprovementSinghTrial": "34% ABC improvement (p<0.001), 17% SRS improvement (p=0.017) at 18 weeks vs <3.3% placebo change (Singh 2014 PNAS, n=44)",
+                "asdAbcChildrenZimmermanTrial": "Cohen's d -0.96 (95% CI -1.73 to -0.15) on ABC at 15 weeks (Zimmerman 2021 Mol Autism, n=45)",
+                "lungBronchialKi67Reduction": "Ki-67 index -20% in SFN vs +65% in placebo (p=0.014) over 12 months in former smokers (Yuan 2025 Phase II)",
+                "qidongPollutantDetoxification": "+61% benzene mercapturic acid excretion (p\u22640.01) over 12 weeks (Egner 2014, n=291)",
+                "renalCreatinineClearancePreclinical": "SMD +1.88 (95% CI 1.09\u20132.68, p<0.0001) across 25 preclinical kidney-disease studies (Monteiro 2023 meta-analysis)"
+          },
+          "commercialAvailability": {
+                "forms": [
+                      "Stabilized synthetic sulforaphane capsules (e.g., Prostaphane)",
+                      "Glucoraphanin + active myrosinase tablets (e.g., Avmacol)",
+                      "Glucoraphanin-only powder/extract (e.g., TrueBroc) \u2014 suboptimal without myrosinase",
+                      "Whole-food source: 3-day-old broccoli sprouts (highest dietary glucoraphanin density)"
+                ],
+                "costRange": "$30\u2013$80/month for myrosinase-active formulations; $20\u2013$50/month for glucoraphanin-only powders (lower bioavailability)",
+                "qualityMarkers": [
+                      "Active myrosinase (or stabilized SFN) explicitly stated on label",
+                      "Standardized to milligrams of sulforaphane (not glucoraphanin equivalents alone)",
+                      "Third-party HPLC purity testing",
+                      "Cold storage / inert packaging to preserve SFN stability"
+                ]
+          },
+          "keyCitations": [
+                {
+                      "authors": "Singh K et al.",
+                      "year": 2014,
+                      "title": "Sulforaphane treatment of autism spectrum disorder (ASD).",
+                      "journal": "Proceedings of the National Academy of Sciences USA",
+                      "doi": "10.1073/pnas.1416940111",
+                      "pmid": "25313065"
+                },
+                {
+                      "authors": "Egner PA et al.",
+                      "year": 2014,
+                      "title": "Rapid and sustainable detoxication of airborne pollutants by broccoli sprout beverage: results of a randomized clinical trial in China.",
+                      "journal": "Cancer Prevention Research",
+                      "doi": "10.1158/1940-6207.CAPR-14-0103",
+                      "pmid": "24913818"
+                },
+                {
+                      "authors": "Yuan JM et al.",
+                      "year": 2025,
+                      "title": "Randomized Phase II Clinical Trial of Sulforaphane in Former Smokers at High Risk for Lung Cancer.",
+                      "journal": "Cancer Prevention Research",
+                      "doi": "10.1158/1940-6207.CAPR-24-0386",
+                      "pmid": "40041932"
+                },
+                {
+                      "authors": "Zimmerman AW et al.",
+                      "year": 2021,
+                      "title": "Randomized controlled trial of sulforaphane and metabolite discovery in children with Autism Spectrum Disorder.",
+                      "journal": "Molecular Autism",
+                      "doi": "10.1186/s13229-021-00447-5",
+                      "pmid": "34034808"
+                },
+                {
+                      "authors": "Monteiro EB et al.",
+                      "year": 2023,
+                      "title": "Sulforaphane exhibits potent renoprotective effects in preclinical models of kidney diseases: A systematic review and meta-analysis.",
+                      "journal": "Life Sciences",
+                      "doi": "10.1016/j.lfs.2023.121664",
+                      "pmid": "37023957"
+                }
+          ],
+          "enhancedCitations": {
+                "isEnhanced": true,
+                "evidenceProfile": {
+                      "overallQuality": "Tier 2",
+                      "totalCitations": 12,
+                      "researchQualityScore": 70,
+                      "lastEvidenceUpdate": "2026-04-19"
+                }
+          },
+          "lastUpdated": "2026-04-19",
+          "healthDomains": [
+                "Longevity",
+                "Antioxidant Support",
+                "Neuroprotection",
+                "Cardiovascular Health",
+                "Metabolic Support"
+          ]
+    },
+        {
+          "id": 118,
+          "name": "Glycine",
+          "scientificName": "Aminoacetic acid (C2H5NO2)",
+          "category": "Amino Acids",
+          "commonNames": [
+                "L-Glycine",
+                "Aminoacetic Acid",
+                "Glycocoll"
+          ],
+          "evidenceTier": 3,
+          "evidenceTierRationale": "Glycine has two completed glycine-specific human RCTs (Bannai 2012 Frontiers in Neurology sleep-restriction trial with 3 g pre-bed; File 1999 J Clin Psychopharmacol cognition crossover trial). One additional combination-supplement RCT (Langan-Evans 2023 MSSE) shows sleep architecture improvements but cannot isolate glycine. Strong supportive evidence comes from the Baylor GlyNAC program (Sekhar/Kumar lab): one randomized placebo-controlled trial (Kumar 2023 J Gerontol A, n=24, 16 weeks) and a pilot open-label trial (Kumar 2021 Clin Transl Med, n=8) demonstrate broad reversal of aging hallmarks, but the GlyNAC fixed combination cannot establish glycine-only causality. Mouse lifespan extension (24%) reported (Kumar 2022 Nutrients). Mechanism is well-characterised: rate-limiting glutathione synthesis substrate, NMDA glycine-site co-agonist, and 33% of collagen sequence. Distinct from existing GlyNAC entry (ID 104) which represents the fixed combination as a research intervention. Per the pipeline decision tree (1-2 small glycine-specific RCTs + supportive precursor-strategy RCT) glycine sits at Tier 3 (Emerging Evidence).",
+          "primaryBenefits": {
+                "cognitive": [
+                      "Improved episodic memory retrieval (File 1999 Bioglycin RCT)",
+                      "Sustained attention improvement in middle-aged adults (File 1999)",
+                      "Reversal of age-associated cognitive decline (preclinical via GlyNAC; Kumar 2023 mouse brain)"
+                ],
+                "nonCognitive": [
+                      "Subjective sleep-quality improvement at 3 g pre-bed (Bannai program)",
+                      "Reduced daytime fatigue and improved psychomotor vigilance after sleep restriction",
+                      "Glutathione synthesis substrate (mechanism + GlyNAC clinical evidence)",
+                      "Collagen synthesis substrate (33% of collagen amino-acid sequence)",
+                      "Aging-hallmark reversal via the GlyNAC precursor strategy (older adults RCT)"
+                ],
+                "isEnhanced": true
+          },
+          "isEnhanced": true,
+          "dosageRange": "Sleep: 3 g oral glycine 30\u201360 minutes pre-bed (canonical Bannai dose). Glutathione/longevity (precursor strategy): 0.1 g/kg/day glycine + 0.1 g/kg/day NAC (GlyNAC trials, ~7 g/day glycine for a 70 kg adult). Collagen-adjunct: 2\u201310 g/day with vitamin C.",
+          "optimalDuration": "Sleep effects are immediate (single pre-bed dose); glutathione/aging-hallmark effects are documented at 12\u201324 weeks of continuous supplementation in the GlyNAC program.",
+          "studyPopulations": [
+                "Healthy young (mean 20.7 yr) and middle-aged men (mean 58.9 yr) for cognition (File 1999, n=33)",
+                "Insomniac-tendency volunteers and sleep-restricted healthy adults (Bannai 2012 program)",
+                "Healthy young adults for combined sleep blend (Langan-Evans 2023, n=16)",
+                "Older adults 65+ for GlyNAC precursor strategy (Kumar 2023, n=24)",
+                "People with HIV (Kumar 2020, n=8) for premature-aging GlyNAC trial",
+                "Preclinical: aged C57BL/6J mice (Kumar 2022 lifespan; Kumar 2023 brain)"
+          ],
+          "mechanismsOfAction": [
+                "Glutathione synthesis substrate (rate-limiting)",
+                "NMDA co-agonist activity (glycine site)",
+                "Collagen synthesis substrate (33% of collagen sequence)",
+                "Inhibitory neurotransmission via glycine receptors",
+                "Core body temperature reduction via cutaneous vasodilation",
+                "Suprachiasmatic nucleus neuropeptide modulation (AVP, VIP)"
+          ],
+          "safetyProfile": {
+                "rating": "Excellent",
+                "commonSideEffects": [
+                      "Mild gastrointestinal upset at very high doses (>45 g/day)",
+                      "No clinically significant adverse events at trial-validated doses (3 g sleep, ~7 g/day in GlyNAC)"
+                ],
+                "contraindications": [
+                      "Pregnancy and lactation (insufficient interventional data at supplemental doses; dietary-equivalent intake considered safe)",
+                      "Severe renal impairment (theoretical due to nitrogen load at high doses)"
+                ],
+                "drugInteractions": [
+                      "No clinically established drug interactions at supplemental doses",
+                      "Theoretical interaction with clozapine (NMDA modulation) \u2014 no clinical signals to date"
+                ]
+          },
+          "effectSizes": {
+                "sleepFatigueReduction": "Significant reduction in daytime fatigue (VAS) and improvement in psychomotor vigilance test in 25%-sleep-restricted volunteers receiving 3 g pre-bed glycine (Bannai 2012)",
+                "memoryRetrievalImprovement": "Significant improvement in episodic memory retrieval in young and middle-aged adults receiving Bioglycin (File 1999)",
+                "blendedSleepLatencyReduction": "-24\u00b125 min sleep onset latency, +22\u00b132 min total sleep time (combination supplement, p=0.002 and p=0.01; Langan-Evans 2023)",
+                "glynacAgingHallmarkReversalRct": "Multi-domain improvements in glutathione, oxidative stress, mitochondrial function, gait speed, muscle strength, walking distance and body composition in older adults receiving GlyNAC vs alanine placebo for 16 weeks (Kumar 2023, n=24)",
+                "glynacMouseLifespanExtension": "+24% length of life in C57BL/6J mice receiving GlyNAC vs control (Kumar 2022)"
+          },
+          "commercialAvailability": {
+                "forms": [
+                      "L-glycine powder (3\u201310 g servings; very inexpensive generic)",
+                      "Glycine capsules (typically 1 g)",
+                      "GlyNAC capsules (combination glycine + N-acetylcysteine)",
+                      "Liquid amino-acid blends containing glycine",
+                      "Whole-food sources: gelatin, bone broth, collagen peptides (~33% glycine by mass)"
+                ],
+                "costRange": "$5\u2013$20/month for generic L-glycine powder at 3\u201310 g/day; $40\u2013$80/month for branded GlyNAC formulations",
+                "qualityMarkers": [
+                      "Pharmaceutical-grade L-glycine (USP)",
+                      "Sweet taste (glycine is naturally sweet) is a quick organoleptic check",
+                      "Third-party heavy-metal and microbial testing",
+                      "GlyNAC products: glycine and NAC each clearly disclosed by mass"
+                ]
+          },
+          "keyCitations": [
+                {
+                      "authors": "Bannai M, Kawai N",
+                      "year": 2012,
+                      "title": "New therapeutic strategy for amino acid medicine: glycine improves the quality of sleep.",
+                      "journal": "Journal of Pharmacological Sciences",
+                      "doi": "10.1254/jphs.11r04fm",
+                      "pmid": "22293292"
+                },
+                {
+                      "authors": "Bannai M et al.",
+                      "year": 2012,
+                      "title": "The effects of glycine on subjective daytime performance in partially sleep-restricted healthy volunteers.",
+                      "journal": "Frontiers in Neurology",
+                      "doi": "10.3389/fneur.2012.00061",
+                      "pmid": "22529837"
+                },
+                {
+                      "authors": "File SE et al.",
+                      "year": 1999,
+                      "title": "Beneficial effects of glycine (bioglycin) on memory and attention in young and middle-aged adults.",
+                      "journal": "Journal of Clinical Psychopharmacology",
+                      "doi": "10.1097/00004714-199912000-00004",
+                      "pmid": "10587285"
+                },
+                {
+                      "authors": "Kumar P et al.",
+                      "year": 2023,
+                      "title": "Supplementing Glycine and N-Acetylcysteine (GlyNAC) in Older Adults Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Physical Function, and Aging Hallmarks: A Randomized Clinical Trial.",
+                      "journal": "Journal of Gerontology A: Biological Sciences and Medical Sciences",
+                      "doi": "10.1093/gerona/glac135",
+                      "pmid": "35975308"
+                },
+                {
+                      "authors": "Sekhar RV",
+                      "year": 2021,
+                      "title": "GlyNAC Supplementation Improves Glutathione Deficiency, Oxidative Stress, Mitochondrial Dysfunction, Inflammation, Aging Hallmarks, Metabolic Defects, Muscle Strength, Cognitive Decline, and Body Composition: Implications for Healthy Aging.",
+                      "journal": "Journal of Nutrition",
+                      "doi": "10.1093/jn/nxab309",
+                      "pmid": "34587244"
+                }
+          ],
+          "enhancedCitations": {
+                "isEnhanced": true,
+                "evidenceProfile": {
+                      "overallQuality": "Tier 3",
+                      "totalCitations": 12,
+                      "researchQualityScore": 52,
+                      "lastEvidenceUpdate": "2026-04-19"
+                }
+          },
+          "lastUpdated": "2026-04-19",
+          "healthDomains": [
+                "Longevity",
+                "Sleep Quality",
+                "Antioxidant Support",
+                "Protein Synthesis & Recovery",
+                "Memory Enhancement"
+          ]
     }
   ],
 
@@ -9467,12 +9902,12 @@ const supplementDatabase = {
     {
       "name": "Antioxidants",
       "description": "Compounds that protect against oxidative stress",
-      "supplements": ["CoQ10", "PQQ", "Green Tea Extract", "Quercetin", "Vitamin C", "Vitamin E", "Selenium", "Alpha-Lipoic Acid", "Lutein", "Astaxanthin", "Spirulina", "Chlorella", "Pine Bark Extract", "Grape Seed Extract", "Zeaxanthin", "Pterostilbene", "Urolithin A", "Spermidine"]
+      "supplements": ["CoQ10", "PQQ", "Green Tea Extract", "Quercetin", "Vitamin C", "Vitamin E", "Selenium", "Alpha-Lipoic Acid", "Lutein", "Astaxanthin", "Spirulina", "Chlorella", "Pine Bark Extract", "Grape Seed Extract", "Zeaxanthin", "Pterostilbene", "Urolithin A", "Spermidine", "Ergothioneine", "Sulforaphane"]
     },
     {
       "name": "Amino Acids",
       "description": "Amino acids and neurotransmitter precursors",
-      "supplements": ["L-Tyrosine", "5-HTP", "Taurine", "GABA", "PEA (Phenylethylamine)", "GlyNAC"]
+      "supplements": ["L-Tyrosine", "5-HTP", "Taurine", "GABA", "PEA (Phenylethylamine)", "GlyNAC", "Glycine"]
     },
     {
       "name": "Herbal Supplement",
@@ -9489,7 +9924,7 @@ const supplementDatabase = {
   "healthDomains": [
     {
       "name": "Memory Enhancement",
-      "supplements": ["Bacopa monnieri", "Creatine", "Omega-3 Fatty Acids", "Lion's Mane Mushroom", "Phosphatidylserine", "Acetyl-L-Carnitine", "Ginkgo Biloba", "Alpha-GPC", "B-Complex Vitamins", "Vitamin B12", "Folate", "Resveratrol", "Iron", "Zinc", "Choline", "Lutein", "Ginger", "Citicoline", "DMAE", "Centella Asiatica", "Aniracetam", "Piracetam"]
+      "supplements": ["Bacopa monnieri", "Creatine", "Omega-3 Fatty Acids", "Lion's Mane Mushroom", "Phosphatidylserine", "Acetyl-L-Carnitine", "Ginkgo Biloba", "Alpha-GPC", "B-Complex Vitamins", "Vitamin B12", "Folate", "Resveratrol", "Iron", "Zinc", "Choline", "Lutein", "Ginger", "Citicoline", "DMAE", "Centella Asiatica", "Aniracetam", "Piracetam", "Glycine"]
     },
     {
       "name": "Focus & Attention", 
@@ -9497,7 +9932,7 @@ const supplementDatabase = {
     },
     {
       "name": "Sleep Quality",
-      "supplements": ["Melatonin", "Magnesium", "L-Theanine", "5-HTP", "GABA", "Passionflower", "Apigenin", "Magnesium L-Threonate"]
+      "supplements": ["Melatonin", "Magnesium", "L-Theanine", "5-HTP", "GABA", "Passionflower", "Apigenin", "Magnesium L-Threonate", "Glycine"]
     },
     {
       "name": "Anxiety Reduction",
@@ -9509,7 +9944,7 @@ const supplementDatabase = {
     },
     {
       "name": "Neuroprotection",
-      "supplements": ["Turmeric/Curcumin", "Omega-3 Fatty Acids", "Vitamin D3", "Lion's Mane Mushroom", "Acetyl-L-Carnitine", "CoQ10", "Quercetin", "Green Tea Extract", "PQQ", "NAD+ Precursors", "Resveratrol", "Vitamin E", "Vitamin C", "Selenium", "Zinc", "Taurine", "Alpha-Lipoic Acid", "Lutein", "Astaxanthin", "Ginger", "Garlic", "Holy Basil", "Schisandra Berry", "Mucuna Pruriens", "Boswellia", "Milk Thistle", "Elderberry"]
+      "supplements": ["Turmeric/Curcumin", "Omega-3 Fatty Acids", "Vitamin D3", "Lion's Mane Mushroom", "Acetyl-L-Carnitine", "CoQ10", "Quercetin", "Green Tea Extract", "PQQ", "NAD+ Precursors", "Resveratrol", "Vitamin E", "Vitamin C", "Selenium", "Zinc", "Taurine", "Alpha-Lipoic Acid", "Lutein", "Astaxanthin", "Ginger", "Garlic", "Holy Basil", "Schisandra Berry", "Mucuna Pruriens", "Boswellia", "Milk Thistle", "Elderberry", "Ergothioneine", "Sulforaphane"]
     },
     {
       "name": "Mood Stabilization",
@@ -9517,15 +9952,15 @@ const supplementDatabase = {
     },
     {
       "name": "Cardiovascular Health",
-      "supplements": ["Omega-3 Fatty Acids", "CoQ10", "Berberine", "Taurine", "Garlic", "Hawthorn Berry", "Red Yeast Rice", "Cinnamon Extract", "Nattokinase", "Pentadecanoic Acid (C15:0)"]
+      "supplements": ["Omega-3 Fatty Acids", "CoQ10", "Berberine", "Taurine", "Garlic", "Hawthorn Berry", "Red Yeast Rice", "Cinnamon Extract", "Nattokinase", "Pentadecanoic Acid (C15:0)", "Ergothioneine", "Sulforaphane"]
     },
     {
       "name": "Metabolic Support",
-      "supplements": ["Berberine", "CoQ10", "Panax Ginseng", "Green Tea Extract", "NAD+ Precursors", "Red Yeast Rice", "Chromium", "Vanadium", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract"]
+      "supplements": ["Berberine", "CoQ10", "Panax Ginseng", "Green Tea Extract", "NAD+ Precursors", "Red Yeast Rice", "Chromium", "Vanadium", "Bitter Melon", "Gymnema Sylvestre", "Fenugreek", "Cinnamon Extract", "Sulforaphane"]
     },
     {
       "name": "Longevity",
-      "supplements": ["NAD+ Precursors", "PQQ", "Quercetin", "CoQ10", "Urolithin A", "Spermidine", "NMN (Nicotinamide Mononucleotide)", "Fisetin", "GlyNAC", "Calcium Alpha-Ketoglutarate"]
+      "supplements": ["NAD+ Precursors", "PQQ", "Quercetin", "CoQ10", "Urolithin A", "Spermidine", "NMN (Nicotinamide Mononucleotide)", "Fisetin", "GlyNAC", "Calcium Alpha-Ketoglutarate", "Ergothioneine", "Sulforaphane", "Glycine"]
     },
     {
       "name": "Energy & Vitality",
@@ -9537,7 +9972,7 @@ const supplementDatabase = {
     },
     {
       "name": "Protein Synthesis & Recovery",
-      "supplements": ["Whey Protein"]
+      "supplements": ["Whey Protein", "Glycine"]
     },
     {
       "name": "Immune System Support",
@@ -9565,7 +10000,7 @@ const supplementDatabase = {
     },
     {
       "name": "Antioxidant Support",
-      "supplements": ["Bitter Melon", "Cinnamon Extract", "Hawthorn Berry"]
+      "supplements": ["Bitter Melon", "Cinnamon Extract", "Hawthorn Berry", "Ergothioneine", "Sulforaphane", "Glycine"]
     }
   ]
 };

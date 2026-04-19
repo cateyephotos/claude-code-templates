@@ -139,6 +139,9 @@ class EnhancedCitationLoader {
             { id: 113, file: '113_cistanche_enhanced.js', globalVar: 'cistancheEnhanced' },
             { id: 114, file: '114_inulin_enhanced.js', globalVar: 'inulinEnhanced' },
             { id: 115, file: '115_calcium-alpha-ketoglutarate_enhanced.js', globalVar: 'calciumAlphaKetoglutarateEnhanced' },
+            { id: 116, file: '116_ergothioneine_enhanced.js', globalVar: 'ergothioneineEnhanced' },
+            { id: 117, file: '117_sulforaphane_enhanced.js', globalVar: 'sulforaphaneEnhanced' },
+            { id: 118, file: '118_glycine_enhanced.js', globalVar: 'glycineEnhanced' },
             { id: 105, file: '105_glutathione_enhanced.js', globalVar: 'glutathioneEnhanced' },
             { id: 106, file: '106_dim-3-3-diindolylmethane_enhanced.js', globalVar: 'dim33diindolylmethaneEnhanced' }
         ];

@@ -571,6 +571,254 @@ const COMPARISONS = [
             { title: 'Metabolic Support', url: '../categories/metabolic-support.html' },
             { title: 'Antioxidants', url: '../categories/antioxidants.html' }
         ]
+    },
+    {
+        slug: 'ergothioneine-vs-urolithin-a',
+        suppA: 'Ergothioneine',
+        suppB: 'Urolithin A',
+        title: 'Ergothioneine vs Urolithin A: Mushroom Antioxidant vs Pomegranate Postbiotic',
+        metaTitle: 'Ergothioneine vs Urolithin A (2026) | Longevity Antioxidants Compared',
+        metaDescription: 'Compare Ergothioneine and Urolithin A for longevity, mitochondrial protection, and tissue antioxidant defense. Evidence tiers, mechanisms, dosing and human data side-by-side.',
+        domain: 'Longevity & Mitochondrial Antioxidants',
+        sharedDomains: ['mitochondrial protection', 'longevity', 'oxidative stress reduction', 'healthy aging'],
+        verdict: 'Urolithin A (Tier 2) leads on completed human RCT evidence with placebo-controlled trials in middle-aged adults showing improved muscle endurance and mitochondrial gene expression. Ergothioneine (Tier 3) has the stronger long-term mortality signal \u2014 a 21-year prospective cohort (Smith 2020, Heart, n=3236) tying higher plasma levels to reduced cardiovascular and overall mortality \u2014 plus a small completed pilot RCT in mild cognitive impairment. Both are mitochondrial antioxidants with distinct mechanisms: Urolithin A directly induces mitophagy; Ergothioneine accumulates in mitochondria via OCTN1, scavenges hydroxyl radicals, and directly activates the mitochondrial enzyme MPST.',
+        whoShouldChoose: [
+            { scenario: 'Strongest completed human RCT evidence', recommendation: 'Urolithin A', reason: 'Singh 2022 (JAMA Network Open) and Liu 2022 are double-blind placebo-controlled trials in middle-aged adults; Ergothioneine has a single n=19 pilot.' },
+            { scenario: 'Cardiovascular mortality risk reduction', recommendation: 'Ergothioneine', reason: 'Smith 2020 (Heart) shows HR=0.79 cardiovascular mortality and HR=0.86 all-cause mortality per 1 SD higher plasma ergothioneine over 21.4 years (n=3236).' },
+            { scenario: 'Tissue retention without daily dosing', recommendation: 'Ergothioneine', reason: 'OCTN1-mediated tissue accumulation gives ergothioneine a half-life of weeks-to-months; Urolithin A levels fluctuate with dosing.' },
+            { scenario: 'Direct mitophagy induction', recommendation: 'Urolithin A', reason: 'Mitophagy is the primary mechanism, demonstrated in human muscle biopsies.' },
+            { scenario: 'Cognitive decline prevention in MCI', recommendation: 'Ergothioneine', reason: 'Yau 2024 pilot RCT in n=19 MCI subjects showed improved learning and stabilized neurofilament light chain over 12 months.' },
+            { scenario: 'Budget', recommendation: 'Ergothioneine', reason: 'Generic L-ergothioneine at 5\u201310 mg/day costs $25\u2013$60/month; Urolithin A (Mitopure) is premium-priced.' }
+        ],
+        canStack: 'Yes \u2014 Ergothioneine and Urolithin A are biochemically distinct mitochondrial antioxidants with no known interactions and complementary mechanisms. Urolithin A induces mitophagy of damaged mitochondria; Ergothioneine accumulates inside surviving mitochondria via OCTN1, activates MPST, and scavenges hydroxyl radicals on-site. Typical stacking: Urolithin A 500\u20131000 mg/day with food and Ergothioneine 5\u201325 mg/day. No reported adverse interactions. Combined RCT data does not yet exist; stack for mechanistic breadth across both mitochondrial turnover and intra-mitochondrial redox protection.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'ergothioneine-vs-glutathione',
+        suppA: 'Ergothioneine',
+        suppB: 'Glutathione',
+        title: 'Ergothioneine vs Glutathione: Network Antioxidants Compared',
+        metaTitle: 'Ergothioneine vs Glutathione (2026) | Cellular Antioxidant Comparison',
+        metaDescription: 'Compare Ergothioneine and Glutathione as cellular antioxidants. Bioavailability, tissue retention, mechanisms, evidence tiers and dosing side-by-side.',
+        domain: 'Cellular Antioxidant Defense',
+        sharedDomains: ['oxidative stress reduction', 'cellular cytoprotection', 'detoxification support', 'healthy aging'],
+        verdict: 'Glutathione (Tier 2) is the most abundant endogenous cellular antioxidant with extensive clinical literature, but oral glutathione has historically poor bioavailability \u2014 most studied formulations are liposomal, sublingual or precursor-based (NAC, GlyNAC). Ergothioneine (Tier 3) has the opposite profile: it is highly bioavailable orally and retained in tissues for weeks via the OCTN1/SLC22A4 transporter, but the human evidence base is thinner (one large prospective cohort + one small pilot RCT). They occupy complementary positions in the cellular antioxidant network: glutathione is the workhorse intracellular reducing agent, ergothioneine acts as a backup scavenger that accumulates specifically in oxidatively-stressed tissues and helps recycle oxidised glutathione.',
+        whoShouldChoose: [
+            { scenario: 'Cellular detoxification support', recommendation: 'Glutathione', reason: 'Glutathione is the central substrate for hepatic Phase II conjugation reactions and the workhorse intracellular reductant.' },
+            { scenario: 'Reliable oral bioavailability and tissue retention', recommendation: 'Ergothioneine', reason: 'OCTN1-mediated active uptake gives ergothioneine weeks-to-months tissue half-life; oral glutathione is rapidly degraded and poorly absorbed.' },
+            { scenario: 'Long-term mortality / cardiovascular signal', recommendation: 'Ergothioneine', reason: 'Smith 2020 (Heart, n=3236) shows long-term inverse association with cardiovascular and all-cause mortality \u2014 no equivalent prospective dataset for plasma glutathione.' },
+            { scenario: 'Acute oxidative-stress events (ischaemia, paracetamol toxicity)', recommendation: 'Glutathione (or NAC precursor)', reason: 'Glutathione repletion via NAC has emergency-medicine indications; no equivalent acute role for ergothioneine.' },
+            { scenario: 'Targeting immune-cell antioxidant defense (neutrophils, monocytes)', recommendation: 'Ergothioneine', reason: 'OCTN1 expression concentrates ergothioneine in neutrophils, monocytes and macrophages \u2014 cells with high oxidative burst.' },
+            { scenario: 'Budget and convenience', recommendation: 'Ergothioneine', reason: 'Effective doses are 5\u201330 mg/day and tissue retention allows intermittent dosing; clinically meaningful glutathione products are typically more expensive per effective dose.' }
+        ],
+        canStack: 'Yes \u2014 Ergothioneine and Glutathione (or its precursors NAC/GlyNAC) are highly compatible. Ergothioneine concentrates inside oxidatively-stressed tissues and is reported to support the reduced glutathione regeneration cycle, so the two can act as a coordinated network rather than compete. Typical stacking: Ergothioneine 5\u201325 mg/day plus liposomal glutathione 250\u20131000 mg/day or GlyNAC at trial-validated doses. No reported adverse interactions. The stack is reasonable for users prioritising cellular antioxidant breadth.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'ergothioneine-vs-calcium-alpha-ketoglutarate',
+        suppA: 'Ergothioneine',
+        suppB: 'Calcium Alpha-Ketoglutarate',
+        title: 'Ergothioneine vs Ca-AKG: Two Emerging Longevity Compounds Compared',
+        metaTitle: 'Ergothioneine vs Ca-AKG (2026) | Longevity Vitamin Comparison',
+        metaDescription: 'Compare Ergothioneine (longevity vitamin) and Calcium Alpha-Ketoglutarate (Ca-AKG) for healthy aging. Mechanisms, evidence tiers, human data and dosing side-by-side.',
+        domain: 'Healthy Aging & Longevity',
+        sharedDomains: ['longevity', 'mitochondrial function', 'oxidative stress reduction', 'healthy aging'],
+        verdict: 'Both Ergothioneine (Tier 3) and Ca-AKG (Tier 3) sit at the Emerging end of the longevity-evidence spectrum, with strong rodent lifespan data but limited completed human trials. Ergothioneine has the larger long-term human cohort signal (Smith 2020, n=3236, 21.4yr inverse association with cardiovascular and all-cause mortality) plus a 12-month placebo-controlled pilot RCT in MCI; Ca-AKG has the Demidenko 2021 retrospective DNA-methylation clock reduction signal (n=42, ~7 months). They act through fundamentally different mechanisms: Ergothioneine is a tissue-retained antioxidant with direct MPST mitochondrial activation, while Ca-AKG operates through TCA-cycle replenishment, ATP synthase / TOR inhibition, and \u03b1-KG-dependent epigenetic demethylation.',
+        whoShouldChoose: [
+            { scenario: 'Long-term mortality risk reduction signal', recommendation: 'Ergothioneine', reason: 'Smith 2020 (Heart) is a 21-year prospective cohort with an HR=0.86 all-cause mortality association \u2014 no equivalent dataset for Ca-AKG.' },
+            { scenario: 'Biological-age clock reduction signal', recommendation: 'Ca-AKG', reason: 'Demidenko 2021 retrospective TruAge analysis is the only human DNA-methylation clock signal among longevity-class supplements.' },
+            { scenario: 'Cognitive aging support (RCT-tested)', recommendation: 'Ergothioneine', reason: 'Yau 2024 pilot RCT in MCI subjects showed improved learning and stabilized neurofilament light chain.' },
+            { scenario: 'TOR / caloric-restriction mimicry', recommendation: 'Ca-AKG', reason: 'Direct ATP synthase binding and TOR pathway downregulation (Chin 2014, Nature) is Ca-AKG specific.' },
+            { scenario: 'Bone health support (preclinical)', recommendation: 'Ca-AKG', reason: 'Wang 2020 (Nat Commun) shows histone-demethylation-mediated bone density restoration in aged mice.' },
+            { scenario: 'Mitochondrial accumulation and exercise capacity', recommendation: 'Ergothioneine', reason: 'Sprenger 2025 (Cell Metab) identifies MPST as the direct ergothioneine target driving mitochondrial respiration and exercise performance.' },
+            { scenario: 'Lowest-dose / convenience', recommendation: 'Ergothioneine', reason: 'Effective dose is 5\u201325 mg/day; Ca-AKG protocols use 1000 mg/day.' }
+        ],
+        canStack: 'Yes \u2014 Ergothioneine and Ca-AKG act through largely independent longevity mechanisms (antioxidant tissue accumulation + MPST activation vs. TCA-cycle replenishment + TOR / epigenetic effects) and are reasonable to stack for mechanistic breadth. Typical stacking: Ergothioneine 5\u201325 mg/day plus Ca-AKG 1000 mg/day, both with food. No reported adverse interactions. As with most emerging-evidence longevity stacks, combined RCT data is not yet available \u2014 expectations should be modest in the near term.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'sulforaphane-vs-turmeric-curcumin',
+        suppA: 'Sulforaphane',
+        suppB: 'Turmeric/Curcumin',
+        title: 'Sulforaphane vs Curcumin: Nrf2 vs NF-κB Pathway Comparison',
+        metaTitle: 'Sulforaphane vs Curcumin (2026) | Nrf2 vs NF-κB Antioxidants Compared',
+        metaDescription: 'Compare Sulforaphane and Curcumin/Turmeric for inflammation, antioxidant defense, and clinical evidence. Mechanisms, evidence tiers, and human trial data side-by-side.',
+        domain: 'Cellular Defense & Anti-inflammatory',
+        sharedDomains: ['oxidative stress reduction', 'inflammation modulation', 'detoxification', 'chemoprevention'],
+        verdict: 'Both Sulforaphane (Tier 2) and Curcumin (Tier 2) sit at the Strong-Evidence level with multiple completed RCTs, but they target complementary pathways. Sulforaphane is the canonical small-molecule Nrf2 activator \u2014 inducing Phase II detoxification enzymes (GST, NQO1, HO-1) and demonstrably enhancing urinary excretion of airborne pollutants in a 291-person Qidong RCT. Curcumin\'s primary mechanism is NF-\u03baB inhibition with secondary anti-inflammatory effects on COX-2 and pro-inflammatory cytokines. Sulforaphane has the strongest unique RCT evidence in autism spectrum disorder (Singh 2014 PNAS, 34% ABC improvement) and lung-cancer chemoprevention (Yuan 2025 Phase II); Curcumin has stronger osteoarthritis and inflammation-marker RCT evidence.',
+        whoShouldChoose: [
+            { scenario: 'Phase II detoxification of environmental pollutants', recommendation: 'Sulforaphane', reason: 'Egner 2014 Qidong RCT (n=291) demonstrates +61% benzene mercapturic acid excretion via GST induction.' },
+            { scenario: 'Chronic joint inflammation / osteoarthritis', recommendation: 'Curcumin', reason: 'Multiple RCTs show curcumin reduces osteoarthritis pain comparable to NSAIDs.' },
+            { scenario: 'Autism spectrum disorder behavioural support', recommendation: 'Sulforaphane', reason: 'Singh 2014 PNAS pivotal RCT in young men with moderate-to-severe ASD; no equivalent curcumin evidence.' },
+            { scenario: 'NF-\u03baB-driven systemic inflammation', recommendation: 'Curcumin', reason: 'Curcumin is the more direct NF-\u03baB inhibitor; sulforaphane acts primarily through Nrf2.' },
+            { scenario: 'Bioavailability without enhancers', recommendation: 'Sulforaphane', reason: 'SFN absorption is good with myrosinase-active formulations; curcumin requires piperine or formulation enhancements.' },
+            { scenario: 'Lung-cancer chemoprevention (smokers)', recommendation: 'Sulforaphane', reason: 'Yuan 2025 Phase II RCT showed Ki-67 bronchial proliferation reduction over 12 months.' }
+        ],
+        canStack: 'Yes \u2014 Sulforaphane and Curcumin engage complementary inflammation/cytoprotection pathways (Nrf2 vs NF-\u03baB) with no reported adverse interactions and are reasonable to stack for breadth. Typical stacking: Sulforaphane 15\u201340 mg/day (myrosinase-active formulation) plus Curcumin 500\u20131000 mg/day (with piperine or phytosome formulation). The combination is widely used in chemoprevention-focused stacks.',
+        relatedGuides: [
+            { title: 'Cardiovascular Guide', url: '../guides/cardiovascular.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' },
+            { title: 'Anti-inflammatory', url: '../categories/anti-inflammatory.html' }
+        ]
+    },
+    {
+        slug: 'sulforaphane-vs-quercetin',
+        suppA: 'Sulforaphane',
+        suppB: 'Quercetin',
+        title: 'Sulforaphane vs Quercetin: Isothiocyanate vs Polyphenol Antioxidants',
+        metaTitle: 'Sulforaphane vs Quercetin (2026) | Two Major Phytochemical Antioxidants',
+        metaDescription: 'Compare Sulforaphane (broccoli-derived isothiocyanate) and Quercetin (polyphenol) for cellular defense, allergies, and longevity. Mechanisms, RCTs, dosing.',
+        domain: 'Phytochemical Antioxidants',
+        sharedDomains: ['antioxidant defense', 'oxidative stress reduction', 'inflammation modulation', 'longevity'],
+        verdict: 'Sulforaphane (Tier 2) and Quercetin (Tier 3) are both well-studied phytochemical antioxidants but with very different evidence profiles. Sulforaphane has multiple successful placebo-controlled RCTs in defined indications (ASD, pollutant detoxification, lung-cancer chemoprevention biomarkers, NAFLD insulin resistance) and a thoroughly characterised Nrf2 mechanism. Quercetin has strong in vitro and animal data for senolytic, anti-allergic and anti-inflammatory effects, with emerging human trials in allergic rhinitis, hypertension and exercise recovery, but lacks the RCT density of sulforaphane in any single indication. Both are well-tolerated.',
+        whoShouldChoose: [
+            { scenario: 'Strong RCT evidence in defined indication', recommendation: 'Sulforaphane', reason: 'ASD, lung chemoprevention, pollutant detoxification all have completed placebo-controlled RCTs.' },
+            { scenario: 'Allergic rhinitis or histamine-related symptoms', recommendation: 'Quercetin', reason: 'Quercetin is a mast-cell stabiliser with the most direct anti-allergic profile.' },
+            { scenario: 'Senolytic activity (Dasatinib + Quercetin protocol)', recommendation: 'Quercetin', reason: 'Quercetin is part of the most-studied senolytic combination; sulforaphane is not senolytic.' },
+            { scenario: 'Phase II detoxification', recommendation: 'Sulforaphane', reason: 'Sulforaphane is the canonical Nrf2 activator with demonstrated Phase II enzyme induction in humans.' },
+            { scenario: 'Bioavailability on its own', recommendation: 'Sulforaphane', reason: 'Quercetin oral bioavailability is poor; sulforaphane in myrosinase-active form has good absorption.' },
+            { scenario: 'Cardiovascular blood pressure effects', recommendation: 'Quercetin', reason: 'Quercetin meta-analyses show modest blood-pressure-lowering effects.' }
+        ],
+        canStack: 'Yes \u2014 Sulforaphane and Quercetin engage different antioxidant pathways (Nrf2 induction vs direct radical scavenging + mast-cell stabilisation) and can be stacked for breadth. Typical stacking: Sulforaphane 15\u201340 mg/day plus Quercetin 500\u20131000 mg/day (with bromelain or vitamin C for absorption). No significant adverse interactions reported.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' },
+            { title: 'Polyphenols', url: '../categories/polyphenols.html' }
+        ]
+    },
+    {
+        slug: 'sulforaphane-vs-glutathione',
+        suppA: 'Sulforaphane',
+        suppB: 'Glutathione',
+        title: 'Sulforaphane vs Glutathione: Nrf2 Activator vs Master Antioxidant',
+        metaTitle: 'Sulforaphane vs Glutathione (2026) | Cellular Antioxidant Comparison',
+        metaDescription: 'Compare Sulforaphane (Nrf2 activator) and Glutathione (master cellular antioxidant). Bioavailability, mechanisms, RCTs, and dosing side-by-side.',
+        domain: 'Cellular Antioxidant Defense',
+        sharedDomains: ['glutathione system', 'oxidative stress reduction', 'detoxification', 'cellular cytoprotection'],
+        verdict: 'Sulforaphane (Tier 2) and Glutathione (Tier 2) play complementary roles in the cellular antioxidant network. Sulforaphane is an inducer \u2014 it activates Nrf2 to upregulate the cell\'s own glutathione synthesis machinery and Phase II detoxification enzymes. Glutathione is the substrate \u2014 the master intracellular reductant that performs the actual radical-neutralising work. Sulforaphane has stronger RCT evidence base across diverse indications; oral glutathione has notoriously poor bioavailability and most clinical evidence comes from liposomal formulations or precursor strategies (NAC, GlyNAC).',
+        whoShouldChoose: [
+            { scenario: 'Inducing the cell\'s own antioxidant machinery', recommendation: 'Sulforaphane', reason: 'Activates Nrf2 to upregulate glutathione synthesis enzymes, GST, NQO1, HO-1.' },
+            { scenario: 'Acute glutathione repletion (paracetamol toxicity, ICU oxidative stress)', recommendation: 'Glutathione (or NAC precursor)', reason: 'Direct repletion via NAC has emergency-medicine indications.' },
+            { scenario: 'Bioavailability of orally consumed product', recommendation: 'Sulforaphane', reason: 'Oral SFN (myrosinase-active) is well-absorbed; oral glutathione is poorly absorbed.' },
+            { scenario: 'Strongest indication-specific RCT evidence', recommendation: 'Sulforaphane', reason: 'Multiple successful RCTs in ASD, pollutant detoxification, lung chemoprevention.' },
+            { scenario: 'Aging / sarcopenia (GlyNAC variant)', recommendation: 'GlyNAC (precursor strategy)', reason: 'Sekhar lab geriatric trials of glycine + NAC show specific benefits in older adults.' },
+            { scenario: 'Phase II xenobiotic detoxification', recommendation: 'Sulforaphane', reason: 'Egner 2014 demonstrated significant urinary mercapturic acid excretion in 291-person trial.' }
+        ],
+        canStack: 'Yes \u2014 Sulforaphane and Glutathione (or its precursors NAC/GlyNAC) are highly complementary: sulforaphane induces the synthesis machinery while glutathione/precursors provide substrate. Typical stacking: Sulforaphane 15\u201340 mg/day plus liposomal glutathione 250\u20131000 mg/day or GlyNAC at trial-validated doses. The stack is reasonable for users prioritising deep cellular antioxidant support.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Mechanism Glossary', url: '../guides/mechanisms.html' }
+        ],
+        relatedCategories: [
+            { title: 'Antioxidants', url: '../categories/antioxidants.html' }
+        ]
+    },
+    {
+        slug: 'glycine-vs-glynac',
+        suppA: 'Glycine',
+        suppB: 'GlyNAC',
+        title: 'Glycine vs GlyNAC: Single Amino Acid vs Combination Precursor',
+        metaTitle: 'Glycine vs GlyNAC (2026) | When to Choose Each',
+        metaDescription: 'Compare standalone Glycine vs the GlyNAC (Glycine + N-Acetylcysteine) combination for sleep, cognition, glutathione, and aging. Mechanisms, RCTs and dosing side-by-side.',
+        domain: 'Amino Acid Supplementation Strategy',
+        sharedDomains: ['glutathione synthesis', 'longevity', 'oxidative stress reduction', 'cognitive support'],
+        verdict: 'Glycine (Tier 3) and GlyNAC (Tier 3) overlap by design \u2014 GlyNAC is a fixed glycine + N-acetylcysteine (NAC) combination dosed and trialled specifically as a geroscience intervention by the Sekhar lab at Baylor. Pure glycine has its own evidence base (sleep at 3 g pre-bed; cognition; collagen substrate) and is much cheaper. GlyNAC has the strongest geroscience-aging RCT data (Kumar 2023 J Gerontol A, n=24, 16 weeks, broad reversal of aging hallmarks) but cannot isolate the glycine vs NAC contribution. Use glycine alone for sleep, cognition, collagen support, and budget-sensitive precursor intake. Use GlyNAC for the trial-validated geroscience protocol.',
+        whoShouldChoose: [
+            { scenario: 'Sleep quality (3 g pre-bed)', recommendation: 'Glycine', reason: 'Bannai program established 3 g pre-bed glycine alone for sleep \u2014 GlyNAC is not the right dose form.' },
+            { scenario: 'Trial-validated aging-hallmark reversal protocol', recommendation: 'GlyNAC', reason: 'Kumar 2023 randomized placebo-controlled trial used the fixed 0.1 g/kg/day each of glycine + NAC.' },
+            { scenario: 'NMDA cognitive support', recommendation: 'Glycine', reason: 'File 1999 cognition RCT used pure glycine; NAC adds different chemistry.' },
+            { scenario: 'Glutathione substrate restoration', recommendation: 'GlyNAC', reason: 'Cysteine (via NAC) is rate-limiting for GSH synthesis alongside glycine; NAC closes the substrate loop.' },
+            { scenario: 'Collagen synthesis support', recommendation: 'Glycine', reason: 'Pure glycine at 2\u201310 g/day is the substrate; NAC is unrelated to collagen.' },
+            { scenario: 'Budget', recommendation: 'Glycine', reason: 'Generic L-glycine powder is a fraction of the cost of branded GlyNAC formulations.' }
+        ],
+        canStack: 'Choosing GlyNAC effectively means glycine + NAC as a combination. Stacking pure glycine with separate NAC is functionally similar to GlyNAC but lets the user titrate doses independently \u2014 useful for users wanting 3 g pre-bed glycine for sleep plus daytime NAC for glutathione precursor support. No reported adverse interactions between glycine and NAC.',
+        relatedGuides: [
+            { title: 'Longevity Guide', url: '../guides/longevity.html' },
+            { title: 'Sleep Guide', url: '../guides/sleep.html' }
+        ],
+        relatedCategories: [
+            { title: 'Amino Acids', url: '../categories/amino-acids.html' }
+        ]
+    },
+    {
+        slug: 'glycine-vs-l-theanine',
+        suppA: 'Glycine',
+        suppB: 'L-Theanine',
+        title: 'Glycine vs L-Theanine: Two Amino Acid Sleep Aids Compared',
+        metaTitle: 'Glycine vs L-Theanine (2026) | Amino Acid Sleep Comparison',
+        metaDescription: 'Compare Glycine (3 g pre-bed) and L-Theanine for sleep quality, anxiety reduction, and cognitive support. Mechanisms, RCT evidence, dosing.',
+        domain: 'Sleep Quality & Calm',
+        sharedDomains: ['sleep quality', 'cognitive support', 'NMDA modulation', 'amino acid biology'],
+        verdict: 'Glycine (Tier 3) and L-Theanine (Tier 2) are two amino acid-class supplements with complementary sleep-and-calm profiles. L-Theanine acts during the day as a relaxation/focus modulator (alpha-wave EEG, mild anxiolysis) and is used widely with caffeine for jitter-free focus; glycine is specifically a pre-bed sleep agent that lowers core body temperature and improves subjective sleep quality at 3 g. L-Theanine has more RCTs across anxiety, sleep onset and stress; glycine has the more specific pre-sleep thermoregulatory mechanism and is much cheaper at the gram-scale doses required.',
+        whoShouldChoose: [
+            { scenario: 'Pre-bed sleep onset improvement', recommendation: 'Glycine', reason: 'Bannai program established 3 g pre-bed glycine specifically for sleep onset and quality.' },
+            { scenario: 'Daytime relaxation without sedation', recommendation: 'L-Theanine', reason: 'L-theanine 100\u2013200 mg is widely used during the day for calm focus, often paired with caffeine.' },
+            { scenario: 'Anxiety reduction', recommendation: 'L-Theanine', reason: 'Multiple RCTs support L-theanine for stress and anxiety; glycine is not primarily an anxiolytic.' },
+            { scenario: 'Sustained-attention support in middle age', recommendation: 'Glycine', reason: 'File 1999 RCT showed glycine improved sustained attention in middle-aged men (Bioglycin).' },
+            { scenario: 'Glutathione precursor strategy', recommendation: 'Glycine', reason: 'Glycine is a rate-limiting GSH substrate; L-theanine is not.' },
+            { scenario: 'Pairing with caffeine', recommendation: 'L-Theanine', reason: 'L-Theanine + caffeine is the canonical jitter-free focus stack.' }
+        ],
+        canStack: 'Yes \u2014 Glycine and L-Theanine target different times of day and different mechanisms (pre-bed thermoregulation vs daytime alpha-wave calm). Typical stacking: L-Theanine 100\u2013200 mg in the morning/afternoon plus 3 g glycine 30\u201360 minutes pre-bed. No reported adverse interactions.',
+        relatedGuides: [
+            { title: 'Sleep Guide', url: '../guides/sleep.html' },
+            { title: 'Anxiety & Stress Guide', url: '../guides/anxiety-stress.html' }
+        ],
+        relatedCategories: [
+            { title: 'Amino Acids', url: '../categories/amino-acids.html' },
+            { title: 'Sleep Support', url: '../categories/sleep-support.html' }
+        ]
+    },
+    {
+        slug: 'glycine-vs-collagen-peptides',
+        suppA: 'Glycine',
+        suppB: 'Collagen Peptides',
+        title: 'Glycine vs Collagen Peptides: Single Amino Acid vs Whole Peptide Mix',
+        metaTitle: 'Glycine vs Collagen Peptides (2026) | Connective-Tissue Support Compared',
+        metaDescription: 'Compare standalone Glycine and Collagen Peptides for skin, joint, and bone support. Glycine is 33% of collagen by mass. Mechanisms, RCTs, dosing.',
+        domain: 'Connective Tissue & Skin Support',
+        sharedDomains: ['collagen synthesis', 'skin elasticity', 'joint support', 'bone matrix'],
+        verdict: 'Glycine (Tier 3) and Collagen Peptides (Tier 2) overlap because glycine is 33% of collagen by mass \u2014 every third amino acid in the collagen sequence is glycine. Hydrolysed collagen peptides supply glycine plus proline, hydroxyproline and the di-/tri-peptide bioactive fragments (Pro-Hyp, Hyp-Gly) that have signalling effects on fibroblasts and chondrocytes. Pure glycine alone provides only the substrate, not the bioactive collagen peptides. Collagen peptides have stronger RCT evidence specifically for skin elasticity, joint pain and bone mineral density; pure glycine has broader applicability (sleep, cognition, GSH precursor) and is much cheaper.',
+        whoShouldChoose: [
+            { scenario: 'Skin elasticity / wrinkle reduction', recommendation: 'Collagen Peptides', reason: 'Multiple RCTs show hydrolysed collagen improves skin elasticity, hydration and wrinkle metrics; the bioactive peptides matter beyond the amino-acid mix.' },
+            { scenario: 'Sleep quality at 3 g pre-bed', recommendation: 'Glycine', reason: 'Standalone glycine is the validated pre-bed sleep dose; collagen peptides are typically taken differently.' },
+            { scenario: 'Joint pain in athletes / osteoarthritis', recommendation: 'Collagen Peptides', reason: 'Bioactive collagen peptides have RCT evidence for joint pain reduction.' },
+            { scenario: 'Glutathione precursor strategy', recommendation: 'Glycine', reason: 'Glycine alone is the rate-limiting GSH substrate; collagen peptides include glycine but at lower per-dose efficiency.' },
+            { scenario: 'Postmenopausal bone mineral density', recommendation: 'Collagen Peptides', reason: 'Specific bioactive collagen peptides (BCP) have RCT-level BMD evidence in postmenopausal women.' },
+            { scenario: 'Budget for amino-acid substrate', recommendation: 'Glycine', reason: 'Generic L-glycine powder is much cheaper per gram than collagen peptides.' }
+        ],
+        canStack: 'Yes \u2014 Glycine and Collagen Peptides are highly compatible. Collagen peptides supply the bioactive fragments and the full collagen-amino-acid profile; supplemental glycine boosts total dietary glycine for sleep and additional substrate availability. Typical stacking: 10\u201320 g/day collagen peptides plus 3 g glycine pre-bed for sleep. No reported adverse interactions.',
+        relatedGuides: [
+            { title: 'Joint Health Guide', url: '../guides/joint-health.html' },
+            { title: 'Recovery Guide', url: '../guides/recovery.html' }
+        ],
+        relatedCategories: [
+            { title: 'Amino Acids', url: '../categories/amino-acids.html' },
+            { title: 'Joint Support', url: '../categories/joint-support.html' }
+        ]
     }
 ];
 
@@ -612,6 +860,9 @@ const SUPPLEMENT_EMOJIS = {
     'Passionflower': '🌺',
     'Inulin': '🌾',
     'Calcium Alpha-Ketoglutarate': '⚗️',
+    'Ergothioneine': '🍄',
+    'Sulforaphane': '🥦',
+    'Glycine': '🧬',
     'NMN (Nicotinamide Mononucleotide)': '🔋',
     'Urolithin A': '🪷',
     'Spermidine': '🌾',
