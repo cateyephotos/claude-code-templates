@@ -128,15 +128,56 @@
         </div>
     </section>
 
-    <section class="dash-panel">
-        <h2>Saved Stacks <span class="text-xs font-normal text-gray-500">— coming soon</span></h2>
-        <p class="sub">Name a Stack Analyzer result and share it with a unique URL. Rolling out in a future release.</p>
+    <section class="dash-panel" aria-labelledby="stacks-heading">
+        <h2 id="stacks-heading">
+            Saved Stacks
+            <span id="stacks-count-pill" class="sync-pill cloud" style="display:none;"><i class="fas fa-layer-group"></i> <span id="stacks-count"></span></span>
+        </h2>
+        <p class="sub" id="stacks-subtitle">Loading your saved stacks…</p>
+        <div id="stacks-skeleton"><div class="fav-grid"><div class="skeleton"></div><div class="skeleton"></div></div></div>
+        <div id="stacks-content" style="display:none;"></div>
+        <div id="stacks-empty" class="empty-state" style="display:none;">
+            <i class="far fa-layer-group"></i>
+            <h3 class="text-white font-semibold mb-1">No saved stacks yet</h3>
+            <p class="mb-3">Run the Stack Analyzer and hit <strong>Save</strong> to store your selections here.</p>
+            <a href="../tools/stack-analyzer.html" class="text-blue-400 hover:underline">Launch Stack Analyzer &rarr;</a>
+        </div>
+        <div id="stacks-signin" class="signin-cta" style="display:none;">
+            <p class="text-gray-400">Sign in to save and share stacks across your devices.</p>
+            <button id="stacks-signin-btn" class="btn">Sign in</button>
+        </div>
     </section>
 
-    <section class="dash-panel">
-        <h2>Bookmarked Guides <span class="text-xs font-normal text-gray-500">— coming soon</span></h2>
-        <p class="sub">Quick access to your purchased and saved evidence guides, with owned-PDF status. Rolling out in a future release.</p>
+    <section class="dash-panel" aria-labelledby="bookmarks-heading">
+        <h2 id="bookmarks-heading">
+            Bookmarked Guides
+            <span id="bookmarks-count-pill" class="sync-pill cloud" style="display:none;"><i class="fas fa-bookmark"></i> <span id="bookmarks-count"></span></span>
+        </h2>
+        <p class="sub" id="bookmarks-subtitle">Loading your bookmarks…</p>
+        <div id="bookmarks-skeleton"><div class="fav-grid"><div class="skeleton"></div><div class="skeleton"></div></div></div>
+        <div id="bookmarks-content" style="display:none;"></div>
+        <div id="bookmarks-empty" class="empty-state" style="display:none;">
+            <i class="far fa-bookmark"></i>
+            <h3 class="text-white font-semibold mb-1">No bookmarks yet</h3>
+            <p class="mb-3">Tap the <i class="far fa-bookmark"></i> button on any evidence guide to save it here.</p>
+            <a href="../index.html#guides" class="text-blue-400 hover:underline">Browse evidence guides &rarr;</a>
+        </div>
     </section>
+
+    <style>
+        /* SUPP-251 / SUPP-252 — stack and bookmark card variations */
+        .stack-card .actions, .bookmark-card .actions { margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+        .stack-card .count { color: #9ca3af; font-size: 0.85rem; margin: 0.1rem 0 0.3rem; }
+        .stack-card .date { color: #6b7280; font-size: 0.78rem; }
+        .bookmark-card .status { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; margin-top: 0.3rem; }
+        .bookmark-card .status.owned { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+        .bookmark-card .status.pending { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        .bookmark-card .status.checkout { background: rgba(59,130,246,0.15); color: #93c5fd; }
+        .bookmark-card .status.failed { background: rgba(220,38,38,0.15); color: #fca5a5; }
+        .bookmark-card .status.not_purchased { background: rgba(107,114,128,0.15); color: #9ca3af; }
+        .fav-card button.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.12); color: #c9d1d9; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; cursor: pointer; }
+        .fav-card button.secondary:hover { background: rgba(255,255,255,0.05); }
+    </style>
 
 </main>
 
@@ -150,6 +191,7 @@
 <script src="../js/convex-client.js" defer></script>
 <script src="../js/auth-ui.js" defer></script>
 <script src="../js/favorites-sync.js" defer></script>
+<script src="../js/bookmarks-sync.js" defer></script>
 <script src="dashboard.js" defer></script>
 
 </body>

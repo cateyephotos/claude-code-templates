@@ -1515,6 +1515,180 @@
         openEmailModal(analysis, result);
       });
     }
+
+    // SUPP-251 — inject a "Save Stack" button into the export bar.
+    // Placed beside the Copy/Email buttons with the same .sa-export-btn
+    // styling so it inherits the existing visual language. Only signed-in
+    // users see the button; anonymous users see a sign-in nudge via the
+    // click handler, matching the analyzer's credit-gate pattern.
+    injectSaveStackButton(analysis, result);
+  }
+
+  /**
+   * Inject a "Save Stack" button into the current export bar (if not
+   * already present) and wire up click → openSaveStackModal. Safe DOM
+   * construction — does not touch the existing innerHTML template.
+   */
+  function injectSaveStackButton(analysis, result) {
+    const btnGroup = document.querySelector(".sa-export-bar .sa-export-btn-group");
+    if (!btnGroup || btnGroup.querySelector("#sa-save-stack-btn")) return;
+
+    const btn = document.createElement("button");
+    btn.id = "sa-save-stack-btn";
+    btn.className = "sa-export-btn";
+    btn.title = "Save this stack to your dashboard";
+    btn.type = "button";
+
+    const icon = document.createElement("i");
+    icon.className = "fas fa-bookmark";
+    btn.appendChild(icon);
+    btn.appendChild(document.createTextNode(" Save"));
+
+    btn.addEventListener("click", () => {
+      openSaveStackModal(analysis, result);
+    });
+
+    btnGroup.appendChild(btn);
+  }
+
+  /**
+   * Render a lightweight modal for naming + privacy choice, then invoke
+   * the stacks:saveStack mutation and redirect to the public URL on
+   * success. Kept intentionally plain — no dependency on a modal lib.
+   */
+  function openSaveStackModal(analysis, result) {
+    const auth = window.SupplementDBAuth;
+    if (!auth || !auth.isSignedIn) {
+      showToast("Sign in to save stacks to your dashboard");
+      try { auth?.openSignIn?.(); } catch (_) {}
+      return;
+    }
+
+    // Guard rails on the input shape — saveStack requires ≥1 supplement.
+    if (!Array.isArray(selectedSupplements) || selectedSupplements.length === 0) {
+      showToast("Pick at least one supplement before saving a stack.");
+      return;
+    }
+
+    // Remove an existing modal if the user double-clicked Save.
+    const existing = document.getElementById("sa-save-stack-modal");
+    if (existing) existing.remove();
+
+    // Safe DOM construction — no innerHTML with user-derived values.
+    const overlay = document.createElement("div");
+    overlay.id = "sa-save-stack-modal";
+    overlay.className = "sa-save-stack-modal-overlay";
+
+    const card = document.createElement("div");
+    card.className = "sa-save-stack-modal-card";
+
+    const title = document.createElement("h3");
+    title.className = "sa-save-stack-modal-title";
+    title.textContent = "Save this stack";
+    card.appendChild(title);
+
+    const subtitle = document.createElement("p");
+    subtitle.className = "sa-save-stack-modal-sub";
+    subtitle.textContent = selectedSupplements.length + " supplement"
+      + (selectedSupplements.length === 1 ? "" : "s")
+      + (selectedGoals && selectedGoals.length
+        ? " · " + selectedGoals.map(function (g) { return g.name; }).join(" + ")
+        : "");
+    card.appendChild(subtitle);
+
+    const nameLabel = document.createElement("label");
+    nameLabel.className = "sa-save-stack-modal-label";
+    nameLabel.textContent = "Stack name";
+    card.appendChild(nameLabel);
+
+    const nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.className = "sa-save-stack-modal-input";
+    nameInput.maxLength = 120;
+    nameInput.placeholder = "Morning Protocol";
+    const suggestedName =
+      (selectedGoals && selectedGoals[0] && selectedGoals[0].name)
+        ? selectedGoals[0].name + " Stack"
+        : "My Stack";
+    nameInput.value = suggestedName;
+    card.appendChild(nameInput);
+
+    const pubRow = document.createElement("label");
+    pubRow.className = "sa-save-stack-modal-checkrow";
+    const pubInput = document.createElement("input");
+    pubInput.type = "checkbox";
+    pubInput.checked = true;
+    pubInput.id = "sa-save-stack-public";
+    pubRow.appendChild(pubInput);
+    pubRow.appendChild(document.createTextNode(" Shareable via public link"));
+    card.appendChild(pubRow);
+
+    const btnRow = document.createElement("div");
+    btnRow.className = "sa-save-stack-modal-actions";
+
+    const cancelBtn = document.createElement("button");
+    cancelBtn.type = "button";
+    cancelBtn.className = "sa-export-btn";
+    cancelBtn.textContent = "Cancel";
+    cancelBtn.addEventListener("click", function () { overlay.remove(); });
+    btnRow.appendChild(cancelBtn);
+
+    const saveBtn = document.createElement("button");
+    saveBtn.type = "button";
+    saveBtn.className = "sa-export-btn sa-export-btn--primary";
+    saveBtn.textContent = "Save stack";
+    saveBtn.addEventListener("click", async function () {
+      saveBtn.disabled = true;
+      cancelBtn.disabled = true;
+      saveBtn.textContent = "Saving…";
+      try {
+        const suppIds = selectedSupplements.map(function (s) { return String(s.id); });
+        const goalIds = (selectedGoals || []).map(function (g) { return String(g.id); });
+        const out = await window.SupplementDB.mutation("stacks:saveStack", {
+          name: nameInput.value.trim() || suggestedName,
+          supplementIds: suppIds,
+          healthGoalIds: goalIds,
+          analysisSnapshot: analysis || null,
+          isPublic: !!pubInput.checked,
+        });
+        if (out && out.slug) {
+          trackEvent("stack_save_succeeded", {
+            supplement_count: suppIds.length,
+            is_public: !!pubInput.checked,
+          });
+          // Redirect to the public stack view.
+          window.location.href = "/stacks/" + out.slug;
+          return;
+        }
+        throw new Error("Unexpected response");
+      } catch (err) {
+        console.warn("[StackAnalyzer] saveStack failed:", err);
+        showToast("Couldn't save that stack — please try again.");
+        saveBtn.disabled = false;
+        cancelBtn.disabled = false;
+        saveBtn.textContent = "Save stack";
+      }
+    });
+    btnRow.appendChild(saveBtn);
+
+    card.appendChild(btnRow);
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+
+    // Auto-focus the name input for fast save.
+    setTimeout(function () { try { nameInput.focus(); nameInput.select(); } catch (_) {} }, 30);
+
+    // Dismiss on overlay click (but not card clicks).
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) overlay.remove();
+    });
+    // Dismiss on Escape.
+    document.addEventListener("keydown", function onKey(e) {
+      if (e.key === "Escape") {
+        overlay.remove();
+        document.removeEventListener("keydown", onKey);
+      }
+    });
   }
 
   function formatResultsAsMarkdown(a) {

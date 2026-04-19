@@ -160,7 +160,9 @@
 
   // Sync when a user signs in (covers both the "signed in on page load" case
   // via `auth:signed-in` with initial:true, and the "just signed in" case).
-  window.addEventListener("auth:signed-in", syncOnSignIn);
+  // auth.js dispatches on `document`, NOT window — listen there or the
+  // handler never fires.
+  document.addEventListener("auth:signed-in", syncOnSignIn);
 
   // Expose a small API for the dashboard page.
   window.SupplementDBFavorites = {

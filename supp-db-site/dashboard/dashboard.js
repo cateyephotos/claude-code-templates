@@ -251,13 +251,214 @@
     });
   }
 
-  // Re-render when auth state flips.
-  window.addEventListener("auth:signed-in", () => render());
-  window.addEventListener("auth:signed-out", () => render());
-  window.addEventListener("auth:loaded", () => render());
+  // ─── SUPP-251: Saved Stacks panel ─────────────────────────────────
+  async function renderStacksPanel() {
+    const skel = document.getElementById("stacks-skeleton");
+    const content = document.getElementById("stacks-content");
+    const empty = document.getElementById("stacks-empty");
+    const signin = document.getElementById("stacks-signin");
+    const subtitle = document.getElementById("stacks-subtitle");
+    const countPill = document.getElementById("stacks-count-pill");
+    const countEl = document.getElementById("stacks-count");
+    if (!skel) return;
+
+    skel.style.display = "";
+    content.style.display = "none";
+    empty.style.display = "none";
+    signin.style.display = "none";
+    countPill.style.display = "none";
+
+    const signedIn = !!(window.SupplementDBAuth && window.SupplementDBAuth.isSignedIn);
+    const hasConvex = !!(window.SupplementDB && typeof window.SupplementDB.query === "function");
+    if (!signedIn || !hasConvex) {
+      skel.style.display = "none";
+      signin.style.display = "";
+      subtitle.textContent = "Sign in to save stacks to your dashboard.";
+      return;
+    }
+
+    let stacks = [];
+    try {
+      stacks = await window.SupplementDB.query("stacks:getUserStacks", {});
+    } catch (err) {
+      console.warn("[dashboard] getUserStacks failed:", err);
+    }
+
+    skel.style.display = "none";
+    subtitle.textContent = stacks.length
+      ? `${stacks.length} saved stack${stacks.length === 1 ? "" : "s"} — share any of them via /stacks/{slug}.`
+      : "No saved stacks yet.";
+    if (stacks.length === 0) {
+      empty.style.display = "";
+      return;
+    }
+
+    countPill.style.display = "";
+    countEl.textContent = stacks.length + " saved";
+
+    clear(content);
+    const grid = mkEl("div", "fav-grid");
+    for (const stack of stacks) {
+      const card = mkEl("article", "fav-card stack-card");
+      card.appendChild(mkEl("div", "name", stack.name));
+      card.appendChild(mkEl("div", "count", stack.supplementCount + " supplement" + (stack.supplementCount === 1 ? "" : "s")));
+      const dateStr = new Date(stack.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+      card.appendChild(mkEl("div", "date", (stack.isPublic ? "Public · " : "Private · ") + "Saved " + dateStr));
+
+      const actions = mkEl("div", "actions");
+      const open = document.createElement("a");
+      open.className = "open";
+      open.href = "/stacks/" + stack.slug;
+      open.textContent = "Open →";
+      actions.appendChild(open);
+
+      const rmBtn = mkEl("button", "secondary", "Delete");
+      rmBtn.type = "button";
+      rmBtn.addEventListener("click", async () => {
+        if (!window.confirm("Delete the stack \"" + stack.name + "\"? This cannot be undone.")) return;
+        rmBtn.disabled = true;
+        rmBtn.textContent = "Deleting…";
+        try {
+          await window.SupplementDB.mutation("stacks:deleteStack", { slug: stack.slug });
+          await renderStacksPanel();
+        } catch (err) {
+          console.warn("[dashboard] deleteStack failed:", err);
+          rmBtn.disabled = false;
+          rmBtn.textContent = "Delete";
+        }
+      });
+      actions.appendChild(rmBtn);
+
+      card.appendChild(actions);
+      grid.appendChild(card);
+    }
+    content.appendChild(grid);
+    content.style.display = "";
+  }
+
+  // ─── SUPP-252: Bookmarks panel ────────────────────────────────────
+  async function renderBookmarksPanel() {
+    const skel = document.getElementById("bookmarks-skeleton");
+    const content = document.getElementById("bookmarks-content");
+    const empty = document.getElementById("bookmarks-empty");
+    const subtitle = document.getElementById("bookmarks-subtitle");
+    const countPill = document.getElementById("bookmarks-count-pill");
+    const countEl = document.getElementById("bookmarks-count");
+    if (!skel) return;
+
+    skel.style.display = "";
+    content.style.display = "none";
+    empty.style.display = "none";
+    countPill.style.display = "none";
+
+    const canCloud = window.SupplementDBBookmarks && window.SupplementDBBookmarks.canSyncCloud && window.SupplementDBBookmarks.canSyncCloud();
+
+    let items = [];
+    if (canCloud) {
+      try {
+        items = await window.SupplementDBBookmarks.listFromCloud();
+      } catch (err) {
+        console.warn("[dashboard] bookmark cloud fetch failed:", err);
+      }
+    } else {
+      items = (window.SupplementDBBookmarks?.listFromLocal?.() || []).map((b) => ({
+        guideSlug: b.guideSlug,
+        guideName: b.guideName,
+        createdAt: Date.now(),
+        purchaseStatus: "not_purchased",
+      }));
+    }
+
+    skel.style.display = "none";
+    if (items.length === 0) {
+      subtitle.textContent = canCloud
+        ? "No bookmarks yet."
+        : "Sign in to sync bookmarks across devices.";
+      empty.style.display = "";
+      return;
+    }
+
+    countPill.style.display = "";
+    countEl.textContent = items.length + " bookmark" + (items.length === 1 ? "" : "s");
+    subtitle.textContent = items.length
+      + " bookmarked guide" + (items.length === 1 ? "" : "s")
+      + " — " + items.filter((b) => b.purchaseStatus === "owned").length
+      + " purchased.";
+
+    clear(content);
+    const grid = mkEl("div", "fav-grid");
+    const statusLabel = {
+      owned: "Purchased · PDF ready",
+      pending: "Purchased · PDF processing",
+      checkout: "Payment in progress",
+      failed: "Payment failed",
+      not_purchased: "Preview only",
+    };
+    for (const b of items) {
+      const card = mkEl("article", "fav-card bookmark-card");
+      card.appendChild(mkEl("div", "name", b.guideName || (b.guideSlug.charAt(0).toUpperCase() + b.guideSlug.slice(1)) + " Guide"));
+      card.appendChild(mkEl("div", "cat", "Evidence guide"));
+      const st = mkEl("span", "status " + b.purchaseStatus, statusLabel[b.purchaseStatus] || "Bookmarked");
+      card.appendChild(st);
+
+      const actions = mkEl("div", "actions");
+      const open = document.createElement("a");
+      open.className = "open";
+      open.href = "../guides/" + b.guideSlug + ".html";
+      open.textContent = b.purchaseStatus === "owned" ? "Open guide →" : "Open preview →";
+      actions.appendChild(open);
+
+      const rmBtn = mkEl("button", "remove", "Remove");
+      rmBtn.type = "button";
+      rmBtn.addEventListener("click", async () => {
+        rmBtn.disabled = true;
+        rmBtn.textContent = "Removing…";
+        try {
+          if (window.SupplementDBBookmarks?.remove) {
+            await window.SupplementDBBookmarks.remove(b.guideSlug);
+          }
+          await renderBookmarksPanel();
+        } catch (err) {
+          console.warn("[dashboard] bookmark remove failed:", err);
+          rmBtn.disabled = false;
+          rmBtn.textContent = "Remove";
+        }
+      });
+      actions.appendChild(rmBtn);
+
+      card.appendChild(actions);
+      grid.appendChild(card);
+    }
+    content.appendChild(grid);
+    content.style.display = "";
+  }
+
+  // Wire optional stacks sign-in button.
+  const stacksSigninBtn = document.getElementById("stacks-signin-btn");
+  if (stacksSigninBtn) {
+    stacksSigninBtn.addEventListener("click", () => {
+      if (window.SupplementDBAuth && typeof window.SupplementDBAuth.openSignIn === "function") {
+        window.SupplementDBAuth.openSignIn();
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+  }
+
+  function renderAll() {
+    render();
+    renderStacksPanel();
+    renderBookmarksPanel();
+  }
+
+  // Re-render when auth state flips. auth.js dispatches on `document`, so
+  // listen there (an earlier version listened on `window` and never fired).
+  document.addEventListener("auth:signed-in", () => renderAll());
+  document.addEventListener("auth:signed-out", () => renderAll());
+  document.addEventListener("auth:loaded", () => renderAll());
 
   // Initial render (deferred slightly so auth + convex-client can attach).
   document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(render, 50);
+    setTimeout(renderAll, 50);
   });
 })();

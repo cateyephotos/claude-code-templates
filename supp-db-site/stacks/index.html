@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Base href anchors relative paths under /stacks/ so cleanUrls doesn't
+         break sibling hrefs when /stacks/{slug} rewrites to this file. -->
+    <base href="/stacks/">
+    <title>Saved Stack — SupplementDB</title>
+    <meta name="description" content="Explore a shared supplement stack from SupplementDB — the evidence-based database of cognitive and mental health compounds.">
+    <meta name="robots" content="noindex, follow">
+    <!-- Canonical and og:url are set by JS once the slug is known. -->
+    <link rel="canonical" href="https://supplementdb.info/stacks/">
+    <meta property="og:title" content="Saved Stack — SupplementDB">
+    <meta property="og:description" content="Shared supplement stack from SupplementDB.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supplementdb.info/stacks/">
+    <meta property="og:image" content="https://supplementdb.info/assets/og-stack-analyzer.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="SupplementDB">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+    <meta name="clerk-key" content="__CLERK_PUBLISHABLE_KEY__">
+    <meta name="convex-url" content="__CONVEX_URL__">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../legal/legal-shared.css">
+    <link rel="stylesheet" href="../css/content-shared.css">
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <style>
+        body.stack-page { background: #0a0e17; color: #e5e7eb; font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+        .stack-hero { padding: 2.5rem 1rem 1.5rem; text-align: center; }
+        .stack-hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: #fff; margin: 0.5rem 0 0.25rem; line-height: 1.15; }
+        .stack-hero .crumbs { color: #60a5fa; font-size: 0.85rem; }
+        .stack-hero .crumbs a { color: #60a5fa; text-decoration: none; }
+        .stack-hero .crumbs a:hover { text-decoration: underline; }
+        .stack-hero .meta { color: #9ca3af; font-size: 0.92rem; margin-top: 0.5rem; }
+        .stack-hero .badge-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+        .stack-badge { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; background: rgba(99,102,241,0.15); color: #a5b4fc; }
+        .stack-shell { max-width: 64rem; margin: 0 auto; padding: 0 1rem 4rem; }
+        .stack-panel { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .stack-panel h2 { font-family: 'Source Serif 4', serif; color: #fff; font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem; }
+        .supp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.8rem; }
+        .supp-card { background: #111827; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.85rem; text-decoration: none; display: block; transition: border-color 0.15s; }
+        .supp-card:hover { border-color: rgba(59,130,246,0.5); }
+        .supp-card .name { color: #fff; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.1rem; font-family: 'Source Serif 4', serif; }
+        .supp-card .meta { color: #9ca3af; font-size: 0.78rem; }
+        .share-row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-top: 1rem; }
+        .share-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; background: #3b82f6; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 500; text-decoration: none; }
+        .share-btn:hover { background: #2563eb; }
+        .share-btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: #c9d1d9; }
+        .share-btn.secondary:hover { background: rgba(255,255,255,0.05); }
+        .share-link-input { flex: 1; min-width: 180px; padding: 0.5rem 0.8rem; background: #0d1117; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #c9d1d9; font-size: 0.82rem; font-family: ui-monospace, monospace; }
+        .stack-analysis { color: #d1d5db; line-height: 1.6; }
+        .stack-analysis p { margin: 0 0 0.8rem; }
+        .notice { text-align: center; padding: 3rem 1rem; color: #9ca3af; }
+        .notice .headline { font-family: 'Source Serif 4', serif; font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem; }
+        .notice a { color: #60a5fa; }
+        .skeleton { background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.08), rgba(255,255,255,0.04)); background-size: 200% 100%; animation: skel 1.2s infinite linear; height: 96px; border-radius: 10px; }
+        @keyframes skel { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body class="stack-page">
+
+<nav class="legal-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity">
+            <i class="fas fa-pills text-xl"></i>
+            <span class="font-bold text-lg">SupplementDB</span>
+        </a>
+        <div class="flex items-center space-x-4">
+            <a href="../tools/stack-analyzer.html" class="text-gray-300 hover:text-white text-sm">
+                <i class="fas fa-layer-group mr-1"></i> Build your own stack
+            </a>
+            <div id="auth-buttons"></div>
+        </div>
+    </div>
+</nav>
+
+<header class="stack-hero">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="crumbs">
+            <a href="../index.html">Home</a> &rsaquo; <a href="../tools/stack-analyzer.html">Stack Analyzer</a> &rsaquo; Saved Stack
+        </div>
+        <h1 id="stack-name">Loading stack…</h1>
+        <div class="meta" id="stack-meta"></div>
+        <div class="badge-row" id="stack-badges"></div>
+    </div>
+</header>
+
+<main class="stack-shell">
+    <div id="stack-loading">
+        <div class="stack-panel"><div class="skeleton"></div></div>
+        <div class="stack-panel"><div class="skeleton" style="height: 180px;"></div></div>
+    </div>
+
+    <div id="stack-404" class="notice" style="display:none;">
+        <div class="headline">Stack not found</div>
+        <p>This stack may have been deleted or marked private by its owner.</p>
+        <p><a href="../tools/stack-analyzer.html">Build your own stack →</a></p>
+    </div>
+
+    <section id="stack-content" style="display:none;">
+        <div class="stack-panel">
+            <h2><i class="fas fa-pills mr-2" style="color:#60a5fa;"></i>Supplements in this stack</h2>
+            <div class="supp-grid" id="stack-supp-grid"></div>
+        </div>
+
+        <div class="stack-panel" id="stack-analysis-panel" style="display:none;">
+            <h2><i class="fas fa-flask mr-2" style="color:#60a5fa;"></i>Analysis snapshot</h2>
+            <div class="stack-analysis" id="stack-analysis-body"></div>
+        </div>
+
+        <div class="stack-panel">
+            <h2><i class="fas fa-share-alt mr-2" style="color:#60a5fa;"></i>Share this stack</h2>
+            <div class="share-row">
+                <input type="text" id="stack-share-link" class="share-link-input" readonly>
+                <button type="button" class="share-btn" id="stack-copy-btn"><i class="fas fa-copy"></i> Copy link</button>
+                <a href="../tools/stack-analyzer.html" class="share-btn secondary">
+                    <i class="fas fa-layer-group"></i> Build your own
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2rem;">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-xs text-gray-500">
+        SupplementDB · Evidence-based supplement research · <a href="../about.html" style="color:#60a5fa;">About</a>
+    </div>
+</footer>
+
+<script src="../js/auth.js" defer></script>
+<script src="../js/convex-client.js" defer></script>
+<script src="../js/auth-ui.js" defer></script>
+<script src="stack-view.js" defer></script>
+
+</body>
+</html>

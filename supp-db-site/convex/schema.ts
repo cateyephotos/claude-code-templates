@@ -78,6 +78,40 @@ export default defineSchema({
     .index("by_supplement", ["supplementId"])
     .index("by_user_supplement", ["userId", "supplementId"]),
 
+  // Saved Stack Analyzer results (SUPP-251)
+  // Each row is one user-named stack with the supplement IDs they selected,
+  // the optional health goals they targeted, and an optional analysis
+  // snapshot so the public /stacks/{slug} view can render without re-running
+  // the paid Claude-backed analyzer call.
+  userStacks: defineTable({
+    userId: v.string(),                              // Clerk subject
+    slug: v.string(),                                // URL-safe unique slug (globally unique)
+    name: v.string(),                                // Display name ("Morning Protocol")
+    supplementIds: v.array(v.string()),              // Selected supplement IDs
+    healthGoalIds: v.optional(v.array(v.string())),  // Health goals targeted (ids from problems.js)
+    analysisSnapshot: v.optional(v.any()),           // Optional cached analyzer output
+    isPublic: v.boolean(),                           // False = private (404 to non-owners)
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_slug", ["slug"])
+    .index("by_userId_slug", ["userId", "slug"]),
+
+  // Bookmarked evidence guides (SUPP-252)
+  // Mirrors `favorites` shape for the guide-pages surface. A user can
+  // bookmark a guide without having purchased it; the dashboard joins
+  // this table with guidePurchases to surface purchase status.
+  userBookmarks: defineTable({
+    userId: v.string(),
+    guideSlug: v.string(),                           // e.g. "sleep", "creatine"
+    guideName: v.optional(v.string()),               // Snapshot at bookmark time for rendering
+    createdAt: v.number(),
+  })
+    .index("by_userId", ["userId"])
+    .index("by_user_guide", ["userId", "guideSlug"])
+    .index("by_guideSlug", ["guideSlug"]),
+
   // Subscription management
   subscriptions: defineTable({
     userId: v.string(),

@@ -2496,6 +2496,15 @@ function generateGuidePage(guide, allSupplements) {
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
         <span class="share-bar-label" style="color: var(--text-muted);">Share this guide</span>
         <div class="share-bar-buttons">
+            <!-- SUPP-252: Bookmark toggle. bookmarks-sync.js discovers via data-guide-bookmark. -->
+            <button class="share-btn guide-bookmark-btn"
+                    data-guide-bookmark="${guide.slug}"
+                    data-guide-name="${guide.title.replace(/"/g, '&quot;')}"
+                    aria-pressed="false"
+                    title="Bookmark this guide"
+                    style="border-color: rgba(99,102,241,0.3); color: #a5b4fc;">
+                <i class="far fa-bookmark guide-bookmark-icon"></i> <span class="guide-bookmark-label">Bookmark</span>
+            </button>
             <button class="share-btn" data-share="twitter" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-x-twitter"></i> Twitter</button>
             <button class="share-btn" data-share="linkedin" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
             <button class="share-btn" data-share="facebook" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);"><i class="fa-brands fa-facebook"></i> Facebook</button>
@@ -2503,6 +2512,11 @@ function generateGuidePage(guide, allSupplements) {
         </div>
     </div>
 </div>
+<style>
+  /* SUPP-252 — bookmark button states */
+  .guide-bookmark-btn.is-bookmarked { background: rgba(99,102,241,0.16); border-color: rgba(99,102,241,0.5) !important; color: #c7d2fe !important; }
+  .guide-bookmark-btn.is-bookmarked .guide-bookmark-icon { color: #a5b4fc; }
+</style>
 
 <!-- Trust Signal Bar -->
 <div class="trust-bar dark-theme" style="max-width:64rem;margin:1.5rem auto;">
@@ -3094,6 +3108,7 @@ document.querySelectorAll('#mobile-nav-menu a').forEach(function(link) {
 <script src="../js/convex-client.js" defer></script>
 <script src="../js/rbac.js" defer></script>
 <script src="../js/auth-ui.js" defer></script>
+<script src="../js/bookmarks-sync.js" defer></script>
 <script src="../js/content-gate.js" defer></script>
 </body>
 </html>`;

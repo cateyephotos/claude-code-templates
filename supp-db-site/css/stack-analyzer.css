@@ -2200,3 +2200,34 @@
 .sa-field-hint--valid {
   color: var(--indigo-light) !important;
 }
+
+/* ── Save Stack Modal (SUPP-251) ──────────────────────────────── */
+.sa-save-stack-modal-overlay {
+  position: fixed; inset: 0; z-index: 2147483000;
+  background: rgba(10, 14, 23, 0.72); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem; animation: sa-save-modal-fade 0.15s ease-out;
+}
+@keyframes sa-save-modal-fade { from { opacity: 0; } to { opacity: 1; } }
+.sa-save-stack-modal-card {
+  background: #161b22; border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 14px; padding: 1.5rem; max-width: 28rem; width: 100%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.55);
+}
+.sa-save-stack-modal-title {
+  font-family: 'DM Serif Display', Georgia, serif; font-size: 1.4rem;
+  color: #f0f6fc; margin: 0 0 0.25rem;
+}
+.sa-save-stack-modal-sub { color: #8b949e; font-size: 0.9rem; margin: 0 0 1.2rem; }
+.sa-save-stack-modal-label { display: block; color: #c9d1d9; font-size: 0.85rem; font-weight: 500; margin: 0 0 0.4rem; }
+.sa-save-stack-modal-input {
+  width: 100%; background: #0d1117; border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 8px; padding: 0.65rem 0.8rem; color: #f0f6fc; font-size: 0.95rem;
+  margin-bottom: 1rem; font-family: inherit;
+}
+.sa-save-stack-modal-input:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,0.25); }
+.sa-save-stack-modal-checkrow { display: flex; align-items: center; gap: 0.5rem; color: #c9d1d9; font-size: 0.88rem; margin-bottom: 1.2rem; cursor: pointer; }
+.sa-save-stack-modal-actions { display: flex; justify-content: flex-end; gap: 0.6rem; }
+.sa-export-btn--primary { background: linear-gradient(135deg,#4f46e5,#6366f1); color: #fff; border-color: transparent; }
+.sa-export-btn--primary:hover { filter: brightness(1.08); }
+.sa-export-btn--primary:disabled { opacity: 0.6; cursor: not-allowed; }
