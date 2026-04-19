@@ -24,10 +24,23 @@ const SKIP_FILES = new Set([
   "sleep-sales.html",
 ]);
 
+// Per-file lastmod from filesystem mtime. Pages are regenerated when
+// content changes (seed.js, generate-compare-pages.js, etc.), so mtime
+// reflects the actual content-change time. Google detects and discounts
+// blanket "today" lastmod values, so this matters for crawl prioritization.
+function fileLastMod(absPath) {
+  try {
+    return fs.statSync(absPath).mtime.toISOString().split("T")[0];
+  } catch {
+    return TODAY;
+  }
+}
+
 const urls = [];
 
-function add(loc, freq, priority) {
-  urls.push({ loc: BASE + loc, freq, priority, lastmod: TODAY });
+function add(loc, freq, priority, sourceFile) {
+  const lastmod = sourceFile ? fileLastMod(sourceFile) : TODAY;
+  urls.push({ loc: BASE + loc, freq, priority, lastmod });
 }
 
 function scanDir(dir, urlPrefix, freq, priority) {
@@ -37,19 +50,20 @@ function scanDir(dir, urlPrefix, freq, priority) {
     .readdirSync(dirPath)
     .filter((f) => f.endsWith(".html") && !SKIP_FILES.has(f))
     .sort();
-  files.forEach((f) => add(`/${urlPrefix}/${f}`, freq, priority));
+  files.forEach((f) => add(`/${urlPrefix}/${f}`, freq, priority, path.join(dirPath, f)));
   return files.length;
 }
 
 // ── Top-level pages ──────────────────────────────────────────────
-add("/", "daily", "1.0");
-add("/about.html", "monthly", "0.5");
-add("/faq.html", "monthly", "0.5");
-add("/methodology.html", "monthly", "0.5");
+add("/", "daily", "1.0", path.join(ROOT, "index.html"));
+add("/about.html", "monthly", "0.5", path.join(ROOT, "about.html"));
+add("/faq.html", "monthly", "0.5", path.join(ROOT, "faq.html"));
+add("/methodology.html", "monthly", "0.5", path.join(ROOT, "methodology.html"));
 
 // Tools
-if (fs.existsSync(path.join(ROOT, "tools", "stack-analyzer.html"))) {
-  add("/tools/stack-analyzer.html", "weekly", "0.7");
+const stackAnalyzer = path.join(ROOT, "tools", "stack-analyzer.html");
+if (fs.existsSync(stackAnalyzer)) {
+  add("/tools/stack-analyzer.html", "weekly", "0.7", stackAnalyzer);
 }
 
 // Legal
@@ -58,7 +72,7 @@ if (fs.existsSync(legalDir)) {
   fs.readdirSync(legalDir)
     .filter((f) => f.endsWith(".html"))
     .sort()
-    .forEach((f) => add(`/legal/${f}`, "monthly", "0.3"));
+    .forEach((f) => add(`/legal/${f}`, "monthly", "0.3", path.join(legalDir, f)));
 }
 
 // ── Content directories ──────────────────────────────────────────
