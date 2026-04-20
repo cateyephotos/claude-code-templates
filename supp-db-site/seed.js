@@ -950,6 +950,7 @@ ${d.lastUpdated ? `    <meta property="article:modified_time" content="${esc(d.l
     <meta name="convex-url" content="${esc(d.convexUrl)}">
 
     <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/content-gate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -1292,6 +1293,7 @@ ${buildRelatedCardsHTML(d.relatedCards)}
 <script src="../js/rbac.js" defer></script>
 <script src="../js/convex-client.js" defer></script>
 <script src="../js/newsletter.js" defer></script>
+<script src="../js/monograph-gate.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
     if(window.SupplementDBNewsletter){

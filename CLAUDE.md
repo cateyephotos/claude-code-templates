@@ -217,6 +217,12 @@ node seed.js --out supplements/              # monographs
 node scripts/generate-compare-pages.js       # comparisons
 node scripts/generate-guide-pages.js         # guides
 
+# 1a. Verify monograph gate survived regen (also runs automatically when you
+#     use `npm run generate:supplements`). Guards against the 2026-03-29
+#     regression (commit 1626abcc) where a routine seed.js regen silently
+#     stripped the preview wall from all 113 monograph pages for 22 days.
+node scripts/check-monograph-gate.js
+
 # 2. Anti-scraping honeypots (ALWAYS run after generation)
 node scripts/inject-honeypots.js
 
