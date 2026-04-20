@@ -4,7 +4,7 @@
  * Reads JSON files from data/premium-chunks/ and upserts each into the
  * premiumGuideContent table via the Convex HTTP API.
  *
- * Uses the Convex HTTP API at {CONVEX_URL}/api/run with deploy key auth,
+ * Uses the Convex HTTP API at {CONVEX_URL}/api/mutation with deploy key auth,
  * which allows calling internal mutations directly without re-deploying.
  *
  * Required env vars:
@@ -16,41 +16,59 @@
 
 const fs = require('fs');
 const path = require('path');
+const { ConvexHttpClient } = require('convex/browser');
 
 const CHUNKS_DIR = path.join(__dirname, '..', 'data', 'premium-chunks');
 const SIZE_WARN_KB = 900;
 const SIZE_ERROR_KB = 1024;
 
-async function uploadChunk(convexUrl, deployKey, chunk, sizeKb) {
-    const response = await fetch(`${convexUrl.replace(/\/$/, '')}/api/run`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Convex ${deployKey}`,
-        },
-        body: JSON.stringify({
-            path: 'premiumGuideContent:upsertContent',
-            args: {
-                guideSlug: chunk.slug,
-                htmlContent: chunk.htmlContent,
-                version: chunk.version || new Date().toISOString().slice(0, 10),
-                generatedAt: chunk.generatedAt || new Date().toISOString(),
-            },
-            format: 'json',
-        }),
-    });
+// Retry on transient gateway errors only. Convex sits behind Cloudflare and
+// can return 502/503/504 during brief origin hiccups. Do NOT retry 404 —
+// it means the endpoint or function name is wrong (deterministic). Do NOT
+// retry 401/403 — auth problems are deterministic too.
+const RETRY_STATUS = new Set([408, 425, 429, 500, 502, 503, 504]);
+const MAX_RETRIES = 4;
+const INITIAL_BACKOFF_MS = 750;
+const INTER_REQUEST_DELAY_MS = 300;
 
-    if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`HTTP ${response.status}: ${errorText}`);
+const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+async function uploadChunk(client, chunk, sizeKb) {
+    const args = {
+        guideSlug: chunk.slug,
+        htmlContent: chunk.htmlContent,
+        version: chunk.version || new Date().toISOString().slice(0, 10),
+        generatedAt: chunk.generatedAt || new Date().toISOString(),
+    };
+
+    let lastErr = null;
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+        try {
+            // Calls Convex `/api/mutation` with header
+            // `Authorization: Convex <token>` (the same format the Convex CLI
+            // uses for admin-authenticated calls — verified against the SDK
+            // source at convex/dist/esm/browser/http_client.js line 212).
+            //
+            // The token MUST match /^(dev|prod):NAME\|BASE64.../ to be
+            // accepted as an admin key. If you get `MalformedAccessToken`,
+            // the token in CONVEX_DEPLOY_KEY is the wrong type — regenerate
+            // a "Production Deploy Key" from the Convex dashboard.
+            return await client.mutation('premiumGuideContent:adminUpsertContent', args);
+        } catch (err) {
+            const msg = String(err && err.message || err);
+            const isTransient = /\b(408|425|429|500|502|503|504)\b/.test(msg)
+                || /network|timeout|fetch failed|ECONN/i.test(msg);
+            lastErr = err;
+            if (isTransient && attempt < MAX_RETRIES) {
+                const wait = INITIAL_BACKOFF_MS * Math.pow(2, attempt);
+                console.warn(`  ⟳ ${chunk.slug}: ${msg.split('\n')[0].slice(0, 120)} — retrying in ${wait}ms (${attempt + 1}/${MAX_RETRIES})`);
+                await sleep(wait);
+                continue;
+            }
+            throw err;
+        }
     }
-
-    const result = await response.json();
-    if (result.status === 'error') {
-        throw new Error(result.errorMessage || 'Unknown Convex error');
-    }
-
-    return result;
+    throw lastErr;
 }
 
 async function main() {
@@ -81,8 +99,23 @@ async function main() {
         process.exit(1);
     }
 
+    // Validate the token shape upfront — saves 18 round-trips if the user
+    // pasted a project token, an OAuth token, or a CLI access token instead
+    // of a deployment admin key.
+    if (!/^(dev|prod):.*\|/.test(deployKey)) {
+        const prefix = deployKey.split(/[:|\s]/)[0] + (deployKey.includes(':') ? ':' : '');
+        console.error('ERROR: CONVEX_DEPLOY_KEY does not look like a deployment admin key.');
+        console.error(`  Got prefix: "${prefix}..." (length ${deployKey.length})`);
+        console.error('  Expected format: "prod:DEPLOYMENT-NAME|BASE64..." or "dev:..."');
+        console.error('  Generate one at: https://dashboard.convex.dev → your deployment → Settings → Deploy Keys → Generate Production Deploy Key');
+        process.exit(1);
+    }
+
     console.log(`Convex URL: ${convexUrl}`);
     console.log(`Found ${files.length} premium content chunks to upload.\n`);
+
+    const client = new ConvexHttpClient(convexUrl);
+    client.setAdminAuth(deployKey);
 
     let uploaded = 0;
     let warned = 0;
@@ -122,13 +155,17 @@ async function main() {
         }
 
         try {
-            await uploadChunk(convexUrl, deployKey, chunk, sizeKb);
+            await uploadChunk(client, chunk, sizeKb);
             console.log(`✓ ${chunk.slug} (${sizeKb.toFixed(1)}KB)`);
             uploaded++;
         } catch (e) {
             console.error(`✗ ${chunk.slug}: Upload failed — ${e.message}`);
             skipped++;
         }
+        // Pace successive uploads so we never fire 18+ mutations into the
+        // same Convex edge second; that pattern triggered a 502 storm in
+        // a previous run.
+        await sleep(INTER_REQUEST_DELAY_MS);
     }
 
     console.log(`\n--- Summary ---`);
