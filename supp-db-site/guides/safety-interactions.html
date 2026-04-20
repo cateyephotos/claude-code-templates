@@ -38,7 +38,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/content-gate.css?v=1776642709499">
+    <link rel="stylesheet" href="../css/content-gate.css?v=1776643879128">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
     <script src="https://unpkg.com/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/convex@latest/dist/browser/index.global.js" crossorigin="anonymous"></script>
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Supplement Safety, Drug Interactions & Contraindications","description":"Comprehensive guide to supplement safety, drug interactions, and contraindications. Covers all 93 supplements in the database with evidence-based safety profiles.","datePublished":"2026-04-19","dateModified":"2026-04-19","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.info"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.info/guides/safety-interactions.html"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Supplement Safety, Drug Interactions & Contraindications","description":"Comprehensive guide to supplement safety, drug interactions, and contraindications. Covers all 93 supplements in the database with evidence-based safety profiles.","datePublished":"2026-04-20","dateModified":"2026-04-20","publisher":{"@type":"Organization","name":"SupplementDB","url":"https://supplementdb.info"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://supplementdb.info/guides/safety-interactions.html"}}</script>
 
     
     <style>
@@ -390,7 +390,7 @@
         <!-- Review badge -->
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6" style="background: rgba(245,158,11, 0.12); color: #fde68a; border: 1px solid rgba(245,158,11, 0.2);">
             <i class="fas fa-clock text-xs" style="color: #fbbf24; font-size: 0.65rem;"></i>
-            Last reviewed: 2026-04-19
+            Last reviewed: 2026-04-20
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-normal mb-4 leading-tight" style="color: var(--text-bright);">
@@ -512,6 +512,34 @@
                     </tr>
                     <tr class="gate-hint-row" data-hide-when-unlocked><td colspan="5" style="padding: 14px 16px; text-align: center; background: rgba(245,158,11, 0.06); border-top: 1px dashed rgba(245,158,11, 0.4); border-bottom: 1px dashed rgba(245,158,11, 0.4); font-size: 0.88rem; color: var(--text-muted);"><i class="fas fa-lock" style="margin-right: 8px; color: var(--accent-light);"></i><strong style="color: var(--text-primary);">+115 more supplements</strong> with mechanisms, dosing and full evidence &mdash; unlocked with access</td></tr>
                     <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<script>
+(function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.01, rootMargin: '200px 0px 200px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+    // Fallback: reveal all after 2s
+    setTimeout(function() {
+        reveals.forEach(function(el) {
+            if (!el.classList.contains('visible')) el.classList.add('visible');
+        });
+    }, 2000);
+})();
+</script>
+<!-- PREMIUM_CONTENT_START -->
+<template id="summary-rows-premium" data-target="#summary table tbody" data-insert-before="[data-gate-cutoff]"><table><tbody>
                     <tr>
                         <td><strong><a href="../supplements/citicoline.html" style="color: var(--glow); text-decoration: none;">Citicoline</a></strong></td>
                         <td><span class="tier-1-badge inline-block px-2 py-0.5 rounded text-xs font-bold">Strong Evidence</span></td>
@@ -1317,33 +1345,7 @@
                         <td style="font-size:0.82rem;">Stroke recovery</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">5-20mg daily</td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-<script>
-(function() {
-    var reveals = document.querySelectorAll('.reveal');
-    if (!reveals.length) return;
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.01, rootMargin: '200px 0px 200px 0px' });
-    reveals.forEach(function(el) { observer.observe(el); });
-    // Fallback: reveal all after 2s
-    setTimeout(function() {
-        reveals.forEach(function(el) {
-            if (!el.classList.contains('visible')) el.classList.add('visible');
-        });
-    }, 2000);
-})();
-</script>
-<!-- PREMIUM_CONTENT_START -->
+                </tbody></table></template>
 <div id="top-supplements">
         <section id="tier1" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 reveal">
             <div class="tier-divider mb-8">

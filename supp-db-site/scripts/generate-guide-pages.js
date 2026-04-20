@@ -2574,15 +2574,18 @@ function generateGuidePage(guide, allSupplements) {
                     </tr>
                 </thead>
                 <tbody>`;
-    const GATE_CUTOFF_AFTER_ROW = 3; // Show 3 rows before content gate cuts off
-    filtered.forEach((s, idx) => {
+    const GATE_CUTOFF_AFTER_ROW = 3; // Show this many rows publicly; the rest live behind the paywall
+
+    // Build the row HTML for a single supplement (used both inline for free
+    // rows and inside the premium <template> for gated rows).
+    function buildSummaryRow(s) {
         const topBenefit = getDomainBenefit(s, guide.slug);
         const topMech = getMechanismsList(s)[0] || '—';
         const mechSummaryLink = getMechanismLink(topMech);
         const mechTdContent = mechSummaryLink
             ? `<a href="${mechSummaryLink}" style="color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;">${esc(topMech)}</a>`
             : esc(topMech);
-        html += `
+        return `
                     <tr>
                         <td><strong><a href="../supplements/${slugify(s.name)}.html" style="color: var(--glow); text-decoration: none;">${esc(s.name)}</a></strong></td>
                         <td>${tierBadgeHtml(s.evidenceTier)}</td>
@@ -2590,25 +2593,33 @@ function generateGuidePage(guide, allSupplements) {
                         <td style="font-size:0.82rem;">${esc(topBenefit)}</td>
                         <td style="font-size:0.82rem; color: var(--text-muted);">${esc(s.dosageRange || '—')}</td>
                     </tr>`;
-        // After the Nth visible row, insert (a) a "+N more" hint row that
-        // teases the locked content, then (b) the invisible gate cutoff marker
-        // that content-gate.js uses to know where the premium content begins.
-        if (idx === GATE_CUTOFF_AFTER_ROW - 1) {
-            const remaining = filtered.length - GATE_CUTOFF_AFTER_ROW;
-            if (remaining > 0) {
-                html += `
-                    <tr class="gate-hint-row" data-hide-when-unlocked><td colspan="5" style="padding: 14px 16px; text-align: center; background: rgba(${theme.accentRgb}, 0.06); border-top: 1px dashed rgba(${theme.accentRgb}, 0.4); border-bottom: 1px dashed rgba(${theme.accentRgb}, 0.4); font-size: 0.88rem; color: var(--text-muted);"><i class="fas fa-lock" style="margin-right: 8px; color: var(--accent-light);"></i><strong style="color: var(--text-primary);">+${remaining} more supplement${remaining === 1 ? '' : 's'}</strong> with mechanisms, dosing and full evidence &mdash; unlocked with access</td></tr>`;
-            }
-            html += `
-                    <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>`;
-        }
+    }
+
+    // Free rows go directly into the teaser table.
+    filtered.slice(0, GATE_CUTOFF_AFTER_ROW).forEach(s => {
+        html += buildSummaryRow(s);
     });
+
+    // Hint row + invisible cutoff marker close out the publicly-visible rows.
+    const remaining = filtered.length - GATE_CUTOFF_AFTER_ROW;
+    if (remaining > 0) {
+        html += `
+                    <tr class="gate-hint-row" data-hide-when-unlocked><td colspan="5" style="padding: 14px 16px; text-align: center; background: rgba(${theme.accentRgb}, 0.06); border-top: 1px dashed rgba(${theme.accentRgb}, 0.4); border-bottom: 1px dashed rgba(${theme.accentRgb}, 0.4); font-size: 0.88rem; color: var(--text-muted);"><i class="fas fa-lock" style="margin-right: 8px; color: var(--accent-light);"></i><strong style="color: var(--text-primary);">+${remaining} more supplement${remaining === 1 ? '' : 's'}</strong> with mechanisms, dosing and full evidence &mdash; unlocked with access</td></tr>`;
+    }
+    html += `
+                    <tr data-gate-cutoff aria-hidden="true" style="height:0;border:none;padding:0;margin:0;"><td colspan="5" style="height:0;border:none;padding:0;margin:0;"></td></tr>`;
+
     html += `
                 </tbody>
             </table>
         </div>
     </div>
 </section>`;
+
+    // Stash the locked rows into a variable for later emission inside the
+    // premium chunk (after the SPLIT marker). They never appear in the
+    // teaser HTML.
+    const lockedSummaryRowsHtml = filtered.slice(GATE_CUTOFF_AFTER_ROW).map(buildSummaryRow).join('');
 
     // Reveal observer for teaser sections (must be before split marker so it
     // stays in the teaser HTML). Observes ALL .reveal elements on the page,
@@ -2638,6 +2649,17 @@ function generateGuidePage(guide, allSupplements) {
 
     // -- Split Point: Premium content starts here --
     html += `\n<!-- PREMIUM_CONTENT_START -->`;
+
+    // ── Locked Quick Evidence Summary rows (paywalled portion) ───────────
+    // Stored in a <template> so they don't render visibly. content-gate.js
+    // reads this on successful premium load and appends each <tr> into the
+    // teaser table's tbody (above the data-gate-cutoff marker, replacing
+    // the hint row).
+    if (lockedSummaryRowsHtml) {
+        html += `
+<template id="summary-rows-premium" data-target="#summary table tbody" data-insert-before="[data-gate-cutoff]"><table><tbody>${lockedSummaryRowsHtml}
+                </tbody></table></template>`;
+    }
 
     // ── Tier-Grouped Evidence Cards ──────────────────────────────────────
     html += `

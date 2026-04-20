@@ -113,6 +113,27 @@
           el.classList.add("visible");
         });
 
+        // Splice any premium-only Quick Evidence Summary rows into the
+        // teaser table BEFORE we hide the gate hint row. The premium chunk
+        // ships these inside <template id="summary-rows-premium" ...> so
+        // anonymous users never receive them in the static teaser HTML.
+        container.querySelectorAll("template[data-target]").forEach(tmpl => {
+          const targetSel = tmpl.getAttribute("data-target");
+          const insertBeforeSel = tmpl.getAttribute("data-insert-before");
+          const target = document.querySelector(targetSel);
+          if (!target) return;
+          const anchor = insertBeforeSel ? target.querySelector(insertBeforeSel) : null;
+          const rows = tmpl.content.querySelectorAll("tr");
+          rows.forEach(tr => {
+            if (anchor && anchor.parentNode === target) {
+              target.insertBefore(tr.cloneNode(true), anchor);
+            } else {
+              target.appendChild(tr.cloneNode(true));
+            }
+          });
+          tmpl.remove();
+        });
+
         // Hide any teaser hints that should disappear once premium loads
         // (e.g., the "+N more supplements unlocked with access" row in the
         // Quick Evidence Summary table).
